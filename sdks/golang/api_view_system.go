@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,178 @@ import (
 // ViewSystemAPIService ViewSystemAPI service
 type ViewSystemAPIService service
 
-type ApiOBPv500CreateSystemViewRequest struct {
+type ApiAddSystemViewPermissionRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
-	oBPv500CreateSystemViewRequest *OBPv500CreateSystemViewRequest
+	viewid string
+	addSystemViewPermissionRequest *AddSystemViewPermissionRequest
 }
 
 // Request body
-func (r ApiOBPv500CreateSystemViewRequest) OBPv500CreateSystemViewRequest(oBPv500CreateSystemViewRequest OBPv500CreateSystemViewRequest) ApiOBPv500CreateSystemViewRequest {
-	r.oBPv500CreateSystemViewRequest = &oBPv500CreateSystemViewRequest
+func (r ApiAddSystemViewPermissionRequest) AddSystemViewPermissionRequest(addSystemViewPermissionRequest AddSystemViewPermissionRequest) ApiAddSystemViewPermissionRequest {
+	r.addSystemViewPermissionRequest = &addSystemViewPermissionRequest
 	return r
 }
 
-func (r ApiOBPv500CreateSystemViewRequest) Execute() (*OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, *http.Response, error) {
-	return r.ApiService.OBPv500CreateSystemViewExecute(r)
+func (r ApiAddSystemViewPermissionRequest) Execute() (*AddSystemViewPermission200Response, *http.Response, error) {
+	return r.ApiService.AddSystemViewPermissionExecute(r)
 }
 
 /*
-OBPv500CreateSystemView Create System View
+AddSystemViewPermission Add Permission to a System View
+
+<p>Add Permission to a System View.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>permission_name</strong></a>: permission_name</p>
+<p><a href="/glossary#">extra_data</a>: extra_data</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param viewid The VIEWID identifier
+ @return ApiAddSystemViewPermissionRequest
+*/
+func (a *ViewSystemAPIService) AddSystemViewPermission(ctx context.Context, viewid string) ApiAddSystemViewPermissionRequest {
+	return ApiAddSystemViewPermissionRequest{
+		ApiService: a,
+		ctx: ctx,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return AddSystemViewPermission200Response
+func (a *ViewSystemAPIService) AddSystemViewPermissionExecute(r ApiAddSystemViewPermissionRequest) (*AddSystemViewPermission200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *AddSystemViewPermission200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.AddSystemViewPermission")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system-views/{viewid}/permissions"
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.addSystemViewPermissionRequest == nil {
+		return localVarReturnValue, nil, reportError("addSystemViewPermissionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.addSystemViewPermissionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateSystemViewRequest struct {
+	ctx context.Context
+	ApiService *ViewSystemAPIService
+	createSystemViewRequest *CreateSystemViewRequest
+}
+
+// Request body
+func (r ApiCreateSystemViewRequest) CreateSystemViewRequest(createSystemViewRequest CreateSystemViewRequest) ApiCreateSystemViewRequest {
+	r.createSystemViewRequest = &createSystemViewRequest
+	return r
+}
+
+func (r ApiCreateSystemViewRequest) Execute() (*GetViewsForBankAccount200ResponseViewsInner, *http.Response, error) {
+	return r.ApiService.CreateSystemViewExecute(r)
+}
+
+/*
+CreateSystemView Create System View
 
 <p>Create a system view</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the CanCreateSystemView entitlement.</p>
@@ -54,6 +208,7 @@ All the actions contained in the list will be set to <code>true</code> on the vi
 <li><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</li>
 </ul>
 <p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
 <p>System views cannot be public. In case you try to set it you will get the error OBP-30258: System view cannot be public</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
@@ -154,26 +309,26 @@ All the actions contained in the list will be set to <code>true</code> on the vi
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv500CreateSystemViewRequest
+ @return ApiCreateSystemViewRequest
 */
-func (a *ViewSystemAPIService) OBPv500CreateSystemView(ctx context.Context) ApiOBPv500CreateSystemViewRequest {
-	return ApiOBPv500CreateSystemViewRequest{
+func (a *ViewSystemAPIService) CreateSystemView(ctx context.Context) ApiCreateSystemViewRequest {
+	return ApiCreateSystemViewRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
-func (a *ViewSystemAPIService) OBPv500CreateSystemViewExecute(r ApiOBPv500CreateSystemViewRequest) (*OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, *http.Response, error) {
+//  @return GetViewsForBankAccount200ResponseViewsInner
+func (a *ViewSystemAPIService) CreateSystemViewExecute(r ApiCreateSystemViewRequest) (*GetViewsForBankAccount200ResponseViewsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
+		localVarReturnValue  *GetViewsForBankAccount200ResponseViewsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv500CreateSystemView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.CreateSystemView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -183,8 +338,8 @@ func (a *ViewSystemAPIService) OBPv500CreateSystemViewExecute(r ApiOBPv500Create
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv500CreateSystemViewRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv500CreateSystemViewRequest is required and must be specified")
+	if r.createSystemViewRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemViewRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -205,7 +360,7 @@ func (a *ViewSystemAPIService) OBPv500CreateSystemViewExecute(r ApiOBPv500Create
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv500CreateSystemViewRequest
+	localVarPostBody = r.createSystemViewRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -230,7 +385,7 @@ func (a *ViewSystemAPIService) OBPv500CreateSystemViewExecute(r ApiOBPv500Create
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -271,18 +426,18 @@ func (a *ViewSystemAPIService) OBPv500CreateSystemViewExecute(r ApiOBPv500Create
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500DeleteSystemViewRequest struct {
+type ApiDeleteSystemViewRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 	viewid string
 }
 
-func (r ApiOBPv500DeleteSystemViewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv500DeleteSystemViewExecute(r)
+func (r ApiDeleteSystemViewRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemViewExecute(r)
 }
 
 /*
-OBPv500DeleteSystemView Delete System View
+DeleteSystemView Delete System View
 
 <p>Deletes the system view specified by VIEW_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -293,10 +448,10 @@ OBPv500DeleteSystemView Delete System View
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param viewid The VIEWID identifier
- @return ApiOBPv500DeleteSystemViewRequest
+ @return ApiDeleteSystemViewRequest
 */
-func (a *ViewSystemAPIService) OBPv500DeleteSystemView(ctx context.Context, viewid string) ApiOBPv500DeleteSystemViewRequest {
-	return ApiOBPv500DeleteSystemViewRequest{
+func (a *ViewSystemAPIService) DeleteSystemView(ctx context.Context, viewid string) ApiDeleteSystemViewRequest {
+	return ApiDeleteSystemViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		viewid: viewid,
@@ -304,14 +459,14 @@ func (a *ViewSystemAPIService) OBPv500DeleteSystemView(ctx context.Context, view
 }
 
 // Execute executes the request
-func (a *ViewSystemAPIService) OBPv500DeleteSystemViewExecute(r ApiOBPv500DeleteSystemViewRequest) (*http.Response, error) {
+func (a *ViewSystemAPIService) DeleteSystemViewExecute(r ApiDeleteSystemViewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv500DeleteSystemView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.DeleteSystemView")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -364,7 +519,7 @@ func (a *ViewSystemAPIService) OBPv500DeleteSystemViewExecute(r ApiOBPv500Delete
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -396,18 +551,449 @@ func (a *ViewSystemAPIService) OBPv500DeleteSystemViewExecute(r ApiOBPv500Delete
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv500GetSystemViewRequest struct {
+type ApiDeleteSystemViewPermissionRequest struct {
+	ctx context.Context
+	ApiService *ViewSystemAPIService
+	viewid string
+	permissionname string
+}
+
+func (r ApiDeleteSystemViewPermissionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemViewPermissionExecute(r)
+}
+
+/*
+DeleteSystemViewPermission Delete Permission to a System View
+
+<p>Delete Permission to a System View</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">PERMISSION_NAME</a>: PERMISSION_NAME</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param viewid The VIEWID identifier
+ @param permissionname The PERMISSIONNAME identifier
+ @return ApiDeleteSystemViewPermissionRequest
+*/
+func (a *ViewSystemAPIService) DeleteSystemViewPermission(ctx context.Context, viewid string, permissionname string) ApiDeleteSystemViewPermissionRequest {
+	return ApiDeleteSystemViewPermissionRequest{
+		ApiService: a,
+		ctx: ctx,
+		viewid: viewid,
+		permissionname: permissionname,
+	}
+}
+
+// Execute executes the request
+func (a *ViewSystemAPIService) DeleteSystemViewPermissionExecute(r ApiDeleteSystemViewPermissionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.DeleteSystemViewPermission")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system-views/{viewid}/permissions/{permissionname}"
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"permissionname"+"}", url.PathEscape(parameterValueToString(r.permissionname, "permissionname")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetCustomViewByIdRequest struct {
+	ctx context.Context
+	ApiService *ViewSystemAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetCustomViewByIdRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.GetCustomViewByIdExecute(r)
+}
+
+/*
+GetCustomViewById Get Custom View
+
+<p>Get a single custom view by bank, account, and view ID.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetCustomViewByIdRequest
+*/
+func (a *ViewSystemAPIService) GetCustomViewById(ctx context.Context, bankid string, accountid string, viewid string) ApiGetCustomViewByIdRequest {
+	return ApiGetCustomViewByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViewById200Response
+func (a *ViewSystemAPIService) GetCustomViewByIdExecute(r ApiGetCustomViewByIdRequest) (*GetSystemViewById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViewById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetCustomViewById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCustomViewsRequest struct {
+	ctx context.Context
+	ApiService *ViewSystemAPIService
+}
+
+func (r ApiGetCustomViewsRequest) Execute() (*GetCustomViews200Response, *http.Response, error) {
+	return r.ApiService.GetCustomViewsExecute(r)
+}
+
+/*
+GetCustomViews Get Custom Views
+
+<p>Get all custom views.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetCustomViewsRequest
+*/
+func (a *ViewSystemAPIService) GetCustomViews(ctx context.Context) ApiGetCustomViewsRequest {
+	return ApiGetCustomViewsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetCustomViews200Response
+func (a *ViewSystemAPIService) GetCustomViewsExecute(r ApiGetCustomViewsRequest) (*GetCustomViews200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCustomViews200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetCustomViews")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/management/custom-views"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetSystemViewRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 	viewid string
 }
 
-func (r ApiOBPv500GetSystemViewRequest) Execute() (*OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, *http.Response, error) {
-	return r.ApiService.OBPv500GetSystemViewExecute(r)
+func (r ApiGetSystemViewRequest) Execute() (*GetViewsForBankAccount200ResponseViewsInner, *http.Response, error) {
+	return r.ApiService.GetSystemViewExecute(r)
 }
 
 /*
-OBPv500GetSystemView Get System View
+GetSystemView Get System View
 
 <p>Get System View</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -503,10 +1089,10 @@ OBPv500GetSystemView Get System View
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param viewid The VIEWID identifier
- @return ApiOBPv500GetSystemViewRequest
+ @return ApiGetSystemViewRequest
 */
-func (a *ViewSystemAPIService) OBPv500GetSystemView(ctx context.Context, viewid string) ApiOBPv500GetSystemViewRequest {
-	return ApiOBPv500GetSystemViewRequest{
+func (a *ViewSystemAPIService) GetSystemView(ctx context.Context, viewid string) ApiGetSystemViewRequest {
+	return ApiGetSystemViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		viewid: viewid,
@@ -514,16 +1100,16 @@ func (a *ViewSystemAPIService) OBPv500GetSystemView(ctx context.Context, viewid 
 }
 
 // Execute executes the request
-//  @return OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
-func (a *ViewSystemAPIService) OBPv500GetSystemViewExecute(r ApiOBPv500GetSystemViewRequest) (*OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems, *http.Response, error) {
+//  @return GetViewsForBankAccount200ResponseViewsInner
+func (a *ViewSystemAPIService) GetSystemViewExecute(r ApiGetSystemViewRequest) (*GetViewsForBankAccount200ResponseViewsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetViewsForBankAccount200ResponsePropertiesViewsItems
+		localVarReturnValue  *GetViewsForBankAccount200ResponseViewsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv500GetSystemView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetSystemView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -576,7 +1162,7 @@ func (a *ViewSystemAPIService) OBPv500GetSystemViewExecute(r ApiOBPv500GetSystem
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -617,569 +1203,18 @@ func (a *ViewSystemAPIService) OBPv500GetSystemViewExecute(r ApiOBPv500GetSystem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500GetSystemViewsIdsRequest struct {
-	ctx context.Context
-	ApiService *ViewSystemAPIService
-}
-
-func (r ApiOBPv500GetSystemViewsIdsRequest) Execute() (*OBPv500GetSystemViewsIds200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetSystemViewsIdsExecute(r)
-}
-
-/*
-OBPv500GetSystemViewsIds Get Ids of System Views
-
-<p>Get Ids of System Views</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv500GetSystemViewsIdsRequest
-*/
-func (a *ViewSystemAPIService) OBPv500GetSystemViewsIds(ctx context.Context) ApiOBPv500GetSystemViewsIdsRequest {
-	return ApiOBPv500GetSystemViewsIdsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500GetSystemViewsIds200Response
-func (a *ViewSystemAPIService) OBPv500GetSystemViewsIdsExecute(r ApiOBPv500GetSystemViewsIdsRequest) (*OBPv500GetSystemViewsIds200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetSystemViewsIds200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv500GetSystemViewsIds")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/system-views-ids"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510AddSystemViewPermissionRequest struct {
-	ctx context.Context
-	ApiService *ViewSystemAPIService
-	viewid string
-	oBPv510AddSystemViewPermissionRequest *OBPv510AddSystemViewPermissionRequest
-}
-
-// Request body
-func (r ApiOBPv510AddSystemViewPermissionRequest) OBPv510AddSystemViewPermissionRequest(oBPv510AddSystemViewPermissionRequest OBPv510AddSystemViewPermissionRequest) ApiOBPv510AddSystemViewPermissionRequest {
-	r.oBPv510AddSystemViewPermissionRequest = &oBPv510AddSystemViewPermissionRequest
-	return r
-}
-
-func (r ApiOBPv510AddSystemViewPermissionRequest) Execute() (*OBPv510AddSystemViewPermission200Response, *http.Response, error) {
-	return r.ApiService.OBPv510AddSystemViewPermissionExecute(r)
-}
-
-/*
-OBPv510AddSystemViewPermission Add Permission to a System View
-
-<p>Add Permission to a System View.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>permission_name</strong></a>: permission_name</p>
-<p><a href="/glossary#">extra_data</a>: extra_data</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlement_id"><strong>entitlement_id</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param viewid The VIEWID identifier
- @return ApiOBPv510AddSystemViewPermissionRequest
-*/
-func (a *ViewSystemAPIService) OBPv510AddSystemViewPermission(ctx context.Context, viewid string) ApiOBPv510AddSystemViewPermissionRequest {
-	return ApiOBPv510AddSystemViewPermissionRequest{
-		ApiService: a,
-		ctx: ctx,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510AddSystemViewPermission200Response
-func (a *ViewSystemAPIService) OBPv510AddSystemViewPermissionExecute(r ApiOBPv510AddSystemViewPermissionRequest) (*OBPv510AddSystemViewPermission200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510AddSystemViewPermission200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv510AddSystemViewPermission")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system-views/{viewid}/permissions"
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510AddSystemViewPermissionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510AddSystemViewPermissionRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510AddSystemViewPermissionRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510DeleteSystemViewPermissionRequest struct {
-	ctx context.Context
-	ApiService *ViewSystemAPIService
-	viewid string
-	permissionname string
-}
-
-func (r ApiOBPv510DeleteSystemViewPermissionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteSystemViewPermissionExecute(r)
-}
-
-/*
-OBPv510DeleteSystemViewPermission Delete Permission to a System View
-
-<p>Delete Permission to a System View</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">PERMISSION_NAME</a>: PERMISSION_NAME</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param viewid The VIEWID identifier
- @param permissionname The PERMISSIONNAME identifier
- @return ApiOBPv510DeleteSystemViewPermissionRequest
-*/
-func (a *ViewSystemAPIService) OBPv510DeleteSystemViewPermission(ctx context.Context, viewid string, permissionname string) ApiOBPv510DeleteSystemViewPermissionRequest {
-	return ApiOBPv510DeleteSystemViewPermissionRequest{
-		ApiService: a,
-		ctx: ctx,
-		viewid: viewid,
-		permissionname: permissionname,
-	}
-}
-
-// Execute executes the request
-func (a *ViewSystemAPIService) OBPv510DeleteSystemViewPermissionExecute(r ApiOBPv510DeleteSystemViewPermissionRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv510DeleteSystemViewPermission")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system-views/{viewid}/permissions/{permissionname}"
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"permissionname"+"}", url.PathEscape(parameterValueToString(r.permissionname, "permissionname")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetCustomViewsRequest struct {
-	ctx context.Context
-	ApiService *ViewSystemAPIService
-}
-
-func (r ApiOBPv600GetCustomViewsRequest) Execute() (*OBPv600GetCustomViews200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCustomViewsExecute(r)
-}
-
-/*
-OBPv600GetCustomViews Get Custom Views
-
-<p>Get all custom views.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCustomViewsRequest
-*/
-func (a *ViewSystemAPIService) OBPv600GetCustomViews(ctx context.Context) ApiOBPv600GetCustomViewsRequest {
-	return ApiOBPv600GetCustomViewsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv600GetCustomViews200Response
-func (a *ViewSystemAPIService) OBPv600GetCustomViewsExecute(r ApiOBPv600GetCustomViewsRequest) (*OBPv600GetCustomViews200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCustomViews200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv600GetCustomViews")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v6.0.0/management/custom-views"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetSystemViewByIdRequest struct {
+type ApiGetSystemViewByIdRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 	viewid string
 }
 
-func (r ApiOBPv600GetSystemViewByIdRequest) Execute() (*OBPv600GetSystemViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemViewByIdExecute(r)
+func (r ApiGetSystemViewByIdRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.GetSystemViewByIdExecute(r)
 }
 
 /*
-OBPv600GetSystemViewById Get System View
+GetSystemViewById Get System View
 
 <p>Get a single system view by its ID.</p>
 <p>System views are predefined views that apply to all accounts, such as:<br />
@@ -1192,8 +1227,10 @@ OBPv600GetSystemViewById Get System View
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -1201,17 +1238,17 @@ OBPv600GetSystemViewById Get System View
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param viewid The VIEWID identifier
- @return ApiOBPv600GetSystemViewByIdRequest
+ @return ApiGetSystemViewByIdRequest
 */
-func (a *ViewSystemAPIService) OBPv600GetSystemViewById(ctx context.Context, viewid string) ApiOBPv600GetSystemViewByIdRequest {
-	return ApiOBPv600GetSystemViewByIdRequest{
+func (a *ViewSystemAPIService) GetSystemViewById(ctx context.Context, viewid string) ApiGetSystemViewByIdRequest {
+	return ApiGetSystemViewByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		viewid: viewid,
@@ -1219,16 +1256,16 @@ func (a *ViewSystemAPIService) OBPv600GetSystemViewById(ctx context.Context, vie
 }
 
 // Execute executes the request
-//  @return OBPv600GetSystemViewById200Response
-func (a *ViewSystemAPIService) OBPv600GetSystemViewByIdExecute(r ApiOBPv600GetSystemViewByIdRequest) (*OBPv600GetSystemViewById200Response, *http.Response, error) {
+//  @return GetSystemViewById200Response
+func (a *ViewSystemAPIService) GetSystemViewByIdExecute(r ApiGetSystemViewByIdRequest) (*GetSystemViewById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViewById200Response
+		localVarReturnValue  *GetSystemViewById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv600GetSystemViewById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetSystemViewById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1281,7 +1318,7 @@ func (a *ViewSystemAPIService) OBPv600GetSystemViewByIdExecute(r ApiOBPv600GetSy
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1322,17 +1359,17 @@ func (a *ViewSystemAPIService) OBPv600GetSystemViewByIdExecute(r ApiOBPv600GetSy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSystemViewsRequest struct {
+type ApiGetSystemViewsRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 }
 
-func (r ApiOBPv600GetSystemViewsRequest) Execute() (*OBPv600GetSystemViews200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemViewsExecute(r)
+func (r ApiGetSystemViewsRequest) Execute() (*GetSystemViews200Response, *http.Response, error) {
+	return r.ApiService.GetSystemViewsExecute(r)
 }
 
 /*
-OBPv600GetSystemViews Get System Views
+GetSystemViews Get System Views
 
 <p>Get all system views.</p>
 <p>System views are predefined views that apply to all accounts, such as:<br />
@@ -1343,8 +1380,10 @@ OBPv600GetSystemViews Get System Views
 <p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -1352,33 +1391,33 @@ OBPv600GetSystemViews Get System Views
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#views"><strong>views</strong></a>:</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSystemViewsRequest
+ @return ApiGetSystemViewsRequest
 */
-func (a *ViewSystemAPIService) OBPv600GetSystemViews(ctx context.Context) ApiOBPv600GetSystemViewsRequest {
-	return ApiOBPv600GetSystemViewsRequest{
+func (a *ViewSystemAPIService) GetSystemViews(ctx context.Context) ApiGetSystemViewsRequest {
+	return ApiGetSystemViewsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetSystemViews200Response
-func (a *ViewSystemAPIService) OBPv600GetSystemViewsExecute(r ApiOBPv600GetSystemViewsRequest) (*OBPv600GetSystemViews200Response, *http.Response, error) {
+//  @return GetSystemViews200Response
+func (a *ViewSystemAPIService) GetSystemViewsExecute(r ApiGetSystemViewsRequest) (*GetSystemViews200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViews200Response
+		localVarReturnValue  *GetSystemViews200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv600GetSystemViews")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetSystemViews")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1430,7 +1469,7 @@ func (a *ViewSystemAPIService) OBPv600GetSystemViewsExecute(r ApiOBPv600GetSyste
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1471,17 +1510,149 @@ func (a *ViewSystemAPIService) OBPv600GetSystemViewsExecute(r ApiOBPv600GetSyste
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetViewPermissionsRequest struct {
+type ApiGetSystemViewsIdsRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 }
 
-func (r ApiOBPv600GetViewPermissionsRequest) Execute() (*OBPv600GetViewPermissions200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetViewPermissionsExecute(r)
+func (r ApiGetSystemViewsIdsRequest) Execute() (*GetSystemViewsIds200Response, *http.Response, error) {
+	return r.ApiService.GetSystemViewsIdsExecute(r)
 }
 
 /*
-OBPv600GetViewPermissions Get View Permissions
+GetSystemViewsIds Get Ids of System Views
+
+<p>Get Ids of System Views</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetSystemViewsIdsRequest
+*/
+func (a *ViewSystemAPIService) GetSystemViewsIds(ctx context.Context) ApiGetSystemViewsIdsRequest {
+	return ApiGetSystemViewsIdsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetSystemViewsIds200Response
+func (a *ViewSystemAPIService) GetSystemViewsIdsExecute(r ApiGetSystemViewsIdsRequest) (*GetSystemViewsIds200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetSystemViewsIds200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetSystemViewsIds")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/system-views-ids"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetViewPermissionsRequest struct {
+	ctx context.Context
+	ApiService *ViewSystemAPIService
+}
+
+func (r ApiGetViewPermissionsRequest) Execute() (*GetViewPermissions200Response, *http.Response, error) {
+	return r.ApiService.GetViewPermissionsExecute(r)
+}
+
+/*
+GetViewPermissions Get View Permissions
 
 <p>Get a list of all available view permissions.</p>
 <p>This endpoint returns all the available permissions that can be assigned to views,<br />
@@ -1497,26 +1668,26 @@ through a view.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetViewPermissionsRequest
+ @return ApiGetViewPermissionsRequest
 */
-func (a *ViewSystemAPIService) OBPv600GetViewPermissions(ctx context.Context) ApiOBPv600GetViewPermissionsRequest {
-	return ApiOBPv600GetViewPermissionsRequest{
+func (a *ViewSystemAPIService) GetViewPermissions(ctx context.Context) ApiGetViewPermissionsRequest {
+	return ApiGetViewPermissionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetViewPermissions200Response
-func (a *ViewSystemAPIService) OBPv600GetViewPermissionsExecute(r ApiOBPv600GetViewPermissionsRequest) (*OBPv600GetViewPermissions200Response, *http.Response, error) {
+//  @return GetViewPermissions200Response
+func (a *ViewSystemAPIService) GetViewPermissionsExecute(r ApiGetViewPermissionsRequest) (*GetViewPermissions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetViewPermissions200Response
+		localVarReturnValue  *GetViewPermissions200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv600GetViewPermissions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.GetViewPermissions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1568,7 +1739,7 @@ func (a *ViewSystemAPIService) OBPv600GetViewPermissionsExecute(r ApiOBPv600GetV
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1609,36 +1780,39 @@ func (a *ViewSystemAPIService) OBPv600GetViewPermissionsExecute(r ApiOBPv600GetV
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateSystemViewRequest struct {
+type ApiUpdateSystemViewRequest struct {
 	ctx context.Context
 	ApiService *ViewSystemAPIService
 	viewid string
-	oBPv600UpdateSystemViewRequest *OBPv600UpdateSystemViewRequest
+	updateSystemViewRequest *UpdateSystemViewRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateSystemViewRequest) OBPv600UpdateSystemViewRequest(oBPv600UpdateSystemViewRequest OBPv600UpdateSystemViewRequest) ApiOBPv600UpdateSystemViewRequest {
-	r.oBPv600UpdateSystemViewRequest = &oBPv600UpdateSystemViewRequest
+func (r ApiUpdateSystemViewRequest) UpdateSystemViewRequest(updateSystemViewRequest UpdateSystemViewRequest) ApiUpdateSystemViewRequest {
+	r.updateSystemViewRequest = &updateSystemViewRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateSystemViewRequest) Execute() (*OBPv600GetSystemViewById200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateSystemViewExecute(r)
+func (r ApiUpdateSystemViewRequest) Execute() (*GetSystemViewById200Response, *http.Response, error) {
+	return r.ApiService.UpdateSystemViewExecute(r)
 }
 
 /*
-OBPv600UpdateSystemView Update System View
+UpdateSystemView Update System View
 
 <p>Update an existing system view.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
 of a view is not editable (it is only set when a view is created).</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
 <p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
 <p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
@@ -1646,17 +1820,17 @@ of a view is not editable (it is only set when a view is created).</p>
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
 <p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
 <p><a href="/glossary#is_firehose">is_firehose</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param viewid The VIEWID identifier
- @return ApiOBPv600UpdateSystemViewRequest
+ @return ApiUpdateSystemViewRequest
 */
-func (a *ViewSystemAPIService) OBPv600UpdateSystemView(ctx context.Context, viewid string) ApiOBPv600UpdateSystemViewRequest {
-	return ApiOBPv600UpdateSystemViewRequest{
+func (a *ViewSystemAPIService) UpdateSystemView(ctx context.Context, viewid string) ApiUpdateSystemViewRequest {
+	return ApiUpdateSystemViewRequest{
 		ApiService: a,
 		ctx: ctx,
 		viewid: viewid,
@@ -1664,16 +1838,16 @@ func (a *ViewSystemAPIService) OBPv600UpdateSystemView(ctx context.Context, view
 }
 
 // Execute executes the request
-//  @return OBPv600GetSystemViewById200Response
-func (a *ViewSystemAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600UpdateSystemViewRequest) (*OBPv600GetSystemViewById200Response, *http.Response, error) {
+//  @return GetSystemViewById200Response
+func (a *ViewSystemAPIService) UpdateSystemViewExecute(r ApiUpdateSystemViewRequest) (*GetSystemViewById200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemViewById200Response
+		localVarReturnValue  *GetSystemViewById200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.OBPv600UpdateSystemView")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ViewSystemAPIService.UpdateSystemView")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1684,8 +1858,8 @@ func (a *ViewSystemAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600Update
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemViewRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemViewRequest is required and must be specified")
+	if r.updateSystemViewRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemViewRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1706,7 +1880,7 @@ func (a *ViewSystemAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600Update
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemViewRequest
+	localVarPostBody = r.updateSystemViewRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1731,7 +1905,7 @@ func (a *ViewSystemAPIService) OBPv600UpdateSystemViewExecute(r ApiOBPv600Update
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

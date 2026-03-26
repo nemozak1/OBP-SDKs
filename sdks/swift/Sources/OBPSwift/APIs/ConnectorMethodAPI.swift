@@ -12,12 +12,12 @@ open class ConnectorMethodAPI {
     /**
      Create Connector Method
      
-     - parameter oBPv400CreateConnectorMethodRequest: (body) Request body 
+     - parameter createConnectorMethodRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+     - returns: GetAllConnectorMethods200ResponseConnectorsMethodsInner
      */
-    open class func oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest: OBPv400CreateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems {
-        return try await oBPv400CreateConnectorMethodWithRequestBuilder(oBPv400CreateConnectorMethodRequest: oBPv400CreateConnectorMethodRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createConnectorMethod(createConnectorMethodRequest: CreateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner {
+        return try await createConnectorMethodWithRequestBuilder(createConnectorMethodRequest: createConnectorMethodRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -31,16 +31,16 @@ open class ConnectorMethodAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400CreateConnectorMethodRequest: (body) Request body 
+     - parameter createConnectorMethodRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> 
+     - returns: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> 
      */
-    open class func oBPv400CreateConnectorMethodWithRequestBuilder(oBPv400CreateConnectorMethodRequest: OBPv400CreateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
+    open class func createConnectorMethodWithRequestBuilder(createConnectorMethodRequest: CreateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
         let localVariablePath = "/obp/v4.0.0/management/connector-methods"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateConnectorMethodRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createConnectorMethodRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -50,7 +50,7 @@ open class ConnectorMethodAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -59,10 +59,10 @@ open class ConnectorMethodAPI {
      Get all Connector Methods
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllConnectorMethods200Response
+     - returns: GetAllConnectorMethods200Response
      */
-    open class func oBPv400GetAllConnectorMethods(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllConnectorMethods200Response {
-        return try await oBPv400GetAllConnectorMethodsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllConnectorMethods(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllConnectorMethods200Response {
+        return try await getAllConnectorMethodsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -76,12 +76,12 @@ open class ConnectorMethodAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllConnectorMethods200Response> 
+     - returns: RequestBuilder<GetAllConnectorMethods200Response> 
      */
-    open class func oBPv400GetAllConnectorMethodsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllConnectorMethods200Response> {
+    open class func getAllConnectorMethodsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllConnectorMethods200Response> {
         let localVariablePath = "/obp/v4.0.0/management/connector-methods"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -94,7 +94,7 @@ open class ConnectorMethodAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllConnectorMethods200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllConnectorMethods200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -104,10 +104,10 @@ open class ConnectorMethodAPI {
      
      - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+     - returns: GetAllConnectorMethods200ResponseConnectorsMethodsInner
      */
-    open class func oBPv400GetConnectorMethod(connectormethodid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems {
-        return try await oBPv400GetConnectorMethodWithRequestBuilder(connectormethodid: connectormethodid, apiConfiguration: apiConfiguration).execute().body
+    open class func getConnectorMethod(connectormethodid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner {
+        return try await getConnectorMethodWithRequestBuilder(connectormethodid: connectormethodid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -121,13 +121,13 @@ open class ConnectorMethodAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> 
+     - returns: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> 
      */
-    open class func oBPv400GetConnectorMethodWithRequestBuilder(connectormethodid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
+    open class func getConnectorMethodWithRequestBuilder(connectormethodid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
         var localVariablePath = "/obp/v4.0.0/management/connector-methods/{connectormethodid}"
         let connectormethodidPreEscape = "\(APIHelper.mapValueToPathItem(connectormethodid))"
         let connectormethodidPostEscape = connectormethodidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -143,70 +143,19 @@ open class ConnectorMethodAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Connector Method
-     
-     - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
-     - parameter oBPv400UpdateConnectorMethodRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-     */
-    open class func oBPv400UpdateConnectorMethod(connectormethodid: String, oBPv400UpdateConnectorMethodRequest: OBPv400UpdateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems {
-        return try await oBPv400UpdateConnectorMethodWithRequestBuilder(connectormethodid: connectormethodid, oBPv400UpdateConnectorMethodRequest: oBPv400UpdateConnectorMethodRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Connector Method
-     - PUT /obp/v4.0.0/management/connector-methods/{connectormethodid}
-     - <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
-     - parameter oBPv400UpdateConnectorMethodRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> 
-     */
-    open class func oBPv400UpdateConnectorMethodWithRequestBuilder(connectormethodid: String, oBPv400UpdateConnectorMethodRequest: OBPv400UpdateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> {
-        var localVariablePath = "/obp/v4.0.0/management/connector-methods/{connectormethodid}"
-        let connectormethodidPreEscape = "\(APIHelper.mapValueToPathItem(connectormethodid))"
-        let connectormethodidPostEscape = connectormethodidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{connectormethodid}", with: connectormethodidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateConnectorMethodRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
      Get Connector Method Names
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetConnectorMethodNames200Response
+     - returns: GetConnectorMethodNames200Response
      */
-    open class func oBPv600GetConnectorMethodNames(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetConnectorMethodNames200Response {
-        return try await oBPv600GetConnectorMethodNamesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getConnectorMethodNames(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetConnectorMethodNames200Response {
+        return try await getConnectorMethodNamesWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -220,12 +169,12 @@ open class ConnectorMethodAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetConnectorMethodNames200Response> 
+     - returns: RequestBuilder<GetConnectorMethodNames200Response> 
      */
-    open class func oBPv600GetConnectorMethodNamesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetConnectorMethodNames200Response> {
+    open class func getConnectorMethodNamesWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetConnectorMethodNames200Response> {
         let localVariablePath = "/obp/v6.0.0/system/connector-method-names"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -238,8 +187,59 @@ open class ConnectorMethodAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetConnectorMethodNames200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetConnectorMethodNames200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Connector Method
+     
+     - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
+     - parameter updateConnectorMethodRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetAllConnectorMethods200ResponseConnectorsMethodsInner
+     */
+    open class func updateConnectorMethod(connectormethodid: String, updateConnectorMethodRequest: UpdateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllConnectorMethods200ResponseConnectorsMethodsInner {
+        return try await updateConnectorMethodWithRequestBuilder(connectormethodid: connectormethodid, updateConnectorMethodRequest: updateConnectorMethodRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Connector Method
+     - PUT /obp/v4.0.0/management/connector-methods/{connectormethodid}
+     - <p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter connectormethodid: (path) The CONNECTORMETHODID identifier 
+     - parameter updateConnectorMethodRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> 
+     */
+    open class func updateConnectorMethodWithRequestBuilder(connectormethodid: String, updateConnectorMethodRequest: UpdateConnectorMethodRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner> {
+        var localVariablePath = "/obp/v4.0.0/management/connector-methods/{connectormethodid}"
+        let connectormethodidPreEscape = "\(APIHelper.mapValueToPathItem(connectormethodid))"
+        let connectormethodidPostEscape = connectormethodidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{connectormethodid}", with: connectormethodidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateConnectorMethodRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetAllConnectorMethods200ResponseConnectorsMethodsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 }

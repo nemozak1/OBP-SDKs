@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400GetAllBankLevelDynamicMessageDocs200Response
-import com.openbankproject.models.OBPv400GetDynamicMessageDoc200Response
-import com.openbankproject.models.OBPv400UpdateDynamicMessageDocRequest
+import com.openbankproject.models.GetAllBankLevelDynamicMessageDocs200Response
+import com.openbankproject.models.GetDynamicMessageDoc200Response
+import com.openbankproject.models.UpdateDynamicMessageDocRequest
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -52,8 +52,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Create Bank Level Dynamic Message Doc
      * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @param updateDynamicMessageDocRequest Request body
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateBankLevelDynamicMessageDoc(bankid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun createBankLevelDynamicMessageDoc(bankid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : GetDynamicMessageDoc200Response {
+        val localVarResponse = createBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,30 +85,30 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Create Bank Level Dynamic Message Doc
      * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @param updateDynamicMessageDocRequest Request body
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400CreateBankLevelDynamicMessageDocRequestConfig(bankid = bankid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun createBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = createBankLevelDynamicMessageDocRequestConfig(bankid = bankid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
-        return request<OBPv400UpdateDynamicMessageDocRequest, OBPv400GetDynamicMessageDoc200Response>(
+        return request<UpdateDynamicMessageDocRequest, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateBankLevelDynamicMessageDoc
+     * To obtain the request config of the operation createBankLevelDynamicMessageDoc
      *
      * @param bankid The BANKID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
+     * @param updateDynamicMessageDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : RequestConfig<OBPv400UpdateDynamicMessageDocRequest> {
-        val localVariableBody = obPv400UpdateDynamicMessageDocRequest
+    fun createBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : RequestConfig<UpdateDynamicMessageDocRequest> {
+        val localVariableBody = updateDynamicMessageDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -128,8 +128,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * POST /obp/v4.0.0/management/dynamic-message-docs
      * Create Dynamic Message Doc
      * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @param updateDynamicMessageDocRequest Request body
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -138,11 +138,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun createDynamicMessageDoc(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : GetDynamicMessageDoc200Response {
+        val localVarResponse = createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,29 +160,29 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * POST /obp/v4.0.0/management/dynamic-message-docs
      * Create Dynamic Message Doc
      * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @param updateDynamicMessageDocRequest Request body
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400CreateDynamicMessageDocRequestConfig(obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = createDynamicMessageDocRequestConfig(updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
-        return request<OBPv400UpdateDynamicMessageDocRequest, OBPv400GetDynamicMessageDoc200Response>(
+        return request<UpdateDynamicMessageDocRequest, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateDynamicMessageDoc
+     * To obtain the request config of the operation createDynamicMessageDoc
      *
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
+     * @param updateDynamicMessageDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateDynamicMessageDocRequestConfig(obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : RequestConfig<OBPv400UpdateDynamicMessageDocRequest> {
-        val localVariableBody = obPv400UpdateDynamicMessageDocRequest
+    fun createDynamicMessageDocRequestConfig(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : RequestConfig<UpdateDynamicMessageDocRequest> {
+        val localVariableBody = updateDynamicMessageDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -212,8 +212,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
+    fun deleteBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -241,8 +241,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
+    fun deleteBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -250,13 +250,13 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteBankLevelDynamicMessageDoc
+     * To obtain the request config of the operation deleteBankLevelDynamicMessageDoc
      *
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -284,8 +284,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid)
+    fun deleteDynamicMessageDoc(dynamicmessagedocid: kotlin.String) : Unit {
+        val localVarResponse = deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -312,8 +312,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid)
+    fun deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -321,12 +321,12 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteDynamicMessageDoc
+     * To obtain the request config of the operation deleteDynamicMessageDoc
      *
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -346,7 +346,7 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Get all Bank Level Dynamic Message Docs
      * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     * @return GetAllBankLevelDynamicMessageDocs200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -355,11 +355,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllBankLevelDynamicMessageDocs(bankid: kotlin.String) : OBPv400GetAllBankLevelDynamicMessageDocs200Response {
-        val localVarResponse = oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid = bankid)
+    fun getAllBankLevelDynamicMessageDocs(bankid: kotlin.String) : GetAllBankLevelDynamicMessageDocs200Response {
+        val localVarResponse = getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllBankLevelDynamicMessageDocs200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankLevelDynamicMessageDocs200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -378,27 +378,27 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Get all Bank Level Dynamic Message Docs
      * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response?>
+     * @return ApiResponse<GetAllBankLevelDynamicMessageDocs200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response?> {
-        val localVariableConfig = oBPv400GetAllBankLevelDynamicMessageDocsRequestConfig(bankid = bankid)
+    fun getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetAllBankLevelDynamicMessageDocs200Response?> {
+        val localVariableConfig = getAllBankLevelDynamicMessageDocsRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+        return request<Unit, GetAllBankLevelDynamicMessageDocs200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllBankLevelDynamicMessageDocs
+     * To obtain the request config of the operation getAllBankLevelDynamicMessageDocs
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetAllBankLevelDynamicMessageDocsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getAllBankLevelDynamicMessageDocsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -418,7 +418,7 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * GET /obp/v4.0.0/management/dynamic-message-docs
      * Get all Dynamic Message Docs
      * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-     * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+     * @return GetAllBankLevelDynamicMessageDocs200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -427,11 +427,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllDynamicMessageDocs() : OBPv400GetAllBankLevelDynamicMessageDocs200Response {
-        val localVarResponse = oBPv400GetAllDynamicMessageDocsWithHttpInfo()
+    fun getAllDynamicMessageDocs() : GetAllBankLevelDynamicMessageDocs200Response {
+        val localVarResponse = getAllDynamicMessageDocsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllBankLevelDynamicMessageDocs200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllBankLevelDynamicMessageDocs200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -449,26 +449,26 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * GET /obp/v4.0.0/management/dynamic-message-docs
      * Get all Dynamic Message Docs
      * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response?>
+     * @return ApiResponse<GetAllBankLevelDynamicMessageDocs200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllDynamicMessageDocsWithHttpInfo() : ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response?> {
-        val localVariableConfig = oBPv400GetAllDynamicMessageDocsRequestConfig()
+    fun getAllDynamicMessageDocsWithHttpInfo() : ApiResponse<GetAllBankLevelDynamicMessageDocs200Response?> {
+        val localVariableConfig = getAllDynamicMessageDocsRequestConfig()
 
-        return request<Unit, OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+        return request<Unit, GetAllBankLevelDynamicMessageDocs200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllDynamicMessageDocs
+     * To obtain the request config of the operation getAllDynamicMessageDocs
      *
      * @return RequestConfig
      */
-    fun oBPv400GetAllDynamicMessageDocsRequestConfig() : RequestConfig<Unit> {
+    fun getAllDynamicMessageDocsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -490,7 +490,7 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * &lt;p&gt;Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -499,11 +499,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
+    fun getBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : GetDynamicMessageDoc200Response {
+        val localVarResponse = getBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -523,28 +523,28 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * &lt;p&gt;Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400GetBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
+    fun getBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = getBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid)
 
-        return request<Unit, OBPv400GetDynamicMessageDoc200Response>(
+        return request<Unit, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetBankLevelDynamicMessageDoc
+     * To obtain the request config of the operation getBankLevelDynamicMessageDoc
      *
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -565,7 +565,7 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Get Dynamic Message Doc
      * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -574,11 +574,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetDynamicMessageDoc(dynamicmessagedocid: kotlin.String) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid)
+    fun getDynamicMessageDoc(dynamicmessagedocid: kotlin.String) : GetDynamicMessageDoc200Response {
+        val localVarResponse = getDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -597,27 +597,27 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Get Dynamic Message Doc
      * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400GetDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid)
+    fun getDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = getDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid)
 
-        return request<Unit, OBPv400GetDynamicMessageDoc200Response>(
+        return request<Unit, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetDynamicMessageDoc
+     * To obtain the request config of the operation getDynamicMessageDoc
      *
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
+    fun getDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -639,8 +639,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @param updateDynamicMessageDocRequest Request body
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -649,11 +649,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun updateBankLevelDynamicMessageDoc(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : GetDynamicMessageDoc200Response {
+        val localVarResponse = updateBankLevelDynamicMessageDocWithHttpInfo(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -673,31 +673,31 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @param updateDynamicMessageDocRequest Request body
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400UpdateBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun updateBankLevelDynamicMessageDocWithHttpInfo(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = updateBankLevelDynamicMessageDocRequestConfig(bankid = bankid, dynamicmessagedocid = dynamicmessagedocid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
-        return request<OBPv400UpdateDynamicMessageDocRequest, OBPv400GetDynamicMessageDoc200Response>(
+        return request<UpdateDynamicMessageDocRequest, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateBankLevelDynamicMessageDoc
+     * To obtain the request config of the operation updateBankLevelDynamicMessageDoc
      *
      * @param bankid The BANKID identifier
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
+     * @param updateDynamicMessageDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : RequestConfig<OBPv400UpdateDynamicMessageDocRequest> {
-        val localVariableBody = obPv400UpdateDynamicMessageDocRequest
+    fun updateBankLevelDynamicMessageDocRequestConfig(bankid: kotlin.String, dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : RequestConfig<UpdateDynamicMessageDocRequest> {
+        val localVariableBody = updateDynamicMessageDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -718,8 +718,8 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Update Dynamic Message Doc
      * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200Response
+     * @param updateDynamicMessageDocRequest Request body
+     * @return GetDynamicMessageDoc200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -728,11 +728,11 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : OBPv400GetDynamicMessageDoc200Response {
-        val localVarResponse = oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun updateDynamicMessageDoc(dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : GetDynamicMessageDoc200Response {
+        val localVarResponse = updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid = dynamicmessagedocid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicMessageDoc200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -751,30 +751,30 @@ open class DynamicMessageDocApi(basePath: kotlin.String = defaultBasePath, clien
      * Update Dynamic Message Doc
      * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200Response?>
+     * @param updateDynamicMessageDocRequest Request body
+     * @return ApiResponse<GetDynamicMessageDoc200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200Response?> {
-        val localVariableConfig = oBPv400UpdateDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest = obPv400UpdateDynamicMessageDocRequest)
+    fun updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : ApiResponse<GetDynamicMessageDoc200Response?> {
+        val localVariableConfig = updateDynamicMessageDocRequestConfig(dynamicmessagedocid = dynamicmessagedocid, updateDynamicMessageDocRequest = updateDynamicMessageDocRequest)
 
-        return request<OBPv400UpdateDynamicMessageDocRequest, OBPv400GetDynamicMessageDoc200Response>(
+        return request<UpdateDynamicMessageDocRequest, GetDynamicMessageDoc200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateDynamicMessageDoc
+     * To obtain the request config of the operation updateDynamicMessageDoc
      *
      * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-     * @param obPv400UpdateDynamicMessageDocRequest Request body
+     * @param updateDynamicMessageDocRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String, obPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest) : RequestConfig<OBPv400UpdateDynamicMessageDocRequest> {
-        val localVariableBody = obPv400UpdateDynamicMessageDocRequest
+    fun updateDynamicMessageDocRequestConfig(dynamicmessagedocid: kotlin.String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest) : RequestConfig<UpdateDynamicMessageDocRequest> {
+        val localVariableBody = updateDynamicMessageDocRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

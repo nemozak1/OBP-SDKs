@@ -5,18 +5,18 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310GetOAuth2ServerJWKsURIs**](OAuthApi.md#obpv310getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
-[**oBPv310GetObpConnectorLoopback**](OAuthApi.md#obpv310getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
-[**oBPv600GetOidcClient**](OAuthApi.md#obpv600getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-[**oBPv600VerifyOidcClient**](OAuthApi.md#obpv600verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+[**getOAuth2ServerJWKsURIs**](OAuthApi.md#getoauth2serverjwksuris) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs
+[**getObpConnectorLoopback**](OAuthApi.md#getobpconnectorloopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback)
+[**getOidcClient**](OAuthApi.md#getoidcclient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+[**verifyOidcClient**](OAuthApi.md#verifyoidcclient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
 
 
-# **oBPv310GetOAuth2ServerJWKsURIs**
-> OBPv310GetOAuth2ServerJWKsURIs200Response oBPv310GetOAuth2ServerJWKsURIs()
+# **getOAuth2ServerJWKsURIs**
+> GetOAuth2ServerJWKsURIs200Response getOAuth2ServerJWKsURIs()
 
 Get JSON Web Key (JWK) URIs
 
@@ -29,10 +29,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getOAuthApi();
 
 try {
-    final response = api.oBPv310GetOAuth2ServerJWKsURIs();
+    final response = api.getOAuth2ServerJWKsURIs();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling OAuthApi->oBPv310GetOAuth2ServerJWKsURIs: $e\n');
+    print('Exception when calling OAuthApi->getOAuth2ServerJWKsURIs: $e\n');
 }
 ```
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -54,8 +54,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetObpConnectorLoopback**
-> OBPv310GetObpConnectorLoopback200Response oBPv310GetObpConnectorLoopback()
+# **getObpConnectorLoopback**
+> GetObpConnectorLoopback200Response getObpConnectorLoopback()
 
 Get Connector Status (Loopback)
 
@@ -78,10 +78,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getOAuthApi();
 
 try {
-    final response = api.oBPv310GetObpConnectorLoopback();
+    final response = api.getObpConnectorLoopback();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling OAuthApi->oBPv310GetObpConnectorLoopback: $e\n');
+    print('Exception when calling OAuthApi->getObpConnectorLoopback: $e\n');
 }
 ```
 
@@ -90,7 +90,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -103,12 +103,12 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetOidcClient**
-> OBPv600GetOidcClient200Response oBPv600GetOidcClient(clientid)
+# **getOidcClient**
+> GetOidcClient200Response getOidcClient(clientid)
 
 Get OIDC Client
 
-<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
+<p>Gets an OIDC/OAuth2 client's metadata by client_id.</p> <p>Returns client information including name, consumer_id, redirect_uris, and enabled status.<br /> This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CLIENT_ID</a>: CLIENT_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_name</strong></a>: client_name</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>redirect_uris</strong></a>: redirect_uris</p> 
 
 ### Example
 ```dart
@@ -128,10 +128,10 @@ final api = ObpDart().getOAuthApi();
 final String clientid = clientid_example; // String | The CLIENTID identifier
 
 try {
-    final response = api.oBPv600GetOidcClient(clientid);
+    final response = api.getOidcClient(clientid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling OAuthApi->oBPv600GetOidcClient: $e\n');
+    print('Exception when calling OAuthApi->getOidcClient: $e\n');
 }
 ```
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -156,12 +156,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600VerifyOidcClient**
-> OBPv600VerifyOidcClient200Response oBPv600VerifyOidcClient(oBPv600VerifyOidcClientRequest)
+# **verifyOidcClient**
+> VerifyOidcClient200Response verifyOidcClient(verifyOidcClientRequest)
 
 Verify OIDC Client
 
-<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
+<p>Verifies an OIDC/OAuth2 client's credentials.</p> <p>Returns <code>valid: true</code> if the client_id and client_secret match an active consumer.<br /> Also returns the consumer_id and redirect_uris for use by the OIDC provider.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br /> See [here](/glossary#API.Endpoint Auth Modes) for more information.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>client_id</strong></a>: client_id</p> <p><a href=\"/glossary#\"><strong>client_secret</strong></a>: client_secret</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>valid</strong></a>: valid</p> <p><a href=\"/glossary#\">client_id</a>: client_id</p> <p><a href=\"/glossary#\">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">redirect_uris</a>: redirect_uris</p> 
 
 ### Example
 ```dart
@@ -178,13 +178,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getOAuthApi();
-final OBPv600VerifyOidcClientRequest oBPv600VerifyOidcClientRequest = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}}; // OBPv600VerifyOidcClientRequest | Request body
+final VerifyOidcClientRequest verifyOidcClientRequest = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}}; // VerifyOidcClientRequest | Request body
 
 try {
-    final response = api.oBPv600VerifyOidcClient(oBPv600VerifyOidcClientRequest);
+    final response = api.verifyOidcClient(verifyOidcClientRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling OAuthApi->oBPv600VerifyOidcClient: $e\n');
+    print('Exception when calling OAuthApi->verifyOidcClient: $e\n');
 }
 ```
 
@@ -192,11 +192,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600VerifyOidcClientRequest** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | 
+ **verifyOidcClientRequest** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

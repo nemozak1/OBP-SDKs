@@ -1,20 +1,20 @@
 # LogCacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510LogCacheAllEndpoint**](LogCacheApi.md#oBPv510LogCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint**](LogCacheApi.md#oBPv510LogCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint**](LogCacheApi.md#oBPv510LogCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint**](LogCacheApi.md#oBPv510LogCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint**](LogCacheApi.md#oBPv510LogCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint**](LogCacheApi.md#oBPv510LogCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**logCacheAllEndpoint**](LogCacheApi.md#logCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint**](LogCacheApi.md#logCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint**](LogCacheApi.md#logCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint**](LogCacheApi.md#logCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint**](LogCacheApi.md#logCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint**](LogCacheApi.md#logCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
 
-<a id="oBPv510LogCacheAllEndpoint"></a>
-# **oBPv510LogCacheAllEndpoint**
-> oBPv510LogCacheAllEndpoint()
+<a id="logCacheAllEndpoint"></a>
+# **logCacheAllEndpoint**
+> logCacheAllEndpoint()
 
 Get All Level Log Cache
 
@@ -28,12 +28,12 @@ Get All Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheAllEndpoint()
+    apiInstance.logCacheAllEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheAllEndpoint")
+    println("4xx response calling LogCacheApi#logCacheAllEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheAllEndpoint")
+    println("5xx response calling LogCacheApi#logCacheAllEndpoint")
     e.printStackTrace()
 }
 ```
@@ -54,17 +54,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510LogCacheDebugEndpoint"></a>
-# **oBPv510LogCacheDebugEndpoint**
-> oBPv510LogCacheDebugEndpoint()
+<a id="logCacheDebugEndpoint"></a>
+# **logCacheDebugEndpoint**
+> logCacheDebugEndpoint()
 
 Get Debug Level Log Cache
 
@@ -78,12 +78,12 @@ Get Debug Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheDebugEndpoint()
+    apiInstance.logCacheDebugEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheDebugEndpoint")
+    println("4xx response calling LogCacheApi#logCacheDebugEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheDebugEndpoint")
+    println("5xx response calling LogCacheApi#logCacheDebugEndpoint")
     e.printStackTrace()
 }
 ```
@@ -104,17 +104,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510LogCacheErrorEndpoint"></a>
-# **oBPv510LogCacheErrorEndpoint**
-> oBPv510LogCacheErrorEndpoint()
+<a id="logCacheErrorEndpoint"></a>
+# **logCacheErrorEndpoint**
+> logCacheErrorEndpoint()
 
 Get Error Level Log Cache
 
@@ -128,12 +128,12 @@ Get Error Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheErrorEndpoint()
+    apiInstance.logCacheErrorEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheErrorEndpoint")
+    println("4xx response calling LogCacheApi#logCacheErrorEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheErrorEndpoint")
+    println("5xx response calling LogCacheApi#logCacheErrorEndpoint")
     e.printStackTrace()
 }
 ```
@@ -154,17 +154,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510LogCacheInfoEndpoint"></a>
-# **oBPv510LogCacheInfoEndpoint**
-> oBPv510LogCacheInfoEndpoint()
+<a id="logCacheInfoEndpoint"></a>
+# **logCacheInfoEndpoint**
+> logCacheInfoEndpoint()
 
 Get Info Level Log Cache
 
@@ -178,12 +178,12 @@ Get Info Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheInfoEndpoint()
+    apiInstance.logCacheInfoEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheInfoEndpoint")
+    println("4xx response calling LogCacheApi#logCacheInfoEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheInfoEndpoint")
+    println("5xx response calling LogCacheApi#logCacheInfoEndpoint")
     e.printStackTrace()
 }
 ```
@@ -204,17 +204,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510LogCacheTraceEndpoint"></a>
-# **oBPv510LogCacheTraceEndpoint**
-> oBPv510LogCacheTraceEndpoint()
+<a id="logCacheTraceEndpoint"></a>
+# **logCacheTraceEndpoint**
+> logCacheTraceEndpoint()
 
 Get Trace Level Log Cache
 
@@ -228,12 +228,12 @@ Get Trace Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheTraceEndpoint()
+    apiInstance.logCacheTraceEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheTraceEndpoint")
+    println("4xx response calling LogCacheApi#logCacheTraceEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheTraceEndpoint")
+    println("5xx response calling LogCacheApi#logCacheTraceEndpoint")
     e.printStackTrace()
 }
 ```
@@ -254,17 +254,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv510LogCacheWarningEndpoint"></a>
-# **oBPv510LogCacheWarningEndpoint**
-> oBPv510LogCacheWarningEndpoint()
+<a id="logCacheWarningEndpoint"></a>
+# **logCacheWarningEndpoint**
+> logCacheWarningEndpoint()
 
 Get Warning Level Log Cache
 
@@ -278,12 +278,12 @@ Get Warning Level Log Cache
 
 val apiInstance = LogCacheApi()
 try {
-    apiInstance.oBPv510LogCacheWarningEndpoint()
+    apiInstance.logCacheWarningEndpoint()
 } catch (e: ClientException) {
-    println("4xx response calling LogCacheApi#oBPv510LogCacheWarningEndpoint")
+    println("4xx response calling LogCacheApi#logCacheWarningEndpoint")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling LogCacheApi#oBPv510LogCacheWarningEndpoint")
+    println("5xx response calling LogCacheApi#logCacheWarningEndpoint")
     e.printStackTrace()
 }
 ```
@@ -304,8 +304,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

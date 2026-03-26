@@ -1,6 +1,6 @@
 generatorName: scala-sttp4
 outputDir: ../sdks/scala
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   groupId: com.openbankproject
   artifactId: obp-scala

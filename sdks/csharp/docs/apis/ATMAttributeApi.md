@@ -1,18 +1,18 @@
 # OpenBankProject.Api.ATMAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv510CreateAtmAttribute**](ATMAttributeApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
-| [**OBPv510DeleteAtmAttribute**](ATMAttributeApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
-| [**OBPv510GetAtmAttribute**](ATMAttributeApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
-| [**OBPv510GetAtmAttributes**](ATMAttributeApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
-| [**OBPv510UpdateAtmAttribute**](ATMAttributeApi.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
+| [**CreateAtmAttribute**](ATMAttributeApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute |
+| [**DeleteAtmAttribute**](ATMAttributeApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute |
+| [**GetAtmAttribute**](ATMAttributeApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID |
+| [**GetAtmAttributes**](ATMAttributeApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes |
+| [**UpdateAtmAttribute**](ATMAttributeApi.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute |
 
-<a id="obpv510createatmattribute"></a>
-# **OBPv510CreateAtmAttribute**
-> OBPv510GetAtmAttribute200Response OBPv510CreateAtmAttribute (string bankid, string atmid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="createatmattribute"></a>
+# **CreateAtmAttribute**
+> GetAtmAttribute200Response CreateAtmAttribute (string bankid, string atmid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -25,11 +25,11 @@ Create ATM Attribute
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **atmid** | **string** | The ATMID identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -50,9 +50,9 @@ Create ATM Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510deleteatmattribute"></a>
-# **OBPv510DeleteAtmAttribute**
-> void OBPv510DeleteAtmAttribute (string bankid, string atmid, string atmattributeid)
+<a id="deleteatmattribute"></a>
+# **DeleteAtmAttribute**
+> void DeleteAtmAttribute (string bankid, string atmid, string atmattributeid)
 
 Delete ATM Attribute
 
@@ -90,9 +90,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510getatmattribute"></a>
-# **OBPv510GetAtmAttribute**
-> OBPv510GetAtmAttribute200Response OBPv510GetAtmAttribute (string bankid, string atmid, string atmattributeid)
+<a id="getatmattribute"></a>
+# **GetAtmAttribute**
+> GetAtmAttribute200Response GetAtmAttribute (string bankid, string atmid, string atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -109,7 +109,7 @@ Get ATM Attribute By ATM_ATTRIBUTE_ID
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -130,9 +130,9 @@ Get ATM Attribute By ATM_ATTRIBUTE_ID
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510getatmattributes"></a>
-# **OBPv510GetAtmAttributes**
-> OBPv510GetAtmAttributes200Response OBPv510GetAtmAttributes (string bankid, string atmid)
+<a id="getatmattributes"></a>
+# **GetAtmAttributes**
+> GetAtmAttributes200Response GetAtmAttributes (string bankid, string atmid)
 
 Get ATM Attributes
 
@@ -148,7 +148,7 @@ Get ATM Attributes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -169,9 +169,9 @@ Get ATM Attributes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510updateatmattribute"></a>
-# **OBPv510UpdateAtmAttribute**
-> OBPv510GetAtmAttribute200Response OBPv510UpdateAtmAttribute (string bankid, string atmid, string atmattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="updateatmattribute"></a>
+# **UpdateAtmAttribute**
+> GetAtmAttribute200Response UpdateAtmAttribute (string bankid, string atmid, string atmattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -185,11 +185,11 @@ Update ATM Attribute
 | **bankid** | **string** | The BANKID identifier |  |
 | **atmid** | **string** | The ATMID identifier |  |
 | **atmattributeid** | **string** | The ATMATTRIBUTEID identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

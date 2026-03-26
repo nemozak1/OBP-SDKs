@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,97 +15,97 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_bank_level_endpoint_mapping`]
+/// struct for typed errors of method [`create_bank_level_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateBankLevelEndpointMappingError {
+pub enum CreateBankLevelEndpointMappingError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_endpoint_mapping`]
+/// struct for typed errors of method [`create_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateEndpointMappingError {
+pub enum CreateEndpointMappingError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_bank_level_endpoint_mapping`]
+/// struct for typed errors of method [`delete_bank_level_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteBankLevelEndpointMappingError {
+pub enum DeleteBankLevelEndpointMappingError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_endpoint_mapping`]
+/// struct for typed errors of method [`delete_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteEndpointMappingError {
+pub enum DeleteEndpointMappingError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_bank_level_endpoint_mappings`]
+/// struct for typed errors of method [`get_all_bank_level_endpoint_mappings`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllBankLevelEndpointMappingsError {
+pub enum GetAllBankLevelEndpointMappingsError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_endpoint_mappings`]
+/// struct for typed errors of method [`get_all_endpoint_mappings`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllEndpointMappingsError {
+pub enum GetAllEndpointMappingsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_bank_level_endpoint_mapping`]
+/// struct for typed errors of method [`get_bank_level_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetBankLevelEndpointMappingError {
+pub enum GetBankLevelEndpointMappingError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_endpoint_mapping`]
+/// struct for typed errors of method [`get_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetEndpointMappingError {
+pub enum GetEndpointMappingError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_bank_level_endpoint_mapping`]
+/// struct for typed errors of method [`update_bank_level_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateBankLevelEndpointMappingError {
+pub enum UpdateBankLevelEndpointMappingError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_endpoint_mapping`]
+/// struct for typed errors of method [`update_endpoint_mapping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateEndpointMappingError {
+pub enum UpdateEndpointMappingError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_create_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, obpv400_create_endpoint_mapping_request: models::Obpv400CreateEndpointMappingRequest) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400CreateBankLevelEndpointMappingError>> {
+pub async fn create_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, create_endpoint_mapping_request: models::CreateEndpointMappingRequest) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<CreateBankLevelEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_create_endpoint_mapping_request = obpv400_create_endpoint_mapping_request;
+    let p_body_create_endpoint_mapping_request = create_endpoint_mapping_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -130,9 +130,9 @@ pub async fn o_bpv4_0_0_create_bank_level_endpoint_mapping(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_endpoint_mapping_request);
+    req_builder = req_builder.json(&p_body_create_endpoint_mapping_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -149,20 +149,20 @@ pub async fn o_bpv4_0_0_create_bank_level_endpoint_mapping(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_create_endpoint_mapping(configuration: &configuration::Configuration, obpv400_create_endpoint_mapping_request: models::Obpv400CreateEndpointMappingRequest) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400CreateEndpointMappingError>> {
+pub async fn create_endpoint_mapping(configuration: &configuration::Configuration, create_endpoint_mapping_request: models::CreateEndpointMappingRequest) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<CreateEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_create_endpoint_mapping_request = obpv400_create_endpoint_mapping_request;
+    let p_body_create_endpoint_mapping_request = create_endpoint_mapping_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/endpoint-mappings", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -187,9 +187,9 @@ pub async fn o_bpv4_0_0_create_endpoint_mapping(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_endpoint_mapping_request);
+    req_builder = req_builder.json(&p_body_create_endpoint_mapping_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -206,18 +206,18 @@ pub async fn o_bpv4_0_0_create_endpoint_mapping(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str) -> Result<(), Error<OBpv400DeleteBankLevelEndpointMappingError>> {
+pub async fn delete_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str) -> Result<(), Error<DeleteBankLevelEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_endpointmappingid = endpointmappingid;
@@ -245,7 +245,7 @@ pub async fn o_bpv4_0_0_delete_bank_level_endpoint_mapping(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -257,13 +257,13 @@ pub async fn o_bpv4_0_0_delete_bank_level_endpoint_mapping(configuration: &confi
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str) -> Result<(), Error<OBpv400DeleteEndpointMappingError>> {
+pub async fn delete_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str) -> Result<(), Error<DeleteEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_endpointmappingid = endpointmappingid;
 
@@ -290,7 +290,7 @@ pub async fn o_bpv4_0_0_delete_endpoint_mapping(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -302,13 +302,13 @@ pub async fn o_bpv4_0_0_delete_endpoint_mapping(configuration: &configuration::C
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_get_all_bank_level_endpoint_mappings(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetAllEndpointMappings200Response, Error<OBpv400GetAllBankLevelEndpointMappingsError>> {
+pub async fn get_all_bank_level_endpoint_mappings(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetAllEndpointMappings200Response, Error<GetAllBankLevelEndpointMappingsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -335,7 +335,7 @@ pub async fn o_bpv4_0_0_get_all_bank_level_endpoint_mappings(configuration: &con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -353,18 +353,18 @@ pub async fn o_bpv4_0_0_get_all_bank_level_endpoint_mappings(configuration: &con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllBankLevelEndpointMappingsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllBankLevelEndpointMappingsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_get_all_endpoint_mappings(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllEndpointMappings200Response, Error<OBpv400GetAllEndpointMappingsError>> {
+pub async fn get_all_endpoint_mappings(configuration: &configuration::Configuration, ) -> Result<models::GetAllEndpointMappings200Response, Error<GetAllEndpointMappingsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/endpoint-mappings", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -389,7 +389,7 @@ pub async fn o_bpv4_0_0_get_all_endpoint_mappings(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -407,18 +407,18 @@ pub async fn o_bpv4_0_0_get_all_endpoint_mappings(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllEndpointMappingsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllEndpointMappingsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_get_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400GetBankLevelEndpointMappingError>> {
+pub async fn get_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<GetBankLevelEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_endpointmappingid = endpointmappingid;
@@ -446,7 +446,7 @@ pub async fn o_bpv4_0_0_get_bank_level_endpoint_mapping(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -464,18 +464,18 @@ pub async fn o_bpv4_0_0_get_bank_level_endpoint_mapping(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_get_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400GetEndpointMappingError>> {
+pub async fn get_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<GetEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_endpointmappingid = endpointmappingid;
 
@@ -502,7 +502,7 @@ pub async fn o_bpv4_0_0_get_endpoint_mapping(configuration: &configuration::Conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -520,22 +520,22 @@ pub async fn o_bpv4_0_0_get_endpoint_mapping(configuration: &configuration::Conf
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_update_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str, obpv400_create_endpoint_mapping_request: models::Obpv400CreateEndpointMappingRequest) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400UpdateBankLevelEndpointMappingError>> {
+pub async fn update_bank_level_endpoint_mapping(configuration: &configuration::Configuration, bankid: &str, endpointmappingid: &str, create_endpoint_mapping_request: models::CreateEndpointMappingRequest) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<UpdateBankLevelEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_endpointmappingid = endpointmappingid;
-    let p_body_obpv400_create_endpoint_mapping_request = obpv400_create_endpoint_mapping_request;
+    let p_body_create_endpoint_mapping_request = create_endpoint_mapping_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), endpointmappingid=crate::apis::urlencode(p_path_endpointmappingid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -560,9 +560,9 @@ pub async fn o_bpv4_0_0_update_bank_level_endpoint_mapping(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_endpoint_mapping_request);
+    req_builder = req_builder.json(&p_body_create_endpoint_mapping_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -579,21 +579,21 @@ pub async fn o_bpv4_0_0_update_bank_level_endpoint_mapping(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateBankLevelEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-pub async fn o_bpv4_0_0_update_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str, obpv400_create_endpoint_mapping_request: models::Obpv400CreateEndpointMappingRequest) -> Result<models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Error<OBpv400UpdateEndpointMappingError>> {
+pub async fn update_endpoint_mapping(configuration: &configuration::Configuration, endpointmappingid: &str, create_endpoint_mapping_request: models::CreateEndpointMappingRequest) -> Result<models::GetAllEndpointMappings200ResponseEndpointMappingsInner, Error<UpdateEndpointMappingError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_endpointmappingid = endpointmappingid;
-    let p_body_obpv400_create_endpoint_mapping_request = obpv400_create_endpoint_mapping_request;
+    let p_body_create_endpoint_mapping_request = create_endpoint_mapping_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}", configuration.base_path, endpointmappingid=crate::apis::urlencode(p_path_endpointmappingid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -618,9 +618,9 @@ pub async fn o_bpv4_0_0_update_endpoint_mapping(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_endpoint_mapping_request);
+    req_builder = req_builder.json(&p_body_create_endpoint_mapping_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -637,12 +637,12 @@ pub async fn o_bpv4_0_0_update_endpoint_mapping(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllEndpointMappings200ResponseEndpointMappingsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateEndpointMappingError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateEndpointMappingError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

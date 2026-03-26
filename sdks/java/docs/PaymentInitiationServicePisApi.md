@@ -1,431 +1,59 @@
 # PaymentInitiationServicePisApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv140GetTransactionRequestTypes**](PaymentInitiationServicePisApi.md#oBPv140GetTransactionRequestTypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account |
-| [**oBPv140GetTransactionRequestTypesWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv140GetTransactionRequestTypesWithHttpInfo) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account |
-| [**oBPv210CreateTransactionRequestSandboxTan**](PaymentInitiationServicePisApi.md#oBPv210CreateTransactionRequestSandboxTan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN) |
-| [**oBPv210CreateTransactionRequestSandboxTanWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv210CreateTransactionRequestSandboxTanWithHttpInfo) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN) |
-| [**oBPv400AnswerTransactionRequestChallenge**](PaymentInitiationServicePisApi.md#oBPv400AnswerTransactionRequestChallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge |
-| [**oBPv400AnswerTransactionRequestChallengeWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400AnswerTransactionRequestChallengeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge |
-| [**oBPv400CreateTransactionRequestAccount**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT) |
-| [**oBPv400CreateTransactionRequestAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAccountWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT) |
-| [**oBPv400CreateTransactionRequestAccountOtp**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAccountOtp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP) |
-| [**oBPv400CreateTransactionRequestAccountOtpWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAccountOtpWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP) |
-| [**oBPv400CreateTransactionRequestAgentCashWithDrawal**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAgentCashWithDrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL) |
-| [**oBPv400CreateTransactionRequestAgentCashWithDrawalWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestAgentCashWithDrawalWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL) |
-| [**oBPv400CreateTransactionRequestCard**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestCard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD) |
-| [**oBPv400CreateTransactionRequestCardWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestCardWithHttpInfo) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD) |
-| [**oBPv400CreateTransactionRequestCounterparty**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestCounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY) |
-| [**oBPv400CreateTransactionRequestCounterpartyWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestCounterpartyWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY) |
-| [**oBPv400CreateTransactionRequestFreeForm**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestFreeForm) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM) |
-| [**oBPv400CreateTransactionRequestFreeFormWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestFreeFormWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM) |
-| [**oBPv400CreateTransactionRequestRefund**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestRefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND) |
-| [**oBPv400CreateTransactionRequestRefundWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestRefundWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND) |
-| [**oBPv400CreateTransactionRequestSepa**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestSepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA) |
-| [**oBPv400CreateTransactionRequestSepaWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestSepaWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA) |
-| [**oBPv400CreateTransactionRequestSimple**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestSimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE) |
-| [**oBPv400CreateTransactionRequestSimpleWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400CreateTransactionRequestSimpleWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE) |
-| [**oBPv400GetCounterpartiesForAnyAccount**](PaymentInitiationServicePisApi.md#oBPv400GetCounterpartiesForAnyAccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit) |
-| [**oBPv400GetCounterpartiesForAnyAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400GetCounterpartiesForAnyAccountWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit) |
-| [**oBPv400GetExplicitCounterpartiesForAccount**](PaymentInitiationServicePisApi.md#oBPv400GetExplicitCounterpartiesForAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit) |
-| [**oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit) |
-| [**oBPv400GetExplicitCounterpartyById**](PaymentInitiationServicePisApi.md#oBPv400GetExplicitCounterpartyById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
-| [**oBPv400GetExplicitCounterpartyByIdWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400GetExplicitCounterpartyByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
-| [**oBPv400GetTransactionRequest**](PaymentInitiationServicePisApi.md#oBPv400GetTransactionRequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request |
-| [**oBPv400GetTransactionRequestWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv400GetTransactionRequestWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request |
-| [**oBPv510GetTransactionRequestById**](PaymentInitiationServicePisApi.md#oBPv510GetTransactionRequestById) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID |
-| [**oBPv510GetTransactionRequestByIdWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv510GetTransactionRequestByIdWithHttpInfo) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID |
-| [**oBPv510GetTransactionRequests**](PaymentInitiationServicePisApi.md#oBPv510GetTransactionRequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests |
-| [**oBPv510GetTransactionRequestsWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv510GetTransactionRequestsWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests |
-| [**oBPv600CreateTransactionRequestCardano**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestCardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO) |
-| [**oBPv600CreateTransactionRequestCardanoWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestCardanoWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO) |
-| [**oBPv600CreateTransactionRequestEthSendRawTransaction**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestEthSendRawTransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION ) |
-| [**oBPv600CreateTransactionRequestEthSendRawTransactionWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestEthSendRawTransactionWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION ) |
-| [**oBPv600CreateTransactionRequestEthereumeSendTransaction**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestEthereumeSendTransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION) |
-| [**oBPv600CreateTransactionRequestEthereumeSendTransactionWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestEthereumeSendTransactionWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION) |
-| [**oBPv600CreateTransactionRequestHold**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestHold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD) |
-| [**oBPv600CreateTransactionRequestHoldWithHttpInfo**](PaymentInitiationServicePisApi.md#oBPv600CreateTransactionRequestHoldWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD) |
-
-
-
-## oBPv140GetTransactionRequestTypes
-
-> OBPv140GetTransactionRequestTypes200Response oBPv140GetTransactionRequestTypes(bankid, accountid, viewid)
-
-Get Transaction Request Types for Account
-
-&lt;p&gt;Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.&lt;/p&gt; &lt;p&gt;These are the ways this API Server can create a Transaction via a Transaction Request&lt;br /&gt; (as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)&lt;/p&gt; &lt;p&gt;A Transaction Request Type internally determines:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;the required Transaction Request &#39;body&#39; i.e. fields that define the &#39;what&#39; and &#39;to&#39; of a Transaction Request,&lt;/li&gt; &lt;li&gt;the type of security challenge that may be be raised before the Transaction Request proceeds, and&lt;/li&gt; &lt;li&gt;the threshold of that challenge.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For instance in a &#39;SANDBOX_TAN&#39; Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.&lt;/p&gt; &lt;p&gt;This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String viewid = "viewid_example"; // String | The VIEWID identifier
-        try {
-            OBPv140GetTransactionRequestTypes200Response result = apiInstance.oBPv140GetTransactionRequestTypes(bankid, accountid, viewid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv140GetTransactionRequestTypes");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **viewid** | **String**| The VIEWID identifier | |
-
-### Return type
-
-[**OBPv140GetTransactionRequestTypes200Response**](OBPv140GetTransactionRequestTypes200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv140GetTransactionRequestTypesWithHttpInfo
-
-> ApiResponse<OBPv140GetTransactionRequestTypes200Response> oBPv140GetTransactionRequestTypes oBPv140GetTransactionRequestTypesWithHttpInfo(bankid, accountid, viewid)
-
-Get Transaction Request Types for Account
-
-&lt;p&gt;Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.&lt;/p&gt; &lt;p&gt;These are the ways this API Server can create a Transaction via a Transaction Request&lt;br /&gt; (as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)&lt;/p&gt; &lt;p&gt;A Transaction Request Type internally determines:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;the required Transaction Request &#39;body&#39; i.e. fields that define the &#39;what&#39; and &#39;to&#39; of a Transaction Request,&lt;/li&gt; &lt;li&gt;the type of security challenge that may be be raised before the Transaction Request proceeds, and&lt;/li&gt; &lt;li&gt;the threshold of that challenge.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For instance in a &#39;SANDBOX_TAN&#39; Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.&lt;/p&gt; &lt;p&gt;This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String viewid = "viewid_example"; // String | The VIEWID identifier
-        try {
-            ApiResponse<OBPv140GetTransactionRequestTypes200Response> response = apiInstance.oBPv140GetTransactionRequestTypesWithHttpInfo(bankid, accountid, viewid);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv140GetTransactionRequestTypes");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **viewid** | **String**| The VIEWID identifier | |
-
-### Return type
-
-ApiResponse<[**OBPv140GetTransactionRequestTypes200Response**](OBPv140GetTransactionRequestTypes200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv210CreateTransactionRequestSandboxTan
-
-> OBPv510GetTransactionRequestById200Response oBPv210CreateTransactionRequestSandboxTan(bankid, accountid, viewid, sandboxtan, obPv400CreateTransactionRequestAccountRequest)
-
-Create Transaction Request (SANDBOX_TAN)
-
-&lt;p&gt;When using SANDBOX_TAN, the payee is set in the request body.&lt;/p&gt; &lt;p&gt;Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.&lt;/p&gt; &lt;p&gt;Initiate a Payment via creating a Transaction Request.&lt;/p&gt; &lt;p&gt;In OBP, a &lt;code&gt;transaction request&lt;/code&gt; may or may not result in a &lt;code&gt;transaction&lt;/code&gt;. However, a &lt;code&gt;transaction&lt;/code&gt; only has one possible state: completed.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; can have one of several states.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transactions&lt;/code&gt; are modeled on items in a bank statement that represent the movement of money.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transaction Requests&lt;/code&gt; are requests to move money which may or may not succeeed and thus result in a &lt;code&gt;Transaction&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; might create a security challenge that needs to be answered before the &lt;code&gt;Transaction Request&lt;/code&gt; proceeds.&lt;/p&gt; &lt;p&gt;Transaction Requests contain charge information giving the client the opportunity to proceed or not (as long as the challenge level is appropriate).&lt;/p&gt; &lt;p&gt;Transaction Requests can have one of several Transaction Request Types which expect different bodies. The escaped body is returned in the details key of the GET response.&lt;br /&gt; This provides some commonality and one URL for many different payment or transfer types with enough flexibility to validate them differently.&lt;/p&gt; &lt;p&gt;The payer is set in the URL. Money comes out of the BANK_ID and ACCOUNT_ID specified in the URL.&lt;/p&gt; &lt;p&gt;In sandbox mode, TRANSACTION_REQUEST_TYPE is commonly set to SANDBOX_TAN. See getTransactionRequestTypesSupportedByBank for all supported types.&lt;/p&gt; &lt;p&gt;In sandbox mode, if the amount is less than 1000 EUR (any currency, unless it is set differently on this server), the transaction request will create a transaction without a challenge, else the Transaction Request will be set to INITIALISED and a challenge will need to be answered.&lt;/p&gt; &lt;p&gt;If a challenge is created you must answer it using Answer Transaction Request Challenge before the Transaction is created.&lt;/p&gt; &lt;p&gt;You can transfer between different currency accounts. (new in 2.0.0). The currency in body must match the sending account.&lt;/p&gt; &lt;p&gt;The following static FX rates are available in sandbox mode:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;XAF&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:1.0,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0135503,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00228226,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.87975,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00127784,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.00131092,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0396,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00601555,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.110241,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.9074795E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.185328,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00163773,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00641333,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00152449&lt;br /&gt; },&lt;br /&gt; &amp;quot;HKD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:73.8049,&lt;br /&gt; &amp;quot;HKD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.178137,&lt;br /&gt; &amp;quot;KRW&amp;quot;:143.424,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0903452,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0985443,&lt;br /&gt; &amp;quot;MXN&amp;quot;:2.8067,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.467977,&lt;br /&gt; &amp;quot;INR&amp;quot;:9.09325,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.164242461E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:14.0867,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.127427,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.460862,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.112495&lt;br /&gt; },&lt;br /&gt; &amp;quot;AUD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:438.162,&lt;br /&gt; &amp;quot;HKD&amp;quot;:5.61346,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;KRW&amp;quot;:895.304,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.556152,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.609788,&lt;br /&gt; &amp;quot;MXN&amp;quot;:16.0826,&lt;br /&gt; &amp;quot;AED&amp;quot;:2.88368,&lt;br /&gt; &amp;quot;INR&amp;quot;:50.4238,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.2284055924E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:87.0936,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.785256,&lt;br /&gt; &amp;quot;ILS&amp;quot;:2.83558,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.667969&lt;br /&gt; },&lt;br /&gt; &amp;quot;KRW&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:0.531986,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.00697233,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00111694,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JOD&amp;quot;:6.30634E-4,&lt;br /&gt; &amp;quot;GBP&amp;quot;:6.97389E-4,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0183,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00320019,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.0586469,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.4234725E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.0985917,&lt;br /&gt; &amp;quot;USD&amp;quot;:8.7125E-4,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00316552,&lt;br /&gt; &amp;quot;EUR&amp;quot;:8.11008E-4&lt;br /&gt; },&lt;br /&gt; &amp;quot;JOD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:782.572,&lt;br /&gt; &amp;quot;HKD&amp;quot;:11.0687,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1585.68,&lt;br /&gt; &amp;quot;JOD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.06757,&lt;br /&gt; &amp;quot;MXN&amp;quot;:30.8336,&lt;br /&gt; &amp;quot;AED&amp;quot;:5.18231,&lt;br /&gt; &amp;quot;INR&amp;quot;:90.1236,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.3803244006E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:156.304,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.41112,&lt;br /&gt; &amp;quot;ILS&amp;quot;:5.02018,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.237707&lt;br /&gt; },&lt;br /&gt; &amp;quot;GBP&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:762.826,&lt;br /&gt; &amp;quot;HKD&amp;quot;:10.1468,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1433.92,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.936707,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.0,&lt;br /&gt; &amp;quot;MXN&amp;quot;:29.242,&lt;br /&gt; &amp;quot;AED&amp;quot;:4.58882,&lt;br /&gt; &amp;quot;INR&amp;quot;:84.095,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2756409956E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:141.373,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.2493,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.7002,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.16278&lt;br /&gt; },&lt;br /&gt; &amp;quot;MXN&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:25.189,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.3562,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0621,&lt;br /&gt; &amp;quot;KRW&amp;quot;:54.4512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0324,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0341,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.1688,&lt;br /&gt; &amp;quot;INR&amp;quot;:3.3513,&lt;br /&gt; &amp;quot;XBT&amp;quot;:8.1112586E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:4.8687,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0459,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.1541,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0384&lt;br /&gt; },&lt;br /&gt; &amp;quot;AED&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:166.236,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.13685,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.346779,&lt;br /&gt; &amp;quot;KRW&amp;quot;:312.482,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.1930565,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.217921,&lt;br /&gt; &amp;quot;MXN&amp;quot;:5.9217,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.0,&lt;br /&gt; &amp;quot;INR&amp;quot;:18.3255,&lt;br /&gt; &amp;quot;XBT&amp;quot;:4.603349217E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:30.8081,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.27225,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.968033,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.253425&lt;br /&gt; },&lt;br /&gt; &amp;quot;INR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:9.07101,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.109972,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0198319,&lt;br /&gt; &amp;quot;KRW&amp;quot;:17.0512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0110959,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0118913,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2983,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.0545671,&lt;br /&gt; &amp;quot;INR&amp;quot;:1.0,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2689396E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.68111,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0148559,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0556764,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0138287&lt;br /&gt; },&lt;br /&gt; &amp;quot;XBT&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:3.4353824E7,&lt;br /&gt; &amp;quot;HKD&amp;quot;:460448.9,&lt;br /&gt; &amp;quot;AUD&amp;quot;:81168.603,&lt;br /&gt; &amp;quot;KRW&amp;quot;:7.0131575E7,&lt;br /&gt; &amp;quot;JOD&amp;quot;:41960.111,&lt;br /&gt; &amp;quot;GBP&amp;quot;:44188.118,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1230503.3,&lt;br /&gt; &amp;quot;AED&amp;quot;:217414.47,&lt;br /&gt; &amp;quot;INR&amp;quot;:4407607.74,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JPY&amp;quot;:6805170.8,&lt;br /&gt; &amp;quot;USD&amp;quot;:59245.918,&lt;br /&gt; &amp;quot;ILS&amp;quot;:182981.21,&lt;br /&gt; &amp;quot;EUR&amp;quot;:52436.431&lt;br /&gt; },&lt;br /&gt; &amp;quot;JPY&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:5.39585,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0709891,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0114819,&lt;br /&gt; &amp;quot;KRW&amp;quot;:10.1428,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00639777,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0070735,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2053,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.032459,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.594846,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.47171931E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.0,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00883695,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0320926,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00822592&lt;br /&gt; },&lt;br /&gt; &amp;quot;USD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:610.601,&lt;br /&gt; &amp;quot;HKD&amp;quot;:7.84766,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.27347,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1147.78,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.708659,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.800446,&lt;br /&gt; &amp;quot;MXN&amp;quot;:21.748,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.6731,&lt;br /&gt; &amp;quot;INR&amp;quot;:67.3135,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.69154E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:113.161,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;ILS&amp;quot;:3.55495,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.930886&lt;br /&gt; },&lt;br /&gt; &amp;quot;ILS&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:155.925,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.16985,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.352661,&lt;br /&gt; &amp;quot;KRW&amp;quot;:315.903,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.199196,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.212763,&lt;br /&gt; &amp;quot;MXN&amp;quot;:6.4871,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.03302,&lt;br /&gt; &amp;quot;INR&amp;quot;:17.9609,&lt;br /&gt; &amp;quot;XBT&amp;quot;:5.452272147E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:31.1599,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.281298,&lt;br /&gt; &amp;quot;ILS&amp;quot;:1.0,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.19318&lt;br /&gt; },&lt;br /&gt; &amp;quot;EUR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:655.957,&lt;br /&gt; &amp;quot;HKD&amp;quot;:8.88926,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.49707,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1233.03,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.838098,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.860011,&lt;br /&gt; &amp;quot;MXN&amp;quot;:26.0359,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.94594,&lt;br /&gt; &amp;quot;INR&amp;quot;:72.3136,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.9087905636E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:121.567,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.07428,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.20494,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.0&lt;br /&gt; }&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Transaction Requests satisfy PSD2 requirements thus:&lt;/p&gt; &lt;p&gt;1) A transaction can be initiated by a third party application.&lt;/p&gt; &lt;p&gt;2) The customer is informed of the charge that will incurred.&lt;/p&gt; &lt;p&gt;3) The call supports delegated authentication (OAuth)&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/Hello-OBP-DirectLogin-Python/blob/master/hello_payments.py\&quot;&gt;this python code&lt;/a&gt; for a complete example of this flow.&lt;/p&gt; &lt;p&gt;There is further documentation &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/OBP-API/wiki/Transaction-Requests\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sandbox_tan\&quot;&gt;SANDBOX_TAN&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String viewid = "viewid_example"; // String | The VIEWID identifier
-        String sandboxtan = "sandboxtan_example"; // String | The SANDBOXTAN identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
-        try {
-            OBPv510GetTransactionRequestById200Response result = apiInstance.oBPv210CreateTransactionRequestSandboxTan(bankid, accountid, viewid, sandboxtan, obPv400CreateTransactionRequestAccountRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv210CreateTransactionRequestSandboxTan");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **viewid** | **String**| The VIEWID identifier | |
-| **sandboxtan** | **String**| The SANDBOXTAN identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv210CreateTransactionRequestSandboxTanWithHttpInfo
-
-> ApiResponse<OBPv510GetTransactionRequestById200Response> oBPv210CreateTransactionRequestSandboxTan oBPv210CreateTransactionRequestSandboxTanWithHttpInfo(bankid, accountid, viewid, sandboxtan, obPv400CreateTransactionRequestAccountRequest)
-
-Create Transaction Request (SANDBOX_TAN)
-
-&lt;p&gt;When using SANDBOX_TAN, the payee is set in the request body.&lt;/p&gt; &lt;p&gt;Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.&lt;/p&gt; &lt;p&gt;Initiate a Payment via creating a Transaction Request.&lt;/p&gt; &lt;p&gt;In OBP, a &lt;code&gt;transaction request&lt;/code&gt; may or may not result in a &lt;code&gt;transaction&lt;/code&gt;. However, a &lt;code&gt;transaction&lt;/code&gt; only has one possible state: completed.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; can have one of several states.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transactions&lt;/code&gt; are modeled on items in a bank statement that represent the movement of money.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transaction Requests&lt;/code&gt; are requests to move money which may or may not succeeed and thus result in a &lt;code&gt;Transaction&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; might create a security challenge that needs to be answered before the &lt;code&gt;Transaction Request&lt;/code&gt; proceeds.&lt;/p&gt; &lt;p&gt;Transaction Requests contain charge information giving the client the opportunity to proceed or not (as long as the challenge level is appropriate).&lt;/p&gt; &lt;p&gt;Transaction Requests can have one of several Transaction Request Types which expect different bodies. The escaped body is returned in the details key of the GET response.&lt;br /&gt; This provides some commonality and one URL for many different payment or transfer types with enough flexibility to validate them differently.&lt;/p&gt; &lt;p&gt;The payer is set in the URL. Money comes out of the BANK_ID and ACCOUNT_ID specified in the URL.&lt;/p&gt; &lt;p&gt;In sandbox mode, TRANSACTION_REQUEST_TYPE is commonly set to SANDBOX_TAN. See getTransactionRequestTypesSupportedByBank for all supported types.&lt;/p&gt; &lt;p&gt;In sandbox mode, if the amount is less than 1000 EUR (any currency, unless it is set differently on this server), the transaction request will create a transaction without a challenge, else the Transaction Request will be set to INITIALISED and a challenge will need to be answered.&lt;/p&gt; &lt;p&gt;If a challenge is created you must answer it using Answer Transaction Request Challenge before the Transaction is created.&lt;/p&gt; &lt;p&gt;You can transfer between different currency accounts. (new in 2.0.0). The currency in body must match the sending account.&lt;/p&gt; &lt;p&gt;The following static FX rates are available in sandbox mode:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;XAF&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:1.0,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0135503,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00228226,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.87975,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00127784,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.00131092,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0396,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00601555,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.110241,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.9074795E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.185328,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00163773,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00641333,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00152449&lt;br /&gt; },&lt;br /&gt; &amp;quot;HKD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:73.8049,&lt;br /&gt; &amp;quot;HKD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.178137,&lt;br /&gt; &amp;quot;KRW&amp;quot;:143.424,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0903452,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0985443,&lt;br /&gt; &amp;quot;MXN&amp;quot;:2.8067,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.467977,&lt;br /&gt; &amp;quot;INR&amp;quot;:9.09325,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.164242461E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:14.0867,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.127427,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.460862,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.112495&lt;br /&gt; },&lt;br /&gt; &amp;quot;AUD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:438.162,&lt;br /&gt; &amp;quot;HKD&amp;quot;:5.61346,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;KRW&amp;quot;:895.304,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.556152,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.609788,&lt;br /&gt; &amp;quot;MXN&amp;quot;:16.0826,&lt;br /&gt; &amp;quot;AED&amp;quot;:2.88368,&lt;br /&gt; &amp;quot;INR&amp;quot;:50.4238,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.2284055924E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:87.0936,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.785256,&lt;br /&gt; &amp;quot;ILS&amp;quot;:2.83558,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.667969&lt;br /&gt; },&lt;br /&gt; &amp;quot;KRW&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:0.531986,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.00697233,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00111694,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JOD&amp;quot;:6.30634E-4,&lt;br /&gt; &amp;quot;GBP&amp;quot;:6.97389E-4,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0183,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00320019,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.0586469,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.4234725E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.0985917,&lt;br /&gt; &amp;quot;USD&amp;quot;:8.7125E-4,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00316552,&lt;br /&gt; &amp;quot;EUR&amp;quot;:8.11008E-4&lt;br /&gt; },&lt;br /&gt; &amp;quot;JOD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:782.572,&lt;br /&gt; &amp;quot;HKD&amp;quot;:11.0687,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1585.68,&lt;br /&gt; &amp;quot;JOD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.06757,&lt;br /&gt; &amp;quot;MXN&amp;quot;:30.8336,&lt;br /&gt; &amp;quot;AED&amp;quot;:5.18231,&lt;br /&gt; &amp;quot;INR&amp;quot;:90.1236,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.3803244006E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:156.304,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.41112,&lt;br /&gt; &amp;quot;ILS&amp;quot;:5.02018,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.237707&lt;br /&gt; },&lt;br /&gt; &amp;quot;GBP&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:762.826,&lt;br /&gt; &amp;quot;HKD&amp;quot;:10.1468,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1433.92,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.936707,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.0,&lt;br /&gt; &amp;quot;MXN&amp;quot;:29.242,&lt;br /&gt; &amp;quot;AED&amp;quot;:4.58882,&lt;br /&gt; &amp;quot;INR&amp;quot;:84.095,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2756409956E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:141.373,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.2493,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.7002,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.16278&lt;br /&gt; },&lt;br /&gt; &amp;quot;MXN&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:25.189,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.3562,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0621,&lt;br /&gt; &amp;quot;KRW&amp;quot;:54.4512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0324,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0341,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.1688,&lt;br /&gt; &amp;quot;INR&amp;quot;:3.3513,&lt;br /&gt; &amp;quot;XBT&amp;quot;:8.1112586E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:4.8687,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0459,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.1541,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0384&lt;br /&gt; },&lt;br /&gt; &amp;quot;AED&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:166.236,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.13685,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.346779,&lt;br /&gt; &amp;quot;KRW&amp;quot;:312.482,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.1930565,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.217921,&lt;br /&gt; &amp;quot;MXN&amp;quot;:5.9217,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.0,&lt;br /&gt; &amp;quot;INR&amp;quot;:18.3255,&lt;br /&gt; &amp;quot;XBT&amp;quot;:4.603349217E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:30.8081,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.27225,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.968033,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.253425&lt;br /&gt; },&lt;br /&gt; &amp;quot;INR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:9.07101,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.109972,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0198319,&lt;br /&gt; &amp;quot;KRW&amp;quot;:17.0512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0110959,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0118913,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2983,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.0545671,&lt;br /&gt; &amp;quot;INR&amp;quot;:1.0,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2689396E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.68111,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0148559,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0556764,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0138287&lt;br /&gt; },&lt;br /&gt; &amp;quot;XBT&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:3.4353824E7,&lt;br /&gt; &amp;quot;HKD&amp;quot;:460448.9,&lt;br /&gt; &amp;quot;AUD&amp;quot;:81168.603,&lt;br /&gt; &amp;quot;KRW&amp;quot;:7.0131575E7,&lt;br /&gt; &amp;quot;JOD&amp;quot;:41960.111,&lt;br /&gt; &amp;quot;GBP&amp;quot;:44188.118,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1230503.3,&lt;br /&gt; &amp;quot;AED&amp;quot;:217414.47,&lt;br /&gt; &amp;quot;INR&amp;quot;:4407607.74,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JPY&amp;quot;:6805170.8,&lt;br /&gt; &amp;quot;USD&amp;quot;:59245.918,&lt;br /&gt; &amp;quot;ILS&amp;quot;:182981.21,&lt;br /&gt; &amp;quot;EUR&amp;quot;:52436.431&lt;br /&gt; },&lt;br /&gt; &amp;quot;JPY&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:5.39585,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0709891,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0114819,&lt;br /&gt; &amp;quot;KRW&amp;quot;:10.1428,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00639777,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0070735,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2053,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.032459,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.594846,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.47171931E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.0,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00883695,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0320926,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00822592&lt;br /&gt; },&lt;br /&gt; &amp;quot;USD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:610.601,&lt;br /&gt; &amp;quot;HKD&amp;quot;:7.84766,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.27347,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1147.78,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.708659,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.800446,&lt;br /&gt; &amp;quot;MXN&amp;quot;:21.748,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.6731,&lt;br /&gt; &amp;quot;INR&amp;quot;:67.3135,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.69154E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:113.161,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;ILS&amp;quot;:3.55495,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.930886&lt;br /&gt; },&lt;br /&gt; &amp;quot;ILS&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:155.925,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.16985,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.352661,&lt;br /&gt; &amp;quot;KRW&amp;quot;:315.903,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.199196,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.212763,&lt;br /&gt; &amp;quot;MXN&amp;quot;:6.4871,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.03302,&lt;br /&gt; &amp;quot;INR&amp;quot;:17.9609,&lt;br /&gt; &amp;quot;XBT&amp;quot;:5.452272147E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:31.1599,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.281298,&lt;br /&gt; &amp;quot;ILS&amp;quot;:1.0,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.19318&lt;br /&gt; },&lt;br /&gt; &amp;quot;EUR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:655.957,&lt;br /&gt; &amp;quot;HKD&amp;quot;:8.88926,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.49707,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1233.03,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.838098,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.860011,&lt;br /&gt; &amp;quot;MXN&amp;quot;:26.0359,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.94594,&lt;br /&gt; &amp;quot;INR&amp;quot;:72.3136,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.9087905636E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:121.567,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.07428,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.20494,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.0&lt;br /&gt; }&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Transaction Requests satisfy PSD2 requirements thus:&lt;/p&gt; &lt;p&gt;1) A transaction can be initiated by a third party application.&lt;/p&gt; &lt;p&gt;2) The customer is informed of the charge that will incurred.&lt;/p&gt; &lt;p&gt;3) The call supports delegated authentication (OAuth)&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/Hello-OBP-DirectLogin-Python/blob/master/hello_payments.py\&quot;&gt;this python code&lt;/a&gt; for a complete example of this flow.&lt;/p&gt; &lt;p&gt;There is further documentation &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/OBP-API/wiki/Transaction-Requests\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sandbox_tan\&quot;&gt;SANDBOX_TAN&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String viewid = "viewid_example"; // String | The VIEWID identifier
-        String sandboxtan = "sandboxtan_example"; // String | The SANDBOXTAN identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
-        try {
-            ApiResponse<OBPv510GetTransactionRequestById200Response> response = apiInstance.oBPv210CreateTransactionRequestSandboxTanWithHttpInfo(bankid, accountid, viewid, sandboxtan, obPv400CreateTransactionRequestAccountRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv210CreateTransactionRequestSandboxTan");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **viewid** | **String**| The VIEWID identifier | |
-| **sandboxtan** | **String**| The SANDBOXTAN identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv400AnswerTransactionRequestChallenge
-
-> OBPv510GetTransactionRequestById200Response oBPv400AnswerTransactionRequestChallenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obPv400AnswerTransactionRequestChallengeRequest)
+| [**answerTransactionRequestChallenge**](PaymentInitiationServicePisApi.md#answerTransactionRequestChallenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge |
+| [**answerTransactionRequestChallengeWithHttpInfo**](PaymentInitiationServicePisApi.md#answerTransactionRequestChallengeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge |
+| [**createTransactionRequestAccount**](PaymentInitiationServicePisApi.md#createTransactionRequestAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT) |
+| [**createTransactionRequestAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestAccountWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT) |
+| [**createTransactionRequestAccountOtp**](PaymentInitiationServicePisApi.md#createTransactionRequestAccountOtp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP) |
+| [**createTransactionRequestAccountOtpWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestAccountOtpWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP) |
+| [**createTransactionRequestAgentCashWithDrawal**](PaymentInitiationServicePisApi.md#createTransactionRequestAgentCashWithDrawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL) |
+| [**createTransactionRequestAgentCashWithDrawalWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestAgentCashWithDrawalWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL) |
+| [**createTransactionRequestCard**](PaymentInitiationServicePisApi.md#createTransactionRequestCard) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD) |
+| [**createTransactionRequestCardWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestCardWithHttpInfo) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD) |
+| [**createTransactionRequestCardano**](PaymentInitiationServicePisApi.md#createTransactionRequestCardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO) |
+| [**createTransactionRequestCardanoWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestCardanoWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO) |
+| [**createTransactionRequestCounterparty**](PaymentInitiationServicePisApi.md#createTransactionRequestCounterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY) |
+| [**createTransactionRequestCounterpartyWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestCounterpartyWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY) |
+| [**createTransactionRequestEthSendRawTransaction**](PaymentInitiationServicePisApi.md#createTransactionRequestEthSendRawTransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION ) |
+| [**createTransactionRequestEthSendRawTransactionWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestEthSendRawTransactionWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION ) |
+| [**createTransactionRequestEthereumeSendTransaction**](PaymentInitiationServicePisApi.md#createTransactionRequestEthereumeSendTransaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION) |
+| [**createTransactionRequestEthereumeSendTransactionWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestEthereumeSendTransactionWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION) |
+| [**createTransactionRequestFreeForm**](PaymentInitiationServicePisApi.md#createTransactionRequestFreeForm) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM) |
+| [**createTransactionRequestFreeFormWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestFreeFormWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM) |
+| [**createTransactionRequestHold**](PaymentInitiationServicePisApi.md#createTransactionRequestHold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD) |
+| [**createTransactionRequestHoldWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestHoldWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD) |
+| [**createTransactionRequestRefund**](PaymentInitiationServicePisApi.md#createTransactionRequestRefund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND) |
+| [**createTransactionRequestRefundWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestRefundWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND) |
+| [**createTransactionRequestSandboxTan**](PaymentInitiationServicePisApi.md#createTransactionRequestSandboxTan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN) |
+| [**createTransactionRequestSandboxTanWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestSandboxTanWithHttpInfo) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN) |
+| [**createTransactionRequestSepa**](PaymentInitiationServicePisApi.md#createTransactionRequestSepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA) |
+| [**createTransactionRequestSepaWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestSepaWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA) |
+| [**createTransactionRequestSimple**](PaymentInitiationServicePisApi.md#createTransactionRequestSimple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE) |
+| [**createTransactionRequestSimpleWithHttpInfo**](PaymentInitiationServicePisApi.md#createTransactionRequestSimpleWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE) |
+| [**getCounterpartiesForAnyAccount**](PaymentInitiationServicePisApi.md#getCounterpartiesForAnyAccount) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit) |
+| [**getCounterpartiesForAnyAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#getCounterpartiesForAnyAccountWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties for any account (Explicit) |
+| [**getExplicitCounterpartiesForAccount**](PaymentInitiationServicePisApi.md#getExplicitCounterpartiesForAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit) |
+| [**getExplicitCounterpartiesForAccountWithHttpInfo**](PaymentInitiationServicePisApi.md#getExplicitCounterpartiesForAccountWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties | Get Counterparties (Explicit) |
+| [**getExplicitCounterpartyById**](PaymentInitiationServicePisApi.md#getExplicitCounterpartyById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**getExplicitCounterpartyByIdWithHttpInfo**](PaymentInitiationServicePisApi.md#getExplicitCounterpartyByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**getTransactionRequest**](PaymentInitiationServicePisApi.md#getTransactionRequest) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request |
+| [**getTransactionRequestWithHttpInfo**](PaymentInitiationServicePisApi.md#getTransactionRequestWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request |
+| [**getTransactionRequestById**](PaymentInitiationServicePisApi.md#getTransactionRequestById) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID |
+| [**getTransactionRequestByIdWithHttpInfo**](PaymentInitiationServicePisApi.md#getTransactionRequestByIdWithHttpInfo) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID |
+| [**getTransactionRequestTypes**](PaymentInitiationServicePisApi.md#getTransactionRequestTypes) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account |
+| [**getTransactionRequestTypesWithHttpInfo**](PaymentInitiationServicePisApi.md#getTransactionRequestTypesWithHttpInfo) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account |
+| [**getTransactionRequests**](PaymentInitiationServicePisApi.md#getTransactionRequests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests |
+| [**getTransactionRequestsWithHttpInfo**](PaymentInitiationServicePisApi.md#getTransactionRequestsWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests |
+
+
+
+## answerTransactionRequestChallenge
+
+> GetTransactionRequestById200Response answerTransactionRequestChallenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answerTransactionRequestChallengeRequest)
 
 Answer Transaction Request Challenge
 
@@ -445,7 +73,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -469,12 +97,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionrequesttype = "transactionrequesttype_example"; // String | The TRANSACTIONREQUESTTYPE identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
-        OBPv400AnswerTransactionRequestChallengeRequest obPv400AnswerTransactionRequestChallengeRequest = new OBPv400AnswerTransactionRequestChallengeRequest(); // OBPv400AnswerTransactionRequestChallengeRequest | Request body
+        AnswerTransactionRequestChallengeRequest answerTransactionRequestChallengeRequest = new AnswerTransactionRequestChallengeRequest(); // AnswerTransactionRequestChallengeRequest | Request body
         try {
-            OBPv510GetTransactionRequestById200Response result = apiInstance.oBPv400AnswerTransactionRequestChallenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obPv400AnswerTransactionRequestChallengeRequest);
+            GetTransactionRequestById200Response result = apiInstance.answerTransactionRequestChallenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answerTransactionRequestChallengeRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400AnswerTransactionRequestChallenge");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#answerTransactionRequestChallenge");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -494,11 +122,11 @@ public class Example {
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionrequesttype** | **String**| The TRANSACTIONREQUESTTYPE identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
-| **obPv400AnswerTransactionRequestChallengeRequest** | [**OBPv400AnswerTransactionRequestChallengeRequest**](OBPv400AnswerTransactionRequestChallengeRequest.md)| Request body | |
+| **answerTransactionRequestChallengeRequest** | [**AnswerTransactionRequestChallengeRequest**](AnswerTransactionRequestChallengeRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 
 ### Authorization
@@ -518,9 +146,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400AnswerTransactionRequestChallengeWithHttpInfo
+## answerTransactionRequestChallengeWithHttpInfo
 
-> ApiResponse<OBPv510GetTransactionRequestById200Response> oBPv400AnswerTransactionRequestChallenge oBPv400AnswerTransactionRequestChallengeWithHttpInfo(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obPv400AnswerTransactionRequestChallengeRequest)
+> ApiResponse<GetTransactionRequestById200Response> answerTransactionRequestChallenge answerTransactionRequestChallengeWithHttpInfo(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answerTransactionRequestChallengeRequest)
 
 Answer Transaction Request Challenge
 
@@ -541,7 +169,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -565,14 +193,14 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionrequesttype = "transactionrequesttype_example"; // String | The TRANSACTIONREQUESTTYPE identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
-        OBPv400AnswerTransactionRequestChallengeRequest obPv400AnswerTransactionRequestChallengeRequest = new OBPv400AnswerTransactionRequestChallengeRequest(); // OBPv400AnswerTransactionRequestChallengeRequest | Request body
+        AnswerTransactionRequestChallengeRequest answerTransactionRequestChallengeRequest = new AnswerTransactionRequestChallengeRequest(); // AnswerTransactionRequestChallengeRequest | Request body
         try {
-            ApiResponse<OBPv510GetTransactionRequestById200Response> response = apiInstance.oBPv400AnswerTransactionRequestChallengeWithHttpInfo(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obPv400AnswerTransactionRequestChallengeRequest);
+            ApiResponse<GetTransactionRequestById200Response> response = apiInstance.answerTransactionRequestChallengeWithHttpInfo(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answerTransactionRequestChallengeRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400AnswerTransactionRequestChallenge");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#answerTransactionRequestChallenge");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -592,11 +220,11 @@ public class Example {
 | **viewid** | **String**| The VIEWID identifier | |
 | **transactionrequesttype** | **String**| The TRANSACTIONREQUESTTYPE identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
-| **obPv400AnswerTransactionRequestChallengeRequest** | [**OBPv400AnswerTransactionRequestChallengeRequest**](OBPv400AnswerTransactionRequestChallengeRequest.md)| Request body | |
+| **answerTransactionRequestChallengeRequest** | [**AnswerTransactionRequestChallengeRequest**](AnswerTransactionRequestChallengeRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)>
+ApiResponse<[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)>
 
 
 ### Authorization
@@ -617,9 +245,9 @@ ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransact
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestAccount
+## createTransactionRequestAccount
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestAccount(bankid, accountid, viewid, account, obPv400CreateTransactionRequestAccountRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestAccount(bankid, accountid, viewid, account, createTransactionRequestAccountRequest)
 
 Create Transaction Request (ACCOUNT)
 
@@ -639,7 +267,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -662,12 +290,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String account = "account_example"; // String | The ACCOUNT identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestAccount(bankid, accountid, viewid, account, obPv400CreateTransactionRequestAccountRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestAccount(bankid, accountid, viewid, account, createTransactionRequestAccountRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -686,11 +314,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **account** | **String**| The ACCOUNT identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -710,9 +338,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestAccountWithHttpInfo
+## createTransactionRequestAccountWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestAccount oBPv400CreateTransactionRequestAccountWithHttpInfo(bankid, accountid, viewid, account, obPv400CreateTransactionRequestAccountRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestAccount createTransactionRequestAccountWithHttpInfo(bankid, accountid, viewid, account, createTransactionRequestAccountRequest)
 
 Create Transaction Request (ACCOUNT)
 
@@ -733,7 +361,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -756,14 +384,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String account = "account_example"; // String | The ACCOUNT identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestAccountWithHttpInfo(bankid, accountid, viewid, account, obPv400CreateTransactionRequestAccountRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestAccountWithHttpInfo(bankid, accountid, viewid, account, createTransactionRequestAccountRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -782,11 +410,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **account** | **String**| The ACCOUNT identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -807,9 +435,9 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestAccountOtp
+## createTransactionRequestAccountOtp
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestAccountOtp(bankid, accountid, viewid, accountotp, obPv400CreateTransactionRequestAccountRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestAccountOtp(bankid, accountid, viewid, accountotp, createTransactionRequestAccountRequest)
 
 Create Transaction Request (ACCOUNT_OTP)
 
@@ -829,7 +457,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -852,12 +480,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String accountotp = "accountotp_example"; // String | The ACCOUNTOTP identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestAccountOtp(bankid, accountid, viewid, accountotp, obPv400CreateTransactionRequestAccountRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestAccountOtp(bankid, accountid, viewid, accountotp, createTransactionRequestAccountRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAccountOtp");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAccountOtp");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -876,11 +504,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **accountotp** | **String**| The ACCOUNTOTP identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -900,9 +528,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestAccountOtpWithHttpInfo
+## createTransactionRequestAccountOtpWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestAccountOtp oBPv400CreateTransactionRequestAccountOtpWithHttpInfo(bankid, accountid, viewid, accountotp, obPv400CreateTransactionRequestAccountRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestAccountOtp createTransactionRequestAccountOtpWithHttpInfo(bankid, accountid, viewid, accountotp, createTransactionRequestAccountRequest)
 
 Create Transaction Request (ACCOUNT_OTP)
 
@@ -923,7 +551,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -946,14 +574,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String accountotp = "accountotp_example"; // String | The ACCOUNTOTP identifier
-        OBPv400CreateTransactionRequestAccountRequest obPv400CreateTransactionRequestAccountRequest = new OBPv400CreateTransactionRequestAccountRequest(); // OBPv400CreateTransactionRequestAccountRequest | Request body
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestAccountOtpWithHttpInfo(bankid, accountid, viewid, accountotp, obPv400CreateTransactionRequestAccountRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestAccountOtpWithHttpInfo(bankid, accountid, viewid, accountotp, createTransactionRequestAccountRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAccountOtp");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAccountOtp");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -972,11 +600,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **accountotp** | **String**| The ACCOUNTOTP identifier | |
-| **obPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -997,9 +625,9 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestAgentCashWithDrawal
+## createTransactionRequestAgentCashWithDrawal
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestAgentCashWithDrawal(bankid, accountid, viewid, agentcashwithdrawal, obPv400CreateTransactionRequestAgentCashWithDrawalRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestAgentCashWithDrawal(bankid, accountid, viewid, agentcashwithdrawal, createTransactionRequestAgentCashWithDrawalRequest)
 
 Create Transaction Request (AGENT_CASH_WITHDRAWAL)
 
@@ -1019,7 +647,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1042,12 +670,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String agentcashwithdrawal = "agentcashwithdrawal_example"; // String | The AGENTCASHWITHDRAWAL identifier
-        OBPv400CreateTransactionRequestAgentCashWithDrawalRequest obPv400CreateTransactionRequestAgentCashWithDrawalRequest = new OBPv400CreateTransactionRequestAgentCashWithDrawalRequest(); // OBPv400CreateTransactionRequestAgentCashWithDrawalRequest | Request body
+        CreateTransactionRequestAgentCashWithDrawalRequest createTransactionRequestAgentCashWithDrawalRequest = new CreateTransactionRequestAgentCashWithDrawalRequest(); // CreateTransactionRequestAgentCashWithDrawalRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestAgentCashWithDrawal(bankid, accountid, viewid, agentcashwithdrawal, obPv400CreateTransactionRequestAgentCashWithDrawalRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestAgentCashWithDrawal(bankid, accountid, viewid, agentcashwithdrawal, createTransactionRequestAgentCashWithDrawalRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAgentCashWithDrawal");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAgentCashWithDrawal");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1066,11 +694,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **agentcashwithdrawal** | **String**| The AGENTCASHWITHDRAWAL identifier | |
-| **obPv400CreateTransactionRequestAgentCashWithDrawalRequest** | [**OBPv400CreateTransactionRequestAgentCashWithDrawalRequest**](OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | |
+| **createTransactionRequestAgentCashWithDrawalRequest** | [**CreateTransactionRequestAgentCashWithDrawalRequest**](CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -1090,9 +718,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestAgentCashWithDrawalWithHttpInfo
+## createTransactionRequestAgentCashWithDrawalWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestAgentCashWithDrawal oBPv400CreateTransactionRequestAgentCashWithDrawalWithHttpInfo(bankid, accountid, viewid, agentcashwithdrawal, obPv400CreateTransactionRequestAgentCashWithDrawalRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestAgentCashWithDrawal createTransactionRequestAgentCashWithDrawalWithHttpInfo(bankid, accountid, viewid, agentcashwithdrawal, createTransactionRequestAgentCashWithDrawalRequest)
 
 Create Transaction Request (AGENT_CASH_WITHDRAWAL)
 
@@ -1113,7 +741,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1136,14 +764,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String agentcashwithdrawal = "agentcashwithdrawal_example"; // String | The AGENTCASHWITHDRAWAL identifier
-        OBPv400CreateTransactionRequestAgentCashWithDrawalRequest obPv400CreateTransactionRequestAgentCashWithDrawalRequest = new OBPv400CreateTransactionRequestAgentCashWithDrawalRequest(); // OBPv400CreateTransactionRequestAgentCashWithDrawalRequest | Request body
+        CreateTransactionRequestAgentCashWithDrawalRequest createTransactionRequestAgentCashWithDrawalRequest = new CreateTransactionRequestAgentCashWithDrawalRequest(); // CreateTransactionRequestAgentCashWithDrawalRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestAgentCashWithDrawalWithHttpInfo(bankid, accountid, viewid, agentcashwithdrawal, obPv400CreateTransactionRequestAgentCashWithDrawalRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestAgentCashWithDrawalWithHttpInfo(bankid, accountid, viewid, agentcashwithdrawal, createTransactionRequestAgentCashWithDrawalRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestAgentCashWithDrawal");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestAgentCashWithDrawal");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1162,11 +790,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **agentcashwithdrawal** | **String**| The AGENTCASHWITHDRAWAL identifier | |
-| **obPv400CreateTransactionRequestAgentCashWithDrawalRequest** | [**OBPv400CreateTransactionRequestAgentCashWithDrawalRequest**](OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | |
+| **createTransactionRequestAgentCashWithDrawalRequest** | [**CreateTransactionRequestAgentCashWithDrawalRequest**](CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -1187,9 +815,9 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestCard
+## createTransactionRequestCard
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestCard(card, obPv400CreateTransactionRequestCardRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestCard(card, createTransactionRequestCardRequest)
 
 Create Transaction Request (CARD)
 
@@ -1209,7 +837,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1229,12 +857,12 @@ public class Example {
 
         PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
         String card = "card_example"; // String | The CARD identifier
-        OBPv400CreateTransactionRequestCardRequest obPv400CreateTransactionRequestCardRequest = new OBPv400CreateTransactionRequestCardRequest(); // OBPv400CreateTransactionRequestCardRequest | Request body
+        CreateTransactionRequestCardRequest createTransactionRequestCardRequest = new CreateTransactionRequestCardRequest(); // CreateTransactionRequestCardRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestCard(card, obPv400CreateTransactionRequestCardRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestCard(card, createTransactionRequestCardRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestCard");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCard");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1250,11 +878,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **card** | **String**| The CARD identifier | |
-| **obPv400CreateTransactionRequestCardRequest** | [**OBPv400CreateTransactionRequestCardRequest**](OBPv400CreateTransactionRequestCardRequest.md)| Request body | |
+| **createTransactionRequestCardRequest** | [**CreateTransactionRequestCardRequest**](CreateTransactionRequestCardRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -1274,9 +902,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestCardWithHttpInfo
+## createTransactionRequestCardWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestCard oBPv400CreateTransactionRequestCardWithHttpInfo(card, obPv400CreateTransactionRequestCardRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestCard createTransactionRequestCardWithHttpInfo(card, createTransactionRequestCardRequest)
 
 Create Transaction Request (CARD)
 
@@ -1297,7 +925,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1317,14 +945,14 @@ public class Example {
 
         PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
         String card = "card_example"; // String | The CARD identifier
-        OBPv400CreateTransactionRequestCardRequest obPv400CreateTransactionRequestCardRequest = new OBPv400CreateTransactionRequestCardRequest(); // OBPv400CreateTransactionRequestCardRequest | Request body
+        CreateTransactionRequestCardRequest createTransactionRequestCardRequest = new CreateTransactionRequestCardRequest(); // CreateTransactionRequestCardRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestCardWithHttpInfo(card, obPv400CreateTransactionRequestCardRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestCardWithHttpInfo(card, createTransactionRequestCardRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestCard");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCard");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1340,11 +968,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **card** | **String**| The CARD identifier | |
-| **obPv400CreateTransactionRequestCardRequest** | [**OBPv400CreateTransactionRequestCardRequest**](OBPv400CreateTransactionRequestCardRequest.md)| Request body | |
+| **createTransactionRequestCardRequest** | [**CreateTransactionRequestCardRequest**](CreateTransactionRequestCardRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -1365,13 +993,13 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestCounterparty
+## createTransactionRequestCardano
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestCounterparty(bankid, accountid, viewid, counterparty, obPv400CreateTransactionRequestCounterpartyRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestCardano(bankid, accountid, cardano, createTransactionRequestCardanoRequest)
 
-Create Transaction Request (COUNTERPARTY)
+Create Transaction Request (CARDANO)
 
-&lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.&lt;br /&gt; The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.&lt;/p&gt; &lt;p&gt;COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt; to create a consent for VRPs.&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty\&quot;&gt;COUNTERPARTY&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;attribute_type&lt;/strong&gt;&lt;/a&gt;: STRING&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;charge_policy&lt;/strong&gt;&lt;/a&gt;: SHARED&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;future_date&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;For sandbox mode, it will use the Cardano Preprod Network.&lt;br /&gt; The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARDANO&lt;/a&gt;: CARDANO&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;asset_name&lt;/strong&gt;&lt;/a&gt;: asset_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;passphrase&lt;/strong&gt;&lt;/a&gt;: passphrase&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy_id&lt;/strong&gt;&lt;/a&gt;: policy_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;quantity&lt;/strong&gt;&lt;/a&gt;: quantity&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;unit&lt;/strong&gt;&lt;/a&gt;: unit&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;assets&lt;/a&gt;: assets&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;metadata&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
 
 ### Example
 
@@ -1387,7 +1015,193 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String cardano = "cardano_example"; // String | The CARDANO identifier
+        CreateTransactionRequestCardanoRequest createTransactionRequestCardanoRequest = new CreateTransactionRequestCardanoRequest(); // CreateTransactionRequestCardanoRequest | Request body
+        try {
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestCardano(bankid, accountid, cardano, createTransactionRequestCardanoRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCardano");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **cardano** | **String**| The CARDANO identifier | |
+| **createTransactionRequestCardanoRequest** | [**CreateTransactionRequestCardanoRequest**](CreateTransactionRequestCardanoRequest.md)| Request body | |
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createTransactionRequestCardanoWithHttpInfo
+
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestCardano createTransactionRequestCardanoWithHttpInfo(bankid, accountid, cardano, createTransactionRequestCardanoRequest)
+
+Create Transaction Request (CARDANO)
+
+&lt;p&gt;For sandbox mode, it will use the Cardano Preprod Network.&lt;br /&gt; The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARDANO&lt;/a&gt;: CARDANO&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;asset_name&lt;/strong&gt;&lt;/a&gt;: asset_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;passphrase&lt;/strong&gt;&lt;/a&gt;: passphrase&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy_id&lt;/strong&gt;&lt;/a&gt;: policy_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;quantity&lt;/strong&gt;&lt;/a&gt;: quantity&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;unit&lt;/strong&gt;&lt;/a&gt;: unit&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;assets&lt;/a&gt;: assets&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;metadata&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String cardano = "cardano_example"; // String | The CARDANO identifier
+        CreateTransactionRequestCardanoRequest createTransactionRequestCardanoRequest = new CreateTransactionRequestCardanoRequest(); // CreateTransactionRequestCardanoRequest | Request body
+        try {
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestCardanoWithHttpInfo(bankid, accountid, cardano, createTransactionRequestCardanoRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCardano");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **cardano** | **String**| The CARDANO identifier | |
+| **createTransactionRequestCardanoRequest** | [**CreateTransactionRequestCardanoRequest**](CreateTransactionRequestCardanoRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createTransactionRequestCounterparty
+
+> CreateTransactionRequestCounterparty200Response createTransactionRequestCounterparty(bankid, accountid, viewid, counterparty, createTransactionRequestCounterpartyRequest)
+
+Create Transaction Request (COUNTERPARTY)
+
+&lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.&lt;br /&gt; The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.&lt;/p&gt; &lt;p&gt;COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt; to create a consent for VRPs.&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty\&quot;&gt;COUNTERPARTY&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;attribute_type&lt;/strong&gt;&lt;/a&gt;: STRING&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;charge_policy&lt;/strong&gt;&lt;/a&gt;: SHARED&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;future_date&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1410,12 +1224,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String counterparty = "counterparty_example"; // String | The COUNTERPARTY identifier
-        OBPv400CreateTransactionRequestCounterpartyRequest obPv400CreateTransactionRequestCounterpartyRequest = new OBPv400CreateTransactionRequestCounterpartyRequest(); // OBPv400CreateTransactionRequestCounterpartyRequest | Request body
+        CreateTransactionRequestCounterpartyRequest createTransactionRequestCounterpartyRequest = new CreateTransactionRequestCounterpartyRequest(); // CreateTransactionRequestCounterpartyRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestCounterparty(bankid, accountid, viewid, counterparty, obPv400CreateTransactionRequestCounterpartyRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestCounterparty(bankid, accountid, viewid, counterparty, createTransactionRequestCounterpartyRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestCounterparty");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCounterparty");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1434,11 +1248,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **counterparty** | **String**| The COUNTERPARTY identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequest** | [**OBPv400CreateTransactionRequestCounterpartyRequest**](OBPv400CreateTransactionRequestCounterpartyRequest.md)| Request body | |
+| **createTransactionRequestCounterpartyRequest** | [**CreateTransactionRequestCounterpartyRequest**](CreateTransactionRequestCounterpartyRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -1458,13 +1272,13 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestCounterpartyWithHttpInfo
+## createTransactionRequestCounterpartyWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestCounterparty oBPv400CreateTransactionRequestCounterpartyWithHttpInfo(bankid, accountid, viewid, counterparty, obPv400CreateTransactionRequestCounterpartyRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestCounterparty createTransactionRequestCounterpartyWithHttpInfo(bankid, accountid, viewid, counterparty, createTransactionRequestCounterpartyRequest)
 
 Create Transaction Request (COUNTERPARTY)
 
-&lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.&lt;br /&gt; The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.&lt;/p&gt; &lt;p&gt;COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt; to create a consent for VRPs.&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty\&quot;&gt;COUNTERPARTY&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;attribute_type&lt;/strong&gt;&lt;/a&gt;: STRING&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;charge_policy&lt;/strong&gt;&lt;/a&gt;: SHARED&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;future_date&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.&lt;br /&gt; The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.&lt;/p&gt; &lt;p&gt;COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt; to create a consent for VRPs.&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty\&quot;&gt;COUNTERPARTY&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;attribute_type&lt;/strong&gt;&lt;/a&gt;: STRING&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;charge_policy&lt;/strong&gt;&lt;/a&gt;: SHARED&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;future_date&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
 
 ### Example
 
@@ -1481,7 +1295,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1504,14 +1318,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String counterparty = "counterparty_example"; // String | The COUNTERPARTY identifier
-        OBPv400CreateTransactionRequestCounterpartyRequest obPv400CreateTransactionRequestCounterpartyRequest = new OBPv400CreateTransactionRequestCounterpartyRequest(); // OBPv400CreateTransactionRequestCounterpartyRequest | Request body
+        CreateTransactionRequestCounterpartyRequest createTransactionRequestCounterpartyRequest = new CreateTransactionRequestCounterpartyRequest(); // CreateTransactionRequestCounterpartyRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestCounterpartyWithHttpInfo(bankid, accountid, viewid, counterparty, obPv400CreateTransactionRequestCounterpartyRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestCounterpartyWithHttpInfo(bankid, accountid, viewid, counterparty, createTransactionRequestCounterpartyRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestCounterparty");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestCounterparty");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1530,11 +1344,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **counterparty** | **String**| The COUNTERPARTY identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequest** | [**OBPv400CreateTransactionRequestCounterpartyRequest**](OBPv400CreateTransactionRequestCounterpartyRequest.md)| Request body | |
+| **createTransactionRequestCounterpartyRequest** | [**CreateTransactionRequestCounterpartyRequest**](CreateTransactionRequestCounterpartyRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -1555,9 +1369,381 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestFreeForm
+## createTransactionRequestEthSendRawTransaction
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestFreeForm(bankid, accountid, viewid, freeform, obPv400CreateTransactionRequestFreeFormRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestEthSendRawTransaction(bankid, accountid, ethsendrawtransaction, createTransactionRequestEthSendRawTransactionRequest)
+
+CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+
+&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_RAW_TRANSACTION&lt;/a&gt;: ETH_SEND_RAW_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;params&lt;/strong&gt;&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String ethsendrawtransaction = "ethsendrawtransaction_example"; // String | The ETHSENDRAWTRANSACTION identifier
+        CreateTransactionRequestEthSendRawTransactionRequest createTransactionRequestEthSendRawTransactionRequest = new CreateTransactionRequestEthSendRawTransactionRequest(); // CreateTransactionRequestEthSendRawTransactionRequest | Request body
+        try {
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestEthSendRawTransaction(bankid, accountid, ethsendrawtransaction, createTransactionRequestEthSendRawTransactionRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestEthSendRawTransaction");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **ethsendrawtransaction** | **String**| The ETHSENDRAWTRANSACTION identifier | |
+| **createTransactionRequestEthSendRawTransactionRequest** | [**CreateTransactionRequestEthSendRawTransactionRequest**](CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | |
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createTransactionRequestEthSendRawTransactionWithHttpInfo
+
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestEthSendRawTransaction createTransactionRequestEthSendRawTransactionWithHttpInfo(bankid, accountid, ethsendrawtransaction, createTransactionRequestEthSendRawTransactionRequest)
+
+CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+
+&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_RAW_TRANSACTION&lt;/a&gt;: ETH_SEND_RAW_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;params&lt;/strong&gt;&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String ethsendrawtransaction = "ethsendrawtransaction_example"; // String | The ETHSENDRAWTRANSACTION identifier
+        CreateTransactionRequestEthSendRawTransactionRequest createTransactionRequestEthSendRawTransactionRequest = new CreateTransactionRequestEthSendRawTransactionRequest(); // CreateTransactionRequestEthSendRawTransactionRequest | Request body
+        try {
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestEthSendRawTransactionWithHttpInfo(bankid, accountid, ethsendrawtransaction, createTransactionRequestEthSendRawTransactionRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestEthSendRawTransaction");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **ethsendrawtransaction** | **String**| The ETHSENDRAWTRANSACTION identifier | |
+| **createTransactionRequestEthSendRawTransactionRequest** | [**CreateTransactionRequestEthSendRawTransactionRequest**](CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createTransactionRequestEthereumeSendTransaction
+
+> CreateTransactionRequestCounterparty200Response createTransactionRequestEthereumeSendTransaction(bankid, accountid, ethsendtransaction, createTransactionRequestEthereumeSendTransactionRequest)
+
+Create Transaction Request (ETH_SEND_TRANSACTION)
+
+&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_TRANSACTION&lt;/a&gt;: ETH_SEND_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;params&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String ethsendtransaction = "ethsendtransaction_example"; // String | The ETHSENDTRANSACTION identifier
+        CreateTransactionRequestEthereumeSendTransactionRequest createTransactionRequestEthereumeSendTransactionRequest = new CreateTransactionRequestEthereumeSendTransactionRequest(); // CreateTransactionRequestEthereumeSendTransactionRequest | Request body
+        try {
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestEthereumeSendTransaction(bankid, accountid, ethsendtransaction, createTransactionRequestEthereumeSendTransactionRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestEthereumeSendTransaction");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **ethsendtransaction** | **String**| The ETHSENDTRANSACTION identifier | |
+| **createTransactionRequestEthereumeSendTransactionRequest** | [**CreateTransactionRequestEthereumeSendTransactionRequest**](CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | |
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createTransactionRequestEthereumeSendTransactionWithHttpInfo
+
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestEthereumeSendTransaction createTransactionRequestEthereumeSendTransactionWithHttpInfo(bankid, accountid, ethsendtransaction, createTransactionRequestEthereumeSendTransactionRequest)
+
+Create Transaction Request (ETH_SEND_TRANSACTION)
+
+&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_TRANSACTION&lt;/a&gt;: ETH_SEND_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;params&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String ethsendtransaction = "ethsendtransaction_example"; // String | The ETHSENDTRANSACTION identifier
+        CreateTransactionRequestEthereumeSendTransactionRequest createTransactionRequestEthereumeSendTransactionRequest = new CreateTransactionRequestEthereumeSendTransactionRequest(); // CreateTransactionRequestEthereumeSendTransactionRequest | Request body
+        try {
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestEthereumeSendTransactionWithHttpInfo(bankid, accountid, ethsendtransaction, createTransactionRequestEthereumeSendTransactionRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestEthereumeSendTransaction");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **ethsendtransaction** | **String**| The ETHSENDTRANSACTION identifier | |
+| **createTransactionRequestEthereumeSendTransactionRequest** | [**CreateTransactionRequestEthereumeSendTransactionRequest**](CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createTransactionRequestFreeForm
+
+> CreateTransactionRequestCounterparty200Response createTransactionRequestFreeForm(bankid, accountid, viewid, freeform, createTransactionRequestFreeFormRequest)
 
 Create Transaction Request (FREE_FORM)
 
@@ -1577,7 +1763,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1600,12 +1786,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String freeform = "freeform_example"; // String | The FREEFORM identifier
-        OBPv400CreateTransactionRequestFreeFormRequest obPv400CreateTransactionRequestFreeFormRequest = new OBPv400CreateTransactionRequestFreeFormRequest(); // OBPv400CreateTransactionRequestFreeFormRequest | Request body
+        CreateTransactionRequestFreeFormRequest createTransactionRequestFreeFormRequest = new CreateTransactionRequestFreeFormRequest(); // CreateTransactionRequestFreeFormRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestFreeForm(bankid, accountid, viewid, freeform, obPv400CreateTransactionRequestFreeFormRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestFreeForm(bankid, accountid, viewid, freeform, createTransactionRequestFreeFormRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestFreeForm");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestFreeForm");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1624,11 +1810,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **freeform** | **String**| The FREEFORM identifier | |
-| **obPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | |
+| **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -1648,9 +1834,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestFreeFormWithHttpInfo
+## createTransactionRequestFreeFormWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestFreeForm oBPv400CreateTransactionRequestFreeFormWithHttpInfo(bankid, accountid, viewid, freeform, obPv400CreateTransactionRequestFreeFormRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestFreeForm createTransactionRequestFreeFormWithHttpInfo(bankid, accountid, viewid, freeform, createTransactionRequestFreeFormRequest)
 
 Create Transaction Request (FREE_FORM)
 
@@ -1671,7 +1857,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1694,14 +1880,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String freeform = "freeform_example"; // String | The FREEFORM identifier
-        OBPv400CreateTransactionRequestFreeFormRequest obPv400CreateTransactionRequestFreeFormRequest = new OBPv400CreateTransactionRequestFreeFormRequest(); // OBPv400CreateTransactionRequestFreeFormRequest | Request body
+        CreateTransactionRequestFreeFormRequest createTransactionRequestFreeFormRequest = new CreateTransactionRequestFreeFormRequest(); // CreateTransactionRequestFreeFormRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestFreeFormWithHttpInfo(bankid, accountid, viewid, freeform, obPv400CreateTransactionRequestFreeFormRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestFreeFormWithHttpInfo(bankid, accountid, viewid, freeform, createTransactionRequestFreeFormRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestFreeForm");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestFreeForm");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1720,11 +1906,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **freeform** | **String**| The FREEFORM identifier | |
-| **obPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | |
+| **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -1745,9 +1931,195 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestRefund
+## createTransactionRequestHold
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestRefund(bankid, accountid, viewid, refund, obPv400CreateTransactionRequestRefundRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestHold(bankid, accountid, hold, createTransactionRequestFreeFormRequest)
+
+Create Transaction Request (HOLD)
+
+&lt;p&gt;Create a transaction request to move funds from the account to its Holding Account.&lt;br /&gt; If the Holding Account does not exist, it will be created automatically.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;HOLD&lt;/a&gt;: HOLD&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String hold = "hold_example"; // String | The HOLD identifier
+        CreateTransactionRequestFreeFormRequest createTransactionRequestFreeFormRequest = new CreateTransactionRequestFreeFormRequest(); // CreateTransactionRequestFreeFormRequest | Request body
+        try {
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestHold(bankid, accountid, hold, createTransactionRequestFreeFormRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestHold");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **hold** | **String**| The HOLD identifier | |
+| **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | |
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createTransactionRequestHoldWithHttpInfo
+
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestHold createTransactionRequestHoldWithHttpInfo(bankid, accountid, hold, createTransactionRequestFreeFormRequest)
+
+Create Transaction Request (HOLD)
+
+&lt;p&gt;Create a transaction request to move funds from the account to its Holding Account.&lt;br /&gt; If the Holding Account does not exist, it will be created automatically.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;HOLD&lt;/a&gt;: HOLD&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String hold = "hold_example"; // String | The HOLD identifier
+        CreateTransactionRequestFreeFormRequest createTransactionRequestFreeFormRequest = new CreateTransactionRequestFreeFormRequest(); // CreateTransactionRequestFreeFormRequest | Request body
+        try {
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestHoldWithHttpInfo(bankid, accountid, hold, createTransactionRequestFreeFormRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestHold");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **hold** | **String**| The HOLD identifier | |
+| **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createTransactionRequestRefund
+
+> CreateTransactionRequestCounterparty200Response createTransactionRequestRefund(bankid, accountid, viewid, refund, createTransactionRequestRefundRequest)
 
 Create Transaction Request (REFUND)
 
@@ -1767,7 +2139,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1790,12 +2162,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String refund = "refund_example"; // String | The REFUND identifier
-        OBPv400CreateTransactionRequestRefundRequest obPv400CreateTransactionRequestRefundRequest = new OBPv400CreateTransactionRequestRefundRequest(); // OBPv400CreateTransactionRequestRefundRequest | Request body
+        CreateTransactionRequestRefundRequest createTransactionRequestRefundRequest = new CreateTransactionRequestRefundRequest(); // CreateTransactionRequestRefundRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestRefund(bankid, accountid, viewid, refund, obPv400CreateTransactionRequestRefundRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestRefund(bankid, accountid, viewid, refund, createTransactionRequestRefundRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestRefund");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestRefund");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1814,11 +2186,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **refund** | **String**| The REFUND identifier | |
-| **obPv400CreateTransactionRequestRefundRequest** | [**OBPv400CreateTransactionRequestRefundRequest**](OBPv400CreateTransactionRequestRefundRequest.md)| Request body | |
+| **createTransactionRequestRefundRequest** | [**CreateTransactionRequestRefundRequest**](CreateTransactionRequestRefundRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -1838,9 +2210,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestRefundWithHttpInfo
+## createTransactionRequestRefundWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestRefund oBPv400CreateTransactionRequestRefundWithHttpInfo(bankid, accountid, viewid, refund, obPv400CreateTransactionRequestRefundRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestRefund createTransactionRequestRefundWithHttpInfo(bankid, accountid, viewid, refund, createTransactionRequestRefundRequest)
 
 Create Transaction Request (REFUND)
 
@@ -1861,7 +2233,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1884,14 +2256,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String refund = "refund_example"; // String | The REFUND identifier
-        OBPv400CreateTransactionRequestRefundRequest obPv400CreateTransactionRequestRefundRequest = new OBPv400CreateTransactionRequestRefundRequest(); // OBPv400CreateTransactionRequestRefundRequest | Request body
+        CreateTransactionRequestRefundRequest createTransactionRequestRefundRequest = new CreateTransactionRequestRefundRequest(); // CreateTransactionRequestRefundRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestRefundWithHttpInfo(bankid, accountid, viewid, refund, obPv400CreateTransactionRequestRefundRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestRefundWithHttpInfo(bankid, accountid, viewid, refund, createTransactionRequestRefundRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestRefund");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestRefund");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1910,11 +2282,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **refund** | **String**| The REFUND identifier | |
-| **obPv400CreateTransactionRequestRefundRequest** | [**OBPv400CreateTransactionRequestRefundRequest**](OBPv400CreateTransactionRequestRefundRequest.md)| Request body | |
+| **createTransactionRequestRefundRequest** | [**CreateTransactionRequestRefundRequest**](CreateTransactionRequestRefundRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -1935,9 +2307,199 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestSepa
+## createTransactionRequestSandboxTan
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestSepa(bankid, accountid, viewid, sepa, obPv400CreateTransactionRequestSepaRequest)
+> GetTransactionRequestById200Response createTransactionRequestSandboxTan(bankid, accountid, viewid, sandboxtan, createTransactionRequestAccountRequest)
+
+Create Transaction Request (SANDBOX_TAN)
+
+&lt;p&gt;When using SANDBOX_TAN, the payee is set in the request body.&lt;/p&gt; &lt;p&gt;Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.&lt;/p&gt; &lt;p&gt;Initiate a Payment via creating a Transaction Request.&lt;/p&gt; &lt;p&gt;In OBP, a &lt;code&gt;transaction request&lt;/code&gt; may or may not result in a &lt;code&gt;transaction&lt;/code&gt;. However, a &lt;code&gt;transaction&lt;/code&gt; only has one possible state: completed.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; can have one of several states.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transactions&lt;/code&gt; are modeled on items in a bank statement that represent the movement of money.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transaction Requests&lt;/code&gt; are requests to move money which may or may not succeeed and thus result in a &lt;code&gt;Transaction&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; might create a security challenge that needs to be answered before the &lt;code&gt;Transaction Request&lt;/code&gt; proceeds.&lt;/p&gt; &lt;p&gt;Transaction Requests contain charge information giving the client the opportunity to proceed or not (as long as the challenge level is appropriate).&lt;/p&gt; &lt;p&gt;Transaction Requests can have one of several Transaction Request Types which expect different bodies. The escaped body is returned in the details key of the GET response.&lt;br /&gt; This provides some commonality and one URL for many different payment or transfer types with enough flexibility to validate them differently.&lt;/p&gt; &lt;p&gt;The payer is set in the URL. Money comes out of the BANK_ID and ACCOUNT_ID specified in the URL.&lt;/p&gt; &lt;p&gt;In sandbox mode, TRANSACTION_REQUEST_TYPE is commonly set to SANDBOX_TAN. See getTransactionRequestTypesSupportedByBank for all supported types.&lt;/p&gt; &lt;p&gt;In sandbox mode, if the amount is less than 1000 EUR (any currency, unless it is set differently on this server), the transaction request will create a transaction without a challenge, else the Transaction Request will be set to INITIALISED and a challenge will need to be answered.&lt;/p&gt; &lt;p&gt;If a challenge is created you must answer it using Answer Transaction Request Challenge before the Transaction is created.&lt;/p&gt; &lt;p&gt;You can transfer between different currency accounts. (new in 2.0.0). The currency in body must match the sending account.&lt;/p&gt; &lt;p&gt;The following static FX rates are available in sandbox mode:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;XAF&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:1.0,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0135503,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00228226,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.87975,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00127784,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.00131092,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0396,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00601555,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.110241,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.9074795E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.185328,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00163773,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00641333,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00152449&lt;br /&gt; },&lt;br /&gt; &amp;quot;HKD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:73.8049,&lt;br /&gt; &amp;quot;HKD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.178137,&lt;br /&gt; &amp;quot;KRW&amp;quot;:143.424,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0903452,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0985443,&lt;br /&gt; &amp;quot;MXN&amp;quot;:2.8067,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.467977,&lt;br /&gt; &amp;quot;INR&amp;quot;:9.09325,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.164242461E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:14.0867,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.127427,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.460862,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.112495&lt;br /&gt; },&lt;br /&gt; &amp;quot;AUD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:438.162,&lt;br /&gt; &amp;quot;HKD&amp;quot;:5.61346,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;KRW&amp;quot;:895.304,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.556152,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.609788,&lt;br /&gt; &amp;quot;MXN&amp;quot;:16.0826,&lt;br /&gt; &amp;quot;AED&amp;quot;:2.88368,&lt;br /&gt; &amp;quot;INR&amp;quot;:50.4238,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.2284055924E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:87.0936,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.785256,&lt;br /&gt; &amp;quot;ILS&amp;quot;:2.83558,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.667969&lt;br /&gt; },&lt;br /&gt; &amp;quot;KRW&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:0.531986,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.00697233,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00111694,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JOD&amp;quot;:6.30634E-4,&lt;br /&gt; &amp;quot;GBP&amp;quot;:6.97389E-4,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0183,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00320019,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.0586469,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.4234725E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.0985917,&lt;br /&gt; &amp;quot;USD&amp;quot;:8.7125E-4,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00316552,&lt;br /&gt; &amp;quot;EUR&amp;quot;:8.11008E-4&lt;br /&gt; },&lt;br /&gt; &amp;quot;JOD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:782.572,&lt;br /&gt; &amp;quot;HKD&amp;quot;:11.0687,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1585.68,&lt;br /&gt; &amp;quot;JOD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.06757,&lt;br /&gt; &amp;quot;MXN&amp;quot;:30.8336,&lt;br /&gt; &amp;quot;AED&amp;quot;:5.18231,&lt;br /&gt; &amp;quot;INR&amp;quot;:90.1236,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.3803244006E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:156.304,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.41112,&lt;br /&gt; &amp;quot;ILS&amp;quot;:5.02018,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.237707&lt;br /&gt; },&lt;br /&gt; &amp;quot;GBP&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:762.826,&lt;br /&gt; &amp;quot;HKD&amp;quot;:10.1468,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1433.92,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.936707,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.0,&lt;br /&gt; &amp;quot;MXN&amp;quot;:29.242,&lt;br /&gt; &amp;quot;AED&amp;quot;:4.58882,&lt;br /&gt; &amp;quot;INR&amp;quot;:84.095,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2756409956E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:141.373,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.2493,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.7002,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.16278&lt;br /&gt; },&lt;br /&gt; &amp;quot;MXN&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:25.189,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.3562,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0621,&lt;br /&gt; &amp;quot;KRW&amp;quot;:54.4512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0324,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0341,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.1688,&lt;br /&gt; &amp;quot;INR&amp;quot;:3.3513,&lt;br /&gt; &amp;quot;XBT&amp;quot;:8.1112586E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:4.8687,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0459,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.1541,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0384&lt;br /&gt; },&lt;br /&gt; &amp;quot;AED&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:166.236,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.13685,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.346779,&lt;br /&gt; &amp;quot;KRW&amp;quot;:312.482,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.1930565,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.217921,&lt;br /&gt; &amp;quot;MXN&amp;quot;:5.9217,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.0,&lt;br /&gt; &amp;quot;INR&amp;quot;:18.3255,&lt;br /&gt; &amp;quot;XBT&amp;quot;:4.603349217E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:30.8081,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.27225,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.968033,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.253425&lt;br /&gt; },&lt;br /&gt; &amp;quot;INR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:9.07101,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.109972,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0198319,&lt;br /&gt; &amp;quot;KRW&amp;quot;:17.0512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0110959,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0118913,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2983,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.0545671,&lt;br /&gt; &amp;quot;INR&amp;quot;:1.0,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2689396E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.68111,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0148559,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0556764,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0138287&lt;br /&gt; },&lt;br /&gt; &amp;quot;XBT&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:3.4353824E7,&lt;br /&gt; &amp;quot;HKD&amp;quot;:460448.9,&lt;br /&gt; &amp;quot;AUD&amp;quot;:81168.603,&lt;br /&gt; &amp;quot;KRW&amp;quot;:7.0131575E7,&lt;br /&gt; &amp;quot;JOD&amp;quot;:41960.111,&lt;br /&gt; &amp;quot;GBP&amp;quot;:44188.118,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1230503.3,&lt;br /&gt; &amp;quot;AED&amp;quot;:217414.47,&lt;br /&gt; &amp;quot;INR&amp;quot;:4407607.74,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JPY&amp;quot;:6805170.8,&lt;br /&gt; &amp;quot;USD&amp;quot;:59245.918,&lt;br /&gt; &amp;quot;ILS&amp;quot;:182981.21,&lt;br /&gt; &amp;quot;EUR&amp;quot;:52436.431&lt;br /&gt; },&lt;br /&gt; &amp;quot;JPY&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:5.39585,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0709891,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0114819,&lt;br /&gt; &amp;quot;KRW&amp;quot;:10.1428,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00639777,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0070735,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2053,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.032459,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.594846,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.47171931E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.0,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00883695,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0320926,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00822592&lt;br /&gt; },&lt;br /&gt; &amp;quot;USD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:610.601,&lt;br /&gt; &amp;quot;HKD&amp;quot;:7.84766,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.27347,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1147.78,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.708659,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.800446,&lt;br /&gt; &amp;quot;MXN&amp;quot;:21.748,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.6731,&lt;br /&gt; &amp;quot;INR&amp;quot;:67.3135,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.69154E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:113.161,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;ILS&amp;quot;:3.55495,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.930886&lt;br /&gt; },&lt;br /&gt; &amp;quot;ILS&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:155.925,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.16985,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.352661,&lt;br /&gt; &amp;quot;KRW&amp;quot;:315.903,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.199196,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.212763,&lt;br /&gt; &amp;quot;MXN&amp;quot;:6.4871,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.03302,&lt;br /&gt; &amp;quot;INR&amp;quot;:17.9609,&lt;br /&gt; &amp;quot;XBT&amp;quot;:5.452272147E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:31.1599,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.281298,&lt;br /&gt; &amp;quot;ILS&amp;quot;:1.0,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.19318&lt;br /&gt; },&lt;br /&gt; &amp;quot;EUR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:655.957,&lt;br /&gt; &amp;quot;HKD&amp;quot;:8.88926,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.49707,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1233.03,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.838098,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.860011,&lt;br /&gt; &amp;quot;MXN&amp;quot;:26.0359,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.94594,&lt;br /&gt; &amp;quot;INR&amp;quot;:72.3136,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.9087905636E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:121.567,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.07428,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.20494,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.0&lt;br /&gt; }&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Transaction Requests satisfy PSD2 requirements thus:&lt;/p&gt; &lt;p&gt;1) A transaction can be initiated by a third party application.&lt;/p&gt; &lt;p&gt;2) The customer is informed of the charge that will incurred.&lt;/p&gt; &lt;p&gt;3) The call supports delegated authentication (OAuth)&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/Hello-OBP-DirectLogin-Python/blob/master/hello_payments.py\&quot;&gt;this python code&lt;/a&gt; for a complete example of this flow.&lt;/p&gt; &lt;p&gt;There is further documentation &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/OBP-API/wiki/Transaction-Requests\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sandbox_tan\&quot;&gt;SANDBOX_TAN&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String viewid = "viewid_example"; // String | The VIEWID identifier
+        String sandboxtan = "sandboxtan_example"; // String | The SANDBOXTAN identifier
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
+        try {
+            GetTransactionRequestById200Response result = apiInstance.createTransactionRequestSandboxTan(bankid, accountid, viewid, sandboxtan, createTransactionRequestAccountRequest);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSandboxTan");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **viewid** | **String**| The VIEWID identifier | |
+| **sandboxtan** | **String**| The SANDBOXTAN identifier | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
+
+### Return type
+
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+## createTransactionRequestSandboxTanWithHttpInfo
+
+> ApiResponse<GetTransactionRequestById200Response> createTransactionRequestSandboxTan createTransactionRequestSandboxTanWithHttpInfo(bankid, accountid, viewid, sandboxtan, createTransactionRequestAccountRequest)
+
+Create Transaction Request (SANDBOX_TAN)
+
+&lt;p&gt;When using SANDBOX_TAN, the payee is set in the request body.&lt;/p&gt; &lt;p&gt;Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.&lt;/p&gt; &lt;p&gt;Initiate a Payment via creating a Transaction Request.&lt;/p&gt; &lt;p&gt;In OBP, a &lt;code&gt;transaction request&lt;/code&gt; may or may not result in a &lt;code&gt;transaction&lt;/code&gt;. However, a &lt;code&gt;transaction&lt;/code&gt; only has one possible state: completed.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; can have one of several states.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transactions&lt;/code&gt; are modeled on items in a bank statement that represent the movement of money.&lt;/p&gt; &lt;p&gt;&lt;code&gt;Transaction Requests&lt;/code&gt; are requests to move money which may or may not succeeed and thus result in a &lt;code&gt;Transaction&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;A &lt;code&gt;Transaction Request&lt;/code&gt; might create a security challenge that needs to be answered before the &lt;code&gt;Transaction Request&lt;/code&gt; proceeds.&lt;/p&gt; &lt;p&gt;Transaction Requests contain charge information giving the client the opportunity to proceed or not (as long as the challenge level is appropriate).&lt;/p&gt; &lt;p&gt;Transaction Requests can have one of several Transaction Request Types which expect different bodies. The escaped body is returned in the details key of the GET response.&lt;br /&gt; This provides some commonality and one URL for many different payment or transfer types with enough flexibility to validate them differently.&lt;/p&gt; &lt;p&gt;The payer is set in the URL. Money comes out of the BANK_ID and ACCOUNT_ID specified in the URL.&lt;/p&gt; &lt;p&gt;In sandbox mode, TRANSACTION_REQUEST_TYPE is commonly set to SANDBOX_TAN. See getTransactionRequestTypesSupportedByBank for all supported types.&lt;/p&gt; &lt;p&gt;In sandbox mode, if the amount is less than 1000 EUR (any currency, unless it is set differently on this server), the transaction request will create a transaction without a challenge, else the Transaction Request will be set to INITIALISED and a challenge will need to be answered.&lt;/p&gt; &lt;p&gt;If a challenge is created you must answer it using Answer Transaction Request Challenge before the Transaction is created.&lt;/p&gt; &lt;p&gt;You can transfer between different currency accounts. (new in 2.0.0). The currency in body must match the sending account.&lt;/p&gt; &lt;p&gt;The following static FX rates are available in sandbox mode:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;XAF&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:1.0,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0135503,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00228226,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.87975,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00127784,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.00131092,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0396,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00601555,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.110241,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.9074795E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.185328,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00163773,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00641333,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00152449&lt;br /&gt; },&lt;br /&gt; &amp;quot;HKD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:73.8049,&lt;br /&gt; &amp;quot;HKD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.178137,&lt;br /&gt; &amp;quot;KRW&amp;quot;:143.424,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0903452,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0985443,&lt;br /&gt; &amp;quot;MXN&amp;quot;:2.8067,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.467977,&lt;br /&gt; &amp;quot;INR&amp;quot;:9.09325,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.164242461E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:14.0867,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.127427,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.460862,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.112495&lt;br /&gt; },&lt;br /&gt; &amp;quot;AUD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:438.162,&lt;br /&gt; &amp;quot;HKD&amp;quot;:5.61346,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;KRW&amp;quot;:895.304,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.556152,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.609788,&lt;br /&gt; &amp;quot;MXN&amp;quot;:16.0826,&lt;br /&gt; &amp;quot;AED&amp;quot;:2.88368,&lt;br /&gt; &amp;quot;INR&amp;quot;:50.4238,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.2284055924E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:87.0936,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.785256,&lt;br /&gt; &amp;quot;ILS&amp;quot;:2.83558,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.667969&lt;br /&gt; },&lt;br /&gt; &amp;quot;KRW&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:0.531986,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.00697233,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.00111694,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JOD&amp;quot;:6.30634E-4,&lt;br /&gt; &amp;quot;GBP&amp;quot;:6.97389E-4,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.0183,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.00320019,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.0586469,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.4234725E-8,&lt;br /&gt; &amp;quot;JPY&amp;quot;:0.0985917,&lt;br /&gt; &amp;quot;USD&amp;quot;:8.7125E-4,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.00316552,&lt;br /&gt; &amp;quot;EUR&amp;quot;:8.11008E-4&lt;br /&gt; },&lt;br /&gt; &amp;quot;JOD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:782.572,&lt;br /&gt; &amp;quot;HKD&amp;quot;:11.0687,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1585.68,&lt;br /&gt; &amp;quot;JOD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.06757,&lt;br /&gt; &amp;quot;MXN&amp;quot;:30.8336,&lt;br /&gt; &amp;quot;AED&amp;quot;:5.18231,&lt;br /&gt; &amp;quot;INR&amp;quot;:90.1236,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.3803244006E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:156.304,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.41112,&lt;br /&gt; &amp;quot;ILS&amp;quot;:5.02018,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.237707&lt;br /&gt; },&lt;br /&gt; &amp;quot;GBP&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:762.826,&lt;br /&gt; &amp;quot;HKD&amp;quot;:10.1468,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.63992,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1433.92,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.936707,&lt;br /&gt; &amp;quot;GBP&amp;quot;:1.0,&lt;br /&gt; &amp;quot;MXN&amp;quot;:29.242,&lt;br /&gt; &amp;quot;AED&amp;quot;:4.58882,&lt;br /&gt; &amp;quot;INR&amp;quot;:84.095,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2756409956E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:141.373,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.2493,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.7002,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.16278&lt;br /&gt; },&lt;br /&gt; &amp;quot;MXN&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:25.189,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.3562,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0621,&lt;br /&gt; &amp;quot;KRW&amp;quot;:54.4512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0324,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0341,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1.0,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.1688,&lt;br /&gt; &amp;quot;INR&amp;quot;:3.3513,&lt;br /&gt; &amp;quot;XBT&amp;quot;:8.1112586E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:4.8687,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0459,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.1541,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0384&lt;br /&gt; },&lt;br /&gt; &amp;quot;AED&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:166.236,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.13685,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.346779,&lt;br /&gt; &amp;quot;KRW&amp;quot;:312.482,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.1930565,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.217921,&lt;br /&gt; &amp;quot;MXN&amp;quot;:5.9217,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.0,&lt;br /&gt; &amp;quot;INR&amp;quot;:18.3255,&lt;br /&gt; &amp;quot;XBT&amp;quot;:4.603349217E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:30.8081,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.27225,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.968033,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.253425&lt;br /&gt; },&lt;br /&gt; &amp;quot;INR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:9.07101,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.109972,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0198319,&lt;br /&gt; &amp;quot;KRW&amp;quot;:17.0512,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.0110959,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0118913,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2983,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.0545671,&lt;br /&gt; &amp;quot;INR&amp;quot;:1.0,&lt;br /&gt; &amp;quot;XBT&amp;quot;:2.2689396E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.68111,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.0148559,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0556764,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.0138287&lt;br /&gt; },&lt;br /&gt; &amp;quot;XBT&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:3.4353824E7,&lt;br /&gt; &amp;quot;HKD&amp;quot;:460448.9,&lt;br /&gt; &amp;quot;AUD&amp;quot;:81168.603,&lt;br /&gt; &amp;quot;KRW&amp;quot;:7.0131575E7,&lt;br /&gt; &amp;quot;JOD&amp;quot;:41960.111,&lt;br /&gt; &amp;quot;GBP&amp;quot;:44188.118,&lt;br /&gt; &amp;quot;MXN&amp;quot;:1230503.3,&lt;br /&gt; &amp;quot;AED&amp;quot;:217414.47,&lt;br /&gt; &amp;quot;INR&amp;quot;:4407607.74,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.0,&lt;br /&gt; &amp;quot;JPY&amp;quot;:6805170.8,&lt;br /&gt; &amp;quot;USD&amp;quot;:59245.918,&lt;br /&gt; &amp;quot;ILS&amp;quot;:182981.21,&lt;br /&gt; &amp;quot;EUR&amp;quot;:52436.431&lt;br /&gt; },&lt;br /&gt; &amp;quot;JPY&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:5.39585,&lt;br /&gt; &amp;quot;HKD&amp;quot;:0.0709891,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.0114819,&lt;br /&gt; &amp;quot;KRW&amp;quot;:10.1428,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.00639777,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.0070735,&lt;br /&gt; &amp;quot;MXN&amp;quot;:0.2053,&lt;br /&gt; &amp;quot;AED&amp;quot;:0.032459,&lt;br /&gt; &amp;quot;INR&amp;quot;:0.594846,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.47171931E-7,&lt;br /&gt; &amp;quot;JPY&amp;quot;:1.0,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.00883695,&lt;br /&gt; &amp;quot;ILS&amp;quot;:0.0320926,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.00822592&lt;br /&gt; },&lt;br /&gt; &amp;quot;USD&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:610.601,&lt;br /&gt; &amp;quot;HKD&amp;quot;:7.84766,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.27347,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1147.78,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.708659,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.800446,&lt;br /&gt; &amp;quot;MXN&amp;quot;:21.748,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.6731,&lt;br /&gt; &amp;quot;INR&amp;quot;:67.3135,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.69154E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:113.161,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.0,&lt;br /&gt; &amp;quot;ILS&amp;quot;:3.55495,&lt;br /&gt; &amp;quot;EUR&amp;quot;:0.930886&lt;br /&gt; },&lt;br /&gt; &amp;quot;ILS&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:155.925,&lt;br /&gt; &amp;quot;HKD&amp;quot;:2.16985,&lt;br /&gt; &amp;quot;AUD&amp;quot;:0.352661,&lt;br /&gt; &amp;quot;KRW&amp;quot;:315.903,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.199196,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.212763,&lt;br /&gt; &amp;quot;MXN&amp;quot;:6.4871,&lt;br /&gt; &amp;quot;AED&amp;quot;:1.03302,&lt;br /&gt; &amp;quot;INR&amp;quot;:17.9609,&lt;br /&gt; &amp;quot;XBT&amp;quot;:5.452272147E-6,&lt;br /&gt; &amp;quot;JPY&amp;quot;:31.1599,&lt;br /&gt; &amp;quot;USD&amp;quot;:0.281298,&lt;br /&gt; &amp;quot;ILS&amp;quot;:1.0,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.19318&lt;br /&gt; },&lt;br /&gt; &amp;quot;EUR&amp;quot;:{&lt;br /&gt; &amp;quot;XAF&amp;quot;:655.957,&lt;br /&gt; &amp;quot;HKD&amp;quot;:8.88926,&lt;br /&gt; &amp;quot;AUD&amp;quot;:1.49707,&lt;br /&gt; &amp;quot;KRW&amp;quot;:1233.03,&lt;br /&gt; &amp;quot;JOD&amp;quot;:0.838098,&lt;br /&gt; &amp;quot;GBP&amp;quot;:0.860011,&lt;br /&gt; &amp;quot;MXN&amp;quot;:26.0359,&lt;br /&gt; &amp;quot;AED&amp;quot;:3.94594,&lt;br /&gt; &amp;quot;INR&amp;quot;:72.3136,&lt;br /&gt; &amp;quot;XBT&amp;quot;:1.9087905636E-5,&lt;br /&gt; &amp;quot;JPY&amp;quot;:121.567,&lt;br /&gt; &amp;quot;USD&amp;quot;:1.07428,&lt;br /&gt; &amp;quot;ILS&amp;quot;:4.20494,&lt;br /&gt; &amp;quot;EUR&amp;quot;:1.0&lt;br /&gt; }&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Transaction Requests satisfy PSD2 requirements thus:&lt;/p&gt; &lt;p&gt;1) A transaction can be initiated by a third party application.&lt;/p&gt; &lt;p&gt;2) The customer is informed of the charge that will incurred.&lt;/p&gt; &lt;p&gt;3) The call supports delegated authentication (OAuth)&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/Hello-OBP-DirectLogin-Python/blob/master/hello_payments.py\&quot;&gt;this python code&lt;/a&gt; for a complete example of this flow.&lt;/p&gt; &lt;p&gt;There is further documentation &lt;a href&#x3D;\&quot;https://github.com/OpenBankProject/OBP-API/wiki/Transaction-Requests\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sandbox_tan\&quot;&gt;SANDBOX_TAN&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String viewid = "viewid_example"; // String | The VIEWID identifier
+        String sandboxtan = "sandboxtan_example"; // String | The SANDBOXTAN identifier
+        CreateTransactionRequestAccountRequest createTransactionRequestAccountRequest = new CreateTransactionRequestAccountRequest(); // CreateTransactionRequestAccountRequest | Request body
+        try {
+            ApiResponse<GetTransactionRequestById200Response> response = apiInstance.createTransactionRequestSandboxTanWithHttpInfo(bankid, accountid, viewid, sandboxtan, createTransactionRequestAccountRequest);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSandboxTan");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **viewid** | **String**| The VIEWID identifier | |
+| **sandboxtan** | **String**| The SANDBOXTAN identifier | |
+| **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | |
+
+### Return type
+
+ApiResponse<[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## createTransactionRequestSepa
+
+> CreateTransactionRequestCounterparty200Response createTransactionRequestSepa(bankid, accountid, viewid, sepa, createTransactionRequestSepaRequest)
 
 Create Transaction Request (SEPA)
 
@@ -1957,7 +2519,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1980,12 +2542,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String sepa = "sepa_example"; // String | The SEPA identifier
-        OBPv400CreateTransactionRequestSepaRequest obPv400CreateTransactionRequestSepaRequest = new OBPv400CreateTransactionRequestSepaRequest(); // OBPv400CreateTransactionRequestSepaRequest | Request body
+        CreateTransactionRequestSepaRequest createTransactionRequestSepaRequest = new CreateTransactionRequestSepaRequest(); // CreateTransactionRequestSepaRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestSepa(bankid, accountid, viewid, sepa, obPv400CreateTransactionRequestSepaRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestSepa(bankid, accountid, viewid, sepa, createTransactionRequestSepaRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestSepa");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSepa");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2004,11 +2566,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **sepa** | **String**| The SEPA identifier | |
-| **obPv400CreateTransactionRequestSepaRequest** | [**OBPv400CreateTransactionRequestSepaRequest**](OBPv400CreateTransactionRequestSepaRequest.md)| Request body | |
+| **createTransactionRequestSepaRequest** | [**CreateTransactionRequestSepaRequest**](CreateTransactionRequestSepaRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -2028,9 +2590,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestSepaWithHttpInfo
+## createTransactionRequestSepaWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestSepa oBPv400CreateTransactionRequestSepaWithHttpInfo(bankid, accountid, viewid, sepa, obPv400CreateTransactionRequestSepaRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestSepa createTransactionRequestSepaWithHttpInfo(bankid, accountid, viewid, sepa, createTransactionRequestSepaRequest)
 
 Create Transaction Request (SEPA)
 
@@ -2051,7 +2613,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2074,14 +2636,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String sepa = "sepa_example"; // String | The SEPA identifier
-        OBPv400CreateTransactionRequestSepaRequest obPv400CreateTransactionRequestSepaRequest = new OBPv400CreateTransactionRequestSepaRequest(); // OBPv400CreateTransactionRequestSepaRequest | Request body
+        CreateTransactionRequestSepaRequest createTransactionRequestSepaRequest = new CreateTransactionRequestSepaRequest(); // CreateTransactionRequestSepaRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestSepaWithHttpInfo(bankid, accountid, viewid, sepa, obPv400CreateTransactionRequestSepaRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestSepaWithHttpInfo(bankid, accountid, viewid, sepa, createTransactionRequestSepaRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestSepa");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSepa");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2100,11 +2662,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **sepa** | **String**| The SEPA identifier | |
-| **obPv400CreateTransactionRequestSepaRequest** | [**OBPv400CreateTransactionRequestSepaRequest**](OBPv400CreateTransactionRequestSepaRequest.md)| Request body | |
+| **createTransactionRequestSepaRequest** | [**CreateTransactionRequestSepaRequest**](CreateTransactionRequestSepaRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -2125,9 +2687,9 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestSimple
+## createTransactionRequestSimple
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv400CreateTransactionRequestSimple(bankid, accountid, viewid, simple, obPv400CreateTransactionRequestSimpleRequest)
+> CreateTransactionRequestCounterparty200Response createTransactionRequestSimple(bankid, accountid, viewid, simple, createTransactionRequestSimpleRequest)
 
 Create Transaction Request (SIMPLE)
 
@@ -2147,7 +2709,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2170,12 +2732,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String simple = "simple_example"; // String | The SIMPLE identifier
-        OBPv400CreateTransactionRequestSimpleRequest obPv400CreateTransactionRequestSimpleRequest = new OBPv400CreateTransactionRequestSimpleRequest(); // OBPv400CreateTransactionRequestSimpleRequest | Request body
+        CreateTransactionRequestSimpleRequest createTransactionRequestSimpleRequest = new CreateTransactionRequestSimpleRequest(); // CreateTransactionRequestSimpleRequest | Request body
         try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv400CreateTransactionRequestSimple(bankid, accountid, viewid, simple, obPv400CreateTransactionRequestSimpleRequest);
+            CreateTransactionRequestCounterparty200Response result = apiInstance.createTransactionRequestSimple(bankid, accountid, viewid, simple, createTransactionRequestSimpleRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestSimple");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSimple");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2194,11 +2756,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **simple** | **String**| The SIMPLE identifier | |
-| **obPv400CreateTransactionRequestSimpleRequest** | [**OBPv400CreateTransactionRequestSimpleRequest**](OBPv400CreateTransactionRequestSimpleRequest.md)| Request body | |
+| **createTransactionRequestSimpleRequest** | [**CreateTransactionRequestSimpleRequest**](CreateTransactionRequestSimpleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 
 ### Authorization
@@ -2218,9 +2780,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestSimpleWithHttpInfo
+## createTransactionRequestSimpleWithHttpInfo
 
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv400CreateTransactionRequestSimple oBPv400CreateTransactionRequestSimpleWithHttpInfo(bankid, accountid, viewid, simple, obPv400CreateTransactionRequestSimpleRequest)
+> ApiResponse<CreateTransactionRequestCounterparty200Response> createTransactionRequestSimple createTransactionRequestSimpleWithHttpInfo(bankid, accountid, viewid, simple, createTransactionRequestSimpleRequest)
 
 Create Transaction Request (SIMPLE)
 
@@ -2241,7 +2803,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2264,14 +2826,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String simple = "simple_example"; // String | The SIMPLE identifier
-        OBPv400CreateTransactionRequestSimpleRequest obPv400CreateTransactionRequestSimpleRequest = new OBPv400CreateTransactionRequestSimpleRequest(); // OBPv400CreateTransactionRequestSimpleRequest | Request body
+        CreateTransactionRequestSimpleRequest createTransactionRequestSimpleRequest = new CreateTransactionRequestSimpleRequest(); // CreateTransactionRequestSimpleRequest | Request body
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv400CreateTransactionRequestSimpleWithHttpInfo(bankid, accountid, viewid, simple, obPv400CreateTransactionRequestSimpleRequest);
+            ApiResponse<CreateTransactionRequestCounterparty200Response> response = apiInstance.createTransactionRequestSimpleWithHttpInfo(bankid, accountid, viewid, simple, createTransactionRequestSimpleRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400CreateTransactionRequestSimple");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#createTransactionRequestSimple");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2290,11 +2852,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
 | **simple** | **String**| The SIMPLE identifier | |
-| **obPv400CreateTransactionRequestSimpleRequest** | [**OBPv400CreateTransactionRequestSimpleRequest**](OBPv400CreateTransactionRequestSimpleRequest.md)| Request body | |
+| **createTransactionRequestSimpleRequest** | [**CreateTransactionRequestSimpleRequest**](CreateTransactionRequestSimpleRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)>
 
 
 ### Authorization
@@ -2315,9 +2877,9 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetCounterpartiesForAnyAccount
+## getCounterpartiesForAnyAccount
 
-> OBPv400GetCounterpartiesForAnyAccount200Response oBPv400GetCounterpartiesForAnyAccount(bankid, accountid, viewid)
+> GetCounterpartiesForAnyAccount200Response getCounterpartiesForAnyAccount(bankid, accountid, viewid)
 
 Get Counterparties for any account (Explicit)
 
@@ -2337,7 +2899,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2360,10 +2922,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            OBPv400GetCounterpartiesForAnyAccount200Response result = apiInstance.oBPv400GetCounterpartiesForAnyAccount(bankid, accountid, viewid);
+            GetCounterpartiesForAnyAccount200Response result = apiInstance.getCounterpartiesForAnyAccount(bankid, accountid, viewid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetCounterpartiesForAnyAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getCounterpartiesForAnyAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2384,7 +2946,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
 
 
 ### Authorization
@@ -2403,9 +2965,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetCounterpartiesForAnyAccountWithHttpInfo
+## getCounterpartiesForAnyAccountWithHttpInfo
 
-> ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response> oBPv400GetCounterpartiesForAnyAccount oBPv400GetCounterpartiesForAnyAccountWithHttpInfo(bankid, accountid, viewid)
+> ApiResponse<GetCounterpartiesForAnyAccount200Response> getCounterpartiesForAnyAccount getCounterpartiesForAnyAccountWithHttpInfo(bankid, accountid, viewid)
 
 Get Counterparties for any account (Explicit)
 
@@ -2426,7 +2988,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2449,12 +3011,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response> response = apiInstance.oBPv400GetCounterpartiesForAnyAccountWithHttpInfo(bankid, accountid, viewid);
+            ApiResponse<GetCounterpartiesForAnyAccount200Response> response = apiInstance.getCounterpartiesForAnyAccountWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetCounterpartiesForAnyAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getCounterpartiesForAnyAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2475,7 +3037,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)>
+ApiResponse<[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)>
 
 
 ### Authorization
@@ -2495,9 +3057,9 @@ ApiResponse<[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCou
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetExplicitCounterpartiesForAccount
+## getExplicitCounterpartiesForAccount
 
-> OBPv400GetCounterpartiesForAnyAccount200Response oBPv400GetExplicitCounterpartiesForAccount(bankid, accountid, viewid)
+> GetCounterpartiesForAnyAccount200Response getExplicitCounterpartiesForAccount(bankid, accountid, viewid)
 
 Get Counterparties (Explicit)
 
@@ -2517,7 +3079,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2540,10 +3102,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            OBPv400GetCounterpartiesForAnyAccount200Response result = apiInstance.oBPv400GetExplicitCounterpartiesForAccount(bankid, accountid, viewid);
+            GetCounterpartiesForAnyAccount200Response result = apiInstance.getExplicitCounterpartiesForAccount(bankid, accountid, viewid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetExplicitCounterpartiesForAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getExplicitCounterpartiesForAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2564,7 +3126,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)
+[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)
 
 
 ### Authorization
@@ -2583,9 +3145,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo
+## getExplicitCounterpartiesForAccountWithHttpInfo
 
-> ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response> oBPv400GetExplicitCounterpartiesForAccount oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo(bankid, accountid, viewid)
+> ApiResponse<GetCounterpartiesForAnyAccount200Response> getExplicitCounterpartiesForAccount getExplicitCounterpartiesForAccountWithHttpInfo(bankid, accountid, viewid)
 
 Get Counterparties (Explicit)
 
@@ -2606,7 +3168,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2629,12 +3191,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv400GetCounterpartiesForAnyAccount200Response> response = apiInstance.oBPv400GetExplicitCounterpartiesForAccountWithHttpInfo(bankid, accountid, viewid);
+            ApiResponse<GetCounterpartiesForAnyAccount200Response> response = apiInstance.getExplicitCounterpartiesForAccountWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetExplicitCounterpartiesForAccount");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getExplicitCounterpartiesForAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2655,7 +3217,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCounterpartiesForAnyAccount200Response.md)>
+ApiResponse<[**GetCounterpartiesForAnyAccount200Response**](GetCounterpartiesForAnyAccount200Response.md)>
 
 
 ### Authorization
@@ -2675,9 +3237,9 @@ ApiResponse<[**OBPv400GetCounterpartiesForAnyAccount200Response**](OBPv400GetCou
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetExplicitCounterpartyById
+## getExplicitCounterpartyById
 
-> OBPv400GetExplicitCounterpartyById200Response oBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid)
+> GetExplicitCounterpartyById200Response getExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty by Id (Explicit)
 
@@ -2697,7 +3259,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2721,10 +3283,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String counterpartyid = "counterpartyid_example"; // String | The COUNTERPARTYID identifier
         try {
-            OBPv400GetExplicitCounterpartyById200Response result = apiInstance.oBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
+            GetExplicitCounterpartyById200Response result = apiInstance.getExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetExplicitCounterpartyById");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getExplicitCounterpartyById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2746,7 +3308,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 
 ### Authorization
@@ -2765,9 +3327,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetExplicitCounterpartyByIdWithHttpInfo
+## getExplicitCounterpartyByIdWithHttpInfo
 
-> ApiResponse<OBPv400GetExplicitCounterpartyById200Response> oBPv400GetExplicitCounterpartyById oBPv400GetExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid)
+> ApiResponse<GetExplicitCounterpartyById200Response> getExplicitCounterpartyById getExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty by Id (Explicit)
 
@@ -2788,7 +3350,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2812,12 +3374,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String counterpartyid = "counterpartyid_example"; // String | The COUNTERPARTYID identifier
         try {
-            ApiResponse<OBPv400GetExplicitCounterpartyById200Response> response = apiInstance.oBPv400GetExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid);
+            ApiResponse<GetExplicitCounterpartyById200Response> response = apiInstance.getExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetExplicitCounterpartyById");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getExplicitCounterpartyById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2839,7 +3401,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)>
+ApiResponse<[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)>
 
 
 ### Authorization
@@ -2859,9 +3421,9 @@ ApiResponse<[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplic
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetTransactionRequest
+## getTransactionRequest
 
-> OBPv510GetTransactionRequestById200Response oBPv400GetTransactionRequest(bankid, accountid, viewid, transactionrequestid)
+> GetTransactionRequestById200Response getTransactionRequest(bankid, accountid, viewid, transactionrequestid)
 
 Get Transaction Request
 
@@ -2881,7 +3443,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2905,10 +3467,10 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            OBPv510GetTransactionRequestById200Response result = apiInstance.oBPv400GetTransactionRequest(bankid, accountid, viewid, transactionrequestid);
+            GetTransactionRequestById200Response result = apiInstance.getTransactionRequest(bankid, accountid, viewid, transactionrequestid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetTransactionRequest");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -2930,7 +3492,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 
 ### Authorization
@@ -2949,9 +3511,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetTransactionRequestWithHttpInfo
+## getTransactionRequestWithHttpInfo
 
-> ApiResponse<OBPv510GetTransactionRequestById200Response> oBPv400GetTransactionRequest oBPv400GetTransactionRequestWithHttpInfo(bankid, accountid, viewid, transactionrequestid)
+> ApiResponse<GetTransactionRequestById200Response> getTransactionRequest getTransactionRequestWithHttpInfo(bankid, accountid, viewid, transactionrequestid)
 
 Get Transaction Request
 
@@ -2972,7 +3534,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2996,12 +3558,12 @@ public class Example {
         String viewid = "viewid_example"; // String | The VIEWID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            ApiResponse<OBPv510GetTransactionRequestById200Response> response = apiInstance.oBPv400GetTransactionRequestWithHttpInfo(bankid, accountid, viewid, transactionrequestid);
+            ApiResponse<GetTransactionRequestById200Response> response = apiInstance.getTransactionRequestWithHttpInfo(bankid, accountid, viewid, transactionrequestid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv400GetTransactionRequest");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3023,7 +3585,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)>
+ApiResponse<[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)>
 
 
 ### Authorization
@@ -3043,9 +3605,9 @@ ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransact
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetTransactionRequestById
+## getTransactionRequestById
 
-> OBPv510GetTransactionRequestById200Response oBPv510GetTransactionRequestById(transactionrequestid)
+> GetTransactionRequestById200Response getTransactionRequestById(transactionrequestid)
 
 Get Transaction Request by ID
 
@@ -3065,7 +3627,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3086,10 +3648,10 @@ public class Example {
         PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            OBPv510GetTransactionRequestById200Response result = apiInstance.oBPv510GetTransactionRequestById(transactionrequestid);
+            GetTransactionRequestById200Response result = apiInstance.getTransactionRequestById(transactionrequestid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv510GetTransactionRequestById");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequestById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3108,7 +3670,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 
 ### Authorization
@@ -3126,9 +3688,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetTransactionRequestByIdWithHttpInfo
+## getTransactionRequestByIdWithHttpInfo
 
-> ApiResponse<OBPv510GetTransactionRequestById200Response> oBPv510GetTransactionRequestById oBPv510GetTransactionRequestByIdWithHttpInfo(transactionrequestid)
+> ApiResponse<GetTransactionRequestById200Response> getTransactionRequestById getTransactionRequestByIdWithHttpInfo(transactionrequestid)
 
 Get Transaction Request by ID
 
@@ -3149,7 +3711,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3170,12 +3732,12 @@ public class Example {
         PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            ApiResponse<OBPv510GetTransactionRequestById200Response> response = apiInstance.oBPv510GetTransactionRequestByIdWithHttpInfo(transactionrequestid);
+            ApiResponse<GetTransactionRequestById200Response> response = apiInstance.getTransactionRequestByIdWithHttpInfo(transactionrequestid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv510GetTransactionRequestById");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequestById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3194,7 +3756,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)>
+ApiResponse<[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)>
 
 
 ### Authorization
@@ -3213,13 +3775,13 @@ ApiResponse<[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransact
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510GetTransactionRequests
+## getTransactionRequestTypes
 
-> OBPv510GetTransactionRequests200Response oBPv510GetTransactionRequests(bankid, accountid, viewid)
+> GetTransactionRequestTypes200Response getTransactionRequestTypes(bankid, accountid, viewid)
 
-Get Transaction Requests
+Get Transaction Request Types for Account
 
-&lt;p&gt;Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.&lt;/p&gt; &lt;p&gt;The VIEW_ID specified must be &#39;owner&#39; and the user must have access to this view.&lt;/p&gt; &lt;p&gt;Version 2.0.0 now returns charge information.&lt;/p&gt; &lt;p&gt;Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Transaction Request Id&lt;/li&gt; &lt;li&gt;Type&lt;/li&gt; &lt;li&gt;Status (INITIATED, COMPLETED)&lt;/li&gt; &lt;li&gt;Challenge (in order to confirm the request)&lt;/li&gt; &lt;li&gt;From Bank / Account&lt;/li&gt; &lt;li&gt;Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)&lt;/li&gt; &lt;li&gt;Related Transactions&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;PSD2 Context: PSD2 requires transparency of charges to the customer.&lt;br /&gt; This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.&lt;br /&gt; The customer can proceed with the Transaction by answering the security challenge.&lt;/p&gt; &lt;p&gt;We support query transaction request by attribute&lt;br /&gt; URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber&#x3D;123&amp;amp;referenceNumber&#x3D;456&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_requests_with_charges\&quot;&gt;&lt;strong&gt;transaction_requests_with_charges&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.&lt;/p&gt; &lt;p&gt;These are the ways this API Server can create a Transaction via a Transaction Request&lt;br /&gt; (as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)&lt;/p&gt; &lt;p&gt;A Transaction Request Type internally determines:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;the required Transaction Request &#39;body&#39; i.e. fields that define the &#39;what&#39; and &#39;to&#39; of a Transaction Request,&lt;/li&gt; &lt;li&gt;the type of security challenge that may be be raised before the Transaction Request proceeds, and&lt;/li&gt; &lt;li&gt;the threshold of that challenge.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For instance in a &#39;SANDBOX_TAN&#39; Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.&lt;/p&gt; &lt;p&gt;This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
 
 ### Example
 
@@ -3235,7 +3797,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3258,10 +3820,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            OBPv510GetTransactionRequests200Response result = apiInstance.oBPv510GetTransactionRequests(bankid, accountid, viewid);
+            GetTransactionRequestTypes200Response result = apiInstance.getTransactionRequestTypes(bankid, accountid, viewid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv510GetTransactionRequests");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequestTypes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3282,7 +3844,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv510GetTransactionRequests200Response**](OBPv510GetTransactionRequests200Response.md)
+[**GetTransactionRequestTypes200Response**](GetTransactionRequestTypes200Response.md)
 
 
 ### Authorization
@@ -3298,16 +3860,17 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510GetTransactionRequestsWithHttpInfo
+## getTransactionRequestTypesWithHttpInfo
 
-> ApiResponse<OBPv510GetTransactionRequests200Response> oBPv510GetTransactionRequests oBPv510GetTransactionRequestsWithHttpInfo(bankid, accountid, viewid)
+> ApiResponse<GetTransactionRequestTypes200Response> getTransactionRequestTypes getTransactionRequestTypesWithHttpInfo(bankid, accountid, viewid)
 
-Get Transaction Requests
+Get Transaction Request Types for Account
 
-&lt;p&gt;Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.&lt;/p&gt; &lt;p&gt;The VIEW_ID specified must be &#39;owner&#39; and the user must have access to this view.&lt;/p&gt; &lt;p&gt;Version 2.0.0 now returns charge information.&lt;/p&gt; &lt;p&gt;Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Transaction Request Id&lt;/li&gt; &lt;li&gt;Type&lt;/li&gt; &lt;li&gt;Status (INITIATED, COMPLETED)&lt;/li&gt; &lt;li&gt;Challenge (in order to confirm the request)&lt;/li&gt; &lt;li&gt;From Bank / Account&lt;/li&gt; &lt;li&gt;Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)&lt;/li&gt; &lt;li&gt;Related Transactions&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;PSD2 Context: PSD2 requires transparency of charges to the customer.&lt;br /&gt; This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.&lt;br /&gt; The customer can proceed with the Transaction by answering the security challenge.&lt;/p&gt; &lt;p&gt;We support query transaction request by attribute&lt;br /&gt; URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber&#x3D;123&amp;amp;referenceNumber&#x3D;456&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_requests_with_charges\&quot;&gt;&lt;strong&gt;transaction_requests_with_charges&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.&lt;/p&gt; &lt;p&gt;These are the ways this API Server can create a Transaction via a Transaction Request&lt;br /&gt; (as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)&lt;/p&gt; &lt;p&gt;A Transaction Request Type internally determines:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;the required Transaction Request &#39;body&#39; i.e. fields that define the &#39;what&#39; and &#39;to&#39; of a Transaction Request,&lt;/li&gt; &lt;li&gt;the type of security challenge that may be be raised before the Transaction Request proceeds, and&lt;/li&gt; &lt;li&gt;the threshold of that challenge.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For instance in a &#39;SANDBOX_TAN&#39; Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.&lt;/p&gt; &lt;p&gt;This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
 
 ### Example
 
@@ -3324,7 +3887,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3347,12 +3910,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv510GetTransactionRequests200Response> response = apiInstance.oBPv510GetTransactionRequestsWithHttpInfo(bankid, accountid, viewid);
+            ApiResponse<GetTransactionRequestTypes200Response> response = apiInstance.getTransactionRequestTypesWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv510GetTransactionRequests");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequestTypes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3373,7 +3936,97 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv510GetTransactionRequests200Response**](OBPv510GetTransactionRequests200Response.md)>
+ApiResponse<[**GetTransactionRequestTypes200Response**](GetTransactionRequestTypes200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## getTransactionRequests
+
+> GetTransactionRequests200Response getTransactionRequests(bankid, accountid, viewid)
+
+Get Transaction Requests
+
+&lt;p&gt;Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.&lt;/p&gt; &lt;p&gt;The VIEW_ID specified must be &#39;owner&#39; and the user must have access to this view.&lt;/p&gt; &lt;p&gt;Version 2.0.0 now returns charge information.&lt;/p&gt; &lt;p&gt;Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Transaction Request Id&lt;/li&gt; &lt;li&gt;Type&lt;/li&gt; &lt;li&gt;Status (INITIATED, COMPLETED)&lt;/li&gt; &lt;li&gt;Challenge (in order to confirm the request)&lt;/li&gt; &lt;li&gt;From Bank / Account&lt;/li&gt; &lt;li&gt;Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)&lt;/li&gt; &lt;li&gt;Related Transactions&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;PSD2 Context: PSD2 requires transparency of charges to the customer.&lt;br /&gt; This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.&lt;br /&gt; The customer can proceed with the Transaction by answering the security challenge.&lt;/p&gt; &lt;p&gt;We support query transaction request by attribute&lt;br /&gt; URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber&#x3D;123&amp;amp;referenceNumber&#x3D;456&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_requests_with_charges\&quot;&gt;&lt;strong&gt;transaction_requests_with_charges&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.PaymentInitiationServicePisApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
+        String viewid = "viewid_example"; // String | The VIEWID identifier
+        try {
+            GetTransactionRequests200Response result = apiInstance.getTransactionRequests(bankid, accountid, viewid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequests");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+| **accountid** | **String**| The ACCOUNTID identifier | |
+| **viewid** | **String**| The VIEWID identifier | |
+
+### Return type
+
+[**GetTransactionRequests200Response**](GetTransactionRequests200Response.md)
 
 
 ### Authorization
@@ -3392,105 +4045,13 @@ ApiResponse<[**OBPv510GetTransactionRequests200Response**](OBPv510GetTransaction
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
+## getTransactionRequestsWithHttpInfo
 
-## oBPv600CreateTransactionRequestCardano
+> ApiResponse<GetTransactionRequests200Response> getTransactionRequests getTransactionRequestsWithHttpInfo(bankid, accountid, viewid)
 
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv600CreateTransactionRequestCardano(bankid, accountid, cardano, obPv600CreateTransactionRequestCardanoRequest)
+Get Transaction Requests
 
-Create Transaction Request (CARDANO)
-
-&lt;p&gt;For sandbox mode, it will use the Cardano Preprod Network.&lt;br /&gt; The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARDANO&lt;/a&gt;: CARDANO&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;asset_name&lt;/strong&gt;&lt;/a&gt;: asset_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;passphrase&lt;/strong&gt;&lt;/a&gt;: passphrase&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy_id&lt;/strong&gt;&lt;/a&gt;: policy_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;quantity&lt;/strong&gt;&lt;/a&gt;: quantity&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;unit&lt;/strong&gt;&lt;/a&gt;: unit&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;assets&lt;/a&gt;: assets&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;metadata&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String cardano = "cardano_example"; // String | The CARDANO identifier
-        OBPv600CreateTransactionRequestCardanoRequest obPv600CreateTransactionRequestCardanoRequest = new OBPv600CreateTransactionRequestCardanoRequest(); // OBPv600CreateTransactionRequestCardanoRequest | Request body
-        try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv600CreateTransactionRequestCardano(bankid, accountid, cardano, obPv600CreateTransactionRequestCardanoRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestCardano");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **cardano** | **String**| The CARDANO identifier | |
-| **obPv600CreateTransactionRequestCardanoRequest** | [**OBPv600CreateTransactionRequestCardanoRequest**](OBPv600CreateTransactionRequestCardanoRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv600CreateTransactionRequestCardanoWithHttpInfo
-
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv600CreateTransactionRequestCardano oBPv600CreateTransactionRequestCardanoWithHttpInfo(bankid, accountid, cardano, obPv600CreateTransactionRequestCardanoRequest)
-
-Create Transaction Request (CARDANO)
-
-&lt;p&gt;For sandbox mode, it will use the Cardano Preprod Network.&lt;br /&gt; The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CARDANO&lt;/a&gt;: CARDANO&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;asset_name&lt;/strong&gt;&lt;/a&gt;: asset_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;passphrase&lt;/strong&gt;&lt;/a&gt;: passphrase&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;policy_id&lt;/strong&gt;&lt;/a&gt;: policy_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;quantity&lt;/strong&gt;&lt;/a&gt;: quantity&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;unit&lt;/strong&gt;&lt;/a&gt;: unit&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;assets&lt;/a&gt;: assets&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;metadata&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
+&lt;p&gt;Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.&lt;/p&gt; &lt;p&gt;The VIEW_ID specified must be &#39;owner&#39; and the user must have access to this view.&lt;/p&gt; &lt;p&gt;Version 2.0.0 now returns charge information.&lt;/p&gt; &lt;p&gt;Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Transaction Request Id&lt;/li&gt; &lt;li&gt;Type&lt;/li&gt; &lt;li&gt;Status (INITIATED, COMPLETED)&lt;/li&gt; &lt;li&gt;Challenge (in order to confirm the request)&lt;/li&gt; &lt;li&gt;From Bank / Account&lt;/li&gt; &lt;li&gt;Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)&lt;/li&gt; &lt;li&gt;Related Transactions&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;PSD2 Context: PSD2 requires transparency of charges to the customer.&lt;br /&gt; This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.&lt;br /&gt; The customer can proceed with the Transaction by answering the security challenge.&lt;/p&gt; &lt;p&gt;We support query transaction request by attribute&lt;br /&gt; URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber&#x3D;123&amp;amp;referenceNumber&#x3D;456&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge\&quot;&gt;&lt;strong&gt;challenge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_requests_with_charges\&quot;&gt;&lt;strong&gt;transaction_requests_with_charges&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
 
 ### Example
 
@@ -3507,7 +4068,7 @@ import com.openbankproject.api.PaymentInitiationServicePisApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -3528,15 +4089,14 @@ public class Example {
         PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String cardano = "cardano_example"; // String | The CARDANO identifier
-        OBPv600CreateTransactionRequestCardanoRequest obPv600CreateTransactionRequestCardanoRequest = new OBPv600CreateTransactionRequestCardanoRequest(); // OBPv600CreateTransactionRequestCardanoRequest | Request body
+        String viewid = "viewid_example"; // String | The VIEWID identifier
         try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv600CreateTransactionRequestCardanoWithHttpInfo(bankid, accountid, cardano, obPv600CreateTransactionRequestCardanoRequest);
+            ApiResponse<GetTransactionRequests200Response> response = apiInstance.getTransactionRequestsWithHttpInfo(bankid, accountid, viewid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestCardano");
+            System.err.println("Exception when calling PaymentInitiationServicePisApi#getTransactionRequests");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -3553,12 +4113,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **cardano** | **String**| The CARDANO identifier | |
-| **obPv600CreateTransactionRequestCardanoRequest** | [**OBPv600CreateTransactionRequestCardanoRequest**](OBPv600CreateTransactionRequestCardanoRequest.md)| Request body | |
+| **viewid** | **String**| The VIEWID identifier | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
+ApiResponse<[**GetTransactionRequests200Response**](GetTransactionRequests200Response.md)>
 
 
 ### Authorization
@@ -3567,572 +4126,13 @@ ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv600CreateTransactionRequestEthSendRawTransaction
-
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv600CreateTransactionRequestEthSendRawTransaction(bankid, accountid, ethsendrawtransaction, obPv600CreateTransactionRequestEthSendRawTransactionRequest)
-
-CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-
-&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_RAW_TRANSACTION&lt;/a&gt;: ETH_SEND_RAW_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;params&lt;/strong&gt;&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String ethsendrawtransaction = "ethsendrawtransaction_example"; // String | The ETHSENDRAWTRANSACTION identifier
-        OBPv600CreateTransactionRequestEthSendRawTransactionRequest obPv600CreateTransactionRequestEthSendRawTransactionRequest = new OBPv600CreateTransactionRequestEthSendRawTransactionRequest(); // OBPv600CreateTransactionRequestEthSendRawTransactionRequest | Request body
-        try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv600CreateTransactionRequestEthSendRawTransaction(bankid, accountid, ethsendrawtransaction, obPv600CreateTransactionRequestEthSendRawTransactionRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestEthSendRawTransaction");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **ethsendrawtransaction** | **String**| The ETHSENDRAWTRANSACTION identifier | |
-| **obPv600CreateTransactionRequestEthSendRawTransactionRequest** | [**OBPv600CreateTransactionRequestEthSendRawTransactionRequest**](OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv600CreateTransactionRequestEthSendRawTransactionWithHttpInfo
-
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv600CreateTransactionRequestEthSendRawTransaction oBPv600CreateTransactionRequestEthSendRawTransactionWithHttpInfo(bankid, accountid, ethsendrawtransaction, obPv600CreateTransactionRequestEthSendRawTransactionRequest)
-
-CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-
-&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_RAW_TRANSACTION&lt;/a&gt;: ETH_SEND_RAW_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;params&lt;/strong&gt;&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String ethsendrawtransaction = "ethsendrawtransaction_example"; // String | The ETHSENDRAWTRANSACTION identifier
-        OBPv600CreateTransactionRequestEthSendRawTransactionRequest obPv600CreateTransactionRequestEthSendRawTransactionRequest = new OBPv600CreateTransactionRequestEthSendRawTransactionRequest(); // OBPv600CreateTransactionRequestEthSendRawTransactionRequest | Request body
-        try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv600CreateTransactionRequestEthSendRawTransactionWithHttpInfo(bankid, accountid, ethsendrawtransaction, obPv600CreateTransactionRequestEthSendRawTransactionRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestEthSendRawTransaction");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **ethsendrawtransaction** | **String**| The ETHSENDRAWTRANSACTION identifier | |
-| **obPv600CreateTransactionRequestEthSendRawTransactionRequest** | [**OBPv600CreateTransactionRequestEthSendRawTransactionRequest**](OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv600CreateTransactionRequestEthereumeSendTransaction
-
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv600CreateTransactionRequestEthereumeSendTransaction(bankid, accountid, ethsendtransaction, obPv600CreateTransactionRequestEthereumeSendTransactionRequest)
-
-Create Transaction Request (ETH_SEND_TRANSACTION)
-
-&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_TRANSACTION&lt;/a&gt;: ETH_SEND_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;params&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String ethsendtransaction = "ethsendtransaction_example"; // String | The ETHSENDTRANSACTION identifier
-        OBPv600CreateTransactionRequestEthereumeSendTransactionRequest obPv600CreateTransactionRequestEthereumeSendTransactionRequest = new OBPv600CreateTransactionRequestEthereumeSendTransactionRequest(); // OBPv600CreateTransactionRequestEthereumeSendTransactionRequest | Request body
-        try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv600CreateTransactionRequestEthereumeSendTransaction(bankid, accountid, ethsendtransaction, obPv600CreateTransactionRequestEthereumeSendTransactionRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestEthereumeSendTransaction");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **ethsendtransaction** | **String**| The ETHSENDTRANSACTION identifier | |
-| **obPv600CreateTransactionRequestEthereumeSendTransactionRequest** | [**OBPv600CreateTransactionRequestEthereumeSendTransactionRequest**](OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv600CreateTransactionRequestEthereumeSendTransactionWithHttpInfo
-
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv600CreateTransactionRequestEthereumeSendTransaction oBPv600CreateTransactionRequestEthereumeSendTransactionWithHttpInfo(bankid, accountid, ethsendtransaction, obPv600CreateTransactionRequestEthereumeSendTransactionRequest)
-
-Create Transaction Request (ETH_SEND_TRANSACTION)
-
-&lt;p&gt;Send ETH via Ethereum JSON-RPC.&lt;br /&gt; AccountId should hold the 0x address for now.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ETH_SEND_TRANSACTION&lt;/a&gt;: ETH_SEND_TRANSACTION&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;params&lt;/a&gt;: params&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String ethsendtransaction = "ethsendtransaction_example"; // String | The ETHSENDTRANSACTION identifier
-        OBPv600CreateTransactionRequestEthereumeSendTransactionRequest obPv600CreateTransactionRequestEthereumeSendTransactionRequest = new OBPv600CreateTransactionRequestEthereumeSendTransactionRequest(); // OBPv600CreateTransactionRequestEthereumeSendTransactionRequest | Request body
-        try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv600CreateTransactionRequestEthereumeSendTransactionWithHttpInfo(bankid, accountid, ethsendtransaction, obPv600CreateTransactionRequestEthereumeSendTransactionRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestEthereumeSendTransaction");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **ethsendtransaction** | **String**| The ETHSENDTRANSACTION identifier | |
-| **obPv600CreateTransactionRequestEthereumeSendTransactionRequest** | [**OBPv600CreateTransactionRequestEthereumeSendTransactionRequest**](OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv600CreateTransactionRequestHold
-
-> OBPv400CreateTransactionRequestCounterparty200Response oBPv600CreateTransactionRequestHold(bankid, accountid, hold, obPv400CreateTransactionRequestFreeFormRequest)
-
-Create Transaction Request (HOLD)
-
-&lt;p&gt;Create a transaction request to move funds from the account to its Holding Account.&lt;br /&gt; If the Holding Account does not exist, it will be created automatically.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;HOLD&lt;/a&gt;: HOLD&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String hold = "hold_example"; // String | The HOLD identifier
-        OBPv400CreateTransactionRequestFreeFormRequest obPv400CreateTransactionRequestFreeFormRequest = new OBPv400CreateTransactionRequestFreeFormRequest(); // OBPv400CreateTransactionRequestFreeFormRequest | Request body
-        try {
-            OBPv400CreateTransactionRequestCounterparty200Response result = apiInstance.oBPv600CreateTransactionRequestHold(bankid, accountid, hold, obPv400CreateTransactionRequestFreeFormRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestHold");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **hold** | **String**| The HOLD identifier | |
-| **obPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | |
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv600CreateTransactionRequestHoldWithHttpInfo
-
-> ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> oBPv600CreateTransactionRequestHold oBPv600CreateTransactionRequestHoldWithHttpInfo(bankid, accountid, hold, obPv400CreateTransactionRequestFreeFormRequest)
-
-Create Transaction Request (HOLD)
-
-&lt;p&gt;Create a transaction request to move funds from the account to its Holding Account.&lt;br /&gt; If the Holding Account does not exist, it will be created automatically.&lt;/p&gt; &lt;p&gt;For an introduction to Transaction Requests, see: &lt;a href&#x3D;\&quot;/glossary#Transaction-Request-Introduction\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;HOLD&lt;/a&gt;: HOLD&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account\&quot;&gt;&lt;strong&gt;account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;agent_number&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#allowed_attempts\&quot;&gt;&lt;strong&gt;allowed_attempts&lt;/strong&gt;&lt;/a&gt;: 5&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_number\&quot;&gt;&lt;strong&gt;branch_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#challenge_type\&quot;&gt;&lt;strong&gt;challenge_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;challenges&lt;/strong&gt;&lt;/a&gt;: challenges&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditoraccount\&quot;&gt;&lt;strong&gt;creditorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creditorname\&quot;&gt;&lt;strong&gt;creditorName&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_of_birth&lt;/strong&gt;&lt;/a&gt;: 2018-03-09&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#debtoraccount\&quot;&gt;&lt;strong&gt;debtorAccount&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#end_date\&quot;&gt;&lt;strong&gt;end_date&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from\&quot;&gt;&lt;strong&gt;from&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#future_date\&quot;&gt;&lt;strong&gt;future_date&lt;/strong&gt;&lt;/a&gt;: 20200127&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;iban&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#instructedamount\&quot;&gt;&lt;strong&gt;instructedAmount&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kyc_document\&quot;&gt;&lt;strong&gt;kyc_document&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;legal_name&lt;/strong&gt;&lt;/a&gt;: Eveline Tripman&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#link\&quot;&gt;&lt;strong&gt;link&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone_number\&quot;&gt;&lt;strong&gt;mobile_phone_number&lt;/strong&gt;&lt;/a&gt;: +49 30 901820&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#nickname\&quot;&gt;&lt;strong&gt;nickname&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherAccountSecondaryRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherAccountSecondaryRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBankRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBankRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingAddress&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingAddress&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;otherBranchRoutingScheme&lt;/strong&gt;&lt;/a&gt;: otherBranchRoutingScheme&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;start_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to\&quot;&gt;&lt;strong&gt;to&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;&lt;strong&gt;transaction_ids&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transfer_type\&quot;&gt;&lt;strong&gt;transfer_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_agent&lt;/a&gt;: to_agent&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_counterparty\&quot;&gt;to_counterparty&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sandbox_tan\&quot;&gt;to_sandbox_tan&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa\&quot;&gt;to_sepa&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_sepa_credit_transfers\&quot;&gt;to_sepa_credit_transfers&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_simple&lt;/a&gt;: to_simple&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_account\&quot;&gt;to_transfer_to_account&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_atm\&quot;&gt;to_transfer_to_atm&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_transfer_to_phone\&quot;&gt;to_transfer_to_phone&lt;/a&gt;:&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.PaymentInitiationServicePisApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        PaymentInitiationServicePisApi apiInstance = new PaymentInitiationServicePisApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        String hold = "hold_example"; // String | The HOLD identifier
-        OBPv400CreateTransactionRequestFreeFormRequest obPv400CreateTransactionRequestFreeFormRequest = new OBPv400CreateTransactionRequestFreeFormRequest(); // OBPv400CreateTransactionRequestFreeFormRequest | Request body
-        try {
-            ApiResponse<OBPv400CreateTransactionRequestCounterparty200Response> response = apiInstance.oBPv600CreateTransactionRequestHoldWithHttpInfo(bankid, accountid, hold, obPv400CreateTransactionRequestFreeFormRequest);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PaymentInitiationServicePisApi#oBPv600CreateTransactionRequestHold");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-| **accountid** | **String**| The ACCOUNTID identifier | |
-| **hold** | **String**| The HOLD identifier | |
-| **obPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | |
-
-### Return type
-
-ApiResponse<[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 

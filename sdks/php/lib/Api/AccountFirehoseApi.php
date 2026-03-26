@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class AccountFirehoseApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv300GetFirehoseTransactionsForBankAccount' => [
+        'getFastFirehoseAccountsAtOneBank' => [
             'application/json',
         ],
-        'oBPv400GetFastFirehoseAccountsAtOneBank' => [
+        'getFirehoseAccountsAtOneBank' => [
             'application/json',
         ],
-        'oBPv400GetFirehoseAccountsAtOneBank' => [
+        'getFirehoseTransactionsForBankAccount' => [
             'application/json',
         ],
     ];
@@ -133,42 +133,38 @@ class AccountFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccount
+     * Operation getFastFirehoseAccountsAtOneBank
      *
-     * Get Firehose Transactions for Account
+     * Get Fast Firehose Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response
+     * @return \OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFastFirehoseAccountsAtOneBank($bankid, string $contentType = self::contentTypes['getFastFirehoseAccountsAtOneBank'][0])
     {
-        list($response) = $this->oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->getFastFirehoseAccountsAtOneBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo
+     * Operation getFastFirehoseAccountsAtOneBankWithHttpInfo
      *
-     * Get Firehose Transactions for Account
+     * Get Fast Firehose Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFastFirehoseAccountsAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getFastFirehoseAccountsAtOneBank'][0])
     {
-        $request = $this->oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->getFastFirehoseAccountsAtOneBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -196,7 +192,7 @@ class AccountFirehoseApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response',
                         $request,
                         $response,
                     );
@@ -218,7 +214,7 @@ class AccountFirehoseApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                '\OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response',
                 $request,
                 $response,
             );
@@ -227,7 +223,7 @@ class AccountFirehoseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response',
+                        '\OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -240,21 +236,19 @@ class AccountFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountAsync
+     * Operation getFastFirehoseAccountsAtOneBankAsync
      *
-     * Get Firehose Transactions for Account
+     * Get Fast Firehose Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFastFirehoseAccountsAtOneBankAsync($bankid, string $contentType = self::contentTypes['getFastFirehoseAccountsAtOneBank'][0])
     {
-        return $this->oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->getFastFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -263,22 +257,20 @@ class AccountFirehoseApi
     }
 
     /**
-     * Operation oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo
+     * Operation getFastFirehoseAccountsAtOneBankAsyncWithHttpInfo
      *
-     * Get Firehose Transactions for Account
+     * Get Fast Firehose Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFastFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getFastFirehoseAccountsAtOneBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetFirehoseTransactionsForBankAccount200Response';
-        $request = $this->oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetFastFirehoseAccountsAtOneBank200Response';
+        $request = $this->getFastFirehoseAccountsAtOneBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -317,37 +309,629 @@ class AccountFirehoseApi
     }
 
     /**
-     * Create request for operation 'oBPv300GetFirehoseTransactionsForBankAccount'
+     * Create request for operation 'getFastFirehoseAccountsAtOneBank'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv300GetFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv300GetFirehoseTransactionsForBankAccount'][0])
+    public function getFastFirehoseAccountsAtOneBankRequest($bankid, string $contentType = self::contentTypes['getFastFirehoseAccountsAtOneBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $bankid when calling getFastFirehoseAccountsAtOneBank'
             );
         }
 
-        // verify the required parameter 'accountid' is set
-        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFirehoseAccountsAtOneBank
+     *
+     * Get Firehose Accounts at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseAccountsAtOneBank'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response
+     */
+    public function getFirehoseAccountsAtOneBank($bankid, $viewid, string $contentType = self::contentTypes['getFirehoseAccountsAtOneBank'][0])
+    {
+        list($response) = $this->getFirehoseAccountsAtOneBankWithHttpInfo($bankid, $viewid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getFirehoseAccountsAtOneBankWithHttpInfo
+     *
+     * Get Firehose Accounts at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseAccountsAtOneBank'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFirehoseAccountsAtOneBankWithHttpInfo($bankid, $viewid, string $contentType = self::contentTypes['getFirehoseAccountsAtOneBank'][0])
+    {
+        $request = $this->getFirehoseAccountsAtOneBankRequest($bankid, $viewid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFirehoseAccountsAtOneBankAsync
+     *
+     * Get Firehose Accounts at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseAccountsAtOneBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFirehoseAccountsAtOneBankAsync($bankid, $viewid, string $contentType = self::contentTypes['getFirehoseAccountsAtOneBank'][0])
+    {
+        return $this->getFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $viewid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getFirehoseAccountsAtOneBankAsyncWithHttpInfo
+     *
+     * Get Firehose Accounts at Bank
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseAccountsAtOneBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $viewid, string $contentType = self::contentTypes['getFirehoseAccountsAtOneBank'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetFirehoseAccountsAtOneBank200Response';
+        $request = $this->getFirehoseAccountsAtOneBankRequest($bankid, $viewid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFirehoseAccountsAtOneBank'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseAccountsAtOneBank'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getFirehoseAccountsAtOneBankRequest($bankid, $viewid, string $contentType = self::contentTypes['getFirehoseAccountsAtOneBank'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $bankid when calling getFirehoseAccountsAtOneBank'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv300GetFirehoseTransactionsForBankAccount'
+                'Missing the required parameter $viewid when calling getFirehoseAccountsAtOneBank'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($viewid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'viewid' . '}',
+                ObjectSerializer::toPathValue($viewid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFirehoseTransactionsForBankAccount
+     *
+     * Get Firehose Transactions for Account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response
+     */
+    public function getFirehoseTransactionsForBankAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
+    {
+        list($response) = $this->getFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getFirehoseTransactionsForBankAccountWithHttpInfo
+     *
+     * Get Firehose Transactions for Account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFirehoseTransactionsForBankAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
+    {
+        $request = $this->getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFirehoseTransactionsForBankAccountAsync
+     *
+     * Get Firehose Transactions for Account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFirehoseTransactionsForBankAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
+    {
+        return $this->getFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getFirehoseTransactionsForBankAccountAsyncWithHttpInfo
+     *
+     * Get Firehose Transactions for Account
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFirehoseTransactionsForBankAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetFirehoseTransactionsForBankAccount200Response';
+        $request = $this->getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFirehoseTransactionsForBankAccount'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $accountid The ACCOUNTID identifier (required)
+     * @param  string $viewid The VIEWID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFirehoseTransactionsForBankAccount'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getFirehoseTransactionsForBankAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getFirehoseTransactionsForBankAccount'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getFirehoseTransactionsForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'accountid' is set
+        if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $accountid when calling getFirehoseTransactionsForBankAccount'
+            );
+        }
+
+        // verify the required parameter 'viewid' is set
+        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $viewid when calling getFirehoseTransactionsForBankAccount'
             );
         }
 
@@ -428,593 +1012,9 @@ class AccountFirehoseApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetFastFirehoseAccountsAtOneBank
-     *
-     * Get Fast Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response
-     */
-    public function oBPv400GetFastFirehoseAccountsAtOneBank($bankid, string $contentType = self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'][0])
-    {
-        list($response) = $this->oBPv400GetFastFirehoseAccountsAtOneBankWithHttpInfo($bankid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400GetFastFirehoseAccountsAtOneBankWithHttpInfo
-     *
-     * Get Fast Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400GetFastFirehoseAccountsAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'][0])
-    {
-        $request = $this->oBPv400GetFastFirehoseAccountsAtOneBankRequest($bankid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400GetFastFirehoseAccountsAtOneBankAsync
-     *
-     * Get Fast Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetFastFirehoseAccountsAtOneBankAsync($bankid, string $contentType = self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'][0])
-    {
-        return $this->oBPv400GetFastFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400GetFastFirehoseAccountsAtOneBankAsyncWithHttpInfo
-     *
-     * Get Fast Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetFastFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetFastFirehoseAccountsAtOneBank200Response';
-        $request = $this->oBPv400GetFastFirehoseAccountsAtOneBankRequest($bankid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400GetFastFirehoseAccountsAtOneBank'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400GetFastFirehoseAccountsAtOneBankRequest($bankid, string $contentType = self::contentTypes['oBPv400GetFastFirehoseAccountsAtOneBank'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetFastFirehoseAccountsAtOneBank'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400GetFirehoseAccountsAtOneBank
-     *
-     * Get Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response
-     */
-    public function oBPv400GetFirehoseAccountsAtOneBank($bankid, $viewid, string $contentType = self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'][0])
-    {
-        list($response) = $this->oBPv400GetFirehoseAccountsAtOneBankWithHttpInfo($bankid, $viewid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400GetFirehoseAccountsAtOneBankWithHttpInfo
-     *
-     * Get Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400GetFirehoseAccountsAtOneBankWithHttpInfo($bankid, $viewid, string $contentType = self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'][0])
-    {
-        $request = $this->oBPv400GetFirehoseAccountsAtOneBankRequest($bankid, $viewid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400GetFirehoseAccountsAtOneBankAsync
-     *
-     * Get Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetFirehoseAccountsAtOneBankAsync($bankid, $viewid, string $contentType = self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'][0])
-    {
-        return $this->oBPv400GetFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $viewid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400GetFirehoseAccountsAtOneBankAsyncWithHttpInfo
-     *
-     * Get Firehose Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400GetFirehoseAccountsAtOneBankAsyncWithHttpInfo($bankid, $viewid, string $contentType = self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400GetFirehoseAccountsAtOneBank200Response';
-        $request = $this->oBPv400GetFirehoseAccountsAtOneBankRequest($bankid, $viewid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400GetFirehoseAccountsAtOneBank'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400GetFirehoseAccountsAtOneBankRequest($bankid, $viewid, string $contentType = self::contentTypes['oBPv400GetFirehoseAccountsAtOneBank'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetFirehoseAccountsAtOneBank'
-            );
-        }
-
-        // verify the required parameter 'viewid' is set
-        if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetFirehoseAccountsAtOneBank'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($viewid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'viewid' . '}',
-                ObjectSerializer::toPathValue($viewid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

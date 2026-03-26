@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,31 +75,31 @@ class DocumentationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv140GetBankLevelDynamicResourceDocsObp' => [
+        'getApiGlossary' => [
             'application/json',
         ],
-        'oBPv140GetResourceDocsObp' => [
+        'getBankLevelDynamicResourceDocsObp' => [
             'application/json',
         ],
-        'oBPv140GetResourceDocsOpenAPI31' => [
+        'getMessageDocs' => [
             'application/json',
         ],
-        'oBPv140GetResourceDocsSwagger' => [
+        'getMessageDocsJsonSchema' => [
             'application/json',
         ],
-        'oBPv220GetMessageDocs' => [
+        'getMessageDocsSwagger' => [
             'application/json',
         ],
-        'oBPv300GetApiGlossary' => [
+        'getResourceDocsObp' => [
             'application/json',
         ],
-        'oBPv310GetMessageDocsSwagger' => [
+        'getResourceDocsOpenAPI31' => [
             'application/json',
         ],
-        'oBPv600GetMessageDocsJsonSchema' => [
+        'getResourceDocsSwagger' => [
             'application/json',
         ],
-        'oBPv600GetScannedApiVersions' => [
+        'getScannedApiVersions' => [
             'application/json',
         ],
     ];
@@ -151,39 +151,287 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv140GetBankLevelDynamicResourceDocsObp
+     * Operation getApiGlossary
+     *
+     * Get Glossary of the API
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiGlossary'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetApiGlossary200Response
+     */
+    public function getApiGlossary(string $contentType = self::contentTypes['getApiGlossary'][0])
+    {
+        list($response) = $this->getApiGlossaryWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getApiGlossaryWithHttpInfo
+     *
+     * Get Glossary of the API
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiGlossary'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetApiGlossary200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getApiGlossaryWithHttpInfo(string $contentType = self::contentTypes['getApiGlossary'][0])
+    {
+        $request = $this->getApiGlossaryRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetApiGlossary200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetApiGlossary200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetApiGlossary200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getApiGlossaryAsync
+     *
+     * Get Glossary of the API
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiGlossary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiGlossaryAsync(string $contentType = self::contentTypes['getApiGlossary'][0])
+    {
+        return $this->getApiGlossaryAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getApiGlossaryAsyncWithHttpInfo
+     *
+     * Get Glossary of the API
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiGlossary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiGlossaryAsyncWithHttpInfo(string $contentType = self::contentTypes['getApiGlossary'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetApiGlossary200Response';
+        $request = $this->getApiGlossaryRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getApiGlossary'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiGlossary'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getApiGlossaryRequest(string $contentType = self::contentTypes['getApiGlossary'][0])
+    {
+
+
+        $resourcePath = '/obp/v3.0.0/api/glossary';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getBankLevelDynamicResourceDocsObp
      *
      * Get Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv140GetBankLevelDynamicResourceDocsObp($bankid, $apiversion, string $contentType = self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'][0])
+    public function getBankLevelDynamicResourceDocsObp($bankid, $apiversion, string $contentType = self::contentTypes['getBankLevelDynamicResourceDocsObp'][0])
     {
-        $this->oBPv140GetBankLevelDynamicResourceDocsObpWithHttpInfo($bankid, $apiversion, $contentType);
+        $this->getBankLevelDynamicResourceDocsObpWithHttpInfo($bankid, $apiversion, $contentType);
     }
 
     /**
-     * Operation oBPv140GetBankLevelDynamicResourceDocsObpWithHttpInfo
+     * Operation getBankLevelDynamicResourceDocsObpWithHttpInfo
      *
      * Get Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv140GetBankLevelDynamicResourceDocsObpWithHttpInfo($bankid, $apiversion, string $contentType = self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'][0])
+    public function getBankLevelDynamicResourceDocsObpWithHttpInfo($bankid, $apiversion, string $contentType = self::contentTypes['getBankLevelDynamicResourceDocsObp'][0])
     {
-        $request = $this->oBPv140GetBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, $contentType);
+        $request = $this->getBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -219,20 +467,20 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv140GetBankLevelDynamicResourceDocsObpAsync
+     * Operation getBankLevelDynamicResourceDocsObpAsync
      *
      * Get Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv140GetBankLevelDynamicResourceDocsObpAsync($bankid, $apiversion, string $contentType = self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'][0])
+    public function getBankLevelDynamicResourceDocsObpAsync($bankid, $apiversion, string $contentType = self::contentTypes['getBankLevelDynamicResourceDocsObp'][0])
     {
-        return $this->oBPv140GetBankLevelDynamicResourceDocsObpAsyncWithHttpInfo($bankid, $apiversion, $contentType)
+        return $this->getBankLevelDynamicResourceDocsObpAsyncWithHttpInfo($bankid, $apiversion, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,21 +489,21 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv140GetBankLevelDynamicResourceDocsObpAsyncWithHttpInfo
+     * Operation getBankLevelDynamicResourceDocsObpAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv140GetBankLevelDynamicResourceDocsObpAsyncWithHttpInfo($bankid, $apiversion, string $contentType = self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'][0])
+    public function getBankLevelDynamicResourceDocsObpAsyncWithHttpInfo($bankid, $apiversion, string $contentType = self::contentTypes['getBankLevelDynamicResourceDocsObp'][0])
     {
         $returnType = '';
-        $request = $this->oBPv140GetBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, $contentType);
+        $request = $this->getBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -281,29 +529,29 @@ class DocumentationApi
     }
 
     /**
-     * Create request for operation 'oBPv140GetBankLevelDynamicResourceDocsObp'
+     * Create request for operation 'getBankLevelDynamicResourceDocsObp'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDocsObp'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv140GetBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, string $contentType = self::contentTypes['oBPv140GetBankLevelDynamicResourceDocsObp'][0])
+    public function getBankLevelDynamicResourceDocsObpRequest($bankid, $apiversion, string $contentType = self::contentTypes['getBankLevelDynamicResourceDocsObp'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv140GetBankLevelDynamicResourceDocsObp'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicResourceDocsObp'
             );
         }
 
         // verify the required parameter 'apiversion' is set
         if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apiversion when calling oBPv140GetBankLevelDynamicResourceDocsObp'
+                'Missing the required parameter $apiversion when calling getBankLevelDynamicResourceDocsObp'
             );
         }
 
@@ -376,9 +624,9 @@ class DocumentationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -403,706 +651,38 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv140GetResourceDocsObp
-     *
-     * Get Resource Docs
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsObp'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv140GetResourceDocsObp($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsObp'][0])
-    {
-        $this->oBPv140GetResourceDocsObpWithHttpInfo($apiversion, $contentType);
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsObpWithHttpInfo
-     *
-     * Get Resource Docs
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsObp'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv140GetResourceDocsObpWithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsObp'][0])
-    {
-        $request = $this->oBPv140GetResourceDocsObpRequest($apiversion, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsObpAsync
-     *
-     * Get Resource Docs
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsObp'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsObpAsync($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsObp'][0])
-    {
-        return $this->oBPv140GetResourceDocsObpAsyncWithHttpInfo($apiversion, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsObpAsyncWithHttpInfo
-     *
-     * Get Resource Docs
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsObp'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsObpAsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsObp'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv140GetResourceDocsObpRequest($apiversion, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv140GetResourceDocsObp'
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsObp'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv140GetResourceDocsObpRequest($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsObp'][0])
-    {
-
-        // verify the required parameter 'apiversion' is set
-        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apiversion when calling oBPv140GetResourceDocsObp'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/obp';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($apiversion !== null) {
-            $resourcePath = str_replace(
-                '{' . 'apiversion' . '}',
-                ObjectSerializer::toPathValue($apiversion),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsOpenAPI31
-     *
-     * Get OpenAPI 3.1 documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsOpenAPI31'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv140GetResourceDocsOpenAPI31($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsOpenAPI31'][0])
-    {
-        $this->oBPv140GetResourceDocsOpenAPI31WithHttpInfo($apiversion, $contentType);
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsOpenAPI31WithHttpInfo
-     *
-     * Get OpenAPI 3.1 documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsOpenAPI31'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv140GetResourceDocsOpenAPI31WithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsOpenAPI31'][0])
-    {
-        $request = $this->oBPv140GetResourceDocsOpenAPI31Request($apiversion, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsOpenAPI31Async
-     *
-     * Get OpenAPI 3.1 documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsOpenAPI31'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsOpenAPI31Async($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsOpenAPI31'][0])
-    {
-        return $this->oBPv140GetResourceDocsOpenAPI31AsyncWithHttpInfo($apiversion, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsOpenAPI31AsyncWithHttpInfo
-     *
-     * Get OpenAPI 3.1 documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsOpenAPI31'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsOpenAPI31AsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsOpenAPI31'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv140GetResourceDocsOpenAPI31Request($apiversion, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv140GetResourceDocsOpenAPI31'
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsOpenAPI31'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv140GetResourceDocsOpenAPI31Request($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsOpenAPI31'][0])
-    {
-
-        // verify the required parameter 'apiversion' is set
-        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apiversion when calling oBPv140GetResourceDocsOpenAPI31'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/openapi';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($apiversion !== null) {
-            $resourcePath = str_replace(
-                '{' . 'apiversion' . '}',
-                ObjectSerializer::toPathValue($apiversion),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsSwagger
-     *
-     * Get Swagger documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsSwagger'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv140GetResourceDocsSwagger($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsSwagger'][0])
-    {
-        $this->oBPv140GetResourceDocsSwaggerWithHttpInfo($apiversion, $contentType);
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsSwaggerWithHttpInfo
-     *
-     * Get Swagger documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsSwagger'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv140GetResourceDocsSwaggerWithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsSwagger'][0])
-    {
-        $request = $this->oBPv140GetResourceDocsSwaggerRequest($apiversion, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsSwaggerAsync
-     *
-     * Get Swagger documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsSwagger'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsSwaggerAsync($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsSwagger'][0])
-    {
-        return $this->oBPv140GetResourceDocsSwaggerAsyncWithHttpInfo($apiversion, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv140GetResourceDocsSwaggerAsyncWithHttpInfo
-     *
-     * Get Swagger documentation
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsSwagger'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv140GetResourceDocsSwaggerAsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsSwagger'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv140GetResourceDocsSwaggerRequest($apiversion, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv140GetResourceDocsSwagger'
-     *
-     * @param  string $apiversion The APIVERSION identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv140GetResourceDocsSwagger'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv140GetResourceDocsSwaggerRequest($apiversion, string $contentType = self::contentTypes['oBPv140GetResourceDocsSwagger'][0])
-    {
-
-        // verify the required parameter 'apiversion' is set
-        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apiversion when calling oBPv140GetResourceDocsSwagger'
-            );
-        }
-
-
-        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/swagger';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($apiversion !== null) {
-            $resourcePath = str_replace(
-                '{' . 'apiversion' . '}',
-                ObjectSerializer::toPathValue($apiversion),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv220GetMessageDocs
+     * Operation getMessageDocs
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv220GetMessageDocs200Response
+     * @return \OpenBankProject\Model\GetMessageDocs200Response
      */
-    public function oBPv220GetMessageDocs($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocs($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        list($response) = $this->oBPv220GetMessageDocsWithHttpInfo($connector, $contentType);
+        list($response) = $this->getMessageDocsWithHttpInfo($connector, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv220GetMessageDocsWithHttpInfo
+     * Operation getMessageDocsWithHttpInfo
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv220GetMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv220GetMessageDocsWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        $request = $this->oBPv220GetMessageDocsRequest($connector, $contentType);
+        $request = $this->getMessageDocsRequest($connector, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1130,7 +710,7 @@ class DocumentationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                        '\OpenBankProject\Model\GetMessageDocs200Response',
                         $request,
                         $response,
                     );
@@ -1152,7 +732,7 @@ class DocumentationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                '\OpenBankProject\Model\GetMessageDocs200Response',
                 $request,
                 $response,
             );
@@ -1161,7 +741,7 @@ class DocumentationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                        '\OpenBankProject\Model\GetMessageDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1174,19 +754,19 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv220GetMessageDocsAsync
+     * Operation getMessageDocsAsync
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetMessageDocsAsync($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsAsync($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        return $this->oBPv220GetMessageDocsAsyncWithHttpInfo($connector, $contentType)
+        return $this->getMessageDocsAsyncWithHttpInfo($connector, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1195,20 +775,20 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv220GetMessageDocsAsyncWithHttpInfo
+     * Operation getMessageDocsAsyncWithHttpInfo
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetMessageDocsAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv220GetMessageDocs200Response';
-        $request = $this->oBPv220GetMessageDocsRequest($connector, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMessageDocs200Response';
+        $request = $this->getMessageDocsRequest($connector, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1247,21 +827,21 @@ class DocumentationApi
     }
 
     /**
-     * Create request for operation 'oBPv220GetMessageDocs'
+     * Create request for operation 'getMessageDocs'
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv220GetMessageDocsRequest($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsRequest($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
 
         // verify the required parameter 'connector' is set
         if ($connector === null || (is_array($connector) && count($connector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv220GetMessageDocs'
+                'Missing the required parameter $connector when calling getMessageDocs'
             );
         }
 
@@ -1339,285 +919,37 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv300GetApiGlossary
+     * Operation getMessageDocsJsonSchema
      *
-     * Get Glossary of the API
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetApiGlossary'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetApiGlossary200Response
-     */
-    public function oBPv300GetApiGlossary(string $contentType = self::contentTypes['oBPv300GetApiGlossary'][0])
-    {
-        list($response) = $this->oBPv300GetApiGlossaryWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv300GetApiGlossaryWithHttpInfo
-     *
-     * Get Glossary of the API
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetApiGlossary'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetApiGlossary200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv300GetApiGlossaryWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetApiGlossary'][0])
-    {
-        $request = $this->oBPv300GetApiGlossaryRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetApiGlossary200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetApiGlossary200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetApiGlossary200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv300GetApiGlossaryAsync
-     *
-     * Get Glossary of the API
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetApiGlossary'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetApiGlossaryAsync(string $contentType = self::contentTypes['oBPv300GetApiGlossary'][0])
-    {
-        return $this->oBPv300GetApiGlossaryAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv300GetApiGlossaryAsyncWithHttpInfo
-     *
-     * Get Glossary of the API
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetApiGlossary'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv300GetApiGlossaryAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv300GetApiGlossary'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv300GetApiGlossary200Response';
-        $request = $this->oBPv300GetApiGlossaryRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv300GetApiGlossary'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv300GetApiGlossary'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv300GetApiGlossaryRequest(string $contentType = self::contentTypes['oBPv300GetApiGlossary'][0])
-    {
-
-
-        $resourcePath = '/obp/v3.0.0/api/glossary';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv310GetMessageDocsSwagger
-     *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv310GetMessageDocsSwagger($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchema($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        $this->oBPv310GetMessageDocsSwaggerWithHttpInfo($connector, $contentType);
+        $this->getMessageDocsJsonSchemaWithHttpInfo($connector, $contentType);
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerWithHttpInfo
+     * Operation getMessageDocsJsonSchemaWithHttpInfo
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMessageDocsSwaggerWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        $request = $this->oBPv310GetMessageDocsSwaggerRequest($connector, $contentType);
+        $request = $this->getMessageDocsJsonSchemaRequest($connector, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1653,19 +985,19 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerAsync
+     * Operation getMessageDocsJsonSchemaAsync
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMessageDocsSwaggerAsync($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaAsync($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        return $this->oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo($connector, $contentType)
+        return $this->getMessageDocsJsonSchemaAsyncWithHttpInfo($connector, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1674,20 +1006,20 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo
+     * Operation getMessageDocsJsonSchemaAsyncWithHttpInfo
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
         $returnType = '';
-        $request = $this->oBPv310GetMessageDocsSwaggerRequest($connector, $contentType);
+        $request = $this->getMessageDocsJsonSchemaRequest($connector, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1713,239 +1045,21 @@ class DocumentationApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMessageDocsSwagger'
+     * Create request for operation 'getMessageDocsJsonSchema'
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetMessageDocsSwaggerRequest($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaRequest($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
 
         // verify the required parameter 'connector' is set
         if ($connector === null || (is_array($connector) && count($connector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv310GetMessageDocsSwagger'
-            );
-        }
-
-
-        $resourcePath = '/obp/v3.1.0/message-docs/{connector}/swagger2.0';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($connector !== null) {
-            $resourcePath = str_replace(
-                '{' . 'connector' . '}',
-                ObjectSerializer::toPathValue($connector),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetMessageDocsJsonSchema
-     *
-     * Get Message Docs as JSON Schema
-     *
-     * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv600GetMessageDocsJsonSchema($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
-    {
-        $this->oBPv600GetMessageDocsJsonSchemaWithHttpInfo($connector, $contentType);
-    }
-
-    /**
-     * Operation oBPv600GetMessageDocsJsonSchemaWithHttpInfo
-     *
-     * Get Message Docs as JSON Schema
-     *
-     * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetMessageDocsJsonSchemaWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
-    {
-        $request = $this->oBPv600GetMessageDocsJsonSchemaRequest($connector, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetMessageDocsJsonSchemaAsync
-     *
-     * Get Message Docs as JSON Schema
-     *
-     * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetMessageDocsJsonSchemaAsync($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
-    {
-        return $this->oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo($connector, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo
-     *
-     * Get Message Docs as JSON Schema
-     *
-     * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv600GetMessageDocsJsonSchemaRequest($connector, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetMessageDocsJsonSchema'
-     *
-     * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetMessageDocsJsonSchemaRequest($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
-    {
-
-        // verify the required parameter 'connector' is set
-        if ($connector === null || (is_array($connector) && count($connector) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv600GetMessageDocsJsonSchema'
+                'Missing the required parameter $connector when calling getMessageDocsJsonSchema'
             );
         }
 
@@ -2023,36 +1137,922 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv600GetScannedApiVersions
+     * Operation getMessageDocsSwagger
      *
-     * Get Scanned API Versions
+     * Get Message Docs Swagger
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetScannedApiVersions'] to see the possible values for this operation
+     * @param  string $connector The CONNECTOR identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetScannedApiVersions200Response
+     * @return void
      */
-    public function oBPv600GetScannedApiVersions(string $contentType = self::contentTypes['oBPv600GetScannedApiVersions'][0])
+    public function getMessageDocsSwagger($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
-        list($response) = $this->oBPv600GetScannedApiVersionsWithHttpInfo($contentType);
+        $this->getMessageDocsSwaggerWithHttpInfo($connector, $contentType);
+    }
+
+    /**
+     * Operation getMessageDocsSwaggerWithHttpInfo
+     *
+     * Get Message Docs Swagger
+     *
+     * @param  string $connector The CONNECTOR identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMessageDocsSwaggerWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
+    {
+        $request = $this->getMessageDocsSwaggerRequest($connector, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMessageDocsSwaggerAsync
+     *
+     * Get Message Docs Swagger
+     *
+     * @param  string $connector The CONNECTOR identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMessageDocsSwaggerAsync($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
+    {
+        return $this->getMessageDocsSwaggerAsyncWithHttpInfo($connector, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMessageDocsSwaggerAsyncWithHttpInfo
+     *
+     * Get Message Docs Swagger
+     *
+     * @param  string $connector The CONNECTOR identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMessageDocsSwaggerAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
+    {
+        $returnType = '';
+        $request = $this->getMessageDocsSwaggerRequest($connector, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMessageDocsSwagger'
+     *
+     * @param  string $connector The CONNECTOR identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getMessageDocsSwaggerRequest($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
+    {
+
+        // verify the required parameter 'connector' is set
+        if ($connector === null || (is_array($connector) && count($connector) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $connector when calling getMessageDocsSwagger'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/message-docs/{connector}/swagger2.0';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($connector !== null) {
+            $resourcePath = str_replace(
+                '{' . 'connector' . '}',
+                ObjectSerializer::toPathValue($connector),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getResourceDocsObp
+     *
+     * Get Resource Docs
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsObp'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getResourceDocsObp($apiversion, string $contentType = self::contentTypes['getResourceDocsObp'][0])
+    {
+        $this->getResourceDocsObpWithHttpInfo($apiversion, $contentType);
+    }
+
+    /**
+     * Operation getResourceDocsObpWithHttpInfo
+     *
+     * Get Resource Docs
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsObp'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getResourceDocsObpWithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsObp'][0])
+    {
+        $request = $this->getResourceDocsObpRequest($apiversion, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getResourceDocsObpAsync
+     *
+     * Get Resource Docs
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsObp'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsObpAsync($apiversion, string $contentType = self::contentTypes['getResourceDocsObp'][0])
+    {
+        return $this->getResourceDocsObpAsyncWithHttpInfo($apiversion, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getResourceDocsObpAsyncWithHttpInfo
+     *
+     * Get Resource Docs
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsObp'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsObpAsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsObp'][0])
+    {
+        $returnType = '';
+        $request = $this->getResourceDocsObpRequest($apiversion, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getResourceDocsObp'
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsObp'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getResourceDocsObpRequest($apiversion, string $contentType = self::contentTypes['getResourceDocsObp'][0])
+    {
+
+        // verify the required parameter 'apiversion' is set
+        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apiversion when calling getResourceDocsObp'
+            );
+        }
+
+
+        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/obp';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($apiversion !== null) {
+            $resourcePath = str_replace(
+                '{' . 'apiversion' . '}',
+                ObjectSerializer::toPathValue($apiversion),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getResourceDocsOpenAPI31
+     *
+     * Get OpenAPI 3.1 documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsOpenAPI31'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getResourceDocsOpenAPI31($apiversion, string $contentType = self::contentTypes['getResourceDocsOpenAPI31'][0])
+    {
+        $this->getResourceDocsOpenAPI31WithHttpInfo($apiversion, $contentType);
+    }
+
+    /**
+     * Operation getResourceDocsOpenAPI31WithHttpInfo
+     *
+     * Get OpenAPI 3.1 documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsOpenAPI31'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getResourceDocsOpenAPI31WithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsOpenAPI31'][0])
+    {
+        $request = $this->getResourceDocsOpenAPI31Request($apiversion, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getResourceDocsOpenAPI31Async
+     *
+     * Get OpenAPI 3.1 documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsOpenAPI31'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsOpenAPI31Async($apiversion, string $contentType = self::contentTypes['getResourceDocsOpenAPI31'][0])
+    {
+        return $this->getResourceDocsOpenAPI31AsyncWithHttpInfo($apiversion, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getResourceDocsOpenAPI31AsyncWithHttpInfo
+     *
+     * Get OpenAPI 3.1 documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsOpenAPI31'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsOpenAPI31AsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsOpenAPI31'][0])
+    {
+        $returnType = '';
+        $request = $this->getResourceDocsOpenAPI31Request($apiversion, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getResourceDocsOpenAPI31'
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsOpenAPI31'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getResourceDocsOpenAPI31Request($apiversion, string $contentType = self::contentTypes['getResourceDocsOpenAPI31'][0])
+    {
+
+        // verify the required parameter 'apiversion' is set
+        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apiversion when calling getResourceDocsOpenAPI31'
+            );
+        }
+
+
+        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/openapi';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($apiversion !== null) {
+            $resourcePath = str_replace(
+                '{' . 'apiversion' . '}',
+                ObjectSerializer::toPathValue($apiversion),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getResourceDocsSwagger
+     *
+     * Get Swagger documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getResourceDocsSwagger($apiversion, string $contentType = self::contentTypes['getResourceDocsSwagger'][0])
+    {
+        $this->getResourceDocsSwaggerWithHttpInfo($apiversion, $contentType);
+    }
+
+    /**
+     * Operation getResourceDocsSwaggerWithHttpInfo
+     *
+     * Get Swagger documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getResourceDocsSwaggerWithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsSwagger'][0])
+    {
+        $request = $this->getResourceDocsSwaggerRequest($apiversion, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getResourceDocsSwaggerAsync
+     *
+     * Get Swagger documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsSwaggerAsync($apiversion, string $contentType = self::contentTypes['getResourceDocsSwagger'][0])
+    {
+        return $this->getResourceDocsSwaggerAsyncWithHttpInfo($apiversion, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getResourceDocsSwaggerAsyncWithHttpInfo
+     *
+     * Get Swagger documentation
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getResourceDocsSwaggerAsyncWithHttpInfo($apiversion, string $contentType = self::contentTypes['getResourceDocsSwagger'][0])
+    {
+        $returnType = '';
+        $request = $this->getResourceDocsSwaggerRequest($apiversion, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getResourceDocsSwagger'
+     *
+     * @param  string $apiversion The APIVERSION identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getResourceDocsSwagger'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getResourceDocsSwaggerRequest($apiversion, string $contentType = self::contentTypes['getResourceDocsSwagger'][0])
+    {
+
+        // verify the required parameter 'apiversion' is set
+        if ($apiversion === null || (is_array($apiversion) && count($apiversion) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apiversion when calling getResourceDocsSwagger'
+            );
+        }
+
+
+        $resourcePath = '/obp/v1.4.0/resource-docs/{apiversion}/swagger';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($apiversion !== null) {
+            $resourcePath = str_replace(
+                '{' . 'apiversion' . '}',
+                ObjectSerializer::toPathValue($apiversion),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getScannedApiVersions
+     *
+     * Get Scanned API Versions
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScannedApiVersions'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetScannedApiVersions200Response
+     */
+    public function getScannedApiVersions(string $contentType = self::contentTypes['getScannedApiVersions'][0])
+    {
+        list($response) = $this->getScannedApiVersionsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetScannedApiVersionsWithHttpInfo
+     * Operation getScannedApiVersionsWithHttpInfo
      *
      * Get Scanned API Versions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetScannedApiVersions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScannedApiVersions'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetScannedApiVersions200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetScannedApiVersions200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetScannedApiVersionsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetScannedApiVersions'][0])
+    public function getScannedApiVersionsWithHttpInfo(string $contentType = self::contentTypes['getScannedApiVersions'][0])
     {
-        $request = $this->oBPv600GetScannedApiVersionsRequest($contentType);
+        $request = $this->getScannedApiVersionsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2080,7 +2080,7 @@ class DocumentationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetScannedApiVersions200Response',
+                        '\OpenBankProject\Model\GetScannedApiVersions200Response',
                         $request,
                         $response,
                     );
@@ -2102,7 +2102,7 @@ class DocumentationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetScannedApiVersions200Response',
+                '\OpenBankProject\Model\GetScannedApiVersions200Response',
                 $request,
                 $response,
             );
@@ -2111,7 +2111,7 @@ class DocumentationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetScannedApiVersions200Response',
+                        '\OpenBankProject\Model\GetScannedApiVersions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2124,18 +2124,18 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv600GetScannedApiVersionsAsync
+     * Operation getScannedApiVersionsAsync
      *
      * Get Scanned API Versions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetScannedApiVersions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScannedApiVersions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetScannedApiVersionsAsync(string $contentType = self::contentTypes['oBPv600GetScannedApiVersions'][0])
+    public function getScannedApiVersionsAsync(string $contentType = self::contentTypes['getScannedApiVersions'][0])
     {
-        return $this->oBPv600GetScannedApiVersionsAsyncWithHttpInfo($contentType)
+        return $this->getScannedApiVersionsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2144,19 +2144,19 @@ class DocumentationApi
     }
 
     /**
-     * Operation oBPv600GetScannedApiVersionsAsyncWithHttpInfo
+     * Operation getScannedApiVersionsAsyncWithHttpInfo
      *
      * Get Scanned API Versions
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetScannedApiVersions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScannedApiVersions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetScannedApiVersionsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetScannedApiVersions'][0])
+    public function getScannedApiVersionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getScannedApiVersions'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetScannedApiVersions200Response';
-        $request = $this->oBPv600GetScannedApiVersionsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetScannedApiVersions200Response';
+        $request = $this->getScannedApiVersionsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2195,14 +2195,14 @@ class DocumentationApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetScannedApiVersions'
+     * Create request for operation 'getScannedApiVersions'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetScannedApiVersions'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getScannedApiVersions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetScannedApiVersionsRequest(string $contentType = self::contentTypes['oBPv600GetScannedApiVersions'][0])
+    public function getScannedApiVersionsRequest(string $contentType = self::contentTypes['getScannedApiVersions'][0])
     {
 
 
@@ -2258,9 +2258,9 @@ class DocumentationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

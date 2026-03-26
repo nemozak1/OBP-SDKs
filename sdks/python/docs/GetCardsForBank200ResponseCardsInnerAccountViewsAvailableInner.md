@@ -1,0 +1,93 @@
+# GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**can_see_transaction_start_date** | **bool** |  | [optional] 
+**can_add_url** | **bool** |  | [optional] 
+**can_add_where_tag** | **bool** |  | [optional] 
+**can_see_transaction_this_bank_account** | **bool** |  | [optional] 
+**can_see_bank_account_owners** | **bool** |  | [optional] 
+**can_see_private_alias** | **bool** |  | [optional] 
+**can_edit_owner_comment** | **bool** |  | [optional] 
+**can_see_other_account_national_identifier** | **bool** |  | [optional] 
+**can_see_public_alias** | **bool** |  | [optional] 
+**can_see_physical_location** | **bool** |  | [optional] 
+**can_see_owner_comment** | **bool** |  | [optional] 
+**can_see_bank_account_iban** | **bool** |  | [optional] 
+**can_see_corporate_location** | **bool** |  | [optional] 
+**can_see_bank_account_number** | **bool** |  | [optional] 
+**can_see_other_account_bank_name** | **bool** |  | [optional] 
+**description** | **str** |  | [optional] 
+**can_see_transaction_other_bank_account** | **bool** |  | [optional] 
+**can_delete_corporate_location** | **bool** |  | [optional] 
+**can_see_comments** | **bool** |  | [optional] 
+**can_see_bank_account_bank_name** | **bool** |  | [optional] 
+**can_add_more_info** | **bool** |  | [optional] 
+**can_see_other_account_number** | **bool** |  | [optional] 
+**can_see_other_account_swift_bic** | **bool** |  | [optional] 
+**can_add_open_corporates_url** | **bool** |  | [optional] 
+**can_see_other_account_kind** | **bool** |  | [optional] 
+**can_delete_physical_location** | **bool** |  | [optional] 
+**can_see_bank_account_label** | **bool** |  | [optional] 
+**can_see_transaction_currency** | **bool** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**can_see_transaction_finish_date** | **bool** |  | [optional] 
+**can_add_tag** | **bool** |  | [optional] 
+**can_see_images** | **bool** |  | [optional] 
+**can_see_bank_account_currency** | **bool** |  | [optional] 
+**hide_metadata_if_alias_used** | **bool** |  | [optional] 
+**can_delete_where_tag** | **bool** |  | [optional] 
+**alias** | **str** |  | [optional] 
+**can_add_image_url** | **bool** |  | [optional] 
+**can_add_comment** | **bool** |  | [optional] 
+**can_see_image_url** | **bool** |  | [optional] 
+**id** | **str** |  | [optional] 
+**can_see_bank_account_national_identifier** | **bool** |  | [optional] 
+**can_see_tags** | **bool** |  | [optional] 
+**can_see_open_corporates_url** | **bool** |  | [optional] 
+**short_name** | **str** |  | [optional] 
+**can_delete_tag** | **bool** |  | [optional] 
+**can_see_more_info** | **bool** |  | [optional] 
+**can_see_transaction_metadata** | **bool** |  | [optional] 
+**can_delete_comment** | **bool** |  | [optional] 
+**can_see_where_tag** | **bool** |  | [optional] 
+**can_add_private_alias** | **bool** |  | [optional] 
+**can_add_public_alias** | **bool** |  | [optional] 
+**can_see_bank_account_swift_bic** | **bool** |  | [optional] 
+**can_add_image** | **bool** |  | [optional] 
+**can_see_transaction_type** | **bool** |  | [optional] 
+**can_see_other_account_iban** | **bool** |  | [optional] 
+**can_add_physical_location** | **bool** |  | [optional] 
+**can_add_corporate_location** | **bool** |  | [optional] 
+**can_delete_image** | **bool** |  | [optional] 
+**can_see_url** | **bool** |  | [optional] 
+**can_see_bank_account_balance** | **bool** |  | [optional] 
+**can_see_transaction_balance** | **bool** |  | [optional] 
+**can_see_transaction_amount** | **bool** |  | [optional] 
+**can_see_other_account_metadata** | **bool** |  | [optional] 
+**can_see_bank_account_type** | **bool** |  | [optional] 
+**can_see_transaction_description** | **bool** |  | [optional] 
+
+## Example
+
+```python
+from obp_python.models.get_cards_for_bank200_response_cards_inner_account_views_available_inner import GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner from a JSON string
+get_cards_for_bank200_response_cards_inner_account_views_available_inner_instance = GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner.from_json(json)
+# print the JSON string representation of the object
+print(GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner.to_json())
+
+# convert the object into a dict
+get_cards_for_bank200_response_cards_inner_account_views_available_inner_dict = get_cards_for_bank200_response_cards_inner_account_views_available_inner_instance.to_dict()
+# create an instance of GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner from a dict
+get_cards_for_bank200_response_cards_inner_account_views_available_inner_from_dict = GetCardsForBank200ResponseCardsInnerAccountViewsAvailableInner.from_dict(get_cards_for_bank200_response_cards_inner_account_views_available_inner_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

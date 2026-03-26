@@ -18,13 +18,13 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attributes200_response import OBPv400GetTransactionRequestAttributes200Response
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.create_transaction_request_counterparty_request_attributes_inner import CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.delete_system_level_endpoint_tag200_response import DeleteSystemLevelEndpointTag200Response
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.models.get_transaction_request_attributes200_response import GetTransactionRequestAttributes200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -45,10 +45,10 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(
+    def create_or_update_transaction_request_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -61,15 +61,15 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
+    ) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,9 +92,9 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_serialize(
+        _param = self._create_or_update_transaction_request_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -102,7 +102,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -118,10 +118,10 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_with_http_info(
+    def create_or_update_transaction_request_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,15 +134,15 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
+    ) -> ApiResponse[GetTransactionRequestAttributeDefinition200ResponseAttributesInner]:
         """Create or Update Transaction Request Attribute Definition
 
         <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,9 +165,9 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_serialize(
+        _param = self._create_or_update_transaction_request_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -175,7 +175,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -191,10 +191,10 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_without_preload_content(
+    def create_or_update_transaction_request_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv400_create_or_update_transaction_request_attribute_definition_request: Annotated[OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
+        create_or_update_transaction_request_attribute_definition_request: Annotated[CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -214,8 +214,8 @@ class TransactionRequestAttributeApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv400_create_or_update_transaction_request_attribute_definition_request: Request body (required)
-        :type obpv400_create_or_update_transaction_request_attribute_definition_request: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+        :param create_or_update_transaction_request_attribute_definition_request: Request body (required)
+        :type create_or_update_transaction_request_attribute_definition_request: CreateOrUpdateTransactionRequestAttributeDefinitionRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -238,9 +238,9 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_serialize(
+        _param = self._create_or_update_transaction_request_attribute_definition_serialize(
             bankid=bankid,
-            obpv400_create_or_update_transaction_request_attribute_definition_request=obpv400_create_or_update_transaction_request_attribute_definition_request,
+            create_or_update_transaction_request_attribute_definition_request=create_or_update_transaction_request_attribute_definition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -248,7 +248,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
+            '200': "GetTransactionRequestAttributeDefinition200ResponseAttributesInner",
             '404': None,
             '500': None,
         }
@@ -259,10 +259,10 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_or_update_transaction_request_attribute_definition_serialize(
+    def _create_or_update_transaction_request_attribute_definition_serialize(
         self,
         bankid,
-        obpv400_create_or_update_transaction_request_attribute_definition_request,
+        create_or_update_transaction_request_attribute_definition_request,
         _request_auth,
         _content_type,
         _headers,
@@ -290,8 +290,8 @@ class TransactionRequestAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_or_update_transaction_request_attribute_definition_request is not None:
-            _body_params = obpv400_create_or_update_transaction_request_attribute_definition_request
+        if create_or_update_transaction_request_attribute_definition_request is not None:
+            _body_params = create_or_update_transaction_request_attribute_definition_request
 
 
         # set the HTTP header `Accept`
@@ -342,12 +342,12 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_transaction_request_attribute(
+    def create_transaction_request_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -360,7 +360,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeById200Response:
+    ) -> GetTransactionRequestAttributeById200Response:
         """Create Transaction Request Attribute
 
         <p>Create Transaction Request Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -371,8 +371,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -395,11 +395,11 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_transaction_request_attribute_serialize(
+        _param = self._create_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -407,7 +407,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -423,12 +423,12 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_transaction_request_attribute_with_http_info(
+    def create_transaction_request_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -441,7 +441,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeById200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributeById200Response]:
         """Create Transaction Request Attribute
 
         <p>Create Transaction Request Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -452,8 +452,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -476,11 +476,11 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_transaction_request_attribute_serialize(
+        _param = self._create_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -488,7 +488,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -504,12 +504,12 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_transaction_request_attribute_without_preload_content(
+    def create_transaction_request_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -533,8 +533,8 @@ class TransactionRequestAttributeApi:
         :type accountid: str
         :param transactionrequestid: The TRANSACTIONREQUESTID identifier (required)
         :type transactionrequestid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -557,11 +557,11 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_transaction_request_attribute_serialize(
+        _param = self._create_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -569,7 +569,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -580,12 +580,12 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_transaction_request_attribute_serialize(
+    def _create_transaction_request_attribute_serialize(
         self,
         bankid,
         accountid,
         transactionrequestid,
-        obpv400_create_transaction_request_counterparty_request_attributes_inner,
+        create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -617,8 +617,8 @@ class TransactionRequestAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
+        if create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`
@@ -669,7 +669,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_transaction_request_attribute_definition(
+    def delete_transaction_request_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -685,7 +685,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400DeleteSystemLevelEndpointTag200Response:
+    ) -> DeleteSystemLevelEndpointTag200Response:
         """Delete Transaction Request Attribute Definition
 
         <p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
@@ -716,7 +716,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_transaction_request_attribute_definition_serialize(
+        _param = self._delete_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -726,7 +726,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -742,7 +742,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_transaction_request_attribute_definition_with_http_info(
+    def delete_transaction_request_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -758,7 +758,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400DeleteSystemLevelEndpointTag200Response]:
+    ) -> ApiResponse[DeleteSystemLevelEndpointTag200Response]:
         """Delete Transaction Request Attribute Definition
 
         <p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
@@ -789,7 +789,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_transaction_request_attribute_definition_serialize(
+        _param = self._delete_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -799,7 +799,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -815,7 +815,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_transaction_request_attribute_definition_without_preload_content(
+    def delete_transaction_request_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         attributedefinitionid: Annotated[StrictStr, Field(description="The ATTRIBUTEDEFINITIONID identifier")],
@@ -862,7 +862,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_transaction_request_attribute_definition_serialize(
+        _param = self._delete_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             attributedefinitionid=attributedefinitionid,
             _request_auth=_request_auth,
@@ -872,7 +872,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400DeleteSystemLevelEndpointTag200Response",
+            '200': "DeleteSystemLevelEndpointTag200Response",
             '404': None,
             '500': None,
         }
@@ -883,7 +883,7 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_transaction_request_attribute_definition_serialize(
+    def _delete_transaction_request_attribute_definition_serialize(
         self,
         bankid,
         attributedefinitionid,
@@ -953,7 +953,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_by_id(
+    def get_transaction_request_attribute_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -971,7 +971,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeById200Response:
+    ) -> GetTransactionRequestAttributeById200Response:
         """Get Transaction Request Attribute By Id
 
         <p>Get Transaction Request Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1006,7 +1006,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_by_id_serialize(
+        _param = self._get_transaction_request_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1018,7 +1018,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -1034,7 +1034,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_by_id_with_http_info(
+    def get_transaction_request_attribute_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1052,7 +1052,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeById200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributeById200Response]:
         """Get Transaction Request Attribute By Id
 
         <p>Get Transaction Request Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1087,7 +1087,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_by_id_serialize(
+        _param = self._get_transaction_request_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1099,7 +1099,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -1115,7 +1115,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_by_id_without_preload_content(
+    def get_transaction_request_attribute_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1168,7 +1168,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_by_id_serialize(
+        _param = self._get_transaction_request_attribute_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1180,7 +1180,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -1191,7 +1191,7 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_transaction_request_attribute_by_id_serialize(
+    def _get_transaction_request_attribute_by_id_serialize(
         self,
         bankid,
         accountid,
@@ -1267,7 +1267,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_definition(
+    def get_transaction_request_attribute_definition(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1282,7 +1282,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeDefinition200Response:
+    ) -> GetTransactionRequestAttributeDefinition200Response:
         """Get Transaction Request Attribute Definition
 
         <p>Get Transaction Request Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1311,7 +1311,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_definition_serialize(
+        _param = self._get_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1320,7 +1320,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1336,7 +1336,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_definition_with_http_info(
+    def get_transaction_request_attribute_definition_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1351,7 +1351,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeDefinition200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributeDefinition200Response]:
         """Get Transaction Request Attribute Definition
 
         <p>Get Transaction Request Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
@@ -1380,7 +1380,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_definition_serialize(
+        _param = self._get_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1389,7 +1389,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1405,7 +1405,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attribute_definition_without_preload_content(
+    def get_transaction_request_attribute_definition_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -1449,7 +1449,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attribute_definition_serialize(
+        _param = self._get_transaction_request_attribute_definition_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1458,7 +1458,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeDefinition200Response",
+            '200': "GetTransactionRequestAttributeDefinition200Response",
             '404': None,
             '500': None,
         }
@@ -1469,7 +1469,7 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_transaction_request_attribute_definition_serialize(
+    def _get_transaction_request_attribute_definition_serialize(
         self,
         bankid,
         _request_auth,
@@ -1536,7 +1536,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attributes(
+    def get_transaction_request_attributes(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1553,7 +1553,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributes200Response:
+    ) -> GetTransactionRequestAttributes200Response:
         """Get Transaction Request Attributes
 
         <p>Get Transaction Request Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>transaction_request_attributes</strong></a>: transaction_request_attributes</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1586,7 +1586,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attributes_serialize(
+        _param = self._get_transaction_request_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1597,7 +1597,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributes200Response",
+            '200': "GetTransactionRequestAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1613,7 +1613,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attributes_with_http_info(
+    def get_transaction_request_attributes_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1630,7 +1630,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributes200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributes200Response]:
         """Get Transaction Request Attributes
 
         <p>Get Transaction Request Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>transaction_request_attributes</strong></a>: transaction_request_attributes</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1663,7 +1663,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attributes_serialize(
+        _param = self._get_transaction_request_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1674,7 +1674,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributes200Response",
+            '200': "GetTransactionRequestAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1690,7 +1690,7 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_transaction_request_attributes_without_preload_content(
+    def get_transaction_request_attributes_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1740,7 +1740,7 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_transaction_request_attributes_serialize(
+        _param = self._get_transaction_request_attributes_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
@@ -1751,7 +1751,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributes200Response",
+            '200': "GetTransactionRequestAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1762,7 +1762,7 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_transaction_request_attributes_serialize(
+    def _get_transaction_request_attributes_serialize(
         self,
         bankid,
         accountid,
@@ -1835,13 +1835,13 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_transaction_request_attribute(
+    def update_transaction_request_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1854,7 +1854,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetTransactionRequestAttributeById200Response:
+    ) -> GetTransactionRequestAttributeById200Response:
         """Update Transaction Request Attribute
 
         <p>Update Transaction Request Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1867,8 +1867,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1891,12 +1891,12 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_transaction_request_attribute_serialize(
+        _param = self._update_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1904,7 +1904,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -1920,13 +1920,13 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_transaction_request_attribute_with_http_info(
+    def update_transaction_request_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1939,7 +1939,7 @@ class TransactionRequestAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetTransactionRequestAttributeById200Response]:
+    ) -> ApiResponse[GetTransactionRequestAttributeById200Response]:
         """Update Transaction Request Attribute
 
         <p>Update Transaction Request Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -1952,8 +1952,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1976,12 +1976,12 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_transaction_request_attribute_serialize(
+        _param = self._update_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1989,7 +1989,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -2005,13 +2005,13 @@ class TransactionRequestAttributeApi:
 
 
     @validate_call
-    def o_bpv4_0_0_update_transaction_request_attribute_without_preload_content(
+    def update_transaction_request_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         transactionrequestid: Annotated[StrictStr, Field(description="The TRANSACTIONREQUESTID identifier")],
         attributeid: Annotated[StrictStr, Field(description="The ATTRIBUTEID identifier")],
-        obpv400_create_transaction_request_counterparty_request_attributes_inner: Annotated[OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
+        create_transaction_request_counterparty_request_attributes_inner: Annotated[CreateTransactionRequestCounterpartyRequestAttributesInner, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2037,8 +2037,8 @@ class TransactionRequestAttributeApi:
         :type transactionrequestid: str
         :param attributeid: The ATTRIBUTEID identifier (required)
         :type attributeid: str
-        :param obpv400_create_transaction_request_counterparty_request_attributes_inner: Request body (required)
-        :type obpv400_create_transaction_request_counterparty_request_attributes_inner: OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
+        :param create_transaction_request_counterparty_request_attributes_inner: Request body (required)
+        :type create_transaction_request_counterparty_request_attributes_inner: CreateTransactionRequestCounterpartyRequestAttributesInner
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2061,12 +2061,12 @@ class TransactionRequestAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_update_transaction_request_attribute_serialize(
+        _param = self._update_transaction_request_attribute_serialize(
             bankid=bankid,
             accountid=accountid,
             transactionrequestid=transactionrequestid,
             attributeid=attributeid,
-            obpv400_create_transaction_request_counterparty_request_attributes_inner=obpv400_create_transaction_request_counterparty_request_attributes_inner,
+            create_transaction_request_counterparty_request_attributes_inner=create_transaction_request_counterparty_request_attributes_inner,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2074,7 +2074,7 @@ class TransactionRequestAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetTransactionRequestAttributeById200Response",
+            '200': "GetTransactionRequestAttributeById200Response",
             '404': None,
             '500': None,
         }
@@ -2085,13 +2085,13 @@ class TransactionRequestAttributeApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_update_transaction_request_attribute_serialize(
+    def _update_transaction_request_attribute_serialize(
         self,
         bankid,
         accountid,
         transactionrequestid,
         attributeid,
-        obpv400_create_transaction_request_counterparty_request_attributes_inner,
+        create_transaction_request_counterparty_request_attributes_inner,
         _request_auth,
         _content_type,
         _headers,
@@ -2125,8 +2125,8 @@ class TransactionRequestAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_transaction_request_counterparty_request_attributes_inner is not None:
-            _body_params = obpv400_create_transaction_request_counterparty_request_attributes_inner
+        if create_transaction_request_counterparty_request_attributes_inner is not None:
+            _body_params = create_transaction_request_counterparty_request_attributes_inner
 
 
         # set the HTTP header `Accept`

@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Grant User Membership to Group Entitlements
     # <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
     # @param userid [String] The USERID identifier
-    # @param obpv600_add_user_to_group_request [OBPv600AddUserToGroupRequest] Request body
+    # @param add_user_to_group_request [AddUserToGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600AddUserToGroup200Response]
-    def o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_add_user_to_group_with_http_info(userid, obpv600_add_user_to_group_request, opts)
+    # @return [AddUserToGroup200Response]
+    def add_user_to_group(userid, add_user_to_group_request, opts = {})
+      data, _status_code, _headers = add_user_to_group_with_http_info(userid, add_user_to_group_request, opts)
       data
     end
 
     # Grant User Membership to Group Entitlements
     # &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param userid [String] The USERID identifier
-    # @param obpv600_add_user_to_group_request [OBPv600AddUserToGroupRequest] Request body
+    # @param add_user_to_group_request [AddUserToGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600AddUserToGroup200Response, Integer, Hash)>] OBPv600AddUserToGroup200Response data, response status code and response headers
-    def o_bpv6_0_0_add_user_to_group_with_http_info(userid, obpv600_add_user_to_group_request, opts = {})
+    # @return [Array<(AddUserToGroup200Response, Integer, Hash)>] AddUserToGroup200Response data, response status code and response headers
+    def add_user_to_group_with_http_info(userid, add_user_to_group_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_add_user_to_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.add_user_to_group ...'
       end
       # verify the required parameter 'userid' is set
       if @api_client.config.client_side_validation && userid.nil?
-        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.o_bpv6_0_0_add_user_to_group"
+        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.add_user_to_group"
       end
-      # verify the required parameter 'obpv600_add_user_to_group_request' is set
-      if @api_client.config.client_side_validation && obpv600_add_user_to_group_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_add_user_to_group_request' when calling GroupApi.o_bpv6_0_0_add_user_to_group"
+      # verify the required parameter 'add_user_to_group_request' is set
+      if @api_client.config.client_side_validation && add_user_to_group_request.nil?
+        fail ArgumentError, "Missing the required parameter 'add_user_to_group_request' when calling GroupApi.add_user_to_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/users/{userid}/group-entitlements'.sub('{' + 'userid' + '}', CGI.escape(userid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_add_user_to_group_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(add_user_to_group_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600AddUserToGroup200Response'
+      return_type = opts[:debug_return_type] || 'AddUserToGroup200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_add_user_to_group",
+        :operation => :"GroupApi.add_user_to_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,33 +88,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_add_user_to_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#add_user_to_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create Group
     # <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
-    # @param obpv600_create_group_request [OBPv600CreateGroupRequest] Request body
+    # @param create_group_request [CreateGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetGroups200ResponsePropertiesGroupsItems]
-    def o_bpv6_0_0_create_group(obpv600_create_group_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_create_group_with_http_info(obpv600_create_group_request, opts)
+    # @return [GetGroups200ResponseGroupsInner]
+    def create_group(create_group_request, opts = {})
+      data, _status_code, _headers = create_group_with_http_info(create_group_request, opts)
       data
     end
 
     # Create Group
     # &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-    # @param obpv600_create_group_request [OBPv600CreateGroupRequest] Request body
+    # @param create_group_request [CreateGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetGroups200ResponsePropertiesGroupsItems, Integer, Hash)>] OBPv600GetGroups200ResponsePropertiesGroupsItems data, response status code and response headers
-    def o_bpv6_0_0_create_group_with_http_info(obpv600_create_group_request, opts = {})
+    # @return [Array<(GetGroups200ResponseGroupsInner, Integer, Hash)>] GetGroups200ResponseGroupsInner data, response status code and response headers
+    def create_group_with_http_info(create_group_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_create_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.create_group ...'
       end
-      # verify the required parameter 'obpv600_create_group_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_group_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_group_request' when calling GroupApi.o_bpv6_0_0_create_group"
+      # verify the required parameter 'create_group_request' is set
+      if @api_client.config.client_side_validation && create_group_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_group_request' when calling GroupApi.create_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups'
@@ -136,16 +136,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_group_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_group_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetGroups200ResponsePropertiesGroupsItems'
+      return_type = opts[:debug_return_type] || 'GetGroups200ResponseGroupsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_create_group",
+        :operation => :"GroupApi.create_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -156,7 +156,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_create_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#create_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -166,8 +166,8 @@ module OpenBankProject
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv6_0_0_delete_group(groupid, opts = {})
-      o_bpv6_0_0_delete_group_with_http_info(groupid, opts)
+    def delete_group(groupid, opts = {})
+      delete_group_with_http_info(groupid, opts)
       nil
     end
 
@@ -176,13 +176,13 @@ module OpenBankProject
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv6_0_0_delete_group_with_http_info(groupid, opts = {})
+    def delete_group_with_http_info(groupid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_delete_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.delete_group ...'
       end
       # verify the required parameter 'groupid' is set
       if @api_client.config.client_side_validation && groupid.nil?
-        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.o_bpv6_0_0_delete_group"
+        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.delete_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups/{groupid}'.sub('{' + 'groupid' + '}', CGI.escape(groupid.to_s))
@@ -206,7 +206,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_delete_group",
+        :operation => :"GroupApi.delete_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -217,7 +217,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_delete_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#delete_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -226,9 +226,9 @@ module OpenBankProject
     # <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetGroups200ResponsePropertiesGroupsItems]
-    def o_bpv6_0_0_get_group(groupid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_group_with_http_info(groupid, opts)
+    # @return [GetGroups200ResponseGroupsInner]
+    def get_group(groupid, opts = {})
+      data, _status_code, _headers = get_group_with_http_info(groupid, opts)
       data
     end
 
@@ -236,14 +236,14 @@ module OpenBankProject
     # &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetGroups200ResponsePropertiesGroupsItems, Integer, Hash)>] OBPv600GetGroups200ResponsePropertiesGroupsItems data, response status code and response headers
-    def o_bpv6_0_0_get_group_with_http_info(groupid, opts = {})
+    # @return [Array<(GetGroups200ResponseGroupsInner, Integer, Hash)>] GetGroups200ResponseGroupsInner data, response status code and response headers
+    def get_group_with_http_info(groupid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_get_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.get_group ...'
       end
       # verify the required parameter 'groupid' is set
       if @api_client.config.client_side_validation && groupid.nil?
-        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.o_bpv6_0_0_get_group"
+        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.get_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups/{groupid}'.sub('{' + 'groupid' + '}', CGI.escape(groupid.to_s))
@@ -263,13 +263,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetGroups200ResponsePropertiesGroupsItems'
+      return_type = opts[:debug_return_type] || 'GetGroups200ResponseGroupsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_get_group",
+        :operation => :"GroupApi.get_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -280,7 +280,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_get_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#get_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -289,9 +289,9 @@ module OpenBankProject
     # <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetGroupEntitlements200Response]
-    def o_bpv6_0_0_get_group_entitlements(groupid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_group_entitlements_with_http_info(groupid, opts)
+    # @return [GetGroupEntitlements200Response]
+    def get_group_entitlements(groupid, opts = {})
+      data, _status_code, _headers = get_group_entitlements_with_http_info(groupid, opts)
       data
     end
 
@@ -299,14 +299,14 @@ module OpenBankProject
     # &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetGroupEntitlements200Response, Integer, Hash)>] OBPv600GetGroupEntitlements200Response data, response status code and response headers
-    def o_bpv6_0_0_get_group_entitlements_with_http_info(groupid, opts = {})
+    # @return [Array<(GetGroupEntitlements200Response, Integer, Hash)>] GetGroupEntitlements200Response data, response status code and response headers
+    def get_group_entitlements_with_http_info(groupid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_get_group_entitlements ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.get_group_entitlements ...'
       end
       # verify the required parameter 'groupid' is set
       if @api_client.config.client_side_validation && groupid.nil?
-        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.o_bpv6_0_0_get_group_entitlements"
+        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.get_group_entitlements"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups/{groupid}/entitlements'.sub('{' + 'groupid' + '}', CGI.escape(groupid.to_s))
@@ -326,13 +326,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetGroupEntitlements200Response'
+      return_type = opts[:debug_return_type] || 'GetGroupEntitlements200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_get_group_entitlements",
+        :operation => :"GroupApi.get_group_entitlements",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -343,7 +343,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_get_group_entitlements\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#get_group_entitlements\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -351,19 +351,19 @@ module OpenBankProject
     # Get Groups
     # <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetGroups200Response]
-    def o_bpv6_0_0_get_groups(opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_groups_with_http_info(opts)
+    # @return [GetGroups200Response]
+    def get_groups(opts = {})
+      data, _status_code, _headers = get_groups_with_http_info(opts)
       data
     end
 
     # Get Groups
     # &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetGroups200Response, Integer, Hash)>] OBPv600GetGroups200Response data, response status code and response headers
-    def o_bpv6_0_0_get_groups_with_http_info(opts = {})
+    # @return [Array<(GetGroups200Response, Integer, Hash)>] GetGroups200Response data, response status code and response headers
+    def get_groups_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_get_groups ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.get_groups ...'
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups'
@@ -383,13 +383,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetGroups200Response'
+      return_type = opts[:debug_return_type] || 'GetGroups200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_get_groups",
+        :operation => :"GroupApi.get_groups",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -400,7 +400,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_get_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#get_groups\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -409,9 +409,9 @@ module OpenBankProject
     # <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
     # @param userid [String] The USERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetUserGroupMemberships200Response]
-    def o_bpv6_0_0_get_user_group_memberships(userid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_user_group_memberships_with_http_info(userid, opts)
+    # @return [GetUserGroupMemberships200Response]
+    def get_user_group_memberships(userid, opts = {})
+      data, _status_code, _headers = get_user_group_memberships_with_http_info(userid, opts)
       data
     end
 
@@ -419,14 +419,14 @@ module OpenBankProject
     # &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param userid [String] The USERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetUserGroupMemberships200Response, Integer, Hash)>] OBPv600GetUserGroupMemberships200Response data, response status code and response headers
-    def o_bpv6_0_0_get_user_group_memberships_with_http_info(userid, opts = {})
+    # @return [Array<(GetUserGroupMemberships200Response, Integer, Hash)>] GetUserGroupMemberships200Response data, response status code and response headers
+    def get_user_group_memberships_with_http_info(userid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_get_user_group_memberships ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.get_user_group_memberships ...'
       end
       # verify the required parameter 'userid' is set
       if @api_client.config.client_side_validation && userid.nil?
-        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.o_bpv6_0_0_get_user_group_memberships"
+        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.get_user_group_memberships"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/users/{userid}/group-entitlements'.sub('{' + 'userid' + '}', CGI.escape(userid.to_s))
@@ -446,13 +446,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetUserGroupMemberships200Response'
+      return_type = opts[:debug_return_type] || 'GetUserGroupMemberships200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_get_user_group_memberships",
+        :operation => :"GroupApi.get_user_group_memberships",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -463,7 +463,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_get_user_group_memberships\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#get_user_group_memberships\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -474,8 +474,8 @@ module OpenBankProject
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv6_0_0_remove_user_from_group(userid, groupid, opts = {})
-      o_bpv6_0_0_remove_user_from_group_with_http_info(userid, groupid, opts)
+    def remove_user_from_group(userid, groupid, opts = {})
+      remove_user_from_group_with_http_info(userid, groupid, opts)
       nil
     end
 
@@ -485,17 +485,17 @@ module OpenBankProject
     # @param groupid [String] The GROUPID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv6_0_0_remove_user_from_group_with_http_info(userid, groupid, opts = {})
+    def remove_user_from_group_with_http_info(userid, groupid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_remove_user_from_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.remove_user_from_group ...'
       end
       # verify the required parameter 'userid' is set
       if @api_client.config.client_side_validation && userid.nil?
-        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.o_bpv6_0_0_remove_user_from_group"
+        fail ArgumentError, "Missing the required parameter 'userid' when calling GroupApi.remove_user_from_group"
       end
       # verify the required parameter 'groupid' is set
       if @api_client.config.client_side_validation && groupid.nil?
-        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.o_bpv6_0_0_remove_user_from_group"
+        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.remove_user_from_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/users/{userid}/group-entitlements/{groupid}'.sub('{' + 'userid' + '}', CGI.escape(userid.to_s)).sub('{' + 'groupid' + '}', CGI.escape(groupid.to_s))
@@ -519,7 +519,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_remove_user_from_group",
+        :operation => :"GroupApi.remove_user_from_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -530,7 +530,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_remove_user_from_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#remove_user_from_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -538,31 +538,31 @@ module OpenBankProject
     # Update Group
     # <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
     # @param groupid [String] The GROUPID identifier
-    # @param obpv600_update_group_request [OBPv600UpdateGroupRequest] Request body
+    # @param update_group_request [UpdateGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetGroups200ResponsePropertiesGroupsItems]
-    def o_bpv6_0_0_update_group(groupid, obpv600_update_group_request, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_update_group_with_http_info(groupid, obpv600_update_group_request, opts)
+    # @return [GetGroups200ResponseGroupsInner]
+    def update_group(groupid, update_group_request, opts = {})
+      data, _status_code, _headers = update_group_with_http_info(groupid, update_group_request, opts)
       data
     end
 
     # Update Group
     # &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param groupid [String] The GROUPID identifier
-    # @param obpv600_update_group_request [OBPv600UpdateGroupRequest] Request body
+    # @param update_group_request [UpdateGroupRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetGroups200ResponsePropertiesGroupsItems, Integer, Hash)>] OBPv600GetGroups200ResponsePropertiesGroupsItems data, response status code and response headers
-    def o_bpv6_0_0_update_group_with_http_info(groupid, obpv600_update_group_request, opts = {})
+    # @return [Array<(GetGroups200ResponseGroupsInner, Integer, Hash)>] GetGroups200ResponseGroupsInner data, response status code and response headers
+    def update_group_with_http_info(groupid, update_group_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: GroupApi.o_bpv6_0_0_update_group ...'
+        @api_client.config.logger.debug 'Calling API: GroupApi.update_group ...'
       end
       # verify the required parameter 'groupid' is set
       if @api_client.config.client_side_validation && groupid.nil?
-        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.o_bpv6_0_0_update_group"
+        fail ArgumentError, "Missing the required parameter 'groupid' when calling GroupApi.update_group"
       end
-      # verify the required parameter 'obpv600_update_group_request' is set
-      if @api_client.config.client_side_validation && obpv600_update_group_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_update_group_request' when calling GroupApi.o_bpv6_0_0_update_group"
+      # verify the required parameter 'update_group_request' is set
+      if @api_client.config.client_side_validation && update_group_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_group_request' when calling GroupApi.update_group"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/management/groups/{groupid}'.sub('{' + 'groupid' + '}', CGI.escape(groupid.to_s))
@@ -584,16 +584,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_update_group_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_group_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetGroups200ResponsePropertiesGroupsItems'
+      return_type = opts[:debug_return_type] || 'GetGroups200ResponseGroupsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"GroupApi.o_bpv6_0_0_update_group",
+        :operation => :"GroupApi.update_group",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -604,7 +604,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: GroupApi#o_bpv6_0_0_update_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: GroupApi#update_group\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

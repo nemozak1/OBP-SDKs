@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv510_get_atm_attribute200_response import OBPv510GetAtmAttribute200Response
-from obp_python.models.obpv510_get_atm_attributes200_response import OBPv510GetAtmAttributes200Response
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
+from obp_python.models.get_atm_attribute200_response import GetAtmAttribute200Response
+from obp_python.models.get_atm_attributes200_response import GetAtmAttributes200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,11 +41,11 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_atm_attribute(
+    def create_atm_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAtmAttribute200Response:
+    ) -> GetAtmAttribute200Response:
         """Create ATM Attribute
 
         <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -67,8 +67,8 @@ class ATMAttributeApi:
         :type bankid: str
         :param atmid: The ATMID identifier (required)
         :type atmid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -91,10 +91,10 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_atm_attribute_serialize(
+        _param = self._create_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -102,7 +102,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -118,11 +118,11 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_atm_attribute_with_http_info(
+    def create_atm_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -135,7 +135,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAtmAttribute200Response]:
+    ) -> ApiResponse[GetAtmAttribute200Response]:
         """Create ATM Attribute
 
         <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -144,8 +144,8 @@ class ATMAttributeApi:
         :type bankid: str
         :param atmid: The ATMID identifier (required)
         :type atmid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -168,10 +168,10 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_atm_attribute_serialize(
+        _param = self._create_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -179,7 +179,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -195,11 +195,11 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_atm_attribute_without_preload_content(
+    def create_atm_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -221,8 +221,8 @@ class ATMAttributeApi:
         :type bankid: str
         :param atmid: The ATMID identifier (required)
         :type atmid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -245,10 +245,10 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_atm_attribute_serialize(
+        _param = self._create_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -256,7 +256,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -267,11 +267,11 @@ class ATMAttributeApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_create_atm_attribute_serialize(
+    def _create_atm_attribute_serialize(
         self,
         bankid,
         atmid,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -301,8 +301,8 @@ class ATMAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`
@@ -353,7 +353,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_atm_attribute(
+    def delete_atm_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -403,7 +403,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_atm_attribute_serialize(
+        _param = self._delete_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -430,7 +430,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_atm_attribute_with_http_info(
+    def delete_atm_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -480,7 +480,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_atm_attribute_serialize(
+        _param = self._delete_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -507,7 +507,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_atm_attribute_without_preload_content(
+    def delete_atm_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -557,7 +557,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_atm_attribute_serialize(
+        _param = self._delete_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -579,7 +579,7 @@ class ATMAttributeApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_delete_atm_attribute_serialize(
+    def _delete_atm_attribute_serialize(
         self,
         bankid,
         atmid,
@@ -645,7 +645,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attribute(
+    def get_atm_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -662,7 +662,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAtmAttribute200Response:
+    ) -> GetAtmAttribute200Response:
         """Get ATM Attribute By ATM_ATTRIBUTE_ID
 
         <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -695,7 +695,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attribute_serialize(
+        _param = self._get_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -706,7 +706,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -722,7 +722,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attribute_with_http_info(
+    def get_atm_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -739,7 +739,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAtmAttribute200Response]:
+    ) -> ApiResponse[GetAtmAttribute200Response]:
         """Get ATM Attribute By ATM_ATTRIBUTE_ID
 
         <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -772,7 +772,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attribute_serialize(
+        _param = self._get_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -783,7 +783,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -799,7 +799,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attribute_without_preload_content(
+    def get_atm_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -849,7 +849,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attribute_serialize(
+        _param = self._get_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
@@ -860,7 +860,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -871,7 +871,7 @@ class ATMAttributeApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_atm_attribute_serialize(
+    def _get_atm_attribute_serialize(
         self,
         bankid,
         atmid,
@@ -944,7 +944,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attributes(
+    def get_atm_attributes(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -960,7 +960,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAtmAttributes200Response:
+    ) -> GetAtmAttributes200Response:
         """Get ATM Attributes
 
         <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -991,7 +991,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attributes_serialize(
+        _param = self._get_atm_attributes_serialize(
             bankid=bankid,
             atmid=atmid,
             _request_auth=_request_auth,
@@ -1001,7 +1001,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttributes200Response",
+            '200': "GetAtmAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1017,7 +1017,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attributes_with_http_info(
+    def get_atm_attributes_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -1033,7 +1033,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAtmAttributes200Response]:
+    ) -> ApiResponse[GetAtmAttributes200Response]:
         """Get ATM Attributes
 
         <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1064,7 +1064,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attributes_serialize(
+        _param = self._get_atm_attributes_serialize(
             bankid=bankid,
             atmid=atmid,
             _request_auth=_request_auth,
@@ -1074,7 +1074,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttributes200Response",
+            '200': "GetAtmAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1090,7 +1090,7 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_atm_attributes_without_preload_content(
+    def get_atm_attributes_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
@@ -1137,7 +1137,7 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_atm_attributes_serialize(
+        _param = self._get_atm_attributes_serialize(
             bankid=bankid,
             atmid=atmid,
             _request_auth=_request_auth,
@@ -1147,7 +1147,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttributes200Response",
+            '200': "GetAtmAttributes200Response",
             '404': None,
             '500': None,
         }
@@ -1158,7 +1158,7 @@ class ATMAttributeApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_atm_attributes_serialize(
+    def _get_atm_attributes_serialize(
         self,
         bankid,
         atmid,
@@ -1228,12 +1228,12 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_atm_attribute(
+    def update_atm_attribute(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
         atmattributeid: Annotated[StrictStr, Field(description="The ATMATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1246,7 +1246,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetAtmAttribute200Response:
+    ) -> GetAtmAttribute200Response:
         """Update ATM Attribute
 
         <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1257,8 +1257,8 @@ class ATMAttributeApi:
         :type atmid: str
         :param atmattributeid: The ATMATTRIBUTEID identifier (required)
         :type atmattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1281,11 +1281,11 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_atm_attribute_serialize(
+        _param = self._update_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1293,7 +1293,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1309,12 +1309,12 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_atm_attribute_with_http_info(
+    def update_atm_attribute_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
         atmattributeid: Annotated[StrictStr, Field(description="The ATMATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1327,7 +1327,7 @@ class ATMAttributeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetAtmAttribute200Response]:
+    ) -> ApiResponse[GetAtmAttribute200Response]:
         """Update ATM Attribute
 
         <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
@@ -1338,8 +1338,8 @@ class ATMAttributeApi:
         :type atmid: str
         :param atmattributeid: The ATMATTRIBUTEID identifier (required)
         :type atmattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1362,11 +1362,11 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_atm_attribute_serialize(
+        _param = self._update_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1374,7 +1374,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1390,12 +1390,12 @@ class ATMAttributeApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_atm_attribute_without_preload_content(
+    def update_atm_attribute_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         atmid: Annotated[StrictStr, Field(description="The ATMID identifier")],
         atmattributeid: Annotated[StrictStr, Field(description="The ATMATTRIBUTEID identifier")],
-        obpv510_update_atm_attribute_request: Annotated[OBPv510UpdateAtmAttributeRequest, Field(description="Request body")],
+        update_atm_attribute_request: Annotated[UpdateAtmAttributeRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1419,8 +1419,8 @@ class ATMAttributeApi:
         :type atmid: str
         :param atmattributeid: The ATMATTRIBUTEID identifier (required)
         :type atmattributeid: str
-        :param obpv510_update_atm_attribute_request: Request body (required)
-        :type obpv510_update_atm_attribute_request: OBPv510UpdateAtmAttributeRequest
+        :param update_atm_attribute_request: Request body (required)
+        :type update_atm_attribute_request: UpdateAtmAttributeRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1443,11 +1443,11 @@ class ATMAttributeApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_atm_attribute_serialize(
+        _param = self._update_atm_attribute_serialize(
             bankid=bankid,
             atmid=atmid,
             atmattributeid=atmattributeid,
-            obpv510_update_atm_attribute_request=obpv510_update_atm_attribute_request,
+            update_atm_attribute_request=update_atm_attribute_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1455,7 +1455,7 @@ class ATMAttributeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetAtmAttribute200Response",
+            '200': "GetAtmAttribute200Response",
             '404': None,
             '500': None,
         }
@@ -1466,12 +1466,12 @@ class ATMAttributeApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_update_atm_attribute_serialize(
+    def _update_atm_attribute_serialize(
         self,
         bankid,
         atmid,
         atmattributeid,
-        obpv510_update_atm_attribute_request,
+        update_atm_attribute_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1503,8 +1503,8 @@ class ATMAttributeApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_update_atm_attribute_request is not None:
-            _body_params = obpv510_update_atm_attribute_request
+        if update_atm_attribute_request is not None:
+            _body_params = update_atm_attribute_request
 
 
         # set the HTTP header `Accept`

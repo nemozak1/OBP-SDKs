@@ -16,10 +16,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from obp_python.models.obpv600_cleanup_orphaned_dynamic_entity_records200_response import OBPv600CleanupOrphanedDynamicEntityRecords200Response
-from obp_python.models.obpv600_get_available_personal_dynamic_entities200_response import OBPv600GetAvailablePersonalDynamicEntities200Response
-from obp_python.models.obpv600_get_dynamic_entity_diagnostics200_response import OBPv600GetDynamicEntityDiagnostics200Response
-from obp_python.models.obpv600_get_reference_types200_response import OBPv600GetReferenceTypes200Response
+from obp_python.models.cleanup_orphaned_dynamic_entity_records200_response import CleanupOrphanedDynamicEntityRecords200Response
+from obp_python.models.get_available_personal_dynamic_entities200_response import GetAvailablePersonalDynamicEntities200Response
+from obp_python.models.get_dynamic_entity_diagnostics200_response import GetDynamicEntityDiagnostics200Response
+from obp_python.models.get_reference_types200_response import GetReferenceTypes200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -40,7 +40,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records(
+    def cleanup_orphaned_dynamic_entity_records(
         self,
         _request_timeout: Union[
             None,
@@ -54,7 +54,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600CleanupOrphanedDynamicEntityRecords200Response:
+    ) -> CleanupOrphanedDynamicEntityRecords200Response:
         """Cleanup Orphaned Dynamic Entity Records
 
         <p>Delete orphaned dynamic entity data records.</p> <p>Orphaned records are rows in the DynamicData table whose entityName/bankId combination<br /> has no matching Dynamic Entity definition. These can accumulate when entity definitions<br /> are deleted but their data records are not cleaned up.</p> <p>This endpoint first identifies all orphaned records (using the same detection logic as<br /> GET /management/diagnostics/dynamic-entities), then deletes them.</p> <p><strong>Response Format:</strong><br /> * <code>deleted_orphaned_entities</code> - List of orphaned entity groups that were deleted, each with:<br /> * <code>entity_name</code> - Name of the orphaned entity<br /> * <code>bank_id</code> - Bank ID (or empty string for system-level)<br /> * <code>record_count</code> - Number of records that were deleted for this entity group<br /> * <code>total_records_deleted</code> - Total count of all deleted records</p> <p>Authentication is Required</p> <p><strong>Required Role:</strong> <code>CanCleanupOrphanedDynamicEntityRecords</code></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -81,7 +81,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_serialize(
+        _param = self._cleanup_orphaned_dynamic_entity_records_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -89,7 +89,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CleanupOrphanedDynamicEntityRecords200Response",
+            '200': "CleanupOrphanedDynamicEntityRecords200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -104,7 +104,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_with_http_info(
+    def cleanup_orphaned_dynamic_entity_records_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -118,7 +118,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600CleanupOrphanedDynamicEntityRecords200Response]:
+    ) -> ApiResponse[CleanupOrphanedDynamicEntityRecords200Response]:
         """Cleanup Orphaned Dynamic Entity Records
 
         <p>Delete orphaned dynamic entity data records.</p> <p>Orphaned records are rows in the DynamicData table whose entityName/bankId combination<br /> has no matching Dynamic Entity definition. These can accumulate when entity definitions<br /> are deleted but their data records are not cleaned up.</p> <p>This endpoint first identifies all orphaned records (using the same detection logic as<br /> GET /management/diagnostics/dynamic-entities), then deletes them.</p> <p><strong>Response Format:</strong><br /> * <code>deleted_orphaned_entities</code> - List of orphaned entity groups that were deleted, each with:<br /> * <code>entity_name</code> - Name of the orphaned entity<br /> * <code>bank_id</code> - Bank ID (or empty string for system-level)<br /> * <code>record_count</code> - Number of records that were deleted for this entity group<br /> * <code>total_records_deleted</code> - Total count of all deleted records</p> <p>Authentication is Required</p> <p><strong>Required Role:</strong> <code>CanCleanupOrphanedDynamicEntityRecords</code></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -145,7 +145,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_serialize(
+        _param = self._cleanup_orphaned_dynamic_entity_records_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -153,7 +153,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CleanupOrphanedDynamicEntityRecords200Response",
+            '200': "CleanupOrphanedDynamicEntityRecords200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -168,7 +168,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_without_preload_content(
+    def cleanup_orphaned_dynamic_entity_records_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -209,7 +209,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_serialize(
+        _param = self._cleanup_orphaned_dynamic_entity_records_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -217,7 +217,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600CleanupOrphanedDynamicEntityRecords200Response",
+            '200': "CleanupOrphanedDynamicEntityRecords200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -227,7 +227,7 @@ class DynamicEntityApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_cleanup_orphaned_dynamic_entity_records_serialize(
+    def _cleanup_orphaned_dynamic_entity_records_serialize(
         self,
         _request_auth,
         _content_type,
@@ -291,7 +291,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities(
+    def get_available_personal_dynamic_entities(
         self,
         _request_timeout: Union[
             None,
@@ -305,7 +305,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAvailablePersonalDynamicEntities200Response:
+    ) -> GetAvailablePersonalDynamicEntities200Response:
         """Get Available Personal Dynamic Entities
 
         <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -332,7 +332,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -340,7 +340,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -355,7 +355,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info(
+    def get_available_personal_dynamic_entities_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -369,7 +369,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAvailablePersonalDynamicEntities200Response]:
+    ) -> ApiResponse[GetAvailablePersonalDynamicEntities200Response]:
         """Get Available Personal Dynamic Entities
 
         <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -396,7 +396,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -404,7 +404,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -419,7 +419,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities_without_preload_content(
+    def get_available_personal_dynamic_entities_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -460,7 +460,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -468,7 +468,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -478,7 +478,7 @@ class DynamicEntityApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+    def _get_available_personal_dynamic_entities_serialize(
         self,
         _request_auth,
         _content_type,
@@ -542,7 +542,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_dynamic_entity_diagnostics(
+    def get_dynamic_entity_diagnostics(
         self,
         _request_timeout: Union[
             None,
@@ -556,7 +556,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetDynamicEntityDiagnostics200Response:
+    ) -> GetDynamicEntityDiagnostics200Response:
         """Get Dynamic Entity Diagnostics
 
         <p>Get diagnostic information about Dynamic Entities to help troubleshoot Swagger generation issues.</p> <p><strong>Use Case:</strong><br /> This endpoint is particularly useful when:<br /> * The Swagger endpoint (<code>/obp/v6.0.0/resource-docs/OBPv6.0.0/swagger?content=dynamic</code>) fails with errors like &quot;expected boolean&quot;<br /> * The OBP endpoint (<code>/obp/v6.0.0/resource-docs/OBPv6.0.0/obp?content=dynamic</code>) works fine<br /> * You need to identify which dynamic entity has malformed field definitions</p> <p><strong>What It Checks:</strong><br /> This endpoint analyzes all dynamic entities (both system and bank level) for:<br /> * Boolean fields with invalid example values (e.g., actual JSON booleans or invalid strings instead of <code>&quot;true&quot;</code> or <code>&quot;false&quot;</code>)<br /> * Malformed JSON in field definitions<br /> * Fields that cannot be converted to their declared types<br /> * Other validation issues that cause Swagger generation to fail</p> <p><strong>Response Format:</strong><br /> The response contains:<br /> * <code>issues</code> - List of issues found, each with:<br /> * <code>entity_name</code> - Name of the problematic entity<br /> * <code>bank_id</code> - Bank ID (or &quot;SYSTEM_LEVEL&quot; for system entities)<br /> * <code>field_name</code> - Name of the problematic field<br /> * <code>example_value</code> - The current (invalid) example value<br /> * <code>error_message</code> - Description of what's wrong and how to fix it<br /> * <code>total_issues</code> - Count of total issues found<br /> * <code>scanned_entities</code> - List of all dynamic entities that were scanned (format: &quot;EntityName (BANK_ID)&quot; or &quot;EntityName (SYSTEM)&quot;)</p> <p><strong>How to Fix Issues:</strong><br /> 1. Identify the problematic entity from the diagnostic output<br /> 2. Update the entity definition using PUT <code>/management/system-dynamic-entities/DYNAMIC_ENTITY_ID</code> or PUT <code>/management/banks/BANK_ID/dynamic-entities/DYNAMIC_ENTITY_ID</code><br /> 3. For boolean fields, ensure the example value is either <code>&quot;true&quot;</code> or <code>&quot;false&quot;</code> (as strings)<br /> 4. Re-run this diagnostic to verify the fix<br /> 5. Check that the Swagger endpoint now works</p> <p><strong>Example Issue:</strong></p> <pre><code>{   &quot;entity_name&quot;: &quot;Customer&quot;,   &quot;bank_id&quot;: &quot;gh.29.uk&quot;,   &quot;field_name&quot;: &quot;is_active&quot;,   &quot;example_value&quot;: &quot;malformed_value&quot;,   &quot;error_message&quot;: &quot;Boolean field has invalid example value. Expected 'true' or 'false', got: 'malformed_value'&quot; } </code></pre> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>Required Role:</strong> <code>CanGetDynamicEntityDiagnostics</code></p> <p>If no issues are found, the response will contain an empty issues list with <code>total_issues: 0</code>, but <code>scanned_entities</code> will show which entities were checked.</p> 
@@ -583,7 +583,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_dynamic_entity_diagnostics_serialize(
+        _param = self._get_dynamic_entity_diagnostics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -591,7 +591,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetDynamicEntityDiagnostics200Response",
+            '200': "GetDynamicEntityDiagnostics200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -606,7 +606,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_dynamic_entity_diagnostics_with_http_info(
+    def get_dynamic_entity_diagnostics_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -620,7 +620,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetDynamicEntityDiagnostics200Response]:
+    ) -> ApiResponse[GetDynamicEntityDiagnostics200Response]:
         """Get Dynamic Entity Diagnostics
 
         <p>Get diagnostic information about Dynamic Entities to help troubleshoot Swagger generation issues.</p> <p><strong>Use Case:</strong><br /> This endpoint is particularly useful when:<br /> * The Swagger endpoint (<code>/obp/v6.0.0/resource-docs/OBPv6.0.0/swagger?content=dynamic</code>) fails with errors like &quot;expected boolean&quot;<br /> * The OBP endpoint (<code>/obp/v6.0.0/resource-docs/OBPv6.0.0/obp?content=dynamic</code>) works fine<br /> * You need to identify which dynamic entity has malformed field definitions</p> <p><strong>What It Checks:</strong><br /> This endpoint analyzes all dynamic entities (both system and bank level) for:<br /> * Boolean fields with invalid example values (e.g., actual JSON booleans or invalid strings instead of <code>&quot;true&quot;</code> or <code>&quot;false&quot;</code>)<br /> * Malformed JSON in field definitions<br /> * Fields that cannot be converted to their declared types<br /> * Other validation issues that cause Swagger generation to fail</p> <p><strong>Response Format:</strong><br /> The response contains:<br /> * <code>issues</code> - List of issues found, each with:<br /> * <code>entity_name</code> - Name of the problematic entity<br /> * <code>bank_id</code> - Bank ID (or &quot;SYSTEM_LEVEL&quot; for system entities)<br /> * <code>field_name</code> - Name of the problematic field<br /> * <code>example_value</code> - The current (invalid) example value<br /> * <code>error_message</code> - Description of what's wrong and how to fix it<br /> * <code>total_issues</code> - Count of total issues found<br /> * <code>scanned_entities</code> - List of all dynamic entities that were scanned (format: &quot;EntityName (BANK_ID)&quot; or &quot;EntityName (SYSTEM)&quot;)</p> <p><strong>How to Fix Issues:</strong><br /> 1. Identify the problematic entity from the diagnostic output<br /> 2. Update the entity definition using PUT <code>/management/system-dynamic-entities/DYNAMIC_ENTITY_ID</code> or PUT <code>/management/banks/BANK_ID/dynamic-entities/DYNAMIC_ENTITY_ID</code><br /> 3. For boolean fields, ensure the example value is either <code>&quot;true&quot;</code> or <code>&quot;false&quot;</code> (as strings)<br /> 4. Re-run this diagnostic to verify the fix<br /> 5. Check that the Swagger endpoint now works</p> <p><strong>Example Issue:</strong></p> <pre><code>{   &quot;entity_name&quot;: &quot;Customer&quot;,   &quot;bank_id&quot;: &quot;gh.29.uk&quot;,   &quot;field_name&quot;: &quot;is_active&quot;,   &quot;example_value&quot;: &quot;malformed_value&quot;,   &quot;error_message&quot;: &quot;Boolean field has invalid example value. Expected 'true' or 'false', got: 'malformed_value'&quot; } </code></pre> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>Required Role:</strong> <code>CanGetDynamicEntityDiagnostics</code></p> <p>If no issues are found, the response will contain an empty issues list with <code>total_issues: 0</code>, but <code>scanned_entities</code> will show which entities were checked.</p> 
@@ -647,7 +647,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_dynamic_entity_diagnostics_serialize(
+        _param = self._get_dynamic_entity_diagnostics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -655,7 +655,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetDynamicEntityDiagnostics200Response",
+            '200': "GetDynamicEntityDiagnostics200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -670,7 +670,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_dynamic_entity_diagnostics_without_preload_content(
+    def get_dynamic_entity_diagnostics_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -711,7 +711,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_dynamic_entity_diagnostics_serialize(
+        _param = self._get_dynamic_entity_diagnostics_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -719,7 +719,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetDynamicEntityDiagnostics200Response",
+            '200': "GetDynamicEntityDiagnostics200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -729,7 +729,7 @@ class DynamicEntityApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_dynamic_entity_diagnostics_serialize(
+    def _get_dynamic_entity_diagnostics_serialize(
         self,
         _request_auth,
         _content_type,
@@ -793,7 +793,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_reference_types(
+    def get_reference_types(
         self,
         _request_timeout: Union[
             None,
@@ -807,7 +807,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetReferenceTypes200Response:
+    ) -> GetReferenceTypes200Response:
         """Get Reference Types for Dynamic Entities
 
         <p>Get a list of all available reference types that can be used in Dynamic Entity field definitions.</p> <p>Reference types allow Dynamic Entity fields to reference other entities (similar to foreign keys).<br /> This endpoint returns both:<br /> * <strong>Static reference types</strong> - Built-in reference types for core OBP entities (e.g., Customer, Account, Transaction)<br /> * <strong>Dynamic reference types</strong> - Reference types for Dynamic Entities that have been created</p> <p>Each reference type includes:<br /> * <code>type_name</code> - The full reference type string to use in entity definitions (e.g., &quot;reference:Customer&quot;)<br /> * <code>example_value</code> - An example value showing the correct format<br /> * <code>description</code> - Description of what the reference type represents</p> <p><strong>Use Case:</strong><br /> When creating a Dynamic Entity with a field that references another entity, you need to know:<br /> 1. What reference types are available<br /> 2. The correct format for the type name<br /> 3. The correct format for example values</p> <p>This endpoint provides all that information.</p> <p><strong>Example Usage:</strong><br /> If you want to create a Dynamic Entity with a field that references a Customer, you would:<br /> 1. Call this endpoint to see that &quot;reference:Customer&quot; is available<br /> 2. Use it in your entity definition like:</p> <pre><code class=\"language-json\">{   &quot;customer_id&quot;: {     &quot;type&quot;: &quot;reference:Customer&quot;,     &quot;example&quot;: &quot;a8770fca-3d1d-47af-b6d0-7a6c3f124388&quot;   } } </code></pre> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>Required Role:</strong> <code>CanGetDynamicEntityReferenceTypes</code></p> 
@@ -834,7 +834,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_reference_types_serialize(
+        _param = self._get_reference_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -842,7 +842,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetReferenceTypes200Response",
+            '200': "GetReferenceTypes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -857,7 +857,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_reference_types_with_http_info(
+    def get_reference_types_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -871,7 +871,7 @@ class DynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetReferenceTypes200Response]:
+    ) -> ApiResponse[GetReferenceTypes200Response]:
         """Get Reference Types for Dynamic Entities
 
         <p>Get a list of all available reference types that can be used in Dynamic Entity field definitions.</p> <p>Reference types allow Dynamic Entity fields to reference other entities (similar to foreign keys).<br /> This endpoint returns both:<br /> * <strong>Static reference types</strong> - Built-in reference types for core OBP entities (e.g., Customer, Account, Transaction)<br /> * <strong>Dynamic reference types</strong> - Reference types for Dynamic Entities that have been created</p> <p>Each reference type includes:<br /> * <code>type_name</code> - The full reference type string to use in entity definitions (e.g., &quot;reference:Customer&quot;)<br /> * <code>example_value</code> - An example value showing the correct format<br /> * <code>description</code> - Description of what the reference type represents</p> <p><strong>Use Case:</strong><br /> When creating a Dynamic Entity with a field that references another entity, you need to know:<br /> 1. What reference types are available<br /> 2. The correct format for the type name<br /> 3. The correct format for example values</p> <p>This endpoint provides all that information.</p> <p><strong>Example Usage:</strong><br /> If you want to create a Dynamic Entity with a field that references a Customer, you would:<br /> 1. Call this endpoint to see that &quot;reference:Customer&quot; is available<br /> 2. Use it in your entity definition like:</p> <pre><code class=\"language-json\">{   &quot;customer_id&quot;: {     &quot;type&quot;: &quot;reference:Customer&quot;,     &quot;example&quot;: &quot;a8770fca-3d1d-47af-b6d0-7a6c3f124388&quot;   } } </code></pre> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>Required Role:</strong> <code>CanGetDynamicEntityReferenceTypes</code></p> 
@@ -898,7 +898,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_reference_types_serialize(
+        _param = self._get_reference_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -906,7 +906,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetReferenceTypes200Response",
+            '200': "GetReferenceTypes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -921,7 +921,7 @@ class DynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_reference_types_without_preload_content(
+    def get_reference_types_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -962,7 +962,7 @@ class DynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_reference_types_serialize(
+        _param = self._get_reference_types_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -970,7 +970,7 @@ class DynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetReferenceTypes200Response",
+            '200': "GetReferenceTypes200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -980,7 +980,7 @@ class DynamicEntityApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_reference_types_serialize(
+    def _get_reference_types_serialize(
         self,
         _request_auth,
         _content_type,

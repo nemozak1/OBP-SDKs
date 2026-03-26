@@ -5,99 +5,17 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv200PublicAccountsAllBanks**](AccountPublicApi.md#obpv200publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
-[**oBPv200PublicAccountsAtOneBank**](AccountPublicApi.md#obpv200publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
-[**oBPv300GetPublicAccountById**](AccountPublicApi.md#obpv300getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+[**getPublicAccountById**](AccountPublicApi.md#getpublicaccountbyid) | **GET** /obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account | Get Public Account by Id
+[**publicAccountsAllBanks**](AccountPublicApi.md#publicaccountsallbanks) | **GET** /obp/v2.0.0/accounts/public | Get Public Accounts at all Banks
+[**publicAccountsAtOneBank**](AccountPublicApi.md#publicaccountsatonebank) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/public | Get Public Accounts at Bank
 
 
-# **oBPv200PublicAccountsAllBanks**
-> OBPv200PublicAccountsAllBanks200Response oBPv200PublicAccountsAllBanks()
-
-Get Public Accounts at all Banks
-
-<p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getAccountPublicApi();
-
-try {
-    final response = api.oBPv200PublicAccountsAllBanks();
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling AccountPublicApi->oBPv200PublicAccountsAllBanks: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv200PublicAccountsAtOneBank**
-> OBPv200PublicAccountsAllBanks200Response oBPv200PublicAccountsAtOneBank(bankid)
-
-Get Public Accounts at Bank
-
-<p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-
-final api = ObpDart().getAccountPublicApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv200PublicAccountsAtOneBank(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling AccountPublicApi->oBPv200PublicAccountsAtOneBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv200PublicAccountsAllBanks200Response**](OBPv200PublicAccountsAllBanks200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv300GetPublicAccountById**
-> OBPv300GetPublicAccountById200Response oBPv300GetPublicAccountById(bankid, accountid, viewid)
+# **getPublicAccountById**
+> GetPublicAccountById200Response getPublicAccountById(bankid, accountid, viewid)
 
 Get Public Account by Id
 
@@ -113,10 +31,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 
 try {
-    final response = api.oBPv300GetPublicAccountById(bankid, accountid, viewid);
+    final response = api.getPublicAccountById(bankid, accountid, viewid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AccountPublicApi->oBPv300GetPublicAccountById: $e\n');
+    print('Exception when calling AccountPublicApi->getPublicAccountById: $e\n');
 }
 ```
 
@@ -130,7 +48,89 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetPublicAccountById200Response**](OBPv300GetPublicAccountById200Response.md)
+[**GetPublicAccountById200Response**](GetPublicAccountById200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **publicAccountsAllBanks**
+> PublicAccountsAllBanks200Response publicAccountsAllBanks()
+
+Get Public Accounts at all Banks
+
+<p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getAccountPublicApi();
+
+try {
+    final response = api.publicAccountsAllBanks();
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AccountPublicApi->publicAccountsAllBanks: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **publicAccountsAtOneBank**
+> PublicAccountsAllBanks200Response publicAccountsAtOneBank(bankid)
+
+Get Public Accounts at Bank
+
+<p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+
+final api = ObpDart().getAccountPublicApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.publicAccountsAtOneBank(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling AccountPublicApi->publicAccountsAtOneBank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**PublicAccountsAllBanks200Response**](PublicAccountsAllBanks200Response.md)
 
 ### Authorization
 

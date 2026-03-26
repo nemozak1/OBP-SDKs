@@ -5,15 +5,15 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#obpv310checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
+[**checkFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#checkfundsavailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds
 
 
-# **oBPv310CheckFundsAvailable**
-> OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(bankid, accountid, viewid)
+# **checkFundsAvailable**
+> CheckFundsAvailable200Response checkFundsAvailable(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -39,10 +39,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
 
 try {
-    final response = api.oBPv310CheckFundsAvailable(bankid, accountid, viewid);
+    final response = api.checkFundsAvailable(bankid, accountid, viewid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ConfirmationOfFundsServicePIISApi->oBPv310CheckFundsAvailable: $e\n');
+    print('Exception when calling ConfirmationOfFundsServicePIISApi->checkFundsAvailable: $e\n');
 }
 ```
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

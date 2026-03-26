@@ -4,19 +4,19 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_add_user_to_group**](GroupApi.md#o_bpv6_0_0_add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-[**o_bpv6_0_0_create_group**](GroupApi.md#o_bpv6_0_0_create_group) | **POST** /obp/v6.0.0/management/groups | Create Group
-[**o_bpv6_0_0_delete_group**](GroupApi.md#o_bpv6_0_0_delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
-[**o_bpv6_0_0_get_group**](GroupApi.md#o_bpv6_0_0_get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
-[**o_bpv6_0_0_get_group_entitlements**](GroupApi.md#o_bpv6_0_0_get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-[**o_bpv6_0_0_get_groups**](GroupApi.md#o_bpv6_0_0_get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups
-[**o_bpv6_0_0_get_user_group_memberships**](GroupApi.md#o_bpv6_0_0_get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-[**o_bpv6_0_0_remove_user_from_group**](GroupApi.md#o_bpv6_0_0_remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-[**o_bpv6_0_0_update_group**](GroupApi.md#o_bpv6_0_0_update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
+[**add_user_to_group**](GroupApi.md#add_user_to_group) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+[**create_group**](GroupApi.md#create_group) | **POST** /obp/v6.0.0/management/groups | Create Group
+[**delete_group**](GroupApi.md#delete_group) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
+[**get_group**](GroupApi.md#get_group) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
+[**get_group_entitlements**](GroupApi.md#get_group_entitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+[**get_groups**](GroupApi.md#get_groups) | **GET** /obp/v6.0.0/management/groups | Get Groups
+[**get_user_group_memberships**](GroupApi.md#get_user_group_memberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+[**remove_user_from_group**](GroupApi.md#remove_user_from_group) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+[**update_group**](GroupApi.md#update_group) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
 
 
-# **o_bpv6_0_0_add_user_to_group**
-> OBPv600AddUserToGroup200Response o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
+# **add_user_to_group**
+> AddUserToGroup200Response add_user_to_group(userid, add_user_to_group_request)
 
 Grant User Membership to Group Entitlements
 
@@ -57,8 +57,8 @@ already has a particular role at the same bank, that entitlement is skipped (not
 
 ```python
 import obp_python
-from obp_python.models.obpv600_add_user_to_group200_response import OBPv600AddUserToGroup200Response
-from obp_python.models.obpv600_add_user_to_group_request import OBPv600AddUserToGroupRequest
+from obp_python.models.add_user_to_group200_response import AddUserToGroup200Response
+from obp_python.models.add_user_to_group_request import AddUserToGroupRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -92,15 +92,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.GroupApi(api_client)
     userid = 'userid_example' # str | The USERID identifier
-    obpv600_add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}} # OBPv600AddUserToGroupRequest | Request body
+    add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}} # AddUserToGroupRequest | Request body
 
     try:
         # Grant User Membership to Group Entitlements
-        api_response = api_instance.o_bpv6_0_0_add_user_to_group(userid, obpv600_add_user_to_group_request)
-        print("The response of GroupApi->o_bpv6_0_0_add_user_to_group:\n")
+        api_response = api_instance.add_user_to_group(userid, add_user_to_group_request)
+        print("The response of GroupApi->add_user_to_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_add_user_to_group: %s\n" % e)
+        print("Exception when calling GroupApi->add_user_to_group: %s\n" % e)
 ```
 
 
@@ -111,11 +111,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **str**| The USERID identifier | 
- **obpv600_add_user_to_group_request** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md)| Request body | 
+ **add_user_to_group_request** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_group**
-> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_create_group(obpv600_create_group_request)
+# **create_group**
+> GetGroups200ResponseGroupsInner create_group(create_group_request)
 
 Create Group
 
@@ -169,8 +169,8 @@ Create Group
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_group_request import OBPv600CreateGroupRequest
-from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
+from obp_python.models.create_group_request import CreateGroupRequest
+from obp_python.models.get_groups200_response_groups_inner import GetGroups200ResponseGroupsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -203,15 +203,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.GroupApi(api_client)
-    obpv600_create_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}} # OBPv600CreateGroupRequest | Request body
+    create_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}} # CreateGroupRequest | Request body
 
     try:
         # Create Group
-        api_response = api_instance.o_bpv6_0_0_create_group(obpv600_create_group_request)
-        print("The response of GroupApi->o_bpv6_0_0_create_group:\n")
+        api_response = api_instance.create_group(create_group_request)
+        print("The response of GroupApi->create_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_create_group: %s\n" % e)
+        print("Exception when calling GroupApi->create_group: %s\n" % e)
 ```
 
 
@@ -221,11 +221,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_create_group_request** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md)| Request body | 
+ **create_group_request** | [**CreateGroupRequest**](CreateGroupRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_group**
-> o_bpv6_0_0_delete_group(groupid)
+# **delete_group**
+> delete_group(groupid)
 
 Delete Group
 
@@ -304,9 +304,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Group
-        api_instance.o_bpv6_0_0_delete_group(groupid)
+        api_instance.delete_group(groupid)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_delete_group: %s\n" % e)
+        print("Exception when calling GroupApi->delete_group: %s\n" % e)
 ```
 
 
@@ -340,8 +340,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_group**
-> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_get_group(groupid)
+# **get_group**
+> GetGroups200ResponseGroupsInner get_group(groupid)
 
 Get Group
 
@@ -369,7 +369,7 @@ Get Group
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
+from obp_python.models.get_groups200_response_groups_inner import GetGroups200ResponseGroupsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -406,11 +406,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Group
-        api_response = api_instance.o_bpv6_0_0_get_group(groupid)
-        print("The response of GroupApi->o_bpv6_0_0_get_group:\n")
+        api_response = api_instance.get_group(groupid)
+        print("The response of GroupApi->get_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_get_group: %s\n" % e)
+        print("Exception when calling GroupApi->get_group: %s\n" % e)
 ```
 
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -444,8 +444,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_group_entitlements**
-> OBPv600GetGroupEntitlements200Response o_bpv6_0_0_get_group_entitlements(groupid)
+# **get_group_entitlements**
+> GetGroupEntitlements200Response get_group_entitlements(groupid)
 
 Get Group Entitlements
 
@@ -475,7 +475,7 @@ Get Group Entitlements
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_group_entitlements200_response import OBPv600GetGroupEntitlements200Response
+from obp_python.models.get_group_entitlements200_response import GetGroupEntitlements200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -512,11 +512,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Group Entitlements
-        api_response = api_instance.o_bpv6_0_0_get_group_entitlements(groupid)
-        print("The response of GroupApi->o_bpv6_0_0_get_group_entitlements:\n")
+        api_response = api_instance.get_group_entitlements(groupid)
+        print("The response of GroupApi->get_group_entitlements:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_get_group_entitlements: %s\n" % e)
+        print("Exception when calling GroupApi->get_group_entitlements: %s\n" % e)
 ```
 
 
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -550,8 +550,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_groups**
-> OBPv600GetGroups200Response o_bpv6_0_0_get_groups()
+# **get_groups**
+> GetGroups200Response get_groups()
 
 Get Groups
 
@@ -580,7 +580,7 @@ Get Groups
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_groups200_response import OBPv600GetGroups200Response
+from obp_python.models.get_groups200_response import GetGroups200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -616,11 +616,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Groups
-        api_response = api_instance.o_bpv6_0_0_get_groups()
-        print("The response of GroupApi->o_bpv6_0_0_get_groups:\n")
+        api_response = api_instance.get_groups()
+        print("The response of GroupApi->get_groups:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_get_groups: %s\n" % e)
+        print("Exception when calling GroupApi->get_groups: %s\n" % e)
 ```
 
 
@@ -631,7 +631,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -651,8 +651,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_user_group_memberships**
-> OBPv600GetUserGroupMemberships200Response o_bpv6_0_0_get_user_group_memberships(userid)
+# **get_user_group_memberships**
+> GetUserGroupMemberships200Response get_user_group_memberships(userid)
 
 Get User's Group Memberships
 
@@ -683,7 +683,7 @@ Get User's Group Memberships
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_user_group_memberships200_response import OBPv600GetUserGroupMemberships200Response
+from obp_python.models.get_user_group_memberships200_response import GetUserGroupMemberships200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -720,11 +720,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get User's Group Memberships
-        api_response = api_instance.o_bpv6_0_0_get_user_group_memberships(userid)
-        print("The response of GroupApi->o_bpv6_0_0_get_user_group_memberships:\n")
+        api_response = api_instance.get_user_group_memberships(userid)
+        print("The response of GroupApi->get_user_group_memberships:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_get_user_group_memberships: %s\n" % e)
+        print("Exception when calling GroupApi->get_user_group_memberships: %s\n" % e)
 ```
 
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -758,8 +758,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_remove_user_from_group**
-> o_bpv6_0_0_remove_user_from_group(userid, groupid)
+# **remove_user_from_group**
+> remove_user_from_group(userid, groupid)
 
 Remove User from Group
 
@@ -822,9 +822,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Remove User from Group
-        api_instance.o_bpv6_0_0_remove_user_from_group(userid, groupid)
+        api_instance.remove_user_from_group(userid, groupid)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_remove_user_from_group: %s\n" % e)
+        print("Exception when calling GroupApi->remove_user_from_group: %s\n" % e)
 ```
 
 
@@ -859,8 +859,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_group**
-> OBPv600GetGroups200ResponseGroupsInner o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
+# **update_group**
+> GetGroups200ResponseGroupsInner update_group(groupid, update_group_request)
 
 Update Group
 
@@ -888,8 +888,8 @@ Update Group
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
-from obp_python.models.obpv600_update_group_request import OBPv600UpdateGroupRequest
+from obp_python.models.get_groups200_response_groups_inner import GetGroups200ResponseGroupsInner
+from obp_python.models.update_group_request import UpdateGroupRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -923,15 +923,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.GroupApi(api_client)
     groupid = 'groupid_example' # str | The GROUPID identifier
-    obpv600_update_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}} # OBPv600UpdateGroupRequest | Request body
+    update_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}} # UpdateGroupRequest | Request body
 
     try:
         # Update Group
-        api_response = api_instance.o_bpv6_0_0_update_group(groupid, obpv600_update_group_request)
-        print("The response of GroupApi->o_bpv6_0_0_update_group:\n")
+        api_response = api_instance.update_group(groupid, update_group_request)
+        print("The response of GroupApi->update_group:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling GroupApi->o_bpv6_0_0_update_group: %s\n" % e)
+        print("Exception when calling GroupApi->update_group: %s\n" % e)
 ```
 
 
@@ -942,11 +942,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupid** | **str**| The GROUPID identifier | 
- **obpv600_update_group_request** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md)| Request body | 
+ **update_group_request** | [**UpdateGroupRequest**](UpdateGroupRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponseGroupsInner**](OBPv600GetGroups200ResponseGroupsInner.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

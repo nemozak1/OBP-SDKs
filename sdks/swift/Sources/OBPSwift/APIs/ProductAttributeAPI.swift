@@ -10,6 +10,113 @@ import Foundation
 open class ProductAttributeAPI {
 
     /**
+     Create or Update Product Attribute Definition
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+     */
+    open class func createOrUpdateProductAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner {
+        return try await createOrUpdateProductAttributeDefinitionWithRequestBuilder(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create or Update Product Attribute Definition
+     - PUT /obp/v4.0.0/banks/{bankid}/attribute-definitions/product
+     - <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> 
+     */
+    open class func createOrUpdateProductAttributeDefinitionWithRequestBuilder(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
+        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create Product Attribute
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter productcode: (path) The PRODUCTCODE identifier 
+     - parameter updateAtmAttributeRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: CreateProductAttribute200Response
+     */
+    open class func createProductAttribute(bankid: String, productcode: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateProductAttribute200Response {
+        return try await createProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create Product Attribute
+     - POST /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute
+     - <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter productcode: (path) The PRODUCTCODE identifier 
+     - parameter updateAtmAttributeRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<CreateProductAttribute200Response> 
+     */
+    open class func createProductAttributeWithRequestBuilder(bankid: String, productcode: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateProductAttribute200Response> {
+        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let productcodePreEscape = "\(APIHelper.mapValueToPathItem(productcode))"
+        let productcodePostEscape = productcodePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{productcode}", with: productcodePostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Delete Product Attribute
      
      - parameter bankid: (path) The BANKID identifier 
@@ -18,8 +125,8 @@ open class ProductAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv310DeleteProductAttribute(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv310DeleteProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteProductAttribute(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -33,7 +140,7 @@ open class ProductAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter productcode: (path) The PRODUCTCODE identifier 
@@ -41,7 +148,7 @@ open class ProductAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv310DeleteProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -69,113 +176,6 @@ open class ProductAttributeAPI {
     }
 
     /**
-     Create or Update Product Attribute Definition
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-     */
-    open class func oBPv400CreateOrUpdateProductAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems {
-        return try await oBPv400CreateOrUpdateProductAttributeDefinitionWithRequestBuilder(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create or Update Product Attribute Definition
-     - PUT /obp/v4.0.0/banks/{bankid}/attribute-definitions/product
-     - <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> 
-     */
-    open class func oBPv400CreateOrUpdateProductAttributeDefinitionWithRequestBuilder(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
-        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Create Product Attribute
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter productcode: (path) The PRODUCTCODE identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateProductAttribute200Response
-     */
-    open class func oBPv400CreateProductAttribute(bankid: String, productcode: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateProductAttribute200Response {
-        return try await oBPv400CreateProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create Product Attribute
-     - POST /obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute
-     - <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter productcode: (path) The PRODUCTCODE identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateProductAttribute200Response> 
-     */
-    open class func oBPv400CreateProductAttributeWithRequestBuilder(bankid: String, productcode: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateProductAttribute200Response> {
-        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let productcodePreEscape = "\(APIHelper.mapValueToPathItem(productcode))"
-        let productcodePostEscape = productcodePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{productcode}", with: productcodePostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Delete Product Attribute Definition
      
      - parameter bankid: (path) The BANKID identifier 
@@ -183,8 +183,8 @@ open class ProductAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteProductAttributeDefinition(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteProductAttributeDefinitionWithRequestBuilder(bankid: bankid, attributedefinitionid: attributedefinitionid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteProductAttributeDefinition(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteProductAttributeDefinitionWithRequestBuilder(bankid: bankid, attributedefinitionid: attributedefinitionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -198,14 +198,14 @@ open class ProductAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter attributedefinitionid: (path) The ATTRIBUTEDEFINITIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteProductAttributeDefinitionWithRequestBuilder(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteProductAttributeDefinitionWithRequestBuilder(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -236,10 +236,10 @@ open class ProductAttributeAPI {
      - parameter productcode: (path) The PRODUCTCODE identifier 
      - parameter productattributeid: (path) The PRODUCTATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateProductAttribute200Response
+     - returns: CreateProductAttribute200Response
      */
-    open class func oBPv400GetProductAttribute(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateProductAttribute200Response {
-        return try await oBPv400GetProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getProductAttribute(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateProductAttribute200Response {
+        return try await getProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -253,15 +253,15 @@ open class ProductAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter productcode: (path) The PRODUCTCODE identifier 
      - parameter productattributeid: (path) The PRODUCTATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateProductAttribute200Response> 
+     - returns: RequestBuilder<CreateProductAttribute200Response> 
      */
-    open class func oBPv400GetProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateProductAttribute200Response> {
+    open class func getProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateProductAttribute200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -283,7 +283,7 @@ open class ProductAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -293,10 +293,10 @@ open class ProductAttributeAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionRequestAttributeDefinition200Response
+     - returns: GetTransactionRequestAttributeDefinition200Response
      */
-    open class func oBPv400GetProductAttributeDefinition(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionRequestAttributeDefinition200Response {
-        return try await oBPv400GetProductAttributeDefinitionWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getProductAttributeDefinition(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionRequestAttributeDefinition200Response {
+        return try await getProductAttributeDefinitionWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -310,13 +310,13 @@ open class ProductAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response> 
+     - returns: RequestBuilder<GetTransactionRequestAttributeDefinition200Response> 
      */
-    open class func oBPv400GetProductAttributeDefinitionWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response> {
+    open class func getProductAttributeDefinitionWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionRequestAttributeDefinition200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -332,7 +332,7 @@ open class ProductAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionRequestAttributeDefinition200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -343,12 +343,12 @@ open class ProductAttributeAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter productcode: (path) The PRODUCTCODE identifier 
      - parameter productattributeid: (path) The PRODUCTATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateProductAttribute200Response
+     - returns: CreateProductAttribute200Response
      */
-    open class func oBPv400UpdateProductAttribute(bankid: String, productcode: String, productattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateProductAttribute200Response {
-        return try await oBPv400UpdateProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, oBPv510UpdateAtmAttributeRequest: oBPv510UpdateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateProductAttribute(bankid: String, productcode: String, productattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateProductAttribute200Response {
+        return try await updateProductAttributeWithRequestBuilder(bankid: bankid, productcode: productcode, productattributeid: productattributeid, updateAtmAttributeRequest: updateAtmAttributeRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -362,16 +362,16 @@ open class ProductAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter productcode: (path) The PRODUCTCODE identifier 
      - parameter productattributeid: (path) The PRODUCTATTRIBUTEID identifier 
-     - parameter oBPv510UpdateAtmAttributeRequest: (body) Request body 
+     - parameter updateAtmAttributeRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateProductAttribute200Response> 
+     - returns: RequestBuilder<CreateProductAttribute200Response> 
      */
-    open class func oBPv400UpdateProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateProductAttribute200Response> {
+    open class func updateProductAttributeWithRequestBuilder(bankid: String, productcode: String, productattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateProductAttribute200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -383,7 +383,7 @@ open class ProductAttributeAPI {
         let productattributeidPostEscape = productattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{productattributeid}", with: productattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510UpdateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateAtmAttributeRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -393,7 +393,7 @@ open class ProductAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateProductAttribute200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

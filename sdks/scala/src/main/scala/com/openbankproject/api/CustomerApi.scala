@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,81 +11,81 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response
-import com.openbankproject.model.OBPv140AddCustomerMessageRequest
-import com.openbankproject.model.OBPv140GetCrmEvents200Response
-import com.openbankproject.model.OBPv140GetCustomersMessages200Response
-import com.openbankproject.model.OBPv200AddKycCheckRequest
-import com.openbankproject.model.OBPv200AddKycDocument200Response
-import com.openbankproject.model.OBPv200AddKycDocumentRequest
-import com.openbankproject.model.OBPv200AddKycMedia200Response
-import com.openbankproject.model.OBPv200AddKycMediaRequest
-import com.openbankproject.model.OBPv200AddKycStatusRequest
-import com.openbankproject.model.OBPv200GetKycChecks200Response
-import com.openbankproject.model.OBPv200GetKycChecks200ResponsePropertiesChecksItems
-import com.openbankproject.model.OBPv200GetKycDocuments200Response
-import com.openbankproject.model.OBPv200GetKycMedia200Response
-import com.openbankproject.model.OBPv200GetKycStatuses200Response
-import com.openbankproject.model.OBPv200GetKycStatuses200ResponsePropertiesStatusesItems
-import com.openbankproject.model.OBPv200GetSocialMediaHandles200Response
-import com.openbankproject.model.OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems
-import com.openbankproject.model.OBPv300GetCustomersForUser200Response
-import com.openbankproject.model.OBPv310CreateCustomerAddress200Response
-import com.openbankproject.model.OBPv310CreateCustomerAddressRequest
-import com.openbankproject.model.OBPv310CreateMeetingRequest
-import com.openbankproject.model.OBPv310CreateTaxResidence200Response
-import com.openbankproject.model.OBPv310CreateTaxResidenceRequest
-import com.openbankproject.model.OBPv310GetCustomerAddresses200Response
-import com.openbankproject.model.OBPv310GetMeeting200Response
-import com.openbankproject.model.OBPv310GetMeetings200Response
-import com.openbankproject.model.OBPv310GetTaxResidence200Response
-import com.openbankproject.model.OBPv310UpdateCustomerBranch200Response
-import com.openbankproject.model.OBPv310UpdateCustomerBranchRequest
-import com.openbankproject.model.OBPv310UpdateCustomerCreditLimitRequest
-import com.openbankproject.model.OBPv310UpdateCustomerCreditRatingAndSourceRequest
-import com.openbankproject.model.OBPv310UpdateCustomerDataRequest
-import com.openbankproject.model.OBPv310UpdateCustomerEmailRequest
-import com.openbankproject.model.OBPv310UpdateCustomerIdentityRequest
-import com.openbankproject.model.OBPv400CreateCustomerMessageRequest
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-import com.openbankproject.model.OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo
-import com.openbankproject.model.OBPv400CreateUserCustomerLinksRequest
-import com.openbankproject.model.OBPv400GetCustomerAttributes200Response
-import com.openbankproject.model.OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-import com.openbankproject.model.OBPv400GetCustomerMessages200Response
-import com.openbankproject.model.OBPv400GetCustomersMinimalAtAnyBank200Response
-import com.openbankproject.model.OBPv400GetMyCorrelatedEntities200Response
-import com.openbankproject.model.OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-import com.openbankproject.model.OBPv400GetUserCustomerLinksByCustomerId200Response
-import com.openbankproject.model.OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems
-import com.openbankproject.model.OBPv500CreateCustomerAccountLinkRequest
-import com.openbankproject.model.OBPv500GetCustomerAccountLinksByCustomerId200Response
-import com.openbankproject.model.OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
-import com.openbankproject.model.OBPv500GetCustomerOverview200Response
-import com.openbankproject.model.OBPv500GetCustomerOverviewFlat200Response
-import com.openbankproject.model.OBPv500GetCustomerOverviewFlatRequest
-import com.openbankproject.model.OBPv500GetMyCustomersAtBank200Response
-import com.openbankproject.model.OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems
-import com.openbankproject.model.OBPv500UpdateCustomerAccountLinkByIdRequest
-import com.openbankproject.model.OBPv510CreateAgentRequest
-import com.openbankproject.model.OBPv510GetAgent200Response
-import com.openbankproject.model.OBPv510UpdateAgentStatusRequest
-import com.openbankproject.model.OBPv600CreateCorporateCustomerRequest
-import com.openbankproject.model.OBPv600CreateCustomerRequest
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest
-import com.openbankproject.model.OBPv600CreateRetailCustomerRequest
-import com.openbankproject.model.OBPv600GetCustomerByCustomerNumber200Response
-import com.openbankproject.model.OBPv600GetCustomerChildren200Response
-import com.openbankproject.model.OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-import com.openbankproject.model.OBPv600GetCustomersByLegalNameRequest
+import com.openbankproject.model.AddCustomerMessageRequest
+import com.openbankproject.model.AddKycCheckRequest
+import com.openbankproject.model.AddKycDocument200Response
+import com.openbankproject.model.AddKycDocumentRequest
+import com.openbankproject.model.AddKycMedia200Response
+import com.openbankproject.model.AddKycMediaRequest
+import com.openbankproject.model.AddKycStatusRequest
+import com.openbankproject.model.CreateAgentRequest
+import com.openbankproject.model.CreateCorporateCustomerRequest
+import com.openbankproject.model.CreateCustomerAccountLinkRequest
+import com.openbankproject.model.CreateCustomerAddress200Response
+import com.openbankproject.model.CreateCustomerAddressRequest
+import com.openbankproject.model.CreateCustomerMessageRequest
+import com.openbankproject.model.CreateCustomerRequest
+import com.openbankproject.model.CreateMeetingRequest
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+import com.openbankproject.model.CreatePersonalDataFieldRequest
+import com.openbankproject.model.CreateRetailCustomerRequest
+import com.openbankproject.model.CreateTaxResidence200Response
+import com.openbankproject.model.CreateTaxResidenceRequest
+import com.openbankproject.model.CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo
+import com.openbankproject.model.CreateUserCustomerLinksRequest
+import com.openbankproject.model.GetAgent200Response
+import com.openbankproject.model.GetCrmEvents200Response
+import com.openbankproject.model.GetCustomerAccountLinksByCustomerId200Response
+import com.openbankproject.model.GetCustomerAccountLinksByCustomerId200ResponseLinksInner
+import com.openbankproject.model.GetCustomerAddresses200Response
+import com.openbankproject.model.GetCustomerAttributes200Response
+import com.openbankproject.model.GetCustomerAttributes200ResponseCustomerAttributesInner
+import com.openbankproject.model.GetCustomerByCustomerNumber200Response
+import com.openbankproject.model.GetCustomerChildren200Response
+import com.openbankproject.model.GetCustomerChildren200ResponseCustomersInner
+import com.openbankproject.model.GetCustomerMessages200Response
+import com.openbankproject.model.GetCustomerOverview200Response
+import com.openbankproject.model.GetCustomerOverviewFlat200Response
+import com.openbankproject.model.GetCustomerOverviewFlatRequest
+import com.openbankproject.model.GetCustomersByLegalNameRequest
+import com.openbankproject.model.GetCustomersForUser200Response
+import com.openbankproject.model.GetCustomersMessages200Response
+import com.openbankproject.model.GetCustomersMinimalAtAnyBank200Response
+import com.openbankproject.model.GetKycChecks200Response
+import com.openbankproject.model.GetKycChecks200ResponseChecksInner
+import com.openbankproject.model.GetKycDocuments200Response
+import com.openbankproject.model.GetKycMedia200Response
+import com.openbankproject.model.GetKycStatuses200Response
+import com.openbankproject.model.GetKycStatuses200ResponseStatusesInner
+import com.openbankproject.model.GetMeeting200Response
+import com.openbankproject.model.GetMeetings200Response
+import com.openbankproject.model.GetMyCorrelatedEntities200Response
+import com.openbankproject.model.GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner
+import com.openbankproject.model.GetMyCustomersAtBank200Response
+import com.openbankproject.model.GetMyCustomersAtBank200ResponseCustomersInner
+import com.openbankproject.model.GetSocialMediaHandles200Response
+import com.openbankproject.model.GetSocialMediaHandles200ResponseChecksInner
+import com.openbankproject.model.GetTaxResidence200Response
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+import com.openbankproject.model.GetUserCustomerLinksByCustomerId200Response
+import com.openbankproject.model.GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner
+import com.openbankproject.model.UpdateAgentStatusRequest
+import com.openbankproject.model.UpdateCustomerAccountLinkByIdRequest
+import com.openbankproject.model.UpdateCustomerBranch200Response
+import com.openbankproject.model.UpdateCustomerBranchRequest
+import com.openbankproject.model.UpdateCustomerCreditLimitRequest
+import com.openbankproject.model.UpdateCustomerCreditRatingAndSourceRequest
+import com.openbankproject.model.UpdateCustomerDataRequest
+import com.openbankproject.model.UpdateCustomerEmailRequest
+import com.openbankproject.model.UpdateCustomerIdentityRequest
+import com.openbankproject.model.UpdateTransactionNarrative200Response
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object CustomerApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new CustomerApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new CustomerApi(baseUrl)
 }
 
 class CustomerApi(baseUrl: String) {
@@ -94,7 +94,7 @@ class CustomerApi(baseUrl: String) {
    * <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -103,65 +103,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv140AddCustomerMessageRequest Request body
+   * @param addCustomerMessageRequest Request body
    */
-  def oBPv140AddCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv140AddCustomerMessageRequest: OBPv140AddCustomerMessageRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, addCustomerMessageRequest: AddCustomerMessageRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/${customerid}/messages")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv140AddCustomerMessageRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#actual_date\"><strong>actual_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#channel\"><strong>channel</strong></a>:</p> <p><a href=\"/glossary#crm_events\"><strong>crm_events</strong></a>:</p> <p><a href=\"/glossary#customer_name\"><strong>customer_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#result\"><strong>result</strong></a>:</p> <p><a href=\"/glossary#scheduled_date\"><strong>scheduled_date</strong></a>: 2020-01-27</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv140GetCrmEvents200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv140GetCrmEvents(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv140GetCrmEvents200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/crm-events")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv140GetCrmEvents200Response])
-
-  /**
-   * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv140GetCustomersMessages200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv140GetCustomersMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv140GetCustomersMessages200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/messages")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv140GetCustomersMessages200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addCustomerMessageRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Add a KYC check for the customer specified by CUSTOMER_ID. KYC Checks store details of checks on a customer made by the KYC team, their comments and a satisfied status</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#kyc_check_id\">KYC_CHECK_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#how\"><strong>how</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#satisfied\"><strong>satisfied</strong></a>: false</p> <p><a href=\"/glossary#staff_name\"><strong>staff_name</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv200GetKycChecks200ResponsePropertiesChecksItems (Successful operation)
+   *   code 200 : GetKycChecks200ResponseChecksInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -172,22 +129,22 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    * @param kyccheckid The KYCCHECKID identifier
-   * @param oBPv200AddKycCheckRequest Request body
+   * @param addKycCheckRequest Request body
    */
-  def oBPv200AddKycCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kyccheckid: String, oBPv200AddKycCheckRequest: OBPv200AddKycCheckRequest): Request[Either[ResponseException[String, Exception], OBPv200GetKycChecks200ResponsePropertiesChecksItems]] =
+  def addKycCheck(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kyccheckid: String, addKycCheckRequest: AddKycCheckRequest): Request[Either[ResponseException[String, Exception], GetKycChecks200ResponseChecksInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/kyc_check/${kyccheckid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv200AddKycCheckRequest)
-      .response(asJson[OBPv200GetKycChecks200ResponsePropertiesChecksItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addKycCheckRequest)
+      .response(asJson[GetKycChecks200ResponseChecksInner])
 
   /**
    * <p>Add a KYC document for the customer specified by CUSTOMER_ID. KYC Documents contain the document type (e.g. passport), place of issue, expiry etc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#kyc_document_id\">KYC_DOCUMENT_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>expiry_date</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>issue_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#issue_place\"><strong>issue_place</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv200AddKycDocument200Response (Successful operation)
+   *   code 200 : AddKycDocument200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -198,22 +155,22 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    * @param kycdocumentid The KYCDOCUMENTID identifier
-   * @param oBPv200AddKycDocumentRequest Request body
+   * @param addKycDocumentRequest Request body
    */
-  def oBPv200AddKycDocument(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kycdocumentid: String, oBPv200AddKycDocumentRequest: OBPv200AddKycDocumentRequest): Request[Either[ResponseException[String, Exception], OBPv200AddKycDocument200Response]] =
+  def addKycDocument(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kycdocumentid: String, addKycDocumentRequest: AddKycDocumentRequest): Request[Either[ResponseException[String, Exception], AddKycDocument200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/kyc_documents/${kycdocumentid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv200AddKycDocumentRequest)
-      .response(asJson[OBPv200AddKycDocument200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addKycDocumentRequest)
+      .response(asJson[AddKycDocument200Response])
 
   /**
    * <p>Add some KYC media for the customer specified by CUSTOMER_ID. KYC Media resources relate to KYC Documents and KYC Checks and contain media urls for scans of passports, utility bills etc</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#kyc_media_id\">KYC_MEDIA_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#relates_to_kyc_check_id\"><strong>relates_to_kyc_check_id</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_document_id\"><strong>relates_to_kyc_document_id</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv200AddKycMedia200Response (Successful operation)
+   *   code 200 : AddKycMedia200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -224,22 +181,22 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    * @param kycmediaid The KYCMEDIAID identifier
-   * @param oBPv200AddKycMediaRequest Request body
+   * @param addKycMediaRequest Request body
    */
-  def oBPv200AddKycMedia(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kycmediaid: String, oBPv200AddKycMediaRequest: OBPv200AddKycMediaRequest): Request[Either[ResponseException[String, Exception], OBPv200AddKycMedia200Response]] =
+  def addKycMedia(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, kycmediaid: String, addKycMediaRequest: AddKycMediaRequest): Request[Either[ResponseException[String, Exception], AddKycMedia200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/kyc_media/${kycmediaid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv200AddKycMediaRequest)
-      .response(asJson[OBPv200AddKycMedia200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addKycMediaRequest)
+      .response(asJson[AddKycMedia200Response])
 
   /**
    * <p>Add a kyc_status for the customer specified by CUSTOMER_ID. KYC Status is a timeline of the KYC status of the customer</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#ok\"><strong>ok</strong></a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv200GetKycStatuses200ResponsePropertiesStatusesItems (Successful operation)
+   *   code 200 : GetKycStatuses200ResponseStatusesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -249,22 +206,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv200AddKycStatusRequest Request body
+   * @param addKycStatusRequest Request body
    */
-  def oBPv200AddKycStatus(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv200AddKycStatusRequest: OBPv200AddKycStatusRequest): Request[Either[ResponseException[String, Exception], OBPv200GetKycStatuses200ResponsePropertiesStatusesItems]] =
+  def addKycStatus(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, addKycStatusRequest: AddKycStatusRequest): Request[Either[ResponseException[String, Exception], GetKycStatuses200ResponseStatusesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/kyc_statuses")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv200AddKycStatusRequest)
-      .response(asJson[OBPv200GetKycStatuses200ResponsePropertiesStatusesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addKycStatusRequest)
+      .response(asJson[GetKycStatuses200ResponseStatusesInner])
 
   /**
    * <p>Create a customer social media handle for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#date_activated\"><strong>date_activated</strong></a>:</p> <p><a href=\"/glossary#date_added\"><strong>date_added</strong></a>:</p> <p><a href=\"/glossary#handle\"><strong>handle</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -274,110 +231,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems Request body
+   * @param getSocialMediaHandles200ResponseChecksInner Request body
    */
-  def oBPv200AddSocialMediaHandle(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems: OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addSocialMediaHandle(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, getSocialMediaHandles200ResponseChecksInner: GetSocialMediaHandles200ResponseChecksInner): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/social_media_handles")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getSocialMediaHandles200ResponseChecksInner)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
-   * <p>Get KYC checks for the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#how\"><strong>how</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#satisfied\"><strong>satisfied</strong></a>: false</p> <p><a href=\"/glossary#staff_name\"><strong>staff_name</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> 
+   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p> <p><a href=\"/glossary#\"><strong>is_pending_agent</strong></a>: is_pending_agent</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv200GetKycChecks200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv200GetKycChecks(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], OBPv200GetKycChecks200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_checks")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv200GetKycChecks200Response])
-
-  /**
-   * <p>Get KYC (know your customer) documents for a customer specified by CUSTOMER_ID<br /> Get a list of documents that affirm the identity of the customer<br /> Passport, driving licence etc.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#documents\"><strong>documents</strong></a>:</p> <p><a href=\"/glossary#\"><strong>expiry_date</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>issue_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#issue_place\"><strong>issue_place</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv200GetKycDocuments200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv200GetKycDocuments(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], OBPv200GetKycDocuments200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_documents")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv200GetKycDocuments200Response])
-
-  /**
-   * <p>Get KYC media (scans, pictures, videos) that affirms the identity of the customer.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#medias\"><strong>medias</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_check_id\"><strong>relates_to_kyc_check_id</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_document_id\"><strong>relates_to_kyc_document_id</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv200GetKycMedia200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv200GetKycMedia(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], OBPv200GetKycMedia200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_media")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv200GetKycMedia200Response])
-
-  /**
-   * <p>Get the KYC statuses for a customer specified by CUSTOMER_ID over time.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#ok\"><strong>ok</strong></a>: false</p> <p><a href=\"/glossary#statuses\"><strong>statuses</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv200GetKycStatuses200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv200GetKycStatuses(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], OBPv200GetKycStatuses200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_statuses")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv200GetKycStatuses200Response])
-
-  /**
-   * <p>Get social media handles for a customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#date_activated\"><strong>date_activated</strong></a>:</p> <p><a href=\"/glossary#date_added\"><strong>date_added</strong></a>:</p> <p><a href=\"/glossary#handle\"><strong>handle</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv200GetSocialMediaHandles200Response (Successful operation)
+   *   code 200 : GetAgent200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -386,41 +255,94 @@ class CustomerApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
+   * @param createAgentRequest Request body
    */
-  def oBPv200GetSocialMediaHandles(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv200GetSocialMediaHandles200Response]] =
+  def createAgent(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createAgentRequest: CreateAgentRequest): Request[Either[ResponseException[String, Exception], GetAgent200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/social_media_handles")
+      .method(Method.POST, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/agents")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv200GetSocialMediaHandles200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createAgentRequest)
+      .response(asJson[GetAgent200Response])
 
   /**
-   * <p>Gets all Customers that are linked to a User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"ma&#105;l&#116;&#111;&#58;&#x66;&#x65;&#108;&#x69;xs&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;l&#101;&#46;c&#x6f;&#109;\">&#x66;&#101;&#108;&#x69;&#x78;s&#109;&#105;&#116;&#x68;@e&#x78;&#97;mpl&#101;&#46;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Create a corporate customer.</p> <p>This endpoint is specifically for creating corporate customers.<br /> Individual-oriented fields (relationship_status, dependants, highest_education_attained, employment_status, name_suffix, date_of_birth, face_image, title) are not available on this endpoint.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The corporate entity's legal name<br /> - mobile_phone_number: The corporate entity's phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, credit_rating, credit_limit, kyc_status, last_ok_date, branch_id<br /> - customer_type: CORPORATE (default) or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent customer</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - customer_type must be CORPORATE or SUBSIDIARY<br /> - parent_customer_id must reference an existing customer if provided</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#x6d;a&#105;&#x6c;&#116;&#x6f;&#58;fe&#x6c;&#105;&#x78;&#x73;&#109;&#105;&#116;&#x68;&#64;e&#x78;&#x61;&#109;&#x70;&#x6c;e&#46;&#x63;&#x6f;&#109;\">&#102;&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#97;&#109;&#112;le.c&#111;m</a></p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;&#x74;o&#58;f&#101;&#108;&#105;&#120;&#115;&#109;&#x69;t&#104;&#x40;e&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#109;\">&#x66;&#101;&#x6c;&#105;xs&#109;&#105;&#116;h&#x40;&#101;&#120;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv300GetCustomersForUser200Response (Successful operation)
+   *   code 200 : GetCustomerChildren200ResponseCustomersInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createCorporateCustomerRequest Request body
    */
-  def oBPv300GetCustomersForUser(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv300GetCustomersForUser200Response]] =
+  def createCorporateCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createCorporateCustomerRequest: CreateCorporateCustomerRequest): Request[Either[ResponseException[String, Exception], GetCustomerChildren200ResponseCustomersInner]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/users/current/customers")
+      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCorporateCustomerRequest)
+      .response(asJson[GetCustomerChildren200ResponseCustomersInner])
+
+  /**
+   * <p>The Customer resource stores the customer number, legal name, email, phone number, date of birth, relationship status,<br /> education attained, a url for a profile image, KYC status, credit rating, credit limit, and other customer information.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email: Customer's email address<br /> - face_image: Customer's face image (url and date)<br /> - date_of_birth: Customer's date of birth in YYYY-MM-DD format<br /> - relationship_status: Customer's relationship status<br /> - dependants: Number of dependants (must match the length of dob_of_dependants array)<br /> - dob_of_dependants: Array of dependant birth dates in YYYY-MM-DD format<br /> - credit_rating: Customer's credit rating (rating and source)<br /> - credit_limit: Customer's credit limit (currency and amount)<br /> - highest_education_attained: Customer's highest education level<br /> - employment_status: Customer's employment status<br /> - kyc_status: Know Your Customer verification status (true/false). Default: false<br /> - last_ok_date: Last verification date<br /> - title: Customer's title (e.g., Mr., Mrs., Dr.)<br /> - branch_id: Associated branch identifier<br /> - name_suffix: Customer's name suffix (e.g., Jr., Sr.)<br /> - customer_type: Type of customer - INDIVIDUAL (default), CORPORATE, or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent CORPORATE customer</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants must be provided in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).<br /> The dates are strictly validated and must be valid calendar dates.<br /> Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array<br /> - date_of_birth must be in valid YYYY-MM-DD format if provided<br /> - Each date in dob_of_dependants must be in valid YYYY-MM-DD format</p> <p>Note: If you need to set a specific customer number, use the Update Customer Number endpoint after this call.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#116;h&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;\">&#x66;&#101;&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;h&#64;&#x65;&#120;&#97;mp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x66;&#101;l&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;@&#101;&#x78;a&#109;&#x70;&#x6c;&#101;&#46;c&#111;&#109;\">&#102;&#x65;&#x6c;&#105;&#120;&#x73;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200ResponseCustomersInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createCustomerRequest Request body
+   */
+  def createCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createCustomerRequest: CreateCustomerRequest): Request[Either[ResponseException[String, Exception], GetCustomerChildren200ResponseCustomersInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv300GetCustomersForUser200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerRequest)
+      .response(asJson[GetCustomerChildren200ResponseCustomersInner])
+
+  /**
+   * <p>Link a Customer to a Account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAccountLinksByCustomerId200ResponseLinksInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createCustomerAccountLinkRequest Request body
+   */
+  def createCustomerAccountLink(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createCustomerAccountLinkRequest: CreateCustomerAccountLinkRequest): Request[Either[ResponseException[String, Exception], GetCustomerAccountLinksByCustomerId200ResponseLinksInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerAccountLinkRequest)
+      .response(asJson[GetCustomerAccountLinksByCustomerId200ResponseLinksInner])
 
   /**
    * <p>Create an Address for a Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#customer_address_id\"><strong>customer_address_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv310CreateCustomerAddress200Response (Successful operation)
+   *   code 200 : CreateCustomerAddress200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -429,22 +351,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv310CreateCustomerAddressRequest Request body
+   * @param createCustomerAddressRequest Request body
    */
-  def oBPv310CreateCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310CreateCustomerAddressRequest: OBPv310CreateCustomerAddressRequest): Request[Either[ResponseException[String, Exception], OBPv310CreateCustomerAddress200Response]] =
+  def createCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createCustomerAddressRequest: CreateCustomerAddressRequest): Request[Either[ResponseException[String, Exception], CreateCustomerAddress200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/address")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310CreateCustomerAddressRequest)
-      .response(asJson[OBPv310CreateCustomerAddress200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerAddressRequest)
+      .response(asJson[CreateCustomerAddress200Response])
 
   /**
-   * <p>Create Meeting: Initiate a video conference/call with the bank.</p> <p>The Meetings resource contains meta data about video/other conference sessions</p> <p>provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).</p> <p>purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong>. Currently staff_user_id is not set. Further calls will be needed to correctly set this.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
+   * <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv310GetMeeting200Response (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -453,22 +375,24 @@ class CustomerApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv310CreateMeetingRequest Request body
+   * @param customerid The CUSTOMERID identifier
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv310CreateMeeting(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv310CreateMeetingRequest: OBPv310CreateMeetingRequest): Request[Either[ResponseException[String, Exception], OBPv310GetMeeting200Response]] =
+  def createCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings")
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attribute")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310CreateMeetingRequest)
-      .response(asJson[OBPv310GetMeeting200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
   /**
-   * <p>Create a Tax Residence for a Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><a href=\"/glossary#tax_residence_id\"><strong>tax_residence_id</strong></a>:</p> 
+   * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv310CreateTaxResidence200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -477,16 +401,159 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv310CreateTaxResidenceRequest Request body
+   * @param createCustomerMessageRequest Request body
    */
-  def oBPv310CreateTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310CreateTaxResidenceRequest: OBPv310CreateTaxResidenceRequest): Request[Either[ResponseException[String, Exception], OBPv310CreateTaxResidence200Response]] =
+  def createCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createCustomerMessageRequest: CreateCustomerMessageRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/messages")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerMessageRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Create Meeting: Initiate a video conference/call with the bank.</p> <p>The Meetings resource contains meta data about video/other conference sessions</p> <p>provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).</p> <p>purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong>. Currently staff_user_id is not set. Further calls will be needed to correctly set this.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMeeting200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createMeetingRequest Request body
+   */
+  def createMeeting(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createMeetingRequest: CreateMeetingRequest): Request[Either[ResponseException[String, Exception], GetMeeting200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createMeetingRequest)
+      .response(asJson[GetMeeting200Response])
+
+  /**
+   * <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetTransactionRequestAttributeDefinition200ResponseAttributesInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+   */
+  def createOrUpdateCustomerAttributeAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200ResponseAttributesInner]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/customer")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createOrUpdateTransactionRequestAttributeDefinitionRequest)
+      .response(asJson[GetTransactionRequestAttributeDefinition200ResponseAttributesInner])
+
+  /**
+   * <p>Create a retail (individual) customer.</p> <p>This endpoint is specifically for creating individual/retail customers.<br /> The customer_type will be automatically set to INDIVIDUAL.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, face_image, date_of_birth, relationship_status, dependants, dob_of_dependants<br /> - credit_rating, credit_limit, highest_education_attained, employment_status<br /> - kyc_status, last_ok_date, title, branch_id, name_suffix</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#97;i&#x6c;t&#x6f;:&#x66;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;a&#109;p&#108;&#x65;&#46;&#99;&#111;&#109;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#x68;@&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#104;@e&#x78;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;\">&#102;&#x65;&#108;i&#x78;&#x73;m&#105;&#x74;h&#64;&#101;&#120;a&#109;&#x70;&#x6c;&#101;.&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200ResponseCustomersInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createRetailCustomerRequest Request body
+   */
+  def createRetailCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createRetailCustomerRequest: CreateRetailCustomerRequest): Request[Either[ResponseException[String, Exception], GetCustomerChildren200ResponseCustomersInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createRetailCustomerRequest)
+      .response(asJson[GetCustomerChildren200ResponseCustomersInner])
+
+  /**
+   * <p>Create a Tax Residence for a Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><a href=\"/glossary#tax_residence_id\"><strong>tax_residence_id</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : CreateTaxResidence200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   * @param createTaxResidenceRequest Request body
+   */
+  def createTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createTaxResidenceRequest: CreateTaxResidenceRequest): Request[Either[ResponseException[String, Exception], CreateTaxResidence200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/tax-residence")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createTaxResidenceRequest)
+      .response(asJson[CreateTaxResidence200Response])
+
+  /**
+   * <p>Link a User to a Customer</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#date_inserted\"><strong>date_inserted</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#user_customer_link_id\"><strong>user_customer_link_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createUserCustomerLinksRequest Request body
+   */
+  def createUserCustomerLinks(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createUserCustomerLinksRequest: CreateUserCustomerLinksRequest): Request[Either[ResponseException[String, Exception], GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/user_customer_links")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .body(oBPv310CreateTaxResidenceRequest)
-      .response(asJson[OBPv310CreateTaxResidence200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createUserCustomerLinksRequest)
+      .response(asJson[GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner])
+
+  /**
+   * <p>Delete Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 :  (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
+   */
+  def deleteCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Delete an Address of the Customer specified by CUSTOMER_ADDRESS_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#customer_address_id\">CUSTOMER_ADDRESS_ID</a>:</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -503,461 +570,13 @@ class CustomerApi(baseUrl: String) {
    * @param customerid The CUSTOMERID identifier
    * @param customeraddressid The CUSTOMERADDRESSID identifier
    */
-  def oBPv310DeleteCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customeraddressid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customeraddressid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/addresses/${customeraddressid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
-
-  /**
-   * <p>Delete a Tax Residence of the Customer specified by TAX_RESIDENCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#tax_residence_id\">TAX_RESIDENCE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 :  (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param taxresidenceid The TAXRESIDENCEID identifier
-   */
-  def oBPv310DeleteTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, taxresidenceid: String): Request[Either[ResponseException[String, Exception], Unit]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/tax_residencies/${taxresidenceid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
-
-  /**
-   * <p>Get the Addresses of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#addresses\"><strong>addresses</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#customer_address_id\"><strong>customer_address_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310GetCustomerAddresses200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv310GetCustomerAddresses(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv310GetCustomerAddresses200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/addresses")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv310GetCustomerAddresses200Response])
-
-  /**
-   * <p>Get Customers that has a firehose View.</p> <p>Allows bulk access to customers.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.893Z. NOTE! The default value is now (2026-03-16T19:25:56.893Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#102;&#x65;&#108;&#105;&#120;&#115;&#x6d;&#105;&#116;&#104;&#x40;&#101;&#x78;&#97;m&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;\">&#102;&#101;&#108;&#x69;&#x78;smit&#x68;&#x40;&#x65;&#x78;&#97;&#x6d;p&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetMyCustomersAtBank200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv310GetFirehoseCustomers(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv500GetMyCustomersAtBank200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/firehose/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetMyCustomersAtBank200Response])
-
-  /**
-   * <p>Get Meeting specified by BANK_ID / MEETING_ID<br /> Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#meeting_id\">MEETING_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310GetMeeting200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param meetingid The MEETINGID identifier
-   */
-  def oBPv310GetMeeting(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, meetingid: String): Request[Either[ResponseException[String, Exception], OBPv310GetMeeting200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings/${meetingid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv310GetMeeting200Response])
-
-  /**
-   * <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#meetings\"><strong>meetings</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310GetMeetings200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv310GetMeetings(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv310GetMeetings200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv310GetMeetings200Response])
-
-  /**
-   * <p>Get the Tax Residences of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><a href=\"/glossary#tax_residence\"><strong>tax_residence</strong></a>:</p> <p><a href=\"/glossary#tax_residence_id\"><strong>tax_residence_id</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310GetTaxResidence200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   */
-  def oBPv310GetTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv310GetTaxResidence200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/tax-residences")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv310GetTaxResidence200Response])
-
-  /**
-   * <p>Update an Address of the Customer specified by CUSTOMER_ADDRESS_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#customer_address_id\">CUSTOMER_ADDRESS_ID</a>:</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#customer_address_id\"><strong>customer_address_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310CreateCustomerAddress200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param customeraddressid The CUSTOMERADDRESSID identifier
-   * @param oBPv310CreateCustomerAddressRequest Request body
-   */
-  def oBPv310UpdateCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customeraddressid: String, oBPv310CreateCustomerAddressRequest: OBPv310CreateCustomerAddressRequest): Request[Either[ResponseException[String, Exception], OBPv310CreateCustomerAddress200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/addresses/${customeraddressid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310CreateCustomerAddressRequest)
-      .response(asJson[OBPv310CreateCustomerAddress200Response])
-
-  /**
-   * <p>Update the Branch of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#108;&#116;&#x6f;:fe&#x6c;&#x69;&#x78;&#115;&#109;&#105;&#x74;&#104;@e&#x78;&#x61;&#109;&#112;&#108;&#101;.&#99;&#111;&#109;\">&#102;&#101;l&#x69;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#97;&#x6d;&#x70;&#x6c;e&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerBranchRequest Request body
-   */
-  def oBPv310UpdateCustomerBranch(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerBranchRequest: OBPv310UpdateCustomerBranchRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/branch")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerBranchRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the credit limit of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#x6d;&#105;t&#x68;&#64;&#101;&#120;&#97;&#109;ple&#x2e;c&#111;m\">&#102;&#x65;&#108;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#x68;&#64;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerCreditLimitRequest Request body
-   */
-  def oBPv310UpdateCustomerCreditLimit(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerCreditLimitRequest: OBPv310UpdateCustomerCreditLimitRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/credit-limit")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerCreditLimitRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the credit rating and source of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#102;&#101;li&#x78;s&#109;&#x69;&#x74;&#104;@&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#x6f;&#109;\">f&#x65;&#x6c;&#x69;&#x78;&#x73;&#x6d;&#105;&#116;&#104;&#x40;&#x65;x&#97;&#x6d;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerCreditRatingAndSourceRequest Request body
-   */
-  def oBPv310UpdateCustomerCreditRatingAndSource(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerCreditRatingAndSourceRequest: OBPv310UpdateCustomerCreditRatingAndSourceRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/credit-rating-and-source")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerCreditRatingAndSourceRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the other data of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;fe&#108;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;\">&#102;&#x65;&#x6c;&#x69;x&#115;&#x6d;ith&#64;&#101;x&#x61;m&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerDataRequest Request body
-   */
-  def oBPv310UpdateCustomerData(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerDataRequest: OBPv310UpdateCustomerDataRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/data")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerDataRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update an email of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#97;i&#x6c;&#116;&#x6f;&#x3a;fe&#108;&#105;&#120;&#x73;&#x6d;&#105;t&#104;&#64;e&#x78;&#x61;mp&#108;e&#x2e;&#99;&#x6f;&#109;\">&#102;&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerEmailRequest Request body
-   */
-  def oBPv310UpdateCustomerEmail(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerEmailRequest: OBPv310UpdateCustomerEmailRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/email")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerEmailRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the identity data of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x66;&#101;&#108;i&#120;&#115;&#x6d;&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;p&#x6c;e.&#x63;&#x6f;&#109;\">f&#x65;&#x6c;&#x69;&#120;&#x73;mi&#116;&#104;@e&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv310UpdateCustomerIdentityRequest Request body
-   */
-  def oBPv310UpdateCustomerIdentity(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv310UpdateCustomerIdentityRequest: OBPv310UpdateCustomerIdentityRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/identity")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv310UpdateCustomerIdentityRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the mobile number of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#x69;&#x6c;&#x74;o&#x3a;&#x66;e&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;@&#101;&#120;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;\">&#102;&#101;&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo Request body
-   */
-  def oBPv310UpdateCustomerMobileNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/mobile-number")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Update the number of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;&#x6c;&#x74;&#x6f;&#58;f&#101;&#x6c;&#x69;x&#115;&#x6d;&#x69;t&#104;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;\">&#102;e&#108;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;@&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#101;.&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv500GetCustomerOverviewFlatRequest Request body
-   */
-  def oBPv310UpdateCustomerNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/number")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500GetCustomerOverviewFlatRequest)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
-
-  /**
-   * <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
-   */
-  def oBPv400CreateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attribute")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
-
-  /**
-   * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customerid The CUSTOMERID identifier
-   * @param oBPv400CreateCustomerMessageRequest Request body
-   */
-  def oBPv400CreateCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv400CreateCustomerMessageRequest: OBPv400CreateCustomerMessageRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/messages")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateCustomerMessageRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
-   */
-  def oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/customer")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems])
-
-  /**
-   * <p>Link a User to a Customer</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#date_inserted\"><strong>date_inserted</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#user_customer_link_id\"><strong>user_customer_link_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv400CreateUserCustomerLinksRequest Request body
-   */
-  def oBPv400CreateUserCustomerLinks(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateUserCustomerLinksRequest: OBPv400CreateUserCustomerLinksRequest): Request[Either[ResponseException[String, Exception], OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/user_customer_links")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateUserCustomerLinksRequest)
-      .response(asJson[OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems])
 
   /**
    * <p>Delete Customer Attribute</p> <p>CustomerAttributes are used to enhance the OBP Customer object with Bank specific entities.</p> <p>Delete a Customer Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -975,12 +594,12 @@ class CustomerApi(baseUrl: String) {
    * @param customerid The CUSTOMERID identifier
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier
    */
-  def oBPv400DeleteCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/${customerid}/attributes/${customerattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -998,12 +617,12 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
    */
-  def oBPv400DeleteCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/${attributedefinitionid}/customer")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -1021,12 +640,35 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400DeleteCustomerCascade(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerCascade(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/cascading/banks/${bankid}/customers/${customerid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
+
+  /**
+   * <p>Delete a Tax Residence of the Customer specified by TAX_RESIDENCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#tax_residence_id\">TAX_RESIDENCE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 :  (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   * @param taxresidenceid The TAXRESIDENCEID identifier
+   */
+  def deleteTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, taxresidenceid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/tax_residencies/${taxresidenceid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -1044,19 +686,41 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param usercustomerlinkid The USERCUSTOMERLINKID identifier
    */
-  def oBPv400DeleteUserCustomerLink(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, usercustomerlinkid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteUserCustomerLink(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, usercustomerlinkid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/user_customer_links/${usercustomerlinkid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
-   * <p>Get Correlated User Info by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#Customer\"><strong>customer</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;e&#108;&#105;&#120;&#115;&#109;i&#116;&#104;&#x40;&#101;&#x78;&#97;&#x6d;&#112;l&#x65;&#x2e;&#99;om\">&#x66;&#101;&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;&#x74;&#x68;&#64;&#x65;&#x78;am&#112;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#users\"><strong>users</strong></a>: user list</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Gets the Corporate Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type CORPORATE or SUBSIDIARY.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#108;&#116;&#x6f;&#58;&#x66;&#101;l&#105;&#x78;&#115;&#x6d;i&#x74;&#104;@e&#x78;a&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;\">&#102;&#101;&#x6c;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems (Successful operation)
+   *   code 200 : GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCorporateCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerByCustomerNumber200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers/${customerid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerByCustomerNumber200Response])
+
+  /**
+   * <p>Get the subsidiary customers of a corporate customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> The specified customer must be of type CORPORATE or SUBSIDIARY.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"ma&#105;l&#x74;&#111;&#x3a;&#x66;&#x65;l&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#x40;&#x65;&#x78;&#97;m&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;\">&#x66;e&#108;&#105;&#x78;&#115;mi&#x74;h@&#x65;&#x78;&#97;&#109;p&#108;&#101;.&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1067,19 +731,176 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetCorrelatedUsersInfoByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems]] =
+  def getCorporateCustomerSubsidiaries(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers/${customerid}/subsidiaries")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Get Corporate Customers at Bank.</p> <p>Returns a list of customers with customer_type CORPORATE or SUBSIDIARY at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;il&#x74;&#x6f;:f&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m\">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#x6d;p&#108;&#101;&#46;&#x63;&#x6f;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCorporateCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Get Correlated User Info by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#Customer\"><strong>customer</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;&#x69;&#x6c;&#116;o:&#x66;e&#108;&#105;xs&#109;&#x69;&#x74;&#x68;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;.&#99;&#x6f;&#x6d;\">&#102;&#101;&#x6c;&#105;xs&#109;&#x69;t&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;l&#101;&#x2e;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#users\"><strong>users</strong></a>: user list</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCorrelatedUsersInfoByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/correlated-users")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner])
+
+  /**
+   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#actual_date\"><strong>actual_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#channel\"><strong>channel</strong></a>:</p> <p><a href=\"/glossary#crm_events\"><strong>crm_events</strong></a>:</p> <p><a href=\"/glossary#customer_name\"><strong>customer_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#result\"><strong>result</strong></a>:</p> <p><a href=\"/glossary#scheduled_date\"><strong>scheduled_date</strong></a>: 2020-01-27</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCrmEvents200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCrmEvents(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCrmEvents200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/crm-events")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCrmEvents200Response])
+
+  /**
+   * <p>Get Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAccountLinksByCustomerId200ResponseLinksInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
+   */
+  def getCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String): Request[Either[ResponseException[String, Exception], GetCustomerAccountLinksByCustomerId200ResponseLinksInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAccountLinksByCustomerId200ResponseLinksInner])
+
+  /**
+   * <p>Get Customer Account Links by ACCOUNT_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>links</strong></a>: links</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAccountLinksByCustomerId200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   */
+  def getCustomerAccountLinksByBankIdAccountId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String): Request[Either[ResponseException[String, Exception], GetCustomerAccountLinksByCustomerId200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/accounts/${accountid}/customer-account-links")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAccountLinksByCustomerId200Response])
+
+  /**
+   * <p>Get Customer Account Links by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>links</strong></a>: links</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAccountLinksByCustomerId200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCustomerAccountLinksByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerAccountLinksByCustomerId200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/${customerid}/customer-account-links")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAccountLinksByCustomerId200Response])
+
+  /**
+   * <p>Get the Addresses of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#addresses\"><strong>addresses</strong></a>:</p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#customer_address_id\"><strong>customer_address_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAddresses200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCustomerAddresses(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerAddresses200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/addresses")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAddresses200Response])
 
   /**
    * <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1091,19 +912,19 @@ class CustomerApi(baseUrl: String) {
    * @param customerid The CUSTOMERID identifier
    * @param attributeid The ATTRIBUTEID identifier
    */
-  def oBPv400GetCustomerAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, attributeid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
+  def getCustomerAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, attributeid: String): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes/${attributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
   /**
    * <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeDefinition200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1113,19 +934,19 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200Response]] =
+  def getCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/customer")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionRequestAttributeDefinition200Response])
 
   /**
    * <p>Get Customer Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200Response (Successful operation)
+   *   code 200 : GetCustomerAttributes200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1136,19 +957,89 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetCustomerAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200Response]] =
+  def getCustomerAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAttributes200Response])
+
+  /**
+   * <p>Gets the Customer specified by CUSTOMER_ID.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;&#108;t&#111;&#x3a;fel&#105;&#x78;s&#x6d;&#105;&#x74;&#104;&#x40;&#x65;x&#x61;m&#x70;l&#101;&#46;&#x63;&#x6f;&#x6d;\">f&#101;&#x6c;&#x69;&#x78;s&#x6d;&#x69;&#116;&#104;@&#101;&#120;a&#x6d;&#x70;&#108;&#x65;&#46;c&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerByCustomerNumber200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/${customerid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerAttributes200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerByCustomerNumber200Response])
+
+  /**
+   * <p>Gets the Customer specified by CUSTOMER_NUMBER.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#108;&#116;&#111;:&#x66;&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#x74;h@&#x65;&#x78;a&#x6d;&#112;&#x6c;e&#46;&#99;&#111;&#x6d;\">&#102;&#101;l&#x69;&#x78;s&#109;&#105;t&#104;@&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param getCustomerOverviewFlatRequest Request body
+   */
+  def getCustomerByCustomerNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], GetCustomerByCustomerNumber200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/customer-number")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCustomerOverviewFlatRequest)
+      .response(asJson[GetCustomerByCustomerNumber200Response])
+
+  /**
+   * <p>Get the child (subsidiary) customers of a parent customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> This is useful for corporate banking where a corporate customer may have subsidiary customers.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;t&#x6f;:&#102;&#x65;&#x6c;i&#120;&#x73;&#x6d;&#105;&#116;h&#x40;&#x65;&#120;&#x61;&#x6d;pl&#x65;&#x2e;&#x63;&#111;&#x6d;\">&#102;&#101;&#108;i&#120;&#115;&#x6d;&#x69;&#116;h&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getCustomerChildren(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/${customerid}/children")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
 
   /**
    * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerMessages200Response (Successful operation)
+   *   code 200 : GetCustomerMessages200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1159,19 +1050,19 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetCustomerMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerMessages200Response]] =
+  def getCustomerMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerMessages200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/messages")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerMessages200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerMessages200Response])
 
   /**
-   * <p>Gets the Customers specified by MOBILE_PHONE_NUMBER.</p> <p>There are two wildcards often used in conjunction with the LIKE operator:<br /> % - The percent sign represents zero, one, or multiple characters<br /> _ - The underscore represents a single character<br /> For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numbers which contain 381 sequence</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#x6c;&#116;&#x6f;:&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;.&#x63;o&#x6d;\">&#102;&#x65;&#108;&#105;&#x78;s&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;e&#46;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Gets the Customer Overview specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;&#x6c;t&#x6f;&#58;f&#x65;&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;t&#104;&#64;&#101;x&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;\">&#x66;&#101;&#108;&#x69;&#120;&#115;&#x6d;i&#116;&#104;@&#x65;x&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">contract_code</a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv310UpdateCustomerBranch200Response (Successful operation)
+   *   code 200 : GetCustomerOverview200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1180,22 +1071,197 @@ class CustomerApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo Request body
+   * @param getCustomerOverviewFlatRequest Request body
    */
-  def oBPv400GetCustomersByCustomerPhoneNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo): Request[Either[ResponseException[String, Exception], OBPv310UpdateCustomerBranch200Response]] =
+  def getCustomerOverview(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], GetCustomerOverview200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/customer-number-query/overview")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCustomerOverviewFlatRequest)
+      .response(asJson[GetCustomerOverview200Response])
+
+  /**
+   * <p>Gets the Customer Overview Flat specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;t&#x6f;&#58;&#x66;&#x65;&#108;&#x69;&#120;sm&#105;&#x74;&#x68;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#101;.c&#x6f;m\">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;h&#x40;e&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;o&#109;</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">branch_code</a>: branch_code</p> <p><a href=\"/glossary#\">cancellation_date</a>: cancellation_date</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#\">form_of_payment</a>: form_of_payment</p> <p><a href=\"/glossary#\">instrument_status_code</a>: instrument_status_code</p> <p><a href=\"/glossary#\">instrument_status_definition</a>: instrument_status_definition</p> <p><a href=\"/glossary#\">interest_amount</a>: interest_amount</p> <p><a href=\"/glossary#\">interest_rate</a>: interest_rate</p> <p><a href=\"/glossary#\">is_substituted</a>: is_substituted</p> <p><a href=\"/glossary#\">issuance_amount</a>: issuance_amount</p> <p><a href=\"/glossary#\">maturity_date</a>: maturity_date</p> <p><a href=\"/glossary#\">opening_date</a>: opening_date</p> <p><a href=\"/glossary#\">payment_method</a>: payment_method</p> <p><a href=\"/glossary#\">product_description</a>: product_description</p> <p><a href=\"/glossary#\">renewal_date</a>: renewal_date</p> <p><a href=\"/glossary#\">term</a>: term</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerOverviewFlat200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param getCustomerOverviewFlatRequest Request body
+   */
+  def getCustomerOverviewFlat(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], GetCustomerOverviewFlat200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/customer-number-query/overview-flat")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCustomerOverviewFlatRequest)
+      .response(asJson[GetCustomerOverviewFlat200Response])
+
+  /**
+   * <p>Get Customers at All Banks.</p> <p>Returns a list of all customers across all banks.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;li&#x78;&#115;m&#x69;&#x74;&#x68;&#x40;&#101;&#x78;&#x61;mpl&#x65;&#x2e;&#x63;&#x6f;&#109;\">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#46;&#99;o&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getCustomersAtAllBanks(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Get Customers at Bank.</p> <p>Returns a list of all customers at the specified bank.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#108;&#x74;&#x6f;:&#102;e&#x6c;&#105;&#x78;s&#x6d;&#105;&#x74;&#x68;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;.&#x63;&#111;m\">&#102;&#101;li&#120;&#115;&#x6d;&#105;&#x74;&#x68;@e&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Gets the Customers specified by MOBILE_PHONE_NUMBER.</p> <p>There are two wildcards often used in conjunction with the LIKE operator:<br /> % - The percent sign represents zero, one, or multiple characters<br /> _ - The underscore represents a single character<br /> For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numbers which contain 381 sequence</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;t&#111;&#58;f&#x65;&#x6c;i&#x78;smi&#116;&#104;&#x40;&#101;x&#97;&#x6d;&#112;le&#46;&#x63;&#x6f;&#x6d;\">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#64;&#101;&#120;&#97;&#109;p&#x6c;&#101;&#x2e;&#99;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo Request body
+   */
+  def getCustomersByCustomerPhoneNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/search/customers/mobile-phone-number")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo)
+      .response(asJson[UpdateCustomerBranch200Response])
+
+  /**
+   * <p>Gets the Customers specified by Legal Name.</p> <p>Returns a list of customers that match the provided legal name.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x66;&#101;&#x6c;&#x69;x&#115;m&#105;&#x74;&#104;&#x40;&#x65;x&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;m\">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;e&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param getCustomersByLegalNameRequest Request body
+   */
+  def getCustomersByLegalName(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, getCustomersByLegalNameRequest: GetCustomersByLegalNameRequest): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/legal-name")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo)
-      .response(asJson[OBPv310UpdateCustomerBranch200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCustomersByLegalNameRequest)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Gets all Customers that are linked to a User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#x69;&#108;&#x74;o&#58;&#102;&#x65;&#108;&#105;&#120;&#115;&#109;&#105;&#x74;h@e&#x78;&#x61;m&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;\">&#x66;&#101;&#108;&#x69;&#120;&#115;&#109;&#105;&#116;&#x68;@&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomersForUser200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getCustomersForUser(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetCustomersForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/users/current/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersForUser200Response])
+
+  /**
+   * <p>Gets all Customers Ids that are linked to a User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;i&#108;&#116;&#111;:&#x66;&#x65;&#x6c;&#105;x&#x73;&#x6d;&#x69;&#116;&#104;@&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;\">&#102;&#x65;&#108;&#105;&#120;&#x73;&#109;&#105;&#x74;&#x68;@&#101;x&#97;&#x6d;&#112;&#x6c;&#x65;&#46;c&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomersForUser200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getCustomersForUserIdsOnly(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetCustomersForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.1.0/users/current/customers/customer_ids")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersForUser200Response])
+
+  /**
+   * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomersMessages200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCustomersMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomersMessages200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/messages")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersMessages200Response])
 
   /**
    * <p>Get Customers Minimal at Any Bank.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomersMinimalAtAnyBank200Response (Successful operation)
+   *   code 200 : GetCustomersMinimalAtAnyBank200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1203,19 +1269,195 @@ class CustomerApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetCustomersMinimalAtAnyBank(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetCustomersMinimalAtAnyBank200Response]] =
+  def getCustomersMinimalAtAnyBank(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetCustomersMinimalAtAnyBank200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/customers-minimal")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomersMinimalAtAnyBank200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersMinimalAtAnyBank200Response])
 
   /**
-   * <p>Correlated Entities are users and customers linked to the currently authenticated user via User-Customer-Links</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>correlated_entities</strong></a>: correlated_entities</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#Customer\"><strong>customer</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x66;&#x65;li&#120;&#115;&#109;&#105;&#x74;h&#x40;&#x65;&#120;&#x61;&#x6d;p&#x6c;&#x65;&#x2e;&#99;&#111;&#109;\">&#102;&#101;&#x6c;&#x69;&#120;s&#x6d;&#105;t&#104;&#64;&#101;&#120;&#x61;m&#x70;&#108;&#x65;&#x2e;&#x63;o&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#users\"><strong>users</strong></a>: user list</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Get Customers Minimal at Bank.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetMyCorrelatedEntities200Response (Successful operation)
+   *   code 200 : GetCustomersMinimalAtAnyBank200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCustomersMinimalAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomersMinimalAtAnyBank200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers-minimal")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersMinimalAtAnyBank200Response])
+
+  /**
+   * <p>Get Customers that has a firehose View.</p> <p>Allows bulk access to customers.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.499Z. NOTE! The default value is now (2026-03-25T12:16:24.499Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;f&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#120;a&#x6d;p&#x6c;&#x65;&#46;&#x63;o&#x6d;\">&#102;&#x65;&#108;&#x69;xs&#x6d;&#105;t&#104;@&#x65;&#120;&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;om</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyCustomersAtBank200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getFirehoseCustomers(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetMyCustomersAtBank200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/firehose/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyCustomersAtBank200Response])
+
+  /**
+   * <p>Get KYC checks for the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#how\"><strong>how</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#satisfied\"><strong>satisfied</strong></a>: false</p> <p><a href=\"/glossary#staff_name\"><strong>staff_name</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetKycChecks200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getKycChecks(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], GetKycChecks200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_checks")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetKycChecks200Response])
+
+  /**
+   * <p>Get KYC (know your customer) documents for a customer specified by CUSTOMER_ID<br /> Get a list of documents that affirm the identity of the customer<br /> Passport, driving licence etc.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#documents\"><strong>documents</strong></a>:</p> <p><a href=\"/glossary#\"><strong>expiry_date</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>issue_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#issue_place\"><strong>issue_place</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetKycDocuments200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getKycDocuments(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], GetKycDocuments200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_documents")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetKycDocuments200Response])
+
+  /**
+   * <p>Get KYC media (scans, pictures, videos) that affirms the identity of the customer.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#medias\"><strong>medias</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_check_id\"><strong>relates_to_kyc_check_id</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_document_id\"><strong>relates_to_kyc_document_id</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetKycMedia200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getKycMedia(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], GetKycMedia200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_media")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetKycMedia200Response])
+
+  /**
+   * <p>Get the KYC statuses for a customer specified by CUSTOMER_ID over time.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#ok\"><strong>ok</strong></a>: false</p> <p><a href=\"/glossary#statuses\"><strong>statuses</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetKycStatuses200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getKycStatuses(apiKeyHeader: String, apiKeyHeader: String)(customerid: String): Request[Either[ResponseException[String, Exception], GetKycStatuses200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/customers/${customerid}/kyc_statuses")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetKycStatuses200Response])
+
+  /**
+   * <p>Get Meeting specified by BANK_ID / MEETING_ID<br /> Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#meeting_id\">MEETING_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMeeting200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param meetingid The MEETINGID identifier
+   */
+  def getMeeting(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, meetingid: String): Request[Either[ResponseException[String, Exception], GetMeeting200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings/${meetingid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMeeting200Response])
+
+  /**
+   * <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#meetings\"><strong>meetings</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMeetings200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getMeetings(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetMeetings200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/meetings")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMeetings200Response])
+
+  /**
+   * <p>Correlated Entities are users and customers linked to the currently authenticated user via User-Customer-Links</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>correlated_entities</strong></a>: correlated_entities</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#Customer\"><strong>customer</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"ma&#105;&#x6c;&#x74;&#x6f;:&#x66;e&#108;&#x69;&#120;s&#x6d;&#105;t&#104;&#x40;&#x65;&#120;am&#112;&#x6c;e&#46;&#x63;o&#109;\">f&#x65;&#108;&#105;x&#x73;&#109;&#105;&#116;&#x68;&#64;&#x65;x&#97;m&#112;&#x6c;e&#x2e;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#users\"><strong>users</strong></a>: user list</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyCorrelatedEntities200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1223,19 +1465,104 @@ class CustomerApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetMyCorrelatedEntities(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetMyCorrelatedEntities200Response]] =
+  def getMyCorrelatedEntities(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetMyCorrelatedEntities200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/correlated-entities")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetMyCorrelatedEntities200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyCorrelatedEntities200Response])
 
   /**
-   * <p>Get User Customer Links by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#date_inserted\"><strong>date_inserted</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#user_customer_link_id\"><strong>user_customer_link_id</strong></a>:</p> <p><a href=\"/glossary#user_customer_links\"><strong>user_customer_links</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * <p>Gets all Customers that are linked to me.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;&#108;&#116;o&#58;&#102;&#x65;&#x6c;&#105;x&#115;&#109;&#x69;&#116;h@&#101;&#120;a&#109;&#112;l&#101;&#x2e;&#99;&#x6f;&#x6d;\">f&#x65;&#108;&#x69;&#x78;s&#109;&#x69;&#116;&#x68;&#64;&#x65;x&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetUserCustomerLinksByCustomerId200Response (Successful operation)
+   *   code 200 : GetMyCustomersAtBank200ResponseCustomersInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getMyCustomersAtAnyBank(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetMyCustomersAtBank200ResponseCustomersInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/my/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyCustomersAtBank200ResponseCustomersInner])
+
+  /**
+   * <p>Returns a list of Customers at the Bank that are linked to the currently authenticated User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;f&#x65;&#108;&#105;&#x78;&#115;&#109;i&#116;&#x68;&#64;&#x65;&#120;&#x61;m&#x70;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;\">&#x66;&#x65;&#108;&#x69;&#120;s&#109;i&#x74;&#x68;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;e&#46;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyCustomersAtBank200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getMyCustomersAtBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetMyCustomersAtBank200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/my/customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyCustomersAtBank200Response])
+
+  /**
+   * <p>Gets the Retail Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type INDIVIDUAL.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;t&#111;&#x3a;&#102;&#101;l&#x69;&#x78;&#115;&#109;&#x69;&#116;&#104;&#64;&#101;xa&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;xam&#x70;&#x6c;&#x65;&#x2e;c&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getRetailCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerByCustomerNumber200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers/${customerid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerByCustomerNumber200Response])
+
+  /**
+   * <p>Get Retail (Individual) Customers at Bank.</p> <p>Returns a list of customers with customer_type INDIVIDUAL at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;ix&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;m\">&#x66;&#x65;l&#x69;x&#x73;&#x6d;it&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerChildren200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getRetailCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomerChildren200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerChildren200Response])
+
+  /**
+   * <p>Get social media handles for a customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#date_activated\"><strong>date_activated</strong></a>:</p> <p><a href=\"/glossary#date_added\"><strong>date_added</strong></a>:</p> <p><a href=\"/glossary#handle\"><strong>handle</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetSocialMediaHandles200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1246,19 +1573,64 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetUserCustomerLinksByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetUserCustomerLinksByCustomerId200Response]] =
+  def getSocialMediaHandles(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetSocialMediaHandles200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v2.0.0/banks/${bankid}/customers/${customerid}/social_media_handles")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetSocialMediaHandles200Response])
+
+  /**
+   * <p>Get the Tax Residences of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#domain\"><strong>domain</strong></a>:</p> <p><a href=\"/glossary#tax_number\"><strong>tax_number</strong></a>: 456</p> <p><a href=\"/glossary#tax_residence\"><strong>tax_residence</strong></a>:</p> <p><a href=\"/glossary#tax_residence_id\"><strong>tax_residence_id</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetTaxResidence200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getTaxResidence(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetTaxResidence200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/tax-residences")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTaxResidence200Response])
+
+  /**
+   * <p>Get User Customer Links by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#date_inserted\"><strong>date_inserted</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#user_customer_link_id\"><strong>user_customer_link_id</strong></a>:</p> <p><a href=\"/glossary#user_customer_links\"><strong>user_customer_links</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetUserCustomerLinksByCustomerId200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   */
+  def getUserCustomerLinksByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetUserCustomerLinksByCustomerId200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/user_customer_links/customers/${customerid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetUserCustomerLinksByCustomerId200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetUserCustomerLinksByCustomerId200Response])
 
   /**
    * <p>Get User Customer Links by USER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#date_inserted\"><strong>date_inserted</strong></a>:</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#user_customer_link_id\"><strong>user_customer_link_id</strong></a>:</p> <p><a href=\"/glossary#user_customer_links\"><strong>user_customer_links</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetUserCustomerLinksByCustomerId200Response (Successful operation)
+   *   code 200 : GetUserCustomerLinksByCustomerId200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1269,19 +1641,94 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param userid The USERID identifier
    */
-  def oBPv400GetUserCustomerLinksByUserId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, userid: String): Request[Either[ResponseException[String, Exception], OBPv400GetUserCustomerLinksByCustomerId200Response]] =
+  def getUserCustomerLinksByUserId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, userid: String): Request[Either[ResponseException[String, Exception], GetUserCustomerLinksByCustomerId200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/user_customer_links/users/${userid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetUserCustomerLinksByCustomerId200Response])
+
+  /**
+   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p> <p><a href=\"/glossary#\"><strong>is_pending_agent</strong></a>: is_pending_agent</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetAgent200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param agentid The AGENTID identifier
+   * @param updateAgentStatusRequest Request body
+   */
+  def updateAgentStatus(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, agentid: String, updateAgentStatusRequest: UpdateAgentStatusRequest): Request[Either[ResponseException[String, Exception], GetAgent200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/agents/${agentid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetUserCustomerLinksByCustomerId200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateAgentStatusRequest)
+      .response(asJson[GetAgent200Response])
+
+  /**
+   * <p>Update Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomerAccountLinksByCustomerId200ResponseLinksInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
+   * @param updateCustomerAccountLinkByIdRequest Request body
+   */
+  def updateCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String, updateCustomerAccountLinkByIdRequest: UpdateCustomerAccountLinkByIdRequest): Request[Either[ResponseException[String, Exception], GetCustomerAccountLinksByCustomerId200ResponseLinksInner]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerAccountLinkByIdRequest)
+      .response(asJson[GetCustomerAccountLinksByCustomerId200ResponseLinksInner])
+
+  /**
+   * <p>Update an Address of the Customer specified by CUSTOMER_ADDRESS_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#customer_address_id\">CUSTOMER_ADDRESS_ID</a>:</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#city\"><strong>city</strong></a>:</p> <p><a href=\"/glossary#country_code\"><strong>country_code</strong></a>: 1254</p> <p><a href=\"/glossary#county\"><strong>county</strong></a>:</p> <p><a href=\"/glossary#customer_address_id\"><strong>customer_address_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>line_1</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_2</strong></a>:</p> <p><a href=\"/glossary#\"><strong>line_3</strong></a>:</p> <p><a href=\"/glossary#postcode\"><strong>postcode</strong></a>:</p> <p><a href=\"/glossary#state\"><strong>state</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
+   * 
+   * Expected answers:
+   *   code 200 : CreateCustomerAddress200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   * @param customeraddressid The CUSTOMERADDRESSID identifier
+   * @param createCustomerAddressRequest Request body
+   */
+  def updateCustomerAddress(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customeraddressid: String, createCustomerAddressRequest: CreateCustomerAddressRequest): Request[Either[ResponseException[String, Exception], CreateCustomerAddress200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/addresses/${customeraddressid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerAddressRequest)
+      .response(asJson[CreateCustomerAddress200Response])
 
   /**
    * <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1292,116 +1739,22 @@ class CustomerApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv400UpdateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
+  def updateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes/${customerattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
   /**
-   * <p>Link a Customer to a Account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
+   * <p>Update the Branch of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;i&#x6c;&#116;&#x6f;&#58;&#x66;&#101;&#x6c;&#105;&#120;s&#x6d;&#x69;&#116;h&#64;&#x65;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#x63;&#x6f;&#109;\">&#x66;&#101;lix&#x73;&#109;&#105;t&#104;@&#101;&#x78;&#x61;mp&#108;&#101;&#46;c&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv500CreateCustomerAccountLinkRequest Request body
-   */
-  def oBPv500CreateCustomerAccountLink(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv500CreateCustomerAccountLinkRequest: OBPv500CreateCustomerAccountLinkRequest): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500CreateCustomerAccountLinkRequest)
-      .response(asJson[OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems])
-
-  /**
-   * <p>Delete Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 :  (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
-   */
-  def oBPv500DeleteCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String): Request[Either[ResponseException[String, Exception], Unit]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
-
-  /**
-   * <p>Get Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
-   */
-  def oBPv500GetCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems])
-
-  /**
-   * <p>Get Customer Account Links by ACCOUNT_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>links</strong></a>: links</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetCustomerAccountLinksByCustomerId200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   */
-  def oBPv500GetCustomerAccountLinksByBankIdAccountId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerAccountLinksByCustomerId200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/accounts/${accountid}/customer-account-links")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetCustomerAccountLinksByCustomerId200Response])
-
-  /**
-   * <p>Get Customer Account Links by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>links</strong></a>: links</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetCustomerAccountLinksByCustomerId200Response (Successful operation)
-   *   code 404 :  (Not Found)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1410,298 +1763,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerBranchRequest Request body
    */
-  def oBPv500GetCustomerAccountLinksByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerAccountLinksByCustomerId200Response]] =
+  def updateCustomerBranch(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerBranchRequest: UpdateCustomerBranchRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/${customerid}/customer-account-links")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/branch")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetCustomerAccountLinksByCustomerId200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerBranchRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Gets the Customer Overview specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;i&#x6c;&#x74;&#111;:&#102;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;e&#46;c&#x6f;&#109;\">&#x66;&#101;&#108;&#105;&#x78;s&#109;&#105;&#x74;&#104;@&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">contract_code</a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update the credit limit of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;lt&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#120;&#x73;&#x6d;i&#x74;&#104;&#x40;&#x65;&#120;a&#109;&#112;le&#x2e;&#x63;&#x6f;&#109;\">f&#x65;&#108;&#x69;&#x78;&#x73;&#x6d;&#x69;t&#x68;&#x40;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;c&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv500GetCustomerOverview200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv500GetCustomerOverviewFlatRequest Request body
-   */
-  def oBPv500GetCustomerOverview(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerOverview200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/customer-number-query/overview")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500GetCustomerOverviewFlatRequest)
-      .response(asJson[OBPv500GetCustomerOverview200Response])
-
-  /**
-   * <p>Gets the Customer Overview Flat specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#102;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;\">fe&#108;&#x69;&#x78;s&#109;i&#x74;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;.&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">branch_code</a>: branch_code</p> <p><a href=\"/glossary#\">cancellation_date</a>: cancellation_date</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#\">form_of_payment</a>: form_of_payment</p> <p><a href=\"/glossary#\">instrument_status_code</a>: instrument_status_code</p> <p><a href=\"/glossary#\">instrument_status_definition</a>: instrument_status_definition</p> <p><a href=\"/glossary#\">interest_amount</a>: interest_amount</p> <p><a href=\"/glossary#\">interest_rate</a>: interest_rate</p> <p><a href=\"/glossary#\">is_substituted</a>: is_substituted</p> <p><a href=\"/glossary#\">issuance_amount</a>: issuance_amount</p> <p><a href=\"/glossary#\">maturity_date</a>: maturity_date</p> <p><a href=\"/glossary#\">opening_date</a>: opening_date</p> <p><a href=\"/glossary#\">payment_method</a>: payment_method</p> <p><a href=\"/glossary#\">product_description</a>: product_description</p> <p><a href=\"/glossary#\">renewal_date</a>: renewal_date</p> <p><a href=\"/glossary#\">term</a>: term</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetCustomerOverviewFlat200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv500GetCustomerOverviewFlatRequest Request body
-   */
-  def oBPv500GetCustomerOverviewFlat(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerOverviewFlat200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers/customer-number-query/overview-flat")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500GetCustomerOverviewFlatRequest)
-      .response(asJson[OBPv500GetCustomerOverviewFlat200Response])
-
-  /**
-   * <p>Get Customers Minimal at Bank.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetCustomersMinimalAtAnyBank200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv500GetCustomersMinimalAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomersMinimalAtAnyBank200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customers-minimal")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomersMinimalAtAnyBank200Response])
-
-  /**
-   * <p>Gets all Customers that are linked to me.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#x6c;&#x74;&#111;:&#102;&#x65;&#x6c;&#105;&#x78;&#x73;&#x6d;ith&#x40;&#101;&#120;&#x61;mp&#108;e&#x2e;c&#111;&#x6d;\">&#102;e&#108;&#x69;&#120;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;&#101;&#x78;&#97;&#109;&#112;le.&#99;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   */
-  def oBPv500GetMyCustomersAtAnyBank(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/my/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems])
-
-  /**
-   * <p>Returns a list of Customers at the Bank that are linked to the currently authenticated User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x66;&#x65;&#x6c;i&#x78;smi&#x74;&#104;@&#x65;&#120;&#x61;&#109;&#x70;&#108;e&#x2e;&#99;o&#x6d;\">&#x66;&#101;&#108;&#105;x&#x73;&#109;i&#116;&#x68;&#64;e&#x78;&#97;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetMyCustomersAtBank200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv500GetMyCustomersAtBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv500GetMyCustomersAtBank200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/my/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv500GetMyCustomersAtBank200Response])
-
-  /**
-   * <p>Update Customer Account Link by CUSTOMER_ACCOUNT_LINK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ACCOUNT_LINK_ID</a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_account_link_id</strong></a>: xyz8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>relationship_type</strong></a>: Owner</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param customeraccountlinkid The CUSTOMERACCOUNTLINKID identifier
-   * @param oBPv500UpdateCustomerAccountLinkByIdRequest Request body
-   */
-  def oBPv500UpdateCustomerAccountLinkById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customeraccountlinkid: String, oBPv500UpdateCustomerAccountLinkByIdRequest: OBPv500UpdateCustomerAccountLinkByIdRequest): Request[Either[ResponseException[String, Exception], OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v5.0.0/banks/${bankid}/customer-account-links/${customeraccountlinkid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500UpdateCustomerAccountLinkByIdRequest)
-      .response(asJson[OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems])
-
-  /**
-   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p> <p><a href=\"/glossary#\"><strong>is_pending_agent</strong></a>: is_pending_agent</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv510GetAgent200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv510CreateAgentRequest Request body
-   */
-  def oBPv510CreateAgent(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv510CreateAgentRequest: OBPv510CreateAgentRequest): Request[Either[ResponseException[String, Exception], OBPv510GetAgent200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/agents")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510CreateAgentRequest)
-      .response(asJson[OBPv510GetAgent200Response])
-
-  /**
-   * <p>Gets all Customers Ids that are linked to a User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#x69;l&#116;&#111;&#58;&#x66;&#101;&#108;&#105;xs&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;&#109;p&#x6c;&#101;&#46;c&#x6f;m\">f&#101;&#108;&#105;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;xa&#x6d;ple.&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv300GetCustomersForUser200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   */
-  def oBPv510GetCustomersForUserIdsOnly(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv300GetCustomersForUser200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.1.0/users/current/customers/customer_ids")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv300GetCustomersForUser200Response])
-
-  /**
-   * <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">AGENT_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>agent_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>agent_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>is_confirmed_agent</strong></a>: is_confirmed_agent</p> <p><a href=\"/glossary#\"><strong>is_pending_agent</strong></a>: is_pending_agent</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv510GetAgent200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param agentid The AGENTID identifier
-   * @param oBPv510UpdateAgentStatusRequest Request body
-   */
-  def oBPv510UpdateAgentStatus(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, agentid: String, oBPv510UpdateAgentStatusRequest: OBPv510UpdateAgentStatusRequest): Request[Either[ResponseException[String, Exception], OBPv510GetAgent200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/agents/${agentid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510UpdateAgentStatusRequest)
-      .response(asJson[OBPv510GetAgent200Response])
-
-  /**
-   * <p>Create a corporate customer.</p> <p>This endpoint is specifically for creating corporate customers.<br /> Individual-oriented fields (relationship_status, dependants, highest_education_attained, employment_status, name_suffix, date_of_birth, face_image, title) are not available on this endpoint.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The corporate entity's legal name<br /> - mobile_phone_number: The corporate entity's phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, credit_rating, credit_limit, kyc_status, last_ok_date, branch_id<br /> - customer_type: CORPORATE (default) or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent customer</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - customer_type must be CORPORATE or SUBSIDIARY<br /> - parent_customer_id must reference an existing customer if provided</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#97;&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#108;i&#x78;s&#x6d;it&#x68;&#x40;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;om\">&#x66;&#101;&#108;&#105;&#x78;&#115;m&#x69;t&#104;&#x40;e&#120;a&#109;&#x70;&#x6c;e.&#99;om</a></p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;&#x74;o&#58;&#102;&#101;&#x6c;&#x69;&#x78;s&#109;i&#116;&#x68;@&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.c&#x6f;&#x6d;\">&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;x&#x61;&#109;&#x70;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv600CreateCorporateCustomerRequest Request body
-   */
-  def oBPv600CreateCorporateCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv600CreateCorporateCustomerRequest: OBPv600CreateCorporateCustomerRequest): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreateCorporateCustomerRequest)
-      .response(asJson[OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems])
-
-  /**
-   * <p>The Customer resource stores the customer number, legal name, email, phone number, date of birth, relationship status,<br /> education attained, a url for a profile image, KYC status, credit rating, credit limit, and other customer information.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email: Customer's email address<br /> - face_image: Customer's face image (url and date)<br /> - date_of_birth: Customer's date of birth in YYYY-MM-DD format<br /> - relationship_status: Customer's relationship status<br /> - dependants: Number of dependants (must match the length of dob_of_dependants array)<br /> - dob_of_dependants: Array of dependant birth dates in YYYY-MM-DD format<br /> - credit_rating: Customer's credit rating (rating and source)<br /> - credit_limit: Customer's credit limit (currency and amount)<br /> - highest_education_attained: Customer's highest education level<br /> - employment_status: Customer's employment status<br /> - kyc_status: Know Your Customer verification status (true/false). Default: false<br /> - last_ok_date: Last verification date<br /> - title: Customer's title (e.g., Mr., Mrs., Dr.)<br /> - branch_id: Associated branch identifier<br /> - name_suffix: Customer's name suffix (e.g., Jr., Sr.)<br /> - customer_type: Type of customer - INDIVIDUAL (default), CORPORATE, or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent CORPORATE customer</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants must be provided in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).<br /> The dates are strictly validated and must be valid calendar dates.<br /> Dates are stored with time set to midnight (00:00:00) UTC for consistency.</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array<br /> - date_of_birth must be in valid YYYY-MM-DD format if provided<br /> - Each date in dob_of_dependants must be in valid YYYY-MM-DD format</p> <p>Note: If you need to set a specific customer number, use the Update Customer Number endpoint after this call.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#x6d;a&#105;&#108;to&#58;&#102;e&#108;&#x69;&#120;&#x73;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;.c&#111;m\">&#x66;&#101;&#108;i&#120;s&#x6d;&#x69;&#116;h&#x40;&#101;&#x78;&#x61;mpl&#101;&#x2e;c&#x6f;m</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;ail&#116;&#111;&#58;&#102;&#101;&#x6c;&#105;x&#x73;&#109;it&#x68;&#x40;&#101;x&#97;&#109;&#112;&#108;&#x65;.&#99;&#111;&#x6d;\">&#102;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#x68;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv600CreateCustomerRequest Request body
-   */
-  def oBPv600CreateCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv600CreateCustomerRequest: OBPv600CreateCustomerRequest): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreateCustomerRequest)
-      .response(asJson[OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems])
-
-  /**
-   * <p>Create a retail (individual) customer.</p> <p>This endpoint is specifically for creating individual/retail customers.<br /> The customer_type will be automatically set to INDIVIDUAL.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, face_image, date_of_birth, relationship_status, dependants, dob_of_dependants<br /> - credit_rating, credit_limit, highest_education_attained, employment_status<br /> - kyc_status, last_ok_date, title, branch_id, name_suffix</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#x61;i&#x6c;to&#x3a;&#x66;&#x65;&#108;&#x69;x&#x73;&#109;i&#x74;h@&#101;&#x78;&#x61;&#109;pl&#101;.&#x63;&#111;&#109;\">&#102;&#101;l&#105;x&#115;&#x6d;&#105;&#116;&#x68;&#x40;e&#x78;&#x61;&#x6d;&#x70;&#108;e.&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#x69;&#108;to&#x3a;&#x66;&#x65;&#108;&#105;&#x78;&#x73;&#x6d;&#105;t&#104;&#x40;e&#x78;&#x61;&#x6d;p&#108;&#x65;.&#x63;&#x6f;m\">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;&#x68;&#x40;&#x65;x&#97;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv600CreateRetailCustomerRequest Request body
-   */
-  def oBPv600CreateRetailCustomer(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv600CreateRetailCustomerRequest: OBPv600CreateRetailCustomerRequest): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreateRetailCustomerRequest)
-      .response(asJson[OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems])
-
-  /**
-   * <p>Gets the Corporate Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type CORPORATE or SUBSIDIARY.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;t&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;&#x2e;&#x63;&#111;&#109;\">&#x66;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;.co&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1710,21 +1787,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerCreditLimitRequest Request body
    */
-  def oBPv600GetCorporateCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerByCustomerNumber200Response]] =
+  def updateCustomerCreditLimit(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerCreditLimitRequest: UpdateCustomerCreditLimitRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers/${customerid}")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/credit-limit")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerByCustomerNumber200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerCreditLimitRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Get the subsidiary customers of a corporate customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> The specified customer must be of type CORPORATE or SUBSIDIARY.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;f&#x65;&#x6c;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;o&#x6d;\">&#x66;&#101;&#x6c;&#x69;&#x78;sm&#105;&#x74;h@&#x65;&#120;a&#109;&#112;&#108;&#101;.&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update the credit rating and source of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;&#105;&#108;t&#111;&#x3a;f&#101;&#x6c;&#x69;&#120;&#115;&#x6d;&#105;&#116;&#x68;&#x40;e&#120;&#x61;&#x6d;&#x70;&#108;&#101;.c&#x6f;&#x6d;\">&#x66;&#x65;li&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 404 :  (Not Found)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1733,42 +1811,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerCreditRatingAndSourceRequest Request body
    */
-  def oBPv600GetCorporateCustomerSubsidiaries(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
+  def updateCustomerCreditRatingAndSource(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerCreditRatingAndSourceRequest: UpdateCustomerCreditRatingAndSourceRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers/${customerid}/subsidiaries")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/credit-rating-and-source")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerCreditRatingAndSourceRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Get Corporate Customers at Bank.</p> <p>Returns a list of customers with customer_type CORPORATE or SUBSIDIARY at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;&#x69;&#x6c;&#x74;&#111;:f&#101;l&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;x&#97;&#109;&#x70;&#108;&#x65;&#x2e;c&#111;&#109;\">fe&#108;&#x69;&#x78;&#x73;mi&#116;h&#64;&#101;x&#97;&#109;&#x70;&#x6c;e&#x2e;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update the other data of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;f&#101;&#108;&#105;&#120;&#x73;&#109;&#105;&#x74;h&#64;&#101;&#120;&#97;&#x6d;&#112;&#x6c;e&#46;c&#111;&#x6d;\">f&#101;&#x6c;i&#120;&#115;m&#105;th@&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv600GetCorporateCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/corporate-customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
-
-  /**
-   * <p>Gets the Customer specified by CUSTOMER_ID.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#x69;&#x6c;&#116;&#111;&#58;&#102;&#x65;&#x6c;ixs&#x6d;&#105;&#116;&#104;&#x40;ex&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;m\">f&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;l&#x65;&#46;&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerByCustomerNumber200Response (Successful operation)
-   *   code 404 :  (Not Found)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1777,45 +1835,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerDataRequest Request body
    */
-  def oBPv600GetCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerByCustomerNumber200Response]] =
+  def updateCustomerData(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerDataRequest: UpdateCustomerDataRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/${customerid}")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/data")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerByCustomerNumber200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerDataRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Gets the Customer specified by CUSTOMER_NUMBER.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;l&#x74;&#111;&#x3a;&#x66;el&#x69;&#x78;&#x73;m&#105;&#116;&#104;&#64;e&#120;&#x61;m&#x70;le&#46;&#99;&#111;m\">f&#101;&#x6c;&#x69;xs&#x6d;&#x69;&#x74;&#x68;&#x40;&#101;x&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update an email of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#x69;&#x6c;&#x74;&#111;:&#x66;&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#x74;&#104;&#64;&#101;x&#x61;&#109;&#x70;l&#x65;&#x2e;&#99;&#111;&#109;\">&#102;&#x65;&#108;&#x69;&#120;&#x73;&#109;i&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;om</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetCustomerByCustomerNumber200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv500GetCustomerOverviewFlatRequest Request body
-   */
-  def oBPv600GetCustomerByCustomerNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerByCustomerNumber200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/customer-number")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv500GetCustomerOverviewFlatRequest)
-      .response(asJson[OBPv600GetCustomerByCustomerNumber200Response])
-
-  /**
-   * <p>Get the child (subsidiary) customers of a parent customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> This is useful for corporate banking where a corporate customer may have subsidiary customers.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;l&#x74;&#x6f;&#58;&#x66;&#x65;&#108;&#x69;&#120;&#115;&#x6d;&#105;th@&#101;&#x78;&#x61;&#x6d;&#x70;l&#101;&#46;c&#x6f;m\">&#x66;&#x65;&#x6c;&#105;x&#115;&#x6d;&#x69;&#116;&#104;@&#101;&#x78;&#x61;&#109;&#112;l&#x65;.&#x63;o&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 404 :  (Not Found)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1824,86 +1859,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerEmailRequest Request body
    */
-  def oBPv600GetCustomerChildren(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
+  def updateCustomerEmail(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerEmailRequest: UpdateCustomerEmailRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/${customerid}/children")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/email")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerEmailRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Get Customers at All Banks.</p> <p>Returns a list of all customers across all banks.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#105;l&#x74;o&#58;&#102;&#101;l&#105;&#x78;&#x73;&#109;i&#116;h&#x40;&#x65;&#120;a&#x6d;p&#108;&#x65;&#x2e;c&#111;&#x6d;\">&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;t&#104;&#64;&#101;x&#x61;&#x6d;&#x70;&#x6c;&#101;.&#99;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update the identity data of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x66;el&#105;&#120;&#115;&#109;&#x69;&#116;h&#x40;&#101;&#120;amp&#x6c;&#101;.&#99;&#111;&#109;\">&#102;&#101;l&#105;&#120;&#115;&#109;&#x69;&#116;h@&#101;&#x78;&#x61;mp&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   */
-  def oBPv600GetCustomersAtAllBanks(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
-
-  /**
-   * <p>Get Customers at Bank.</p> <p>Returns a list of all customers at the specified bank.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;&#x6c;t&#x6f;:&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#x69;t&#x68;&#64;&#101;&#120;&#x61;m&#112;&#x6c;e&#46;&#x63;&#x6f;&#109;\">&#102;&#x65;l&#105;&#120;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xamp&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv600GetCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
-
-  /**
-   * <p>Gets the Customers specified by Legal Name.</p> <p>Returns a list of customers that match the provided legal name.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#x6c;&#116;&#111;&#58;&#102;&#101;&#108;i&#x78;&#x73;&#x6d;&#105;t&#104;&#64;e&#120;a&#x6d;&#x70;&#108;e&#x2e;&#x63;&#111;&#x6d;\">fel&#105;xs&#109;&#105;t&#x68;&#x40;&#101;&#120;a&#x6d;&#112;l&#101;&#x2e;&#99;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param oBPv600GetCustomersByLegalNameRequest Request body
-   */
-  def oBPv600GetCustomersByLegalName(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv600GetCustomersByLegalNameRequest: OBPv600GetCustomersByLegalNameRequest): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/customers/legal-name")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600GetCustomersByLegalNameRequest)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
-
-  /**
-   * <p>Gets the Retail Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type INDIVIDUAL.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;x&#x61;&#x6d;&#112;&#108;&#101;.&#x63;&#x6f;&#109;\">&#x66;&#101;l&#x69;&#120;&#x73;&#x6d;&#105;&#116;h&#x40;&#101;&#x78;&#x61;&#x6d;p&#x6c;&#101;.&#99;o&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv600GetCustomerByCustomerNumber200Response (Successful operation)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1912,20 +1883,22 @@ class CustomerApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
+   * @param updateCustomerIdentityRequest Request body
    */
-  def oBPv600GetRetailCustomerByCustomerId(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerByCustomerNumber200Response]] =
+  def updateCustomerIdentity(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, updateCustomerIdentityRequest: UpdateCustomerIdentityRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers/${customerid}")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/identity")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerByCustomerNumber200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCustomerIdentityRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
   /**
-   * <p>Get Retail (Individual) Customers at Bank.</p> <p>Returns a list of customers with customer_type INDIVIDUAL at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;l&#116;&#111;&#58;&#102;&#x65;&#108;&#105;&#x78;&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#101;x&#x61;mp&#x6c;&#x65;&#46;c&#x6f;&#109;\">f&#101;&#x6c;&#x69;&#120;s&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;m&#112;&#108;&#x65;&#x2e;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * <p>Update the mobile number of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#x65;li&#x78;s&#109;&#105;&#x74;h@&#x65;x&#x61;&#109;&#112;&#108;&#101;&#46;&#99;&#111;m\">&#102;e&#x6c;i&#x78;s&#109;&#105;&#x74;&#x68;&#64;&#101;x&#97;&#109;p&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetCustomerChildren200Response (Successful operation)
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -1933,13 +1906,40 @@ class CustomerApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   * @param createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo Request body
    */
-  def oBPv600GetRetailCustomersAtOneBank(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv600GetCustomerChildren200Response]] =
+  def updateCustomerMobileNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
     basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/retail-customers")
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/mobile-number")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo)
+      .response(asJson[UpdateCustomerBranch200Response])
+
+  /**
+   * <p>Update the number of the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#x6c;&#x69;&#120;&#x73;mi&#116;&#104;@&#x65;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;\">&#x66;&#101;&#108;&#x69;&#x78;&#x73;&#x6d;&#x69;&#116;h&#64;&#101;&#120;&#x61;m&#x70;&#108;&#x65;.&#x63;&#111;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateCustomerBranch200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param customerid The CUSTOMERID identifier
+   * @param getCustomerOverviewFlatRequest Request body
+   */
+  def updateCustomerNumber(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest): Request[Either[ResponseException[String, Exception], UpdateCustomerBranch200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v3.1.0/banks/${bankid}/customers/${customerid}/number")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetCustomerChildren200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCustomerOverviewFlatRequest)
+      .response(asJson[UpdateCustomerBranch200Response])
 
 }

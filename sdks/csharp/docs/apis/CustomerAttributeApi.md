@@ -1,21 +1,21 @@
 # OpenBankProject.Api.CustomerAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateCustomerAttribute**](CustomerAttributeApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**OBPv400DeleteCustomerAttribute**](CustomerAttributeApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**OBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**OBPv400GetCustomerAttributeById**](CustomerAttributeApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**OBPv400GetCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**OBPv400GetCustomerAttributes**](CustomerAttributeApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**OBPv400UpdateCustomerAttribute**](CustomerAttributeApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**CreateCustomerAttribute**](CustomerAttributeApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**DeleteCustomerAttribute**](CustomerAttributeApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**DeleteCustomerAttributeDefinition**](CustomerAttributeApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**GetCustomerAttributeById**](CustomerAttributeApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**GetCustomerAttributeDefinition**](CustomerAttributeApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**GetCustomerAttributes**](CustomerAttributeApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**UpdateCustomerAttribute**](CustomerAttributeApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
 
-<a id="obpv400createcustomerattribute"></a>
-# **OBPv400CreateCustomerAttribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400CreateCustomerAttribute (string bankid, string customerid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="createcustomerattribute"></a>
+# **CreateCustomerAttribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner CreateCustomerAttribute (string bankid, string customerid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Create Customer Attribute
 
@@ -28,11 +28,11 @@ Create Customer Attribute
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **customerid** | **string** | The CUSTOMERID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -53,9 +53,9 @@ Create Customer Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createorupdatecustomerattributeattributedefinition"></a>
-# **OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition (string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+<a id="createorupdatecustomerattributeattributedefinition"></a>
+# **CreateOrUpdateCustomerAttributeAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateCustomerAttributeAttributeDefinition (string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Customer Attribute Definition
 
@@ -67,11 +67,11 @@ Create or Update Customer Attribute Definition
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ Create or Update Customer Attribute Definition
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletecustomerattribute"></a>
-# **OBPv400DeleteCustomerAttribute**
-> void OBPv400DeleteCustomerAttribute (string bankid, string customerid, string customerattributeid)
+<a id="deletecustomerattribute"></a>
+# **DeleteCustomerAttribute**
+> void DeleteCustomerAttribute (string bankid, string customerid, string customerattributeid)
 
 Delete Customer Attribute
 
@@ -132,9 +132,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletecustomerattributedefinition"></a>
-# **OBPv400DeleteCustomerAttributeDefinition**
-> void OBPv400DeleteCustomerAttributeDefinition (string bankid, string attributedefinitionid)
+<a id="deletecustomerattributedefinition"></a>
+# **DeleteCustomerAttributeDefinition**
+> void DeleteCustomerAttributeDefinition (string bankid, string attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -171,9 +171,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getcustomerattributebyid"></a>
-# **OBPv400GetCustomerAttributeById**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400GetCustomerAttributeById (string bankid, string customerid, string attributeid)
+<a id="getcustomerattributebyid"></a>
+# **GetCustomerAttributeById**
+> GetCustomerAttributes200ResponseCustomerAttributesInner GetCustomerAttributeById (string bankid, string customerid, string attributeid)
 
 Get Customer Attribute By Id
 
@@ -190,7 +190,7 @@ Get Customer Attribute By Id
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -211,9 +211,9 @@ Get Customer Attribute By Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getcustomerattributedefinition"></a>
-# **OBPv400GetCustomerAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetCustomerAttributeDefinition (string bankid)
+<a id="getcustomerattributedefinition"></a>
+# **GetCustomerAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response GetCustomerAttributeDefinition (string bankid)
 
 Get Customer Attribute Definition
 
@@ -228,7 +228,7 @@ Get Customer Attribute Definition
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -249,9 +249,9 @@ Get Customer Attribute Definition
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getcustomerattributes"></a>
-# **OBPv400GetCustomerAttributes**
-> OBPv400GetCustomerAttributes200Response OBPv400GetCustomerAttributes (string bankid, string customerid)
+<a id="getcustomerattributes"></a>
+# **GetCustomerAttributes**
+> GetCustomerAttributes200Response GetCustomerAttributes (string bankid, string customerid)
 
 Get Customer Attributes
 
@@ -267,7 +267,7 @@ Get Customer Attributes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -288,9 +288,9 @@ Get Customer Attributes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatecustomerattribute"></a>
-# **OBPv400UpdateCustomerAttribute**
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400UpdateCustomerAttribute (string bankid, string customerid, string customerattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="updatecustomerattribute"></a>
+# **UpdateCustomerAttribute**
+> GetCustomerAttributes200ResponseCustomerAttributesInner UpdateCustomerAttribute (string bankid, string customerid, string customerattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Update Customer Attribute
 
@@ -304,11 +304,11 @@ Update Customer Attribute
 | **bankid** | **string** | The BANKID identifier |  |
 | **customerid** | **string** | The CUSTOMERID identifier |  |
 | **customerattributeid** | **string** | The CUSTOMERATTRIBUTEID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

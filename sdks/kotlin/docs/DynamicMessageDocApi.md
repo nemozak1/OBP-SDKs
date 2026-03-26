@@ -1,24 +1,24 @@
 # DynamicMessageDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400CreateBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**oBPv400CreateDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400CreateDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**oBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400DeleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**oBPv400DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400DeleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**oBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#oBPv400GetAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**oBPv400GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#oBPv400GetAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**oBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400GetBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**oBPv400GetDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400GetDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**oBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400UpdateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**oBPv400UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#oBPv400UpdateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**createBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#createBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**createDynamicMessageDoc**](DynamicMessageDocApi.md#createDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**deleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#deleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**deleteDynamicMessageDoc**](DynamicMessageDocApi.md#deleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**getAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#getAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**getAllDynamicMessageDocs**](DynamicMessageDocApi.md#getAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**getBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#getBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**getDynamicMessageDoc**](DynamicMessageDocApi.md#getDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**updateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#updateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**updateDynamicMessageDoc**](DynamicMessageDocApi.md#updateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
 
-<a id="oBPv400CreateBankLevelDynamicMessageDoc"></a>
-# **oBPv400CreateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(bankid, obPv400UpdateDynamicMessageDocRequest)
+<a id="createBankLevelDynamicMessageDoc"></a>
+# **createBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -32,15 +32,15 @@ Create Bank Level Dynamic Message Doc
 
 val apiInstance = DynamicMessageDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400UpdateDynamicMessageDocRequest : OBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // OBPv400UpdateDynamicMessageDocRequest | Request body
+val updateDynamicMessageDocRequest : UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // UpdateDynamicMessageDocRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400CreateBankLevelDynamicMessageDoc(bankid, obPv400UpdateDynamicMessageDocRequest)
+    val result : GetDynamicMessageDoc200Response = apiInstance.createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400CreateBankLevelDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#createBankLevelDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400CreateBankLevelDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#createBankLevelDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -49,11 +49,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -64,17 +64,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateDynamicMessageDoc"></a>
-# **oBPv400CreateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest)
+<a id="createDynamicMessageDoc"></a>
+# **createDynamicMessageDoc**
+> GetDynamicMessageDoc200Response createDynamicMessageDoc(updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -87,15 +87,15 @@ Create Dynamic Message Doc
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicMessageDocApi()
-val obPv400UpdateDynamicMessageDocRequest : OBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // OBPv400UpdateDynamicMessageDocRequest | Request body
+val updateDynamicMessageDocRequest : UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // UpdateDynamicMessageDocRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest)
+    val result : GetDynamicMessageDoc200Response = apiInstance.createDynamicMessageDoc(updateDynamicMessageDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400CreateDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#createDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400CreateDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#createDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -103,11 +103,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -118,17 +118,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteBankLevelDynamicMessageDoc"></a>
-# **oBPv400DeleteBankLevelDynamicMessageDoc**
-> oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+<a id="deleteBankLevelDynamicMessageDoc"></a>
+# **deleteBankLevelDynamicMessageDoc**
+> deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -144,12 +144,12 @@ val apiInstance = DynamicMessageDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
 try {
-    apiInstance.oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+    apiInstance.deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400DeleteBankLevelDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#deleteBankLevelDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400DeleteBankLevelDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#deleteBankLevelDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -173,17 +173,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteDynamicMessageDoc"></a>
-# **oBPv400DeleteDynamicMessageDoc**
-> oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid)
+<a id="deleteDynamicMessageDoc"></a>
+# **deleteDynamicMessageDoc**
+> deleteDynamicMessageDoc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -198,12 +198,12 @@ Delete Dynamic Message Doc
 val apiInstance = DynamicMessageDocApi()
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
 try {
-    apiInstance.oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid)
+    apiInstance.deleteDynamicMessageDoc(dynamicmessagedocid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400DeleteDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#deleteDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400DeleteDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#deleteDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -226,17 +226,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetAllBankLevelDynamicMessageDocs"></a>
-# **oBPv400GetAllBankLevelDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(bankid)
+<a id="getAllBankLevelDynamicMessageDocs"></a>
+# **getAllBankLevelDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -251,13 +251,13 @@ Get all Bank Level Dynamic Message Docs
 val apiInstance = DynamicMessageDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetAllBankLevelDynamicMessageDocs200Response = apiInstance.oBPv400GetAllBankLevelDynamicMessageDocs(bankid)
+    val result : GetAllBankLevelDynamicMessageDocs200Response = apiInstance.getAllBankLevelDynamicMessageDocs(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400GetAllBankLevelDynamicMessageDocs")
+    println("4xx response calling DynamicMessageDocApi#getAllBankLevelDynamicMessageDocs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400GetAllBankLevelDynamicMessageDocs")
+    println("5xx response calling DynamicMessageDocApi#getAllBankLevelDynamicMessageDocs")
     e.printStackTrace()
 }
 ```
@@ -269,7 +269,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -280,17 +280,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAllDynamicMessageDocs"></a>
-# **oBPv400GetAllDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs()
+<a id="getAllDynamicMessageDocs"></a>
+# **getAllDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs()
 
 Get all Dynamic Message Docs
 
@@ -304,13 +304,13 @@ Get all Dynamic Message Docs
 
 val apiInstance = DynamicMessageDocApi()
 try {
-    val result : OBPv400GetAllBankLevelDynamicMessageDocs200Response = apiInstance.oBPv400GetAllDynamicMessageDocs()
+    val result : GetAllBankLevelDynamicMessageDocs200Response = apiInstance.getAllDynamicMessageDocs()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400GetAllDynamicMessageDocs")
+    println("4xx response calling DynamicMessageDocApi#getAllDynamicMessageDocs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400GetAllDynamicMessageDocs")
+    println("5xx response calling DynamicMessageDocApi#getAllDynamicMessageDocs")
     e.printStackTrace()
 }
 ```
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -331,17 +331,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetBankLevelDynamicMessageDoc"></a>
-# **oBPv400GetBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+<a id="getBankLevelDynamicMessageDoc"></a>
+# **getBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -357,13 +357,13 @@ val apiInstance = DynamicMessageDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+    val result : GetDynamicMessageDoc200Response = apiInstance.getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400GetBankLevelDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#getBankLevelDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400GetBankLevelDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#getBankLevelDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -376,7 +376,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -387,17 +387,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetDynamicMessageDoc"></a>
-# **oBPv400GetDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(dynamicmessagedocid)
+<a id="getDynamicMessageDoc"></a>
+# **getDynamicMessageDoc**
+> GetDynamicMessageDoc200Response getDynamicMessageDoc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -412,13 +412,13 @@ Get Dynamic Message Doc
 val apiInstance = DynamicMessageDocApi()
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400GetDynamicMessageDoc(dynamicmessagedocid)
+    val result : GetDynamicMessageDoc200Response = apiInstance.getDynamicMessageDoc(dynamicmessagedocid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400GetDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#getDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400GetDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#getDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -430,7 +430,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -441,17 +441,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateBankLevelDynamicMessageDoc"></a>
-# **oBPv400UpdateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+<a id="updateBankLevelDynamicMessageDoc"></a>
+# **updateBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -466,15 +466,15 @@ Update Bank Level Dynamic Message Doc
 val apiInstance = DynamicMessageDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
-val obPv400UpdateDynamicMessageDocRequest : OBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // OBPv400UpdateDynamicMessageDocRequest | Request body
+val updateDynamicMessageDocRequest : UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}} // UpdateDynamicMessageDocRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+    val result : GetDynamicMessageDoc200Response = apiInstance.updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400UpdateBankLevelDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#updateBankLevelDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400UpdateBankLevelDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#updateBankLevelDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -484,11 +484,11 @@ try {
 | **dynamicmessagedocid** | **kotlin.String**| The DYNAMICMESSAGEDOCID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -499,17 +499,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400UpdateDynamicMessageDoc"></a>
-# **oBPv400UpdateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+<a id="updateDynamicMessageDoc"></a>
+# **updateDynamicMessageDoc**
+> GetDynamicMessageDoc200Response updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -523,15 +523,15 @@ Update Dynamic Message Doc
 
 val apiInstance = DynamicMessageDocApi()
 val dynamicmessagedocid : kotlin.String = dynamicmessagedocid_example // kotlin.String | The DYNAMICMESSAGEDOCID identifier
-val obPv400UpdateDynamicMessageDocRequest : OBPv400UpdateDynamicMessageDocRequest = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}} // OBPv400UpdateDynamicMessageDocRequest | Request body
+val updateDynamicMessageDocRequest : UpdateDynamicMessageDocRequest = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}} // UpdateDynamicMessageDocRequest | Request body
 try {
-    val result : OBPv400GetDynamicMessageDoc200Response = apiInstance.oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest)
+    val result : GetDynamicMessageDoc200Response = apiInstance.updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicMessageDocApi#oBPv400UpdateDynamicMessageDoc")
+    println("4xx response calling DynamicMessageDocApi#updateDynamicMessageDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicMessageDocApi#oBPv400UpdateDynamicMessageDoc")
+    println("5xx response calling DynamicMessageDocApi#updateDynamicMessageDoc")
     e.printStackTrace()
 }
 ```
@@ -540,11 +540,11 @@ try {
 | **dynamicmessagedocid** | **kotlin.String**| The DYNAMICMESSAGEDOCID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -555,8 +555,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

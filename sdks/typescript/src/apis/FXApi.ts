@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,29 +15,29 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv220CreateFxRequest,
-  OBPv510GetCurrenciesAtBank200Response,
+  CreateFxRequest,
+  GetCurrenciesAtBank200Response,
 } from '../models/index';
 import {
-    OBPv220CreateFxRequestFromJSON,
-    OBPv220CreateFxRequestToJSON,
-    OBPv510GetCurrenciesAtBank200ResponseFromJSON,
-    OBPv510GetCurrenciesAtBank200ResponseToJSON,
+    CreateFxRequestFromJSON,
+    CreateFxRequestToJSON,
+    GetCurrenciesAtBank200ResponseFromJSON,
+    GetCurrenciesAtBank200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv220CreateFxOperationRequest {
+export interface CreateFxOperationRequest {
     bankid: string;
-    oBPv220CreateFxRequest: OBPv220CreateFxRequest;
+    createFxRequest: CreateFxRequest;
 }
 
-export interface OBPv220GetCurrentFxRateRequest {
+export interface GetCurrenciesAtBankRequest {
+    bankid: string;
+}
+
+export interface GetCurrentFxRateRequest {
     bankid: string;
     fromcurrencycode: string;
     tocurrencycode: string;
-}
-
-export interface OBPv510GetCurrenciesAtBankRequest {
-    bankid: string;
 }
 
 /**
@@ -46,20 +46,20 @@ export interface OBPv510GetCurrenciesAtBankRequest {
 export class FXApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv220CreateFx without sending the request
+     * Creates request options for createFx without sending the request
      */
-    async oBPv220CreateFxRequestOpts(requestParameters: OBPv220CreateFxOperationRequest): Promise<runtime.RequestOpts> {
+    async createFxRequestOpts(requestParameters: CreateFxOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv220CreateFx().'
+                'Required parameter "bankid" was null or undefined when calling createFx().'
             );
         }
 
-        if (requestParameters['oBPv220CreateFxRequest'] == null) {
+        if (requestParameters['createFxRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv220CreateFxRequest',
-                'Required parameter "oBPv220CreateFxRequest" was null or undefined when calling oBPv220CreateFx().'
+                'createFxRequest',
+                'Required parameter "createFxRequest" was null or undefined when calling createFx().'
             );
         }
 
@@ -79,7 +79,7 @@ export class FXApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -91,7 +91,7 @@ export class FXApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv220CreateFxRequestToJSON(requestParameters['oBPv220CreateFxRequest']),
+            body: CreateFxRequestToJSON(requestParameters['createFxRequest']),
         };
     }
 
@@ -99,44 +99,30 @@ export class FXApi extends runtime.BaseAPI {
      * <p>Create or Update Fx for the Bank.</p> <p>Example:</p> <p>“from_currency_code”:“EUR”,<br /> “to_currency_code”:“USD”,<br /> “conversion_value”: 1.136305,<br /> “inverse_conversion_value”: 1 / 1.136305 = 0.8800454103431737,</p> <p>Thus 1 Euro = 1.136305 US Dollar<br /> and<br /> 1 US Dollar = 0.8800 Euro</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#conversion_value\"><strong>conversion_value</strong></a>: 100</p> <p><a href=\"/glossary#effective_date\"><strong>effective_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_currency_code\"><strong>from_currency_code</strong></a>:</p> <p><a href=\"/glossary#inverse_conversion_value\"><strong>inverse_conversion_value</strong></a>: 50</p> <p><a href=\"/glossary#to_currency_code\"><strong>to_currency_code</strong></a>: EUR</p> 
      * Create Fx
      */
-    async oBPv220CreateFxRaw(requestParameters: OBPv220CreateFxOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv220CreateFxRequest>> {
-        const requestOptions = await this.oBPv220CreateFxRequestOpts(requestParameters);
+    async createFxRaw(requestParameters: CreateFxOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateFxRequest>> {
+        const requestOptions = await this.createFxRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv220CreateFxRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateFxRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Create or Update Fx for the Bank.</p> <p>Example:</p> <p>“from_currency_code”:“EUR”,<br /> “to_currency_code”:“USD”,<br /> “conversion_value”: 1.136305,<br /> “inverse_conversion_value”: 1 / 1.136305 = 0.8800454103431737,</p> <p>Thus 1 Euro = 1.136305 US Dollar<br /> and<br /> 1 US Dollar = 0.8800 Euro</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#conversion_value\"><strong>conversion_value</strong></a>: 100</p> <p><a href=\"/glossary#effective_date\"><strong>effective_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_currency_code\"><strong>from_currency_code</strong></a>:</p> <p><a href=\"/glossary#inverse_conversion_value\"><strong>inverse_conversion_value</strong></a>: 50</p> <p><a href=\"/glossary#to_currency_code\"><strong>to_currency_code</strong></a>: EUR</p> 
      * Create Fx
      */
-    async oBPv220CreateFx(requestParameters: OBPv220CreateFxOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv220CreateFxRequest> {
-        const response = await this.oBPv220CreateFxRaw(requestParameters, initOverrides);
+    async createFx(requestParameters: CreateFxOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateFxRequest> {
+        const response = await this.createFxRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv220GetCurrentFxRate without sending the request
+     * Creates request options for getCurrenciesAtBank without sending the request
      */
-    async oBPv220GetCurrentFxRateRequestOpts(requestParameters: OBPv220GetCurrentFxRateRequest): Promise<runtime.RequestOpts> {
+    async getCurrenciesAtBankRequestOpts(requestParameters: GetCurrenciesAtBankRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv220GetCurrentFxRate().'
-            );
-        }
-
-        if (requestParameters['fromcurrencycode'] == null) {
-            throw new runtime.RequiredError(
-                'fromcurrencycode',
-                'Required parameter "fromcurrencycode" was null or undefined when calling oBPv220GetCurrentFxRate().'
-            );
-        }
-
-        if (requestParameters['tocurrencycode'] == null) {
-            throw new runtime.RequiredError(
-                'tocurrencycode',
-                'Required parameter "tocurrencycode" was null or undefined when calling oBPv220GetCurrentFxRate().'
+                'Required parameter "bankid" was null or undefined when calling getCurrenciesAtBank().'
             );
         }
 
@@ -154,7 +140,81 @@ export class FXApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v5.1.0/banks/{bankid}/currencies`;
+        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
+     * Get Currencies at a Bank
+     */
+    async getCurrenciesAtBankRaw(requestParameters: GetCurrenciesAtBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetCurrenciesAtBank200Response>> {
+        const requestOptions = await this.getCurrenciesAtBankRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetCurrenciesAtBank200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
+     * Get Currencies at a Bank
+     */
+    async getCurrenciesAtBank(requestParameters: GetCurrenciesAtBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetCurrenciesAtBank200Response> {
+        const response = await this.getCurrenciesAtBankRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getCurrentFxRate without sending the request
+     */
+    async getCurrentFxRateRequestOpts(requestParameters: GetCurrentFxRateRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['bankid'] == null) {
+            throw new runtime.RequiredError(
+                'bankid',
+                'Required parameter "bankid" was null or undefined when calling getCurrentFxRate().'
+            );
+        }
+
+        if (requestParameters['fromcurrencycode'] == null) {
+            throw new runtime.RequiredError(
+                'fromcurrencycode',
+                'Required parameter "fromcurrencycode" was null or undefined when calling getCurrentFxRate().'
+            );
+        }
+
+        if (requestParameters['tocurrencycode'] == null) {
+            throw new runtime.RequiredError(
+                'tocurrencycode',
+                'Required parameter "tocurrencycode" was null or undefined when calling getCurrentFxRate().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -175,79 +235,19 @@ export class FXApi extends runtime.BaseAPI {
      * <p>Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE</p> <p>OBP may try different sources of FX rate information depending on the Connector in operation.</p> <p>For example we want to convert EUR =&gt; USD:</p> <p>OBP will:<br /> 1st try - Connector (database, core banking system or external FX service)<br /> 2nd try part 1 - fallbackexchangerates/eur.json<br /> 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)<br /> 3rd try - Hardcoded map of FX rates.</p> <p><img src=\"https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\" alt=\"FX Flow\" /></p> <p><strong>Public Access:</strong> This endpoint can be made publicly accessible (no authentication required) by setting the property <code>apiOptions.getCurrentFxRateIsPublic=true</code> in the props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#from_currency_code\">FROM_CURRENCY_CODE</a>:</p> <p><a href=\"/glossary#to_currency_code\">TO_CURRENCY_CODE</a>: EUR</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#conversion_value\"><strong>conversion_value</strong></a>: 100</p> <p><a href=\"/glossary#effective_date\"><strong>effective_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_currency_code\"><strong>from_currency_code</strong></a>:</p> <p><a href=\"/glossary#inverse_conversion_value\"><strong>inverse_conversion_value</strong></a>: 50</p> <p><a href=\"/glossary#to_currency_code\"><strong>to_currency_code</strong></a>: EUR</p> 
      * Get Current FxRate
      */
-    async oBPv220GetCurrentFxRateRaw(requestParameters: OBPv220GetCurrentFxRateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv220CreateFxRequest>> {
-        const requestOptions = await this.oBPv220GetCurrentFxRateRequestOpts(requestParameters);
+    async getCurrentFxRateRaw(requestParameters: GetCurrentFxRateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateFxRequest>> {
+        const requestOptions = await this.getCurrentFxRateRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv220CreateFxRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateFxRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE</p> <p>OBP may try different sources of FX rate information depending on the Connector in operation.</p> <p>For example we want to convert EUR =&gt; USD:</p> <p>OBP will:<br /> 1st try - Connector (database, core banking system or external FX service)<br /> 2nd try part 1 - fallbackexchangerates/eur.json<br /> 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)<br /> 3rd try - Hardcoded map of FX rates.</p> <p><img src=\"https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\" alt=\"FX Flow\" /></p> <p><strong>Public Access:</strong> This endpoint can be made publicly accessible (no authentication required) by setting the property <code>apiOptions.getCurrentFxRateIsPublic=true</code> in the props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#from_currency_code\">FROM_CURRENCY_CODE</a>:</p> <p><a href=\"/glossary#to_currency_code\">TO_CURRENCY_CODE</a>: EUR</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#conversion_value\"><strong>conversion_value</strong></a>: 100</p> <p><a href=\"/glossary#effective_date\"><strong>effective_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_currency_code\"><strong>from_currency_code</strong></a>:</p> <p><a href=\"/glossary#inverse_conversion_value\"><strong>inverse_conversion_value</strong></a>: 50</p> <p><a href=\"/glossary#to_currency_code\"><strong>to_currency_code</strong></a>: EUR</p> 
      * Get Current FxRate
      */
-    async oBPv220GetCurrentFxRate(requestParameters: OBPv220GetCurrentFxRateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv220CreateFxRequest> {
-        const response = await this.oBPv220GetCurrentFxRateRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv510GetCurrenciesAtBank without sending the request
-     */
-    async oBPv510GetCurrenciesAtBankRequestOpts(requestParameters: OBPv510GetCurrenciesAtBankRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['bankid'] == null) {
-            throw new runtime.RequiredError(
-                'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510GetCurrenciesAtBank().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v5.1.0/banks/{bankid}/currencies`;
-        urlPath = urlPath.replace(`{${"bankid"}}`, encodeURIComponent(String(requestParameters['bankid'])));
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
-     * Get Currencies at a Bank
-     */
-    async oBPv510GetCurrenciesAtBankRaw(requestParameters: OBPv510GetCurrenciesAtBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv510GetCurrenciesAtBank200Response>> {
-        const requestOptions = await this.oBPv510GetCurrenciesAtBankRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv510GetCurrenciesAtBank200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
-     * Get Currencies at a Bank
-     */
-    async oBPv510GetCurrenciesAtBank(requestParameters: OBPv510GetCurrenciesAtBankRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv510GetCurrenciesAtBank200Response> {
-        const response = await this.oBPv510GetCurrenciesAtBankRaw(requestParameters, initOverrides);
+    async getCurrentFxRate(requestParameters: GetCurrentFxRateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateFxRequest> {
+        const response = await this.getCurrentFxRateRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -1,19 +1,19 @@
 # OpenBankProject::ApiProductApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_create_api_product**](ApiProductApi.md#o_bpv6_0_0_create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
-| [**o_bpv6_0_0_create_or_update_api_product**](ApiProductApi.md#o_bpv6_0_0_create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
-| [**o_bpv6_0_0_delete_api_product**](ApiProductApi.md#o_bpv6_0_0_delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
-| [**o_bpv6_0_0_get_api_product**](ApiProductApi.md#o_bpv6_0_0_get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
-| [**o_bpv6_0_0_get_api_products**](ApiProductApi.md#o_bpv6_0_0_get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
+| [**create_api_product**](ApiProductApi.md#create_api_product) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
+| [**create_or_update_api_product**](ApiProductApi.md#create_or_update_api_product) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
+| [**delete_api_product**](ApiProductApi.md#delete_api_product) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
+| [**get_api_product**](ApiProductApi.md#get_api_product) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
+| [**get_api_products**](ApiProductApi.md#get_api_products) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
 
 
-## o_bpv6_0_0_create_api_product
+## create_api_product
 
-> <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> <GetApiProducts200ResponseApiProductsInner> create_api_product(bankid, apiproductcode, create_or_update_api_product_request)
 
 Create Api Product
 
@@ -35,40 +35,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifier
-obpv600_create_or_update_api_product_request = OpenBankProject::OBPv600CreateOrUpdateApiProductRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreateOrUpdateApiProductRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), monthly_subscription_currency: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), per_month_call_limit: , description: , terms_and_conditions_url: , per_week_call_limit: , collection_id: , monthly_subscription_amount: , more_info_url: , per_hour_call_limit: , per_second_call_limit: , parent_api_product_code: , category: , per_minute_call_limit: , per_day_call_limit: })}) # OBPv600CreateOrUpdateApiProductRequest | Request body
+create_or_update_api_product_request = OpenBankProject::CreateOrUpdateApiProductRequest.new # CreateOrUpdateApiProductRequest | Request body
 
 begin
   # Create Api Product
-  result = api_instance.o_bpv6_0_0_create_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+  result = api_instance.create_api_product(bankid, apiproductcode, create_or_update_api_product_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_create_api_product: #{e}"
+  puts "Error when calling ApiProductApi->create_api_product: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_api_product_with_http_info variant
+#### Using the create_api_product_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>, Integer, Hash)> o_bpv6_0_0_create_api_product_with_http_info(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> <Array(<GetApiProducts200ResponseApiProductsInner>, Integer, Hash)> create_api_product_with_http_info(bankid, apiproductcode, create_or_update_api_product_request)
 
 ```ruby
 begin
   # Create Api Product
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_api_product_with_http_info(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+  data, status_code, headers = api_instance.create_api_product_with_http_info(bankid, apiproductcode, create_or_update_api_product_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>
+  p data # => <GetApiProducts200ResponseApiProductsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_create_api_product_with_http_info: #{e}"
+  puts "Error when calling ApiProductApi->create_api_product_with_http_info: #{e}"
 end
 ```
 
@@ -78,11 +78,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **apiproductcode** | **String** | The APIPRODUCTCODE identifier |  |
-| **obpv600_create_or_update_api_product_request** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body |  |
+| **create_or_update_api_product_request** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_create_or_update_api_product
+## create_or_update_api_product
 
-> <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> <GetApiProducts200ResponseApiProductsInner> create_or_update_api_product(bankid, apiproductcode, create_or_update_api_product_request)
 
 Create or Update Api Product
 
@@ -118,40 +118,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifier
-obpv600_create_or_update_api_product_request = OpenBankProject::OBPv600CreateOrUpdateApiProductRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreateOrUpdateApiProductRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), monthly_subscription_currency: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), per_month_call_limit: , description: , terms_and_conditions_url: , per_week_call_limit: , collection_id: , monthly_subscription_amount: , more_info_url: , per_hour_call_limit: , per_second_call_limit: , parent_api_product_code: , category: , per_minute_call_limit: , per_day_call_limit: })}) # OBPv600CreateOrUpdateApiProductRequest | Request body
+create_or_update_api_product_request = OpenBankProject::CreateOrUpdateApiProductRequest.new # CreateOrUpdateApiProductRequest | Request body
 
 begin
   # Create or Update Api Product
-  result = api_instance.o_bpv6_0_0_create_or_update_api_product(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+  result = api_instance.create_or_update_api_product(bankid, apiproductcode, create_or_update_api_product_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_create_or_update_api_product: #{e}"
+  puts "Error when calling ApiProductApi->create_or_update_api_product: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_or_update_api_product_with_http_info variant
+#### Using the create_or_update_api_product_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>, Integer, Hash)> o_bpv6_0_0_create_or_update_api_product_with_http_info(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+> <Array(<GetApiProducts200ResponseApiProductsInner>, Integer, Hash)> create_or_update_api_product_with_http_info(bankid, apiproductcode, create_or_update_api_product_request)
 
 ```ruby
 begin
   # Create or Update Api Product
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_or_update_api_product_with_http_info(bankid, apiproductcode, obpv600_create_or_update_api_product_request)
+  data, status_code, headers = api_instance.create_or_update_api_product_with_http_info(bankid, apiproductcode, create_or_update_api_product_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>
+  p data # => <GetApiProducts200ResponseApiProductsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_create_or_update_api_product_with_http_info: #{e}"
+  puts "Error when calling ApiProductApi->create_or_update_api_product_with_http_info: #{e}"
 end
 ```
 
@@ -161,11 +161,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **apiproductcode** | **String** | The APIPRODUCTCODE identifier |  |
-| **obpv600_create_or_update_api_product_request** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body |  |
+| **create_or_update_api_product_request** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -177,9 +177,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_delete_api_product
+## delete_api_product
 
-> o_bpv6_0_0_delete_api_product(bankid, apiproductcode)
+> delete_api_product(bankid, apiproductcode)
 
 Delete Api Product
 
@@ -201,9 +201,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ApiProductApi.new
@@ -212,27 +212,27 @@ apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifi
 
 begin
   # Delete Api Product
-  api_instance.o_bpv6_0_0_delete_api_product(bankid, apiproductcode)
+  api_instance.delete_api_product(bankid, apiproductcode)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_delete_api_product: #{e}"
+  puts "Error when calling ApiProductApi->delete_api_product: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_api_product_with_http_info variant
+#### Using the delete_api_product_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_api_product_with_http_info(bankid, apiproductcode)
+> <Array(nil, Integer, Hash)> delete_api_product_with_http_info(bankid, apiproductcode)
 
 ```ruby
 begin
   # Delete Api Product
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_api_product_with_http_info(bankid, apiproductcode)
+  data, status_code, headers = api_instance.delete_api_product_with_http_info(bankid, apiproductcode)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_delete_api_product_with_http_info: #{e}"
+  puts "Error when calling ApiProductApi->delete_api_product_with_http_info: #{e}"
 end
 ```
 
@@ -257,9 +257,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_get_api_product
+## get_api_product
 
-> <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems> o_bpv6_0_0_get_api_product(bankid, apiproductcode)
+> <GetApiProducts200ResponseApiProductsInner> get_api_product(bankid, apiproductcode)
 
 Get Api Product
 
@@ -277,28 +277,28 @@ apiproductcode = 'apiproductcode_example' # String | The APIPRODUCTCODE identifi
 
 begin
   # Get Api Product
-  result = api_instance.o_bpv6_0_0_get_api_product(bankid, apiproductcode)
+  result = api_instance.get_api_product(bankid, apiproductcode)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_get_api_product: #{e}"
+  puts "Error when calling ApiProductApi->get_api_product: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_api_product_with_http_info variant
+#### Using the get_api_product_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>, Integer, Hash)> o_bpv6_0_0_get_api_product_with_http_info(bankid, apiproductcode)
+> <Array(<GetApiProducts200ResponseApiProductsInner>, Integer, Hash)> get_api_product_with_http_info(bankid, apiproductcode)
 
 ```ruby
 begin
   # Get Api Product
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_api_product_with_http_info(bankid, apiproductcode)
+  data, status_code, headers = api_instance.get_api_product_with_http_info(bankid, apiproductcode)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetApiProducts200ResponsePropertiesApiProductsItems>
+  p data # => <GetApiProducts200ResponseApiProductsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_get_api_product_with_http_info: #{e}"
+  puts "Error when calling ApiProductApi->get_api_product_with_http_info: #{e}"
 end
 ```
 
@@ -311,7 +311,7 @@ end
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -323,9 +323,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_api_products
+## get_api_products
 
-> <OBPv600GetApiProducts200Response> o_bpv6_0_0_get_api_products(bankid)
+> <GetApiProducts200Response> get_api_products(bankid)
 
 Get Api Products
 
@@ -342,28 +342,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Api Products
-  result = api_instance.o_bpv6_0_0_get_api_products(bankid)
+  result = api_instance.get_api_products(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_get_api_products: #{e}"
+  puts "Error when calling ApiProductApi->get_api_products: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_api_products_with_http_info variant
+#### Using the get_api_products_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetApiProducts200Response>, Integer, Hash)> o_bpv6_0_0_get_api_products_with_http_info(bankid)
+> <Array(<GetApiProducts200Response>, Integer, Hash)> get_api_products_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Api Products
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_api_products_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_api_products_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetApiProducts200Response>
+  p data # => <GetApiProducts200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ApiProductApi->o_bpv6_0_0_get_api_products_with_http_info: #{e}"
+  puts "Error when calling ApiProductApi->get_api_products_with_http_info: #{e}"
 end
 ```
 
@@ -375,7 +375,7 @@ end
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

@@ -1,16 +1,16 @@
 # StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateStandingOrder**](StandingOrderApi.md#oBPv400CreateStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**oBPv400CreateStandingOrderManagement**](StandingOrderApi.md#oBPv400CreateStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**createStandingOrder**](StandingOrderApi.md#createStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**createStandingOrderManagement**](StandingOrderApi.md#createStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
 
-<a id="oBPv400CreateStandingOrder"></a>
-# **oBPv400CreateStandingOrder**
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrder(bankid, accountid, viewid, obPv400CreateStandingOrderRequest)
+<a id="createStandingOrder"></a>
+# **createStandingOrder**
+> CreateStandingOrder200Response createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest)
 
 Create Standing Order
 
@@ -26,15 +26,15 @@ val apiInstance = StandingOrderApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
-val obPv400CreateStandingOrderRequest : OBPv400CreateStandingOrderRequest = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_signed":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} // OBPv400CreateStandingOrderRequest | Request body
+val createStandingOrderRequest : CreateStandingOrderRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}} // CreateStandingOrderRequest | Request body
 try {
-    val result : OBPv400CreateStandingOrder200Response = apiInstance.oBPv400CreateStandingOrder(bankid, accountid, viewid, obPv400CreateStandingOrderRequest)
+    val result : CreateStandingOrder200Response = apiInstance.createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling StandingOrderApi#oBPv400CreateStandingOrder")
+    println("4xx response calling StandingOrderApi#createStandingOrder")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling StandingOrderApi#oBPv400CreateStandingOrder")
+    println("5xx response calling StandingOrderApi#createStandingOrder")
     e.printStackTrace()
 }
 ```
@@ -45,11 +45,11 @@ try {
 | **viewid** | **kotlin.String**| The VIEWID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -60,17 +60,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateStandingOrderManagement"></a>
-# **oBPv400CreateStandingOrderManagement**
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrderManagement(bankid, accountid, obPv400CreateStandingOrderRequest)
+<a id="createStandingOrderManagement"></a>
+# **createStandingOrderManagement**
+> CreateStandingOrder200Response createStandingOrderManagement(bankid, accountid, createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -85,15 +85,15 @@ Create Standing Order (management)
 val apiInstance = StandingOrderApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
-val obPv400CreateStandingOrderRequest : OBPv400CreateStandingOrderRequest = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_signed={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} // OBPv400CreateStandingOrderRequest | Request body
+val createStandingOrderRequest : CreateStandingOrderRequest = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}} // CreateStandingOrderRequest | Request body
 try {
-    val result : OBPv400CreateStandingOrder200Response = apiInstance.oBPv400CreateStandingOrderManagement(bankid, accountid, obPv400CreateStandingOrderRequest)
+    val result : CreateStandingOrder200Response = apiInstance.createStandingOrderManagement(bankid, accountid, createStandingOrderRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling StandingOrderApi#oBPv400CreateStandingOrderManagement")
+    println("4xx response calling StandingOrderApi#createStandingOrderManagement")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling StandingOrderApi#oBPv400CreateStandingOrderManagement")
+    println("5xx response calling StandingOrderApi#createStandingOrderManagement")
     e.printStackTrace()
 }
 ```
@@ -103,11 +103,11 @@ try {
 | **accountid** | **kotlin.String**| The ACCOUNTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -118,8 +118,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

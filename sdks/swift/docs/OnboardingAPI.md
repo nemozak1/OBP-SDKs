@@ -1,16 +1,16 @@
 # OnboardingAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv500CreateAccount**](OnboardingAPI.md#obpv500createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-[**oBPv600CreateUser**](OnboardingAPI.md#obpv600createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
+[**createAccount**](OnboardingAPI.md#createaccount) | **PUT** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+[**createUser**](OnboardingAPI.md#createuser) | **POST** /obp/v6.0.0/users | Create User (v6.0.0)
 
 
-# **oBPv500CreateAccount**
+# **createAccount**
 ```swift
-    open class func oBPv500CreateAccount(bankid: String, accountid: String, oBPv400AddAccountRequest: OBPv400AddAccountRequest, completion: @escaping (_ data: OBPv400AddAccount200Response?, _ error: Error?) -> Void)
+    open class func createAccount(bankid: String, accountid: String, addAccountRequest: AddAccountRequest, completion: @escaping (_ data: AddAccount200Response?, _ error: Error?) -> Void)
 ```
 
 Create Account (PUT)
@@ -24,10 +24,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let oBPv400AddAccountRequest = OBPv4_0_0_addAccount_request(type: "type_example", properties: OBPv4_0_0_addAccount_request_properties(branchId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), accountRoutings: OBPv3_1_0_getCheckbookOrders_200_response_properties_account_properties_account_routings(type: "type_example", items: OBPv3_1_0_getCheckbookOrders_200_response_properties_account_properties_account_routings_items(type: "type_example", properties: OBPv3_1_0_getCheckbookOrders_200_response_properties_account_properties_account_routings_items_properties(address: nil, scheme: nil))), label: nil, balance: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit(type: "type_example", properties: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit_properties(currency: nil, amount: nil)), userId: nil, productCode: nil)) // OBPv400AddAccountRequest | Request body
+let addAccountRequest = addAccount_request(branchId: "branchId_example", accountRoutings: [getCheckbookOrders_200_response_account_account_routings_inner(address: "address_example", scheme: "scheme_example")], label: "label_example", balance: getMyCustomersAtBank_200_response_customers_inner_credit_limit(currency: "currency_example", amount: "amount_example"), userId: "userId_example", productCode: "productCode_example") // AddAccountRequest | Request body
 
 // Create Account (PUT)
-OnboardingAPI.oBPv500CreateAccount(bankid: bankid, accountid: accountid, oBPv400AddAccountRequest: oBPv400AddAccountRequest) { (response, error) in
+OnboardingAPI.createAccount(bankid: bankid, accountid: accountid, addAccountRequest: addAccountRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -45,11 +45,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
- **oBPv400AddAccountRequest** | [**OBPv400AddAccountRequest**](OBPv400AddAccountRequest.md) | Request body | 
+ **addAccountRequest** | [**AddAccountRequest**](AddAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400AddAccount200Response**](OBPv400AddAccount200Response.md)
+[**AddAccount200Response**](AddAccount200Response.md)
 
 ### Authorization
 
@@ -62,24 +62,24 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateUser**
+# **createUser**
 ```swift
-    open class func oBPv600CreateUser(oBPv600CreateUserRequest: OBPv600CreateUserRequest, completion: @escaping (_ data: OBPv600VerifyUserCredentials200Response?, _ error: Error?) -> Void)
+    open class func createUser(createUserRequest: CreateUserRequest, completion: @escaping (_ data: VerifyUserCredentials200Response?, _ error: Error?) -> Void)
 ```
 
 Create User (v6.0.0)
 
-<p>Creates OBP user.<br /> No authorisation required.</p> <p>Mimics current webform to Register.</p> <p>Requires username(email), password, first_name, last_name, and email.</p> <p>Validation checks performed:<br /> - Password must meet strong password requirements (InvalidStrongPasswordFormat error if not)<br /> - Username must be unique (409 error if username already exists)<br /> - All required fields must be present in valid JSON format</p> <p>Email validation behavior:<br /> - Controlled by property 'authUser.skipEmailValidation' (default: false)<br /> - When false: User is created with validated=false and a validation email is sent to the user's email address<br /> - The validation link is constructed using the <code>portal_external_url</code> property which must be set<br /> - When true: User is created with validated=true and no validation email is sent<br /> - Default entitlements are granted immediately regardless of validation status</p> <p>Note: If email validation is required (skipEmailValidation=false), the user must click the validation link<br /> in the email before they can log in, even though entitlements are already granted.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#x69;&#x6c;&#x74;o&#x3a;&#102;&#101;&#108;&#105;&#x78;s&#109;&#105;&#x74;&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;ple&#46;co&#x6d;\">&#x66;&#x65;&#x6c;&#105;&#120;&#x73;&#x6d;it&#x68;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#\"><strong>password</strong></a>: password</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#x69;&#108;&#x74;o&#58;&#x66;&#101;&#108;&#105;&#120;&#x73;mi&#x74;&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;\">&#102;&#x65;li&#x78;&#115;&#109;i&#x74;&#104;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;</a></p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#list\"><strong>list</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> 
+<p>Creates OBP user.<br /> No authorisation required.</p> <p>Mimics current webform to Register.</p> <p>Requires username(email), password, first_name, last_name, and email.</p> <p>Validation checks performed:<br /> - Password must meet strong password requirements (InvalidStrongPasswordFormat error if not)<br /> - Username must be unique (409 error if username already exists)<br /> - All required fields must be present in valid JSON format</p> <p>Email validation behavior:<br /> - Controlled by property 'authUser.skipEmailValidation' (default: false)<br /> - When false: User is created with validated=false and a validation email is sent to the user's email address<br /> - The validation link is constructed using the <code>portal_external_url</code> property which must be set<br /> - When true: User is created with validated=true and no validation email is sent<br /> - Default entitlements are granted immediately regardless of validation status</p> <p>Note: If email validation is required (skipEmailValidation=false), the user must click the validation link<br /> in the email before they can log in, even though entitlements are already granted.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;i&#108;&#116;&#x6f;:&#102;&#101;&#108;&#x69;&#120;s&#109;ith&#64;&#x65;&#x78;&#x61;m&#x70;le&#46;&#99;&#111;&#109;\">f&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#116;&#104;@&#x65;&#120;a&#x6d;&#x70;l&#101;&#46;&#99;o&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#\"><strong>password</strong></a>: passwordpasswordpassword</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#x69;&#x6c;to:&#x66;&#x65;&#108;i&#120;&#x73;&#109;&#105;&#x74;h&#64;&#101;&#x78;&#x61;m&#112;&#x6c;&#101;&#x2e;c&#111;m\">f&#101;&#x6c;&#x69;x&#x73;&#x6d;&#105;&#x74;h&#64;e&#x78;&#97;mp&#108;e&#x2e;&#99;o&#x6d;</a></p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#list\"><strong>list</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> 
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600CreateUserRequest = OBPv6_0_0_createUser_request(type: "type_example", properties: OBPv6_0_0_createUser_request_properties(firstName: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), email: nil, username: nil, lastName: nil, password: nil)) // OBPv600CreateUserRequest | Request body
+let createUserRequest = createUser_request(firstName: "firstName_example", email: "email_example", username: "username_example", lastName: "lastName_example", password: "password_example") // CreateUserRequest | Request body
 
 // Create User (v6.0.0)
-OnboardingAPI.oBPv600CreateUser(oBPv600CreateUserRequest: oBPv600CreateUserRequest) { (response, error) in
+OnboardingAPI.createUser(createUserRequest: createUserRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -95,11 +95,11 @@ OnboardingAPI.oBPv600CreateUser(oBPv600CreateUserRequest: oBPv600CreateUserReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateUserRequest** | [**OBPv600CreateUserRequest**](OBPv600CreateUserRequest.md) | Request body | 
+ **createUserRequest** | [**CreateUserRequest**](CreateUserRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600VerifyUserCredentials200Response**](OBPv600VerifyUserCredentials200Response.md)
+[**VerifyUserCredentials200Response**](VerifyUserCredentials200Response.md)
 
 ### Authorization
 

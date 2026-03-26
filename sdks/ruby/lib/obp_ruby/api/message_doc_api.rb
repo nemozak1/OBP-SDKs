@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,9 +23,9 @@ module OpenBankProject
     # <p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br /> Integrators can use these messages to build Adapters that provide core banking services to OBP.</p> <p>Note: API Explorer provides a Message Docs page where these messages are displayed.</p> <p><code>CONNECTOR</code>: rest_vMar2019, stored_procedure_vDec2019 ...</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Connector\">CONNECTOR</a>: CONNECTOR</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#adapter_implementation\"><strong>adapter_implementation</strong></a>:</p> <p><a href=\"/glossary#dependent_endpoints\"><strong>dependent_endpoints</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#example_inbound_message\"><strong>example_inbound_message</strong></a>: {}</p> <p><a href=\"/glossary#example_outbound_message\"><strong>example_outbound_message</strong></a>: {}</p> <p><a href=\"/glossary#group\"><strong>group</strong></a>:</p> <p><a href=\"/glossary#message_docs\"><strong>message_docs</strong></a>:</p> <p><a href=\"/glossary#message_format\"><strong>message_format</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><a href=\"/glossary#suggested_order\"><strong>suggested_order</strong></a>:</p> <p><a href=\"/glossary#version\"><strong>version</strong></a>:</p> <p><a href=\"/glossary#inboundavroschema\">inboundAvroSchema</a>:</p> <p><a href=\"/glossary#inbound_topic\">inbound_topic</a>:</p> <p><a href=\"/glossary#outboundavroschema\">outboundAvroSchema</a>:</p> <p><a href=\"/glossary#outbound_topic\">outbound_topic</a>:</p> <p><a href=\"/glossary#requiredfieldinfo\">requiredFieldInfo</a>: false</p> 
     # @param connector [String] The CONNECTOR identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv220GetMessageDocs200Response]
-    def o_bpv2_2_0_get_message_docs(connector, opts = {})
-      data, _status_code, _headers = o_bpv2_2_0_get_message_docs_with_http_info(connector, opts)
+    # @return [GetMessageDocs200Response]
+    def get_message_docs(connector, opts = {})
+      data, _status_code, _headers = get_message_docs_with_http_info(connector, opts)
       data
     end
 
@@ -33,14 +33,14 @@ module OpenBankProject
     # &lt;p&gt;These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.&lt;br /&gt; Integrators can use these messages to build Adapters that provide core banking services to OBP.&lt;/p&gt; &lt;p&gt;Note: API Explorer provides a Message Docs page where these messages are displayed.&lt;/p&gt; &lt;p&gt;&lt;code&gt;CONNECTOR&lt;/code&gt;: rest_vMar2019, stored_procedure_vDec2019 ...&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#adapter_implementation\&quot;&gt;&lt;strong&gt;adapter_implementation&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#dependent_endpoints\&quot;&gt;&lt;strong&gt;dependent_endpoints&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#example_inbound_message\&quot;&gt;&lt;strong&gt;example_inbound_message&lt;/strong&gt;&lt;/a&gt;: {}&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#example_outbound_message\&quot;&gt;&lt;strong&gt;example_outbound_message&lt;/strong&gt;&lt;/a&gt;: {}&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#group\&quot;&gt;&lt;strong&gt;group&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message_docs\&quot;&gt;&lt;strong&gt;message_docs&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message_format\&quot;&gt;&lt;strong&gt;message_format&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#suggested_order\&quot;&gt;&lt;strong&gt;suggested_order&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#version\&quot;&gt;&lt;strong&gt;version&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inboundavroschema\&quot;&gt;inboundAvroSchema&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inbound_topic\&quot;&gt;inbound_topic&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#outboundavroschema\&quot;&gt;outboundAvroSchema&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#outbound_topic\&quot;&gt;outbound_topic&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#requiredfieldinfo\&quot;&gt;requiredFieldInfo&lt;/a&gt;: false&lt;/p&gt; 
     # @param connector [String] The CONNECTOR identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv220GetMessageDocs200Response, Integer, Hash)>] OBPv220GetMessageDocs200Response data, response status code and response headers
-    def o_bpv2_2_0_get_message_docs_with_http_info(connector, opts = {})
+    # @return [Array<(GetMessageDocs200Response, Integer, Hash)>] GetMessageDocs200Response data, response status code and response headers
+    def get_message_docs_with_http_info(connector, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MessageDocApi.o_bpv2_2_0_get_message_docs ...'
+        @api_client.config.logger.debug 'Calling API: MessageDocApi.get_message_docs ...'
       end
       # verify the required parameter 'connector' is set
       if @api_client.config.client_side_validation && connector.nil?
-        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.o_bpv2_2_0_get_message_docs"
+        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.get_message_docs"
       end
       # resource path
       local_var_path = '/obp/v2.2.0/message-docs/{connector}'.sub('{' + 'connector' + '}', CGI.escape(connector.to_s))
@@ -60,13 +60,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv220GetMessageDocs200Response'
+      return_type = opts[:debug_return_type] || 'GetMessageDocs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"MessageDocApi.o_bpv2_2_0_get_message_docs",
+        :operation => :"MessageDocApi.get_message_docs",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -77,68 +77,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MessageDocApi#o_bpv2_2_0_get_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Message Docs Swagger
-    # <p>This endpoint provides example message docs in swagger format.<br /> It is only relavent for REST Connectors.</p> <p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br /> That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p> <p>i.e.:</p> <p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Connector\">CONNECTOR</a>: CONNECTOR</p> <p><strong>JSON response body fields:</strong></p> 
-    # @param connector [String] The CONNECTOR identifier
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def o_bpv3_1_0_get_message_docs_swagger(connector, opts = {})
-      o_bpv3_1_0_get_message_docs_swagger_with_http_info(connector, opts)
-      nil
-    end
-
-    # Get Message Docs Swagger
-    # &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-    # @param connector [String] The CONNECTOR identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv3_1_0_get_message_docs_swagger_with_http_info(connector, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MessageDocApi.o_bpv3_1_0_get_message_docs_swagger ...'
-      end
-      # verify the required parameter 'connector' is set
-      if @api_client.config.client_side_validation && connector.nil?
-        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.o_bpv3_1_0_get_message_docs_swagger"
-      end
-      # resource path
-      local_var_path = '/obp/v3.1.0/message-docs/{connector}/swagger2.0'.sub('{' + 'connector' + '}', CGI.escape(connector.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"MessageDocApi.o_bpv3_1_0_get_message_docs_swagger",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MessageDocApi#o_bpv3_1_0_get_message_docs_swagger\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MessageDocApi#get_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -148,8 +87,8 @@ module OpenBankProject
     # @param connector [String] The CONNECTOR identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv6_0_0_get_message_docs_json_schema(connector, opts = {})
-      o_bpv6_0_0_get_message_docs_json_schema_with_http_info(connector, opts)
+    def get_message_docs_json_schema(connector, opts = {})
+      get_message_docs_json_schema_with_http_info(connector, opts)
       nil
     end
 
@@ -158,13 +97,13 @@ module OpenBankProject
     # @param connector [String] The CONNECTOR identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv6_0_0_get_message_docs_json_schema_with_http_info(connector, opts = {})
+    def get_message_docs_json_schema_with_http_info(connector, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MessageDocApi.o_bpv6_0_0_get_message_docs_json_schema ...'
+        @api_client.config.logger.debug 'Calling API: MessageDocApi.get_message_docs_json_schema ...'
       end
       # verify the required parameter 'connector' is set
       if @api_client.config.client_side_validation && connector.nil?
-        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.o_bpv6_0_0_get_message_docs_json_schema"
+        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.get_message_docs_json_schema"
       end
       # resource path
       local_var_path = '/obp/v6.0.0/message-docs/{connector}/json-schema'.sub('{' + 'connector' + '}', CGI.escape(connector.to_s))
@@ -188,7 +127,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"MessageDocApi.o_bpv6_0_0_get_message_docs_json_schema",
+        :operation => :"MessageDocApi.get_message_docs_json_schema",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -199,7 +138,68 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MessageDocApi#o_bpv6_0_0_get_message_docs_json_schema\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MessageDocApi#get_message_docs_json_schema\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Message Docs Swagger
+    # <p>This endpoint provides example message docs in swagger format.<br /> It is only relavent for REST Connectors.</p> <p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br /> That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p> <p>i.e.:</p> <p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Connector\">CONNECTOR</a>: CONNECTOR</p> <p><strong>JSON response body fields:</strong></p> 
+    # @param connector [String] The CONNECTOR identifier
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def get_message_docs_swagger(connector, opts = {})
+      get_message_docs_swagger_with_http_info(connector, opts)
+      nil
+    end
+
+    # Get Message Docs Swagger
+    # &lt;p&gt;This endpoint provides example message docs in swagger format.&lt;br /&gt; It is only relavent for REST Connectors.&lt;/p&gt; &lt;p&gt;This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).&lt;br /&gt; That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.&lt;/p&gt; &lt;p&gt;i.e.:&lt;/p&gt; &lt;p&gt;OBP API (Core OBP API code) -&amp;gt; OBP REST Connector (OBP REST Connector code) -&amp;gt; OBP REST Adapter (Adapter developer code) -&amp;gt; CBS (Main Frame)&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Connector\&quot;&gt;CONNECTOR&lt;/a&gt;: CONNECTOR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+    # @param connector [String] The CONNECTOR identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def get_message_docs_swagger_with_http_info(connector, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: MessageDocApi.get_message_docs_swagger ...'
+      end
+      # verify the required parameter 'connector' is set
+      if @api_client.config.client_side_validation && connector.nil?
+        fail ArgumentError, "Missing the required parameter 'connector' when calling MessageDocApi.get_message_docs_swagger"
+      end
+      # resource path
+      local_var_path = '/obp/v3.1.0/message-docs/{connector}/swagger2.0'.sub('{' + 'connector' + '}', CGI.escape(connector.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"MessageDocApi.get_message_docs_swagger",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: MessageDocApi#get_message_docs_swagger\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

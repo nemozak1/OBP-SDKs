@@ -2,20 +2,20 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateApiProductAttribute()**](ApiProductAttributeApi.md#oBPv600CreateApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
-| [**oBPv600DeleteApiProductAttribute()**](ApiProductAttributeApi.md#oBPv600DeleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
-| [**oBPv600GetApiProductAttribute()**](ApiProductAttributeApi.md#oBPv600GetApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
-| [**oBPv600UpdateApiProductAttribute()**](ApiProductAttributeApi.md#oBPv600UpdateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
+| [**createApiProductAttribute()**](ApiProductAttributeApi.md#createApiProductAttribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute |
+| [**deleteApiProductAttribute()**](ApiProductAttributeApi.md#deleteApiProductAttribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute |
+| [**getApiProductAttribute()**](ApiProductAttributeApi.md#getApiProductAttribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute |
+| [**updateApiProductAttribute()**](ApiProductAttributeApi.md#updateApiProductAttribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute |
 
 
-## `oBPv600CreateApiProductAttribute()`
+## `createApiProductAttribute()`
 
 ```php
-oBPv600CreateApiProductAttribute($bankid, $apiproductcode, $obpv510_update_atm_attribute_request): \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+createApiProductAttribute($bankid, $apiproductcode, $update_atm_attribute_request): \OpenBankProject\Model\CreateApiProductAttribute200Response
 ```
 
 Create Api Product Attribute
@@ -38,9 +38,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductAttributeApi(
@@ -51,13 +51,13 @@ $apiInstance = new OpenBankProject\Api\ApiProductAttributeApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
-$obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest | Request body
+$update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\UpdateAtmAttributeRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateApiProductAttribute($bankid, $apiproductcode, $obpv510_update_atm_attribute_request);
+    $result = $apiInstance->createApiProductAttribute($bankid, $apiproductcode, $update_atm_attribute_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductAttributeApi->oBPv600CreateApiProductAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductAttributeApi->createApiProductAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,11 +67,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **apiproductcode** | **string**| The APIPRODUCTCODE identifier | |
-| **obpv510_update_atm_attribute_request** | [**\OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest**](../Model/OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **update_atm_attribute_request** | [**\OpenBankProject\Model\UpdateAtmAttributeRequest**](../Model/UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response**](../Model/OBPv600CreateApiProductAttribute200Response.md)
+[**\OpenBankProject\Model\CreateApiProductAttribute200Response**](../Model/CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeleteApiProductAttribute()`
+## `deleteApiProductAttribute()`
 
 ```php
-oBPv600DeleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid)
+deleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid)
 ```
 
 Delete Api Product Attribute
@@ -112,9 +112,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductAttributeApi(
@@ -128,9 +128,9 @@ $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE ident
 $apiproductattributeid = 'apiproductattributeid_example'; // string | The APIPRODUCTATTRIBUTEID identifier
 
 try {
-    $apiInstance->oBPv600DeleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid);
+    $apiInstance->deleteApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductAttributeApi->oBPv600DeleteApiProductAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductAttributeApi->deleteApiProductAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -159,10 +159,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetApiProductAttribute()`
+## `getApiProductAttribute()`
 
 ```php
-oBPv600GetApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid): \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+getApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid): \OpenBankProject\Model\CreateApiProductAttribute200Response
 ```
 
 Get Api Product Attribute
@@ -187,10 +187,10 @@ $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE ident
 $apiproductattributeid = 'apiproductattributeid_example'; // string | The APIPRODUCTATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid);
+    $result = $apiInstance->getApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductAttributeApi->oBPv600GetApiProductAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductAttributeApi->getApiProductAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -204,7 +204,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response**](../Model/OBPv600CreateApiProductAttribute200Response.md)
+[**\OpenBankProject\Model\CreateApiProductAttribute200Response**](../Model/CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -219,10 +219,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdateApiProductAttribute()`
+## `updateApiProductAttribute()`
 
 ```php
-oBPv600UpdateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request): \OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response
+updateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request): \OpenBankProject\Model\CreateApiProductAttribute200Response
 ```
 
 Update Api Product Attribute
@@ -245,9 +245,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductAttributeApi(
@@ -259,13 +259,13 @@ $apiInstance = new OpenBankProject\Api\ApiProductAttributeApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
 $apiproductattributeid = 'apiproductattributeid_example'; // string | The APIPRODUCTATTRIBUTEID identifier
-$obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest | Request body
+$update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // \OpenBankProject\Model\UpdateAtmAttributeRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $obpv510_update_atm_attribute_request);
+    $result = $apiInstance->updateApiProductAttribute($bankid, $apiproductcode, $apiproductattributeid, $update_atm_attribute_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductAttributeApi->oBPv600UpdateApiProductAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductAttributeApi->updateApiProductAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -276,11 +276,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **apiproductcode** | **string**| The APIPRODUCTCODE identifier | |
 | **apiproductattributeid** | **string**| The APIPRODUCTATTRIBUTEID identifier | |
-| **obpv510_update_atm_attribute_request** | [**\OpenBankProject\Model\OBPv510UpdateAtmAttributeRequest**](../Model/OBPv510UpdateAtmAttributeRequest.md)| Request body | |
+| **update_atm_attribute_request** | [**\OpenBankProject\Model\UpdateAtmAttributeRequest**](../Model/UpdateAtmAttributeRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600CreateApiProductAttribute200Response**](../Model/OBPv600CreateApiProductAttribute200Response.md)
+[**\OpenBankProject\Model\CreateApiProductAttribute200Response**](../Model/CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

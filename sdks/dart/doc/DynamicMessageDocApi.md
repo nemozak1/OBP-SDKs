@@ -5,24 +5,24 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
-[**oBPv400CreateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
-[**oBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
-[**oBPv400DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
-[**oBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
-[**oBPv400GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
-[**oBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
-[**oBPv400GetDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
-[**oBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
-[**oBPv400UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
+[**createBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
+[**createDynamicMessageDoc**](DynamicMessageDocApi.md#createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
+[**deleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
+[**deleteDynamicMessageDoc**](DynamicMessageDocApi.md#deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
+[**getAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
+[**getAllDynamicMessageDocs**](DynamicMessageDocApi.md#getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
+[**getBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
+[**getDynamicMessageDoc**](DynamicMessageDocApi.md#getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
+[**updateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
+[**updateDynamicMessageDoc**](DynamicMessageDocApi.md#updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
 
 
-# **oBPv400CreateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(bankid, oBPv400UpdateDynamicMessageDocRequest)
+# **createBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -44,13 +44,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDynamicMessageDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // OBPv400UpdateDynamicMessageDocRequest | Request body
+final UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // UpdateDynamicMessageDocRequest | Request body
 
 try {
-    final response = api.oBPv400CreateBankLevelDynamicMessageDoc(bankid, oBPv400UpdateDynamicMessageDocRequest);
+    final response = api.createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400CreateBankLevelDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->createBankLevelDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -59,11 +59,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -76,8 +76,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(oBPv400UpdateDynamicMessageDocRequest)
+# **createDynamicMessageDoc**
+> GetDynamicMessageDoc200Response createDynamicMessageDoc(updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -98,13 +98,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDynamicMessageDocApi();
-final OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // OBPv400UpdateDynamicMessageDocRequest | Request body
+final UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // UpdateDynamicMessageDocRequest | Request body
 
 try {
-    final response = api.oBPv400CreateDynamicMessageDoc(oBPv400UpdateDynamicMessageDocRequest);
+    final response = api.createDynamicMessageDoc(updateDynamicMessageDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400CreateDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->createDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -112,11 +112,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -129,8 +129,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteBankLevelDynamicMessageDoc**
-> oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+# **deleteBankLevelDynamicMessageDoc**
+> deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -155,9 +155,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    api.oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
+    api.deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400DeleteBankLevelDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->deleteBankLevelDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -183,8 +183,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteDynamicMessageDoc**
-> oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid)
+# **deleteDynamicMessageDoc**
+> deleteDynamicMessageDoc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -208,9 +208,9 @@ final api = ObpDart().getDynamicMessageDocApi();
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    api.oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid);
+    api.deleteDynamicMessageDoc(dynamicmessagedocid);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400DeleteDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->deleteDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -235,8 +235,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllBankLevelDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(bankid)
+# **getAllBankLevelDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -260,10 +260,10 @@ final api = ObpDart().getDynamicMessageDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetAllBankLevelDynamicMessageDocs(bankid);
+    final response = api.getAllBankLevelDynamicMessageDocs(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400GetAllBankLevelDynamicMessageDocs: $e\n');
+    print('Exception when calling DynamicMessageDocApi->getAllBankLevelDynamicMessageDocs: $e\n');
 }
 ```
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs()
+# **getAllDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs()
 
 Get all Dynamic Message Docs
 
@@ -312,10 +312,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicMessageDocApi();
 
 try {
-    final response = api.oBPv400GetAllDynamicMessageDocs();
+    final response = api.getAllDynamicMessageDocs();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400GetAllDynamicMessageDocs: $e\n');
+    print('Exception when calling DynamicMessageDocApi->getAllDynamicMessageDocs: $e\n');
 }
 ```
 
@@ -324,7 +324,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -337,8 +337,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+# **getBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -363,10 +363,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    final response = api.oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
+    final response = api.getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400GetBankLevelDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->getBankLevelDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -392,8 +392,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(dynamicmessagedocid)
+# **getDynamicMessageDoc**
+> GetDynamicMessageDoc200Response getDynamicMessageDoc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -417,10 +417,10 @@ final api = ObpDart().getDynamicMessageDocApi();
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    final response = api.oBPv400GetDynamicMessageDoc(dynamicmessagedocid);
+    final response = api.getDynamicMessageDoc(dynamicmessagedocid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400GetDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->getDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -445,8 +445,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest)
+# **updateBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -469,13 +469,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDynamicMessageDocApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
-final OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // OBPv400UpdateDynamicMessageDocRequest | Request body
+final UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // UpdateDynamicMessageDocRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest);
+    final response = api.updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400UpdateBankLevelDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->updateBankLevelDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -485,11 +485,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -502,8 +502,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest)
+# **updateDynamicMessageDoc**
+> GetDynamicMessageDoc200Response updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -525,13 +525,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDynamicMessageDocApi();
 final String dynamicmessagedocid = dynamicmessagedocid_example; // String | The DYNAMICMESSAGEDOCID identifier
-final OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}}; // OBPv400UpdateDynamicMessageDocRequest | Request body
+final UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}}; // UpdateDynamicMessageDocRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest);
+    final response = api.updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DynamicMessageDocApi->oBPv400UpdateDynamicMessageDoc: $e\n');
+    print('Exception when calling DynamicMessageDocApi->updateDynamicMessageDoc: $e\n');
 }
 ```
 
@@ -540,11 +540,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dynamicmessagedocid** | **String**| The DYNAMICMESSAGEDOCID identifier | 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md)| Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

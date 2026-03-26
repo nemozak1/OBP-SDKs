@@ -1,23 +1,23 @@
 # OpenBankProject.Api.DynamicMessageDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**OBPv400CreateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**OBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**OBPv400DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**OBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**OBPv400GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**OBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**OBPv400GetDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**OBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**OBPv400UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**CreateDynamicMessageDoc**](DynamicMessageDocApi.md#createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**GetDynamicMessageDoc**](DynamicMessageDocApi.md#getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#updatedynamicmessagedoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
-<a id="obpv400createbankleveldynamicmessagedoc"></a>
-# **OBPv400CreateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400CreateBankLevelDynamicMessageDoc (string bankid, OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest)
+<a id="createbankleveldynamicmessagedoc"></a>
+# **CreateBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response CreateBankLevelDynamicMessageDoc (string bankid, UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -29,11 +29,11 @@ Create Bank Level Dynamic Message Doc
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -54,9 +54,9 @@ Create Bank Level Dynamic Message Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createdynamicmessagedoc"></a>
-# **OBPv400CreateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400CreateDynamicMessageDoc (OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest)
+<a id="createdynamicmessagedoc"></a>
+# **CreateDynamicMessageDoc**
+> GetDynamicMessageDoc200Response CreateDynamicMessageDoc (UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -67,11 +67,11 @@ Create Dynamic Message Doc
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ Create Dynamic Message Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletebankleveldynamicmessagedoc"></a>
-# **OBPv400DeleteBankLevelDynamicMessageDoc**
-> void OBPv400DeleteBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid)
+<a id="deletebankleveldynamicmessagedoc"></a>
+# **DeleteBankLevelDynamicMessageDoc**
+> void DeleteBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -130,9 +130,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletedynamicmessagedoc"></a>
-# **OBPv400DeleteDynamicMessageDoc**
-> void OBPv400DeleteDynamicMessageDoc (string dynamicmessagedocid)
+<a id="deletedynamicmessagedoc"></a>
+# **DeleteDynamicMessageDoc**
+> void DeleteDynamicMessageDoc (string dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -167,9 +167,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallbankleveldynamicmessagedocs"></a>
-# **OBPv400GetAllBankLevelDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response OBPv400GetAllBankLevelDynamicMessageDocs (string bankid)
+<a id="getallbankleveldynamicmessagedocs"></a>
+# **GetAllBankLevelDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response GetAllBankLevelDynamicMessageDocs (string bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -184,7 +184,7 @@ Get all Bank Level Dynamic Message Docs
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -205,9 +205,9 @@ Get all Bank Level Dynamic Message Docs
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getalldynamicmessagedocs"></a>
-# **OBPv400GetAllDynamicMessageDocs**
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response OBPv400GetAllDynamicMessageDocs ()
+<a id="getalldynamicmessagedocs"></a>
+# **GetAllDynamicMessageDocs**
+> GetAllBankLevelDynamicMessageDocs200Response GetAllDynamicMessageDocs ()
 
 Get all Dynamic Message Docs
 
@@ -218,7 +218,7 @@ Get all Dynamic Message Docs
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -238,9 +238,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankleveldynamicmessagedoc"></a>
-# **OBPv400GetBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400GetBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid)
+<a id="getbankleveldynamicmessagedoc"></a>
+# **GetBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response GetBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -256,7 +256,7 @@ Get Bank Level Dynamic Message Doc
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -277,9 +277,9 @@ Get Bank Level Dynamic Message Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getdynamicmessagedoc"></a>
-# **OBPv400GetDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400GetDynamicMessageDoc (string dynamicmessagedocid)
+<a id="getdynamicmessagedoc"></a>
+# **GetDynamicMessageDoc**
+> GetDynamicMessageDoc200Response GetDynamicMessageDoc (string dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -294,7 +294,7 @@ Get Dynamic Message Doc
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -314,9 +314,9 @@ Get Dynamic Message Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatebankleveldynamicmessagedoc"></a>
-# **OBPv400UpdateBankLevelDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400UpdateBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid, OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest)
+<a id="updatebankleveldynamicmessagedoc"></a>
+# **UpdateBankLevelDynamicMessageDoc**
+> GetDynamicMessageDoc200Response UpdateBankLevelDynamicMessageDoc (string bankid, string dynamicmessagedocid, UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -329,11 +329,11 @@ Update Bank Level Dynamic Message Doc
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **dynamicmessagedocid** | **string** | The DYNAMICMESSAGEDOCID identifier |  |
-| **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -354,9 +354,9 @@ Update Bank Level Dynamic Message Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatedynamicmessagedoc"></a>
-# **OBPv400UpdateDynamicMessageDoc**
-> OBPv400GetDynamicMessageDoc200Response OBPv400UpdateDynamicMessageDoc (string dynamicmessagedocid, OBPv400UpdateDynamicMessageDocRequest oBPv400UpdateDynamicMessageDocRequest)
+<a id="updatedynamicmessagedoc"></a>
+# **UpdateDynamicMessageDoc**
+> GetDynamicMessageDoc200Response UpdateDynamicMessageDoc (string dynamicmessagedocid, UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -368,11 +368,11 @@ Update Dynamic Message Doc
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **dynamicmessagedocid** | **string** | The DYNAMICMESSAGEDOCID identifier |  |
-| **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body |  |
+| **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

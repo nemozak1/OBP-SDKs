@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,27 +11,27 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv121GetCounterpartyPublicAlias200Response
-import com.openbankproject.model.OBPv121GetOtherAccountForTransaction200Response
-import com.openbankproject.model.OBPv121GetOtherAccountMetadata200Response
-import com.openbankproject.model.OBPv121UpdateCounterpartyCorporateLocationRequest
-import com.openbankproject.model.OBPv121UpdateCounterpartyImageUrlRequest
-import com.openbankproject.model.OBPv121UpdateCounterpartyMoreInfoRequest
-import com.openbankproject.model.OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-import com.openbankproject.model.OBPv121UpdateCounterpartyPhysicalLocationRequest
-import com.openbankproject.model.OBPv121UpdateCounterpartyUrlRequest
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response
-import com.openbankproject.model.OBPv300GetOtherAccountsForBankAccount200Response
-import com.openbankproject.model.OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
-import com.openbankproject.model.OBPv400CreateCounterpartyForAnyAccountRequest
-import com.openbankproject.model.OBPv400GetCounterpartiesForAnyAccount200Response
-import com.openbankproject.model.OBPv400GetExplicitCounterpartyById200Response
+import com.openbankproject.model.CreateCounterpartyForAnyAccountRequest
+import com.openbankproject.model.GetCounterpartiesForAnyAccount200Response
+import com.openbankproject.model.GetCounterpartyPublicAlias200Response
+import com.openbankproject.model.GetExplicitCounterpartyById200Response
+import com.openbankproject.model.GetOtherAccountForTransaction200Response
+import com.openbankproject.model.GetOtherAccountMetadata200Response
+import com.openbankproject.model.GetOtherAccountsForBankAccount200Response
+import com.openbankproject.model.GetTransactionByIdForBankAccount200ResponseOtherAccount
+import com.openbankproject.model.UpdateCounterpartyCorporateLocationRequest
+import com.openbankproject.model.UpdateCounterpartyImageUrlRequest
+import com.openbankproject.model.UpdateCounterpartyMoreInfoRequest
+import com.openbankproject.model.UpdateCounterpartyOpenCorporatesUrlRequest
+import com.openbankproject.model.UpdateCounterpartyPhysicalLocationRequest
+import com.openbankproject.model.UpdateCounterpartyUrlRequest
+import com.openbankproject.model.UpdateTransactionNarrative200Response
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object CounterpartyApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new CounterpartyApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new CounterpartyApi(baseUrl)
 }
 
 class CounterpartyApi(baseUrl: String) {
@@ -40,7 +40,7 @@ class CounterpartyApi(baseUrl: String) {
    * <p>Add the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -52,22 +52,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyCorporateLocationRequest Request body
+   * @param updateCounterpartyCorporateLocationRequest Request body
    */
-  def oBPv121AddCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/corporate_location")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyCorporateLocationRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyCorporateLocationRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Add a url that points to the logo of the counterparty</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -79,22 +79,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyImageUrlRequest Request body
+   * @param updateCounterpartyImageUrlRequest Request body
    */
-  def oBPv121AddCounterpartyImageUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyImageUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/image_url")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyImageUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyImageUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -106,22 +106,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyMoreInfoRequest Request body
+   * @param updateCounterpartyMoreInfoRequest Request body
    */
-  def oBPv121AddCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/more_info")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyMoreInfoRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyMoreInfoRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Add open corporates url to other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -129,20 +129,20 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body
    */
-  def oBPv121AddCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/open_corporates_url")
       .contentType("application/json")
-      .body(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .body(updateCounterpartyOpenCorporatesUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Add geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -154,22 +154,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyPhysicalLocationRequest Request body
+   * @param updateCounterpartyPhysicalLocationRequest Request body
    */
-  def oBPv121AddCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/physical_location")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyPhysicalLocationRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyPhysicalLocationRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p>Note: Public aliases are automatically generated for new 'other accounts / counterparties', so this call should only be used if<br /> the public alias was deleted.</p> <p>The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -181,22 +181,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121GetCounterpartyPublicAlias200Response Request body
+   * @param getCounterpartyPublicAlias200Response Request body
    */
-  def oBPv121AddCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121GetCounterpartyPublicAlias200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCounterpartyPublicAlias200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -208,22 +208,22 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyUrlRequest Request body
+   * @param updateCounterpartyUrlRequest Request body
    */
-  def oBPv121AddCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/url")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -235,16 +235,68 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121GetCounterpartyPublicAlias200Response Request body
+   * @param getCounterpartyPublicAlias200Response Request body
    */
-  def oBPv121AddOtherAccountPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addOtherAccountPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCounterpartyPublicAlias200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetExplicitCounterpartyById200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param createCounterpartyForAnyAccountRequest Request body
+   */
+  def createCounterparty(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, createCounterpartyForAnyAccountRequest: CreateCounterpartyForAnyAccountRequest): Request[Either[ResponseException[String, Exception], GetExplicitCounterpartyById200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .body(oBPv121GetCounterpartyPublicAlias200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCounterpartyForAnyAccountRequest)
+      .response(asJson[GetExplicitCounterpartyById200Response])
+
+  /**
+   * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetExplicitCounterpartyById200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param createCounterpartyForAnyAccountRequest Request body
+   */
+  def createCounterpartyForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, createCounterpartyForAnyAccountRequest: CreateCounterpartyForAnyAccountRequest): Request[Either[ResponseException[String, Exception], GetExplicitCounterpartyById200Response]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCounterpartyForAnyAccountRequest)
+      .response(asJson[GetExplicitCounterpartyById200Response])
 
   /**
    * <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
@@ -263,12 +315,37 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/corporate_location")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
+
+  /**
+   * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 :  (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param counterpartyid The COUNTERPARTYID identifier
+   */
+  def deleteCounterpartyForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties/${counterpartyid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -283,7 +360,7 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/image_url")
       .contentType("application/json")
@@ -306,12 +383,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/more_info")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -331,12 +408,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyOpenCorporatesUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyOpenCorporatesUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/open_corporates_url")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -356,12 +433,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/physical_location")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -381,12 +458,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -406,12 +483,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -431,441 +508,12 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param otheraccountid The OTHERACCOUNTID identifier
    */
-  def oBPv121DeleteCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/url")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
-
-  /**
-   * <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121GetCounterpartyPublicAlias200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   */
-  def oBPv121GetCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], OBPv121GetCounterpartyPublicAlias200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121GetCounterpartyPublicAlias200Response])
-
-  /**
-   * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121GetOtherAccountForTransaction200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param transactionid The TRANSACTIONID identifier
-   */
-  def oBPv121GetOtherAccountForTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], OBPv121GetOtherAccountForTransaction200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/other_account")
-      .contentType("application/json")
-      .response(asJson[OBPv121GetOtherAccountForTransaction200Response])
-
-  /**
-   * <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121GetOtherAccountMetadata200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   */
-  def oBPv121GetOtherAccountMetadata(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], OBPv121GetOtherAccountMetadata200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121GetOtherAccountMetadata200Response])
-
-  /**
-   * <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121GetCounterpartyPublicAlias200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   */
-  def oBPv121GetOtherAccountPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], OBPv121GetCounterpartyPublicAlias200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv121GetCounterpartyPublicAlias200Response])
-
-  /**
-   * <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyCorporateLocationRequest Request body
-   */
-  def oBPv121UpdateCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/corporate_location")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyCorporateLocationRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyImageUrlRequest Request body
-   */
-  def oBPv121UpdateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/image_url")
-      .contentType("application/json")
-      .body(oBPv121UpdateCounterpartyImageUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyMoreInfoRequest Request body
-   */
-  def oBPv121UpdateCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/more_info")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyMoreInfoRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body
-   */
-  def oBPv121UpdateCounterpartyOpenCorporatesUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/open_corporates_url")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyPhysicalLocationRequest Request body
-   */
-  def oBPv121UpdateCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/physical_location")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyPhysicalLocationRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121GetCounterpartyPublicAlias200Response Request body
-   */
-  def oBPv121UpdateCounterpartyPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121GetCounterpartyPublicAlias200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121GetCounterpartyPublicAlias200Response Request body
-   */
-  def oBPv121UpdateCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121GetCounterpartyPublicAlias200Response)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   * @param oBPv121UpdateCounterpartyUrlRequest Request body
-   */
-  def oBPv121UpdateCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/url")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv121UpdateCounterpartyUrlRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param otheraccountid The OTHERACCOUNTID identifier
-   */
-  def oBPv300GetOtherAccountByIdForBankAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount])
-
-  /**
-   * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv300GetOtherAccountsForBankAccount200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   */
-  def oBPv300GetOtherAccountsForBankAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], OBPv300GetOtherAccountsForBankAccount200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv300GetOtherAccountsForBankAccount200Response])
-
-  /**
-   * <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetExplicitCounterpartyById200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param oBPv400CreateCounterpartyForAnyAccountRequest Request body
-   */
-  def oBPv400CreateCounterparty(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, oBPv400CreateCounterpartyForAnyAccountRequest: OBPv400CreateCounterpartyForAnyAccountRequest): Request[Either[ResponseException[String, Exception], OBPv400GetExplicitCounterpartyById200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateCounterpartyForAnyAccountRequest)
-      .response(asJson[OBPv400GetExplicitCounterpartyById200Response])
-
-  /**
-   * <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetExplicitCounterpartyById200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param oBPv400CreateCounterpartyForAnyAccountRequest Request body
-   */
-  def oBPv400CreateCounterpartyForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, oBPv400CreateCounterpartyForAnyAccountRequest: OBPv400CreateCounterpartyForAnyAccountRequest): Request[Either[ResponseException[String, Exception], OBPv400GetExplicitCounterpartyById200Response]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateCounterpartyForAnyAccountRequest)
-      .response(asJson[OBPv400GetExplicitCounterpartyById200Response])
-
-  /**
-   * <p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 :  (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   * @param accountid The ACCOUNTID identifier
-   * @param viewid The VIEWID identifier
-   * @param counterpartyid The COUNTERPARTYID identifier
-   */
-  def oBPv400DeleteCounterpartyForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], Unit]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties/${counterpartyid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -885,19 +533,19 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param counterpartyid The COUNTERPARTYID identifier
    */
-  def oBPv400DeleteExplicitCounterparty(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteExplicitCounterparty(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties/${counterpartyid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCounterpartiesForAnyAccount200Response (Successful operation)
+   *   code 200 : GetCounterpartiesForAnyAccount200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -909,19 +557,19 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    */
-  def oBPv400GetCounterpartiesForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCounterpartiesForAnyAccount200Response]] =
+  def getCounterpartiesForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], GetCounterpartiesForAnyAccount200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCounterpartiesForAnyAccount200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCounterpartiesForAnyAccount200Response])
 
   /**
    * <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetExplicitCounterpartyById200Response (Successful operation)
+   *   code 200 : GetExplicitCounterpartyById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -934,19 +582,19 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param counterpartyid The COUNTERPARTYID identifier
    */
-  def oBPv400GetCounterpartyByIdForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], OBPv400GetExplicitCounterpartyById200Response]] =
+  def getCounterpartyByIdForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], GetExplicitCounterpartyById200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties/${counterpartyid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetExplicitCounterpartyById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetExplicitCounterpartyById200Response])
 
   /**
    * <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetExplicitCounterpartyById200Response (Successful operation)
+   *   code 200 : GetExplicitCounterpartyById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -959,19 +607,44 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param counterpartyname The COUNTERPARTYNAME identifier
    */
-  def oBPv400GetCounterpartyByNameForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyname: String): Request[Either[ResponseException[String, Exception], OBPv400GetExplicitCounterpartyById200Response]] =
+  def getCounterpartyByNameForAnyAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyname: String): Request[Either[ResponseException[String, Exception], GetExplicitCounterpartyById200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/accounts/${accountid}/${viewid}/counterparty-names/${counterpartyname}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetExplicitCounterpartyById200Response])
+
+  /**
+   * <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCounterpartyPublicAlias200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   */
+  def getCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], GetCounterpartyPublicAlias200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetExplicitCounterpartyById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCounterpartyPublicAlias200Response])
 
   /**
    * <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCounterpartiesForAnyAccount200Response (Successful operation)
+   *   code 200 : GetCounterpartiesForAnyAccount200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -983,19 +656,19 @@ class CounterpartyApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    */
-  def oBPv400GetExplicitCounterpartiesForAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCounterpartiesForAnyAccount200Response]] =
+  def getExplicitCounterpartiesForAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], GetCounterpartiesForAnyAccount200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCounterpartiesForAnyAccount200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCounterpartiesForAnyAccount200Response])
 
   /**
    * <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetExplicitCounterpartyById200Response (Successful operation)
+   *   code 200 : GetExplicitCounterpartyById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -1008,12 +681,339 @@ class CounterpartyApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param counterpartyid The COUNTERPARTYID identifier
    */
-  def oBPv400GetExplicitCounterpartyById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], OBPv400GetExplicitCounterpartyById200Response]] =
+  def getExplicitCounterpartyById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, counterpartyid: String): Request[Either[ResponseException[String, Exception], GetExplicitCounterpartyById200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/counterparties/${counterpartyid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetExplicitCounterpartyById200Response])
+
+  /**
+   * <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetTransactionByIdForBankAccount200ResponseOtherAccount (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   */
+  def getOtherAccountByIdForBankAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], GetTransactionByIdForBankAccount200ResponseOtherAccount]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetExplicitCounterpartyById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionByIdForBankAccount200ResponseOtherAccount])
+
+  /**
+   * <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetOtherAccountForTransaction200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param transactionid The TRANSACTIONID identifier
+   */
+  def getOtherAccountForTransaction(bankid: String, accountid: String, viewid: String, transactionid: String): Request[Either[ResponseException[String, Exception], GetOtherAccountForTransaction200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/transactions/${transactionid}/other_account")
+      .contentType("application/json")
+      .response(asJson[GetOtherAccountForTransaction200Response])
+
+  /**
+   * <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetOtherAccountMetadata200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   */
+  def getOtherAccountMetadata(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], GetOtherAccountMetadata200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetOtherAccountMetadata200Response])
+
+  /**
+   * <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCounterpartyPublicAlias200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   */
+  def getOtherAccountPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String): Request[Either[ResponseException[String, Exception], GetCounterpartyPublicAlias200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCounterpartyPublicAlias200Response])
+
+  /**
+   * <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetOtherAccountsForBankAccount200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   */
+  def getOtherAccountsForBankAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], GetOtherAccountsForBankAccount200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v3.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetOtherAccountsForBankAccount200Response])
+
+  /**
+   * <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyCorporateLocationRequest Request body
+   */
+  def updateCounterpartyCorporateLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/corporate_location")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyCorporateLocationRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyImageUrlRequest Request body
+   */
+  def updateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/image_url")
+      .contentType("application/json")
+      .body(updateCounterpartyImageUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyMoreInfoRequest Request body
+   */
+  def updateCounterpartyMoreInfo(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/more_info")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyMoreInfoRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body
+   */
+  def updateCounterpartyOpenCorporatesUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/open_corporates_url")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyOpenCorporatesUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyPhysicalLocationRequest Request body
+   */
+  def updateCounterpartyPhysicalLocation(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/physical_location")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyPhysicalLocationRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param getCounterpartyPublicAlias200Response Request body
+   */
+  def updateCounterpartyPrivateAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/private_alias")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCounterpartyPublicAlias200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param getCounterpartyPublicAlias200Response Request body
+   */
+  def updateCounterpartyPublicAlias(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/public_alias")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(getCounterpartyPublicAlias200Response)
+      .response(asJson[UpdateTransactionNarrative200Response])
+
+  /**
+   * <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   * @param accountid The ACCOUNTID identifier
+   * @param viewid The VIEWID identifier
+   * @param otheraccountid The OTHERACCOUNTID identifier
+   * @param updateCounterpartyUrlRequest Request body
+   */
+  def updateCounterpartyUrl(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v1.2.1/banks/${bankid}/accounts/${accountid}/${viewid}/other_accounts/${otheraccountid}/metadata/url")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateCounterpartyUrlRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
 }

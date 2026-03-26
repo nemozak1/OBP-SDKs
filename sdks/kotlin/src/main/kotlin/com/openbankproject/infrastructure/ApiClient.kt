@@ -291,12 +291,12 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
     }
 
     protected fun <T> updateAuthParams(requestConfig: RequestConfig<T>) {
-        if (requestConfig.headers["Authorization"].isNullOrEmpty()) {
-            if (apiKey["Authorization"] != null) {
-                if (apiKeyPrefix["Authorization"] != null) {
-                    requestConfig.headers["Authorization"] = apiKeyPrefix["Authorization"]!! + " " + apiKey["Authorization"]!!
+        if (requestConfig.headers["DirectLogin"].isNullOrEmpty()) {
+            if (apiKey["DirectLogin"] != null) {
+                if (apiKeyPrefix["DirectLogin"] != null) {
+                    requestConfig.headers["DirectLogin"] = apiKeyPrefix["DirectLogin"]!! + " " + apiKey["DirectLogin"]!!
                 } else {
-                    requestConfig.headers["Authorization"] = apiKey["Authorization"]!!
+                    requestConfig.headers["DirectLogin"] = apiKey["DirectLogin"]!!
                 }
             }
         }

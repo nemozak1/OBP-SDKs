@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -24,11 +24,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
-    # @param obpv400_create_standing_order_request [OBPv400CreateStandingOrderRequest] Request body
+    # @param create_standing_order_request [CreateStandingOrderRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400CreateStandingOrder200Response]
-    def o_bpv4_0_0_create_standing_order(bankid, accountid, viewid, obpv400_create_standing_order_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_standing_order_with_http_info(bankid, accountid, viewid, obpv400_create_standing_order_request, opts)
+    # @return [CreateStandingOrder200Response]
+    def create_standing_order(bankid, accountid, viewid, create_standing_order_request, opts = {})
+      data, _status_code, _headers = create_standing_order_with_http_info(bankid, accountid, viewid, create_standing_order_request, opts)
       data
     end
 
@@ -37,28 +37,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
-    # @param obpv400_create_standing_order_request [OBPv400CreateStandingOrderRequest] Request body
+    # @param create_standing_order_request [CreateStandingOrderRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400CreateStandingOrder200Response, Integer, Hash)>] OBPv400CreateStandingOrder200Response data, response status code and response headers
-    def o_bpv4_0_0_create_standing_order_with_http_info(bankid, accountid, viewid, obpv400_create_standing_order_request, opts = {})
+    # @return [Array<(CreateStandingOrder200Response, Integer, Hash)>] CreateStandingOrder200Response data, response status code and response headers
+    def create_standing_order_with_http_info(bankid, accountid, viewid, create_standing_order_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: StandingOrderApi.o_bpv4_0_0_create_standing_order ...'
+        @api_client.config.logger.debug 'Calling API: StandingOrderApi.create_standing_order ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling StandingOrderApi.create_standing_order"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling StandingOrderApi.create_standing_order"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling StandingOrderApi.create_standing_order"
       end
-      # verify the required parameter 'obpv400_create_standing_order_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_standing_order_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_standing_order_request' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order"
+      # verify the required parameter 'create_standing_order_request' is set
+      if @api_client.config.client_side_validation && create_standing_order_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_standing_order_request' when calling StandingOrderApi.create_standing_order"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
@@ -80,16 +80,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_standing_order_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_standing_order_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400CreateStandingOrder200Response'
+      return_type = opts[:debug_return_type] || 'CreateStandingOrder200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"StandingOrderApi.o_bpv4_0_0_create_standing_order",
+        :operation => :"StandingOrderApi.create_standing_order",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -100,7 +100,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: StandingOrderApi#o_bpv4_0_0_create_standing_order\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: StandingOrderApi#create_standing_order\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -109,11 +109,11 @@ module OpenBankProject
     # <p>Create standing order for an account.</p> <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br /> when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#standing_order_id\"><strong>standing_order_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv400_create_standing_order_request [OBPv400CreateStandingOrderRequest] Request body
+    # @param create_standing_order_request [CreateStandingOrderRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400CreateStandingOrder200Response]
-    def o_bpv4_0_0_create_standing_order_management(bankid, accountid, obpv400_create_standing_order_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_standing_order_management_with_http_info(bankid, accountid, obpv400_create_standing_order_request, opts)
+    # @return [CreateStandingOrder200Response]
+    def create_standing_order_management(bankid, accountid, create_standing_order_request, opts = {})
+      data, _status_code, _headers = create_standing_order_management_with_http_info(bankid, accountid, create_standing_order_request, opts)
       data
     end
 
@@ -121,24 +121,24 @@ module OpenBankProject
     # &lt;p&gt;Create standing order for an account.&lt;/p&gt; &lt;p&gt;when -&amp;gt; frequency &#x3D; {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}&lt;br /&gt; when -&amp;gt; detail &#x3D; { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#standing_order_id\&quot;&gt;&lt;strong&gt;standing_order_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv400_create_standing_order_request [OBPv400CreateStandingOrderRequest] Request body
+    # @param create_standing_order_request [CreateStandingOrderRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400CreateStandingOrder200Response, Integer, Hash)>] OBPv400CreateStandingOrder200Response data, response status code and response headers
-    def o_bpv4_0_0_create_standing_order_management_with_http_info(bankid, accountid, obpv400_create_standing_order_request, opts = {})
+    # @return [Array<(CreateStandingOrder200Response, Integer, Hash)>] CreateStandingOrder200Response data, response status code and response headers
+    def create_standing_order_management_with_http_info(bankid, accountid, create_standing_order_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: StandingOrderApi.o_bpv4_0_0_create_standing_order_management ...'
+        @api_client.config.logger.debug 'Calling API: StandingOrderApi.create_standing_order_management ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order_management"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling StandingOrderApi.create_standing_order_management"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order_management"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling StandingOrderApi.create_standing_order_management"
       end
-      # verify the required parameter 'obpv400_create_standing_order_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_standing_order_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_standing_order_request' when calling StandingOrderApi.o_bpv4_0_0_create_standing_order_management"
+      # verify the required parameter 'create_standing_order_request' is set
+      if @api_client.config.client_side_validation && create_standing_order_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_standing_order_request' when calling StandingOrderApi.create_standing_order_management"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
@@ -160,16 +160,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_standing_order_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_standing_order_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400CreateStandingOrder200Response'
+      return_type = opts[:debug_return_type] || 'CreateStandingOrder200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"StandingOrderApi.o_bpv4_0_0_create_standing_order_management",
+        :operation => :"StandingOrderApi.create_standing_order_management",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -180,7 +180,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: StandingOrderApi#o_bpv4_0_0_create_standing_order_management\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: StandingOrderApi#create_standing_order_management\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

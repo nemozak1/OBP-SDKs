@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,27 +39,6 @@ namespace OpenBankProject.Api
         RateLimitsApiEvents Events { get; }
 
         /// <summary>
-        /// Get Rate Limiting Info
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetRateLimitingInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetRateLimitingInfoApiResponse> OBPv310GetRateLimitingInfoAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Rate Limiting Info
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetRateLimitingInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetRateLimitingInfoApiResponse?> OBPv310GetRateLimitingInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Set Rate Limits / Call Limits per Consumer
         /// </summary>
         /// <remarks>
@@ -67,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CallsLimitApiResponse"/>&gt;</returns>
-        Task<IOBPv400CallsLimitApiResponse> OBPv400CallsLimitAsync(string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICallsLimitApiResponse"/>&gt;</returns>
+        Task<ICallsLimitApiResponse> CallsLimitAsync(string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set Rate Limits / Call Limits per Consumer
@@ -79,10 +58,31 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
         /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CallsLimitApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CallsLimitApiResponse?> OBPv400CallsLimitOrDefaultAsync(string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICallsLimitApiResponse"/>?&gt;</returns>
+        Task<ICallsLimitApiResponse?> CallsLimitOrDefaultAsync(string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Rate Limiting Info
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetRateLimitingInfoApiResponse"/>&gt;</returns>
+        Task<IGetRateLimitingInfoApiResponse> GetRateLimitingInfoAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Rate Limiting Info
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetRateLimitingInfoApiResponse"/>?&gt;</returns>
+        Task<IGetRateLimitingInfoApiResponse?> GetRateLimitingInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set Rate Limits / Call Limits per Consumer
@@ -93,10 +93,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="ratelimitingid">The RATELIMITINGID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateRateLimitsApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdateRateLimitsApiResponse> OBPv600UpdateRateLimitsAsync(string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateRateLimitsApiResponse"/>&gt;</returns>
+        Task<IUpdateRateLimitsApiResponse> UpdateRateLimitsAsync(string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set Rate Limits / Call Limits per Consumer
@@ -106,10 +106,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="ratelimitingid">The RATELIMITINGID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateRateLimitsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdateRateLimitsApiResponse?> OBPv600UpdateRateLimitsOrDefaultAsync(string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateRateLimitsApiResponse"/>?&gt;</returns>
+        Task<IUpdateRateLimitsApiResponse?> UpdateRateLimitsOrDefaultAsync(string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -120,61 +120,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetRateLimitingInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnCallsLimit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetRateLimitingInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCallsLimit;
 
-        internal void ExecuteOnOBPv310GetRateLimitingInfo(APIApi.OBPv310GetRateLimitingInfoApiResponse apiResponse)
+        internal void ExecuteOnCallsLimit(ConsumerApi.CallsLimitApiResponse apiResponse)
         {
-            OnOBPv310GetRateLimitingInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCallsLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetRateLimitingInfo(Exception exception)
+        internal void ExecuteOnErrorCallsLimit(Exception exception)
         {
-            OnErrorOBPv310GetRateLimitingInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCallsLimit?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CallsLimit;
+        public event EventHandler<ApiResponseEventArgs>? OnGetRateLimitingInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CallsLimit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetRateLimitingInfo;
 
-        internal void ExecuteOnOBPv400CallsLimit(ConsumerApi.OBPv400CallsLimitApiResponse apiResponse)
+        internal void ExecuteOnGetRateLimitingInfo(APIApi.GetRateLimitingInfoApiResponse apiResponse)
         {
-            OnOBPv400CallsLimit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetRateLimitingInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CallsLimit(Exception exception)
+        internal void ExecuteOnErrorGetRateLimitingInfo(Exception exception)
         {
-            OnErrorOBPv400CallsLimit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetRateLimitingInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdateRateLimits;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateRateLimits;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdateRateLimits;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateRateLimits;
 
-        internal void ExecuteOnOBPv600UpdateRateLimits(ConsumerApi.OBPv600UpdateRateLimitsApiResponse apiResponse)
+        internal void ExecuteOnUpdateRateLimits(ConsumerApi.UpdateRateLimitsApiResponse apiResponse)
         {
-            OnOBPv600UpdateRateLimits?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateRateLimits?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdateRateLimits(Exception exception)
+        internal void ExecuteOnErrorUpdateRateLimits(Exception exception)
         {
-            OnErrorOBPv600UpdateRateLimits?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateRateLimits?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -232,14 +232,33 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
+        partial void FormatCallsLimit(ref string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="consumerid"></param>
+        /// <param name="updateRateLimitsRequest"></param>
+        /// <returns></returns>
+        private void ValidateCallsLimit(string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest)
+        {
+            if (consumerid == null)
+                throw new ArgumentNullException(nameof(consumerid));
+
+            if (updateRateLimitsRequest == null)
+                throw new ArgumentNullException(nameof(updateRateLimitsRequest));
+        }
+
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv310GetRateLimitingInfoDefaultImplementation(IOBPv310GetRateLimitingInfoApiResponse apiResponseLocalVar)
+        /// <param name="consumerid"></param>
+        /// <param name="updateRateLimitsRequest"></param>
+        private void AfterCallsLimitDefaultImplementation(ICallsLimitApiResponse apiResponseLocalVar, string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310GetRateLimitingInfo(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterCallsLimit(ref suppressDefaultLog, apiResponseLocalVar, consumerid, updateRateLimitsRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -249,7 +268,9 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv310GetRateLimitingInfo(ref bool suppressDefaultLog, IOBPv310GetRateLimitingInfoApiResponse apiResponseLocalVar);
+        /// <param name="consumerid"></param>
+        /// <param name="updateRateLimitsRequest"></param>
+        partial void AfterCallsLimit(ref bool suppressDefaultLog, ICallsLimitApiResponse apiResponseLocalVar, string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -257,10 +278,12 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv310GetRateLimitingInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        /// <param name="consumerid"></param>
+        /// <param name="updateRateLimitsRequest"></param>
+        private void OnErrorCallsLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetRateLimitingInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorCallsLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, updateRateLimitsRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -272,18 +295,186 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv310GetRateLimitingInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        /// <param name="consumerid"></param>
+        /// <param name="updateRateLimitsRequest"></param>
+        partial void OnErrorCallsLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest);
+
+        /// <summary>
+        /// Set Rate Limits / Call Limits per Consumer &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
+        /// </summary>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICallsLimitApiResponse"/>&gt;</returns>
+        public async Task<ICallsLimitApiResponse?> CallsLimitOrDefaultAsync(string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CallsLimitAsync(consumerid, updateRateLimitsRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Set Rate Limits / Call Limits per Consumer &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICallsLimitApiResponse"/>&gt;</returns>
+        public async Task<ICallsLimitApiResponse> CallsLimitAsync(string consumerid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCallsLimit(consumerid, updateRateLimitsRequest);
+
+                FormatCallsLimit(ref consumerid, updateRateLimitsRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateRateLimitsRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateRateLimitsRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<ConsumerApi.CallsLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.CallsLimitApiResponse>();
+                        ConsumerApi.CallsLimitApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCallsLimitDefaultImplementation(apiResponseLocalVar, consumerid, updateRateLimitsRequest);
+
+                        Events.ExecuteOnCallsLimit(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCallsLimitDefaultImplementation(e, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits", uriBuilderLocalVar.Path, consumerid, updateRateLimitsRequest);
+                Events.ExecuteOnErrorCallsLimit(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        private void AfterGetRateLimitingInfoDefaultImplementation(IGetRateLimitingInfoApiResponse apiResponseLocalVar)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetRateLimitingInfo(ref suppressDefaultLog, apiResponseLocalVar);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        partial void AfterGetRateLimitingInfo(ref bool suppressDefaultLog, IGetRateLimitingInfoApiResponse apiResponseLocalVar);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        private void OnErrorGetRateLimitingInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetRateLimitingInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        partial void OnErrorGetRateLimitingInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Rate Limiting Info &lt;p&gt;Get information about the Rate Limiting setup on this OBP Instance such as:&lt;/p&gt; &lt;p&gt;Is rate limiting enabled and active?&lt;br /&gt; What backend is used to keep track of the API calls (e.g. REDIS).&lt;/p&gt; &lt;p&gt;Note: Rate limiting can be set at the Consumer level and also for anonymous calls.&lt;/p&gt; &lt;p&gt;See the consumer rate limits / call limits endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#service_available\&quot;&gt;&lt;strong&gt;service_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#technology\&quot;&gt;&lt;strong&gt;technology&lt;/strong&gt;&lt;/a&gt;: technology1&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetRateLimitingInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetRateLimitingInfoApiResponse?> OBPv310GetRateLimitingInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetRateLimitingInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetRateLimitingInfoApiResponse?> GetRateLimitingInfoOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310GetRateLimitingInfoAsync(cancellationToken).ConfigureAwait(false);
+                return await GetRateLimitingInfoAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -296,8 +487,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetRateLimitingInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetRateLimitingInfoApiResponse> OBPv310GetRateLimitingInfoAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetRateLimitingInfoApiResponse"/>&gt;</returns>
+        public async Task<IGetRateLimitingInfoApiResponse> GetRateLimitingInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -317,7 +508,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -344,8 +535,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv310GetRateLimitingInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv310GetRateLimitingInfoApiResponse>();
-                        APIApi.OBPv310GetRateLimitingInfoApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetRateLimitingInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetRateLimitingInfoApiResponse>();
+                        APIApi.GetRateLimitingInfoApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -356,200 +547,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310GetRateLimitingInfoDefaultImplementation(apiResponseLocalVar);
+                        AfterGetRateLimitingInfoDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv310GetRateLimitingInfo(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310GetRateLimitingInfoDefaultImplementation(e, "/obp/v3.1.0/rate-limiting", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv310GetRateLimitingInfo(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CallsLimit(ref string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CallsLimit(string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
-        {
-            if (consumerid == null)
-                throw new ArgumentNullException(nameof(consumerid));
-
-            if (oBPv600UpdateRateLimitsRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateRateLimitsRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        private void AfterOBPv400CallsLimitDefaultImplementation(IOBPv400CallsLimitApiResponse apiResponseLocalVar, string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CallsLimit(ref suppressDefaultLog, apiResponseLocalVar, consumerid, oBPv600UpdateRateLimitsRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        partial void AfterOBPv400CallsLimit(ref bool suppressDefaultLog, IOBPv400CallsLimitApiResponse apiResponseLocalVar, string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        private void OnErrorOBPv400CallsLimitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CallsLimit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, oBPv600UpdateRateLimitsRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        partial void OnErrorOBPv400CallsLimit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
-
-        /// <summary>
-        /// Set Rate Limits / Call Limits per Consumer &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-        /// </summary>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CallsLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CallsLimitApiResponse?> OBPv400CallsLimitOrDefaultAsync(string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CallsLimitAsync(consumerid, oBPv600UpdateRateLimitsRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Set Rate Limits / Call Limits per Consumer &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CallsLimitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CallsLimitApiResponse> OBPv400CallsLimitAsync(string consumerid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CallsLimit(consumerid, oBPv600UpdateRateLimitsRequest);
-
-                FormatOBPv400CallsLimit(ref consumerid, oBPv600UpdateRateLimitsRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateRateLimitsRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateRateLimitsRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<ConsumerApi.OBPv400CallsLimitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.OBPv400CallsLimitApiResponse>();
-                        ConsumerApi.OBPv400CallsLimitApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CallsLimitDefaultImplementation(apiResponseLocalVar, consumerid, oBPv600UpdateRateLimitsRequest);
-
-                        Events.ExecuteOnOBPv400CallsLimit(apiResponseLocalVar);
+                        Events.ExecuteOnGetRateLimitingInfo(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -561,22 +561,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CallsLimitDefaultImplementation(e, "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits", uriBuilderLocalVar.Path, consumerid, oBPv600UpdateRateLimitsRequest);
-                Events.ExecuteOnErrorOBPv400CallsLimit(e);
+                OnErrorGetRateLimitingInfoDefaultImplementation(e, "/obp/v3.1.0/rate-limiting", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetRateLimitingInfo(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600UpdateRateLimits(ref string consumerid, ref string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
+        partial void FormatUpdateRateLimits(ref string consumerid, ref string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="consumerid"></param>
         /// <param name="ratelimitingid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
+        /// <param name="updateRateLimitsRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600UpdateRateLimits(string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
+        private void ValidateUpdateRateLimits(string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest)
         {
             if (consumerid == null)
                 throw new ArgumentNullException(nameof(consumerid));
@@ -584,8 +584,8 @@ namespace OpenBankProject.Api
             if (ratelimitingid == null)
                 throw new ArgumentNullException(nameof(ratelimitingid));
 
-            if (oBPv600UpdateRateLimitsRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateRateLimitsRequest));
+            if (updateRateLimitsRequest == null)
+                throw new ArgumentNullException(nameof(updateRateLimitsRequest));
         }
 
         /// <summary>
@@ -594,11 +594,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
         /// <param name="ratelimitingid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        private void AfterOBPv600UpdateRateLimitsDefaultImplementation(IOBPv600UpdateRateLimitsApiResponse apiResponseLocalVar, string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
+        /// <param name="updateRateLimitsRequest"></param>
+        private void AfterUpdateRateLimitsDefaultImplementation(IUpdateRateLimitsApiResponse apiResponseLocalVar, string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600UpdateRateLimits(ref suppressDefaultLog, apiResponseLocalVar, consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest);
+            AfterUpdateRateLimits(ref suppressDefaultLog, apiResponseLocalVar, consumerid, ratelimitingid, updateRateLimitsRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -610,8 +610,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
         /// <param name="ratelimitingid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        partial void AfterOBPv600UpdateRateLimits(ref bool suppressDefaultLog, IOBPv600UpdateRateLimitsApiResponse apiResponseLocalVar, string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
+        /// <param name="updateRateLimitsRequest"></param>
+        partial void AfterUpdateRateLimits(ref bool suppressDefaultLog, IUpdateRateLimitsApiResponse apiResponseLocalVar, string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -621,11 +621,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
         /// <param name="ratelimitingid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        private void OnErrorOBPv600UpdateRateLimitsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest)
+        /// <param name="updateRateLimitsRequest"></param>
+        private void OnErrorUpdateRateLimitsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdateRateLimits(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest);
+            OnErrorUpdateRateLimits(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, ratelimitingid, updateRateLimitsRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -639,22 +639,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
         /// <param name="ratelimitingid"></param>
-        /// <param name="oBPv600UpdateRateLimitsRequest"></param>
-        partial void OnErrorOBPv600UpdateRateLimits(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest);
+        /// <param name="updateRateLimitsRequest"></param>
+        partial void OnErrorUpdateRateLimits(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest);
 
         /// <summary>
         /// Set Rate Limits / Call Limits per Consumer &lt;p&gt;Set the API rate limits / call limits for a Consumer:&lt;/p&gt; &lt;p&gt;Rate limiting can be set:&lt;/p&gt; &lt;p&gt;Per Second&lt;br /&gt; Per Minute&lt;br /&gt; Per Hour&lt;br /&gt; Per Week&lt;br /&gt; Per Month&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;RATE_LIMITING_ID&lt;/a&gt;: RATE_LIMITING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_date\&quot;&gt;&lt;strong&gt;from_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_day_call_limit\&quot;&gt;&lt;strong&gt;per_day_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_hour_call_limit\&quot;&gt;&lt;strong&gt;per_hour_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_minute_call_limit\&quot;&gt;&lt;strong&gt;per_minute_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_month_call_limit\&quot;&gt;&lt;strong&gt;per_month_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_second_call_limit\&quot;&gt;&lt;strong&gt;per_second_call_limit&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#per_week_call_limit\&quot;&gt;&lt;strong&gt;per_week_call_limit&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_date\&quot;&gt;&lt;strong&gt;to_date&lt;/strong&gt;&lt;/a&gt;: 1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;api_name&lt;/a&gt;: api_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#api_version\&quot;&gt;api_version&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="ratelimitingid">The RATELIMITINGID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateRateLimitsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateRateLimitsApiResponse?> OBPv600UpdateRateLimitsOrDefaultAsync(string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateRateLimitsApiResponse"/>&gt;</returns>
+        public async Task<IUpdateRateLimitsApiResponse?> UpdateRateLimitsOrDefaultAsync(string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600UpdateRateLimitsAsync(consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateRateLimitsAsync(consumerid, ratelimitingid, updateRateLimitsRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -668,18 +668,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="ratelimitingid">The RATELIMITINGID identifier</param>
-        /// <param name="oBPv600UpdateRateLimitsRequest">Request body</param>
+        /// <param name="updateRateLimitsRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateRateLimitsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateRateLimitsApiResponse> OBPv600UpdateRateLimitsAsync(string consumerid, string ratelimitingid, OBPv600UpdateRateLimitsRequest oBPv600UpdateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateRateLimitsApiResponse"/>&gt;</returns>
+        public async Task<IUpdateRateLimitsApiResponse> UpdateRateLimitsAsync(string consumerid, string ratelimitingid, UpdateRateLimitsRequest updateRateLimitsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600UpdateRateLimits(consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest);
+                ValidateUpdateRateLimits(consumerid, ratelimitingid, updateRateLimitsRequest);
 
-                FormatOBPv600UpdateRateLimits(ref consumerid, ref ratelimitingid, oBPv600UpdateRateLimitsRequest);
+                FormatUpdateRateLimits(ref consumerid, ref ratelimitingid, updateRateLimitsRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -692,16 +692,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bratelimitingid%7D", Uri.EscapeDataString(ratelimitingid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateRateLimitsRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateRateLimitsRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateRateLimitsRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateRateLimitsRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -737,8 +737,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ConsumerApi.OBPv600UpdateRateLimitsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.OBPv600UpdateRateLimitsApiResponse>();
-                        ConsumerApi.OBPv600UpdateRateLimitsApiResponse apiResponseLocalVar;
+                        ILogger<ConsumerApi.UpdateRateLimitsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.UpdateRateLimitsApiResponse>();
+                        ConsumerApi.UpdateRateLimitsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -749,9 +749,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600UpdateRateLimitsDefaultImplementation(apiResponseLocalVar, consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest);
+                        AfterUpdateRateLimitsDefaultImplementation(apiResponseLocalVar, consumerid, ratelimitingid, updateRateLimitsRequest);
 
-                        Events.ExecuteOnOBPv600UpdateRateLimits(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateRateLimits(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -763,8 +763,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600UpdateRateLimitsDefaultImplementation(e, "/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid}", uriBuilderLocalVar.Path, consumerid, ratelimitingid, oBPv600UpdateRateLimitsRequest);
-                Events.ExecuteOnErrorOBPv600UpdateRateLimits(e);
+                OnErrorUpdateRateLimitsDefaultImplementation(e, "/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid}", uriBuilderLocalVar.Path, consumerid, ratelimitingid, updateRateLimitsRequest);
+                Events.ExecuteOnErrorUpdateRateLimits(e);
                 throw;
             }
         }

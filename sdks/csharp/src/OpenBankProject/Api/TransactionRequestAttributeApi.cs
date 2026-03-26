@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> CreateOrUpdateTransactionRequestAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Transaction Request Attribute Definition
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be TransactionRequest&lt;/p&gt; &lt;p&gt;The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse?> CreateOrUpdateTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Transaction Request Attribute
@@ -73,10 +73,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateTransactionRequestAttributeApiResponse> OBPv400CreateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateTransactionRequestAttributeApiResponse> CreateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Transaction Request Attribute
@@ -87,10 +87,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateTransactionRequestAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateTransactionRequestAttributeApiResponse?> OBPv400CreateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionRequestAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateTransactionRequestAttributeApiResponse?> CreateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Transaction Request Attribute Definition
@@ -102,8 +102,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse> OBPv400DeleteTransactionRequestAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IDeleteTransactionRequestAttributeDefinitionApiResponse> DeleteTransactionRequestAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Transaction Request Attribute Definition
@@ -114,8 +114,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse?> OBPv400DeleteTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IDeleteTransactionRequestAttributeDefinitionApiResponse?> DeleteTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attribute By Id
@@ -129,8 +129,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributeByIdApiResponse> OBPv400GetTransactionRequestAttributeByIdAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
+        Task<IGetTransactionRequestAttributeByIdApiResponse> GetTransactionRequestAttributeByIdAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attribute By Id
@@ -143,8 +143,8 @@ namespace OpenBankProject.Api
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributeByIdApiResponse?> OBPv400GetTransactionRequestAttributeByIdOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeByIdApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionRequestAttributeByIdApiResponse?> GetTransactionRequestAttributeByIdOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attribute Definition
@@ -155,8 +155,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributeDefinitionApiResponse> OBPv400GetTransactionRequestAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IGetTransactionRequestAttributeDefinitionApiResponse> GetTransactionRequestAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attribute Definition
@@ -166,8 +166,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributeDefinitionApiResponse?> OBPv400GetTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionRequestAttributeDefinitionApiResponse?> GetTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attributes
@@ -180,8 +180,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributesApiResponse> OBPv400GetTransactionRequestAttributesAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributesApiResponse"/>&gt;</returns>
+        Task<IGetTransactionRequestAttributesApiResponse> GetTransactionRequestAttributesAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Transaction Request Attributes
@@ -193,8 +193,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetTransactionRequestAttributesApiResponse?> OBPv400GetTransactionRequestAttributesOrDefaultAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributesApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionRequestAttributesApiResponse?> GetTransactionRequestAttributesOrDefaultAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Transaction Request Attribute
@@ -207,10 +207,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateTransactionRequestAttributeApiResponse> OBPv400UpdateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateTransactionRequestAttributeApiResponse> UpdateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Transaction Request Attribute
@@ -222,10 +222,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateTransactionRequestAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateTransactionRequestAttributeApiResponse?> OBPv400UpdateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionRequestAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateTransactionRequestAttributeApiResponse?> UpdateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -236,141 +236,141 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateTransactionRequestAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateTransactionRequestAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateTransactionRequestAttributeDefinition;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(AttributeApi.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateTransactionRequestAttributeDefinition(AttributeApi.CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateTransactionRequestAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateTransactionRequestAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateTransactionRequestAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateTransactionRequestAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateTransactionRequestAttribute;
 
-        internal void ExecuteOnOBPv400CreateTransactionRequestAttribute(AttributeApi.OBPv400CreateTransactionRequestAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateTransactionRequestAttribute(AttributeApi.CreateTransactionRequestAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateTransactionRequestAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateTransactionRequestAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateTransactionRequestAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateTransactionRequestAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateTransactionRequestAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateTransactionRequestAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteTransactionRequestAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteTransactionRequestAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteTransactionRequestAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteTransactionRequestAttributeDefinition;
 
-        internal void ExecuteOnOBPv400DeleteTransactionRequestAttributeDefinition(AttributeApi.OBPv400DeleteTransactionRequestAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnDeleteTransactionRequestAttributeDefinition(AttributeApi.DeleteTransactionRequestAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400DeleteTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteTransactionRequestAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorDeleteTransactionRequestAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400DeleteTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetTransactionRequestAttributeById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionRequestAttributeById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetTransactionRequestAttributeById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionRequestAttributeById;
 
-        internal void ExecuteOnOBPv400GetTransactionRequestAttributeById(AttributeApi.OBPv400GetTransactionRequestAttributeByIdApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionRequestAttributeById(AttributeApi.GetTransactionRequestAttributeByIdApiResponse apiResponse)
         {
-            OnOBPv400GetTransactionRequestAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionRequestAttributeById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetTransactionRequestAttributeById(Exception exception)
+        internal void ExecuteOnErrorGetTransactionRequestAttributeById(Exception exception)
         {
-            OnErrorOBPv400GetTransactionRequestAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionRequestAttributeById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetTransactionRequestAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionRequestAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetTransactionRequestAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionRequestAttributeDefinition;
 
-        internal void ExecuteOnOBPv400GetTransactionRequestAttributeDefinition(AttributeApi.OBPv400GetTransactionRequestAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionRequestAttributeDefinition(AttributeApi.GetTransactionRequestAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400GetTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionRequestAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetTransactionRequestAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorGetTransactionRequestAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400GetTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionRequestAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetTransactionRequestAttributes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionRequestAttributes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetTransactionRequestAttributes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionRequestAttributes;
 
-        internal void ExecuteOnOBPv400GetTransactionRequestAttributes(AttributeApi.OBPv400GetTransactionRequestAttributesApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionRequestAttributes(AttributeApi.GetTransactionRequestAttributesApiResponse apiResponse)
         {
-            OnOBPv400GetTransactionRequestAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionRequestAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetTransactionRequestAttributes(Exception exception)
+        internal void ExecuteOnErrorGetTransactionRequestAttributes(Exception exception)
         {
-            OnErrorOBPv400GetTransactionRequestAttributes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionRequestAttributes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateTransactionRequestAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateTransactionRequestAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateTransactionRequestAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateTransactionRequestAttribute;
 
-        internal void ExecuteOnOBPv400UpdateTransactionRequestAttribute(AttributeApi.OBPv400UpdateTransactionRequestAttributeApiResponse apiResponse)
+        internal void ExecuteOnUpdateTransactionRequestAttribute(AttributeApi.UpdateTransactionRequestAttributeApiResponse apiResponse)
         {
-            OnOBPv400UpdateTransactionRequestAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateTransactionRequestAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateTransactionRequestAttribute(Exception exception)
+        internal void ExecuteOnErrorUpdateTransactionRequestAttribute(Exception exception)
         {
-            OnErrorOBPv400UpdateTransactionRequestAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateTransactionRequestAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -428,21 +428,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        partial void FormatCreateOrUpdateTransactionRequestAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        private void ValidateCreateOrUpdateTransactionRequestAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
         }
 
         /// <summary>
@@ -450,11 +450,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            AfterCreateOrUpdateTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -465,8 +465,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -475,11 +475,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            OnErrorCreateOrUpdateTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -492,21 +492,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Create or Update Transaction Request Attribute Definition &lt;p&gt;Create or Update Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be TransactionRequest&lt;/p&gt; &lt;p&gt;The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse?> CreateOrUpdateTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateTransactionRequestAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -519,18 +519,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> CreateOrUpdateTransactionRequestAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                ValidateCreateOrUpdateTransactionRequestAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                FormatOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                FormatCreateOrUpdateTransactionRequestAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -542,16 +542,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -587,8 +587,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse>();
+                        AttributeApi.CreateOrUpdateTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -599,9 +599,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                        AfterCreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateTransactionRequestAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -613,13 +613,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateTransactionRequestAttributeDefinition(e);
+                OnErrorCreateOrUpdateTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateTransactionRequestAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateTransactionRequestAttribute(ref string bankid, ref string accountid, ref string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        partial void FormatCreateTransactionRequestAttribute(ref string bankid, ref string accountid, ref string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Validates the request parameters
@@ -627,9 +627,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateTransactionRequestAttribute(string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        private void ValidateCreateTransactionRequestAttribute(string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -640,8 +640,8 @@ namespace OpenBankProject.Api
             if (transactionrequestid == null)
                 throw new ArgumentNullException(nameof(transactionrequestid));
 
-            if (oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems));
+            if (createTransactionRequestCounterpartyRequestAttributesInner == null)
+                throw new ArgumentNullException(nameof(createTransactionRequestCounterpartyRequestAttributesInner));
         }
 
         /// <summary>
@@ -651,11 +651,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        private void AfterOBPv400CreateTransactionRequestAttributeDefaultImplementation(IOBPv400CreateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        private void AfterCreateTransactionRequestAttributeDefaultImplementation(ICreateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateTransactionRequestAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            AfterCreateTransactionRequestAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -668,8 +668,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        partial void AfterOBPv400CreateTransactionRequestAttribute(ref bool suppressDefaultLog, IOBPv400CreateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        partial void AfterCreateTransactionRequestAttribute(ref bool suppressDefaultLog, ICreateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -680,11 +680,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        private void OnErrorOBPv400CreateTransactionRequestAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        private void OnErrorCreateTransactionRequestAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateTransactionRequestAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            OnErrorCreateTransactionRequestAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -699,8 +699,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        partial void OnErrorOBPv400CreateTransactionRequestAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        partial void OnErrorCreateTransactionRequestAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Create Transaction Request Attribute &lt;p&gt;Create Transaction Request Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;TRANSACTION_REQUEST_ID&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;attribute_type&lt;/strong&gt;&lt;/a&gt;: STRING&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -708,14 +708,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateTransactionRequestAttributeApiResponse?> OBPv400CreateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateTransactionRequestAttributeApiResponse?> CreateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateTransactionRequestAttributeAsync(bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, cancellationToken).ConfigureAwait(false);
+                return await CreateTransactionRequestAttributeAsync(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -730,18 +730,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateTransactionRequestAttributeApiResponse> OBPv400CreateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateTransactionRequestAttributeApiResponse> CreateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                ValidateCreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
 
-                FormatOBPv400CreateTransactionRequestAttribute(ref bankid, ref accountid, ref transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                FormatCreateTransactionRequestAttribute(ref bankid, ref accountid, ref transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -755,16 +755,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionrequestid%7D", Uri.EscapeDataString(transactionrequestid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createTransactionRequestCounterpartyRequestAttributesInner as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createTransactionRequestCounterpartyRequestAttributesInner, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -800,8 +800,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400CreateTransactionRequestAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateTransactionRequestAttributeApiResponse>();
-                        AttributeApi.OBPv400CreateTransactionRequestAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateTransactionRequestAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateTransactionRequestAttributeApiResponse>();
+                        AttributeApi.CreateTransactionRequestAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -812,9 +812,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateTransactionRequestAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                        AfterCreateTransactionRequestAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
 
-                        Events.ExecuteOnOBPv400CreateTransactionRequestAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateTransactionRequestAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -826,13 +826,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateTransactionRequestAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
-                Events.ExecuteOnErrorOBPv400CreateTransactionRequestAttribute(e);
+                OnErrorCreateTransactionRequestAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
+                Events.ExecuteOnErrorCreateTransactionRequestAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteTransactionRequestAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+        partial void FormatDeleteTransactionRequestAttributeDefinition(ref string bankid, ref string attributedefinitionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -840,7 +840,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteTransactionRequestAttributeDefinition(string bankid, string attributedefinitionid)
+        private void ValidateDeleteTransactionRequestAttributeDefinition(string bankid, string attributedefinitionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -855,10 +855,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void AfterOBPv400DeleteTransactionRequestAttributeDefinitionDefaultImplementation(IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        private void AfterDeleteTransactionRequestAttributeDefinitionDefaultImplementation(IDeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            AfterDeleteTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -870,7 +870,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void AfterOBPv400DeleteTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+        partial void AfterDeleteTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, IDeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -880,10 +880,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void OnErrorOBPv400DeleteTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        private void OnErrorDeleteTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            OnErrorDeleteTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -897,7 +897,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void OnErrorOBPv400DeleteTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+        partial void OnErrorDeleteTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Delete Transaction Request Attribute Definition &lt;p&gt;Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -905,12 +905,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse?> OBPv400DeleteTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTransactionRequestAttributeDefinitionApiResponse?> DeleteTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteTransactionRequestAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteTransactionRequestAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -925,16 +925,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteTransactionRequestAttributeDefinitionApiResponse> OBPv400DeleteTransactionRequestAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteTransactionRequestAttributeDefinitionApiResponse> DeleteTransactionRequestAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid);
+                ValidateDeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid);
 
-                FormatOBPv400DeleteTransactionRequestAttributeDefinition(ref bankid, ref attributedefinitionid);
+                FormatDeleteTransactionRequestAttributeDefinition(ref bankid, ref attributedefinitionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -952,7 +952,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -979,8 +979,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400DeleteTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteTransactionRequestAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400DeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteTransactionRequestAttributeDefinitionApiResponse>();
+                        AttributeApi.DeleteTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -991,9 +991,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+                        AfterDeleteTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
 
-                        Events.ExecuteOnOBPv400DeleteTransactionRequestAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteTransactionRequestAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1005,13 +1005,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
-                Events.ExecuteOnErrorOBPv400DeleteTransactionRequestAttributeDefinition(e);
+                OnErrorDeleteTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
+                Events.ExecuteOnErrorDeleteTransactionRequestAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetTransactionRequestAttributeById(ref string bankid, ref string accountid, ref string transactionrequestid, ref string attributeid);
+        partial void FormatGetTransactionRequestAttributeById(ref string bankid, ref string accountid, ref string transactionrequestid, ref string attributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1021,7 +1021,7 @@ namespace OpenBankProject.Api
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetTransactionRequestAttributeById(string bankid, string accountid, string transactionrequestid, string attributeid)
+        private void ValidateGetTransactionRequestAttributeById(string bankid, string accountid, string transactionrequestid, string attributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1044,10 +1044,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        private void AfterOBPv400GetTransactionRequestAttributeByIdDefaultImplementation(IOBPv400GetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid)
+        private void AfterGetTransactionRequestAttributeByIdDefaultImplementation(IGetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetTransactionRequestAttributeById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid);
+            AfterGetTransactionRequestAttributeById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1061,7 +1061,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        partial void AfterOBPv400GetTransactionRequestAttributeById(ref bool suppressDefaultLog, IOBPv400GetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid);
+        partial void AfterGetTransactionRequestAttributeById(ref bool suppressDefaultLog, IGetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1073,10 +1073,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        private void OnErrorOBPv400GetTransactionRequestAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid)
+        private void OnErrorGetTransactionRequestAttributeByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetTransactionRequestAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, attributeid);
+            OnErrorGetTransactionRequestAttributeById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, attributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1092,7 +1092,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        partial void OnErrorOBPv400GetTransactionRequestAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid);
+        partial void OnErrorGetTransactionRequestAttributeById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid);
 
         /// <summary>
         /// Get Transaction Request Attribute By Id &lt;p&gt;Get Transaction Request Attribute By Id&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Adapter.card_attribute_id\&quot;&gt;ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;TRANSACTION_REQUEST_ID&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1102,12 +1102,12 @@ namespace OpenBankProject.Api
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributeByIdApiResponse?> OBPv400GetTransactionRequestAttributeByIdOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributeByIdApiResponse?> GetTransactionRequestAttributeByIdOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetTransactionRequestAttributeByIdAsync(bankid, accountid, transactionrequestid, attributeid, cancellationToken).ConfigureAwait(false);
+                return await GetTransactionRequestAttributeByIdAsync(bankid, accountid, transactionrequestid, attributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1124,16 +1124,16 @@ namespace OpenBankProject.Api
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributeByIdApiResponse> OBPv400GetTransactionRequestAttributeByIdAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributeByIdApiResponse> GetTransactionRequestAttributeByIdAsync(string bankid, string accountid, string transactionrequestid, string attributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid);
+                ValidateGetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid);
 
-                FormatOBPv400GetTransactionRequestAttributeById(ref bankid, ref accountid, ref transactionrequestid, ref attributeid);
+                FormatGetTransactionRequestAttributeById(ref bankid, ref accountid, ref transactionrequestid, ref attributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1153,7 +1153,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1180,8 +1180,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetTransactionRequestAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetTransactionRequestAttributeByIdApiResponse>();
-                        AttributeApi.OBPv400GetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetTransactionRequestAttributeByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetTransactionRequestAttributeByIdApiResponse>();
+                        AttributeApi.GetTransactionRequestAttributeByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1192,9 +1192,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetTransactionRequestAttributeByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid);
+                        AfterGetTransactionRequestAttributeByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid);
 
-                        Events.ExecuteOnOBPv400GetTransactionRequestAttributeById(apiResponseLocalVar);
+                        Events.ExecuteOnGetTransactionRequestAttributeById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1206,20 +1206,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetTransactionRequestAttributeByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, attributeid);
-                Events.ExecuteOnErrorOBPv400GetTransactionRequestAttributeById(e);
+                OnErrorGetTransactionRequestAttributeByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, attributeid);
+                Events.ExecuteOnErrorGetTransactionRequestAttributeById(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetTransactionRequestAttributeDefinition(ref string bankid);
+        partial void FormatGetTransactionRequestAttributeDefinition(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetTransactionRequestAttributeDefinition(string bankid)
+        private void ValidateGetTransactionRequestAttributeDefinition(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1230,10 +1230,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetTransactionRequestAttributeDefinitionDefaultImplementation(IOBPv400GetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetTransactionRequestAttributeDefinitionDefaultImplementation(IGetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetTransactionRequestAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1244,7 +1244,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, IOBPv400GetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetTransactionRequestAttributeDefinition(ref bool suppressDefaultLog, IGetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1253,10 +1253,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetTransactionRequestAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetTransactionRequestAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1269,19 +1269,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetTransactionRequestAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Transaction Request Attribute Definition &lt;p&gt;Get Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributeDefinitionApiResponse?> OBPv400GetTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributeDefinitionApiResponse?> GetTransactionRequestAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetTransactionRequestAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetTransactionRequestAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1295,16 +1295,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributeDefinitionApiResponse> OBPv400GetTransactionRequestAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributeDefinitionApiResponse> GetTransactionRequestAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetTransactionRequestAttributeDefinition(bankid);
+                ValidateGetTransactionRequestAttributeDefinition(bankid);
 
-                FormatOBPv400GetTransactionRequestAttributeDefinition(ref bankid);
+                FormatGetTransactionRequestAttributeDefinition(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1321,7 +1321,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1348,8 +1348,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetTransactionRequestAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400GetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetTransactionRequestAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetTransactionRequestAttributeDefinitionApiResponse>();
+                        AttributeApi.GetTransactionRequestAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1360,9 +1360,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetTransactionRequestAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetTransactionRequestAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnGetTransactionRequestAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1374,13 +1374,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetTransactionRequestAttributeDefinition(e);
+                OnErrorGetTransactionRequestAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetTransactionRequestAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetTransactionRequestAttributes(ref string bankid, ref string accountid, ref string transactionrequestid);
+        partial void FormatGetTransactionRequestAttributes(ref string bankid, ref string accountid, ref string transactionrequestid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1389,7 +1389,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetTransactionRequestAttributes(string bankid, string accountid, string transactionrequestid)
+        private void ValidateGetTransactionRequestAttributes(string bankid, string accountid, string transactionrequestid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1408,10 +1408,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        private void AfterOBPv400GetTransactionRequestAttributesDefaultImplementation(IOBPv400GetTransactionRequestAttributesApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid)
+        private void AfterGetTransactionRequestAttributesDefaultImplementation(IGetTransactionRequestAttributesApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetTransactionRequestAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid);
+            AfterGetTransactionRequestAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1424,7 +1424,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        partial void AfterOBPv400GetTransactionRequestAttributes(ref bool suppressDefaultLog, IOBPv400GetTransactionRequestAttributesApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid);
+        partial void AfterGetTransactionRequestAttributes(ref bool suppressDefaultLog, IGetTransactionRequestAttributesApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1435,10 +1435,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        private void OnErrorOBPv400GetTransactionRequestAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid)
+        private void OnErrorGetTransactionRequestAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetTransactionRequestAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid);
+            OnErrorGetTransactionRequestAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1453,7 +1453,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
-        partial void OnErrorOBPv400GetTransactionRequestAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid);
+        partial void OnErrorGetTransactionRequestAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid);
 
         /// <summary>
         /// Get Transaction Request Attributes &lt;p&gt;Get Transaction Request Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;TRANSACTION_REQUEST_ID&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_attributes&lt;/strong&gt;&lt;/a&gt;: transaction_request_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1462,12 +1462,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributesApiResponse?> OBPv400GetTransactionRequestAttributesOrDefaultAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributesApiResponse?> GetTransactionRequestAttributesOrDefaultAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetTransactionRequestAttributesAsync(bankid, accountid, transactionrequestid, cancellationToken).ConfigureAwait(false);
+                return await GetTransactionRequestAttributesAsync(bankid, accountid, transactionrequestid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1483,16 +1483,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetTransactionRequestAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetTransactionRequestAttributesApiResponse> OBPv400GetTransactionRequestAttributesAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestAttributesApiResponse> GetTransactionRequestAttributesAsync(string bankid, string accountid, string transactionrequestid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetTransactionRequestAttributes(bankid, accountid, transactionrequestid);
+                ValidateGetTransactionRequestAttributes(bankid, accountid, transactionrequestid);
 
-                FormatOBPv400GetTransactionRequestAttributes(ref bankid, ref accountid, ref transactionrequestid);
+                FormatGetTransactionRequestAttributes(ref bankid, ref accountid, ref transactionrequestid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1511,7 +1511,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1538,8 +1538,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetTransactionRequestAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetTransactionRequestAttributesApiResponse>();
-                        AttributeApi.OBPv400GetTransactionRequestAttributesApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetTransactionRequestAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetTransactionRequestAttributesApiResponse>();
+                        AttributeApi.GetTransactionRequestAttributesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1550,9 +1550,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetTransactionRequestAttributesDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid);
+                        AfterGetTransactionRequestAttributesDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid);
 
-                        Events.ExecuteOnOBPv400GetTransactionRequestAttributes(apiResponseLocalVar);
+                        Events.ExecuteOnGetTransactionRequestAttributes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1564,13 +1564,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetTransactionRequestAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid);
-                Events.ExecuteOnErrorOBPv400GetTransactionRequestAttributes(e);
+                OnErrorGetTransactionRequestAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid);
+                Events.ExecuteOnErrorGetTransactionRequestAttributes(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateTransactionRequestAttribute(ref string bankid, ref string accountid, ref string transactionrequestid, ref string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        partial void FormatUpdateTransactionRequestAttribute(ref string bankid, ref string accountid, ref string transactionrequestid, ref string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Validates the request parameters
@@ -1579,9 +1579,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateTransactionRequestAttribute(string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        private void ValidateUpdateTransactionRequestAttribute(string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1595,8 +1595,8 @@ namespace OpenBankProject.Api
             if (attributeid == null)
                 throw new ArgumentNullException(nameof(attributeid));
 
-            if (oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems));
+            if (createTransactionRequestCounterpartyRequestAttributesInner == null)
+                throw new ArgumentNullException(nameof(createTransactionRequestCounterpartyRequestAttributesInner));
         }
 
         /// <summary>
@@ -1607,11 +1607,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        private void AfterOBPv400UpdateTransactionRequestAttributeDefaultImplementation(IOBPv400UpdateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        private void AfterUpdateTransactionRequestAttributeDefaultImplementation(IUpdateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateTransactionRequestAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            AfterUpdateTransactionRequestAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1625,8 +1625,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        partial void AfterOBPv400UpdateTransactionRequestAttribute(ref bool suppressDefaultLog, IOBPv400UpdateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        partial void AfterUpdateTransactionRequestAttribute(ref bool suppressDefaultLog, IUpdateTransactionRequestAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1638,11 +1638,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        private void OnErrorOBPv400UpdateTransactionRequestAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        private void OnErrorUpdateTransactionRequestAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateTransactionRequestAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            OnErrorUpdateTransactionRequestAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1658,8 +1658,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="transactionrequestid"></param>
         /// <param name="attributeid"></param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems"></param>
-        partial void OnErrorOBPv400UpdateTransactionRequestAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner"></param>
+        partial void OnErrorUpdateTransactionRequestAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner);
 
         /// <summary>
         /// Update Transaction Request Attribute &lt;p&gt;Update Transaction Request Attribute&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Adapter.card_attribute_id\&quot;&gt;ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;TRANSACTION_REQUEST_ID&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -1668,14 +1668,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateTransactionRequestAttributeApiResponse?> OBPv400UpdateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateTransactionRequestAttributeApiResponse?> UpdateTransactionRequestAttributeOrDefaultAsync(string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateTransactionRequestAttributeAsync(bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, cancellationToken).ConfigureAwait(false);
+                return await UpdateTransactionRequestAttributeAsync(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1691,18 +1691,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="transactionrequestid">The TRANSACTIONREQUESTID identifier</param>
         /// <param name="attributeid">The ATTRIBUTEID identifier</param>
-        /// <param name="oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems">Request body</param>
+        /// <param name="createTransactionRequestCounterpartyRequestAttributesInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateTransactionRequestAttributeApiResponse> OBPv400UpdateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, string attributeid, OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateTransactionRequestAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateTransactionRequestAttributeApiResponse> UpdateTransactionRequestAttributeAsync(string bankid, string accountid, string transactionrequestid, string attributeid, CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                ValidateUpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
 
-                FormatOBPv400UpdateTransactionRequestAttribute(ref bankid, ref accountid, ref transactionrequestid, ref attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                FormatUpdateTransactionRequestAttribute(ref bankid, ref accountid, ref transactionrequestid, ref attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1717,16 +1717,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btransactionrequestid%7D", Uri.EscapeDataString(transactionrequestid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Battributeid%7D", Uri.EscapeDataString(attributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createTransactionRequestCounterpartyRequestAttributesInner as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createTransactionRequestCounterpartyRequestAttributesInner, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1762,8 +1762,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400UpdateTransactionRequestAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400UpdateTransactionRequestAttributeApiResponse>();
-                        AttributeApi.OBPv400UpdateTransactionRequestAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateTransactionRequestAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateTransactionRequestAttributeApiResponse>();
+                        AttributeApi.UpdateTransactionRequestAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1774,9 +1774,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateTransactionRequestAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+                        AfterUpdateTransactionRequestAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
 
-                        Events.ExecuteOnOBPv400UpdateTransactionRequestAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateTransactionRequestAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1788,8 +1788,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateTransactionRequestAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
-                Events.ExecuteOnErrorOBPv400UpdateTransactionRequestAttribute(e);
+                OnErrorUpdateTransactionRequestAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid}", uriBuilderLocalVar.Path, bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
+                Events.ExecuteOnErrorUpdateTransactionRequestAttribute(e);
                 throw;
             }
         }

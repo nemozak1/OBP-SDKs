@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,60 +15,60 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_authentication_type_validation`]
+/// struct for typed errors of method [`create_authentication_type_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateAuthenticationTypeValidationError {
+pub enum CreateAuthenticationTypeValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_authentication_type_validation`]
+/// struct for typed errors of method [`delete_authentication_type_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteAuthenticationTypeValidationError {
+pub enum DeleteAuthenticationTypeValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_authentication_type_validations`]
+/// struct for typed errors of method [`get_all_authentication_type_validations`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllAuthenticationTypeValidationsError {
+pub enum GetAllAuthenticationTypeValidationsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_authentication_type_validations_public`]
+/// struct for typed errors of method [`get_all_authentication_type_validations_public`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllAuthenticationTypeValidationsPublicError {
+pub enum GetAllAuthenticationTypeValidationsPublicError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_authentication_type_validation`]
+/// struct for typed errors of method [`get_authentication_type_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAuthenticationTypeValidationError {
+pub enum GetAuthenticationTypeValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_authentication_type_validation`]
+/// struct for typed errors of method [`update_authentication_type_validation`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateAuthenticationTypeValidationError {
+pub enum UpdateAuthenticationTypeValidationError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_create_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str, obpv400_update_authentication_type_validation_request: models::Obpv400UpdateAuthenticationTypeValidationRequest) -> Result<models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Error<OBpv400CreateAuthenticationTypeValidationError>> {
+pub async fn create_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str, update_authentication_type_validation_request: models::UpdateAuthenticationTypeValidationRequest) -> Result<models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Error<CreateAuthenticationTypeValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
-    let p_body_obpv400_update_authentication_type_validation_request = obpv400_update_authentication_type_validation_request;
+    let p_body_update_authentication_type_validation_request = update_authentication_type_validation_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/authentication-type-validations/{operationid}", configuration.base_path, operationid=crate::apis::urlencode(p_path_operationid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -93,9 +93,9 @@ pub async fn o_bpv4_0_0_create_authentication_type_validation(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_authentication_type_validation_request);
+    req_builder = req_builder.json(&p_body_update_authentication_type_validation_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -112,18 +112,18 @@ pub async fn o_bpv4_0_0_create_authentication_type_validation(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<(), Error<OBpv400DeleteAuthenticationTypeValidationError>> {
+pub async fn delete_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<(), Error<DeleteAuthenticationTypeValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
 
@@ -150,7 +150,7 @@ pub async fn o_bpv4_0_0_delete_authentication_type_validation(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -162,13 +162,13 @@ pub async fn o_bpv4_0_0_delete_authentication_type_validation(configuration: &co
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_get_all_authentication_type_validations(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response, Error<OBpv400GetAllAuthenticationTypeValidationsError>> {
+pub async fn get_all_authentication_type_validations(configuration: &configuration::Configuration, ) -> Result<models::GetAllAuthenticationTypeValidationsPublic200Response, Error<GetAllAuthenticationTypeValidationsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/authentication-type-validations", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -193,7 +193,7 @@ pub async fn o_bpv4_0_0_get_all_authentication_type_validations(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -211,18 +211,18 @@ pub async fn o_bpv4_0_0_get_all_authentication_type_validations(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllAuthenticationTypeValidationsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllAuthenticationTypeValidationsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_get_all_authentication_type_validations_public(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response, Error<OBpv400GetAllAuthenticationTypeValidationsPublicError>> {
+pub async fn get_all_authentication_type_validations_public(configuration: &configuration::Configuration, ) -> Result<models::GetAllAuthenticationTypeValidationsPublic200Response, Error<GetAllAuthenticationTypeValidationsPublicError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/endpoints/authentication-type-validations", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -246,18 +246,18 @@ pub async fn o_bpv4_0_0_get_all_authentication_type_validations_public(configura
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllAuthenticationTypeValidationsPublicError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllAuthenticationTypeValidationsPublicError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_get_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Error<OBpv400GetAuthenticationTypeValidationError>> {
+pub async fn get_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str) -> Result<models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Error<GetAuthenticationTypeValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
 
@@ -284,7 +284,7 @@ pub async fn o_bpv4_0_0_get_authentication_type_validation(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -302,21 +302,21 @@ pub async fn o_bpv4_0_0_get_authentication_type_validation(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_update_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str, obpv400_update_authentication_type_validation_request: models::Obpv400UpdateAuthenticationTypeValidationRequest) -> Result<models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Error<OBpv400UpdateAuthenticationTypeValidationError>> {
+pub async fn update_authentication_type_validation(configuration: &configuration::Configuration, operationid: &str, update_authentication_type_validation_request: models::UpdateAuthenticationTypeValidationRequest) -> Result<models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Error<UpdateAuthenticationTypeValidationError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_operationid = operationid;
-    let p_body_obpv400_update_authentication_type_validation_request = obpv400_update_authentication_type_validation_request;
+    let p_body_update_authentication_type_validation_request = update_authentication_type_validation_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/authentication-type-validations/{operationid}", configuration.base_path, operationid=crate::apis::urlencode(p_path_operationid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -341,9 +341,9 @@ pub async fn o_bpv4_0_0_update_authentication_type_validation(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_authentication_type_validation_request);
+    req_builder = req_builder.json(&p_body_update_authentication_type_validation_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -360,12 +360,12 @@ pub async fn o_bpv4_0_0_update_authentication_type_validation(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateAuthenticationTypeValidationError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

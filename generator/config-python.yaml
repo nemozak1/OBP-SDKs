@@ -1,6 +1,6 @@
 generatorName: python
 outputDir: ../sdks/python
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   packageName: obp_python
   projectName: obp-python

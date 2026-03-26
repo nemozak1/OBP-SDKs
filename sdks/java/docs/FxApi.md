@@ -1,21 +1,21 @@
 # FxApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv220CreateFx**](FxApi.md#oBPv220CreateFx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
-| [**oBPv220CreateFxWithHttpInfo**](FxApi.md#oBPv220CreateFxWithHttpInfo) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
-| [**oBPv220GetCurrentFxRate**](FxApi.md#oBPv220GetCurrentFxRate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
-| [**oBPv220GetCurrentFxRateWithHttpInfo**](FxApi.md#oBPv220GetCurrentFxRateWithHttpInfo) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
-| [**oBPv510GetCurrenciesAtBank**](FxApi.md#oBPv510GetCurrenciesAtBank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
-| [**oBPv510GetCurrenciesAtBankWithHttpInfo**](FxApi.md#oBPv510GetCurrenciesAtBankWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**createFx**](FxApi.md#createFx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
+| [**createFxWithHttpInfo**](FxApi.md#createFxWithHttpInfo) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
+| [**getCurrenciesAtBank**](FxApi.md#getCurrenciesAtBank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**getCurrenciesAtBankWithHttpInfo**](FxApi.md#getCurrenciesAtBankWithHttpInfo) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**getCurrentFxRate**](FxApi.md#getCurrentFxRate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
+| [**getCurrentFxRateWithHttpInfo**](FxApi.md#getCurrentFxRateWithHttpInfo) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
 
 
 
-## oBPv220CreateFx
+## createFx
 
-> OBPv220CreateFxRequest oBPv220CreateFx(bankid, obPv220CreateFxRequest)
+> CreateFxRequest createFx(bankid, createFxRequest)
 
 Create Fx
 
@@ -35,7 +35,7 @@ import com.openbankproject.api.FxApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -55,12 +55,12 @@ public class Example {
 
         FxApi apiInstance = new FxApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv220CreateFxRequest obPv220CreateFxRequest = new OBPv220CreateFxRequest(); // OBPv220CreateFxRequest | Request body
+        CreateFxRequest createFxRequest = new CreateFxRequest(); // CreateFxRequest | Request body
         try {
-            OBPv220CreateFxRequest result = apiInstance.oBPv220CreateFx(bankid, obPv220CreateFxRequest);
+            CreateFxRequest result = apiInstance.createFx(bankid, createFxRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv220CreateFx");
+            System.err.println("Exception when calling FxApi#createFx");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -76,11 +76,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)| Request body | |
+| **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 
 ### Authorization
@@ -99,9 +99,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv220CreateFxWithHttpInfo
+## createFxWithHttpInfo
 
-> ApiResponse<OBPv220CreateFxRequest> oBPv220CreateFx oBPv220CreateFxWithHttpInfo(bankid, obPv220CreateFxRequest)
+> ApiResponse<CreateFxRequest> createFx createFxWithHttpInfo(bankid, createFxRequest)
 
 Create Fx
 
@@ -122,7 +122,7 @@ import com.openbankproject.api.FxApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -142,14 +142,14 @@ public class Example {
 
         FxApi apiInstance = new FxApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv220CreateFxRequest obPv220CreateFxRequest = new OBPv220CreateFxRequest(); // OBPv220CreateFxRequest | Request body
+        CreateFxRequest createFxRequest = new CreateFxRequest(); // CreateFxRequest | Request body
         try {
-            ApiResponse<OBPv220CreateFxRequest> response = apiInstance.oBPv220CreateFxWithHttpInfo(bankid, obPv220CreateFxRequest);
+            ApiResponse<CreateFxRequest> response = apiInstance.createFxWithHttpInfo(bankid, createFxRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv220CreateFx");
+            System.err.println("Exception when calling FxApi#createFx");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -165,11 +165,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)| Request body | |
+| **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)>
+ApiResponse<[**CreateFxRequest**](CreateFxRequest.md)>
 
 
 ### Authorization
@@ -189,9 +189,179 @@ ApiResponse<[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv220GetCurrentFxRate
+## getCurrenciesAtBank
 
-> OBPv220CreateFxRequest oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
+> GetCurrenciesAtBank200Response getCurrenciesAtBank(bankid)
+
+Get Currencies at a Bank
+
+&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.FxApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        FxApi apiInstance = new FxApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        try {
+            GetCurrenciesAtBank200Response result = apiInstance.getCurrenciesAtBank(bankid);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FxApi#getCurrenciesAtBank");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+## getCurrenciesAtBankWithHttpInfo
+
+> ApiResponse<GetCurrenciesAtBank200Response> getCurrenciesAtBank getCurrenciesAtBankWithHttpInfo(bankid)
+
+Get Currencies at a Bank
+
+&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+
+### Example
+
+```java
+// Import classes:
+import com.openbankproject.ApiClient;
+import com.openbankproject.ApiException;
+import com.openbankproject.ApiResponse;
+import com.openbankproject.Configuration;
+import com.openbankproject.auth.*;
+import com.openbankproject.models.*;
+import com.openbankproject.api.FxApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://127.0.0.1:8080");
+        
+        // Configure OAuth2 access token for authorization: OAuth2
+        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        // Configure API key authorization: GatewayLogin
+        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
+        GatewayLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //GatewayLogin.setApiKeyPrefix("Token");
+
+        // Configure API key authorization: DirectLogin
+        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
+        DirectLogin.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //DirectLogin.setApiKeyPrefix("Token");
+
+        FxApi apiInstance = new FxApi(defaultClient);
+        String bankid = "bankid_example"; // String | The BANKID identifier
+        try {
+            ApiResponse<GetCurrenciesAtBank200Response> response = apiInstance.getCurrenciesAtBankWithHttpInfo(bankid);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FxApi#getCurrenciesAtBank");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **bankid** | **String**| The BANKID identifier | |
+
+### Return type
+
+ApiResponse<[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)>
+
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful operation |  -  |
+| **500** | Internal Server Error |  -  |
+
+
+## getCurrentFxRate
+
+> CreateFxRequest getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -211,7 +381,7 @@ import com.openbankproject.api.FxApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -234,10 +404,10 @@ public class Example {
         String fromcurrencycode = "fromcurrencycode_example"; // String | The FROMCURRENCYCODE identifier
         String tocurrencycode = "tocurrencycode_example"; // String | The TOCURRENCYCODE identifier
         try {
-            OBPv220CreateFxRequest result = apiInstance.oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
+            CreateFxRequest result = apiInstance.getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv220GetCurrentFxRate");
+            System.err.println("Exception when calling FxApi#getCurrentFxRate");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -258,7 +428,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 
 ### Authorization
@@ -276,9 +446,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv220GetCurrentFxRateWithHttpInfo
+## getCurrentFxRateWithHttpInfo
 
-> ApiResponse<OBPv220CreateFxRequest> oBPv220GetCurrentFxRate oBPv220GetCurrentFxRateWithHttpInfo(bankid, fromcurrencycode, tocurrencycode)
+> ApiResponse<CreateFxRequest> getCurrentFxRate getCurrentFxRateWithHttpInfo(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -299,7 +469,7 @@ import com.openbankproject.api.FxApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -322,12 +492,12 @@ public class Example {
         String fromcurrencycode = "fromcurrencycode_example"; // String | The FROMCURRENCYCODE identifier
         String tocurrencycode = "tocurrencycode_example"; // String | The TOCURRENCYCODE identifier
         try {
-            ApiResponse<OBPv220CreateFxRequest> response = apiInstance.oBPv220GetCurrentFxRateWithHttpInfo(bankid, fromcurrencycode, tocurrencycode);
+            ApiResponse<CreateFxRequest> response = apiInstance.getCurrentFxRateWithHttpInfo(bankid, fromcurrencycode, tocurrencycode);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv220GetCurrentFxRate");
+            System.err.println("Exception when calling FxApi#getCurrentFxRate");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -348,177 +518,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)>
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-
-## oBPv510GetCurrenciesAtBank
-
-> OBPv510GetCurrenciesAtBank200Response oBPv510GetCurrenciesAtBank(bankid)
-
-Get Currencies at a Bank
-
-&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.FxApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        FxApi apiInstance = new FxApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        try {
-            OBPv510GetCurrenciesAtBank200Response result = apiInstance.oBPv510GetCurrenciesAtBank(bankid);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv510GetCurrenciesAtBank");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
-
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
-| **500** | Internal Server Error |  -  |
-
-## oBPv510GetCurrenciesAtBankWithHttpInfo
-
-> ApiResponse<OBPv510GetCurrenciesAtBank200Response> oBPv510GetCurrenciesAtBank oBPv510GetCurrenciesAtBankWithHttpInfo(bankid)
-
-Get Currencies at a Bank
-
-&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-
-### Example
-
-```java
-// Import classes:
-import com.openbankproject.ApiClient;
-import com.openbankproject.ApiException;
-import com.openbankproject.ApiResponse;
-import com.openbankproject.Configuration;
-import com.openbankproject.auth.*;
-import com.openbankproject.models.*;
-import com.openbankproject.api.FxApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
-        
-        // Configure OAuth2 access token for authorization: OAuth2
-        OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-        OAuth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        // Configure API key authorization: GatewayLogin
-        ApiKeyAuth GatewayLogin = (ApiKeyAuth) defaultClient.getAuthentication("GatewayLogin");
-        GatewayLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //GatewayLogin.setApiKeyPrefix("Token");
-
-        // Configure API key authorization: DirectLogin
-        ApiKeyAuth DirectLogin = (ApiKeyAuth) defaultClient.getAuthentication("DirectLogin");
-        DirectLogin.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //DirectLogin.setApiKeyPrefix("Token");
-
-        FxApi apiInstance = new FxApi(defaultClient);
-        String bankid = "bankid_example"; // String | The BANKID identifier
-        try {
-            ApiResponse<OBPv510GetCurrenciesAtBank200Response> response = apiInstance.oBPv510GetCurrenciesAtBankWithHttpInfo(bankid);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FxApi#oBPv510GetCurrenciesAtBank");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **bankid** | **String**| The BANKID identifier | |
-
-### Return type
-
-ApiResponse<[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)>
+ApiResponse<[**CreateFxRequest**](CreateFxRequest.md)>
 
 
 ### Authorization

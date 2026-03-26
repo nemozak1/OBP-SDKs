@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,13 +18,13 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600DeleteSignalChannel200Response;
-import com.openbankproject.model.OBPv600GetSignalChannelInfo200Response;
-import com.openbankproject.model.OBPv600GetSignalChannels200Response;
-import com.openbankproject.model.OBPv600GetSignalMessages200Response;
-import com.openbankproject.model.OBPv600GetSignalStats200Response;
-import com.openbankproject.model.OBPv600PublishSignalMessage200Response;
-import com.openbankproject.model.OBPv600PublishSignalMessageRequest;
+import com.openbankproject.model.DeleteSignalChannel200Response;
+import com.openbankproject.model.GetSignalChannelInfo200Response;
+import com.openbankproject.model.GetSignalChannels200Response;
+import com.openbankproject.model.GetSignalMessages200Response;
+import com.openbankproject.model.GetSignalStats200Response;
+import com.openbankproject.model.PublishSignalMessage200Response;
+import com.openbankproject.model.PublishSignalMessageRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,7 +51,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ChannelApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -172,11 +172,11 @@ public class ChannelApi {
    * Delete Signal Channel
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return OBPv600DeleteSignalChannel200Response
+   * @return DeleteSignalChannel200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600DeleteSignalChannel(channelname, null);
+  public DeleteSignalChannel200Response deleteSignalChannel(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return deleteSignalChannel(channelname, null);
   }
 
   /**
@@ -184,11 +184,11 @@ public class ChannelApi {
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600DeleteSignalChannel200Response
+   * @return DeleteSignalChannel200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600DeleteSignalChannel200Response oBPv600DeleteSignalChannel(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600DeleteSignalChannel200Response> localVarResponse = oBPv600DeleteSignalChannelWithHttpInfo(channelname, headers);
+  public DeleteSignalChannel200Response deleteSignalChannel(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    ApiResponse<DeleteSignalChannel200Response> localVarResponse = deleteSignalChannelWithHttpInfo(channelname, headers);
     return localVarResponse.getData();
   }
 
@@ -196,11 +196,11 @@ public class ChannelApi {
    * Delete Signal Channel
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return ApiResponse&lt;OBPv600DeleteSignalChannel200Response&gt;
+   * @return ApiResponse&lt;DeleteSignalChannel200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600DeleteSignalChannel200Response> oBPv600DeleteSignalChannelWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600DeleteSignalChannelWithHttpInfo(channelname, null);
+  public ApiResponse<DeleteSignalChannel200Response> deleteSignalChannelWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return deleteSignalChannelWithHttpInfo(channelname, null);
   }
 
   /**
@@ -208,11 +208,11 @@ public class ChannelApi {
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint deletes a signal channel and all its messages immediately.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;deleted&lt;/strong&gt;&lt;/a&gt;: deleted&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600DeleteSignalChannel200Response&gt;
+   * @return ApiResponse&lt;DeleteSignalChannel200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600DeleteSignalChannel200Response> oBPv600DeleteSignalChannelWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteSignalChannelRequestBuilder(channelname, headers);
+  public ApiResponse<DeleteSignalChannel200Response> deleteSignalChannelWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteSignalChannelRequestBuilder(channelname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -223,11 +223,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteSignalChannel", localVarResponse);
+          throw getApiException("deleteSignalChannel", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600DeleteSignalChannel200Response>(
+          return new ApiResponse<DeleteSignalChannel200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -237,10 +237,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600DeleteSignalChannel200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600DeleteSignalChannel200Response>() {});
+        DeleteSignalChannel200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<DeleteSignalChannel200Response>() {});
         
 
-        return new ApiResponse<OBPv600DeleteSignalChannel200Response>(
+        return new ApiResponse<DeleteSignalChannel200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -259,10 +259,10 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeleteSignalChannelRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteSignalChannelRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'channelname' is set
     if (channelname == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelname' when calling oBPv600DeleteSignalChannel");
+      throw new ApiException(400, "Missing the required parameter 'channelname' when calling deleteSignalChannel");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -290,11 +290,11 @@ public class ChannelApi {
    * Get Signal Channel Info
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return OBPv600GetSignalChannelInfo200Response
+   * @return GetSignalChannelInfo200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600GetSignalChannelInfo(channelname, null);
+  public GetSignalChannelInfo200Response getSignalChannelInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return getSignalChannelInfo(channelname, null);
   }
 
   /**
@@ -302,11 +302,11 @@ public class ChannelApi {
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetSignalChannelInfo200Response
+   * @return GetSignalChannelInfo200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalChannelInfo200Response oBPv600GetSignalChannelInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetSignalChannelInfo200Response> localVarResponse = oBPv600GetSignalChannelInfoWithHttpInfo(channelname, headers);
+  public GetSignalChannelInfo200Response getSignalChannelInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSignalChannelInfo200Response> localVarResponse = getSignalChannelInfoWithHttpInfo(channelname, headers);
     return localVarResponse.getData();
   }
 
@@ -314,11 +314,11 @@ public class ChannelApi {
    * Get Signal Channel Info
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return ApiResponse&lt;OBPv600GetSignalChannelInfo200Response&gt;
+   * @return ApiResponse&lt;GetSignalChannelInfo200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalChannelInfo200Response> oBPv600GetSignalChannelInfoWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600GetSignalChannelInfoWithHttpInfo(channelname, null);
+  public ApiResponse<GetSignalChannelInfo200Response> getSignalChannelInfoWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return getSignalChannelInfoWithHttpInfo(channelname, null);
   }
 
   /**
@@ -326,11 +326,11 @@ public class ChannelApi {
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetSignalChannelInfo200Response&gt;
+   * @return ApiResponse&lt;GetSignalChannelInfo200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalChannelInfo200Response> oBPv600GetSignalChannelInfoWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetSignalChannelInfoRequestBuilder(channelname, headers);
+  public ApiResponse<GetSignalChannelInfo200Response> getSignalChannelInfoWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSignalChannelInfoRequestBuilder(channelname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -341,11 +341,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetSignalChannelInfo", localVarResponse);
+          throw getApiException("getSignalChannelInfo", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetSignalChannelInfo200Response>(
+          return new ApiResponse<GetSignalChannelInfo200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -355,10 +355,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetSignalChannelInfo200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetSignalChannelInfo200Response>() {});
+        GetSignalChannelInfo200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSignalChannelInfo200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetSignalChannelInfo200Response>(
+        return new ApiResponse<GetSignalChannelInfo200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -377,10 +377,10 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetSignalChannelInfoRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSignalChannelInfoRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'channelname' is set
     if (channelname == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelname' when calling oBPv600GetSignalChannelInfo");
+      throw new ApiException(400, "Missing the required parameter 'channelname' when calling getSignalChannelInfo");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -407,44 +407,44 @@ public class ChannelApi {
   /**
    * List Signal Channels
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
-   * @return OBPv600GetSignalChannels200Response
+   * @return GetSignalChannels200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalChannels200Response oBPv600GetSignalChannels() throws ApiException {
-    return oBPv600GetSignalChannels(null);
+  public GetSignalChannels200Response getSignalChannels() throws ApiException {
+    return getSignalChannels(null);
   }
 
   /**
    * List Signal Channels
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetSignalChannels200Response
+   * @return GetSignalChannels200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalChannels200Response oBPv600GetSignalChannels(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetSignalChannels200Response> localVarResponse = oBPv600GetSignalChannelsWithHttpInfo(headers);
+  public GetSignalChannels200Response getSignalChannels(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSignalChannels200Response> localVarResponse = getSignalChannelsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * List Signal Channels
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetSignalChannels200Response&gt;
+   * @return ApiResponse&lt;GetSignalChannels200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalChannels200Response> oBPv600GetSignalChannelsWithHttpInfo() throws ApiException {
-    return oBPv600GetSignalChannelsWithHttpInfo(null);
+  public ApiResponse<GetSignalChannels200Response> getSignalChannelsWithHttpInfo() throws ApiException {
+    return getSignalChannelsWithHttpInfo(null);
   }
 
   /**
    * List Signal Channels
    * &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.&lt;br /&gt; Messages are ephemeral and will expire after the configured TTL (default 1 hour).&lt;/p&gt; &lt;p&gt;This endpoint lists active signal channels.&lt;br /&gt; Only channels that contain at least one broadcast message (no to_user_id) are listed.&lt;br /&gt; Private-only channels are not shown.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetSignalChannels200Response&gt;
+   * @return ApiResponse&lt;GetSignalChannels200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalChannels200Response> oBPv600GetSignalChannelsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetSignalChannelsRequestBuilder(headers);
+  public ApiResponse<GetSignalChannels200Response> getSignalChannelsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSignalChannelsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -455,11 +455,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetSignalChannels", localVarResponse);
+          throw getApiException("getSignalChannels", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetSignalChannels200Response>(
+          return new ApiResponse<GetSignalChannels200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -469,10 +469,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetSignalChannels200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetSignalChannels200Response>() {});
+        GetSignalChannels200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSignalChannels200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetSignalChannels200Response>(
+        return new ApiResponse<GetSignalChannels200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -491,7 +491,7 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetSignalChannelsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSignalChannelsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -517,11 +517,11 @@ public class ChannelApi {
    * Get Signal Messages
    * &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return OBPv600GetSignalMessages200Response
+   * @return GetSignalMessages200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600GetSignalMessages(channelname, null);
+  public GetSignalMessages200Response getSignalMessages(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return getSignalMessages(channelname, null);
   }
 
   /**
@@ -529,11 +529,11 @@ public class ChannelApi {
    * &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetSignalMessages200Response
+   * @return GetSignalMessages200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalMessages200Response oBPv600GetSignalMessages(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetSignalMessages200Response> localVarResponse = oBPv600GetSignalMessagesWithHttpInfo(channelname, headers);
+  public GetSignalMessages200Response getSignalMessages(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSignalMessages200Response> localVarResponse = getSignalMessagesWithHttpInfo(channelname, headers);
     return localVarResponse.getData();
   }
 
@@ -541,11 +541,11 @@ public class ChannelApi {
    * Get Signal Messages
    * &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @return ApiResponse&lt;OBPv600GetSignalMessages200Response&gt;
+   * @return ApiResponse&lt;GetSignalMessages200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalMessages200Response> oBPv600GetSignalMessagesWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
-    return oBPv600GetSignalMessagesWithHttpInfo(channelname, null);
+  public ApiResponse<GetSignalMessages200Response> getSignalMessagesWithHttpInfo(@javax.annotation.Nonnull String channelname) throws ApiException {
+    return getSignalMessagesWithHttpInfo(channelname, null);
   }
 
   /**
@@ -553,11 +553,11 @@ public class ChannelApi {
    * &lt;p&gt;Fetch messages from a signal channel with offset/limit pagination.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery&lt;br /&gt; and coordination, but usable by any authenticated OBP consumer.&lt;/p&gt; &lt;p&gt;Messages are returned oldest-first.&lt;/p&gt; &lt;p&gt;Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)&lt;br /&gt; and private messages addressed to you (to_user_id matches your user ID) or sent by you.&lt;/p&gt; &lt;p&gt;Use the offset parameter to poll for new messages by tracking your position.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;has_more&lt;/strong&gt;&lt;/a&gt;: has_more&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_type&lt;/strong&gt;&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_consumer_id&lt;/strong&gt;&lt;/a&gt;: sender_consumer_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;sender_user_id&lt;/strong&gt;&lt;/a&gt;: sender_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_count&lt;/strong&gt;&lt;/a&gt;: total_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetSignalMessages200Response&gt;
+   * @return ApiResponse&lt;GetSignalMessages200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalMessages200Response> oBPv600GetSignalMessagesWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetSignalMessagesRequestBuilder(channelname, headers);
+  public ApiResponse<GetSignalMessages200Response> getSignalMessagesWithHttpInfo(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSignalMessagesRequestBuilder(channelname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -568,11 +568,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetSignalMessages", localVarResponse);
+          throw getApiException("getSignalMessages", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetSignalMessages200Response>(
+          return new ApiResponse<GetSignalMessages200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -582,10 +582,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetSignalMessages200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetSignalMessages200Response>() {});
+        GetSignalMessages200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSignalMessages200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetSignalMessages200Response>(
+        return new ApiResponse<GetSignalMessages200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -604,10 +604,10 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetSignalMessagesRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSignalMessagesRequestBuilder(@javax.annotation.Nonnull String channelname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'channelname' is set
     if (channelname == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelname' when calling oBPv600GetSignalMessages");
+      throw new ApiException(400, "Missing the required parameter 'channelname' when calling getSignalMessages");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -634,44 +634,44 @@ public class ChannelApi {
   /**
    * Get Signal Channel Stats
    * &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
-   * @return OBPv600GetSignalStats200Response
+   * @return GetSignalStats200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalStats200Response oBPv600GetSignalStats() throws ApiException {
-    return oBPv600GetSignalStats(null);
+  public GetSignalStats200Response getSignalStats() throws ApiException {
+    return getSignalStats(null);
   }
 
   /**
    * Get Signal Channel Stats
    * &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetSignalStats200Response
+   * @return GetSignalStats200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSignalStats200Response oBPv600GetSignalStats(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetSignalStats200Response> localVarResponse = oBPv600GetSignalStatsWithHttpInfo(headers);
+  public GetSignalStats200Response getSignalStats(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSignalStats200Response> localVarResponse = getSignalStatsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Signal Channel Stats
    * &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetSignalStats200Response&gt;
+   * @return ApiResponse&lt;GetSignalStats200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalStats200Response> oBPv600GetSignalStatsWithHttpInfo() throws ApiException {
-    return oBPv600GetSignalStatsWithHttpInfo(null);
+  public ApiResponse<GetSignalStats200Response> getSignalStatsWithHttpInfo() throws ApiException {
+    return getSignalStatsWithHttpInfo(null);
   }
 
   /**
    * Get Signal Channel Stats
    * &lt;p&gt;Returns statistics for all signal channels, including private-only channels.&lt;/p&gt; &lt;p&gt;Unlike the List Signal Channels endpoint, this does not filter out private-only channels.&lt;br /&gt; It provides a complete view of all active channels with message counts and TTL info.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channels&lt;/strong&gt;&lt;/a&gt;: channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_count&lt;/strong&gt;&lt;/a&gt;: message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_channels&lt;/strong&gt;&lt;/a&gt;: total_channels&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;total_messages&lt;/strong&gt;&lt;/a&gt;: total_messages&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;ttl_seconds&lt;/strong&gt;&lt;/a&gt;: ttl_seconds&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetSignalStats200Response&gt;
+   * @return ApiResponse&lt;GetSignalStats200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSignalStats200Response> oBPv600GetSignalStatsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetSignalStatsRequestBuilder(headers);
+  public ApiResponse<GetSignalStats200Response> getSignalStatsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSignalStatsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -682,11 +682,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetSignalStats", localVarResponse);
+          throw getApiException("getSignalStats", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetSignalStats200Response>(
+          return new ApiResponse<GetSignalStats200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -696,10 +696,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetSignalStats200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetSignalStats200Response>() {});
+        GetSignalStats200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSignalStats200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetSignalStats200Response>(
+        return new ApiResponse<GetSignalStats200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -718,7 +718,7 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetSignalStatsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSignalStatsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -744,25 +744,25 @@ public class ChannelApi {
    * Publish Signal Message
    * &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @param obPv600PublishSignalMessageRequest Request body (required)
-   * @return OBPv600PublishSignalMessage200Response
+   * @param publishSignalMessageRequest Request body (required)
+   * @return PublishSignalMessage200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest) throws ApiException {
-    return oBPv600PublishSignalMessage(channelname, obPv600PublishSignalMessageRequest, null);
+  public PublishSignalMessage200Response publishSignalMessage(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull PublishSignalMessageRequest publishSignalMessageRequest) throws ApiException {
+    return publishSignalMessage(channelname, publishSignalMessageRequest, null);
   }
 
   /**
    * Publish Signal Message
    * &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @param obPv600PublishSignalMessageRequest Request body (required)
+   * @param publishSignalMessageRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600PublishSignalMessage200Response
+   * @return PublishSignalMessage200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600PublishSignalMessage200Response oBPv600PublishSignalMessage(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600PublishSignalMessage200Response> localVarResponse = oBPv600PublishSignalMessageWithHttpInfo(channelname, obPv600PublishSignalMessageRequest, headers);
+  public PublishSignalMessage200Response publishSignalMessage(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull PublishSignalMessageRequest publishSignalMessageRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<PublishSignalMessage200Response> localVarResponse = publishSignalMessageWithHttpInfo(channelname, publishSignalMessageRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -770,25 +770,25 @@ public class ChannelApi {
    * Publish Signal Message
    * &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @param obPv600PublishSignalMessageRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600PublishSignalMessage200Response&gt;
+   * @param publishSignalMessageRequest Request body (required)
+   * @return ApiResponse&lt;PublishSignalMessage200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600PublishSignalMessage200Response> oBPv600PublishSignalMessageWithHttpInfo(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest) throws ApiException {
-    return oBPv600PublishSignalMessageWithHttpInfo(channelname, obPv600PublishSignalMessageRequest, null);
+  public ApiResponse<PublishSignalMessage200Response> publishSignalMessageWithHttpInfo(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull PublishSignalMessageRequest publishSignalMessageRequest) throws ApiException {
+    return publishSignalMessageWithHttpInfo(channelname, publishSignalMessageRequest, null);
   }
 
   /**
    * Publish Signal Message
    * &lt;p&gt;Publish a message to a signal channel.&lt;/p&gt; &lt;p&gt;Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between&lt;br /&gt; AI agents and other OBP consumers. Messages are not persisted to a database.&lt;/p&gt; &lt;p&gt;Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).&lt;br /&gt; Messages are capped at a configurable maximum per channel (default 1000).&lt;/p&gt; &lt;p&gt;The payload field accepts any valid JSON content.&lt;/p&gt; &lt;p&gt;Set to_user_id to send a private message visible only to the sender and recipient.&lt;br /&gt; Leave to_user_id empty for a broadcast message visible to all channel readers.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CHANNEL_NAME&lt;/a&gt;: CHANNEL_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#payload\&quot;&gt;&lt;strong&gt;payload&lt;/strong&gt;&lt;/a&gt;: payload&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;message_type&lt;/a&gt;: message_type&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;to_user_id&lt;/a&gt;: to_user_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_message_count&lt;/strong&gt;&lt;/a&gt;: channel_message_count&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;channel_name&lt;/strong&gt;&lt;/a&gt;: channel_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;message_id&lt;/strong&gt;&lt;/a&gt;: message_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;timestamp&lt;/strong&gt;&lt;/a&gt;: timestamp&lt;/p&gt; 
    * @param channelname The CHANNELNAME identifier (required)
-   * @param obPv600PublishSignalMessageRequest Request body (required)
+   * @param publishSignalMessageRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600PublishSignalMessage200Response&gt;
+   * @return ApiResponse&lt;PublishSignalMessage200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600PublishSignalMessage200Response> oBPv600PublishSignalMessageWithHttpInfo(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600PublishSignalMessageRequestBuilder(channelname, obPv600PublishSignalMessageRequest, headers);
+  public ApiResponse<PublishSignalMessage200Response> publishSignalMessageWithHttpInfo(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull PublishSignalMessageRequest publishSignalMessageRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = publishSignalMessageRequestBuilder(channelname, publishSignalMessageRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -799,11 +799,11 @@ public class ChannelApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600PublishSignalMessage", localVarResponse);
+          throw getApiException("publishSignalMessage", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600PublishSignalMessage200Response>(
+          return new ApiResponse<PublishSignalMessage200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -813,10 +813,10 @@ public class ChannelApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600PublishSignalMessage200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600PublishSignalMessage200Response>() {});
+        PublishSignalMessage200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<PublishSignalMessage200Response>() {});
         
 
-        return new ApiResponse<OBPv600PublishSignalMessage200Response>(
+        return new ApiResponse<PublishSignalMessage200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -835,14 +835,14 @@ public class ChannelApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600PublishSignalMessageRequestBuilder(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull OBPv600PublishSignalMessageRequest obPv600PublishSignalMessageRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder publishSignalMessageRequestBuilder(@javax.annotation.Nonnull String channelname, @javax.annotation.Nonnull PublishSignalMessageRequest publishSignalMessageRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'channelname' is set
     if (channelname == null) {
-      throw new ApiException(400, "Missing the required parameter 'channelname' when calling oBPv600PublishSignalMessage");
+      throw new ApiException(400, "Missing the required parameter 'channelname' when calling publishSignalMessage");
     }
-    // verify the required parameter 'obPv600PublishSignalMessageRequest' is set
-    if (obPv600PublishSignalMessageRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600PublishSignalMessageRequest' when calling oBPv600PublishSignalMessage");
+    // verify the required parameter 'publishSignalMessageRequest' is set
+    if (publishSignalMessageRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'publishSignalMessageRequest' when calling publishSignalMessage");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -856,7 +856,7 @@ public class ChannelApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600PublishSignalMessageRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(publishSignalMessageRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

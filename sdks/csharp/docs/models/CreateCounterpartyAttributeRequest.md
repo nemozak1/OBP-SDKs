@@ -1,0 +1,13 @@
+# OpenBankProject.Model.CreateCounterpartyAttributeRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AttributeType** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**IsActive** | **bool** |  | [optional] 
+**Value** | **string** |  | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

@@ -1,25 +1,25 @@
 # DynamicMessageDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**oBPv400CreateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**oBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**oBPv400DeleteDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**oBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**oBPv400GetAllDynamicMessageDocs**](DynamicMessageDocApi.md#obpv400getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**oBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**oBPv400GetDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**oBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**oBPv400UpdateDynamicMessageDoc**](DynamicMessageDocApi.md#obpv400updatedynamicmessagedocoperation) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**createBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#createbankleveldynamicmessagedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**createDynamicMessageDoc**](DynamicMessageDocApi.md#createdynamicmessagedoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**deleteBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#deletebankleveldynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**deleteDynamicMessageDoc**](DynamicMessageDocApi.md#deletedynamicmessagedoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**getAllBankLevelDynamicMessageDocs**](DynamicMessageDocApi.md#getallbankleveldynamicmessagedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**getAllDynamicMessageDocs**](DynamicMessageDocApi.md#getalldynamicmessagedocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**getBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#getbankleveldynamicmessagedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**getDynamicMessageDoc**](DynamicMessageDocApi.md#getdynamicmessagedoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**updateBankLevelDynamicMessageDoc**](DynamicMessageDocApi.md#updatebankleveldynamicmessagedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**updateDynamicMessageDoc**](DynamicMessageDocApi.md#updatedynamicmessagedocoperation) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
 
 
-## oBPv400CreateBankLevelDynamicMessageDoc
+## createBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(bankid, oBPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest)
 
 Create Bank Level Dynamic Message Doc
 
@@ -32,7 +32,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400CreateBankLevelDynamicMessageDocRequest } from 'obp-typescript';
+import type { CreateBankLevelDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -49,12 +49,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400UpdateDynamicMessageDocRequest | Request body
-    oBPv400UpdateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
-  } satisfies OBPv400CreateBankLevelDynamicMessageDocRequest;
+    // UpdateDynamicMessageDocRequest | Request body
+    updateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
+  } satisfies CreateBankLevelDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400CreateBankLevelDynamicMessageDoc(body);
+    const data = await api.createBankLevelDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -71,11 +71,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateDynamicMessageDocRequest** | [OBPv400UpdateDynamicMessageDocRequest](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | |
+| **updateDynamicMessageDocRequest** | [UpdateDynamicMessageDocRequest](UpdateDynamicMessageDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateDynamicMessageDoc
+## createDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(oBPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response createDynamicMessageDoc(updateDynamicMessageDocRequest)
 
 Create Dynamic Message Doc
 
@@ -112,7 +112,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400CreateDynamicMessageDocRequest } from 'obp-typescript';
+import type { CreateDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -127,12 +127,12 @@ async function example() {
   const api = new DynamicMessageDocApi(config);
 
   const body = {
-    // OBPv400UpdateDynamicMessageDocRequest | Request body
-    oBPv400UpdateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
-  } satisfies OBPv400CreateDynamicMessageDocRequest;
+    // UpdateDynamicMessageDocRequest | Request body
+    updateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
+  } satisfies CreateDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400CreateDynamicMessageDoc(body);
+    const data = await api.createDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -148,11 +148,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400UpdateDynamicMessageDocRequest** | [OBPv400UpdateDynamicMessageDocRequest](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | |
+| **updateDynamicMessageDocRequest** | [UpdateDynamicMessageDocRequest](UpdateDynamicMessageDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -173,9 +173,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteBankLevelDynamicMessageDoc
+## deleteBankLevelDynamicMessageDoc
 
-> oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+> deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Delete Bank Level Dynamic Message Doc
 
@@ -188,7 +188,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteBankLevelDynamicMessageDocRequest } from 'obp-typescript';
+import type { DeleteBankLevelDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -207,10 +207,10 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-  } satisfies OBPv400DeleteBankLevelDynamicMessageDocRequest;
+  } satisfies DeleteBankLevelDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400DeleteBankLevelDynamicMessageDoc(body);
+    const data = await api.deleteBankLevelDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -253,9 +253,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteDynamicMessageDoc
+## deleteDynamicMessageDoc
 
-> oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid)
+> deleteDynamicMessageDoc(dynamicmessagedocid)
 
 Delete Dynamic Message Doc
 
@@ -268,7 +268,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteDynamicMessageDocRequest } from 'obp-typescript';
+import type { DeleteDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -285,10 +285,10 @@ async function example() {
   const body = {
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-  } satisfies OBPv400DeleteDynamicMessageDocRequest;
+  } satisfies DeleteDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400DeleteDynamicMessageDoc(body);
+    const data = await api.deleteDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -329,9 +329,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllBankLevelDynamicMessageDocs
+## getAllBankLevelDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(bankid)
+> GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(bankid)
 
 Get all Bank Level Dynamic Message Docs
 
@@ -344,7 +344,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllBankLevelDynamicMessageDocsRequest } from 'obp-typescript';
+import type { GetAllBankLevelDynamicMessageDocsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -361,10 +361,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetAllBankLevelDynamicMessageDocsRequest;
+  } satisfies GetAllBankLevelDynamicMessageDocsRequest;
 
   try {
-    const data = await api.oBPv400GetAllBankLevelDynamicMessageDocs(body);
+    const data = await api.getAllBankLevelDynamicMessageDocs(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -384,7 +384,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -406,9 +406,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllDynamicMessageDocs
+## getAllDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs()
+> GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs()
 
 Get all Dynamic Message Docs
 
@@ -421,7 +421,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllDynamicMessageDocsRequest } from 'obp-typescript';
+import type { GetAllDynamicMessageDocsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -436,7 +436,7 @@ async function example() {
   const api = new DynamicMessageDocApi(config);
 
   try {
-    const data = await api.oBPv400GetAllDynamicMessageDocs();
+    const data = await api.getAllDynamicMessageDocs();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -453,7 +453,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -474,9 +474,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankLevelDynamicMessageDoc
+## getBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
+> GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid)
 
 Get Bank Level Dynamic Message Doc
 
@@ -489,7 +489,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankLevelDynamicMessageDocRequest } from 'obp-typescript';
+import type { GetBankLevelDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -508,10 +508,10 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-  } satisfies OBPv400GetBankLevelDynamicMessageDocRequest;
+  } satisfies GetBankLevelDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400GetBankLevelDynamicMessageDoc(body);
+    const data = await api.getBankLevelDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -532,7 +532,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -554,9 +554,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetDynamicMessageDoc
+## getDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(dynamicmessagedocid)
+> GetDynamicMessageDoc200Response getDynamicMessageDoc(dynamicmessagedocid)
 
 Get Dynamic Message Doc
 
@@ -569,7 +569,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetDynamicMessageDocRequest } from 'obp-typescript';
+import type { GetDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -586,10 +586,10 @@ async function example() {
   const body = {
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-  } satisfies OBPv400GetDynamicMessageDocRequest;
+  } satisfies GetDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400GetDynamicMessageDoc(body);
+    const data = await api.getDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -609,7 +609,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -630,9 +630,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateBankLevelDynamicMessageDoc
+## updateBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Bank Level Dynamic Message Doc
 
@@ -645,7 +645,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateBankLevelDynamicMessageDocRequest } from 'obp-typescript';
+import type { UpdateBankLevelDynamicMessageDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -664,12 +664,12 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-    // OBPv400UpdateDynamicMessageDocRequest | Request body
-    oBPv400UpdateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
-  } satisfies OBPv400UpdateBankLevelDynamicMessageDocRequest;
+    // UpdateDynamicMessageDocRequest | Request body
+    updateDynamicMessageDocRequest: {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}},
+  } satisfies UpdateBankLevelDynamicMessageDocRequest;
 
   try {
-    const data = await api.oBPv400UpdateBankLevelDynamicMessageDoc(body);
+    const data = await api.updateBankLevelDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -687,11 +687,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **dynamicmessagedocid** | `string` | The DYNAMICMESSAGEDOCID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateDynamicMessageDocRequest** | [OBPv400UpdateDynamicMessageDocRequest](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | |
+| **updateDynamicMessageDocRequest** | [UpdateDynamicMessageDocRequest](UpdateDynamicMessageDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -713,9 +713,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateDynamicMessageDoc
+## updateDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, oBPv400UpdateDynamicMessageDocRequest)
+> GetDynamicMessageDoc200Response updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest)
 
 Update Dynamic Message Doc
 
@@ -728,7 +728,7 @@ import {
   Configuration,
   DynamicMessageDocApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateDynamicMessageDocOperationRequest } from 'obp-typescript';
+import type { UpdateDynamicMessageDocOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -745,12 +745,12 @@ async function example() {
   const body = {
     // string | The DYNAMICMESSAGEDOCID identifier
     dynamicmessagedocid: dynamicmessagedocid_example,
-    // OBPv400UpdateDynamicMessageDocRequest | Request body
-    oBPv400UpdateDynamicMessageDocRequest: {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}},
-  } satisfies OBPv400UpdateDynamicMessageDocOperationRequest;
+    // UpdateDynamicMessageDocRequest | Request body
+    updateDynamicMessageDocRequest: {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}},
+  } satisfies UpdateDynamicMessageDocOperationRequest;
 
   try {
-    const data = await api.oBPv400UpdateDynamicMessageDoc(body);
+    const data = await api.updateDynamicMessageDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -767,11 +767,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicmessagedocid** | `string` | The DYNAMICMESSAGEDOCID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateDynamicMessageDocRequest** | [OBPv400UpdateDynamicMessageDocRequest](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | |
+| **updateDynamicMessageDocRequest** | [UpdateDynamicMessageDocRequest](UpdateDynamicMessageDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

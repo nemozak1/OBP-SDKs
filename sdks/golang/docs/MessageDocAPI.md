@@ -1,18 +1,18 @@
 # \MessageDocAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv220GetMessageDocs**](MessageDocAPI.md#OBPv220GetMessageDocs) | **Get** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-[**OBPv310GetMessageDocsSwagger**](MessageDocAPI.md#OBPv310GetMessageDocsSwagger) | **Get** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-[**OBPv600GetMessageDocsJsonSchema**](MessageDocAPI.md#OBPv600GetMessageDocsJsonSchema) | **Get** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**GetMessageDocs**](MessageDocAPI.md#GetMessageDocs) | **Get** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+[**GetMessageDocsJsonSchema**](MessageDocAPI.md#GetMessageDocsJsonSchema) | **Get** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**GetMessageDocsSwagger**](MessageDocAPI.md#GetMessageDocsSwagger) | **Get** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
 
 
 
-## OBPv220GetMessageDocs
+## GetMessageDocs
 
-> OBPv220GetMessageDocs200Response OBPv220GetMessageDocs(ctx, connector).Execute()
+> GetMessageDocs200Response GetMessageDocs(ctx, connector).Execute()
 
 Get Message Docs
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MessageDocAPI.OBPv220GetMessageDocs(context.Background(), connector).Execute()
+	resp, r, err := apiClient.MessageDocAPI.GetMessageDocs(context.Background(), connector).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.OBPv220GetMessageDocs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.GetMessageDocs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv220GetMessageDocs`: OBPv220GetMessageDocs200Response
-	fmt.Fprintf(os.Stdout, "Response from `MessageDocAPI.OBPv220GetMessageDocs`: %v\n", resp)
+	// response from `GetMessageDocs`: GetMessageDocs200Response
+	fmt.Fprintf(os.Stdout, "Response from `MessageDocAPI.GetMessageDocs`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv220GetMessageDocsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMessageDocsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220GetMessageDocs200Response**](OBPv220GetMessageDocs200Response.md)
+[**GetMessageDocs200Response**](GetMessageDocs200Response.md)
 
 ### Authorization
 
@@ -80,11 +80,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv310GetMessageDocsSwagger
+## GetMessageDocsJsonSchema
 
-> OBPv310GetMessageDocsSwagger(ctx, connector).Execute()
+> GetMessageDocsJsonSchema(ctx, connector).Execute()
 
-Get Message Docs Swagger
+Get Message Docs as JSON Schema
 
 
 
@@ -105,9 +105,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.MessageDocAPI.OBPv310GetMessageDocsSwagger(context.Background(), connector).Execute()
+	r, err := apiClient.MessageDocAPI.GetMessageDocsJsonSchema(context.Background(), connector).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.OBPv310GetMessageDocsSwagger``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.GetMessageDocsJsonSchema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310GetMessageDocsSwaggerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMessageDocsJsonSchemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,11 +148,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv600GetMessageDocsJsonSchema
+## GetMessageDocsSwagger
 
-> OBPv600GetMessageDocsJsonSchema(ctx, connector).Execute()
+> GetMessageDocsSwagger(ctx, connector).Execute()
 
-Get Message Docs as JSON Schema
+Get Message Docs Swagger
 
 
 
@@ -173,9 +173,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.MessageDocAPI.OBPv600GetMessageDocsJsonSchema(context.Background(), connector).Execute()
+	r, err := apiClient.MessageDocAPI.GetMessageDocsSwagger(context.Background(), connector).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.OBPv600GetMessageDocsJsonSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MessageDocAPI.GetMessageDocsSwagger``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetMessageDocsJsonSchemaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMessageDocsSwaggerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

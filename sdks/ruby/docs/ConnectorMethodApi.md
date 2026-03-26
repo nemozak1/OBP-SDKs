@@ -1,19 +1,19 @@
 # OpenBankProject::ConnectorMethodApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_connector_method**](ConnectorMethodApi.md#o_bpv4_0_0_create_connector_method) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**o_bpv4_0_0_get_all_connector_methods**](ConnectorMethodApi.md#o_bpv4_0_0_get_all_connector_methods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**o_bpv4_0_0_get_connector_method**](ConnectorMethodApi.md#o_bpv4_0_0_get_connector_method) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**o_bpv4_0_0_update_connector_method**](ConnectorMethodApi.md#o_bpv4_0_0_update_connector_method) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**o_bpv6_0_0_get_connector_method_names**](ConnectorMethodApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**create_connector_method**](ConnectorMethodApi.md#create_connector_method) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**get_all_connector_methods**](ConnectorMethodApi.md#get_all_connector_methods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**get_connector_method**](ConnectorMethodApi.md#get_connector_method) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**get_connector_method_names**](ConnectorMethodApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**update_connector_method**](ConnectorMethodApi.md#update_connector_method) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
 
 
-## o_bpv4_0_0_create_connector_method
+## create_connector_method
 
-> <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> o_bpv4_0_0_create_connector_method(obpv400_create_connector_method_request)
+> <GetAllConnectorMethods200ResponseConnectorsMethodsInner> create_connector_method(create_connector_method_request)
 
 Create Connector Method
 
@@ -35,38 +35,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ConnectorMethodApi.new
-obpv400_create_connector_method_request = OpenBankProject::OBPv400CreateConnectorMethodRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateConnectorMethodRequestProperties.new({method_name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), programming_lang: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), method_body: })}) # OBPv400CreateConnectorMethodRequest | Request body
+create_connector_method_request = OpenBankProject::CreateConnectorMethodRequest.new # CreateConnectorMethodRequest | Request body
 
 begin
   # Create Connector Method
-  result = api_instance.o_bpv4_0_0_create_connector_method(obpv400_create_connector_method_request)
+  result = api_instance.create_connector_method(create_connector_method_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_create_connector_method: #{e}"
+  puts "Error when calling ConnectorMethodApi->create_connector_method: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_connector_method_with_http_info variant
+#### Using the create_connector_method_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>, Integer, Hash)> o_bpv4_0_0_create_connector_method_with_http_info(obpv400_create_connector_method_request)
+> <Array(<GetAllConnectorMethods200ResponseConnectorsMethodsInner>, Integer, Hash)> create_connector_method_with_http_info(create_connector_method_request)
 
 ```ruby
 begin
   # Create Connector Method
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_connector_method_with_http_info(obpv400_create_connector_method_request)
+  data, status_code, headers = api_instance.create_connector_method_with_http_info(create_connector_method_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>
+  p data # => <GetAllConnectorMethods200ResponseConnectorsMethodsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_create_connector_method_with_http_info: #{e}"
+  puts "Error when calling ConnectorMethodApi->create_connector_method_with_http_info: #{e}"
 end
 ```
 
@@ -74,11 +74,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_create_connector_method_request** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md) | Request body |  |
+| **create_connector_method_request** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -90,9 +90,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_connector_methods
+## get_all_connector_methods
 
-> <OBPv400GetAllConnectorMethods200Response> o_bpv4_0_0_get_all_connector_methods
+> <GetAllConnectorMethods200Response> get_all_connector_methods
 
 Get all Connector Methods
 
@@ -114,37 +114,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ConnectorMethodApi.new
 
 begin
   # Get all Connector Methods
-  result = api_instance.o_bpv4_0_0_get_all_connector_methods
+  result = api_instance.get_all_connector_methods
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_get_all_connector_methods: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_all_connector_methods: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_connector_methods_with_http_info variant
+#### Using the get_all_connector_methods_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllConnectorMethods200Response>, Integer, Hash)> o_bpv4_0_0_get_all_connector_methods_with_http_info
+> <Array(<GetAllConnectorMethods200Response>, Integer, Hash)> get_all_connector_methods_with_http_info
 
 ```ruby
 begin
   # Get all Connector Methods
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_connector_methods_with_http_info
+  data, status_code, headers = api_instance.get_all_connector_methods_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllConnectorMethods200Response>
+  p data # => <GetAllConnectorMethods200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_get_all_connector_methods_with_http_info: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_all_connector_methods_with_http_info: #{e}"
 end
 ```
 
@@ -154,7 +154,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_connector_method
+## get_connector_method
 
-> <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> o_bpv4_0_0_get_connector_method(connectormethodid)
+> <GetAllConnectorMethods200ResponseConnectorsMethodsInner> get_connector_method(connectormethodid)
 
 Get Connector Method by Id
 
@@ -190,9 +190,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ConnectorMethodApi.new
@@ -200,28 +200,28 @@ connectormethodid = 'connectormethodid_example' # String | The CONNECTORMETHODID
 
 begin
   # Get Connector Method by Id
-  result = api_instance.o_bpv4_0_0_get_connector_method(connectormethodid)
+  result = api_instance.get_connector_method(connectormethodid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_get_connector_method: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_connector_method: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_connector_method_with_http_info variant
+#### Using the get_connector_method_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>, Integer, Hash)> o_bpv4_0_0_get_connector_method_with_http_info(connectormethodid)
+> <Array(<GetAllConnectorMethods200ResponseConnectorsMethodsInner>, Integer, Hash)> get_connector_method_with_http_info(connectormethodid)
 
 ```ruby
 begin
   # Get Connector Method by Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_connector_method_with_http_info(connectormethodid)
+  data, status_code, headers = api_instance.get_connector_method_with_http_info(connectormethodid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>
+  p data # => <GetAllConnectorMethods200ResponseConnectorsMethodsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_get_connector_method_with_http_info: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_connector_method_with_http_info: #{e}"
 end
 ```
 
@@ -233,7 +233,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -245,90 +245,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_connector_method
+## get_connector_method_names
 
-> <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> o_bpv4_0_0_update_connector_method(connectormethodid, obpv400_update_connector_method_request)
-
-Update Connector Method
-
-<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::ConnectorMethodApi.new
-connectormethodid = 'connectormethodid_example' # String | The CONNECTORMETHODID identifier
-obpv400_update_connector_method_request = OpenBankProject::OBPv400UpdateConnectorMethodRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateConnectorMethodRequestProperties.new({programming_lang: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), method_body: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv400UpdateConnectorMethodRequest | Request body
-
-begin
-  # Update Connector Method
-  result = api_instance.o_bpv4_0_0_update_connector_method(connectormethodid, obpv400_update_connector_method_request)
-  p result
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_update_connector_method: #{e}"
-end
-```
-
-#### Using the o_bpv4_0_0_update_connector_method_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>, Integer, Hash)> o_bpv4_0_0_update_connector_method_with_http_info(connectormethodid, obpv400_update_connector_method_request)
-
-```ruby
-begin
-  # Update Connector Method
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_connector_method_with_http_info(connectormethodid, obpv400_update_connector_method_request)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv4_0_0_update_connector_method_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **connectormethodid** | **String** | The CONNECTORMETHODID identifier |  |
-| **obpv400_update_connector_method_request** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md) | Request body |  |
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## o_bpv6_0_0_get_connector_method_names
-
-> <OBPv600GetConnectorMethodNames200Response> o_bpv6_0_0_get_connector_method_names
+> <GetConnectorMethodNames200Response> get_connector_method_names
 
 Get Connector Method Names
 
@@ -350,37 +269,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ConnectorMethodApi.new
 
 begin
   # Get Connector Method Names
-  result = api_instance.o_bpv6_0_0_get_connector_method_names
+  result = api_instance.get_connector_method_names
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv6_0_0_get_connector_method_names: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_connector_method_names: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_connector_method_names_with_http_info variant
+#### Using the get_connector_method_names_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetConnectorMethodNames200Response>, Integer, Hash)> o_bpv6_0_0_get_connector_method_names_with_http_info
+> <Array(<GetConnectorMethodNames200Response>, Integer, Hash)> get_connector_method_names_with_http_info
 
 ```ruby
 begin
   # Get Connector Method Names
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_connector_method_names_with_http_info
+  data, status_code, headers = api_instance.get_connector_method_names_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetConnectorMethodNames200Response>
+  p data # => <GetConnectorMethodNames200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConnectorMethodApi->o_bpv6_0_0_get_connector_method_names_with_http_info: #{e}"
+  puts "Error when calling ConnectorMethodApi->get_connector_method_names_with_http_info: #{e}"
 end
 ```
 
@@ -390,7 +309,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -399,5 +318,86 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## update_connector_method
+
+> <GetAllConnectorMethods200ResponseConnectorsMethodsInner> update_connector_method(connectormethodid, update_connector_method_request)
+
+Update Connector Method
+
+<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::ConnectorMethodApi.new
+connectormethodid = 'connectormethodid_example' # String | The CONNECTORMETHODID identifier
+update_connector_method_request = OpenBankProject::UpdateConnectorMethodRequest.new # UpdateConnectorMethodRequest | Request body
+
+begin
+  # Update Connector Method
+  result = api_instance.update_connector_method(connectormethodid, update_connector_method_request)
+  p result
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling ConnectorMethodApi->update_connector_method: #{e}"
+end
+```
+
+#### Using the update_connector_method_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetAllConnectorMethods200ResponseConnectorsMethodsInner>, Integer, Hash)> update_connector_method_with_http_info(connectormethodid, update_connector_method_request)
+
+```ruby
+begin
+  # Update Connector Method
+  data, status_code, headers = api_instance.update_connector_method_with_http_info(connectormethodid, update_connector_method_request)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetAllConnectorMethods200ResponseConnectorsMethodsInner>
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling ConnectorMethodApi->update_connector_method_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **connectormethodid** | **String** | The CONNECTORMETHODID identifier |  |
+| **update_connector_method_request** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md) | Request body |  |
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

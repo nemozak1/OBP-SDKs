@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_standing_order200_response.dart';
-import 'package:obp_dart/src/model/obpv400_create_standing_order_request.dart';
+import 'package:obp_dart/src/model/create_standing_order200_response.dart';
+import 'package:obp_dart/src/model/create_standing_order_request.dart';
 
 class StandingOrderApi {
 
@@ -27,7 +27,7 @@ class StandingOrderApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
-  /// * [oBPv400CreateStandingOrderRequest] - Request body
+  /// * [createStandingOrderRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,13 +35,13 @@ class StandingOrderApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400CreateStandingOrder200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateStandingOrder200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400CreateStandingOrder200Response>> oBPv400CreateStandingOrder({ 
+  Future<Response<CreateStandingOrder200Response>> createStandingOrder({ 
     required String bankid,
     required String accountid,
     required String viewid,
-    required OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest,
+    required CreateStandingOrderRequest createStandingOrderRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,7 +68,7 @@ class StandingOrderApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -81,8 +81,8 @@ class StandingOrderApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateStandingOrderRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateStandingOrderRequest, specifiedType: _type);
+      const _type = FullType(CreateStandingOrderRequest);
+      _bodyData = _serializers.serialize(createStandingOrderRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -105,14 +105,14 @@ class StandingOrderApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400CreateStandingOrder200Response? _responseData;
+    CreateStandingOrder200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400CreateStandingOrder200Response),
-      ) as OBPv400CreateStandingOrder200Response;
+        specifiedType: const FullType(CreateStandingOrder200Response),
+      ) as CreateStandingOrder200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -124,7 +124,7 @@ class StandingOrderApi {
       );
     }
 
-    return Response<OBPv400CreateStandingOrder200Response>(
+    return Response<CreateStandingOrder200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -142,7 +142,7 @@ class StandingOrderApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
-  /// * [oBPv400CreateStandingOrderRequest] - Request body
+  /// * [createStandingOrderRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -150,12 +150,12 @@ class StandingOrderApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400CreateStandingOrder200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateStandingOrder200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400CreateStandingOrder200Response>> oBPv400CreateStandingOrderManagement({ 
+  Future<Response<CreateStandingOrder200Response>> createStandingOrderManagement({ 
     required String bankid,
     required String accountid,
-    required OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest,
+    required CreateStandingOrderRequest createStandingOrderRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -182,7 +182,7 @@ class StandingOrderApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -195,8 +195,8 @@ class StandingOrderApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateStandingOrderRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateStandingOrderRequest, specifiedType: _type);
+      const _type = FullType(CreateStandingOrderRequest);
+      _bodyData = _serializers.serialize(createStandingOrderRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -219,14 +219,14 @@ class StandingOrderApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400CreateStandingOrder200Response? _responseData;
+    CreateStandingOrder200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400CreateStandingOrder200Response),
-      ) as OBPv400CreateStandingOrder200Response;
+        specifiedType: const FullType(CreateStandingOrder200Response),
+      ) as CreateStandingOrder200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -238,7 +238,7 @@ class StandingOrderApi {
       );
     }
 
-    return Response<OBPv400CreateStandingOrder200Response>(
+    return Response<CreateStandingOrder200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

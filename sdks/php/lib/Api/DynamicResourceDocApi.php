@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,37 +75,37 @@ class DynamicResourceDocApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400BuildDynamicEndpointTemplate' => [
+        'buildDynamicEndpointTemplate' => [
             'application/json',
         ],
-        'oBPv400CreateBankLevelDynamicResourceDoc' => [
+        'createBankLevelDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400CreateDynamicResourceDoc' => [
+        'createDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400DeleteBankLevelDynamicResourceDoc' => [
+        'deleteBankLevelDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400DeleteDynamicResourceDoc' => [
+        'deleteDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400GetAllBankLevelDynamicResourceDocs' => [
+        'getAllBankLevelDynamicResourceDocs' => [
             'application/json',
         ],
-        'oBPv400GetAllDynamicResourceDocs' => [
+        'getAllDynamicResourceDocs' => [
             'application/json',
         ],
-        'oBPv400GetBankLevelDynamicResourceDoc' => [
+        'getBankLevelDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400GetDynamicResourceDoc' => [
+        'getDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400UpdateBankLevelDynamicResourceDoc' => [
+        'updateBankLevelDynamicResourceDoc' => [
             'application/json',
         ],
-        'oBPv400UpdateDynamicResourceDoc' => [
+        'updateDynamicResourceDoc' => [
             'application/json',
         ],
     ];
@@ -157,38 +157,38 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400BuildDynamicEndpointTemplate
+     * Operation buildDynamicEndpointTemplate
      *
      * Create Dynamic Resource Doc endpoint code
      *
-     * @param  \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest $obpv400_build_dynamic_endpoint_template_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400BuildDynamicEndpointTemplate'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest $build_dynamic_endpoint_template_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['buildDynamicEndpointTemplate'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response
+     * @return \OpenBankProject\Model\BuildDynamicEndpointTemplate200Response
      */
-    public function oBPv400BuildDynamicEndpointTemplate($obpv400_build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['oBPv400BuildDynamicEndpointTemplate'][0])
+    public function buildDynamicEndpointTemplate($build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['buildDynamicEndpointTemplate'][0])
     {
-        list($response) = $this->oBPv400BuildDynamicEndpointTemplateWithHttpInfo($obpv400_build_dynamic_endpoint_template_request, $contentType);
+        list($response) = $this->buildDynamicEndpointTemplateWithHttpInfo($build_dynamic_endpoint_template_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400BuildDynamicEndpointTemplateWithHttpInfo
+     * Operation buildDynamicEndpointTemplateWithHttpInfo
      *
      * Create Dynamic Resource Doc endpoint code
      *
-     * @param  \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest $obpv400_build_dynamic_endpoint_template_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400BuildDynamicEndpointTemplate'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest $build_dynamic_endpoint_template_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['buildDynamicEndpointTemplate'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\BuildDynamicEndpointTemplate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400BuildDynamicEndpointTemplateWithHttpInfo($obpv400_build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['oBPv400BuildDynamicEndpointTemplate'][0])
+    public function buildDynamicEndpointTemplateWithHttpInfo($build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['buildDynamicEndpointTemplate'][0])
     {
-        $request = $this->oBPv400BuildDynamicEndpointTemplateRequest($obpv400_build_dynamic_endpoint_template_request, $contentType);
+        $request = $this->buildDynamicEndpointTemplateRequest($build_dynamic_endpoint_template_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -216,7 +216,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response',
+                        '\OpenBankProject\Model\BuildDynamicEndpointTemplate200Response',
                         $request,
                         $response,
                     );
@@ -238,7 +238,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response',
+                '\OpenBankProject\Model\BuildDynamicEndpointTemplate200Response',
                 $request,
                 $response,
             );
@@ -247,7 +247,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response',
+                        '\OpenBankProject\Model\BuildDynamicEndpointTemplate200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -260,19 +260,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400BuildDynamicEndpointTemplateAsync
+     * Operation buildDynamicEndpointTemplateAsync
      *
      * Create Dynamic Resource Doc endpoint code
      *
-     * @param  \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest $obpv400_build_dynamic_endpoint_template_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400BuildDynamicEndpointTemplate'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest $build_dynamic_endpoint_template_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['buildDynamicEndpointTemplate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400BuildDynamicEndpointTemplateAsync($obpv400_build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['oBPv400BuildDynamicEndpointTemplate'][0])
+    public function buildDynamicEndpointTemplateAsync($build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['buildDynamicEndpointTemplate'][0])
     {
-        return $this->oBPv400BuildDynamicEndpointTemplateAsyncWithHttpInfo($obpv400_build_dynamic_endpoint_template_request, $contentType)
+        return $this->buildDynamicEndpointTemplateAsyncWithHttpInfo($build_dynamic_endpoint_template_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -281,20 +281,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400BuildDynamicEndpointTemplateAsyncWithHttpInfo
+     * Operation buildDynamicEndpointTemplateAsyncWithHttpInfo
      *
      * Create Dynamic Resource Doc endpoint code
      *
-     * @param  \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest $obpv400_build_dynamic_endpoint_template_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400BuildDynamicEndpointTemplate'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest $build_dynamic_endpoint_template_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['buildDynamicEndpointTemplate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400BuildDynamicEndpointTemplateAsyncWithHttpInfo($obpv400_build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['oBPv400BuildDynamicEndpointTemplate'][0])
+    public function buildDynamicEndpointTemplateAsyncWithHttpInfo($build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['buildDynamicEndpointTemplate'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplate200Response';
-        $request = $this->oBPv400BuildDynamicEndpointTemplateRequest($obpv400_build_dynamic_endpoint_template_request, $contentType);
+        $returnType = '\OpenBankProject\Model\BuildDynamicEndpointTemplate200Response';
+        $request = $this->buildDynamicEndpointTemplateRequest($build_dynamic_endpoint_template_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -333,21 +333,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400BuildDynamicEndpointTemplate'
+     * Create request for operation 'buildDynamicEndpointTemplate'
      *
-     * @param  \OpenBankProject\Model\OBPv400BuildDynamicEndpointTemplateRequest $obpv400_build_dynamic_endpoint_template_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400BuildDynamicEndpointTemplate'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\BuildDynamicEndpointTemplateRequest $build_dynamic_endpoint_template_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['buildDynamicEndpointTemplate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400BuildDynamicEndpointTemplateRequest($obpv400_build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['oBPv400BuildDynamicEndpointTemplate'][0])
+    public function buildDynamicEndpointTemplateRequest($build_dynamic_endpoint_template_request, string $contentType = self::contentTypes['buildDynamicEndpointTemplate'][0])
     {
 
-        // verify the required parameter 'obpv400_build_dynamic_endpoint_template_request' is set
-        if ($obpv400_build_dynamic_endpoint_template_request === null || (is_array($obpv400_build_dynamic_endpoint_template_request) && count($obpv400_build_dynamic_endpoint_template_request) === 0)) {
+        // verify the required parameter 'build_dynamic_endpoint_template_request' is set
+        if ($build_dynamic_endpoint_template_request === null || (is_array($build_dynamic_endpoint_template_request) && count($build_dynamic_endpoint_template_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_build_dynamic_endpoint_template_request when calling oBPv400BuildDynamicEndpointTemplate'
+                'Missing the required parameter $build_dynamic_endpoint_template_request when calling buildDynamicEndpointTemplate'
             );
         }
 
@@ -370,12 +370,12 @@ class DynamicResourceDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_build_dynamic_endpoint_template_request)) {
+        if (isset($build_dynamic_endpoint_template_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_build_dynamic_endpoint_template_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($build_dynamic_endpoint_template_request));
             } else {
-                $httpBody = $obpv400_build_dynamic_endpoint_template_request;
+                $httpBody = $build_dynamic_endpoint_template_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -411,9 +411,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -438,40 +438,40 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicResourceDoc
+     * Operation createBankLevelDynamicResourceDoc
      *
      * Create Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400CreateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'][0])
+    public function createBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        list($response) = $this->createBankLevelDynamicResourceDocWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo
+     * Operation createBankLevelDynamicResourceDocWithHttpInfo
      *
      * Create Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'][0])
+    public function createBankLevelDynamicResourceDocWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400CreateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $request = $this->createBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -499,7 +499,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -521,7 +521,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -530,7 +530,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -543,20 +543,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicResourceDocAsync
+     * Operation createBankLevelDynamicResourceDocAsync
      *
      * Create Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicResourceDocAsync($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'][0])
+    public function createBankLevelDynamicResourceDocAsync($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicResourceDoc'][0])
     {
-        return $this->oBPv400CreateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType)
+        return $this->createBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -565,21 +565,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicResourceDocAsyncWithHttpInfo
+     * Operation createBankLevelDynamicResourceDocAsyncWithHttpInfo
      *
      * Create Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'][0])
+    public function createBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400CreateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->createBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -618,29 +618,29 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateBankLevelDynamicResourceDoc'
+     * Create request for operation 'createBankLevelDynamicResourceDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicResourceDoc'][0])
+    public function createBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createBankLevelDynamicResourceDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateBankLevelDynamicResourceDoc'
+                'Missing the required parameter $bankid when calling createBankLevelDynamicResourceDoc'
             );
         }
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-        if ($obpv400_update_bank_level_dynamic_resource_doc_request === null || (is_array($obpv400_update_bank_level_dynamic_resource_doc_request) && count($obpv400_update_bank_level_dynamic_resource_doc_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+        if ($update_bank_level_dynamic_resource_doc_request === null || (is_array($update_bank_level_dynamic_resource_doc_request) && count($update_bank_level_dynamic_resource_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_resource_doc_request when calling oBPv400CreateBankLevelDynamicResourceDoc'
+                'Missing the required parameter $update_bank_level_dynamic_resource_doc_request when calling createBankLevelDynamicResourceDoc'
             );
         }
 
@@ -671,12 +671,12 @@ class DynamicResourceDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_resource_doc_request)) {
+        if (isset($update_bank_level_dynamic_resource_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_resource_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_resource_doc_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_resource_doc_request;
+                $httpBody = $update_bank_level_dynamic_resource_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -712,9 +712,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -739,38 +739,38 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicResourceDoc
+     * Operation createDynamicResourceDoc
      *
      * Create Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400CreateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicResourceDoc'][0])
+    public function createDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400CreateDynamicResourceDocWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        list($response) = $this->createDynamicResourceDocWithHttpInfo($update_bank_level_dynamic_resource_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateDynamicResourceDocWithHttpInfo
+     * Operation createDynamicResourceDocWithHttpInfo
      *
      * Create Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateDynamicResourceDocWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicResourceDoc'][0])
+    public function createDynamicResourceDocWithHttpInfo($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400CreateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $request = $this->createDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,7 +798,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -820,7 +820,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -829,7 +829,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -842,19 +842,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicResourceDocAsync
+     * Operation createDynamicResourceDocAsync
      *
      * Create Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicResourceDocAsync($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicResourceDoc'][0])
+    public function createDynamicResourceDocAsync($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createDynamicResourceDoc'][0])
     {
-        return $this->oBPv400CreateDynamicResourceDocAsyncWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType)
+        return $this->createDynamicResourceDocAsyncWithHttpInfo($update_bank_level_dynamic_resource_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -863,20 +863,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicResourceDocAsyncWithHttpInfo
+     * Operation createDynamicResourceDocAsyncWithHttpInfo
      *
      * Create Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicResourceDocAsyncWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicResourceDoc'][0])
+    public function createDynamicResourceDocAsyncWithHttpInfo($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400CreateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->createDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -915,21 +915,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateDynamicResourceDoc'
+     * Create request for operation 'createDynamicResourceDoc'
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400CreateDynamicResourceDoc'][0])
+    public function createDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['createDynamicResourceDoc'][0])
     {
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-        if ($obpv400_update_bank_level_dynamic_resource_doc_request === null || (is_array($obpv400_update_bank_level_dynamic_resource_doc_request) && count($obpv400_update_bank_level_dynamic_resource_doc_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+        if ($update_bank_level_dynamic_resource_doc_request === null || (is_array($update_bank_level_dynamic_resource_doc_request) && count($update_bank_level_dynamic_resource_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_resource_doc_request when calling oBPv400CreateDynamicResourceDoc'
+                'Missing the required parameter $update_bank_level_dynamic_resource_doc_request when calling createDynamicResourceDoc'
             );
         }
 
@@ -952,12 +952,12 @@ class DynamicResourceDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_resource_doc_request)) {
+        if (isset($update_bank_level_dynamic_resource_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_resource_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_resource_doc_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_resource_doc_request;
+                $httpBody = $update_bank_level_dynamic_resource_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -993,9 +993,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1020,37 +1020,37 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicResourceDoc
+     * Operation deleteBankLevelDynamicResourceDoc
      *
      * Delete Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteBankLevelDynamicResourceDoc($bankid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'][0])
+    public function deleteBankLevelDynamicResourceDoc($bankid, string $contentType = self::contentTypes['deleteBankLevelDynamicResourceDoc'][0])
     {
-        $this->oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo($bankid, $contentType);
+        $this->deleteBankLevelDynamicResourceDocWithHttpInfo($bankid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo
+     * Operation deleteBankLevelDynamicResourceDocWithHttpInfo
      *
      * Delete Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'][0])
+    public function deleteBankLevelDynamicResourceDocWithHttpInfo($bankid, string $contentType = self::contentTypes['deleteBankLevelDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400DeleteBankLevelDynamicResourceDocRequest($bankid, $contentType);
+        $request = $this->deleteBankLevelDynamicResourceDocRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1086,19 +1086,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicResourceDocAsync
+     * Operation deleteBankLevelDynamicResourceDocAsync
      *
      * Delete Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicResourceDocAsync($bankid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'][0])
+    public function deleteBankLevelDynamicResourceDocAsync($bankid, string $contentType = self::contentTypes['deleteBankLevelDynamicResourceDoc'][0])
     {
-        return $this->oBPv400DeleteBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $contentType)
+        return $this->deleteBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1107,20 +1107,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicResourceDocAsyncWithHttpInfo
+     * Operation deleteBankLevelDynamicResourceDocAsyncWithHttpInfo
      *
      * Delete Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'][0])
+    public function deleteBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['deleteBankLevelDynamicResourceDoc'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteBankLevelDynamicResourceDocRequest($bankid, $contentType);
+        $request = $this->deleteBankLevelDynamicResourceDocRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1146,21 +1146,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteBankLevelDynamicResourceDoc'
+     * Create request for operation 'deleteBankLevelDynamicResourceDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteBankLevelDynamicResourceDocRequest($bankid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicResourceDoc'][0])
+    public function deleteBankLevelDynamicResourceDocRequest($bankid, string $contentType = self::contentTypes['deleteBankLevelDynamicResourceDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteBankLevelDynamicResourceDoc'
+                'Missing the required parameter $bankid when calling deleteBankLevelDynamicResourceDoc'
             );
         }
 
@@ -1225,9 +1225,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1252,35 +1252,35 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicResourceDoc
+     * Operation deleteDynamicResourceDoc
      *
      * Delete Dynamic Resource Doc
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteDynamicResourceDoc(string $contentType = self::contentTypes['oBPv400DeleteDynamicResourceDoc'][0])
+    public function deleteDynamicResourceDoc(string $contentType = self::contentTypes['deleteDynamicResourceDoc'][0])
     {
-        $this->oBPv400DeleteDynamicResourceDocWithHttpInfo($contentType);
+        $this->deleteDynamicResourceDocWithHttpInfo($contentType);
     }
 
     /**
-     * Operation oBPv400DeleteDynamicResourceDocWithHttpInfo
+     * Operation deleteDynamicResourceDocWithHttpInfo
      *
      * Delete Dynamic Resource Doc
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteDynamicResourceDocWithHttpInfo(string $contentType = self::contentTypes['oBPv400DeleteDynamicResourceDoc'][0])
+    public function deleteDynamicResourceDocWithHttpInfo(string $contentType = self::contentTypes['deleteDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400DeleteDynamicResourceDocRequest($contentType);
+        $request = $this->deleteDynamicResourceDocRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1316,18 +1316,18 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicResourceDocAsync
+     * Operation deleteDynamicResourceDocAsync
      *
      * Delete Dynamic Resource Doc
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicResourceDocAsync(string $contentType = self::contentTypes['oBPv400DeleteDynamicResourceDoc'][0])
+    public function deleteDynamicResourceDocAsync(string $contentType = self::contentTypes['deleteDynamicResourceDoc'][0])
     {
-        return $this->oBPv400DeleteDynamicResourceDocAsyncWithHttpInfo($contentType)
+        return $this->deleteDynamicResourceDocAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1336,19 +1336,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicResourceDocAsyncWithHttpInfo
+     * Operation deleteDynamicResourceDocAsyncWithHttpInfo
      *
      * Delete Dynamic Resource Doc
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicResourceDocAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400DeleteDynamicResourceDoc'][0])
+    public function deleteDynamicResourceDocAsyncWithHttpInfo(string $contentType = self::contentTypes['deleteDynamicResourceDoc'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteDynamicResourceDocRequest($contentType);
+        $request = $this->deleteDynamicResourceDocRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1374,14 +1374,14 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteDynamicResourceDoc'
+     * Create request for operation 'deleteDynamicResourceDoc'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteDynamicResourceDocRequest(string $contentType = self::contentTypes['oBPv400DeleteDynamicResourceDoc'][0])
+    public function deleteDynamicResourceDocRequest(string $contentType = self::contentTypes['deleteDynamicResourceDoc'][0])
     {
 
 
@@ -1437,9 +1437,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1464,38 +1464,38 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicResourceDocs
+     * Operation getAllBankLevelDynamicResourceDocs
      *
      * Get all Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response
+     * @return \OpenBankProject\Model\GetAllDynamicResourceDocs200Response
      */
-    public function oBPv400GetAllBankLevelDynamicResourceDocs($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'][0])
+    public function getAllBankLevelDynamicResourceDocs($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicResourceDocs'][0])
     {
-        list($response) = $this->oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getAllBankLevelDynamicResourceDocsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo
+     * Operation getAllBankLevelDynamicResourceDocsWithHttpInfo
      *
      * Get all Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllDynamicResourceDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'][0])
+    public function getAllBankLevelDynamicResourceDocsWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicResourceDocs'][0])
     {
-        $request = $this->oBPv400GetAllBankLevelDynamicResourceDocsRequest($bankid, $contentType);
+        $request = $this->getAllBankLevelDynamicResourceDocsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1523,7 +1523,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                        '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                         $request,
                         $response,
                     );
@@ -1545,7 +1545,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                 $request,
                 $response,
             );
@@ -1554,7 +1554,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                        '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1567,19 +1567,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicResourceDocsAsync
+     * Operation getAllBankLevelDynamicResourceDocsAsync
      *
      * Get all Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelDynamicResourceDocsAsync($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'][0])
+    public function getAllBankLevelDynamicResourceDocsAsync($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicResourceDocs'][0])
     {
-        return $this->oBPv400GetAllBankLevelDynamicResourceDocsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getAllBankLevelDynamicResourceDocsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1588,20 +1588,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllBankLevelDynamicResourceDocsAsyncWithHttpInfo
+     * Operation getAllBankLevelDynamicResourceDocsAsyncWithHttpInfo
      *
      * Get all Bank Level Dynamic Resource Docs
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllBankLevelDynamicResourceDocsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'][0])
+    public function getAllBankLevelDynamicResourceDocsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicResourceDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response';
-        $request = $this->oBPv400GetAllBankLevelDynamicResourceDocsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response';
+        $request = $this->getAllBankLevelDynamicResourceDocsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1640,21 +1640,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllBankLevelDynamicResourceDocs'
+     * Create request for operation 'getAllBankLevelDynamicResourceDocs'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankLevelDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllBankLevelDynamicResourceDocsRequest($bankid, string $contentType = self::contentTypes['oBPv400GetAllBankLevelDynamicResourceDocs'][0])
+    public function getAllBankLevelDynamicResourceDocsRequest($bankid, string $contentType = self::contentTypes['getAllBankLevelDynamicResourceDocs'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetAllBankLevelDynamicResourceDocs'
+                'Missing the required parameter $bankid when calling getAllBankLevelDynamicResourceDocs'
             );
         }
 
@@ -1719,9 +1719,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1746,36 +1746,36 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicResourceDocs
+     * Operation getAllDynamicResourceDocs
      *
      * Get all Dynamic Resource Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response
+     * @return \OpenBankProject\Model\GetAllDynamicResourceDocs200Response
      */
-    public function oBPv400GetAllDynamicResourceDocs(string $contentType = self::contentTypes['oBPv400GetAllDynamicResourceDocs'][0])
+    public function getAllDynamicResourceDocs(string $contentType = self::contentTypes['getAllDynamicResourceDocs'][0])
     {
-        list($response) = $this->oBPv400GetAllDynamicResourceDocsWithHttpInfo($contentType);
+        list($response) = $this->getAllDynamicResourceDocsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllDynamicResourceDocsWithHttpInfo
+     * Operation getAllDynamicResourceDocsWithHttpInfo
      *
      * Get all Dynamic Resource Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllDynamicResourceDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllDynamicResourceDocsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllDynamicResourceDocs'][0])
+    public function getAllDynamicResourceDocsWithHttpInfo(string $contentType = self::contentTypes['getAllDynamicResourceDocs'][0])
     {
-        $request = $this->oBPv400GetAllDynamicResourceDocsRequest($contentType);
+        $request = $this->getAllDynamicResourceDocsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1803,7 +1803,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                        '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                         $request,
                         $response,
                     );
@@ -1825,7 +1825,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                 $request,
                 $response,
             );
@@ -1834,7 +1834,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response',
+                        '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1847,18 +1847,18 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicResourceDocsAsync
+     * Operation getAllDynamicResourceDocsAsync
      *
      * Get all Dynamic Resource Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllDynamicResourceDocsAsync(string $contentType = self::contentTypes['oBPv400GetAllDynamicResourceDocs'][0])
+    public function getAllDynamicResourceDocsAsync(string $contentType = self::contentTypes['getAllDynamicResourceDocs'][0])
     {
-        return $this->oBPv400GetAllDynamicResourceDocsAsyncWithHttpInfo($contentType)
+        return $this->getAllDynamicResourceDocsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1867,19 +1867,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetAllDynamicResourceDocsAsyncWithHttpInfo
+     * Operation getAllDynamicResourceDocsAsyncWithHttpInfo
      *
      * Get all Dynamic Resource Docs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllDynamicResourceDocsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllDynamicResourceDocs'][0])
+    public function getAllDynamicResourceDocsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllDynamicResourceDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllDynamicResourceDocs200Response';
-        $request = $this->oBPv400GetAllDynamicResourceDocsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllDynamicResourceDocs200Response';
+        $request = $this->getAllDynamicResourceDocsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1918,14 +1918,14 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllDynamicResourceDocs'
+     * Create request for operation 'getAllDynamicResourceDocs'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllDynamicResourceDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllDynamicResourceDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllDynamicResourceDocsRequest(string $contentType = self::contentTypes['oBPv400GetAllDynamicResourceDocs'][0])
+    public function getAllDynamicResourceDocsRequest(string $contentType = self::contentTypes['getAllDynamicResourceDocs'][0])
     {
 
 
@@ -1981,9 +1981,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2008,38 +2008,38 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicResourceDoc
+     * Operation getBankLevelDynamicResourceDoc
      *
      * Get Bank Level Dynamic Resource Doc by Id
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400GetBankLevelDynamicResourceDoc($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'][0])
+    public function getBankLevelDynamicResourceDoc($bankid, string $contentType = self::contentTypes['getBankLevelDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400GetBankLevelDynamicResourceDocWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getBankLevelDynamicResourceDocWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicResourceDocWithHttpInfo
+     * Operation getBankLevelDynamicResourceDocWithHttpInfo
      *
      * Get Bank Level Dynamic Resource Doc by Id
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetBankLevelDynamicResourceDocWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'][0])
+    public function getBankLevelDynamicResourceDocWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400GetBankLevelDynamicResourceDocRequest($bankid, $contentType);
+        $request = $this->getBankLevelDynamicResourceDocRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2067,7 +2067,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -2089,7 +2089,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -2098,7 +2098,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2111,19 +2111,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicResourceDocAsync
+     * Operation getBankLevelDynamicResourceDocAsync
      *
      * Get Bank Level Dynamic Resource Doc by Id
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicResourceDocAsync($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'][0])
+    public function getBankLevelDynamicResourceDocAsync($bankid, string $contentType = self::contentTypes['getBankLevelDynamicResourceDoc'][0])
     {
-        return $this->oBPv400GetBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2132,20 +2132,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicResourceDocAsyncWithHttpInfo
+     * Operation getBankLevelDynamicResourceDocAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Resource Doc by Id
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'][0])
+    public function getBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400GetBankLevelDynamicResourceDocRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->getBankLevelDynamicResourceDocRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2184,21 +2184,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetBankLevelDynamicResourceDoc'
+     * Create request for operation 'getBankLevelDynamicResourceDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetBankLevelDynamicResourceDocRequest($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicResourceDoc'][0])
+    public function getBankLevelDynamicResourceDocRequest($bankid, string $contentType = self::contentTypes['getBankLevelDynamicResourceDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetBankLevelDynamicResourceDoc'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicResourceDoc'
             );
         }
 
@@ -2263,9 +2263,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2290,36 +2290,36 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicResourceDoc
+     * Operation getDynamicResourceDoc
      *
      * Get Dynamic Resource Doc by Id
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400GetDynamicResourceDoc(string $contentType = self::contentTypes['oBPv400GetDynamicResourceDoc'][0])
+    public function getDynamicResourceDoc(string $contentType = self::contentTypes['getDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400GetDynamicResourceDocWithHttpInfo($contentType);
+        list($response) = $this->getDynamicResourceDocWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetDynamicResourceDocWithHttpInfo
+     * Operation getDynamicResourceDocWithHttpInfo
      *
      * Get Dynamic Resource Doc by Id
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetDynamicResourceDocWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetDynamicResourceDoc'][0])
+    public function getDynamicResourceDocWithHttpInfo(string $contentType = self::contentTypes['getDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400GetDynamicResourceDocRequest($contentType);
+        $request = $this->getDynamicResourceDocRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2347,7 +2347,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -2369,7 +2369,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -2378,7 +2378,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2391,18 +2391,18 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicResourceDocAsync
+     * Operation getDynamicResourceDocAsync
      *
      * Get Dynamic Resource Doc by Id
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicResourceDocAsync(string $contentType = self::contentTypes['oBPv400GetDynamicResourceDoc'][0])
+    public function getDynamicResourceDocAsync(string $contentType = self::contentTypes['getDynamicResourceDoc'][0])
     {
-        return $this->oBPv400GetDynamicResourceDocAsyncWithHttpInfo($contentType)
+        return $this->getDynamicResourceDocAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2411,19 +2411,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400GetDynamicResourceDocAsyncWithHttpInfo
+     * Operation getDynamicResourceDocAsyncWithHttpInfo
      *
      * Get Dynamic Resource Doc by Id
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicResourceDocAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetDynamicResourceDoc'][0])
+    public function getDynamicResourceDocAsyncWithHttpInfo(string $contentType = self::contentTypes['getDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400GetDynamicResourceDocRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->getDynamicResourceDocRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2462,14 +2462,14 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetDynamicResourceDoc'
+     * Create request for operation 'getDynamicResourceDoc'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicResourceDoc'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetDynamicResourceDocRequest(string $contentType = self::contentTypes['oBPv400GetDynamicResourceDoc'][0])
+    public function getDynamicResourceDocRequest(string $contentType = self::contentTypes['getDynamicResourceDoc'][0])
     {
 
 
@@ -2525,9 +2525,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2552,40 +2552,40 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicResourceDoc
+     * Operation updateBankLevelDynamicResourceDoc
      *
      * Update Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400UpdateBankLevelDynamicResourceDoc($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'][0])
+    public function updateBankLevelDynamicResourceDoc($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        list($response) = $this->updateBankLevelDynamicResourceDocWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo
+     * Operation updateBankLevelDynamicResourceDocWithHttpInfo
      *
      * Update Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'][0])
+    public function updateBankLevelDynamicResourceDocWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400UpdateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $request = $this->updateBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2613,7 +2613,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -2635,7 +2635,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -2644,7 +2644,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2657,20 +2657,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicResourceDocAsync
+     * Operation updateBankLevelDynamicResourceDocAsync
      *
      * Update Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicResourceDocAsync($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'][0])
+    public function updateBankLevelDynamicResourceDocAsync($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicResourceDoc'][0])
     {
-        return $this->oBPv400UpdateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType)
+        return $this->updateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2679,21 +2679,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicResourceDocAsyncWithHttpInfo
+     * Operation updateBankLevelDynamicResourceDocAsyncWithHttpInfo
      *
      * Update Bank Level Dynamic Resource Doc
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'][0])
+    public function updateBankLevelDynamicResourceDocAsyncWithHttpInfo($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400UpdateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->updateBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2732,29 +2732,29 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateBankLevelDynamicResourceDoc'
+     * Create request for operation 'updateBankLevelDynamicResourceDoc'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateBankLevelDynamicResourceDocRequest($bankid, $obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicResourceDoc'][0])
+    public function updateBankLevelDynamicResourceDocRequest($bankid, $update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateBankLevelDynamicResourceDoc'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateBankLevelDynamicResourceDoc'
+                'Missing the required parameter $bankid when calling updateBankLevelDynamicResourceDoc'
             );
         }
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-        if ($obpv400_update_bank_level_dynamic_resource_doc_request === null || (is_array($obpv400_update_bank_level_dynamic_resource_doc_request) && count($obpv400_update_bank_level_dynamic_resource_doc_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+        if ($update_bank_level_dynamic_resource_doc_request === null || (is_array($update_bank_level_dynamic_resource_doc_request) && count($update_bank_level_dynamic_resource_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_resource_doc_request when calling oBPv400UpdateBankLevelDynamicResourceDoc'
+                'Missing the required parameter $update_bank_level_dynamic_resource_doc_request when calling updateBankLevelDynamicResourceDoc'
             );
         }
 
@@ -2785,12 +2785,12 @@ class DynamicResourceDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_resource_doc_request)) {
+        if (isset($update_bank_level_dynamic_resource_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_resource_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_resource_doc_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_resource_doc_request;
+                $httpBody = $update_bank_level_dynamic_resource_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2826,9 +2826,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2853,38 +2853,38 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicResourceDoc
+     * Operation updateDynamicResourceDoc
      *
      * Update Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response
      */
-    public function oBPv400UpdateDynamicResourceDoc($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicResourceDoc'][0])
+    public function updateDynamicResourceDoc($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateDynamicResourceDoc'][0])
     {
-        list($response) = $this->oBPv400UpdateDynamicResourceDocWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        list($response) = $this->updateDynamicResourceDocWithHttpInfo($update_bank_level_dynamic_resource_doc_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateDynamicResourceDocWithHttpInfo
+     * Operation updateDynamicResourceDocWithHttpInfo
      *
      * Update Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateDynamicResourceDocWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicResourceDoc'][0])
+    public function updateDynamicResourceDocWithHttpInfo($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateDynamicResourceDoc'][0])
     {
-        $request = $this->oBPv400UpdateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $request = $this->updateDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2912,7 +2912,7 @@ class DynamicResourceDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $request,
                         $response,
                     );
@@ -2934,7 +2934,7 @@ class DynamicResourceDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                 $request,
                 $response,
             );
@@ -2943,7 +2943,7 @@ class DynamicResourceDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2956,19 +2956,19 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicResourceDocAsync
+     * Operation updateDynamicResourceDocAsync
      *
      * Update Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicResourceDocAsync($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicResourceDoc'][0])
+    public function updateDynamicResourceDocAsync($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateDynamicResourceDoc'][0])
     {
-        return $this->oBPv400UpdateDynamicResourceDocAsyncWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType)
+        return $this->updateDynamicResourceDocAsyncWithHttpInfo($update_bank_level_dynamic_resource_doc_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2977,20 +2977,20 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicResourceDocAsyncWithHttpInfo
+     * Operation updateDynamicResourceDocAsyncWithHttpInfo
      *
      * Update Dynamic Resource Doc
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicResourceDocAsyncWithHttpInfo($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicResourceDoc'][0])
+    public function updateDynamicResourceDocAsyncWithHttpInfo($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateDynamicResourceDoc'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetBankLevelDynamicResourceDoc200Response';
-        $request = $this->oBPv400UpdateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicResourceDoc200Response';
+        $request = $this->updateDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3029,21 +3029,21 @@ class DynamicResourceDocApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateDynamicResourceDoc'
+     * Create request for operation 'updateDynamicResourceDoc'
      *
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicResourceDocRequest $obpv400_update_bank_level_dynamic_resource_doc_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicResourceDoc'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicResourceDocRequest $update_bank_level_dynamic_resource_doc_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicResourceDoc'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateDynamicResourceDocRequest($obpv400_update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicResourceDoc'][0])
+    public function updateDynamicResourceDocRequest($update_bank_level_dynamic_resource_doc_request, string $contentType = self::contentTypes['updateDynamicResourceDoc'][0])
     {
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_resource_doc_request' is set
-        if ($obpv400_update_bank_level_dynamic_resource_doc_request === null || (is_array($obpv400_update_bank_level_dynamic_resource_doc_request) && count($obpv400_update_bank_level_dynamic_resource_doc_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_resource_doc_request' is set
+        if ($update_bank_level_dynamic_resource_doc_request === null || (is_array($update_bank_level_dynamic_resource_doc_request) && count($update_bank_level_dynamic_resource_doc_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_resource_doc_request when calling oBPv400UpdateDynamicResourceDoc'
+                'Missing the required parameter $update_bank_level_dynamic_resource_doc_request when calling updateDynamicResourceDoc'
             );
         }
 
@@ -3066,12 +3066,12 @@ class DynamicResourceDocApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_resource_doc_request)) {
+        if (isset($update_bank_level_dynamic_resource_doc_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_resource_doc_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_resource_doc_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_resource_doc_request;
+                $httpBody = $update_bank_level_dynamic_resource_doc_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3107,9 +3107,9 @@ class DynamicResourceDocApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

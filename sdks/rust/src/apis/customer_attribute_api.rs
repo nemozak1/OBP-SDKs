@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,73 +15,73 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_customer_attribute`]
+/// struct for typed errors of method [`create_customer_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateCustomerAttributeError {
+pub enum CreateCustomerAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition`]
+/// struct for typed errors of method [`create_or_update_customer_attribute_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateOrUpdateCustomerAttributeAttributeDefinitionError {
+pub enum CreateOrUpdateCustomerAttributeAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_customer_attribute`]
+/// struct for typed errors of method [`delete_customer_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteCustomerAttributeError {
+pub enum DeleteCustomerAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_customer_attribute_definition`]
+/// struct for typed errors of method [`delete_customer_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteCustomerAttributeDefinitionError {
+pub enum DeleteCustomerAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_customer_attribute_by_id`]
+/// struct for typed errors of method [`get_customer_attribute_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetCustomerAttributeByIdError {
+pub enum GetCustomerAttributeByIdError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_customer_attribute_definition`]
+/// struct for typed errors of method [`get_customer_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetCustomerAttributeDefinitionError {
+pub enum GetCustomerAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_customer_attributes`]
+/// struct for typed errors of method [`get_customer_attributes`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetCustomerAttributesError {
+pub enum GetCustomerAttributesError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_customer_attribute`]
+/// struct for typed errors of method [`update_customer_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateCustomerAttributeError {
+pub enum UpdateCustomerAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -89,11 +89,11 @@ pub enum OBpv400UpdateCustomerAttributeError {
 
 
 /// <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_create_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Error<OBpv400CreateCustomerAttributeError>> {
+pub async fn create_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetCustomerAttributes200ResponseCustomerAttributesInner, Error<CreateCustomerAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_customerid = customerid;
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), customerid=crate::apis::urlencode(p_path_customerid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -118,9 +118,9 @@ pub async fn o_bpv4_0_0_create_customer_attribute(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -137,21 +137,21 @@ pub async fn o_bpv4_0_0_create_customer_attribute(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateCustomerAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateCustomerAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-pub async fn o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(configuration: &configuration::Configuration, bankid: &str, obpv400_create_or_update_transaction_request_attribute_definition_request: models::Obpv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) -> Result<models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Error<OBpv400CreateOrUpdateCustomerAttributeAttributeDefinitionError>> {
+pub async fn create_or_update_customer_attribute_attribute_definition(configuration: &configuration::Configuration, bankid: &str, create_or_update_transaction_request_attribute_definition_request: models::CreateOrUpdateTransactionRequestAttributeDefinitionRequest) -> Result<models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Error<CreateOrUpdateCustomerAttributeAttributeDefinitionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_create_or_update_transaction_request_attribute_definition_request = obpv400_create_or_update_transaction_request_attribute_definition_request;
+    let p_body_create_or_update_transaction_request_attribute_definition_request = create_or_update_transaction_request_attribute_definition_request;
 
     let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -176,9 +176,9 @@ pub async fn o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_or_update_transaction_request_attribute_definition_request);
+    req_builder = req_builder.json(&p_body_create_or_update_transaction_request_attribute_definition_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -195,18 +195,18 @@ pub async fn o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateOrUpdateCustomerAttributeAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateOrUpdateCustomerAttributeAttributeDefinitionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete Customer Attribute</p> <p>CustomerAttributes are used to enhance the OBP Customer object with Bank specific entities.</p> <p>Delete a Customer Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, customerattributeid: &str) -> Result<(), Error<OBpv400DeleteCustomerAttributeError>> {
+pub async fn delete_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, customerattributeid: &str) -> Result<(), Error<DeleteCustomerAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_customerid = customerid;
@@ -235,7 +235,7 @@ pub async fn o_bpv4_0_0_delete_customer_attribute(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -247,13 +247,13 @@ pub async fn o_bpv4_0_0_delete_customer_attribute(configuration: &configuration:
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteCustomerAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteCustomerAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete Customer Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_customer_attribute_definition(configuration: &configuration::Configuration, bankid: &str, attributedefinitionid: &str) -> Result<(), Error<OBpv400DeleteCustomerAttributeDefinitionError>> {
+pub async fn delete_customer_attribute_definition(configuration: &configuration::Configuration, bankid: &str, attributedefinitionid: &str) -> Result<(), Error<DeleteCustomerAttributeDefinitionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_attributedefinitionid = attributedefinitionid;
@@ -281,7 +281,7 @@ pub async fn o_bpv4_0_0_delete_customer_attribute_definition(configuration: &con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -293,13 +293,13 @@ pub async fn o_bpv4_0_0_delete_customer_attribute_definition(configuration: &con
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteCustomerAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteCustomerAttributeDefinitionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_get_customer_attribute_by_id(configuration: &configuration::Configuration, bankid: &str, customerid: &str, attributeid: &str) -> Result<models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Error<OBpv400GetCustomerAttributeByIdError>> {
+pub async fn get_customer_attribute_by_id(configuration: &configuration::Configuration, bankid: &str, customerid: &str, attributeid: &str) -> Result<models::GetCustomerAttributes200ResponseCustomerAttributesInner, Error<GetCustomerAttributeByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_customerid = customerid;
@@ -328,7 +328,7 @@ pub async fn o_bpv4_0_0_get_customer_attribute_by_id(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -346,18 +346,18 @@ pub async fn o_bpv4_0_0_get_customer_attribute_by_id(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetCustomerAttributeByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetCustomerAttributeByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-pub async fn o_bpv4_0_0_get_customer_attribute_definition(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetTransactionRequestAttributeDefinition200Response, Error<OBpv400GetCustomerAttributeDefinitionError>> {
+pub async fn get_customer_attribute_definition(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetTransactionRequestAttributeDefinition200Response, Error<GetCustomerAttributeDefinitionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -384,7 +384,7 @@ pub async fn o_bpv4_0_0_get_customer_attribute_definition(configuration: &config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -402,18 +402,18 @@ pub async fn o_bpv4_0_0_get_customer_attribute_definition(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetCustomerAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetCustomerAttributeDefinitionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Customer Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_get_customer_attributes(configuration: &configuration::Configuration, bankid: &str, customerid: &str) -> Result<models::Obpv400GetCustomerAttributes200Response, Error<OBpv400GetCustomerAttributesError>> {
+pub async fn get_customer_attributes(configuration: &configuration::Configuration, bankid: &str, customerid: &str) -> Result<models::GetCustomerAttributes200Response, Error<GetCustomerAttributesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_customerid = customerid;
@@ -441,7 +441,7 @@ pub async fn o_bpv4_0_0_get_customer_attributes(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -459,23 +459,23 @@ pub async fn o_bpv4_0_0_get_customer_attributes(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetCustomerAttributes200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetCustomerAttributes200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetCustomerAttributesError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetCustomerAttributesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_update_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, customerattributeid: &str, obpv600_create_personal_data_field_request: models::Obpv600CreatePersonalDataFieldRequest) -> Result<models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Error<OBpv400UpdateCustomerAttributeError>> {
+pub async fn update_customer_attribute(configuration: &configuration::Configuration, bankid: &str, customerid: &str, customerattributeid: &str, create_personal_data_field_request: models::CreatePersonalDataFieldRequest) -> Result<models::GetCustomerAttributes200ResponseCustomerAttributesInner, Error<UpdateCustomerAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_customerid = customerid;
     let p_path_customerattributeid = customerattributeid;
-    let p_body_obpv600_create_personal_data_field_request = obpv600_create_personal_data_field_request;
+    let p_body_create_personal_data_field_request = create_personal_data_field_request;
 
     let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), customerid=crate::apis::urlencode(p_path_customerid), customerattributeid=crate::apis::urlencode(p_path_customerattributeid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -500,9 +500,9 @@ pub async fn o_bpv4_0_0_update_customer_attribute(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv600_create_personal_data_field_request);
+    req_builder = req_builder.json(&p_body_create_personal_data_field_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -519,12 +519,12 @@ pub async fn o_bpv4_0_0_update_customer_attribute(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetCustomerAttributes200ResponseCustomerAttributesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateCustomerAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateCustomerAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

@@ -10,6 +10,57 @@ import Foundation
 open class ScopeAPI {
 
     /**
+     Create Scope for a Consumer
+     
+     - parameter consumerid: (path) The CONSUMERID identifier 
+     - parameter createConsentImplicitRequestEntitlementsInner: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetScopes200ResponseListInner
+     */
+    open class func addScope(consumerid: String, createConsentImplicitRequestEntitlementsInner: CreateConsentImplicitRequestEntitlementsInner, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetScopes200ResponseListInner {
+        return try await addScopeWithRequestBuilder(consumerid: consumerid, createConsentImplicitRequestEntitlementsInner: createConsentImplicitRequestEntitlementsInner, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create Scope for a Consumer
+     - POST /obp/v4.0.0/consumers/{consumerid}/scopes
+     - <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter consumerid: (path) The CONSUMERID identifier 
+     - parameter createConsentImplicitRequestEntitlementsInner: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetScopes200ResponseListInner> 
+     */
+    open class func addScopeWithRequestBuilder(consumerid: String, createConsentImplicitRequestEntitlementsInner: CreateConsentImplicitRequestEntitlementsInner, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetScopes200ResponseListInner> {
+        var localVariablePath = "/obp/v4.0.0/consumers/{consumerid}/scopes"
+        let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
+        let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{consumerid}", with: consumeridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createConsentImplicitRequestEntitlementsInner, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetScopes200ResponseListInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Delete Consumer Scope
      
      - parameter consumerid: (path) The CONSUMERID identifier 
@@ -17,8 +68,8 @@ open class ScopeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv300DeleteScope(consumerid: String, scopeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv300DeleteScopeWithRequestBuilder(consumerid: consumerid, scopeid: scopeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteScope(consumerid: String, scopeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteScopeWithRequestBuilder(consumerid: consumerid, scopeid: scopeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,14 +83,14 @@ open class ScopeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter consumerid: (path) The CONSUMERID identifier 
      - parameter scopeid: (path) The SCOPEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv300DeleteScopeWithRequestBuilder(consumerid: String, scopeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteScopeWithRequestBuilder(consumerid: String, scopeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}"
         let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
         let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -64,65 +115,14 @@ open class ScopeAPI {
     }
 
     /**
-     Create Scope for a Consumer
-     
-     - parameter consumerid: (path) The CONSUMERID identifier 
-     - parameter oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetScopes200ResponsePropertiesListItems
-     */
-    open class func oBPv400AddScope(consumerid: String, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetScopes200ResponsePropertiesListItems {
-        return try await oBPv400AddScopeWithRequestBuilder(consumerid: consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create Scope for a Consumer
-     - POST /obp/v4.0.0/consumers/{consumerid}/scopes
-     - <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter consumerid: (path) The CONSUMERID identifier 
-     - parameter oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetScopes200ResponsePropertiesListItems> 
-     */
-    open class func oBPv400AddScopeWithRequestBuilder(consumerid: String, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetScopes200ResponsePropertiesListItems> {
-        var localVariablePath = "/obp/v4.0.0/consumers/{consumerid}/scopes"
-        let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
-        let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{consumerid}", with: consumeridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetScopes200ResponsePropertiesListItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Get Scopes for Consumer
      
      - parameter consumerid: (path) The CONSUMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetScopes200Response
+     - returns: GetScopes200Response
      */
-    open class func oBPv400GetScopes(consumerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetScopes200Response {
-        return try await oBPv400GetScopesWithRequestBuilder(consumerid: consumerid, apiConfiguration: apiConfiguration).execute().body
+    open class func getScopes(consumerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetScopes200Response {
+        return try await getScopesWithRequestBuilder(consumerid: consumerid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -136,13 +136,13 @@ open class ScopeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter consumerid: (path) The CONSUMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetScopes200Response> 
+     - returns: RequestBuilder<GetScopes200Response> 
      */
-    open class func oBPv400GetScopesWithRequestBuilder(consumerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetScopes200Response> {
+    open class func getScopesWithRequestBuilder(consumerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetScopes200Response> {
         var localVariablePath = "/obp/v4.0.0/consumers/{consumerid}/scopes"
         let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
         let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -158,7 +158,7 @@ open class ScopeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetScopes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetScopes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

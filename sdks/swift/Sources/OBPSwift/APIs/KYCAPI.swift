@@ -15,12 +15,12 @@ open class KYCAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kyccheckid: (path) The KYCCHECKID identifier 
-     - parameter oBPv200AddKycCheckRequest: (body) Request body 
+     - parameter addKycCheckRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycChecks200ResponsePropertiesChecksItems
+     - returns: GetKycChecks200ResponseChecksInner
      */
-    open class func oBPv200AddKycCheck(bankid: String, customerid: String, kyccheckid: String, oBPv200AddKycCheckRequest: OBPv200AddKycCheckRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycChecks200ResponsePropertiesChecksItems {
-        return try await oBPv200AddKycCheckWithRequestBuilder(bankid: bankid, customerid: customerid, kyccheckid: kyccheckid, oBPv200AddKycCheckRequest: oBPv200AddKycCheckRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addKycCheck(bankid: String, customerid: String, kyccheckid: String, addKycCheckRequest: AddKycCheckRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycChecks200ResponseChecksInner {
+        return try await addKycCheckWithRequestBuilder(bankid: bankid, customerid: customerid, kyccheckid: kyccheckid, addKycCheckRequest: addKycCheckRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -34,16 +34,16 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kyccheckid: (path) The KYCCHECKID identifier 
-     - parameter oBPv200AddKycCheckRequest: (body) Request body 
+     - parameter addKycCheckRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycChecks200ResponsePropertiesChecksItems> 
+     - returns: RequestBuilder<GetKycChecks200ResponseChecksInner> 
      */
-    open class func oBPv200AddKycCheckWithRequestBuilder(bankid: String, customerid: String, kyccheckid: String, oBPv200AddKycCheckRequest: OBPv200AddKycCheckRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycChecks200ResponsePropertiesChecksItems> {
+    open class func addKycCheckWithRequestBuilder(bankid: String, customerid: String, kyccheckid: String, addKycCheckRequest: AddKycCheckRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycChecks200ResponseChecksInner> {
         var localVariablePath = "/obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -55,7 +55,7 @@ open class KYCAPI {
         let kyccheckidPostEscape = kyccheckidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{kyccheckid}", with: kyccheckidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv200AddKycCheckRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addKycCheckRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -65,7 +65,7 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycChecks200ResponsePropertiesChecksItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetKycChecks200ResponseChecksInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -76,12 +76,12 @@ open class KYCAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kycdocumentid: (path) The KYCDOCUMENTID identifier 
-     - parameter oBPv200AddKycDocumentRequest: (body) Request body 
+     - parameter addKycDocumentRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200AddKycDocument200Response
+     - returns: AddKycDocument200Response
      */
-    open class func oBPv200AddKycDocument(bankid: String, customerid: String, kycdocumentid: String, oBPv200AddKycDocumentRequest: OBPv200AddKycDocumentRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200AddKycDocument200Response {
-        return try await oBPv200AddKycDocumentWithRequestBuilder(bankid: bankid, customerid: customerid, kycdocumentid: kycdocumentid, oBPv200AddKycDocumentRequest: oBPv200AddKycDocumentRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addKycDocument(bankid: String, customerid: String, kycdocumentid: String, addKycDocumentRequest: AddKycDocumentRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> AddKycDocument200Response {
+        return try await addKycDocumentWithRequestBuilder(bankid: bankid, customerid: customerid, kycdocumentid: kycdocumentid, addKycDocumentRequest: addKycDocumentRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -95,16 +95,16 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kycdocumentid: (path) The KYCDOCUMENTID identifier 
-     - parameter oBPv200AddKycDocumentRequest: (body) Request body 
+     - parameter addKycDocumentRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200AddKycDocument200Response> 
+     - returns: RequestBuilder<AddKycDocument200Response> 
      */
-    open class func oBPv200AddKycDocumentWithRequestBuilder(bankid: String, customerid: String, kycdocumentid: String, oBPv200AddKycDocumentRequest: OBPv200AddKycDocumentRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200AddKycDocument200Response> {
+    open class func addKycDocumentWithRequestBuilder(bankid: String, customerid: String, kycdocumentid: String, addKycDocumentRequest: AddKycDocumentRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<AddKycDocument200Response> {
         var localVariablePath = "/obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -116,7 +116,7 @@ open class KYCAPI {
         let kycdocumentidPostEscape = kycdocumentidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{kycdocumentid}", with: kycdocumentidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv200AddKycDocumentRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addKycDocumentRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -126,7 +126,7 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv200AddKycDocument200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AddKycDocument200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -137,12 +137,12 @@ open class KYCAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kycmediaid: (path) The KYCMEDIAID identifier 
-     - parameter oBPv200AddKycMediaRequest: (body) Request body 
+     - parameter addKycMediaRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200AddKycMedia200Response
+     - returns: AddKycMedia200Response
      */
-    open class func oBPv200AddKycMedia(bankid: String, customerid: String, kycmediaid: String, oBPv200AddKycMediaRequest: OBPv200AddKycMediaRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200AddKycMedia200Response {
-        return try await oBPv200AddKycMediaWithRequestBuilder(bankid: bankid, customerid: customerid, kycmediaid: kycmediaid, oBPv200AddKycMediaRequest: oBPv200AddKycMediaRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addKycMedia(bankid: String, customerid: String, kycmediaid: String, addKycMediaRequest: AddKycMediaRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> AddKycMedia200Response {
+        return try await addKycMediaWithRequestBuilder(bankid: bankid, customerid: customerid, kycmediaid: kycmediaid, addKycMediaRequest: addKycMediaRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -156,16 +156,16 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter kycmediaid: (path) The KYCMEDIAID identifier 
-     - parameter oBPv200AddKycMediaRequest: (body) Request body 
+     - parameter addKycMediaRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200AddKycMedia200Response> 
+     - returns: RequestBuilder<AddKycMedia200Response> 
      */
-    open class func oBPv200AddKycMediaWithRequestBuilder(bankid: String, customerid: String, kycmediaid: String, oBPv200AddKycMediaRequest: OBPv200AddKycMediaRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200AddKycMedia200Response> {
+    open class func addKycMediaWithRequestBuilder(bankid: String, customerid: String, kycmediaid: String, addKycMediaRequest: AddKycMediaRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<AddKycMedia200Response> {
         var localVariablePath = "/obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -177,7 +177,7 @@ open class KYCAPI {
         let kycmediaidPostEscape = kycmediaidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{kycmediaid}", with: kycmediaidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv200AddKycMediaRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addKycMediaRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -187,7 +187,7 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv200AddKycMedia200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<AddKycMedia200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -197,12 +197,12 @@ open class KYCAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter oBPv200AddKycStatusRequest: (body) Request body 
+     - parameter addKycStatusRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycStatuses200ResponsePropertiesStatusesItems
+     - returns: GetKycStatuses200ResponseStatusesInner
      */
-    open class func oBPv200AddKycStatus(bankid: String, customerid: String, oBPv200AddKycStatusRequest: OBPv200AddKycStatusRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycStatuses200ResponsePropertiesStatusesItems {
-        return try await oBPv200AddKycStatusWithRequestBuilder(bankid: bankid, customerid: customerid, oBPv200AddKycStatusRequest: oBPv200AddKycStatusRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addKycStatus(bankid: String, customerid: String, addKycStatusRequest: AddKycStatusRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycStatuses200ResponseStatusesInner {
+        return try await addKycStatusWithRequestBuilder(bankid: bankid, customerid: customerid, addKycStatusRequest: addKycStatusRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -216,15 +216,15 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter oBPv200AddKycStatusRequest: (body) Request body 
+     - parameter addKycStatusRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycStatuses200ResponsePropertiesStatusesItems> 
+     - returns: RequestBuilder<GetKycStatuses200ResponseStatusesInner> 
      */
-    open class func oBPv200AddKycStatusWithRequestBuilder(bankid: String, customerid: String, oBPv200AddKycStatusRequest: OBPv200AddKycStatusRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycStatuses200ResponsePropertiesStatusesItems> {
+    open class func addKycStatusWithRequestBuilder(bankid: String, customerid: String, addKycStatusRequest: AddKycStatusRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycStatuses200ResponseStatusesInner> {
         var localVariablePath = "/obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -233,7 +233,7 @@ open class KYCAPI {
         let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv200AddKycStatusRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addKycStatusRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -243,205 +243,9 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycStatuses200ResponsePropertiesStatusesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetKycStatuses200ResponseStatusesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer KYC Checks
-     
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycChecks200Response
-     */
-    open class func oBPv200GetKycChecks(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycChecks200Response {
-        return try await oBPv200GetKycChecksWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer KYC Checks
-     - GET /obp/v2.0.0/customers/{customerid}/kyc_checks
-     - <p>Get KYC checks for the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#how\"><strong>how</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#satisfied\"><strong>satisfied</strong></a>: false</p> <p><a href=\"/glossary#staff_name\"><strong>staff_name</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycChecks200Response> 
-     */
-    open class func oBPv200GetKycChecksWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycChecks200Response> {
-        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_checks"
-        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
-        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycChecks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer KYC Documents
-     
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycDocuments200Response
-     */
-    open class func oBPv200GetKycDocuments(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycDocuments200Response {
-        return try await oBPv200GetKycDocumentsWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer KYC Documents
-     - GET /obp/v2.0.0/customers/{customerid}/kyc_documents
-     - <p>Get KYC (know your customer) documents for a customer specified by CUSTOMER_ID<br /> Get a list of documents that affirm the identity of the customer<br /> Passport, driving licence etc.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#documents\"><strong>documents</strong></a>:</p> <p><a href=\"/glossary#\"><strong>expiry_date</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>issue_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#issue_place\"><strong>issue_place</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycDocuments200Response> 
-     */
-    open class func oBPv200GetKycDocumentsWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycDocuments200Response> {
-        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_documents"
-        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
-        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycDocuments200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get KYC Media for a customer
-     
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycMedia200Response
-     */
-    open class func oBPv200GetKycMedia(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycMedia200Response {
-        return try await oBPv200GetKycMediaWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get KYC Media for a customer
-     - GET /obp/v2.0.0/customers/{customerid}/kyc_media
-     - <p>Get KYC media (scans, pictures, videos) that affirms the identity of the customer.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#medias\"><strong>medias</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_check_id\"><strong>relates_to_kyc_check_id</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_document_id\"><strong>relates_to_kyc_document_id</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycMedia200Response> 
-     */
-    open class func oBPv200GetKycMediaWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycMedia200Response> {
-        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_media"
-        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
-        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycMedia200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer KYC statuses
-     
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200GetKycStatuses200Response
-     */
-    open class func oBPv200GetKycStatuses(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200GetKycStatuses200Response {
-        return try await oBPv200GetKycStatusesWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer KYC statuses
-     - GET /obp/v2.0.0/customers/{customerid}/kyc_statuses
-     - <p>Get the KYC statuses for a customer specified by CUSTOMER_ID over time.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#ok\"><strong>ok</strong></a>: false</p> <p><a href=\"/glossary#statuses\"><strong>statuses</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200GetKycStatuses200Response> 
-     */
-    open class func oBPv200GetKycStatusesWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200GetKycStatuses200Response> {
-        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_statuses"
-        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
-        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200GetKycStatuses200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -449,12 +253,12 @@ open class KYCAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter oBPv310CreateTaxResidenceRequest: (body) Request body 
+     - parameter createTaxResidenceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310CreateTaxResidence200Response
+     - returns: CreateTaxResidence200Response
      */
-    open class func oBPv310CreateTaxResidence(bankid: String, customerid: String, oBPv310CreateTaxResidenceRequest: OBPv310CreateTaxResidenceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310CreateTaxResidence200Response {
-        return try await oBPv310CreateTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, oBPv310CreateTaxResidenceRequest: oBPv310CreateTaxResidenceRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createTaxResidence(bankid: String, customerid: String, createTaxResidenceRequest: CreateTaxResidenceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateTaxResidence200Response {
+        return try await createTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, createTaxResidenceRequest: createTaxResidenceRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -468,15 +272,15 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
-     - parameter oBPv310CreateTaxResidenceRequest: (body) Request body 
+     - parameter createTaxResidenceRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310CreateTaxResidence200Response> 
+     - returns: RequestBuilder<CreateTaxResidence200Response> 
      */
-    open class func oBPv310CreateTaxResidenceWithRequestBuilder(bankid: String, customerid: String, oBPv310CreateTaxResidenceRequest: OBPv310CreateTaxResidenceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310CreateTaxResidence200Response> {
+    open class func createTaxResidenceWithRequestBuilder(bankid: String, customerid: String, createTaxResidenceRequest: CreateTaxResidenceRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateTaxResidence200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -485,7 +289,7 @@ open class KYCAPI {
         let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv310CreateTaxResidenceRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createTaxResidenceRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -495,7 +299,58 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310CreateTaxResidence200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateTaxResidence200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create User Invitation
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createUserInvitationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetUserInvitations200Response
+     */
+    open class func createUserInvitation(bankid: String, createUserInvitationRequest: CreateUserInvitationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetUserInvitations200Response {
+        return try await createUserInvitationWithRequestBuilder(bankid: bankid, createUserInvitationRequest: createUserInvitationRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create User Invitation
+     - POST /obp/v4.0.0/banks/{bankid}/user-invitation
+     - <p>Create User Invitation.</p> <p>This endpoint will send an invitation email to the developers, then they can use the link to create the obp user.</p> <p>purpose filed only support:List(DEVELOPER, CUSTOMER).</p> <p>You can customise the email details use the following webui props:</p> <p>when purpose == DEVELOPER<br /> webui_developer_user_invitation_email_subject<br /> webui_developer_user_invitation_email_from<br /> webui_developer_user_invitation_email_text<br /> webui_developer_user_invitation_email_html_text</p> <p>when purpose = == CUSTOMER<br /> webui_customer_user_invitation_email_subject<br /> webui_customer_user_invitation_email_from<br /> webui_customer_user_invitation_email_text<br /> webui_customer_user_invitation_email_html_text</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;&#105;&#108;&#x74;o:&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;t&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;e&#x2e;c&#111;&#x6d;\">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#109;&#x70;l&#101;&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#108;&#x74;&#111;&#58;&#x66;&#101;&#x6c;&#x69;&#120;&#x73;&#109;&#105;&#116;&#104;&#x40;&#101;&#x78;a&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;\">&#x66;eli&#x78;s&#109;&#105;&#116;&#104;&#x40;ex&#97;&#109;&#112;l&#101;&#46;c&#x6f;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createUserInvitationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetUserInvitations200Response> 
+     */
+    open class func createUserInvitationWithRequestBuilder(bankid: String, createUserInvitationRequest: CreateUserInvitationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetUserInvitations200Response> {
+        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/user-invitation"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createUserInvitationRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetUserInvitations200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -509,8 +364,8 @@ open class KYCAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv310DeleteCustomerAddress(bankid: String, customerid: String, customeraddressid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv310DeleteCustomerAddressWithRequestBuilder(bankid: bankid, customerid: customerid, customeraddressid: customeraddressid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCustomerAddress(bankid: String, customerid: String, customeraddressid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCustomerAddressWithRequestBuilder(bankid: bankid, customerid: customerid, customeraddressid: customeraddressid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -524,7 +379,7 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
@@ -532,7 +387,7 @@ open class KYCAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv310DeleteCustomerAddressWithRequestBuilder(bankid: String, customerid: String, customeraddressid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCustomerAddressWithRequestBuilder(bankid: String, customerid: String, customeraddressid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -568,8 +423,8 @@ open class KYCAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv310DeleteTaxResidence(bankid: String, customerid: String, taxresidenceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv310DeleteTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, taxresidenceid: taxresidenceid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteTaxResidence(bankid: String, customerid: String, taxresidenceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, taxresidenceid: taxresidenceid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -583,7 +438,7 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
@@ -591,7 +446,7 @@ open class KYCAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv310DeleteTaxResidenceWithRequestBuilder(bankid: String, customerid: String, taxresidenceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteTaxResidenceWithRequestBuilder(bankid: String, customerid: String, taxresidenceid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -624,10 +479,10 @@ open class KYCAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetCustomerAddresses200Response
+     - returns: GetCustomerAddresses200Response
      */
-    open class func oBPv310GetCustomerAddresses(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetCustomerAddresses200Response {
-        return try await oBPv310GetCustomerAddressesWithRequestBuilder(bankid: bankid, customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    open class func getCustomerAddresses(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCustomerAddresses200Response {
+        return try await getCustomerAddressesWithRequestBuilder(bankid: bankid, customerid: customerid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -641,14 +496,14 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetCustomerAddresses200Response> 
+     - returns: RequestBuilder<GetCustomerAddresses200Response> 
      */
-    open class func oBPv310GetCustomerAddressesWithRequestBuilder(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetCustomerAddresses200Response> {
+    open class func getCustomerAddressesWithRequestBuilder(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCustomerAddresses200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -667,7 +522,458 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetCustomerAddresses200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCustomerAddresses200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer by CUSTOMER_NUMBER
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCustomerByCustomerNumber200Response
+     */
+    open class func getCustomerByCustomerNumber(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCustomerByCustomerNumber200Response {
+        return try await getCustomerByCustomerNumberWithRequestBuilder(bankid: bankid, getCustomerOverviewFlatRequest: getCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer by CUSTOMER_NUMBER
+     - POST /obp/v6.0.0/banks/{bankid}/customers/customer-number
+     - <p>Gets the Customer specified by CUSTOMER_NUMBER.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#108;&#116;&#111;:&#x66;&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#x74;h@&#x65;&#x78;a&#x6d;&#112;&#x6c;e&#46;&#99;&#111;&#x6d;\">&#102;&#101;l&#x69;&#x78;s&#109;&#105;t&#104;@&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCustomerByCustomerNumber200Response> 
+     */
+    open class func getCustomerByCustomerNumberWithRequestBuilder(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCustomerByCustomerNumber200Response> {
+        var localVariablePath = "/obp/v6.0.0/banks/{bankid}/customers/customer-number"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCustomerByCustomerNumber200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer Overview
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCustomerOverview200Response
+     */
+    open class func getCustomerOverview(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCustomerOverview200Response {
+        return try await getCustomerOverviewWithRequestBuilder(bankid: bankid, getCustomerOverviewFlatRequest: getCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer Overview
+     - POST /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview
+     - <p>Gets the Customer Overview specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#105;&#x6c;t&#x6f;&#58;f&#x65;&#x6c;&#105;&#120;&#x73;&#x6d;&#x69;t&#104;&#64;&#101;x&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#109;\">&#x66;&#101;&#108;&#x69;&#120;&#115;&#x6d;i&#116;&#104;@&#x65;x&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">contract_code</a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCustomerOverview200Response> 
+     */
+    open class func getCustomerOverviewWithRequestBuilder(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCustomerOverview200Response> {
+        var localVariablePath = "/obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCustomerOverview200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer Overview Flat
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCustomerOverviewFlat200Response
+     */
+    open class func getCustomerOverviewFlat(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCustomerOverviewFlat200Response {
+        return try await getCustomerOverviewFlatWithRequestBuilder(bankid: bankid, getCustomerOverviewFlatRequest: getCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer Overview Flat
+     - POST /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat
+     - <p>Gets the Customer Overview Flat specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;t&#x6f;&#58;&#x66;&#x65;&#108;&#x69;&#120;sm&#105;&#x74;&#x68;&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#101;.c&#x6f;m\">&#102;&#x65;&#108;&#105;&#x78;&#115;&#109;&#x69;&#x74;h&#x40;e&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#x63;o&#109;</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">branch_code</a>: branch_code</p> <p><a href=\"/glossary#\">cancellation_date</a>: cancellation_date</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#\">form_of_payment</a>: form_of_payment</p> <p><a href=\"/glossary#\">instrument_status_code</a>: instrument_status_code</p> <p><a href=\"/glossary#\">instrument_status_definition</a>: instrument_status_definition</p> <p><a href=\"/glossary#\">interest_amount</a>: interest_amount</p> <p><a href=\"/glossary#\">interest_rate</a>: interest_rate</p> <p><a href=\"/glossary#\">is_substituted</a>: is_substituted</p> <p><a href=\"/glossary#\">issuance_amount</a>: issuance_amount</p> <p><a href=\"/glossary#\">maturity_date</a>: maturity_date</p> <p><a href=\"/glossary#\">opening_date</a>: opening_date</p> <p><a href=\"/glossary#\">payment_method</a>: payment_method</p> <p><a href=\"/glossary#\">product_description</a>: product_description</p> <p><a href=\"/glossary#\">renewal_date</a>: renewal_date</p> <p><a href=\"/glossary#\">term</a>: term</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomerOverviewFlatRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCustomerOverviewFlat200Response> 
+     */
+    open class func getCustomerOverviewFlatWithRequestBuilder(bankid: String, getCustomerOverviewFlatRequest: GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCustomerOverviewFlat200Response> {
+        var localVariablePath = "/obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCustomerOverviewFlat200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customers by MOBILE_PHONE_NUMBER
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateCustomerBranch200Response
+     */
+    open class func getCustomersByCustomerPhoneNumber(bankid: String, createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateCustomerBranch200Response {
+        return try await getCustomersByCustomerPhoneNumberWithRequestBuilder(bankid: bankid, createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customers by MOBILE_PHONE_NUMBER
+     - POST /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number
+     - <p>Gets the Customers specified by MOBILE_PHONE_NUMBER.</p> <p>There are two wildcards often used in conjunction with the LIKE operator:<br /> % - The percent sign represents zero, one, or multiple characters<br /> _ - The underscore represents a single character<br /> For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numbers which contain 381 sequence</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;t&#111;&#58;f&#x65;&#x6c;i&#x78;smi&#116;&#104;&#x40;&#101;x&#97;&#x6d;&#112;le&#46;&#x63;&#x6f;&#x6d;\">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#64;&#101;&#120;&#97;&#109;p&#x6c;&#101;&#x2e;&#99;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateCustomerBranch200Response> 
+     */
+    open class func getCustomersByCustomerPhoneNumberWithRequestBuilder(bankid: String, createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo: CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateCustomerBranch200Response> {
+        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateCustomerBranch200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customers by Legal Name
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomersByLegalNameRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCustomerChildren200Response
+     */
+    open class func getCustomersByLegalName(bankid: String, getCustomersByLegalNameRequest: GetCustomersByLegalNameRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCustomerChildren200Response {
+        return try await getCustomersByLegalNameWithRequestBuilder(bankid: bankid, getCustomersByLegalNameRequest: getCustomersByLegalNameRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customers by Legal Name
+     - POST /obp/v6.0.0/banks/{bankid}/customers/legal-name
+     - <p>Gets the Customers specified by Legal Name.</p> <p>Returns a list of customers that match the provided legal name.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x66;&#101;&#x6c;&#x69;x&#115;m&#105;&#x74;&#104;&#x40;&#x65;x&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;m\">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;e&#46;&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter getCustomersByLegalNameRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCustomerChildren200Response> 
+     */
+    open class func getCustomersByLegalNameWithRequestBuilder(bankid: String, getCustomersByLegalNameRequest: GetCustomersByLegalNameRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCustomerChildren200Response> {
+        var localVariablePath = "/obp/v6.0.0/banks/{bankid}/customers/legal-name"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCustomersByLegalNameRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCustomerChildren200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer KYC Checks
+     
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetKycChecks200Response
+     */
+    open class func getKycChecks(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycChecks200Response {
+        return try await getKycChecksWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer KYC Checks
+     - GET /obp/v2.0.0/customers/{customerid}/kyc_checks
+     - <p>Get KYC checks for the Customer specified by CUSTOMER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#checks\"><strong>checks</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#how\"><strong>how</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#satisfied\"><strong>satisfied</strong></a>: false</p> <p><a href=\"/glossary#staff_name\"><strong>staff_name</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetKycChecks200Response> 
+     */
+    open class func getKycChecksWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycChecks200Response> {
+        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_checks"
+        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
+        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetKycChecks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer KYC Documents
+     
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetKycDocuments200Response
+     */
+    open class func getKycDocuments(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycDocuments200Response {
+        return try await getKycDocumentsWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer KYC Documents
+     - GET /obp/v2.0.0/customers/{customerid}/kyc_documents
+     - <p>Get KYC (know your customer) documents for a customer specified by CUSTOMER_ID<br /> Get a list of documents that affirm the identity of the customer<br /> Passport, driving licence etc.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#documents\"><strong>documents</strong></a>:</p> <p><a href=\"/glossary#\"><strong>expiry_date</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#\"><strong>issue_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#issue_place\"><strong>issue_place</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetKycDocuments200Response> 
+     */
+    open class func getKycDocumentsWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycDocuments200Response> {
+        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_documents"
+        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
+        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetKycDocuments200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get KYC Media for a customer
+     
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetKycMedia200Response
+     */
+    open class func getKycMedia(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycMedia200Response {
+        return try await getKycMediaWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get KYC Media for a customer
+     - GET /obp/v2.0.0/customers/{customerid}/kyc_media
+     - <p>Get KYC media (scans, pictures, videos) that affirms the identity of the customer.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#medias\"><strong>medias</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_check_id\"><strong>relates_to_kyc_check_id</strong></a>:</p> <p><a href=\"/glossary#relates_to_kyc_document_id\"><strong>relates_to_kyc_document_id</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetKycMedia200Response> 
+     */
+    open class func getKycMediaWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycMedia200Response> {
+        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_media"
+        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
+        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetKycMedia200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Customer KYC statuses
+     
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetKycStatuses200Response
+     */
+    open class func getKycStatuses(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetKycStatuses200Response {
+        return try await getKycStatusesWithRequestBuilder(customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Customer KYC statuses
+     - GET /obp/v2.0.0/customers/{customerid}/kyc_statuses
+     - <p>Get the KYC statuses for a customer specified by CUSTOMER_ID over time.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#ok\"><strong>ok</strong></a>: false</p> <p><a href=\"/glossary#statuses\"><strong>statuses</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter customerid: (path) The CUSTOMERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetKycStatuses200Response> 
+     */
+    open class func getKycStatusesWithRequestBuilder(customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetKycStatuses200Response> {
+        var localVariablePath = "/obp/v2.0.0/customers/{customerid}/kyc_statuses"
+        let customeridPreEscape = "\(APIHelper.mapValueToPathItem(customerid))"
+        let customeridPostEscape = customeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{customerid}", with: customeridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetKycStatuses200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -678,10 +984,10 @@ open class KYCAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetTaxResidence200Response
+     - returns: GetTaxResidence200Response
      */
-    open class func oBPv310GetTaxResidence(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetTaxResidence200Response {
-        return try await oBPv310GetTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTaxResidence(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTaxResidence200Response {
+        return try await getTaxResidenceWithRequestBuilder(bankid: bankid, customerid: customerid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -695,14 +1001,14 @@ open class KYCAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter customerid: (path) The CUSTOMERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetTaxResidence200Response> 
+     - returns: RequestBuilder<GetTaxResidence200Response> 
      */
-    open class func oBPv310GetTaxResidenceWithRequestBuilder(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetTaxResidence200Response> {
+    open class func getTaxResidenceWithRequestBuilder(bankid: String, customerid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTaxResidence200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -721,141 +1027,39 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetTaxResidence200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTaxResidence200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
-     Create User Invitation
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateUserInvitationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetUserInvitations200Response
-     */
-    open class func oBPv400CreateUserInvitation(bankid: String, oBPv400CreateUserInvitationRequest: OBPv400CreateUserInvitationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetUserInvitations200Response {
-        return try await oBPv400CreateUserInvitationWithRequestBuilder(bankid: bankid, oBPv400CreateUserInvitationRequest: oBPv400CreateUserInvitationRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create User Invitation
-     - POST /obp/v4.0.0/banks/{bankid}/user-invitation
-     - <p>Create User Invitation.</p> <p>This endpoint will send an invitation email to the developers, then they can use the link to create the obp user.</p> <p>purpose filed only support:List(DEVELOPER, CUSTOMER).</p> <p>You can customise the email details use the following webui props:</p> <p>when purpose == DEVELOPER<br /> webui_developer_user_invitation_email_subject<br /> webui_developer_user_invitation_email_from<br /> webui_developer_user_invitation_email_text<br /> webui_developer_user_invitation_email_html_text</p> <p>when purpose = == CUSTOMER<br /> webui_customer_user_invitation_email_subject<br /> webui_customer_user_invitation_email_from<br /> webui_customer_user_invitation_email_text<br /> webui_customer_user_invitation_email_html_text</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#x6c;&#116;o&#58;&#x66;&#x65;&#108;&#105;xs&#x6d;i&#116;h&#x40;e&#x78;&#97;m&#x70;l&#101;&#46;&#99;&#x6f;&#109;\">&#102;&#101;&#x6c;i&#120;&#115;m&#x69;&#x74;h@ex&#97;&#x6d;pl&#x65;.&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;ai&#x6c;t&#111;&#x3a;&#102;&#101;&#108;&#x69;x&#115;&#109;&#x69;&#x74;&#x68;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;.&#x63;&#111;&#x6d;\">&#x66;&#101;&#x6c;&#x69;xsm&#105;&#x74;&#x68;&#x40;&#x65;&#120;&#97;mp&#108;&#x65;.&#99;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateUserInvitationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetUserInvitations200Response> 
-     */
-    open class func oBPv400CreateUserInvitationWithRequestBuilder(bankid: String, oBPv400CreateUserInvitationRequest: OBPv400CreateUserInvitationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetUserInvitations200Response> {
-        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/user-invitation"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateUserInvitationRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetUserInvitations200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customers by MOBILE_PHONE_NUMBER
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310UpdateCustomerBranch200Response
-     */
-    open class func oBPv400GetCustomersByCustomerPhoneNumber(bankid: String, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310UpdateCustomerBranch200Response {
-        return try await oBPv400GetCustomersByCustomerPhoneNumberWithRequestBuilder(bankid: bankid, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customers by MOBILE_PHONE_NUMBER
-     - POST /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number
-     - <p>Gets the Customers specified by MOBILE_PHONE_NUMBER.</p> <p>There are two wildcards often used in conjunction with the LIKE operator:<br /> % - The percent sign represents zero, one, or multiple characters<br /> _ - The underscore represents a single character<br /> For example {&quot;customer_phone_number&quot;:&quot;%381%&quot;} lists all numbers which contain 381 sequence</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#x6c;&#116;&#x6f;:&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#105;&#116;&#104;&#64;&#x65;&#x78;&#x61;&#x6d;&#112;&#108;&#x65;.&#x63;o&#x6d;\">&#102;&#x65;&#108;&#105;&#x78;s&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;e&#46;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310UpdateCustomerBranch200Response> 
-     */
-    open class func oBPv400GetCustomersByCustomerPhoneNumberWithRequestBuilder(bankid: String, oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo: OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310UpdateCustomerBranch200Response> {
-        var localVariablePath = "/obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv310UpdateCustomerBranch200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Get User Invitation Information
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400GetUserInvitationAnonymousRequest: (body) Request body 
+     - parameter getUserInvitationAnonymousRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetUserInvitations200Response
+     - returns: GetUserInvitations200Response
      */
-    open class func oBPv400GetUserInvitationAnonymous(bankid: String, oBPv400GetUserInvitationAnonymousRequest: OBPv400GetUserInvitationAnonymousRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetUserInvitations200Response {
-        return try await oBPv400GetUserInvitationAnonymousWithRequestBuilder(bankid: bankid, oBPv400GetUserInvitationAnonymousRequest: oBPv400GetUserInvitationAnonymousRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func getUserInvitationAnonymous(bankid: String, getUserInvitationAnonymousRequest: GetUserInvitationAnonymousRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetUserInvitations200Response {
+        return try await getUserInvitationAnonymousWithRequestBuilder(bankid: bankid, getUserInvitationAnonymousRequest: getUserInvitationAnonymousRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
      Get User Invitation Information
      - POST /obp/v4.0.0/banks/{bankid}/user-invitations
-     - <p>Get User Invitation Information.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>secret_key</strong></a>: secret_key</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;ai&#108;&#116;o:&#x66;&#x65;li&#120;&#x73;m&#105;&#116;&#104;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#46;c&#x6f;m\">&#x66;&#x65;&#108;&#105;x&#115;&#109;&#105;&#116;&#104;&#64;&#101;&#x78;a&#x6d;&#112;l&#101;&#x2e;&#x63;&#111;&#109;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
+     - <p>Get User Invitation Information.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>secret_key</strong></a>: secret_key</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#country\"><strong>country</strong></a>: Germany</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#x6c;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;i&#x74;&#x68;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;\">fe&#108;&#105;&#x78;&#x73;&#109;&#105;&#x74;h@&#x65;&#120;&#x61;m&#112;&#108;e&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#first_name\"><strong>first_name</strong></a>: Tom</p> <p><a href=\"/glossary#last_name\"><strong>last_name</strong></a>: Smith</p> <p><a href=\"/glossary#purpose\"><strong>purpose</strong></a>: DEVELOPER</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> 
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400GetUserInvitationAnonymousRequest: (body) Request body 
+     - parameter getUserInvitationAnonymousRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetUserInvitations200Response> 
+     - returns: RequestBuilder<GetUserInvitations200Response> 
      */
-    open class func oBPv400GetUserInvitationAnonymousWithRequestBuilder(bankid: String, oBPv400GetUserInvitationAnonymousRequest: OBPv400GetUserInvitationAnonymousRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetUserInvitations200Response> {
+    open class func getUserInvitationAnonymousWithRequestBuilder(bankid: String, getUserInvitationAnonymousRequest: GetUserInvitationAnonymousRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetUserInvitations200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/user-invitations"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400GetUserInvitationAnonymousRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getUserInvitationAnonymousRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -865,212 +1069,8 @@ open class KYCAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetUserInvitations200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetUserInvitations200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer Overview
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv500GetCustomerOverview200Response
-     */
-    open class func oBPv500GetCustomerOverview(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv500GetCustomerOverview200Response {
-        return try await oBPv500GetCustomerOverviewWithRequestBuilder(bankid: bankid, oBPv500GetCustomerOverviewFlatRequest: oBPv500GetCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer Overview
-     - POST /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview
-     - <p>Gets the Customer Overview specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;i&#x6c;&#x74;&#111;:&#102;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;e&#46;c&#x6f;&#109;\">&#x66;&#101;&#108;&#105;&#x78;s&#109;&#105;&#x74;&#104;@&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">contract_code</a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv500GetCustomerOverview200Response> 
-     */
-    open class func oBPv500GetCustomerOverviewWithRequestBuilder(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv500GetCustomerOverview200Response> {
-        var localVariablePath = "/obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv500GetCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv500GetCustomerOverview200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer Overview Flat
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv500GetCustomerOverviewFlat200Response
-     */
-    open class func oBPv500GetCustomerOverviewFlat(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv500GetCustomerOverviewFlat200Response {
-        return try await oBPv500GetCustomerOverviewFlatWithRequestBuilder(bankid: bankid, oBPv500GetCustomerOverviewFlatRequest: oBPv500GetCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer Overview Flat
-     - POST /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat
-     - <p>Gets the Customer Overview Flat specified by customer_number and bank_code.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#account_attributes\"><strong>account_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#balance\"><strong>balance</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#102;&#x65;&#x6c;&#x69;x&#x73;&#x6d;&#x69;&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;\">fe&#108;&#x69;&#x78;s&#109;i&#x74;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;.&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">branch_code</a>: branch_code</p> <p><a href=\"/glossary#\">cancellation_date</a>: cancellation_date</p> <p><a href=\"/glossary#\"><strong>contract_code</strong></a>: contract_code</p> <p><a href=\"/glossary#\">contracts</a>: contracts</p> <p><a href=\"/glossary#\">form_of_payment</a>: form_of_payment</p> <p><a href=\"/glossary#\">instrument_status_code</a>: instrument_status_code</p> <p><a href=\"/glossary#\">instrument_status_definition</a>: instrument_status_definition</p> <p><a href=\"/glossary#\">interest_amount</a>: interest_amount</p> <p><a href=\"/glossary#\">interest_rate</a>: interest_rate</p> <p><a href=\"/glossary#\">is_substituted</a>: is_substituted</p> <p><a href=\"/glossary#\">issuance_amount</a>: issuance_amount</p> <p><a href=\"/glossary#\">maturity_date</a>: maturity_date</p> <p><a href=\"/glossary#\">opening_date</a>: opening_date</p> <p><a href=\"/glossary#\">payment_method</a>: payment_method</p> <p><a href=\"/glossary#\">product_description</a>: product_description</p> <p><a href=\"/glossary#\">renewal_date</a>: renewal_date</p> <p><a href=\"/glossary#\">term</a>: term</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv500GetCustomerOverviewFlat200Response> 
-     */
-    open class func oBPv500GetCustomerOverviewFlatWithRequestBuilder(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv500GetCustomerOverviewFlat200Response> {
-        var localVariablePath = "/obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv500GetCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv500GetCustomerOverviewFlat200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customer by CUSTOMER_NUMBER
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetCustomerByCustomerNumber200Response
-     */
-    open class func oBPv600GetCustomerByCustomerNumber(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetCustomerByCustomerNumber200Response {
-        return try await oBPv600GetCustomerByCustomerNumberWithRequestBuilder(bankid: bankid, oBPv500GetCustomerOverviewFlatRequest: oBPv500GetCustomerOverviewFlatRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customer by CUSTOMER_NUMBER
-     - POST /obp/v6.0.0/banks/{bankid}/customers/customer-number
-     - <p>Gets the Customer specified by CUSTOMER_NUMBER.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;l&#x74;&#111;&#x3a;&#x66;el&#x69;&#x78;&#x73;m&#105;&#116;&#104;&#64;e&#120;&#x61;m&#x70;le&#46;&#99;&#111;m\">f&#101;&#x6c;&#x69;xs&#x6d;&#x69;&#x74;&#x68;&#x40;&#101;x&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv500GetCustomerOverviewFlatRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetCustomerByCustomerNumber200Response> 
-     */
-    open class func oBPv600GetCustomerByCustomerNumberWithRequestBuilder(bankid: String, oBPv500GetCustomerOverviewFlatRequest: OBPv500GetCustomerOverviewFlatRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetCustomerByCustomerNumber200Response> {
-        var localVariablePath = "/obp/v6.0.0/banks/{bankid}/customers/customer-number"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv500GetCustomerOverviewFlatRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetCustomerByCustomerNumber200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Customers by Legal Name
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv600GetCustomersByLegalNameRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetCustomerChildren200Response
-     */
-    open class func oBPv600GetCustomersByLegalName(bankid: String, oBPv600GetCustomersByLegalNameRequest: OBPv600GetCustomersByLegalNameRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetCustomerChildren200Response {
-        return try await oBPv600GetCustomersByLegalNameWithRequestBuilder(bankid: bankid, oBPv600GetCustomersByLegalNameRequest: oBPv600GetCustomersByLegalNameRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Customers by Legal Name
-     - POST /obp/v6.0.0/banks/{bankid}/customers/legal-name
-     - <p>Gets the Customers specified by Legal Name.</p> <p>Returns a list of customers that match the provided legal name.</p> <p><strong>Date Format:</strong><br /> In v6.0.0, date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong> (e.g., &quot;1990-05-15&quot;, &quot;2010-03-20&quot;).</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;i&#x6c;&#116;&#111;&#58;&#102;&#101;&#108;i&#x78;&#x73;&#x6d;&#105;t&#104;&#64;e&#120;a&#x6d;&#x70;&#108;e&#x2e;&#x63;&#111;&#x6d;\">fel&#105;xs&#109;&#105;t&#x68;&#x40;&#101;&#120;a&#x6d;&#112;l&#101;&#x2e;&#99;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv600GetCustomersByLegalNameRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetCustomerChildren200Response> 
-     */
-    open class func oBPv600GetCustomersByLegalNameWithRequestBuilder(bankid: String, oBPv600GetCustomersByLegalNameRequest: OBPv600GetCustomersByLegalNameRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetCustomerChildren200Response> {
-        var localVariablePath = "/obp/v6.0.0/banks/{bankid}/customers/legal-name"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600GetCustomersByLegalNameRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetCustomerChildren200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 }

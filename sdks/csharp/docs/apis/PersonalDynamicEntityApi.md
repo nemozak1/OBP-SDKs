@@ -1,14 +1,14 @@
 # OpenBankProject.Api.PersonalDynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
 
-<a id="obpv600getavailablepersonaldynamicentities"></a>
-# **OBPv600GetAvailablePersonalDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response OBPv600GetAvailablePersonalDynamicEntities ()
+<a id="getavailablepersonaldynamicentities"></a>
+# **GetAvailablePersonalDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response GetAvailablePersonalDynamicEntities ()
 
 Get Available Personal Dynamic Entities
 
@@ -19,7 +19,7 @@ Get Available Personal Dynamic Entities
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class VRPApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv500CreateConsentByConsentRequestIdEmail' => [
+        'createConsentByConsentRequestIdEmail' => [
             'application/json',
         ],
-        'oBPv510CreateVRPConsentRequest' => [
+        'createVRPConsentRequest' => [
             'application/json',
         ],
     ];
@@ -130,40 +130,40 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv500CreateConsentByConsentRequestIdEmail
+     * Operation createConsentByConsentRequestIdEmail
      *
      * Create Consent By CONSENT_REQUEST_ID (EMAIL)
      *
      * @param  string $consentrequestid The CONSENTREQUESTID identifier (required)
      * @param  string $email The EMAIL identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsentByConsentRequestIdEmail'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response
+     * @return \OpenBankProject\Model\GetConsentByConsentRequestId200Response
      */
-    public function oBPv500CreateConsentByConsentRequestIdEmail($consentrequestid, $email, string $contentType = self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'][0])
+    public function createConsentByConsentRequestIdEmail($consentrequestid, $email, string $contentType = self::contentTypes['createConsentByConsentRequestIdEmail'][0])
     {
-        list($response) = $this->oBPv500CreateConsentByConsentRequestIdEmailWithHttpInfo($consentrequestid, $email, $contentType);
+        list($response) = $this->createConsentByConsentRequestIdEmailWithHttpInfo($consentrequestid, $email, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv500CreateConsentByConsentRequestIdEmailWithHttpInfo
+     * Operation createConsentByConsentRequestIdEmailWithHttpInfo
      *
      * Create Consent By CONSENT_REQUEST_ID (EMAIL)
      *
      * @param  string $consentrequestid The CONSENTREQUESTID identifier (required)
      * @param  string $email The EMAIL identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsentByConsentRequestIdEmail'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConsentByConsentRequestId200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv500CreateConsentByConsentRequestIdEmailWithHttpInfo($consentrequestid, $email, string $contentType = self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'][0])
+    public function createConsentByConsentRequestIdEmailWithHttpInfo($consentrequestid, $email, string $contentType = self::contentTypes['createConsentByConsentRequestIdEmail'][0])
     {
-        $request = $this->oBPv500CreateConsentByConsentRequestIdEmailRequest($consentrequestid, $email, $contentType);
+        $request = $this->createConsentByConsentRequestIdEmailRequest($consentrequestid, $email, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -191,7 +191,7 @@ class VRPApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response',
+                        '\OpenBankProject\Model\GetConsentByConsentRequestId200Response',
                         $request,
                         $response,
                     );
@@ -213,7 +213,7 @@ class VRPApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response',
+                '\OpenBankProject\Model\GetConsentByConsentRequestId200Response',
                 $request,
                 $response,
             );
@@ -222,7 +222,7 @@ class VRPApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response',
+                        '\OpenBankProject\Model\GetConsentByConsentRequestId200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -235,20 +235,20 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv500CreateConsentByConsentRequestIdEmailAsync
+     * Operation createConsentByConsentRequestIdEmailAsync
      *
      * Create Consent By CONSENT_REQUEST_ID (EMAIL)
      *
      * @param  string $consentrequestid The CONSENTREQUESTID identifier (required)
      * @param  string $email The EMAIL identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsentByConsentRequestIdEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateConsentByConsentRequestIdEmailAsync($consentrequestid, $email, string $contentType = self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'][0])
+    public function createConsentByConsentRequestIdEmailAsync($consentrequestid, $email, string $contentType = self::contentTypes['createConsentByConsentRequestIdEmail'][0])
     {
-        return $this->oBPv500CreateConsentByConsentRequestIdEmailAsyncWithHttpInfo($consentrequestid, $email, $contentType)
+        return $this->createConsentByConsentRequestIdEmailAsyncWithHttpInfo($consentrequestid, $email, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,21 +257,21 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv500CreateConsentByConsentRequestIdEmailAsyncWithHttpInfo
+     * Operation createConsentByConsentRequestIdEmailAsyncWithHttpInfo
      *
      * Create Consent By CONSENT_REQUEST_ID (EMAIL)
      *
      * @param  string $consentrequestid The CONSENTREQUESTID identifier (required)
      * @param  string $email The EMAIL identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsentByConsentRequestIdEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv500CreateConsentByConsentRequestIdEmailAsyncWithHttpInfo($consentrequestid, $email, string $contentType = self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'][0])
+    public function createConsentByConsentRequestIdEmailAsyncWithHttpInfo($consentrequestid, $email, string $contentType = self::contentTypes['createConsentByConsentRequestIdEmail'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv500GetConsentByConsentRequestId200Response';
-        $request = $this->oBPv500CreateConsentByConsentRequestIdEmailRequest($consentrequestid, $email, $contentType);
+        $returnType = '\OpenBankProject\Model\GetConsentByConsentRequestId200Response';
+        $request = $this->createConsentByConsentRequestIdEmailRequest($consentrequestid, $email, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -310,29 +310,29 @@ class VRPApi
     }
 
     /**
-     * Create request for operation 'oBPv500CreateConsentByConsentRequestIdEmail'
+     * Create request for operation 'createConsentByConsentRequestIdEmail'
      *
      * @param  string $consentrequestid The CONSENTREQUESTID identifier (required)
      * @param  string $email The EMAIL identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createConsentByConsentRequestIdEmail'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv500CreateConsentByConsentRequestIdEmailRequest($consentrequestid, $email, string $contentType = self::contentTypes['oBPv500CreateConsentByConsentRequestIdEmail'][0])
+    public function createConsentByConsentRequestIdEmailRequest($consentrequestid, $email, string $contentType = self::contentTypes['createConsentByConsentRequestIdEmail'][0])
     {
 
         // verify the required parameter 'consentrequestid' is set
         if ($consentrequestid === null || (is_array($consentrequestid) && count($consentrequestid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $consentrequestid when calling oBPv500CreateConsentByConsentRequestIdEmail'
+                'Missing the required parameter $consentrequestid when calling createConsentByConsentRequestIdEmail'
             );
         }
 
         // verify the required parameter 'email' is set
         if ($email === null || (is_array($email) && count($email) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling oBPv500CreateConsentByConsentRequestIdEmail'
+                'Missing the required parameter $email when calling createConsentByConsentRequestIdEmail'
             );
         }
 
@@ -405,9 +405,9 @@ class VRPApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -432,38 +432,38 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv510CreateVRPConsentRequest
+     * Operation createVRPConsentRequest
      *
      * Create Consent Request VRP
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequest $obpv510_create_vrp_consent_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateVRPConsentRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequest $create_vrp_consent_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVRPConsentRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response
+     * @return \OpenBankProject\Model\CreateVRPConsentRequest200Response
      */
-    public function oBPv510CreateVRPConsentRequest($obpv510_create_vrp_consent_request_request, string $contentType = self::contentTypes['oBPv510CreateVRPConsentRequest'][0])
+    public function createVRPConsentRequest($create_vrp_consent_request_request, string $contentType = self::contentTypes['createVRPConsentRequest'][0])
     {
-        list($response) = $this->oBPv510CreateVRPConsentRequestWithHttpInfo($obpv510_create_vrp_consent_request_request, $contentType);
+        list($response) = $this->createVRPConsentRequestWithHttpInfo($create_vrp_consent_request_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateVRPConsentRequestWithHttpInfo
+     * Operation createVRPConsentRequestWithHttpInfo
      *
      * Create Consent Request VRP
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequest $obpv510_create_vrp_consent_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateVRPConsentRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequest $create_vrp_consent_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVRPConsentRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateVRPConsentRequest200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateVRPConsentRequestWithHttpInfo($obpv510_create_vrp_consent_request_request, string $contentType = self::contentTypes['oBPv510CreateVRPConsentRequest'][0])
+    public function createVRPConsentRequestWithHttpInfo($create_vrp_consent_request_request, string $contentType = self::contentTypes['createVRPConsentRequest'][0])
     {
-        $request = $this->oBPv510CreateVRPConsentRequestRequest($obpv510_create_vrp_consent_request_request, $contentType);
+        $request = $this->createVRPConsentRequestRequest($create_vrp_consent_request_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -491,7 +491,7 @@ class VRPApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response',
+                        '\OpenBankProject\Model\CreateVRPConsentRequest200Response',
                         $request,
                         $response,
                     );
@@ -513,7 +513,7 @@ class VRPApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response',
+                '\OpenBankProject\Model\CreateVRPConsentRequest200Response',
                 $request,
                 $response,
             );
@@ -522,7 +522,7 @@ class VRPApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response',
+                        '\OpenBankProject\Model\CreateVRPConsentRequest200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -535,19 +535,19 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv510CreateVRPConsentRequestAsync
+     * Operation createVRPConsentRequestAsync
      *
      * Create Consent Request VRP
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequest $obpv510_create_vrp_consent_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateVRPConsentRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequest $create_vrp_consent_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVRPConsentRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateVRPConsentRequestAsync($obpv510_create_vrp_consent_request_request, string $contentType = self::contentTypes['oBPv510CreateVRPConsentRequest'][0])
+    public function createVRPConsentRequestAsync($create_vrp_consent_request_request, string $contentType = self::contentTypes['createVRPConsentRequest'][0])
     {
-        return $this->oBPv510CreateVRPConsentRequestAsyncWithHttpInfo($obpv510_create_vrp_consent_request_request, $contentType)
+        return $this->createVRPConsentRequestAsyncWithHttpInfo($create_vrp_consent_request_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -556,20 +556,20 @@ class VRPApi
     }
 
     /**
-     * Operation oBPv510CreateVRPConsentRequestAsyncWithHttpInfo
+     * Operation createVRPConsentRequestAsyncWithHttpInfo
      *
      * Create Consent Request VRP
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequest $obpv510_create_vrp_consent_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateVRPConsentRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequest $create_vrp_consent_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVRPConsentRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateVRPConsentRequestAsyncWithHttpInfo($obpv510_create_vrp_consent_request_request, string $contentType = self::contentTypes['oBPv510CreateVRPConsentRequest'][0])
+    public function createVRPConsentRequestAsyncWithHttpInfo($create_vrp_consent_request_request, string $contentType = self::contentTypes['createVRPConsentRequest'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510CreateVRPConsentRequest200Response';
-        $request = $this->oBPv510CreateVRPConsentRequestRequest($obpv510_create_vrp_consent_request_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateVRPConsentRequest200Response';
+        $request = $this->createVRPConsentRequestRequest($create_vrp_consent_request_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -608,21 +608,21 @@ class VRPApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateVRPConsentRequest'
+     * Create request for operation 'createVRPConsentRequest'
      *
-     * @param  \OpenBankProject\Model\OBPv510CreateVRPConsentRequestRequest $obpv510_create_vrp_consent_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateVRPConsentRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateVRPConsentRequestRequest $create_vrp_consent_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createVRPConsentRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateVRPConsentRequestRequest($obpv510_create_vrp_consent_request_request, string $contentType = self::contentTypes['oBPv510CreateVRPConsentRequest'][0])
+    public function createVRPConsentRequestRequest($create_vrp_consent_request_request, string $contentType = self::contentTypes['createVRPConsentRequest'][0])
     {
 
-        // verify the required parameter 'obpv510_create_vrp_consent_request_request' is set
-        if ($obpv510_create_vrp_consent_request_request === null || (is_array($obpv510_create_vrp_consent_request_request) && count($obpv510_create_vrp_consent_request_request) === 0)) {
+        // verify the required parameter 'create_vrp_consent_request_request' is set
+        if ($create_vrp_consent_request_request === null || (is_array($create_vrp_consent_request_request) && count($create_vrp_consent_request_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_vrp_consent_request_request when calling oBPv510CreateVRPConsentRequest'
+                'Missing the required parameter $create_vrp_consent_request_request when calling createVRPConsentRequest'
             );
         }
 
@@ -645,12 +645,12 @@ class VRPApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_vrp_consent_request_request)) {
+        if (isset($create_vrp_consent_request_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_vrp_consent_request_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_vrp_consent_request_request));
             } else {
-                $httpBody = $obpv510_create_vrp_consent_request_request;
+                $httpBody = $create_vrp_consent_request_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -676,6 +676,20 @@ class VRPApi
             }
         }
 
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

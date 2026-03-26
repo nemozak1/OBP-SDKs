@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -54,7 +54,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * <p>The setter methods of this class return the current object to facilitate
  * a fluent style of configuration.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ApiClient {
 
   protected HttpClient.Builder builder;
@@ -169,7 +169,7 @@ public class ApiClient {
   public ApiClient() {
     this.builder = createDefaultHttpClientBuilder();
     this.mapper = createDefaultObjectMapper();
-    updateBaseUri("https://apisandbox.openbankproject.com");
+    updateBaseUri("http://127.0.0.1:8080");
     interceptor = null;
     readTimeout = null;
     connectTimeout = null;
@@ -187,7 +187,7 @@ public class ApiClient {
   public ApiClient(HttpClient.Builder builder, ObjectMapper mapper, String baseUri) {
     this.builder = builder;
     this.mapper = mapper;
-    updateBaseUri(baseUri != null ? baseUri : "https://apisandbox.openbankproject.com");
+    updateBaseUri(baseUri != null ? baseUri : "http://127.0.0.1:8080");
     interceptor = null;
     readTimeout = null;
     connectTimeout = null;

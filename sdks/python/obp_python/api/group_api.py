@@ -18,14 +18,14 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_add_user_to_group200_response import OBPv600AddUserToGroup200Response
-from obp_python.models.obpv600_add_user_to_group_request import OBPv600AddUserToGroupRequest
-from obp_python.models.obpv600_create_group_request import OBPv600CreateGroupRequest
-from obp_python.models.obpv600_get_group_entitlements200_response import OBPv600GetGroupEntitlements200Response
-from obp_python.models.obpv600_get_groups200_response import OBPv600GetGroups200Response
-from obp_python.models.obpv600_get_groups200_response_groups_inner import OBPv600GetGroups200ResponseGroupsInner
-from obp_python.models.obpv600_get_user_group_memberships200_response import OBPv600GetUserGroupMemberships200Response
-from obp_python.models.obpv600_update_group_request import OBPv600UpdateGroupRequest
+from obp_python.models.add_user_to_group200_response import AddUserToGroup200Response
+from obp_python.models.add_user_to_group_request import AddUserToGroupRequest
+from obp_python.models.create_group_request import CreateGroupRequest
+from obp_python.models.get_group_entitlements200_response import GetGroupEntitlements200Response
+from obp_python.models.get_groups200_response import GetGroups200Response
+from obp_python.models.get_groups200_response_groups_inner import GetGroups200ResponseGroupsInner
+from obp_python.models.get_user_group_memberships200_response import GetUserGroupMemberships200Response
+from obp_python.models.update_group_request import UpdateGroupRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -46,10 +46,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_add_user_to_group(
+    def add_user_to_group(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_add_user_to_group_request: Annotated[OBPv600AddUserToGroupRequest, Field(description="Request body")],
+        add_user_to_group_request: Annotated[AddUserToGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,15 +62,15 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600AddUserToGroup200Response:
+    ) -> AddUserToGroup200Response:
         """Grant User Membership to Group Entitlements
 
         <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_add_user_to_group_request: Request body (required)
-        :type obpv600_add_user_to_group_request: OBPv600AddUserToGroupRequest
+        :param add_user_to_group_request: Request body (required)
+        :type add_user_to_group_request: AddUserToGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,9 +93,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_add_user_to_group_serialize(
+        _param = self._add_user_to_group_serialize(
             userid=userid,
-            obpv600_add_user_to_group_request=obpv600_add_user_to_group_request,
+            add_user_to_group_request=add_user_to_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -103,7 +103,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600AddUserToGroup200Response",
+            '200': "AddUserToGroup200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -118,10 +118,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_add_user_to_group_with_http_info(
+    def add_user_to_group_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_add_user_to_group_request: Annotated[OBPv600AddUserToGroupRequest, Field(description="Request body")],
+        add_user_to_group_request: Annotated[AddUserToGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,15 +134,15 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600AddUserToGroup200Response]:
+    ) -> ApiResponse[AddUserToGroup200Response]:
         """Grant User Membership to Group Entitlements
 
         <p>Grant the User Group Entitlements.</p> <p>This endpoint creates entitlements for every Role in the Group. If the user<br /> already has a particular role at the same bank, that entitlement is skipped (not duplicated).</p> <p>Each entitlement created will have:<br /> - group_id set to the group ID<br /> - process set to &quot;GROUP_MEMBERSHIP&quot;</p> <p><strong>Response Fields:</strong><br /> - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)<br /> - entitlements_created: Roles that were newly created as entitlements during this operation<br /> - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created</p> <p>Note: target_entitlements = entitlements_created + entitlements_skipped</p> <p>Requires either:<br /> - CanAddUserToGroupAtAllBanks (for any group)<br /> - CanAddUserToGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>entitlements_created</strong></a>: entitlements_created</p> <p><a href=\"/glossary#\"><strong>entitlements_skipped</strong></a>: entitlements_skipped</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>target_entitlements</strong></a>: target_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_add_user_to_group_request: Request body (required)
-        :type obpv600_add_user_to_group_request: OBPv600AddUserToGroupRequest
+        :param add_user_to_group_request: Request body (required)
+        :type add_user_to_group_request: AddUserToGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,9 +165,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_add_user_to_group_serialize(
+        _param = self._add_user_to_group_serialize(
             userid=userid,
-            obpv600_add_user_to_group_request=obpv600_add_user_to_group_request,
+            add_user_to_group_request=add_user_to_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -175,7 +175,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600AddUserToGroup200Response",
+            '200': "AddUserToGroup200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -190,10 +190,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_add_user_to_group_without_preload_content(
+    def add_user_to_group_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
-        obpv600_add_user_to_group_request: Annotated[OBPv600AddUserToGroupRequest, Field(description="Request body")],
+        add_user_to_group_request: Annotated[AddUserToGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -213,8 +213,8 @@ class GroupApi:
 
         :param userid: The USERID identifier (required)
         :type userid: str
-        :param obpv600_add_user_to_group_request: Request body (required)
-        :type obpv600_add_user_to_group_request: OBPv600AddUserToGroupRequest
+        :param add_user_to_group_request: Request body (required)
+        :type add_user_to_group_request: AddUserToGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -237,9 +237,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_add_user_to_group_serialize(
+        _param = self._add_user_to_group_serialize(
             userid=userid,
-            obpv600_add_user_to_group_request=obpv600_add_user_to_group_request,
+            add_user_to_group_request=add_user_to_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -247,7 +247,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600AddUserToGroup200Response",
+            '200': "AddUserToGroup200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -257,10 +257,10 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_add_user_to_group_serialize(
+    def _add_user_to_group_serialize(
         self,
         userid,
-        obpv600_add_user_to_group_request,
+        add_user_to_group_request,
         _request_auth,
         _content_type,
         _headers,
@@ -288,8 +288,8 @@ class GroupApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_add_user_to_group_request is not None:
-            _body_params = obpv600_add_user_to_group_request
+        if add_user_to_group_request is not None:
+            _body_params = add_user_to_group_request
 
 
         # set the HTTP header `Accept`
@@ -340,9 +340,9 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_group(
+    def create_group(
         self,
-        obpv600_create_group_request: Annotated[OBPv600CreateGroupRequest, Field(description="Request body")],
+        create_group_request: Annotated[CreateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -355,13 +355,13 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponseGroupsInner:
+    ) -> GetGroups200ResponseGroupsInner:
         """Create Group
 
         <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
-        :param obpv600_create_group_request: Request body (required)
-        :type obpv600_create_group_request: OBPv600CreateGroupRequest
+        :param create_group_request: Request body (required)
+        :type create_group_request: CreateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -384,8 +384,8 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_group_serialize(
-            obpv600_create_group_request=obpv600_create_group_request,
+        _param = self._create_group_serialize(
+            create_group_request=create_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -393,7 +393,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -408,9 +408,9 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_group_with_http_info(
+    def create_group_with_http_info(
         self,
-        obpv600_create_group_request: Annotated[OBPv600CreateGroupRequest, Field(description="Request body")],
+        create_group_request: Annotated[CreateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -423,13 +423,13 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
+    ) -> ApiResponse[GetGroups200ResponseGroupsInner]:
         """Create Group
 
         <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
-        :param obpv600_create_group_request: Request body (required)
-        :type obpv600_create_group_request: OBPv600CreateGroupRequest
+        :param create_group_request: Request body (required)
+        :type create_group_request: CreateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -452,8 +452,8 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_group_serialize(
-            obpv600_create_group_request=obpv600_create_group_request,
+        _param = self._create_group_serialize(
+            create_group_request=create_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -461,7 +461,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -476,9 +476,9 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_group_without_preload_content(
+    def create_group_without_preload_content(
         self,
-        obpv600_create_group_request: Annotated[OBPv600CreateGroupRequest, Field(description="Request body")],
+        create_group_request: Annotated[CreateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -496,8 +496,8 @@ class GroupApi:
 
         <p>Create a new group of roles.</p> <p>Groups can be either:<br /> - System-level (bank_id = null) - requires CanCreateGroupAtAllBanks role<br /> - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role</p> <p>A group contains a list of role names that can be assigned together.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
-        :param obpv600_create_group_request: Request body (required)
-        :type obpv600_create_group_request: OBPv600CreateGroupRequest
+        :param create_group_request: Request body (required)
+        :type create_group_request: CreateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -520,8 +520,8 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_group_serialize(
-            obpv600_create_group_request=obpv600_create_group_request,
+        _param = self._create_group_serialize(
+            create_group_request=create_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -529,7 +529,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -539,9 +539,9 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_group_serialize(
+    def _create_group_serialize(
         self,
-        obpv600_create_group_request,
+        create_group_request,
         _request_auth,
         _content_type,
         _headers,
@@ -567,8 +567,8 @@ class GroupApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_group_request is not None:
-            _body_params = obpv600_create_group_request
+        if create_group_request is not None:
+            _body_params = create_group_request
 
 
         # set the HTTP header `Accept`
@@ -619,7 +619,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_group(
+    def delete_group(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -663,7 +663,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_group_serialize(
+        _param = self._delete_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -687,7 +687,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_group_with_http_info(
+    def delete_group_with_http_info(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -731,7 +731,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_group_serialize(
+        _param = self._delete_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -755,7 +755,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_delete_group_without_preload_content(
+    def delete_group_without_preload_content(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -799,7 +799,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_delete_group_serialize(
+        _param = self._delete_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -818,7 +818,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_delete_group_serialize(
+    def _delete_group_serialize(
         self,
         groupid,
         _request_auth,
@@ -878,7 +878,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group(
+    def get_group(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -893,7 +893,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponseGroupsInner:
+    ) -> GetGroups200ResponseGroupsInner:
         """Get Group
 
         <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -922,7 +922,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_serialize(
+        _param = self._get_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -931,7 +931,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -946,7 +946,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group_with_http_info(
+    def get_group_with_http_info(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -961,7 +961,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
+    ) -> ApiResponse[GetGroups200ResponseGroupsInner]:
         """Get Group
 
         <p>Get a group by its ID.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any group)<br /> - CanGetGroupsAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -990,7 +990,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_serialize(
+        _param = self._get_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -999,7 +999,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1014,7 +1014,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group_without_preload_content(
+    def get_group_without_preload_content(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -1058,7 +1058,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_serialize(
+        _param = self._get_group_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1067,7 +1067,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1077,7 +1077,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_group_serialize(
+    def _get_group_serialize(
         self,
         groupid,
         _request_auth,
@@ -1144,7 +1144,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group_entitlements(
+    def get_group_entitlements(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -1159,7 +1159,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroupEntitlements200Response:
+    ) -> GetGroupEntitlements200Response:
         """Get Group Entitlements
 
         <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
@@ -1188,7 +1188,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_entitlements_serialize(
+        _param = self._get_group_entitlements_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1197,7 +1197,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroupEntitlements200Response",
+            '200': "GetGroupEntitlements200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1212,7 +1212,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group_entitlements_with_http_info(
+    def get_group_entitlements_with_http_info(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -1227,7 +1227,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroupEntitlements200Response]:
+    ) -> ApiResponse[GetGroupEntitlements200Response]:
         """Get Group Entitlements
 
         <p>Get all entitlements that have been granted from a specific group.</p> <p>This returns all entitlements where the group_id matches the specified GROUP_ID.</p> <p>Requires:<br /> - CanGetEntitlementsForAnyBank</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#entitlement_id\"><strong>entitlement_id</strong></a>:</p> <p><a href=\"/glossary#entitlements\"><strong>entitlements</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">group_id</a>: group_id</p> <p><a href=\"/glossary#process\">process</a>: obp.getBank</p> 
@@ -1256,7 +1256,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_entitlements_serialize(
+        _param = self._get_group_entitlements_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1265,7 +1265,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroupEntitlements200Response",
+            '200': "GetGroupEntitlements200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1280,7 +1280,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_group_entitlements_without_preload_content(
+    def get_group_entitlements_without_preload_content(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
         _request_timeout: Union[
@@ -1324,7 +1324,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_group_entitlements_serialize(
+        _param = self._get_group_entitlements_serialize(
             groupid=groupid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1333,7 +1333,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroupEntitlements200Response",
+            '200': "GetGroupEntitlements200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1343,7 +1343,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_group_entitlements_serialize(
+    def _get_group_entitlements_serialize(
         self,
         groupid,
         _request_auth,
@@ -1410,7 +1410,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_groups(
+    def get_groups(
         self,
         _request_timeout: Union[
             None,
@@ -1424,7 +1424,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200Response:
+    ) -> GetGroups200Response:
         """Get Groups
 
         <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -1451,7 +1451,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_groups_serialize(
+        _param = self._get_groups_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1459,7 +1459,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200Response",
+            '200': "GetGroups200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1474,7 +1474,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_groups_with_http_info(
+    def get_groups_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1488,7 +1488,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200Response]:
+    ) -> ApiResponse[GetGroups200Response]:
         """Get Groups
 
         <p>Get all groups. Optionally filter by bank_id.</p> <p>Query parameters:<br /> - bank_id (optional): Filter groups by bank. Use &quot;null&quot; or omit for system-level groups.</p> <p>Requires either:<br /> - CanGetGroupsAtAllBanks (for any/all groups)<br /> - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>groups</strong></a>: groups</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -1515,7 +1515,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_groups_serialize(
+        _param = self._get_groups_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1523,7 +1523,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200Response",
+            '200': "GetGroups200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1538,7 +1538,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_groups_without_preload_content(
+    def get_groups_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1579,7 +1579,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_groups_serialize(
+        _param = self._get_groups_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1587,7 +1587,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200Response",
+            '200': "GetGroups200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1597,7 +1597,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_groups_serialize(
+    def _get_groups_serialize(
         self,
         _request_auth,
         _content_type,
@@ -1661,7 +1661,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_group_memberships(
+    def get_user_group_memberships(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -1676,7 +1676,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetUserGroupMemberships200Response:
+    ) -> GetUserGroupMemberships200Response:
         """Get User's Group Memberships
 
         <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -1705,7 +1705,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_group_memberships_serialize(
+        _param = self._get_user_group_memberships_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1714,7 +1714,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetUserGroupMemberships200Response",
+            '200': "GetUserGroupMemberships200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1729,7 +1729,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_group_memberships_with_http_info(
+    def get_user_group_memberships_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -1744,7 +1744,7 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetUserGroupMemberships200Response]:
+    ) -> ApiResponse[GetUserGroupMemberships200Response]:
         """Get User's Group Memberships
 
         <p>Get all groups a user is a member of.</p> <p>Returns groups where the user has entitlements with process = &quot;GROUP_MEMBERSHIP&quot;.</p> <p>The response includes:<br /> - list_of_entitlements: entitlements the user currently has from this group membership</p> <p>Requires either:<br /> - CanGetUserGroupMembershipsAtAllBanks (for any user)<br /> - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_entitlements</strong></a>: group_entitlements</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>list_of_entitlements</strong></a>: list_of_entitlements</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
@@ -1773,7 +1773,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_group_memberships_serialize(
+        _param = self._get_user_group_memberships_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1782,7 +1782,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetUserGroupMemberships200Response",
+            '200': "GetUserGroupMemberships200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1797,7 +1797,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_user_group_memberships_without_preload_content(
+    def get_user_group_memberships_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         _request_timeout: Union[
@@ -1841,7 +1841,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_user_group_memberships_serialize(
+        _param = self._get_user_group_memberships_serialize(
             userid=userid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1850,7 +1850,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetUserGroupMemberships200Response",
+            '200': "GetUserGroupMemberships200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -1860,7 +1860,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_user_group_memberships_serialize(
+    def _get_user_group_memberships_serialize(
         self,
         userid,
         _request_auth,
@@ -1927,7 +1927,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_remove_user_from_group(
+    def remove_user_from_group(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
@@ -1974,7 +1974,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_remove_user_from_group_serialize(
+        _param = self._remove_user_from_group_serialize(
             userid=userid,
             groupid=groupid,
             _request_auth=_request_auth,
@@ -1999,7 +1999,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_remove_user_from_group_with_http_info(
+    def remove_user_from_group_with_http_info(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
@@ -2046,7 +2046,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_remove_user_from_group_serialize(
+        _param = self._remove_user_from_group_serialize(
             userid=userid,
             groupid=groupid,
             _request_auth=_request_auth,
@@ -2071,7 +2071,7 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_remove_user_from_group_without_preload_content(
+    def remove_user_from_group_without_preload_content(
         self,
         userid: Annotated[StrictStr, Field(description="The USERID identifier")],
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
@@ -2118,7 +2118,7 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_remove_user_from_group_serialize(
+        _param = self._remove_user_from_group_serialize(
             userid=userid,
             groupid=groupid,
             _request_auth=_request_auth,
@@ -2138,7 +2138,7 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_remove_user_from_group_serialize(
+    def _remove_user_from_group_serialize(
         self,
         userid,
         groupid,
@@ -2201,10 +2201,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_group(
+    def update_group(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
-        obpv600_update_group_request: Annotated[OBPv600UpdateGroupRequest, Field(description="Request body")],
+        update_group_request: Annotated[UpdateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2217,15 +2217,15 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetGroups200ResponseGroupsInner:
+    ) -> GetGroups200ResponseGroupsInner:
         """Update Group
 
         <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
         :param groupid: The GROUPID identifier (required)
         :type groupid: str
-        :param obpv600_update_group_request: Request body (required)
-        :type obpv600_update_group_request: OBPv600UpdateGroupRequest
+        :param update_group_request: Request body (required)
+        :type update_group_request: UpdateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2248,9 +2248,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_group_serialize(
+        _param = self._update_group_serialize(
             groupid=groupid,
-            obpv600_update_group_request=obpv600_update_group_request,
+            update_group_request=update_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2258,7 +2258,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2273,10 +2273,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_group_with_http_info(
+    def update_group_with_http_info(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
-        obpv600_update_group_request: Annotated[OBPv600UpdateGroupRequest, Field(description="Request body")],
+        update_group_request: Annotated[UpdateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2289,15 +2289,15 @@ class GroupApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetGroups200ResponseGroupsInner]:
+    ) -> ApiResponse[GetGroups200ResponseGroupsInner]:
         """Update Group
 
         <p>Update a group. All fields are optional.</p> <p>Requires either:<br /> - CanUpdateGroupAtAllBanks (for any group)<br /> - CanUpdateGroupAtOneBank (for groups at specific bank)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">GROUP_ID</a>: GROUP_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>group_description</strong></a>: group_description</p> <p><a href=\"/glossary#\"><strong>group_id</strong></a>: group_id</p> <p><a href=\"/glossary#\"><strong>group_name</strong></a>: group_name</p> <p><a href=\"/glossary#\"><strong>is_enabled</strong></a>: is_enabled</p> <p><a href=\"/glossary#\"><strong>list_of_roles</strong></a>: list_of_roles</p> <p><a href=\"/glossary#\">bank_id</a>: gh.29.uk</p> 
 
         :param groupid: The GROUPID identifier (required)
         :type groupid: str
-        :param obpv600_update_group_request: Request body (required)
-        :type obpv600_update_group_request: OBPv600UpdateGroupRequest
+        :param update_group_request: Request body (required)
+        :type update_group_request: UpdateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2320,9 +2320,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_group_serialize(
+        _param = self._update_group_serialize(
             groupid=groupid,
-            obpv600_update_group_request=obpv600_update_group_request,
+            update_group_request=update_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2330,7 +2330,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2345,10 +2345,10 @@ class GroupApi:
 
 
     @validate_call
-    def o_bpv6_0_0_update_group_without_preload_content(
+    def update_group_without_preload_content(
         self,
         groupid: Annotated[StrictStr, Field(description="The GROUPID identifier")],
-        obpv600_update_group_request: Annotated[OBPv600UpdateGroupRequest, Field(description="Request body")],
+        update_group_request: Annotated[UpdateGroupRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2368,8 +2368,8 @@ class GroupApi:
 
         :param groupid: The GROUPID identifier (required)
         :type groupid: str
-        :param obpv600_update_group_request: Request body (required)
-        :type obpv600_update_group_request: OBPv600UpdateGroupRequest
+        :param update_group_request: Request body (required)
+        :type update_group_request: UpdateGroupRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2392,9 +2392,9 @@ class GroupApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_update_group_serialize(
+        _param = self._update_group_serialize(
             groupid=groupid,
-            obpv600_update_group_request=obpv600_update_group_request,
+            update_group_request=update_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2402,7 +2402,7 @@ class GroupApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetGroups200ResponseGroupsInner",
+            '200': "GetGroups200ResponseGroupsInner",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -2412,10 +2412,10 @@ class GroupApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_update_group_serialize(
+    def _update_group_serialize(
         self,
         groupid,
-        obpv600_update_group_request,
+        update_group_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2443,8 +2443,8 @@ class GroupApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_update_group_request is not None:
-            _body_params = obpv600_update_group_request
+        if update_group_request is not None:
+            _body_params = update_group_request
 
 
         # set the HTTP header `Accept`

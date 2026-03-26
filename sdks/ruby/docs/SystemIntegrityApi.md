@@ -1,19 +1,19 @@
 # OpenBankProject::SystemIntegrityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv5_1_0_account_access_unique_index_check**](SystemIntegrityApi.md#o_bpv5_1_0_account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**o_bpv5_1_0_account_currency_check**](SystemIntegrityApi.md#o_bpv5_1_0_account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**o_bpv5_1_0_custom_view_names_check**](SystemIntegrityApi.md#o_bpv5_1_0_custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**o_bpv5_1_0_orphaned_account_check**](SystemIntegrityApi.md#o_bpv5_1_0_orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**o_bpv5_1_0_system_view_names_check**](SystemIntegrityApi.md#o_bpv5_1_0_system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**account_access_unique_index_check**](SystemIntegrityApi.md#account_access_unique_index_check) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**account_currency_check**](SystemIntegrityApi.md#account_currency_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**custom_view_names_check**](SystemIntegrityApi.md#custom_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**orphaned_account_check**](SystemIntegrityApi.md#orphaned_account_check) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**system_view_names_check**](SystemIntegrityApi.md#system_view_names_check) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
 
 
-## o_bpv5_1_0_account_access_unique_index_check
+## account_access_unique_index_check
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv5_1_0_account_access_unique_index_check
+> <AccountAccessUniqueIndexCheck200Response> account_access_unique_index_check
 
 Check Unique Index at Account Access
 
@@ -35,37 +35,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemIntegrityApi.new
 
 begin
   # Check Unique Index at Account Access
-  result = api_instance.o_bpv5_1_0_account_access_unique_index_check
+  result = api_instance.account_access_unique_index_check
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_account_access_unique_index_check: #{e}"
+  puts "Error when calling SystemIntegrityApi->account_access_unique_index_check: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_account_access_unique_index_check_with_http_info variant
+#### Using the account_access_unique_index_check_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv5_1_0_account_access_unique_index_check_with_http_info
+> <Array(<AccountAccessUniqueIndexCheck200Response>, Integer, Hash)> account_access_unique_index_check_with_http_info
 
 ```ruby
 begin
   # Check Unique Index at Account Access
-  data, status_code, headers = api_instance.o_bpv5_1_0_account_access_unique_index_check_with_http_info
+  data, status_code, headers = api_instance.account_access_unique_index_check_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <AccountAccessUniqueIndexCheck200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_account_access_unique_index_check_with_http_info: #{e}"
+  puts "Error when calling SystemIntegrityApi->account_access_unique_index_check_with_http_info: #{e}"
 end
 ```
 
@@ -75,7 +75,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -87,9 +87,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_account_currency_check
+## account_currency_check
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv5_1_0_account_currency_check(bankid)
+> <AccountAccessUniqueIndexCheck200Response> account_currency_check(bankid)
 
 Check for Sensible Currencies
 
@@ -111,9 +111,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemIntegrityApi.new
@@ -121,28 +121,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Check for Sensible Currencies
-  result = api_instance.o_bpv5_1_0_account_currency_check(bankid)
+  result = api_instance.account_currency_check(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_account_currency_check: #{e}"
+  puts "Error when calling SystemIntegrityApi->account_currency_check: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_account_currency_check_with_http_info variant
+#### Using the account_currency_check_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv5_1_0_account_currency_check_with_http_info(bankid)
+> <Array(<AccountAccessUniqueIndexCheck200Response>, Integer, Hash)> account_currency_check_with_http_info(bankid)
 
 ```ruby
 begin
   # Check for Sensible Currencies
-  data, status_code, headers = api_instance.o_bpv5_1_0_account_currency_check_with_http_info(bankid)
+  data, status_code, headers = api_instance.account_currency_check_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <AccountAccessUniqueIndexCheck200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_account_currency_check_with_http_info: #{e}"
+  puts "Error when calling SystemIntegrityApi->account_currency_check_with_http_info: #{e}"
 end
 ```
 
@@ -154,7 +154,7 @@ end
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_custom_view_names_check
+## custom_view_names_check
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv5_1_0_custom_view_names_check
+> <AccountAccessUniqueIndexCheck200Response> custom_view_names_check
 
 Check Custom View Names
 
@@ -190,37 +190,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemIntegrityApi.new
 
 begin
   # Check Custom View Names
-  result = api_instance.o_bpv5_1_0_custom_view_names_check
+  result = api_instance.custom_view_names_check
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_custom_view_names_check: #{e}"
+  puts "Error when calling SystemIntegrityApi->custom_view_names_check: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_custom_view_names_check_with_http_info variant
+#### Using the custom_view_names_check_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv5_1_0_custom_view_names_check_with_http_info
+> <Array(<AccountAccessUniqueIndexCheck200Response>, Integer, Hash)> custom_view_names_check_with_http_info
 
 ```ruby
 begin
   # Check Custom View Names
-  data, status_code, headers = api_instance.o_bpv5_1_0_custom_view_names_check_with_http_info
+  data, status_code, headers = api_instance.custom_view_names_check_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <AccountAccessUniqueIndexCheck200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_custom_view_names_check_with_http_info: #{e}"
+  puts "Error when calling SystemIntegrityApi->custom_view_names_check_with_http_info: #{e}"
 end
 ```
 
@@ -230,7 +230,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -242,9 +242,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_orphaned_account_check
+## orphaned_account_check
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv5_1_0_orphaned_account_check(bankid)
+> <AccountAccessUniqueIndexCheck200Response> orphaned_account_check(bankid)
 
 Check for Orphaned Accounts
 
@@ -266,9 +266,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemIntegrityApi.new
@@ -276,28 +276,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Check for Orphaned Accounts
-  result = api_instance.o_bpv5_1_0_orphaned_account_check(bankid)
+  result = api_instance.orphaned_account_check(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_orphaned_account_check: #{e}"
+  puts "Error when calling SystemIntegrityApi->orphaned_account_check: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_orphaned_account_check_with_http_info variant
+#### Using the orphaned_account_check_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv5_1_0_orphaned_account_check_with_http_info(bankid)
+> <Array(<AccountAccessUniqueIndexCheck200Response>, Integer, Hash)> orphaned_account_check_with_http_info(bankid)
 
 ```ruby
 begin
   # Check for Orphaned Accounts
-  data, status_code, headers = api_instance.o_bpv5_1_0_orphaned_account_check_with_http_info(bankid)
+  data, status_code, headers = api_instance.orphaned_account_check_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <AccountAccessUniqueIndexCheck200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_orphaned_account_check_with_http_info: #{e}"
+  puts "Error when calling SystemIntegrityApi->orphaned_account_check_with_http_info: #{e}"
 end
 ```
 
@@ -309,7 +309,7 @@ end
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -321,9 +321,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv5_1_0_system_view_names_check
+## system_view_names_check
 
-> <OBPv121UpdateTransactionNarrative200Response> o_bpv5_1_0_system_view_names_check
+> <AccountAccessUniqueIndexCheck200Response> system_view_names_check
 
 Check System View Names
 
@@ -345,37 +345,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemIntegrityApi.new
 
 begin
   # Check System View Names
-  result = api_instance.o_bpv5_1_0_system_view_names_check
+  result = api_instance.system_view_names_check
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_system_view_names_check: #{e}"
+  puts "Error when calling SystemIntegrityApi->system_view_names_check: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_system_view_names_check_with_http_info variant
+#### Using the system_view_names_check_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv121UpdateTransactionNarrative200Response>, Integer, Hash)> o_bpv5_1_0_system_view_names_check_with_http_info
+> <Array(<AccountAccessUniqueIndexCheck200Response>, Integer, Hash)> system_view_names_check_with_http_info
 
 ```ruby
 begin
   # Check System View Names
-  data, status_code, headers = api_instance.o_bpv5_1_0_system_view_names_check_with_http_info
+  data, status_code, headers = api_instance.system_view_names_check_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv121UpdateTransactionNarrative200Response>
+  p data # => <AccountAccessUniqueIndexCheck200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemIntegrityApi->o_bpv5_1_0_system_view_names_check_with_http_info: #{e}"
+  puts "Error when calling SystemIntegrityApi->system_view_names_check_with_http_info: #{e}"
 end
 ```
 
@@ -385,7 +385,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

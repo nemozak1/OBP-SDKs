@@ -1,39 +1,39 @@
 # DynamicEndpointManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400CreateBankLevelDynamicEndpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
-| [**oBPv400CreateBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400CreateBankLevelDynamicEndpointWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
-| [**oBPv400CreateDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400CreateDynamicEndpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
-| [**oBPv400CreateDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400CreateDynamicEndpointWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
-| [**oBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteBankLevelDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
-| [**oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
-| [**oBPv400DeleteDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
-| [**oBPv400DeleteDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400DeleteDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
-| [**oBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400DeleteMyDynamicEndpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
-| [**oBPv400DeleteMyDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400DeleteMyDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpointWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
-| [**oBPv400GetBankLevelDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400GetBankLevelDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
-| [**oBPv400GetDynamicEndpoint**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
-| [**oBPv400GetDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpointWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
-| [**oBPv400GetDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
-| [**oBPv400GetDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400GetDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
-| [**oBPv400GetMyDynamicEndpoints**](DynamicEndpointManageApi.md#oBPv400GetMyDynamicEndpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
-| [**oBPv400GetMyDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400GetMyDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
-| [**oBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#oBPv400UpdateBankLevelDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
-| [**oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
-| [**oBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageApi.md#oBPv400UpdateDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
-| [**oBPv400UpdateDynamicEndpointHostWithHttpInfo**](DynamicEndpointManageApi.md#oBPv400UpdateDynamicEndpointHostWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
+| [**createBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#createBankLevelDynamicEndpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
+| [**createBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#createBankLevelDynamicEndpointWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
+| [**createDynamicEndpoint**](DynamicEndpointManageApi.md#createDynamicEndpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
+| [**createDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#createDynamicEndpointWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
+| [**deleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#deleteBankLevelDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
+| [**deleteBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#deleteBankLevelDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
+| [**deleteDynamicEndpoint**](DynamicEndpointManageApi.md#deleteDynamicEndpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
+| [**deleteDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#deleteDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
+| [**deleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#deleteMyDynamicEndpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
+| [**deleteMyDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#deleteMyDynamicEndpointWithHttpInfo) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
+| [**getBankLevelDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpointWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
+| [**getBankLevelDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#getBankLevelDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
+| [**getDynamicEndpoint**](DynamicEndpointManageApi.md#getDynamicEndpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
+| [**getDynamicEndpointWithHttpInfo**](DynamicEndpointManageApi.md#getDynamicEndpointWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
+| [**getDynamicEndpoints**](DynamicEndpointManageApi.md#getDynamicEndpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
+| [**getDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#getDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
+| [**getMyDynamicEndpoints**](DynamicEndpointManageApi.md#getMyDynamicEndpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
+| [**getMyDynamicEndpointsWithHttpInfo**](DynamicEndpointManageApi.md#getMyDynamicEndpointsWithHttpInfo) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
+| [**updateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#updateBankLevelDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
+| [**updateBankLevelDynamicEndpointHostWithHttpInfo**](DynamicEndpointManageApi.md#updateBankLevelDynamicEndpointHostWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
+| [**updateDynamicEndpointHost**](DynamicEndpointManageApi.md#updateDynamicEndpointHost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
+| [**updateDynamicEndpointHostWithHttpInfo**](DynamicEndpointManageApi.md#updateDynamicEndpointHostWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
 
 
 
-## oBPv400CreateBankLevelDynamicEndpoint
+## createBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateBankLevelDynamicEndpoint(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Bank Level Dynamic Endpoint
 
@@ -53,7 +53,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -73,12 +73,12 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = new OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(); // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+        GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = new GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(); // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
         try {
-            OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems result = apiInstance.oBPv400CreateBankLevelDynamicEndpoint(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            GetDynamicEndpoints200ResponseDynamicEndpointsInner result = apiInstance.createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400CreateBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#createBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -94,11 +94,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 
 ### Authorization
@@ -117,9 +117,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateBankLevelDynamicEndpointWithHttpInfo
+## createBankLevelDynamicEndpointWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateBankLevelDynamicEndpoint oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createBankLevelDynamicEndpoint createBankLevelDynamicEndpointWithHttpInfo(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Bank Level Dynamic Endpoint
 
@@ -140,7 +140,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -160,14 +160,14 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = new OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(); // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+        GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = new GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(); // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> response = apiInstance.oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> response = apiInstance.createBankLevelDynamicEndpointWithHttpInfo(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400CreateBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#createBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -183,11 +183,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)>
+ApiResponse<[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)>
 
 
 ### Authorization
@@ -207,9 +207,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateDynamicEndpoint
+## createDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Dynamic Endpoint
 
@@ -229,7 +229,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -248,12 +248,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = new OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(); // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+        GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = new GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(); // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
         try {
-            OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems result = apiInstance.oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            GetDynamicEndpoints200ResponseDynamicEndpointsInner result = apiInstance.createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400CreateDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#createDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -268,11 +268,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 
 ### Authorization
@@ -290,9 +290,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateDynamicEndpointWithHttpInfo
+## createDynamicEndpointWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateDynamicEndpoint oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createDynamicEndpoint createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Dynamic Endpoint
 
@@ -313,7 +313,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -332,14 +332,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = new OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(); // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
+        GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = new GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(); // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> response = apiInstance.oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> response = apiInstance.createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400CreateDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#createDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -354,11 +354,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md)| Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)>
+ApiResponse<[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)>
 
 
 ### Authorization
@@ -377,9 +377,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteBankLevelDynamicEndpoint
+## deleteBankLevelDynamicEndpoint
 
-> void oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+> void deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -399,7 +399,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -421,9 +421,9 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            apiInstance.oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid);
+            apiInstance.deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -462,9 +462,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo
+## deleteBankLevelDynamicEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteBankLevelDynamicEndpoint oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid)
+> ApiResponse<Void> deleteBankLevelDynamicEndpoint deleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -485,7 +485,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -507,11 +507,11 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid);
+            ApiResponse<Void> response = apiInstance.deleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -551,9 +551,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteDynamicEndpoint
+## deleteDynamicEndpoint
 
-> void oBPv400DeleteDynamicEndpoint(dynamicendpointid)
+> void deleteDynamicEndpoint(dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -573,7 +573,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -594,9 +594,9 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            apiInstance.oBPv400DeleteDynamicEndpoint(dynamicendpointid);
+            apiInstance.deleteDynamicEndpoint(dynamicendpointid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -634,9 +634,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteDynamicEndpointWithHttpInfo
+## deleteDynamicEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteDynamicEndpoint oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid)
+> ApiResponse<Void> deleteDynamicEndpoint deleteDynamicEndpointWithHttpInfo(dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -657,7 +657,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -678,11 +678,11 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid);
+            ApiResponse<Void> response = apiInstance.deleteDynamicEndpointWithHttpInfo(dynamicendpointid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -721,9 +721,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteMyDynamicEndpoint
+## deleteMyDynamicEndpoint
 
-> void oBPv400DeleteMyDynamicEndpoint(dynamicendpointid)
+> void deleteMyDynamicEndpoint(dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -743,7 +743,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -764,9 +764,9 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            apiInstance.oBPv400DeleteMyDynamicEndpoint(dynamicendpointid);
+            apiInstance.deleteMyDynamicEndpoint(dynamicendpointid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteMyDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteMyDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -804,9 +804,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteMyDynamicEndpointWithHttpInfo
+## deleteMyDynamicEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteMyDynamicEndpoint oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid)
+> ApiResponse<Void> deleteMyDynamicEndpoint deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -827,7 +827,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -848,11 +848,11 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid);
+            ApiResponse<Void> response = apiInstance.deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400DeleteMyDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#deleteMyDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -891,9 +891,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetBankLevelDynamicEndpoint
+## getBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -913,7 +913,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -935,10 +935,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems result = apiInstance.oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid);
+            GetDynamicEndpoints200ResponseDynamicEndpointsInner result = apiInstance.getBankLevelDynamicEndpoint(bankid, dynamicendpointid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -958,7 +958,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 
 ### Authorization
@@ -977,9 +977,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetBankLevelDynamicEndpointWithHttpInfo
+## getBankLevelDynamicEndpointWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetBankLevelDynamicEndpoint oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid)
+> ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getBankLevelDynamicEndpoint getBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -1000,7 +1000,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1022,12 +1022,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> response = apiInstance.oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid);
+            ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> response = apiInstance.getBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getBankLevelDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1047,7 +1047,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)>
+ApiResponse<[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)>
 
 
 ### Authorization
@@ -1067,9 +1067,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetBankLevelDynamicEndpoints
+## getBankLevelDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetBankLevelDynamicEndpoints(bankid)
+> GetDynamicEndpoints200Response getBankLevelDynamicEndpoints(bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -1089,7 +1089,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1110,10 +1110,10 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetDynamicEndpoints200Response result = apiInstance.oBPv400GetBankLevelDynamicEndpoints(bankid);
+            GetDynamicEndpoints200Response result = apiInstance.getBankLevelDynamicEndpoints(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getBankLevelDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1132,7 +1132,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 
 ### Authorization
@@ -1151,9 +1151,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetBankLevelDynamicEndpointsWithHttpInfo
+## getBankLevelDynamicEndpointsWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetBankLevelDynamicEndpoints oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid)
+> ApiResponse<GetDynamicEndpoints200Response> getBankLevelDynamicEndpoints getBankLevelDynamicEndpointsWithHttpInfo(bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -1174,7 +1174,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1195,12 +1195,12 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200Response> response = apiInstance.oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid);
+            ApiResponse<GetDynamicEndpoints200Response> response = apiInstance.getBankLevelDynamicEndpointsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetBankLevelDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getBankLevelDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1219,7 +1219,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)>
+ApiResponse<[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)>
 
 
 ### Authorization
@@ -1239,9 +1239,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoin
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetDynamicEndpoint
+## getDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetDynamicEndpoint(dynamicendpointid)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getDynamicEndpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -1261,7 +1261,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1282,10 +1282,10 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems result = apiInstance.oBPv400GetDynamicEndpoint(dynamicendpointid);
+            GetDynamicEndpoints200ResponseDynamicEndpointsInner result = apiInstance.getDynamicEndpoint(dynamicendpointid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1304,7 +1304,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 
 ### Authorization
@@ -1323,9 +1323,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetDynamicEndpointWithHttpInfo
+## getDynamicEndpointWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetDynamicEndpoint oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid)
+> ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getDynamicEndpoint getDynamicEndpointWithHttpInfo(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -1346,7 +1346,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1367,12 +1367,12 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> response = apiInstance.oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid);
+            ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> response = apiInstance.getDynamicEndpointWithHttpInfo(dynamicendpointid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoint");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getDynamicEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1391,7 +1391,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)>
+ApiResponse<[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)>
 
 
 ### Authorization
@@ -1411,9 +1411,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsIt
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetDynamicEndpoints
+## getDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetDynamicEndpoints()
+> GetDynamicEndpoints200Response getDynamicEndpoints()
 
  Get Dynamic Endpoints
 
@@ -1433,7 +1433,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1453,10 +1453,10 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         try {
-            OBPv400GetDynamicEndpoints200Response result = apiInstance.oBPv400GetDynamicEndpoints();
+            GetDynamicEndpoints200Response result = apiInstance.getDynamicEndpoints();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1472,7 +1472,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 
 ### Authorization
@@ -1490,9 +1490,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetDynamicEndpointsWithHttpInfo
+## getDynamicEndpointsWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetDynamicEndpoints oBPv400GetDynamicEndpointsWithHttpInfo()
+> ApiResponse<GetDynamicEndpoints200Response> getDynamicEndpoints getDynamicEndpointsWithHttpInfo()
 
  Get Dynamic Endpoints
 
@@ -1513,7 +1513,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1533,12 +1533,12 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200Response> response = apiInstance.oBPv400GetDynamicEndpointsWithHttpInfo();
+            ApiResponse<GetDynamicEndpoints200Response> response = apiInstance.getDynamicEndpointsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1554,7 +1554,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)>
+ApiResponse<[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)>
 
 
 ### Authorization
@@ -1573,9 +1573,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoin
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetMyDynamicEndpoints
+## getMyDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetMyDynamicEndpoints()
+> GetDynamicEndpoints200Response getMyDynamicEndpoints()
 
 Get My Dynamic Endpoints
 
@@ -1595,7 +1595,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1615,10 +1615,10 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         try {
-            OBPv400GetDynamicEndpoints200Response result = apiInstance.oBPv400GetMyDynamicEndpoints();
+            GetDynamicEndpoints200Response result = apiInstance.getMyDynamicEndpoints();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetMyDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getMyDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1634,7 +1634,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 
 ### Authorization
@@ -1652,9 +1652,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetMyDynamicEndpointsWithHttpInfo
+## getMyDynamicEndpointsWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetMyDynamicEndpoints oBPv400GetMyDynamicEndpointsWithHttpInfo()
+> ApiResponse<GetDynamicEndpoints200Response> getMyDynamicEndpoints getMyDynamicEndpointsWithHttpInfo()
 
 Get My Dynamic Endpoints
 
@@ -1675,7 +1675,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1695,12 +1695,12 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetDynamicEndpoints200Response> response = apiInstance.oBPv400GetMyDynamicEndpointsWithHttpInfo();
+            ApiResponse<GetDynamicEndpoints200Response> response = apiInstance.getMyDynamicEndpointsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400GetMyDynamicEndpoints");
+            System.err.println("Exception when calling DynamicEndpointManageApi#getMyDynamicEndpoints");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1716,7 +1716,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)>
+ApiResponse<[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)>
 
 
 ### Authorization
@@ -1735,9 +1735,9 @@ ApiResponse<[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoin
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateBankLevelDynamicEndpointHost
+## updateBankLevelDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+> UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -1757,7 +1757,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1778,12 +1778,12 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest = new OBPv400UpdateBankLevelDynamicEndpointHostRequest(); // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+        UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest = new UpdateBankLevelDynamicEndpointHostRequest(); // UpdateBankLevelDynamicEndpointHostRequest | Request body
         try {
-            OBPv400UpdateBankLevelDynamicEndpointHostRequest result = apiInstance.oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest);
+            UpdateBankLevelDynamicEndpointHostRequest result = apiInstance.updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400UpdateBankLevelDynamicEndpointHost");
+            System.err.println("Exception when calling DynamicEndpointManageApi#updateBankLevelDynamicEndpointHost");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1800,11 +1800,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **dynamicendpointid** | **String**| The DYNAMICENDPOINTID identifier | |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 
 ### Authorization
@@ -1823,9 +1823,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo
+## updateBankLevelDynamicEndpointHostWithHttpInfo
 
-> ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateBankLevelDynamicEndpointHost oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+> ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateBankLevelDynamicEndpointHost updateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -1846,7 +1846,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1867,14 +1867,14 @@ public class Example {
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest = new OBPv400UpdateBankLevelDynamicEndpointHostRequest(); // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+        UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest = new UpdateBankLevelDynamicEndpointHostRequest(); // UpdateBankLevelDynamicEndpointHostRequest | Request body
         try {
-            ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> response = apiInstance.oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest);
+            ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> response = apiInstance.updateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400UpdateBankLevelDynamicEndpointHost");
+            System.err.println("Exception when calling DynamicEndpointManageApi#updateBankLevelDynamicEndpointHost");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1891,11 +1891,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **dynamicendpointid** | **String**| The DYNAMICENDPOINTID identifier | |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)>
+ApiResponse<[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)>
 
 
 ### Authorization
@@ -1915,9 +1915,9 @@ ApiResponse<[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400Update
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateDynamicEndpointHost
+## updateDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateDynamicEndpointHost(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+> UpdateBankLevelDynamicEndpointHostRequest updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Dynamic Endpoint Host
 
@@ -1937,7 +1937,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1957,12 +1957,12 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest = new OBPv400UpdateBankLevelDynamicEndpointHostRequest(); // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+        UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest = new UpdateBankLevelDynamicEndpointHostRequest(); // UpdateBankLevelDynamicEndpointHostRequest | Request body
         try {
-            OBPv400UpdateBankLevelDynamicEndpointHostRequest result = apiInstance.oBPv400UpdateDynamicEndpointHost(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest);
+            UpdateBankLevelDynamicEndpointHostRequest result = apiInstance.updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400UpdateDynamicEndpointHost");
+            System.err.println("Exception when calling DynamicEndpointManageApi#updateDynamicEndpointHost");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1978,11 +1978,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicendpointid** | **String**| The DYNAMICENDPOINTID identifier | |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 
 ### Authorization
@@ -2001,9 +2001,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateDynamicEndpointHostWithHttpInfo
+## updateDynamicEndpointHostWithHttpInfo
 
-> ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateDynamicEndpointHost oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest)
+> ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateDynamicEndpointHost updateDynamicEndpointHostWithHttpInfo(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Dynamic Endpoint Host
 
@@ -2024,7 +2024,7 @@ import com.openbankproject.api.DynamicEndpointManageApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -2044,14 +2044,14 @@ public class Example {
 
         DynamicEndpointManageApi apiInstance = new DynamicEndpointManageApi(defaultClient);
         String dynamicendpointid = "dynamicendpointid_example"; // String | The DYNAMICENDPOINTID identifier
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest = new OBPv400UpdateBankLevelDynamicEndpointHostRequest(); // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+        UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest = new UpdateBankLevelDynamicEndpointHostRequest(); // UpdateBankLevelDynamicEndpointHostRequest | Request body
         try {
-            ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> response = apiInstance.oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest);
+            ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> response = apiInstance.updateDynamicEndpointHostWithHttpInfo(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicEndpointManageApi#oBPv400UpdateDynamicEndpointHost");
+            System.err.println("Exception when calling DynamicEndpointManageApi#updateDynamicEndpointHost");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -2067,11 +2067,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicendpointid** | **String**| The DYNAMICENDPOINTID identifier | |
-| **obPv400UpdateBankLevelDynamicEndpointHostRequest** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)>
+ApiResponse<[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)>
 
 
 ### Authorization

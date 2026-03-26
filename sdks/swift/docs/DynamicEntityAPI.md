@@ -1,18 +1,18 @@
 # DynamicEntityAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CleanupOrphanedDynamicEntityRecords**](DynamicEntityAPI.md#obpv600cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
-[**oBPv600GetAvailablePersonalDynamicEntities**](DynamicEntityAPI.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
-[**oBPv600GetDynamicEntityDiagnostics**](DynamicEntityAPI.md#obpv600getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
-[**oBPv600GetReferenceTypes**](DynamicEntityAPI.md#obpv600getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
+[**cleanupOrphanedDynamicEntityRecords**](DynamicEntityAPI.md#cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records
+[**getAvailablePersonalDynamicEntities**](DynamicEntityAPI.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**getDynamicEntityDiagnostics**](DynamicEntityAPI.md#getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics
+[**getReferenceTypes**](DynamicEntityAPI.md#getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities
 
 
-# **oBPv600CleanupOrphanedDynamicEntityRecords**
+# **cleanupOrphanedDynamicEntityRecords**
 ```swift
-    open class func oBPv600CleanupOrphanedDynamicEntityRecords(completion: @escaping (_ data: OBPv600CleanupOrphanedDynamicEntityRecords200Response?, _ error: Error?) -> Void)
+    open class func cleanupOrphanedDynamicEntityRecords(completion: @escaping (_ data: CleanupOrphanedDynamicEntityRecords200Response?, _ error: Error?) -> Void)
 ```
 
 Cleanup Orphaned Dynamic Entity Records
@@ -26,7 +26,7 @@ import OBPSwift
 
 
 // Cleanup Orphaned Dynamic Entity Records
-DynamicEntityAPI.oBPv600CleanupOrphanedDynamicEntityRecords() { (response, error) in
+DynamicEntityAPI.cleanupOrphanedDynamicEntityRecords() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -56,9 +56,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAvailablePersonalDynamicEntities**
+# **getAvailablePersonalDynamicEntities**
 ```swift
-    open class func oBPv600GetAvailablePersonalDynamicEntities(completion: @escaping (_ data: OBPv600GetAvailablePersonalDynamicEntities200Response?, _ error: Error?) -> Void)
+    open class func getAvailablePersonalDynamicEntities(completion: @escaping (_ data: GetAvailablePersonalDynamicEntities200Response?, _ error: Error?) -> Void)
 ```
 
 Get Available Personal Dynamic Entities
@@ -72,7 +72,7 @@ import OBPSwift
 
 
 // Get Available Personal Dynamic Entities
-DynamicEntityAPI.oBPv600GetAvailablePersonalDynamicEntities() { (response, error) in
+DynamicEntityAPI.getAvailablePersonalDynamicEntities() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -89,7 +89,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -102,9 +102,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetDynamicEntityDiagnostics**
+# **getDynamicEntityDiagnostics**
 ```swift
-    open class func oBPv600GetDynamicEntityDiagnostics(completion: @escaping (_ data: OBPv600GetDynamicEntityDiagnostics200Response?, _ error: Error?) -> Void)
+    open class func getDynamicEntityDiagnostics(completion: @escaping (_ data: GetDynamicEntityDiagnostics200Response?, _ error: Error?) -> Void)
 ```
 
 Get Dynamic Entity Diagnostics
@@ -118,7 +118,7 @@ import OBPSwift
 
 
 // Get Dynamic Entity Diagnostics
-DynamicEntityAPI.oBPv600GetDynamicEntityDiagnostics() { (response, error) in
+DynamicEntityAPI.getDynamicEntityDiagnostics() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -148,9 +148,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetReferenceTypes**
+# **getReferenceTypes**
 ```swift
-    open class func oBPv600GetReferenceTypes(completion: @escaping (_ data: OBPv600GetReferenceTypes200Response?, _ error: Error?) -> Void)
+    open class func getReferenceTypes(completion: @escaping (_ data: GetReferenceTypes200Response?, _ error: Error?) -> Void)
 ```
 
 Get Reference Types for Dynamic Entities
@@ -164,7 +164,7 @@ import OBPSwift
 
 
 // Get Reference Types for Dynamic Entities
-DynamicEntityAPI.oBPv600GetReferenceTypes() { (response, error) in
+DynamicEntityAPI.getReferenceTypes() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

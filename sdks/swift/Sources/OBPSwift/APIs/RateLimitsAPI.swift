@@ -10,59 +10,15 @@ import Foundation
 open class RateLimitsAPI {
 
     /**
-     Get Rate Limiting Info
-     
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetRateLimitingInfo200Response
-     */
-    open class func oBPv310GetRateLimitingInfo(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetRateLimitingInfo200Response {
-        return try await oBPv310GetRateLimitingInfoWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Rate Limiting Info
-     - GET /obp/v3.1.0/rate-limiting
-     - <p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetRateLimitingInfo200Response> 
-     */
-    open class func oBPv310GetRateLimitingInfoWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetRateLimitingInfo200Response> {
-        let localVariablePath = "/obp/v3.1.0/rate-limiting"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetRateLimitingInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Set Rate Limits / Call Limits per Consumer
      
      - parameter consumerid: (path) The CONSUMERID identifier 
-     - parameter oBPv600UpdateRateLimitsRequest: (body) Request body 
+     - parameter updateRateLimitsRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600UpdateRateLimitsRequest
+     - returns: UpdateRateLimitsRequest
      */
-    open class func oBPv400CallsLimit(consumerid: String, oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600UpdateRateLimitsRequest {
-        return try await oBPv400CallsLimitWithRequestBuilder(consumerid: consumerid, oBPv600UpdateRateLimitsRequest: oBPv600UpdateRateLimitsRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func callsLimit(consumerid: String, updateRateLimitsRequest: UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateRateLimitsRequest {
+        return try await callsLimitWithRequestBuilder(consumerid: consumerid, updateRateLimitsRequest: updateRateLimitsRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -76,20 +32,20 @@ open class RateLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter consumerid: (path) The CONSUMERID identifier 
-     - parameter oBPv600UpdateRateLimitsRequest: (body) Request body 
+     - parameter updateRateLimitsRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600UpdateRateLimitsRequest> 
+     - returns: RequestBuilder<UpdateRateLimitsRequest> 
      */
-    open class func oBPv400CallsLimitWithRequestBuilder(consumerid: String, oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600UpdateRateLimitsRequest> {
+    open class func callsLimitWithRequestBuilder(consumerid: String, updateRateLimitsRequest: UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateRateLimitsRequest> {
         var localVariablePath = "/obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits"
         let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
         let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{consumerid}", with: consumeridPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateRateLimitsRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateRateLimitsRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -99,9 +55,53 @@ open class RateLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600UpdateRateLimitsRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateRateLimitsRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Rate Limiting Info
+     
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetRateLimitingInfo200Response
+     */
+    open class func getRateLimitingInfo(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetRateLimitingInfo200Response {
+        return try await getRateLimitingInfoWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Rate Limiting Info
+     - GET /obp/v3.1.0/rate-limiting
+     - <p>Get information about the Rate Limiting setup on this OBP Instance such as:</p> <p>Is rate limiting enabled and active?<br /> What backend is used to keep track of the API calls (e.g. REDIS).</p> <p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p> <p>See the consumer rate limits / call limits endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#service_available\"><strong>service_available</strong></a>:</p> <p><a href=\"/glossary#technology\"><strong>technology</strong></a>: technology1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetRateLimitingInfo200Response> 
+     */
+    open class func getRateLimitingInfoWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetRateLimitingInfo200Response> {
+        let localVariablePath = "/obp/v3.1.0/rate-limiting"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetRateLimitingInfo200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -109,12 +109,12 @@ open class RateLimitsAPI {
      
      - parameter consumerid: (path) The CONSUMERID identifier 
      - parameter ratelimitingid: (path) The RATELIMITINGID identifier 
-     - parameter oBPv600UpdateRateLimitsRequest: (body) Request body 
+     - parameter updateRateLimitsRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600UpdateRateLimitsRequest
+     - returns: UpdateRateLimitsRequest
      */
-    open class func oBPv600UpdateRateLimits(consumerid: String, ratelimitingid: String, oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600UpdateRateLimitsRequest {
-        return try await oBPv600UpdateRateLimitsWithRequestBuilder(consumerid: consumerid, ratelimitingid: ratelimitingid, oBPv600UpdateRateLimitsRequest: oBPv600UpdateRateLimitsRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateRateLimits(consumerid: String, ratelimitingid: String, updateRateLimitsRequest: UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateRateLimitsRequest {
+        return try await updateRateLimitsWithRequestBuilder(consumerid: consumerid, ratelimitingid: ratelimitingid, updateRateLimitsRequest: updateRateLimitsRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -128,15 +128,15 @@ open class RateLimitsAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter consumerid: (path) The CONSUMERID identifier 
      - parameter ratelimitingid: (path) The RATELIMITINGID identifier 
-     - parameter oBPv600UpdateRateLimitsRequest: (body) Request body 
+     - parameter updateRateLimitsRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600UpdateRateLimitsRequest> 
+     - returns: RequestBuilder<UpdateRateLimitsRequest> 
      */
-    open class func oBPv600UpdateRateLimitsWithRequestBuilder(consumerid: String, ratelimitingid: String, oBPv600UpdateRateLimitsRequest: OBPv600UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600UpdateRateLimitsRequest> {
+    open class func updateRateLimitsWithRequestBuilder(consumerid: String, ratelimitingid: String, updateRateLimitsRequest: UpdateRateLimitsRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateRateLimitsRequest> {
         var localVariablePath = "/obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid}"
         let consumeridPreEscape = "\(APIHelper.mapValueToPathItem(consumerid))"
         let consumeridPostEscape = consumeridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -145,7 +145,7 @@ open class RateLimitsAPI {
         let ratelimitingidPostEscape = ratelimitingidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{ratelimitingid}", with: ratelimitingidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateRateLimitsRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateRateLimitsRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -155,7 +155,7 @@ open class RateLimitsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600UpdateRateLimitsRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateRateLimitsRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

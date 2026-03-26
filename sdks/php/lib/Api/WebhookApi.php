@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class WebhookApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310CreateAccountWebhook' => [
+        'createAccountWebhook' => [
             'application/json',
         ],
-        'oBPv310EnableDisableAccountWebhook' => [
+        'createBankAccountNotificationWebhook' => [
             'application/json',
         ],
-        'oBPv310GetAccountWebhooks' => [
+        'createSystemAccountNotificationWebhook' => [
             'application/json',
         ],
-        'oBPv400CreateBankAccountNotificationWebhook' => [
+        'enableDisableAccountWebhook' => [
             'application/json',
         ],
-        'oBPv400CreateSystemAccountNotificationWebhook' => [
+        'getAccountWebhooks' => [
             'application/json',
         ],
     ];
@@ -139,40 +139,40 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310CreateAccountWebhook
+     * Operation createAccountWebhook
      *
      * Create an Account Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountWebhookRequest $obpv310_create_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountWebhookRequest $create_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response
+     * @return \OpenBankProject\Model\EnableDisableAccountWebhook200Response
      */
-    public function oBPv310CreateAccountWebhook($bankid, $obpv310_create_account_webhook_request, string $contentType = self::contentTypes['oBPv310CreateAccountWebhook'][0])
+    public function createAccountWebhook($bankid, $create_account_webhook_request, string $contentType = self::contentTypes['createAccountWebhook'][0])
     {
-        list($response) = $this->oBPv310CreateAccountWebhookWithHttpInfo($bankid, $obpv310_create_account_webhook_request, $contentType);
+        list($response) = $this->createAccountWebhookWithHttpInfo($bankid, $create_account_webhook_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310CreateAccountWebhookWithHttpInfo
+     * Operation createAccountWebhookWithHttpInfo
      *
      * Create an Account Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountWebhookRequest $obpv310_create_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountWebhookRequest $create_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\EnableDisableAccountWebhook200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310CreateAccountWebhookWithHttpInfo($bankid, $obpv310_create_account_webhook_request, string $contentType = self::contentTypes['oBPv310CreateAccountWebhook'][0])
+    public function createAccountWebhookWithHttpInfo($bankid, $create_account_webhook_request, string $contentType = self::contentTypes['createAccountWebhook'][0])
     {
-        $request = $this->oBPv310CreateAccountWebhookRequest($bankid, $obpv310_create_account_webhook_request, $contentType);
+        $request = $this->createAccountWebhookRequest($bankid, $create_account_webhook_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -200,7 +200,7 @@ class WebhookApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                        '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
                         $request,
                         $response,
                     );
@@ -222,7 +222,7 @@ class WebhookApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
                 $request,
                 $response,
             );
@@ -231,7 +231,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                        '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -244,20 +244,20 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310CreateAccountWebhookAsync
+     * Operation createAccountWebhookAsync
      *
      * Create an Account Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountWebhookRequest $obpv310_create_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountWebhookRequest $create_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateAccountWebhookAsync($bankid, $obpv310_create_account_webhook_request, string $contentType = self::contentTypes['oBPv310CreateAccountWebhook'][0])
+    public function createAccountWebhookAsync($bankid, $create_account_webhook_request, string $contentType = self::contentTypes['createAccountWebhook'][0])
     {
-        return $this->oBPv310CreateAccountWebhookAsyncWithHttpInfo($bankid, $obpv310_create_account_webhook_request, $contentType)
+        return $this->createAccountWebhookAsyncWithHttpInfo($bankid, $create_account_webhook_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,21 +266,21 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310CreateAccountWebhookAsyncWithHttpInfo
+     * Operation createAccountWebhookAsyncWithHttpInfo
      *
      * Create an Account Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountWebhookRequest $obpv310_create_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountWebhookRequest $create_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310CreateAccountWebhookAsyncWithHttpInfo($bankid, $obpv310_create_account_webhook_request, string $contentType = self::contentTypes['oBPv310CreateAccountWebhook'][0])
+    public function createAccountWebhookAsyncWithHttpInfo($bankid, $create_account_webhook_request, string $contentType = self::contentTypes['createAccountWebhook'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response';
-        $request = $this->oBPv310CreateAccountWebhookRequest($bankid, $obpv310_create_account_webhook_request, $contentType);
+        $returnType = '\OpenBankProject\Model\EnableDisableAccountWebhook200Response';
+        $request = $this->createAccountWebhookRequest($bankid, $create_account_webhook_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -319,29 +319,29 @@ class WebhookApi
     }
 
     /**
-     * Create request for operation 'oBPv310CreateAccountWebhook'
+     * Create request for operation 'createAccountWebhook'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310CreateAccountWebhookRequest $obpv310_create_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310CreateAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountWebhookRequest $create_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310CreateAccountWebhookRequest($bankid, $obpv310_create_account_webhook_request, string $contentType = self::contentTypes['oBPv310CreateAccountWebhook'][0])
+    public function createAccountWebhookRequest($bankid, $create_account_webhook_request, string $contentType = self::contentTypes['createAccountWebhook'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310CreateAccountWebhook'
+                'Missing the required parameter $bankid when calling createAccountWebhook'
             );
         }
 
-        // verify the required parameter 'obpv310_create_account_webhook_request' is set
-        if ($obpv310_create_account_webhook_request === null || (is_array($obpv310_create_account_webhook_request) && count($obpv310_create_account_webhook_request) === 0)) {
+        // verify the required parameter 'create_account_webhook_request' is set
+        if ($create_account_webhook_request === null || (is_array($create_account_webhook_request) && count($create_account_webhook_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_create_account_webhook_request when calling oBPv310CreateAccountWebhook'
+                'Missing the required parameter $create_account_webhook_request when calling createAccountWebhook'
             );
         }
 
@@ -372,12 +372,12 @@ class WebhookApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_create_account_webhook_request)) {
+        if (isset($create_account_webhook_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_create_account_webhook_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_account_webhook_request));
             } else {
-                $httpBody = $obpv310_create_account_webhook_request;
+                $httpBody = $create_account_webhook_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -413,9 +413,9 @@ class WebhookApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -440,40 +440,40 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310EnableDisableAccountWebhook
+     * Operation createBankAccountNotificationWebhook
      *
-     * Enable/Disable an Account Webhook
+     * Create bank level Account Notification Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableAccountWebhookRequest $obpv310_enable_disable_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response
+     * @return \OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response
      */
-    public function oBPv310EnableDisableAccountWebhook($bankid, $obpv310_enable_disable_account_webhook_request, string $contentType = self::contentTypes['oBPv310EnableDisableAccountWebhook'][0])
+    public function createBankAccountNotificationWebhook($bankid, $create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createBankAccountNotificationWebhook'][0])
     {
-        list($response) = $this->oBPv310EnableDisableAccountWebhookWithHttpInfo($bankid, $obpv310_enable_disable_account_webhook_request, $contentType);
+        list($response) = $this->createBankAccountNotificationWebhookWithHttpInfo($bankid, $create_system_account_notification_webhook_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310EnableDisableAccountWebhookWithHttpInfo
+     * Operation createBankAccountNotificationWebhookWithHttpInfo
      *
-     * Enable/Disable an Account Webhook
+     * Create bank level Account Notification Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableAccountWebhookRequest $obpv310_enable_disable_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310EnableDisableAccountWebhookWithHttpInfo($bankid, $obpv310_enable_disable_account_webhook_request, string $contentType = self::contentTypes['oBPv310EnableDisableAccountWebhook'][0])
+    public function createBankAccountNotificationWebhookWithHttpInfo($bankid, $create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createBankAccountNotificationWebhook'][0])
     {
-        $request = $this->oBPv310EnableDisableAccountWebhookRequest($bankid, $obpv310_enable_disable_account_webhook_request, $contentType);
+        $request = $this->createBankAccountNotificationWebhookRequest($bankid, $create_system_account_notification_webhook_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -501,7 +501,7 @@ class WebhookApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                        '\OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response',
                         $request,
                         $response,
                     );
@@ -523,7 +523,7 @@ class WebhookApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                '\OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response',
                 $request,
                 $response,
             );
@@ -532,7 +532,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response',
+                        '\OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -545,20 +545,20 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310EnableDisableAccountWebhookAsync
+     * Operation createBankAccountNotificationWebhookAsync
      *
-     * Enable/Disable an Account Webhook
+     * Create bank level Account Notification Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableAccountWebhookRequest $obpv310_enable_disable_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310EnableDisableAccountWebhookAsync($bankid, $obpv310_enable_disable_account_webhook_request, string $contentType = self::contentTypes['oBPv310EnableDisableAccountWebhook'][0])
+    public function createBankAccountNotificationWebhookAsync($bankid, $create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createBankAccountNotificationWebhook'][0])
     {
-        return $this->oBPv310EnableDisableAccountWebhookAsyncWithHttpInfo($bankid, $obpv310_enable_disable_account_webhook_request, $contentType)
+        return $this->createBankAccountNotificationWebhookAsyncWithHttpInfo($bankid, $create_system_account_notification_webhook_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -567,21 +567,21 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310EnableDisableAccountWebhookAsyncWithHttpInfo
+     * Operation createBankAccountNotificationWebhookAsyncWithHttpInfo
      *
-     * Enable/Disable an Account Webhook
+     * Create bank level Account Notification Webhook
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableAccountWebhookRequest $obpv310_enable_disable_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310EnableDisableAccountWebhookAsyncWithHttpInfo($bankid, $obpv310_enable_disable_account_webhook_request, string $contentType = self::contentTypes['oBPv310EnableDisableAccountWebhook'][0])
+    public function createBankAccountNotificationWebhookAsyncWithHttpInfo($bankid, $create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createBankAccountNotificationWebhook'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310EnableDisableAccountWebhook200Response';
-        $request = $this->oBPv310EnableDisableAccountWebhookRequest($bankid, $obpv310_enable_disable_account_webhook_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateBankAccountNotificationWebhook200Response';
+        $request = $this->createBankAccountNotificationWebhookRequest($bankid, $create_system_account_notification_webhook_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -620,34 +620,34 @@ class WebhookApi
     }
 
     /**
-     * Create request for operation 'oBPv310EnableDisableAccountWebhook'
+     * Create request for operation 'createBankAccountNotificationWebhook'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv310EnableDisableAccountWebhookRequest $obpv310_enable_disable_account_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310EnableDisableAccountWebhook'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310EnableDisableAccountWebhookRequest($bankid, $obpv310_enable_disable_account_webhook_request, string $contentType = self::contentTypes['oBPv310EnableDisableAccountWebhook'][0])
+    public function createBankAccountNotificationWebhookRequest($bankid, $create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createBankAccountNotificationWebhook'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310EnableDisableAccountWebhook'
+                'Missing the required parameter $bankid when calling createBankAccountNotificationWebhook'
             );
         }
 
-        // verify the required parameter 'obpv310_enable_disable_account_webhook_request' is set
-        if ($obpv310_enable_disable_account_webhook_request === null || (is_array($obpv310_enable_disable_account_webhook_request) && count($obpv310_enable_disable_account_webhook_request) === 0)) {
+        // verify the required parameter 'create_system_account_notification_webhook_request' is set
+        if ($create_system_account_notification_webhook_request === null || (is_array($create_system_account_notification_webhook_request) && count($create_system_account_notification_webhook_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv310_enable_disable_account_webhook_request when calling oBPv310EnableDisableAccountWebhook'
+                'Missing the required parameter $create_system_account_notification_webhook_request when calling createBankAccountNotificationWebhook'
             );
         }
 
 
-        $resourcePath = '/obp/v3.1.0/banks/{bankid}/account-web-hooks';
+        $resourcePath = '/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -673,12 +673,12 @@ class WebhookApi
         );
 
         // for model (json/xml)
-        if (isset($obpv310_enable_disable_account_webhook_request)) {
+        if (isset($create_system_account_notification_webhook_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv310_enable_disable_account_webhook_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_system_account_notification_webhook_request));
             } else {
-                $httpBody = $obpv310_enable_disable_account_webhook_request;
+                $httpBody = $create_system_account_notification_webhook_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -714,9 +714,9 @@ class WebhookApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -733,7 +733,7 @@ class WebhookApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -741,38 +741,38 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310GetAccountWebhooks
+     * Operation createSystemAccountNotificationWebhook
      *
-     * Get Account Webhooks
+     * Create system level Account Notification Webhook
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountWebhooks'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetAccountWebhooks200Response
+     * @return \OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response
      */
-    public function oBPv310GetAccountWebhooks($bankid, string $contentType = self::contentTypes['oBPv310GetAccountWebhooks'][0])
+    public function createSystemAccountNotificationWebhook($create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createSystemAccountNotificationWebhook'][0])
     {
-        list($response) = $this->oBPv310GetAccountWebhooksWithHttpInfo($bankid, $contentType);
+        list($response) = $this->createSystemAccountNotificationWebhookWithHttpInfo($create_system_account_notification_webhook_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetAccountWebhooksWithHttpInfo
+     * Operation createSystemAccountNotificationWebhookWithHttpInfo
      *
-     * Get Account Webhooks
+     * Create system level Account Notification Webhook
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountWebhooks'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetAccountWebhooks200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetAccountWebhooksWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetAccountWebhooks'][0])
+    public function createSystemAccountNotificationWebhookWithHttpInfo($create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createSystemAccountNotificationWebhook'][0])
     {
-        $request = $this->oBPv310GetAccountWebhooksRequest($bankid, $contentType);
+        $request = $this->createSystemAccountNotificationWebhookRequest($create_system_account_notification_webhook_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -800,7 +800,7 @@ class WebhookApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetAccountWebhooks200Response',
+                        '\OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response',
                         $request,
                         $response,
                     );
@@ -822,7 +822,7 @@ class WebhookApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetAccountWebhooks200Response',
+                '\OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response',
                 $request,
                 $response,
             );
@@ -831,7 +831,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetAccountWebhooks200Response',
+                        '\OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -844,19 +844,19 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310GetAccountWebhooksAsync
+     * Operation createSystemAccountNotificationWebhookAsync
      *
-     * Get Account Webhooks
+     * Create system level Account Notification Webhook
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountWebhooks'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountWebhooksAsync($bankid, string $contentType = self::contentTypes['oBPv310GetAccountWebhooks'][0])
+    public function createSystemAccountNotificationWebhookAsync($create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createSystemAccountNotificationWebhook'][0])
     {
-        return $this->oBPv310GetAccountWebhooksAsyncWithHttpInfo($bankid, $contentType)
+        return $this->createSystemAccountNotificationWebhookAsyncWithHttpInfo($create_system_account_notification_webhook_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -865,20 +865,20 @@ class WebhookApi
     }
 
     /**
-     * Operation oBPv310GetAccountWebhooksAsyncWithHttpInfo
+     * Operation createSystemAccountNotificationWebhookAsyncWithHttpInfo
      *
-     * Get Account Webhooks
+     * Create system level Account Notification Webhook
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountWebhooks'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetAccountWebhooksAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv310GetAccountWebhooks'][0])
+    public function createSystemAccountNotificationWebhookAsyncWithHttpInfo($create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createSystemAccountNotificationWebhook'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetAccountWebhooks200Response';
-        $request = $this->oBPv310GetAccountWebhooksRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateSystemAccountNotificationWebhook200Response';
+        $request = $this->createSystemAccountNotificationWebhookRequest($create_system_account_notification_webhook_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -917,21 +917,603 @@ class WebhookApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetAccountWebhooks'
+     * Create request for operation 'createSystemAccountNotificationWebhook'
      *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetAccountWebhooks'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemAccountNotificationWebhookRequest $create_system_account_notification_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemAccountNotificationWebhook'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetAccountWebhooksRequest($bankid, string $contentType = self::contentTypes['oBPv310GetAccountWebhooks'][0])
+    public function createSystemAccountNotificationWebhookRequest($create_system_account_notification_webhook_request, string $contentType = self::contentTypes['createSystemAccountNotificationWebhook'][0])
+    {
+
+        // verify the required parameter 'create_system_account_notification_webhook_request' is set
+        if ($create_system_account_notification_webhook_request === null || (is_array($create_system_account_notification_webhook_request) && count($create_system_account_notification_webhook_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_system_account_notification_webhook_request when calling createSystemAccountNotificationWebhook'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_system_account_notification_webhook_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_system_account_notification_webhook_request));
+            } else {
+                $httpBody = $create_system_account_notification_webhook_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation enableDisableAccountWebhook
+     *
+     * Enable/Disable an Account Webhook
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\EnableDisableAccountWebhookRequest $enable_disable_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableAccountWebhook'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\EnableDisableAccountWebhook200Response
+     */
+    public function enableDisableAccountWebhook($bankid, $enable_disable_account_webhook_request, string $contentType = self::contentTypes['enableDisableAccountWebhook'][0])
+    {
+        list($response) = $this->enableDisableAccountWebhookWithHttpInfo($bankid, $enable_disable_account_webhook_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation enableDisableAccountWebhookWithHttpInfo
+     *
+     * Enable/Disable an Account Webhook
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\EnableDisableAccountWebhookRequest $enable_disable_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableAccountWebhook'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\EnableDisableAccountWebhook200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function enableDisableAccountWebhookWithHttpInfo($bankid, $enable_disable_account_webhook_request, string $contentType = self::contentTypes['enableDisableAccountWebhook'][0])
+    {
+        $request = $this->enableDisableAccountWebhookRequest($bankid, $enable_disable_account_webhook_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\EnableDisableAccountWebhook200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation enableDisableAccountWebhookAsync
+     *
+     * Enable/Disable an Account Webhook
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\EnableDisableAccountWebhookRequest $enable_disable_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableAccountWebhook'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function enableDisableAccountWebhookAsync($bankid, $enable_disable_account_webhook_request, string $contentType = self::contentTypes['enableDisableAccountWebhook'][0])
+    {
+        return $this->enableDisableAccountWebhookAsyncWithHttpInfo($bankid, $enable_disable_account_webhook_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation enableDisableAccountWebhookAsyncWithHttpInfo
+     *
+     * Enable/Disable an Account Webhook
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\EnableDisableAccountWebhookRequest $enable_disable_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableAccountWebhook'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function enableDisableAccountWebhookAsyncWithHttpInfo($bankid, $enable_disable_account_webhook_request, string $contentType = self::contentTypes['enableDisableAccountWebhook'][0])
+    {
+        $returnType = '\OpenBankProject\Model\EnableDisableAccountWebhook200Response';
+        $request = $this->enableDisableAccountWebhookRequest($bankid, $enable_disable_account_webhook_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'enableDisableAccountWebhook'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  \OpenBankProject\Model\EnableDisableAccountWebhookRequest $enable_disable_account_webhook_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enableDisableAccountWebhook'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function enableDisableAccountWebhookRequest($bankid, $enable_disable_account_webhook_request, string $contentType = self::contentTypes['enableDisableAccountWebhook'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv310GetAccountWebhooks'
+                'Missing the required parameter $bankid when calling enableDisableAccountWebhook'
+            );
+        }
+
+        // verify the required parameter 'enable_disable_account_webhook_request' is set
+        if ($enable_disable_account_webhook_request === null || (is_array($enable_disable_account_webhook_request) && count($enable_disable_account_webhook_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $enable_disable_account_webhook_request when calling enableDisableAccountWebhook'
+            );
+        }
+
+
+        $resourcePath = '/obp/v3.1.0/banks/{bankid}/account-web-hooks';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($enable_disable_account_webhook_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($enable_disable_account_webhook_request));
+            } else {
+                $httpBody = $enable_disable_account_webhook_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'PUT',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAccountWebhooks
+     *
+     * Get Account Webhooks
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountWebhooks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetAccountWebhooks200Response
+     */
+    public function getAccountWebhooks($bankid, string $contentType = self::contentTypes['getAccountWebhooks'][0])
+    {
+        list($response) = $this->getAccountWebhooksWithHttpInfo($bankid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAccountWebhooksWithHttpInfo
+     *
+     * Get Account Webhooks
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountWebhooks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetAccountWebhooks200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAccountWebhooksWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountWebhooks'][0])
+    {
+        $request = $this->getAccountWebhooksRequest($bankid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetAccountWebhooks200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetAccountWebhooks200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetAccountWebhooks200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAccountWebhooksAsync
+     *
+     * Get Account Webhooks
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountWebhooks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountWebhooksAsync($bankid, string $contentType = self::contentTypes['getAccountWebhooks'][0])
+    {
+        return $this->getAccountWebhooksAsyncWithHttpInfo($bankid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAccountWebhooksAsyncWithHttpInfo
+     *
+     * Get Account Webhooks
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountWebhooks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAccountWebhooksAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountWebhooks'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetAccountWebhooks200Response';
+        $request = $this->getAccountWebhooksRequest($bankid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAccountWebhooks'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountWebhooks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAccountWebhooksRequest($bankid, string $contentType = self::contentTypes['getAccountWebhooks'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getAccountWebhooks'
             );
         }
 
@@ -996,9 +1578,9 @@ class WebhookApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1016,588 +1598,6 @@ class WebhookApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400CreateBankAccountNotificationWebhook
-     *
-     * Create bank level Account Notification Webhook
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response
-     */
-    public function oBPv400CreateBankAccountNotificationWebhook($bankid, $obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'][0])
-    {
-        list($response) = $this->oBPv400CreateBankAccountNotificationWebhookWithHttpInfo($bankid, $obpv400_create_system_account_notification_webhook_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400CreateBankAccountNotificationWebhookWithHttpInfo
-     *
-     * Create bank level Account Notification Webhook
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400CreateBankAccountNotificationWebhookWithHttpInfo($bankid, $obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'][0])
-    {
-        $request = $this->oBPv400CreateBankAccountNotificationWebhookRequest($bankid, $obpv400_create_system_account_notification_webhook_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400CreateBankAccountNotificationWebhookAsync
-     *
-     * Create bank level Account Notification Webhook
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateBankAccountNotificationWebhookAsync($bankid, $obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'][0])
-    {
-        return $this->oBPv400CreateBankAccountNotificationWebhookAsyncWithHttpInfo($bankid, $obpv400_create_system_account_notification_webhook_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400CreateBankAccountNotificationWebhookAsyncWithHttpInfo
-     *
-     * Create bank level Account Notification Webhook
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateBankAccountNotificationWebhookAsyncWithHttpInfo($bankid, $obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateBankAccountNotificationWebhook200Response';
-        $request = $this->oBPv400CreateBankAccountNotificationWebhookRequest($bankid, $obpv400_create_system_account_notification_webhook_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400CreateBankAccountNotificationWebhook'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400CreateBankAccountNotificationWebhookRequest($bankid, $obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateBankAccountNotificationWebhook'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateBankAccountNotificationWebhook'
-            );
-        }
-
-        // verify the required parameter 'obpv400_create_system_account_notification_webhook_request' is set
-        if ($obpv400_create_system_account_notification_webhook_request === null || (is_array($obpv400_create_system_account_notification_webhook_request) && count($obpv400_create_system_account_notification_webhook_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_system_account_notification_webhook_request when calling oBPv400CreateBankAccountNotificationWebhook'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_create_system_account_notification_webhook_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_system_account_notification_webhook_request));
-            } else {
-                $httpBody = $obpv400_create_system_account_notification_webhook_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400CreateSystemAccountNotificationWebhook
-     *
-     * Create system level Account Notification Webhook
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response
-     */
-    public function oBPv400CreateSystemAccountNotificationWebhook($obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'][0])
-    {
-        list($response) = $this->oBPv400CreateSystemAccountNotificationWebhookWithHttpInfo($obpv400_create_system_account_notification_webhook_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv400CreateSystemAccountNotificationWebhookWithHttpInfo
-     *
-     * Create system level Account Notification Webhook
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400CreateSystemAccountNotificationWebhookWithHttpInfo($obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'][0])
-    {
-        $request = $this->oBPv400CreateSystemAccountNotificationWebhookRequest($obpv400_create_system_account_notification_webhook_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400CreateSystemAccountNotificationWebhookAsync
-     *
-     * Create system level Account Notification Webhook
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateSystemAccountNotificationWebhookAsync($obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'][0])
-    {
-        return $this->oBPv400CreateSystemAccountNotificationWebhookAsyncWithHttpInfo($obpv400_create_system_account_notification_webhook_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400CreateSystemAccountNotificationWebhookAsyncWithHttpInfo
-     *
-     * Create system level Account Notification Webhook
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400CreateSystemAccountNotificationWebhookAsyncWithHttpInfo($obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhook200Response';
-        $request = $this->oBPv400CreateSystemAccountNotificationWebhookRequest($obpv400_create_system_account_notification_webhook_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400CreateSystemAccountNotificationWebhook'
-     *
-     * @param  \OpenBankProject\Model\OBPv400CreateSystemAccountNotificationWebhookRequest $obpv400_create_system_account_notification_webhook_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400CreateSystemAccountNotificationWebhookRequest($obpv400_create_system_account_notification_webhook_request, string $contentType = self::contentTypes['oBPv400CreateSystemAccountNotificationWebhook'][0])
-    {
-
-        // verify the required parameter 'obpv400_create_system_account_notification_webhook_request' is set
-        if ($obpv400_create_system_account_notification_webhook_request === null || (is_array($obpv400_create_system_account_notification_webhook_request) && count($obpv400_create_system_account_notification_webhook_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_system_account_notification_webhook_request when calling oBPv400CreateSystemAccountNotificationWebhook'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv400_create_system_account_notification_webhook_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_system_account_notification_webhook_request));
-            } else {
-                $httpBody = $obpv400_create_system_account_notification_webhook_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

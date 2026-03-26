@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,8 +46,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
-        Task<IOBPv510AccountAccessUniqueIndexCheckApiResponse> OBPv510AccountAccessUniqueIndexCheckAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
+        Task<IAccountAccessUniqueIndexCheckApiResponse> AccountAccessUniqueIndexCheckAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check Unique Index at Account Access
@@ -56,8 +56,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountAccessUniqueIndexCheckApiResponse"/>?&gt;</returns>
-        Task<IOBPv510AccountAccessUniqueIndexCheckApiResponse?> OBPv510AccountAccessUniqueIndexCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountAccessUniqueIndexCheckApiResponse"/>?&gt;</returns>
+        Task<IAccountAccessUniqueIndexCheckApiResponse?> AccountAccessUniqueIndexCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check for Sensible Currencies
@@ -68,8 +68,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountCurrencyCheckApiResponse"/>&gt;</returns>
-        Task<IOBPv510AccountCurrencyCheckApiResponse> OBPv510AccountCurrencyCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountCurrencyCheckApiResponse"/>&gt;</returns>
+        Task<IAccountCurrencyCheckApiResponse> AccountCurrencyCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check for Sensible Currencies
@@ -79,8 +79,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountCurrencyCheckApiResponse"/>?&gt;</returns>
-        Task<IOBPv510AccountCurrencyCheckApiResponse?> OBPv510AccountCurrencyCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountCurrencyCheckApiResponse"/>?&gt;</returns>
+        Task<IAccountCurrencyCheckApiResponse?> AccountCurrencyCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check Custom View Names
@@ -90,8 +90,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CustomViewNamesCheckApiResponse"/>&gt;</returns>
-        Task<IOBPv510CustomViewNamesCheckApiResponse> OBPv510CustomViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICustomViewNamesCheckApiResponse"/>&gt;</returns>
+        Task<ICustomViewNamesCheckApiResponse> CustomViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check Custom View Names
@@ -100,8 +100,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CustomViewNamesCheckApiResponse"/>?&gt;</returns>
-        Task<IOBPv510CustomViewNamesCheckApiResponse?> OBPv510CustomViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICustomViewNamesCheckApiResponse"/>?&gt;</returns>
+        Task<ICustomViewNamesCheckApiResponse?> CustomViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check for Orphaned Accounts
@@ -112,8 +112,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510OrphanedAccountCheckApiResponse"/>&gt;</returns>
-        Task<IOBPv510OrphanedAccountCheckApiResponse> OBPv510OrphanedAccountCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IOrphanedAccountCheckApiResponse"/>&gt;</returns>
+        Task<IOrphanedAccountCheckApiResponse> OrphanedAccountCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check for Orphaned Accounts
@@ -123,8 +123,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510OrphanedAccountCheckApiResponse"/>?&gt;</returns>
-        Task<IOBPv510OrphanedAccountCheckApiResponse?> OBPv510OrphanedAccountCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IOrphanedAccountCheckApiResponse"/>?&gt;</returns>
+        Task<IOrphanedAccountCheckApiResponse?> OrphanedAccountCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check System View Names
@@ -134,8 +134,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510SystemViewNamesCheckApiResponse"/>&gt;</returns>
-        Task<IOBPv510SystemViewNamesCheckApiResponse> OBPv510SystemViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ISystemViewNamesCheckApiResponse"/>&gt;</returns>
+        Task<ISystemViewNamesCheckApiResponse> SystemViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check System View Names
@@ -144,14 +144,14 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510SystemViewNamesCheckApiResponse"/>?&gt;</returns>
-        Task<IOBPv510SystemViewNamesCheckApiResponse?> OBPv510SystemViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ISystemViewNamesCheckApiResponse"/>?&gt;</returns>
+        Task<ISystemViewNamesCheckApiResponse?> SystemViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510AccountAccessUniqueIndexCheckApiResponse"/>
+    /// The <see cref="IAccountAccessUniqueIndexCheckApiResponse"/>
     /// </summary>
-    public interface IOBPv510AccountAccessUniqueIndexCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response?>
+    public interface IAccountAccessUniqueIndexCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -167,9 +167,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510AccountCurrencyCheckApiResponse"/>
+    /// The <see cref="IAccountCurrencyCheckApiResponse"/>
     /// </summary>
-    public interface IOBPv510AccountCurrencyCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response?>
+    public interface IAccountCurrencyCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -185,9 +185,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510CustomViewNamesCheckApiResponse"/>
+    /// The <see cref="ICustomViewNamesCheckApiResponse"/>
     /// </summary>
-    public interface IOBPv510CustomViewNamesCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response?>
+    public interface ICustomViewNamesCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -203,9 +203,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510OrphanedAccountCheckApiResponse"/>
+    /// The <see cref="IOrphanedAccountCheckApiResponse"/>
     /// </summary>
-    public interface IOBPv510OrphanedAccountCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response?>
+    public interface IOrphanedAccountCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -221,9 +221,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510SystemViewNamesCheckApiResponse"/>
+    /// The <see cref="ISystemViewNamesCheckApiResponse"/>
     /// </summary>
-    public interface IOBPv510SystemViewNamesCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response?>
+    public interface ISystemViewNamesCheckApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -246,101 +246,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510AccountAccessUniqueIndexCheck;
+        public event EventHandler<ApiResponseEventArgs>? OnAccountAccessUniqueIndexCheck;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510AccountAccessUniqueIndexCheck;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAccountAccessUniqueIndexCheck;
 
-        internal void ExecuteOnOBPv510AccountAccessUniqueIndexCheck(SystemIntegrityApi.OBPv510AccountAccessUniqueIndexCheckApiResponse apiResponse)
+        internal void ExecuteOnAccountAccessUniqueIndexCheck(SystemIntegrityApi.AccountAccessUniqueIndexCheckApiResponse apiResponse)
         {
-            OnOBPv510AccountAccessUniqueIndexCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAccountAccessUniqueIndexCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510AccountAccessUniqueIndexCheck(Exception exception)
+        internal void ExecuteOnErrorAccountAccessUniqueIndexCheck(Exception exception)
         {
-            OnErrorOBPv510AccountAccessUniqueIndexCheck?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAccountAccessUniqueIndexCheck?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510AccountCurrencyCheck;
+        public event EventHandler<ApiResponseEventArgs>? OnAccountCurrencyCheck;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510AccountCurrencyCheck;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAccountCurrencyCheck;
 
-        internal void ExecuteOnOBPv510AccountCurrencyCheck(SystemIntegrityApi.OBPv510AccountCurrencyCheckApiResponse apiResponse)
+        internal void ExecuteOnAccountCurrencyCheck(SystemIntegrityApi.AccountCurrencyCheckApiResponse apiResponse)
         {
-            OnOBPv510AccountCurrencyCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAccountCurrencyCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510AccountCurrencyCheck(Exception exception)
+        internal void ExecuteOnErrorAccountCurrencyCheck(Exception exception)
         {
-            OnErrorOBPv510AccountCurrencyCheck?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAccountCurrencyCheck?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510CustomViewNamesCheck;
+        public event EventHandler<ApiResponseEventArgs>? OnCustomViewNamesCheck;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510CustomViewNamesCheck;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCustomViewNamesCheck;
 
-        internal void ExecuteOnOBPv510CustomViewNamesCheck(SystemIntegrityApi.OBPv510CustomViewNamesCheckApiResponse apiResponse)
+        internal void ExecuteOnCustomViewNamesCheck(SystemIntegrityApi.CustomViewNamesCheckApiResponse apiResponse)
         {
-            OnOBPv510CustomViewNamesCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCustomViewNamesCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510CustomViewNamesCheck(Exception exception)
+        internal void ExecuteOnErrorCustomViewNamesCheck(Exception exception)
         {
-            OnErrorOBPv510CustomViewNamesCheck?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCustomViewNamesCheck?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510OrphanedAccountCheck;
+        public event EventHandler<ApiResponseEventArgs>? OnOrphanedAccountCheck;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510OrphanedAccountCheck;
+        public event EventHandler<ExceptionEventArgs>? OnErrorOrphanedAccountCheck;
 
-        internal void ExecuteOnOBPv510OrphanedAccountCheck(SystemIntegrityApi.OBPv510OrphanedAccountCheckApiResponse apiResponse)
+        internal void ExecuteOnOrphanedAccountCheck(SystemIntegrityApi.OrphanedAccountCheckApiResponse apiResponse)
         {
-            OnOBPv510OrphanedAccountCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnOrphanedAccountCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510OrphanedAccountCheck(Exception exception)
+        internal void ExecuteOnErrorOrphanedAccountCheck(Exception exception)
         {
-            OnErrorOBPv510OrphanedAccountCheck?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorOrphanedAccountCheck?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510SystemViewNamesCheck;
+        public event EventHandler<ApiResponseEventArgs>? OnSystemViewNamesCheck;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510SystemViewNamesCheck;
+        public event EventHandler<ExceptionEventArgs>? OnErrorSystemViewNamesCheck;
 
-        internal void ExecuteOnOBPv510SystemViewNamesCheck(SystemIntegrityApi.OBPv510SystemViewNamesCheckApiResponse apiResponse)
+        internal void ExecuteOnSystemViewNamesCheck(SystemIntegrityApi.SystemViewNamesCheckApiResponse apiResponse)
         {
-            OnOBPv510SystemViewNamesCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnSystemViewNamesCheck?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510SystemViewNamesCheck(Exception exception)
+        internal void ExecuteOnErrorSystemViewNamesCheck(Exception exception)
         {
-            OnErrorOBPv510SystemViewNamesCheck?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorSystemViewNamesCheck?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -402,10 +402,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510AccountAccessUniqueIndexCheckDefaultImplementation(IOBPv510AccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar)
+        private void AfterAccountAccessUniqueIndexCheckDefaultImplementation(IAccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510AccountAccessUniqueIndexCheck(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterAccountAccessUniqueIndexCheck(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -415,7 +415,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510AccountAccessUniqueIndexCheck(ref bool suppressDefaultLog, IOBPv510AccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar);
+        partial void AfterAccountAccessUniqueIndexCheck(ref bool suppressDefaultLog, IAccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -423,10 +423,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510AccountAccessUniqueIndexCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorAccountAccessUniqueIndexCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510AccountAccessUniqueIndexCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorAccountAccessUniqueIndexCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -438,18 +438,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510AccountAccessUniqueIndexCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorAccountAccessUniqueIndexCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Check Unique Index at Account Access &lt;p&gt;Check unique index at account access table.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510AccountAccessUniqueIndexCheckApiResponse?> OBPv510AccountAccessUniqueIndexCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
+        public async Task<IAccountAccessUniqueIndexCheckApiResponse?> AccountAccessUniqueIndexCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510AccountAccessUniqueIndexCheckAsync(cancellationToken).ConfigureAwait(false);
+                return await AccountAccessUniqueIndexCheckAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -462,8 +462,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510AccountAccessUniqueIndexCheckApiResponse> OBPv510AccountAccessUniqueIndexCheckAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountAccessUniqueIndexCheckApiResponse"/>&gt;</returns>
+        public async Task<IAccountAccessUniqueIndexCheckApiResponse> AccountAccessUniqueIndexCheckAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -483,7 +483,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -510,8 +510,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510AccountAccessUniqueIndexCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510AccountAccessUniqueIndexCheckApiResponse>();
-                        OBPv510AccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar;
+                        ILogger<AccountAccessUniqueIndexCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountAccessUniqueIndexCheckApiResponse>();
+                        AccountAccessUniqueIndexCheckApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -522,9 +522,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510AccountAccessUniqueIndexCheckDefaultImplementation(apiResponseLocalVar);
+                        AfterAccountAccessUniqueIndexCheckDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510AccountAccessUniqueIndexCheck(apiResponseLocalVar);
+                        Events.ExecuteOnAccountAccessUniqueIndexCheck(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -536,24 +536,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510AccountAccessUniqueIndexCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510AccountAccessUniqueIndexCheck(e);
+                OnErrorAccountAccessUniqueIndexCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorAccountAccessUniqueIndexCheck(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510AccountAccessUniqueIndexCheckApiResponse"/>
+        /// The <see cref="AccountAccessUniqueIndexCheckApiResponse"/>
         /// </summary>
-        public partial class OBPv510AccountAccessUniqueIndexCheckApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510AccountAccessUniqueIndexCheckApiResponse
+        public partial class AccountAccessUniqueIndexCheckApiResponse : OpenBankProject.Client.ApiResponse, IAccountAccessUniqueIndexCheckApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510AccountAccessUniqueIndexCheckApiResponse> Logger { get; }
+            public ILogger<AccountAccessUniqueIndexCheckApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510AccountAccessUniqueIndexCheckApiResponse"/>
+            /// The <see cref="AccountAccessUniqueIndexCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -562,14 +562,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510AccountAccessUniqueIndexCheckApiResponse(ILogger<OBPv510AccountAccessUniqueIndexCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public AccountAccessUniqueIndexCheckApiResponse(ILogger<AccountAccessUniqueIndexCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510AccountAccessUniqueIndexCheckApiResponse"/>
+            /// The <see cref="AccountAccessUniqueIndexCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -578,7 +578,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510AccountAccessUniqueIndexCheckApiResponse(ILogger<OBPv510AccountAccessUniqueIndexCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public AccountAccessUniqueIndexCheckApiResponse(ILogger<AccountAccessUniqueIndexCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -596,11 +596,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? Ok()
+            public OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -609,7 +609,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? result)
             {
                 result = null;
 
@@ -641,14 +641,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510AccountCurrencyCheck(ref string bankid);
+        partial void FormatAccountCurrencyCheck(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510AccountCurrencyCheck(string bankid)
+        private void ValidateAccountCurrencyCheck(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -659,10 +659,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv510AccountCurrencyCheckDefaultImplementation(IOBPv510AccountCurrencyCheckApiResponse apiResponseLocalVar, string bankid)
+        private void AfterAccountCurrencyCheckDefaultImplementation(IAccountCurrencyCheckApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510AccountCurrencyCheck(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterAccountCurrencyCheck(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -673,7 +673,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv510AccountCurrencyCheck(ref bool suppressDefaultLog, IOBPv510AccountCurrencyCheckApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterAccountCurrencyCheck(ref bool suppressDefaultLog, IAccountCurrencyCheckApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -682,10 +682,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv510AccountCurrencyCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorAccountCurrencyCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510AccountCurrencyCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorAccountCurrencyCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -698,19 +698,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv510AccountCurrencyCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorAccountCurrencyCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Check for Sensible Currencies &lt;p&gt;Check for sensible currencies at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountCurrencyCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510AccountCurrencyCheckApiResponse?> OBPv510AccountCurrencyCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountCurrencyCheckApiResponse"/>&gt;</returns>
+        public async Task<IAccountCurrencyCheckApiResponse?> AccountCurrencyCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510AccountCurrencyCheckAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await AccountCurrencyCheckAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -724,16 +724,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510AccountCurrencyCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510AccountCurrencyCheckApiResponse> OBPv510AccountCurrencyCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAccountCurrencyCheckApiResponse"/>&gt;</returns>
+        public async Task<IAccountCurrencyCheckApiResponse> AccountCurrencyCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510AccountCurrencyCheck(bankid);
+                ValidateAccountCurrencyCheck(bankid);
 
-                FormatOBPv510AccountCurrencyCheck(ref bankid);
+                FormatAccountCurrencyCheck(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -750,7 +750,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -777,8 +777,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510AccountCurrencyCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510AccountCurrencyCheckApiResponse>();
-                        OBPv510AccountCurrencyCheckApiResponse apiResponseLocalVar;
+                        ILogger<AccountCurrencyCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountCurrencyCheckApiResponse>();
+                        AccountCurrencyCheckApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -789,9 +789,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510AccountCurrencyCheckDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterAccountCurrencyCheckDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv510AccountCurrencyCheck(apiResponseLocalVar);
+                        Events.ExecuteOnAccountCurrencyCheck(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -803,24 +803,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510AccountCurrencyCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv510AccountCurrencyCheck(e);
+                OnErrorAccountCurrencyCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorAccountCurrencyCheck(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510AccountCurrencyCheckApiResponse"/>
+        /// The <see cref="AccountCurrencyCheckApiResponse"/>
         /// </summary>
-        public partial class OBPv510AccountCurrencyCheckApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510AccountCurrencyCheckApiResponse
+        public partial class AccountCurrencyCheckApiResponse : OpenBankProject.Client.ApiResponse, IAccountCurrencyCheckApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510AccountCurrencyCheckApiResponse> Logger { get; }
+            public ILogger<AccountCurrencyCheckApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510AccountCurrencyCheckApiResponse"/>
+            /// The <see cref="AccountCurrencyCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -829,14 +829,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510AccountCurrencyCheckApiResponse(ILogger<OBPv510AccountCurrencyCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public AccountCurrencyCheckApiResponse(ILogger<AccountCurrencyCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510AccountCurrencyCheckApiResponse"/>
+            /// The <see cref="AccountCurrencyCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -845,7 +845,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510AccountCurrencyCheckApiResponse(ILogger<OBPv510AccountCurrencyCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public AccountCurrencyCheckApiResponse(ILogger<AccountCurrencyCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -863,11 +863,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? Ok()
+            public OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -876,7 +876,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? result)
             {
                 result = null;
 
@@ -912,10 +912,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510CustomViewNamesCheckDefaultImplementation(IOBPv510CustomViewNamesCheckApiResponse apiResponseLocalVar)
+        private void AfterCustomViewNamesCheckDefaultImplementation(ICustomViewNamesCheckApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510CustomViewNamesCheck(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterCustomViewNamesCheck(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -925,7 +925,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510CustomViewNamesCheck(ref bool suppressDefaultLog, IOBPv510CustomViewNamesCheckApiResponse apiResponseLocalVar);
+        partial void AfterCustomViewNamesCheck(ref bool suppressDefaultLog, ICustomViewNamesCheckApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -933,10 +933,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510CustomViewNamesCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorCustomViewNamesCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510CustomViewNamesCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorCustomViewNamesCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -948,18 +948,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510CustomViewNamesCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorCustomViewNamesCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Check Custom View Names &lt;p&gt;Check custom view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CustomViewNamesCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CustomViewNamesCheckApiResponse?> OBPv510CustomViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICustomViewNamesCheckApiResponse"/>&gt;</returns>
+        public async Task<ICustomViewNamesCheckApiResponse?> CustomViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510CustomViewNamesCheckAsync(cancellationToken).ConfigureAwait(false);
+                return await CustomViewNamesCheckAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -972,8 +972,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CustomViewNamesCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CustomViewNamesCheckApiResponse> OBPv510CustomViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICustomViewNamesCheckApiResponse"/>&gt;</returns>
+        public async Task<ICustomViewNamesCheckApiResponse> CustomViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -993,7 +993,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1020,8 +1020,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510CustomViewNamesCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510CustomViewNamesCheckApiResponse>();
-                        OBPv510CustomViewNamesCheckApiResponse apiResponseLocalVar;
+                        ILogger<CustomViewNamesCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CustomViewNamesCheckApiResponse>();
+                        CustomViewNamesCheckApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1032,9 +1032,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510CustomViewNamesCheckDefaultImplementation(apiResponseLocalVar);
+                        AfterCustomViewNamesCheckDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510CustomViewNamesCheck(apiResponseLocalVar);
+                        Events.ExecuteOnCustomViewNamesCheck(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1046,24 +1046,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510CustomViewNamesCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/custom-view-names-check", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510CustomViewNamesCheck(e);
+                OnErrorCustomViewNamesCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/custom-view-names-check", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorCustomViewNamesCheck(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510CustomViewNamesCheckApiResponse"/>
+        /// The <see cref="CustomViewNamesCheckApiResponse"/>
         /// </summary>
-        public partial class OBPv510CustomViewNamesCheckApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510CustomViewNamesCheckApiResponse
+        public partial class CustomViewNamesCheckApiResponse : OpenBankProject.Client.ApiResponse, ICustomViewNamesCheckApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510CustomViewNamesCheckApiResponse> Logger { get; }
+            public ILogger<CustomViewNamesCheckApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510CustomViewNamesCheckApiResponse"/>
+            /// The <see cref="CustomViewNamesCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1072,14 +1072,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510CustomViewNamesCheckApiResponse(ILogger<OBPv510CustomViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CustomViewNamesCheckApiResponse(ILogger<CustomViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510CustomViewNamesCheckApiResponse"/>
+            /// The <see cref="CustomViewNamesCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1088,7 +1088,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510CustomViewNamesCheckApiResponse(ILogger<OBPv510CustomViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CustomViewNamesCheckApiResponse(ILogger<CustomViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1106,11 +1106,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? Ok()
+            public OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1119,7 +1119,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? result)
             {
                 result = null;
 
@@ -1151,14 +1151,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510OrphanedAccountCheck(ref string bankid);
+        partial void FormatOrphanedAccountCheck(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510OrphanedAccountCheck(string bankid)
+        private void ValidateOrphanedAccountCheck(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1169,10 +1169,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv510OrphanedAccountCheckDefaultImplementation(IOBPv510OrphanedAccountCheckApiResponse apiResponseLocalVar, string bankid)
+        private void AfterOrphanedAccountCheckDefaultImplementation(IOrphanedAccountCheckApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510OrphanedAccountCheck(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterOrphanedAccountCheck(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1183,7 +1183,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv510OrphanedAccountCheck(ref bool suppressDefaultLog, IOBPv510OrphanedAccountCheckApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterOrphanedAccountCheck(ref bool suppressDefaultLog, IOrphanedAccountCheckApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1192,10 +1192,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv510OrphanedAccountCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorOrphanedAccountCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510OrphanedAccountCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorOrphanedAccountCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1208,19 +1208,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv510OrphanedAccountCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorOrphanedAccountCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Check for Orphaned Accounts &lt;p&gt;Check for orphaned accounts at Bank Account model&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510OrphanedAccountCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510OrphanedAccountCheckApiResponse?> OBPv510OrphanedAccountCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IOrphanedAccountCheckApiResponse"/>&gt;</returns>
+        public async Task<IOrphanedAccountCheckApiResponse?> OrphanedAccountCheckOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510OrphanedAccountCheckAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await OrphanedAccountCheckAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1234,16 +1234,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510OrphanedAccountCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510OrphanedAccountCheckApiResponse> OBPv510OrphanedAccountCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IOrphanedAccountCheckApiResponse"/>&gt;</returns>
+        public async Task<IOrphanedAccountCheckApiResponse> OrphanedAccountCheckAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510OrphanedAccountCheck(bankid);
+                ValidateOrphanedAccountCheck(bankid);
 
-                FormatOBPv510OrphanedAccountCheck(ref bankid);
+                FormatOrphanedAccountCheck(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1260,7 +1260,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1287,8 +1287,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510OrphanedAccountCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510OrphanedAccountCheckApiResponse>();
-                        OBPv510OrphanedAccountCheckApiResponse apiResponseLocalVar;
+                        ILogger<OrphanedAccountCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OrphanedAccountCheckApiResponse>();
+                        OrphanedAccountCheckApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1299,9 +1299,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510OrphanedAccountCheckDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterOrphanedAccountCheckDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv510OrphanedAccountCheck(apiResponseLocalVar);
+                        Events.ExecuteOnOrphanedAccountCheck(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1313,24 +1313,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510OrphanedAccountCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv510OrphanedAccountCheck(e);
+                OnErrorOrphanedAccountCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorOrphanedAccountCheck(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510OrphanedAccountCheckApiResponse"/>
+        /// The <see cref="OrphanedAccountCheckApiResponse"/>
         /// </summary>
-        public partial class OBPv510OrphanedAccountCheckApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510OrphanedAccountCheckApiResponse
+        public partial class OrphanedAccountCheckApiResponse : OpenBankProject.Client.ApiResponse, IOrphanedAccountCheckApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510OrphanedAccountCheckApiResponse> Logger { get; }
+            public ILogger<OrphanedAccountCheckApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510OrphanedAccountCheckApiResponse"/>
+            /// The <see cref="OrphanedAccountCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1339,14 +1339,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510OrphanedAccountCheckApiResponse(ILogger<OBPv510OrphanedAccountCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public OrphanedAccountCheckApiResponse(ILogger<OrphanedAccountCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510OrphanedAccountCheckApiResponse"/>
+            /// The <see cref="OrphanedAccountCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1355,7 +1355,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510OrphanedAccountCheckApiResponse(ILogger<OBPv510OrphanedAccountCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public OrphanedAccountCheckApiResponse(ILogger<OrphanedAccountCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1373,11 +1373,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? Ok()
+            public OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1386,7 +1386,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? result)
             {
                 result = null;
 
@@ -1422,10 +1422,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv510SystemViewNamesCheckDefaultImplementation(IOBPv510SystemViewNamesCheckApiResponse apiResponseLocalVar)
+        private void AfterSystemViewNamesCheckDefaultImplementation(ISystemViewNamesCheckApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510SystemViewNamesCheck(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterSystemViewNamesCheck(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1435,7 +1435,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv510SystemViewNamesCheck(ref bool suppressDefaultLog, IOBPv510SystemViewNamesCheckApiResponse apiResponseLocalVar);
+        partial void AfterSystemViewNamesCheck(ref bool suppressDefaultLog, ISystemViewNamesCheckApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1443,10 +1443,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv510SystemViewNamesCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorSystemViewNamesCheckDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510SystemViewNamesCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorSystemViewNamesCheck(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1458,18 +1458,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv510SystemViewNamesCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorSystemViewNamesCheck(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Check System View Names &lt;p&gt;Check system view names.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;debug_info&lt;/a&gt;: debug_info&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510SystemViewNamesCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510SystemViewNamesCheckApiResponse?> OBPv510SystemViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ISystemViewNamesCheckApiResponse"/>&gt;</returns>
+        public async Task<ISystemViewNamesCheckApiResponse?> SystemViewNamesCheckOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510SystemViewNamesCheckAsync(cancellationToken).ConfigureAwait(false);
+                return await SystemViewNamesCheckAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1482,8 +1482,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510SystemViewNamesCheckApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510SystemViewNamesCheckApiResponse> OBPv510SystemViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ISystemViewNamesCheckApiResponse"/>&gt;</returns>
+        public async Task<ISystemViewNamesCheckApiResponse> SystemViewNamesCheckAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1503,7 +1503,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1530,8 +1530,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510SystemViewNamesCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510SystemViewNamesCheckApiResponse>();
-                        OBPv510SystemViewNamesCheckApiResponse apiResponseLocalVar;
+                        ILogger<SystemViewNamesCheckApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<SystemViewNamesCheckApiResponse>();
+                        SystemViewNamesCheckApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1542,9 +1542,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510SystemViewNamesCheckDefaultImplementation(apiResponseLocalVar);
+                        AfterSystemViewNamesCheckDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv510SystemViewNamesCheck(apiResponseLocalVar);
+                        Events.ExecuteOnSystemViewNamesCheck(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1556,24 +1556,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510SystemViewNamesCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/system-view-names-check", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv510SystemViewNamesCheck(e);
+                OnErrorSystemViewNamesCheckDefaultImplementation(e, "/obp/v5.1.0/management/system/integrity/system-view-names-check", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorSystemViewNamesCheck(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510SystemViewNamesCheckApiResponse"/>
+        /// The <see cref="SystemViewNamesCheckApiResponse"/>
         /// </summary>
-        public partial class OBPv510SystemViewNamesCheckApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510SystemViewNamesCheckApiResponse
+        public partial class SystemViewNamesCheckApiResponse : OpenBankProject.Client.ApiResponse, ISystemViewNamesCheckApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510SystemViewNamesCheckApiResponse> Logger { get; }
+            public ILogger<SystemViewNamesCheckApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510SystemViewNamesCheckApiResponse"/>
+            /// The <see cref="SystemViewNamesCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1582,14 +1582,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510SystemViewNamesCheckApiResponse(ILogger<OBPv510SystemViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public SystemViewNamesCheckApiResponse(ILogger<SystemViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510SystemViewNamesCheckApiResponse"/>
+            /// The <see cref="SystemViewNamesCheckApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1598,7 +1598,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510SystemViewNamesCheckApiResponse(ILogger<OBPv510SystemViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public SystemViewNamesCheckApiResponse(ILogger<SystemViewNamesCheckApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1616,11 +1616,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? Ok()
+            public OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1629,7 +1629,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv121UpdateTransactionNarrative200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.AccountAccessUniqueIndexCheck200Response? result)
             {
                 result = null;
 

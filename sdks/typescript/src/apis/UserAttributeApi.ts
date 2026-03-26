@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,59 +15,59 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600CreatePersonalDataFieldRequest,
-  OBPv600GetPersonalDataFields200Response,
-  OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems,
+  CreatePersonalDataFieldRequest,
+  GetPersonalDataFields200Response,
+  GetPersonalDataFields200ResponseUserAttributesInner,
 } from '../models/index';
 import {
-    OBPv600CreatePersonalDataFieldRequestFromJSON,
-    OBPv600CreatePersonalDataFieldRequestToJSON,
-    OBPv600GetPersonalDataFields200ResponseFromJSON,
-    OBPv600GetPersonalDataFields200ResponseToJSON,
-    OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON,
-    OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsToJSON,
+    CreatePersonalDataFieldRequestFromJSON,
+    CreatePersonalDataFieldRequestToJSON,
+    GetPersonalDataFields200ResponseFromJSON,
+    GetPersonalDataFields200ResponseToJSON,
+    GetPersonalDataFields200ResponseUserAttributesInnerFromJSON,
+    GetPersonalDataFields200ResponseUserAttributesInnerToJSON,
 } from '../models/index';
 
-export interface OBPv600CreatePersonalDataFieldOperationRequest {
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+export interface CreatePersonalDataFieldOperationRequest {
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
-export interface OBPv600CreateUserAttributeRequest {
+export interface CreateUserAttributeRequest {
     userid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
-export interface OBPv600DeletePersonalDataFieldRequest {
+export interface DeletePersonalDataFieldRequest {
     userattributeid: string;
 }
 
-export interface OBPv600DeleteUserAttributeRequest {
-    userid: string;
-    userattributeid: string;
-}
-
-export interface OBPv600GetPersonalDataFieldByIdRequest {
-    userattributeid: string;
-}
-
-export interface OBPv600GetUserAttributeByIdRequest {
+export interface DeleteUserAttributeRequest {
     userid: string;
     userattributeid: string;
 }
 
-export interface OBPv600GetUserAttributesRequest {
+export interface GetPersonalDataFieldByIdRequest {
+    userattributeid: string;
+}
+
+export interface GetUserAttributeByIdRequest {
+    userid: string;
+    userattributeid: string;
+}
+
+export interface GetUserAttributesRequest {
     userid: string;
 }
 
-export interface OBPv600UpdatePersonalDataFieldRequest {
+export interface UpdatePersonalDataFieldRequest {
     userattributeid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
-export interface OBPv600UpdateUserAttributeRequest {
+export interface UpdateUserAttributeRequest {
     userid: string;
     userattributeid: string;
-    oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest;
+    createPersonalDataFieldRequest: CreatePersonalDataFieldRequest;
 }
 
 /**
@@ -76,13 +76,13 @@ export interface OBPv600UpdateUserAttributeRequest {
 export class UserAttributeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600CreatePersonalDataField without sending the request
+     * Creates request options for createPersonalDataField without sending the request
      */
-    async oBPv600CreatePersonalDataFieldRequestOpts(requestParameters: OBPv600CreatePersonalDataFieldOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+    async createPersonalDataFieldRequestOpts(requestParameters: CreatePersonalDataFieldOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv600CreatePersonalDataField().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling createPersonalDataField().'
             );
         }
 
@@ -102,7 +102,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -113,7 +113,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -121,37 +121,37 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create Personal Data Field
      */
-    async oBPv600CreatePersonalDataFieldRaw(requestParameters: OBPv600CreatePersonalDataFieldOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600CreatePersonalDataFieldRequestOpts(requestParameters);
+    async createPersonalDataFieldRaw(requestParameters: CreatePersonalDataFieldOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.createPersonalDataFieldRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Personal Data Field for the currently authenticated user.</p> <p>Personal Data Fields (IsPersonal=true) are managed by the user themselves and do not require special roles.<br /> This data is not available in ABAC rules for privacy reasons.</p> <p>For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create Personal Data Field
      */
-    async oBPv600CreatePersonalDataField(requestParameters: OBPv600CreatePersonalDataFieldOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600CreatePersonalDataFieldRaw(requestParameters, initOverrides);
+    async createPersonalDataField(requestParameters: CreatePersonalDataFieldOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.createPersonalDataFieldRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600CreateUserAttribute without sending the request
+     * Creates request options for createUserAttribute without sending the request
      */
-    async oBPv600CreateUserAttributeRequestOpts(requestParameters: OBPv600CreateUserAttributeRequest): Promise<runtime.RequestOpts> {
+    async createUserAttributeRequestOpts(requestParameters: CreateUserAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600CreateUserAttribute().'
+                'Required parameter "userid" was null or undefined when calling createUserAttribute().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv600CreateUserAttribute().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling createUserAttribute().'
             );
         }
 
@@ -171,7 +171,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,7 +183,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -191,30 +191,30 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create User Attribute
      */
-    async oBPv600CreateUserAttributeRaw(requestParameters: OBPv600CreateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600CreateUserAttributeRequestOpts(requestParameters);
+    async createUserAttributeRaw(requestParameters: CreateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.createUserAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a User Attribute for the user specified by USER_ID.</p> <p>User Attributes are non-personal attributes (IsPersonal=false) that can be used in ABAC rules.<br /> They require a role to set, similar to Customer Attributes, Account Attributes, etc.</p> <p>For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create User Attribute
      */
-    async oBPv600CreateUserAttribute(requestParameters: OBPv600CreateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600CreateUserAttributeRaw(requestParameters, initOverrides);
+    async createUserAttribute(requestParameters: CreateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.createUserAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600DeletePersonalDataField without sending the request
+     * Creates request options for deletePersonalDataField without sending the request
      */
-    async oBPv600DeletePersonalDataFieldRequestOpts(requestParameters: OBPv600DeletePersonalDataFieldRequest): Promise<runtime.RequestOpts> {
+    async deletePersonalDataFieldRequestOpts(requestParameters: DeletePersonalDataFieldRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600DeletePersonalDataField().'
+                'Required parameter "userattributeid" was null or undefined when calling deletePersonalDataField().'
             );
         }
 
@@ -232,7 +232,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -251,8 +251,8 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Personal Data Field
      */
-    async oBPv600DeletePersonalDataFieldRaw(requestParameters: OBPv600DeletePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeletePersonalDataFieldRequestOpts(requestParameters);
+    async deletePersonalDataFieldRaw(requestParameters: DeletePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deletePersonalDataFieldRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -262,25 +262,25 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Delete a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Personal Data Field
      */
-    async oBPv600DeletePersonalDataField(requestParameters: OBPv600DeletePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeletePersonalDataFieldRaw(requestParameters, initOverrides);
+    async deletePersonalDataField(requestParameters: DeletePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deletePersonalDataFieldRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600DeleteUserAttribute without sending the request
+     * Creates request options for deleteUserAttribute without sending the request
      */
-    async oBPv600DeleteUserAttributeRequestOpts(requestParameters: OBPv600DeleteUserAttributeRequest): Promise<runtime.RequestOpts> {
+    async deleteUserAttributeRequestOpts(requestParameters: DeleteUserAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600DeleteUserAttribute().'
+                'Required parameter "userid" was null or undefined when calling deleteUserAttribute().'
             );
         }
 
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600DeleteUserAttribute().'
+                'Required parameter "userattributeid" was null or undefined when calling deleteUserAttribute().'
             );
         }
 
@@ -298,7 +298,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -318,8 +318,8 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete User Attribute
      */
-    async oBPv600DeleteUserAttributeRaw(requestParameters: OBPv600DeleteUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeleteUserAttributeRequestOpts(requestParameters);
+    async deleteUserAttributeRaw(requestParameters: DeleteUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteUserAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -329,18 +329,18 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Delete a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete User Attribute
      */
-    async oBPv600DeleteUserAttribute(requestParameters: OBPv600DeleteUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeleteUserAttributeRaw(requestParameters, initOverrides);
+    async deleteUserAttribute(requestParameters: DeleteUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteUserAttributeRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv600GetPersonalDataFieldById without sending the request
+     * Creates request options for getPersonalDataFieldById without sending the request
      */
-    async oBPv600GetPersonalDataFieldByIdRequestOpts(requestParameters: OBPv600GetPersonalDataFieldByIdRequest): Promise<runtime.RequestOpts> {
+    async getPersonalDataFieldByIdRequestOpts(requestParameters: GetPersonalDataFieldByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600GetPersonalDataFieldById().'
+                'Required parameter "userattributeid" was null or undefined when calling getPersonalDataFieldById().'
             );
         }
 
@@ -358,7 +358,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -377,26 +377,26 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Personal Data Field By Id
      */
-    async oBPv600GetPersonalDataFieldByIdRaw(requestParameters: OBPv600GetPersonalDataFieldByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600GetPersonalDataFieldByIdRequestOpts(requestParameters);
+    async getPersonalDataFieldByIdRaw(requestParameters: GetPersonalDataFieldByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.getPersonalDataFieldByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Personal Data Field By Id
      */
-    async oBPv600GetPersonalDataFieldById(requestParameters: OBPv600GetPersonalDataFieldByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600GetPersonalDataFieldByIdRaw(requestParameters, initOverrides);
+    async getPersonalDataFieldById(requestParameters: GetPersonalDataFieldByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.getPersonalDataFieldByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetPersonalDataFields without sending the request
+     * Creates request options for getPersonalDataFields without sending the request
      */
-    async oBPv600GetPersonalDataFieldsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getPersonalDataFieldsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -411,7 +411,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -429,37 +429,37 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Personal Data Fields
      */
-    async oBPv600GetPersonalDataFieldsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200Response>> {
-        const requestOptions = await this.oBPv600GetPersonalDataFieldsRequestOpts();
+    async getPersonalDataFieldsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200Response>> {
+        const requestOptions = await this.getPersonalDataFieldsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Personal Data Fields for the currently authenticated user.</p> <p>Returns Personal Data Fields (IsPersonal=true) that are managed by the user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get Personal Data Fields
      */
-    async oBPv600GetPersonalDataFields(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200Response> {
-        const response = await this.oBPv600GetPersonalDataFieldsRaw(initOverrides);
+    async getPersonalDataFields(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200Response> {
+        const response = await this.getPersonalDataFieldsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetUserAttributeById without sending the request
+     * Creates request options for getUserAttributeById without sending the request
      */
-    async oBPv600GetUserAttributeByIdRequestOpts(requestParameters: OBPv600GetUserAttributeByIdRequest): Promise<runtime.RequestOpts> {
+    async getUserAttributeByIdRequestOpts(requestParameters: GetUserAttributeByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600GetUserAttributeById().'
+                'Required parameter "userid" was null or undefined when calling getUserAttributeById().'
             );
         }
 
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600GetUserAttributeById().'
+                'Required parameter "userattributeid" was null or undefined when calling getUserAttributeById().'
             );
         }
 
@@ -477,7 +477,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -497,30 +497,30 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get User Attribute By Id
      */
-    async oBPv600GetUserAttributeByIdRaw(requestParameters: OBPv600GetUserAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600GetUserAttributeByIdRequestOpts(requestParameters);
+    async getUserAttributeByIdRaw(requestParameters: GetUserAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.getUserAttributeByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get User Attribute By Id
      */
-    async oBPv600GetUserAttributeById(requestParameters: OBPv600GetUserAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600GetUserAttributeByIdRaw(requestParameters, initOverrides);
+    async getUserAttributeById(requestParameters: GetUserAttributeByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.getUserAttributeByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetUserAttributes without sending the request
+     * Creates request options for getUserAttributes without sending the request
      */
-    async oBPv600GetUserAttributesRequestOpts(requestParameters: OBPv600GetUserAttributesRequest): Promise<runtime.RequestOpts> {
+    async getUserAttributesRequestOpts(requestParameters: GetUserAttributesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600GetUserAttributes().'
+                'Required parameter "userid" was null or undefined when calling getUserAttributes().'
             );
         }
 
@@ -538,7 +538,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -557,37 +557,37 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get User Attributes
      */
-    async oBPv600GetUserAttributesRaw(requestParameters: OBPv600GetUserAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200Response>> {
-        const requestOptions = await this.oBPv600GetUserAttributesRequestOpts(requestParameters);
+    async getUserAttributesRaw(requestParameters: GetUserAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200Response>> {
+        const requestOptions = await this.getUserAttributesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get User Attributes for the user specified by USER_ID.</p> <p>Returns non-personal user attributes (IsPersonal=false) that can be used in ABAC rules.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>user_attributes</strong></a>: user_attributes</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get User Attributes
      */
-    async oBPv600GetUserAttributes(requestParameters: OBPv600GetUserAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200Response> {
-        const response = await this.oBPv600GetUserAttributesRaw(requestParameters, initOverrides);
+    async getUserAttributes(requestParameters: GetUserAttributesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200Response> {
+        const response = await this.getUserAttributesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdatePersonalDataField without sending the request
+     * Creates request options for updatePersonalDataField without sending the request
      */
-    async oBPv600UpdatePersonalDataFieldRequestOpts(requestParameters: OBPv600UpdatePersonalDataFieldRequest): Promise<runtime.RequestOpts> {
+    async updatePersonalDataFieldRequestOpts(requestParameters: UpdatePersonalDataFieldRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600UpdatePersonalDataField().'
+                'Required parameter "userattributeid" was null or undefined when calling updatePersonalDataField().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv600UpdatePersonalDataField().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling updatePersonalDataField().'
             );
         }
 
@@ -607,7 +607,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -619,7 +619,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -627,44 +627,44 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Personal Data Field
      */
-    async oBPv600UpdatePersonalDataFieldRaw(requestParameters: OBPv600UpdatePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600UpdatePersonalDataFieldRequestOpts(requestParameters);
+    async updatePersonalDataFieldRaw(requestParameters: UpdatePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.updatePersonalDataFieldRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update Personal Data Field
      */
-    async oBPv600UpdatePersonalDataField(requestParameters: OBPv600UpdatePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600UpdatePersonalDataFieldRaw(requestParameters, initOverrides);
+    async updatePersonalDataField(requestParameters: UpdatePersonalDataFieldRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.updatePersonalDataFieldRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600UpdateUserAttribute without sending the request
+     * Creates request options for updateUserAttribute without sending the request
      */
-    async oBPv600UpdateUserAttributeRequestOpts(requestParameters: OBPv600UpdateUserAttributeRequest): Promise<runtime.RequestOpts> {
+    async updateUserAttributeRequestOpts(requestParameters: UpdateUserAttributeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv600UpdateUserAttribute().'
+                'Required parameter "userid" was null or undefined when calling updateUserAttribute().'
             );
         }
 
         if (requestParameters['userattributeid'] == null) {
             throw new runtime.RequiredError(
                 'userattributeid',
-                'Required parameter "userattributeid" was null or undefined when calling oBPv600UpdateUserAttribute().'
+                'Required parameter "userattributeid" was null or undefined when calling updateUserAttribute().'
             );
         }
 
-        if (requestParameters['oBPv600CreatePersonalDataFieldRequest'] == null) {
+        if (requestParameters['createPersonalDataFieldRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600CreatePersonalDataFieldRequest',
-                'Required parameter "oBPv600CreatePersonalDataFieldRequest" was null or undefined when calling oBPv600UpdateUserAttribute().'
+                'createPersonalDataFieldRequest',
+                'Required parameter "createPersonalDataFieldRequest" was null or undefined when calling updateUserAttribute().'
             );
         }
 
@@ -684,7 +684,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -697,7 +697,7 @@ export class UserAttributeApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600CreatePersonalDataFieldRequestToJSON(requestParameters['oBPv600CreatePersonalDataFieldRequest']),
+            body: CreatePersonalDataFieldRequestToJSON(requestParameters['createPersonalDataFieldRequest']),
         };
     }
 
@@ -705,19 +705,19 @@ export class UserAttributeApi extends runtime.BaseAPI {
      * <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update User Attribute
      */
-    async oBPv600UpdateUserAttributeRaw(requestParameters: OBPv600UpdateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>> {
-        const requestOptions = await this.oBPv600UpdateUserAttributeRequestOpts(requestParameters);
+    async updateUserAttributeRaw(requestParameters: UpdateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>> {
+        const requestOptions = await this.updateUserAttributeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetPersonalDataFields200ResponseUserAttributesInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">USER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>insert_date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>is_personal</strong></a>: is_personal</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Update User Attribute
      */
-    async oBPv600UpdateUserAttribute(requestParameters: OBPv600UpdateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
-        const response = await this.oBPv600UpdateUserAttributeRaw(requestParameters, initOverrides);
+    async updateUserAttribute(requestParameters: UpdateUserAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetPersonalDataFields200ResponseUserAttributesInner> {
+        const response = await this.updateUserAttributeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

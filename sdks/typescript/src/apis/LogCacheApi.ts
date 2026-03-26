@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -21,9 +21,9 @@ import * as runtime from '../runtime';
 export class LogCacheApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv510LogCacheAllEndpoint without sending the request
+     * Creates request options for logCacheAllEndpoint without sending the request
      */
-    async oBPv510LogCacheAllEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheAllEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -38,7 +38,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -56,8 +56,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get All Level Log Cache
      */
-    async oBPv510LogCacheAllEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheAllEndpointRequestOpts();
+    async logCacheAllEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheAllEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -67,14 +67,14 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get All Level Log Cache
      */
-    async oBPv510LogCacheAllEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheAllEndpointRaw(initOverrides);
+    async logCacheAllEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheAllEndpointRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510LogCacheDebugEndpoint without sending the request
+     * Creates request options for logCacheDebugEndpoint without sending the request
      */
-    async oBPv510LogCacheDebugEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheDebugEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -89,7 +89,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -107,8 +107,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Debug Level Log Cache
      */
-    async oBPv510LogCacheDebugEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheDebugEndpointRequestOpts();
+    async logCacheDebugEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheDebugEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -118,14 +118,14 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Debug Level Log Cache
      */
-    async oBPv510LogCacheDebugEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheDebugEndpointRaw(initOverrides);
+    async logCacheDebugEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheDebugEndpointRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510LogCacheErrorEndpoint without sending the request
+     * Creates request options for logCacheErrorEndpoint without sending the request
      */
-    async oBPv510LogCacheErrorEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheErrorEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -140,7 +140,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -158,8 +158,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Error Level Log Cache
      */
-    async oBPv510LogCacheErrorEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheErrorEndpointRequestOpts();
+    async logCacheErrorEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheErrorEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -169,14 +169,14 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Error Level Log Cache
      */
-    async oBPv510LogCacheErrorEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheErrorEndpointRaw(initOverrides);
+    async logCacheErrorEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheErrorEndpointRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510LogCacheInfoEndpoint without sending the request
+     * Creates request options for logCacheInfoEndpoint without sending the request
      */
-    async oBPv510LogCacheInfoEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheInfoEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -191,7 +191,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -209,8 +209,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Info Level Log Cache
      */
-    async oBPv510LogCacheInfoEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheInfoEndpointRequestOpts();
+    async logCacheInfoEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheInfoEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -220,14 +220,14 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Info Level Log Cache
      */
-    async oBPv510LogCacheInfoEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheInfoEndpointRaw(initOverrides);
+    async logCacheInfoEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheInfoEndpointRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510LogCacheTraceEndpoint without sending the request
+     * Creates request options for logCacheTraceEndpoint without sending the request
      */
-    async oBPv510LogCacheTraceEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheTraceEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -242,7 +242,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -260,8 +260,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Trace Level Log Cache
      */
-    async oBPv510LogCacheTraceEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheTraceEndpointRequestOpts();
+    async logCacheTraceEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheTraceEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -271,14 +271,14 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Trace Level Log Cache
      */
-    async oBPv510LogCacheTraceEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheTraceEndpointRaw(initOverrides);
+    async logCacheTraceEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheTraceEndpointRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv510LogCacheWarningEndpoint without sending the request
+     * Creates request options for logCacheWarningEndpoint without sending the request
      */
-    async oBPv510LogCacheWarningEndpointRequestOpts(): Promise<runtime.RequestOpts> {
+    async logCacheWarningEndpointRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -293,7 +293,7 @@ export class LogCacheApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -311,8 +311,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Warning Level Log Cache
      */
-    async oBPv510LogCacheWarningEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv510LogCacheWarningEndpointRequestOpts();
+    async logCacheWarningEndpointRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.logCacheWarningEndpointRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -322,8 +322,8 @@ export class LogCacheApi extends runtime.BaseAPI {
      * <p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Get Warning Level Log Cache
      */
-    async oBPv510LogCacheWarningEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv510LogCacheWarningEndpointRaw(initOverrides);
+    async logCacheWarningEndpoint(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.logCacheWarningEndpointRaw(initOverrides);
     }
 
 }

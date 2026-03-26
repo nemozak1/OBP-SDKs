@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class SystemIntegrityApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510AccountAccessUniqueIndexCheck' => [
+        'accountAccessUniqueIndexCheck' => [
             'application/json',
         ],
-        'oBPv510AccountCurrencyCheck' => [
+        'accountCurrencyCheck' => [
             'application/json',
         ],
-        'oBPv510CustomViewNamesCheck' => [
+        'customViewNamesCheck' => [
             'application/json',
         ],
-        'oBPv510OrphanedAccountCheck' => [
+        'orphanedAccountCheck' => [
             'application/json',
         ],
-        'oBPv510SystemViewNamesCheck' => [
+        'systemViewNamesCheck' => [
             'application/json',
         ],
     ];
@@ -139,36 +139,36 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountAccessUniqueIndexCheck
+     * Operation accountAccessUniqueIndexCheck
      *
      * Check Unique Index at Account Access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountAccessUniqueIndexCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
      */
-    public function oBPv510AccountAccessUniqueIndexCheck(string $contentType = self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'][0])
+    public function accountAccessUniqueIndexCheck(string $contentType = self::contentTypes['accountAccessUniqueIndexCheck'][0])
     {
-        list($response) = $this->oBPv510AccountAccessUniqueIndexCheckWithHttpInfo($contentType);
+        list($response) = $this->accountAccessUniqueIndexCheckWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510AccountAccessUniqueIndexCheckWithHttpInfo
+     * Operation accountAccessUniqueIndexCheckWithHttpInfo
      *
      * Check Unique Index at Account Access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountAccessUniqueIndexCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510AccountAccessUniqueIndexCheckWithHttpInfo(string $contentType = self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'][0])
+    public function accountAccessUniqueIndexCheckWithHttpInfo(string $contentType = self::contentTypes['accountAccessUniqueIndexCheck'][0])
     {
-        $request = $this->oBPv510AccountAccessUniqueIndexCheckRequest($contentType);
+        $request = $this->accountAccessUniqueIndexCheckRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -196,7 +196,7 @@ class SystemIntegrityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $request,
                         $response,
                     );
@@ -218,7 +218,7 @@ class SystemIntegrityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                 $request,
                 $response,
             );
@@ -227,7 +227,7 @@ class SystemIntegrityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -240,18 +240,18 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountAccessUniqueIndexCheckAsync
+     * Operation accountAccessUniqueIndexCheckAsync
      *
      * Check Unique Index at Account Access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountAccessUniqueIndexCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510AccountAccessUniqueIndexCheckAsync(string $contentType = self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'][0])
+    public function accountAccessUniqueIndexCheckAsync(string $contentType = self::contentTypes['accountAccessUniqueIndexCheck'][0])
     {
-        return $this->oBPv510AccountAccessUniqueIndexCheckAsyncWithHttpInfo($contentType)
+        return $this->accountAccessUniqueIndexCheckAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,19 +260,19 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountAccessUniqueIndexCheckAsyncWithHttpInfo
+     * Operation accountAccessUniqueIndexCheckAsyncWithHttpInfo
      *
      * Check Unique Index at Account Access
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountAccessUniqueIndexCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510AccountAccessUniqueIndexCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'][0])
+    public function accountAccessUniqueIndexCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['accountAccessUniqueIndexCheck'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv510AccountAccessUniqueIndexCheckRequest($contentType);
+        $returnType = '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response';
+        $request = $this->accountAccessUniqueIndexCheckRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -311,14 +311,14 @@ class SystemIntegrityApi
     }
 
     /**
-     * Create request for operation 'oBPv510AccountAccessUniqueIndexCheck'
+     * Create request for operation 'accountAccessUniqueIndexCheck'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountAccessUniqueIndexCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510AccountAccessUniqueIndexCheckRequest(string $contentType = self::contentTypes['oBPv510AccountAccessUniqueIndexCheck'][0])
+    public function accountAccessUniqueIndexCheckRequest(string $contentType = self::contentTypes['accountAccessUniqueIndexCheck'][0])
     {
 
 
@@ -374,9 +374,9 @@ class SystemIntegrityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -401,38 +401,38 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountCurrencyCheck
+     * Operation accountCurrencyCheck
      *
      * Check for Sensible Currencies
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountCurrencyCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCurrencyCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
      */
-    public function oBPv510AccountCurrencyCheck($bankid, string $contentType = self::contentTypes['oBPv510AccountCurrencyCheck'][0])
+    public function accountCurrencyCheck($bankid, string $contentType = self::contentTypes['accountCurrencyCheck'][0])
     {
-        list($response) = $this->oBPv510AccountCurrencyCheckWithHttpInfo($bankid, $contentType);
+        list($response) = $this->accountCurrencyCheckWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510AccountCurrencyCheckWithHttpInfo
+     * Operation accountCurrencyCheckWithHttpInfo
      *
      * Check for Sensible Currencies
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountCurrencyCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCurrencyCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510AccountCurrencyCheckWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510AccountCurrencyCheck'][0])
+    public function accountCurrencyCheckWithHttpInfo($bankid, string $contentType = self::contentTypes['accountCurrencyCheck'][0])
     {
-        $request = $this->oBPv510AccountCurrencyCheckRequest($bankid, $contentType);
+        $request = $this->accountCurrencyCheckRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -460,7 +460,7 @@ class SystemIntegrityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $request,
                         $response,
                     );
@@ -482,7 +482,7 @@ class SystemIntegrityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                 $request,
                 $response,
             );
@@ -491,7 +491,7 @@ class SystemIntegrityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,19 +504,19 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountCurrencyCheckAsync
+     * Operation accountCurrencyCheckAsync
      *
      * Check for Sensible Currencies
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountCurrencyCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCurrencyCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510AccountCurrencyCheckAsync($bankid, string $contentType = self::contentTypes['oBPv510AccountCurrencyCheck'][0])
+    public function accountCurrencyCheckAsync($bankid, string $contentType = self::contentTypes['accountCurrencyCheck'][0])
     {
-        return $this->oBPv510AccountCurrencyCheckAsyncWithHttpInfo($bankid, $contentType)
+        return $this->accountCurrencyCheckAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -525,20 +525,20 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510AccountCurrencyCheckAsyncWithHttpInfo
+     * Operation accountCurrencyCheckAsyncWithHttpInfo
      *
      * Check for Sensible Currencies
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountCurrencyCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCurrencyCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510AccountCurrencyCheckAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510AccountCurrencyCheck'][0])
+    public function accountCurrencyCheckAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['accountCurrencyCheck'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv510AccountCurrencyCheckRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response';
+        $request = $this->accountCurrencyCheckRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -577,21 +577,21 @@ class SystemIntegrityApi
     }
 
     /**
-     * Create request for operation 'oBPv510AccountCurrencyCheck'
+     * Create request for operation 'accountCurrencyCheck'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510AccountCurrencyCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCurrencyCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510AccountCurrencyCheckRequest($bankid, string $contentType = self::contentTypes['oBPv510AccountCurrencyCheck'][0])
+    public function accountCurrencyCheckRequest($bankid, string $contentType = self::contentTypes['accountCurrencyCheck'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510AccountCurrencyCheck'
+                'Missing the required parameter $bankid when calling accountCurrencyCheck'
             );
         }
 
@@ -656,9 +656,9 @@ class SystemIntegrityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -683,36 +683,36 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510CustomViewNamesCheck
+     * Operation customViewNamesCheck
      *
      * Check Custom View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CustomViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
      */
-    public function oBPv510CustomViewNamesCheck(string $contentType = self::contentTypes['oBPv510CustomViewNamesCheck'][0])
+    public function customViewNamesCheck(string $contentType = self::contentTypes['customViewNamesCheck'][0])
     {
-        list($response) = $this->oBPv510CustomViewNamesCheckWithHttpInfo($contentType);
+        list($response) = $this->customViewNamesCheckWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CustomViewNamesCheckWithHttpInfo
+     * Operation customViewNamesCheckWithHttpInfo
      *
      * Check Custom View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CustomViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CustomViewNamesCheckWithHttpInfo(string $contentType = self::contentTypes['oBPv510CustomViewNamesCheck'][0])
+    public function customViewNamesCheckWithHttpInfo(string $contentType = self::contentTypes['customViewNamesCheck'][0])
     {
-        $request = $this->oBPv510CustomViewNamesCheckRequest($contentType);
+        $request = $this->customViewNamesCheckRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -740,7 +740,7 @@ class SystemIntegrityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $request,
                         $response,
                     );
@@ -762,7 +762,7 @@ class SystemIntegrityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                 $request,
                 $response,
             );
@@ -771,7 +771,7 @@ class SystemIntegrityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -784,18 +784,18 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510CustomViewNamesCheckAsync
+     * Operation customViewNamesCheckAsync
      *
      * Check Custom View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CustomViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CustomViewNamesCheckAsync(string $contentType = self::contentTypes['oBPv510CustomViewNamesCheck'][0])
+    public function customViewNamesCheckAsync(string $contentType = self::contentTypes['customViewNamesCheck'][0])
     {
-        return $this->oBPv510CustomViewNamesCheckAsyncWithHttpInfo($contentType)
+        return $this->customViewNamesCheckAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -804,19 +804,19 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510CustomViewNamesCheckAsyncWithHttpInfo
+     * Operation customViewNamesCheckAsyncWithHttpInfo
      *
      * Check Custom View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CustomViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CustomViewNamesCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510CustomViewNamesCheck'][0])
+    public function customViewNamesCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['customViewNamesCheck'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv510CustomViewNamesCheckRequest($contentType);
+        $returnType = '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response';
+        $request = $this->customViewNamesCheckRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -855,14 +855,14 @@ class SystemIntegrityApi
     }
 
     /**
-     * Create request for operation 'oBPv510CustomViewNamesCheck'
+     * Create request for operation 'customViewNamesCheck'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CustomViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CustomViewNamesCheckRequest(string $contentType = self::contentTypes['oBPv510CustomViewNamesCheck'][0])
+    public function customViewNamesCheckRequest(string $contentType = self::contentTypes['customViewNamesCheck'][0])
     {
 
 
@@ -918,9 +918,9 @@ class SystemIntegrityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -945,38 +945,38 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510OrphanedAccountCheck
+     * Operation orphanedAccountCheck
      *
      * Check for Orphaned Accounts
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510OrphanedAccountCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orphanedAccountCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
      */
-    public function oBPv510OrphanedAccountCheck($bankid, string $contentType = self::contentTypes['oBPv510OrphanedAccountCheck'][0])
+    public function orphanedAccountCheck($bankid, string $contentType = self::contentTypes['orphanedAccountCheck'][0])
     {
-        list($response) = $this->oBPv510OrphanedAccountCheckWithHttpInfo($bankid, $contentType);
+        list($response) = $this->orphanedAccountCheckWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510OrphanedAccountCheckWithHttpInfo
+     * Operation orphanedAccountCheckWithHttpInfo
      *
      * Check for Orphaned Accounts
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510OrphanedAccountCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orphanedAccountCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510OrphanedAccountCheckWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510OrphanedAccountCheck'][0])
+    public function orphanedAccountCheckWithHttpInfo($bankid, string $contentType = self::contentTypes['orphanedAccountCheck'][0])
     {
-        $request = $this->oBPv510OrphanedAccountCheckRequest($bankid, $contentType);
+        $request = $this->orphanedAccountCheckRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1004,7 +1004,7 @@ class SystemIntegrityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $request,
                         $response,
                     );
@@ -1026,7 +1026,7 @@ class SystemIntegrityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                 $request,
                 $response,
             );
@@ -1035,7 +1035,7 @@ class SystemIntegrityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1048,19 +1048,19 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510OrphanedAccountCheckAsync
+     * Operation orphanedAccountCheckAsync
      *
      * Check for Orphaned Accounts
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510OrphanedAccountCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orphanedAccountCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510OrphanedAccountCheckAsync($bankid, string $contentType = self::contentTypes['oBPv510OrphanedAccountCheck'][0])
+    public function orphanedAccountCheckAsync($bankid, string $contentType = self::contentTypes['orphanedAccountCheck'][0])
     {
-        return $this->oBPv510OrphanedAccountCheckAsyncWithHttpInfo($bankid, $contentType)
+        return $this->orphanedAccountCheckAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1069,20 +1069,20 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510OrphanedAccountCheckAsyncWithHttpInfo
+     * Operation orphanedAccountCheckAsyncWithHttpInfo
      *
      * Check for Orphaned Accounts
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510OrphanedAccountCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orphanedAccountCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510OrphanedAccountCheckAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510OrphanedAccountCheck'][0])
+    public function orphanedAccountCheckAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['orphanedAccountCheck'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv510OrphanedAccountCheckRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response';
+        $request = $this->orphanedAccountCheckRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1121,21 +1121,21 @@ class SystemIntegrityApi
     }
 
     /**
-     * Create request for operation 'oBPv510OrphanedAccountCheck'
+     * Create request for operation 'orphanedAccountCheck'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510OrphanedAccountCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orphanedAccountCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510OrphanedAccountCheckRequest($bankid, string $contentType = self::contentTypes['oBPv510OrphanedAccountCheck'][0])
+    public function orphanedAccountCheckRequest($bankid, string $contentType = self::contentTypes['orphanedAccountCheck'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510OrphanedAccountCheck'
+                'Missing the required parameter $bankid when calling orphanedAccountCheck'
             );
         }
 
@@ -1200,9 +1200,9 @@ class SystemIntegrityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1227,36 +1227,36 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510SystemViewNamesCheck
+     * Operation systemViewNamesCheck
      *
      * Check System View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510SystemViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['systemViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+     * @return \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response
      */
-    public function oBPv510SystemViewNamesCheck(string $contentType = self::contentTypes['oBPv510SystemViewNamesCheck'][0])
+    public function systemViewNamesCheck(string $contentType = self::contentTypes['systemViewNamesCheck'][0])
     {
-        list($response) = $this->oBPv510SystemViewNamesCheckWithHttpInfo($contentType);
+        list($response) = $this->systemViewNamesCheckWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510SystemViewNamesCheckWithHttpInfo
+     * Operation systemViewNamesCheckWithHttpInfo
      *
      * Check System View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510SystemViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['systemViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510SystemViewNamesCheckWithHttpInfo(string $contentType = self::contentTypes['oBPv510SystemViewNamesCheck'][0])
+    public function systemViewNamesCheckWithHttpInfo(string $contentType = self::contentTypes['systemViewNamesCheck'][0])
     {
-        $request = $this->oBPv510SystemViewNamesCheckRequest($contentType);
+        $request = $this->systemViewNamesCheckRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1284,7 +1284,7 @@ class SystemIntegrityApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $request,
                         $response,
                     );
@@ -1306,7 +1306,7 @@ class SystemIntegrityApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                 $request,
                 $response,
             );
@@ -1315,7 +1315,7 @@ class SystemIntegrityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response',
+                        '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1328,18 +1328,18 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510SystemViewNamesCheckAsync
+     * Operation systemViewNamesCheckAsync
      *
      * Check System View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510SystemViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['systemViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510SystemViewNamesCheckAsync(string $contentType = self::contentTypes['oBPv510SystemViewNamesCheck'][0])
+    public function systemViewNamesCheckAsync(string $contentType = self::contentTypes['systemViewNamesCheck'][0])
     {
-        return $this->oBPv510SystemViewNamesCheckAsyncWithHttpInfo($contentType)
+        return $this->systemViewNamesCheckAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1348,19 +1348,19 @@ class SystemIntegrityApi
     }
 
     /**
-     * Operation oBPv510SystemViewNamesCheckAsyncWithHttpInfo
+     * Operation systemViewNamesCheckAsyncWithHttpInfo
      *
      * Check System View Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510SystemViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['systemViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510SystemViewNamesCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510SystemViewNamesCheck'][0])
+    public function systemViewNamesCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['systemViewNamesCheck'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response';
-        $request = $this->oBPv510SystemViewNamesCheckRequest($contentType);
+        $returnType = '\OpenBankProject\Model\AccountAccessUniqueIndexCheck200Response';
+        $request = $this->systemViewNamesCheckRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1399,14 +1399,14 @@ class SystemIntegrityApi
     }
 
     /**
-     * Create request for operation 'oBPv510SystemViewNamesCheck'
+     * Create request for operation 'systemViewNamesCheck'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510SystemViewNamesCheck'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['systemViewNamesCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510SystemViewNamesCheckRequest(string $contentType = self::contentTypes['oBPv510SystemViewNamesCheck'][0])
+    public function systemViewNamesCheckRequest(string $contentType = self::contentTypes['systemViewNamesCheck'][0])
     {
 
 
@@ -1462,9 +1462,9 @@ class SystemIntegrityApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

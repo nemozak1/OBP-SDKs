@@ -5,21 +5,21 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-[**oBPv400CreateTransactionAttribute**](TransactionAttributeApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-[**oBPv400DeleteTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-[**oBPv400GetTransactionAttributeById**](TransactionAttributeApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-[**oBPv400GetTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-[**oBPv400GetTransactionAttributes**](TransactionAttributeApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-[**oBPv400UpdateTransactionAttribute**](TransactionAttributeApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+[**createOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+[**createTransactionAttribute**](TransactionAttributeApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+[**deleteTransactionAttributeDefinition**](TransactionAttributeApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+[**getTransactionAttributeById**](TransactionAttributeApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+[**getTransactionAttributeDefinition**](TransactionAttributeApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+[**getTransactionAttributes**](TransactionAttributeApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+[**updateTransactionAttribute**](TransactionAttributeApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
 
 
-# **oBPv400CreateOrUpdateTransactionAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+# **createOrUpdateTransactionAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Attribute Definition
 
@@ -41,13 +41,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getTransactionAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+final CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}}; // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 try {
-    final response = api.oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+    final response = api.createOrUpdateTransactionAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400CreateOrUpdateTransactionAttributeDefinition: $e\n');
+    print('Exception when calling TransactionAttributeApi->createOrUpdateTransactionAttributeDefinition: $e\n');
 }
 ```
 
@@ -56,11 +56,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateTransactionAttribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400CreateTransactionAttribute(bankid, accountid, transactionid, oBPv600CreatePersonalDataFieldRequest)
+# **createTransactionAttribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner createTransactionAttribute(bankid, accountid, transactionid, createPersonalDataFieldRequest)
 
 Create Transaction Attribute
 
@@ -98,13 +98,13 @@ final api = ObpDart().getTransactionAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String transactionid = transactionid_example; // String | The TRANSACTIONID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv400CreateTransactionAttribute(bankid, accountid, transactionid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.createTransactionAttribute(bankid, accountid, transactionid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400CreateTransactionAttribute: $e\n');
+    print('Exception when calling TransactionAttributeApi->createTransactionAttribute: $e\n');
 }
 ```
 
@@ -115,11 +115,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **transactionid** | **String**| The TRANSACTIONID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -132,8 +132,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteTransactionAttributeDefinition**
-> oBPv400DeleteTransactionAttributeDefinition(bankid, attributedefinitionid)
+# **deleteTransactionAttributeDefinition**
+> deleteTransactionAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Transaction Attribute Definition
 
@@ -158,9 +158,9 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String attributedefinitionid = attributedefinitionid_example; // String | The ATTRIBUTEDEFINITIONID identifier
 
 try {
-    api.oBPv400DeleteTransactionAttributeDefinition(bankid, attributedefinitionid);
+    api.deleteTransactionAttributeDefinition(bankid, attributedefinitionid);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400DeleteTransactionAttributeDefinition: $e\n');
+    print('Exception when calling TransactionAttributeApi->deleteTransactionAttributeDefinition: $e\n');
 }
 ```
 
@@ -186,8 +186,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributeById**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400GetTransactionAttributeById(bankid, accountid, transactionid, attributeid)
+# **getTransactionAttributeById**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner getTransactionAttributeById(bankid, accountid, transactionid, attributeid)
 
 Get Transaction Attribute By Id
 
@@ -214,10 +214,10 @@ final String transactionid = transactionid_example; // String | The TRANSACTIONI
 final String attributeid = attributeid_example; // String | The ATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv400GetTransactionAttributeById(bankid, accountid, transactionid, attributeid);
+    final response = api.getTransactionAttributeById(bankid, accountid, transactionid, attributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400GetTransactionAttributeById: $e\n');
+    print('Exception when calling TransactionAttributeApi->getTransactionAttributeById: $e\n');
 }
 ```
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionAttributeDefinition(bankid)
+# **getTransactionAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response getTransactionAttributeDefinition(bankid)
 
 Get Transaction Attribute Definition
 
@@ -270,10 +270,10 @@ final api = ObpDart().getTransactionAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 
 try {
-    final response = api.oBPv400GetTransactionAttributeDefinition(bankid);
+    final response = api.getTransactionAttributeDefinition(bankid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400GetTransactionAttributeDefinition: $e\n');
+    print('Exception when calling TransactionAttributeApi->getTransactionAttributeDefinition: $e\n');
 }
 ```
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -298,8 +298,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionAttributes**
-> OBPv400GetTransactionAttributes200Response oBPv400GetTransactionAttributes(bankid, accountid, transactionid)
+# **getTransactionAttributes**
+> GetTransactionAttributes200Response getTransactionAttributes(bankid, accountid, transactionid)
 
 Get Transaction Attributes
 
@@ -325,10 +325,10 @@ final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String transactionid = transactionid_example; // String | The TRANSACTIONID identifier
 
 try {
-    final response = api.oBPv400GetTransactionAttributes(bankid, accountid, transactionid);
+    final response = api.getTransactionAttributes(bankid, accountid, transactionid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400GetTransactionAttributes: $e\n');
+    print('Exception when calling TransactionAttributeApi->getTransactionAttributes: $e\n');
 }
 ```
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -355,8 +355,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateTransactionAttribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems oBPv400UpdateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, oBPv600CreatePersonalDataFieldRequest)
+# **updateTransactionAttribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner updateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest)
 
 Update Transaction Attribute
 
@@ -381,13 +381,13 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String transactionid = transactionid_example; // String | The TRANSACTIONID identifier
 final String accountattributeid = accountattributeid_example; // String | The ACCOUNTATTRIBUTEID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv400UpdateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.updateTransactionAttribute(bankid, accountid, transactionid, accountattributeid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling TransactionAttributeApi->oBPv400UpdateTransactionAttribute: $e\n');
+    print('Exception when calling TransactionAttributeApi->updateTransactionAttribute: $e\n');
 }
 ```
 
@@ -399,11 +399,11 @@ Name | Type | Description  | Notes
  **accountid** | **String**| The ACCOUNTID identifier | 
  **transactionid** | **String**| The TRANSACTIONID identifier | 
  **accountattributeid** | **String**| The ACCOUNTATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 

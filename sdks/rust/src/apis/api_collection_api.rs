@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,184 +15,45 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_my_api_collection`]
+/// struct for typed errors of method [`create_featured_api_collection`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateMyApiCollectionError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_create_my_api_collection_endpoint`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400CreateMyApiCollectionEndpointError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_create_my_api_collection_endpoint_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400CreateMyApiCollectionEndpointByIdError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_delete_my_api_collection`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400DeleteMyApiCollectionError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_delete_my_api_collection_endpoint`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400DeleteMyApiCollectionEndpointError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_delete_my_api_collection_endpoint_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400DeleteMyApiCollectionEndpointByIdError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400DeleteMyApiCollectionEndpointByOperationIdError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_api_collection_endpoints`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetApiCollectionEndpointsError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_api_collections_for_user`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetApiCollectionsForUserError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_featured_api_collections`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetFeaturedApiCollectionsError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collection_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionByIdError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collection_by_name`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionByNameError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collection_endpoint`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionEndpointError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collection_endpoints`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionEndpointsError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collection_endpoints_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionEndpointsByIdError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_my_api_collections`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetMyApiCollectionsError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_get_sharable_api_collection_by_id`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400GetSharableApiCollectionByIdError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv5_1_0_get_all_api_collections`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv510GetAllApiCollectionsError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv5_1_0_update_my_api_collection`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv510UpdateMyApiCollectionError {
-    Status404(),
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv6_0_0_create_featured_api_collection`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv600CreateFeaturedApiCollectionError {
+pub enum CreateFeaturedApiCollectionError {
     Status404(),
     Status500(),
     Status401(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_delete_featured_api_collection`]
+/// struct for typed errors of method [`create_my_api_collection`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600DeleteFeaturedApiCollectionError {
+pub enum CreateMyApiCollectionError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`create_my_api_collection_endpoint`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateMyApiCollectionEndpointError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`create_my_api_collection_endpoint_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateMyApiCollectionEndpointByIdError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`delete_featured_api_collection`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteFeaturedApiCollectionError {
     Status400(),
     Status404(),
     Status500(),
@@ -200,29 +61,225 @@ pub enum OBpv600DeleteFeaturedApiCollectionError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_get_featured_api_collections_admin`]
+/// struct for typed errors of method [`delete_my_api_collection`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600GetFeaturedApiCollectionsAdminError {
+pub enum DeleteMyApiCollectionError {
+    Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv6_0_0_update_featured_api_collection`]
+/// struct for typed errors of method [`delete_my_api_collection_endpoint`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv600UpdateFeaturedApiCollectionError {
+pub enum DeleteMyApiCollectionEndpointError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`delete_my_api_collection_endpoint_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteMyApiCollectionEndpointByIdError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`delete_my_api_collection_endpoint_by_operation_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteMyApiCollectionEndpointByOperationIdError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_all_api_collections`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetAllApiCollectionsError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_api_collection_endpoints`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetApiCollectionEndpointsError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_api_collections_for_user`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetApiCollectionsForUserError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_featured_api_collections`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetFeaturedApiCollectionsError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_featured_api_collections_admin`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetFeaturedApiCollectionsAdminError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collection_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionByIdError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collection_by_name`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionByNameError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collection_endpoint`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionEndpointError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collection_endpoints`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionEndpointsError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collection_endpoints_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionEndpointsByIdError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_my_api_collections`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetMyApiCollectionsError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`get_sharable_api_collection_by_id`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetSharableApiCollectionByIdError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`update_featured_api_collection`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UpdateFeaturedApiCollectionError {
     Status400(),
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`update_my_api_collection`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UpdateMyApiCollectionError {
+    Status404(),
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+
+/// <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+pub async fn create_featured_api_collection(configuration: &configuration::Configuration, create_featured_api_collection_request: models::CreateFeaturedApiCollectionRequest) -> Result<models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, Error<CreateFeaturedApiCollectionError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_create_featured_api_collection_request = create_featured_api_collection_request;
+
+    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+    req_builder = req_builder.json(&p_body_create_featured_api_collection_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<CreateFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
 
 /// <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_create_my_api_collection(configuration: &configuration::Configuration, obpv400_create_my_api_collection_request: models::Obpv400CreateMyApiCollectionRequest) -> Result<models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, Error<OBpv400CreateMyApiCollectionError>> {
+pub async fn create_my_api_collection(configuration: &configuration::Configuration, create_my_api_collection_request: models::CreateMyApiCollectionRequest) -> Result<models::GetApiCollectionsForUser200ResponseApiCollectionsInner, Error<CreateMyApiCollectionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_create_my_api_collection_request = obpv400_create_my_api_collection_request;
+    let p_body_create_my_api_collection_request = create_my_api_collection_request;
 
     let uri_str = format!("{}/obp/v4.0.0/my/api-collections", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -247,9 +304,9 @@ pub async fn o_bpv4_0_0_create_my_api_collection(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_my_api_collection_request);
+    req_builder = req_builder.json(&p_body_create_my_api_collection_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -266,21 +323,21 @@ pub async fn o_bpv4_0_0_create_my_api_collection(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateMyApiCollectionError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateMyApiCollectionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_create_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, obpv400_create_my_api_collection_endpoint_request: models::Obpv400CreateMyApiCollectionEndpointRequest) -> Result<models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, Error<OBpv400CreateMyApiCollectionEndpointError>> {
+pub async fn create_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, create_my_api_collection_endpoint_request: models::CreateMyApiCollectionEndpointRequest) -> Result<models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, Error<CreateMyApiCollectionEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionname = apicollectionname;
-    let p_body_obpv400_create_my_api_collection_endpoint_request = obpv400_create_my_api_collection_endpoint_request;
+    let p_body_create_my_api_collection_endpoint_request = create_my_api_collection_endpoint_request;
 
     let uri_str = format!("{}/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints", configuration.base_path, apicollectionname=crate::apis::urlencode(p_path_apicollectionname));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -305,9 +362,9 @@ pub async fn o_bpv4_0_0_create_my_api_collection_endpoint(configuration: &config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_my_api_collection_endpoint_request);
+    req_builder = req_builder.json(&p_body_create_my_api_collection_endpoint_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -324,21 +381,21 @@ pub async fn o_bpv4_0_0_create_my_api_collection_endpoint(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_create_my_api_collection_endpoint_by_id(configuration: &configuration::Configuration, apicollectionid: &str, obpv400_create_my_api_collection_endpoint_request: models::Obpv400CreateMyApiCollectionEndpointRequest) -> Result<models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, Error<OBpv400CreateMyApiCollectionEndpointByIdError>> {
+pub async fn create_my_api_collection_endpoint_by_id(configuration: &configuration::Configuration, apicollectionid: &str, create_my_api_collection_endpoint_request: models::CreateMyApiCollectionEndpointRequest) -> Result<models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, Error<CreateMyApiCollectionEndpointByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
-    let p_body_obpv400_create_my_api_collection_endpoint_request = obpv400_create_my_api_collection_endpoint_request;
+    let p_body_create_my_api_collection_endpoint_request = create_my_api_collection_endpoint_request;
 
     let uri_str = format!("{}/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -363,9 +420,9 @@ pub async fn o_bpv4_0_0_create_my_api_collection_endpoint_by_id(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_my_api_collection_endpoint_request);
+    req_builder = req_builder.json(&p_body_create_my_api_collection_endpoint_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -382,18 +439,63 @@ pub async fn o_bpv4_0_0_create_my_api_collection_endpoint_by_id(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateMyApiCollectionEndpointByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateMyApiCollectionEndpointByIdError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+pub async fn delete_featured_api_collection(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<(), Error<DeleteFeaturedApiCollectionError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_apicollectionid = apicollectionid;
+
+    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
+    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+
+    if !status.is_client_error() && !status.is_server_error() {
+        Ok(())
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<DeleteFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_my_api_collection(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::Obpv400DeleteSystemLevelEndpointTag200Response, Error<OBpv400DeleteMyApiCollectionError>> {
+pub async fn delete_my_api_collection(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::DeleteSystemLevelEndpointTag200Response, Error<DeleteMyApiCollectionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
 
@@ -420,7 +522,7 @@ pub async fn o_bpv4_0_0_delete_my_api_collection(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -438,18 +540,18 @@ pub async fn o_bpv4_0_0_delete_my_api_collection(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteMyApiCollectionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteMyApiCollectionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, operationid: &str) -> Result<models::Obpv400DeleteSystemLevelEndpointTag200Response, Error<OBpv400DeleteMyApiCollectionEndpointError>> {
+pub async fn delete_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, operationid: &str) -> Result<models::DeleteSystemLevelEndpointTag200Response, Error<DeleteMyApiCollectionEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionname = apicollectionname;
     let p_path_operationid = operationid;
@@ -477,7 +579,7 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint(configuration: &config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -495,18 +597,18 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_id(configuration: &configuration::Configuration, apicollectionid: &str, apicollectionendpointid: &str) -> Result<models::Obpv400DeleteSystemLevelEndpointTag200Response, Error<OBpv400DeleteMyApiCollectionEndpointByIdError>> {
+pub async fn delete_my_api_collection_endpoint_by_id(configuration: &configuration::Configuration, apicollectionid: &str, apicollectionendpointid: &str) -> Result<models::DeleteSystemLevelEndpointTag200Response, Error<DeleteMyApiCollectionEndpointByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
     let p_path_apicollectionendpointid = apicollectionendpointid;
@@ -534,7 +636,7 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_id(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -552,18 +654,18 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_id(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteMyApiCollectionEndpointByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteMyApiCollectionEndpointByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id(configuration: &configuration::Configuration, apicollectionid: &str, operationid: &str) -> Result<models::Obpv400DeleteSystemLevelEndpointTag200Response, Error<OBpv400DeleteMyApiCollectionEndpointByOperationIdError>> {
+pub async fn delete_my_api_collection_endpoint_by_operation_id(configuration: &configuration::Configuration, apicollectionid: &str, operationid: &str) -> Result<models::DeleteSystemLevelEndpointTag200Response, Error<DeleteMyApiCollectionEndpointByOperationIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
     let p_path_operationid = operationid;
@@ -591,7 +693,7 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id(config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -609,18 +711,72 @@ pub async fn o_bpv4_0_0_delete_my_api_collection_endpoint_by_operation_id(config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400DeleteSystemLevelEndpointTag200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::DeleteSystemLevelEndpointTag200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteMyApiCollectionEndpointByOperationIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteMyApiCollectionEndpointByOperationIdError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+pub async fn get_all_api_collections(configuration: &configuration::Configuration, ) -> Result<models::GetApiCollectionsForUser200Response, Error<GetAllApiCollectionsError>> {
+
+    let uri_str = format!("{}/obp/v5.1.0/management/api-collections", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<GetAllApiCollectionsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_get_api_collection_endpoints(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::Obpv400GetMyApiCollectionEndpoints200Response, Error<OBpv400GetApiCollectionEndpointsError>> {
+pub async fn get_api_collection_endpoints(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::GetMyApiCollectionEndpoints200Response, Error<GetApiCollectionEndpointsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
 
@@ -646,18 +802,18 @@ pub async fn o_bpv4_0_0_get_api_collection_endpoints(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetApiCollectionEndpointsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetApiCollectionEndpointsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_api_collections_for_user(configuration: &configuration::Configuration, userid: &str) -> Result<models::Obpv400GetApiCollectionsForUser200Response, Error<OBpv400GetApiCollectionsForUserError>> {
+pub async fn get_api_collections_for_user(configuration: &configuration::Configuration, userid: &str) -> Result<models::GetApiCollectionsForUser200Response, Error<GetApiCollectionsForUserError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_userid = userid;
 
@@ -684,7 +840,7 @@ pub async fn o_bpv4_0_0_get_api_collections_for_user(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -702,18 +858,18 @@ pub async fn o_bpv4_0_0_get_api_collections_for_user(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetApiCollectionsForUserError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetApiCollectionsForUserError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_featured_api_collections(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetApiCollectionsForUser200Response, Error<OBpv400GetFeaturedApiCollectionsError>> {
+pub async fn get_featured_api_collections(configuration: &configuration::Configuration, ) -> Result<models::GetApiCollectionsForUser200Response, Error<GetFeaturedApiCollectionsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/api-collections/featured", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -737,18 +893,72 @@ pub async fn o_bpv4_0_0_get_featured_api_collections(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetFeaturedApiCollectionsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetFeaturedApiCollectionsError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+pub async fn get_featured_api_collections_admin(configuration: &configuration::Configuration, ) -> Result<models::GetFeaturedApiCollectionsAdmin200Response, Error<GetFeaturedApiCollectionsAdminError>> {
+
+    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200Response`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<GetFeaturedApiCollectionsAdminError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_my_api_collection_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, Error<OBpv400GetMyApiCollectionByIdError>> {
+pub async fn get_my_api_collection_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::GetApiCollectionsForUser200ResponseApiCollectionsInner, Error<GetMyApiCollectionByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
 
@@ -775,7 +985,7 @@ pub async fn o_bpv4_0_0_get_my_api_collection_by_id(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -793,18 +1003,18 @@ pub async fn o_bpv4_0_0_get_my_api_collection_by_id(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_my_api_collection_by_name(configuration: &configuration::Configuration, apicollectionname: &str) -> Result<models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, Error<OBpv400GetMyApiCollectionByNameError>> {
+pub async fn get_my_api_collection_by_name(configuration: &configuration::Configuration, apicollectionname: &str) -> Result<models::GetApiCollectionsForUser200ResponseApiCollectionsInner, Error<GetMyApiCollectionByNameError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionname = apicollectionname;
 
@@ -831,7 +1041,7 @@ pub async fn o_bpv4_0_0_get_my_api_collection_by_name(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -849,18 +1059,18 @@ pub async fn o_bpv4_0_0_get_my_api_collection_by_name(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionByNameError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionByNameError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_get_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, operationid: &str) -> Result<models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, Error<OBpv400GetMyApiCollectionEndpointError>> {
+pub async fn get_my_api_collection_endpoint(configuration: &configuration::Configuration, apicollectionname: &str, operationid: &str) -> Result<models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, Error<GetMyApiCollectionEndpointError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionname = apicollectionname;
     let p_path_operationid = operationid;
@@ -887,18 +1097,18 @@ pub async fn o_bpv4_0_0_get_my_api_collection_endpoint(configuration: &configura
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionEndpointError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_get_my_api_collection_endpoints(configuration: &configuration::Configuration, apicollectionname: &str) -> Result<models::Obpv400GetMyApiCollectionEndpoints200Response, Error<OBpv400GetMyApiCollectionEndpointsError>> {
+pub async fn get_my_api_collection_endpoints(configuration: &configuration::Configuration, apicollectionname: &str) -> Result<models::GetMyApiCollectionEndpoints200Response, Error<GetMyApiCollectionEndpointsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionname = apicollectionname;
 
@@ -925,7 +1135,7 @@ pub async fn o_bpv4_0_0_get_my_api_collection_endpoints(configuration: &configur
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -943,18 +1153,18 @@ pub async fn o_bpv4_0_0_get_my_api_collection_endpoints(configuration: &configur
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionEndpointsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionEndpointsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-pub async fn o_bpv4_0_0_get_my_api_collection_endpoints_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::Obpv400GetMyApiCollectionEndpoints200Response, Error<OBpv400GetMyApiCollectionEndpointsByIdError>> {
+pub async fn get_my_api_collection_endpoints_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::GetMyApiCollectionEndpoints200Response, Error<GetMyApiCollectionEndpointsByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
 
@@ -981,7 +1191,7 @@ pub async fn o_bpv4_0_0_get_my_api_collection_endpoints_by_id(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -999,18 +1209,18 @@ pub async fn o_bpv4_0_0_get_my_api_collection_endpoints_by_id(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetMyApiCollectionEndpoints200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetMyApiCollectionEndpoints200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionEndpointsByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionEndpointsByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
-/// <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_my_api_collections(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetApiCollectionsForUser200Response, Error<OBpv400GetMyApiCollectionsError>> {
+/// <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+pub async fn get_my_api_collections(configuration: &configuration::Configuration, ) -> Result<models::GetApiCollectionsForUser200Response, Error<GetMyApiCollectionsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/my/api-collections", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -1035,7 +1245,7 @@ pub async fn o_bpv4_0_0_get_my_api_collections(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -1053,18 +1263,18 @@ pub async fn o_bpv4_0_0_get_my_api_collections(configuration: &configuration::Co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetMyApiCollectionsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetMyApiCollectionsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv4_0_0_get_sharable_api_collection_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, Error<OBpv400GetSharableApiCollectionByIdError>> {
+pub async fn get_sharable_api_collection_by_id(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<models::GetApiCollectionsForUser200ResponseApiCollectionsInner, Error<GetSharableApiCollectionByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
 
@@ -1090,21 +1300,24 @@ pub async fn o_bpv4_0_0_get_sharable_api_collection_by_id(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetSharableApiCollectionByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetSharableApiCollectionByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
-/// <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv5_1_0_get_all_api_collections(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetApiCollectionsForUser200Response, Error<OBpv510GetAllApiCollectionsError>> {
+/// <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+pub async fn update_featured_api_collection(configuration: &configuration::Configuration, apicollectionid: &str, update_featured_api_collection_request: models::UpdateFeaturedApiCollectionRequest) -> Result<models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, Error<UpdateFeaturedApiCollectionError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_apicollectionid = apicollectionid;
+    let p_body_update_featured_api_collection_request = update_featured_api_collection_request;
 
-    let uri_str = format!("{}/obp/v5.1.0/management/api-collections", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
+    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -1126,8 +1339,9 @@ pub async fn o_bpv5_1_0_get_all_api_collections(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
+    req_builder = req_builder.json(&p_body_update_featured_api_collection_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -1144,21 +1358,21 @@ pub async fn o_bpv5_1_0_get_all_api_collections(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510GetAllApiCollectionsError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-pub async fn o_bpv5_1_0_update_my_api_collection(configuration: &configuration::Configuration, apicollectionid: &str, obpv400_create_my_api_collection_request: models::Obpv400CreateMyApiCollectionRequest) -> Result<models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, Error<OBpv510UpdateMyApiCollectionError>> {
+pub async fn update_my_api_collection(configuration: &configuration::Configuration, apicollectionid: &str, create_my_api_collection_request: models::CreateMyApiCollectionRequest) -> Result<models::GetApiCollectionsForUser200ResponseApiCollectionsInner, Error<UpdateMyApiCollectionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_apicollectionid = apicollectionid;
-    let p_body_obpv400_create_my_api_collection_request = obpv400_create_my_api_collection_request;
+    let p_body_create_my_api_collection_request = create_my_api_collection_request;
 
     let uri_str = format!("{}/obp/v5.1.0/my/api-collections/{apicollectionid}", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -1183,9 +1397,9 @@ pub async fn o_bpv5_1_0_update_my_api_collection(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_create_my_api_collection_request);
+    req_builder = req_builder.json(&p_body_create_my_api_collection_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -1202,226 +1416,12 @@ pub async fn o_bpv5_1_0_update_my_api_collection(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetApiCollectionsForUser200ResponseApiCollectionsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510UpdateMyApiCollectionError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-pub async fn o_bpv6_0_0_create_featured_api_collection(configuration: &configuration::Configuration, obpv600_create_featured_api_collection_request: models::Obpv600CreateFeaturedApiCollectionRequest) -> Result<models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, Error<OBpv600CreateFeaturedApiCollectionError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv600_create_featured_api_collection_request = obpv600_create_featured_api_collection_request;
-
-    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_obpv600_create_featured_api_collection_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv600CreateFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv6_0_0_delete_featured_api_collection(configuration: &configuration::Configuration, apicollectionid: &str) -> Result<(), Error<OBpv600DeleteFeaturedApiCollectionError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_apicollectionid = apicollectionid;
-
-    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
-    let mut req_builder = configuration.client.request(reqwest::Method::DELETE, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv600DeleteFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-pub async fn o_bpv6_0_0_get_featured_api_collections_admin(configuration: &configuration::Configuration, ) -> Result<models::Obpv600GetFeaturedApiCollectionsAdmin200Response, Error<OBpv600GetFeaturedApiCollectionsAdminError>> {
-
-    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv600GetFeaturedApiCollectionsAdminError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-pub async fn o_bpv6_0_0_update_featured_api_collection(configuration: &configuration::Configuration, apicollectionid: &str, obpv600_update_featured_api_collection_request: models::Obpv600UpdateFeaturedApiCollectionRequest) -> Result<models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, Error<OBpv600UpdateFeaturedApiCollectionError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_apicollectionid = apicollectionid;
-    let p_body_obpv600_update_featured_api_collection_request = obpv600_update_featured_api_collection_request;
-
-    let uri_str = format!("{}/obp/v6.0.0/management/api-collections/featured/{apicollectionid}", configuration.base_path, apicollectionid=crate::apis::urlencode(p_path_apicollectionid));
-    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_obpv600_update_featured_api_collection_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv600UpdateFeaturedApiCollectionError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateMyApiCollectionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

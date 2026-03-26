@@ -2,18 +2,18 @@
 
 Operations related to PrivateData
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv300CorePrivateAccountsAllBanks()**](PrivateDataApi.md#oBPv300CorePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**oBPv600GetAccountsAtBank()**](PrivateDataApi.md#oBPv600GetAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**corePrivateAccountsAllBanks()**](PrivateDataApi.md#corePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**getAccountsAtBank()**](PrivateDataApi.md#getAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
 
-## `oBPv300CorePrivateAccountsAllBanks()`
+## `corePrivateAccountsAllBanks()`
 
 ```php
-oBPv300CorePrivateAccountsAllBanks(): \OpenBankProject\Model\OBPv300PrivateAccountsAtOneBank200Response
+corePrivateAccountsAllBanks(): \OpenBankProject\Model\PrivateAccountsAtOneBank200Response
 ```
 
 Get Accounts at all Banks (private)
@@ -36,9 +36,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\PrivateDataApi(
@@ -49,10 +49,10 @@ $apiInstance = new OpenBankProject\Api\PrivateDataApi(
 );
 
 try {
-    $result = $apiInstance->oBPv300CorePrivateAccountsAllBanks();
+    $result = $apiInstance->corePrivateAccountsAllBanks();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PrivateDataApi->oBPv300CorePrivateAccountsAllBanks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PrivateDataApi->corePrivateAccountsAllBanks: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv300PrivateAccountsAtOneBank200Response**](../Model/OBPv300PrivateAccountsAtOneBank200Response.md)
+[**\OpenBankProject\Model\PrivateAccountsAtOneBank200Response**](../Model/PrivateAccountsAtOneBank200Response.md)
 
 ### Authorization
 
@@ -77,10 +77,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetAccountsAtBank()`
+## `getAccountsAtBank()`
 
 ```php
-oBPv600GetAccountsAtBank($bankid): \OpenBankProject\Model\OBPv600GetAccountsAtBank200Response
+getAccountsAtBank($bankid): \OpenBankProject\Model\GetAccountsAtBank200Response
 ```
 
 Get Accounts at Bank
@@ -103,9 +103,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\PrivateDataApi(
@@ -117,10 +117,10 @@ $apiInstance = new OpenBankProject\Api\PrivateDataApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetAccountsAtBank($bankid);
+    $result = $apiInstance->getAccountsAtBank($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PrivateDataApi->oBPv600GetAccountsAtBank: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PrivateDataApi->getAccountsAtBank: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -132,7 +132,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetAccountsAtBank200Response**](../Model/OBPv600GetAccountsAtBank200Response.md)
+[**\OpenBankProject\Model\GetAccountsAtBank200Response**](../Model/GetAccountsAtBank200Response.md)
 
 ### Authorization
 

@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv600CreatePersonalDataFieldRequest
-import com.openbankproject.models.OBPv600GetPersonalDataFields200Response
-import com.openbankproject.models.OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+import com.openbankproject.models.CreatePersonalDataFieldRequest
+import com.openbankproject.models.GetPersonalDataFields200Response
+import com.openbankproject.models.GetPersonalDataFields200ResponseUserAttributesInner
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -51,8 +51,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * POST /obp/v6.0.0/my/personal-data-fields
      * Create Personal Data Field
      * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @param createPersonalDataFieldRequest Request body
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createPersonalDataField(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -83,29 +83,29 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * POST /obp/v6.0.0/my/personal-data-fields
      * Create Personal Data Field
      * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600CreatePersonalDataFieldRequestConfig(obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = createPersonalDataFieldRequestConfig(createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<CreatePersonalDataFieldRequest, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreatePersonalDataField
+     * To obtain the request config of the operation createPersonalDataField
      *
-     * @param obPv600CreatePersonalDataFieldRequest Request body
+     * @param createPersonalDataFieldRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreatePersonalDataFieldRequestConfig(obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
+    fun createPersonalDataFieldRequestConfig(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -126,8 +126,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Create User Attribute
      * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @param createPersonalDataFieldRequest Request body
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -136,11 +136,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateUserAttribute(userid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600CreateUserAttributeWithHttpInfo(userid = userid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createUserAttribute(userid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = createUserAttributeWithHttpInfo(userid = userid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -159,30 +159,30 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Create User Attribute
      * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateUserAttributeWithHttpInfo(userid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600CreateUserAttributeRequestConfig(userid = userid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun createUserAttributeWithHttpInfo(userid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = createUserAttributeRequestConfig(userid = userid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<CreatePersonalDataFieldRequest, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreateUserAttribute
+     * To obtain the request config of the operation createUserAttribute
      *
      * @param userid The USERID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
+     * @param createPersonalDataFieldRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreateUserAttributeRequestConfig(userid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
+    fun createUserAttributeRequestConfig(userid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -211,8 +211,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeletePersonalDataField(userattributeid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid = userattributeid)
+    fun deletePersonalDataField(userattributeid: kotlin.String) : Unit {
+        val localVarResponse = deletePersonalDataFieldWithHttpInfo(userattributeid = userattributeid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -239,8 +239,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeletePersonalDataFieldRequestConfig(userattributeid = userattributeid)
+    fun deletePersonalDataFieldWithHttpInfo(userattributeid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deletePersonalDataFieldRequestConfig(userattributeid = userattributeid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -248,12 +248,12 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeletePersonalDataField
+     * To obtain the request config of the operation deletePersonalDataField
      *
      * @param userattributeid The USERATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeletePersonalDataFieldRequestConfig(userattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun deletePersonalDataFieldRequestConfig(userattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -282,8 +282,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600DeleteUserAttribute(userid: kotlin.String, userattributeid: kotlin.String) : Unit {
-        val localVarResponse = oBPv600DeleteUserAttributeWithHttpInfo(userid = userid, userattributeid = userattributeid)
+    fun deleteUserAttribute(userid: kotlin.String, userattributeid: kotlin.String) : Unit {
+        val localVarResponse = deleteUserAttributeWithHttpInfo(userid = userid, userattributeid = userattributeid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -311,8 +311,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600DeleteUserAttributeWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv600DeleteUserAttributeRequestConfig(userid = userid, userattributeid = userattributeid)
+    fun deleteUserAttributeWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteUserAttributeRequestConfig(userid = userid, userattributeid = userattributeid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -320,13 +320,13 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
     }
 
     /**
-     * To obtain the request config of the operation oBPv600DeleteUserAttribute
+     * To obtain the request config of the operation deleteUserAttribute
      *
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600DeleteUserAttributeRequestConfig(userid: kotlin.String, userattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteUserAttributeRequestConfig(userid: kotlin.String, userattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -346,7 +346,7 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get Personal Data Field By Id
      * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -355,11 +355,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetPersonalDataFieldById(userattributeid: kotlin.String) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid = userattributeid)
+    fun getPersonalDataFieldById(userattributeid: kotlin.String) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = getPersonalDataFieldByIdWithHttpInfo(userattributeid = userattributeid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -378,27 +378,27 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get Personal Data Field By Id
      * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid: kotlin.String) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600GetPersonalDataFieldByIdRequestConfig(userattributeid = userattributeid)
+    fun getPersonalDataFieldByIdWithHttpInfo(userattributeid: kotlin.String) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = getPersonalDataFieldByIdRequestConfig(userattributeid = userattributeid)
 
-        return request<Unit, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<Unit, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetPersonalDataFieldById
+     * To obtain the request config of the operation getPersonalDataFieldById
      *
      * @param userattributeid The USERATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetPersonalDataFieldByIdRequestConfig(userattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun getPersonalDataFieldByIdRequestConfig(userattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -418,7 +418,7 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * GET /obp/v6.0.0/my/personal-data-fields
      * Get Personal Data Fields
      * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @return OBPv600GetPersonalDataFields200Response
+     * @return GetPersonalDataFields200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -427,11 +427,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetPersonalDataFields() : OBPv600GetPersonalDataFields200Response {
-        val localVarResponse = oBPv600GetPersonalDataFieldsWithHttpInfo()
+    fun getPersonalDataFields() : GetPersonalDataFields200Response {
+        val localVarResponse = getPersonalDataFieldsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -449,26 +449,26 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * GET /obp/v6.0.0/my/personal-data-fields
      * Get Personal Data Fields
      * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetPersonalDataFields200Response?>
+     * @return ApiResponse<GetPersonalDataFields200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetPersonalDataFieldsWithHttpInfo() : ApiResponse<OBPv600GetPersonalDataFields200Response?> {
-        val localVariableConfig = oBPv600GetPersonalDataFieldsRequestConfig()
+    fun getPersonalDataFieldsWithHttpInfo() : ApiResponse<GetPersonalDataFields200Response?> {
+        val localVariableConfig = getPersonalDataFieldsRequestConfig()
 
-        return request<Unit, OBPv600GetPersonalDataFields200Response>(
+        return request<Unit, GetPersonalDataFields200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetPersonalDataFields
+     * To obtain the request config of the operation getPersonalDataFields
      *
      * @return RequestConfig
      */
-    fun oBPv600GetPersonalDataFieldsRequestConfig() : RequestConfig<Unit> {
+    fun getPersonalDataFieldsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -490,7 +490,7 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -499,11 +499,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetUserAttributeById(userid: kotlin.String, userattributeid: kotlin.String) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600GetUserAttributeByIdWithHttpInfo(userid = userid, userattributeid = userattributeid)
+    fun getUserAttributeById(userid: kotlin.String, userattributeid: kotlin.String) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = getUserAttributeByIdWithHttpInfo(userid = userid, userattributeid = userattributeid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -523,28 +523,28 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetUserAttributeByIdWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600GetUserAttributeByIdRequestConfig(userid = userid, userattributeid = userattributeid)
+    fun getUserAttributeByIdWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = getUserAttributeByIdRequestConfig(userid = userid, userattributeid = userattributeid)
 
-        return request<Unit, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<Unit, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetUserAttributeById
+     * To obtain the request config of the operation getUserAttributeById
      *
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetUserAttributeByIdRequestConfig(userid: kotlin.String, userattributeid: kotlin.String) : RequestConfig<Unit> {
+    fun getUserAttributeByIdRequestConfig(userid: kotlin.String, userattributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -565,7 +565,7 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get User Attributes
      * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @return OBPv600GetPersonalDataFields200Response
+     * @return GetPersonalDataFields200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -574,11 +574,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetUserAttributes(userid: kotlin.String) : OBPv600GetPersonalDataFields200Response {
-        val localVarResponse = oBPv600GetUserAttributesWithHttpInfo(userid = userid)
+    fun getUserAttributes(userid: kotlin.String) : GetPersonalDataFields200Response {
+        val localVarResponse = getUserAttributesWithHttpInfo(userid = userid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -597,27 +597,27 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Get User Attributes
      * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
-     * @return ApiResponse<OBPv600GetPersonalDataFields200Response?>
+     * @return ApiResponse<GetPersonalDataFields200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetUserAttributesWithHttpInfo(userid: kotlin.String) : ApiResponse<OBPv600GetPersonalDataFields200Response?> {
-        val localVariableConfig = oBPv600GetUserAttributesRequestConfig(userid = userid)
+    fun getUserAttributesWithHttpInfo(userid: kotlin.String) : ApiResponse<GetPersonalDataFields200Response?> {
+        val localVariableConfig = getUserAttributesRequestConfig(userid = userid)
 
-        return request<Unit, OBPv600GetPersonalDataFields200Response>(
+        return request<Unit, GetPersonalDataFields200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetUserAttributes
+     * To obtain the request config of the operation getUserAttributes
      *
      * @param userid The USERID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetUserAttributesRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
+    fun getUserAttributesRequestConfig(userid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -638,8 +638,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Update Personal Data Field
      * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @param createPersonalDataFieldRequest Request body
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -648,11 +648,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdatePersonalDataField(userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid = userattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun updatePersonalDataField(userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = updatePersonalDataFieldWithHttpInfo(userattributeid = userattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -671,30 +671,30 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * Update Personal Data Field
      * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600UpdatePersonalDataFieldRequestConfig(userattributeid = userattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun updatePersonalDataFieldWithHttpInfo(userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = updatePersonalDataFieldRequestConfig(userattributeid = userattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<CreatePersonalDataFieldRequest, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdatePersonalDataField
+     * To obtain the request config of the operation updatePersonalDataField
      *
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
+     * @param createPersonalDataFieldRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdatePersonalDataFieldRequestConfig(userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
+    fun updatePersonalDataFieldRequestConfig(userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -716,8 +716,8 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     * @param createPersonalDataFieldRequest Request body
+     * @return GetPersonalDataFields200ResponseUserAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -726,11 +726,11 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600UpdateUserAttribute(userid: kotlin.String, userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        val localVarResponse = oBPv600UpdateUserAttributeWithHttpInfo(userid = userid, userattributeid = userattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun updateUserAttribute(userid: kotlin.String, userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : GetPersonalDataFields200ResponseUserAttributesInner {
+        val localVarResponse = updateUserAttributeWithHttpInfo(userid = userid, userattributeid = userattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetPersonalDataFields200ResponseUserAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -750,31 +750,31 @@ open class UserAttributeApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
-     * @return ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?>
+     * @param createPersonalDataFieldRequest Request body
+     * @return ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600UpdateUserAttributeWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems?> {
-        val localVariableConfig = oBPv600UpdateUserAttributeRequestConfig(userid = userid, userattributeid = userattributeid, obPv600CreatePersonalDataFieldRequest = obPv600CreatePersonalDataFieldRequest)
+    fun updateUserAttributeWithHttpInfo(userid: kotlin.String, userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner?> {
+        val localVariableConfig = updateUserAttributeRequestConfig(userid = userid, userattributeid = userattributeid, createPersonalDataFieldRequest = createPersonalDataFieldRequest)
 
-        return request<OBPv600CreatePersonalDataFieldRequest, OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return request<CreatePersonalDataFieldRequest, GetPersonalDataFields200ResponseUserAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600UpdateUserAttribute
+     * To obtain the request config of the operation updateUserAttribute
      *
      * @param userid The USERID identifier
      * @param userattributeid The USERATTRIBUTEID identifier
-     * @param obPv600CreatePersonalDataFieldRequest Request body
+     * @param createPersonalDataFieldRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600UpdateUserAttributeRequestConfig(userid: kotlin.String, userattributeid: kotlin.String, obPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest) : RequestConfig<OBPv600CreatePersonalDataFieldRequest> {
-        val localVariableBody = obPv600CreatePersonalDataFieldRequest
+    fun updateUserAttributeRequestConfig(userid: kotlin.String, userattributeid: kotlin.String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest) : RequestConfig<CreatePersonalDataFieldRequest> {
+        val localVariableBody = createPersonalDataFieldRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

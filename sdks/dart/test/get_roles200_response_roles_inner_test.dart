@@ -1,0 +1,21 @@
+import 'package:test/test.dart';
+import 'package:obp_dart/obp_dart.dart';
+
+// tests for GetRoles200ResponseRolesInner
+void main() {
+  final instance = GetRoles200ResponseRolesInnerBuilder();
+  // TODO add properties to the builder and call build()
+
+  group(GetRoles200ResponseRolesInner, () {
+    // String role
+    test('to test the property `role`', () async {
+      // TODO
+    });
+
+    // bool requiresBankId
+    test('to test the property `requiresBankId`', () async {
+      // TODO
+    });
+
+  });
+}

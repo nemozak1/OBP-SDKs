@@ -1,19 +1,19 @@
 # PrivateDataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv300CorePrivateAccountsAllBanks**](PrivateDataApi.md#oBPv300CorePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**oBPv300CorePrivateAccountsAllBanksWithHttpInfo**](PrivateDataApi.md#oBPv300CorePrivateAccountsAllBanksWithHttpInfo) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
-| [**oBPv600GetAccountsAtBank**](PrivateDataApi.md#oBPv600GetAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
-| [**oBPv600GetAccountsAtBankWithHttpInfo**](PrivateDataApi.md#oBPv600GetAccountsAtBankWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**corePrivateAccountsAllBanks**](PrivateDataApi.md#corePrivateAccountsAllBanks) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**corePrivateAccountsAllBanksWithHttpInfo**](PrivateDataApi.md#corePrivateAccountsAllBanksWithHttpInfo) | **GET** /obp/v3.0.0/my/accounts | Get Accounts at all Banks (private) |
+| [**getAccountsAtBank**](PrivateDataApi.md#getAccountsAtBank) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
+| [**getAccountsAtBankWithHttpInfo**](PrivateDataApi.md#getAccountsAtBankWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts | Get Accounts at Bank |
 
 
 
-## oBPv300CorePrivateAccountsAllBanks
+## corePrivateAccountsAllBanks
 
-> OBPv300PrivateAccountsAtOneBank200Response oBPv300CorePrivateAccountsAllBanks()
+> PrivateAccountsAtOneBank200Response corePrivateAccountsAllBanks()
 
 Get Accounts at all Banks (private)
 
@@ -33,7 +33,7 @@ import com.openbankproject.api.PrivateDataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -53,10 +53,10 @@ public class Example {
 
         PrivateDataApi apiInstance = new PrivateDataApi(defaultClient);
         try {
-            OBPv300PrivateAccountsAtOneBank200Response result = apiInstance.oBPv300CorePrivateAccountsAllBanks();
+            PrivateAccountsAtOneBank200Response result = apiInstance.corePrivateAccountsAllBanks();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PrivateDataApi#oBPv300CorePrivateAccountsAllBanks");
+            System.err.println("Exception when calling PrivateDataApi#corePrivateAccountsAllBanks");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)
+[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)
 
 
 ### Authorization
@@ -90,9 +90,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv300CorePrivateAccountsAllBanksWithHttpInfo
+## corePrivateAccountsAllBanksWithHttpInfo
 
-> ApiResponse<OBPv300PrivateAccountsAtOneBank200Response> oBPv300CorePrivateAccountsAllBanks oBPv300CorePrivateAccountsAllBanksWithHttpInfo()
+> ApiResponse<PrivateAccountsAtOneBank200Response> corePrivateAccountsAllBanks corePrivateAccountsAllBanksWithHttpInfo()
 
 Get Accounts at all Banks (private)
 
@@ -113,7 +113,7 @@ import com.openbankproject.api.PrivateDataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -133,12 +133,12 @@ public class Example {
 
         PrivateDataApi apiInstance = new PrivateDataApi(defaultClient);
         try {
-            ApiResponse<OBPv300PrivateAccountsAtOneBank200Response> response = apiInstance.oBPv300CorePrivateAccountsAllBanksWithHttpInfo();
+            ApiResponse<PrivateAccountsAtOneBank200Response> response = apiInstance.corePrivateAccountsAllBanksWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PrivateDataApi#oBPv300CorePrivateAccountsAllBanks");
+            System.err.println("Exception when calling PrivateDataApi#corePrivateAccountsAllBanks");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -154,7 +154,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccountsAtOneBank200Response.md)>
+ApiResponse<[**PrivateAccountsAtOneBank200Response**](PrivateAccountsAtOneBank200Response.md)>
 
 
 ### Authorization
@@ -173,9 +173,9 @@ ApiResponse<[**OBPv300PrivateAccountsAtOneBank200Response**](OBPv300PrivateAccou
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAccountsAtBank
+## getAccountsAtBank
 
-> OBPv600GetAccountsAtBank200Response oBPv600GetAccountsAtBank(bankid)
+> GetAccountsAtBank200Response getAccountsAtBank(bankid)
 
 Get Accounts at Bank
 
@@ -195,7 +195,7 @@ import com.openbankproject.api.PrivateDataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -216,10 +216,10 @@ public class Example {
         PrivateDataApi apiInstance = new PrivateDataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv600GetAccountsAtBank200Response result = apiInstance.oBPv600GetAccountsAtBank(bankid);
+            GetAccountsAtBank200Response result = apiInstance.getAccountsAtBank(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling PrivateDataApi#oBPv600GetAccountsAtBank");
+            System.err.println("Exception when calling PrivateDataApi#getAccountsAtBank");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -238,7 +238,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)
+[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)
 
 
 ### Authorization
@@ -257,9 +257,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAccountsAtBankWithHttpInfo
+## getAccountsAtBankWithHttpInfo
 
-> ApiResponse<OBPv600GetAccountsAtBank200Response> oBPv600GetAccountsAtBank oBPv600GetAccountsAtBankWithHttpInfo(bankid)
+> ApiResponse<GetAccountsAtBank200Response> getAccountsAtBank getAccountsAtBankWithHttpInfo(bankid)
 
 Get Accounts at Bank
 
@@ -280,7 +280,7 @@ import com.openbankproject.api.PrivateDataApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -301,12 +301,12 @@ public class Example {
         PrivateDataApi apiInstance = new PrivateDataApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv600GetAccountsAtBank200Response> response = apiInstance.oBPv600GetAccountsAtBankWithHttpInfo(bankid);
+            ApiResponse<GetAccountsAtBank200Response> response = apiInstance.getAccountsAtBankWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling PrivateDataApi#oBPv600GetAccountsAtBank");
+            System.err.println("Exception when calling PrivateDataApi#getAccountsAtBank");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -325,7 +325,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAccountsAtBank200Response**](OBPv600GetAccountsAtBank200Response.md)>
+ApiResponse<[**GetAccountsAtBank200Response**](GetAccountsAtBank200Response.md)>
 
 
 ### Authorization

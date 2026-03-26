@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -48,10 +48,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateDirectDebitApiResponse> OBPv400CreateDirectDebitAsync(string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitApiResponse"/>&gt;</returns>
+        Task<ICreateDirectDebitApiResponse> CreateDirectDebitAsync(string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Direct Debit
@@ -62,10 +62,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateDirectDebitApiResponse?> OBPv400CreateDirectDebitOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitApiResponse"/>?&gt;</returns>
+        Task<ICreateDirectDebitApiResponse?> CreateDirectDebitOrDefaultAsync(string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Direct Debit (management)
@@ -76,10 +76,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitManagementApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateDirectDebitManagementApiResponse> OBPv400CreateDirectDebitManagementAsync(string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitManagementApiResponse"/>&gt;</returns>
+        Task<ICreateDirectDebitManagementApiResponse> CreateDirectDebitManagementAsync(string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Direct Debit (management)
@@ -89,10 +89,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitManagementApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateDirectDebitManagementApiResponse?> OBPv400CreateDirectDebitManagementOrDefaultAsync(string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitManagementApiResponse"/>?&gt;</returns>
+        Task<ICreateDirectDebitManagementApiResponse?> CreateDirectDebitManagementOrDefaultAsync(string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -103,41 +103,41 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateDirectDebit;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateDirectDebit;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateDirectDebit;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateDirectDebit;
 
-        internal void ExecuteOnOBPv400CreateDirectDebit(AccountApi.OBPv400CreateDirectDebitApiResponse apiResponse)
+        internal void ExecuteOnCreateDirectDebit(AccountApi.CreateDirectDebitApiResponse apiResponse)
         {
-            OnOBPv400CreateDirectDebit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateDirectDebit?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateDirectDebit(Exception exception)
+        internal void ExecuteOnErrorCreateDirectDebit(Exception exception)
         {
-            OnErrorOBPv400CreateDirectDebit?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateDirectDebit?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateDirectDebitManagement;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateDirectDebitManagement;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateDirectDebitManagement;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateDirectDebitManagement;
 
-        internal void ExecuteOnOBPv400CreateDirectDebitManagement(AccountApi.OBPv400CreateDirectDebitManagementApiResponse apiResponse)
+        internal void ExecuteOnCreateDirectDebitManagement(AccountApi.CreateDirectDebitManagementApiResponse apiResponse)
         {
-            OnOBPv400CreateDirectDebitManagement?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateDirectDebitManagement?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateDirectDebitManagement(Exception exception)
+        internal void ExecuteOnErrorCreateDirectDebitManagement(Exception exception)
         {
-            OnErrorOBPv400CreateDirectDebitManagement?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateDirectDebitManagement?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -195,7 +195,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateDirectDebit(ref string bankid, ref string accountid, ref string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        partial void FormatCreateDirectDebit(ref string bankid, ref string accountid, ref string viewid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -203,9 +203,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
+        /// <param name="createDirectDebitRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateDirectDebit(string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        private void ValidateCreateDirectDebit(string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -216,8 +216,8 @@ namespace OpenBankProject.Api
             if (viewid == null)
                 throw new ArgumentNullException(nameof(viewid));
 
-            if (oBPv400CreateDirectDebitRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateDirectDebitRequest));
+            if (createDirectDebitRequest == null)
+                throw new ArgumentNullException(nameof(createDirectDebitRequest));
         }
 
         /// <summary>
@@ -227,11 +227,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        private void AfterOBPv400CreateDirectDebitDefaultImplementation(IOBPv400CreateDirectDebitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        /// <param name="createDirectDebitRequest"></param>
+        private void AfterCreateDirectDebitDefaultImplementation(ICreateDirectDebitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateDirectDebit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
+            AfterCreateDirectDebit(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, createDirectDebitRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -244,8 +244,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        partial void AfterOBPv400CreateDirectDebit(ref bool suppressDefaultLog, IOBPv400CreateDirectDebitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        /// <param name="createDirectDebitRequest"></param>
+        partial void AfterCreateDirectDebit(ref bool suppressDefaultLog, ICreateDirectDebitApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -256,11 +256,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        private void OnErrorOBPv400CreateDirectDebitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        /// <param name="createDirectDebitRequest"></param>
+        private void OnErrorCreateDirectDebitDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateDirectDebit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
+            OnErrorCreateDirectDebit(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, createDirectDebitRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -275,8 +275,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        partial void OnErrorOBPv400CreateDirectDebit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        /// <param name="createDirectDebitRequest"></param>
+        partial void OnErrorCreateDirectDebit(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Create Direct Debit &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
@@ -284,14 +284,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDirectDebitApiResponse?> OBPv400CreateDirectDebitOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitApiResponse"/>&gt;</returns>
+        public async Task<ICreateDirectDebitApiResponse?> CreateDirectDebitOrDefaultAsync(string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateDirectDebitAsync(bankid, accountid, viewid, oBPv400CreateDirectDebitRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateDirectDebitAsync(bankid, accountid, viewid, createDirectDebitRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -306,18 +306,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDirectDebitApiResponse> OBPv400CreateDirectDebitAsync(string bankid, string accountid, string viewid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitApiResponse"/>&gt;</returns>
+        public async Task<ICreateDirectDebitApiResponse> CreateDirectDebitAsync(string bankid, string accountid, string viewid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateDirectDebit(bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
+                ValidateCreateDirectDebit(bankid, accountid, viewid, createDirectDebitRequest);
 
-                FormatOBPv400CreateDirectDebit(ref bankid, ref accountid, ref viewid, oBPv400CreateDirectDebitRequest);
+                FormatCreateDirectDebit(ref bankid, ref accountid, ref viewid, createDirectDebitRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -331,16 +331,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateDirectDebitRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createDirectDebitRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateDirectDebitRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createDirectDebitRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -376,8 +376,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400CreateDirectDebitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400CreateDirectDebitApiResponse>();
-                        AccountApi.OBPv400CreateDirectDebitApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateDirectDebitApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateDirectDebitApiResponse>();
+                        AccountApi.CreateDirectDebitApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -388,9 +388,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateDirectDebitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
+                        AfterCreateDirectDebitDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, createDirectDebitRequest);
 
-                        Events.ExecuteOnOBPv400CreateDirectDebit(apiResponseLocalVar);
+                        Events.ExecuteOnCreateDirectDebit(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -402,22 +402,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateDirectDebitDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit", uriBuilderLocalVar.Path, bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
-                Events.ExecuteOnErrorOBPv400CreateDirectDebit(e);
+                OnErrorCreateDirectDebitDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit", uriBuilderLocalVar.Path, bankid, accountid, viewid, createDirectDebitRequest);
+                Events.ExecuteOnErrorCreateDirectDebit(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateDirectDebitManagement(ref string bankid, ref string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        partial void FormatCreateDirectDebitManagement(ref string bankid, ref string accountid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
+        /// <param name="createDirectDebitRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateDirectDebitManagement(string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        private void ValidateCreateDirectDebitManagement(string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -425,8 +425,8 @@ namespace OpenBankProject.Api
             if (accountid == null)
                 throw new ArgumentNullException(nameof(accountid));
 
-            if (oBPv400CreateDirectDebitRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateDirectDebitRequest));
+            if (createDirectDebitRequest == null)
+                throw new ArgumentNullException(nameof(createDirectDebitRequest));
         }
 
         /// <summary>
@@ -435,11 +435,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        private void AfterOBPv400CreateDirectDebitManagementDefaultImplementation(IOBPv400CreateDirectDebitManagementApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        /// <param name="createDirectDebitRequest"></param>
+        private void AfterCreateDirectDebitManagementDefaultImplementation(ICreateDirectDebitManagementApiResponse apiResponseLocalVar, string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateDirectDebitManagement(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, oBPv400CreateDirectDebitRequest);
+            AfterCreateDirectDebitManagement(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, createDirectDebitRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -451,8 +451,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        partial void AfterOBPv400CreateDirectDebitManagement(ref bool suppressDefaultLog, IOBPv400CreateDirectDebitManagementApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        /// <param name="createDirectDebitRequest"></param>
+        partial void AfterCreateDirectDebitManagement(ref bool suppressDefaultLog, ICreateDirectDebitManagementApiResponse apiResponseLocalVar, string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -462,11 +462,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        private void OnErrorOBPv400CreateDirectDebitManagementDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest)
+        /// <param name="createDirectDebitRequest"></param>
+        private void OnErrorCreateDirectDebitManagementDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateDirectDebitManagement(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, oBPv400CreateDirectDebitRequest);
+            OnErrorCreateDirectDebitManagement(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, createDirectDebitRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -480,22 +480,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateDirectDebitRequest"></param>
-        partial void OnErrorOBPv400CreateDirectDebitManagement(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest);
+        /// <param name="createDirectDebitRequest"></param>
+        partial void OnErrorCreateDirectDebitManagement(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest);
 
         /// <summary>
         /// Create Direct Debit (management) &lt;p&gt;Create direct debit for an account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#direct_debit_id\&quot;&gt;&lt;strong&gt;direct_debit_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitManagementApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDirectDebitManagementApiResponse?> OBPv400CreateDirectDebitManagementOrDefaultAsync(string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitManagementApiResponse"/>&gt;</returns>
+        public async Task<ICreateDirectDebitManagementApiResponse?> CreateDirectDebitManagementOrDefaultAsync(string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateDirectDebitManagementAsync(bankid, accountid, oBPv400CreateDirectDebitRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateDirectDebitManagementAsync(bankid, accountid, createDirectDebitRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -509,18 +509,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateDirectDebitRequest">Request body</param>
+        /// <param name="createDirectDebitRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDirectDebitManagementApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDirectDebitManagementApiResponse> OBPv400CreateDirectDebitManagementAsync(string bankid, string accountid, OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDirectDebitManagementApiResponse"/>&gt;</returns>
+        public async Task<ICreateDirectDebitManagementApiResponse> CreateDirectDebitManagementAsync(string bankid, string accountid, CreateDirectDebitRequest createDirectDebitRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateDirectDebitManagement(bankid, accountid, oBPv400CreateDirectDebitRequest);
+                ValidateCreateDirectDebitManagement(bankid, accountid, createDirectDebitRequest);
 
-                FormatOBPv400CreateDirectDebitManagement(ref bankid, ref accountid, oBPv400CreateDirectDebitRequest);
+                FormatCreateDirectDebitManagement(ref bankid, ref accountid, createDirectDebitRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -533,16 +533,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateDirectDebitRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createDirectDebitRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateDirectDebitRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createDirectDebitRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -578,8 +578,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400CreateDirectDebitManagementApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400CreateDirectDebitManagementApiResponse>();
-                        AccountApi.OBPv400CreateDirectDebitManagementApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateDirectDebitManagementApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateDirectDebitManagementApiResponse>();
+                        AccountApi.CreateDirectDebitManagementApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -590,9 +590,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateDirectDebitManagementDefaultImplementation(apiResponseLocalVar, bankid, accountid, oBPv400CreateDirectDebitRequest);
+                        AfterCreateDirectDebitManagementDefaultImplementation(apiResponseLocalVar, bankid, accountid, createDirectDebitRequest);
 
-                        Events.ExecuteOnOBPv400CreateDirectDebitManagement(apiResponseLocalVar);
+                        Events.ExecuteOnCreateDirectDebitManagement(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -604,8 +604,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateDirectDebitManagementDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit", uriBuilderLocalVar.Path, bankid, accountid, oBPv400CreateDirectDebitRequest);
-                Events.ExecuteOnErrorOBPv400CreateDirectDebitManagement(e);
+                OnErrorCreateDirectDebitManagementDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit", uriBuilderLocalVar.Path, bankid, accountid, createDirectDebitRequest);
+                Events.ExecuteOnErrorCreateDirectDebitManagement(e);
                 throw;
             }
         }

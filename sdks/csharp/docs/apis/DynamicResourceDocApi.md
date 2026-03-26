@@ -1,24 +1,24 @@
 # OpenBankProject.Api.DynamicResourceDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#obpv400builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**OBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**OBPv400CreateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**OBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**OBPv400DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**OBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**OBPv400GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**OBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**OBPv400GetDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**OBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**OBPv400UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#builddynamicendpointtemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**CreateDynamicResourceDoc**](DynamicResourceDocApi.md#createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**GetDynamicResourceDoc**](DynamicResourceDocApi.md#getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#updatebankleveldynamicresourcedoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
-<a id="obpv400builddynamicendpointtemplate"></a>
-# **OBPv400BuildDynamicEndpointTemplate**
-> OBPv400BuildDynamicEndpointTemplate200Response OBPv400BuildDynamicEndpointTemplate (OBPv400BuildDynamicEndpointTemplateRequest oBPv400BuildDynamicEndpointTemplateRequest)
+<a id="builddynamicendpointtemplate"></a>
+# **BuildDynamicEndpointTemplate**
+> BuildDynamicEndpointTemplate200Response BuildDynamicEndpointTemplate (BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -29,11 +29,11 @@ Create Dynamic Resource Doc endpoint code
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md) | Request body |  |
+| **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -53,9 +53,9 @@ Create Dynamic Resource Doc endpoint code
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createbankleveldynamicresourcedoc"></a>
-# **OBPv400CreateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400CreateBankLevelDynamicResourceDoc (string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="createbankleveldynamicresourcedoc"></a>
+# **CreateBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response CreateBankLevelDynamicResourceDoc (string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -67,11 +67,11 @@ Create Bank Level Dynamic Resource Doc
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ Create Bank Level Dynamic Resource Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createdynamicresourcedoc"></a>
-# **OBPv400CreateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400CreateDynamicResourceDoc (OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="createdynamicresourcedoc"></a>
+# **CreateDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response CreateDynamicResourceDoc (UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -105,11 +105,11 @@ Create Dynamic Resource Doc
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -129,9 +129,9 @@ Create Dynamic Resource Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletebankleveldynamicresourcedoc"></a>
-# **OBPv400DeleteBankLevelDynamicResourceDoc**
-> void OBPv400DeleteBankLevelDynamicResourceDoc (string bankid)
+<a id="deletebankleveldynamicresourcedoc"></a>
+# **DeleteBankLevelDynamicResourceDoc**
+> void DeleteBankLevelDynamicResourceDoc (string bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -167,9 +167,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletedynamicresourcedoc"></a>
-# **OBPv400DeleteDynamicResourceDoc**
-> void OBPv400DeleteDynamicResourceDoc ()
+<a id="deletedynamicresourcedoc"></a>
+# **DeleteDynamicResourceDoc**
+> void DeleteDynamicResourceDoc ()
 
 Delete Dynamic Resource Doc
 
@@ -200,9 +200,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallbankleveldynamicresourcedocs"></a>
-# **OBPv400GetAllBankLevelDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response OBPv400GetAllBankLevelDynamicResourceDocs (string bankid)
+<a id="getallbankleveldynamicresourcedocs"></a>
+# **GetAllBankLevelDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response GetAllBankLevelDynamicResourceDocs (string bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -217,7 +217,7 @@ Get all Bank Level Dynamic Resource Docs
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -238,9 +238,9 @@ Get all Bank Level Dynamic Resource Docs
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getalldynamicresourcedocs"></a>
-# **OBPv400GetAllDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response OBPv400GetAllDynamicResourceDocs ()
+<a id="getalldynamicresourcedocs"></a>
+# **GetAllDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response GetAllDynamicResourceDocs ()
 
 Get all Dynamic Resource Docs
 
@@ -251,7 +251,7 @@ Get all Dynamic Resource Docs
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -271,9 +271,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankleveldynamicresourcedoc"></a>
-# **OBPv400GetBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400GetBankLevelDynamicResourceDoc (string bankid)
+<a id="getbankleveldynamicresourcedoc"></a>
+# **GetBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response GetBankLevelDynamicResourceDoc (string bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -288,7 +288,7 @@ Get Bank Level Dynamic Resource Doc by Id
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -309,9 +309,9 @@ Get Bank Level Dynamic Resource Doc by Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getdynamicresourcedoc"></a>
-# **OBPv400GetDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400GetDynamicResourceDoc ()
+<a id="getdynamicresourcedoc"></a>
+# **GetDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response GetDynamicResourceDoc ()
 
 Get Dynamic Resource Doc by Id
 
@@ -322,7 +322,7 @@ Get Dynamic Resource Doc by Id
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -342,9 +342,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatebankleveldynamicresourcedoc"></a>
-# **OBPv400UpdateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400UpdateBankLevelDynamicResourceDoc (string bankid, OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="updatebankleveldynamicresourcedoc"></a>
+# **UpdateBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response UpdateBankLevelDynamicResourceDoc (string bankid, UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -356,11 +356,11 @@ Update Bank Level Dynamic Resource Doc
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -381,9 +381,9 @@ Update Bank Level Dynamic Resource Doc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatedynamicresourcedoc"></a>
-# **OBPv400UpdateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response OBPv400UpdateDynamicResourceDoc (OBPv400UpdateBankLevelDynamicResourceDocRequest oBPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="updatedynamicresourcedoc"></a>
+# **UpdateDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response UpdateDynamicResourceDoc (UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -394,11 +394,11 @@ Update Dynamic Resource Doc
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

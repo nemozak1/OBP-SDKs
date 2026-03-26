@@ -1,24 +1,24 @@
 # OpenBankProject::UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_create_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**o_bpv6_0_0_create_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**o_bpv6_0_0_delete_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**o_bpv6_0_0_delete_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**o_bpv6_0_0_get_personal_data_field_by_id**](UserAttributeApi.md#o_bpv6_0_0_get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**o_bpv6_0_0_get_personal_data_fields**](UserAttributeApi.md#o_bpv6_0_0_get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**o_bpv6_0_0_get_user_attribute_by_id**](UserAttributeApi.md#o_bpv6_0_0_get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**o_bpv6_0_0_get_user_attributes**](UserAttributeApi.md#o_bpv6_0_0_get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**o_bpv6_0_0_update_personal_data_field**](UserAttributeApi.md#o_bpv6_0_0_update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**o_bpv6_0_0_update_user_attribute**](UserAttributeApi.md#o_bpv6_0_0_update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**create_personal_data_field**](UserAttributeApi.md#create_personal_data_field) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**create_user_attribute**](UserAttributeApi.md#create_user_attribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**delete_personal_data_field**](UserAttributeApi.md#delete_personal_data_field) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**delete_user_attribute**](UserAttributeApi.md#delete_user_attribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**get_personal_data_field_by_id**](UserAttributeApi.md#get_personal_data_field_by_id) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**get_personal_data_fields**](UserAttributeApi.md#get_personal_data_fields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**get_user_attribute_by_id**](UserAttributeApi.md#get_user_attribute_by_id) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**get_user_attributes**](UserAttributeApi.md#get_user_attributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**update_personal_data_field**](UserAttributeApi.md#update_personal_data_field) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**update_user_attribute**](UserAttributeApi.md#update_user_attribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
 
-## o_bpv6_0_0_create_personal_data_field
+## create_personal_data_field
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
+> <GetPersonalDataFields200ResponseUserAttributesInner> create_personal_data_field(create_personal_data_field_request)
 
 Create Personal Data Field
 
@@ -40,38 +40,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Create Personal Data Field
-  result = api_instance.o_bpv6_0_0_create_personal_data_field(obpv600_create_personal_data_field_request)
+  result = api_instance.create_personal_data_field(create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_create_personal_data_field: #{e}"
+  puts "Error when calling UserAttributeApi->create_personal_data_field: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_personal_data_field_with_http_info variant
+#### Using the create_personal_data_field_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_create_personal_data_field_with_http_info(obpv600_create_personal_data_field_request)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> create_personal_data_field_with_http_info(create_personal_data_field_request)
 
 ```ruby
 begin
   # Create Personal Data Field
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_personal_data_field_with_http_info(obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.create_personal_data_field_with_http_info(create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_create_personal_data_field_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->create_personal_data_field_with_http_info: #{e}"
 end
 ```
 
@@ -79,11 +79,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -95,9 +95,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_create_user_attribute
+## create_user_attribute
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
+> <GetPersonalDataFields200ResponseUserAttributesInner> create_user_attribute(userid, create_personal_data_field_request)
 
 Create User Attribute
 
@@ -119,39 +119,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
 userid = 'userid_example' # String | The USERID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Create User Attribute
-  result = api_instance.o_bpv6_0_0_create_user_attribute(userid, obpv600_create_personal_data_field_request)
+  result = api_instance.create_user_attribute(userid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_create_user_attribute: #{e}"
+  puts "Error when calling UserAttributeApi->create_user_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_user_attribute_with_http_info variant
+#### Using the create_user_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_create_user_attribute_with_http_info(userid, obpv600_create_personal_data_field_request)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> create_user_attribute_with_http_info(userid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Create User Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_user_attribute_with_http_info(userid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.create_user_attribute_with_http_info(userid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_create_user_attribute_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->create_user_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -160,11 +160,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **userid** | **String** | The USERID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -176,9 +176,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_delete_personal_data_field
+## delete_personal_data_field
 
-> o_bpv6_0_0_delete_personal_data_field(userattributeid)
+> delete_personal_data_field(userattributeid)
 
 Delete Personal Data Field
 
@@ -200,9 +200,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
@@ -210,27 +210,27 @@ userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID ident
 
 begin
   # Delete Personal Data Field
-  api_instance.o_bpv6_0_0_delete_personal_data_field(userattributeid)
+  api_instance.delete_personal_data_field(userattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_delete_personal_data_field: #{e}"
+  puts "Error when calling UserAttributeApi->delete_personal_data_field: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_personal_data_field_with_http_info variant
+#### Using the delete_personal_data_field_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_personal_data_field_with_http_info(userattributeid)
+> <Array(nil, Integer, Hash)> delete_personal_data_field_with_http_info(userattributeid)
 
 ```ruby
 begin
   # Delete Personal Data Field
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_personal_data_field_with_http_info(userattributeid)
+  data, status_code, headers = api_instance.delete_personal_data_field_with_http_info(userattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_delete_personal_data_field_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->delete_personal_data_field_with_http_info: #{e}"
 end
 ```
 
@@ -254,9 +254,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_delete_user_attribute
+## delete_user_attribute
 
-> o_bpv6_0_0_delete_user_attribute(userid, userattributeid)
+> delete_user_attribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -278,9 +278,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
@@ -289,27 +289,27 @@ userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID ident
 
 begin
   # Delete User Attribute
-  api_instance.o_bpv6_0_0_delete_user_attribute(userid, userattributeid)
+  api_instance.delete_user_attribute(userid, userattributeid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_delete_user_attribute: #{e}"
+  puts "Error when calling UserAttributeApi->delete_user_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_user_attribute_with_http_info variant
+#### Using the delete_user_attribute_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_user_attribute_with_http_info(userid, userattributeid)
+> <Array(nil, Integer, Hash)> delete_user_attribute_with_http_info(userid, userattributeid)
 
 ```ruby
 begin
   # Delete User Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_user_attribute_with_http_info(userid, userattributeid)
+  data, status_code, headers = api_instance.delete_user_attribute_with_http_info(userid, userattributeid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_delete_user_attribute_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->delete_user_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -334,9 +334,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_get_personal_data_field_by_id
+## get_personal_data_field_by_id
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
+> <GetPersonalDataFields200ResponseUserAttributesInner> get_personal_data_field_by_id(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -358,9 +358,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
@@ -368,28 +368,28 @@ userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID ident
 
 begin
   # Get Personal Data Field By Id
-  result = api_instance.o_bpv6_0_0_get_personal_data_field_by_id(userattributeid)
+  result = api_instance.get_personal_data_field_by_id(userattributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_field_by_id: #{e}"
+  puts "Error when calling UserAttributeApi->get_personal_data_field_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_personal_data_field_by_id_with_http_info variant
+#### Using the get_personal_data_field_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_get_personal_data_field_by_id_with_http_info(userattributeid)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> get_personal_data_field_by_id_with_http_info(userattributeid)
 
 ```ruby
 begin
   # Get Personal Data Field By Id
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_personal_data_field_by_id_with_http_info(userattributeid)
+  data, status_code, headers = api_instance.get_personal_data_field_by_id_with_http_info(userattributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_field_by_id_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->get_personal_data_field_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -401,7 +401,7 @@ end
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -413,9 +413,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_personal_data_fields
+## get_personal_data_fields
 
-> <OBPv600GetPersonalDataFields200Response> o_bpv6_0_0_get_personal_data_fields
+> <GetPersonalDataFields200Response> get_personal_data_fields
 
 Get Personal Data Fields
 
@@ -437,37 +437,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
 
 begin
   # Get Personal Data Fields
-  result = api_instance.o_bpv6_0_0_get_personal_data_fields
+  result = api_instance.get_personal_data_fields
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_fields: #{e}"
+  puts "Error when calling UserAttributeApi->get_personal_data_fields: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_personal_data_fields_with_http_info variant
+#### Using the get_personal_data_fields_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200Response>, Integer, Hash)> o_bpv6_0_0_get_personal_data_fields_with_http_info
+> <Array(<GetPersonalDataFields200Response>, Integer, Hash)> get_personal_data_fields_with_http_info
 
 ```ruby
 begin
   # Get Personal Data Fields
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_personal_data_fields_with_http_info
+  data, status_code, headers = api_instance.get_personal_data_fields_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200Response>
+  p data # => <GetPersonalDataFields200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_personal_data_fields_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->get_personal_data_fields_with_http_info: #{e}"
 end
 ```
 
@@ -477,7 +477,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -489,9 +489,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_user_attribute_by_id
+## get_user_attribute_by_id
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
+> <GetPersonalDataFields200ResponseUserAttributesInner> get_user_attribute_by_id(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -513,9 +513,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
@@ -524,28 +524,28 @@ userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID ident
 
 begin
   # Get User Attribute By Id
-  result = api_instance.o_bpv6_0_0_get_user_attribute_by_id(userid, userattributeid)
+  result = api_instance.get_user_attribute_by_id(userid, userattributeid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_user_attribute_by_id: #{e}"
+  puts "Error when calling UserAttributeApi->get_user_attribute_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_user_attribute_by_id_with_http_info variant
+#### Using the get_user_attribute_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_get_user_attribute_by_id_with_http_info(userid, userattributeid)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> get_user_attribute_by_id_with_http_info(userid, userattributeid)
 
 ```ruby
 begin
   # Get User Attribute By Id
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_user_attribute_by_id_with_http_info(userid, userattributeid)
+  data, status_code, headers = api_instance.get_user_attribute_by_id_with_http_info(userid, userattributeid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_user_attribute_by_id_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->get_user_attribute_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -558,7 +558,7 @@ end
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -570,9 +570,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_user_attributes
+## get_user_attributes
 
-> <OBPv600GetPersonalDataFields200Response> o_bpv6_0_0_get_user_attributes(userid)
+> <GetPersonalDataFields200Response> get_user_attributes(userid)
 
 Get User Attributes
 
@@ -594,9 +594,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
@@ -604,28 +604,28 @@ userid = 'userid_example' # String | The USERID identifier
 
 begin
   # Get User Attributes
-  result = api_instance.o_bpv6_0_0_get_user_attributes(userid)
+  result = api_instance.get_user_attributes(userid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_user_attributes: #{e}"
+  puts "Error when calling UserAttributeApi->get_user_attributes: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_user_attributes_with_http_info variant
+#### Using the get_user_attributes_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200Response>, Integer, Hash)> o_bpv6_0_0_get_user_attributes_with_http_info(userid)
+> <Array(<GetPersonalDataFields200Response>, Integer, Hash)> get_user_attributes_with_http_info(userid)
 
 ```ruby
 begin
   # Get User Attributes
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_user_attributes_with_http_info(userid)
+  data, status_code, headers = api_instance.get_user_attributes_with_http_info(userid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200Response>
+  p data # => <GetPersonalDataFields200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_get_user_attributes_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->get_user_attributes_with_http_info: #{e}"
 end
 ```
 
@@ -637,7 +637,7 @@ end
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -649,9 +649,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_update_personal_data_field
+## update_personal_data_field
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
+> <GetPersonalDataFields200ResponseUserAttributesInner> update_personal_data_field(userattributeid, create_personal_data_field_request)
 
 Update Personal Data Field
 
@@ -673,39 +673,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
 userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Update Personal Data Field
-  result = api_instance.o_bpv6_0_0_update_personal_data_field(userattributeid, obpv600_create_personal_data_field_request)
+  result = api_instance.update_personal_data_field(userattributeid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_update_personal_data_field: #{e}"
+  puts "Error when calling UserAttributeApi->update_personal_data_field: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_update_personal_data_field_with_http_info variant
+#### Using the update_personal_data_field_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_update_personal_data_field_with_http_info(userattributeid, obpv600_create_personal_data_field_request)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> update_personal_data_field_with_http_info(userattributeid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Update Personal Data Field
-  data, status_code, headers = api_instance.o_bpv6_0_0_update_personal_data_field_with_http_info(userattributeid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.update_personal_data_field_with_http_info(userattributeid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_update_personal_data_field_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->update_personal_data_field_with_http_info: #{e}"
 end
 ```
 
@@ -714,11 +714,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **userattributeid** | **String** | The USERATTRIBUTEID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -730,9 +730,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_update_user_attribute
+## update_user_attribute
 
-> <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
+> <GetPersonalDataFields200ResponseUserAttributesInner> update_user_attribute(userid, userattributeid, create_personal_data_field_request)
 
 Update User Attribute
 
@@ -754,40 +754,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::UserAttributeApi.new
 userid = 'userid_example' # String | The USERID identifier
 userattributeid = 'userattributeid_example' # String | The USERATTRIBUTEID identifier
-obpv600_create_personal_data_field_request = OpenBankProject::OBPv600CreatePersonalDataFieldRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreatePersonalDataFieldRequestProperties.new({name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), value: })}) # OBPv600CreatePersonalDataFieldRequest | Request body
+create_personal_data_field_request = OpenBankProject::CreatePersonalDataFieldRequest.new # CreatePersonalDataFieldRequest | Request body
 
 begin
   # Update User Attribute
-  result = api_instance.o_bpv6_0_0_update_user_attribute(userid, userattributeid, obpv600_create_personal_data_field_request)
+  result = api_instance.update_user_attribute(userid, userattributeid, create_personal_data_field_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_update_user_attribute: #{e}"
+  puts "Error when calling UserAttributeApi->update_user_attribute: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_update_user_attribute_with_http_info variant
+#### Using the update_user_attribute_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>, Integer, Hash)> o_bpv6_0_0_update_user_attribute_with_http_info(userid, userattributeid, obpv600_create_personal_data_field_request)
+> <Array(<GetPersonalDataFields200ResponseUserAttributesInner>, Integer, Hash)> update_user_attribute_with_http_info(userid, userattributeid, create_personal_data_field_request)
 
 ```ruby
 begin
   # Update User Attribute
-  data, status_code, headers = api_instance.o_bpv6_0_0_update_user_attribute_with_http_info(userid, userattributeid, obpv600_create_personal_data_field_request)
+  data, status_code, headers = api_instance.update_user_attribute_with_http_info(userid, userattributeid, create_personal_data_field_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>
+  p data # => <GetPersonalDataFields200ResponseUserAttributesInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling UserAttributeApi->o_bpv6_0_0_update_user_attribute_with_http_info: #{e}"
+  puts "Error when calling UserAttributeApi->update_user_attribute_with_http_info: #{e}"
 end
 ```
 
@@ -797,11 +797,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **userid** | **String** | The USERID identifier |  |
 | **userattributeid** | **String** | The USERATTRIBUTEID identifier |  |
-| **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

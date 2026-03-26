@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,26 +24,183 @@ import (
 // ConsentAPIService ConsentAPI service
 type ConsentAPIService service
 
-type ApiOBPv310AnswerConsentChallengeRequest struct {
+type ApiAddConsentUserRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 	consentid string
-	oBPv310AnswerConsentChallengeRequest *OBPv310AnswerConsentChallengeRequest
+	addConsentUserRequest *AddConsentUserRequest
 }
 
 // Request body
-func (r ApiOBPv310AnswerConsentChallengeRequest) OBPv310AnswerConsentChallengeRequest(oBPv310AnswerConsentChallengeRequest OBPv310AnswerConsentChallengeRequest) ApiOBPv310AnswerConsentChallengeRequest {
-	r.oBPv310AnswerConsentChallengeRequest = &oBPv310AnswerConsentChallengeRequest
+func (r ApiAddConsentUserRequest) AddConsentUserRequest(addConsentUserRequest AddConsentUserRequest) ApiAddConsentUserRequest {
+	r.addConsentUserRequest = &addConsentUserRequest
 	return r
 }
 
-func (r ApiOBPv310AnswerConsentChallengeRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv310AnswerConsentChallengeExecute(r)
+func (r ApiAddConsentUserRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.AddConsentUserExecute(r)
 }
 
 /*
-OBPv310AnswerConsentChallenge Answer Consent Challenge
+AddConsentUser Add User to a Consent
+
+<p>This endpoint is used to add the User of Consent.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param consentid The CONSENTID identifier
+ @return ApiAddConsentUserRequest
+*/
+func (a *ConsentAPIService) AddConsentUser(ctx context.Context, bankid string, consentid string) ApiAddConsentUserRequest {
+	return ApiAddConsentUserRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		consentid: consentid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) AddConsentUserExecute(r ApiAddConsentUserRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateConsentImplicit200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.AddConsentUser")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.addConsentUserRequest == nil {
+		return localVarReturnValue, nil, reportError("addConsentUserRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.addConsentUserRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiAnswerConsentChallengeRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	bankid string
+	consentid string
+	answerConsentChallengeRequest *AnswerConsentChallengeRequest
+}
+
+// Request body
+func (r ApiAnswerConsentChallengeRequest) AnswerConsentChallengeRequest(answerConsentChallengeRequest AnswerConsentChallengeRequest) ApiAnswerConsentChallengeRequest {
+	r.answerConsentChallengeRequest = &answerConsentChallengeRequest
+	return r
+}
+
+func (r ApiAnswerConsentChallengeRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.AnswerConsentChallengeExecute(r)
+}
+
+/*
+AnswerConsentChallenge Answer Consent Challenge
 
 <p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
 <p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
@@ -78,7 +235,7 @@ cache-control: no-cache</p>
 }<br />
 ],<br />
 &quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#x6c;t&#111;&#x3a;&#101;&#x76;el&#105;n&#x65;&#64;&#101;x&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">e&#x76;&#x65;&#x6c;i&#110;&#x65;&#64;e&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;co&#109;</a>&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;l&#116;o&#x3a;&#101;&#118;&#x65;&#x6c;&#x69;&#110;e&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;o&#109;">&#101;&#x76;&#101;&#108;&#105;n&#101;&#64;e&#x78;a&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#x6d;</a>&quot;,<br />
 &quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
 &quot;time_to_live&quot;: 3600<br />
 }<br />
@@ -104,10 +261,10 @@ time_to_live = consents.max_time_to_live</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param consentid The CONSENTID identifier
- @return ApiOBPv310AnswerConsentChallengeRequest
+ @return ApiAnswerConsentChallengeRequest
 */
-func (a *ConsentAPIService) OBPv310AnswerConsentChallenge(ctx context.Context, bankid string, consentid string) ApiOBPv310AnswerConsentChallengeRequest {
-	return ApiOBPv310AnswerConsentChallengeRequest{
+func (a *ConsentAPIService) AnswerConsentChallenge(ctx context.Context, bankid string, consentid string) ApiAnswerConsentChallengeRequest {
+	return ApiAnswerConsentChallengeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -116,16 +273,16 @@ func (a *ConsentAPIService) OBPv310AnswerConsentChallenge(ctx context.Context, b
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv310AnswerConsentChallengeExecute(r ApiOBPv310AnswerConsentChallengeRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) AnswerConsentChallengeExecute(r ApiAnswerConsentChallengeRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv310AnswerConsentChallenge")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.AnswerConsentChallenge")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -137,8 +294,8 @@ func (a *ConsentAPIService) OBPv310AnswerConsentChallengeExecute(r ApiOBPv310Ans
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310AnswerConsentChallengeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310AnswerConsentChallengeRequest is required and must be specified")
+	if r.answerConsentChallengeRequest == nil {
+		return localVarReturnValue, nil, reportError("answerConsentChallengeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -159,7 +316,7 @@ func (a *ConsentAPIService) OBPv310AnswerConsentChallengeExecute(r ApiOBPv310Ans
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310AnswerConsentChallengeRequest
+	localVarPostBody = r.answerConsentChallengeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -184,7 +341,7 @@ func (a *ConsentAPIService) OBPv310AnswerConsentChallengeExecute(r ApiOBPv310Ans
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -225,1366 +382,19 @@ func (a *ConsentAPIService) OBPv310AnswerConsentChallengeExecute(r ApiOBPv310Ans
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310CreateConsentEmailRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-	email string
-	oBPv310CreateConsentEmailRequest *OBPv310CreateConsentEmailRequest
-}
-
-// Request body
-func (r ApiOBPv310CreateConsentEmailRequest) OBPv310CreateConsentEmailRequest(oBPv310CreateConsentEmailRequest OBPv310CreateConsentEmailRequest) ApiOBPv310CreateConsentEmailRequest {
-	r.oBPv310CreateConsentEmailRequest = &oBPv310CreateConsentEmailRequest
-	return r
-}
-
-func (r ApiOBPv310CreateConsentEmailRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateConsentEmailExecute(r)
-}
-
-/*
-OBPv310CreateConsentEmail Create Consent (EMAIL)
-
-<p>This endpoint starts the process of creating a Consent.</p>
-<p>The Consent is created in an INITIATED state.</p>
-<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
-SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
-Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
-<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
-<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
-<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
-<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
-For example:<br />
-GET /obp/v4.0.0/users/current HTTP/1.1<br />
-Host: 127.0.0.1:8080<br />
-Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
-1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
-EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
-zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
-tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
-<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
-cache-control: no-cache</p>
-<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
-<p>Example of POST JSON:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="m&#97;i&#108;t&#x6f;&#58;ev&#101;&#108;&#105;&#110;e@e&#x78;&#x61;&#x6d;pl&#x65;&#46;&#x63;&#x6f;&#109;">&#101;&#118;&#x65;&#x6c;&#x69;&#x6e;e&#64;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;e&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
-&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
-&quot;time_to_live&quot;: 3600<br />
-}<br />
-Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
-In case you omit they the default values are used:<br />
-consumer_id = consumer of current user<br />
-valid_from = current time<br />
-time_to_live = consents.max_time_to_live</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Example 1:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
-}</p>
-<p>Please note that consumer_id is optional field<br />
-Example 2:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
-}</p>
-<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
-Example 3:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
-}</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;&#x3a;&#x66;&#101;&#108;ixs&#109;&#x69;&#x74;&#x68;&#x40;&#x65;&#x78;&#97;&#x6d;p&#x6c;&#101;.&#x63;o&#109;">f&#x65;l&#x69;&#x78;s&#109;&#x69;&#116;&#104;&#x40;&#x65;&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#x6d;</a></p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;i&#x6c;t&#x6f;&#58;&#x66;&#x65;&#x6c;&#105;&#120;&#115;mi&#x74;&#x68;&#64;&#x65;&#120;&#97;m&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m">&#x66;&#x65;&#108;&#105;x&#115;&#109;&#105;&#116;h&#x40;&#x65;&#x78;&#97;mp&#x6c;&#101;&#46;&#x63;&#111;m</a></p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param email The EMAIL identifier
- @return ApiOBPv310CreateConsentEmailRequest
-*/
-func (a *ConsentAPIService) OBPv310CreateConsentEmail(ctx context.Context, bankid string, email string) ApiOBPv310CreateConsentEmailRequest {
-	return ApiOBPv310CreateConsentEmailRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		email: email,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv310CreateConsentEmailExecute(r ApiOBPv310CreateConsentEmailRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv310CreateConsentEmail")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/my/consents/{email}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"email"+"}", url.PathEscape(parameterValueToString(r.email, "email")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310CreateConsentEmailRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateConsentEmailRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310CreateConsentEmailRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310CreateConsentImplicitRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-	implicit string
-	oBPv510CreateConsentImplicitRequest *OBPv510CreateConsentImplicitRequest
-}
-
-// Request body
-func (r ApiOBPv310CreateConsentImplicitRequest) OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest OBPv510CreateConsentImplicitRequest) ApiOBPv310CreateConsentImplicitRequest {
-	r.oBPv510CreateConsentImplicitRequest = &oBPv510CreateConsentImplicitRequest
-	return r
-}
-
-func (r ApiOBPv310CreateConsentImplicitRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateConsentImplicitExecute(r)
-}
-
-/*
-OBPv310CreateConsentImplicit Create Consent (IMPLICIT)
-
-<p>This endpoint starts the process of creating a Consent.</p>
-<p>The Consent is created in an INITIATED state.</p>
-<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
-SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
-Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
-<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
-<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
-<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
-<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
-For example:<br />
-GET /obp/v4.0.0/users/current HTTP/1.1<br />
-Host: 127.0.0.1:8080<br />
-Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
-1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
-EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
-zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
-tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
-<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
-cache-control: no-cache</p>
-<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
-<p>Example of POST JSON:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#101;&#x76;&#101;l&#105;&#x6e;&#x65;&#64;&#101;&#120;&#97;&#109;p&#108;&#x65;&#46;&#99;&#x6f;&#109;">&#x65;vel&#x69;&#110;&#101;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>&quot;,<br />
-&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
-&quot;time_to_live&quot;: 3600<br />
-}<br />
-Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
-In case you omit they the default values are used:<br />
-consumer_id = consumer of current user<br />
-valid_from = current time<br />
-time_to_live = consents.max_time_to_live</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Example 1:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p>Please note that consumer_id is optional field<br />
-Example 2:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-}</p>
-<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
-Example 3:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param implicit The IMPLICIT identifier
- @return ApiOBPv310CreateConsentImplicitRequest
-*/
-func (a *ConsentAPIService) OBPv310CreateConsentImplicit(ctx context.Context, bankid string, implicit string) ApiOBPv310CreateConsentImplicitRequest {
-	return ApiOBPv310CreateConsentImplicitRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		implicit: implicit,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv310CreateConsentImplicitExecute(r ApiOBPv310CreateConsentImplicitRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv310CreateConsentImplicit")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/my/consents/{implicit}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"implicit"+"}", url.PathEscape(parameterValueToString(r.implicit, "implicit")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510CreateConsentImplicitRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateConsentImplicitRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510CreateConsentImplicitRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310CreateConsentSmsRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-	sms string
-	oBPv310CreateConsentSmsRequest *OBPv310CreateConsentSmsRequest
-}
-
-// Request body
-func (r ApiOBPv310CreateConsentSmsRequest) OBPv310CreateConsentSmsRequest(oBPv310CreateConsentSmsRequest OBPv310CreateConsentSmsRequest) ApiOBPv310CreateConsentSmsRequest {
-	r.oBPv310CreateConsentSmsRequest = &oBPv310CreateConsentSmsRequest
-	return r
-}
-
-func (r ApiOBPv310CreateConsentSmsRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv310CreateConsentSmsExecute(r)
-}
-
-/*
-OBPv310CreateConsentSms Create Consent (SMS)
-
-<p>This endpoint starts the process of creating a Consent.</p>
-<p>The Consent is created in an INITIATED state.</p>
-<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
-SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
-Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
-<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
-<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
-<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
-<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
-For example:<br />
-GET /obp/v4.0.0/users/current HTTP/1.1<br />
-Host: 127.0.0.1:8080<br />
-Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
-1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
-EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
-zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
-tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
-<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
-cache-control: no-cache</p>
-<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
-<p>Example of POST JSON:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#x65;&#x76;&#101;&#108;&#105;&#x6e;&#x65;&#64;&#101;&#120;a&#109;&#x70;l&#101;&#x2e;&#x63;&#111;&#109;">&#x65;&#118;&#101;l&#105;&#x6e;&#101;@&#101;x&#97;&#x6d;&#112;&#108;&#x65;.&#99;&#111;m</a>&quot;,<br />
-&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
-&quot;time_to_live&quot;: 3600<br />
-}<br />
-Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
-In case you omit they the default values are used:<br />
-consumer_id = consumer of current user<br />
-valid_from = current time<br />
-time_to_live = consents.max_time_to_live</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Example 1:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#97;&#x69;&#108;t&#x6f;&#x3a;&#101;&#x76;&#x65;&#108;&#x69;&#110;&#x65;&#x40;&#101;&#120;&#97;m&#112;&#x6c;&#x65;.&#99;&#x6f;&#109;">&#x65;&#118;&#x65;&#108;&#x69;ne@&#101;x&#x61;&#x6d;p&#x6c;&#x65;&#x2e;&#99;o&#109;</a>&quot;<br />
-}</p>
-<p>Please note that consumer_id is optional field<br />
-Example 2:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;email&quot;: &quot;<a href="&#x6d;&#x61;&#105;&#x6c;t&#x6f;&#58;&#101;&#x76;&#x65;&#108;&#105;&#x6e;&#x65;&#64;&#x65;&#120;&#97;&#109;&#x70;l&#101;&#x2e;&#99;&#111;&#x6d;">&#101;&#118;&#x65;&#108;&#x69;&#110;e&#64;&#101;&#120;&#x61;mpl&#x65;.&#99;&#111;&#x6d;</a>&quot;<br />
-}</p>
-<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
-Example 3:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x65;&#x76;&#101;&#108;&#105;n&#x65;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;e&#x2e;&#99;&#x6f;&#109;">&#x65;&#x76;&#101;l&#105;&#110;&#101;&#x40;&#101;&#x78;&#x61;m&#x70;l&#101;&#46;&#99;&#111;&#x6d;</a>&quot;<br />
-}</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#sms">SMS</a>:</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#phone_number"><strong>phone_number</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param sms The SMS identifier
- @return ApiOBPv310CreateConsentSmsRequest
-*/
-func (a *ConsentAPIService) OBPv310CreateConsentSms(ctx context.Context, bankid string, sms string) ApiOBPv310CreateConsentSmsRequest {
-	return ApiOBPv310CreateConsentSmsRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		sms: sms,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv310CreateConsentSmsExecute(r ApiOBPv310CreateConsentSmsRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv310CreateConsentSms")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/my/consents/{sms}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"sms"+"}", url.PathEscape(parameterValueToString(r.sms, "sms")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310CreateConsentSmsRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateConsentSmsRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310CreateConsentSmsRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400AddConsentUserRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-	consentid string
-	oBPv400AddConsentUserRequest *OBPv400AddConsentUserRequest
-}
-
-// Request body
-func (r ApiOBPv400AddConsentUserRequest) OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest OBPv400AddConsentUserRequest) ApiOBPv400AddConsentUserRequest {
-	r.oBPv400AddConsentUserRequest = &oBPv400AddConsentUserRequest
-	return r
-}
-
-func (r ApiOBPv400AddConsentUserRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv400AddConsentUserExecute(r)
-}
-
-/*
-OBPv400AddConsentUser Add User to a Consent
-
-<p>This endpoint is used to add the User of Consent.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param consentid The CONSENTID identifier
- @return ApiOBPv400AddConsentUserRequest
-*/
-func (a *ConsentAPIService) OBPv400AddConsentUser(ctx context.Context, bankid string, consentid string) ApiOBPv400AddConsentUserRequest {
-	return ApiOBPv400AddConsentUserRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		consentid: consentid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv400AddConsentUserExecute(r ApiOBPv400AddConsentUserRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv400AddConsentUser")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400AddConsentUserRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400AddConsentUserRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400AddConsentUserRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetConsentInfosRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-}
-
-func (r ApiOBPv400GetConsentInfosRequest) Execute() (*OBPv400GetConsentInfos200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetConsentInfosExecute(r)
-}
-
-/*
-OBPv400GetConsentInfos Get My Consents Info
-
-<p>This endpoint gets the Consents that the current User created.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
-<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
-<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetConsentInfosRequest
-*/
-func (a *ConsentAPIService) OBPv400GetConsentInfos(ctx context.Context) ApiOBPv400GetConsentInfosRequest {
-	return ApiOBPv400GetConsentInfosRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetConsentInfos200Response
-func (a *ConsentAPIService) OBPv400GetConsentInfosExecute(r ApiOBPv400GetConsentInfosRequest) (*OBPv400GetConsentInfos200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetConsentInfos200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv400GetConsentInfos")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/my/consent-infos"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetConsentInfosByBankRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-}
-
-func (r ApiOBPv400GetConsentInfosByBankRequest) Execute() (*OBPv400GetConsentInfos200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetConsentInfosByBankExecute(r)
-}
-
-/*
-OBPv400GetConsentInfosByBank Get My Consents Info At Bank
-
-<p>This endpoint gets the Consents that the current User created at bank.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
-<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
-<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400GetConsentInfosByBankRequest
-*/
-func (a *ConsentAPIService) OBPv400GetConsentInfosByBank(ctx context.Context, bankid string) ApiOBPv400GetConsentInfosByBankRequest {
-	return ApiOBPv400GetConsentInfosByBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetConsentInfos200Response
-func (a *ConsentAPIService) OBPv400GetConsentInfosByBankExecute(r ApiOBPv400GetConsentInfosByBankRequest) (*OBPv400GetConsentInfos200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetConsentInfos200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv400GetConsentInfosByBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/my/consent-infos"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateConsentStatusRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	bankid string
-	consentid string
-	oBPv510UpdateTransactionRequestStatusRequest *OBPv510UpdateTransactionRequestStatusRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateConsentStatusRequest) OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest OBPv510UpdateTransactionRequestStatusRequest) ApiOBPv400UpdateConsentStatusRequest {
-	r.oBPv510UpdateTransactionRequestStatusRequest = &oBPv510UpdateTransactionRequestStatusRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateConsentStatusRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateConsentStatusExecute(r)
-}
-
-/*
-OBPv400UpdateConsentStatus Update Consent Status
-
-<p>This endpoint is used to update the Status of Consent.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param consentid The CONSENTID identifier
- @return ApiOBPv400UpdateConsentStatusRequest
-*/
-func (a *ConsentAPIService) OBPv400UpdateConsentStatus(ctx context.Context, bankid string, consentid string) ApiOBPv400UpdateConsentStatusRequest {
-	return ApiOBPv400UpdateConsentStatusRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		consentid: consentid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv400UpdateConsentStatusExecute(r ApiOBPv400UpdateConsentStatusRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv400UpdateConsentStatus")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/consents/{consentid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateTransactionRequestStatusRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateTransactionRequestStatusRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateTransactionRequestStatusRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv500CreateConsentByConsentRequestIdEmailRequest struct {
+type ApiCreateConsentByConsentRequestIdEmailRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentrequestid string
 	email string
 }
 
-func (r ApiOBPv500CreateConsentByConsentRequestIdEmailRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateConsentByConsentRequestIdEmailExecute(r)
+func (r ApiCreateConsentByConsentRequestIdEmailRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentByConsentRequestIdEmailExecute(r)
 }
 
 /*
-OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID (EMAIL)
+CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID (EMAIL)
 
 <p>This endpoint continues the process of creating a Consent.</p>
 <p>It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
@@ -1592,7 +402,7 @@ OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#consent_request_id">CONSENT_REQUEST_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">EMAIL</a>: <a href="m&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#101;&#108;ix&#x73;&#109;i&#x74;h&#64;e&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#102;&#101;&#x6c;i&#x78;&#115;&#109;&#x69;&#x74;&#104;@&#x65;&#120;&#97;mp&#x6c;&#101;.&#99;&#111;&#109;</a></p>
+<p><a href="/glossary#">EMAIL</a>: <a href="ma&#105;&#108;&#x74;&#x6f;&#58;&#102;e&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#46;com">fe&#108;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#104;@&#x65;xa&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><strong>JSON request body fields:</strong></p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
@@ -1610,10 +420,10 @@ OBPv500CreateConsentByConsentRequestIdEmail Create Consent By CONSENT_REQUEST_ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
  @param email The EMAIL identifier
- @return ApiOBPv500CreateConsentByConsentRequestIdEmailRequest
+ @return ApiCreateConsentByConsentRequestIdEmailRequest
 */
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdEmail(ctx context.Context, consentrequestid string, email string) ApiOBPv500CreateConsentByConsentRequestIdEmailRequest {
-	return ApiOBPv500CreateConsentByConsentRequestIdEmailRequest{
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdEmail(ctx context.Context, consentrequestid string, email string) ApiCreateConsentByConsentRequestIdEmailRequest {
+	return ApiCreateConsentByConsentRequestIdEmailRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -1622,16 +432,16 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdEmail(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r ApiOBPv500CreateConsentByConsentRequestIdEmailRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
+//  @return GetConsentByConsentRequestId200Response
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdEmailExecute(r ApiCreateConsentByConsentRequestIdEmailRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500CreateConsentByConsentRequestIdEmail")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentByConsentRequestIdEmail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1685,7 +495,7 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1726,19 +536,19 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdEmailExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest struct {
+type ApiCreateConsentByConsentRequestIdImplicitRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentrequestid string
 	implicit string
 }
 
-func (r ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateConsentByConsentRequestIdImplicitExecute(r)
+func (r ApiCreateConsentByConsentRequestIdImplicitRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentByConsentRequestIdImplicitExecute(r)
 }
 
 /*
-OBPv500CreateConsentByConsentRequestIdImplicit Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+CreateConsentByConsentRequestIdImplicit Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
 
 <p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.<br />
 Please note that the Consent cannot elevate the privileges logged in user already have.</p>
@@ -1763,10 +573,10 @@ Please note that the Consent cannot elevate the privileges logged in user alread
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
  @param implicit The IMPLICIT identifier
- @return ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest
+ @return ApiCreateConsentByConsentRequestIdImplicitRequest
 */
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdImplicit(ctx context.Context, consentrequestid string, implicit string) ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest {
-	return ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest{
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdImplicit(ctx context.Context, consentrequestid string, implicit string) ApiCreateConsentByConsentRequestIdImplicitRequest {
+	return ApiCreateConsentByConsentRequestIdImplicitRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -1775,16 +585,16 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdImplicit(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdImplicitExecute(r ApiOBPv500CreateConsentByConsentRequestIdImplicitRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
+//  @return GetConsentByConsentRequestId200Response
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdImplicitExecute(r ApiCreateConsentByConsentRequestIdImplicitRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500CreateConsentByConsentRequestIdImplicit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentByConsentRequestIdImplicit")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1838,7 +648,7 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdImplicitExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1879,19 +689,19 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdImplicitExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500CreateConsentByConsentRequestIdSmsRequest struct {
+type ApiCreateConsentByConsentRequestIdSmsRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentrequestid string
 	sms string
 }
 
-func (r ApiOBPv500CreateConsentByConsentRequestIdSmsRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateConsentByConsentRequestIdSmsExecute(r)
+func (r ApiCreateConsentByConsentRequestIdSmsRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentByConsentRequestIdSmsExecute(r)
 }
 
 /*
-OBPv500CreateConsentByConsentRequestIdSms Create Consent By CONSENT_REQUEST_ID (SMS)
+CreateConsentByConsentRequestIdSms Create Consent By CONSENT_REQUEST_ID (SMS)
 
 <p>This endpoint continues the process of creating a Consent. It starts the SCA flow which changes the status of the consent from INITIATED to ACCEPTED or REJECTED.</p>
 <p>Please note that the Consent you are creating cannot exceed the entitlements that the User creating this consents already has.</p>
@@ -1916,10 +726,10 @@ OBPv500CreateConsentByConsentRequestIdSms Create Consent By CONSENT_REQUEST_ID (
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
  @param sms The SMS identifier
- @return ApiOBPv500CreateConsentByConsentRequestIdSmsRequest
+ @return ApiCreateConsentByConsentRequestIdSmsRequest
 */
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdSms(ctx context.Context, consentrequestid string, sms string) ApiOBPv500CreateConsentByConsentRequestIdSmsRequest {
-	return ApiOBPv500CreateConsentByConsentRequestIdSmsRequest{
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdSms(ctx context.Context, consentrequestid string, sms string) ApiCreateConsentByConsentRequestIdSmsRequest {
+	return ApiCreateConsentByConsentRequestIdSmsRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -1928,16 +738,16 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdSms(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdSmsExecute(r ApiOBPv500CreateConsentByConsentRequestIdSmsRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
+//  @return GetConsentByConsentRequestId200Response
+func (a *ConsentAPIService) CreateConsentByConsentRequestIdSmsExecute(r ApiCreateConsentByConsentRequestIdSmsRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500CreateConsentByConsentRequestIdSms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentByConsentRequestIdSms")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1991,7 +801,7 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdSmsExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2032,89 +842,171 @@ func (a *ConsentAPIService) OBPv500CreateConsentByConsentRequestIdSmsExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500CreateConsentRequestRequest struct {
+type ApiCreateConsentEmailRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
-	oBPv500CreateConsentRequestRequest *OBPv500CreateConsentRequestRequest
+	bankid string
+	email string
+	createConsentEmailRequest *CreateConsentEmailRequest
 }
 
 // Request body
-func (r ApiOBPv500CreateConsentRequestRequest) OBPv500CreateConsentRequestRequest(oBPv500CreateConsentRequestRequest OBPv500CreateConsentRequestRequest) ApiOBPv500CreateConsentRequestRequest {
-	r.oBPv500CreateConsentRequestRequest = &oBPv500CreateConsentRequestRequest
+func (r ApiCreateConsentEmailRequest) CreateConsentEmailRequest(createConsentEmailRequest CreateConsentEmailRequest) ApiCreateConsentEmailRequest {
+	r.createConsentEmailRequest = &createConsentEmailRequest
 	return r
 }
 
-func (r ApiOBPv500CreateConsentRequestRequest) Execute() (*OBPv500GetConsentRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv500CreateConsentRequestExecute(r)
+func (r ApiCreateConsentEmailRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentEmailExecute(r)
 }
 
 /*
-OBPv500CreateConsentRequest Create Consent Request
+CreateConsentEmail Create Consent (EMAIL)
 
-<p>Client Authentication (mandatory)</p>
-<p>It is used when applications request an access token to access their own resources, not on behalf of a user.</p>
-<p>The client needs to authenticate themselves for this request.<br />
-In case of public client we use client_id and private key to obtain access token, otherwise we use client_id and client_secret.<br />
-The obtained access token is used in the HTTP Bearer auth header of our request.</p>
-<p>Example:<br />
-Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
-<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent.</p>
-<p>Application Access is Required. The Application must be authenticated.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
+<p>This endpoint starts the process of creating a Consent.</p>
+<p>The Consent is created in an INITIATED state.</p>
+<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
+SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
+Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
+<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
+<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
+<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
+<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
+For example:<br />
+GET /obp/v4.0.0/users/current HTTP/1.1<br />
+Host: 127.0.0.1:8080<br />
+Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
+1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
+EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
+zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
+tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
+<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
+cache-control: no-cache</p>
+<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
+<p>Example of POST JSON:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;ai&#108;&#x74;o&#x3a;&#101;&#118;e&#108;&#105;&#x6e;&#x65;@&#x65;x&#97;&#x6d;p&#108;&#101;.&#99;&#111;m">&#x65;&#118;&#x65;&#x6c;&#105;&#110;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;.&#x63;&#111;&#x6d;</a>&quot;,<br />
+&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
+&quot;time_to_live&quot;: 3600<br />
+}<br />
+Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
+In case you omit they the default values are used:<br />
+consumer_id = consumer of current user<br />
+valid_from = current time<br />
+time_to_live = consents.max_time_to_live</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Example 1:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
+}</p>
+<p>Please note that consumer_id is optional field<br />
+Example 2:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
+}</p>
+<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
+Example 3:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;phone_number&quot;: &quot;+49 170 1234567&quot;<br />
+}</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">EMAIL</a>: <a href="&#x6d;&#x61;&#105;&#108;&#116;o:&#102;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#101;x&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#102;&#101;&#x6c;i&#120;&#x73;m&#105;&#x74;&#x68;&#x40;&#101;&#120;&#x61;&#109;&#112;l&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_access</strong></a>: account_access</p>
-<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;l&#116;&#x6f;&#58;&#x66;&#x65;l&#x69;&#120;&#x73;&#x6d;&#105;th&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x66;&#x65;l&#x69;&#120;&#115;&#x6d;&#x69;t&#104;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
 <p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
 <p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
 <p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
 <p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;&#105;l&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#x78;s&#109;i&#x74;&#104;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;e&#46;&#x63;&#x6f;&#109;">&#x66;&#101;&#108;&#105;&#x78;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;e&#x2e;&#x63;&#x6f;m</a></p>
-<p><a href="/glossary#entitlements">entitlements</a>:</p>
-<p><a href="/glossary#phone_number">phone_number</a>:</p>
 <p><a href="/glossary#time_to_live">time_to_live</a>:</p>
 <p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv500CreateConsentRequestRequest
+ @param bankid The BANKID identifier
+ @param email The EMAIL identifier
+ @return ApiCreateConsentEmailRequest
 */
-func (a *ConsentAPIService) OBPv500CreateConsentRequest(ctx context.Context) ApiOBPv500CreateConsentRequestRequest {
-	return ApiOBPv500CreateConsentRequestRequest{
+func (a *ConsentAPIService) CreateConsentEmail(ctx context.Context, bankid string, email string) ApiCreateConsentEmailRequest {
+	return ApiCreateConsentEmailRequest{
 		ApiService: a,
 		ctx: ctx,
+		bankid: bankid,
+		email: email,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentRequest200Response
-func (a *ConsentAPIService) OBPv500CreateConsentRequestExecute(r ApiOBPv500CreateConsentRequestRequest) (*OBPv500GetConsentRequest200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) CreateConsentEmailExecute(r ApiCreateConsentEmailRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentRequest200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500CreateConsentRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentEmail")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v5.0.0/consumer/consent-requests"
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/my/consents/{email}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"email"+"}", url.PathEscape(parameterValueToString(r.email, "email")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv500CreateConsentRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv500CreateConsentRequestRequest is required and must be specified")
+	if r.createConsentEmailRequest == nil {
+		return localVarReturnValue, nil, reportError("createConsentEmailRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2135,7 +1027,35 @@ func (a *ConsentAPIService) OBPv500CreateConsentRequestExecute(r ApiOBPv500Creat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv500CreateConsentRequestRequest
+	localVarPostBody = r.createConsentEmailRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -2173,18 +1093,1154 @@ func (a *ConsentAPIService) OBPv500CreateConsentRequestExecute(r ApiOBPv500Creat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500GetConsentByConsentRequestIdRequest struct {
+type ApiCreateConsentImplicitRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	implicit string
+	createConsentImplicitRequest *CreateConsentImplicitRequest
+}
+
+// Request body
+func (r ApiCreateConsentImplicitRequest) CreateConsentImplicitRequest(createConsentImplicitRequest CreateConsentImplicitRequest) ApiCreateConsentImplicitRequest {
+	r.createConsentImplicitRequest = &createConsentImplicitRequest
+	return r
+}
+
+func (r ApiCreateConsentImplicitRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentImplicitExecute(r)
+}
+
+/*
+CreateConsentImplicit Create Consent (IMPLICIT)
+
+<p>This endpoint starts the process of creating a Consent.</p>
+<p>The Consent is created in an INITIATED state.</p>
+<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
+SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
+Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
+<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
+<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
+<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
+<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.</p>
+<p>Examples:</p>
+<p>For example:<br />
+GET /obp/v4.0.0/users/current HTTP/1.1<br />
+Host: 127.0.0.1:8080<br />
+Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
+1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
+EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
+zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
+tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
+<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
+cache-control: no-cache</p>
+<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
+<p>Example of POST JSON:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;a&#105;lto&#x3a;&#x65;&#x76;e&#108;i&#110;&#x65;&#x40;&#x65;&#x78;ampl&#x65;&#x2e;&#x63;o&#x6d;">&#101;&#118;e&#x6c;&#x69;&#110;&#x65;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a>&quot;,<br />
+&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
+&quot;time_to_live&quot;: 3600<br />
+}<br />
+Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
+In case you omit they the default values are used:<br />
+consumer_id = consumer of current user<br />
+valid_from = current time<br />
+time_to_live = consents.max_time_to_live</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Example 1:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+}</p>
+<p>Please note that consumer_id is optional field<br />
+Example 2:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+}</p>
+<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
+Example 3:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+}</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param implicit The IMPLICIT identifier
+ @return ApiCreateConsentImplicitRequest
+*/
+func (a *ConsentAPIService) CreateConsentImplicit(ctx context.Context, implicit string) ApiCreateConsentImplicitRequest {
+	return ApiCreateConsentImplicitRequest{
+		ApiService: a,
+		ctx: ctx,
+		implicit: implicit,
+	}
+}
+
+// Execute executes the request
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) CreateConsentImplicitExecute(r ApiCreateConsentImplicitRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateConsentImplicit200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentImplicit")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/my/consents/{implicit}"
+	localVarPath = strings.Replace(localVarPath, "{"+"implicit"+"}", url.PathEscape(parameterValueToString(r.implicit, "implicit")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createConsentImplicitRequest == nil {
+		return localVarReturnValue, nil, reportError("createConsentImplicitRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createConsentImplicitRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateConsentRequestRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	createConsentRequestRequest *CreateConsentRequestRequest
+}
+
+// Request body
+func (r ApiCreateConsentRequestRequest) CreateConsentRequestRequest(createConsentRequestRequest CreateConsentRequestRequest) ApiCreateConsentRequestRequest {
+	r.createConsentRequestRequest = &createConsentRequestRequest
+	return r
+}
+
+func (r ApiCreateConsentRequestRequest) Execute() (*GetConsentRequest200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentRequestExecute(r)
+}
+
+/*
+CreateConsentRequest Create Consent Request
+
+<p>Client Authentication (mandatory)</p>
+<p>It is used when applications request an access token to access their own resources, not on behalf of a user.</p>
+<p>The client needs to authenticate themselves for this request.<br />
+In case of public client we use client_id and private key to obtain access token, otherwise we use client_id and client_secret.<br />
+The obtained access token is used in the HTTP Bearer auth header of our request.</p>
+<p>Example:<br />
+Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
+<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent.</p>
+<p>Application Access is Required. The Application must be authenticated.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_access</strong></a>: account_access</p>
+<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">email</a>: <a href="ma&#x69;&#108;t&#x6f;&#x3a;&#x66;&#x65;l&#x69;x&#115;&#x6d;&#x69;&#116;&#104;&#x40;&#101;&#120;a&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;">&#x66;&#x65;&#108;&#105;&#120;&#x73;m&#x69;&#116;&#104;@&#x65;&#x78;&#x61;&#x6d;&#x70;&#x6c;e&#46;c&#x6f;&#109;</a></p>
+<p><a href="/glossary#entitlements">entitlements</a>:</p>
+<p><a href="/glossary#phone_number">phone_number</a>:</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateConsentRequestRequest
+*/
+func (a *ConsentAPIService) CreateConsentRequest(ctx context.Context) ApiCreateConsentRequestRequest {
+	return ApiCreateConsentRequestRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetConsentRequest200Response
+func (a *ConsentAPIService) CreateConsentRequestExecute(r ApiCreateConsentRequestRequest) (*GetConsentRequest200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConsentRequest200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentRequest")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/consumer/consent-requests"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createConsentRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("createConsentRequestRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createConsentRequestRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateConsentSmsRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	bankid string
+	sms string
+	createConsentSmsRequest *CreateConsentSmsRequest
+}
+
+// Request body
+func (r ApiCreateConsentSmsRequest) CreateConsentSmsRequest(createConsentSmsRequest CreateConsentSmsRequest) ApiCreateConsentSmsRequest {
+	r.createConsentSmsRequest = &createConsentSmsRequest
+	return r
+}
+
+func (r ApiCreateConsentSmsRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.CreateConsentSmsExecute(r)
+}
+
+/*
+CreateConsentSms Create Consent (SMS)
+
+<p>This endpoint starts the process of creating a Consent.</p>
+<p>The Consent is created in an INITIATED state.</p>
+<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
+SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
+Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
+<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
+<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
+<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
+<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.<br />
+For example:<br />
+GET /obp/v4.0.0/users/current HTTP/1.1<br />
+Host: 127.0.0.1:8080<br />
+Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
+1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
+EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
+zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
+tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
+<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
+cache-control: no-cache</p>
+<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
+<p>Example of POST JSON:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#101;&#x76;&#x65;&#108;&#x69;&#110;&#x65;&#64;&#101;&#x78;&#97;m&#x70;&#108;&#x65;&#x2e;c&#x6f;&#x6d;">&#101;&#x76;&#101;&#x6c;i&#x6e;e&#x40;&#101;&#120;am&#x70;&#108;e.&#x63;&#x6f;&#x6d;</a>&quot;,<br />
+&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
+&quot;time_to_live&quot;: 3600<br />
+}<br />
+Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
+In case you omit they the default values are used:<br />
+consumer_id = consumer of current user<br />
+valid_from = current time<br />
+time_to_live = consents.max_time_to_live</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Example 1:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#x6c;t&#111;&#x3a;&#x65;&#118;&#101;&#108;&#105;n&#x65;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;.c&#x6f;&#109;">&#x65;&#x76;&#101;&#108;&#x69;n&#x65;&#x40;&#101;x&#x61;&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;</a>&quot;<br />
+}</p>
+<p>Please note that consumer_id is optional field<br />
+Example 2:<br />
+{<br />
+&quot;everything&quot;: true,<br />
+&quot;views&quot;: [],<br />
+&quot;entitlements&quot;: [],<br />
+&quot;email&quot;: &quot;<a href="&#109;&#97;&#x69;&#108;&#116;&#111;:&#101;&#x76;&#x65;&#x6c;&#105;&#110;&#x65;&#64;&#101;&#x78;&#97;&#109;&#x70;l&#x65;.c&#111;&#109;">&#x65;&#118;&#101;&#108;&#x69;&#x6e;&#101;&#64;&#x65;x&#x61;&#109;&#112;&#108;e&#46;&#99;om</a>&quot;<br />
+}</p>
+<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
+Example 3:<br />
+{<br />
+&quot;everything&quot;: false,<br />
+&quot;views&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
+&quot;view_id&quot;: &quot;owner&quot;<br />
+}<br />
+],<br />
+&quot;entitlements&quot;: [<br />
+{<br />
+&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
+&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
+}<br />
+],<br />
+&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
+&quot;email&quot;: &quot;<a href="m&#97;&#105;&#x6c;t&#111;:&#x65;&#118;&#101;&#108;&#x69;&#110;e&#x40;&#x65;x&#x61;m&#x70;&#108;&#x65;&#46;&#99;&#x6f;&#109;">&#101;&#118;e&#x6c;&#105;n&#x65;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#46;&#99;&#111;&#x6d;</a>&quot;<br />
+}</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#sms">SMS</a>:</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
+<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
+<p><a href="/glossary#phone_number"><strong>phone_number</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param sms The SMS identifier
+ @return ApiCreateConsentSmsRequest
+*/
+func (a *ConsentAPIService) CreateConsentSms(ctx context.Context, bankid string, sms string) ApiCreateConsentSmsRequest {
+	return ApiCreateConsentSmsRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		sms: sms,
+	}
+}
+
+// Execute executes the request
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) CreateConsentSmsExecute(r ApiCreateConsentSmsRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateConsentImplicit200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateConsentSms")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/banks/{bankid}/my/consents/{sms}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"sms"+"}", url.PathEscape(parameterValueToString(r.sms, "sms")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createConsentSmsRequest == nil {
+		return localVarReturnValue, nil, reportError("createConsentSmsRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createConsentSmsRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateVRPConsentRequestRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	createVRPConsentRequestRequest *CreateVRPConsentRequestRequest
+}
+
+// Request body
+func (r ApiCreateVRPConsentRequestRequest) CreateVRPConsentRequestRequest(createVRPConsentRequestRequest CreateVRPConsentRequestRequest) ApiCreateVRPConsentRequestRequest {
+	r.createVRPConsentRequestRequest = &createVRPConsentRequestRequest
+	return r
+}
+
+func (r ApiCreateVRPConsentRequestRequest) Execute() (*CreateVRPConsentRequest200Response, *http.Response, error) {
+	return r.ApiService.CreateVRPConsentRequestExecute(r)
+}
+
+/*
+CreateVRPConsentRequest Create Consent Request VRP
+
+<p>This endpoint is used to begin the process of creating a consent that may be used for Variable Recurring Payments (VRPs).</p>
+<p>VRPs are useful in situations when a beneficiary needs to be paid different amounts on a regular basis.</p>
+<p>Once granted, the consent allows its holder to initiate multiple Transaction Requests to the Counterparty defined in this endpoint as long as the<br />
+Counterparty Limits linked to this particular consent are respected.</p>
+<p>Client, Consumer or Application Authentication is mandatory for this endpoint.</p>
+<p>i.e. the caller of this endpoint is the API Client, Consumer or Application rather than a specific User.</p>
+<p>At the end of the process the following objects are created in OBP or connected backend systems:<br />
+- An automatically generated View which controls access.<br />
+- A Counterparty that is the Beneficiary of the Variable Recurring Payments. The Counterparty specifies the Bank Account number or other routing address.<br />
+- Limits for the Counterparty which constrain the amount of money that can be sent to it in various periods (yearly, monthly, weekly).</p>
+<p>The Account holder may modify the Counterparty or Limits e.g. to increase or decrease the maximum possible payment amounts or the frequencey of the payments.</p>
+<p>In the case of a public client we use the client_id and private key to obtain an access token, otherwise we use the client_id and client_secret.<br />
+The obtained access token is used in the HTTP Authorization header of the request as follows:</p>
+<p>Example:<br />
+Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
+<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent using the CONSENT_REQUEST_ID returned by this endpoint.</p>
+<p>Application Access is Required. The Application must be authenticated.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
+<p><a href="/glossary#branch_routing"><strong>branch_routing</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_name</strong></a>: John Smith Ltd.</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>from_account</strong></a>: from_account</p>
+<p><a href="/glossary#"><strong>limit</strong></a>: 100</p>
+<p><a href="/glossary#max_monthly_amount"><strong>max_monthly_amount</strong></a>: 10000.11</p>
+<p><a href="/glossary#max_number_of_monthly_transactions"><strong>max_number_of_monthly_transactions</strong></a>: 10</p>
+<p><a href="/glossary#max_number_of_transactions"><strong>max_number_of_transactions</strong></a>: 100</p>
+<p><a href="/glossary#max_number_of_yearly_transactions"><strong>max_number_of_yearly_transactions</strong></a>: 100</p>
+<p><a href="/glossary#max_single_amount"><strong>max_single_amount</strong></a>: 1000.11</p>
+<p><a href="/glossary#max_total_amount"><strong>max_total_amount</strong></a>: 10000.12</p>
+<p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p><a href="/glossary#phone_number">phone_number</a>:</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateVRPConsentRequestRequest
+*/
+func (a *ConsentAPIService) CreateVRPConsentRequest(ctx context.Context) ApiCreateVRPConsentRequestRequest {
+	return ApiCreateVRPConsentRequestRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return CreateVRPConsentRequest200Response
+func (a *ConsentAPIService) CreateVRPConsentRequestExecute(r ApiCreateVRPConsentRequestRequest) (*CreateVRPConsentRequest200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateVRPConsentRequest200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.CreateVRPConsentRequest")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/consumer/vrp-consent-requests"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createVRPConsentRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("createVRPConsentRequestRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createVRPConsentRequestRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConsentByConsentIdRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	consentid string
+}
+
+func (r ApiGetConsentByConsentIdRequest) Execute() (*GetConsentByConsentId200Response, *http.Response, error) {
+	return r.ApiService.GetConsentByConsentIdExecute(r)
+}
+
+/*
+GetConsentByConsentId Get Consent By Consent Id via User
+
+<p>This endpoint gets the Consent By consent id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#scopes">scopes</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param consentid The CONSENTID identifier
+ @return ApiGetConsentByConsentIdRequest
+*/
+func (a *ConsentAPIService) GetConsentByConsentId(ctx context.Context, consentid string) ApiGetConsentByConsentIdRequest {
+	return ApiGetConsentByConsentIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		consentid: consentid,
+	}
+}
+
+// Execute executes the request
+//  @return GetConsentByConsentId200Response
+func (a *ConsentAPIService) GetConsentByConsentIdExecute(r ApiGetConsentByConsentIdRequest) (*GetConsentByConsentId200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConsentByConsentId200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentByConsentId")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/user/current/consents/{consentid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConsentByConsentIdViaConsumerRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	consentid string
+}
+
+func (r ApiGetConsentByConsentIdViaConsumerRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.GetConsentByConsentIdViaConsumerExecute(r)
+}
+
+/*
+GetConsentByConsentIdViaConsumer Get Consent By Consent Id via Consumer
+
+<p>This endpoint gets the Consent By consent id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#">account_access</a>: account_access</p>
+<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">helper_info</a>: helper_info</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param consentid The CONSENTID identifier
+ @return ApiGetConsentByConsentIdViaConsumerRequest
+*/
+func (a *ConsentAPIService) GetConsentByConsentIdViaConsumer(ctx context.Context, consentid string) ApiGetConsentByConsentIdViaConsumerRequest {
+	return ApiGetConsentByConsentIdViaConsumerRequest{
+		ApiService: a,
+		ctx: ctx,
+		consentid: consentid,
+	}
+}
+
+// Execute executes the request
+//  @return GetConsentByConsentRequestId200Response
+func (a *ConsentAPIService) GetConsentByConsentIdViaConsumerExecute(r ApiGetConsentByConsentIdViaConsumerRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentByConsentIdViaConsumer")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/consumer/current/consents/{consentid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConsentByConsentRequestIdRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentrequestid string
 }
 
-func (r ApiOBPv500GetConsentByConsentRequestIdRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetConsentByConsentRequestIdExecute(r)
+func (r ApiGetConsentByConsentRequestIdRequest) Execute() (*GetConsentByConsentRequestId200Response, *http.Response, error) {
+	return r.ApiService.GetConsentByConsentRequestIdExecute(r)
 }
 
 /*
-OBPv500GetConsentByConsentRequestId Get Consent By Consent Request Id via Consumer
+GetConsentByConsentRequestId Get Consent By Consent Request Id via Consumer
 
 <p>This endpoint gets the Consent By consent request id.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2205,10 +2261,10 @@ OBPv500GetConsentByConsentRequestId Get Consent By Consent Request Id via Consum
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
- @return ApiOBPv500GetConsentByConsentRequestIdRequest
+ @return ApiGetConsentByConsentRequestIdRequest
 */
-func (a *ConsentAPIService) OBPv500GetConsentByConsentRequestId(ctx context.Context, consentrequestid string) ApiOBPv500GetConsentByConsentRequestIdRequest {
-	return ApiOBPv500GetConsentByConsentRequestIdRequest{
+func (a *ConsentAPIService) GetConsentByConsentRequestId(ctx context.Context, consentrequestid string) ApiGetConsentByConsentRequestIdRequest {
+	return ApiGetConsentByConsentRequestIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -2216,16 +2272,16 @@ func (a *ConsentAPIService) OBPv500GetConsentByConsentRequestId(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *ConsentAPIService) OBPv500GetConsentByConsentRequestIdExecute(r ApiOBPv500GetConsentByConsentRequestIdRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
+//  @return GetConsentByConsentRequestId200Response
+func (a *ConsentAPIService) GetConsentByConsentRequestIdExecute(r ApiGetConsentByConsentRequestIdRequest) (*GetConsentByConsentRequestId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
+		localVarReturnValue  *GetConsentByConsentRequestId200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500GetConsentByConsentRequestId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentByConsentRequestId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2278,7 +2334,7 @@ func (a *ConsentAPIService) OBPv500GetConsentByConsentRequestIdExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2319,18 +2375,302 @@ func (a *ConsentAPIService) OBPv500GetConsentByConsentRequestIdExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv500GetConsentRequestRequest struct {
+type ApiGetConsentInfosRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+}
+
+func (r ApiGetConsentInfosRequest) Execute() (*GetConsentInfos200Response, *http.Response, error) {
+	return r.ApiService.GetConsentInfosExecute(r)
+}
+
+/*
+GetConsentInfos Get My Consents Info
+
+<p>This endpoint gets the Consents that the current User created.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
+<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
+<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetConsentInfosRequest
+*/
+func (a *ConsentAPIService) GetConsentInfos(ctx context.Context) ApiGetConsentInfosRequest {
+	return ApiGetConsentInfosRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetConsentInfos200Response
+func (a *ConsentAPIService) GetConsentInfosExecute(r ApiGetConsentInfosRequest) (*GetConsentInfos200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConsentInfos200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentInfos")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/my/consent-infos"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConsentInfosByBankRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	bankid string
+}
+
+func (r ApiGetConsentInfosByBankRequest) Execute() (*GetConsentInfos200Response, *http.Response, error) {
+	return r.ApiService.GetConsentInfosByBankExecute(r)
+}
+
+/*
+GetConsentInfosByBank Get My Consents Info At Bank
+
+<p>This endpoint gets the Consents that the current User created at bank.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
+<p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
+<p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetConsentInfosByBankRequest
+*/
+func (a *ConsentAPIService) GetConsentInfosByBank(ctx context.Context, bankid string) ApiGetConsentInfosByBankRequest {
+	return ApiGetConsentInfosByBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetConsentInfos200Response
+func (a *ConsentAPIService) GetConsentInfosByBankExecute(r ApiGetConsentInfosByBankRequest) (*GetConsentInfos200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConsentInfos200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentInfosByBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/my/consent-infos"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConsentRequestRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentrequestid string
 }
 
-func (r ApiOBPv500GetConsentRequestRequest) Execute() (*OBPv500GetConsentRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetConsentRequestExecute(r)
+func (r ApiGetConsentRequestRequest) Execute() (*GetConsentRequest200Response, *http.Response, error) {
+	return r.ApiService.GetConsentRequestExecute(r)
 }
 
 /*
-OBPv500GetConsentRequest Get Consent Request
+GetConsentRequest Get Consent Request
 
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
@@ -2343,10 +2683,10 @@ OBPv500GetConsentRequest Get Consent Request
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentrequestid The CONSENTREQUESTID identifier
- @return ApiOBPv500GetConsentRequestRequest
+ @return ApiGetConsentRequestRequest
 */
-func (a *ConsentAPIService) OBPv500GetConsentRequest(ctx context.Context, consentrequestid string) ApiOBPv500GetConsentRequestRequest {
-	return ApiOBPv500GetConsentRequestRequest{
+func (a *ConsentAPIService) GetConsentRequest(ctx context.Context, consentrequestid string) ApiGetConsentRequestRequest {
+	return ApiGetConsentRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentrequestid: consentrequestid,
@@ -2354,16 +2694,16 @@ func (a *ConsentAPIService) OBPv500GetConsentRequest(ctx context.Context, consen
 }
 
 // Execute executes the request
-//  @return OBPv500GetConsentRequest200Response
-func (a *ConsentAPIService) OBPv500GetConsentRequestExecute(r ApiOBPv500GetConsentRequestRequest) (*OBPv500GetConsentRequest200Response, *http.Response, error) {
+//  @return GetConsentRequest200Response
+func (a *ConsentAPIService) GetConsentRequestExecute(r ApiGetConsentRequestRequest) (*GetConsentRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentRequest200Response
+		localVarReturnValue  *GetConsentRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv500GetConsentRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2429,705 +2769,17 @@ func (a *ConsentAPIService) OBPv500GetConsentRequestExecute(r ApiOBPv500GetConse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateConsentImplicitRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	implicit string
-	oBPv510CreateConsentImplicitRequest *OBPv510CreateConsentImplicitRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateConsentImplicitRequest) OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest OBPv510CreateConsentImplicitRequest) ApiOBPv510CreateConsentImplicitRequest {
-	r.oBPv510CreateConsentImplicitRequest = &oBPv510CreateConsentImplicitRequest
-	return r
-}
-
-func (r ApiOBPv510CreateConsentImplicitRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateConsentImplicitExecute(r)
-}
-
-/*
-OBPv510CreateConsentImplicit Create Consent (IMPLICIT)
-
-<p>This endpoint starts the process of creating a Consent.</p>
-<p>The Consent is created in an INITIATED state.</p>
-<p>A One Time Password (OTP) (AKA security challenge) is sent Out of Band (OOB) to the User via the transport defined in SCA_METHOD<br />
-SCA_METHOD is typically &quot;SMS&quot;,&quot;EMAIL&quot; or &quot;IMPLICIT&quot;. &quot;EMAIL&quot; is used for testing purposes. OBP mapped mode &quot;IMPLICIT&quot; is &quot;EMAIL&quot;.<br />
-Other mode, bank can decide it in the connector method 'getConsentImplicitSCA'.</p>
-<p>When the Consent is created, OBP (or a backend system) stores the challenge so it can be checked later against the value supplied by the User with the Answer Consent Challenge endpoint.</p>
-<p>An OBP Consent allows the holder of the Consent to call one or more endpoints.</p>
-<p>Consents must be created and authorisied using SCA (Strong Customer Authentication).</p>
-<p>That is, Consents can be created by an authorised User via the OBP REST API but they must be confirmed via an out of band (OOB) mechanism such as a code sent to a mobile phone.</p>
-<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
-<p>Each Consent is bound to a consumer i.e. you need to identify yourself over request header value Consumer-Key.</p>
-<p>Examples:</p>
-<p>For example:<br />
-GET /obp/v4.0.0/users/current HTTP/1.1<br />
-Host: 127.0.0.1:8080<br />
-Consent-JWT: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOlt7InJvbGVfbmFtZSI6IkNhbkdldEFueVVzZXIiLCJiYW5rX2lkIjoiIn<br />
-1dLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIzNDc1MDEzZi03YmY5LTQyNj<br />
-EtOWUxYy0xZTdlNWZjZTJlN2UiLCJhdWQiOiI4MTVhMGVmMS00YjZhLTQyMDUtYjExMi1lNDVmZDZmNGQzYWQiLCJuYmYiOjE1ODA3NDE2NjcsIml<br />
-zcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDgwIiwiZXhwIjoxNTgwNzQ1MjY3LCJpYXQiOjE1ODA3NDE2NjcsImp0aSI6ImJkYzVjZTk5LTE2ZTY<br />
-tNDM4Yi1hNjllLTU3MTAzN2RhMTg3OCIsInZpZXdzIjpbXX0.L3fEEEhdCVr3qnmyRKBBUaIQ7dk1VjiFaEBW8hUNjfg</p>
-<p>Consumer-Key: ejznk505d132ryomnhbx1qmtohurbsbb0kijajsk<br />
-cache-control: no-cache</p>
-<p>Maximum time to live of the token is specified over props value consents.max_time_to_live. In case isn't defined default value is 3600 seconds.</p>
-<p>Example of POST JSON:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-&quot;email&quot;: &quot;<a href="&#109;&#97;&#105;&#108;t&#x6f;:&#x65;&#x76;&#101;&#108;&#105;n&#x65;&#x40;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#101;&#118;&#101;&#x6c;&#105;&#x6e;&#x65;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;e.&#99;&#x6f;&#x6d;</a>&quot;,<br />
-&quot;valid_from&quot;: &quot;2020-02-07T08:43:34Z&quot;,<br />
-&quot;time_to_live&quot;: 3600<br />
-}<br />
-Please note that only optional fields are: consumer_id, valid_from and time_to_live.<br />
-In case you omit they the default values are used:<br />
-consumer_id = consumer of current user<br />
-valid_from = current time<br />
-time_to_live = consents.max_time_to_live</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Example 1:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p>Please note that consumer_id is optional field<br />
-Example 2:<br />
-{<br />
-&quot;everything&quot;: true,<br />
-&quot;views&quot;: [],<br />
-&quot;entitlements&quot;: [],<br />
-}</p>
-<p>Please note if everything=false you need to explicitly specify views and entitlements<br />
-Example 3:<br />
-{<br />
-&quot;everything&quot;: false,<br />
-&quot;views&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;account_id&quot;: &quot;8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&quot;,<br />
-&quot;view_id&quot;: &quot;owner&quot;<br />
-}<br />
-],<br />
-&quot;entitlements&quot;: [<br />
-{<br />
-&quot;bank_id&quot;: &quot;GENODEM1GLS&quot;,<br />
-&quot;role_name&quot;: &quot;CanGetCustomersAtOneBank&quot;<br />
-}<br />
-],<br />
-&quot;consumer_id&quot;: &quot;7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&quot;,<br />
-}</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">IMPLICIT</a>: IMPLICIT</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#everything"><strong>everything</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">consumer_id</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param implicit The IMPLICIT identifier
- @return ApiOBPv510CreateConsentImplicitRequest
-*/
-func (a *ConsentAPIService) OBPv510CreateConsentImplicit(ctx context.Context, implicit string) ApiOBPv510CreateConsentImplicitRequest {
-	return ApiOBPv510CreateConsentImplicitRequest{
-		ApiService: a,
-		ctx: ctx,
-		implicit: implicit,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510CreateConsentImplicitExecute(r ApiOBPv510CreateConsentImplicitRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510CreateConsentImplicit")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/my/consents/{implicit}"
-	localVarPath = strings.Replace(localVarPath, "{"+"implicit"+"}", url.PathEscape(parameterValueToString(r.implicit, "implicit")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510CreateConsentImplicitRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateConsentImplicitRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510CreateConsentImplicitRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateVRPConsentRequestRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	oBPv510CreateVRPConsentRequestRequest *OBPv510CreateVRPConsentRequestRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateVRPConsentRequestRequest) OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest OBPv510CreateVRPConsentRequestRequest) ApiOBPv510CreateVRPConsentRequestRequest {
-	r.oBPv510CreateVRPConsentRequestRequest = &oBPv510CreateVRPConsentRequestRequest
-	return r
-}
-
-func (r ApiOBPv510CreateVRPConsentRequestRequest) Execute() (*OBPv510CreateVRPConsentRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateVRPConsentRequestExecute(r)
-}
-
-/*
-OBPv510CreateVRPConsentRequest Create Consent Request VRP
-
-<p>This endpoint is used to begin the process of creating a consent that may be used for Variable Recurring Payments (VRPs).</p>
-<p>VRPs are useful in situations when a beneficiary needs to be paid different amounts on a regular basis.</p>
-<p>Once granted, the consent allows its holder to initiate multiple Transaction Requests to the Counterparty defined in this endpoint as long as the<br />
-Counterparty Limits linked to this particular consent are respected.</p>
-<p>Client, Consumer or Application Authentication is mandatory for this endpoint.</p>
-<p>i.e. the caller of this endpoint is the API Client, Consumer or Application rather than a specific User.</p>
-<p>At the end of the process the following objects are created in OBP or connected backend systems:<br />
-- An automatically generated View which controls access.<br />
-- A Counterparty that is the Beneficiary of the Variable Recurring Payments. The Counterparty specifies the Bank Account number or other routing address.<br />
-- Limits for the Counterparty which constrain the amount of money that can be sent to it in various periods (yearly, monthly, weekly).</p>
-<p>The Account holder may modify the Counterparty or Limits e.g. to increase or decrease the maximum possible payment amounts or the frequencey of the payments.</p>
-<p>In the case of a public client we use the client_id and private key to obtain an access token, otherwise we use the client_id and client_secret.<br />
-The obtained access token is used in the HTTP Authorization header of the request as follows:</p>
-<p>Example:<br />
-Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
-<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent using the CONSENT_REQUEST_ID returned by this endpoint.</p>
-<p>Application Access is Required. The Application must be authenticated.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
-<p><a href="/glossary#branch_routing"><strong>branch_routing</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_name</strong></a>: John Smith Ltd.</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>from_account</strong></a>: from_account</p>
-<p><a href="/glossary#"><strong>limit</strong></a>: 100</p>
-<p><a href="/glossary#max_monthly_amount"><strong>max_monthly_amount</strong></a>: 10000.11</p>
-<p><a href="/glossary#max_number_of_monthly_transactions"><strong>max_number_of_monthly_transactions</strong></a>: 10</p>
-<p><a href="/glossary#max_number_of_transactions"><strong>max_number_of_transactions</strong></a>: 100</p>
-<p><a href="/glossary#max_number_of_yearly_transactions"><strong>max_number_of_yearly_transactions</strong></a>: 100</p>
-<p><a href="/glossary#max_single_amount"><strong>max_single_amount</strong></a>: 1000.11</p>
-<p><a href="/glossary#max_total_amount"><strong>max_total_amount</strong></a>: 10000.12</p>
-<p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
-<p><a href="/glossary#">email</a>: <a href="m&#97;&#x69;l&#x74;o&#x3a;f&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#116;&#x68;&#x40;&#x65;&#120;a&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#102;&#101;&#x6c;i&#120;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#x65;x&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
-<p><a href="/glossary#phone_number">phone_number</a>:</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CreateVRPConsentRequestRequest
-*/
-func (a *ConsentAPIService) OBPv510CreateVRPConsentRequest(ctx context.Context) ApiOBPv510CreateVRPConsentRequestRequest {
-	return ApiOBPv510CreateVRPConsentRequestRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510CreateVRPConsentRequest200Response
-func (a *ConsentAPIService) OBPv510CreateVRPConsentRequestExecute(r ApiOBPv510CreateVRPConsentRequestRequest) (*OBPv510CreateVRPConsentRequest200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateVRPConsentRequest200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510CreateVRPConsentRequest")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/consumer/vrp-consent-requests"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510CreateVRPConsentRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateVRPConsentRequestRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510CreateVRPConsentRequestRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetConsentByConsentIdRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	consentid string
-}
-
-func (r ApiOBPv510GetConsentByConsentIdRequest) Execute() (*OBPv510GetConsentByConsentId200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetConsentByConsentIdExecute(r)
-}
-
-/*
-OBPv510GetConsentByConsentId Get Consent By Consent Id via User
-
-<p>This endpoint gets the Consent By consent id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#scopes">scopes</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consentid The CONSENTID identifier
- @return ApiOBPv510GetConsentByConsentIdRequest
-*/
-func (a *ConsentAPIService) OBPv510GetConsentByConsentId(ctx context.Context, consentid string) ApiOBPv510GetConsentByConsentIdRequest {
-	return ApiOBPv510GetConsentByConsentIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		consentid: consentid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetConsentByConsentId200Response
-func (a *ConsentAPIService) OBPv510GetConsentByConsentIdExecute(r ApiOBPv510GetConsentByConsentIdRequest) (*OBPv510GetConsentByConsentId200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetConsentByConsentId200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetConsentByConsentId")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/user/current/consents/{consentid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetConsentByConsentIdViaConsumerRequest struct {
-	ctx context.Context
-	ApiService *ConsentAPIService
-	consentid string
-}
-
-func (r ApiOBPv510GetConsentByConsentIdViaConsumerRequest) Execute() (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetConsentByConsentIdViaConsumerExecute(r)
-}
-
-/*
-OBPv510GetConsentByConsentIdViaConsumer Get Consent By Consent Id via Consumer
-
-<p>This endpoint gets the Consent By consent id.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#">account_access</a>: account_access</p>
-<p><a href="/glossary#consent_request_id">consent_request_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consentid The CONSENTID identifier
- @return ApiOBPv510GetConsentByConsentIdViaConsumerRequest
-*/
-func (a *ConsentAPIService) OBPv510GetConsentByConsentIdViaConsumer(ctx context.Context, consentid string) ApiOBPv510GetConsentByConsentIdViaConsumerRequest {
-	return ApiOBPv510GetConsentByConsentIdViaConsumerRequest{
-		ApiService: a,
-		ctx: ctx,
-		consentid: consentid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500GetConsentByConsentRequestId200Response
-func (a *ConsentAPIService) OBPv510GetConsentByConsentIdViaConsumerExecute(r ApiOBPv510GetConsentByConsentIdViaConsumerRequest) (*OBPv500GetConsentByConsentRequestId200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetConsentByConsentRequestId200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetConsentByConsentIdViaConsumer")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/consumer/current/consents/{consentid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetConsentsRequest struct {
+type ApiGetConsentsRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 }
 
-func (r ApiOBPv510GetConsentsRequest) Execute() (*OBPv510GetConsents200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetConsentsExecute(r)
+func (r ApiGetConsentsRequest) Execute() (*GetConsents200Response, *http.Response, error) {
+	return r.ApiService.GetConsentsExecute(r)
 }
 
 /*
-OBPv510GetConsents Get Consents
+GetConsents Get Consents
 
 <p>This endpoint gets the Consents.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3180,7 +2832,7 @@ eg: provider_provider_id=http%3A%2F%2Flocalhost%3A7070%2Frealms%2Fmaster|7837ee9
 <p><a href="/glossary#">balances</a>: balances</p>
 <p><a href="/glossary#">bban</a>: bban</p>
 <p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;&#97;&#105;l&#x74;&#111;:&#x66;&#101;&#x6c;i&#x78;&#x73;&#x6d;it&#x68;&#64;&#101;xa&#x6d;p&#x6c;e&#x2e;&#x63;&#x6f;&#x6d;">&#102;e&#108;&#105;&#120;&#x73;m&#105;&#116;&#104;&#64;e&#x78;&#x61;&#x6d;&#x70;l&#x65;.&#x63;&#x6f;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;a&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#x6c;i&#120;&#x73;&#109;i&#116;&#104;&#64;e&#120;a&#x6d;&#112;&#x6c;&#x65;&#46;&#99;o&#x6d;">&#x66;e&#108;&#x69;&#x78;&#115;&#109;&#105;&#116;&#104;&#x40;&#x65;&#120;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#">frequency_per_day</a>: frequency_per_day</p>
 <p><a href="/glossary#">helper_info</a>: helper_info</p>
 <p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
@@ -3195,26 +2847,26 @@ eg: provider_provider_id=http%3A%2F%2Flocalhost%3A7070%2Frealms%2Fmaster|7837ee9
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510GetConsentsRequest
+ @return ApiGetConsentsRequest
 */
-func (a *ConsentAPIService) OBPv510GetConsents(ctx context.Context) ApiOBPv510GetConsentsRequest {
-	return ApiOBPv510GetConsentsRequest{
+func (a *ConsentAPIService) GetConsents(ctx context.Context) ApiGetConsentsRequest {
+	return ApiGetConsentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510GetConsents200Response
-func (a *ConsentAPIService) OBPv510GetConsentsExecute(r ApiOBPv510GetConsentsRequest) (*OBPv510GetConsents200Response, *http.Response, error) {
+//  @return GetConsents200Response
+func (a *ConsentAPIService) GetConsentsExecute(r ApiGetConsentsRequest) (*GetConsents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetConsents200Response
+		localVarReturnValue  *GetConsents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetConsents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3266,7 +2918,7 @@ func (a *ConsentAPIService) OBPv510GetConsentsExecute(r ApiOBPv510GetConsentsReq
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3307,18 +2959,18 @@ func (a *ConsentAPIService) OBPv510GetConsentsExecute(r ApiOBPv510GetConsentsReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetConsentsAtBankRequest struct {
+type ApiGetConsentsAtBankRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 }
 
-func (r ApiOBPv510GetConsentsAtBankRequest) Execute() (*OBPv510GetConsents200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetConsentsAtBankExecute(r)
+func (r ApiGetConsentsAtBankRequest) Execute() (*GetConsents200Response, *http.Response, error) {
+	return r.ApiService.GetConsentsAtBankExecute(r)
 }
 
 /*
-OBPv510GetConsentsAtBank Get Consents at Bank
+GetConsentsAtBank Get Consents at Bank
 
 <p>This endpoint gets the Consents at Bank by BANK_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3368,7 +3020,7 @@ OBPv510GetConsentsAtBank Get Consents at Bank
 <p><a href="/glossary#">balances</a>: balances</p>
 <p><a href="/glossary#">bban</a>: bban</p>
 <p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="ma&#105;&#x6c;t&#x6f;&#58;&#x66;&#x65;&#108;i&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#x65;&#120;am&#112;&#108;&#x65;.&#x63;&#x6f;&#109;">feli&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;.&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;&#105;lto:&#x66;&#101;&#108;i&#120;s&#109;&#105;&#x74;&#104;&#64;&#x65;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">f&#x65;&#108;i&#x78;&#x73;&#109;&#x69;&#x74;&#104;&#64;&#x65;x&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#">frequency_per_day</a>: frequency_per_day</p>
 <p><a href="/glossary#">helper_info</a>: helper_info</p>
 <p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
@@ -3384,10 +3036,10 @@ OBPv510GetConsentsAtBank Get Consents at Bank
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510GetConsentsAtBankRequest
+ @return ApiGetConsentsAtBankRequest
 */
-func (a *ConsentAPIService) OBPv510GetConsentsAtBank(ctx context.Context, bankid string) ApiOBPv510GetConsentsAtBankRequest {
-	return ApiOBPv510GetConsentsAtBankRequest{
+func (a *ConsentAPIService) GetConsentsAtBank(ctx context.Context, bankid string) ApiGetConsentsAtBankRequest {
+	return ApiGetConsentsAtBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3395,16 +3047,16 @@ func (a *ConsentAPIService) OBPv510GetConsentsAtBank(ctx context.Context, bankid
 }
 
 // Execute executes the request
-//  @return OBPv510GetConsents200Response
-func (a *ConsentAPIService) OBPv510GetConsentsAtBankExecute(r ApiOBPv510GetConsentsAtBankRequest) (*OBPv510GetConsents200Response, *http.Response, error) {
+//  @return GetConsents200Response
+func (a *ConsentAPIService) GetConsentsAtBankExecute(r ApiGetConsentsAtBankRequest) (*GetConsents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetConsents200Response
+		localVarReturnValue  *GetConsents200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetConsentsAtBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetConsentsAtBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3457,7 +3109,7 @@ func (a *ConsentAPIService) OBPv510GetConsentsAtBankExecute(r ApiOBPv510GetConse
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3498,89 +3150,62 @@ func (a *ConsentAPIService) OBPv510GetConsentsAtBankExecute(r ApiOBPv510GetConse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetMyConsentsRequest struct {
+type ApiGetMyConsentsRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 }
 
-func (r ApiOBPv510GetMyConsentsRequest) Execute() (*OBPv510GetMyConsentsByBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetMyConsentsExecute(r)
+func (r ApiGetMyConsentsRequest) Execute() (*GetMyConsentsByBank200Response, *http.Response, error) {
+	return r.ApiService.GetMyConsentsExecute(r)
 }
 
 /*
-OBPv510GetMyConsents Get My Consents
+GetMyConsents Get My Consents
 
-<p>This endpoint gets the Consents created by a current User.</p>
+<p>This endpoint gets the Consents created by the current User.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>3 status  (ignore if omitted)</p>
+<p>4 sort_by (defaults to created_date:desc)  eg: sort_by=created_date:desc</p>
+<p>eg: /my/consents?limit=10&amp;offset=0&amp;sort_by=created_date:desc</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
 <p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#"><strong>aud</strong></a>: String</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
 <p><a href="/glossary#"><strong>consent_reference_id</strong></a>: 123456</p>
 <p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
 <p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#"><strong>createdByUserId</strong></a>: createdByUserId</p>
 <p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#"><strong>exp</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iat</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iss</strong></a>: String</p>
-<p><a href="/glossary#"><strong>jti</strong></a>: String</p>
 <p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#"><strong>jwt_expires_at</strong></a>: jwt_expires_at</p>
 <p><a href="/glossary#"><strong>jwt_payload</strong></a>: jwt_payload</p>
 <p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
 <p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>nbf</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>request_headers</strong></a>: request_headers</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
 <p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>sub</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>values</strong></a>: values</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">access</a>: access</p>
-<p><a href="/glossary#accounts">accounts</a>:</p>
-<p><a href="/glossary#">allPsd2</a>: allPsd2</p>
-<p><a href="/glossary#">availableAccounts</a>: availableAccounts</p>
-<p><a href="/glossary#">balances</a>: balances</p>
-<p><a href="/glossary#">bban</a>: bban</p>
-<p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;a&#x69;&#108;&#x74;&#111;&#58;f&#101;&#108;&#105;&#120;&#x73;&#x6d;&#105;t&#x68;&#x40;&#101;&#x78;a&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#x66;el&#x69;&#x78;&#115;&#x6d;&#x69;&#x74;&#104;&#x40;exa&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-<p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#">maskedPan</a>: maskedPan</p>
-<p><a href="/glossary#">msisdn</a>: msisdn</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#">pan</a>: pan</p>
-<p><a href="/glossary#transactions">transactions</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510GetMyConsentsRequest
+ @return ApiGetMyConsentsRequest
 */
-func (a *ConsentAPIService) OBPv510GetMyConsents(ctx context.Context) ApiOBPv510GetMyConsentsRequest {
-	return ApiOBPv510GetMyConsentsRequest{
+func (a *ConsentAPIService) GetMyConsents(ctx context.Context) ApiGetMyConsentsRequest {
+	return ApiGetMyConsentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510GetMyConsentsByBank200Response
-func (a *ConsentAPIService) OBPv510GetMyConsentsExecute(r ApiOBPv510GetMyConsentsRequest) (*OBPv510GetMyConsentsByBank200Response, *http.Response, error) {
+//  @return GetMyConsentsByBank200Response
+func (a *ConsentAPIService) GetMyConsentsExecute(r ApiGetMyConsentsRequest) (*GetMyConsentsByBank200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetMyConsentsByBank200Response
+		localVarReturnValue  *GetMyConsentsByBank200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetMyConsents")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetMyConsents")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3632,7 +3257,7 @@ func (a *ConsentAPIService) OBPv510GetMyConsentsExecute(r ApiOBPv510GetMyConsent
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3673,77 +3298,52 @@ func (a *ConsentAPIService) OBPv510GetMyConsentsExecute(r ApiOBPv510GetMyConsent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetMyConsentsByBankRequest struct {
+type ApiGetMyConsentsByBankRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 }
 
-func (r ApiOBPv510GetMyConsentsByBankRequest) Execute() (*OBPv510GetMyConsentsByBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetMyConsentsByBankExecute(r)
+func (r ApiGetMyConsentsByBankRequest) Execute() (*GetMyConsentsByBank200Response, *http.Response, error) {
+	return r.ApiService.GetMyConsentsByBankExecute(r)
 }
 
 /*
-OBPv510GetMyConsentsByBank Get My Consents at Bank
+GetMyConsentsByBank Get My Consents at Bank
 
-<p>This endpoint gets the Consents created by a current User.</p>
+<p>This endpoint gets the Consents created by a current User at the specified Bank.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>1 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>3 status  (ignore if omitted)</p>
+<p>4 sort_by (defaults to created_date:desc)  eg: sort_by=created_date:desc</p>
+<p>Note: This endpoint only returns consents that explicitly reference the specified BANK_ID.<br />
+Consents created before the consent_item join table was introduced will not appear in results.</p>
+<p>eg: /banks/BANK_ID/my/consents?limit=10&amp;offset=0&amp;sort_by=created_date:desc</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#"><strong>api_standard</strong></a>: api_standard</p>
 <p><a href="/glossary#api_version"><strong>api_version</strong></a>:</p>
-<p><a href="/glossary#"><strong>aud</strong></a>: String</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
 <p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
 <p><a href="/glossary#"><strong>consent_reference_id</strong></a>: 123456</p>
 <p><a href="/glossary#consents"><strong>consents</strong></a>:</p>
 <p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>counterparty_ids</strong></a>: counterparty_ids</p>
-<p><a href="/glossary#"><strong>createdByUserId</strong></a>: createdByUserId</p>
 <p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#entitlements"><strong>entitlements</strong></a>:</p>
-<p><a href="/glossary#"><strong>exp</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iat</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>iss</strong></a>: String</p>
-<p><a href="/glossary#"><strong>jti</strong></a>: String</p>
 <p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#"><strong>jwt_expires_at</strong></a>: jwt_expires_at</p>
 <p><a href="/glossary#"><strong>jwt_payload</strong></a>: jwt_payload</p>
 <p><a href="/glossary#"><strong>last_action_date</strong></a>: last_action_date</p>
 <p><a href="/glossary#"><strong>last_usage_date</strong></a>: last_usage_date</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>nbf</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>request_headers</strong></a>: request_headers</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
 <p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#"><strong>sub</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>values</strong></a>: values</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#">access</a>: access</p>
-<p><a href="/glossary#accounts">accounts</a>:</p>
-<p><a href="/glossary#">allPsd2</a>: allPsd2</p>
-<p><a href="/glossary#">availableAccounts</a>: availableAccounts</p>
-<p><a href="/glossary#">balances</a>: balances</p>
-<p><a href="/glossary#">bban</a>: bban</p>
-<p><a href="/glossary#">currency</a>: EUR</p>
-<p><a href="/glossary#">email</a>: <a href="&#x6d;ai&#108;&#x74;&#x6f;:&#102;&#101;l&#105;x&#115;&#x6d;&#x69;&#x74;&#104;@e&#x78;a&#x6d;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x66;e&#x6c;&#x69;&#x78;s&#109;&#x69;&#x74;&#104;@&#101;&#x78;&#97;&#x6d;&#x70;l&#x65;&#x2e;co&#109;</a></p>
-<p><a href="/glossary#">helper_info</a>: helper_info</p>
-<p><a href="/glossary#">iban</a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#">maskedPan</a>: maskedPan</p>
-<p><a href="/glossary#">msisdn</a>: msisdn</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#">pan</a>: pan</p>
-<p><a href="/glossary#transactions">transactions</a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510GetMyConsentsByBankRequest
+ @return ApiGetMyConsentsByBankRequest
 */
-func (a *ConsentAPIService) OBPv510GetMyConsentsByBank(ctx context.Context, bankid string) ApiOBPv510GetMyConsentsByBankRequest {
-	return ApiOBPv510GetMyConsentsByBankRequest{
+func (a *ConsentAPIService) GetMyConsentsByBank(ctx context.Context, bankid string) ApiGetMyConsentsByBankRequest {
+	return ApiGetMyConsentsByBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -3751,16 +3351,16 @@ func (a *ConsentAPIService) OBPv510GetMyConsentsByBank(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv510GetMyConsentsByBank200Response
-func (a *ConsentAPIService) OBPv510GetMyConsentsByBankExecute(r ApiOBPv510GetMyConsentsByBankRequest) (*OBPv510GetMyConsentsByBank200Response, *http.Response, error) {
+//  @return GetMyConsentsByBank200Response
+func (a *ConsentAPIService) GetMyConsentsByBankExecute(r ApiGetMyConsentsByBankRequest) (*GetMyConsentsByBank200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetMyConsentsByBank200Response
+		localVarReturnValue  *GetMyConsentsByBank200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510GetMyConsentsByBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.GetMyConsentsByBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3813,7 +3413,7 @@ func (a *ConsentAPIService) OBPv510GetMyConsentsByBankExecute(r ApiOBPv510GetMyC
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3854,17 +3454,17 @@ func (a *ConsentAPIService) OBPv510GetMyConsentsByBankExecute(r ApiOBPv510GetMyC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510MtlsClientCertificateInfoRequest struct {
+type ApiMtlsClientCertificateInfoRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 }
 
-func (r ApiOBPv510MtlsClientCertificateInfoRequest) Execute() (*OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo, *http.Response, error) {
-	return r.ApiService.OBPv510MtlsClientCertificateInfoExecute(r)
+func (r ApiMtlsClientCertificateInfoRequest) Execute() (*UpdateConsumerName200ResponseCertificateInfo, *http.Response, error) {
+	return r.ApiService.MtlsClientCertificateInfoExecute(r)
 }
 
 /*
-OBPv510MtlsClientCertificateInfo Provide client's certificate info of a current call
+MtlsClientCertificateInfo Provide client's certificate info of a current call
 
 <p>Provide client's certificate info of a current call specified by PSD2-CERT value at Request Header</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -3878,26 +3478,26 @@ OBPv510MtlsClientCertificateInfo Provide client's certificate info of a current 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510MtlsClientCertificateInfoRequest
+ @return ApiMtlsClientCertificateInfoRequest
 */
-func (a *ConsentAPIService) OBPv510MtlsClientCertificateInfo(ctx context.Context) ApiOBPv510MtlsClientCertificateInfoRequest {
-	return ApiOBPv510MtlsClientCertificateInfoRequest{
+func (a *ConsentAPIService) MtlsClientCertificateInfo(ctx context.Context) ApiMtlsClientCertificateInfoRequest {
+	return ApiMtlsClientCertificateInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo
-func (a *ConsentAPIService) OBPv510MtlsClientCertificateInfoExecute(r ApiOBPv510MtlsClientCertificateInfoRequest) (*OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo, *http.Response, error) {
+//  @return UpdateConsumerName200ResponseCertificateInfo
+func (a *ConsentAPIService) MtlsClientCertificateInfoExecute(r ApiMtlsClientCertificateInfoRequest) (*UpdateConsumerName200ResponseCertificateInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo
+		localVarReturnValue  *UpdateConsumerName200ResponseCertificateInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510MtlsClientCertificateInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.MtlsClientCertificateInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3949,7 +3549,7 @@ func (a *ConsentAPIService) OBPv510MtlsClientCertificateInfoExecute(r ApiOBPv510
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3990,19 +3590,19 @@ func (a *ConsentAPIService) OBPv510MtlsClientCertificateInfoExecute(r ApiOBPv510
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510RevokeConsentAtBankRequest struct {
+type ApiRevokeConsentAtBankRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 	consentid string
 }
 
-func (r ApiOBPv510RevokeConsentAtBankRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RevokeConsentAtBankExecute(r)
+func (r ApiRevokeConsentAtBankRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.RevokeConsentAtBankExecute(r)
 }
 
 /*
-OBPv510RevokeConsentAtBank Revoke Consent at Bank
+RevokeConsentAtBank Revoke Consent at Bank
 
 <p>Revoke Consent specified by CONSENT_ID</p>
 <p>There are a few reasons you might need to revoke an application’s access to a user’s account:<br />
@@ -4024,10 +3624,10 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param consentid The CONSENTID identifier
- @return ApiOBPv510RevokeConsentAtBankRequest
+ @return ApiRevokeConsentAtBankRequest
 */
-func (a *ConsentAPIService) OBPv510RevokeConsentAtBank(ctx context.Context, bankid string, consentid string) ApiOBPv510RevokeConsentAtBankRequest {
-	return ApiOBPv510RevokeConsentAtBankRequest{
+func (a *ConsentAPIService) RevokeConsentAtBank(ctx context.Context, bankid string, consentid string) ApiRevokeConsentAtBankRequest {
+	return ApiRevokeConsentAtBankRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4036,16 +3636,16 @@ func (a *ConsentAPIService) OBPv510RevokeConsentAtBank(ctx context.Context, bank
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510RevokeConsentAtBankExecute(r ApiOBPv510RevokeConsentAtBankRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) RevokeConsentAtBankExecute(r ApiRevokeConsentAtBankRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510RevokeConsentAtBank")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.RevokeConsentAtBank")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4099,7 +3699,7 @@ func (a *ConsentAPIService) OBPv510RevokeConsentAtBankExecute(r ApiOBPv510Revoke
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4140,18 +3740,18 @@ func (a *ConsentAPIService) OBPv510RevokeConsentAtBankExecute(r ApiOBPv510Revoke
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510RevokeMyConsentRequest struct {
+type ApiRevokeMyConsentRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	consentid string
 }
 
-func (r ApiOBPv510RevokeMyConsentRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RevokeMyConsentExecute(r)
+func (r ApiRevokeMyConsentRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.RevokeMyConsentExecute(r)
 }
 
 /*
-OBPv510RevokeMyConsent Revoke My Consent
+RevokeMyConsent Revoke My Consent
 
 <p>Revoke Consent for current user specified by CONSENT_ID</p>
 <p>There are a few reasons you might need to revoke an application’s access to a user’s account:<br />
@@ -4172,10 +3772,10 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param consentid The CONSENTID identifier
- @return ApiOBPv510RevokeMyConsentRequest
+ @return ApiRevokeMyConsentRequest
 */
-func (a *ConsentAPIService) OBPv510RevokeMyConsent(ctx context.Context, consentid string) ApiOBPv510RevokeMyConsentRequest {
-	return ApiOBPv510RevokeMyConsentRequest{
+func (a *ConsentAPIService) RevokeMyConsent(ctx context.Context, consentid string) ApiRevokeMyConsentRequest {
+	return ApiRevokeMyConsentRequest{
 		ApiService: a,
 		ctx: ctx,
 		consentid: consentid,
@@ -4183,16 +3783,16 @@ func (a *ConsentAPIService) OBPv510RevokeMyConsent(ctx context.Context, consenti
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510RevokeMyConsentExecute(r ApiOBPv510RevokeMyConsentRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) RevokeMyConsentExecute(r ApiRevokeMyConsentRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510RevokeMyConsent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.RevokeMyConsent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4245,7 +3845,7 @@ func (a *ConsentAPIService) OBPv510RevokeMyConsentExecute(r ApiOBPv510RevokeMyCo
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4286,17 +3886,17 @@ func (a *ConsentAPIService) OBPv510RevokeMyConsentExecute(r ApiOBPv510RevokeMyCo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510SelfRevokeConsentRequest struct {
+type ApiSelfRevokeConsentRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 }
 
-func (r ApiOBPv510SelfRevokeConsentRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510SelfRevokeConsentExecute(r)
+func (r ApiSelfRevokeConsentRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.SelfRevokeConsentExecute(r)
 }
 
 /*
-OBPv510SelfRevokeConsent Revoke Consent used in the Current Call
+SelfRevokeConsent Revoke Consent used in the Current Call
 
 <p>Revoke Consent specified by Consent-Id at Request Header</p>
 <p>There are a few reasons you might need to revoke an application’s access to a user’s account:<br />
@@ -4313,26 +3913,26 @@ The status of the token is changed to &quot;REVOKED&quot; so the next time the r
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510SelfRevokeConsentRequest
+ @return ApiSelfRevokeConsentRequest
 */
-func (a *ConsentAPIService) OBPv510SelfRevokeConsent(ctx context.Context) ApiOBPv510SelfRevokeConsentRequest {
-	return ApiOBPv510SelfRevokeConsentRequest{
+func (a *ConsentAPIService) SelfRevokeConsent(ctx context.Context) ApiSelfRevokeConsentRequest {
+	return ApiSelfRevokeConsentRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510SelfRevokeConsentExecute(r ApiOBPv510SelfRevokeConsentRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) SelfRevokeConsentExecute(r ApiSelfRevokeConsentRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510SelfRevokeConsent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.SelfRevokeConsent")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4384,7 +3984,7 @@ func (a *ConsentAPIService) OBPv510SelfRevokeConsentExecute(r ApiOBPv510SelfRevo
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4425,26 +4025,26 @@ func (a *ConsentAPIService) OBPv510SelfRevokeConsentExecute(r ApiOBPv510SelfRevo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest struct {
+type ApiUpdateConsentAccountAccessByConsentIdRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 	consentid string
-	oBPv510UpdateConsentAccountAccessByConsentIdRequest *OBPv510UpdateConsentAccountAccessByConsentIdRequest
+	updateConsentAccountAccessByConsentIdRequest *UpdateConsentAccountAccessByConsentIdRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest) OBPv510UpdateConsentAccountAccessByConsentIdRequest(oBPv510UpdateConsentAccountAccessByConsentIdRequest OBPv510UpdateConsentAccountAccessByConsentIdRequest) ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest {
-	r.oBPv510UpdateConsentAccountAccessByConsentIdRequest = &oBPv510UpdateConsentAccountAccessByConsentIdRequest
+func (r ApiUpdateConsentAccountAccessByConsentIdRequest) UpdateConsentAccountAccessByConsentIdRequest(updateConsentAccountAccessByConsentIdRequest UpdateConsentAccountAccessByConsentIdRequest) ApiUpdateConsentAccountAccessByConsentIdRequest {
+	r.updateConsentAccountAccessByConsentIdRequest = &updateConsentAccountAccessByConsentIdRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateConsentAccountAccessByConsentIdExecute(r)
+func (r ApiUpdateConsentAccountAccessByConsentIdRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.UpdateConsentAccountAccessByConsentIdExecute(r)
 }
 
 /*
-OBPv510UpdateConsentAccountAccessByConsentId Update Consent Account Access by CONSENT_ID
+UpdateConsentAccountAccessByConsentId Update Consent Account Access by CONSENT_ID
 
 <p>This endpoint is used to update the Account Access of Consent.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -4460,10 +4060,10 @@ OBPv510UpdateConsentAccountAccessByConsentId Update Consent Account Access by CO
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param consentid The CONSENTID identifier
- @return ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest
+ @return ApiUpdateConsentAccountAccessByConsentIdRequest
 */
-func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentId(ctx context.Context, bankid string, consentid string) ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest {
-	return ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest{
+func (a *ConsentAPIService) UpdateConsentAccountAccessByConsentId(ctx context.Context, bankid string, consentid string) ApiUpdateConsentAccountAccessByConsentIdRequest {
+	return ApiUpdateConsentAccountAccessByConsentIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4472,16 +4072,16 @@ func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentId(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentIdExecute(r ApiOBPv510UpdateConsentAccountAccessByConsentIdRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) UpdateConsentAccountAccessByConsentIdExecute(r ApiUpdateConsentAccountAccessByConsentIdRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510UpdateConsentAccountAccessByConsentId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.UpdateConsentAccountAccessByConsentId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4493,8 +4093,8 @@ func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentIdExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateConsentAccountAccessByConsentIdRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateConsentAccountAccessByConsentIdRequest is required and must be specified")
+	if r.updateConsentAccountAccessByConsentIdRequest == nil {
+		return localVarReturnValue, nil, reportError("updateConsentAccountAccessByConsentIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4515,7 +4115,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentIdExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateConsentAccountAccessByConsentIdRequest
+	localVarPostBody = r.updateConsentAccountAccessByConsentIdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4540,7 +4140,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentIdExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4581,26 +4181,26 @@ func (a *ConsentAPIService) OBPv510UpdateConsentAccountAccessByConsentIdExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateConsentStatusByConsentRequest struct {
+type ApiUpdateConsentStatusRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 	consentid string
-	oBPv510UpdateTransactionRequestStatusRequest *OBPv510UpdateTransactionRequestStatusRequest
+	updateTransactionRequestStatusRequest *UpdateTransactionRequestStatusRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateConsentStatusByConsentRequest) OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest OBPv510UpdateTransactionRequestStatusRequest) ApiOBPv510UpdateConsentStatusByConsentRequest {
-	r.oBPv510UpdateTransactionRequestStatusRequest = &oBPv510UpdateTransactionRequestStatusRequest
+func (r ApiUpdateConsentStatusRequest) UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest UpdateTransactionRequestStatusRequest) ApiUpdateConsentStatusRequest {
+	r.updateTransactionRequestStatusRequest = &updateTransactionRequestStatusRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateConsentStatusByConsentRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateConsentStatusByConsentExecute(r)
+func (r ApiUpdateConsentStatusRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.UpdateConsentStatusExecute(r)
 }
 
 /*
-OBPv510UpdateConsentStatusByConsent Update Consent Status by CONSENT_ID
+UpdateConsentStatus Update Consent Status
 
 <p>This endpoint is used to update the Status of Consent.</p>
 <p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
@@ -4617,10 +4217,10 @@ OBPv510UpdateConsentStatusByConsent Update Consent Status by CONSENT_ID
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param consentid The CONSENTID identifier
- @return ApiOBPv510UpdateConsentStatusByConsentRequest
+ @return ApiUpdateConsentStatusRequest
 */
-func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsent(ctx context.Context, bankid string, consentid string) ApiOBPv510UpdateConsentStatusByConsentRequest {
-	return ApiOBPv510UpdateConsentStatusByConsentRequest{
+func (a *ConsentAPIService) UpdateConsentStatus(ctx context.Context, bankid string, consentid string) ApiUpdateConsentStatusRequest {
+	return ApiUpdateConsentStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4629,29 +4229,29 @@ func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsent(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsentExecute(r ApiOBPv510UpdateConsentStatusByConsentRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) UpdateConsentStatusExecute(r ApiUpdateConsentStatusRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510UpdateConsentStatusByConsent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.UpdateConsentStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v5.1.0/management/banks/{bankid}/consents/{consentid}"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/consents/{consentid}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateTransactionRequestStatusRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateTransactionRequestStatusRequest is required and must be specified")
+	if r.updateTransactionRequestStatusRequest == nil {
+		return localVarReturnValue, nil, reportError("updateTransactionRequestStatusRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4672,7 +4272,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsentExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateTransactionRequestStatusRequest
+	localVarPostBody = r.updateTransactionRequestStatusRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4697,7 +4297,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsentExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4738,26 +4338,183 @@ func (a *ConsentAPIService) OBPv510UpdateConsentStatusByConsentExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateConsentUserIdByConsentIdRequest struct {
+type ApiUpdateConsentStatusByConsentRequest struct {
 	ctx context.Context
 	ApiService *ConsentAPIService
 	bankid string
 	consentid string
-	oBPv400AddConsentUserRequest *OBPv400AddConsentUserRequest
+	updateTransactionRequestStatusRequest *UpdateTransactionRequestStatusRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateConsentUserIdByConsentIdRequest) OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest OBPv400AddConsentUserRequest) ApiOBPv510UpdateConsentUserIdByConsentIdRequest {
-	r.oBPv400AddConsentUserRequest = &oBPv400AddConsentUserRequest
+func (r ApiUpdateConsentStatusByConsentRequest) UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest UpdateTransactionRequestStatusRequest) ApiUpdateConsentStatusByConsentRequest {
+	r.updateTransactionRequestStatusRequest = &updateTransactionRequestStatusRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateConsentUserIdByConsentIdRequest) Execute() (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateConsentUserIdByConsentIdExecute(r)
+func (r ApiUpdateConsentStatusByConsentRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.UpdateConsentStatusByConsentExecute(r)
 }
 
 /*
-OBPv510UpdateConsentUserIdByConsentId Update Created by User of Consent by CONSENT_ID
+UpdateConsentStatusByConsent Update Consent Status by CONSENT_ID
+
+<p>This endpoint is used to update the Status of Consent.</p>
+<p>Each Consent has one of the following states: INITIATED, ACCEPTED, REJECTED, rejected, REVOKED, EXPIRED, received, valid, revokedByPsu, expired, terminatedByTpp, AUTHORISED, AWAITINGAUTHORISATION.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#consent_id">CONSENT_ID</a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_id"><strong>consent_id</strong></a>: 9d429899-24f5-42c8-8565-943ffa6a7947</p>
+<p><a href="/glossary#jwt"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param consentid The CONSENTID identifier
+ @return ApiUpdateConsentStatusByConsentRequest
+*/
+func (a *ConsentAPIService) UpdateConsentStatusByConsent(ctx context.Context, bankid string, consentid string) ApiUpdateConsentStatusByConsentRequest {
+	return ApiUpdateConsentStatusByConsentRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		consentid: consentid,
+	}
+}
+
+// Execute executes the request
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) UpdateConsentStatusByConsentExecute(r ApiUpdateConsentStatusByConsentRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CreateConsentImplicit200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.UpdateConsentStatusByConsent")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/management/banks/{bankid}/consents/{consentid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consentid"+"}", url.PathEscape(parameterValueToString(r.consentid, "consentid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateTransactionRequestStatusRequest == nil {
+		return localVarReturnValue, nil, reportError("updateTransactionRequestStatusRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateTransactionRequestStatusRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateConsentUserIdByConsentIdRequest struct {
+	ctx context.Context
+	ApiService *ConsentAPIService
+	bankid string
+	consentid string
+	addConsentUserRequest *AddConsentUserRequest
+}
+
+// Request body
+func (r ApiUpdateConsentUserIdByConsentIdRequest) AddConsentUserRequest(addConsentUserRequest AddConsentUserRequest) ApiUpdateConsentUserIdByConsentIdRequest {
+	r.addConsentUserRequest = &addConsentUserRequest
+	return r
+}
+
+func (r ApiUpdateConsentUserIdByConsentIdRequest) Execute() (*CreateConsentImplicit200Response, *http.Response, error) {
+	return r.ApiService.UpdateConsentUserIdByConsentIdExecute(r)
+}
+
+/*
+UpdateConsentUserIdByConsentId Update Created by User of Consent by CONSENT_ID
 
 <p>This endpoint is used to Update the User bound to a consent.</p>
 <p>In general we would not expect for a management user to set the User bound to a consent, but there may be<br />
@@ -4776,10 +4533,10 @@ some use cases where this workflow is useful.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param consentid The CONSENTID identifier
- @return ApiOBPv510UpdateConsentUserIdByConsentIdRequest
+ @return ApiUpdateConsentUserIdByConsentIdRequest
 */
-func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentId(ctx context.Context, bankid string, consentid string) ApiOBPv510UpdateConsentUserIdByConsentIdRequest {
-	return ApiOBPv510UpdateConsentUserIdByConsentIdRequest{
+func (a *ConsentAPIService) UpdateConsentUserIdByConsentId(ctx context.Context, bankid string, consentid string) ApiUpdateConsentUserIdByConsentIdRequest {
+	return ApiUpdateConsentUserIdByConsentIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4788,16 +4545,16 @@ func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentId(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv510CreateConsentImplicit200Response
-func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentIdExecute(r ApiOBPv510UpdateConsentUserIdByConsentIdRequest) (*OBPv510CreateConsentImplicit200Response, *http.Response, error) {
+//  @return CreateConsentImplicit200Response
+func (a *ConsentAPIService) UpdateConsentUserIdByConsentIdExecute(r ApiUpdateConsentUserIdByConsentIdRequest) (*CreateConsentImplicit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510CreateConsentImplicit200Response
+		localVarReturnValue  *CreateConsentImplicit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.OBPv510UpdateConsentUserIdByConsentId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentAPIService.UpdateConsentUserIdByConsentId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4809,8 +4566,8 @@ func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentIdExecute(r ApiOB
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400AddConsentUserRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400AddConsentUserRequest is required and must be specified")
+	if r.addConsentUserRequest == nil {
+		return localVarReturnValue, nil, reportError("addConsentUserRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4831,7 +4588,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentIdExecute(r ApiOB
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400AddConsentUserRequest
+	localVarPostBody = r.addConsentUserRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4856,7 +4613,7 @@ func (a *ConsentAPIService) OBPv510UpdateConsentUserIdByConsentIdExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

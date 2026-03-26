@@ -2,21 +2,21 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateConnectorMethod()**](ConnectorMethodApi.md#oBPv400CreateConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
-| [**oBPv400GetAllConnectorMethods()**](ConnectorMethodApi.md#oBPv400GetAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
-| [**oBPv400GetConnectorMethod()**](ConnectorMethodApi.md#oBPv400GetConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
-| [**oBPv400UpdateConnectorMethod()**](ConnectorMethodApi.md#oBPv400UpdateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
-| [**oBPv600GetConnectorMethodNames()**](ConnectorMethodApi.md#oBPv600GetConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**createConnectorMethod()**](ConnectorMethodApi.md#createConnectorMethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method |
+| [**getAllConnectorMethods()**](ConnectorMethodApi.md#getAllConnectorMethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods |
+| [**getConnectorMethod()**](ConnectorMethodApi.md#getConnectorMethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id |
+| [**getConnectorMethodNames()**](ConnectorMethodApi.md#getConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**updateConnectorMethod()**](ConnectorMethodApi.md#updateConnectorMethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method |
 
 
-## `oBPv400CreateConnectorMethod()`
+## `createConnectorMethod()`
 
 ```php
-oBPv400CreateConnectorMethod($obpv400_create_connector_method_request): \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+createConnectorMethod($create_connector_method_request): \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
 ```
 
 Create Connector Method
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
@@ -50,13 +50,13 @@ $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv400_create_connector_method_request = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400CreateConnectorMethodRequest | Request body
+$create_connector_method_request = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // \OpenBankProject\Model\CreateConnectorMethodRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateConnectorMethod($obpv400_create_connector_method_request);
+    $result = $apiInstance->createConnectorMethod($create_connector_method_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectorMethodApi->oBPv400CreateConnectorMethod: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectorMethodApi->createConnectorMethod: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -64,11 +64,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv400_create_connector_method_request** | [**\OpenBankProject\Model\OBPv400CreateConnectorMethodRequest**](../Model/OBPv400CreateConnectorMethodRequest.md)| Request body | |
+| **create_connector_method_request** | [**\OpenBankProject\Model\CreateConnectorMethodRequest**](../Model/CreateConnectorMethodRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](../Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner**](../Model/GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -83,10 +83,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllConnectorMethods()`
+## `getAllConnectorMethods()`
 
 ```php
-oBPv400GetAllConnectorMethods(): \OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response
+getAllConnectorMethods(): \OpenBankProject\Model\GetAllConnectorMethods200Response
 ```
 
 Get all Connector Methods
@@ -109,9 +109,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
@@ -122,10 +122,10 @@ $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllConnectorMethods();
+    $result = $apiInstance->getAllConnectorMethods();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectorMethodApi->oBPv400GetAllConnectorMethods: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectorMethodApi->getAllConnectorMethods: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllConnectorMethods200Response**](../Model/OBPv400GetAllConnectorMethods200Response.md)
+[**\OpenBankProject\Model\GetAllConnectorMethods200Response**](../Model/GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -150,10 +150,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetConnectorMethod()`
+## `getConnectorMethod()`
 
 ```php
-oBPv400GetConnectorMethod($connectormethodid): \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+getConnectorMethod($connectormethodid): \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
 ```
 
 Get Connector Method by Id
@@ -176,9 +176,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
@@ -190,10 +190,10 @@ $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
 $connectormethodid = 'connectormethodid_example'; // string | The CONNECTORMETHODID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetConnectorMethod($connectormethodid);
+    $result = $apiInstance->getConnectorMethod($connectormethodid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectorMethodApi->oBPv400GetConnectorMethod: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectorMethodApi->getConnectorMethod: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -205,7 +205,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](../Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner**](../Model/GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -220,82 +220,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateConnectorMethod()`
+## `getConnectorMethodNames()`
 
 ```php
-oBPv400UpdateConnectorMethod($connectormethodid, $obpv400_update_connector_method_request): \OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-```
-
-Update Connector Method
-
-<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure API key authorization: GatewayLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$connectormethodid = 'connectormethodid_example'; // string | The CONNECTORMETHODID identifier
-$obpv400_update_connector_method_request = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest | Request body
-
-try {
-    $result = $apiInstance->oBPv400UpdateConnectorMethod($connectormethodid, $obpv400_update_connector_method_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConnectorMethodApi->oBPv400UpdateConnectorMethod: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **connectormethodid** | **string**| The CONNECTORMETHODID identifier | |
-| **obpv400_update_connector_method_request** | [**\OpenBankProject\Model\OBPv400UpdateConnectorMethodRequest**](../Model/OBPv400UpdateConnectorMethodRequest.md)| Request body | |
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](../Model/OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv600GetConnectorMethodNames()`
-
-```php
-oBPv600GetConnectorMethodNames(): \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response
+getConnectorMethodNames(): \OpenBankProject\Model\GetConnectorMethodNames200Response
 ```
 
 Get Connector Method Names
@@ -318,9 +246,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
@@ -331,10 +259,10 @@ $apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetConnectorMethodNames();
+    $result = $apiInstance->getConnectorMethodNames();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectorMethodApi->oBPv600GetConnectorMethodNames: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectorMethodApi->getConnectorMethodNames: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -344,7 +272,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response**](../Model/OBPv600GetConnectorMethodNames200Response.md)
+[**\OpenBankProject\Model\GetConnectorMethodNames200Response**](../Model/GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -353,6 +281,78 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateConnectorMethod()`
+
+```php
+updateConnectorMethod($connectormethodid, $update_connector_method_request): \OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner
+```
+
+Update Connector Method
+
+<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure API key authorization: GatewayLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure API key authorization: DirectLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
+
+
+$apiInstance = new OpenBankProject\Api\ConnectorMethodApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$connectormethodid = 'connectormethodid_example'; // string | The CONNECTORMETHODID identifier
+$update_connector_method_request = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // \OpenBankProject\Model\UpdateConnectorMethodRequest | Request body
+
+try {
+    $result = $apiInstance->updateConnectorMethod($connectormethodid, $update_connector_method_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConnectorMethodApi->updateConnectorMethod: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **connectormethodid** | **string**| The CONNECTORMETHODID identifier | |
+| **update_connector_method_request** | [**\OpenBankProject\Model\UpdateConnectorMethodRequest**](../Model/UpdateConnectorMethodRequest.md)| Request body | |
+
+### Return type
+
+[**\OpenBankProject\Model\GetAllConnectorMethods200ResponseConnectorsMethodsInner**](../Model/GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

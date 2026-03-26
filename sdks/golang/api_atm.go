@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,1108 +24,25 @@ import (
 // ATMAPIService ATMAPI service
 type ATMAPIService service
 
-type ApiOBPv400UpdateAtmAccessibilityFeaturesRequest struct {
+type ApiCreateAtmRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
-	atmid string
-	oBPv400UpdateAtmAccessibilityFeaturesRequest *OBPv400UpdateAtmAccessibilityFeaturesRequest
+	createAtmRequest *CreateAtmRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateAtmAccessibilityFeaturesRequest) OBPv400UpdateAtmAccessibilityFeaturesRequest(oBPv400UpdateAtmAccessibilityFeaturesRequest OBPv400UpdateAtmAccessibilityFeaturesRequest) ApiOBPv400UpdateAtmAccessibilityFeaturesRequest {
-	r.oBPv400UpdateAtmAccessibilityFeaturesRequest = &oBPv400UpdateAtmAccessibilityFeaturesRequest
+func (r ApiCreateAtmRequest) CreateAtmRequest(createAtmRequest CreateAtmRequest) ApiCreateAtmRequest {
+	r.createAtmRequest = &createAtmRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateAtmAccessibilityFeaturesRequest) Execute() (*OBPv400UpdateAtmAccessibilityFeatures200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmAccessibilityFeaturesExecute(r)
+func (r ApiCreateAtmRequest) Execute() (*GetAtm200Response, *http.Response, error) {
+	return r.ApiService.CreateAtmExecute(r)
 }
 
 /*
-OBPv400UpdateAtmAccessibilityFeatures Update ATM Accessibility Features
-
-<p>Update ATM Accessibility Features.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#accessibility_features"><strong>accessibility_features</strong></a>: [&quot;ATAC&quot;,&quot;ATAD&quot;]</p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmAccessibilityFeaturesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmAccessibilityFeatures(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmAccessibilityFeaturesRequest {
-	return ApiOBPv400UpdateAtmAccessibilityFeaturesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmAccessibilityFeatures200Response
-func (a *ATMAPIService) OBPv400UpdateAtmAccessibilityFeaturesExecute(r ApiOBPv400UpdateAtmAccessibilityFeaturesRequest) (*OBPv400UpdateAtmAccessibilityFeatures200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmAccessibilityFeatures200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmAccessibilityFeatures")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmAccessibilityFeaturesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmAccessibilityFeaturesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmAccessibilityFeaturesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateAtmLocationCategoriesRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	atmid string
-	oBPv400UpdateAtmLocationCategoriesRequest *OBPv400UpdateAtmLocationCategoriesRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateAtmLocationCategoriesRequest) OBPv400UpdateAtmLocationCategoriesRequest(oBPv400UpdateAtmLocationCategoriesRequest OBPv400UpdateAtmLocationCategoriesRequest) ApiOBPv400UpdateAtmLocationCategoriesRequest {
-	r.oBPv400UpdateAtmLocationCategoriesRequest = &oBPv400UpdateAtmLocationCategoriesRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateAtmLocationCategoriesRequest) Execute() (*OBPv400UpdateAtmLocationCategories200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmLocationCategoriesExecute(r)
-}
-
-/*
-OBPv400UpdateAtmLocationCategories Update ATM Location Categories
-
-<p>Update ATM Location Categories.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>location_categories</strong></a>: location_categories</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmLocationCategoriesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmLocationCategories(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmLocationCategoriesRequest {
-	return ApiOBPv400UpdateAtmLocationCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmLocationCategories200Response
-func (a *ATMAPIService) OBPv400UpdateAtmLocationCategoriesExecute(r ApiOBPv400UpdateAtmLocationCategoriesRequest) (*OBPv400UpdateAtmLocationCategories200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmLocationCategories200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmLocationCategories")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmLocationCategoriesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmLocationCategoriesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmLocationCategoriesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateAtmNotesRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	atmid string
-	oBPv400UpdateAtmNotesRequest *OBPv400UpdateAtmNotesRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateAtmNotesRequest) OBPv400UpdateAtmNotesRequest(oBPv400UpdateAtmNotesRequest OBPv400UpdateAtmNotesRequest) ApiOBPv400UpdateAtmNotesRequest {
-	r.oBPv400UpdateAtmNotesRequest = &oBPv400UpdateAtmNotesRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateAtmNotesRequest) Execute() (*OBPv400UpdateAtmNotes200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmNotesExecute(r)
-}
-
-/*
-OBPv400UpdateAtmNotes Update ATM Notes
-
-<p>Update ATM Notes.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>notes</strong></a>: notes</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmNotesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmNotes(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmNotesRequest {
-	return ApiOBPv400UpdateAtmNotesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmNotes200Response
-func (a *ATMAPIService) OBPv400UpdateAtmNotesExecute(r ApiOBPv400UpdateAtmNotesRequest) (*OBPv400UpdateAtmNotes200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmNotes200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmNotes")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmNotesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmNotesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmNotesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateAtmServicesRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	atmid string
-	oBPv400UpdateAtmServicesRequest *OBPv400UpdateAtmServicesRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateAtmServicesRequest) OBPv400UpdateAtmServicesRequest(oBPv400UpdateAtmServicesRequest OBPv400UpdateAtmServicesRequest) ApiOBPv400UpdateAtmServicesRequest {
-	r.oBPv400UpdateAtmServicesRequest = &oBPv400UpdateAtmServicesRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateAtmServicesRequest) Execute() (*OBPv400UpdateAtmServices200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmServicesExecute(r)
-}
-
-/*
-OBPv400UpdateAtmServices Update ATM Services
-
-<p>Update ATM Services.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmServicesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmServices(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmServicesRequest {
-	return ApiOBPv400UpdateAtmServicesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmServices200Response
-func (a *ATMAPIService) OBPv400UpdateAtmServicesExecute(r ApiOBPv400UpdateAtmServicesRequest) (*OBPv400UpdateAtmServices200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmServices200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmServices")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/services"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmServicesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmServicesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmServicesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateAtmSupportedCurrenciesRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	atmid string
-	oBPv400UpdateAtmSupportedCurrenciesRequest *OBPv400UpdateAtmSupportedCurrenciesRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateAtmSupportedCurrenciesRequest) OBPv400UpdateAtmSupportedCurrenciesRequest(oBPv400UpdateAtmSupportedCurrenciesRequest OBPv400UpdateAtmSupportedCurrenciesRequest) ApiOBPv400UpdateAtmSupportedCurrenciesRequest {
-	r.oBPv400UpdateAtmSupportedCurrenciesRequest = &oBPv400UpdateAtmSupportedCurrenciesRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateAtmSupportedCurrenciesRequest) Execute() (*OBPv400UpdateAtmSupportedCurrencies200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmSupportedCurrenciesExecute(r)
-}
-
-/*
-OBPv400UpdateAtmSupportedCurrencies Update ATM Supported Currencies
-
-<p>Update ATM Supported Currencies.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#supported_currencies"><strong>supported_currencies</strong></a>: [&quot;EUR&quot;,&quot;MXN&quot;,&quot;USD&quot;]</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmSupportedCurrenciesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmSupportedCurrencies(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmSupportedCurrenciesRequest {
-	return ApiOBPv400UpdateAtmSupportedCurrenciesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmSupportedCurrencies200Response
-func (a *ATMAPIService) OBPv400UpdateAtmSupportedCurrenciesExecute(r ApiOBPv400UpdateAtmSupportedCurrenciesRequest) (*OBPv400UpdateAtmSupportedCurrencies200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmSupportedCurrencies200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmSupportedCurrencies")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmSupportedCurrenciesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmSupportedCurrenciesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmSupportedCurrenciesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateAtmSupportedLanguagesRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	atmid string
-	oBPv400UpdateAtmSupportedLanguagesRequest *OBPv400UpdateAtmSupportedLanguagesRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateAtmSupportedLanguagesRequest) OBPv400UpdateAtmSupportedLanguagesRequest(oBPv400UpdateAtmSupportedLanguagesRequest OBPv400UpdateAtmSupportedLanguagesRequest) ApiOBPv400UpdateAtmSupportedLanguagesRequest {
-	r.oBPv400UpdateAtmSupportedLanguagesRequest = &oBPv400UpdateAtmSupportedLanguagesRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateAtmSupportedLanguagesRequest) Execute() (*OBPv400UpdateAtmSupportedLanguages200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateAtmSupportedLanguagesExecute(r)
-}
-
-/*
-OBPv400UpdateAtmSupportedLanguages Update ATM Supported Languages
-
-<p>Update ATM Supported Languages.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#supported_languages"><strong>supported_languages</strong></a>: [&quot;es&quot;,&quot;fr&quot;,&quot;de&quot;]</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param atmid The ATMID identifier
- @return ApiOBPv400UpdateAtmSupportedLanguagesRequest
-*/
-func (a *ATMAPIService) OBPv400UpdateAtmSupportedLanguages(ctx context.Context, bankid string, atmid string) ApiOBPv400UpdateAtmSupportedLanguagesRequest {
-	return ApiOBPv400UpdateAtmSupportedLanguagesRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		atmid: atmid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateAtmSupportedLanguages200Response
-func (a *ATMAPIService) OBPv400UpdateAtmSupportedLanguagesExecute(r ApiOBPv400UpdateAtmSupportedLanguagesRequest) (*OBPv400UpdateAtmSupportedLanguages200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateAtmSupportedLanguages200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv400UpdateAtmSupportedLanguages")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateAtmSupportedLanguagesRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateAtmSupportedLanguagesRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateAtmSupportedLanguagesRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv500HeadAtmsRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-}
-
-func (r ApiOBPv500HeadAtmsRequest) Execute() (*OBPv500HeadAtms200Response, *http.Response, error) {
-	return r.ApiService.OBPv500HeadAtmsExecute(r)
-}
-
-/*
-OBPv500HeadAtms Head Bank ATMS
-
-<p>Head Bank ATMS.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#accessibility_features"><strong>accessibility_features</strong></a>: [&quot;ATAC&quot;,&quot;ATAD&quot;]</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#atms"><strong>atms</strong></a>:</p>
-<p><a href="/glossary#"><strong>balance_inquiry_fee</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>branch_identification</strong></a>: branch_identification</p>
-<p><a href="/glossary#"><strong>cash_withdrawal_international_fee</strong></a>:</p>
-<p><a href="/glossary#"><strong>cash_withdrawal_national_fee</strong></a>:</p>
-<p><a href="/glossary#city"><strong>city</strong></a>:</p>
-<p><a href="/glossary#closing_time"><strong>closing_time</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#country_code"><strong>country_code</strong></a>: 1254</p>
-<p><a href="/glossary#county"><strong>county</strong></a>:</p>
-<p><a href="/glossary#friday"><strong>friday</strong></a>:</p>
-<p><a href="/glossary#"><strong>has_deposit_capability</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>is_accessible</strong></a>: false</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#license"><strong>license</strong></a>:</p>
-<p><a href="/glossary#"><strong>line_1</strong></a>:</p>
-<p><a href="/glossary#"><strong>line_2</strong></a>:</p>
-<p><a href="/glossary#"><strong>line_3</strong></a>:</p>
-<p><a href="/glossary#"><strong>located_at</strong></a>:</p>
-<p><a href="/glossary#location"><strong>location</strong></a>:</p>
-<p><a href="/glossary#"><strong>location_categories</strong></a>: location_categories</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
-<p><a href="/glossary#"><strong>minimum_withdrawal</strong></a>: minimum_withdrawal</p>
-<p><a href="/glossary#monday"><strong>monday</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>notes</strong></a>: notes</p>
-<p><a href="/glossary#opening_time"><strong>opening_time</strong></a>:</p>
-<p><a href="/glossary#postcode"><strong>postcode</strong></a>:</p>
-<p><a href="/glossary#saturday"><strong>saturday</strong></a>:</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-<p><a href="/glossary#"><strong>site_identification</strong></a>: site_identification</p>
-<p><a href="/glossary#"><strong>site_name</strong></a>: site_name</p>
-<p><a href="/glossary#state"><strong>state</strong></a>:</p>
-<p><a href="/glossary#sunday"><strong>sunday</strong></a>:</p>
-<p><a href="/glossary#supported_currencies"><strong>supported_currencies</strong></a>: [&quot;EUR&quot;,&quot;MXN&quot;,&quot;USD&quot;]</p>
-<p><a href="/glossary#supported_languages"><strong>supported_languages</strong></a>: [&quot;es&quot;,&quot;fr&quot;,&quot;de&quot;]</p>
-<p><a href="/glossary#thursday"><strong>thursday</strong></a>:</p>
-<p><a href="/glossary#tuesday"><strong>tuesday</strong></a>:</p>
-<p><a href="/glossary#wednesday"><strong>wednesday</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv500HeadAtmsRequest
-*/
-func (a *ATMAPIService) OBPv500HeadAtms(ctx context.Context, bankid string) ApiOBPv500HeadAtmsRequest {
-	return ApiOBPv500HeadAtmsRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500HeadAtms200Response
-func (a *ATMAPIService) OBPv500HeadAtmsExecute(r ApiOBPv500HeadAtmsRequest) (*OBPv500HeadAtms200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodHead
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500HeadAtms200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv500HeadAtms")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/atms"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateAtmRequest struct {
-	ctx context.Context
-	ApiService *ATMAPIService
-	bankid string
-	oBPv510CreateAtmRequest *OBPv510CreateAtmRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateAtmRequest) OBPv510CreateAtmRequest(oBPv510CreateAtmRequest OBPv510CreateAtmRequest) ApiOBPv510CreateAtmRequest {
-	r.oBPv510CreateAtmRequest = &oBPv510CreateAtmRequest
-	return r
-}
-
-func (r ApiOBPv510CreateAtmRequest) Execute() (*OBPv510GetAtm200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateAtmExecute(r)
-}
-
-/*
-OBPv510CreateAtm Create ATM
+CreateAtm Create ATM
 
 <p>Create ATM.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1235,10 +152,10 @@ OBPv510CreateAtm Create ATM
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510CreateAtmRequest
+ @return ApiCreateAtmRequest
 */
-func (a *ATMAPIService) OBPv510CreateAtm(ctx context.Context, bankid string) ApiOBPv510CreateAtmRequest {
-	return ApiOBPv510CreateAtmRequest{
+func (a *ATMAPIService) CreateAtm(ctx context.Context, bankid string) ApiCreateAtmRequest {
+	return ApiCreateAtmRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1246,16 +163,16 @@ func (a *ATMAPIService) OBPv510CreateAtm(ctx context.Context, bankid string) Api
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtm200Response
-func (a *ATMAPIService) OBPv510CreateAtmExecute(r ApiOBPv510CreateAtmRequest) (*OBPv510GetAtm200Response, *http.Response, error) {
+//  @return GetAtm200Response
+func (a *ATMAPIService) CreateAtmExecute(r ApiCreateAtmRequest) (*GetAtm200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtm200Response
+		localVarReturnValue  *GetAtm200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510CreateAtm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.CreateAtm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1266,8 +183,8 @@ func (a *ATMAPIService) OBPv510CreateAtmExecute(r ApiOBPv510CreateAtmRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510CreateAtmRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateAtmRequest is required and must be specified")
+	if r.createAtmRequest == nil {
+		return localVarReturnValue, nil, reportError("createAtmRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1288,7 +205,7 @@ func (a *ATMAPIService) OBPv510CreateAtmExecute(r ApiOBPv510CreateAtmRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510CreateAtmRequest
+	localVarPostBody = r.createAtmRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1313,7 +230,7 @@ func (a *ATMAPIService) OBPv510CreateAtmExecute(r ApiOBPv510CreateAtmRequest) (*
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1354,26 +271,26 @@ func (a *ATMAPIService) OBPv510CreateAtmExecute(r ApiOBPv510CreateAtmRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CreateAtmAttributeRequest struct {
+type ApiCreateAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv510CreateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510CreateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiCreateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv510CreateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateAtmAttributeExecute(r)
+func (r ApiCreateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateAtmAttributeExecute(r)
 }
 
 /*
-OBPv510CreateAtmAttribute Create ATM Attribute
+CreateAtmAttribute Create ATM Attribute
 
 <p>Create ATM Attribute</p>
 <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
@@ -1399,10 +316,10 @@ OBPv510CreateAtmAttribute Create ATM Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510CreateAtmAttributeRequest
+ @return ApiCreateAtmAttributeRequest
 */
-func (a *ATMAPIService) OBPv510CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiOBPv510CreateAtmAttributeRequest {
-	return ApiOBPv510CreateAtmAttributeRequest{
+func (a *ATMAPIService) CreateAtmAttribute(ctx context.Context, bankid string, atmid string) ApiCreateAtmAttributeRequest {
+	return ApiCreateAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1411,16 +328,16 @@ func (a *ATMAPIService) OBPv510CreateAtmAttribute(ctx context.Context, bankid st
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *ATMAPIService) CreateAtmAttributeExecute(r ApiCreateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510CreateAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.CreateAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1432,8 +349,8 @@ func (a *ATMAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1454,7 +371,7 @@ func (a *ATMAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1479,7 +396,7 @@ func (a *ATMAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAt
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1520,19 +437,19 @@ func (a *ATMAPIService) OBPv510CreateAtmAttributeExecute(r ApiOBPv510CreateAtmAt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteAtmRequest struct {
+type ApiDeleteAtmRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
 }
 
-func (r ApiOBPv510DeleteAtmRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteAtmExecute(r)
+func (r ApiDeleteAtmRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAtmExecute(r)
 }
 
 /*
-OBPv510DeleteAtm Delete ATM
+DeleteAtm Delete ATM
 
 <p>Delete ATM.</p>
 <p>This will also delete all its attributes.</p>
@@ -1546,10 +463,10 @@ OBPv510DeleteAtm Delete ATM
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510DeleteAtmRequest
+ @return ApiDeleteAtmRequest
 */
-func (a *ATMAPIService) OBPv510DeleteAtm(ctx context.Context, bankid string, atmid string) ApiOBPv510DeleteAtmRequest {
-	return ApiOBPv510DeleteAtmRequest{
+func (a *ATMAPIService) DeleteAtm(ctx context.Context, bankid string, atmid string) ApiDeleteAtmRequest {
+	return ApiDeleteAtmRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1558,14 +475,14 @@ func (a *ATMAPIService) OBPv510DeleteAtm(ctx context.Context, bankid string, atm
 }
 
 // Execute executes the request
-func (a *ATMAPIService) OBPv510DeleteAtmExecute(r ApiOBPv510DeleteAtmRequest) (*http.Response, error) {
+func (a *ATMAPIService) DeleteAtmExecute(r ApiDeleteAtmRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510DeleteAtm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.DeleteAtm")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1619,7 +536,7 @@ func (a *ATMAPIService) OBPv510DeleteAtmExecute(r ApiOBPv510DeleteAtmRequest) (*
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1651,7 +568,7 @@ func (a *ATMAPIService) OBPv510DeleteAtmExecute(r ApiOBPv510DeleteAtmRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510DeleteAtmAttributeRequest struct {
+type ApiDeleteAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
@@ -1659,12 +576,12 @@ type ApiOBPv510DeleteAtmAttributeRequest struct {
 	atmattributeid string
 }
 
-func (r ApiOBPv510DeleteAtmAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteAtmAttributeExecute(r)
+func (r ApiDeleteAtmAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAtmAttributeExecute(r)
 }
 
 /*
-OBPv510DeleteAtmAttribute Delete ATM Attribute
+DeleteAtmAttribute Delete ATM Attribute
 
 <p>Delete ATM Attribute</p>
 <p>Delete a Atm Attribute by its id.</p>
@@ -1680,10 +597,10 @@ OBPv510DeleteAtmAttribute Delete ATM Attribute
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
  @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510DeleteAtmAttributeRequest
+ @return ApiDeleteAtmAttributeRequest
 */
-func (a *ATMAPIService) OBPv510DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510DeleteAtmAttributeRequest {
-	return ApiOBPv510DeleteAtmAttributeRequest{
+func (a *ATMAPIService) DeleteAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiDeleteAtmAttributeRequest {
+	return ApiDeleteAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1693,14 +610,14 @@ func (a *ATMAPIService) OBPv510DeleteAtmAttribute(ctx context.Context, bankid st
 }
 
 // Execute executes the request
-func (a *ATMAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510DeleteAtmAttributeRequest) (*http.Response, error) {
+func (a *ATMAPIService) DeleteAtmAttributeExecute(r ApiDeleteAtmAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510DeleteAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.DeleteAtmAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1755,7 +672,7 @@ func (a *ATMAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510DeleteAtmAt
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1787,19 +704,19 @@ func (a *ATMAPIService) OBPv510DeleteAtmAttributeExecute(r ApiOBPv510DeleteAtmAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmRequest struct {
+type ApiGetAtmRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
 }
 
-func (r ApiOBPv510GetAtmRequest) Execute() (*OBPv510GetAtm200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmExecute(r)
+func (r ApiGetAtmRequest) Execute() (*GetAtm200Response, *http.Response, error) {
+	return r.ApiService.GetAtmExecute(r)
 }
 
 /*
-OBPv510GetAtm Get Bank ATM
+GetAtm Get Bank ATM
 
 <p>Returns information about ATM for a single bank specified by BANK_ID and ATM_ID including:</p>
 <ul>
@@ -1870,10 +787,10 @@ OBPv510GetAtm Get Bank ATM
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510GetAtmRequest
+ @return ApiGetAtmRequest
 */
-func (a *ATMAPIService) OBPv510GetAtm(ctx context.Context, bankid string, atmid string) ApiOBPv510GetAtmRequest {
-	return ApiOBPv510GetAtmRequest{
+func (a *ATMAPIService) GetAtm(ctx context.Context, bankid string, atmid string) ApiGetAtmRequest {
+	return ApiGetAtmRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1882,16 +799,16 @@ func (a *ATMAPIService) OBPv510GetAtm(ctx context.Context, bankid string, atmid 
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtm200Response
-func (a *ATMAPIService) OBPv510GetAtmExecute(r ApiOBPv510GetAtmRequest) (*OBPv510GetAtm200Response, *http.Response, error) {
+//  @return GetAtm200Response
+func (a *ATMAPIService) GetAtmExecute(r ApiGetAtmRequest) (*GetAtm200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtm200Response
+		localVarReturnValue  *GetAtm200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510GetAtm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.GetAtm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1958,7 +875,7 @@ func (a *ATMAPIService) OBPv510GetAtmExecute(r ApiOBPv510GetAtmRequest) (*OBPv51
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmAttributeRequest struct {
+type ApiGetAtmAttributeRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
@@ -1966,12 +883,12 @@ type ApiOBPv510GetAtmAttributeRequest struct {
 	atmattributeid string
 }
 
-func (r ApiOBPv510GetAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributeExecute(r)
+func (r ApiGetAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributeExecute(r)
 }
 
 /*
-OBPv510GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
+GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
 
 <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1993,10 +910,10 @@ OBPv510GetAtmAttribute Get ATM Attribute By ATM_ATTRIBUTE_ID
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
  @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510GetAtmAttributeRequest
+ @return ApiGetAtmAttributeRequest
 */
-func (a *ATMAPIService) OBPv510GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510GetAtmAttributeRequest {
-	return ApiOBPv510GetAtmAttributeRequest{
+func (a *ATMAPIService) GetAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiGetAtmAttributeRequest {
+	return ApiGetAtmAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2006,16 +923,16 @@ func (a *ATMAPIService) OBPv510GetAtmAttribute(ctx context.Context, bankid strin
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return GetAtmAttribute200Response
+func (a *ATMAPIService) GetAtmAttributeExecute(r ApiGetAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *GetAtmAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510GetAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.GetAtmAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2070,7 +987,7 @@ func (a *ATMAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAtmAttribut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2111,19 +1028,19 @@ func (a *ATMAPIService) OBPv510GetAtmAttributeExecute(r ApiOBPv510GetAtmAttribut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmAttributesRequest struct {
+type ApiGetAtmAttributesRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
 }
 
-func (r ApiOBPv510GetAtmAttributesRequest) Execute() (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmAttributesExecute(r)
+func (r ApiGetAtmAttributesRequest) Execute() (*GetAtmAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAtmAttributesExecute(r)
 }
 
 /*
-OBPv510GetAtmAttributes Get ATM Attributes
+GetAtmAttributes Get ATM Attributes
 
 <p>Get ATM Attributes</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2144,10 +1061,10 @@ OBPv510GetAtmAttributes Get ATM Attributes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510GetAtmAttributesRequest
+ @return ApiGetAtmAttributesRequest
 */
-func (a *ATMAPIService) OBPv510GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiOBPv510GetAtmAttributesRequest {
-	return ApiOBPv510GetAtmAttributesRequest{
+func (a *ATMAPIService) GetAtmAttributes(ctx context.Context, bankid string, atmid string) ApiGetAtmAttributesRequest {
+	return ApiGetAtmAttributesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2156,16 +1073,16 @@ func (a *ATMAPIService) OBPv510GetAtmAttributes(ctx context.Context, bankid stri
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttributes200Response
-func (a *ATMAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetAtmAttributesRequest) (*OBPv510GetAtmAttributes200Response, *http.Response, error) {
+//  @return GetAtmAttributes200Response
+func (a *ATMAPIService) GetAtmAttributesExecute(r ApiGetAtmAttributesRequest) (*GetAtmAttributes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttributes200Response
+		localVarReturnValue  *GetAtmAttributes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510GetAtmAttributes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.GetAtmAttributes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2219,7 +1136,7 @@ func (a *ATMAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetAtmAttribu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2260,18 +1177,18 @@ func (a *ATMAPIService) OBPv510GetAtmAttributesExecute(r ApiOBPv510GetAtmAttribu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510GetAtmsRequest struct {
+type ApiGetAtmsRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 }
 
-func (r ApiOBPv510GetAtmsRequest) Execute() (*OBPv510GetAtms200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAtmsExecute(r)
+func (r ApiGetAtmsRequest) Execute() (*GetAtms200Response, *http.Response, error) {
+	return r.ApiService.GetAtmsExecute(r)
 }
 
 /*
-OBPv510GetAtms Get Bank ATMS
+GetAtms Get Bank ATMS
 
 <p>Returns information about ATMs for a single bank specified by BANK_ID including:</p>
 <ul>
@@ -2343,10 +1260,10 @@ OBPv510GetAtms Get Bank ATMS
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510GetAtmsRequest
+ @return ApiGetAtmsRequest
 */
-func (a *ATMAPIService) OBPv510GetAtms(ctx context.Context, bankid string) ApiOBPv510GetAtmsRequest {
-	return ApiOBPv510GetAtmsRequest{
+func (a *ATMAPIService) GetAtms(ctx context.Context, bankid string) ApiGetAtmsRequest {
+	return ApiGetAtmsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2354,16 +1271,16 @@ func (a *ATMAPIService) OBPv510GetAtms(ctx context.Context, bankid string) ApiOB
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtms200Response
-func (a *ATMAPIService) OBPv510GetAtmsExecute(r ApiOBPv510GetAtmsRequest) (*OBPv510GetAtms200Response, *http.Response, error) {
+//  @return GetAtms200Response
+func (a *ATMAPIService) GetAtmsExecute(r ApiGetAtmsRequest) (*GetAtms200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtms200Response
+		localVarReturnValue  *GetAtms200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510GetAtms")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.GetAtms")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2429,26 +1346,179 @@ func (a *ATMAPIService) OBPv510GetAtmsExecute(r ApiOBPv510GetAtmsRequest) (*OBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateAtmRequest struct {
+type ApiHeadAtmsRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+}
+
+func (r ApiHeadAtmsRequest) Execute() (*HeadAtms200Response, *http.Response, error) {
+	return r.ApiService.HeadAtmsExecute(r)
+}
+
+/*
+HeadAtms Head Bank ATMS
+
+<p>Head Bank ATMS.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#accessibility_features"><strong>accessibility_features</strong></a>: [&quot;ATAC&quot;,&quot;ATAD&quot;]</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#atms"><strong>atms</strong></a>:</p>
+<p><a href="/glossary#"><strong>balance_inquiry_fee</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>branch_identification</strong></a>: branch_identification</p>
+<p><a href="/glossary#"><strong>cash_withdrawal_international_fee</strong></a>:</p>
+<p><a href="/glossary#"><strong>cash_withdrawal_national_fee</strong></a>:</p>
+<p><a href="/glossary#city"><strong>city</strong></a>:</p>
+<p><a href="/glossary#closing_time"><strong>closing_time</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#country_code"><strong>country_code</strong></a>: 1254</p>
+<p><a href="/glossary#county"><strong>county</strong></a>:</p>
+<p><a href="/glossary#friday"><strong>friday</strong></a>:</p>
+<p><a href="/glossary#"><strong>has_deposit_capability</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>is_accessible</strong></a>: false</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#license"><strong>license</strong></a>:</p>
+<p><a href="/glossary#"><strong>line_1</strong></a>:</p>
+<p><a href="/glossary#"><strong>line_2</strong></a>:</p>
+<p><a href="/glossary#"><strong>line_3</strong></a>:</p>
+<p><a href="/glossary#"><strong>located_at</strong></a>:</p>
+<p><a href="/glossary#location"><strong>location</strong></a>:</p>
+<p><a href="/glossary#"><strong>location_categories</strong></a>: location_categories</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#meta"><strong>meta</strong></a>:</p>
+<p><a href="/glossary#"><strong>minimum_withdrawal</strong></a>: minimum_withdrawal</p>
+<p><a href="/glossary#monday"><strong>monday</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>notes</strong></a>: notes</p>
+<p><a href="/glossary#opening_time"><strong>opening_time</strong></a>:</p>
+<p><a href="/glossary#postcode"><strong>postcode</strong></a>:</p>
+<p><a href="/glossary#saturday"><strong>saturday</strong></a>:</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+<p><a href="/glossary#"><strong>site_identification</strong></a>: site_identification</p>
+<p><a href="/glossary#"><strong>site_name</strong></a>: site_name</p>
+<p><a href="/glossary#state"><strong>state</strong></a>:</p>
+<p><a href="/glossary#sunday"><strong>sunday</strong></a>:</p>
+<p><a href="/glossary#supported_currencies"><strong>supported_currencies</strong></a>: [&quot;EUR&quot;,&quot;MXN&quot;,&quot;USD&quot;]</p>
+<p><a href="/glossary#supported_languages"><strong>supported_languages</strong></a>: [&quot;es&quot;,&quot;fr&quot;,&quot;de&quot;]</p>
+<p><a href="/glossary#thursday"><strong>thursday</strong></a>:</p>
+<p><a href="/glossary#tuesday"><strong>tuesday</strong></a>:</p>
+<p><a href="/glossary#wednesday"><strong>wednesday</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiHeadAtmsRequest
+*/
+func (a *ATMAPIService) HeadAtms(ctx context.Context, bankid string) ApiHeadAtmsRequest {
+	return ApiHeadAtmsRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return HeadAtms200Response
+func (a *ATMAPIService) HeadAtmsExecute(r ApiHeadAtmsRequest) (*HeadAtms200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodHead
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *HeadAtms200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.HeadAtms")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/banks/{bankid}/atms"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
-	oBPv510UpdateAtmRequest *OBPv510UpdateAtmRequest
+	updateAtmRequest *UpdateAtmRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateAtmRequest) OBPv510UpdateAtmRequest(oBPv510UpdateAtmRequest OBPv510UpdateAtmRequest) ApiOBPv510UpdateAtmRequest {
-	r.oBPv510UpdateAtmRequest = &oBPv510UpdateAtmRequest
+func (r ApiUpdateAtmRequest) UpdateAtmRequest(updateAtmRequest UpdateAtmRequest) ApiUpdateAtmRequest {
+	r.updateAtmRequest = &updateAtmRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateAtmRequest) Execute() (*OBPv510GetAtm200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateAtmExecute(r)
+func (r ApiUpdateAtmRequest) Execute() (*GetAtm200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmExecute(r)
 }
 
 /*
-OBPv510UpdateAtm UPDATE ATM
+UpdateAtm UPDATE ATM
 
 <p>Update ATM.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -2513,10 +1583,10 @@ OBPv510UpdateAtm UPDATE ATM
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @return ApiOBPv510UpdateAtmRequest
+ @return ApiUpdateAtmRequest
 */
-func (a *ATMAPIService) OBPv510UpdateAtm(ctx context.Context, bankid string, atmid string) ApiOBPv510UpdateAtmRequest {
-	return ApiOBPv510UpdateAtmRequest{
+func (a *ATMAPIService) UpdateAtm(ctx context.Context, bankid string, atmid string) ApiUpdateAtmRequest {
+	return ApiUpdateAtmRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2525,16 +1595,16 @@ func (a *ATMAPIService) OBPv510UpdateAtm(ctx context.Context, bankid string, atm
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtm200Response
-func (a *ATMAPIService) OBPv510UpdateAtmExecute(r ApiOBPv510UpdateAtmRequest) (*OBPv510GetAtm200Response, *http.Response, error) {
+//  @return GetAtm200Response
+func (a *ATMAPIService) UpdateAtmExecute(r ApiUpdateAtmRequest) (*GetAtm200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtm200Response
+		localVarReturnValue  *GetAtm200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510UpdateAtm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtm")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2546,8 +1616,8 @@ func (a *ATMAPIService) OBPv510UpdateAtmExecute(r ApiOBPv510UpdateAtmRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmRequest is required and must be specified")
+	if r.updateAtmRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2568,7 +1638,7 @@ func (a *ATMAPIService) OBPv510UpdateAtmExecute(r ApiOBPv510UpdateAtmRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmRequest
+	localVarPostBody = r.updateAtmRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2593,7 +1663,7 @@ func (a *ATMAPIService) OBPv510UpdateAtmExecute(r ApiOBPv510UpdateAtmRequest) (*
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2634,86 +1704,75 @@ func (a *ATMAPIService) OBPv510UpdateAtmExecute(r ApiOBPv510UpdateAtmRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510UpdateAtmAttributeRequest struct {
+type ApiUpdateAtmAccessibilityFeaturesRequest struct {
 	ctx context.Context
 	ApiService *ATMAPIService
 	bankid string
 	atmid string
-	atmattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAccessibilityFeaturesRequest *UpdateAtmAccessibilityFeaturesRequest
 }
 
 // Request body
-func (r ApiOBPv510UpdateAtmAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv510UpdateAtmAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateAtmAccessibilityFeaturesRequest) UpdateAtmAccessibilityFeaturesRequest(updateAtmAccessibilityFeaturesRequest UpdateAtmAccessibilityFeaturesRequest) ApiUpdateAtmAccessibilityFeaturesRequest {
+	r.updateAtmAccessibilityFeaturesRequest = &updateAtmAccessibilityFeaturesRequest
 	return r
 }
 
-func (r ApiOBPv510UpdateAtmAttributeRequest) Execute() (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateAtmAttributeExecute(r)
+func (r ApiUpdateAtmAccessibilityFeaturesRequest) Execute() (*UpdateAtmAccessibilityFeatures200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmAccessibilityFeaturesExecute(r)
 }
 
 /*
-OBPv510UpdateAtmAttribute Update ATM Attribute
+UpdateAtmAccessibilityFeatures Update ATM Accessibility Features
 
-<p>Update ATM Attribute.</p>
-<p>Update an ATM Attribute by its id.</p>
+<p>Update ATM Accessibility Features.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
 <p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#accessibility_features"><strong>accessibility_features</strong></a>: [&quot;ATAC&quot;,&quot;ATAD&quot;]</p>
 <p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param atmid The ATMID identifier
- @param atmattributeid The ATMATTRIBUTEID identifier
- @return ApiOBPv510UpdateAtmAttributeRequest
+ @return ApiUpdateAtmAccessibilityFeaturesRequest
 */
-func (a *ATMAPIService) OBPv510UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiOBPv510UpdateAtmAttributeRequest {
-	return ApiOBPv510UpdateAtmAttributeRequest{
+func (a *ATMAPIService) UpdateAtmAccessibilityFeatures(ctx context.Context, bankid string, atmid string) ApiUpdateAtmAccessibilityFeaturesRequest {
+	return ApiUpdateAtmAccessibilityFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		atmid: atmid,
-		atmattributeid: atmattributeid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv510GetAtmAttribute200Response
-func (a *ATMAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510UpdateAtmAttributeRequest) (*OBPv510GetAtmAttribute200Response, *http.Response, error) {
+//  @return UpdateAtmAccessibilityFeatures200Response
+func (a *ATMAPIService) UpdateAtmAccessibilityFeaturesExecute(r ApiUpdateAtmAccessibilityFeaturesRequest) (*UpdateAtmAccessibilityFeatures200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAtmAttribute200Response
+		localVarReturnValue  *UpdateAtmAccessibilityFeatures200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.OBPv510UpdateAtmAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmAccessibilityFeatures")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/accessibility-features"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAccessibilityFeaturesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAccessibilityFeaturesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2734,7 +1793,7 @@ func (a *ATMAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510UpdateAtmAt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAccessibilityFeaturesRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2759,7 +1818,948 @@ func (a *ATMAPIService) OBPv510UpdateAtmAttributeExecute(r ApiOBPv510UpdateAtmAt
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmAttributeRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	atmattributeid string
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
+}
+
+// Request body
+func (r ApiUpdateAtmAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateAtmAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
+	return r
+}
+
+func (r ApiUpdateAtmAttributeRequest) Execute() (*GetAtmAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmAttributeExecute(r)
+}
+
+/*
+UpdateAtmAttribute Update ATM Attribute
+
+<p>Update ATM Attribute.</p>
+<p>Update an ATM Attribute by its id.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @param atmattributeid The ATMATTRIBUTEID identifier
+ @return ApiUpdateAtmAttributeRequest
+*/
+func (a *ATMAPIService) UpdateAtmAttribute(ctx context.Context, bankid string, atmid string, atmattributeid string) ApiUpdateAtmAttributeRequest {
+	return ApiUpdateAtmAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+		atmattributeid: atmattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAtmAttribute200Response
+func (a *ATMAPIService) UpdateAtmAttributeExecute(r ApiUpdateAtmAttributeRequest) (*GetAtmAttribute200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAtmAttribute200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmattributeid"+"}", url.PathEscape(parameterValueToString(r.atmattributeid, "atmattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmLocationCategoriesRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	updateAtmLocationCategoriesRequest *UpdateAtmLocationCategoriesRequest
+}
+
+// Request body
+func (r ApiUpdateAtmLocationCategoriesRequest) UpdateAtmLocationCategoriesRequest(updateAtmLocationCategoriesRequest UpdateAtmLocationCategoriesRequest) ApiUpdateAtmLocationCategoriesRequest {
+	r.updateAtmLocationCategoriesRequest = &updateAtmLocationCategoriesRequest
+	return r
+}
+
+func (r ApiUpdateAtmLocationCategoriesRequest) Execute() (*UpdateAtmLocationCategories200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmLocationCategoriesExecute(r)
+}
+
+/*
+UpdateAtmLocationCategories Update ATM Location Categories
+
+<p>Update ATM Location Categories.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>location_categories</strong></a>: location_categories</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiUpdateAtmLocationCategoriesRequest
+*/
+func (a *ATMAPIService) UpdateAtmLocationCategories(ctx context.Context, bankid string, atmid string) ApiUpdateAtmLocationCategoriesRequest {
+	return ApiUpdateAtmLocationCategoriesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateAtmLocationCategories200Response
+func (a *ATMAPIService) UpdateAtmLocationCategoriesExecute(r ApiUpdateAtmLocationCategoriesRequest) (*UpdateAtmLocationCategories200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateAtmLocationCategories200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmLocationCategories")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/location-categories"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmLocationCategoriesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmLocationCategoriesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmLocationCategoriesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmNotesRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	updateAtmNotesRequest *UpdateAtmNotesRequest
+}
+
+// Request body
+func (r ApiUpdateAtmNotesRequest) UpdateAtmNotesRequest(updateAtmNotesRequest UpdateAtmNotesRequest) ApiUpdateAtmNotesRequest {
+	r.updateAtmNotesRequest = &updateAtmNotesRequest
+	return r
+}
+
+func (r ApiUpdateAtmNotesRequest) Execute() (*UpdateAtmNotes200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmNotesExecute(r)
+}
+
+/*
+UpdateAtmNotes Update ATM Notes
+
+<p>Update ATM Notes.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>notes</strong></a>: notes</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiUpdateAtmNotesRequest
+*/
+func (a *ATMAPIService) UpdateAtmNotes(ctx context.Context, bankid string, atmid string) ApiUpdateAtmNotesRequest {
+	return ApiUpdateAtmNotesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateAtmNotes200Response
+func (a *ATMAPIService) UpdateAtmNotesExecute(r ApiUpdateAtmNotesRequest) (*UpdateAtmNotes200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateAtmNotes200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmNotes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/notes"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmNotesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmNotesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmNotesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmServicesRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	updateAtmServicesRequest *UpdateAtmServicesRequest
+}
+
+// Request body
+func (r ApiUpdateAtmServicesRequest) UpdateAtmServicesRequest(updateAtmServicesRequest UpdateAtmServicesRequest) ApiUpdateAtmServicesRequest {
+	r.updateAtmServicesRequest = &updateAtmServicesRequest
+	return r
+}
+
+func (r ApiUpdateAtmServicesRequest) Execute() (*UpdateAtmServices200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmServicesExecute(r)
+}
+
+/*
+UpdateAtmServices Update ATM Services
+
+<p>Update ATM Services.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiUpdateAtmServicesRequest
+*/
+func (a *ATMAPIService) UpdateAtmServices(ctx context.Context, bankid string, atmid string) ApiUpdateAtmServicesRequest {
+	return ApiUpdateAtmServicesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateAtmServices200Response
+func (a *ATMAPIService) UpdateAtmServicesExecute(r ApiUpdateAtmServicesRequest) (*UpdateAtmServices200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateAtmServices200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmServices")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/services"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmServicesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmServicesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmServicesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmSupportedCurrenciesRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	updateAtmSupportedCurrenciesRequest *UpdateAtmSupportedCurrenciesRequest
+}
+
+// Request body
+func (r ApiUpdateAtmSupportedCurrenciesRequest) UpdateAtmSupportedCurrenciesRequest(updateAtmSupportedCurrenciesRequest UpdateAtmSupportedCurrenciesRequest) ApiUpdateAtmSupportedCurrenciesRequest {
+	r.updateAtmSupportedCurrenciesRequest = &updateAtmSupportedCurrenciesRequest
+	return r
+}
+
+func (r ApiUpdateAtmSupportedCurrenciesRequest) Execute() (*UpdateAtmSupportedCurrencies200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmSupportedCurrenciesExecute(r)
+}
+
+/*
+UpdateAtmSupportedCurrencies Update ATM Supported Currencies
+
+<p>Update ATM Supported Currencies.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#supported_currencies"><strong>supported_currencies</strong></a>: [&quot;EUR&quot;,&quot;MXN&quot;,&quot;USD&quot;]</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiUpdateAtmSupportedCurrenciesRequest
+*/
+func (a *ATMAPIService) UpdateAtmSupportedCurrencies(ctx context.Context, bankid string, atmid string) ApiUpdateAtmSupportedCurrenciesRequest {
+	return ApiUpdateAtmSupportedCurrenciesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateAtmSupportedCurrencies200Response
+func (a *ATMAPIService) UpdateAtmSupportedCurrenciesExecute(r ApiUpdateAtmSupportedCurrenciesRequest) (*UpdateAtmSupportedCurrencies200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateAtmSupportedCurrencies200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmSupportedCurrencies")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-currencies"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmSupportedCurrenciesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmSupportedCurrenciesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmSupportedCurrenciesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateAtmSupportedLanguagesRequest struct {
+	ctx context.Context
+	ApiService *ATMAPIService
+	bankid string
+	atmid string
+	updateAtmSupportedLanguagesRequest *UpdateAtmSupportedLanguagesRequest
+}
+
+// Request body
+func (r ApiUpdateAtmSupportedLanguagesRequest) UpdateAtmSupportedLanguagesRequest(updateAtmSupportedLanguagesRequest UpdateAtmSupportedLanguagesRequest) ApiUpdateAtmSupportedLanguagesRequest {
+	r.updateAtmSupportedLanguagesRequest = &updateAtmSupportedLanguagesRequest
+	return r
+}
+
+func (r ApiUpdateAtmSupportedLanguagesRequest) Execute() (*UpdateAtmSupportedLanguages200Response, *http.Response, error) {
+	return r.ApiService.UpdateAtmSupportedLanguagesExecute(r)
+}
+
+/*
+UpdateAtmSupportedLanguages Update ATM Supported Languages
+
+<p>Update ATM Supported Languages.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#atm_id">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#atm_id"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#supported_languages"><strong>supported_languages</strong></a>: [&quot;es&quot;,&quot;fr&quot;,&quot;de&quot;]</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param atmid The ATMID identifier
+ @return ApiUpdateAtmSupportedLanguagesRequest
+*/
+func (a *ATMAPIService) UpdateAtmSupportedLanguages(ctx context.Context, bankid string, atmid string) ApiUpdateAtmSupportedLanguagesRequest {
+	return ApiUpdateAtmSupportedLanguagesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		atmid: atmid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateAtmSupportedLanguages200Response
+func (a *ATMAPIService) UpdateAtmSupportedLanguagesExecute(r ApiUpdateAtmSupportedLanguagesRequest) (*UpdateAtmSupportedLanguages200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateAtmSupportedLanguages200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ATMAPIService.UpdateAtmSupportedLanguages")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/atms/{atmid}/supported-languages"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"atmid"+"}", url.PathEscape(parameterValueToString(r.atmid, "atmid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateAtmSupportedLanguagesRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmSupportedLanguagesRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateAtmSupportedLanguagesRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

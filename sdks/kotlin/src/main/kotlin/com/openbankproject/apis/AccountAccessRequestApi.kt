@@ -19,10 +19,10 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv600CreateAccountAccessRequestRequest
-import com.openbankproject.models.OBPv600GetAccountAccessRequestsForAccount200Response
-import com.openbankproject.models.OBPv600RejectAccountAccessRequest200Response
-import com.openbankproject.models.OBPv600RejectAccountAccessRequestRequest
+import com.openbankproject.models.CreateAccountAccessRequestRequest
+import com.openbankproject.models.GetAccountAccessRequestsForAccount200Response
+import com.openbankproject.models.RejectAccountAccessRequest200Response
+import com.openbankproject.models.RejectAccountAccessRequestRequest
 
 import com.squareup.moshi.Json
 
@@ -44,7 +44,7 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -55,8 +55,8 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
-     * @return OBPv600RejectAccountAccessRequest200Response
+     * @param rejectAccountAccessRequestRequest Request body
+     * @return RejectAccountAccessRequest200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +65,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600ApproveAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : OBPv600RejectAccountAccessRequest200Response {
-        val localVarResponse = oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, obPv600RejectAccountAccessRequestRequest = obPv600RejectAccountAccessRequestRequest)
+    fun approveAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : RejectAccountAccessRequest200Response {
+        val localVarResponse = approveAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, rejectAccountAccessRequestRequest = rejectAccountAccessRequestRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600RejectAccountAccessRequest200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RejectAccountAccessRequest200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -90,32 +90,32 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
-     * @return ApiResponse<OBPv600RejectAccountAccessRequest200Response?>
+     * @param rejectAccountAccessRequestRequest Request body
+     * @return ApiResponse<RejectAccountAccessRequest200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : ApiResponse<OBPv600RejectAccountAccessRequest200Response?> {
-        val localVariableConfig = oBPv600ApproveAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, obPv600RejectAccountAccessRequestRequest = obPv600RejectAccountAccessRequestRequest)
+    fun approveAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : ApiResponse<RejectAccountAccessRequest200Response?> {
+        val localVariableConfig = approveAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, rejectAccountAccessRequestRequest = rejectAccountAccessRequestRequest)
 
-        return request<OBPv600RejectAccountAccessRequestRequest, OBPv600RejectAccountAccessRequest200Response>(
+        return request<RejectAccountAccessRequestRequest, RejectAccountAccessRequest200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600ApproveAccountAccessRequest
+     * To obtain the request config of the operation approveAccountAccessRequest
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
+     * @param rejectAccountAccessRequestRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600ApproveAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : RequestConfig<OBPv600RejectAccountAccessRequestRequest> {
-        val localVariableBody = obPv600RejectAccountAccessRequestRequest
+    fun approveAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : RequestConfig<RejectAccountAccessRequestRequest> {
+        val localVariableBody = rejectAccountAccessRequestRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -137,8 +137,8 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv600CreateAccountAccessRequestRequest Request body
-     * @return OBPv600RejectAccountAccessRequest200Response
+     * @param createAccountAccessRequestRequest Request body
+     * @return RejectAccountAccessRequest200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -147,11 +147,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600CreateAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, obPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest) : OBPv600RejectAccountAccessRequest200Response {
-        val localVarResponse = oBPv600CreateAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, obPv600CreateAccountAccessRequestRequest = obPv600CreateAccountAccessRequestRequest)
+    fun createAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest) : RejectAccountAccessRequest200Response {
+        val localVarResponse = createAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, createAccountAccessRequestRequest = createAccountAccessRequestRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600RejectAccountAccessRequest200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RejectAccountAccessRequest200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -171,31 +171,31 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * &lt;p&gt;Create a new Account Access Request (maker step in maker/checker workflow).&lt;/p&gt; &lt;p&gt;The requestor (maker) creates a request to grant a target user access to a specific view on an account.&lt;br /&gt; A business justification is required.&lt;/p&gt; &lt;p&gt;The request is created with status INITIATED and must be approved or rejected by a different user (checker).&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv600CreateAccountAccessRequestRequest Request body
-     * @return ApiResponse<OBPv600RejectAccountAccessRequest200Response?>
+     * @param createAccountAccessRequestRequest Request body
+     * @return ApiResponse<RejectAccountAccessRequest200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600CreateAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, obPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest) : ApiResponse<OBPv600RejectAccountAccessRequest200Response?> {
-        val localVariableConfig = oBPv600CreateAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, obPv600CreateAccountAccessRequestRequest = obPv600CreateAccountAccessRequestRequest)
+    fun createAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest) : ApiResponse<RejectAccountAccessRequest200Response?> {
+        val localVariableConfig = createAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, createAccountAccessRequestRequest = createAccountAccessRequestRequest)
 
-        return request<OBPv600CreateAccountAccessRequestRequest, OBPv600RejectAccountAccessRequest200Response>(
+        return request<CreateAccountAccessRequestRequest, RejectAccountAccessRequest200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600CreateAccountAccessRequest
+     * To obtain the request config of the operation createAccountAccessRequest
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv600CreateAccountAccessRequestRequest Request body
+     * @param createAccountAccessRequestRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600CreateAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, obPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest) : RequestConfig<OBPv600CreateAccountAccessRequestRequest> {
-        val localVariableBody = obPv600CreateAccountAccessRequestRequest
+    fun createAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest) : RequestConfig<CreateAccountAccessRequestRequest> {
+        val localVariableBody = createAccountAccessRequestRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -218,7 +218,7 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @return OBPv600RejectAccountAccessRequest200Response
+     * @return RejectAccountAccessRequest200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -227,11 +227,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetAccountAccessRequestById(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : OBPv600RejectAccountAccessRequest200Response {
-        val localVarResponse = oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid)
+    fun getAccountAccessRequestById(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : RejectAccountAccessRequest200Response {
+        val localVarResponse = getAccountAccessRequestByIdWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600RejectAccountAccessRequest200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RejectAccountAccessRequest200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -252,29 +252,29 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @return ApiResponse<OBPv600RejectAccountAccessRequest200Response?>
+     * @return ApiResponse<RejectAccountAccessRequest200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : ApiResponse<OBPv600RejectAccountAccessRequest200Response?> {
-        val localVariableConfig = oBPv600GetAccountAccessRequestByIdRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid)
+    fun getAccountAccessRequestByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : ApiResponse<RejectAccountAccessRequest200Response?> {
+        val localVariableConfig = getAccountAccessRequestByIdRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid)
 
-        return request<Unit, OBPv600RejectAccountAccessRequest200Response>(
+        return request<Unit, RejectAccountAccessRequest200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetAccountAccessRequestById
+     * To obtain the request config of the operation getAccountAccessRequestById
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetAccountAccessRequestByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : RequestConfig<Unit> {
+    fun getAccountAccessRequestByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -296,7 +296,7 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * &lt;p&gt;Get Account Access Requests for a specific account (checker view).&lt;/p&gt; &lt;p&gt;Optionally filter by status using the query parameter: ?status&#x3D;INITIATED&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @return OBPv600GetAccountAccessRequestsForAccount200Response
+     * @return GetAccountAccessRequestsForAccount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -305,11 +305,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetAccountAccessRequestsForAccount(bankid: kotlin.String, accountid: kotlin.String) : OBPv600GetAccountAccessRequestsForAccount200Response {
-        val localVarResponse = oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid = bankid, accountid = accountid)
+    fun getAccountAccessRequestsForAccount(bankid: kotlin.String, accountid: kotlin.String) : GetAccountAccessRequestsForAccount200Response {
+        val localVarResponse = getAccountAccessRequestsForAccountWithHttpInfo(bankid = bankid, accountid = accountid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetAccountAccessRequestsForAccount200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAccountAccessRequestsForAccount200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -329,28 +329,28 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * &lt;p&gt;Get Account Access Requests for a specific account (checker view).&lt;/p&gt; &lt;p&gt;Optionally filter by status using the query parameter: ?status&#x3D;INITIATED&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @return ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response?>
+     * @return ApiResponse<GetAccountAccessRequestsForAccount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String) : ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response?> {
-        val localVariableConfig = oBPv600GetAccountAccessRequestsForAccountRequestConfig(bankid = bankid, accountid = accountid)
+    fun getAccountAccessRequestsForAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String) : ApiResponse<GetAccountAccessRequestsForAccount200Response?> {
+        val localVariableConfig = getAccountAccessRequestsForAccountRequestConfig(bankid = bankid, accountid = accountid)
 
-        return request<Unit, OBPv600GetAccountAccessRequestsForAccount200Response>(
+        return request<Unit, GetAccountAccessRequestsForAccount200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetAccountAccessRequestsForAccount
+     * To obtain the request config of the operation getAccountAccessRequestsForAccount
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetAccountAccessRequestsForAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String) : RequestConfig<Unit> {
+    fun getAccountAccessRequestsForAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -370,7 +370,7 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * GET /obp/v6.0.0/my/account-access-requests
      * Get My Account Access Requests
      * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
-     * @return OBPv600GetAccountAccessRequestsForAccount200Response
+     * @return GetAccountAccessRequestsForAccount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -379,11 +379,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetMyAccountAccessRequests() : OBPv600GetAccountAccessRequestsForAccount200Response {
-        val localVarResponse = oBPv600GetMyAccountAccessRequestsWithHttpInfo()
+    fun getMyAccountAccessRequests() : GetAccountAccessRequestsForAccount200Response {
+        val localVarResponse = getMyAccountAccessRequestsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetAccountAccessRequestsForAccount200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAccountAccessRequestsForAccount200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -401,26 +401,26 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * GET /obp/v6.0.0/my/account-access-requests
      * Get My Account Access Requests
      * &lt;p&gt;Get Account Access Requests created by the current user (maker view).&lt;/p&gt; &lt;p&gt;No special roles are required — a user can always see their own requests.&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_request_id&lt;/strong&gt;&lt;/a&gt;: account_access_request_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_access_requests&lt;/strong&gt;&lt;/a&gt;: account_access_requests&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;business_justification&lt;/strong&gt;&lt;/a&gt;: business_justification&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_comment&lt;/strong&gt;&lt;/a&gt;: checker_comment&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;checker_user_id&lt;/strong&gt;&lt;/a&gt;: checker_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created\&quot;&gt;&lt;strong&gt;created&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_system_view&lt;/strong&gt;&lt;/a&gt;: is_system_view&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;requestor_user_id&lt;/strong&gt;&lt;/a&gt;: requestor_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_user_id&lt;/strong&gt;&lt;/a&gt;: target_user_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;updated&lt;/strong&gt;&lt;/a&gt;: updated&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
-     * @return ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response?>
+     * @return ApiResponse<GetAccountAccessRequestsForAccount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetMyAccountAccessRequestsWithHttpInfo() : ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response?> {
-        val localVariableConfig = oBPv600GetMyAccountAccessRequestsRequestConfig()
+    fun getMyAccountAccessRequestsWithHttpInfo() : ApiResponse<GetAccountAccessRequestsForAccount200Response?> {
+        val localVariableConfig = getMyAccountAccessRequestsRequestConfig()
 
-        return request<Unit, OBPv600GetAccountAccessRequestsForAccount200Response>(
+        return request<Unit, GetAccountAccessRequestsForAccount200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetMyAccountAccessRequests
+     * To obtain the request config of the operation getMyAccountAccessRequests
      *
      * @return RequestConfig
      */
-    fun oBPv600GetMyAccountAccessRequestsRequestConfig() : RequestConfig<Unit> {
+    fun getMyAccountAccessRequestsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -443,8 +443,8 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
-     * @return OBPv600RejectAccountAccessRequest200Response
+     * @param rejectAccountAccessRequestRequest Request body
+     * @return RejectAccountAccessRequest200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -453,11 +453,11 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600RejectAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : OBPv600RejectAccountAccessRequest200Response {
-        val localVarResponse = oBPv600RejectAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, obPv600RejectAccountAccessRequestRequest = obPv600RejectAccountAccessRequestRequest)
+    fun rejectAccountAccessRequest(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : RejectAccountAccessRequest200Response {
+        val localVarResponse = rejectAccountAccessRequestWithHttpInfo(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, rejectAccountAccessRequestRequest = rejectAccountAccessRequestRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600RejectAccountAccessRequest200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RejectAccountAccessRequest200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -478,32 +478,32 @@ open class AccountAccessRequestApi(basePath: kotlin.String = defaultBasePath, cl
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
-     * @return ApiResponse<OBPv600RejectAccountAccessRequest200Response?>
+     * @param rejectAccountAccessRequestRequest Request body
+     * @return ApiResponse<RejectAccountAccessRequest200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600RejectAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : ApiResponse<OBPv600RejectAccountAccessRequest200Response?> {
-        val localVariableConfig = oBPv600RejectAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, obPv600RejectAccountAccessRequestRequest = obPv600RejectAccountAccessRequestRequest)
+    fun rejectAccountAccessRequestWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : ApiResponse<RejectAccountAccessRequest200Response?> {
+        val localVariableConfig = rejectAccountAccessRequestRequestConfig(bankid = bankid, accountid = accountid, accountaccessrequestid = accountaccessrequestid, rejectAccountAccessRequestRequest = rejectAccountAccessRequestRequest)
 
-        return request<OBPv600RejectAccountAccessRequestRequest, OBPv600RejectAccountAccessRequest200Response>(
+        return request<RejectAccountAccessRequestRequest, RejectAccountAccessRequest200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600RejectAccountAccessRequest
+     * To obtain the request config of the operation rejectAccountAccessRequest
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
-     * @param obPv600RejectAccountAccessRequestRequest Request body
+     * @param rejectAccountAccessRequestRequest Request body
      * @return RequestConfig
      */
-    fun oBPv600RejectAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, obPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest) : RequestConfig<OBPv600RejectAccountAccessRequestRequest> {
-        val localVariableBody = obPv600RejectAccountAccessRequestRequest
+    fun rejectAccountAccessRequestRequestConfig(bankid: kotlin.String, accountid: kotlin.String, accountaccessrequestid: kotlin.String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest) : RequestConfig<RejectAccountAccessRequestRequest> {
+        val localVariableBody = rejectAccountAccessRequestRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,37 +75,37 @@ class ABACApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600CreateAbacRule' => [
+        'createAbacRule' => [
             'application/json',
         ],
-        'oBPv600DeleteAbacRule' => [
+        'deleteAbacRule' => [
             'application/json',
         ],
-        'oBPv600ExecuteAbacPolicy' => [
+        'executeAbacPolicy' => [
             'application/json',
         ],
-        'oBPv600ExecuteAbacRule' => [
+        'executeAbacRule' => [
             'application/json',
         ],
-        'oBPv600GetAbacPolicies' => [
+        'getAbacPolicies' => [
             'application/json',
         ],
-        'oBPv600GetAbacRule' => [
+        'getAbacRule' => [
             'application/json',
         ],
-        'oBPv600GetAbacRuleSchema' => [
+        'getAbacRuleSchema' => [
             'application/json',
         ],
-        'oBPv600GetAbacRules' => [
+        'getAbacRules' => [
             'application/json',
         ],
-        'oBPv600GetAbacRulesByPolicy' => [
+        'getAbacRulesByPolicy' => [
             'application/json',
         ],
-        'oBPv600UpdateAbacRule' => [
+        'updateAbacRule' => [
             'application/json',
         ],
-        'oBPv600ValidateAbacRule' => [
+        'validateAbacRule' => [
             'application/json',
         ],
     ];
@@ -157,38 +157,38 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600CreateAbacRule
+     * Operation createAbacRule
      *
      * Create ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRule200Response
+     * @return \OpenBankProject\Model\GetAbacRule200Response
      */
-    public function oBPv600CreateAbacRule($obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600CreateAbacRule'][0])
+    public function createAbacRule($update_abac_rule_request, string $contentType = self::contentTypes['createAbacRule'][0])
     {
-        list($response) = $this->oBPv600CreateAbacRuleWithHttpInfo($obpv600_update_abac_rule_request, $contentType);
+        list($response) = $this->createAbacRuleWithHttpInfo($update_abac_rule_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateAbacRuleWithHttpInfo
+     * Operation createAbacRuleWithHttpInfo
      *
      * Create ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateAbacRuleWithHttpInfo($obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600CreateAbacRule'][0])
+    public function createAbacRuleWithHttpInfo($update_abac_rule_request, string $contentType = self::contentTypes['createAbacRule'][0])
     {
-        $request = $this->oBPv600CreateAbacRuleRequest($obpv600_update_abac_rule_request, $contentType);
+        $request = $this->createAbacRuleRequest($update_abac_rule_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -216,7 +216,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $request,
                         $response,
                     );
@@ -238,7 +238,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                '\OpenBankProject\Model\GetAbacRule200Response',
                 $request,
                 $response,
             );
@@ -247,7 +247,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -260,19 +260,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600CreateAbacRuleAsync
+     * Operation createAbacRuleAsync
      *
      * Create ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateAbacRuleAsync($obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600CreateAbacRule'][0])
+    public function createAbacRuleAsync($update_abac_rule_request, string $contentType = self::contentTypes['createAbacRule'][0])
     {
-        return $this->oBPv600CreateAbacRuleAsyncWithHttpInfo($obpv600_update_abac_rule_request, $contentType)
+        return $this->createAbacRuleAsyncWithHttpInfo($update_abac_rule_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -281,20 +281,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600CreateAbacRuleAsyncWithHttpInfo
+     * Operation createAbacRuleAsyncWithHttpInfo
      *
      * Create ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateAbacRuleAsyncWithHttpInfo($obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600CreateAbacRule'][0])
+    public function createAbacRuleAsyncWithHttpInfo($update_abac_rule_request, string $contentType = self::contentTypes['createAbacRule'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRule200Response';
-        $request = $this->oBPv600CreateAbacRuleRequest($obpv600_update_abac_rule_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRule200Response';
+        $request = $this->createAbacRuleRequest($update_abac_rule_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -333,21 +333,21 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateAbacRule'
+     * Create request for operation 'createAbacRule'
      *
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateAbacRuleRequest($obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600CreateAbacRule'][0])
+    public function createAbacRuleRequest($update_abac_rule_request, string $contentType = self::contentTypes['createAbacRule'][0])
     {
 
-        // verify the required parameter 'obpv600_update_abac_rule_request' is set
-        if ($obpv600_update_abac_rule_request === null || (is_array($obpv600_update_abac_rule_request) && count($obpv600_update_abac_rule_request) === 0)) {
+        // verify the required parameter 'update_abac_rule_request' is set
+        if ($update_abac_rule_request === null || (is_array($update_abac_rule_request) && count($update_abac_rule_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_abac_rule_request when calling oBPv600CreateAbacRule'
+                'Missing the required parameter $update_abac_rule_request when calling createAbacRule'
             );
         }
 
@@ -370,12 +370,12 @@ class ABACApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_abac_rule_request)) {
+        if (isset($update_abac_rule_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_abac_rule_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_abac_rule_request));
             } else {
-                $httpBody = $obpv600_update_abac_rule_request;
+                $httpBody = $update_abac_rule_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -411,9 +411,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -438,37 +438,37 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600DeleteAbacRule
+     * Operation deleteAbacRule
      *
      * Delete ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteAbacRule($abacruleid, string $contentType = self::contentTypes['oBPv600DeleteAbacRule'][0])
+    public function deleteAbacRule($abacruleid, string $contentType = self::contentTypes['deleteAbacRule'][0])
     {
-        $this->oBPv600DeleteAbacRuleWithHttpInfo($abacruleid, $contentType);
+        $this->deleteAbacRuleWithHttpInfo($abacruleid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteAbacRuleWithHttpInfo
+     * Operation deleteAbacRuleWithHttpInfo
      *
      * Delete ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteAbacRuleWithHttpInfo($abacruleid, string $contentType = self::contentTypes['oBPv600DeleteAbacRule'][0])
+    public function deleteAbacRuleWithHttpInfo($abacruleid, string $contentType = self::contentTypes['deleteAbacRule'][0])
     {
-        $request = $this->oBPv600DeleteAbacRuleRequest($abacruleid, $contentType);
+        $request = $this->deleteAbacRuleRequest($abacruleid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -504,19 +504,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600DeleteAbacRuleAsync
+     * Operation deleteAbacRuleAsync
      *
      * Delete ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteAbacRuleAsync($abacruleid, string $contentType = self::contentTypes['oBPv600DeleteAbacRule'][0])
+    public function deleteAbacRuleAsync($abacruleid, string $contentType = self::contentTypes['deleteAbacRule'][0])
     {
-        return $this->oBPv600DeleteAbacRuleAsyncWithHttpInfo($abacruleid, $contentType)
+        return $this->deleteAbacRuleAsyncWithHttpInfo($abacruleid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -525,20 +525,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600DeleteAbacRuleAsyncWithHttpInfo
+     * Operation deleteAbacRuleAsyncWithHttpInfo
      *
      * Delete ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteAbacRuleAsyncWithHttpInfo($abacruleid, string $contentType = self::contentTypes['oBPv600DeleteAbacRule'][0])
+    public function deleteAbacRuleAsyncWithHttpInfo($abacruleid, string $contentType = self::contentTypes['deleteAbacRule'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteAbacRuleRequest($abacruleid, $contentType);
+        $request = $this->deleteAbacRuleRequest($abacruleid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -564,21 +564,21 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteAbacRule'
+     * Create request for operation 'deleteAbacRule'
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteAbacRuleRequest($abacruleid, string $contentType = self::contentTypes['oBPv600DeleteAbacRule'][0])
+    public function deleteAbacRuleRequest($abacruleid, string $contentType = self::contentTypes['deleteAbacRule'][0])
     {
 
         // verify the required parameter 'abacruleid' is set
         if ($abacruleid === null || (is_array($abacruleid) && count($abacruleid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abacruleid when calling oBPv600DeleteAbacRule'
+                'Missing the required parameter $abacruleid when calling deleteAbacRule'
             );
         }
 
@@ -643,9 +643,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -670,40 +670,40 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacPolicy
+     * Operation executeAbacPolicy
      *
      * Execute ABAC Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacPolicy'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacPolicy'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response
+     * @return \OpenBankProject\Model\ExecuteAbacPolicy200Response
      */
-    public function oBPv600ExecuteAbacPolicy($policy, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacPolicy'][0])
+    public function executeAbacPolicy($policy, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacPolicy'][0])
     {
-        list($response) = $this->oBPv600ExecuteAbacPolicyWithHttpInfo($policy, $obpv600_execute_abac_policy_request, $contentType);
+        list($response) = $this->executeAbacPolicyWithHttpInfo($policy, $execute_abac_policy_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600ExecuteAbacPolicyWithHttpInfo
+     * Operation executeAbacPolicyWithHttpInfo
      *
      * Execute ABAC Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacPolicy'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacPolicy'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\ExecuteAbacPolicy200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600ExecuteAbacPolicyWithHttpInfo($policy, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacPolicy'][0])
+    public function executeAbacPolicyWithHttpInfo($policy, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacPolicy'][0])
     {
-        $request = $this->oBPv600ExecuteAbacPolicyRequest($policy, $obpv600_execute_abac_policy_request, $contentType);
+        $request = $this->executeAbacPolicyRequest($policy, $execute_abac_policy_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -731,7 +731,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                        '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                         $request,
                         $response,
                     );
@@ -753,7 +753,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                 $request,
                 $response,
             );
@@ -762,7 +762,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                        '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -775,20 +775,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacPolicyAsync
+     * Operation executeAbacPolicyAsync
      *
      * Execute ABAC Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacPolicy'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ExecuteAbacPolicyAsync($policy, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacPolicy'][0])
+    public function executeAbacPolicyAsync($policy, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacPolicy'][0])
     {
-        return $this->oBPv600ExecuteAbacPolicyAsyncWithHttpInfo($policy, $obpv600_execute_abac_policy_request, $contentType)
+        return $this->executeAbacPolicyAsyncWithHttpInfo($policy, $execute_abac_policy_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -797,21 +797,21 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacPolicyAsyncWithHttpInfo
+     * Operation executeAbacPolicyAsyncWithHttpInfo
      *
      * Execute ABAC Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacPolicy'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ExecuteAbacPolicyAsyncWithHttpInfo($policy, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacPolicy'][0])
+    public function executeAbacPolicyAsyncWithHttpInfo($policy, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacPolicy'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response';
-        $request = $this->oBPv600ExecuteAbacPolicyRequest($policy, $obpv600_execute_abac_policy_request, $contentType);
+        $returnType = '\OpenBankProject\Model\ExecuteAbacPolicy200Response';
+        $request = $this->executeAbacPolicyRequest($policy, $execute_abac_policy_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -850,29 +850,29 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600ExecuteAbacPolicy'
+     * Create request for operation 'executeAbacPolicy'
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacPolicy'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600ExecuteAbacPolicyRequest($policy, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacPolicy'][0])
+    public function executeAbacPolicyRequest($policy, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacPolicy'][0])
     {
 
         // verify the required parameter 'policy' is set
         if ($policy === null || (is_array($policy) && count($policy) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $policy when calling oBPv600ExecuteAbacPolicy'
+                'Missing the required parameter $policy when calling executeAbacPolicy'
             );
         }
 
-        // verify the required parameter 'obpv600_execute_abac_policy_request' is set
-        if ($obpv600_execute_abac_policy_request === null || (is_array($obpv600_execute_abac_policy_request) && count($obpv600_execute_abac_policy_request) === 0)) {
+        // verify the required parameter 'execute_abac_policy_request' is set
+        if ($execute_abac_policy_request === null || (is_array($execute_abac_policy_request) && count($execute_abac_policy_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_execute_abac_policy_request when calling oBPv600ExecuteAbacPolicy'
+                'Missing the required parameter $execute_abac_policy_request when calling executeAbacPolicy'
             );
         }
 
@@ -903,12 +903,12 @@ class ABACApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_execute_abac_policy_request)) {
+        if (isset($execute_abac_policy_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_execute_abac_policy_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($execute_abac_policy_request));
             } else {
-                $httpBody = $obpv600_execute_abac_policy_request;
+                $httpBody = $execute_abac_policy_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -944,9 +944,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -971,40 +971,40 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacRule
+     * Operation executeAbacRule
      *
      * Execute ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response
+     * @return \OpenBankProject\Model\ExecuteAbacPolicy200Response
      */
-    public function oBPv600ExecuteAbacRule($abacruleid, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacRule'][0])
+    public function executeAbacRule($abacruleid, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacRule'][0])
     {
-        list($response) = $this->oBPv600ExecuteAbacRuleWithHttpInfo($abacruleid, $obpv600_execute_abac_policy_request, $contentType);
+        list($response) = $this->executeAbacRuleWithHttpInfo($abacruleid, $execute_abac_policy_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600ExecuteAbacRuleWithHttpInfo
+     * Operation executeAbacRuleWithHttpInfo
      *
      * Execute ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\ExecuteAbacPolicy200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600ExecuteAbacRuleWithHttpInfo($abacruleid, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacRule'][0])
+    public function executeAbacRuleWithHttpInfo($abacruleid, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacRule'][0])
     {
-        $request = $this->oBPv600ExecuteAbacRuleRequest($abacruleid, $obpv600_execute_abac_policy_request, $contentType);
+        $request = $this->executeAbacRuleRequest($abacruleid, $execute_abac_policy_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1032,7 +1032,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                        '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                         $request,
                         $response,
                     );
@@ -1054,7 +1054,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                 $request,
                 $response,
             );
@@ -1063,7 +1063,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response',
+                        '\OpenBankProject\Model\ExecuteAbacPolicy200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1076,20 +1076,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacRuleAsync
+     * Operation executeAbacRuleAsync
      *
      * Execute ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ExecuteAbacRuleAsync($abacruleid, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacRule'][0])
+    public function executeAbacRuleAsync($abacruleid, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacRule'][0])
     {
-        return $this->oBPv600ExecuteAbacRuleAsyncWithHttpInfo($abacruleid, $obpv600_execute_abac_policy_request, $contentType)
+        return $this->executeAbacRuleAsyncWithHttpInfo($abacruleid, $execute_abac_policy_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1098,21 +1098,21 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ExecuteAbacRuleAsyncWithHttpInfo
+     * Operation executeAbacRuleAsyncWithHttpInfo
      *
      * Execute ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ExecuteAbacRuleAsyncWithHttpInfo($abacruleid, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacRule'][0])
+    public function executeAbacRuleAsyncWithHttpInfo($abacruleid, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacRule'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600ExecuteAbacPolicy200Response';
-        $request = $this->oBPv600ExecuteAbacRuleRequest($abacruleid, $obpv600_execute_abac_policy_request, $contentType);
+        $returnType = '\OpenBankProject\Model\ExecuteAbacPolicy200Response';
+        $request = $this->executeAbacRuleRequest($abacruleid, $execute_abac_policy_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1151,29 +1151,29 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600ExecuteAbacRule'
+     * Create request for operation 'executeAbacRule'
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600ExecuteAbacPolicyRequest $obpv600_execute_abac_policy_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ExecuteAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ExecuteAbacPolicyRequest $execute_abac_policy_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['executeAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600ExecuteAbacRuleRequest($abacruleid, $obpv600_execute_abac_policy_request, string $contentType = self::contentTypes['oBPv600ExecuteAbacRule'][0])
+    public function executeAbacRuleRequest($abacruleid, $execute_abac_policy_request, string $contentType = self::contentTypes['executeAbacRule'][0])
     {
 
         // verify the required parameter 'abacruleid' is set
         if ($abacruleid === null || (is_array($abacruleid) && count($abacruleid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abacruleid when calling oBPv600ExecuteAbacRule'
+                'Missing the required parameter $abacruleid when calling executeAbacRule'
             );
         }
 
-        // verify the required parameter 'obpv600_execute_abac_policy_request' is set
-        if ($obpv600_execute_abac_policy_request === null || (is_array($obpv600_execute_abac_policy_request) && count($obpv600_execute_abac_policy_request) === 0)) {
+        // verify the required parameter 'execute_abac_policy_request' is set
+        if ($execute_abac_policy_request === null || (is_array($execute_abac_policy_request) && count($execute_abac_policy_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_execute_abac_policy_request when calling oBPv600ExecuteAbacRule'
+                'Missing the required parameter $execute_abac_policy_request when calling executeAbacRule'
             );
         }
 
@@ -1204,12 +1204,12 @@ class ABACApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_execute_abac_policy_request)) {
+        if (isset($execute_abac_policy_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_execute_abac_policy_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($execute_abac_policy_request));
             } else {
-                $httpBody = $obpv600_execute_abac_policy_request;
+                $httpBody = $execute_abac_policy_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1245,9 +1245,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1272,36 +1272,36 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacPolicies
+     * Operation getAbacPolicies
      *
      * Get ABAC Policies
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacPolicies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacPolicies'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacPolicies200Response
+     * @return \OpenBankProject\Model\GetAbacPolicies200Response
      */
-    public function oBPv600GetAbacPolicies(string $contentType = self::contentTypes['oBPv600GetAbacPolicies'][0])
+    public function getAbacPolicies(string $contentType = self::contentTypes['getAbacPolicies'][0])
     {
-        list($response) = $this->oBPv600GetAbacPoliciesWithHttpInfo($contentType);
+        list($response) = $this->getAbacPoliciesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAbacPoliciesWithHttpInfo
+     * Operation getAbacPoliciesWithHttpInfo
      *
      * Get ABAC Policies
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacPolicies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacPolicies'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacPolicies200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacPolicies200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAbacPoliciesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacPolicies'][0])
+    public function getAbacPoliciesWithHttpInfo(string $contentType = self::contentTypes['getAbacPolicies'][0])
     {
-        $request = $this->oBPv600GetAbacPoliciesRequest($contentType);
+        $request = $this->getAbacPoliciesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1329,7 +1329,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacPolicies200Response',
+                        '\OpenBankProject\Model\GetAbacPolicies200Response',
                         $request,
                         $response,
                     );
@@ -1351,7 +1351,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacPolicies200Response',
+                '\OpenBankProject\Model\GetAbacPolicies200Response',
                 $request,
                 $response,
             );
@@ -1360,7 +1360,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacPolicies200Response',
+                        '\OpenBankProject\Model\GetAbacPolicies200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1373,18 +1373,18 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacPoliciesAsync
+     * Operation getAbacPoliciesAsync
      *
      * Get ABAC Policies
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacPolicies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacPolicies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacPoliciesAsync(string $contentType = self::contentTypes['oBPv600GetAbacPolicies'][0])
+    public function getAbacPoliciesAsync(string $contentType = self::contentTypes['getAbacPolicies'][0])
     {
-        return $this->oBPv600GetAbacPoliciesAsyncWithHttpInfo($contentType)
+        return $this->getAbacPoliciesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1393,19 +1393,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacPoliciesAsyncWithHttpInfo
+     * Operation getAbacPoliciesAsyncWithHttpInfo
      *
      * Get ABAC Policies
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacPolicies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacPolicies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacPoliciesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacPolicies'][0])
+    public function getAbacPoliciesAsyncWithHttpInfo(string $contentType = self::contentTypes['getAbacPolicies'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacPolicies200Response';
-        $request = $this->oBPv600GetAbacPoliciesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacPolicies200Response';
+        $request = $this->getAbacPoliciesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1444,14 +1444,14 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAbacPolicies'
+     * Create request for operation 'getAbacPolicies'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacPolicies'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacPolicies'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAbacPoliciesRequest(string $contentType = self::contentTypes['oBPv600GetAbacPolicies'][0])
+    public function getAbacPoliciesRequest(string $contentType = self::contentTypes['getAbacPolicies'][0])
     {
 
 
@@ -1507,9 +1507,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1534,38 +1534,38 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRule
+     * Operation getAbacRule
      *
      * Get ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRule200Response
+     * @return \OpenBankProject\Model\GetAbacRule200Response
      */
-    public function oBPv600GetAbacRule($abacruleid, string $contentType = self::contentTypes['oBPv600GetAbacRule'][0])
+    public function getAbacRule($abacruleid, string $contentType = self::contentTypes['getAbacRule'][0])
     {
-        list($response) = $this->oBPv600GetAbacRuleWithHttpInfo($abacruleid, $contentType);
+        list($response) = $this->getAbacRuleWithHttpInfo($abacruleid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAbacRuleWithHttpInfo
+     * Operation getAbacRuleWithHttpInfo
      *
      * Get ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAbacRuleWithHttpInfo($abacruleid, string $contentType = self::contentTypes['oBPv600GetAbacRule'][0])
+    public function getAbacRuleWithHttpInfo($abacruleid, string $contentType = self::contentTypes['getAbacRule'][0])
     {
-        $request = $this->oBPv600GetAbacRuleRequest($abacruleid, $contentType);
+        $request = $this->getAbacRuleRequest($abacruleid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1593,7 +1593,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $request,
                         $response,
                     );
@@ -1615,7 +1615,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                '\OpenBankProject\Model\GetAbacRule200Response',
                 $request,
                 $response,
             );
@@ -1624,7 +1624,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1637,19 +1637,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRuleAsync
+     * Operation getAbacRuleAsync
      *
      * Get ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRuleAsync($abacruleid, string $contentType = self::contentTypes['oBPv600GetAbacRule'][0])
+    public function getAbacRuleAsync($abacruleid, string $contentType = self::contentTypes['getAbacRule'][0])
     {
-        return $this->oBPv600GetAbacRuleAsyncWithHttpInfo($abacruleid, $contentType)
+        return $this->getAbacRuleAsyncWithHttpInfo($abacruleid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1658,20 +1658,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRuleAsyncWithHttpInfo
+     * Operation getAbacRuleAsyncWithHttpInfo
      *
      * Get ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRuleAsyncWithHttpInfo($abacruleid, string $contentType = self::contentTypes['oBPv600GetAbacRule'][0])
+    public function getAbacRuleAsyncWithHttpInfo($abacruleid, string $contentType = self::contentTypes['getAbacRule'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRule200Response';
-        $request = $this->oBPv600GetAbacRuleRequest($abacruleid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRule200Response';
+        $request = $this->getAbacRuleRequest($abacruleid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1710,21 +1710,21 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAbacRule'
+     * Create request for operation 'getAbacRule'
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRule'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAbacRuleRequest($abacruleid, string $contentType = self::contentTypes['oBPv600GetAbacRule'][0])
+    public function getAbacRuleRequest($abacruleid, string $contentType = self::contentTypes['getAbacRule'][0])
     {
 
         // verify the required parameter 'abacruleid' is set
         if ($abacruleid === null || (is_array($abacruleid) && count($abacruleid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abacruleid when calling oBPv600GetAbacRule'
+                'Missing the required parameter $abacruleid when calling getAbacRule'
             );
         }
 
@@ -1789,9 +1789,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1816,36 +1816,36 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRuleSchema
+     * Operation getAbacRuleSchema
      *
      * Get ABAC Rule Schema
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRuleSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRuleSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response
+     * @return \OpenBankProject\Model\GetAbacRuleSchema200Response
      */
-    public function oBPv600GetAbacRuleSchema(string $contentType = self::contentTypes['oBPv600GetAbacRuleSchema'][0])
+    public function getAbacRuleSchema(string $contentType = self::contentTypes['getAbacRuleSchema'][0])
     {
-        list($response) = $this->oBPv600GetAbacRuleSchemaWithHttpInfo($contentType);
+        list($response) = $this->getAbacRuleSchemaWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAbacRuleSchemaWithHttpInfo
+     * Operation getAbacRuleSchemaWithHttpInfo
      *
      * Get ABAC Rule Schema
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRuleSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRuleSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRuleSchema200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAbacRuleSchemaWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacRuleSchema'][0])
+    public function getAbacRuleSchemaWithHttpInfo(string $contentType = self::contentTypes['getAbacRuleSchema'][0])
     {
-        $request = $this->oBPv600GetAbacRuleSchemaRequest($contentType);
+        $request = $this->getAbacRuleSchemaRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1873,7 +1873,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response',
+                        '\OpenBankProject\Model\GetAbacRuleSchema200Response',
                         $request,
                         $response,
                     );
@@ -1895,7 +1895,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response',
+                '\OpenBankProject\Model\GetAbacRuleSchema200Response',
                 $request,
                 $response,
             );
@@ -1904,7 +1904,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response',
+                        '\OpenBankProject\Model\GetAbacRuleSchema200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1917,18 +1917,18 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRuleSchemaAsync
+     * Operation getAbacRuleSchemaAsync
      *
      * Get ABAC Rule Schema
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRuleSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRuleSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRuleSchemaAsync(string $contentType = self::contentTypes['oBPv600GetAbacRuleSchema'][0])
+    public function getAbacRuleSchemaAsync(string $contentType = self::contentTypes['getAbacRuleSchema'][0])
     {
-        return $this->oBPv600GetAbacRuleSchemaAsyncWithHttpInfo($contentType)
+        return $this->getAbacRuleSchemaAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1937,19 +1937,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRuleSchemaAsyncWithHttpInfo
+     * Operation getAbacRuleSchemaAsyncWithHttpInfo
      *
      * Get ABAC Rule Schema
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRuleSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRuleSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRuleSchemaAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacRuleSchema'][0])
+    public function getAbacRuleSchemaAsyncWithHttpInfo(string $contentType = self::contentTypes['getAbacRuleSchema'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRuleSchema200Response';
-        $request = $this->oBPv600GetAbacRuleSchemaRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRuleSchema200Response';
+        $request = $this->getAbacRuleSchemaRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1988,14 +1988,14 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAbacRuleSchema'
+     * Create request for operation 'getAbacRuleSchema'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRuleSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRuleSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAbacRuleSchemaRequest(string $contentType = self::contentTypes['oBPv600GetAbacRuleSchema'][0])
+    public function getAbacRuleSchemaRequest(string $contentType = self::contentTypes['getAbacRuleSchema'][0])
     {
 
 
@@ -2051,9 +2051,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2078,36 +2078,36 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRules
+     * Operation getAbacRules
      *
      * Get ABAC Rules
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRules'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRules'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response
+     * @return \OpenBankProject\Model\GetAbacRulesByPolicy200Response
      */
-    public function oBPv600GetAbacRules(string $contentType = self::contentTypes['oBPv600GetAbacRules'][0])
+    public function getAbacRules(string $contentType = self::contentTypes['getAbacRules'][0])
     {
-        list($response) = $this->oBPv600GetAbacRulesWithHttpInfo($contentType);
+        list($response) = $this->getAbacRulesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAbacRulesWithHttpInfo
+     * Operation getAbacRulesWithHttpInfo
      *
      * Get ABAC Rules
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRules'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRules'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRulesByPolicy200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAbacRulesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacRules'][0])
+    public function getAbacRulesWithHttpInfo(string $contentType = self::contentTypes['getAbacRules'][0])
     {
-        $request = $this->oBPv600GetAbacRulesRequest($contentType);
+        $request = $this->getAbacRulesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2135,7 +2135,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                        '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                         $request,
                         $response,
                     );
@@ -2157,7 +2157,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                 $request,
                 $response,
             );
@@ -2166,7 +2166,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                        '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2179,18 +2179,18 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRulesAsync
+     * Operation getAbacRulesAsync
      *
      * Get ABAC Rules
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRules'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRulesAsync(string $contentType = self::contentTypes['oBPv600GetAbacRules'][0])
+    public function getAbacRulesAsync(string $contentType = self::contentTypes['getAbacRules'][0])
     {
-        return $this->oBPv600GetAbacRulesAsyncWithHttpInfo($contentType)
+        return $this->getAbacRulesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2199,19 +2199,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRulesAsyncWithHttpInfo
+     * Operation getAbacRulesAsyncWithHttpInfo
      *
      * Get ABAC Rules
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRules'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRulesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetAbacRules'][0])
+    public function getAbacRulesAsyncWithHttpInfo(string $contentType = self::contentTypes['getAbacRules'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response';
-        $request = $this->oBPv600GetAbacRulesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRulesByPolicy200Response';
+        $request = $this->getAbacRulesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2250,14 +2250,14 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAbacRules'
+     * Create request for operation 'getAbacRules'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRules'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRules'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAbacRulesRequest(string $contentType = self::contentTypes['oBPv600GetAbacRules'][0])
+    public function getAbacRulesRequest(string $contentType = self::contentTypes['getAbacRules'][0])
     {
 
 
@@ -2313,9 +2313,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2340,38 +2340,38 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRulesByPolicy
+     * Operation getAbacRulesByPolicy
      *
      * Get ABAC Rules by Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRulesByPolicy'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRulesByPolicy'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response
+     * @return \OpenBankProject\Model\GetAbacRulesByPolicy200Response
      */
-    public function oBPv600GetAbacRulesByPolicy($policy, string $contentType = self::contentTypes['oBPv600GetAbacRulesByPolicy'][0])
+    public function getAbacRulesByPolicy($policy, string $contentType = self::contentTypes['getAbacRulesByPolicy'][0])
     {
-        list($response) = $this->oBPv600GetAbacRulesByPolicyWithHttpInfo($policy, $contentType);
+        list($response) = $this->getAbacRulesByPolicyWithHttpInfo($policy, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAbacRulesByPolicyWithHttpInfo
+     * Operation getAbacRulesByPolicyWithHttpInfo
      *
      * Get ABAC Rules by Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRulesByPolicy'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRulesByPolicy'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRulesByPolicy200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAbacRulesByPolicyWithHttpInfo($policy, string $contentType = self::contentTypes['oBPv600GetAbacRulesByPolicy'][0])
+    public function getAbacRulesByPolicyWithHttpInfo($policy, string $contentType = self::contentTypes['getAbacRulesByPolicy'][0])
     {
-        $request = $this->oBPv600GetAbacRulesByPolicyRequest($policy, $contentType);
+        $request = $this->getAbacRulesByPolicyRequest($policy, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2399,7 +2399,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                        '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                         $request,
                         $response,
                     );
@@ -2421,7 +2421,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                 $request,
                 $response,
             );
@@ -2430,7 +2430,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response',
+                        '\OpenBankProject\Model\GetAbacRulesByPolicy200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2443,19 +2443,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRulesByPolicyAsync
+     * Operation getAbacRulesByPolicyAsync
      *
      * Get ABAC Rules by Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRulesByPolicy'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRulesByPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRulesByPolicyAsync($policy, string $contentType = self::contentTypes['oBPv600GetAbacRulesByPolicy'][0])
+    public function getAbacRulesByPolicyAsync($policy, string $contentType = self::contentTypes['getAbacRulesByPolicy'][0])
     {
-        return $this->oBPv600GetAbacRulesByPolicyAsyncWithHttpInfo($policy, $contentType)
+        return $this->getAbacRulesByPolicyAsyncWithHttpInfo($policy, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2464,20 +2464,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600GetAbacRulesByPolicyAsyncWithHttpInfo
+     * Operation getAbacRulesByPolicyAsyncWithHttpInfo
      *
      * Get ABAC Rules by Policy
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRulesByPolicy'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRulesByPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAbacRulesByPolicyAsyncWithHttpInfo($policy, string $contentType = self::contentTypes['oBPv600GetAbacRulesByPolicy'][0])
+    public function getAbacRulesByPolicyAsyncWithHttpInfo($policy, string $contentType = self::contentTypes['getAbacRulesByPolicy'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRulesByPolicy200Response';
-        $request = $this->oBPv600GetAbacRulesByPolicyRequest($policy, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRulesByPolicy200Response';
+        $request = $this->getAbacRulesByPolicyRequest($policy, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2516,21 +2516,21 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAbacRulesByPolicy'
+     * Create request for operation 'getAbacRulesByPolicy'
      *
      * @param  string $policy The POLICY identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAbacRulesByPolicy'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAbacRulesByPolicy'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAbacRulesByPolicyRequest($policy, string $contentType = self::contentTypes['oBPv600GetAbacRulesByPolicy'][0])
+    public function getAbacRulesByPolicyRequest($policy, string $contentType = self::contentTypes['getAbacRulesByPolicy'][0])
     {
 
         // verify the required parameter 'policy' is set
         if ($policy === null || (is_array($policy) && count($policy) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $policy when calling oBPv600GetAbacRulesByPolicy'
+                'Missing the required parameter $policy when calling getAbacRulesByPolicy'
             );
         }
 
@@ -2595,9 +2595,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2622,40 +2622,40 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600UpdateAbacRule
+     * Operation updateAbacRule
      *
      * Update ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAbacRule200Response
+     * @return \OpenBankProject\Model\GetAbacRule200Response
      */
-    public function oBPv600UpdateAbacRule($abacruleid, $obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600UpdateAbacRule'][0])
+    public function updateAbacRule($abacruleid, $update_abac_rule_request, string $contentType = self::contentTypes['updateAbacRule'][0])
     {
-        list($response) = $this->oBPv600UpdateAbacRuleWithHttpInfo($abacruleid, $obpv600_update_abac_rule_request, $contentType);
+        list($response) = $this->updateAbacRuleWithHttpInfo($abacruleid, $update_abac_rule_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateAbacRuleWithHttpInfo
+     * Operation updateAbacRuleWithHttpInfo
      *
      * Update ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateAbacRuleWithHttpInfo($abacruleid, $obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600UpdateAbacRule'][0])
+    public function updateAbacRuleWithHttpInfo($abacruleid, $update_abac_rule_request, string $contentType = self::contentTypes['updateAbacRule'][0])
     {
-        $request = $this->oBPv600UpdateAbacRuleRequest($abacruleid, $obpv600_update_abac_rule_request, $contentType);
+        $request = $this->updateAbacRuleRequest($abacruleid, $update_abac_rule_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2683,7 +2683,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $request,
                         $response,
                     );
@@ -2705,7 +2705,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                '\OpenBankProject\Model\GetAbacRule200Response',
                 $request,
                 $response,
             );
@@ -2714,7 +2714,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAbacRule200Response',
+                        '\OpenBankProject\Model\GetAbacRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2727,20 +2727,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600UpdateAbacRuleAsync
+     * Operation updateAbacRuleAsync
      *
      * Update ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateAbacRuleAsync($abacruleid, $obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600UpdateAbacRule'][0])
+    public function updateAbacRuleAsync($abacruleid, $update_abac_rule_request, string $contentType = self::contentTypes['updateAbacRule'][0])
     {
-        return $this->oBPv600UpdateAbacRuleAsyncWithHttpInfo($abacruleid, $obpv600_update_abac_rule_request, $contentType)
+        return $this->updateAbacRuleAsyncWithHttpInfo($abacruleid, $update_abac_rule_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2749,21 +2749,21 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600UpdateAbacRuleAsyncWithHttpInfo
+     * Operation updateAbacRuleAsyncWithHttpInfo
      *
      * Update ABAC Rule
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateAbacRuleAsyncWithHttpInfo($abacruleid, $obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600UpdateAbacRule'][0])
+    public function updateAbacRuleAsyncWithHttpInfo($abacruleid, $update_abac_rule_request, string $contentType = self::contentTypes['updateAbacRule'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAbacRule200Response';
-        $request = $this->oBPv600UpdateAbacRuleRequest($abacruleid, $obpv600_update_abac_rule_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAbacRule200Response';
+        $request = $this->updateAbacRuleRequest($abacruleid, $update_abac_rule_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2802,29 +2802,29 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateAbacRule'
+     * Create request for operation 'updateAbacRule'
      *
      * @param  string $abacruleid The ABACRULEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateAbacRuleRequest $obpv600_update_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAbacRuleRequest $update_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateAbacRuleRequest($abacruleid, $obpv600_update_abac_rule_request, string $contentType = self::contentTypes['oBPv600UpdateAbacRule'][0])
+    public function updateAbacRuleRequest($abacruleid, $update_abac_rule_request, string $contentType = self::contentTypes['updateAbacRule'][0])
     {
 
         // verify the required parameter 'abacruleid' is set
         if ($abacruleid === null || (is_array($abacruleid) && count($abacruleid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $abacruleid when calling oBPv600UpdateAbacRule'
+                'Missing the required parameter $abacruleid when calling updateAbacRule'
             );
         }
 
-        // verify the required parameter 'obpv600_update_abac_rule_request' is set
-        if ($obpv600_update_abac_rule_request === null || (is_array($obpv600_update_abac_rule_request) && count($obpv600_update_abac_rule_request) === 0)) {
+        // verify the required parameter 'update_abac_rule_request' is set
+        if ($update_abac_rule_request === null || (is_array($update_abac_rule_request) && count($update_abac_rule_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_abac_rule_request when calling oBPv600UpdateAbacRule'
+                'Missing the required parameter $update_abac_rule_request when calling updateAbacRule'
             );
         }
 
@@ -2855,12 +2855,12 @@ class ABACApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_abac_rule_request)) {
+        if (isset($update_abac_rule_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_abac_rule_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_abac_rule_request));
             } else {
-                $httpBody = $obpv600_update_abac_rule_request;
+                $httpBody = $update_abac_rule_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2896,9 +2896,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2923,38 +2923,38 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ValidateAbacRule
+     * Operation validateAbacRule
      *
      * Validate ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest $obpv600_validate_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ValidateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ValidateAbacRuleRequest $validate_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600ValidateAbacRule200Response
+     * @return \OpenBankProject\Model\ValidateAbacRule200Response
      */
-    public function oBPv600ValidateAbacRule($obpv600_validate_abac_rule_request, string $contentType = self::contentTypes['oBPv600ValidateAbacRule'][0])
+    public function validateAbacRule($validate_abac_rule_request, string $contentType = self::contentTypes['validateAbacRule'][0])
     {
-        list($response) = $this->oBPv600ValidateAbacRuleWithHttpInfo($obpv600_validate_abac_rule_request, $contentType);
+        list($response) = $this->validateAbacRuleWithHttpInfo($validate_abac_rule_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600ValidateAbacRuleWithHttpInfo
+     * Operation validateAbacRuleWithHttpInfo
      *
      * Validate ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest $obpv600_validate_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ValidateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ValidateAbacRuleRequest $validate_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateAbacRule'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600ValidateAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\ValidateAbacRule200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600ValidateAbacRuleWithHttpInfo($obpv600_validate_abac_rule_request, string $contentType = self::contentTypes['oBPv600ValidateAbacRule'][0])
+    public function validateAbacRuleWithHttpInfo($validate_abac_rule_request, string $contentType = self::contentTypes['validateAbacRule'][0])
     {
-        $request = $this->oBPv600ValidateAbacRuleRequest($obpv600_validate_abac_rule_request, $contentType);
+        $request = $this->validateAbacRuleRequest($validate_abac_rule_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2982,7 +2982,7 @@ class ABACApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600ValidateAbacRule200Response',
+                        '\OpenBankProject\Model\ValidateAbacRule200Response',
                         $request,
                         $response,
                     );
@@ -3004,7 +3004,7 @@ class ABACApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600ValidateAbacRule200Response',
+                '\OpenBankProject\Model\ValidateAbacRule200Response',
                 $request,
                 $response,
             );
@@ -3013,7 +3013,7 @@ class ABACApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600ValidateAbacRule200Response',
+                        '\OpenBankProject\Model\ValidateAbacRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3026,19 +3026,19 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ValidateAbacRuleAsync
+     * Operation validateAbacRuleAsync
      *
      * Validate ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest $obpv600_validate_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ValidateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ValidateAbacRuleRequest $validate_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ValidateAbacRuleAsync($obpv600_validate_abac_rule_request, string $contentType = self::contentTypes['oBPv600ValidateAbacRule'][0])
+    public function validateAbacRuleAsync($validate_abac_rule_request, string $contentType = self::contentTypes['validateAbacRule'][0])
     {
-        return $this->oBPv600ValidateAbacRuleAsyncWithHttpInfo($obpv600_validate_abac_rule_request, $contentType)
+        return $this->validateAbacRuleAsyncWithHttpInfo($validate_abac_rule_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3047,20 +3047,20 @@ class ABACApi
     }
 
     /**
-     * Operation oBPv600ValidateAbacRuleAsyncWithHttpInfo
+     * Operation validateAbacRuleAsyncWithHttpInfo
      *
      * Validate ABAC Rule
      *
-     * @param  \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest $obpv600_validate_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ValidateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ValidateAbacRuleRequest $validate_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ValidateAbacRuleAsyncWithHttpInfo($obpv600_validate_abac_rule_request, string $contentType = self::contentTypes['oBPv600ValidateAbacRule'][0])
+    public function validateAbacRuleAsyncWithHttpInfo($validate_abac_rule_request, string $contentType = self::contentTypes['validateAbacRule'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600ValidateAbacRule200Response';
-        $request = $this->oBPv600ValidateAbacRuleRequest($obpv600_validate_abac_rule_request, $contentType);
+        $returnType = '\OpenBankProject\Model\ValidateAbacRule200Response';
+        $request = $this->validateAbacRuleRequest($validate_abac_rule_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3099,21 +3099,21 @@ class ABACApi
     }
 
     /**
-     * Create request for operation 'oBPv600ValidateAbacRule'
+     * Create request for operation 'validateAbacRule'
      *
-     * @param  \OpenBankProject\Model\OBPv600ValidateAbacRuleRequest $obpv600_validate_abac_rule_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ValidateAbacRule'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\ValidateAbacRuleRequest $validate_abac_rule_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['validateAbacRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600ValidateAbacRuleRequest($obpv600_validate_abac_rule_request, string $contentType = self::contentTypes['oBPv600ValidateAbacRule'][0])
+    public function validateAbacRuleRequest($validate_abac_rule_request, string $contentType = self::contentTypes['validateAbacRule'][0])
     {
 
-        // verify the required parameter 'obpv600_validate_abac_rule_request' is set
-        if ($obpv600_validate_abac_rule_request === null || (is_array($obpv600_validate_abac_rule_request) && count($obpv600_validate_abac_rule_request) === 0)) {
+        // verify the required parameter 'validate_abac_rule_request' is set
+        if ($validate_abac_rule_request === null || (is_array($validate_abac_rule_request) && count($validate_abac_rule_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_validate_abac_rule_request when calling oBPv600ValidateAbacRule'
+                'Missing the required parameter $validate_abac_rule_request when calling validateAbacRule'
             );
         }
 
@@ -3136,12 +3136,12 @@ class ABACApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_validate_abac_rule_request)) {
+        if (isset($validate_abac_rule_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_validate_abac_rule_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($validate_abac_rule_request));
             } else {
-                $httpBody = $obpv600_validate_abac_rule_request;
+                $httpBody = $validate_abac_rule_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3177,9 +3177,9 @@ class ABACApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

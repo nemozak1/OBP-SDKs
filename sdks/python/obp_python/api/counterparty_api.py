@@ -18,21 +18,21 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.models.obpv121_get_other_account_for_transaction200_response import OBPv121GetOtherAccountForTransaction200Response
-from obp_python.models.obpv121_get_other_account_metadata200_response import OBPv121GetOtherAccountMetadata200Response
-from obp_python.models.obpv121_update_counterparty_corporate_location_request import OBPv121UpdateCounterpartyCorporateLocationRequest
-from obp_python.models.obpv121_update_counterparty_image_url_request import OBPv121UpdateCounterpartyImageUrlRequest
-from obp_python.models.obpv121_update_counterparty_more_info_request import OBPv121UpdateCounterpartyMoreInfoRequest
-from obp_python.models.obpv121_update_counterparty_open_corporates_url_request import OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-from obp_python.models.obpv121_update_counterparty_physical_location_request import OBPv121UpdateCounterpartyPhysicalLocationRequest
-from obp_python.models.obpv121_update_counterparty_url_request import OBPv121UpdateCounterpartyUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv300_get_other_accounts_for_bank_account200_response import OBPv300GetOtherAccountsForBankAccount200Response
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_other_account import OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount
-from obp_python.models.obpv400_create_counterparty_for_any_account_request import OBPv400CreateCounterpartyForAnyAccountRequest
-from obp_python.models.obpv400_get_counterparties_for_any_account200_response import OBPv400GetCounterpartiesForAnyAccount200Response
-from obp_python.models.obpv400_get_explicit_counterparty_by_id200_response import OBPv400GetExplicitCounterpartyById200Response
+from obp_python.models.create_counterparty_for_any_account_request import CreateCounterpartyForAnyAccountRequest
+from obp_python.models.get_counterparties_for_any_account200_response import GetCounterpartiesForAnyAccount200Response
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.models.get_explicit_counterparty_by_id200_response import GetExplicitCounterpartyById200Response
+from obp_python.models.get_other_account_for_transaction200_response import GetOtherAccountForTransaction200Response
+from obp_python.models.get_other_account_metadata200_response import GetOtherAccountMetadata200Response
+from obp_python.models.get_other_accounts_for_bank_account200_response import GetOtherAccountsForBankAccount200Response
+from obp_python.models.get_transaction_by_id_for_bank_account200_response_other_account import GetTransactionByIdForBankAccount200ResponseOtherAccount
+from obp_python.models.update_counterparty_corporate_location_request import UpdateCounterpartyCorporateLocationRequest
+from obp_python.models.update_counterparty_image_url_request import UpdateCounterpartyImageUrlRequest
+from obp_python.models.update_counterparty_more_info_request import UpdateCounterpartyMoreInfoRequest
+from obp_python.models.update_counterparty_open_corporates_url_request import UpdateCounterpartyOpenCorporatesUrlRequest
+from obp_python.models.update_counterparty_physical_location_request import UpdateCounterpartyPhysicalLocationRequest
+from obp_python.models.update_counterparty_url_request import UpdateCounterpartyUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -53,13 +53,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_corporate_location(
+    def add_counterparty_corporate_location(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -72,7 +72,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add Corporate Location to Counterparty
 
         <p>Add the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -85,8 +85,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -109,12 +109,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_corporate_location_serialize(
+        _param = self._add_counterparty_corporate_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -122,7 +122,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -138,13 +138,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_corporate_location_with_http_info(
+    def add_counterparty_corporate_location_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -157,7 +157,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add Corporate Location to Counterparty
 
         <p>Add the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -170,8 +170,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -194,12 +194,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_corporate_location_serialize(
+        _param = self._add_counterparty_corporate_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -207,7 +207,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -223,13 +223,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_corporate_location_without_preload_content(
+    def add_counterparty_corporate_location_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -255,8 +255,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -279,12 +279,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_corporate_location_serialize(
+        _param = self._add_counterparty_corporate_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -292,7 +292,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -303,13 +303,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_corporate_location_serialize(
+    def _add_counterparty_corporate_location_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_corporate_location_request,
+        update_counterparty_corporate_location_request,
         _request_auth,
         _content_type,
         _headers,
@@ -343,8 +343,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_corporate_location_request is not None:
-            _body_params = obpv121_update_counterparty_corporate_location_request
+        if update_counterparty_corporate_location_request is not None:
+            _body_params = update_counterparty_corporate_location_request
 
 
         # set the HTTP header `Accept`
@@ -395,13 +395,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_image_url(
+    def add_counterparty_image_url(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -414,7 +414,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add image url to other bank account
 
         <p>Add a url that points to the logo of the counterparty</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -427,8 +427,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -451,12 +451,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_image_url_serialize(
+        _param = self._add_counterparty_image_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -464,7 +464,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -480,13 +480,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_image_url_with_http_info(
+    def add_counterparty_image_url_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -499,7 +499,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add image url to other bank account
 
         <p>Add a url that points to the logo of the counterparty</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -512,8 +512,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -536,12 +536,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_image_url_serialize(
+        _param = self._add_counterparty_image_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -549,7 +549,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -565,13 +565,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_image_url_without_preload_content(
+    def add_counterparty_image_url_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -597,8 +597,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -621,12 +621,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_image_url_serialize(
+        _param = self._add_counterparty_image_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -634,7 +634,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -645,13 +645,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_image_url_serialize(
+    def _add_counterparty_image_url_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_image_url_request,
+        update_counterparty_image_url_request,
         _request_auth,
         _content_type,
         _headers,
@@ -685,8 +685,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_image_url_request is not None:
-            _body_params = obpv121_update_counterparty_image_url_request
+        if update_counterparty_image_url_request is not None:
+            _body_params = update_counterparty_image_url_request
 
 
         # set the HTTP header `Accept`
@@ -737,13 +737,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_more_info(
+    def add_counterparty_more_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -756,7 +756,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add Counterparty More Info
 
         <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -769,8 +769,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -793,12 +793,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_more_info_serialize(
+        _param = self._add_counterparty_more_info_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -806,7 +806,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -822,13 +822,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_more_info_with_http_info(
+    def add_counterparty_more_info_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -841,7 +841,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add Counterparty More Info
 
         <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -854,8 +854,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -878,12 +878,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_more_info_serialize(
+        _param = self._add_counterparty_more_info_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -891,7 +891,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -907,13 +907,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_more_info_without_preload_content(
+    def add_counterparty_more_info_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -939,8 +939,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -963,12 +963,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_more_info_serialize(
+        _param = self._add_counterparty_more_info_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -976,7 +976,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -987,13 +987,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_more_info_serialize(
+    def _add_counterparty_more_info_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_more_info_request,
+        update_counterparty_more_info_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1027,8 +1027,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_more_info_request is not None:
-            _body_params = obpv121_update_counterparty_more_info_request
+        if update_counterparty_more_info_request is not None:
+            _body_params = update_counterparty_more_info_request
 
 
         # set the HTTP header `Accept`
@@ -1079,13 +1079,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_open_corporates_url(
+    def add_counterparty_open_corporates_url(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1098,7 +1098,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add Open Corporates URL to Counterparty
 
         <p>Add open corporates url to other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1111,8 +1111,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1135,12 +1135,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_open_corporates_url_serialize(
+        _param = self._add_counterparty_open_corporates_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1148,7 +1148,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1164,13 +1164,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_open_corporates_url_with_http_info(
+    def add_counterparty_open_corporates_url_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1183,7 +1183,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add Open Corporates URL to Counterparty
 
         <p>Add open corporates url to other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1196,8 +1196,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1220,12 +1220,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_open_corporates_url_serialize(
+        _param = self._add_counterparty_open_corporates_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1233,7 +1233,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1249,13 +1249,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_open_corporates_url_without_preload_content(
+    def add_counterparty_open_corporates_url_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1281,8 +1281,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1305,12 +1305,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_open_corporates_url_serialize(
+        _param = self._add_counterparty_open_corporates_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1318,7 +1318,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1329,13 +1329,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_open_corporates_url_serialize(
+    def _add_counterparty_open_corporates_url_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_open_corporates_url_request,
+        update_counterparty_open_corporates_url_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1369,8 +1369,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_open_corporates_url_request is not None:
-            _body_params = obpv121_update_counterparty_open_corporates_url_request
+        if update_counterparty_open_corporates_url_request is not None:
+            _body_params = update_counterparty_open_corporates_url_request
 
 
         # set the HTTP header `Accept`
@@ -1418,13 +1418,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_physical_location(
+    def add_counterparty_physical_location(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1437,7 +1437,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add physical location to other bank account
 
         <p>Add geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1450,8 +1450,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1474,12 +1474,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_physical_location_serialize(
+        _param = self._add_counterparty_physical_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1487,7 +1487,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1503,13 +1503,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_physical_location_with_http_info(
+    def add_counterparty_physical_location_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1522,7 +1522,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add physical location to other bank account
 
         <p>Add geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1535,8 +1535,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1559,12 +1559,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_physical_location_serialize(
+        _param = self._add_counterparty_physical_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1572,7 +1572,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1588,13 +1588,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_physical_location_without_preload_content(
+    def add_counterparty_physical_location_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1620,8 +1620,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1644,12 +1644,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_physical_location_serialize(
+        _param = self._add_counterparty_physical_location_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1657,7 +1657,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1668,13 +1668,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_physical_location_serialize(
+    def _add_counterparty_physical_location_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_physical_location_request,
+        update_counterparty_physical_location_request,
         _request_auth,
         _content_type,
         _headers,
@@ -1708,8 +1708,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_physical_location_request is not None:
-            _body_params = obpv121_update_counterparty_physical_location_request
+        if update_counterparty_physical_location_request is not None:
+            _body_params = update_counterparty_physical_location_request
 
 
         # set the HTTP header `Accept`
@@ -1760,13 +1760,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_public_alias(
+    def add_counterparty_public_alias(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1779,7 +1779,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add public alias to other bank account
 
         <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p>Note: Public aliases are automatically generated for new 'other accounts / counterparties', so this call should only be used if<br /> the public alias was deleted.</p> <p>The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1792,8 +1792,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1816,12 +1816,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_public_alias_serialize(
+        _param = self._add_counterparty_public_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1829,7 +1829,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1845,13 +1845,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_public_alias_with_http_info(
+    def add_counterparty_public_alias_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1864,7 +1864,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add public alias to other bank account
 
         <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p>Note: Public aliases are automatically generated for new 'other accounts / counterparties', so this call should only be used if<br /> the public alias was deleted.</p> <p>The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -1877,8 +1877,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1901,12 +1901,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_public_alias_serialize(
+        _param = self._add_counterparty_public_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1914,7 +1914,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -1930,13 +1930,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_public_alias_without_preload_content(
+    def add_counterparty_public_alias_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1962,8 +1962,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1986,12 +1986,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_public_alias_serialize(
+        _param = self._add_counterparty_public_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1999,7 +1999,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2010,13 +2010,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_public_alias_serialize(
+    def _add_counterparty_public_alias_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_get_counterparty_public_alias200_response,
+        get_counterparty_public_alias200_response,
         _request_auth,
         _content_type,
         _headers,
@@ -2050,8 +2050,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_get_counterparty_public_alias200_response is not None:
-            _body_params = obpv121_get_counterparty_public_alias200_response
+        if get_counterparty_public_alias200_response is not None:
+            _body_params = get_counterparty_public_alias200_response
 
 
         # set the HTTP header `Accept`
@@ -2102,13 +2102,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_url(
+    def add_counterparty_url(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2121,7 +2121,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Add url to other bank account
 
         <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -2134,8 +2134,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2158,12 +2158,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_url_serialize(
+        _param = self._add_counterparty_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
+            update_counterparty_url_request=update_counterparty_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2171,7 +2171,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2187,13 +2187,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_url_with_http_info(
+    def add_counterparty_url_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2206,7 +2206,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Add url to other bank account
 
         <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -2219,8 +2219,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2243,12 +2243,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_url_serialize(
+        _param = self._add_counterparty_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
+            update_counterparty_url_request=update_counterparty_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2256,7 +2256,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2272,13 +2272,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_counterparty_url_without_preload_content(
+    def add_counterparty_url_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2304,8 +2304,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2328,12 +2328,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_counterparty_url_serialize(
+        _param = self._add_counterparty_url_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
+            update_counterparty_url_request=update_counterparty_url_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2341,7 +2341,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2352,13 +2352,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_counterparty_url_serialize(
+    def _add_counterparty_url_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_update_counterparty_url_request,
+        update_counterparty_url_request,
         _request_auth,
         _content_type,
         _headers,
@@ -2392,8 +2392,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_update_counterparty_url_request is not None:
-            _body_params = obpv121_update_counterparty_url_request
+        if update_counterparty_url_request is not None:
+            _body_params = update_counterparty_url_request
 
 
         # set the HTTP header `Accept`
@@ -2444,13 +2444,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_other_account_private_alias(
+    def add_other_account_private_alias(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2463,7 +2463,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Create Other Account Private Alias
 
         <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -2476,8 +2476,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2500,12 +2500,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_other_account_private_alias_serialize(
+        _param = self._add_other_account_private_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2513,7 +2513,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2529,13 +2529,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_other_account_private_alias_with_http_info(
+    def add_other_account_private_alias_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2548,7 +2548,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Create Other Account Private Alias
 
         <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -2561,8 +2561,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2585,12 +2585,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_other_account_private_alias_serialize(
+        _param = self._add_other_account_private_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2598,7 +2598,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2614,13 +2614,13 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_add_other_account_private_alias_without_preload_content(
+    def add_other_account_private_alias_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2646,8 +2646,8 @@ class CounterpartyApi:
         :type viewid: str
         :param otheraccountid: The OTHERACCOUNTID identifier (required)
         :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2670,12 +2670,12 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_2_1_add_other_account_private_alias_serialize(
+        _param = self._add_other_account_private_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2683,7 +2683,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -2694,13 +2694,13 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv1_2_1_add_other_account_private_alias_serialize(
+    def _add_other_account_private_alias_serialize(
         self,
         bankid,
         accountid,
         viewid,
         otheraccountid,
-        obpv121_get_counterparty_public_alias200_response,
+        get_counterparty_public_alias200_response,
         _request_auth,
         _content_type,
         _headers,
@@ -2734,8 +2734,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv121_get_counterparty_public_alias200_response is not None:
-            _body_params = obpv121_get_counterparty_public_alias200_response
+        if get_counterparty_public_alias200_response is not None:
+            _body_params = get_counterparty_public_alias200_response
 
 
         # set the HTTP header `Accept`
@@ -2786,12 +2786,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv1_2_1_delete_counterparty_corporate_location(
+    def create_counterparty(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2804,7053 +2804,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Corporate Location
-
-        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_corporate_location_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Corporate Location
-
-        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_corporate_location_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Corporate Location
-
-        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_corporate_location_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_image_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Image URL
-
-        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_image_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Image URL
-
-        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_image_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Image URL
-
-        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_image_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_more_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete more info of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_more_info_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete more info of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_more_info_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete more info of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_more_info_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_open_corporates_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Open Corporates URL
-
-        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_open_corporates_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Open Corporates URL
-
-        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_open_corporates_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Open Corporates URL
-
-        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_open_corporates_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_physical_location(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Physical Location
-
-        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_physical_location_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Physical Location
-
-        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_physical_location_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Physical Location
-
-        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_physical_location_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_private_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Private Alias
-
-        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_private_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Private Alias
-
-        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_private_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Private Alias
-
-        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_private_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_public_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete Counterparty Public Alias
-
-        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_public_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete Counterparty Public Alias
-
-        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_public_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete Counterparty Public Alias
-
-        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_public_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
-        """Delete url of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
-        """Delete url of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_delete_counterparty_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Delete url of other bank account
-
-        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_delete_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_delete_counterparty_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_get_counterparty_public_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetCounterpartyPublicAlias200Response:
-        """Get public alias of other bank account
-
-        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_get_counterparty_public_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetCounterpartyPublicAlias200Response]:
-        """Get public alias of other bank account
-
-        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_get_counterparty_public_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get public alias of other bank account
-
-        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_get_counterparty_public_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_for_transaction(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetOtherAccountForTransaction200Response:
-        """Get Other Account of Transaction
-
-        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param transactionid: The TRANSACTIONID identifier (required)
-        :type transactionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_for_transaction_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            transactionid=transactionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountForTransaction200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_for_transaction_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetOtherAccountForTransaction200Response]:
-        """Get Other Account of Transaction
-
-        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param transactionid: The TRANSACTIONID identifier (required)
-        :type transactionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_for_transaction_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            transactionid=transactionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountForTransaction200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_for_transaction_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Other Account of Transaction
-
-        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param transactionid: The TRANSACTIONID identifier (required)
-        :type transactionid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_for_transaction_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            transactionid=transactionid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountForTransaction200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_get_other_account_for_transaction_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        transactionid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if transactionid is not None:
-            _path_params['transactionid'] = transactionid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_metadata(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetOtherAccountMetadata200Response:
-        """Get Other Account Metadata
-
-        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_metadata_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountMetadata200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_metadata_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetOtherAccountMetadata200Response]:
-        """Get Other Account Metadata
-
-        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_metadata_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountMetadata200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_metadata_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Other Account Metadata
-
-        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_metadata_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetOtherAccountMetadata200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_get_other_account_metadata_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_private_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121GetCounterpartyPublicAlias200Response:
-        """Get Other Account Private Alias
-
-        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_private_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121GetCounterpartyPublicAlias200Response]:
-        """Get Other Account Private Alias
-
-        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_get_other_account_private_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Other Account Private Alias
-
-        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_get_other_account_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121GetCounterpartyPublicAlias200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_get_other_account_private_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_corporate_location(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Counterparty Corporate Location
-
-        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_corporate_location_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Counterparty Corporate Location
-
-        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_corporate_location_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_corporate_location_request: Annotated[OBPv121UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Counterparty Corporate Location
-
-        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_corporate_location_request: Request body (required)
-        :type obpv121_update_counterparty_corporate_location_request: OBPv121UpdateCounterpartyCorporateLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_corporate_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_corporate_location_request=obpv121_update_counterparty_corporate_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_corporate_location_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_corporate_location_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_corporate_location_request is not None:
-            _body_params = obpv121_update_counterparty_corporate_location_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_image_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Counterparty Image Url
-
-        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_image_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Counterparty Image Url
-
-        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_image_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_image_url_request: Annotated[OBPv121UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Counterparty Image Url
-
-        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_image_url_request: Request body (required)
-        :type obpv121_update_counterparty_image_url_request: OBPv121UpdateCounterpartyImageUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_image_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_image_url_request=obpv121_update_counterparty_image_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_image_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_image_url_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_image_url_request is not None:
-            _body_params = obpv121_update_counterparty_image_url_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_more_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Counterparty More Info
-
-        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_more_info_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Counterparty More Info
-
-        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_more_info_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_more_info_request: Annotated[OBPv121UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Counterparty More Info
-
-        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_more_info_request: Request body (required)
-        :type obpv121_update_counterparty_more_info_request: OBPv121UpdateCounterpartyMoreInfoRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_more_info_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_more_info_request=obpv121_update_counterparty_more_info_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_more_info_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_more_info_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_more_info_request is not None:
-            _body_params = obpv121_update_counterparty_more_info_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_open_corporates_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Open Corporates Url of Counterparty
-
-        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_open_corporates_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Open Corporates Url of Counterparty
-
-        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_open_corporates_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_open_corporates_url_request: Annotated[OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Open Corporates Url of Counterparty
-
-        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_open_corporates_url_request: Request body (required)
-        :type obpv121_update_counterparty_open_corporates_url_request: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_open_corporates_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_open_corporates_url_request=obpv121_update_counterparty_open_corporates_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_open_corporates_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_open_corporates_url_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_open_corporates_url_request is not None:
-            _body_params = obpv121_update_counterparty_open_corporates_url_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_physical_location(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Counterparty Physical Location
-
-        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_physical_location_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Counterparty Physical Location
-
-        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_physical_location_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_physical_location_request: Annotated[OBPv121UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Counterparty Physical Location
-
-        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_physical_location_request: Request body (required)
-        :type obpv121_update_counterparty_physical_location_request: OBPv121UpdateCounterpartyPhysicalLocationRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_physical_location_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_physical_location_request=obpv121_update_counterparty_physical_location_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_physical_location_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_physical_location_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_physical_location_request is not None:
-            _body_params = obpv121_update_counterparty_physical_location_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_private_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update Counterparty Private Alias
-
-        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_private_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update Counterparty Private Alias
-
-        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_private_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update Counterparty Private Alias
-
-        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_private_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_private_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_get_counterparty_public_alias200_response,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_get_counterparty_public_alias200_response is not None:
-            _body_params = obpv121_get_counterparty_public_alias200_response
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_public_alias(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update public alias of other bank account
-
-        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_public_alias_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update public alias of other bank account
-
-        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_public_alias_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_get_counterparty_public_alias200_response: Annotated[OBPv121GetCounterpartyPublicAlias200Response, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update public alias of other bank account
-
-        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_get_counterparty_public_alias200_response: Request body (required)
-        :type obpv121_get_counterparty_public_alias200_response: OBPv121GetCounterpartyPublicAlias200Response
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_public_alias_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_get_counterparty_public_alias200_response=obpv121_get_counterparty_public_alias200_response,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_public_alias_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_get_counterparty_public_alias200_response,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_get_counterparty_public_alias200_response is not None:
-            _body_params = obpv121_get_counterparty_public_alias200_response
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_url(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
-        """Update url of other bank account
-
-        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_url_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
-        """Update url of other bank account
-
-        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_2_1_update_counterparty_url_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        obpv121_update_counterparty_url_request: Annotated[OBPv121UpdateCounterpartyUrlRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Update url of other bank account
-
-        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param obpv121_update_counterparty_url_request: Request body (required)
-        :type obpv121_update_counterparty_url_request: OBPv121UpdateCounterpartyUrlRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_2_1_update_counterparty_url_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            obpv121_update_counterparty_url_request=obpv121_update_counterparty_url_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_2_1_update_counterparty_url_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        obpv121_update_counterparty_url_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if obpv121_update_counterparty_url_request is not None:
-            _body_params = obpv121_update_counterparty_url_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='PUT',
-            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_account_by_id_for_bank_account(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount:
-        """Get Other Account by Id
-
-        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_account_by_id_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_account_by_id_for_bank_account_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount]:
-        """Get Other Account by Id
-
-        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_account_by_id_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_account_by_id_for_bank_account_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Other Account by Id
-
-        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param otheraccountid: The OTHERACCOUNTID identifier (required)
-        :type otheraccountid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_account_by_id_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            otheraccountid=otheraccountid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetTransactionByIdForBankAccount200ResponseOtherAccount",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv3_0_0_get_other_account_by_id_for_bank_account_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        otheraccountid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        if otheraccountid is not None:
-            _path_params['otheraccountid'] = otheraccountid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_accounts_for_bank_account(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv300GetOtherAccountsForBankAccount200Response:
-        """Get Other Accounts of one Account
-
-        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_accounts_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetOtherAccountsForBankAccount200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_accounts_for_bank_account_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv300GetOtherAccountsForBankAccount200Response]:
-        """Get Other Accounts of one Account
-
-        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_accounts_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetOtherAccountsForBankAccount200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv3_0_0_get_other_accounts_for_bank_account_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Other Accounts of one Account
-
-        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param accountid: The ACCOUNTID identifier (required)
-        :type accountid: str
-        :param viewid: The VIEWID identifier (required)
-        :type viewid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv3_0_0_get_other_accounts_for_bank_account_serialize(
-            bankid=bankid,
-            accountid=accountid,
-            viewid=viewid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv300GetOtherAccountsForBankAccount200Response",
-            '404': None,
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv3_0_0_get_other_accounts_for_bank_account_serialize(
-        self,
-        bankid,
-        accountid,
-        viewid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        if accountid is not None:
-            _path_params['accountid'] = accountid
-        if viewid is not None:
-            _path_params['viewid'] = viewid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv4_0_0_create_counterparty(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetExplicitCounterpartyById200Response:
+    ) -> GetExplicitCounterpartyById200Response:
         """Create Counterparty (Explicit)
 
         <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -9861,8 +2815,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9885,11 +2839,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_serialize(
+        _param = self._create_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9897,7 +2851,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -9913,12 +2867,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_counterparty_with_http_info(
+    def create_counterparty_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9931,7 +2885,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetExplicitCounterpartyById200Response]:
+    ) -> ApiResponse[GetExplicitCounterpartyById200Response]:
         """Create Counterparty (Explicit)
 
         <p>This endpoint creates an (Explicit) Counterparty for an Account.</p> <p>For an introduction to Counterparties in OBP see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -9942,8 +2896,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9966,11 +2920,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_serialize(
+        _param = self._create_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9978,7 +2932,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -9994,12 +2948,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_counterparty_without_preload_content(
+    def create_counterparty_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10023,8 +2977,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10047,11 +3001,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_serialize(
+        _param = self._create_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10059,7 +3013,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -10070,12 +3024,12 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_counterparty_serialize(
+    def _create_counterparty_serialize(
         self,
         bankid,
         accountid,
         viewid,
-        obpv400_create_counterparty_for_any_account_request,
+        create_counterparty_for_any_account_request,
         _request_auth,
         _content_type,
         _headers,
@@ -10107,8 +3061,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_counterparty_for_any_account_request is not None:
-            _body_params = obpv400_create_counterparty_for_any_account_request
+        if create_counterparty_for_any_account_request is not None:
+            _body_params = create_counterparty_for_any_account_request
 
 
         # set the HTTP header `Accept`
@@ -10159,12 +3113,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_counterparty_for_any_account(
+    def create_counterparty_for_any_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10177,7 +3131,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetExplicitCounterpartyById200Response:
+    ) -> GetExplicitCounterpartyById200Response:
         """Create Counterparty for any account (Explicit)
 
         <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -10188,8 +3142,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10212,11 +3166,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_for_any_account_serialize(
+        _param = self._create_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10224,7 +3178,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -10240,12 +3194,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_counterparty_for_any_account_with_http_info(
+    def create_counterparty_for_any_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10258,7 +3212,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetExplicitCounterpartyById200Response]:
+    ) -> ApiResponse[GetExplicitCounterpartyById200Response]:
         """Create Counterparty for any account (Explicit)
 
         <p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -10269,8 +3223,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10293,11 +3247,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_for_any_account_serialize(
+        _param = self._create_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10305,7 +3259,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -10321,12 +3275,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_counterparty_for_any_account_without_preload_content(
+    def create_counterparty_for_any_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_counterparty_for_any_account_request: Annotated[OBPv400CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
+        create_counterparty_for_any_account_request: Annotated[CreateCounterpartyForAnyAccountRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10350,8 +3304,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_counterparty_for_any_account_request: Request body (required)
-        :type obpv400_create_counterparty_for_any_account_request: OBPv400CreateCounterpartyForAnyAccountRequest
+        :param create_counterparty_for_any_account_request: Request body (required)
+        :type create_counterparty_for_any_account_request: CreateCounterpartyForAnyAccountRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10374,11 +3328,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_counterparty_for_any_account_serialize(
+        _param = self._create_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_counterparty_for_any_account_request=obpv400_create_counterparty_for_any_account_request,
+            create_counterparty_for_any_account_request=create_counterparty_for_any_account_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10386,7 +3340,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -10397,12 +3351,12 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_counterparty_for_any_account_serialize(
+    def _create_counterparty_for_any_account_serialize(
         self,
         bankid,
         accountid,
         viewid,
-        obpv400_create_counterparty_for_any_account_request,
+        create_counterparty_for_any_account_request,
         _request_auth,
         _content_type,
         _headers,
@@ -10434,8 +3388,8 @@ class CounterpartyApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_counterparty_for_any_account_request is not None:
-            _body_params = obpv400_create_counterparty_for_any_account_request
+        if create_counterparty_for_any_account_request is not None:
+            _body_params = create_counterparty_for_any_account_request
 
 
         # set the HTTP header `Accept`
@@ -10486,7 +3440,314 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_counterparty_for_any_account(
+    def delete_counterparty_corporate_location(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Corporate Location
+
+        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_corporate_location_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Corporate Location
+
+        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_corporate_location_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Corporate Location
+
+        <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_corporate_location_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_for_any_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -10539,7 +3800,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_counterparty_for_any_account_serialize(
+        _param = self._delete_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -10567,7 +3828,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_counterparty_for_any_account_with_http_info(
+    def delete_counterparty_for_any_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -10620,7 +3881,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_counterparty_for_any_account_serialize(
+        _param = self._delete_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -10648,7 +3909,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_counterparty_for_any_account_without_preload_content(
+    def delete_counterparty_for_any_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -10701,7 +3962,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_counterparty_for_any_account_serialize(
+        _param = self._delete_counterparty_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -10724,7 +3985,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_counterparty_for_any_account_serialize(
+    def _delete_counterparty_for_any_account_serialize(
         self,
         bankid,
         accountid,
@@ -10793,7 +4054,2150 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_explicit_counterparty(
+    def delete_counterparty_image_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Image URL
+
+        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_image_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Image URL
+
+        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_image_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Image URL
+
+        <p>Delete image url of other bank account</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_image_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_more_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete more info of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_more_info_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete more info of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_more_info_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete more info of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_more_info_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_open_corporates_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Open Corporates URL
+
+        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_open_corporates_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Open Corporates URL
+
+        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_open_corporates_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Open Corporates URL
+
+        <p>Delete open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_open_corporates_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_physical_location(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Physical Location
+
+        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_physical_location_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Physical Location
+
+        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_physical_location_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Physical Location
+
+        <p>Delete physical location of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_physical_location_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_private_alias(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Private Alias
+
+        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_private_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Private Alias
+
+        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_private_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Private Alias
+
+        <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_private_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_public_alias(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete Counterparty Public Alias
+
+        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_public_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete Counterparty Public Alias
+
+        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_public_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete Counterparty Public Alias
+
+        <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_public_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_counterparty_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete url of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_counterparty_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete url of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_counterparty_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete url of other bank account
+
+        <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': None,
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_counterparty_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_explicit_counterparty(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -10846,7 +6250,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_explicit_counterparty_serialize(
+        _param = self._delete_explicit_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -10874,7 +6278,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_explicit_counterparty_with_http_info(
+    def delete_explicit_counterparty_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -10927,7 +6331,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_explicit_counterparty_serialize(
+        _param = self._delete_explicit_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -10955,7 +6359,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_delete_explicit_counterparty_without_preload_content(
+    def delete_explicit_counterparty_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11008,7 +6412,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_delete_explicit_counterparty_serialize(
+        _param = self._delete_explicit_counterparty_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11031,7 +6435,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_delete_explicit_counterparty_serialize(
+    def _delete_explicit_counterparty_serialize(
         self,
         bankid,
         accountid,
@@ -11100,7 +6504,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparties_for_any_account(
+    def get_counterparties_for_any_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11117,7 +6521,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCounterpartiesForAnyAccount200Response:
+    ) -> GetCounterpartiesForAnyAccount200Response:
         """Get Counterparties for any account (Explicit)
 
         <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11150,7 +6554,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparties_for_any_account_serialize(
+        _param = self._get_counterparties_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11161,7 +6565,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartiesForAnyAccount200Response",
             '404': None,
             '500': None,
         }
@@ -11177,7 +6581,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparties_for_any_account_with_http_info(
+    def get_counterparties_for_any_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11194,7 +6598,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCounterpartiesForAnyAccount200Response]:
+    ) -> ApiResponse[GetCounterpartiesForAnyAccount200Response]:
         """Get Counterparties for any account (Explicit)
 
         <p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11227,7 +6631,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparties_for_any_account_serialize(
+        _param = self._get_counterparties_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11238,7 +6642,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartiesForAnyAccount200Response",
             '404': None,
             '500': None,
         }
@@ -11254,7 +6658,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparties_for_any_account_without_preload_content(
+    def get_counterparties_for_any_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11304,7 +6708,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparties_for_any_account_serialize(
+        _param = self._get_counterparties_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11315,7 +6719,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartiesForAnyAccount200Response",
             '404': None,
             '500': None,
         }
@@ -11326,7 +6730,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_counterparties_for_any_account_serialize(
+    def _get_counterparties_for_any_account_serialize(
         self,
         bankid,
         accountid,
@@ -11399,7 +6803,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_id_for_any_account(
+    def get_counterparty_by_id_for_any_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11417,7 +6821,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetExplicitCounterpartyById200Response:
+    ) -> GetExplicitCounterpartyById200Response:
         """Get Counterparty by Id for any account (Explicit)
 
         <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11452,7 +6856,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_id_for_any_account_serialize(
+        _param = self._get_counterparty_by_id_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11464,7 +6868,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11480,7 +6884,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_id_for_any_account_with_http_info(
+    def get_counterparty_by_id_for_any_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11498,7 +6902,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetExplicitCounterpartyById200Response]:
+    ) -> ApiResponse[GetExplicitCounterpartyById200Response]:
         """Get Counterparty by Id for any account (Explicit)
 
         <p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11533,7 +6937,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_id_for_any_account_serialize(
+        _param = self._get_counterparty_by_id_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11545,7 +6949,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11561,7 +6965,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_id_for_any_account_without_preload_content(
+    def get_counterparty_by_id_for_any_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11614,7 +7018,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_id_for_any_account_serialize(
+        _param = self._get_counterparty_by_id_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11626,7 +7030,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11637,7 +7041,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_counterparty_by_id_for_any_account_serialize(
+    def _get_counterparty_by_id_for_any_account_serialize(
         self,
         bankid,
         accountid,
@@ -11713,7 +7117,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_name_for_any_account(
+    def get_counterparty_by_name_for_any_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11731,7 +7135,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetExplicitCounterpartyById200Response:
+    ) -> GetExplicitCounterpartyById200Response:
         """Get Counterparty by name for any account (Explicit) 
 
         <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11766,7 +7170,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_name_for_any_account_serialize(
+        _param = self._get_counterparty_by_name_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11778,7 +7182,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11794,7 +7198,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_name_for_any_account_with_http_info(
+    def get_counterparty_by_name_for_any_account_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11812,7 +7216,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetExplicitCounterpartyById200Response]:
+    ) -> ApiResponse[GetExplicitCounterpartyById200Response]:
         """Get Counterparty by name for any account (Explicit) 
 
         <p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_NAME</a>: John Smith Ltd.</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -11847,7 +7251,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_name_for_any_account_serialize(
+        _param = self._get_counterparty_by_name_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11859,7 +7263,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11875,7 +7279,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_counterparty_by_name_for_any_account_without_preload_content(
+    def get_counterparty_by_name_for_any_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -11928,7 +7332,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_counterparty_by_name_for_any_account_serialize(
+        _param = self._get_counterparty_by_name_for_any_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -11940,7 +7344,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -11951,7 +7355,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_counterparty_by_name_for_any_account_serialize(
+    def _get_counterparty_by_name_for_any_account_serialize(
         self,
         bankid,
         accountid,
@@ -12027,11 +7431,12 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparties_for_account(
+    def get_counterparty_public_alias(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12044,10 +7449,10 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCounterpartiesForAnyAccount200Response:
-        """Get Counterparties (Explicit)
+    ) -> GetCounterpartyPublicAlias200Response:
+        """Get public alias of other bank account
 
-        <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
@@ -12055,6 +7460,8 @@ class CounterpartyApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12077,10 +7484,11 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparties_for_account_serialize(
+        _param = self._get_counterparty_public_alias_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
+            otheraccountid=otheraccountid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12088,7 +7496,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartyPublicAlias200Response",
             '404': None,
             '500': None,
         }
@@ -12104,7 +7512,240 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparties_for_account_with_http_info(
+    def get_counterparty_public_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetCounterpartyPublicAlias200Response]:
+        """Get public alias of other bank account
+
+        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartyPublicAlias200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_counterparty_public_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get public alias of other bank account
+
+        <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br /> User Authentication is Optional. The User need not be logged in.<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartyPublicAlias200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_counterparty_public_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_explicit_counterparties_for_account(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -12121,7 +7762,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCounterpartiesForAnyAccount200Response]:
+    ) -> GetCounterpartiesForAnyAccount200Response:
         """Get Counterparties (Explicit)
 
         <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12154,7 +7795,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparties_for_account_serialize(
+        _param = self._get_explicit_counterparties_for_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -12165,7 +7806,84 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartiesForAnyAccount200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_explicit_counterparties_for_account_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetCounterpartiesForAnyAccount200Response]:
+        """Get Counterparties (Explicit)
+
+        <p>Get the Counterparties that have been explicitly created on the specified Account / View.</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#Counterparties\"><strong>counterparties</strong></a>:</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_explicit_counterparties_for_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartiesForAnyAccount200Response",
             '404': None,
             '500': None,
         }
@@ -12181,7 +7899,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparties_for_account_without_preload_content(
+    def get_explicit_counterparties_for_account_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -12231,7 +7949,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparties_for_account_serialize(
+        _param = self._get_explicit_counterparties_for_account_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -12242,7 +7960,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCounterpartiesForAnyAccount200Response",
+            '200': "GetCounterpartiesForAnyAccount200Response",
             '404': None,
             '500': None,
         }
@@ -12253,7 +7971,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_explicit_counterparties_for_account_serialize(
+    def _get_explicit_counterparties_for_account_serialize(
         self,
         bankid,
         accountid,
@@ -12326,7 +8044,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparty_by_id(
+    def get_explicit_counterparty_by_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -12344,7 +8062,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetExplicitCounterpartyById200Response:
+    ) -> GetExplicitCounterpartyById200Response:
         """Get Counterparty by Id (Explicit)
 
         <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12379,7 +8097,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparty_by_id_serialize(
+        _param = self._get_explicit_counterparty_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -12391,7 +8109,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -12407,7 +8125,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparty_by_id_with_http_info(
+    def get_explicit_counterparty_by_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -12425,7 +8143,7 @@ class CounterpartyApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetExplicitCounterpartyById200Response]:
+    ) -> ApiResponse[GetExplicitCounterpartyById200Response]:
         """Get Counterparty by Id (Explicit)
 
         <p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
@@ -12460,7 +8178,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparty_by_id_serialize(
+        _param = self._get_explicit_counterparty_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -12472,7 +8190,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -12488,7 +8206,7 @@ class CounterpartyApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_explicit_counterparty_by_id_without_preload_content(
+    def get_explicit_counterparty_by_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -12541,7 +8259,7 @@ class CounterpartyApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_explicit_counterparty_by_id_serialize(
+        _param = self._get_explicit_counterparty_by_id_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -12553,7 +8271,7 @@ class CounterpartyApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetExplicitCounterpartyById200Response",
+            '200': "GetExplicitCounterpartyById200Response",
             '404': None,
             '500': None,
         }
@@ -12564,7 +8282,7 @@ class CounterpartyApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_explicit_counterparty_by_id_serialize(
+    def _get_explicit_counterparty_by_id_serialize(
         self,
         bankid,
         accountid,
@@ -12624,6 +8342,4288 @@ class CounterpartyApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_other_account_by_id_for_bank_account(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetTransactionByIdForBankAccount200ResponseOtherAccount:
+        """Get Other Account by Id
+
+        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_by_id_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetTransactionByIdForBankAccount200ResponseOtherAccount",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_other_account_by_id_for_bank_account_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetTransactionByIdForBankAccount200ResponseOtherAccount]:
+        """Get Other Account by Id
+
+        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_by_id_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetTransactionByIdForBankAccount200ResponseOtherAccount",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_other_account_by_id_for_bank_account_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Other Account by Id
+
+        <p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_by_id_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetTransactionByIdForBankAccount200ResponseOtherAccount",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_other_account_by_id_for_bank_account_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_other_account_for_transaction(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetOtherAccountForTransaction200Response:
+        """Get Other Account of Transaction
+
+        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param transactionid: The TRANSACTIONID identifier (required)
+        :type transactionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_for_transaction_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            transactionid=transactionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountForTransaction200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_other_account_for_transaction_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetOtherAccountForTransaction200Response]:
+        """Get Other Account of Transaction
+
+        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param transactionid: The TRANSACTIONID identifier (required)
+        :type transactionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_for_transaction_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            transactionid=transactionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountForTransaction200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_other_account_for_transaction_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        transactionid: Annotated[StrictStr, Field(description="The TRANSACTIONID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Other Account of Transaction
+
+        <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param transactionid: The TRANSACTIONID identifier (required)
+        :type transactionid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_for_transaction_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            transactionid=transactionid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountForTransaction200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_other_account_for_transaction_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        transactionid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if transactionid is not None:
+            _path_params['transactionid'] = transactionid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_other_account_metadata(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetOtherAccountMetadata200Response:
+        """Get Other Account Metadata
+
+        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_metadata_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountMetadata200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_other_account_metadata_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetOtherAccountMetadata200Response]:
+        """Get Other Account Metadata
+
+        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_metadata_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountMetadata200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_other_account_metadata_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Other Account Metadata
+
+        <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_metadata_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountMetadata200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_other_account_metadata_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_other_account_private_alias(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetCounterpartyPublicAlias200Response:
+        """Get Other Account Private Alias
+
+        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartyPublicAlias200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_other_account_private_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetCounterpartyPublicAlias200Response]:
+        """Get Other Account Private Alias
+
+        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartyPublicAlias200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_other_account_private_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Other Account Private Alias
+
+        <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_account_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCounterpartyPublicAlias200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_other_account_private_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_other_accounts_for_bank_account(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetOtherAccountsForBankAccount200Response:
+        """Get Other Accounts of one Account
+
+        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_accounts_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountsForBankAccount200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_other_accounts_for_bank_account_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetOtherAccountsForBankAccount200Response]:
+        """Get Other Accounts of one Account
+
+        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_accounts_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountsForBankAccount200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_other_accounts_for_bank_account_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Other Accounts of one Account
+
+        <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br /> User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view VIEW_ID is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_accounts\"><strong>other_accounts</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_other_accounts_for_bank_account_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetOtherAccountsForBankAccount200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_other_accounts_for_bank_account_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_corporate_location(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Counterparty Corporate Location
+
+        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_corporate_location_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Counterparty Corporate Location
+
+        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_corporate_location_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_corporate_location_request: Annotated[UpdateCounterpartyCorporateLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Counterparty Corporate Location
+
+        <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_corporate_location_request: Request body (required)
+        :type update_counterparty_corporate_location_request: UpdateCounterpartyCorporateLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_corporate_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_corporate_location_request=update_counterparty_corporate_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_corporate_location_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_corporate_location_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_corporate_location_request is not None:
+            _body_params = update_counterparty_corporate_location_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_image_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Counterparty Image Url
+
+        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_image_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Counterparty Image Url
+
+        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_image_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_image_url_request: Annotated[UpdateCounterpartyImageUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Counterparty Image Url
+
+        <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_image_url_request: Request body (required)
+        :type update_counterparty_image_url_request: UpdateCounterpartyImageUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_image_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_image_url_request=update_counterparty_image_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_image_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_image_url_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_image_url_request is not None:
+            _body_params = update_counterparty_image_url_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_more_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Counterparty More Info
+
+        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_more_info_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Counterparty More Info
+
+        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_more_info_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_more_info_request: Annotated[UpdateCounterpartyMoreInfoRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Counterparty More Info
+
+        <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_more_info_request: Request body (required)
+        :type update_counterparty_more_info_request: UpdateCounterpartyMoreInfoRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_more_info_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_more_info_request=update_counterparty_more_info_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_more_info_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_more_info_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_more_info_request is not None:
+            _body_params = update_counterparty_more_info_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_open_corporates_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Open Corporates Url of Counterparty
+
+        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_open_corporates_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Open Corporates Url of Counterparty
+
+        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_open_corporates_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_open_corporates_url_request: Annotated[UpdateCounterpartyOpenCorporatesUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Open Corporates Url of Counterparty
+
+        <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_open_corporates_url_request: Request body (required)
+        :type update_counterparty_open_corporates_url_request: UpdateCounterpartyOpenCorporatesUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_open_corporates_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_open_corporates_url_request=update_counterparty_open_corporates_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_open_corporates_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_open_corporates_url_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_open_corporates_url_request is not None:
+            _body_params = update_counterparty_open_corporates_url_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_physical_location(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Counterparty Physical Location
+
+        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_physical_location_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Counterparty Physical Location
+
+        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_physical_location_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_physical_location_request: Annotated[UpdateCounterpartyPhysicalLocationRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Counterparty Physical Location
+
+        <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_physical_location_request: Request body (required)
+        :type update_counterparty_physical_location_request: UpdateCounterpartyPhysicalLocationRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_physical_location_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_physical_location_request=update_counterparty_physical_location_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_physical_location_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_physical_location_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_physical_location_request is not None:
+            _body_params = update_counterparty_physical_location_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_private_alias(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update Counterparty Private Alias
+
+        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_private_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update Counterparty Private Alias
+
+        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_private_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update Counterparty Private Alias
+
+        <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_private_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_private_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        get_counterparty_public_alias200_response,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if get_counterparty_public_alias200_response is not None:
+            _body_params = get_counterparty_public_alias200_response
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_public_alias(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update public alias of other bank account
+
+        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_public_alias_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update public alias of other bank account
+
+        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_public_alias_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        get_counterparty_public_alias200_response: Annotated[GetCounterpartyPublicAlias200Response, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update public alias of other bank account
+
+        <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param get_counterparty_public_alias200_response: Request body (required)
+        :type get_counterparty_public_alias200_response: GetCounterpartyPublicAlias200Response
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_public_alias_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            get_counterparty_public_alias200_response=get_counterparty_public_alias200_response,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_public_alias_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        get_counterparty_public_alias200_response,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if get_counterparty_public_alias200_response is not None:
+            _body_params = get_counterparty_public_alias200_response
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_counterparty_url(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> UpdateTransactionNarrative200Response:
+        """Update url of other bank account
+
+        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_url_request=update_counterparty_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_counterparty_url_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
+        """Update url of other bank account
+
+        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_url_request=update_counterparty_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_counterparty_url_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
+        viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
+        otheraccountid: Annotated[StrictStr, Field(description="The OTHERACCOUNTID identifier")],
+        update_counterparty_url_request: Annotated[UpdateCounterpartyUrlRequest, Field(description="Request body")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Update url of other bank account
+
+        <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param accountid: The ACCOUNTID identifier (required)
+        :type accountid: str
+        :param viewid: The VIEWID identifier (required)
+        :type viewid: str
+        :param otheraccountid: The OTHERACCOUNTID identifier (required)
+        :type otheraccountid: str
+        :param update_counterparty_url_request: Request body (required)
+        :type update_counterparty_url_request: UpdateCounterpartyUrlRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_counterparty_url_serialize(
+            bankid=bankid,
+            accountid=accountid,
+            viewid=viewid,
+            otheraccountid=otheraccountid,
+            update_counterparty_url_request=update_counterparty_url_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "UpdateTransactionNarrative200Response",
+            '404': None,
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_counterparty_url_serialize(
+        self,
+        bankid,
+        accountid,
+        viewid,
+        otheraccountid,
+        update_counterparty_url_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        if accountid is not None:
+            _path_params['accountid'] = accountid
+        if viewid is not None:
+            _path_params['viewid'] = viewid
+        if otheraccountid is not None:
+            _path_params['otheraccountid'] = otheraccountid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if update_counterparty_url_request is not None:
+            _body_params = update_counterparty_url_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

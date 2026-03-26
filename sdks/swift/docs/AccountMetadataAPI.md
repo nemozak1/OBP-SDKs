@@ -1,17 +1,17 @@
 # AccountMetadataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400AddTagForViewOnAccount**](AccountMetadataAPI.md#obpv400addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
-[**oBPv400DeleteTagForViewOnAccount**](AccountMetadataAPI.md#obpv400deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
-[**oBPv400GetTagsForViewOnAccount**](AccountMetadataAPI.md#obpv400gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
+[**addTagForViewOnAccount**](AccountMetadataAPI.md#addtagforviewonaccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account
+[**deleteTagForViewOnAccount**](AccountMetadataAPI.md#deletetagforviewonaccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account
+[**getTagsForViewOnAccount**](AccountMetadataAPI.md#gettagsforviewonaccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account
 
 
-# **oBPv400AddTagForViewOnAccount**
+# **addTagForViewOnAccount**
 ```swift
-    open class func oBPv400AddTagForViewOnAccount(bankid: String, accountid: String, viewid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response, completion: @escaping (_ data: OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems?, _ error: Error?) -> Void)
+    open class func addTagForViewOnAccount(bankid: String, accountid: String, viewid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId, completion: @escaping (_ data: GetTagsForViewOnAccount200ResponseTagsInner?, _ error: Error?) -> Void)
 ```
 
 Create a tag on account
@@ -26,10 +26,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
-let oBPv400DeleteSystemLevelEndpointTag200Response = OBPv4_0_0_deleteSystemLevelEndpointTag_200_response(type: "type_example", properties: OBPv4_0_0_deleteSystemLevelEndpointTag_200_response_properties(value: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+let getTransactionTypes200ResponseTransactionTypesInnerId = getTransactionTypes_200_response_transaction_types_inner_id(value: "value_example") // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 // Create a tag on account
-AccountMetadataAPI.oBPv400AddTagForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid, oBPv400DeleteSystemLevelEndpointTag200Response: oBPv400DeleteSystemLevelEndpointTag200Response) { (response, error) in
+AccountMetadataAPI.addTagForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid, getTransactionTypes200ResponseTransactionTypesInnerId: getTransactionTypes200ResponseTransactionTypesInnerId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
- **oBPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body | 
+ **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteTagForViewOnAccount**
+# **deleteTagForViewOnAccount**
 ```swift
-    open class func oBPv400DeleteTagForViewOnAccount(bankid: String, accountid: String, viewid: String, tagid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteTagForViewOnAccount(bankid: String, accountid: String, viewid: String, tagid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete a tag on account
@@ -85,7 +85,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let tagid = "tagid_example" // String | The TAGID identifier
 
 // Delete a tag on account
-AccountMetadataAPI.oBPv400DeleteTagForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid, tagid: tagid) { (response, error) in
+AccountMetadataAPI.deleteTagForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid, tagid: tagid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -121,9 +121,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTagsForViewOnAccount**
+# **getTagsForViewOnAccount**
 ```swift
-    open class func oBPv400GetTagsForViewOnAccount(bankid: String, accountid: String, viewid: String, completion: @escaping (_ data: OBPv400GetTagsForViewOnAccount200Response?, _ error: Error?) -> Void)
+    open class func getTagsForViewOnAccount(bankid: String, accountid: String, viewid: String, completion: @escaping (_ data: GetTagsForViewOnAccount200Response?, _ error: Error?) -> Void)
 ```
 
 Get tags on account
@@ -140,7 +140,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 
 // Get tags on account
-AccountMetadataAPI.oBPv400GetTagsForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid) { (response, error) in
+AccountMetadataAPI.getTagsForViewOnAccount(bankid: bankid, accountid: accountid, viewid: viewid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

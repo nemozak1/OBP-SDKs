@@ -1,19 +1,19 @@
 # CacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetCacheConfig**](CacheApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo**](CacheApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces**](CacheApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600InvalidateCacheNamespace**](CacheApi.md#obpv600invalidatecachenamespaceoperation) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**getCacheConfig**](CacheApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo**](CacheApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces**](CacheApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**invalidateCacheNamespace**](CacheApi.md#invalidatecachenamespaceoperation) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
 
 
-## oBPv600GetCacheConfig
+## getCacheConfig
 
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -26,7 +26,7 @@ import {
   Configuration,
   CacheApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheConfigRequest } from 'obp-typescript';
+import type { GetCacheConfigRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -41,7 +41,7 @@ async function example() {
   const api = new CacheApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheConfig();
+    const data = await api.getCacheConfig();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -79,9 +79,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetCacheInfo
+## getCacheInfo
 
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -94,7 +94,7 @@ import {
   Configuration,
   CacheApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheInfoRequest } from 'obp-typescript';
+import type { GetCacheInfoRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -109,7 +109,7 @@ async function example() {
   const api = new CacheApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheInfo();
+    const data = await api.getCacheInfo();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -147,9 +147,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetCacheNamespaces
+## getCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -162,7 +162,7 @@ import {
   Configuration,
   CacheApi,
 } from 'obp-typescript';
-import type { OBPv600GetCacheNamespacesRequest } from 'obp-typescript';
+import type { GetCacheNamespacesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -177,7 +177,7 @@ async function example() {
   const api = new CacheApi(config);
 
   try {
-    const data = await api.oBPv600GetCacheNamespaces();
+    const data = await api.getCacheNamespaces();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -215,9 +215,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600InvalidateCacheNamespace
+## invalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest)
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -230,7 +230,7 @@ import {
   Configuration,
   CacheApi,
 } from 'obp-typescript';
-import type { OBPv600InvalidateCacheNamespaceOperationRequest } from 'obp-typescript';
+import type { InvalidateCacheNamespaceOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -245,12 +245,12 @@ async function example() {
   const api = new CacheApi(config);
 
   const body = {
-    // OBPv600InvalidateCacheNamespaceRequest | Request body
-    oBPv600InvalidateCacheNamespaceRequest: {"type":"object","properties":{"namespace_id":{"type":"string"}}},
-  } satisfies OBPv600InvalidateCacheNamespaceOperationRequest;
+    // InvalidateCacheNamespaceRequest | Request body
+    invalidateCacheNamespaceRequest: {"type":"object","properties":{"namespace_id":{"type":"string"}}},
+  } satisfies InvalidateCacheNamespaceOperationRequest;
 
   try {
-    const data = await api.oBPv600InvalidateCacheNamespace(body);
+    const data = await api.invalidateCacheNamespace(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -266,11 +266,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv600InvalidateCacheNamespaceRequest** | [OBPv600InvalidateCacheNamespaceRequest](OBPv600InvalidateCacheNamespaceRequest.md) | Request body | |
+| **invalidateCacheNamespaceRequest** | [InvalidateCacheNamespaceRequest](InvalidateCacheNamespaceRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

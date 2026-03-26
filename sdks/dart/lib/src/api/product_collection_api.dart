@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv310_create_product_collection200_response.dart';
-import 'package:obp_dart/src/model/obpv310_create_product_collection_request.dart';
-import 'package:obp_dart/src/model/obpv310_get_product_collection200_response.dart';
+import 'package:obp_dart/src/model/create_product_collection200_response.dart';
+import 'package:obp_dart/src/model/create_product_collection_request.dart';
+import 'package:obp_dart/src/model/get_product_collection200_response.dart';
 
 class ProductCollectionApi {
 
@@ -27,7 +27,7 @@ class ProductCollectionApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [collectioncode] - The COLLECTIONCODE identifier
-  /// * [oBPv310CreateProductCollectionRequest] - Request body
+  /// * [createProductCollectionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,12 +35,12 @@ class ProductCollectionApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310CreateProductCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateProductCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310CreateProductCollection200Response>> oBPv310CreateProductCollection({ 
+  Future<Response<CreateProductCollection200Response>> createProductCollection({ 
     required String bankid,
     required String collectioncode,
-    required OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest,
+    required CreateProductCollectionRequest createProductCollectionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class ProductCollectionApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -80,8 +80,8 @@ class ProductCollectionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv310CreateProductCollectionRequest);
-      _bodyData = _serializers.serialize(oBPv310CreateProductCollectionRequest, specifiedType: _type);
+      const _type = FullType(CreateProductCollectionRequest);
+      _bodyData = _serializers.serialize(createProductCollectionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -104,14 +104,14 @@ class ProductCollectionApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310CreateProductCollection200Response? _responseData;
+    CreateProductCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310CreateProductCollection200Response),
-      ) as OBPv310CreateProductCollection200Response;
+        specifiedType: const FullType(CreateProductCollection200Response),
+      ) as CreateProductCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -123,7 +123,7 @@ class ProductCollectionApi {
       );
     }
 
-    return Response<OBPv310CreateProductCollection200Response>(
+    return Response<CreateProductCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -148,9 +148,9 @@ class ProductCollectionApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetProductCollection200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetProductCollection200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetProductCollection200Response>> oBPv310GetProductCollection({ 
+  Future<Response<GetProductCollection200Response>> getProductCollection({ 
     required String bankid,
     required String collectioncode,
     CancelToken? cancelToken,
@@ -179,7 +179,7 @@ class ProductCollectionApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -196,14 +196,14 @@ class ProductCollectionApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetProductCollection200Response? _responseData;
+    GetProductCollection200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetProductCollection200Response),
-      ) as OBPv310GetProductCollection200Response;
+        specifiedType: const FullType(GetProductCollection200Response),
+      ) as GetProductCollection200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -215,7 +215,7 @@ class ProductCollectionApi {
       );
     }
 
-    return Response<OBPv310GetProductCollection200Response>(
+    return Response<GetProductCollection200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

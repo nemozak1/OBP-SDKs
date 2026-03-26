@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_direct_debit**](DirectDebitApi.md#o_bpv4_0_0_create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-[**o_bpv4_0_0_create_direct_debit_management**](DirectDebitApi.md#o_bpv4_0_0_create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+[**create_direct_debit**](DirectDebitApi.md#create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+[**create_direct_debit_management**](DirectDebitApi.md#create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
 
 
-# **o_bpv4_0_0_create_direct_debit**
-> OBPv400CreateDirectDebit200Response o_bpv4_0_0_create_direct_debit(bankid, accountid, viewid, obpv400_create_direct_debit_request)
+# **create_direct_debit**
+> CreateDirectDebit200Response create_direct_debit(bankid, accountid, viewid, create_direct_debit_request)
 
 Create Direct Debit
 
@@ -48,8 +48,8 @@ Create Direct Debit
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_direct_debit200_response import OBPv400CreateDirectDebit200Response
-from obp_python.models.obpv400_create_direct_debit_request import OBPv400CreateDirectDebitRequest
+from obp_python.models.create_direct_debit200_response import CreateDirectDebit200Response
+from obp_python.models.create_direct_debit_request import CreateDirectDebitRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -85,15 +85,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv400_create_direct_debit_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}} # OBPv400CreateDirectDebitRequest | Request body
+    create_direct_debit_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}} # CreateDirectDebitRequest | Request body
 
     try:
         # Create Direct Debit
-        api_response = api_instance.o_bpv4_0_0_create_direct_debit(bankid, accountid, viewid, obpv400_create_direct_debit_request)
-        print("The response of DirectDebitApi->o_bpv4_0_0_create_direct_debit:\n")
+        api_response = api_instance.create_direct_debit(bankid, accountid, viewid, create_direct_debit_request)
+        print("The response of DirectDebitApi->create_direct_debit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit: %s\n" % e)
+        print("Exception when calling DirectDebitApi->create_direct_debit: %s\n" % e)
 ```
 
 
@@ -106,11 +106,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv400_create_direct_debit_request** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | 
+ **create_direct_debit_request** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -131,8 +131,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_direct_debit_management**
-> OBPv400CreateDirectDebit200Response o_bpv4_0_0_create_direct_debit_management(bankid, accountid, obpv400_create_direct_debit_request)
+# **create_direct_debit_management**
+> CreateDirectDebit200Response create_direct_debit_management(bankid, accountid, create_direct_debit_request)
 
 Create Direct Debit (management)
 
@@ -170,8 +170,8 @@ Create Direct Debit (management)
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_direct_debit200_response import OBPv400CreateDirectDebit200Response
-from obp_python.models.obpv400_create_direct_debit_request import OBPv400CreateDirectDebitRequest
+from obp_python.models.create_direct_debit200_response import CreateDirectDebit200Response
+from obp_python.models.create_direct_debit_request import CreateDirectDebitRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -206,15 +206,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DirectDebitApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv400_create_direct_debit_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}} # OBPv400CreateDirectDebitRequest | Request body
+    create_direct_debit_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}} # CreateDirectDebitRequest | Request body
 
     try:
         # Create Direct Debit (management)
-        api_response = api_instance.o_bpv4_0_0_create_direct_debit_management(bankid, accountid, obpv400_create_direct_debit_request)
-        print("The response of DirectDebitApi->o_bpv4_0_0_create_direct_debit_management:\n")
+        api_response = api_instance.create_direct_debit_management(bankid, accountid, create_direct_debit_request)
+        print("The response of DirectDebitApi->create_direct_debit_management:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit_management: %s\n" % e)
+        print("Exception when calling DirectDebitApi->create_direct_debit_management: %s\n" % e)
 ```
 
 
@@ -226,11 +226,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv400_create_direct_debit_request** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | 
+ **create_direct_debit_request** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

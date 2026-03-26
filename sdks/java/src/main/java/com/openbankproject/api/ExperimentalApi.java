@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv310CreateMeetingRequest;
-import com.openbankproject.model.OBPv310GetMeeting200Response;
-import com.openbankproject.model.OBPv310GetMeetings200Response;
+import com.openbankproject.model.CreateMeetingRequest;
+import com.openbankproject.model.GetMeeting200Response;
+import com.openbankproject.model.GetMeetings200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ExperimentalApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,25 +168,25 @@ public class ExperimentalApi {
    * Create Meeting (video conference/call)
    * &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv310CreateMeetingRequest Request body (required)
-   * @return OBPv310GetMeeting200Response
+   * @param createMeetingRequest Request body (required)
+   * @return GetMeeting200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeeting200Response oBPv310CreateMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv310CreateMeetingRequest obPv310CreateMeetingRequest) throws ApiException {
-    return oBPv310CreateMeeting(bankid, obPv310CreateMeetingRequest, null);
+  public GetMeeting200Response createMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateMeetingRequest createMeetingRequest) throws ApiException {
+    return createMeeting(bankid, createMeetingRequest, null);
   }
 
   /**
    * Create Meeting (video conference/call)
    * &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv310CreateMeetingRequest Request body (required)
+   * @param createMeetingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310GetMeeting200Response
+   * @return GetMeeting200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeeting200Response oBPv310CreateMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv310CreateMeetingRequest obPv310CreateMeetingRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetMeeting200Response> localVarResponse = oBPv310CreateMeetingWithHttpInfo(bankid, obPv310CreateMeetingRequest, headers);
+  public GetMeeting200Response createMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateMeetingRequest createMeetingRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMeeting200Response> localVarResponse = createMeetingWithHttpInfo(bankid, createMeetingRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -194,25 +194,25 @@ public class ExperimentalApi {
    * Create Meeting (video conference/call)
    * &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv310CreateMeetingRequest Request body (required)
-   * @return ApiResponse&lt;OBPv310GetMeeting200Response&gt;
+   * @param createMeetingRequest Request body (required)
+   * @return ApiResponse&lt;GetMeeting200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeeting200Response> oBPv310CreateMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv310CreateMeetingRequest obPv310CreateMeetingRequest) throws ApiException {
-    return oBPv310CreateMeetingWithHttpInfo(bankid, obPv310CreateMeetingRequest, null);
+  public ApiResponse<GetMeeting200Response> createMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateMeetingRequest createMeetingRequest) throws ApiException {
+    return createMeetingWithHttpInfo(bankid, createMeetingRequest, null);
   }
 
   /**
    * Create Meeting (video conference/call)
    * &lt;p&gt;Create Meeting: Initiate a video conference/call with the bank.&lt;/p&gt; &lt;p&gt;The Meetings resource contains meta data about video/other conference sessions&lt;/p&gt; &lt;p&gt;provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt;. Currently staff_user_id is not set. Further calls will be needed to correctly set this.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv310CreateMeetingRequest Request body (required)
+   * @param createMeetingRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetMeeting200Response&gt;
+   * @return ApiResponse&lt;GetMeeting200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeeting200Response> oBPv310CreateMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv310CreateMeetingRequest obPv310CreateMeetingRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310CreateMeetingRequestBuilder(bankid, obPv310CreateMeetingRequest, headers);
+  public ApiResponse<GetMeeting200Response> createMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateMeetingRequest createMeetingRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createMeetingRequestBuilder(bankid, createMeetingRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -223,11 +223,11 @@ public class ExperimentalApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310CreateMeeting", localVarResponse);
+          throw getApiException("createMeeting", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetMeeting200Response>(
+          return new ApiResponse<GetMeeting200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -237,10 +237,10 @@ public class ExperimentalApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetMeeting200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetMeeting200Response>() {});
+        GetMeeting200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMeeting200Response>() {});
         
 
-        return new ApiResponse<OBPv310GetMeeting200Response>(
+        return new ApiResponse<GetMeeting200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -259,14 +259,14 @@ public class ExperimentalApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310CreateMeetingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv310CreateMeetingRequest obPv310CreateMeetingRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createMeetingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateMeetingRequest createMeetingRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310CreateMeeting");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createMeeting");
     }
-    // verify the required parameter 'obPv310CreateMeetingRequest' is set
-    if (obPv310CreateMeetingRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv310CreateMeetingRequest' when calling oBPv310CreateMeeting");
+    // verify the required parameter 'createMeetingRequest' is set
+    if (createMeetingRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createMeetingRequest' when calling createMeeting");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -280,7 +280,7 @@ public class ExperimentalApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv310CreateMeetingRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createMeetingRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -301,11 +301,11 @@ public class ExperimentalApi {
    * &lt;p&gt;Get Meeting specified by BANK_ID / MEETING_ID&lt;br /&gt; Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;MEETING_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param meetingid The MEETINGID identifier (required)
-   * @return OBPv310GetMeeting200Response
+   * @return GetMeeting200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeeting200Response oBPv310GetMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid) throws ApiException {
-    return oBPv310GetMeeting(bankid, meetingid, null);
+  public GetMeeting200Response getMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid) throws ApiException {
+    return getMeeting(bankid, meetingid, null);
   }
 
   /**
@@ -314,11 +314,11 @@ public class ExperimentalApi {
    * @param bankid The BANKID identifier (required)
    * @param meetingid The MEETINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310GetMeeting200Response
+   * @return GetMeeting200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeeting200Response oBPv310GetMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetMeeting200Response> localVarResponse = oBPv310GetMeetingWithHttpInfo(bankid, meetingid, headers);
+  public GetMeeting200Response getMeeting(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMeeting200Response> localVarResponse = getMeetingWithHttpInfo(bankid, meetingid, headers);
     return localVarResponse.getData();
   }
 
@@ -327,11 +327,11 @@ public class ExperimentalApi {
    * &lt;p&gt;Get Meeting specified by BANK_ID / MEETING_ID&lt;br /&gt; Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;MEETING_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param meetingid The MEETINGID identifier (required)
-   * @return ApiResponse&lt;OBPv310GetMeeting200Response&gt;
+   * @return ApiResponse&lt;GetMeeting200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeeting200Response> oBPv310GetMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid) throws ApiException {
-    return oBPv310GetMeetingWithHttpInfo(bankid, meetingid, null);
+  public ApiResponse<GetMeeting200Response> getMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid) throws ApiException {
+    return getMeetingWithHttpInfo(bankid, meetingid, null);
   }
 
   /**
@@ -340,11 +340,11 @@ public class ExperimentalApi {
    * @param bankid The BANKID identifier (required)
    * @param meetingid The MEETINGID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetMeeting200Response&gt;
+   * @return ApiResponse&lt;GetMeeting200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeeting200Response> oBPv310GetMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310GetMeetingRequestBuilder(bankid, meetingid, headers);
+  public ApiResponse<GetMeeting200Response> getMeetingWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMeetingRequestBuilder(bankid, meetingid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -355,11 +355,11 @@ public class ExperimentalApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310GetMeeting", localVarResponse);
+          throw getApiException("getMeeting", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetMeeting200Response>(
+          return new ApiResponse<GetMeeting200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -369,10 +369,10 @@ public class ExperimentalApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetMeeting200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetMeeting200Response>() {});
+        GetMeeting200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMeeting200Response>() {});
         
 
-        return new ApiResponse<OBPv310GetMeeting200Response>(
+        return new ApiResponse<GetMeeting200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -391,14 +391,14 @@ public class ExperimentalApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310GetMeetingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMeetingRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String meetingid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310GetMeeting");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getMeeting");
     }
     // verify the required parameter 'meetingid' is set
     if (meetingid == null) {
-      throw new ApiException(400, "Missing the required parameter 'meetingid' when calling oBPv310GetMeeting");
+      throw new ApiException(400, "Missing the required parameter 'meetingid' when calling getMeeting");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -427,11 +427,11 @@ public class ExperimentalApi {
    * Get Meetings
    * &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv310GetMeetings200Response
+   * @return GetMeetings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeetings200Response oBPv310GetMeetings(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv310GetMeetings(bankid, null);
+  public GetMeetings200Response getMeetings(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getMeetings(bankid, null);
   }
 
   /**
@@ -439,11 +439,11 @@ public class ExperimentalApi {
    * &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310GetMeetings200Response
+   * @return GetMeetings200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetMeetings200Response oBPv310GetMeetings(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetMeetings200Response> localVarResponse = oBPv310GetMeetingsWithHttpInfo(bankid, headers);
+  public GetMeetings200Response getMeetings(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetMeetings200Response> localVarResponse = getMeetingsWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -451,11 +451,11 @@ public class ExperimentalApi {
    * Get Meetings
    * &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv310GetMeetings200Response&gt;
+   * @return ApiResponse&lt;GetMeetings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeetings200Response> oBPv310GetMeetingsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv310GetMeetingsWithHttpInfo(bankid, null);
+  public ApiResponse<GetMeetings200Response> getMeetingsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getMeetingsWithHttpInfo(bankid, null);
   }
 
   /**
@@ -463,11 +463,11 @@ public class ExperimentalApi {
    * &lt;p&gt;Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.&lt;/p&gt; &lt;p&gt;The actual conference/chats are handled by external services.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;This call is &lt;strong&gt;experimental&lt;/strong&gt; and will require further authorisation in the future.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#contact_details\&quot;&gt;&lt;strong&gt;contact_details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#creator\&quot;&gt;&lt;strong&gt;creator&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_token\&quot;&gt;&lt;strong&gt;customer_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_user_id\&quot;&gt;&lt;strong&gt;customer_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#email_address\&quot;&gt;&lt;strong&gt;email_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#invitees\&quot;&gt;&lt;strong&gt;invitees&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#keys\&quot;&gt;&lt;strong&gt;keys&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meeting_id\&quot;&gt;&lt;strong&gt;meeting_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meetings\&quot;&gt;&lt;strong&gt;meetings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#mobile_phone\&quot;&gt;&lt;strong&gt;mobile_phone&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#present\&quot;&gt;&lt;strong&gt;present&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider_id\&quot;&gt;&lt;strong&gt;provider_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#purpose_id\&quot;&gt;&lt;strong&gt;purpose_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;session_id&lt;/strong&gt;&lt;/a&gt;: b4e0352a-9a0f-4bfa-b30b-9003aa467f50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_token\&quot;&gt;&lt;strong&gt;staff_token&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#staff_user_id\&quot;&gt;&lt;strong&gt;staff_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#status\&quot;&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetMeetings200Response&gt;
+   * @return ApiResponse&lt;GetMeetings200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetMeetings200Response> oBPv310GetMeetingsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310GetMeetingsRequestBuilder(bankid, headers);
+  public ApiResponse<GetMeetings200Response> getMeetingsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMeetingsRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -478,11 +478,11 @@ public class ExperimentalApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310GetMeetings", localVarResponse);
+          throw getApiException("getMeetings", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetMeetings200Response>(
+          return new ApiResponse<GetMeetings200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -492,10 +492,10 @@ public class ExperimentalApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetMeetings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetMeetings200Response>() {});
+        GetMeetings200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetMeetings200Response>() {});
         
 
-        return new ApiResponse<OBPv310GetMeetings200Response>(
+        return new ApiResponse<GetMeetings200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -514,10 +514,10 @@ public class ExperimentalApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310GetMeetingsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMeetingsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv310GetMeetings");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getMeetings");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();

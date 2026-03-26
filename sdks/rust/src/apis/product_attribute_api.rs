@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,69 +15,186 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv3_1_0_delete_product_attribute`]
+/// struct for typed errors of method [`create_or_update_product_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv310DeleteProductAttributeError {
+pub enum CreateOrUpdateProductAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_or_update_product_attribute_definition`]
+/// struct for typed errors of method [`create_product_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateOrUpdateProductAttributeDefinitionError {
+pub enum CreateProductAttributeError {
+    Status500(),
+    UnknownValue(serde_json::Value),
+}
+
+/// struct for typed errors of method [`delete_product_attribute`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteProductAttributeError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_product_attribute`]
+/// struct for typed errors of method [`delete_product_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateProductAttributeError {
-    Status500(),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`o_bpv4_0_0_delete_product_attribute_definition`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum OBpv400DeleteProductAttributeDefinitionError {
+pub enum DeleteProductAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_product_attribute`]
+/// struct for typed errors of method [`get_product_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetProductAttributeError {
+pub enum GetProductAttributeError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_product_attribute_definition`]
+/// struct for typed errors of method [`get_product_attribute_definition`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetProductAttributeDefinitionError {
+pub enum GetProductAttributeDefinitionError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_product_attribute`]
+/// struct for typed errors of method [`update_product_attribute`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateProductAttributeError {
+pub enum UpdateProductAttributeError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
+
+/// <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+pub async fn create_or_update_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str, create_or_update_transaction_request_attribute_definition_request: models::CreateOrUpdateTransactionRequestAttributeDefinitionRequest) -> Result<models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Error<CreateOrUpdateProductAttributeDefinitionError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_bankid = bankid;
+    let p_body_create_or_update_transaction_request_attribute_definition_request = create_or_update_transaction_request_attribute_definition_request;
+
+    let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
+    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+    req_builder = req_builder.json(&p_body_create_or_update_transaction_request_attribute_definition_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200ResponseAttributesInner`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<CreateOrUpdateProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
+pub async fn create_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, update_atm_attribute_request: models::UpdateAtmAttributeRequest) -> Result<models::CreateProductAttribute200Response, Error<CreateProductAttributeError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_path_bankid = bankid;
+    let p_path_productcode = productcode;
+    let p_body_update_atm_attribute_request = update_atm_attribute_request;
+
+    let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), productcode=crate::apis::urlencode(p_path_productcode));
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref token) = configuration.oauth_access_token {
+        req_builder = req_builder.bearer_auth(token.to_owned());
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("DirectLogin", value);
+    };
+    req_builder = req_builder.json(&p_body_update_atm_attribute_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::CreateProductAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::CreateProductAttribute200Response`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<CreateProductAttributeError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
 
 /// <p>Delete Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Delete a Product Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_attribute_id\">PRODUCT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv3_1_0_delete_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str) -> Result<(), Error<OBpv310DeleteProductAttributeError>> {
+pub async fn delete_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str) -> Result<(), Error<DeleteProductAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_productcode = productcode;
@@ -106,7 +223,7 @@ pub async fn o_bpv3_1_0_delete_product_attribute(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -118,130 +235,13 @@ pub async fn o_bpv3_1_0_delete_product_attribute(configuration: &configuration::
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv310DeleteProductAttributeError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Create or Update Product Attribute Definition</p> <p>The category field must be Product</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-pub async fn o_bpv4_0_0_create_or_update_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str, obpv400_create_or_update_transaction_request_attribute_definition_request: models::Obpv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) -> Result<models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Error<OBpv400CreateOrUpdateProductAttributeDefinitionError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_bankid = bankid;
-    let p_body_obpv400_create_or_update_transaction_request_attribute_definition_request = obpv400_create_or_update_transaction_request_attribute_definition_request;
-
-    let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
-    let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_obpv400_create_or_update_transaction_request_attribute_definition_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv400CreateOrUpdateProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// <p>Create Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Typical product attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv4_0_0_create_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, obpv510_update_atm_attribute_request: models::Obpv510UpdateAtmAttributeRequest) -> Result<models::Obpv400CreateProductAttribute200Response, Error<OBpv400CreateProductAttributeError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_path_bankid = bankid;
-    let p_path_productcode = productcode;
-    let p_body_obpv510_update_atm_attribute_request = obpv510_update_atm_attribute_request;
-
-    let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), productcode=crate::apis::urlencode(p_path_productcode));
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref token) = configuration.oauth_access_token {
-        req_builder = req_builder.bearer_auth(token.to_owned());
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_obpv510_update_atm_attribute_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<OBpv400CreateProductAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteProductAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str, attributedefinitionid: &str) -> Result<(), Error<OBpv400DeleteProductAttributeDefinitionError>> {
+pub async fn delete_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str, attributedefinitionid: &str) -> Result<(), Error<DeleteProductAttributeDefinitionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_attributedefinitionid = attributedefinitionid;
@@ -269,7 +269,7 @@ pub async fn o_bpv4_0_0_delete_product_attribute_definition(configuration: &conf
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -281,13 +281,13 @@ pub async fn o_bpv4_0_0_delete_product_attribute_definition(configuration: &conf
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Product Attribute</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Get one product attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_attribute_id\">PRODUCT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv4_0_0_get_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str) -> Result<models::Obpv400CreateProductAttribute200Response, Error<OBpv400GetProductAttributeError>> {
+pub async fn get_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str) -> Result<models::CreateProductAttribute200Response, Error<GetProductAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_productcode = productcode;
@@ -316,7 +316,7 @@ pub async fn o_bpv4_0_0_get_product_attribute(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -334,18 +334,18 @@ pub async fn o_bpv4_0_0_get_product_attribute(configuration: &configuration::Con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::CreateProductAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::CreateProductAttribute200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetProductAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetProductAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get Product Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-pub async fn o_bpv4_0_0_get_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetTransactionRequestAttributeDefinition200Response, Error<OBpv400GetProductAttributeDefinitionError>> {
+pub async fn get_product_attribute_definition(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetTransactionRequestAttributeDefinition200Response, Error<GetProductAttributeDefinitionError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -372,7 +372,7 @@ pub async fn o_bpv4_0_0_get_product_attribute_definition(configuration: &configu
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -390,23 +390,23 @@ pub async fn o_bpv4_0_0_get_product_attribute_definition(configuration: &configu
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTransactionRequestAttributeDefinition200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTransactionRequestAttributeDefinition200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetProductAttributeDefinitionError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update Product Attribute.</p> <p>Product Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Product Attribute is linked to its Product by PRODUCT_CODE</p> <p>Update one Product Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_attribute_id\">PRODUCT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_attribute_id\"><strong>product_attribute_id</strong></a>:</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
-pub async fn o_bpv4_0_0_update_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str, obpv510_update_atm_attribute_request: models::Obpv510UpdateAtmAttributeRequest) -> Result<models::Obpv400CreateProductAttribute200Response, Error<OBpv400UpdateProductAttributeError>> {
+pub async fn update_product_attribute(configuration: &configuration::Configuration, bankid: &str, productcode: &str, productattributeid: &str, update_atm_attribute_request: models::UpdateAtmAttributeRequest) -> Result<models::CreateProductAttribute200Response, Error<UpdateProductAttributeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_productcode = productcode;
     let p_path_productattributeid = productattributeid;
-    let p_body_obpv510_update_atm_attribute_request = obpv510_update_atm_attribute_request;
+    let p_body_update_atm_attribute_request = update_atm_attribute_request;
 
     let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), productcode=crate::apis::urlencode(p_path_productcode), productattributeid=crate::apis::urlencode(p_path_productattributeid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -431,9 +431,9 @@ pub async fn o_bpv4_0_0_update_product_attribute(configuration: &configuration::
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv510_update_atm_attribute_request);
+    req_builder = req_builder.json(&p_body_update_atm_attribute_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -450,12 +450,12 @@ pub async fn o_bpv4_0_0_update_product_attribute(configuration: &configuration::
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400CreateProductAttribute200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::CreateProductAttribute200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::CreateProductAttribute200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateProductAttributeError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateProductAttributeError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

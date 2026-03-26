@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // UserInvitationAPIService UserInvitationAPI service
 type UserInvitationAPIService service
 
-type ApiOBPv400CreateUserInvitationRequest struct {
+type ApiCreateUserInvitationRequest struct {
 	ctx context.Context
 	ApiService *UserInvitationAPIService
 	bankid string
-	oBPv400CreateUserInvitationRequest *OBPv400CreateUserInvitationRequest
+	createUserInvitationRequest *CreateUserInvitationRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateUserInvitationRequest) OBPv400CreateUserInvitationRequest(oBPv400CreateUserInvitationRequest OBPv400CreateUserInvitationRequest) ApiOBPv400CreateUserInvitationRequest {
-	r.oBPv400CreateUserInvitationRequest = &oBPv400CreateUserInvitationRequest
+func (r ApiCreateUserInvitationRequest) CreateUserInvitationRequest(createUserInvitationRequest CreateUserInvitationRequest) ApiCreateUserInvitationRequest {
+	r.createUserInvitationRequest = &createUserInvitationRequest
 	return r
 }
 
-func (r ApiOBPv400CreateUserInvitationRequest) Execute() (*OBPv400GetUserInvitations200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateUserInvitationExecute(r)
+func (r ApiCreateUserInvitationRequest) Execute() (*GetUserInvitations200Response, *http.Response, error) {
+	return r.ApiService.CreateUserInvitationExecute(r)
 }
 
 /*
-OBPv400CreateUserInvitation Create User Invitation
+CreateUserInvitation Create User Invitation
 
 <p>Create User Invitation.</p>
 <p>This endpoint will send an invitation email to the developers, then they can use the link to create the obp user.</p>
@@ -64,14 +64,14 @@ webui_customer_user_invitation_email_html_text</p>
 <p><strong>JSON request body fields:</strong></p>
 <p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
 <p><a href="/glossary#country"><strong>country</strong></a>: Germany</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;o&#58;&#x66;&#x65;&#108;&#105;xs&#x6d;i&#116;h&#x40;e&#x78;&#97;m&#x70;l&#101;&#46;&#99;&#x6f;&#109;">&#102;&#101;&#x6c;i&#120;&#115;m&#x69;&#x74;h@ex&#97;&#x6d;pl&#x65;.&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#97;&#105;&#108;&#x74;o:&#102;&#x65;&#x6c;&#x69;x&#x73;&#109;&#x69;t&#x68;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;e&#x2e;c&#111;&#x6d;">&#102;&#101;&#x6c;&#x69;&#120;&#x73;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#109;&#x70;l&#101;&#46;&#99;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
 <p><a href="/glossary#purpose"><strong>purpose</strong></a>: DEVELOPER</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
 <p><a href="/glossary#country"><strong>country</strong></a>: Germany</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#x6c;t&#111;&#x3a;&#102;&#101;&#108;&#x69;x&#115;&#109;&#x69;&#x74;&#x68;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;.&#x63;&#111;&#x6d;">&#x66;&#101;&#x6c;&#x69;xsm&#105;&#x74;&#x68;&#x40;&#x65;&#120;&#97;mp&#108;&#x65;.&#99;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;i&#108;&#x74;&#111;&#58;&#x66;&#101;&#x6c;&#x69;&#120;&#x73;&#109;&#105;&#116;&#104;&#x40;&#101;&#x78;a&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#109;">&#x66;eli&#x78;s&#109;&#105;&#116;&#104;&#x40;ex&#97;&#109;&#112;l&#101;&#46;c&#x6f;&#109;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
 <p><a href="/glossary#purpose"><strong>purpose</strong></a>: DEVELOPER</p>
@@ -80,10 +80,10 @@ webui_customer_user_invitation_email_html_text</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateUserInvitationRequest
+ @return ApiCreateUserInvitationRequest
 */
-func (a *UserInvitationAPIService) OBPv400CreateUserInvitation(ctx context.Context, bankid string) ApiOBPv400CreateUserInvitationRequest {
-	return ApiOBPv400CreateUserInvitationRequest{
+func (a *UserInvitationAPIService) CreateUserInvitation(ctx context.Context, bankid string) ApiCreateUserInvitationRequest {
+	return ApiCreateUserInvitationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -91,16 +91,16 @@ func (a *UserInvitationAPIService) OBPv400CreateUserInvitation(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return OBPv400GetUserInvitations200Response
-func (a *UserInvitationAPIService) OBPv400CreateUserInvitationExecute(r ApiOBPv400CreateUserInvitationRequest) (*OBPv400GetUserInvitations200Response, *http.Response, error) {
+//  @return GetUserInvitations200Response
+func (a *UserInvitationAPIService) CreateUserInvitationExecute(r ApiCreateUserInvitationRequest) (*GetUserInvitations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetUserInvitations200Response
+		localVarReturnValue  *GetUserInvitations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.OBPv400CreateUserInvitation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.CreateUserInvitation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -111,8 +111,8 @@ func (a *UserInvitationAPIService) OBPv400CreateUserInvitationExecute(r ApiOBPv4
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateUserInvitationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateUserInvitationRequest is required and must be specified")
+	if r.createUserInvitationRequest == nil {
+		return localVarReturnValue, nil, reportError("createUserInvitationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -133,7 +133,7 @@ func (a *UserInvitationAPIService) OBPv400CreateUserInvitationExecute(r ApiOBPv4
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateUserInvitationRequest
+	localVarPostBody = r.createUserInvitationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -158,7 +158,7 @@ func (a *UserInvitationAPIService) OBPv400CreateUserInvitationExecute(r ApiOBPv4
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -199,19 +199,19 @@ func (a *UserInvitationAPIService) OBPv400CreateUserInvitationExecute(r ApiOBPv4
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetUserInvitationRequest struct {
+type ApiGetUserInvitationRequest struct {
 	ctx context.Context
 	ApiService *UserInvitationAPIService
 	bankid string
 	secretlink string
 }
 
-func (r ApiOBPv400GetUserInvitationRequest) Execute() (*OBPv400GetUserInvitations200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetUserInvitationExecute(r)
+func (r ApiGetUserInvitationRequest) Execute() (*GetUserInvitations200Response, *http.Response, error) {
+	return r.ApiService.GetUserInvitationExecute(r)
 }
 
 /*
-OBPv400GetUserInvitation Get User Invitation
+GetUserInvitation Get User Invitation
 
 <p>Get User Invitation</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -221,7 +221,7 @@ OBPv400GetUserInvitation Get User Invitation
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
 <p><a href="/glossary#country"><strong>country</strong></a>: Germany</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#x66;&#x65;l&#105;&#120;&#x73;&#x6d;&#x69;&#116;&#x68;&#64;ex&#97;m&#112;&#x6c;&#101;&#46;&#99;&#x6f;m">&#x66;&#x65;l&#x69;&#120;&#115;&#x6d;i&#x74;&#x68;&#64;&#101;&#120;am&#x70;&#x6c;&#101;&#x2e;c&#x6f;m</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;&#108;to&#58;&#102;e&#108;i&#120;s&#109;&#x69;t&#x68;@&#x65;&#x78;&#97;m&#x70;&#108;&#101;&#x2e;c&#x6f;m">&#x66;e&#x6c;&#x69;&#120;&#115;&#x6d;&#x69;&#x74;h&#x40;&#x65;xam&#112;&#108;e&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
 <p><a href="/glossary#purpose"><strong>purpose</strong></a>: DEVELOPER</p>
@@ -231,10 +231,10 @@ OBPv400GetUserInvitation Get User Invitation
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param secretlink The SECRETLINK identifier
- @return ApiOBPv400GetUserInvitationRequest
+ @return ApiGetUserInvitationRequest
 */
-func (a *UserInvitationAPIService) OBPv400GetUserInvitation(ctx context.Context, bankid string, secretlink string) ApiOBPv400GetUserInvitationRequest {
-	return ApiOBPv400GetUserInvitationRequest{
+func (a *UserInvitationAPIService) GetUserInvitation(ctx context.Context, bankid string, secretlink string) ApiGetUserInvitationRequest {
+	return ApiGetUserInvitationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -243,16 +243,16 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitation(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv400GetUserInvitations200Response
-func (a *UserInvitationAPIService) OBPv400GetUserInvitationExecute(r ApiOBPv400GetUserInvitationRequest) (*OBPv400GetUserInvitations200Response, *http.Response, error) {
+//  @return GetUserInvitations200Response
+func (a *UserInvitationAPIService) GetUserInvitationExecute(r ApiGetUserInvitationRequest) (*GetUserInvitations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetUserInvitations200Response
+		localVarReturnValue  *GetUserInvitations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.OBPv400GetUserInvitation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.GetUserInvitation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -306,7 +306,7 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationExecute(r ApiOBPv400G
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -347,25 +347,25 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationExecute(r ApiOBPv400G
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetUserInvitationAnonymousRequest struct {
+type ApiGetUserInvitationAnonymousRequest struct {
 	ctx context.Context
 	ApiService *UserInvitationAPIService
 	bankid string
-	oBPv400GetUserInvitationAnonymousRequest *OBPv400GetUserInvitationAnonymousRequest
+	getUserInvitationAnonymousRequest *GetUserInvitationAnonymousRequest
 }
 
 // Request body
-func (r ApiOBPv400GetUserInvitationAnonymousRequest) OBPv400GetUserInvitationAnonymousRequest(oBPv400GetUserInvitationAnonymousRequest OBPv400GetUserInvitationAnonymousRequest) ApiOBPv400GetUserInvitationAnonymousRequest {
-	r.oBPv400GetUserInvitationAnonymousRequest = &oBPv400GetUserInvitationAnonymousRequest
+func (r ApiGetUserInvitationAnonymousRequest) GetUserInvitationAnonymousRequest(getUserInvitationAnonymousRequest GetUserInvitationAnonymousRequest) ApiGetUserInvitationAnonymousRequest {
+	r.getUserInvitationAnonymousRequest = &getUserInvitationAnonymousRequest
 	return r
 }
 
-func (r ApiOBPv400GetUserInvitationAnonymousRequest) Execute() (*OBPv400GetUserInvitations200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetUserInvitationAnonymousExecute(r)
+func (r ApiGetUserInvitationAnonymousRequest) Execute() (*GetUserInvitations200Response, *http.Response, error) {
+	return r.ApiService.GetUserInvitationAnonymousExecute(r)
 }
 
 /*
-OBPv400GetUserInvitationAnonymous Get User Invitation Information
+GetUserInvitationAnonymous Get User Invitation Information
 
 <p>Get User Invitation Information.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -376,7 +376,7 @@ OBPv400GetUserInvitationAnonymous Get User Invitation Information
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
 <p><a href="/glossary#country"><strong>country</strong></a>: Germany</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#108;&#116;o:&#x66;&#x65;li&#120;&#x73;m&#105;&#116;&#104;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#46;c&#x6f;m">&#x66;&#x65;&#108;&#105;x&#115;&#109;&#105;&#116;&#104;&#64;&#101;&#x78;a&#x6d;&#112;l&#101;&#x2e;&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;i&#x6c;&#116;&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;&#120;&#115;&#x6d;i&#x74;&#x68;&#64;&#101;&#x78;a&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#109;">fe&#108;&#105;&#x78;&#x73;&#109;&#105;&#x74;h@&#x65;&#120;&#x61;m&#112;&#108;e&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
 <p><a href="/glossary#purpose"><strong>purpose</strong></a>: DEVELOPER</p>
@@ -385,10 +385,10 @@ OBPv400GetUserInvitationAnonymous Get User Invitation Information
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetUserInvitationAnonymousRequest
+ @return ApiGetUserInvitationAnonymousRequest
 */
-func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymous(ctx context.Context, bankid string) ApiOBPv400GetUserInvitationAnonymousRequest {
-	return ApiOBPv400GetUserInvitationAnonymousRequest{
+func (a *UserInvitationAPIService) GetUserInvitationAnonymous(ctx context.Context, bankid string) ApiGetUserInvitationAnonymousRequest {
+	return ApiGetUserInvitationAnonymousRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -396,16 +396,16 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymous(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv400GetUserInvitations200Response
-func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymousExecute(r ApiOBPv400GetUserInvitationAnonymousRequest) (*OBPv400GetUserInvitations200Response, *http.Response, error) {
+//  @return GetUserInvitations200Response
+func (a *UserInvitationAPIService) GetUserInvitationAnonymousExecute(r ApiGetUserInvitationAnonymousRequest) (*GetUserInvitations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetUserInvitations200Response
+		localVarReturnValue  *GetUserInvitations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.OBPv400GetUserInvitationAnonymous")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.GetUserInvitationAnonymous")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -416,8 +416,8 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymousExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400GetUserInvitationAnonymousRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetUserInvitationAnonymousRequest is required and must be specified")
+	if r.getUserInvitationAnonymousRequest == nil {
+		return localVarReturnValue, nil, reportError("getUserInvitationAnonymousRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -438,7 +438,7 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymousExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400GetUserInvitationAnonymousRequest
+	localVarPostBody = r.getUserInvitationAnonymousRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -476,18 +476,18 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationAnonymousExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetUserInvitationsRequest struct {
+type ApiGetUserInvitationsRequest struct {
 	ctx context.Context
 	ApiService *UserInvitationAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetUserInvitationsRequest) Execute() (*OBPv400GetUserInvitations200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetUserInvitationsExecute(r)
+func (r ApiGetUserInvitationsRequest) Execute() (*GetUserInvitations200Response, *http.Response, error) {
+	return r.ApiService.GetUserInvitationsExecute(r)
 }
 
 /*
-OBPv400GetUserInvitations Get User Invitations
+GetUserInvitations Get User Invitations
 
 <p>Get User Invitations</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -496,7 +496,7 @@ OBPv400GetUserInvitations Get User Invitations
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
 <p><a href="/glossary#country"><strong>country</strong></a>: Germany</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;&#108;&#x74;&#111;&#58;f&#101;l&#x69;&#120;&#x73;&#x6d;&#x69;t&#x68;&#x40;&#101;&#120;&#97;&#x6d;p&#108;e.&#x63;&#111;&#109;">&#x66;&#101;l&#x69;&#120;&#x73;&#109;&#x69;t&#x68;&#64;e&#120;a&#x6d;&#112;l&#101;&#46;&#99;&#111;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#105;&#x6c;&#x74;&#111;&#58;f&#x65;&#x6c;i&#x78;s&#109;it&#104;@&#101;&#120;&#x61;mp&#108;&#x65;&#46;&#99;&#x6f;m">&#102;&#101;&#x6c;&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;&#x78;&#97;m&#112;l&#101;&#46;co&#109;</a></p>
 <p><a href="/glossary#first_name"><strong>first_name</strong></a>: Tom</p>
 <p><a href="/glossary#last_name"><strong>last_name</strong></a>: Smith</p>
 <p><a href="/glossary#purpose"><strong>purpose</strong></a>: DEVELOPER</p>
@@ -505,10 +505,10 @@ OBPv400GetUserInvitations Get User Invitations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetUserInvitationsRequest
+ @return ApiGetUserInvitationsRequest
 */
-func (a *UserInvitationAPIService) OBPv400GetUserInvitations(ctx context.Context, bankid string) ApiOBPv400GetUserInvitationsRequest {
-	return ApiOBPv400GetUserInvitationsRequest{
+func (a *UserInvitationAPIService) GetUserInvitations(ctx context.Context, bankid string) ApiGetUserInvitationsRequest {
+	return ApiGetUserInvitationsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -516,16 +516,16 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitations(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400GetUserInvitations200Response
-func (a *UserInvitationAPIService) OBPv400GetUserInvitationsExecute(r ApiOBPv400GetUserInvitationsRequest) (*OBPv400GetUserInvitations200Response, *http.Response, error) {
+//  @return GetUserInvitations200Response
+func (a *UserInvitationAPIService) GetUserInvitationsExecute(r ApiGetUserInvitationsRequest) (*GetUserInvitations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetUserInvitations200Response
+		localVarReturnValue  *GetUserInvitations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.OBPv400GetUserInvitations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserInvitationAPIService.GetUserInvitations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -578,7 +578,7 @@ func (a *UserInvitationAPIService) OBPv400GetUserInvitationsExecute(r ApiOBPv400
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

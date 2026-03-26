@@ -13,12 +13,12 @@ open class DynamicEndpointManageAPI {
      Create Bank Level Dynamic Endpoint
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: (body) Request body 
+     - parameter getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     - returns: GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    open class func oBPv400CreateBankLevelDynamicEndpoint(bankid: String, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        return try await oBPv400CreateBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: apiConfiguration).execute().body
+    open class func createBankLevelDynamicEndpoint(bankid: String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        return try await createBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: (body) Request body 
+     - parameter getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> 
+     - returns: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> 
      */
-    open class func oBPv400CreateBankLevelDynamicEndpointWithRequestBuilder(bankid: String, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
+    open class func createBankLevelDynamicEndpointWithRequestBuilder(bankid: String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -63,12 +63,12 @@ open class DynamicEndpointManageAPI {
     /**
      Create Dynamic Endpoint
      
-     - parameter oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: (body) Request body 
+     - parameter getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     - returns: GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    open class func oBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        return try await oBPv400CreateDynamicEndpointWithRequestBuilder(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: apiConfiguration).execute().body
+    open class func createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        return try await createDynamicEndpointWithRequestBuilder(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,16 +82,16 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: (body) Request body 
+     - parameter getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> 
+     - returns: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> 
      */
-    open class func oBPv400CreateDynamicEndpointWithRequestBuilder(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
+    open class func createDynamicEndpointWithRequestBuilder(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-endpoints"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -114,8 +114,8 @@ open class DynamicEndpointManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -129,14 +129,14 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteBankLevelDynamicEndpointWithRequestBuilder(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteBankLevelDynamicEndpointWithRequestBuilder(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -167,8 +167,8 @@ open class DynamicEndpointManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -182,13 +182,13 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
         let dynamicendpointidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicendpointid))"
         let dynamicendpointidPostEscape = dynamicendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -216,8 +216,8 @@ open class DynamicEndpointManageAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteMyDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteMyDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteMyDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteMyDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -231,13 +231,13 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteMyDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteMyDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}"
         let dynamicendpointidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicendpointid))"
         let dynamicendpointidPostEscape = dynamicendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -264,10 +264,10 @@ open class DynamicEndpointManageAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     - returns: GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    open class func oBPv400GetBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        return try await oBPv400GetBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelDynamicEndpoint(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        return try await getBankLevelDynamicEndpointWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -281,14 +281,14 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> 
+     - returns: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> 
      */
-    open class func oBPv400GetBankLevelDynamicEndpointWithRequestBuilder(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
+    open class func getBankLevelDynamicEndpointWithRequestBuilder(bankid: String, dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -307,7 +307,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -317,10 +317,10 @@ open class DynamicEndpointManageAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200Response
+     - returns: GetDynamicEndpoints200Response
      */
-    open class func oBPv400GetBankLevelDynamicEndpoints(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200Response {
-        return try await oBPv400GetBankLevelDynamicEndpointsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getBankLevelDynamicEndpoints(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200Response {
+        return try await getBankLevelDynamicEndpointsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -334,13 +334,13 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200Response> 
+     - returns: RequestBuilder<GetDynamicEndpoints200Response> 
      */
-    open class func oBPv400GetBankLevelDynamicEndpointsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200Response> {
+    open class func getBankLevelDynamicEndpointsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -356,7 +356,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -366,10 +366,10 @@ open class DynamicEndpointManageAPI {
      
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     - returns: GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    open class func oBPv400GetDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        return try await oBPv400GetDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
+    open class func getDynamicEndpoint(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        return try await getDynamicEndpointWithRequestBuilder(dynamicendpointid: dynamicendpointid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -383,13 +383,13 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> 
+     - returns: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> 
      */
-    open class func oBPv400GetDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
+    open class func getDynamicEndpointWithRequestBuilder(dynamicendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
         let dynamicendpointidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicendpointid))"
         let dynamicendpointidPostEscape = dynamicendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -405,7 +405,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200ResponseDynamicEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -414,10 +414,10 @@ open class DynamicEndpointManageAPI {
       Get Dynamic Endpoints
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200Response
+     - returns: GetDynamicEndpoints200Response
      */
-    open class func oBPv400GetDynamicEndpoints(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200Response {
-        return try await oBPv400GetDynamicEndpointsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getDynamicEndpoints(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200Response {
+        return try await getDynamicEndpointsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -431,12 +431,12 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200Response> 
+     - returns: RequestBuilder<GetDynamicEndpoints200Response> 
      */
-    open class func oBPv400GetDynamicEndpointsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200Response> {
+    open class func getDynamicEndpointsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200Response> {
         let localVariablePath = "/obp/v4.0.0/management/dynamic-endpoints"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -449,7 +449,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -458,10 +458,10 @@ open class DynamicEndpointManageAPI {
      Get My Dynamic Endpoints
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicEndpoints200Response
+     - returns: GetDynamicEndpoints200Response
      */
-    open class func oBPv400GetMyDynamicEndpoints(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicEndpoints200Response {
-        return try await oBPv400GetMyDynamicEndpointsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getMyDynamicEndpoints(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetDynamicEndpoints200Response {
+        return try await getMyDynamicEndpointsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -475,12 +475,12 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicEndpoints200Response> 
+     - returns: RequestBuilder<GetDynamicEndpoints200Response> 
      */
-    open class func oBPv400GetMyDynamicEndpointsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicEndpoints200Response> {
+    open class func getMyDynamicEndpointsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetDynamicEndpoints200Response> {
         let localVariablePath = "/obp/v4.0.0/my/dynamic-endpoints"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -493,7 +493,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetDynamicEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -503,12 +503,12 @@ open class DynamicEndpointManageAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicEndpointHostRequest: (body) Request body 
+     - parameter updateBankLevelDynamicEndpointHostRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     - returns: UpdateBankLevelDynamicEndpointHostRequest
      */
-    open class func oBPv400UpdateBankLevelDynamicEndpointHost(bankid: String, dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400UpdateBankLevelDynamicEndpointHostRequest {
-        return try await oBPv400UpdateBankLevelDynamicEndpointHostWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest: oBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateBankLevelDynamicEndpointHost(bankid: String, dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateBankLevelDynamicEndpointHostRequest {
+        return try await updateBankLevelDynamicEndpointHostWithRequestBuilder(bankid: bankid, dynamicendpointid: dynamicendpointid, updateBankLevelDynamicEndpointHostRequest: updateBankLevelDynamicEndpointHostRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -522,15 +522,15 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicEndpointHostRequest: (body) Request body 
+     - parameter updateBankLevelDynamicEndpointHostRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest> 
+     - returns: RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest> 
      */
-    open class func oBPv400UpdateBankLevelDynamicEndpointHostWithRequestBuilder(bankid: String, dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
+    open class func updateBankLevelDynamicEndpointHostWithRequestBuilder(bankid: String, dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -539,7 +539,7 @@ open class DynamicEndpointManageAPI {
         let dynamicendpointidPostEscape = dynamicendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicendpointid}", with: dynamicendpointidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicEndpointHostRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicEndpointHostRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -549,7 +549,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -558,12 +558,12 @@ open class DynamicEndpointManageAPI {
       Update Dynamic Endpoint Host
      
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicEndpointHostRequest: (body) Request body 
+     - parameter updateBankLevelDynamicEndpointHostRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     - returns: UpdateBankLevelDynamicEndpointHostRequest
      */
-    open class func oBPv400UpdateDynamicEndpointHost(dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400UpdateBankLevelDynamicEndpointHostRequest {
-        return try await oBPv400UpdateDynamicEndpointHostWithRequestBuilder(dynamicendpointid: dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest: oBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateDynamicEndpointHost(dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateBankLevelDynamicEndpointHostRequest {
+        return try await updateDynamicEndpointHostWithRequestBuilder(dynamicendpointid: dynamicendpointid, updateBankLevelDynamicEndpointHostRequest: updateBankLevelDynamicEndpointHostRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -577,20 +577,20 @@ open class DynamicEndpointManageAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter dynamicendpointid: (path) The DYNAMICENDPOINTID identifier 
-     - parameter oBPv400UpdateBankLevelDynamicEndpointHostRequest: (body) Request body 
+     - parameter updateBankLevelDynamicEndpointHostRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest> 
+     - returns: RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest> 
      */
-    open class func oBPv400UpdateDynamicEndpointHostWithRequestBuilder(dynamicendpointid: String, oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
+    open class func updateDynamicEndpointHostWithRequestBuilder(dynamicendpointid: String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest> {
         var localVariablePath = "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host"
         let dynamicendpointidPreEscape = "\(APIHelper.mapValueToPathItem(dynamicendpointid))"
         let dynamicendpointidPostEscape = dynamicendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{dynamicendpointid}", with: dynamicendpointidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400UpdateBankLevelDynamicEndpointHostRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateBankLevelDynamicEndpointHostRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -600,7 +600,7 @@ open class DynamicEndpointManageAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400UpdateBankLevelDynamicEndpointHostRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateBankLevelDynamicEndpointHostRequest>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

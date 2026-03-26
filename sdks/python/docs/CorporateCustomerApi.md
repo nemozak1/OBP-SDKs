@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_corporate_customer**](CorporateCustomerApi.md#o_bpv6_0_0_create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-[**o_bpv6_0_0_get_corporate_customer_by_customer_id**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-[**o_bpv6_0_0_get_corporate_customer_subsidiaries**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-[**o_bpv6_0_0_get_corporate_customers_at_one_bank**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+[**create_corporate_customer**](CorporateCustomerApi.md#create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+[**get_corporate_customer_by_customer_id**](CorporateCustomerApi.md#get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+[**get_corporate_customer_subsidiaries**](CorporateCustomerApi.md#get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+[**get_corporate_customers_at_one_bank**](CorporateCustomerApi.md#get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
 
 
-# **o_bpv6_0_0_create_corporate_customer**
-> OBPv600GetCustomerChildren200ResponseCustomersInner o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
+# **create_corporate_customer**
+> GetCustomerChildren200ResponseCustomersInner create_corporate_customer(bankid, create_corporate_customer_request)
 
 Create Corporate Customer
 
@@ -90,8 +90,8 @@ Individual-oriented fields (relationship_status, dependants, highest_education_a
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_corporate_customer_request import OBPv600CreateCorporateCustomerRequest
-from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
+from obp_python.models.create_corporate_customer_request import CreateCorporateCustomerRequest
+from obp_python.models.get_customer_children200_response_customers_inner import GetCustomerChildren200ResponseCustomersInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -125,15 +125,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.CorporateCustomerApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv600_create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"}}} # OBPv600CreateCorporateCustomerRequest | Request body
+    create_corporate_customer_request = {"type":"object","properties":{"customer_type":{"type":"string"},"credit_limit":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"credit_rating":{"type":"object","properties":{"rating":{"type":"string"},"source":{"type":"string"}}},"email":{"type":"string"},"customer_number":{"type":"string"},"kyc_status":{"type":"boolean"},"legal_name":{"type":"string"},"branch_id":{"type":"string"},"mobile_phone_number":{"type":"string"},"last_ok_date":{"type":"string","format":"date-time"}}} # CreateCorporateCustomerRequest | Request body
 
     try:
         # Create Corporate Customer
-        api_response = api_instance.o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
-        print("The response of CorporateCustomerApi->o_bpv6_0_0_create_corporate_customer:\n")
+        api_response = api_instance.create_corporate_customer(bankid, create_corporate_customer_request)
+        print("The response of CorporateCustomerApi->create_corporate_customer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CorporateCustomerApi->o_bpv6_0_0_create_corporate_customer: %s\n" % e)
+        print("Exception when calling CorporateCustomerApi->create_corporate_customer: %s\n" % e)
 ```
 
 
@@ -144,11 +144,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv600_create_corporate_customer_request** | [**OBPv600CreateCorporateCustomerRequest**](OBPv600CreateCorporateCustomerRequest.md)| Request body | 
+ **create_corporate_customer_request** | [**CreateCorporateCustomerRequest**](CreateCorporateCustomerRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponseCustomersInner**](OBPv600GetCustomerChildren200ResponseCustomersInner.md)
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -169,8 +169,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_corporate_customer_by_customer_id**
-> OBPv600GetCustomerByCustomerNumber200Response o_bpv6_0_0_get_corporate_customer_by_customer_id(bankid, customerid)
+# **get_corporate_customer_by_customer_id**
+> GetCustomerByCustomerNumber200Response get_corporate_customer_by_customer_id(bankid, customerid)
 
 Get Corporate Customer by CUSTOMER_ID
 
@@ -228,7 +228,7 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_customer_by_customer_number200_response import OBPv600GetCustomerByCustomerNumber200Response
+from obp_python.models.get_customer_by_customer_number200_response import GetCustomerByCustomerNumber200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -266,11 +266,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Corporate Customer by CUSTOMER_ID
-        api_response = api_instance.o_bpv6_0_0_get_corporate_customer_by_customer_id(bankid, customerid)
-        print("The response of CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_by_customer_id:\n")
+        api_response = api_instance.get_corporate_customer_by_customer_id(bankid, customerid)
+        print("The response of CorporateCustomerApi->get_corporate_customer_by_customer_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_by_customer_id: %s\n" % e)
+        print("Exception when calling CorporateCustomerApi->get_corporate_customer_by_customer_id: %s\n" % e)
 ```
 
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -305,8 +305,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_corporate_customer_subsidiaries**
-> OBPv600GetCustomerChildren200Response o_bpv6_0_0_get_corporate_customer_subsidiaries(bankid, customerid)
+# **get_corporate_customer_subsidiaries**
+> GetCustomerChildren200Response get_corporate_customer_subsidiaries(bankid, customerid)
 
 Get Corporate Customer Subsidiaries
 
@@ -358,7 +358,7 @@ The specified customer must be of type CORPORATE or SUBSIDIARY.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_customer_children200_response import OBPv600GetCustomerChildren200Response
+from obp_python.models.get_customer_children200_response import GetCustomerChildren200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -396,11 +396,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Corporate Customer Subsidiaries
-        api_response = api_instance.o_bpv6_0_0_get_corporate_customer_subsidiaries(bankid, customerid)
-        print("The response of CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_subsidiaries:\n")
+        api_response = api_instance.get_corporate_customer_subsidiaries(bankid, customerid)
+        print("The response of CorporateCustomerApi->get_corporate_customer_subsidiaries:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_subsidiaries: %s\n" % e)
+        print("Exception when calling CorporateCustomerApi->get_corporate_customer_subsidiaries: %s\n" % e)
 ```
 
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -436,8 +436,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_corporate_customers_at_one_bank**
-> OBPv600GetCustomerChildren200Response o_bpv6_0_0_get_corporate_customers_at_one_bank(bankid)
+# **get_corporate_customers_at_one_bank**
+> GetCustomerChildren200Response get_corporate_customers_at_one_bank(bankid)
 
 Get Corporate Customers at Bank
 
@@ -493,7 +493,7 @@ date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <stron
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_customer_children200_response import OBPv600GetCustomerChildren200Response
+from obp_python.models.get_customer_children200_response import GetCustomerChildren200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -530,11 +530,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Corporate Customers at Bank
-        api_response = api_instance.o_bpv6_0_0_get_corporate_customers_at_one_bank(bankid)
-        print("The response of CorporateCustomerApi->o_bpv6_0_0_get_corporate_customers_at_one_bank:\n")
+        api_response = api_instance.get_corporate_customers_at_one_bank(bankid)
+        print("The response of CorporateCustomerApi->get_corporate_customers_at_one_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customers_at_one_bank: %s\n" % e)
+        print("Exception when calling CorporateCustomerApi->get_corporate_customers_at_one_bank: %s\n" % e)
 ```
 
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 

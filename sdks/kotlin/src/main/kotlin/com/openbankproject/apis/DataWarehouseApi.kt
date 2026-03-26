@@ -19,8 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv300DataWarehouseSearchRequest
-import com.openbankproject.models.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+import com.openbankproject.models.DataWarehouseSearchRequest
 
 import com.squareup.moshi.Json
 
@@ -42,7 +41,7 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -51,8 +50,8 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      * Data Warehouse Search
      * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
      * @param index The INDEX identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @param dataWarehouseSearchRequest Request body
+     * @return kotlin.Any
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +60,11 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv300DataWarehouseSearch(index: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage {
-        val localVarResponse = oBPv300DataWarehouseSearchWithHttpInfo(index = index, obPv300DataWarehouseSearchRequest = obPv300DataWarehouseSearchRequest)
+    fun dataWarehouseSearch(index: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : kotlin.Any {
+        val localVarResponse = dataWarehouseSearchWithHttpInfo(index = index, dataWarehouseSearchRequest = dataWarehouseSearchRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,30 +83,30 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      * Data Warehouse Search
      * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
      * @param index The INDEX identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?>
+     * @param dataWarehouseSearchRequest Request body
+     * @return ApiResponse<kotlin.Any?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv300DataWarehouseSearchWithHttpInfo(index: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?> {
-        val localVariableConfig = oBPv300DataWarehouseSearchRequestConfig(index = index, obPv300DataWarehouseSearchRequest = obPv300DataWarehouseSearchRequest)
+    fun dataWarehouseSearchWithHttpInfo(index: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : ApiResponse<kotlin.Any?> {
+        val localVariableConfig = dataWarehouseSearchRequestConfig(index = index, dataWarehouseSearchRequest = dataWarehouseSearchRequest)
 
-        return request<OBPv300DataWarehouseSearchRequest, OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+        return request<DataWarehouseSearchRequest, kotlin.Any>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv300DataWarehouseSearch
+     * To obtain the request config of the operation dataWarehouseSearch
      *
      * @param index The INDEX identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
+     * @param dataWarehouseSearchRequest Request body
      * @return RequestConfig
      */
-    fun oBPv300DataWarehouseSearchRequestConfig(index: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : RequestConfig<OBPv300DataWarehouseSearchRequest> {
-        val localVariableBody = obPv300DataWarehouseSearchRequest
+    fun dataWarehouseSearchRequestConfig(index: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : RequestConfig<DataWarehouseSearchRequest> {
+        val localVariableBody = dataWarehouseSearchRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -129,8 +128,8 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
      * @param index The INDEX identifier
      * @param `field` The FIELD identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
-     * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @param dataWarehouseSearchRequest Request body
+     * @return kotlin.Any
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -139,11 +138,11 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv300DataWarehouseStatistics(index: kotlin.String, `field`: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage {
-        val localVarResponse = oBPv300DataWarehouseStatisticsWithHttpInfo(index = index, `field` = `field`, obPv300DataWarehouseSearchRequest = obPv300DataWarehouseSearchRequest)
+    fun dataWarehouseStatistics(index: kotlin.String, `field`: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : kotlin.Any {
+        val localVarResponse = dataWarehouseStatisticsWithHttpInfo(index = index, `field` = `field`, dataWarehouseSearchRequest = dataWarehouseSearchRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -163,31 +162,31 @@ open class DataWarehouseApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
      * @param index The INDEX identifier
      * @param `field` The FIELD identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
-     * @return ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?>
+     * @param dataWarehouseSearchRequest Request body
+     * @return ApiResponse<kotlin.Any?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv300DataWarehouseStatisticsWithHttpInfo(index: kotlin.String, `field`: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?> {
-        val localVariableConfig = oBPv300DataWarehouseStatisticsRequestConfig(index = index, `field` = `field`, obPv300DataWarehouseSearchRequest = obPv300DataWarehouseSearchRequest)
+    fun dataWarehouseStatisticsWithHttpInfo(index: kotlin.String, `field`: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : ApiResponse<kotlin.Any?> {
+        val localVariableConfig = dataWarehouseStatisticsRequestConfig(index = index, `field` = `field`, dataWarehouseSearchRequest = dataWarehouseSearchRequest)
 
-        return request<OBPv300DataWarehouseSearchRequest, OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+        return request<DataWarehouseSearchRequest, kotlin.Any>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv300DataWarehouseStatistics
+     * To obtain the request config of the operation dataWarehouseStatistics
      *
      * @param index The INDEX identifier
      * @param `field` The FIELD identifier
-     * @param obPv300DataWarehouseSearchRequest Request body
+     * @param dataWarehouseSearchRequest Request body
      * @return RequestConfig
      */
-    fun oBPv300DataWarehouseStatisticsRequestConfig(index: kotlin.String, `field`: kotlin.String, obPv300DataWarehouseSearchRequest: OBPv300DataWarehouseSearchRequest) : RequestConfig<OBPv300DataWarehouseSearchRequest> {
-        val localVariableBody = obPv300DataWarehouseSearchRequest
+    fun dataWarehouseStatisticsRequestConfig(index: kotlin.String, `field`: kotlin.String, dataWarehouseSearchRequest: DataWarehouseSearchRequest) : RequestConfig<DataWarehouseSearchRequest> {
+        val localVariableBody = dataWarehouseSearchRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

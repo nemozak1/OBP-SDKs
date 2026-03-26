@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_delete_system_level_endpoint_tag200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_tags_for_view_on_account200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_tags_for_view_on_account200_response_properties_tags_items.dart';
+import 'package:obp_dart/src/model/get_tags_for_view_on_account200_response.dart';
+import 'package:obp_dart/src/model/get_tags_for_view_on_account200_response_tags_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_types200_response_transaction_types_inner_id.dart';
 
 class AccountMetadataApi {
 
@@ -28,7 +28,7 @@ class AccountMetadataApi {
   /// * [bankid] - The BANKID identifier
   /// * [accountid] - The ACCOUNTID identifier
   /// * [viewid] - The VIEWID identifier
-  /// * [oBPv400DeleteSystemLevelEndpointTag200Response] - Request body
+  /// * [getTransactionTypes200ResponseTransactionTypesInnerId] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,13 +36,13 @@ class AccountMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTagsForViewOnAccount200ResponseTagsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> oBPv400AddTagForViewOnAccount({ 
+  Future<Response<GetTagsForViewOnAccount200ResponseTagsInner>> addTagForViewOnAccount({ 
     required String bankid,
     required String accountid,
     required String viewid,
-    required OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteSystemLevelEndpointTag200Response,
+    required GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -69,7 +69,7 @@ class AccountMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -82,8 +82,8 @@ class AccountMetadataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400DeleteSystemLevelEndpointTag200Response);
-      _bodyData = _serializers.serialize(oBPv400DeleteSystemLevelEndpointTag200Response, specifiedType: _type);
+      const _type = FullType(GetTransactionTypes200ResponseTransactionTypesInnerId);
+      _bodyData = _serializers.serialize(getTransactionTypes200ResponseTransactionTypesInnerId, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -106,14 +106,14 @@ class AccountMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems? _responseData;
+    GetTagsForViewOnAccount200ResponseTagsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems),
-      ) as OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems;
+        specifiedType: const FullType(GetTagsForViewOnAccount200ResponseTagsInner),
+      ) as GetTagsForViewOnAccount200ResponseTagsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -125,7 +125,7 @@ class AccountMetadataApi {
       );
     }
 
-    return Response<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+    return Response<GetTagsForViewOnAccount200ResponseTagsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -154,7 +154,7 @@ class AccountMetadataApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteTagForViewOnAccount({ 
+  Future<Response<void>> deleteTagForViewOnAccount({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -185,7 +185,7 @@ class AccountMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -219,9 +219,9 @@ class AccountMetadataApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTagsForViewOnAccount200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetTagsForViewOnAccount200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTagsForViewOnAccount200Response>> oBPv400GetTagsForViewOnAccount({ 
+  Future<Response<GetTagsForViewOnAccount200Response>> getTagsForViewOnAccount({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -251,7 +251,7 @@ class AccountMetadataApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -268,14 +268,14 @@ class AccountMetadataApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTagsForViewOnAccount200Response? _responseData;
+    GetTagsForViewOnAccount200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTagsForViewOnAccount200Response),
-      ) as OBPv400GetTagsForViewOnAccount200Response;
+        specifiedType: const FullType(GetTagsForViewOnAccount200Response),
+      ) as GetTagsForViewOnAccount200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -287,7 +287,7 @@ class AccountMetadataApi {
       );
     }
 
-    return Response<OBPv400GetTagsForViewOnAccount200Response>(
+    return Response<GetTagsForViewOnAccount200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

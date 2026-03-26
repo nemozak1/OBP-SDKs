@@ -1,22 +1,22 @@
 # OpenBankProject::CorporateCustomerApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_create_corporate_customer**](CorporateCustomerApi.md#o_bpv6_0_0_create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer |
-| [**o_bpv6_0_0_get_corporate_customer_by_customer_id**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID |
-| [**o_bpv6_0_0_get_corporate_customer_subsidiaries**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries |
-| [**o_bpv6_0_0_get_corporate_customers_at_one_bank**](CorporateCustomerApi.md#o_bpv6_0_0_get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank |
+| [**create_corporate_customer**](CorporateCustomerApi.md#create_corporate_customer) | **POST** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer |
+| [**get_corporate_customer_by_customer_id**](CorporateCustomerApi.md#get_corporate_customer_by_customer_id) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID |
+| [**get_corporate_customer_subsidiaries**](CorporateCustomerApi.md#get_corporate_customer_subsidiaries) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries |
+| [**get_corporate_customers_at_one_bank**](CorporateCustomerApi.md#get_corporate_customers_at_one_bank) | **GET** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank |
 
 
-## o_bpv6_0_0_create_corporate_customer
+## create_corporate_customer
 
-> <OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems> o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
+> <GetCustomerChildren200ResponseCustomersInner> create_corporate_customer(bankid, create_corporate_customer_request)
 
 Create Corporate Customer
 
-<p>Create a corporate customer.</p> <p>This endpoint is specifically for creating corporate customers.<br /> Individual-oriented fields (relationship_status, dependants, highest_education_attained, employment_status, name_suffix, date_of_birth, face_image, title) are not available on this endpoint.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The corporate entity's legal name<br /> - mobile_phone_number: The corporate entity's phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, credit_rating, credit_limit, kyc_status, last_ok_date, branch_id<br /> - customer_type: CORPORATE (default) or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent customer</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - customer_type must be CORPORATE or SUBSIDIARY<br /> - parent_customer_id must reference an existing customer if provided</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#97;&#x69;&#108;&#116;&#x6f;:&#102;&#101;&#108;i&#x78;s&#x6d;it&#x68;&#x40;&#x65;x&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;om\">&#x66;&#101;&#108;&#105;&#x78;&#115;m&#x69;t&#104;&#x40;e&#120;a&#109;&#x70;&#x6c;e.&#99;om</a></p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;&#x74;o&#58;&#102;&#101;&#x6c;&#x69;&#x78;s&#109;i&#116;&#x68;@&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.c&#x6f;&#x6d;\">&#x66;&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;&#105;&#116;&#x68;&#x40;&#101;x&#x61;&#109;&#x70;&#x6c;&#101;.&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+<p>Create a corporate customer.</p> <p>This endpoint is specifically for creating corporate customers.<br /> Individual-oriented fields (relationship_status, dependants, highest_education_attained, employment_status, name_suffix, date_of_birth, face_image, title) are not available on this endpoint.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The corporate entity's legal name<br /> - mobile_phone_number: The corporate entity's phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, credit_rating, credit_limit, kyc_status, last_ok_date, branch_id<br /> - customer_type: CORPORATE (default) or SUBSIDIARY<br /> - parent_customer_id: For SUBSIDIARY customers, the customer_id of the parent customer</p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - customer_type must be CORPORATE or SUBSIDIARY<br /> - parent_customer_id must reference an existing customer if provided</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">customer_type</a>: INDIVIDUAL</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#x6d;a&#105;&#x6c;&#116;&#x6f;&#58;fe&#x6c;&#105;&#x78;&#x73;&#109;&#105;&#116;&#x68;&#64;e&#x78;&#x61;&#109;&#x70;&#x6c;e&#46;&#x63;&#x6f;&#109;\">&#102;&#101;&#108;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;&#101;&#120;&#97;&#109;&#112;le.c&#111;m</a></p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">parent_customer_id</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;i&#108;&#x74;o&#58;f&#101;&#108;&#105;&#120;&#115;&#109;&#x69;t&#104;&#x40;e&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;.&#x63;&#111;&#109;\">&#x66;&#101;&#x6c;&#105;xs&#109;&#105;&#116;h&#x40;&#101;&#120;&#x61;&#109;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
 ### Examples
 
@@ -34,39 +34,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CorporateCustomerApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv600_create_corporate_customer_request = OpenBankProject::OBPv600CreateCorporateCustomerRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreateCorporateCustomerRequestProperties.new({email: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), branch_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), mobile_phone_number: , customer_number: , credit_rating: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating.new({type: 'type_example', properties: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties.new({rating: , source: })}), last_ok_date: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), customer_type: , legal_name: , credit_limit: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit.new({type: 'type_example', properties: OpenBankProject::OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties.new({currency: , amount: })}), kyc_status: })}) # OBPv600CreateCorporateCustomerRequest | Request body
+create_corporate_customer_request = OpenBankProject::CreateCorporateCustomerRequest.new # CreateCorporateCustomerRequest | Request body
 
 begin
   # Create Corporate Customer
-  result = api_instance.o_bpv6_0_0_create_corporate_customer(bankid, obpv600_create_corporate_customer_request)
+  result = api_instance.create_corporate_customer(bankid, create_corporate_customer_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_create_corporate_customer: #{e}"
+  puts "Error when calling CorporateCustomerApi->create_corporate_customer: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_corporate_customer_with_http_info variant
+#### Using the create_corporate_customer_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems>, Integer, Hash)> o_bpv6_0_0_create_corporate_customer_with_http_info(bankid, obpv600_create_corporate_customer_request)
+> <Array(<GetCustomerChildren200ResponseCustomersInner>, Integer, Hash)> create_corporate_customer_with_http_info(bankid, create_corporate_customer_request)
 
 ```ruby
 begin
   # Create Corporate Customer
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_corporate_customer_with_http_info(bankid, obpv600_create_corporate_customer_request)
+  data, status_code, headers = api_instance.create_corporate_customer_with_http_info(bankid, create_corporate_customer_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems>
+  p data # => <GetCustomerChildren200ResponseCustomersInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_create_corporate_customer_with_http_info: #{e}"
+  puts "Error when calling CorporateCustomerApi->create_corporate_customer_with_http_info: #{e}"
 end
 ```
 
@@ -75,11 +75,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv600_create_corporate_customer_request** | [**OBPv600CreateCorporateCustomerRequest**](OBPv600CreateCorporateCustomerRequest.md) | Request body |  |
+| **create_corporate_customer_request** | [**CreateCorporateCustomerRequest**](CreateCorporateCustomerRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -91,13 +91,13 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_corporate_customer_by_customer_id
+## get_corporate_customer_by_customer_id
 
-> <OBPv600GetCustomerByCustomerNumber200Response> o_bpv6_0_0_get_corporate_customer_by_customer_id(bankid, customerid)
+> <GetCustomerByCustomerNumber200Response> get_corporate_customer_by_customer_id(bankid, customerid)
 
 Get Corporate Customer by CUSTOMER_ID
 
-<p>Gets the Corporate Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type CORPORATE or SUBSIDIARY.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;t&#x6f;&#x3a;&#x66;&#x65;&#x6c;&#x69;x&#115;&#x6d;&#105;&#x74;&#x68;&#64;&#x65;&#x78;&#x61;m&#x70;l&#101;&#x2e;&#x63;&#111;&#109;\">&#x66;&#x65;&#x6c;&#x69;&#x78;&#115;&#109;&#x69;th&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;.co&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+<p>Gets the Corporate Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type CORPORATE or SUBSIDIARY.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;i&#108;&#116;&#x6f;&#58;&#x66;&#101;l&#105;&#x78;&#115;&#x6d;i&#x74;&#104;@e&#x78;a&#x6d;&#112;l&#101;.&#99;&#x6f;&#109;\">&#102;&#101;&#x6c;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
 ### Examples
 
@@ -115,9 +115,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CorporateCustomerApi.new
@@ -126,28 +126,28 @@ customerid = 'customerid_example' # String | The CUSTOMERID identifier
 
 begin
   # Get Corporate Customer by CUSTOMER_ID
-  result = api_instance.o_bpv6_0_0_get_corporate_customer_by_customer_id(bankid, customerid)
+  result = api_instance.get_corporate_customer_by_customer_id(bankid, customerid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_by_customer_id: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customer_by_customer_id: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_corporate_customer_by_customer_id_with_http_info variant
+#### Using the get_corporate_customer_by_customer_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCustomerByCustomerNumber200Response>, Integer, Hash)> o_bpv6_0_0_get_corporate_customer_by_customer_id_with_http_info(bankid, customerid)
+> <Array(<GetCustomerByCustomerNumber200Response>, Integer, Hash)> get_corporate_customer_by_customer_id_with_http_info(bankid, customerid)
 
 ```ruby
 begin
   # Get Corporate Customer by CUSTOMER_ID
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_corporate_customer_by_customer_id_with_http_info(bankid, customerid)
+  data, status_code, headers = api_instance.get_corporate_customer_by_customer_id_with_http_info(bankid, customerid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCustomerByCustomerNumber200Response>
+  p data # => <GetCustomerByCustomerNumber200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_by_customer_id_with_http_info: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customer_by_customer_id_with_http_info: #{e}"
 end
 ```
 
@@ -160,7 +160,7 @@ end
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -172,13 +172,13 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_corporate_customer_subsidiaries
+## get_corporate_customer_subsidiaries
 
-> <OBPv600GetCustomerChildren200Response> o_bpv6_0_0_get_corporate_customer_subsidiaries(bankid, customerid)
+> <GetCustomerChildren200Response> get_corporate_customer_subsidiaries(bankid, customerid)
 
 Get Corporate Customer Subsidiaries
 
-<p>Get the subsidiary customers of a corporate customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> The specified customer must be of type CORPORATE or SUBSIDIARY.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;f&#x65;&#x6c;&#105;&#x78;&#115;&#109;&#105;&#x74;&#104;&#x40;&#101;&#x78;&#x61;&#x6d;&#112;&#108;e&#46;&#x63;o&#x6d;\">&#x66;&#101;&#x6c;&#x69;&#x78;sm&#105;&#x74;h@&#x65;&#120;a&#109;&#112;&#108;&#101;.&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+<p>Get the subsidiary customers of a corporate customer.</p> <p>Returns a list of customers whose parent_customer_id matches the specified CUSTOMER_ID.<br /> The specified customer must be of type CORPORATE or SUBSIDIARY.</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"ma&#105;l&#x74;&#111;&#x3a;&#x66;&#x65;l&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#x40;&#x65;&#x78;&#97;m&#112;&#x6c;&#101;&#x2e;&#99;o&#x6d;\">&#x66;e&#108;&#105;&#x78;&#115;mi&#x74;h@&#x65;&#x78;&#97;&#109;p&#108;&#101;.&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
 ### Examples
 
@@ -196,9 +196,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CorporateCustomerApi.new
@@ -207,28 +207,28 @@ customerid = 'customerid_example' # String | The CUSTOMERID identifier
 
 begin
   # Get Corporate Customer Subsidiaries
-  result = api_instance.o_bpv6_0_0_get_corporate_customer_subsidiaries(bankid, customerid)
+  result = api_instance.get_corporate_customer_subsidiaries(bankid, customerid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_subsidiaries: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customer_subsidiaries: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_corporate_customer_subsidiaries_with_http_info variant
+#### Using the get_corporate_customer_subsidiaries_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCustomerChildren200Response>, Integer, Hash)> o_bpv6_0_0_get_corporate_customer_subsidiaries_with_http_info(bankid, customerid)
+> <Array(<GetCustomerChildren200Response>, Integer, Hash)> get_corporate_customer_subsidiaries_with_http_info(bankid, customerid)
 
 ```ruby
 begin
   # Get Corporate Customer Subsidiaries
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_corporate_customer_subsidiaries_with_http_info(bankid, customerid)
+  data, status_code, headers = api_instance.get_corporate_customer_subsidiaries_with_http_info(bankid, customerid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCustomerChildren200Response>
+  p data # => <GetCustomerChildren200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customer_subsidiaries_with_http_info: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customer_subsidiaries_with_http_info: #{e}"
 end
 ```
 
@@ -241,7 +241,7 @@ end
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -253,13 +253,13 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_corporate_customers_at_one_bank
+## get_corporate_customers_at_one_bank
 
-> <OBPv600GetCustomerChildren200Response> o_bpv6_0_0_get_corporate_customers_at_one_bank(bankid)
+> <GetCustomerChildren200Response> get_corporate_customers_at_one_bank(bankid)
 
 Get Corporate Customers at Bank
 
-<p>Get Corporate Customers at Bank.</p> <p>Returns a list of customers with customer_type CORPORATE or SUBSIDIARY at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"m&#x61;&#x69;&#x6c;&#x74;&#111;:f&#101;l&#105;&#120;&#115;&#109;&#105;t&#104;@&#101;x&#97;&#109;&#x70;&#108;&#x65;&#x2e;c&#111;&#109;\">fe&#108;&#x69;&#x78;&#x73;mi&#116;h&#64;&#101;x&#97;&#109;&#x70;&#x6c;e&#x2e;&#99;&#111;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-16T19:25:55.523Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
+<p>Get Corporate Customers at Bank.</p> <p>Returns a list of customers with customer_type CORPORATE or SUBSIDIARY at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#97;il&#x74;&#x6f;:f&#101;&#x6c;&#105;&#x78;&#x73;&#x6d;&#x69;&#x74;&#104;&#64;e&#x78;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;m\">&#102;&#101;&#108;&#105;&#x78;&#115;&#x6d;i&#116;&#104;@&#x65;x&#x61;&#x6d;p&#108;&#101;&#46;&#x63;&#x6f;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
 ### Examples
 
@@ -277,9 +277,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CorporateCustomerApi.new
@@ -287,28 +287,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get Corporate Customers at Bank
-  result = api_instance.o_bpv6_0_0_get_corporate_customers_at_one_bank(bankid)
+  result = api_instance.get_corporate_customers_at_one_bank(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customers_at_one_bank: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customers_at_one_bank: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_corporate_customers_at_one_bank_with_http_info variant
+#### Using the get_corporate_customers_at_one_bank_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCustomerChildren200Response>, Integer, Hash)> o_bpv6_0_0_get_corporate_customers_at_one_bank_with_http_info(bankid)
+> <Array(<GetCustomerChildren200Response>, Integer, Hash)> get_corporate_customers_at_one_bank_with_http_info(bankid)
 
 ```ruby
 begin
   # Get Corporate Customers at Bank
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_corporate_customers_at_one_bank_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_corporate_customers_at_one_bank_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCustomerChildren200Response>
+  p data # => <GetCustomerChildren200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CorporateCustomerApi->o_bpv6_0_0_get_corporate_customers_at_one_bank_with_http_info: #{e}"
+  puts "Error when calling CorporateCustomerApi->get_corporate_customers_at_one_bank_with_http_info: #{e}"
 end
 ```
 
@@ -320,7 +320,7 @@ end
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 

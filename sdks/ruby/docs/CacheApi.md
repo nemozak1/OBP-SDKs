@@ -1,18 +1,18 @@
 # OpenBankProject::CacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_get_cache_config**](CacheApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**o_bpv6_0_0_get_cache_info**](CacheApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**o_bpv6_0_0_get_cache_namespaces**](CacheApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**o_bpv6_0_0_invalidate_cache_namespace**](CacheApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**get_cache_config**](CacheApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**get_cache_info**](CacheApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**get_cache_namespaces**](CacheApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**invalidate_cache_namespace**](CacheApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
 
-## o_bpv6_0_0_get_cache_config
+## get_cache_config
 
-> <OBPv600GetCacheConfig200Response> o_bpv6_0_0_get_cache_config
+> <GetCacheConfig200Response> get_cache_config
 
 Get Cache Configuration
 
@@ -34,37 +34,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CacheApi.new
 
 begin
   # Get Cache Configuration
-  result = api_instance.o_bpv6_0_0_get_cache_config
+  result = api_instance.get_cache_config
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_config: #{e}"
+  puts "Error when calling CacheApi->get_cache_config: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_config_with_http_info variant
+#### Using the get_cache_config_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheConfig200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_config_with_http_info
+> <Array(<GetCacheConfig200Response>, Integer, Hash)> get_cache_config_with_http_info
 
 ```ruby
 begin
   # Get Cache Configuration
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_config_with_http_info
+  data, status_code, headers = api_instance.get_cache_config_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheConfig200Response>
+  p data # => <GetCacheConfig200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_config_with_http_info: #{e}"
+  puts "Error when calling CacheApi->get_cache_config_with_http_info: #{e}"
 end
 ```
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -86,9 +86,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_cache_info
+## get_cache_info
 
-> <OBPv600GetCacheInfo200Response> o_bpv6_0_0_get_cache_info
+> <GetCacheInfo200Response> get_cache_info
 
 Get Cache Information
 
@@ -110,37 +110,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CacheApi.new
 
 begin
   # Get Cache Information
-  result = api_instance.o_bpv6_0_0_get_cache_info
+  result = api_instance.get_cache_info
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_info: #{e}"
+  puts "Error when calling CacheApi->get_cache_info: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_info_with_http_info variant
+#### Using the get_cache_info_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheInfo200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_info_with_http_info
+> <Array(<GetCacheInfo200Response>, Integer, Hash)> get_cache_info_with_http_info
 
 ```ruby
 begin
   # Get Cache Information
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_info_with_http_info
+  data, status_code, headers = api_instance.get_cache_info_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheInfo200Response>
+  p data # => <GetCacheInfo200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_info_with_http_info: #{e}"
+  puts "Error when calling CacheApi->get_cache_info_with_http_info: #{e}"
 end
 ```
 
@@ -150,7 +150,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -162,9 +162,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_cache_namespaces
+## get_cache_namespaces
 
-> <OBPv600GetCacheNamespaces200Response> o_bpv6_0_0_get_cache_namespaces
+> <GetCacheNamespaces200Response> get_cache_namespaces
 
 Get Cache Namespaces
 
@@ -186,37 +186,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CacheApi.new
 
 begin
   # Get Cache Namespaces
-  result = api_instance.o_bpv6_0_0_get_cache_namespaces
+  result = api_instance.get_cache_namespaces
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_namespaces: #{e}"
+  puts "Error when calling CacheApi->get_cache_namespaces: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_namespaces_with_http_info variant
+#### Using the get_cache_namespaces_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheNamespaces200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_namespaces_with_http_info
+> <Array(<GetCacheNamespaces200Response>, Integer, Hash)> get_cache_namespaces_with_http_info
 
 ```ruby
 begin
   # Get Cache Namespaces
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_namespaces_with_http_info
+  data, status_code, headers = api_instance.get_cache_namespaces_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheNamespaces200Response>
+  p data # => <GetCacheNamespaces200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_get_cache_namespaces_with_http_info: #{e}"
+  puts "Error when calling CacheApi->get_cache_namespaces_with_http_info: #{e}"
 end
 ```
 
@@ -226,7 +226,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -238,9 +238,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_invalidate_cache_namespace
+## invalidate_cache_namespace
 
-> <OBPv600InvalidateCacheNamespace200Response> o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
+> <InvalidateCacheNamespace200Response> invalidate_cache_namespace(invalidate_cache_namespace_request)
 
 Invalidate Cache Namespace
 
@@ -262,38 +262,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::CacheApi.new
-obpv600_invalidate_cache_namespace_request = OpenBankProject::OBPv600InvalidateCacheNamespaceRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600InvalidateCacheNamespaceRequestProperties.new({namespace_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600InvalidateCacheNamespaceRequest | Request body
+invalidate_cache_namespace_request = OpenBankProject::InvalidateCacheNamespaceRequest.new # InvalidateCacheNamespaceRequest | Request body
 
 begin
   # Invalidate Cache Namespace
-  result = api_instance.o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
+  result = api_instance.invalidate_cache_namespace(invalidate_cache_namespace_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_invalidate_cache_namespace: #{e}"
+  puts "Error when calling CacheApi->invalidate_cache_namespace: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_invalidate_cache_namespace_with_http_info variant
+#### Using the invalidate_cache_namespace_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600InvalidateCacheNamespace200Response>, Integer, Hash)> o_bpv6_0_0_invalidate_cache_namespace_with_http_info(obpv600_invalidate_cache_namespace_request)
+> <Array(<InvalidateCacheNamespace200Response>, Integer, Hash)> invalidate_cache_namespace_with_http_info(invalidate_cache_namespace_request)
 
 ```ruby
 begin
   # Invalidate Cache Namespace
-  data, status_code, headers = api_instance.o_bpv6_0_0_invalidate_cache_namespace_with_http_info(obpv600_invalidate_cache_namespace_request)
+  data, status_code, headers = api_instance.invalidate_cache_namespace_with_http_info(invalidate_cache_namespace_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600InvalidateCacheNamespace200Response>
+  p data # => <InvalidateCacheNamespace200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling CacheApi->o_bpv6_0_0_invalidate_cache_namespace_with_http_info: #{e}"
+  puts "Error when calling CacheApi->invalidate_cache_namespace_with_http_info: #{e}"
 end
 ```
 
@@ -301,11 +301,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_invalidate_cache_namespace_request** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body |  |
+| **invalidate_cache_namespace_request** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

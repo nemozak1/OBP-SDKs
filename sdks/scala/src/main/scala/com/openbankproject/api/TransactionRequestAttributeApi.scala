@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,19 +11,19 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-import com.openbankproject.model.OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeById200Response
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributes200Response
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+import com.openbankproject.model.CreateTransactionRequestCounterpartyRequestAttributesInner
+import com.openbankproject.model.DeleteSystemLevelEndpointTag200Response
+import com.openbankproject.model.GetTransactionRequestAttributeById200Response
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+import com.openbankproject.model.GetTransactionRequestAttributes200Response
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object TransactionRequestAttributeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new TransactionRequestAttributeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new TransactionRequestAttributeApi(baseUrl)
 }
 
 class TransactionRequestAttributeApi(baseUrl: String) {
@@ -32,7 +32,7 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * <p>Create or Update Transaction Request Attribute Definition</p> <p>The category field must be TransactionRequest</p> <p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeDefinition200ResponseAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -41,22 +41,22 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
    */
-  def oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]] =
+  def createOrUpdateTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200ResponseAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/transaction-request")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createOrUpdateTransactionRequestAttributeDefinitionRequest)
+      .response(asJson[GetTransactionRequestAttributeDefinition200ResponseAttributesInner])
 
   /**
    * <p>Create Transaction Request Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>attribute_type</strong></a>: STRING</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeById200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -67,22 +67,22 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param accountid The ACCOUNTID identifier
    * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-   * @param oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
+   * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
    */
-  def oBPv400CreateTransactionRequestAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeById200Response]] =
+  def createTransactionRequestAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeById200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/transaction-requests/${transactionrequestid}/attribute")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
-      .response(asJson[OBPv400GetTransactionRequestAttributeById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createTransactionRequestCounterpartyRequestAttributesInner)
+      .response(asJson[GetTransactionRequestAttributeById200Response])
 
   /**
    * <p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#attribute_definition_id\">ATTRIBUTE_DEFINITION_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400DeleteSystemLevelEndpointTag200Response (Successful operation)
+   *   code 200 : DeleteSystemLevelEndpointTag200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -93,19 +93,19 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
    */
-  def oBPv400DeleteTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], OBPv400DeleteSystemLevelEndpointTag200Response]] =
+  def deleteTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], DeleteSystemLevelEndpointTag200Response]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/${attributedefinitionid}/transaction-request")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400DeleteSystemLevelEndpointTag200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[DeleteSystemLevelEndpointTag200Response])
 
   /**
    * <p>Get Transaction Request Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeById200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -118,19 +118,19 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * @param transactionrequestid The TRANSACTIONREQUESTID identifier
    * @param attributeid The ATTRIBUTEID identifier
    */
-  def oBPv400GetTransactionRequestAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, attributeid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeById200Response]] =
+  def getTransactionRequestAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, attributeid: String): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeById200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/transaction-requests/${transactionrequestid}/attributes/${attributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTransactionRequestAttributeById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionRequestAttributeById200Response])
 
   /**
    * <p>Get Transaction Request Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeDefinition200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -140,19 +140,19 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200Response]] =
+  def getTransactionRequestAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/transaction-request")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionRequestAttributeDefinition200Response])
 
   /**
    * <p>Get Transaction Request Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>transaction_request_attributes</strong></a>: transaction_request_attributes</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributes200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributes200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -164,19 +164,19 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param transactionrequestid The TRANSACTIONREQUESTID identifier
    */
-  def oBPv400GetTransactionRequestAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributes200Response]] =
+  def getTransactionRequestAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributes200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/transaction-requests/${transactionrequestid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTransactionRequestAttributes200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionRequestAttributes200Response])
 
   /**
    * <p>Update Transaction Request Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeById200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeById200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -188,15 +188,15 @@ class TransactionRequestAttributeApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param transactionrequestid The TRANSACTIONREQUESTID identifier
    * @param attributeid The ATTRIBUTEID identifier
-   * @param oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
+   * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
    */
-  def oBPv400UpdateTransactionRequestAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeById200Response]] =
+  def updateTransactionRequestAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeById200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/transaction-requests/${transactionrequestid}/attributes/${attributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
-      .response(asJson[OBPv400GetTransactionRequestAttributeById200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createTransactionRequestCounterpartyRequestAttributesInner)
+      .response(asJson[GetTransactionRequestAttributeById200Response])
 
 }

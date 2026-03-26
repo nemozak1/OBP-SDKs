@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,57 +15,57 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400BuildDynamicEndpointTemplate200Response,
-  OBPv400BuildDynamicEndpointTemplateRequest,
-  OBPv400GetAllDynamicResourceDocs200Response,
-  OBPv400GetBankLevelDynamicResourceDoc200Response,
-  OBPv400UpdateBankLevelDynamicResourceDocRequest,
+  BuildDynamicEndpointTemplate200Response,
+  BuildDynamicEndpointTemplateRequest,
+  GetAllDynamicResourceDocs200Response,
+  GetBankLevelDynamicResourceDoc200Response,
+  UpdateBankLevelDynamicResourceDocRequest,
 } from '../models/index';
 import {
-    OBPv400BuildDynamicEndpointTemplate200ResponseFromJSON,
-    OBPv400BuildDynamicEndpointTemplate200ResponseToJSON,
-    OBPv400BuildDynamicEndpointTemplateRequestFromJSON,
-    OBPv400BuildDynamicEndpointTemplateRequestToJSON,
-    OBPv400GetAllDynamicResourceDocs200ResponseFromJSON,
-    OBPv400GetAllDynamicResourceDocs200ResponseToJSON,
-    OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON,
-    OBPv400GetBankLevelDynamicResourceDoc200ResponseToJSON,
-    OBPv400UpdateBankLevelDynamicResourceDocRequestFromJSON,
-    OBPv400UpdateBankLevelDynamicResourceDocRequestToJSON,
+    BuildDynamicEndpointTemplate200ResponseFromJSON,
+    BuildDynamicEndpointTemplate200ResponseToJSON,
+    BuildDynamicEndpointTemplateRequestFromJSON,
+    BuildDynamicEndpointTemplateRequestToJSON,
+    GetAllDynamicResourceDocs200ResponseFromJSON,
+    GetAllDynamicResourceDocs200ResponseToJSON,
+    GetBankLevelDynamicResourceDoc200ResponseFromJSON,
+    GetBankLevelDynamicResourceDoc200ResponseToJSON,
+    UpdateBankLevelDynamicResourceDocRequestFromJSON,
+    UpdateBankLevelDynamicResourceDocRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400BuildDynamicEndpointTemplateOperationRequest {
-    oBPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest;
+export interface BuildDynamicEndpointTemplateOperationRequest {
+    buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest;
 }
 
-export interface OBPv400CreateBankLevelDynamicResourceDocRequest {
+export interface CreateBankLevelDynamicResourceDocRequest {
     bankid: string;
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest;
+    updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest;
 }
 
-export interface OBPv400CreateDynamicResourceDocRequest {
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest;
+export interface CreateDynamicResourceDocRequest {
+    updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest;
 }
 
-export interface OBPv400DeleteBankLevelDynamicResourceDocRequest {
-    bankid: string;
-}
-
-export interface OBPv400GetAllBankLevelDynamicResourceDocsRequest {
+export interface DeleteBankLevelDynamicResourceDocRequest {
     bankid: string;
 }
 
-export interface OBPv400GetBankLevelDynamicResourceDocRequest {
+export interface GetAllBankLevelDynamicResourceDocsRequest {
     bankid: string;
 }
 
-export interface OBPv400UpdateBankLevelDynamicResourceDocOperationRequest {
+export interface GetBankLevelDynamicResourceDocRequest {
     bankid: string;
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest;
 }
 
-export interface OBPv400UpdateDynamicResourceDocRequest {
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest;
+export interface UpdateBankLevelDynamicResourceDocOperationRequest {
+    bankid: string;
+    updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest;
+}
+
+export interface UpdateDynamicResourceDocRequest {
+    updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest;
 }
 
 /**
@@ -74,13 +74,13 @@ export interface OBPv400UpdateDynamicResourceDocRequest {
 export class DynamicResourceDocApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400BuildDynamicEndpointTemplate without sending the request
+     * Creates request options for buildDynamicEndpointTemplate without sending the request
      */
-    async oBPv400BuildDynamicEndpointTemplateRequestOpts(requestParameters: OBPv400BuildDynamicEndpointTemplateOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400BuildDynamicEndpointTemplateRequest'] == null) {
+    async buildDynamicEndpointTemplateRequestOpts(requestParameters: BuildDynamicEndpointTemplateOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['buildDynamicEndpointTemplateRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400BuildDynamicEndpointTemplateRequest',
-                'Required parameter "oBPv400BuildDynamicEndpointTemplateRequest" was null or undefined when calling oBPv400BuildDynamicEndpointTemplate().'
+                'buildDynamicEndpointTemplateRequest',
+                'Required parameter "buildDynamicEndpointTemplateRequest" was null or undefined when calling buildDynamicEndpointTemplate().'
             );
         }
 
@@ -100,7 +100,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -111,7 +111,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400BuildDynamicEndpointTemplateRequestToJSON(requestParameters['oBPv400BuildDynamicEndpointTemplateRequest']),
+            body: BuildDynamicEndpointTemplateRequestToJSON(requestParameters['buildDynamicEndpointTemplateRequest']),
         };
     }
 
@@ -119,37 +119,37 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
      * Create Dynamic Resource Doc endpoint code
      */
-    async oBPv400BuildDynamicEndpointTemplateRaw(requestParameters: OBPv400BuildDynamicEndpointTemplateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response>> {
-        const requestOptions = await this.oBPv400BuildDynamicEndpointTemplateRequestOpts(requestParameters);
+    async buildDynamicEndpointTemplateRaw(requestParameters: BuildDynamicEndpointTemplateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BuildDynamicEndpointTemplate200Response>> {
+        const requestOptions = await this.buildDynamicEndpointTemplateRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400BuildDynamicEndpointTemplate200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BuildDynamicEndpointTemplate200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
      * Create Dynamic Resource Doc endpoint code
      */
-    async oBPv400BuildDynamicEndpointTemplate(requestParameters: OBPv400BuildDynamicEndpointTemplateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400BuildDynamicEndpointTemplate200Response> {
-        const response = await this.oBPv400BuildDynamicEndpointTemplateRaw(requestParameters, initOverrides);
+    async buildDynamicEndpointTemplate(requestParameters: BuildDynamicEndpointTemplateOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BuildDynamicEndpointTemplate200Response> {
+        const response = await this.buildDynamicEndpointTemplateRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateBankLevelDynamicResourceDoc without sending the request
+     * Creates request options for createBankLevelDynamicResourceDoc without sending the request
      */
-    async oBPv400CreateBankLevelDynamicResourceDocRequestOpts(requestParameters: OBPv400CreateBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
+    async createBankLevelDynamicResourceDocRequestOpts(requestParameters: CreateBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateBankLevelDynamicResourceDoc().'
+                'Required parameter "bankid" was null or undefined when calling createBankLevelDynamicResourceDoc().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest'] == null) {
+        if (requestParameters['updateBankLevelDynamicResourceDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicResourceDocRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicResourceDocRequest" was null or undefined when calling oBPv400CreateBankLevelDynamicResourceDoc().'
+                'updateBankLevelDynamicResourceDocRequest',
+                'Required parameter "updateBankLevelDynamicResourceDocRequest" was null or undefined when calling createBankLevelDynamicResourceDoc().'
             );
         }
 
@@ -169,7 +169,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -181,7 +181,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest']),
+            body: UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['updateBankLevelDynamicResourceDocRequest']),
         };
     }
 
@@ -189,30 +189,30 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Create Bank Level Dynamic Resource Doc
      */
-    async oBPv400CreateBankLevelDynamicResourceDocRaw(requestParameters: OBPv400CreateBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400CreateBankLevelDynamicResourceDocRequestOpts(requestParameters);
+    async createBankLevelDynamicResourceDocRaw(requestParameters: CreateBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.createBankLevelDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Create Bank Level Dynamic Resource Doc
      */
-    async oBPv400CreateBankLevelDynamicResourceDoc(requestParameters: OBPv400CreateBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400CreateBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
+    async createBankLevelDynamicResourceDoc(requestParameters: CreateBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.createBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateDynamicResourceDoc without sending the request
+     * Creates request options for createDynamicResourceDoc without sending the request
      */
-    async oBPv400CreateDynamicResourceDocRequestOpts(requestParameters: OBPv400CreateDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest'] == null) {
+    async createDynamicResourceDocRequestOpts(requestParameters: CreateDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['updateBankLevelDynamicResourceDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicResourceDocRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicResourceDocRequest" was null or undefined when calling oBPv400CreateDynamicResourceDoc().'
+                'updateBankLevelDynamicResourceDocRequest',
+                'Required parameter "updateBankLevelDynamicResourceDocRequest" was null or undefined when calling createDynamicResourceDoc().'
             );
         }
 
@@ -232,7 +232,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -243,7 +243,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest']),
+            body: UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['updateBankLevelDynamicResourceDocRequest']),
         };
     }
 
@@ -251,30 +251,30 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Create Dynamic Resource Doc
      */
-    async oBPv400CreateDynamicResourceDocRaw(requestParameters: OBPv400CreateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400CreateDynamicResourceDocRequestOpts(requestParameters);
+    async createDynamicResourceDocRaw(requestParameters: CreateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.createDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Create Dynamic Resource Doc
      */
-    async oBPv400CreateDynamicResourceDoc(requestParameters: OBPv400CreateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400CreateDynamicResourceDocRaw(requestParameters, initOverrides);
+    async createDynamicResourceDoc(requestParameters: CreateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.createDynamicResourceDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteBankLevelDynamicResourceDoc without sending the request
+     * Creates request options for deleteBankLevelDynamicResourceDoc without sending the request
      */
-    async oBPv400DeleteBankLevelDynamicResourceDocRequestOpts(requestParameters: OBPv400DeleteBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
+    async deleteBankLevelDynamicResourceDocRequestOpts(requestParameters: DeleteBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankLevelDynamicResourceDoc().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankLevelDynamicResourceDoc().'
             );
         }
 
@@ -292,7 +292,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -311,8 +311,8 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Dynamic Resource Doc
      */
-    async oBPv400DeleteBankLevelDynamicResourceDocRaw(requestParameters: OBPv400DeleteBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankLevelDynamicResourceDocRequestOpts(requestParameters);
+    async deleteBankLevelDynamicResourceDocRaw(requestParameters: DeleteBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankLevelDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -322,14 +322,14 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Dynamic Resource Doc
      */
-    async oBPv400DeleteBankLevelDynamicResourceDoc(requestParameters: OBPv400DeleteBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
+    async deleteBankLevelDynamicResourceDoc(requestParameters: DeleteBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400DeleteDynamicResourceDoc without sending the request
+     * Creates request options for deleteDynamicResourceDoc without sending the request
      */
-    async oBPv400DeleteDynamicResourceDocRequestOpts(): Promise<runtime.RequestOpts> {
+    async deleteDynamicResourceDocRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -344,7 +344,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -362,8 +362,8 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Delete a Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Dynamic Resource Doc
      */
-    async oBPv400DeleteDynamicResourceDocRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteDynamicResourceDocRequestOpts();
+    async deleteDynamicResourceDocRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteDynamicResourceDocRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -373,18 +373,18 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Delete a Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Dynamic Resource Doc
      */
-    async oBPv400DeleteDynamicResourceDoc(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteDynamicResourceDocRaw(initOverrides);
+    async deleteDynamicResourceDoc(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteDynamicResourceDocRaw(initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetAllBankLevelDynamicResourceDocs without sending the request
+     * Creates request options for getAllBankLevelDynamicResourceDocs without sending the request
      */
-    async oBPv400GetAllBankLevelDynamicResourceDocsRequestOpts(requestParameters: OBPv400GetAllBankLevelDynamicResourceDocsRequest): Promise<runtime.RequestOpts> {
+    async getAllBankLevelDynamicResourceDocsRequestOpts(requestParameters: GetAllBankLevelDynamicResourceDocsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetAllBankLevelDynamicResourceDocs().'
+                'Required parameter "bankid" was null or undefined when calling getAllBankLevelDynamicResourceDocs().'
             );
         }
 
@@ -402,7 +402,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -421,26 +421,26 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get all Bank Level Dynamic Resource Docs
      */
-    async oBPv400GetAllBankLevelDynamicResourceDocsRaw(requestParameters: OBPv400GetAllBankLevelDynamicResourceDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>> {
-        const requestOptions = await this.oBPv400GetAllBankLevelDynamicResourceDocsRequestOpts(requestParameters);
+    async getAllBankLevelDynamicResourceDocsRaw(requestParameters: GetAllBankLevelDynamicResourceDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllDynamicResourceDocs200Response>> {
+        const requestOptions = await this.getAllBankLevelDynamicResourceDocsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllDynamicResourceDocs200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllDynamicResourceDocs200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get all Bank Level Dynamic Resource Docs
      */
-    async oBPv400GetAllBankLevelDynamicResourceDocs(requestParameters: OBPv400GetAllBankLevelDynamicResourceDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllDynamicResourceDocs200Response> {
-        const response = await this.oBPv400GetAllBankLevelDynamicResourceDocsRaw(requestParameters, initOverrides);
+    async getAllBankLevelDynamicResourceDocs(requestParameters: GetAllBankLevelDynamicResourceDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllDynamicResourceDocs200Response> {
+        const response = await this.getAllBankLevelDynamicResourceDocsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllDynamicResourceDocs without sending the request
+     * Creates request options for getAllDynamicResourceDocs without sending the request
      */
-    async oBPv400GetAllDynamicResourceDocsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllDynamicResourceDocsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -455,7 +455,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -473,30 +473,30 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get all Dynamic Resource Docs
      */
-    async oBPv400GetAllDynamicResourceDocsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllDynamicResourceDocs200Response>> {
-        const requestOptions = await this.oBPv400GetAllDynamicResourceDocsRequestOpts();
+    async getAllDynamicResourceDocsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllDynamicResourceDocs200Response>> {
+        const requestOptions = await this.getAllDynamicResourceDocsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllDynamicResourceDocs200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllDynamicResourceDocs200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get all Dynamic Resource Docs
      */
-    async oBPv400GetAllDynamicResourceDocs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllDynamicResourceDocs200Response> {
-        const response = await this.oBPv400GetAllDynamicResourceDocsRaw(initOverrides);
+    async getAllDynamicResourceDocs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllDynamicResourceDocs200Response> {
+        const response = await this.getAllDynamicResourceDocsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetBankLevelDynamicResourceDoc without sending the request
+     * Creates request options for getBankLevelDynamicResourceDoc without sending the request
      */
-    async oBPv400GetBankLevelDynamicResourceDocRequestOpts(requestParameters: OBPv400GetBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelDynamicResourceDocRequestOpts(requestParameters: GetBankLevelDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankLevelDynamicResourceDoc().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelDynamicResourceDoc().'
             );
         }
 
@@ -514,7 +514,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -533,26 +533,26 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get Bank Level Dynamic Resource Doc by Id
      */
-    async oBPv400GetBankLevelDynamicResourceDocRaw(requestParameters: OBPv400GetBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400GetBankLevelDynamicResourceDocRequestOpts(requestParameters);
+    async getBankLevelDynamicResourceDocRaw(requestParameters: GetBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.getBankLevelDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get Bank Level Dynamic Resource Doc by Id
      */
-    async oBPv400GetBankLevelDynamicResourceDoc(requestParameters: OBPv400GetBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400GetBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
+    async getBankLevelDynamicResourceDoc(requestParameters: GetBankLevelDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.getBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetDynamicResourceDoc without sending the request
+     * Creates request options for getDynamicResourceDoc without sending the request
      */
-    async oBPv400GetDynamicResourceDocRequestOpts(): Promise<runtime.RequestOpts> {
+    async getDynamicResourceDocRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -567,7 +567,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -585,37 +585,37 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get Dynamic Resource Doc by Id
      */
-    async oBPv400GetDynamicResourceDocRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400GetDynamicResourceDocRequestOpts();
+    async getDynamicResourceDocRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.getDynamicResourceDocRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Get Dynamic Resource Doc by Id
      */
-    async oBPv400GetDynamicResourceDoc(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400GetDynamicResourceDocRaw(initOverrides);
+    async getDynamicResourceDoc(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.getDynamicResourceDocRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateBankLevelDynamicResourceDoc without sending the request
+     * Creates request options for updateBankLevelDynamicResourceDoc without sending the request
      */
-    async oBPv400UpdateBankLevelDynamicResourceDocRequestOpts(requestParameters: OBPv400UpdateBankLevelDynamicResourceDocOperationRequest): Promise<runtime.RequestOpts> {
+    async updateBankLevelDynamicResourceDocRequestOpts(requestParameters: UpdateBankLevelDynamicResourceDocOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateBankLevelDynamicResourceDoc().'
+                'Required parameter "bankid" was null or undefined when calling updateBankLevelDynamicResourceDoc().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest'] == null) {
+        if (requestParameters['updateBankLevelDynamicResourceDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicResourceDocRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicResourceDocRequest" was null or undefined when calling oBPv400UpdateBankLevelDynamicResourceDoc().'
+                'updateBankLevelDynamicResourceDocRequest',
+                'Required parameter "updateBankLevelDynamicResourceDocRequest" was null or undefined when calling updateBankLevelDynamicResourceDoc().'
             );
         }
 
@@ -635,7 +635,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -647,7 +647,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest']),
+            body: UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['updateBankLevelDynamicResourceDocRequest']),
         };
     }
 
@@ -655,30 +655,30 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Update Bank Level Dynamic Resource Doc
      */
-    async oBPv400UpdateBankLevelDynamicResourceDocRaw(requestParameters: OBPv400UpdateBankLevelDynamicResourceDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400UpdateBankLevelDynamicResourceDocRequestOpts(requestParameters);
+    async updateBankLevelDynamicResourceDocRaw(requestParameters: UpdateBankLevelDynamicResourceDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.updateBankLevelDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Update Bank Level Dynamic Resource Doc
      */
-    async oBPv400UpdateBankLevelDynamicResourceDoc(requestParameters: OBPv400UpdateBankLevelDynamicResourceDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400UpdateBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
+    async updateBankLevelDynamicResourceDoc(requestParameters: UpdateBankLevelDynamicResourceDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.updateBankLevelDynamicResourceDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateDynamicResourceDoc without sending the request
+     * Creates request options for updateDynamicResourceDoc without sending the request
      */
-    async oBPv400UpdateDynamicResourceDocRequestOpts(requestParameters: OBPv400UpdateDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest'] == null) {
+    async updateDynamicResourceDocRequestOpts(requestParameters: UpdateDynamicResourceDocRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['updateBankLevelDynamicResourceDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicResourceDocRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicResourceDocRequest" was null or undefined when calling oBPv400UpdateDynamicResourceDoc().'
+                'updateBankLevelDynamicResourceDocRequest',
+                'Required parameter "updateBankLevelDynamicResourceDocRequest" was null or undefined when calling updateDynamicResourceDoc().'
             );
         }
 
@@ -698,7 +698,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -709,7 +709,7 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicResourceDocRequest']),
+            body: UpdateBankLevelDynamicResourceDocRequestToJSON(requestParameters['updateBankLevelDynamicResourceDocRequest']),
         };
     }
 
@@ -717,19 +717,19 @@ export class DynamicResourceDocApi extends runtime.BaseAPI {
      * <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Update Dynamic Resource Doc
      */
-    async oBPv400UpdateDynamicResourceDocRaw(requestParameters: OBPv400UpdateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response>> {
-        const requestOptions = await this.oBPv400UpdateDynamicResourceDocRequestOpts(requestParameters);
+    async updateDynamicResourceDocRaw(requestParameters: UpdateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetBankLevelDynamicResourceDoc200Response>> {
+        const requestOptions = await this.updateDynamicResourceDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetBankLevelDynamicResourceDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
      * Update Dynamic Resource Doc
      */
-    async oBPv400UpdateDynamicResourceDoc(requestParameters: OBPv400UpdateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetBankLevelDynamicResourceDoc200Response> {
-        const response = await this.oBPv400UpdateDynamicResourceDocRaw(requestParameters, initOverrides);
+    async updateDynamicResourceDoc(requestParameters: UpdateDynamicResourceDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetBankLevelDynamicResourceDoc200Response> {
+        const response = await this.updateDynamicResourceDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -4,43 +4,71 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_2_1_delete_view_for_bank_account**](ViewCustomApi.md#o_bpv1_2_1_delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
-[**o_bpv2_0_0_get_permissions_for_bank_account**](ViewCustomApi.md#o_bpv2_0_0_get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
-[**o_bpv3_0_0_create_view_for_bank_account**](ViewCustomApi.md#o_bpv3_0_0_create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
-[**o_bpv3_0_0_get_accounts_held**](ViewCustomApi.md#o_bpv3_0_0_get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
-[**o_bpv3_0_0_get_permission_for_user_for_bank_account**](ViewCustomApi.md#o_bpv3_0_0_get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
-[**o_bpv3_0_0_update_view_for_bank_account**](ViewCustomApi.md#o_bpv3_0_0_update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
-[**o_bpv5_0_0_get_views_for_bank_account**](ViewCustomApi.md#o_bpv5_0_0_get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
-[**o_bpv5_1_0_create_custom_view**](ViewCustomApi.md#o_bpv5_1_0_create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
-[**o_bpv5_1_0_create_user_with_account_access_by_id**](ViewCustomApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-[**o_bpv5_1_0_delete_custom_view**](ViewCustomApi.md#o_bpv5_1_0_delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
-[**o_bpv5_1_0_get_custom_view**](ViewCustomApi.md#o_bpv5_1_0_get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
-[**o_bpv5_1_0_grant_user_access_to_view_by_id**](ViewCustomApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-[**o_bpv5_1_0_revoke_user_access_to_view_by_id**](ViewCustomApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
-[**o_bpv5_1_0_update_custom_view**](ViewCustomApi.md#o_bpv5_1_0_update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
-[**o_bpv6_0_0_create_custom_view_management**](ViewCustomApi.md#o_bpv6_0_0_create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
-[**o_bpv6_0_0_get_custom_view_by_id**](ViewCustomApi.md#o_bpv6_0_0_get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
-[**o_bpv6_0_0_get_custom_views**](ViewCustomApi.md#o_bpv6_0_0_get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
-[**o_bpv6_0_0_get_system_view_by_id**](ViewCustomApi.md#o_bpv6_0_0_get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
-[**o_bpv6_0_0_get_system_views**](ViewCustomApi.md#o_bpv6_0_0_get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
-[**o_bpv6_0_0_get_users_with_account_access**](ViewCustomApi.md#o_bpv6_0_0_get_users_with_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
-[**o_bpv6_0_0_get_view_permissions**](ViewCustomApi.md#o_bpv6_0_0_get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
-[**o_bpv6_0_0_has_account_access**](ViewCustomApi.md#o_bpv6_0_0_has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
-[**o_bpv6_0_0_update_system_view**](ViewCustomApi.md#o_bpv6_0_0_update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+[**create_custom_view**](ViewCustomApi.md#create_custom_view) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views | Create Custom View
+[**create_custom_view_management**](ViewCustomApi.md#create_custom_view_management) | **POST** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views | Create Custom View (Management)
+[**create_user_with_account_access_by_id**](ViewCustomApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**create_view_for_bank_account**](ViewCustomApi.md#create_view_for_bank_account) | **POST** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views | Create Custom View
+[**delete_custom_view**](ViewCustomApi.md#delete_custom_view) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Delete Custom View
+[**delete_view_for_bank_account**](ViewCustomApi.md#delete_view_for_bank_account) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/views/{viewid} | Delete Custom View
+[**get_accounts_held**](ViewCustomApi.md#get_accounts_held) | **GET** /obp/v3.0.0/banks/{bankid}/accounts-held | Get Accounts Held
+[**get_custom_view**](ViewCustomApi.md#get_custom_view) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Get Custom View
+[**get_custom_view_by_id**](ViewCustomApi.md#get_custom_view_by_id) | **GET** /obp/v6.0.0/management/banks/{bankid}/accounts/{accountid}/views/{viewid} | Get Custom View
+[**get_custom_views**](ViewCustomApi.md#get_custom_views) | **GET** /obp/v6.0.0/management/custom-views | Get Custom Views
+[**get_permission_for_user_for_bank_account**](ViewCustomApi.md#get_permission_for_user_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/permissions/{provider}/{providerid} | Get Account access for User
+[**get_permissions_for_bank_account**](ViewCustomApi.md#get_permissions_for_bank_account) | **GET** /obp/v2.0.0/banks/{bankid}/accounts/{accountid}/permissions | Get access
+[**get_system_view_by_id**](ViewCustomApi.md#get_system_view_by_id) | **GET** /obp/v6.0.0/management/system-views/{viewid} | Get System View
+[**get_system_views**](ViewCustomApi.md#get_system_views) | **GET** /obp/v6.0.0/management/system-views | Get System Views
+[**get_users_with_account_access**](ViewCustomApi.md#get_users_with_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/users-with-access | Get Users With Account Access
+[**get_view_permissions**](ViewCustomApi.md#get_view_permissions) | **GET** /obp/v6.0.0/management/view-permissions | Get View Permissions
+[**get_views_for_bank_account**](ViewCustomApi.md#get_views_for_bank_account) | **GET** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/views | Get Views for Account
+[**grant_user_access_to_view_by_id**](ViewCustomApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+[**has_account_access**](ViewCustomApi.md#has_account_access) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/has-account-access | Has Account Access
+[**revoke_user_access_to_view_by_id**](ViewCustomApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+[**update_custom_view**](ViewCustomApi.md#update_custom_view) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/target-views/{targetviewid} | Update Custom View
+[**update_system_view**](ViewCustomApi.md#update_system_view) | **PUT** /obp/v6.0.0/system-views/{viewid} | Update System View
+[**update_view_for_bank_account**](ViewCustomApi.md#update_view_for_bank_account) | **PUT** /obp/v3.0.0/banks/{bankid}/accounts/{accountid}/views/{viewid} | Update Custom View
 
 
-# **o_bpv1_2_1_delete_view_for_bank_account**
-> o_bpv1_2_1_delete_view_for_bank_account(bankid, accountid, viewid)
+# **create_custom_view**
+> CreateCustomView200Response create_custom_view(bankid, accountid, viewid, create_custom_view_request)
 
-Delete Custom View
+Create Custom View
 
-<p>Deletes the custom view specified by VIEW_ID on the bank account specified by ACCOUNT_ID at bank BANK_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Create a custom view on bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
+The 'alias' field in the JSON can take one of three values:</p>
+<ul>
+<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
+<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
+<li>
+<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
+</li>
+</ul>
+<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
+<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
 
 
 ### Example
@@ -51,6 +79,8 @@ Delete Custom View
 
 ```python
 import obp_python
+from obp_python.models.create_custom_view200_response import CreateCustomView200Response
+from obp_python.models.create_custom_view_request import CreateCustomViewRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -86,12 +116,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
+    create_custom_view_request = {"type":"object","properties":{"allowed_permissions":{"type":"array","items":{"type":"string"}},"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"},"name":{"type":"string"}}} # CreateCustomViewRequest | Request body
 
     try:
-        # Delete Custom View
-        api_instance.o_bpv1_2_1_delete_view_for_bank_account(bankid, accountid, viewid)
+        # Create Custom View
+        api_response = api_instance.create_custom_view(bankid, accountid, viewid, create_custom_view_request)
+        print("The response of ViewCustomApi->create_custom_view:\n")
+        pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv1_2_1_delete_view_for_bank_account: %s\n" % e)
+        print("Exception when calling ViewCustomApi->create_custom_view: %s\n" % e)
 ```
 
 
@@ -104,10 +137,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
+ **create_custom_view_request** | [**CreateCustomViewRequest**](CreateCustomViewRequest.md)| Request body | 
 
 ### Return type
 
-void (empty response body)
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
 
 ### Authorization
 
@@ -115,177 +149,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv2_0_0_get_permissions_for_bank_account**
-> OBPv200GetPermissionsForBankAccount200Response o_bpv2_0_0_get_permissions_for_bank_account(bankid, accountid)
-
-Get access
-
-<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
-and the user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv200_get_permissions_for_bank_account200_response import OBPv200GetPermissionsForBankAccount200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-
-    try:
-        # Get access
-        api_response = api_instance.o_bpv2_0_0_get_permissions_for_bank_account(bankid, accountid)
-        print("The response of ViewCustomApi->o_bpv2_0_0_get_permissions_for_bank_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv2_0_0_get_permissions_for_bank_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv200GetPermissionsForBankAccount200Response**](OBPv200GetPermissionsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -298,14 +162,20 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_create_view_for_bank_account**
-> OBPv510CreateUserWithAccountAccessById200ResponseHead o_bpv3_0_0_create_view_for_bank_account(bankid, accountid, obpv600_create_custom_view_management_request)
+# **create_custom_view_management**
+> CreateUserWithAccountAccessById200ResponseHead create_custom_view_management(bankid, accountid, create_custom_view_management_request)
 
-Create Custom View
+Create Custom View (Management)
 
-<p>Create a custom view on bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
-The 'alias' field in the JSON can take one of three values:</p>
+<p>Create a custom view on a bank account via management endpoint.</p>
+<p>This is a <strong>management endpoint</strong> that requires the <code>CanCreateCustomView</code> role (entitlement).</p>
+<p>This endpoint provides a simpler, role-based authorization model compared to the original<br />
+v3.0.0 endpoint which requires view-level permissions. Use this endpoint when you want to<br />
+grant view creation ability through direct role assignment rather than through view access.</p>
+<p>For the original endpoint that checks account-level view permissions, see:<br />
+POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The 'alias' field in the JSON can take one of three values:</p>
 <ul>
 <li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
 <li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
@@ -422,8 +292,8 @@ The 'alias' field in the JSON can take one of three values:</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
-from obp_python.models.obpv600_create_custom_view_management_request import OBPv600CreateCustomViewManagementRequest
+from obp_python.models.create_custom_view_management_request import CreateCustomViewManagementRequest
+from obp_python.models.create_user_with_account_access_by_id200_response_head import CreateUserWithAccountAccessById200ResponseHead
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -458,15 +328,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ViewCustomApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv600_create_custom_view_management_request = {type=object, properties={hide_metadata_if_alias_used={type=boolean}, name={type=string}, description={type=string}, is_public={type=boolean}, metadata_view={type=string}, which_alias_to_use={type=string}, allowed_actions={type=array, items={type=string}}}} # OBPv600CreateCustomViewManagementRequest | Request body
+    create_custom_view_management_request = {"type":"object","properties":{"hide_metadata_if_alias_used":{"type":"boolean"},"name":{"type":"string"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"},"allowed_actions":{"type":"array","items":{"type":"string"}}}} # CreateCustomViewManagementRequest | Request body
 
     try:
-        # Create Custom View
-        api_response = api_instance.o_bpv3_0_0_create_view_for_bank_account(bankid, accountid, obpv600_create_custom_view_management_request)
-        print("The response of ViewCustomApi->o_bpv3_0_0_create_view_for_bank_account:\n")
+        # Create Custom View (Management)
+        api_response = api_instance.create_custom_view_management(bankid, accountid, create_custom_view_management_request)
+        print("The response of ViewCustomApi->create_custom_view_management:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv3_0_0_create_view_for_bank_account: %s\n" % e)
+        print("Exception when calling ViewCustomApi->create_custom_view_management: %s\n" % e)
 ```
 
 
@@ -478,11 +348,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv600_create_custom_view_management_request** | [**OBPv600CreateCustomViewManagementRequest**](OBPv600CreateCustomViewManagementRequest.md)| Request body | 
+ **create_custom_view_management_request** | [**CreateCustomViewManagementRequest**](CreateCustomViewManagementRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md)
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
 
 ### Authorization
 
@@ -503,829 +373,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_get_accounts_held**
-> OBPv510GetAccountsHeldByUserAtBank200Response o_bpv3_0_0_get_accounts_held(bankid)
-
-Get Accounts Held
-
-<p>Get Accounts held by the current User if even the User has not been assigned the owner View yet.</p>
-<p>Can be used to onboard the account to the API - since all other account and transaction endpoints require views to be assigned.</p>
-<p>optional request parameters:</p>
-<ul>
-<li>account_type_filter: one or many accountType value, split by comma</li>
-<li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li>
-</ul>
-<p>whole url example:<br />
-/banks/BANK_ID/accounts-held?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_accounts_held_by_user_at_bank200_response import OBPv510GetAccountsHeldByUserAtBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Accounts Held
-        api_response = api_instance.o_bpv3_0_0_get_accounts_held(bankid)
-        print("The response of ViewCustomApi->o_bpv3_0_0_get_accounts_held:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv3_0_0_get_accounts_held: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv510GetAccountsHeldByUserAtBank200Response**](OBPv510GetAccountsHeldByUserAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_permission_for_user_for_bank_account**
-> OBPv300GetPermissionForUserForBankAccount200Response o_bpv3_0_0_get_permission_for_user_for_bank_account(bankid, accountid, provider, providerid)
-
-Get Account access for User
-
-<p>Returns the list of the views at BANK_ID for account ACCOUNT_ID that a user identified by PROVIDER_ID at their provider PROVIDER has access to.<br />
-All url parameters must be <a href="http://en.wikipedia.org/wiki/Percent-encoding">%-encoded</a>, which is often especially relevant for USER_ID and PROVIDER.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#provider">PROVIDER</a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id">PROVIDER_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_permission_for_user_for_bank_account200_response import OBPv300GetPermissionForUserForBankAccount200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    provider = 'provider_example' # str | The PROVIDER identifier
-    providerid = 'providerid_example' # str | The PROVIDERID identifier
-
-    try:
-        # Get Account access for User
-        api_response = api_instance.o_bpv3_0_0_get_permission_for_user_for_bank_account(bankid, accountid, provider, providerid)
-        print("The response of ViewCustomApi->o_bpv3_0_0_get_permission_for_user_for_bank_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv3_0_0_get_permission_for_user_for_bank_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **provider** | **str**| The PROVIDER identifier | 
- **providerid** | **str**| The PROVIDERID identifier | 
-
-### Return type
-
-[**OBPv300GetPermissionForUserForBankAccount200Response**](OBPv300GetPermissionForUserForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_update_view_for_bank_account**
-> OBPv510CreateUserWithAccountAccessById200ResponseHead o_bpv3_0_0_update_view_for_bank_account(bankid, accountid, viewid, obpv300_update_view_for_bank_account_request)
-
-Update Custom View
-
-<p>Update an existing custom view on a bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
-<p>The json sent is the same as during view creation (above), with one difference: the 'name' field<br />
-of a view is not editable (it is only set when a view is created)</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_update_view_for_bank_account_request import OBPv300UpdateViewForBankAccountRequest
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv300_update_view_for_bank_account_request = {"type":"object","properties":{"allowed_actions":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"metadata_view":{"type":"string"},"is_public":{"type":"boolean"},"which_alias_to_use":{"type":"string"}}} # OBPv300UpdateViewForBankAccountRequest | Request body
-
-    try:
-        # Update Custom View
-        api_response = api_instance.o_bpv3_0_0_update_view_for_bank_account(bankid, accountid, viewid, obpv300_update_view_for_bank_account_request)
-        print("The response of ViewCustomApi->o_bpv3_0_0_update_view_for_bank_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv3_0_0_update_view_for_bank_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **obpv300_update_view_for_bank_account_request** | [**OBPv300UpdateViewForBankAccountRequest**](OBPv300UpdateViewForBankAccountRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_get_views_for_bank_account**
-> OBPv500GetViewsForBankAccount200Response o_bpv5_0_0_get_views_for_bank_account(bankid, accountid)
-
-Get Views for Account
-
-<h1><a href="#views" id="views">Views</a></h1>
-<p>Views in Open Bank Project provide a mechanism for fine grained access control and delegation to Accounts and Transactions. Account holders use the 'owner' view by default. Delegated access is made through other views for example 'accountants', 'share-holders' or 'tagging-application'. Views can be created via the API and each view has a list of entitlements.</p>
-<p>Views on accounts and transactions filter the underlying data to redact certain fields for certain users. For instance the balance on an account may be hidden from the public. The way to know what is possible on a view is determined in the following JSON.</p>
-<p><strong>Data:</strong> When a view moderates a set of data, some fields my contain the value <code>null</code> rather than the original value. This indicates either that the user is not allowed to see the original data or the field is empty.</p>
-<p>There is currently one exception to this rule; the 'holder' field in the JSON contains always a value which is either an alias or the real name - indicated by the 'is_alias' field.</p>
-<p><strong>Action:</strong> When a user performs an action like trying to post a comment (with POST API call), if he is not allowed, the body response will contain an error message.</p>
-<p><strong>Metadata:</strong><br />
-Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</em> on the view where they have been created e.g. comments posted to the public view only appear on the public view.</p>
-<p>The other account metadata fields (like image_URL, more_info, etc.) are unique through all the views. Example, if a user edits the 'more_info' field in the 'team' view, then the view 'authorities' will show the new value (if it is allowed to do it).</p>
-<h1><a href="#all" id="all">All</a></h1>
-<p><em>Optional</em></p>
-<p>Returns the list of the views created for account ACCOUNT_ID at BANK_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
-<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
-<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
-<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
-<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
-<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
-<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
-<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
-<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
-<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
-<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
-<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
-<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
-<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
-<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
-<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
-<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
-<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
-<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
-<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
-<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
-<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
-<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
-<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
-<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
-<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
-<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
-<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
-<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
-<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_views_for_bank_account200_response import OBPv500GetViewsForBankAccount200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-
-    try:
-        # Get Views for Account
-        api_response = api_instance.o_bpv5_0_0_get_views_for_bank_account(bankid, accountid)
-        print("The response of ViewCustomApi->o_bpv5_0_0_get_views_for_bank_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_0_0_get_views_for_bank_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv500GetViewsForBankAccount200Response**](OBPv500GetViewsForBankAccount200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_custom_view**
-> OBPv510CreateCustomView200Response o_bpv5_1_0_create_custom_view(bankid, accountid, viewid, obpv510_create_custom_view_request)
-
-Create Custom View
-
-<p>Create a custom view on bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
-The 'alias' field in the JSON can take one of three values:</p>
-<ul>
-<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
-<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
-<li>
-<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
-</li>
-</ul>
-<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
-<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
-<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
-<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#"><strong>allowed_permissions</strong></a>: allowed_permissions</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_create_custom_view200_response import OBPv510CreateCustomView200Response
-from obp_python.models.obpv510_create_custom_view_request import OBPv510CreateCustomViewRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_create_custom_view_request = {"type":"object","properties":{"allowed_permissions":{"type":"array","items":{"type":"string"}},"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"},"name":{"type":"string"}}} # OBPv510CreateCustomViewRequest | Request body
-
-    try:
-        # Create Custom View
-        api_response = api_instance.o_bpv5_1_0_create_custom_view(bankid, accountid, viewid, obpv510_create_custom_view_request)
-        print("The response of ViewCustomApi->o_bpv5_1_0_create_custom_view:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_create_custom_view: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **obpv510_create_custom_view_request** | [**OBPv510CreateCustomViewRequest**](OBPv510CreateCustomViewRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_create_user_with_account_access_by_id**
-> OBPv510CreateUserWithAccountAccessById200Response o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
+# **create_user_with_account_access_by_id**
+> CreateUserWithAccountAccessById200Response create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
 
 Create (DAuth) User with Account Access
 
@@ -1539,8 +588,8 @@ Each parameter MUST NOT appear more than once per request.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response import OBPv510CreateUserWithAccountAccessById200Response
-from obp_python.models.obpv510_create_user_with_account_access_by_id_request import OBPv510CreateUserWithAccountAccessByIdRequest
+from obp_python.models.create_user_with_account_access_by_id200_response import CreateUserWithAccountAccessById200Response
+from obp_python.models.create_user_with_account_access_by_id_request import CreateUserWithAccountAccessByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1576,15 +625,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # OBPv510CreateUserWithAccountAccessByIdRequest | Request body
+    create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # CreateUserWithAccountAccessByIdRequest | Request body
 
     try:
         # Create (DAuth) User with Account Access
-        api_response = api_instance.o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
-        print("The response of ViewCustomApi->o_bpv5_1_0_create_user_with_account_access_by_id:\n")
+        api_response = api_instance.create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
+        print("The response of ViewCustomApi->create_user_with_account_access_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_create_user_with_account_access_by_id: %s\n" % e)
+        print("Exception when calling ViewCustomApi->create_user_with_account_access_by_id: %s\n" % e)
 ```
 
 
@@ -1597,11 +646,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_create_user_with_account_access_by_id_request** | [**OBPv510CreateUserWithAccountAccessByIdRequest**](OBPv510CreateUserWithAccountAccessByIdRequest.md)| Request body | 
+ **create_user_with_account_access_by_id_request** | [**CreateUserWithAccountAccessByIdRequest**](CreateUserWithAccountAccessByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200Response**](OBPv510CreateUserWithAccountAccessById200Response.md)
+[**CreateUserWithAccountAccessById200Response**](CreateUserWithAccountAccessById200Response.md)
 
 ### Authorization
 
@@ -1622,8 +671,213 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_custom_view**
-> o_bpv5_1_0_delete_custom_view(bankid, accountid, viewid, targetviewid)
+# **create_view_for_bank_account**
+> CreateUserWithAccountAccessById200ResponseHead create_view_for_bank_account(bankid, accountid, create_custom_view_management_request)
+
+Create Custom View
+
+<p>Create a custom view on bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.<br />
+The 'alias' field in the JSON can take one of three values:</p>
+<ul>
+<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
+<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
+<li>
+<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
+</li>
+</ul>
+<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
+<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
+<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_custom_view_management_request import CreateCustomViewManagementRequest
+from obp_python.models.create_user_with_account_access_by_id200_response_head import CreateUserWithAccountAccessById200ResponseHead
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    create_custom_view_management_request = {type=object, properties={hide_metadata_if_alias_used={type=boolean}, name={type=string}, description={type=string}, is_public={type=boolean}, metadata_view={type=string}, which_alias_to_use={type=string}, allowed_actions={type=array, items={type=string}}}} # CreateCustomViewManagementRequest | Request body
+
+    try:
+        # Create Custom View
+        api_response = api_instance.create_view_for_bank_account(bankid, accountid, create_custom_view_management_request)
+        print("The response of ViewCustomApi->create_view_for_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->create_view_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **create_custom_view_management_request** | [**CreateCustomViewManagementRequest**](CreateCustomViewManagementRequest.md)| Request body | 
+
+### Return type
+
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_custom_view**
+> delete_custom_view(bankid, accountid, viewid, targetviewid)
 
 Delete Custom View
 
@@ -1684,9 +938,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Custom View
-        api_instance.o_bpv5_1_0_delete_custom_view(bankid, accountid, viewid, targetviewid)
+        api_instance.delete_custom_view(bankid, accountid, viewid, targetviewid)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_delete_custom_view: %s\n" % e)
+        print("Exception when calling ViewCustomApi->delete_custom_view: %s\n" % e)
 ```
 
 
@@ -1724,8 +978,218 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_custom_view**
-> OBPv510CreateCustomView200Response o_bpv5_1_0_get_custom_view(bankid, accountid, viewid, targetviewid)
+# **delete_view_for_bank_account**
+> delete_view_for_bank_account(bankid, accountid, viewid)
+
+Delete Custom View
+
+<p>Deletes the custom view specified by VIEW_ID on the bank account specified by ACCOUNT_ID at bank BANK_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Delete Custom View
+        api_instance.delete_view_for_bank_account(bankid, accountid, viewid)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->delete_view_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_accounts_held**
+> GetAccountsHeldByUserAtBank200Response get_accounts_held(bankid)
+
+Get Accounts Held
+
+<p>Get Accounts held by the current User if even the User has not been assigned the owner View yet.</p>
+<p>Can be used to onboard the account to the API - since all other account and transaction endpoints require views to be assigned.</p>
+<p>optional request parameters:</p>
+<ul>
+<li>account_type_filter: one or many accountType value, split by comma</li>
+<li>account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE</li>
+</ul>
+<p>whole url example:<br />
+/banks/BANK_ID/accounts-held?account_type_filter=330,CURRENT+PLUS&amp;account_type_filter_operation=INCLUDE</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_accounts_held_by_user_at_bank200_response import GetAccountsHeldByUserAtBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Accounts Held
+        api_response = api_instance.get_accounts_held(bankid)
+        print("The response of ViewCustomApi->get_accounts_held:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_accounts_held: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetAccountsHeldByUserAtBank200Response**](GetAccountsHeldByUserAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_custom_view**
+> CreateCustomView200Response get_custom_view(bankid, accountid, viewid, targetviewid)
 
 Get Custom View
 
@@ -1766,7 +1230,7 @@ Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_custom_view200_response import OBPv510CreateCustomView200Response
+from obp_python.models.create_custom_view200_response import CreateCustomView200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1806,11 +1270,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Custom View
-        api_response = api_instance.o_bpv5_1_0_get_custom_view(bankid, accountid, viewid, targetviewid)
-        print("The response of ViewCustomApi->o_bpv5_1_0_get_custom_view:\n")
+        api_response = api_instance.get_custom_view(bankid, accountid, viewid, targetviewid)
+        print("The response of ViewCustomApi->get_custom_view:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_get_custom_view: %s\n" % e)
+        print("Exception when calling ViewCustomApi->get_custom_view: %s\n" % e)
 ```
 
 
@@ -1827,7 +1291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
 
 ### Authorization
 
@@ -1848,8 +1312,1217 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_grant_user_access_to_view_by_id**
-> OBPv510CreateUserWithAccountAccessById200ResponseHead o_bpv5_1_0_grant_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
+# **get_custom_view_by_id**
+> GetSystemViewById200Response get_custom_view_by_id(bankid, accountid, viewid)
+
+Get Custom View
+
+<p>Get a single custom view by bank, account, and view ID.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Custom View
+        api_response = api_instance.get_custom_view_by_id(bankid, accountid, viewid)
+        print("The response of ViewCustomApi->get_custom_view_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_custom_view_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_custom_views**
+> GetCustomViews200Response get_custom_views()
+
+Get Custom Views
+
+<p>Get all custom views.</p>
+<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
+- _work<br />
+- _personal<br />
+- _audit</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_custom_views200_response import GetCustomViews200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+
+    try:
+        # Get Custom Views
+        api_response = api_instance.get_custom_views()
+        print("The response of ViewCustomApi->get_custom_views:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_custom_views: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetCustomViews200Response**](GetCustomViews200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_permission_for_user_for_bank_account**
+> GetPermissionForUserForBankAccount200Response get_permission_for_user_for_bank_account(bankid, accountid, provider, providerid)
+
+Get Account access for User
+
+<p>Returns the list of the views at BANK_ID for account ACCOUNT_ID that a user identified by PROVIDER_ID at their provider PROVIDER has access to.<br />
+All url parameters must be <a href="http://en.wikipedia.org/wiki/Percent-encoding">%-encoded</a>, which is often especially relevant for USER_ID and PROVIDER.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#provider">PROVIDER</a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id">PROVIDER_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_permission_for_user_for_bank_account200_response import GetPermissionForUserForBankAccount200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    provider = 'provider_example' # str | The PROVIDER identifier
+    providerid = 'providerid_example' # str | The PROVIDERID identifier
+
+    try:
+        # Get Account access for User
+        api_response = api_instance.get_permission_for_user_for_bank_account(bankid, accountid, provider, providerid)
+        print("The response of ViewCustomApi->get_permission_for_user_for_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_permission_for_user_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **provider** | **str**| The PROVIDER identifier | 
+ **providerid** | **str**| The PROVIDERID identifier | 
+
+### Return type
+
+[**GetPermissionForUserForBankAccount200Response**](GetPermissionForUserForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_permissions_for_bank_account**
+> GetPermissionsForBankAccount200Response get_permissions_for_bank_account(bankid, accountid)
+
+Get access
+
+<p>Returns the list of the permissions at BANK_ID for account ACCOUNT_ID, with each time a pair composed of the user and the views that he has access to.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.<br />
+and the user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_permissions_for_bank_account200_response import GetPermissionsForBankAccount200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+
+    try:
+        # Get access
+        api_response = api_instance.get_permissions_for_bank_account(bankid, accountid)
+        print("The response of ViewCustomApi->get_permissions_for_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_permissions_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+
+### Return type
+
+[**GetPermissionsForBankAccount200Response**](GetPermissionsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_view_by_id**
+> GetSystemViewById200Response get_system_view_by_id(viewid)
+
+Get System View
+
+<p>Get a single system view by its ID.</p>
+<p>System views are predefined views that apply to all accounts, such as:<br />
+- owner<br />
+- accountant<br />
+- auditor<br />
+- standard</p>
+<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get System View
+        api_response = api_instance.get_system_view_by_id(viewid)
+        print("The response of ViewCustomApi->get_system_view_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_system_view_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_system_views**
+> GetSystemViews200Response get_system_views()
+
+Get System Views
+
+<p>Get all system views.</p>
+<p>System views are predefined views that apply to all accounts, such as:<br />
+- owner<br />
+- accountant<br />
+- auditor<br />
+- standard</p>
+<p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_views200_response import GetSystemViews200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+
+    try:
+        # Get System Views
+        api_response = api_instance.get_system_views()
+        print("The response of ViewCustomApi->get_system_views:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_system_views: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetSystemViews200Response**](GetSystemViews200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_users_with_account_access**
+> GetUsersWithAccountAccess200Response get_users_with_account_access(bankid, accountid, viewid)
+
+Get Users With Account Access
+
+<p>Get all users who have access to a specific view on a specific account, and how that access was granted.</p>
+<p>This endpoint combines both traditional AccountAccess records and ABAC (Attribute-Based Access Control)<br />
+evaluation to provide a complete picture of who can access the specified view.</p>
+<p>Each user entry includes an access_source indicating how access was granted<br />
+(either &quot;ACCOUNT_ACCESS&quot; for direct grants or &quot;ABAC&quot; for rule-based access).</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#108;&#105;x&#x73;&#109;&#x69;&#116;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;&#x6f;m">f&#101;&#108;i&#x78;&#115;&#x6d;&#x69;&#116;&#x68;&#x40;&#101;&#x78;&#97;mp&#x6c;&#101;.&#99;&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#users"><strong>users</strong></a>: user list</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_users_with_account_access200_response import GetUsersWithAccountAccess200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Users With Account Access
+        api_response = api_instance.get_users_with_account_access(bankid, accountid, viewid)
+        print("The response of ViewCustomApi->get_users_with_account_access:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_users_with_account_access: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetUsersWithAccountAccess200Response**](GetUsersWithAccountAccess200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_view_permissions**
+> GetViewPermissions200Response get_view_permissions()
+
+Get View Permissions
+
+<p>Get a list of all available view permissions.</p>
+<p>This endpoint returns all the available permissions that can be assigned to views,<br />
+organized by category. These permissions control what actions and data can be accessed<br />
+through a view.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The response contains all available view permission names that can be used in the<br />
+<code>allowed_actions</code> field when creating or updating custom views.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#"><strong>permission</strong></a>: permission</p>
+<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_view_permissions200_response import GetViewPermissions200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+
+    try:
+        # Get View Permissions
+        api_response = api_instance.get_view_permissions()
+        print("The response of ViewCustomApi->get_view_permissions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_view_permissions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetViewPermissions200Response**](GetViewPermissions200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_views_for_bank_account**
+> GetViewsForBankAccount200Response get_views_for_bank_account(bankid, accountid)
+
+Get Views for Account
+
+<h1><a href="#views" id="views">Views</a></h1>
+<p>Views in Open Bank Project provide a mechanism for fine grained access control and delegation to Accounts and Transactions. Account holders use the 'owner' view by default. Delegated access is made through other views for example 'accountants', 'share-holders' or 'tagging-application'. Views can be created via the API and each view has a list of entitlements.</p>
+<p>Views on accounts and transactions filter the underlying data to redact certain fields for certain users. For instance the balance on an account may be hidden from the public. The way to know what is possible on a view is determined in the following JSON.</p>
+<p><strong>Data:</strong> When a view moderates a set of data, some fields my contain the value <code>null</code> rather than the original value. This indicates either that the user is not allowed to see the original data or the field is empty.</p>
+<p>There is currently one exception to this rule; the 'holder' field in the JSON contains always a value which is either an alias or the real name - indicated by the 'is_alias' field.</p>
+<p><strong>Action:</strong> When a user performs an action like trying to post a comment (with POST API call), if he is not allowed, the body response will contain an error message.</p>
+<p><strong>Metadata:</strong><br />
+Transaction metadata (like images, tags, comments, etc.) will appears <em>ONLY</em> on the view where they have been created e.g. comments posted to the public view only appear on the public view.</p>
+<p>The other account metadata fields (like image_URL, more_info, etc.) are unique through all the views. Example, if a user edits the 'more_info' field in the 'team' view, then the view 'authorities' will show the new value (if it is allowed to do it).</p>
+<h1><a href="#all" id="all">All</a></h1>
+<p><em>Optional</em></p>
+<p>Returns the list of the views created for account ACCOUNT_ID at BANK_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
+<p><a href="/glossary#can_add_corporate_location"><strong>can_add_corporate_location</strong></a>:</p>
+<p><a href="/glossary#can_add_counterparty"><strong>can_add_counterparty</strong></a>: false</p>
+<p><a href="/glossary#can_add_image"><strong>can_add_image</strong></a>:</p>
+<p><a href="/glossary#can_add_image_url"><strong>can_add_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_add_more_info"><strong>can_add_more_info</strong></a>: false</p>
+<p><a href="/glossary#can_add_open_corporates_url"><strong>can_add_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_add_physical_location"><strong>can_add_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_add_private_alias"><strong>can_add_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_public_alias"><strong>can_add_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_add_tag"><strong>can_add_tag</strong></a>: false</p>
+<p><a href="/glossary#can_add_transaction_request_to_any_account"><strong>can_add_transaction_request_to_any_account</strong></a>:</p>
+<p><a href="/glossary#can_add_transaction_request_to_own_account"><strong>can_add_transaction_request_to_own_account</strong></a>: false</p>
+<p><a href="/glossary#can_add_url"><strong>can_add_url</strong></a>:</p>
+<p><a href="/glossary#can_add_where_tag"><strong>can_add_where_tag</strong></a>:</p>
+<p><a href="/glossary#can_create_direct_debit"><strong>can_create_direct_debit</strong></a>: false</p>
+<p><a href="/glossary#can_create_standing_order"><strong>can_create_standing_order</strong></a>:</p>
+<p><a href="/glossary#can_delete_comment"><strong>can_delete_comment</strong></a>:</p>
+<p><a href="/glossary#can_delete_corporate_location"><strong>can_delete_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_delete_image"><strong>can_delete_image</strong></a>: false</p>
+<p><a href="/glossary#can_delete_physical_location"><strong>can_delete_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_delete_tag"><strong>can_delete_tag</strong></a>:</p>
+<p><a href="/glossary#can_delete_where_tag"><strong>can_delete_where_tag</strong></a>: false</p>
+<p><a href="/glossary#can_edit_owner_comment"><strong>can_edit_owner_comment</strong></a>: false</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#can_query_available_funds"><strong>can_query_available_funds</strong></a>: false</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
+<p><a href="/glossary#can_see_bank_account_balance"><strong>can_see_bank_account_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_bank_name"><strong>can_see_bank_account_bank_name</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_credit_limit"><strong>can_see_bank_account_credit_limit</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_currency"><strong>can_see_bank_account_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_iban"><strong>can_see_bank_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_label"><strong>can_see_bank_account_label</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_national_identifier"><strong>can_see_bank_account_national_identifier</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_number"><strong>can_see_bank_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_owners"><strong>can_see_bank_account_owners</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_account_routing_address"><strong>can_see_bank_account_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_routing_scheme"><strong>can_see_bank_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_swift_bic"><strong>can_see_bank_account_swift_bic</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_account_type"><strong>can_see_bank_account_type</strong></a>:</p>
+<p><a href="/glossary#can_see_bank_routing_address"><strong>can_see_bank_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_bank_routing_scheme"><strong>can_see_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_comments"><strong>can_see_comments</strong></a>:</p>
+<p><a href="/glossary#can_see_corporate_location"><strong>can_see_corporate_location</strong></a>: false</p>
+<p><a href="/glossary#can_see_image_url"><strong>can_see_image_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_images"><strong>can_see_images</strong></a>: false</p>
+<p><a href="/glossary#can_see_more_info"><strong>can_see_more_info</strong></a>:</p>
+<p><a href="/glossary#can_see_open_corporates_url"><strong>can_see_open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_bank_name"><strong>can_see_other_account_bank_name</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_iban"><strong>can_see_other_account_iban</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_kind"><strong>can_see_other_account_kind</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_metadata"><strong>can_see_other_account_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_national_identifier"><strong>can_see_other_account_national_identifier</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_number"><strong>can_see_other_account_number</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_address"><strong>can_see_other_account_routing_address</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_account_routing_scheme"><strong>can_see_other_account_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_other_account_swift_bic"><strong>can_see_other_account_swift_bic</strong></a>: false</p>
+<p><a href="/glossary#can_see_other_bank_routing_address"><strong>can_see_other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#can_see_other_bank_routing_scheme"><strong>can_see_other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#can_see_owner_comment"><strong>can_see_owner_comment</strong></a>:</p>
+<p><a href="/glossary#can_see_physical_location"><strong>can_see_physical_location</strong></a>:</p>
+<p><a href="/glossary#can_see_private_alias"><strong>can_see_private_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_public_alias"><strong>can_see_public_alias</strong></a>:</p>
+<p><a href="/glossary#can_see_tags"><strong>can_see_tags</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_amount"><strong>can_see_transaction_amount</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_balance"><strong>can_see_transaction_balance</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_currency"><strong>can_see_transaction_currency</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_description"><strong>can_see_transaction_description</strong></a>: false</p>
+<p><a href="/glossary#can_see_transaction_finish_date"><strong>can_see_transaction_finish_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_metadata"><strong>can_see_transaction_metadata</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_other_bank_account"><strong>can_see_transaction_other_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_start_date"><strong>can_see_transaction_start_date</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_this_bank_account"><strong>can_see_transaction_this_bank_account</strong></a>:</p>
+<p><a href="/glossary#can_see_transaction_type"><strong>can_see_transaction_type</strong></a>:</p>
+<p><a href="/glossary#can_see_url"><strong>can_see_url</strong></a>: false</p>
+<p><a href="/glossary#can_see_where_tag"><strong>can_see_where_tag</strong></a>: false</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
+<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
+<p><a href="/glossary#short_name"><strong>short_name</strong></a>:</p>
+<p><a href="/glossary#views"><strong>views</strong></a>:</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_views_for_bank_account200_response import GetViewsForBankAccount200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+
+    try:
+        # Get Views for Account
+        api_response = api_instance.get_views_for_bank_account(bankid, accountid)
+        print("The response of ViewCustomApi->get_views_for_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->get_views_for_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+
+### Return type
+
+[**GetViewsForBankAccount200Response**](GetViewsForBankAccount200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **grant_user_access_to_view_by_id**
+> CreateUserWithAccountAccessById200ResponseHead grant_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
 
 Grant User access to View
 
@@ -1978,8 +2651,8 @@ This operation includes:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id_request import OBPv510RevokeUserAccessToViewByIdRequest
+from obp_python.models.create_user_with_account_access_by_id200_response_head import CreateUserWithAccountAccessById200ResponseHead
+from obp_python.models.revoke_user_access_to_view_by_id_request import RevokeUserAccessToViewByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2015,15 +2688,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_revoke_user_access_to_view_by_id_request = {type=object, properties={view_id={type=string}, user_id={type=string}}} # OBPv510RevokeUserAccessToViewByIdRequest | Request body
+    revoke_user_access_to_view_by_id_request = {type=object, properties={view_id={type=string}, user_id={type=string}}} # RevokeUserAccessToViewByIdRequest | Request body
 
     try:
         # Grant User access to View
-        api_response = api_instance.o_bpv5_1_0_grant_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
-        print("The response of ViewCustomApi->o_bpv5_1_0_grant_user_access_to_view_by_id:\n")
+        api_response = api_instance.grant_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
+        print("The response of ViewCustomApi->grant_user_access_to_view_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_grant_user_access_to_view_by_id: %s\n" % e)
+        print("Exception when calling ViewCustomApi->grant_user_access_to_view_by_id: %s\n" % e)
 ```
 
 
@@ -2036,11 +2709,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_revoke_user_access_to_view_by_id_request** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md)| Request body | 
+ **revoke_user_access_to_view_by_id_request** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md)
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
 
 ### Authorization
 
@@ -2061,8 +2734,118 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_revoke_user_access_to_view_by_id**
-> OBPv510RevokeUserAccessToViewById200Response o_bpv5_1_0_revoke_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
+# **has_account_access**
+> HasAccountAccess200Response has_account_access(bankid, accountid, viewid)
+
+Has Account Access
+
+<p>Check whether the authenticated user has access to a specific view on a specific account.</p>
+<p>Returns a boolean <code>has_account_access</code> along with the <code>access_source</code> (currently &quot;ACCOUNT_ACCESS&quot;)<br />
+and the <code>account_access_id</code> (primary key of the AccountAccess record).</p>
+<p>If the user does not have access, <code>has_account_access</code> is false and the other fields are empty strings.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>abac_rule_id</strong></a>: abac_rule_id</p>
+<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
+<p><a href="/glossary#"><strong>account_access_id</strong></a>: account_access_id</p>
+<p><a href="/glossary#"><strong>has_account_access</strong></a>: has_account_access</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.has_account_access200_response import HasAccountAccess200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Has Account Access
+        api_response = api_instance.has_account_access(bankid, accountid, viewid)
+        print("The response of ViewCustomApi->has_account_access:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->has_account_access: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**HasAccountAccess200Response**](HasAccountAccess200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **revoke_user_access_to_view_by_id**
+> RevokeUserAccessToViewById200Response revoke_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
 
 Revoke User access to View
 
@@ -2087,8 +2870,8 @@ Revoke User access to View
 
 ```python
 import obp_python
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id200_response import OBPv510RevokeUserAccessToViewById200Response
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id_request import OBPv510RevokeUserAccessToViewByIdRequest
+from obp_python.models.revoke_user_access_to_view_by_id200_response import RevokeUserAccessToViewById200Response
+from obp_python.models.revoke_user_access_to_view_by_id_request import RevokeUserAccessToViewByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2124,15 +2907,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_revoke_user_access_to_view_by_id_request = {"type":"object","properties":{"view_id":{"type":"string"},"user_id":{"type":"string"}}} # OBPv510RevokeUserAccessToViewByIdRequest | Request body
+    revoke_user_access_to_view_by_id_request = {"type":"object","properties":{"view_id":{"type":"string"},"user_id":{"type":"string"}}} # RevokeUserAccessToViewByIdRequest | Request body
 
     try:
         # Revoke User access to View
-        api_response = api_instance.o_bpv5_1_0_revoke_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
-        print("The response of ViewCustomApi->o_bpv5_1_0_revoke_user_access_to_view_by_id:\n")
+        api_response = api_instance.revoke_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
+        print("The response of ViewCustomApi->revoke_user_access_to_view_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_revoke_user_access_to_view_by_id: %s\n" % e)
+        print("Exception when calling ViewCustomApi->revoke_user_access_to_view_by_id: %s\n" % e)
 ```
 
 
@@ -2145,11 +2928,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_revoke_user_access_to_view_by_id_request** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md)| Request body | 
+ **revoke_user_access_to_view_by_id_request** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510RevokeUserAccessToViewById200Response**](OBPv510RevokeUserAccessToViewById200Response.md)
+[**RevokeUserAccessToViewById200Response**](RevokeUserAccessToViewById200Response.md)
 
 ### Authorization
 
@@ -2170,8 +2953,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_custom_view**
-> OBPv510CreateCustomView200Response o_bpv5_1_0_update_custom_view(bankid, accountid, viewid, targetviewid, obpv510_update_custom_view_request)
+# **update_custom_view**
+> CreateCustomView200Response update_custom_view(bankid, accountid, viewid, targetviewid, update_custom_view_request)
 
 Update Custom View
 
@@ -2203,8 +2986,8 @@ of a view is not editable (it is only set when a view is created)</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_custom_view200_response import OBPv510CreateCustomView200Response
-from obp_python.models.obpv510_update_custom_view_request import OBPv510UpdateCustomViewRequest
+from obp_python.models.create_custom_view200_response import CreateCustomView200Response
+from obp_python.models.update_custom_view_request import UpdateCustomViewRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2241,15 +3024,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     targetviewid = 'targetviewid_example' # str | The TARGETVIEWID identifier
-    obpv510_update_custom_view_request = {"type":"object","properties":{"allowed_permissions":{"type":"array","items":{"type":"string"}},"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"}}} # OBPv510UpdateCustomViewRequest | Request body
+    update_custom_view_request = {"type":"object","properties":{"allowed_permissions":{"type":"array","items":{"type":"string"}},"hide_metadata_if_alias_used":{"type":"boolean"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"}}} # UpdateCustomViewRequest | Request body
 
     try:
         # Update Custom View
-        api_response = api_instance.o_bpv5_1_0_update_custom_view(bankid, accountid, viewid, targetviewid, obpv510_update_custom_view_request)
-        print("The response of ViewCustomApi->o_bpv5_1_0_update_custom_view:\n")
+        api_response = api_instance.update_custom_view(bankid, accountid, viewid, targetviewid, update_custom_view_request)
+        print("The response of ViewCustomApi->update_custom_view:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv5_1_0_update_custom_view: %s\n" % e)
+        print("Exception when calling ViewCustomApi->update_custom_view: %s\n" % e)
 ```
 
 
@@ -2263,11 +3046,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **targetviewid** | **str**| The TARGETVIEWID identifier | 
- **obpv510_update_custom_view_request** | [**OBPv510UpdateCustomViewRequest**](OBPv510UpdateCustomViewRequest.md)| Request body | 
+ **update_custom_view_request** | [**UpdateCustomViewRequest**](UpdateCustomViewRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateCustomView200Response**](OBPv510CreateCustomView200Response.md)
+[**CreateCustomView200Response**](CreateCustomView200Response.md)
 
 ### Authorization
 
@@ -2288,42 +3071,136 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_create_custom_view_management**
-> OBPv510CreateUserWithAccountAccessById200ResponseHead o_bpv6_0_0_create_custom_view_management(bankid, accountid, obpv600_create_custom_view_management_request)
+# **update_system_view**
+> GetSystemViewById200Response update_system_view(viewid, update_system_view_request)
 
-Create Custom View (Management)
+Update System View
 
-<p>Create a custom view on a bank account via management endpoint.</p>
-<p>This is a <strong>management endpoint</strong> that requires the <code>CanCreateCustomView</code> role (entitlement).</p>
-<p>This endpoint provides a simpler, role-based authorization model compared to the original<br />
-v3.0.0 endpoint which requires view-level permissions. Use this endpoint when you want to<br />
-grant view creation ability through direct role assignment rather than through view access.</p>
-<p>For the original endpoint that checks account-level view permissions, see:<br />
-POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
+<p>Update an existing system view.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The 'alias' field in the JSON can take one of three values:</p>
-<ul>
-<li><em>public</em>: to use the public alias if there is one specified for the other account.</li>
-<li><em>private</em>: to use the private alias if there is one specified for the other account.</li>
-<li>
-<p><em>''(empty string)</em>: to use no alias; the view shows the real name of the other account.</p>
-</li>
-</ul>
-<p>The 'hide_metadata_if_alias_used' field in the JSON can take boolean values. If it is set to <code>true</code> and there is an alias on the other account then the other accounts' metadata (like more_info, url, image_url, open_corporates_url, etc.) will be hidden. Otherwise the metadata will be shown.</p>
-<p>The 'allowed_actions' field is a list containing the name of the actions allowed on this view, all the actions contained will be set to <code>true</code> on the view creation, the rest will be set to <code>false</code>.</p>
+<p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
+of a view is not editable (it is only set when a view is created).</p>
 <p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
-<p>You MUST use a leading _ (underscore) in the view name because other view names are reserved for OBP <a href="/index#group-View-System">system views</a>.</p>
+<p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
 <p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
+<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
 <p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
 <p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
 <p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
+<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
 <p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#which_alias_to_use"><strong>which_alias_to_use</strong></a>: public</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
+<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_system_view_by_id200_response import GetSystemViewById200Response
+from obp_python.models.update_system_view_request import UpdateSystemViewRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ViewCustomApi(api_client)
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    update_system_view_request = {"type":"object","properties":{"is_firehose":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"allowed_actions":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"description":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}}}} # UpdateSystemViewRequest | Request body
+
+    try:
+        # Update System View
+        api_response = api_instance.update_system_view(viewid, update_system_view_request)
+        print("The response of ViewCustomApi->update_system_view:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ViewCustomApi->update_system_view: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **viewid** | **str**| The VIEWID identifier | 
+ **update_system_view_request** | [**UpdateSystemViewRequest**](UpdateSystemViewRequest.md)| Request body | 
+
+### Return type
+
+[**GetSystemViewById200Response**](GetSystemViewById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_view_for_bank_account**
+> CreateUserWithAccountAccessById200ResponseHead update_view_for_bank_account(bankid, accountid, viewid, update_view_for_bank_account_request)
+
+Update Custom View
+
+<p>Update an existing custom view on a bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated. and the user needs to have access to the owner view.</p>
+<p>The json sent is the same as during view creation (above), with one difference: the 'name' field<br />
+of a view is not editable (it is only set when a view is created)</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
 <p><a href="/glossary#can_add_comment"><strong>can_add_comment</strong></a>:</p>
@@ -2418,130 +3295,8 @@ POST /obp/v3.0.0/banks/BANK_ID/accounts/ACCOUNT_ID/views</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
-from obp_python.models.obpv600_create_custom_view_management_request import OBPv600CreateCustomViewManagementRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    obpv600_create_custom_view_management_request = {"type":"object","properties":{"hide_metadata_if_alias_used":{"type":"boolean"},"name":{"type":"string"},"description":{"type":"string"},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"which_alias_to_use":{"type":"string"},"allowed_actions":{"type":"array","items":{"type":"string"}}}} # OBPv600CreateCustomViewManagementRequest | Request body
-
-    try:
-        # Create Custom View (Management)
-        api_response = api_instance.o_bpv6_0_0_create_custom_view_management(bankid, accountid, obpv600_create_custom_view_management_request)
-        print("The response of ViewCustomApi->o_bpv6_0_0_create_custom_view_management:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_create_custom_view_management: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **obpv600_create_custom_view_management_request** | [**OBPv600CreateCustomViewManagementRequest**](OBPv600CreateCustomViewManagementRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_custom_view_by_id**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
-
-Get Custom View
-
-<p>Get a single custom view by bank, account, and view ID.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>Custom views are unique per bank_id, account_id, and view_id combination.</p>
-<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
+from obp_python.models.create_user_with_account_access_by_id200_response_head import CreateUserWithAccountAccessById200ResponseHead
+from obp_python.models.update_view_for_bank_account_request import UpdateViewForBankAccountRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2577,14 +3332,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
+    update_view_for_bank_account_request = {"type":"object","properties":{"allowed_actions":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"metadata_view":{"type":"string"},"is_public":{"type":"boolean"},"which_alias_to_use":{"type":"string"}}} # UpdateViewForBankAccountRequest | Request body
 
     try:
-        # Get Custom View
-        api_response = api_instance.o_bpv6_0_0_get_custom_view_by_id(bankid, accountid, viewid)
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_custom_view_by_id:\n")
+        # Update Custom View
+        api_response = api_instance.update_view_for_bank_account(bankid, accountid, viewid, update_view_for_bank_account_request)
+        print("The response of ViewCustomApi->update_view_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_custom_view_by_id: %s\n" % e)
+        print("Exception when calling ViewCustomApi->update_view_for_bank_account: %s\n" % e)
 ```
 
 
@@ -2597,767 +3353,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
+ **update_view_for_bank_account_request** | [**UpdateViewForBankAccountRequest**](UpdateViewForBankAccountRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_custom_views**
-> OBPv600GetCustomViews200Response o_bpv6_0_0_get_custom_views()
-
-Get Custom Views
-
-<p>Get all custom views.</p>
-<p>Custom views are user-created views with names starting with underscore (_), such as:<br />
-- _work<br />
-- _personal<br />
-- _audit</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_custom_views200_response import OBPv600GetCustomViews200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-
-    try:
-        # Get Custom Views
-        api_response = api_instance.o_bpv6_0_0_get_custom_views()
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_custom_views:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_custom_views: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetCustomViews200Response**](OBPv600GetCustomViews200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_system_view_by_id**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_get_system_view_by_id(viewid)
-
-Get System View
-
-<p>Get a single system view by its ID.</p>
-<p>System views are predefined views that apply to all accounts, such as:<br />
-- owner<br />
-- accountant<br />
-- auditor<br />
-- standard</p>
-<p>The view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Get System View
-        api_response = api_instance.o_bpv6_0_0_get_system_view_by_id(viewid)
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_system_view_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_system_view_by_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_system_views**
-> OBPv600GetSystemViews200Response o_bpv6_0_0_get_system_views()
-
-Get System Views
-
-<p>Get all system views.</p>
-<p>System views are predefined views that apply to all accounts, such as:<br />
-- owner<br />
-- accountant<br />
-- auditor<br />
-- standard</p>
-<p>Each view is returned with an <code>allowed_actions</code> array containing all permissions for that view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
-<p><a href="/glossary#views"><strong>views</strong></a>:</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_system_views200_response import OBPv600GetSystemViews200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-
-    try:
-        # Get System Views
-        api_response = api_instance.o_bpv6_0_0_get_system_views()
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_system_views:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_system_views: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetSystemViews200Response**](OBPv600GetSystemViews200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_users_with_account_access**
-> OBPv600GetUsersWithAccountAccess200Response o_bpv6_0_0_get_users_with_account_access(bankid, accountid, viewid)
-
-Get Users With Account Access
-
-<p>Get all users who have access to a specific view on a specific account, and how that access was granted.</p>
-<p>This endpoint combines both traditional AccountAccess records and ABAC (Attribute-Based Access Control)<br />
-evaluation to provide a complete picture of who can access the specified view.</p>
-<p>Each user entry includes an access_source indicating how access was granted<br />
-(either &quot;ACCOUNT_ACCESS&quot; for direct grants or &quot;ABAC&quot; for rule-based access).</p>
-<p>Authentication is Required</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#x65;&#108;&#105;x&#x73;&#109;&#x69;&#116;&#x68;@&#x65;x&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;&#x6f;m">f&#101;&#108;i&#x78;&#115;&#x6d;&#x69;&#116;&#x68;&#x40;&#101;&#x78;&#97;mp&#x6c;&#101;.&#99;&#x6f;&#x6d;</a></p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#users"><strong>users</strong></a>: user list</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_users_with_account_access200_response import OBPv600GetUsersWithAccountAccess200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Get Users With Account Access
-        api_response = api_instance.o_bpv6_0_0_get_users_with_account_access(bankid, accountid, viewid)
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_users_with_account_access:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_users_with_account_access: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv600GetUsersWithAccountAccess200Response**](OBPv600GetUsersWithAccountAccess200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_view_permissions**
-> OBPv600GetViewPermissions200Response o_bpv6_0_0_get_view_permissions()
-
-Get View Permissions
-
-<p>Get a list of all available view permissions.</p>
-<p>This endpoint returns all the available permissions that can be assigned to views,<br />
-organized by category. These permissions control what actions and data can be accessed<br />
-through a view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The response contains all available view permission names that can be used in the<br />
-<code>allowed_actions</code> field when creating or updating custom views.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#"><strong>permission</strong></a>: permission</p>
-<p><a href="/glossary#permissions"><strong>permissions</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_view_permissions200_response import OBPv600GetViewPermissions200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-
-    try:
-        # Get View Permissions
-        api_response = api_instance.o_bpv6_0_0_get_view_permissions()
-        print("The response of ViewCustomApi->o_bpv6_0_0_get_view_permissions:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_get_view_permissions: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetViewPermissions200Response**](OBPv600GetViewPermissions200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_has_account_access**
-> OBPv600HasAccountAccess200Response o_bpv6_0_0_has_account_access(bankid, accountid, viewid)
-
-Has Account Access
-
-<p>Check whether the authenticated user has access to a specific view on a specific account.</p>
-<p>Returns a boolean <code>has_account_access</code> along with the <code>access_source</code> (currently &quot;ACCOUNT_ACCESS&quot;)<br />
-and the <code>account_access_id</code> (primary key of the AccountAccess record).</p>
-<p>If the user does not have access, <code>has_account_access</code> is false and the other fields are empty strings.</p>
-<p>Authentication is Required</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>abac_rule_id</strong></a>: abac_rule_id</p>
-<p><a href="/glossary#"><strong>access_source</strong></a>: access_source</p>
-<p><a href="/glossary#"><strong>account_access_id</strong></a>: account_access_id</p>
-<p><a href="/glossary#"><strong>has_account_access</strong></a>: has_account_access</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_has_account_access200_response import OBPv600HasAccountAccess200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Has Account Access
-        api_response = api_instance.o_bpv6_0_0_has_account_access(bankid, accountid, viewid)
-        print("The response of ViewCustomApi->o_bpv6_0_0_has_account_access:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_has_account_access: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv600HasAccountAccess200Response**](OBPv600HasAccountAccess200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_update_system_view**
-> OBPv600GetSystemViewById200Response o_bpv6_0_0_update_system_view(viewid, obpv600_update_system_view_request)
-
-Update System View
-
-<p>Update an existing system view.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The JSON sent is the same as during view creation, with one difference: the 'name' field<br />
-of a view is not editable (it is only set when a view is created).</p>
-<p>The 'metadata_view' field determines where metadata (comments, tags, images, where tags) for transactions are stored and retrieved. If set to another view's ID (e.g. 'owner'), metadata added through this view will be shared with all other views that also use the same metadata_view value. If left empty, metadata is stored under this view's own ID and is not shared with other views.</p>
-<p>The response contains the updated view with an <code>allowed_actions</code> array.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#allowed_actions"><strong>allowed_actions</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>can_grant_access_to_views</strong></a>: can_grant_access_to_views</p>
-<p><a href="/glossary#"><strong>can_revoke_access_to_views</strong></a>: can_revoke_access_to_views</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#hide_metadata_if_alias_used"><strong>hide_metadata_if_alias_used</strong></a>: false</p>
-<p><a href="/glossary#is_public"><strong>is_public</strong></a>: false</p>
-<p><a href="/glossary#"><strong>is_system</strong></a>: true</p>
-<p><a href="/glossary#metadata_view"><strong>metadata_view</strong></a>:</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-<p><a href="/glossary#"><strong>view_name</strong></a>: owner</p>
-<p><a href="/glossary#is_firehose">is_firehose</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_system_view_by_id200_response import OBPv600GetSystemViewById200Response
-from obp_python.models.obpv600_update_system_view_request import OBPv600UpdateSystemViewRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ViewCustomApi(api_client)
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv600_update_system_view_request = {"type":"object","properties":{"is_firehose":{"type":"boolean"},"which_alias_to_use":{"type":"string"},"hide_metadata_if_alias_used":{"type":"boolean"},"allowed_actions":{"type":"array","items":{"type":"string"}},"can_grant_access_to_views":{"type":"array","items":{"type":"string"}},"is_public":{"type":"boolean"},"metadata_view":{"type":"string"},"description":{"type":"string"},"can_revoke_access_to_views":{"type":"array","items":{"type":"string"}}}} # OBPv600UpdateSystemViewRequest | Request body
-
-    try:
-        # Update System View
-        api_response = api_instance.o_bpv6_0_0_update_system_view(viewid, obpv600_update_system_view_request)
-        print("The response of ViewCustomApi->o_bpv6_0_0_update_system_view:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ViewCustomApi->o_bpv6_0_0_update_system_view: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewid** | **str**| The VIEWID identifier | 
- **obpv600_update_system_view_request** | [**OBPv600UpdateSystemViewRequest**](OBPv600UpdateSystemViewRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv600GetSystemViewById200Response**](OBPv600GetSystemViewById200Response.md)
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
 
 ### Authorization
 

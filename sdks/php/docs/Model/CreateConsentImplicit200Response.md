@@ -1,0 +1,11 @@
+# # CreateConsentImplicit200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**consent_id** | **string** |  | [optional]
+**status** | **string** |  | [optional]
+**jwt** | **string** |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

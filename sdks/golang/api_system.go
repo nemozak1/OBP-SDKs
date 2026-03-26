@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,755 +23,17 @@ import (
 // SystemAPIService SystemAPI service
 type SystemAPIService service
 
-type ApiOBPv510LogCacheAllEndpointRequest struct {
+type ApiGetCacheConfigRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv510LogCacheAllEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheAllEndpointExecute(r)
+func (r ApiGetCacheConfigRequest) Execute() (*GetCacheConfig200Response, *http.Response, error) {
+	return r.ApiService.GetCacheConfigExecute(r)
 }
 
 /*
-OBPv510LogCacheAllEndpoint Get All Level Log Cache
-
-<p>Returns logs of all levels from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheAllEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheAllEndpoint(ctx context.Context) ApiOBPv510LogCacheAllEndpointRequest {
-	return ApiOBPv510LogCacheAllEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheAllEndpointExecute(r ApiOBPv510LogCacheAllEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheAllEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/all"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheDebugEndpointRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv510LogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheDebugEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheDebugEndpoint Get Debug Level Log Cache
-
-<p>Returns DEBUG level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheDebugEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheDebugEndpoint(ctx context.Context) ApiOBPv510LogCacheDebugEndpointRequest {
-	return ApiOBPv510LogCacheDebugEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheDebugEndpointExecute(r ApiOBPv510LogCacheDebugEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheDebugEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/debug"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheErrorEndpointRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv510LogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheErrorEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheErrorEndpoint Get Error Level Log Cache
-
-<p>Returns ERROR level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheErrorEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheErrorEndpoint(ctx context.Context) ApiOBPv510LogCacheErrorEndpointRequest {
-	return ApiOBPv510LogCacheErrorEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheErrorEndpointExecute(r ApiOBPv510LogCacheErrorEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheErrorEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/error"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheInfoEndpointRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv510LogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheInfoEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheInfoEndpoint Get Info Level Log Cache
-
-<p>Returns INFO level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheInfoEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheInfoEndpoint(ctx context.Context) ApiOBPv510LogCacheInfoEndpointRequest {
-	return ApiOBPv510LogCacheInfoEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheInfoEndpointExecute(r ApiOBPv510LogCacheInfoEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheInfoEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/info"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheTraceEndpointRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv510LogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheTraceEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheTraceEndpoint Get Trace Level Log Cache
-
-<p>Returns TRACE level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheTraceEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheTraceEndpoint(ctx context.Context) ApiOBPv510LogCacheTraceEndpointRequest {
-	return ApiOBPv510LogCacheTraceEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheTraceEndpointExecute(r ApiOBPv510LogCacheTraceEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheTraceEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/trace"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheWarningEndpointRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv510LogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheWarningEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheWarningEndpoint Get Warning Level Log Cache
-
-<p>Returns WARNING level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheWarningEndpointRequest
-*/
-func (a *SystemAPIService) OBPv510LogCacheWarningEndpoint(ctx context.Context) ApiOBPv510LogCacheWarningEndpointRequest {
-	return ApiOBPv510LogCacheWarningEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemAPIService) OBPv510LogCacheWarningEndpointExecute(r ApiOBPv510LogCacheWarningEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv510LogCacheWarningEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/warning"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetCacheConfigRequest struct {
-	ctx context.Context
-	ApiService *SystemAPIService
-}
-
-func (r ApiOBPv600GetCacheConfigRequest) Execute() (*OBPv600GetCacheConfig200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheConfigExecute(r)
-}
-
-/*
-OBPv600GetCacheConfig Get Cache Configuration
+GetCacheConfig Get Cache Configuration
 
 <p>Returns cache configuration information including:</p>
 <ul>
@@ -797,26 +59,26 @@ OBPv600GetCacheConfig Get Cache Configuration
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheConfigRequest
+ @return ApiGetCacheConfigRequest
 */
-func (a *SystemAPIService) OBPv600GetCacheConfig(ctx context.Context) ApiOBPv600GetCacheConfigRequest {
-	return ApiOBPv600GetCacheConfigRequest{
+func (a *SystemAPIService) GetCacheConfig(ctx context.Context) ApiGetCacheConfigRequest {
+	return ApiGetCacheConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheConfig200Response
-func (a *SystemAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfigRequest) (*OBPv600GetCacheConfig200Response, *http.Response, error) {
+//  @return GetCacheConfig200Response
+func (a *SystemAPIService) GetCacheConfigExecute(r ApiGetCacheConfigRequest) (*GetCacheConfig200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheConfig200Response
+		localVarReturnValue  *GetCacheConfig200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetCacheConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetCacheConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -868,7 +130,7 @@ func (a *SystemAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConf
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -909,17 +171,17 @@ func (a *SystemAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheInfoRequest struct {
+type ApiGetCacheInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetCacheInfoRequest) Execute() (*OBPv600GetCacheInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheInfoExecute(r)
+func (r ApiGetCacheInfoRequest) Execute() (*GetCacheInfo200Response, *http.Response, error) {
+	return r.ApiService.GetCacheInfoExecute(r)
 }
 
 /*
-OBPv600GetCacheInfo Get Cache Information
+GetCacheInfo Get Cache Information
 
 <p>Returns detailed cache information for all namespaces:</p>
 <ul>
@@ -956,26 +218,26 @@ OBPv600GetCacheInfo Get Cache Information
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheInfoRequest
+ @return ApiGetCacheInfoRequest
 */
-func (a *SystemAPIService) OBPv600GetCacheInfo(ctx context.Context) ApiOBPv600GetCacheInfoRequest {
-	return ApiOBPv600GetCacheInfoRequest{
+func (a *SystemAPIService) GetCacheInfo(ctx context.Context) ApiGetCacheInfoRequest {
+	return ApiGetCacheInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheInfo200Response
-func (a *SystemAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoRequest) (*OBPv600GetCacheInfo200Response, *http.Response, error) {
+//  @return GetCacheInfo200Response
+func (a *SystemAPIService) GetCacheInfoExecute(r ApiGetCacheInfoRequest) (*GetCacheInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheInfo200Response
+		localVarReturnValue  *GetCacheInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetCacheInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetCacheInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1027,7 +289,7 @@ func (a *SystemAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1068,17 +330,17 @@ func (a *SystemAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheNamespacesRequest struct {
+type ApiGetCacheNamespacesRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetCacheNamespacesRequest) Execute() (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheNamespacesExecute(r)
+func (r ApiGetCacheNamespacesRequest) Execute() (*GetCacheNamespaces200Response, *http.Response, error) {
+	return r.ApiService.GetCacheNamespacesExecute(r)
 }
 
 /*
-OBPv600GetCacheNamespaces Get Cache Namespaces
+GetCacheNamespaces Get Cache Namespaces
 
 <p>Returns information about all cache namespaces in the system.</p>
 <p>This endpoint provides visibility into:<br />
@@ -1103,26 +365,26 @@ OBPv600GetCacheNamespaces Get Cache Namespaces
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheNamespacesRequest
+ @return ApiGetCacheNamespacesRequest
 */
-func (a *SystemAPIService) OBPv600GetCacheNamespaces(ctx context.Context) ApiOBPv600GetCacheNamespacesRequest {
-	return ApiOBPv600GetCacheNamespacesRequest{
+func (a *SystemAPIService) GetCacheNamespaces(ctx context.Context) ApiGetCacheNamespacesRequest {
+	return ApiGetCacheNamespacesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheNamespaces200Response
-func (a *SystemAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheNamespacesRequest) (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
+//  @return GetCacheNamespaces200Response
+func (a *SystemAPIService) GetCacheNamespacesExecute(r ApiGetCacheNamespacesRequest) (*GetCacheNamespaces200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheNamespaces200Response
+		localVarReturnValue  *GetCacheNamespaces200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetCacheNamespaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetCacheNamespaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1174,7 +436,7 @@ func (a *SystemAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCache
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1215,17 +477,17 @@ func (a *SystemAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCache
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorMethodNamesRequest struct {
+type ApiGetConnectorMethodNamesRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetConnectorMethodNamesRequest) Execute() (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorMethodNamesExecute(r)
+func (r ApiGetConnectorMethodNamesRequest) Execute() (*GetConnectorMethodNames200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorMethodNamesExecute(r)
 }
 
 /*
-OBPv600GetConnectorMethodNames Get Connector Method Names
+GetConnectorMethodNames Get Connector Method Names
 
 <p>Get the list of all available connector method names.</p>
 <p>These are the method names that can be used in Method Routing configuration.</p>
@@ -1260,26 +522,26 @@ These method names are different from API endpoint operation IDs (which you get 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorMethodNamesRequest
+ @return ApiGetConnectorMethodNamesRequest
 */
-func (a *SystemAPIService) OBPv600GetConnectorMethodNames(ctx context.Context) ApiOBPv600GetConnectorMethodNamesRequest {
-	return ApiOBPv600GetConnectorMethodNamesRequest{
+func (a *SystemAPIService) GetConnectorMethodNames(ctx context.Context) ApiGetConnectorMethodNamesRequest {
+	return ApiGetConnectorMethodNamesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorMethodNames200Response
-func (a *SystemAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetConnectorMethodNamesRequest) (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
+//  @return GetConnectorMethodNames200Response
+func (a *SystemAPIService) GetConnectorMethodNamesExecute(r ApiGetConnectorMethodNamesRequest) (*GetConnectorMethodNames200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorMethodNames200Response
+		localVarReturnValue  *GetConnectorMethodNames200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetConnectorMethodNames")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetConnectorMethodNames")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1331,7 +593,7 @@ func (a *SystemAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600Get
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1372,17 +634,17 @@ func (a *SystemAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600Get
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorsRequest struct {
+type ApiGetConnectorsRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetConnectorsRequest) Execute() (*OBPv600GetConnectors200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorsExecute(r)
+func (r ApiGetConnectorsRequest) Execute() (*GetConnectors200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorsExecute(r)
 }
 
 /*
-OBPv600GetConnectors Get Connectors
+GetConnectors Get Connectors
 
 <p>Get the list of connectors and their availability for method routing.</p>
 <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p>
@@ -1410,8 +672,8 @@ This depends on the <code>connector</code> and <code>starConnector_supported_typ
 <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br />
 A connector is available for method routing if it matches the <code>connector</code> prop setting,<br />
 or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetConnectorNames entitlement is required.</p>
+<p>Authentication is Optional.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>connectors</strong></a>: connectors</p>
@@ -1419,26 +681,26 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorsRequest
+ @return ApiGetConnectorsRequest
 */
-func (a *SystemAPIService) OBPv600GetConnectors(ctx context.Context) ApiOBPv600GetConnectorsRequest {
-	return ApiOBPv600GetConnectorsRequest{
+func (a *SystemAPIService) GetConnectors(ctx context.Context) ApiGetConnectorsRequest {
+	return ApiGetConnectorsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectors200Response
-func (a *SystemAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectorsRequest) (*OBPv600GetConnectors200Response, *http.Response, error) {
+//  @return GetConnectors200Response
+func (a *SystemAPIService) GetConnectorsExecute(r ApiGetConnectorsRequest) (*GetConnectors200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectors200Response
+		localVarReturnValue  *GetConnectors200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetConnectors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetConnectors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1465,34 +727,6 @@ func (a *SystemAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectors
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1531,17 +765,17 @@ func (a *SystemAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectors
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetDatabasePoolInfoRequest struct {
+type ApiGetDatabasePoolInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetDatabasePoolInfoRequest) Execute() (*OBPv600GetDatabasePoolInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetDatabasePoolInfoExecute(r)
+func (r ApiGetDatabasePoolInfoRequest) Execute() (*GetDatabasePoolInfo200Response, *http.Response, error) {
+	return r.ApiService.GetDatabasePoolInfoExecute(r)
 }
 
 /*
-OBPv600GetDatabasePoolInfo Get Database Pool Information
+GetDatabasePoolInfo Get Database Pool Information
 
 <p>Returns HikariCP connection pool information including:</p>
 <ul>
@@ -1570,26 +804,26 @@ OBPv600GetDatabasePoolInfo Get Database Pool Information
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetDatabasePoolInfoRequest
+ @return ApiGetDatabasePoolInfoRequest
 */
-func (a *SystemAPIService) OBPv600GetDatabasePoolInfo(ctx context.Context) ApiOBPv600GetDatabasePoolInfoRequest {
-	return ApiOBPv600GetDatabasePoolInfoRequest{
+func (a *SystemAPIService) GetDatabasePoolInfo(ctx context.Context) ApiGetDatabasePoolInfoRequest {
+	return ApiGetDatabasePoolInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetDatabasePoolInfo200Response
-func (a *SystemAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetDatabasePoolInfoRequest) (*OBPv600GetDatabasePoolInfo200Response, *http.Response, error) {
+//  @return GetDatabasePoolInfo200Response
+func (a *SystemAPIService) GetDatabasePoolInfoExecute(r ApiGetDatabasePoolInfoRequest) (*GetDatabasePoolInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetDatabasePoolInfo200Response
+		localVarReturnValue  *GetDatabasePoolInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetDatabasePoolInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetDatabasePoolInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1641,7 +875,7 @@ func (a *SystemAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetData
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1682,17 +916,17 @@ func (a *SystemAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetData
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMigrationsRequest struct {
+type ApiGetMigrationsRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetMigrationsRequest) Execute() (*OBPv600GetMigrations200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMigrationsExecute(r)
+func (r ApiGetMigrationsRequest) Execute() (*GetMigrations200Response, *http.Response, error) {
+	return r.ApiService.GetMigrationsExecute(r)
 }
 
 /*
-OBPv600GetMigrations Get Database Migrations
+GetMigrations Get Database Migrations
 
 <p>Get all database migration script logs.</p>
 <p>This endpoint returns information about all migration scripts that have been executed or attempted.</p>
@@ -1713,26 +947,26 @@ OBPv600GetMigrations Get Database Migrations
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMigrationsRequest
+ @return ApiGetMigrationsRequest
 */
-func (a *SystemAPIService) OBPv600GetMigrations(ctx context.Context) ApiOBPv600GetMigrationsRequest {
-	return ApiOBPv600GetMigrationsRequest{
+func (a *SystemAPIService) GetMigrations(ctx context.Context) ApiGetMigrationsRequest {
+	return ApiGetMigrationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetMigrations200Response
-func (a *SystemAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrationsRequest) (*OBPv600GetMigrations200Response, *http.Response, error) {
+//  @return GetMigrations200Response
+func (a *SystemAPIService) GetMigrationsExecute(r ApiGetMigrationsRequest) (*GetMigrations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetMigrations200Response
+		localVarReturnValue  *GetMigrations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetMigrations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetMigrations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1784,7 +1018,7 @@ func (a *SystemAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrations
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1825,17 +1059,17 @@ func (a *SystemAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetStoredProcedureConnectorHealthRequest struct {
+type ApiGetStoredProcedureConnectorHealthRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiOBPv600GetStoredProcedureConnectorHealthRequest) Execute() (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetStoredProcedureConnectorHealthExecute(r)
+func (r ApiGetStoredProcedureConnectorHealthRequest) Execute() (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+	return r.ApiService.GetStoredProcedureConnectorHealthExecute(r)
 }
 
 /*
-OBPv600GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
+GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
 
 <p>Returns health status of the stored procedure connector including:</p>
 <ul>
@@ -1863,26 +1097,26 @@ The response time depends on the connection pool timeout and JDBC driver setting
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetStoredProcedureConnectorHealthRequest
+ @return ApiGetStoredProcedureConnectorHealthRequest
 */
-func (a *SystemAPIService) OBPv600GetStoredProcedureConnectorHealth(ctx context.Context) ApiOBPv600GetStoredProcedureConnectorHealthRequest {
-	return ApiOBPv600GetStoredProcedureConnectorHealthRequest{
+func (a *SystemAPIService) GetStoredProcedureConnectorHealth(ctx context.Context) ApiGetStoredProcedureConnectorHealthRequest {
+	return ApiGetStoredProcedureConnectorHealthRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetStoredProcedureConnectorHealth200Response
-func (a *SystemAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r ApiOBPv600GetStoredProcedureConnectorHealthRequest) (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+//  @return GetStoredProcedureConnectorHealth200Response
+func (a *SystemAPIService) GetStoredProcedureConnectorHealthExecute(r ApiGetStoredProcedureConnectorHealthRequest) (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetStoredProcedureConnectorHealth200Response
+		localVarReturnValue  *GetStoredProcedureConnectorHealth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600GetStoredProcedureConnectorHealth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetStoredProcedureConnectorHealth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1934,7 +1168,7 @@ func (a *SystemAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1975,24 +1209,24 @@ func (a *SystemAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600InvalidateCacheNamespaceRequest struct {
+type ApiInvalidateCacheNamespaceRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
-	oBPv600InvalidateCacheNamespaceRequest *OBPv600InvalidateCacheNamespaceRequest
+	invalidateCacheNamespaceRequest *InvalidateCacheNamespaceRequest
 }
 
 // Request body
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest OBPv600InvalidateCacheNamespaceRequest) ApiOBPv600InvalidateCacheNamespaceRequest {
-	r.oBPv600InvalidateCacheNamespaceRequest = &oBPv600InvalidateCacheNamespaceRequest
+func (r ApiInvalidateCacheNamespaceRequest) InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest InvalidateCacheNamespaceRequest) ApiInvalidateCacheNamespaceRequest {
+	r.invalidateCacheNamespaceRequest = &invalidateCacheNamespaceRequest
 	return r
 }
 
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) Execute() (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
-	return r.ApiService.OBPv600InvalidateCacheNamespaceExecute(r)
+func (r ApiInvalidateCacheNamespaceRequest) Execute() (*InvalidateCacheNamespace200Response, *http.Response, error) {
+	return r.ApiService.InvalidateCacheNamespaceExecute(r)
 }
 
 /*
-OBPv600InvalidateCacheNamespace Invalidate Cache Namespace
+InvalidateCacheNamespace Invalidate Cache Namespace
 
 <p>Invalidates a cache namespace by incrementing its version counter.</p>
 <p>This provides instant cache invalidation without deleting individual keys.<br />
@@ -2012,26 +1246,26 @@ rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, ab
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600InvalidateCacheNamespaceRequest
+ @return ApiInvalidateCacheNamespaceRequest
 */
-func (a *SystemAPIService) OBPv600InvalidateCacheNamespace(ctx context.Context) ApiOBPv600InvalidateCacheNamespaceRequest {
-	return ApiOBPv600InvalidateCacheNamespaceRequest{
+func (a *SystemAPIService) InvalidateCacheNamespace(ctx context.Context) ApiInvalidateCacheNamespaceRequest {
+	return ApiInvalidateCacheNamespaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600InvalidateCacheNamespace200Response
-func (a *SystemAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600InvalidateCacheNamespaceRequest) (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
+//  @return InvalidateCacheNamespace200Response
+func (a *SystemAPIService) InvalidateCacheNamespaceExecute(r ApiInvalidateCacheNamespaceRequest) (*InvalidateCacheNamespace200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600InvalidateCacheNamespace200Response
+		localVarReturnValue  *InvalidateCacheNamespace200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.OBPv600InvalidateCacheNamespace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.InvalidateCacheNamespace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2041,8 +1275,8 @@ func (a *SystemAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600In
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600InvalidateCacheNamespaceRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600InvalidateCacheNamespaceRequest is required and must be specified")
+	if r.invalidateCacheNamespaceRequest == nil {
+		return localVarReturnValue, nil, reportError("invalidateCacheNamespaceRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2063,7 +1297,7 @@ func (a *SystemAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600In
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600InvalidateCacheNamespaceRequest
+	localVarPostBody = r.invalidateCacheNamespaceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2088,7 +1322,7 @@ func (a *SystemAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600In
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2127,4 +1361,742 @@ func (a *SystemAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600In
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiLogCacheAllEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheAllEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheAllEndpointExecute(r)
+}
+
+/*
+LogCacheAllEndpoint Get All Level Log Cache
+
+<p>Returns logs of all levels from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheAllEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheAllEndpoint(ctx context.Context) ApiLogCacheAllEndpointRequest {
+	return ApiLogCacheAllEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheAllEndpointExecute(r ApiLogCacheAllEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheAllEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/all"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheDebugEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheDebugEndpointExecute(r)
+}
+
+/*
+LogCacheDebugEndpoint Get Debug Level Log Cache
+
+<p>Returns DEBUG level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheDebugEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheDebugEndpoint(ctx context.Context) ApiLogCacheDebugEndpointRequest {
+	return ApiLogCacheDebugEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheDebugEndpointExecute(r ApiLogCacheDebugEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheDebugEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/debug"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheErrorEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheErrorEndpointExecute(r)
+}
+
+/*
+LogCacheErrorEndpoint Get Error Level Log Cache
+
+<p>Returns ERROR level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheErrorEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheErrorEndpoint(ctx context.Context) ApiLogCacheErrorEndpointRequest {
+	return ApiLogCacheErrorEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheErrorEndpointExecute(r ApiLogCacheErrorEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheErrorEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/error"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheInfoEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheInfoEndpointExecute(r)
+}
+
+/*
+LogCacheInfoEndpoint Get Info Level Log Cache
+
+<p>Returns INFO level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheInfoEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheInfoEndpoint(ctx context.Context) ApiLogCacheInfoEndpointRequest {
+	return ApiLogCacheInfoEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheInfoEndpointExecute(r ApiLogCacheInfoEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheInfoEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/info"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheTraceEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheTraceEndpointExecute(r)
+}
+
+/*
+LogCacheTraceEndpoint Get Trace Level Log Cache
+
+<p>Returns TRACE level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheTraceEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheTraceEndpoint(ctx context.Context) ApiLogCacheTraceEndpointRequest {
+	return ApiLogCacheTraceEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheTraceEndpointExecute(r ApiLogCacheTraceEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheTraceEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/trace"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheWarningEndpointRequest struct {
+	ctx context.Context
+	ApiService *SystemAPIService
+}
+
+func (r ApiLogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheWarningEndpointExecute(r)
+}
+
+/*
+LogCacheWarningEndpoint Get Warning Level Log Cache
+
+<p>Returns WARNING level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheWarningEndpointRequest
+*/
+func (a *SystemAPIService) LogCacheWarningEndpoint(ctx context.Context) ApiLogCacheWarningEndpointRequest {
+	return ApiLogCacheWarningEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SystemAPIService) LogCacheWarningEndpointExecute(r ApiLogCacheWarningEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.LogCacheWarningEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/warning"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }

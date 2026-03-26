@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,125 +39,6 @@ namespace OpenBankProject.Api
         BankApiEvents Events { get; }
 
         /// <summary>
-        /// Get Transaction Types at Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200GetTransactionTypesApiResponse"/>&gt;</returns>
-        Task<IOBPv200GetTransactionTypesApiResponse> OBPv200GetTransactionTypesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Transaction Types at Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200GetTransactionTypesApiResponse"/>?&gt;</returns>
-        Task<IOBPv200GetTransactionTypesApiResponse?> OBPv200GetTransactionTypesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Transaction Type at bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210CreateTransactionTypeApiResponse"/>&gt;</returns>
-        Task<IOBPv210CreateTransactionTypeApiResponse> OBPv210CreateTransactionTypeAsync(string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Transaction Type at bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210CreateTransactionTypeApiResponse"/>?&gt;</returns>
-        Task<IOBPv210CreateTransactionTypeApiResponse?> OBPv210CreateTransactionTypeOrDefaultAsync(string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Transaction Request Types at Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
-        Task<IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse> OBPv210GetTransactionRequestTypesSupportedByBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Transaction Request Types at Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse?> OBPv210GetTransactionRequestTypesSupportedByBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Branch
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="branchid">The BRANCHID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchApiResponse"/>&gt;</returns>
-        Task<IOBPv300GetBranchApiResponse> OBPv300GetBranchAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Branch
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="branchid">The BRANCHID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchApiResponse"/>?&gt;</returns>
-        Task<IOBPv300GetBranchApiResponse?> OBPv300GetBranchOrDefaultAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Branches for a Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about branches for a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;li&gt;Structured opening hours&lt;/li&gt; &lt;li&gt;Accessible flag&lt;/li&gt; &lt;li&gt;Branch Type&lt;/li&gt; &lt;li&gt;More Info&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Pagination:&lt;/p&gt; &lt;p&gt;By default, 50 records are returned.&lt;/p&gt; &lt;p&gt;You can use the url query parameters &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; for pagination&lt;br /&gt; You can also use the follow url query parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;city - string, find Branches those in this city, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;withinMetersOf - number, find Branches within given meters distance, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt;nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;li&gt;nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branches\&quot;&gt;&lt;strong&gt;branches&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchesApiResponse"/>&gt;</returns>
-        Task<IOBPv300GetBranchesApiResponse> OBPv300GetBranchesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Branches for a Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about branches for a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;li&gt;Structured opening hours&lt;/li&gt; &lt;li&gt;Accessible flag&lt;/li&gt; &lt;li&gt;Branch Type&lt;/li&gt; &lt;li&gt;More Info&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Pagination:&lt;/p&gt; &lt;p&gt;By default, 50 records are returned.&lt;/p&gt; &lt;p&gt;You can use the url query parameters &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; for pagination&lt;br /&gt; You can also use the follow url query parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;city - string, find Branches those in this city, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;withinMetersOf - number, find Branches within given meters distance, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt;nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;li&gt;nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branches\&quot;&gt;&lt;strong&gt;branches&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchesApiResponse"/>?&gt;</returns>
-        Task<IOBPv300GetBranchesApiResponse?> OBPv300GetBranchesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Create an Account Webhook
         /// </summary>
         /// <remarks>
@@ -165,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateAccountWebhookRequest">Request body</param>
+        /// <param name="createAccountWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountWebhookApiResponse"/>&gt;</returns>
-        Task<IOBPv310CreateAccountWebhookApiResponse> OBPv310CreateAccountWebhookAsync(string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountWebhookApiResponse"/>&gt;</returns>
+        Task<ICreateAccountWebhookApiResponse> CreateAccountWebhookAsync(string bankid, CreateAccountWebhookRequest createAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create an Account Webhook
@@ -177,58 +58,33 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateAccountWebhookRequest">Request body</param>
+        /// <param name="createAccountWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountWebhookApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CreateAccountWebhookApiResponse?> OBPv310CreateAccountWebhookOrDefaultAsync(string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountWebhookApiResponse"/>?&gt;</returns>
+        Task<ICreateAccountWebhookApiResponse?> CreateAccountWebhookOrDefaultAsync(string bankid, CreateAccountWebhookRequest createAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Enable/Disable an Account Webhook
+        /// Create Bank
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="createBankRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310EnableDisableAccountWebhookApiResponse"/>&gt;</returns>
-        Task<IOBPv310EnableDisableAccountWebhookApiResponse> OBPv310EnableDisableAccountWebhookAsync(string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankApiResponse"/>&gt;</returns>
+        Task<ICreateBankApiResponse> CreateBankAsync(CreateBankRequest createBankRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Enable/Disable an Account Webhook
+        /// Create Bank
         /// </summary>
         /// <remarks>
-        /// &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
         /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="createBankRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310EnableDisableAccountWebhookApiResponse"/>?&gt;</returns>
-        Task<IOBPv310EnableDisableAccountWebhookApiResponse?> OBPv310EnableDisableAccountWebhookOrDefaultAsync(string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Account Webhooks
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetAccountWebhooksApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetAccountWebhooksApiResponse> OBPv310GetAccountWebhooksAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Account Webhooks
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetAccountWebhooksApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetAccountWebhooksApiResponse?> OBPv310GetAccountWebhooksOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankApiResponse"/>?&gt;</returns>
+        Task<ICreateBankApiResponse?> CreateBankOrDefaultAsync(CreateBankRequest createBankRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create bank level Account Notification Webhook
@@ -238,10 +94,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateBankAccountNotificationWebhookApiResponse> OBPv400CreateBankAccountNotificationWebhookAsync(string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        Task<ICreateBankAccountNotificationWebhookApiResponse> CreateBankAccountNotificationWebhookAsync(string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create bank level Account Notification Webhook
@@ -250,10 +106,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a notification Webhook that will fire for all accounts on the specified Bank.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAccountNotificationWebhookApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateBankAccountNotificationWebhookApiResponse?> OBPv400CreateBankAccountNotificationWebhookOrDefaultAsync(string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountNotificationWebhookApiResponse"/>?&gt;</returns>
+        Task<ICreateBankAccountNotificationWebhookApiResponse?> CreateBankAccountNotificationWebhookOrDefaultAsync(string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Attribute
@@ -263,10 +119,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateBankAttributeApiResponse> OBPv400CreateBankAttributeAsync(string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateBankAttributeApiResponse> CreateBankAttributeAsync(string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Attribute
@@ -275,10 +131,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create Bank Attribute&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateBankAttributeApiResponse?> OBPv400CreateBankAttributeOrDefaultAsync(string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateBankAttributeApiResponse?> CreateBankAttributeOrDefaultAsync(string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Bank Attribute Definition
@@ -288,10 +144,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse> OBPv400CreateOrUpdateBankAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateBankAttributeDefinitionApiResponse> CreateOrUpdateBankAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create or Update Bank Attribute Definition
@@ -300,10 +156,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update Bank Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Bank&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateBankAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateBankAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateBankAttributeDefinitionApiResponse?> CreateOrUpdateBankAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Settlement Account
@@ -313,10 +169,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSettlementAccountRequest">Request body</param>
+        /// <param name="createSettlementAccountRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSettlementAccountApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateSettlementAccountApiResponse> OBPv400CreateSettlementAccountAsync(string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSettlementAccountApiResponse"/>&gt;</returns>
+        Task<ICreateSettlementAccountApiResponse> CreateSettlementAccountAsync(string bankid, CreateSettlementAccountRequest createSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Settlement Account
@@ -325,10 +181,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a new settlement account at a bank.&lt;/p&gt; &lt;p&gt;The created settlement account id will be the concatenation of the payment system and the account currency.&lt;br /&gt; For examples: SEPA_SETTLEMENT_ACCOUNT_EUR, CARD_SETTLEMENT_ACCOUNT_USD&lt;/p&gt; &lt;p&gt;By default, when you create a new bank, two settlements accounts are created automatically: OBP_DEFAULT_INCOMING_ACCOUNT_ID and OBP_DEFAULT_OUTGOING_ACCOUNT_ID&lt;br /&gt; Those two accounts have EUR as default currency.&lt;/p&gt; &lt;p&gt;If you want to create default settlement account for a specific currency, you can fill the &lt;code&gt;payment_system&lt;/code&gt; field with the &lt;code&gt;DEFAULT&lt;/code&gt; value.&lt;/p&gt; &lt;p&gt;When a transaction is saved in OBP through the mapped connector, OBP-API look for the account to save the double-entry transaction.&lt;br /&gt; If no OBP account can be found from the counterparty, the double-entry transaction will be saved on a bank settlement account.&lt;br /&gt; - First, the mapped connector looks for a settlement account specific to the payment system and currency. E.g SEPA_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - If we don&#39;t find any specific settlement account with the payment system, we look for a default settlement account for the counterparty currency. E.g DEFAULT_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - Else, we select one of the two OBP default settlement accounts (OBP_DEFAULT_INCOMING_ACCOUNT_ID/OBP_DEFAULT_OUTGOING_ACCOUNT_ID) according to the transaction direction.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID &lt;em&gt;is&lt;/em&gt; specified, the logged in user must have the Role CanCreateAccount. Once created, the Account will be owned by the User specified by USER_ID.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID is &lt;em&gt;not&lt;/em&gt; specified, the account will be owned by the logged in User.&lt;/p&gt; &lt;p&gt;Note: The Amount MUST be zero.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSettlementAccountRequest">Request body</param>
+        /// <param name="createSettlementAccountRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSettlementAccountApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateSettlementAccountApiResponse?> OBPv400CreateSettlementAccountOrDefaultAsync(string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSettlementAccountApiResponse"/>?&gt;</returns>
+        Task<ICreateSettlementAccountApiResponse?> CreateSettlementAccountOrDefaultAsync(string bankid, CreateSettlementAccountRequest createSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create system level Account Notification Webhook
@@ -337,10 +193,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateSystemAccountNotificationWebhookApiResponse> OBPv400CreateSystemAccountNotificationWebhookAsync(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        Task<ICreateSystemAccountNotificationWebhookApiResponse> CreateSystemAccountNotificationWebhookAsync(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create system level Account Notification Webhook
@@ -348,10 +204,35 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSystemAccountNotificationWebhookApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateSystemAccountNotificationWebhookApiResponse?> OBPv400CreateSystemAccountNotificationWebhookOrDefaultAsync(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSystemAccountNotificationWebhookApiResponse"/>?&gt;</returns>
+        Task<ICreateSystemAccountNotificationWebhookApiResponse?> CreateSystemAccountNotificationWebhookOrDefaultAsync(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Transaction Type at bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionTypeApiResponse"/>&gt;</returns>
+        Task<ICreateTransactionTypeApiResponse> CreateTransactionTypeAsync(string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Transaction Type at bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionTypeApiResponse"/>?&gt;</returns>
+        Task<ICreateTransactionTypeApiResponse?> CreateTransactionTypeOrDefaultAsync(string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Attribute
@@ -363,8 +244,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteBankAttributeApiResponse> OBPv400DeleteBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteBankAttributeApiResponse> DeleteBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Attribute
@@ -375,8 +256,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteBankAttributeApiResponse?> OBPv400DeleteBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankAttributeApiResponse?> DeleteBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Cascade
@@ -387,8 +268,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankCascadeApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteBankCascadeApiResponse> OBPv400DeleteBankCascadeAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankCascadeApiResponse"/>&gt;</returns>
+        Task<IDeleteBankCascadeApiResponse> DeleteBankCascadeAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Cascade
@@ -398,8 +279,79 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankCascadeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteBankCascadeApiResponse?> OBPv400DeleteBankCascadeOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankCascadeApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankCascadeApiResponse?> DeleteBankCascadeOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Enable/Disable an Account Webhook
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="enableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IEnableDisableAccountWebhookApiResponse"/>&gt;</returns>
+        Task<IEnableDisableAccountWebhookApiResponse> EnableDisableAccountWebhookAsync(string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Enable/Disable an Account Webhook
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="enableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IEnableDisableAccountWebhookApiResponse"/>?&gt;</returns>
+        Task<IEnableDisableAccountWebhookApiResponse?> EnableDisableAccountWebhookOrDefaultAsync(string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Account Webhooks
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountWebhooksApiResponse"/>&gt;</returns>
+        Task<IGetAccountWebhooksApiResponse> GetAccountWebhooksAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Account Webhooks
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountWebhooksApiResponse"/>?&gt;</returns>
+        Task<IGetAccountWebhooksApiResponse?> GetAccountWebhooksOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankApiResponse"/>&gt;</returns>
+        Task<IGetBankApiResponse> GetBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankApiResponse"/>?&gt;</returns>
+        Task<IGetBankApiResponse?> GetBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Attribute By BANK_ATTRIBUTE_ID
@@ -411,8 +363,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankAttributeApiResponse> OBPv400GetBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributeApiResponse"/>&gt;</returns>
+        Task<IGetBankAttributeApiResponse> GetBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Attribute By BANK_ATTRIBUTE_ID
@@ -423,8 +375,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankAttributeApiResponse?> OBPv400GetBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributeApiResponse"/>?&gt;</returns>
+        Task<IGetBankAttributeApiResponse?> GetBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Attributes
@@ -435,8 +387,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankAttributesApiResponse> OBPv400GetBankAttributesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributesApiResponse"/>&gt;</returns>
+        Task<IGetBankAttributesApiResponse> GetBankAttributesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Attributes
@@ -446,8 +398,77 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankAttributesApiResponse?> OBPv400GetBankAttributesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributesApiResponse"/>?&gt;</returns>
+        Task<IGetBankAttributesApiResponse?> GetBankAttributesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Banks
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBanksApiResponse"/>&gt;</returns>
+        Task<IGetBanksApiResponse> GetBanksAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Banks
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBanksApiResponse"/>?&gt;</returns>
+        Task<IGetBanksApiResponse?> GetBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Branch
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="branchid">The BRANCHID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchApiResponse"/>&gt;</returns>
+        Task<IGetBranchApiResponse> GetBranchAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Branch
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="branchid">The BRANCHID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchApiResponse"/>?&gt;</returns>
+        Task<IGetBranchApiResponse?> GetBranchOrDefaultAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Branches for a Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about branches for a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;li&gt;Structured opening hours&lt;/li&gt; &lt;li&gt;Accessible flag&lt;/li&gt; &lt;li&gt;Branch Type&lt;/li&gt; &lt;li&gt;More Info&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Pagination:&lt;/p&gt; &lt;p&gt;By default, 50 records are returned.&lt;/p&gt; &lt;p&gt;You can use the url query parameters &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; for pagination&lt;br /&gt; You can also use the follow url query parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;city - string, find Branches those in this city, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;withinMetersOf - number, find Branches within given meters distance, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt;nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;li&gt;nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branches\&quot;&gt;&lt;strong&gt;branches&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchesApiResponse"/>&gt;</returns>
+        Task<IGetBranchesApiResponse> GetBranchesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Branches for a Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about branches for a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;li&gt;Structured opening hours&lt;/li&gt; &lt;li&gt;Accessible flag&lt;/li&gt; &lt;li&gt;Branch Type&lt;/li&gt; &lt;li&gt;More Info&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Pagination:&lt;/p&gt; &lt;p&gt;By default, 50 records are returned.&lt;/p&gt; &lt;p&gt;You can use the url query parameters &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; for pagination&lt;br /&gt; You can also use the follow url query parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;city - string, find Branches those in this city, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;withinMetersOf - number, find Branches within given meters distance, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt;nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;li&gt;nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branches\&quot;&gt;&lt;strong&gt;branches&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchesApiResponse"/>?&gt;</returns>
+        Task<IGetBranchesApiResponse?> GetBranchesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Settlement accounts at Bank
@@ -458,8 +479,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSettlementAccountsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetSettlementAccountsApiResponse> OBPv400GetSettlementAccountsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSettlementAccountsApiResponse"/>&gt;</returns>
+        Task<IGetSettlementAccountsApiResponse> GetSettlementAccountsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Settlement accounts at Bank
@@ -469,8 +490,77 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSettlementAccountsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetSettlementAccountsApiResponse?> OBPv400GetSettlementAccountsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSettlementAccountsApiResponse"/>?&gt;</returns>
+        Task<IGetSettlementAccountsApiResponse?> GetSettlementAccountsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Transaction Request Types at Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
+        Task<IGetTransactionRequestTypesSupportedByBankApiResponse> GetTransactionRequestTypesSupportedByBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Transaction Request Types at Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestTypesSupportedByBankApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionRequestTypesSupportedByBankApiResponse?> GetTransactionRequestTypesSupportedByBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Transaction Types at Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionTypesApiResponse"/>&gt;</returns>
+        Task<IGetTransactionTypesApiResponse> GetTransactionTypesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Transaction Types at Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionTypesApiResponse"/>?&gt;</returns>
+        Task<IGetTransactionTypesApiResponse?> GetTransactionTypesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateBankRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankApiResponse"/>&gt;</returns>
+        Task<IUpdateBankApiResponse> UpdateBankAsync(UpdateBankRequest updateBankRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="updateBankRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankApiResponse?> UpdateBankOrDefaultAsync(UpdateBankRequest updateBankRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Attribute
@@ -481,10 +571,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateBankAttributeApiResponse> OBPv400UpdateBankAttributeAsync(string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateBankAttributeApiResponse> UpdateBankAttributeAsync(string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Attribute
@@ -494,106 +584,118 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateBankAttributeApiResponse?> OBPv400UpdateBankAttributeOrDefaultAsync(string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv500UpdateBankRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500UpdateBankApiResponse"/>&gt;</returns>
-        Task<IOBPv500UpdateBankApiResponse> OBPv500UpdateBankAsync(OBPv500UpdateBankRequest oBPv500UpdateBankRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="oBPv500UpdateBankRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500UpdateBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv500UpdateBankApiResponse?> OBPv500UpdateBankOrDefaultAsync(OBPv500UpdateBankRequest oBPv500UpdateBankRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateBankRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateBankApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateBankApiResponse> OBPv600CreateBankAsync(OBPv600CreateBankRequest oBPv600CreateBankRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="oBPv600CreateBankRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateBankApiResponse?> OBPv600CreateBankOrDefaultAsync(OBPv600CreateBankRequest oBPv600CreateBankRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBankApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetBankApiResponse> OBPv600GetBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetBankApiResponse?> OBPv600GetBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Banks
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBanksApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetBanksApiResponse> OBPv600GetBanksAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Banks
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBanksApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetBanksApiResponse?> OBPv600GetBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankAttributeApiResponse?> UpdateBankAttributeOrDefaultAsync(string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv210CreateTransactionTypeApiResponse"/>
+    /// The <see cref="ICreateAccountWebhookApiResponse"/>
     /// </summary>
-    public interface IOBPv210CreateTransactionTypeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv210CreateTransactionType200Response?>
+    public interface ICreateAccountWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.EnableDisableAccountWebhook200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="ICreateBankApiResponse"/>
+    /// </summary>
+    public interface ICreateBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBank200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="ICreateBankAccountNotificationWebhookApiResponse"/>
+    /// </summary>
+    public interface ICreateBankAccountNotificationWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateBankAccountNotificationWebhook200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="ICreateSettlementAccountApiResponse"/>
+    /// </summary>
+    public interface ICreateSettlementAccountApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateSettlementAccount200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 404 NotFound
+        /// </summary>
+        /// <returns></returns>
+        bool IsNotFound { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="ICreateSystemAccountNotificationWebhookApiResponse"/>
+    /// </summary>
+    public interface ICreateSystemAccountNotificationWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateSystemAccountNotificationWebhook200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="ICreateTransactionTypeApiResponse"/>
+    /// </summary>
+    public interface ICreateTransactionTypeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateTransactionType200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -621,27 +723,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>
+    /// The <see cref="IDeleteBankCascadeApiResponse"/>
     /// </summary>
-    public interface IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv210GetTransactionRequestTypesSupportedByBank200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv300GetBranchApiResponse"/>
-    /// </summary>
-    public interface IOBPv300GetBranchApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv300GetBranches200ResponsePropertiesBranchesItems?>
+    public interface IDeleteBankCascadeApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -663,9 +747,45 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv300GetBranchesApiResponse"/>
+    /// The <see cref="IEnableDisableAccountWebhookApiResponse"/>
     /// </summary>
-    public interface IOBPv300GetBranchesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv300GetBranches200Response?>
+    public interface IEnableDisableAccountWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.EnableDisableAccountWebhook200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetAccountWebhooksApiResponse"/>
+    /// </summary>
+    public interface IGetAccountWebhooksApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetAccountWebhooks200Response?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IGetBranchApiResponse"/>
+    /// </summary>
+    public interface IGetBranchApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBranches200ResponseBranchesInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -687,63 +807,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310CreateAccountWebhookApiResponse"/>
+    /// The <see cref="IGetBranchesApiResponse"/>
     /// </summary>
-    public interface IOBPv310CreateAccountWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv310EnableDisableAccountWebhookApiResponse"/>
-    /// </summary>
-    public interface IOBPv310EnableDisableAccountWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv310GetAccountWebhooksApiResponse"/>
-    /// </summary>
-    public interface IOBPv310GetAccountWebhooksApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetAccountWebhooks200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400CreateBankAccountNotificationWebhookApiResponse"/>
-    /// </summary>
-    public interface IOBPv400CreateBankAccountNotificationWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400CreateBankAccountNotificationWebhook200Response?>
+    public interface IGetBranchesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetBranches200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -765,9 +831,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateSettlementAccountApiResponse"/>
+    /// The <see cref="IGetSettlementAccountsApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateSettlementAccountApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400CreateSettlementAccount200Response?>
+    public interface IGetSettlementAccountsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetSettlementAccounts200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -789,9 +855,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateSystemAccountNotificationWebhookApiResponse"/>
+    /// The <see cref="IGetTransactionRequestTypesSupportedByBankApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateSystemAccountNotificationWebhookApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400CreateSystemAccountNotificationWebhook200Response?>
+    public interface IGetTransactionRequestTypesSupportedByBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetTransactionRequestTypesSupportedByBank200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -807,57 +873,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteBankCascadeApiResponse"/>
+    /// The <see cref="IUpdateBankApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteBankCascadeApiResponse : OpenBankProject.Client.IApiResponse
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv400GetSettlementAccountsApiResponse"/>
-    /// </summary>
-    public interface IOBPv400GetSettlementAccountsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetSettlementAccounts200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 404 NotFound
-        /// </summary>
-        /// <returns></returns>
-        bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv500UpdateBankApiResponse"/>
-    /// </summary>
-    public interface IOBPv500UpdateBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv500UpdateBank200Response?>
+    public interface IUpdateBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.UpdateBank200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -876,24 +894,6 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <returns></returns>
         bool IsNotFound { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IOBPv600CreateBankApiResponse"/>
-    /// </summary>
-    public interface IOBPv600CreateBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetBank200Response?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
 
         /// <summary>
         /// Returns true if the response is 500 InternalServerError
@@ -910,461 +910,461 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv200GetTransactionTypes;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAccountWebhook;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv200GetTransactionTypes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAccountWebhook;
 
-        internal void ExecuteOnOBPv200GetTransactionTypes(AccountInformationServiceAISApi.OBPv200GetTransactionTypesApiResponse apiResponse)
+        internal void ExecuteOnCreateAccountWebhook(BankApi.CreateAccountWebhookApiResponse apiResponse)
         {
-            OnOBPv200GetTransactionTypes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAccountWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv200GetTransactionTypes(Exception exception)
+        internal void ExecuteOnErrorCreateAccountWebhook(Exception exception)
         {
-            OnErrorOBPv200GetTransactionTypes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAccountWebhook?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv210CreateTransactionType;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv210CreateTransactionType;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBank;
 
-        internal void ExecuteOnOBPv210CreateTransactionType(BankApi.OBPv210CreateTransactionTypeApiResponse apiResponse)
+        internal void ExecuteOnCreateBank(BankApi.CreateBankApiResponse apiResponse)
         {
-            OnOBPv210CreateTransactionType?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv210CreateTransactionType(Exception exception)
+        internal void ExecuteOnErrorCreateBank(Exception exception)
         {
-            OnErrorOBPv210CreateTransactionType?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv210GetTransactionRequestTypesSupportedByBank;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankAccountNotificationWebhook;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv210GetTransactionRequestTypesSupportedByBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankAccountNotificationWebhook;
 
-        internal void ExecuteOnOBPv210GetTransactionRequestTypesSupportedByBank(BankApi.OBPv210GetTransactionRequestTypesSupportedByBankApiResponse apiResponse)
+        internal void ExecuteOnCreateBankAccountNotificationWebhook(BankApi.CreateBankAccountNotificationWebhookApiResponse apiResponse)
         {
-            OnOBPv210GetTransactionRequestTypesSupportedByBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankAccountNotificationWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv210GetTransactionRequestTypesSupportedByBank(Exception exception)
+        internal void ExecuteOnErrorCreateBankAccountNotificationWebhook(Exception exception)
         {
-            OnErrorOBPv210GetTransactionRequestTypesSupportedByBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankAccountNotificationWebhook?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300GetBranch;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300GetBranch;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankAttribute;
 
-        internal void ExecuteOnOBPv300GetBranch(BankApi.OBPv300GetBranchApiResponse apiResponse)
+        internal void ExecuteOnCreateBankAttribute(AttributeApi.CreateBankAttributeApiResponse apiResponse)
         {
-            OnOBPv300GetBranch?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300GetBranch(Exception exception)
+        internal void ExecuteOnErrorCreateBankAttribute(Exception exception)
         {
-            OnErrorOBPv300GetBranch?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300GetBranches;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateBankAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300GetBranches;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateBankAttributeDefinition;
 
-        internal void ExecuteOnOBPv300GetBranches(BankApi.OBPv300GetBranchesApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateBankAttributeDefinition(AttributeApi.CreateOrUpdateBankAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv300GetBranches?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateBankAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300GetBranches(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateBankAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv300GetBranches?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateBankAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CreateAccountWebhook;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateSettlementAccount;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CreateAccountWebhook;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateSettlementAccount;
 
-        internal void ExecuteOnOBPv310CreateAccountWebhook(BankApi.OBPv310CreateAccountWebhookApiResponse apiResponse)
+        internal void ExecuteOnCreateSettlementAccount(BankApi.CreateSettlementAccountApiResponse apiResponse)
         {
-            OnOBPv310CreateAccountWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateSettlementAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CreateAccountWebhook(Exception exception)
+        internal void ExecuteOnErrorCreateSettlementAccount(Exception exception)
         {
-            OnErrorOBPv310CreateAccountWebhook?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateSettlementAccount?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310EnableDisableAccountWebhook;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateSystemAccountNotificationWebhook;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310EnableDisableAccountWebhook;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateSystemAccountNotificationWebhook;
 
-        internal void ExecuteOnOBPv310EnableDisableAccountWebhook(BankApi.OBPv310EnableDisableAccountWebhookApiResponse apiResponse)
+        internal void ExecuteOnCreateSystemAccountNotificationWebhook(BankApi.CreateSystemAccountNotificationWebhookApiResponse apiResponse)
         {
-            OnOBPv310EnableDisableAccountWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateSystemAccountNotificationWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310EnableDisableAccountWebhook(Exception exception)
+        internal void ExecuteOnErrorCreateSystemAccountNotificationWebhook(Exception exception)
         {
-            OnErrorOBPv310EnableDisableAccountWebhook?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateSystemAccountNotificationWebhook?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetAccountWebhooks;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateTransactionType;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetAccountWebhooks;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateTransactionType;
 
-        internal void ExecuteOnOBPv310GetAccountWebhooks(BankApi.OBPv310GetAccountWebhooksApiResponse apiResponse)
+        internal void ExecuteOnCreateTransactionType(BankApi.CreateTransactionTypeApiResponse apiResponse)
         {
-            OnOBPv310GetAccountWebhooks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateTransactionType?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetAccountWebhooks(Exception exception)
+        internal void ExecuteOnErrorCreateTransactionType(Exception exception)
         {
-            OnErrorOBPv310GetAccountWebhooks?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateTransactionType?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateBankAccountNotificationWebhook;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateBankAccountNotificationWebhook;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankAttribute;
 
-        internal void ExecuteOnOBPv400CreateBankAccountNotificationWebhook(BankApi.OBPv400CreateBankAccountNotificationWebhookApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankAttribute(AttributeApi.DeleteBankAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateBankAccountNotificationWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateBankAccountNotificationWebhook(Exception exception)
+        internal void ExecuteOnErrorDeleteBankAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateBankAccountNotificationWebhook?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateBankAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankCascade;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateBankAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankCascade;
 
-        internal void ExecuteOnOBPv400CreateBankAttribute(AttributeApi.OBPv400CreateBankAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankCascade(BankApi.DeleteBankCascadeApiResponse apiResponse)
         {
-            OnOBPv400CreateBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankCascade?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateBankAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteBankCascade(Exception exception)
         {
-            OnErrorOBPv400CreateBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankCascade?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateBankAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnEnableDisableAccountWebhook;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateBankAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorEnableDisableAccountWebhook;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateBankAttributeDefinition(AttributeApi.OBPv400CreateOrUpdateBankAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnEnableDisableAccountWebhook(BankApi.EnableDisableAccountWebhookApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateBankAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnEnableDisableAccountWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateBankAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorEnableDisableAccountWebhook(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateBankAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorEnableDisableAccountWebhook?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateSettlementAccount;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAccountWebhooks;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateSettlementAccount;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAccountWebhooks;
 
-        internal void ExecuteOnOBPv400CreateSettlementAccount(BankApi.OBPv400CreateSettlementAccountApiResponse apiResponse)
+        internal void ExecuteOnGetAccountWebhooks(BankApi.GetAccountWebhooksApiResponse apiResponse)
         {
-            OnOBPv400CreateSettlementAccount?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAccountWebhooks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateSettlementAccount(Exception exception)
+        internal void ExecuteOnErrorGetAccountWebhooks(Exception exception)
         {
-            OnErrorOBPv400CreateSettlementAccount?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAccountWebhooks?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateSystemAccountNotificationWebhook;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateSystemAccountNotificationWebhook;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBank;
 
-        internal void ExecuteOnOBPv400CreateSystemAccountNotificationWebhook(BankApi.OBPv400CreateSystemAccountNotificationWebhookApiResponse apiResponse)
+        internal void ExecuteOnGetBank(AccountInformationServiceAISApi.GetBankApiResponse apiResponse)
         {
-            OnOBPv400CreateSystemAccountNotificationWebhook?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateSystemAccountNotificationWebhook(Exception exception)
+        internal void ExecuteOnErrorGetBank(Exception exception)
         {
-            OnErrorOBPv400CreateSystemAccountNotificationWebhook?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteBankAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteBankAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankAttribute;
 
-        internal void ExecuteOnOBPv400DeleteBankAttribute(AttributeApi.OBPv400DeleteBankAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetBankAttribute(AttributeApi.GetBankAttributeApiResponse apiResponse)
         {
-            OnOBPv400DeleteBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteBankAttribute(Exception exception)
+        internal void ExecuteOnErrorGetBankAttribute(Exception exception)
         {
-            OnErrorOBPv400DeleteBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteBankCascade;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankAttributes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteBankCascade;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankAttributes;
 
-        internal void ExecuteOnOBPv400DeleteBankCascade(BankApi.OBPv400DeleteBankCascadeApiResponse apiResponse)
+        internal void ExecuteOnGetBankAttributes(AttributeApi.GetBankAttributesApiResponse apiResponse)
         {
-            OnOBPv400DeleteBankCascade?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteBankCascade(Exception exception)
+        internal void ExecuteOnErrorGetBankAttributes(Exception exception)
         {
-            OnErrorOBPv400DeleteBankCascade?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankAttributes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBanks;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBanks;
 
-        internal void ExecuteOnOBPv400GetBankAttribute(AttributeApi.OBPv400GetBankAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetBanks(AccountInformationServiceAISApi.GetBanksApiResponse apiResponse)
         {
-            OnOBPv400GetBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBanks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankAttribute(Exception exception)
+        internal void ExecuteOnErrorGetBanks(Exception exception)
         {
-            OnErrorOBPv400GetBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBanks?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankAttributes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBranch;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankAttributes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBranch;
 
-        internal void ExecuteOnOBPv400GetBankAttributes(AttributeApi.OBPv400GetBankAttributesApiResponse apiResponse)
+        internal void ExecuteOnGetBranch(BankApi.GetBranchApiResponse apiResponse)
         {
-            OnOBPv400GetBankAttributes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBranch?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankAttributes(Exception exception)
+        internal void ExecuteOnErrorGetBranch(Exception exception)
         {
-            OnErrorOBPv400GetBankAttributes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBranch?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetSettlementAccounts;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBranches;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetSettlementAccounts;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBranches;
 
-        internal void ExecuteOnOBPv400GetSettlementAccounts(BankApi.OBPv400GetSettlementAccountsApiResponse apiResponse)
+        internal void ExecuteOnGetBranches(BankApi.GetBranchesApiResponse apiResponse)
         {
-            OnOBPv400GetSettlementAccounts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBranches?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetSettlementAccounts(Exception exception)
+        internal void ExecuteOnErrorGetBranches(Exception exception)
         {
-            OnErrorOBPv400GetSettlementAccounts?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBranches?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateBankAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetSettlementAccounts;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateBankAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetSettlementAccounts;
 
-        internal void ExecuteOnOBPv400UpdateBankAttribute(AttributeApi.OBPv400UpdateBankAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetSettlementAccounts(BankApi.GetSettlementAccountsApiResponse apiResponse)
         {
-            OnOBPv400UpdateBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetSettlementAccounts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateBankAttribute(Exception exception)
+        internal void ExecuteOnErrorGetSettlementAccounts(Exception exception)
         {
-            OnErrorOBPv400UpdateBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetSettlementAccounts?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv500UpdateBank;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionRequestTypesSupportedByBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv500UpdateBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionRequestTypesSupportedByBank;
 
-        internal void ExecuteOnOBPv500UpdateBank(BankApi.OBPv500UpdateBankApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionRequestTypesSupportedByBank(BankApi.GetTransactionRequestTypesSupportedByBankApiResponse apiResponse)
         {
-            OnOBPv500UpdateBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionRequestTypesSupportedByBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv500UpdateBank(Exception exception)
+        internal void ExecuteOnErrorGetTransactionRequestTypesSupportedByBank(Exception exception)
         {
-            OnErrorOBPv500UpdateBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionRequestTypesSupportedByBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateBank;
+        public event EventHandler<ApiResponseEventArgs>? OnGetTransactionTypes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetTransactionTypes;
 
-        internal void ExecuteOnOBPv600CreateBank(BankApi.OBPv600CreateBankApiResponse apiResponse)
+        internal void ExecuteOnGetTransactionTypes(AccountInformationServiceAISApi.GetTransactionTypesApiResponse apiResponse)
         {
-            OnOBPv600CreateBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetTransactionTypes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateBank(Exception exception)
+        internal void ExecuteOnErrorGetTransactionTypes(Exception exception)
         {
-            OnErrorOBPv600CreateBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetTransactionTypes?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetBank;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBank;
 
-        internal void ExecuteOnOBPv600GetBank(AccountInformationServiceAISApi.OBPv600GetBankApiResponse apiResponse)
+        internal void ExecuteOnUpdateBank(BankApi.UpdateBankApiResponse apiResponse)
         {
-            OnOBPv600GetBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetBank(Exception exception)
+        internal void ExecuteOnErrorUpdateBank(Exception exception)
         {
-            OnErrorOBPv600GetBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetBanks;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBankAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetBanks;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBankAttribute;
 
-        internal void ExecuteOnOBPv600GetBanks(AccountInformationServiceAISApi.OBPv600GetBanksApiResponse apiResponse)
+        internal void ExecuteOnUpdateBankAttribute(AttributeApi.UpdateBankAttributeApiResponse apiResponse)
         {
-            OnOBPv600GetBanks?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBankAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetBanks(Exception exception)
+        internal void ExecuteOnErrorUpdateBankAttribute(Exception exception)
         {
-            OnErrorOBPv600GetBanks?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBankAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -1422,17 +1422,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv200GetTransactionTypes(ref string bankid);
+        partial void FormatCreateAccountWebhook(ref string bankid, CreateAccountWebhookRequest createAccountWebhookRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
+        /// <param name="createAccountWebhookRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv200GetTransactionTypes(string bankid)
+        private void ValidateCreateAccountWebhook(string bankid, CreateAccountWebhookRequest createAccountWebhookRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
+
+            if (createAccountWebhookRequest == null)
+                throw new ArgumentNullException(nameof(createAccountWebhookRequest));
         }
 
         /// <summary>
@@ -1440,10 +1444,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv200GetTransactionTypesDefaultImplementation(IOBPv200GetTransactionTypesApiResponse apiResponseLocalVar, string bankid)
+        /// <param name="createAccountWebhookRequest"></param>
+        private void AfterCreateAccountWebhookDefaultImplementation(ICreateAccountWebhookApiResponse apiResponseLocalVar, string bankid, CreateAccountWebhookRequest createAccountWebhookRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv200GetTransactionTypes(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterCreateAccountWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, createAccountWebhookRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1454,7 +1459,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv200GetTransactionTypes(ref bool suppressDefaultLog, IOBPv200GetTransactionTypesApiResponse apiResponseLocalVar, string bankid);
+        /// <param name="createAccountWebhookRequest"></param>
+        partial void AfterCreateAccountWebhook(ref bool suppressDefaultLog, ICreateAccountWebhookApiResponse apiResponseLocalVar, string bankid, CreateAccountWebhookRequest createAccountWebhookRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1463,10 +1469,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv200GetTransactionTypesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        /// <param name="createAccountWebhookRequest"></param>
+        private void OnErrorCreateAccountWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateAccountWebhookRequest createAccountWebhookRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv200GetTransactionTypes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorCreateAccountWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createAccountWebhookRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1479,19 +1486,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv200GetTransactionTypes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        /// <param name="createAccountWebhookRequest"></param>
+        partial void OnErrorCreateAccountWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateAccountWebhookRequest createAccountWebhookRequest);
 
         /// <summary>
-        /// Get Transaction Types at Bank &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// Create an Account Webhook &lt;p&gt;Create an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createAccountWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200GetTransactionTypesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv200GetTransactionTypesApiResponse?> OBPv200GetTransactionTypesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountWebhookApiResponse?> CreateAccountWebhookOrDefaultAsync(string bankid, CreateAccountWebhookRequest createAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv200GetTransactionTypesAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await CreateAccountWebhookAsync(bankid, createAccountWebhookRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1500,21 +1509,22 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get Transaction Types at Bank &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// Create an Account Webhook &lt;p&gt;Create an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createAccountWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200GetTransactionTypesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv200GetTransactionTypesApiResponse> OBPv200GetTransactionTypesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountWebhookApiResponse> CreateAccountWebhookAsync(string bankid, CreateAccountWebhookRequest createAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv200GetTransactionTypes(bankid);
+                ValidateCreateAccountWebhook(bankid, createAccountWebhookRequest);
 
-                FormatOBPv200GetTransactionTypes(ref bankid);
+                FormatCreateAccountWebhook(ref bankid, createAccountWebhookRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1522,11 +1532,39 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v2.0.0/banks/{bankid}/transaction-types"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.0.0/banks/{bankid}/transaction-types");
+                        ? "/obp/v3.1.0/banks/{bankid}/account-web-hooks"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/account-web-hooks");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
+                    httpRequestMessageLocalVar.Content = (createAccountWebhookRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createAccountWebhookRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
 
                     string[] acceptLocalVars = new string[] {
                         "application/json"
@@ -1537,27 +1575,31 @@ namespace OpenBankProject.Api
                     foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
                         httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
 
                     DateTime requestedAtLocalVar = DateTime.UtcNow;
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountInformationServiceAISApi.OBPv200GetTransactionTypesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.OBPv200GetTransactionTypesApiResponse>();
-                        AccountInformationServiceAISApi.OBPv200GetTransactionTypesApiResponse apiResponseLocalVar;
+                        ILogger<CreateAccountWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateAccountWebhookApiResponse>();
+                        CreateAccountWebhookApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.0.0/banks/{bankid}/transaction-types", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv200GetTransactionTypesDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterCreateAccountWebhookDefaultImplementation(apiResponseLocalVar, bankid, createAccountWebhookRequest);
 
-                        Events.ExecuteOnOBPv200GetTransactionTypes(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAccountWebhook(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
 
                         return apiResponseLocalVar;
                     }
@@ -1565,27 +1607,405 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv200GetTransactionTypesDefaultImplementation(e, "/obp/v2.0.0/banks/{bankid}/transaction-types", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv200GetTransactionTypes(e);
+                OnErrorCreateAccountWebhookDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid, createAccountWebhookRequest);
+                Events.ExecuteOnErrorCreateAccountWebhook(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv210CreateTransactionType(ref string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+        /// <summary>
+        /// The <see cref="CreateAccountWebhookApiResponse"/>
+        /// </summary>
+        public partial class CreateAccountWebhookApiResponse : OpenBankProject.Client.ApiResponse, ICreateAccountWebhookApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateAccountWebhookApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateAccountWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateAccountWebhookApiResponse(ILogger<CreateAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateAccountWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateAccountWebhookApiResponse(ILogger<CreateAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.EnableDisableAccountWebhook200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.EnableDisableAccountWebhook200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.EnableDisableAccountWebhook200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateBank(CreateBankRequest createBankRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="createBankRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateBank(CreateBankRequest createBankRequest)
+        {
+            if (createBankRequest == null)
+                throw new ArgumentNullException(nameof(createBankRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createBankRequest"></param>
+        private void AfterCreateBankDefaultImplementation(ICreateBankApiResponse apiResponseLocalVar, CreateBankRequest createBankRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateBank(ref suppressDefaultLog, apiResponseLocalVar, createBankRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createBankRequest"></param>
+        partial void AfterCreateBank(ref bool suppressDefaultLog, ICreateBankApiResponse apiResponseLocalVar, CreateBankRequest createBankRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createBankRequest"></param>
+        private void OnErrorCreateBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateBankRequest createBankRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createBankRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createBankRequest"></param>
+        partial void OnErrorCreateBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateBankRequest createBankRequest);
+
+        /// <summary>
+        /// Create Bank &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <param name="createBankRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankApiResponse?> CreateBankOrDefaultAsync(CreateBankRequest createBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateBankAsync(createBankRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Bank &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createBankRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankApiResponse> CreateBankAsync(CreateBankRequest createBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateBank(createBankRequest);
+
+                FormatCreateBank(createBankRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/banks"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks");
+
+                    httpRequestMessageLocalVar.Content = (createBankRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createBankRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateBankApiResponse>();
+                        CreateBankApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateBankDefaultImplementation(apiResponseLocalVar, createBankRequest);
+
+                        Events.ExecuteOnCreateBank(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateBankDefaultImplementation(e, "/obp/v6.0.0/banks", uriBuilderLocalVar.Path, createBankRequest);
+                Events.ExecuteOnErrorCreateBank(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateBankApiResponse"/>
+        /// </summary>
+        public partial class CreateBankApiResponse : OpenBankProject.Client.ApiResponse, ICreateBankApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateBankApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateBankApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateBankApiResponse(ILogger<CreateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateBankApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateBankApiResponse(ILogger<CreateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetBank200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBank200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBank200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateBankAccountNotificationWebhook(ref string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems"></param>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv210CreateTransactionType(string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems)
+        private void ValidateCreateBankAccountNotificationWebhook(string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems == null)
-                throw new ArgumentNullException(nameof(oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems));
+            if (createSystemAccountNotificationWebhookRequest == null)
+                throw new ArgumentNullException(nameof(createSystemAccountNotificationWebhookRequest));
         }
 
         /// <summary>
@@ -1593,11 +2013,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems"></param>
-        private void AfterOBPv210CreateTransactionTypeDefaultImplementation(IOBPv210CreateTransactionTypeApiResponse apiResponseLocalVar, string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems)
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        private void AfterCreateBankAccountNotificationWebhookDefaultImplementation(ICreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar, string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv210CreateTransactionType(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+            AfterCreateBankAccountNotificationWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, createSystemAccountNotificationWebhookRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1608,8 +2028,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems"></param>
-        partial void AfterOBPv210CreateTransactionType(ref bool suppressDefaultLog, IOBPv210CreateTransactionTypeApiResponse apiResponseLocalVar, string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        partial void AfterCreateBankAccountNotificationWebhook(ref bool suppressDefaultLog, ICreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar, string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1618,11 +2038,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems"></param>
-        private void OnErrorOBPv210CreateTransactionTypeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems)
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        private void OnErrorCreateBankAccountNotificationWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv210CreateTransactionType(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+            OnErrorCreateBankAccountNotificationWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createSystemAccountNotificationWebhookRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1635,21 +2055,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems"></param>
-        partial void OnErrorOBPv210CreateTransactionType(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        partial void OnErrorCreateBankAccountNotificationWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
 
         /// <summary>
-        /// Create Transaction Type at bank &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// Create bank level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the specified Bank.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210CreateTransactionTypeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv210CreateTransactionTypeApiResponse?> OBPv210CreateTransactionTypeOrDefaultAsync(string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAccountNotificationWebhookApiResponse?> CreateBankAccountNotificationWebhookOrDefaultAsync(string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv210CreateTransactionTypeAsync(bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, cancellationToken).ConfigureAwait(false);
+                return await CreateBankAccountNotificationWebhookAsync(bankid, createSystemAccountNotificationWebhookRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1658,22 +2078,22 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Create Transaction Type at bank &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// Create bank level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the specified Bank.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems">Request body</param>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210CreateTransactionTypeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv210CreateTransactionTypeApiResponse> OBPv210CreateTransactionTypeAsync(string bankid, OBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAccountNotificationWebhookApiResponse> CreateBankAccountNotificationWebhookAsync(string bankid, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv210CreateTransactionType(bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+                ValidateCreateBankAccountNotificationWebhook(bankid, createSystemAccountNotificationWebhookRequest);
 
-                FormatOBPv210CreateTransactionType(ref bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+                FormatCreateBankAccountNotificationWebhook(ref bankid, createSystemAccountNotificationWebhookRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1681,20 +2101,507 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v2.1.0/banks/{bankid}/transaction-types"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.1.0/banks/{bankid}/transaction-types");
+                        ? "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createSystemAccountNotificationWebhookRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createSystemAccountNotificationWebhookRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateBankAccountNotificationWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateBankAccountNotificationWebhookApiResponse>();
+                        CreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateBankAccountNotificationWebhookDefaultImplementation(apiResponseLocalVar, bankid, createSystemAccountNotificationWebhookRequest);
+
+                        Events.ExecuteOnCreateBankAccountNotificationWebhook(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateBankAccountNotificationWebhookDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction", uriBuilderLocalVar.Path, bankid, createSystemAccountNotificationWebhookRequest);
+                Events.ExecuteOnErrorCreateBankAccountNotificationWebhook(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateBankAccountNotificationWebhookApiResponse"/>
+        /// </summary>
+        public partial class CreateBankAccountNotificationWebhookApiResponse : OpenBankProject.Client.ApiResponse, ICreateBankAccountNotificationWebhookApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateBankAccountNotificationWebhookApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateBankAccountNotificationWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateBankAccountNotificationWebhookApiResponse(ILogger<CreateBankAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateBankAccountNotificationWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateBankAccountNotificationWebhookApiResponse(ILogger<CreateBankAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.CreateBankAccountNotificationWebhook200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateBankAccountNotificationWebhook200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateBankAccountNotificationWebhook200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateBankAttribute(ref string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateBankAttribute(string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterCreateBankAttributeDefaultImplementation(ICreateBankAttributeApiResponse apiResponseLocalVar, string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, updateAtmAttributeRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterCreateBankAttribute(ref bool suppressDefaultLog, ICreateBankAttributeApiResponse apiResponseLocalVar, string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorCreateBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, updateAtmAttributeRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorCreateBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Create Bank Attribute &lt;p&gt;Create Bank Attribute&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAttributeApiResponse?> CreateBankAttributeOrDefaultAsync(string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateBankAttributeAsync(bankid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Bank Attribute &lt;p&gt;Create Bank Attribute&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAttributeApiResponse> CreateBankAttributeAsync(string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateBankAttribute(bankid, updateAtmAttributeRequest);
+
+                FormatCreateBankAttribute(ref bankid, updateAtmAttributeRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/attribute"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.CreateBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateBankAttributeApiResponse>();
+                        AttributeApi.CreateBankAttributeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, updateAtmAttributeRequest);
+
+                        Events.ExecuteOnCreateBankAttribute(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute", uriBuilderLocalVar.Path, bankid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorCreateBankAttribute(e);
+                throw;
+            }
+        }
+
+        partial void FormatCreateOrUpdateBankAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateOrUpdateBankAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateBankAttributeDefinitionDefaultImplementation(ICreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateOrUpdateBankAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateBankAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateBankAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateOrUpdateBankAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateBankAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
+
+        /// <summary>
+        /// Create or Update Bank Attribute Definition &lt;p&gt;Create or Update Bank Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Bank&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateBankAttributeDefinitionApiResponse?> CreateOrUpdateBankAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateOrUpdateBankAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create or Update Bank Attribute Definition &lt;p&gt;Create or Update Bank Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Bank&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateBankAttributeDefinitionApiResponse> CreateOrUpdateBankAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+
+                FormatCreateOrUpdateBankAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1730,21 +2637,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv210CreateTransactionTypeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv210CreateTransactionTypeApiResponse>();
-                        OBPv210CreateTransactionTypeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateOrUpdateBankAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateOrUpdateBankAttributeDefinitionApiResponse>();
+                        AttributeApi.CreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.1.0/banks/{bankid}/transaction-types", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv210CreateTransactionTypeDefaultImplementation(apiResponseLocalVar, bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
+                        AfterCreateOrUpdateBankAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv210CreateTransactionType(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateBankAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1756,24 +2663,215 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv210CreateTransactionTypeDefaultImplementation(e, "/obp/v2.1.0/banks/{bankid}/transaction-types", uriBuilderLocalVar.Path, bankid, oBPv200GetTransactionTypes200ResponsePropertiesTransactionTypesItems);
-                Events.ExecuteOnErrorOBPv210CreateTransactionType(e);
+                OnErrorCreateOrUpdateBankAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateBankAttributeDefinition(e);
+                throw;
+            }
+        }
+
+        partial void FormatCreateSettlementAccount(ref string bankid, CreateSettlementAccountRequest createSettlementAccountRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="createSettlementAccountRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateSettlementAccount(string bankid, CreateSettlementAccountRequest createSettlementAccountRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (createSettlementAccountRequest == null)
+                throw new ArgumentNullException(nameof(createSettlementAccountRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createSettlementAccountRequest"></param>
+        private void AfterCreateSettlementAccountDefaultImplementation(ICreateSettlementAccountApiResponse apiResponseLocalVar, string bankid, CreateSettlementAccountRequest createSettlementAccountRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateSettlementAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, createSettlementAccountRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createSettlementAccountRequest"></param>
+        partial void AfterCreateSettlementAccount(ref bool suppressDefaultLog, ICreateSettlementAccountApiResponse apiResponseLocalVar, string bankid, CreateSettlementAccountRequest createSettlementAccountRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createSettlementAccountRequest"></param>
+        private void OnErrorCreateSettlementAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateSettlementAccountRequest createSettlementAccountRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateSettlementAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createSettlementAccountRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="createSettlementAccountRequest"></param>
+        partial void OnErrorCreateSettlementAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateSettlementAccountRequest createSettlementAccountRequest);
+
+        /// <summary>
+        /// Create Settlement Account &lt;p&gt;Create a new settlement account at a bank.&lt;/p&gt; &lt;p&gt;The created settlement account id will be the concatenation of the payment system and the account currency.&lt;br /&gt; For examples: SEPA_SETTLEMENT_ACCOUNT_EUR, CARD_SETTLEMENT_ACCOUNT_USD&lt;/p&gt; &lt;p&gt;By default, when you create a new bank, two settlements accounts are created automatically: OBP_DEFAULT_INCOMING_ACCOUNT_ID and OBP_DEFAULT_OUTGOING_ACCOUNT_ID&lt;br /&gt; Those two accounts have EUR as default currency.&lt;/p&gt; &lt;p&gt;If you want to create default settlement account for a specific currency, you can fill the &lt;code&gt;payment_system&lt;/code&gt; field with the &lt;code&gt;DEFAULT&lt;/code&gt; value.&lt;/p&gt; &lt;p&gt;When a transaction is saved in OBP through the mapped connector, OBP-API look for the account to save the double-entry transaction.&lt;br /&gt; If no OBP account can be found from the counterparty, the double-entry transaction will be saved on a bank settlement account.&lt;br /&gt; - First, the mapped connector looks for a settlement account specific to the payment system and currency. E.g SEPA_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - If we don&#39;t find any specific settlement account with the payment system, we look for a default settlement account for the counterparty currency. E.g DEFAULT_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - Else, we select one of the two OBP default settlement accounts (OBP_DEFAULT_INCOMING_ACCOUNT_ID/OBP_DEFAULT_OUTGOING_ACCOUNT_ID) according to the transaction direction.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID &lt;em&gt;is&lt;/em&gt; specified, the logged in user must have the Role CanCreateAccount. Once created, the Account will be owned by the User specified by USER_ID.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID is &lt;em&gt;not&lt;/em&gt; specified, the account will be owned by the logged in User.&lt;/p&gt; &lt;p&gt;Note: The Amount MUST be zero.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createSettlementAccountRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSettlementAccountApiResponse"/>&gt;</returns>
+        public async Task<ICreateSettlementAccountApiResponse?> CreateSettlementAccountOrDefaultAsync(string bankid, CreateSettlementAccountRequest createSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateSettlementAccountAsync(bankid, createSettlementAccountRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Settlement Account &lt;p&gt;Create a new settlement account at a bank.&lt;/p&gt; &lt;p&gt;The created settlement account id will be the concatenation of the payment system and the account currency.&lt;br /&gt; For examples: SEPA_SETTLEMENT_ACCOUNT_EUR, CARD_SETTLEMENT_ACCOUNT_USD&lt;/p&gt; &lt;p&gt;By default, when you create a new bank, two settlements accounts are created automatically: OBP_DEFAULT_INCOMING_ACCOUNT_ID and OBP_DEFAULT_OUTGOING_ACCOUNT_ID&lt;br /&gt; Those two accounts have EUR as default currency.&lt;/p&gt; &lt;p&gt;If you want to create default settlement account for a specific currency, you can fill the &lt;code&gt;payment_system&lt;/code&gt; field with the &lt;code&gt;DEFAULT&lt;/code&gt; value.&lt;/p&gt; &lt;p&gt;When a transaction is saved in OBP through the mapped connector, OBP-API look for the account to save the double-entry transaction.&lt;br /&gt; If no OBP account can be found from the counterparty, the double-entry transaction will be saved on a bank settlement account.&lt;br /&gt; - First, the mapped connector looks for a settlement account specific to the payment system and currency. E.g SEPA_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - If we don&#39;t find any specific settlement account with the payment system, we look for a default settlement account for the counterparty currency. E.g DEFAULT_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - Else, we select one of the two OBP default settlement accounts (OBP_DEFAULT_INCOMING_ACCOUNT_ID/OBP_DEFAULT_OUTGOING_ACCOUNT_ID) according to the transaction direction.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID &lt;em&gt;is&lt;/em&gt; specified, the logged in user must have the Role CanCreateAccount. Once created, the Account will be owned by the User specified by USER_ID.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID is &lt;em&gt;not&lt;/em&gt; specified, the account will be owned by the logged in User.&lt;/p&gt; &lt;p&gt;Note: The Amount MUST be zero.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createSettlementAccountRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSettlementAccountApiResponse"/>&gt;</returns>
+        public async Task<ICreateSettlementAccountApiResponse> CreateSettlementAccountAsync(string bankid, CreateSettlementAccountRequest createSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateSettlementAccount(bankid, createSettlementAccountRequest);
+
+                FormatCreateSettlementAccount(ref bankid, createSettlementAccountRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/settlement-accounts"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/settlement-accounts");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createSettlementAccountRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createSettlementAccountRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateSettlementAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateSettlementAccountApiResponse>();
+                        CreateSettlementAccountApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateSettlementAccountDefaultImplementation(apiResponseLocalVar, bankid, createSettlementAccountRequest);
+
+                        Events.ExecuteOnCreateSettlementAccount(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateSettlementAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", uriBuilderLocalVar.Path, bankid, createSettlementAccountRequest);
+                Events.ExecuteOnErrorCreateSettlementAccount(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv210CreateTransactionTypeApiResponse"/>
+        /// The <see cref="CreateSettlementAccountApiResponse"/>
         /// </summary>
-        public partial class OBPv210CreateTransactionTypeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv210CreateTransactionTypeApiResponse
+        public partial class CreateSettlementAccountApiResponse : OpenBankProject.Client.ApiResponse, ICreateSettlementAccountApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv210CreateTransactionTypeApiResponse> Logger { get; }
+            public ILogger<CreateSettlementAccountApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv210CreateTransactionTypeApiResponse"/>
+            /// The <see cref="CreateSettlementAccountApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1782,14 +2880,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv210CreateTransactionTypeApiResponse(ILogger<OBPv210CreateTransactionTypeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateSettlementAccountApiResponse(ILogger<CreateSettlementAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv210CreateTransactionTypeApiResponse"/>
+            /// The <see cref="CreateSettlementAccountApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1798,7 +2896,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv210CreateTransactionTypeApiResponse(ILogger<OBPv210CreateTransactionTypeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateSettlementAccountApiResponse(ILogger<CreateSettlementAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1816,11 +2914,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv210CreateTransactionType200Response? Ok()
+            public OpenBankProject.Model.CreateSettlementAccount200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv210CreateTransactionType200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateSettlementAccount200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1829,7 +2927,582 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv210CreateTransactionType200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateSettlementAccount200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateSystemAccountNotificationWebhook(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateSystemAccountNotificationWebhook(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
+        {
+            if (createSystemAccountNotificationWebhookRequest == null)
+                throw new ArgumentNullException(nameof(createSystemAccountNotificationWebhookRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        private void AfterCreateSystemAccountNotificationWebhookDefaultImplementation(ICreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateSystemAccountNotificationWebhook(ref suppressDefaultLog, apiResponseLocalVar, createSystemAccountNotificationWebhookRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        partial void AfterCreateSystemAccountNotificationWebhook(ref bool suppressDefaultLog, ICreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        private void OnErrorCreateSystemAccountNotificationWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateSystemAccountNotificationWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createSystemAccountNotificationWebhookRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="createSystemAccountNotificationWebhookRequest"></param>
+        partial void OnErrorCreateSystemAccountNotificationWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest);
+
+        /// <summary>
+        /// Create system level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
+        /// </summary>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateSystemAccountNotificationWebhookApiResponse?> CreateSystemAccountNotificationWebhookOrDefaultAsync(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateSystemAccountNotificationWebhookAsync(createSystemAccountNotificationWebhookRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create system level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createSystemAccountNotificationWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
+        public async Task<ICreateSystemAccountNotificationWebhookApiResponse> CreateSystemAccountNotificationWebhookAsync(CreateSystemAccountNotificationWebhookRequest createSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateSystemAccountNotificationWebhook(createSystemAccountNotificationWebhookRequest);
+
+                FormatCreateSystemAccountNotificationWebhook(createSystemAccountNotificationWebhookRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction");
+
+                    httpRequestMessageLocalVar.Content = (createSystemAccountNotificationWebhookRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createSystemAccountNotificationWebhookRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateSystemAccountNotificationWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateSystemAccountNotificationWebhookApiResponse>();
+                        CreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateSystemAccountNotificationWebhookDefaultImplementation(apiResponseLocalVar, createSystemAccountNotificationWebhookRequest);
+
+                        Events.ExecuteOnCreateSystemAccountNotificationWebhook(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateSystemAccountNotificationWebhookDefaultImplementation(e, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction", uriBuilderLocalVar.Path, createSystemAccountNotificationWebhookRequest);
+                Events.ExecuteOnErrorCreateSystemAccountNotificationWebhook(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateSystemAccountNotificationWebhookApiResponse"/>
+        /// </summary>
+        public partial class CreateSystemAccountNotificationWebhookApiResponse : OpenBankProject.Client.ApiResponse, ICreateSystemAccountNotificationWebhookApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateSystemAccountNotificationWebhookApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateSystemAccountNotificationWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateSystemAccountNotificationWebhookApiResponse(ILogger<CreateSystemAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateSystemAccountNotificationWebhookApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateSystemAccountNotificationWebhookApiResponse(ILogger<CreateSystemAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.CreateSystemAccountNotificationWebhook200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateSystemAccountNotificationWebhook200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateSystemAccountNotificationWebhook200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateTransactionType(ref string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner"></param>
+        /// <returns></returns>
+        private void ValidateCreateTransactionType(string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (getTransactionTypes200ResponseTransactionTypesInner == null)
+                throw new ArgumentNullException(nameof(getTransactionTypes200ResponseTransactionTypesInner));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner"></param>
+        private void AfterCreateTransactionTypeDefaultImplementation(ICreateTransactionTypeApiResponse apiResponseLocalVar, string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateTransactionType(ref suppressDefaultLog, apiResponseLocalVar, bankid, getTransactionTypes200ResponseTransactionTypesInner);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner"></param>
+        partial void AfterCreateTransactionType(ref bool suppressDefaultLog, ICreateTransactionTypeApiResponse apiResponseLocalVar, string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner"></param>
+        private void OnErrorCreateTransactionTypeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateTransactionType(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, getTransactionTypes200ResponseTransactionTypesInner);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner"></param>
+        partial void OnErrorCreateTransactionType(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner);
+
+        /// <summary>
+        /// Create Transaction Type at bank &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionTypeApiResponse"/>&gt;</returns>
+        public async Task<ICreateTransactionTypeApiResponse?> CreateTransactionTypeOrDefaultAsync(string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateTransactionTypeAsync(bankid, getTransactionTypes200ResponseTransactionTypesInner, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Transaction Type at bank &lt;p&gt;Create Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bankid\&quot;&gt;&lt;strong&gt;bankId&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#shortcode\&quot;&gt;&lt;strong&gt;shortCode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="getTransactionTypes200ResponseTransactionTypesInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateTransactionTypeApiResponse"/>&gt;</returns>
+        public async Task<ICreateTransactionTypeApiResponse> CreateTransactionTypeAsync(string bankid, GetTransactionTypes200ResponseTransactionTypesInner getTransactionTypes200ResponseTransactionTypesInner, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateTransactionType(bankid, getTransactionTypes200ResponseTransactionTypesInner);
+
+                FormatCreateTransactionType(ref bankid, getTransactionTypes200ResponseTransactionTypesInner);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v2.1.0/banks/{bankid}/transaction-types"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.1.0/banks/{bankid}/transaction-types");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (getTransactionTypes200ResponseTransactionTypesInner as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getTransactionTypes200ResponseTransactionTypesInner, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateTransactionTypeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateTransactionTypeApiResponse>();
+                        CreateTransactionTypeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.1.0/banks/{bankid}/transaction-types", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateTransactionTypeDefaultImplementation(apiResponseLocalVar, bankid, getTransactionTypes200ResponseTransactionTypesInner);
+
+                        Events.ExecuteOnCreateTransactionType(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateTransactionTypeDefaultImplementation(e, "/obp/v2.1.0/banks/{bankid}/transaction-types", uriBuilderLocalVar.Path, bankid, getTransactionTypes200ResponseTransactionTypesInner);
+                Events.ExecuteOnErrorCreateTransactionType(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateTransactionTypeApiResponse"/>
+        /// </summary>
+        public partial class CreateTransactionTypeApiResponse : OpenBankProject.Client.ApiResponse, ICreateTransactionTypeApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateTransactionTypeApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateTransactionTypeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateTransactionTypeApiResponse(ILogger<CreateTransactionTypeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateTransactionTypeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateTransactionTypeApiResponse(ILogger<CreateTransactionTypeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.CreateTransactionType200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateTransactionType200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateTransactionType200Response? result)
             {
                 result = null;
 
@@ -1873,17 +3546,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv210GetTransactionRequestTypesSupportedByBank(ref string bankid);
+        partial void FormatDeleteBankAttribute(ref string bankid, ref string bankattributeid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv210GetTransactionRequestTypesSupportedByBank(string bankid)
+        private void ValidateDeleteBankAttribute(string bankid, string bankattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
+
+            if (bankattributeid == null)
+                throw new ArgumentNullException(nameof(bankattributeid));
         }
 
         /// <summary>
@@ -1891,10 +3568,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv210GetTransactionRequestTypesSupportedByBankDefaultImplementation(IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar, string bankid)
+        /// <param name="bankattributeid"></param>
+        private void AfterDeleteBankAttributeDefaultImplementation(IDeleteBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv210GetTransactionRequestTypesSupportedByBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterDeleteBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1905,7 +3583,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv210GetTransactionRequestTypesSupportedByBank(ref bool suppressDefaultLog, IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar, string bankid);
+        /// <param name="bankattributeid"></param>
+        partial void AfterDeleteBankAttribute(ref bool suppressDefaultLog, IDeleteBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1914,10 +3593,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv210GetTransactionRequestTypesSupportedByBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        /// <param name="bankattributeid"></param>
+        private void OnErrorDeleteBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv210GetTransactionRequestTypesSupportedByBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorDeleteBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1930,19 +3610,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv210GetTransactionRequestTypesSupportedByBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        /// <param name="bankattributeid"></param>
+        partial void OnErrorDeleteBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid);
 
         /// <summary>
-        /// Get Transaction Request Types at Bank &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Delete Bank Attribute &lt;p&gt;Delete Bank Attribute&lt;/p&gt; &lt;p&gt;Delete a Bank Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse?> OBPv210GetTransactionRequestTypesSupportedByBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankAttributeApiResponse?> DeleteBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv210GetTransactionRequestTypesSupportedByBankAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await DeleteBankAttributeAsync(bankid, bankattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1951,21 +3633,22 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get Transaction Request Types at Bank &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Delete Bank Attribute &lt;p&gt;Delete Bank Attribute&lt;/p&gt; &lt;p&gt;Delete a Bank Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse> OBPv210GetTransactionRequestTypesSupportedByBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankAttributeApiResponse> DeleteBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv210GetTransactionRequestTypesSupportedByBank(bankid);
+                ValidateDeleteBankAttribute(bankid, bankattributeid);
 
-                FormatOBPv210GetTransactionRequestTypesSupportedByBank(ref bankid);
+                FormatDeleteBankAttribute(ref bankid, ref bankattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1973,11 +3656,441 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v2.1.0/banks/{bankid}/transaction-request-types"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.1.0/banks/{bankid}/transaction-request-types");
+                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.DeleteBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteBankAttributeApiResponse>();
+                        AttributeApi.DeleteBankAttributeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterDeleteBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid);
+
+                        Events.ExecuteOnDeleteBankAttribute(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorDeleteBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid);
+                Events.ExecuteOnErrorDeleteBankAttribute(e);
+                throw;
+            }
+        }
+
+        partial void FormatDeleteBankCascade(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateDeleteBankCascade(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterDeleteBankCascadeDefaultImplementation(IDeleteBankCascadeApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterDeleteBankCascade(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterDeleteBankCascade(ref bool suppressDefaultLog, IDeleteBankCascadeApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorDeleteBankCascadeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorDeleteBankCascade(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorDeleteBankCascade(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+
+        /// <summary>
+        /// Delete Bank Cascade &lt;p&gt;Delete a Bank Cascade specified by BANK_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankCascadeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankCascadeApiResponse?> DeleteBankCascadeOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await DeleteBankCascadeAsync(bankid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Delete Bank Cascade &lt;p&gt;Delete a Bank Cascade specified by BANK_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankCascadeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankCascadeApiResponse> DeleteBankCascadeAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateDeleteBankCascade(bankid);
+
+                FormatDeleteBankCascade(ref bankid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/management/cascading/banks/{bankid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/cascading/banks/{bankid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<DeleteBankCascadeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteBankCascadeApiResponse>();
+                        DeleteBankCascadeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/management/cascading/banks/{bankid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterDeleteBankCascadeDefaultImplementation(apiResponseLocalVar, bankid);
+
+                        Events.ExecuteOnDeleteBankCascade(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorDeleteBankCascadeDefaultImplementation(e, "/obp/v4.0.0/management/cascading/banks/{bankid}", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorDeleteBankCascade(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="DeleteBankCascadeApiResponse"/>
+        /// </summary>
+        public partial class DeleteBankCascadeApiResponse : OpenBankProject.Client.ApiResponse, IDeleteBankCascadeApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<DeleteBankCascadeApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="DeleteBankCascadeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public DeleteBankCascadeApiResponse(ILogger<DeleteBankCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="DeleteBankCascadeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public DeleteBankCascadeApiResponse(ILogger<DeleteBankCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatEnableDisableAccountWebhook(ref string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="enableDisableAccountWebhookRequest"></param>
+        /// <returns></returns>
+        private void ValidateEnableDisableAccountWebhook(string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (enableDisableAccountWebhookRequest == null)
+                throw new ArgumentNullException(nameof(enableDisableAccountWebhookRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="enableDisableAccountWebhookRequest"></param>
+        private void AfterEnableDisableAccountWebhookDefaultImplementation(IEnableDisableAccountWebhookApiResponse apiResponseLocalVar, string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterEnableDisableAccountWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, enableDisableAccountWebhookRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="enableDisableAccountWebhookRequest"></param>
+        partial void AfterEnableDisableAccountWebhook(ref bool suppressDefaultLog, IEnableDisableAccountWebhookApiResponse apiResponseLocalVar, string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="enableDisableAccountWebhookRequest"></param>
+        private void OnErrorEnableDisableAccountWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorEnableDisableAccountWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, enableDisableAccountWebhookRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="enableDisableAccountWebhookRequest"></param>
+        partial void OnErrorEnableDisableAccountWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest);
+
+        /// <summary>
+        /// Enable/Disable an Account Webhook &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="enableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IEnableDisableAccountWebhookApiResponse"/>&gt;</returns>
+        public async Task<IEnableDisableAccountWebhookApiResponse?> EnableDisableAccountWebhookOrDefaultAsync(string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await EnableDisableAccountWebhookAsync(bankid, enableDisableAccountWebhookRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Enable/Disable an Account Webhook &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="enableDisableAccountWebhookRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IEnableDisableAccountWebhookApiResponse"/>&gt;</returns>
+        public async Task<IEnableDisableAccountWebhookApiResponse> EnableDisableAccountWebhookAsync(string bankid, EnableDisableAccountWebhookRequest enableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateEnableDisableAccountWebhook(bankid, enableDisableAccountWebhookRequest);
+
+                FormatEnableDisableAccountWebhook(ref bankid, enableDisableAccountWebhookRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/banks/{bankid}/account-web-hooks"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/account-web-hooks");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (enableDisableAccountWebhookRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(enableDisableAccountWebhookRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
 
                     string[] acceptLocalVars = new string[] {
                         "application/json"
@@ -1988,27 +4101,31 @@ namespace OpenBankProject.Api
                     foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
                         httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
 
                     DateTime requestedAtLocalVar = DateTime.UtcNow;
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv210GetTransactionRequestTypesSupportedByBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv210GetTransactionRequestTypesSupportedByBankApiResponse>();
-                        OBPv210GetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar;
+                        ILogger<EnableDisableAccountWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EnableDisableAccountWebhookApiResponse>();
+                        EnableDisableAccountWebhookApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.1.0/banks/{bankid}/transaction-request-types", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv210GetTransactionRequestTypesSupportedByBankDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterEnableDisableAccountWebhookDefaultImplementation(apiResponseLocalVar, bankid, enableDisableAccountWebhookRequest);
 
-                        Events.ExecuteOnOBPv210GetTransactionRequestTypesSupportedByBank(apiResponseLocalVar);
+                        Events.ExecuteOnEnableDisableAccountWebhook(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
 
                         return apiResponseLocalVar;
                     }
@@ -2016,24 +4133,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv210GetTransactionRequestTypesSupportedByBankDefaultImplementation(e, "/obp/v2.1.0/banks/{bankid}/transaction-request-types", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv210GetTransactionRequestTypesSupportedByBank(e);
+                OnErrorEnableDisableAccountWebhookDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid, enableDisableAccountWebhookRequest);
+                Events.ExecuteOnErrorEnableDisableAccountWebhook(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>
+        /// The <see cref="EnableDisableAccountWebhookApiResponse"/>
         /// </summary>
-        public partial class OBPv210GetTransactionRequestTypesSupportedByBankApiResponse : OpenBankProject.Client.ApiResponse, IOBPv210GetTransactionRequestTypesSupportedByBankApiResponse
+        public partial class EnableDisableAccountWebhookApiResponse : OpenBankProject.Client.ApiResponse, IEnableDisableAccountWebhookApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv210GetTransactionRequestTypesSupportedByBankApiResponse> Logger { get; }
+            public ILogger<EnableDisableAccountWebhookApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>
+            /// The <see cref="EnableDisableAccountWebhookApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2042,14 +4159,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv210GetTransactionRequestTypesSupportedByBankApiResponse(ILogger<OBPv210GetTransactionRequestTypesSupportedByBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public EnableDisableAccountWebhookApiResponse(ILogger<EnableDisableAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv210GetTransactionRequestTypesSupportedByBankApiResponse"/>
+            /// The <see cref="EnableDisableAccountWebhookApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2058,7 +4175,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv210GetTransactionRequestTypesSupportedByBankApiResponse(ILogger<OBPv210GetTransactionRequestTypesSupportedByBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public EnableDisableAccountWebhookApiResponse(ILogger<EnableDisableAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2076,11 +4193,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv210GetTransactionRequestTypesSupportedByBank200Response? Ok()
+            public OpenBankProject.Model.EnableDisableAccountWebhook200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv210GetTransactionRequestTypesSupportedByBank200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.EnableDisableAccountWebhook200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2089,7 +4206,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv210GetTransactionRequestTypesSupportedByBank200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.EnableDisableAccountWebhook200Response? result)
             {
                 result = null;
 
@@ -2121,7 +4238,895 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv300GetBranch(ref string bankid, ref string branchid);
+        partial void FormatGetAccountWebhooks(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateGetAccountWebhooks(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterGetAccountWebhooksDefaultImplementation(IGetAccountWebhooksApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetAccountWebhooks(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterGetAccountWebhooks(ref bool suppressDefaultLog, IGetAccountWebhooksApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorGetAccountWebhooksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetAccountWebhooks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorGetAccountWebhooks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+
+        /// <summary>
+        /// Get Account Webhooks &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountWebhooksApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountWebhooksApiResponse?> GetAccountWebhooksOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetAccountWebhooksAsync(bankid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Account Webhooks &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountWebhooksApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountWebhooksApiResponse> GetAccountWebhooksAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetAccountWebhooks(bankid);
+
+                FormatGetAccountWebhooks(ref bankid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<GetAccountWebhooksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetAccountWebhooksApiResponse>();
+                        GetAccountWebhooksApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetAccountWebhooksDefaultImplementation(apiResponseLocalVar, bankid);
+
+                        Events.ExecuteOnGetAccountWebhooks(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetAccountWebhooksDefaultImplementation(e, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetAccountWebhooks(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="GetAccountWebhooksApiResponse"/>
+        /// </summary>
+        public partial class GetAccountWebhooksApiResponse : OpenBankProject.Client.ApiResponse, IGetAccountWebhooksApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<GetAccountWebhooksApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="GetAccountWebhooksApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetAccountWebhooksApiResponse(ILogger<GetAccountWebhooksApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="GetAccountWebhooksApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetAccountWebhooksApiResponse(ILogger<GetAccountWebhooksApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetAccountWebhooks200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetAccountWebhooks200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetAccountWebhooks200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatGetBank(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateGetBank(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterGetBankDefaultImplementation(IGetBankApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterGetBank(ref bool suppressDefaultLog, IGetBankApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorGetBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorGetBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+
+        /// <summary>
+        /// Get Bank &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankApiResponse"/>&gt;</returns>
+        public async Task<IGetBankApiResponse?> GetBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetBankAsync(bankid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Bank &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankApiResponse"/>&gt;</returns>
+        public async Task<IGetBankApiResponse> GetBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetBank(bankid);
+
+                FormatGetBank(ref bankid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/banks/{bankid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks/{bankid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AccountInformationServiceAISApi.GetBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.GetBankApiResponse>();
+                        AccountInformationServiceAISApi.GetBankApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks/{bankid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetBankDefaultImplementation(apiResponseLocalVar, bankid);
+
+                        Events.ExecuteOnGetBank(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetBankDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetBank(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetBankAttribute(ref string bankid, ref string bankattributeid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <returns></returns>
+        private void ValidateGetBankAttribute(string bankid, string bankattributeid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (bankattributeid == null)
+                throw new ArgumentNullException(nameof(bankattributeid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        private void AfterGetBankAttributeDefaultImplementation(IGetBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        partial void AfterGetBankAttribute(ref bool suppressDefaultLog, IGetBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        private void OnErrorGetBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        partial void OnErrorGetBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid);
+
+        /// <summary>
+        /// Get Bank Attribute By BANK_ATTRIBUTE_ID &lt;p&gt;Get Bank Attribute By BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAttributeApiResponse?> GetBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetBankAttributeAsync(bankid, bankattributeid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Bank Attribute By BANK_ATTRIBUTE_ID &lt;p&gt;Get Bank Attribute By BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAttributeApiResponse> GetBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetBankAttribute(bankid, bankattributeid);
+
+                FormatGetBankAttribute(ref bankid, ref bankattributeid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.GetBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetBankAttributeApiResponse>();
+                        AttributeApi.GetBankAttributeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid);
+
+                        Events.ExecuteOnGetBankAttribute(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid);
+                Events.ExecuteOnErrorGetBankAttribute(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetBankAttributes(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateGetBankAttributes(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterGetBankAttributesDefaultImplementation(IGetBankAttributesApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetBankAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterGetBankAttributes(ref bool suppressDefaultLog, IGetBankAttributesApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorGetBankAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetBankAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorGetBankAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+
+        /// <summary>
+        /// Get Bank Attributes &lt;p&gt;Get Bank Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attributes&lt;/strong&gt;&lt;/a&gt;: bank_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAttributesApiResponse?> GetBankAttributesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetBankAttributesAsync(bankid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Bank Attributes &lt;p&gt;Get Bank Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attributes&lt;/strong&gt;&lt;/a&gt;: bank_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAttributesApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAttributesApiResponse> GetBankAttributesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetBankAttributes(bankid);
+
+                FormatGetBankAttributes(ref bankid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/attributes"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.GetBankAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetBankAttributesApiResponse>();
+                        AttributeApi.GetBankAttributesApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetBankAttributesDefaultImplementation(apiResponseLocalVar, bankid);
+
+                        Events.ExecuteOnGetBankAttributes(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetBankAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetBankAttributes(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        private void AfterGetBanksDefaultImplementation(IGetBanksApiResponse apiResponseLocalVar)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetBanks(ref suppressDefaultLog, apiResponseLocalVar);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        partial void AfterGetBanks(ref bool suppressDefaultLog, IGetBanksApiResponse apiResponseLocalVar);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        private void OnErrorGetBanksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetBanks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        partial void OnErrorGetBanks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+
+        /// <summary>
+        /// Get Banks &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBanksApiResponse"/>&gt;</returns>
+        public async Task<IGetBanksApiResponse?> GetBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetBanksAsync(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Banks &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBanksApiResponse"/>&gt;</returns>
+        public async Task<IGetBanksApiResponse> GetBanksAsync(System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v6.0.0/banks"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks");
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AccountInformationServiceAISApi.GetBanksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.GetBanksApiResponse>();
+                        AccountInformationServiceAISApi.GetBanksApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetBanksDefaultImplementation(apiResponseLocalVar);
+
+                        Events.ExecuteOnGetBanks(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetBanksDefaultImplementation(e, "/obp/v6.0.0/banks", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetBanks(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetBranch(ref string bankid, ref string branchid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2129,7 +5134,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="branchid"></param>
         /// <returns></returns>
-        private void ValidateOBPv300GetBranch(string bankid, string branchid)
+        private void ValidateGetBranch(string bankid, string branchid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2144,10 +5149,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="branchid"></param>
-        private void AfterOBPv300GetBranchDefaultImplementation(IOBPv300GetBranchApiResponse apiResponseLocalVar, string bankid, string branchid)
+        private void AfterGetBranchDefaultImplementation(IGetBranchApiResponse apiResponseLocalVar, string bankid, string branchid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300GetBranch(ref suppressDefaultLog, apiResponseLocalVar, bankid, branchid);
+            AfterGetBranch(ref suppressDefaultLog, apiResponseLocalVar, bankid, branchid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2159,7 +5164,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="branchid"></param>
-        partial void AfterOBPv300GetBranch(ref bool suppressDefaultLog, IOBPv300GetBranchApiResponse apiResponseLocalVar, string bankid, string branchid);
+        partial void AfterGetBranch(ref bool suppressDefaultLog, IGetBranchApiResponse apiResponseLocalVar, string bankid, string branchid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2169,10 +5174,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="branchid"></param>
-        private void OnErrorOBPv300GetBranchDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string branchid)
+        private void OnErrorGetBranchDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string branchid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300GetBranch(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, branchid);
+            OnErrorGetBranch(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, branchid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2186,7 +5191,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="branchid"></param>
-        partial void OnErrorOBPv300GetBranch(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string branchid);
+        partial void OnErrorGetBranch(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string branchid);
 
         /// <summary>
         /// Get Branch &lt;p&gt;Returns information about a single Branch specified by BANK_ID and BRANCH_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2194,12 +5199,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="branchid">The BRANCHID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300GetBranchApiResponse?> OBPv300GetBranchOrDefaultAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchApiResponse"/>&gt;</returns>
+        public async Task<IGetBranchApiResponse?> GetBranchOrDefaultAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv300GetBranchAsync(bankid, branchid, cancellationToken).ConfigureAwait(false);
+                return await GetBranchAsync(bankid, branchid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2214,16 +5219,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="branchid">The BRANCHID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300GetBranchApiResponse> OBPv300GetBranchAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchApiResponse"/>&gt;</returns>
+        public async Task<IGetBranchApiResponse> GetBranchAsync(string bankid, string branchid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv300GetBranch(bankid, branchid);
+                ValidateGetBranch(bankid, branchid);
 
-                FormatOBPv300GetBranch(ref bankid, ref branchid);
+                FormatGetBranch(ref bankid, ref branchid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2253,8 +5258,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv300GetBranchApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv300GetBranchApiResponse>();
-                        OBPv300GetBranchApiResponse apiResponseLocalVar;
+                        ILogger<GetBranchApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetBranchApiResponse>();
+                        GetBranchApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2265,9 +5270,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv300GetBranchDefaultImplementation(apiResponseLocalVar, bankid, branchid);
+                        AfterGetBranchDefaultImplementation(apiResponseLocalVar, bankid, branchid);
 
-                        Events.ExecuteOnOBPv300GetBranch(apiResponseLocalVar);
+                        Events.ExecuteOnGetBranch(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -2275,24 +5280,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv300GetBranchDefaultImplementation(e, "/obp/v3.0.0/banks/{bankid}/branches/{branchid}", uriBuilderLocalVar.Path, bankid, branchid);
-                Events.ExecuteOnErrorOBPv300GetBranch(e);
+                OnErrorGetBranchDefaultImplementation(e, "/obp/v3.0.0/banks/{bankid}/branches/{branchid}", uriBuilderLocalVar.Path, bankid, branchid);
+                Events.ExecuteOnErrorGetBranch(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv300GetBranchApiResponse"/>
+        /// The <see cref="GetBranchApiResponse"/>
         /// </summary>
-        public partial class OBPv300GetBranchApiResponse : OpenBankProject.Client.ApiResponse, IOBPv300GetBranchApiResponse
+        public partial class GetBranchApiResponse : OpenBankProject.Client.ApiResponse, IGetBranchApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv300GetBranchApiResponse> Logger { get; }
+            public ILogger<GetBranchApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv300GetBranchApiResponse"/>
+            /// The <see cref="GetBranchApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2301,14 +5306,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300GetBranchApiResponse(ILogger<OBPv300GetBranchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetBranchApiResponse(ILogger<GetBranchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv300GetBranchApiResponse"/>
+            /// The <see cref="GetBranchApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2317,7 +5322,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300GetBranchApiResponse(ILogger<OBPv300GetBranchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetBranchApiResponse(ILogger<GetBranchApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2335,11 +5340,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv300GetBranches200ResponsePropertiesBranchesItems? Ok()
+            public OpenBankProject.Model.GetBranches200ResponseBranchesInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv300GetBranches200ResponsePropertiesBranchesItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBranches200ResponseBranchesInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2348,7 +5353,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv300GetBranches200ResponsePropertiesBranchesItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBranches200ResponseBranchesInner? result)
             {
                 result = null;
 
@@ -2386,14 +5391,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv300GetBranches(ref string bankid);
+        partial void FormatGetBranches(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv300GetBranches(string bankid)
+        private void ValidateGetBranches(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2404,10 +5409,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv300GetBranchesDefaultImplementation(IOBPv300GetBranchesApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetBranchesDefaultImplementation(IGetBranchesApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300GetBranches(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetBranches(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2418,7 +5423,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv300GetBranches(ref bool suppressDefaultLog, IOBPv300GetBranchesApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetBranches(ref bool suppressDefaultLog, IGetBranchesApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2427,10 +5432,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv300GetBranchesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetBranchesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300GetBranches(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetBranches(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2443,19 +5448,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv300GetBranches(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetBranches(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Branches for a Bank &lt;p&gt;Returns information about branches for a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Address&lt;/li&gt; &lt;li&gt;Geo Location&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;li&gt;Structured opening hours&lt;/li&gt; &lt;li&gt;Accessible flag&lt;/li&gt; &lt;li&gt;Branch Type&lt;/li&gt; &lt;li&gt;More Info&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Pagination:&lt;/p&gt; &lt;p&gt;By default, 50 records are returned.&lt;/p&gt; &lt;p&gt;You can use the url query parameters &lt;em&gt;limit&lt;/em&gt; and &lt;em&gt;offset&lt;/em&gt; for pagination&lt;br /&gt; You can also use the follow url query parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;city - string, find Branches those in this city, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;withinMetersOf - number, find Branches within given meters distance, optional&lt;/p&gt; &lt;/li&gt; &lt;li&gt;nearLatitude - number, a position of latitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;li&gt;nearLongitude - number, a position of longitude value, cooperate with withMetersOf do query filter, optional&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;note: withinMetersOf, nearLatitude and nearLongitude either all empty or all have value.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accessiblefeatures\&quot;&gt;&lt;strong&gt;accessibleFeatures&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_routing\&quot;&gt;&lt;strong&gt;branch_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branch_type\&quot;&gt;&lt;strong&gt;branch_type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#branches\&quot;&gt;&lt;strong&gt;branches&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#city\&quot;&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#closing_time\&quot;&gt;&lt;strong&gt;closing_time&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#country_code\&quot;&gt;&lt;strong&gt;country_code&lt;/strong&gt;&lt;/a&gt;: 1254&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#county\&quot;&gt;&lt;strong&gt;county&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#drive_up\&quot;&gt;&lt;strong&gt;drive_up&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#friday\&quot;&gt;&lt;strong&gt;friday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_accessible&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_1&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_2&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;line_3&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#lobby\&quot;&gt;&lt;strong&gt;lobby&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#location\&quot;&gt;&lt;strong&gt;location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#monday\&quot;&gt;&lt;strong&gt;monday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#opening_time\&quot;&gt;&lt;strong&gt;opening_time&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#phone_number\&quot;&gt;&lt;strong&gt;phone_number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#postcode\&quot;&gt;&lt;strong&gt;postcode&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#saturday\&quot;&gt;&lt;strong&gt;saturday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#state\&quot;&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#sunday\&quot;&gt;&lt;strong&gt;sunday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#thursday\&quot;&gt;&lt;strong&gt;thursday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tuesday\&quot;&gt;&lt;strong&gt;tuesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#wednesday\&quot;&gt;&lt;strong&gt;wednesday&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300GetBranchesApiResponse?> OBPv300GetBranchesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchesApiResponse"/>&gt;</returns>
+        public async Task<IGetBranchesApiResponse?> GetBranchesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv300GetBranchesAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetBranchesAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2469,16 +5474,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300GetBranchesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300GetBranchesApiResponse> OBPv300GetBranchesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBranchesApiResponse"/>&gt;</returns>
+        public async Task<IGetBranchesApiResponse> GetBranchesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv300GetBranches(bankid);
+                ValidateGetBranches(bankid);
 
-                FormatOBPv300GetBranches(ref bankid);
+                FormatGetBranches(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2507,8 +5512,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv300GetBranchesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv300GetBranchesApiResponse>();
-                        OBPv300GetBranchesApiResponse apiResponseLocalVar;
+                        ILogger<GetBranchesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetBranchesApiResponse>();
+                        GetBranchesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2519,9 +5524,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv300GetBranchesDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetBranchesDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv300GetBranches(apiResponseLocalVar);
+                        Events.ExecuteOnGetBranches(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -2529,24 +5534,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv300GetBranchesDefaultImplementation(e, "/obp/v3.0.0/banks/{bankid}/branches", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv300GetBranches(e);
+                OnErrorGetBranchesDefaultImplementation(e, "/obp/v3.0.0/banks/{bankid}/branches", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetBranches(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv300GetBranchesApiResponse"/>
+        /// The <see cref="GetBranchesApiResponse"/>
         /// </summary>
-        public partial class OBPv300GetBranchesApiResponse : OpenBankProject.Client.ApiResponse, IOBPv300GetBranchesApiResponse
+        public partial class GetBranchesApiResponse : OpenBankProject.Client.ApiResponse, IGetBranchesApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv300GetBranchesApiResponse> Logger { get; }
+            public ILogger<GetBranchesApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv300GetBranchesApiResponse"/>
+            /// The <see cref="GetBranchesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2555,14 +5560,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300GetBranchesApiResponse(ILogger<OBPv300GetBranchesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetBranchesApiResponse(ILogger<GetBranchesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv300GetBranchesApiResponse"/>
+            /// The <see cref="GetBranchesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2571,7 +5576,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv300GetBranchesApiResponse(ILogger<OBPv300GetBranchesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetBranchesApiResponse(ILogger<GetBranchesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2589,11 +5594,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv300GetBranches200Response? Ok()
+            public OpenBankProject.Model.GetBranches200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv300GetBranches200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetBranches200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2602,7 +5607,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv300GetBranches200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetBranches200Response? result)
             {
                 result = null;
 
@@ -2640,594 +5645,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv310CreateAccountWebhook(ref string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateAccountWebhookRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310CreateAccountWebhook(string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv310CreateAccountWebhookRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310CreateAccountWebhookRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateAccountWebhookRequest"></param>
-        private void AfterOBPv310CreateAccountWebhookDefaultImplementation(IOBPv310CreateAccountWebhookApiResponse apiResponseLocalVar, string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310CreateAccountWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv310CreateAccountWebhookRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateAccountWebhookRequest"></param>
-        partial void AfterOBPv310CreateAccountWebhook(ref bool suppressDefaultLog, IOBPv310CreateAccountWebhookApiResponse apiResponseLocalVar, string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateAccountWebhookRequest"></param>
-        private void OnErrorOBPv310CreateAccountWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CreateAccountWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv310CreateAccountWebhookRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310CreateAccountWebhookRequest"></param>
-        partial void OnErrorOBPv310CreateAccountWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest);
-
-        /// <summary>
-        /// Create an Account Webhook &lt;p&gt;Create an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateAccountWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateAccountWebhookApiResponse?> OBPv310CreateAccountWebhookOrDefaultAsync(string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310CreateAccountWebhookAsync(bankid, oBPv310CreateAccountWebhookRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create an Account Webhook &lt;p&gt;Create an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310CreateAccountWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateAccountWebhookApiResponse> OBPv310CreateAccountWebhookAsync(string bankid, OBPv310CreateAccountWebhookRequest oBPv310CreateAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310CreateAccountWebhook(bankid, oBPv310CreateAccountWebhookRequest);
-
-                FormatOBPv310CreateAccountWebhook(ref bankid, oBPv310CreateAccountWebhookRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/account-web-hooks"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/account-web-hooks");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv310CreateAccountWebhookRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310CreateAccountWebhookRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310CreateAccountWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310CreateAccountWebhookApiResponse>();
-                        OBPv310CreateAccountWebhookApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310CreateAccountWebhookDefaultImplementation(apiResponseLocalVar, bankid, oBPv310CreateAccountWebhookRequest);
-
-                        Events.ExecuteOnOBPv310CreateAccountWebhook(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310CreateAccountWebhookDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid, oBPv310CreateAccountWebhookRequest);
-                Events.ExecuteOnErrorOBPv310CreateAccountWebhook(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310CreateAccountWebhookApiResponse"/>
-        /// </summary>
-        public partial class OBPv310CreateAccountWebhookApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310CreateAccountWebhookApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310CreateAccountWebhookApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310CreateAccountWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateAccountWebhookApiResponse(ILogger<OBPv310CreateAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310CreateAccountWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateAccountWebhookApiResponse(ILogger<OBPv310CreateAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv310EnableDisableAccountWebhook(ref string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310EnableDisableAccountWebhook(string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv310EnableDisableAccountWebhookRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310EnableDisableAccountWebhookRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest"></param>
-        private void AfterOBPv310EnableDisableAccountWebhookDefaultImplementation(IOBPv310EnableDisableAccountWebhookApiResponse apiResponseLocalVar, string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310EnableDisableAccountWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv310EnableDisableAccountWebhookRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest"></param>
-        partial void AfterOBPv310EnableDisableAccountWebhook(ref bool suppressDefaultLog, IOBPv310EnableDisableAccountWebhookApiResponse apiResponseLocalVar, string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest"></param>
-        private void OnErrorOBPv310EnableDisableAccountWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310EnableDisableAccountWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv310EnableDisableAccountWebhookRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest"></param>
-        partial void OnErrorOBPv310EnableDisableAccountWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest);
-
-        /// <summary>
-        /// Enable/Disable an Account Webhook &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310EnableDisableAccountWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310EnableDisableAccountWebhookApiResponse?> OBPv310EnableDisableAccountWebhookOrDefaultAsync(string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310EnableDisableAccountWebhookAsync(bankid, oBPv310EnableDisableAccountWebhookRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Enable/Disable an Account Webhook &lt;p&gt;Enable/Disable an Account Webhook&lt;/p&gt; &lt;p&gt;Webhooks are used to call external URLs when certain events happen.&lt;/p&gt; &lt;p&gt;Account Webhooks focus on events around accounts.&lt;/p&gt; &lt;p&gt;For instance, a webhook could be used to notify an external service if a balance changes on an account.&lt;/p&gt; &lt;p&gt;This functionality is work in progress! Please note that only implemented trigger is: OnBalanceChange&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv310EnableDisableAccountWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310EnableDisableAccountWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310EnableDisableAccountWebhookApiResponse> OBPv310EnableDisableAccountWebhookAsync(string bankid, OBPv310EnableDisableAccountWebhookRequest oBPv310EnableDisableAccountWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310EnableDisableAccountWebhook(bankid, oBPv310EnableDisableAccountWebhookRequest);
-
-                FormatOBPv310EnableDisableAccountWebhook(ref bankid, oBPv310EnableDisableAccountWebhookRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/account-web-hooks"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/account-web-hooks");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv310EnableDisableAccountWebhookRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310EnableDisableAccountWebhookRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310EnableDisableAccountWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310EnableDisableAccountWebhookApiResponse>();
-                        OBPv310EnableDisableAccountWebhookApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310EnableDisableAccountWebhookDefaultImplementation(apiResponseLocalVar, bankid, oBPv310EnableDisableAccountWebhookRequest);
-
-                        Events.ExecuteOnOBPv310EnableDisableAccountWebhook(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310EnableDisableAccountWebhookDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid, oBPv310EnableDisableAccountWebhookRequest);
-                Events.ExecuteOnErrorOBPv310EnableDisableAccountWebhook(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310EnableDisableAccountWebhookApiResponse"/>
-        /// </summary>
-        public partial class OBPv310EnableDisableAccountWebhookApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310EnableDisableAccountWebhookApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310EnableDisableAccountWebhookApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310EnableDisableAccountWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310EnableDisableAccountWebhookApiResponse(ILogger<OBPv310EnableDisableAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310EnableDisableAccountWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310EnableDisableAccountWebhookApiResponse(ILogger<OBPv310EnableDisableAccountWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310EnableDisableAccountWebhook200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv310GetAccountWebhooks(ref string bankid);
+        partial void FormatGetSettlementAccounts(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv310GetAccountWebhooks(string bankid)
+        private void ValidateGetSettlementAccounts(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3238,10 +5663,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv310GetAccountWebhooksDefaultImplementation(IOBPv310GetAccountWebhooksApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetSettlementAccountsDefaultImplementation(IGetSettlementAccountsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310GetAccountWebhooks(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetSettlementAccounts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3252,7 +5677,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv310GetAccountWebhooks(ref bool suppressDefaultLog, IOBPv310GetAccountWebhooksApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetSettlementAccounts(ref bool suppressDefaultLog, IGetSettlementAccountsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3261,10 +5686,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv310GetAccountWebhooksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetSettlementAccountsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetAccountWebhooks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetSettlementAccounts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3277,2288 +5702,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv310GetAccountWebhooks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
-
-        /// <summary>
-        /// Get Account Webhooks &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetAccountWebhooksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetAccountWebhooksApiResponse?> OBPv310GetAccountWebhooksOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310GetAccountWebhooksAsync(bankid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Account Webhooks &lt;p&gt;Get Account Webhooks.&lt;/p&gt; &lt;p&gt;Possible custom URL parameters for pagination:&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;li&gt;user_id&#x3D;STRING (if null ignore)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_webhook_id\&quot;&gt;&lt;strong&gt;account_webhook_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_hooks\&quot;&gt;&lt;strong&gt;web_hooks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetAccountWebhooksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetAccountWebhooksApiResponse> OBPv310GetAccountWebhooksAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310GetAccountWebhooks(bankid);
-
-                FormatOBPv310GetAccountWebhooks(ref bankid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310GetAccountWebhooksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310GetAccountWebhooksApiResponse>();
-                        OBPv310GetAccountWebhooksApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310GetAccountWebhooksDefaultImplementation(apiResponseLocalVar, bankid);
-
-                        Events.ExecuteOnOBPv310GetAccountWebhooks(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310GetAccountWebhooksDefaultImplementation(e, "/obp/v3.1.0/management/banks/{bankid}/account-web-hooks", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv310GetAccountWebhooks(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310GetAccountWebhooksApiResponse"/>
-        /// </summary>
-        public partial class OBPv310GetAccountWebhooksApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310GetAccountWebhooksApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310GetAccountWebhooksApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetAccountWebhooksApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetAccountWebhooksApiResponse(ILogger<OBPv310GetAccountWebhooksApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetAccountWebhooksApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetAccountWebhooksApiResponse(ILogger<OBPv310GetAccountWebhooksApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetAccountWebhooks200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetAccountWebhooks200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetAccountWebhooks200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400CreateBankAccountNotificationWebhook(ref string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateBankAccountNotificationWebhook(string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateSystemAccountNotificationWebhookRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateSystemAccountNotificationWebhookRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        private void AfterOBPv400CreateBankAccountNotificationWebhookDefaultImplementation(IOBPv400CreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar, string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateBankAccountNotificationWebhook(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        partial void AfterOBPv400CreateBankAccountNotificationWebhook(ref bool suppressDefaultLog, IOBPv400CreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar, string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        private void OnErrorOBPv400CreateBankAccountNotificationWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateBankAccountNotificationWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        partial void OnErrorOBPv400CreateBankAccountNotificationWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Create bank level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the specified Bank.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankAccountNotificationWebhookApiResponse?> OBPv400CreateBankAccountNotificationWebhookOrDefaultAsync(string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateBankAccountNotificationWebhookAsync(bankid, oBPv400CreateSystemAccountNotificationWebhookRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create bank level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the specified Bank.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankAccountNotificationWebhookApiResponse> OBPv400CreateBankAccountNotificationWebhookAsync(string bankid, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateBankAccountNotificationWebhook(bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                FormatOBPv400CreateBankAccountNotificationWebhook(ref bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateSystemAccountNotificationWebhookRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateSystemAccountNotificationWebhookRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv400CreateBankAccountNotificationWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateBankAccountNotificationWebhookApiResponse>();
-                        OBPv400CreateBankAccountNotificationWebhookApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateBankAccountNotificationWebhookDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                        Events.ExecuteOnOBPv400CreateBankAccountNotificationWebhook(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateBankAccountNotificationWebhookDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/web-hooks/account/notifications/on-create-transaction", uriBuilderLocalVar.Path, bankid, oBPv400CreateSystemAccountNotificationWebhookRequest);
-                Events.ExecuteOnErrorOBPv400CreateBankAccountNotificationWebhook(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv400CreateBankAccountNotificationWebhookApiResponse"/>
-        /// </summary>
-        public partial class OBPv400CreateBankAccountNotificationWebhookApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateBankAccountNotificationWebhookApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv400CreateBankAccountNotificationWebhookApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateBankAccountNotificationWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankAccountNotificationWebhookApiResponse(ILogger<OBPv400CreateBankAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateBankAccountNotificationWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateBankAccountNotificationWebhookApiResponse(ILogger<OBPv400CreateBankAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv400CreateBankAccountNotificationWebhook200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400CreateBankAccountNotificationWebhook200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400CreateBankAccountNotificationWebhook200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400CreateBankAttribute(ref string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateBankAttribute(string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400CreateBankAttributeDefaultImplementation(IOBPv400CreateBankAttributeApiResponse apiResponseLocalVar, string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv510UpdateAtmAttributeRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400CreateBankAttribute(ref bool suppressDefaultLog, IOBPv400CreateBankAttributeApiResponse apiResponseLocalVar, string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400CreateBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv510UpdateAtmAttributeRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400CreateBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Create Bank Attribute &lt;p&gt;Create Bank Attribute&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankAttributeApiResponse?> OBPv400CreateBankAttributeOrDefaultAsync(string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateBankAttributeAsync(bankid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Bank Attribute &lt;p&gt;Create Bank Attribute&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankAttributeApiResponse> OBPv400CreateBankAttributeAsync(string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest);
-
-                FormatOBPv400CreateBankAttribute(ref bankid, oBPv510UpdateAtmAttributeRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attribute"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400CreateBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateBankAttributeApiResponse>();
-                        AttributeApi.OBPv400CreateBankAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, oBPv510UpdateAtmAttributeRequest);
-
-                        Events.ExecuteOnOBPv400CreateBankAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute", uriBuilderLocalVar.Path, bankid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400CreateBankAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateOrUpdateBankAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateBankAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateBankAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateBankAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateBankAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateBankAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateBankAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateBankAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Create or Update Bank Attribute Definition &lt;p&gt;Create or Update Bank Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Bank&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateBankAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateOrUpdateBankAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create or Update Bank Attribute Definition &lt;p&gt;Create or Update Bank Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Bank&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateBankAttributeDefinitionApiResponse> OBPv400CreateOrUpdateBankAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                FormatOBPv400CreateOrUpdateBankAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400CreateOrUpdateBankAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateOrUpdateBankAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400CreateOrUpdateBankAttributeDefinitionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateOrUpdateBankAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                        Events.ExecuteOnOBPv400CreateOrUpdateBankAttributeDefinition(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateOrUpdateBankAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/bank", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateBankAttributeDefinition(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateSettlementAccount(ref string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSettlementAccountRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateSettlementAccount(string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateSettlementAccountRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateSettlementAccountRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSettlementAccountRequest"></param>
-        private void AfterOBPv400CreateSettlementAccountDefaultImplementation(IOBPv400CreateSettlementAccountApiResponse apiResponseLocalVar, string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateSettlementAccount(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateSettlementAccountRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSettlementAccountRequest"></param>
-        partial void AfterOBPv400CreateSettlementAccount(ref bool suppressDefaultLog, IOBPv400CreateSettlementAccountApiResponse apiResponseLocalVar, string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSettlementAccountRequest"></param>
-        private void OnErrorOBPv400CreateSettlementAccountDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateSettlementAccount(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateSettlementAccountRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateSettlementAccountRequest"></param>
-        partial void OnErrorOBPv400CreateSettlementAccount(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest);
-
-        /// <summary>
-        /// Create Settlement Account &lt;p&gt;Create a new settlement account at a bank.&lt;/p&gt; &lt;p&gt;The created settlement account id will be the concatenation of the payment system and the account currency.&lt;br /&gt; For examples: SEPA_SETTLEMENT_ACCOUNT_EUR, CARD_SETTLEMENT_ACCOUNT_USD&lt;/p&gt; &lt;p&gt;By default, when you create a new bank, two settlements accounts are created automatically: OBP_DEFAULT_INCOMING_ACCOUNT_ID and OBP_DEFAULT_OUTGOING_ACCOUNT_ID&lt;br /&gt; Those two accounts have EUR as default currency.&lt;/p&gt; &lt;p&gt;If you want to create default settlement account for a specific currency, you can fill the &lt;code&gt;payment_system&lt;/code&gt; field with the &lt;code&gt;DEFAULT&lt;/code&gt; value.&lt;/p&gt; &lt;p&gt;When a transaction is saved in OBP through the mapped connector, OBP-API look for the account to save the double-entry transaction.&lt;br /&gt; If no OBP account can be found from the counterparty, the double-entry transaction will be saved on a bank settlement account.&lt;br /&gt; - First, the mapped connector looks for a settlement account specific to the payment system and currency. E.g SEPA_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - If we don&#39;t find any specific settlement account with the payment system, we look for a default settlement account for the counterparty currency. E.g DEFAULT_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - Else, we select one of the two OBP default settlement accounts (OBP_DEFAULT_INCOMING_ACCOUNT_ID/OBP_DEFAULT_OUTGOING_ACCOUNT_ID) according to the transaction direction.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID &lt;em&gt;is&lt;/em&gt; specified, the logged in user must have the Role CanCreateAccount. Once created, the Account will be owned by the User specified by USER_ID.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID is &lt;em&gt;not&lt;/em&gt; specified, the account will be owned by the logged in User.&lt;/p&gt; &lt;p&gt;Note: The Amount MUST be zero.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSettlementAccountRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSettlementAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateSettlementAccountApiResponse?> OBPv400CreateSettlementAccountOrDefaultAsync(string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateSettlementAccountAsync(bankid, oBPv400CreateSettlementAccountRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Settlement Account &lt;p&gt;Create a new settlement account at a bank.&lt;/p&gt; &lt;p&gt;The created settlement account id will be the concatenation of the payment system and the account currency.&lt;br /&gt; For examples: SEPA_SETTLEMENT_ACCOUNT_EUR, CARD_SETTLEMENT_ACCOUNT_USD&lt;/p&gt; &lt;p&gt;By default, when you create a new bank, two settlements accounts are created automatically: OBP_DEFAULT_INCOMING_ACCOUNT_ID and OBP_DEFAULT_OUTGOING_ACCOUNT_ID&lt;br /&gt; Those two accounts have EUR as default currency.&lt;/p&gt; &lt;p&gt;If you want to create default settlement account for a specific currency, you can fill the &lt;code&gt;payment_system&lt;/code&gt; field with the &lt;code&gt;DEFAULT&lt;/code&gt; value.&lt;/p&gt; &lt;p&gt;When a transaction is saved in OBP through the mapped connector, OBP-API look for the account to save the double-entry transaction.&lt;br /&gt; If no OBP account can be found from the counterparty, the double-entry transaction will be saved on a bank settlement account.&lt;br /&gt; - First, the mapped connector looks for a settlement account specific to the payment system and currency. E.g SEPA_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - If we don&#39;t find any specific settlement account with the payment system, we look for a default settlement account for the counterparty currency. E.g DEFAULT_SETTLEMENT_ACCOUNT_EUR.&lt;br /&gt; - Else, we select one of the two OBP default settlement accounts (OBP_DEFAULT_INCOMING_ACCOUNT_ID/OBP_DEFAULT_OUTGOING_ACCOUNT_ID) according to the transaction direction.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID &lt;em&gt;is&lt;/em&gt; specified, the logged in user must have the Role CanCreateAccount. Once created, the Account will be owned by the User specified by USER_ID.&lt;/p&gt; &lt;p&gt;If the POST body USER_ID is &lt;em&gt;not&lt;/em&gt; specified, the account will be owned by the logged in User.&lt;/p&gt; &lt;p&gt;Note: The Amount MUST be zero.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateSettlementAccountRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSettlementAccountApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateSettlementAccountApiResponse> OBPv400CreateSettlementAccountAsync(string bankid, OBPv400CreateSettlementAccountRequest oBPv400CreateSettlementAccountRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateSettlementAccount(bankid, oBPv400CreateSettlementAccountRequest);
-
-                FormatOBPv400CreateSettlementAccount(ref bankid, oBPv400CreateSettlementAccountRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/settlement-accounts"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/settlement-accounts");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateSettlementAccountRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateSettlementAccountRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv400CreateSettlementAccountApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateSettlementAccountApiResponse>();
-                        OBPv400CreateSettlementAccountApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateSettlementAccountDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateSettlementAccountRequest);
-
-                        Events.ExecuteOnOBPv400CreateSettlementAccount(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateSettlementAccountDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", uriBuilderLocalVar.Path, bankid, oBPv400CreateSettlementAccountRequest);
-                Events.ExecuteOnErrorOBPv400CreateSettlementAccount(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv400CreateSettlementAccountApiResponse"/>
-        /// </summary>
-        public partial class OBPv400CreateSettlementAccountApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateSettlementAccountApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv400CreateSettlementAccountApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateSettlementAccountApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateSettlementAccountApiResponse(ILogger<OBPv400CreateSettlementAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateSettlementAccountApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateSettlementAccountApiResponse(ILogger<OBPv400CreateSettlementAccountApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv400CreateSettlementAccount200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400CreateSettlementAccount200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400CreateSettlementAccount200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400CreateSystemAccountNotificationWebhook(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateSystemAccountNotificationWebhook(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            if (oBPv400CreateSystemAccountNotificationWebhookRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateSystemAccountNotificationWebhookRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        private void AfterOBPv400CreateSystemAccountNotificationWebhookDefaultImplementation(IOBPv400CreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateSystemAccountNotificationWebhook(ref suppressDefaultLog, apiResponseLocalVar, oBPv400CreateSystemAccountNotificationWebhookRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        partial void AfterOBPv400CreateSystemAccountNotificationWebhook(ref bool suppressDefaultLog, IOBPv400CreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        private void OnErrorOBPv400CreateSystemAccountNotificationWebhookDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateSystemAccountNotificationWebhook(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400CreateSystemAccountNotificationWebhookRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest"></param>
-        partial void OnErrorOBPv400CreateSystemAccountNotificationWebhook(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-        /// <summary>
-        /// Create system level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
-        /// </summary>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateSystemAccountNotificationWebhookApiResponse?> OBPv400CreateSystemAccountNotificationWebhookOrDefaultAsync(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateSystemAccountNotificationWebhookAsync(oBPv400CreateSystemAccountNotificationWebhookRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create system level Account Notification Webhook &lt;p&gt;Create a notification Webhook that will fire for all accounts on the system.&lt;/p&gt; &lt;p&gt;Webhooks are used to call external web services when certain events happen.&lt;/p&gt; &lt;p&gt;For instance, a webhook can be used to notify an external service if a transaction is created on an account.&lt;/p&gt; &lt;p&gt;When an account notification webhook fires it will POST to the URL you specify during the creation of the webhook.&lt;/p&gt; &lt;p&gt;Inside the payload you will find account_id and transaction_id and also user_ids and customer_ids of the Users / Customers linked to the Account.&lt;/p&gt; &lt;p&gt;The webhook will POST the following structure to your service:&lt;/p&gt; &lt;p&gt;{&lt;br /&gt; &amp;quot;event_name&amp;quot;: &amp;quot;OnCreateTransaction&amp;quot;,&lt;br /&gt; &amp;quot;event_id&amp;quot;: &amp;quot;9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;bank_id&amp;quot;: &amp;quot;gh.29.uk&amp;quot;,&lt;br /&gt; &amp;quot;account_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;transaction_id&amp;quot;: &amp;quot;7ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;related_entities&amp;quot;: [&lt;br /&gt; {&lt;br /&gt; &amp;quot;user_id&amp;quot;: &amp;quot;8ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;,&lt;br /&gt; &amp;quot;customer_ids&amp;quot;: [&amp;quot;3ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&amp;quot;]&lt;br /&gt; }&lt;br /&gt; ]&lt;br /&gt; }&lt;/p&gt; &lt;p&gt;Thus, your service should accept the above POST body structure.&lt;/p&gt; &lt;p&gt;In this way, your web service can be informed about an event on an account and act accordingly.&lt;/p&gt; &lt;p&gt;Further information about the account, transaction or related entities can then be retrieved using the standard REST APIs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_method\&quot;&gt;&lt;strong&gt;http_method&lt;/strong&gt;&lt;/a&gt;: GET&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#http_protocol\&quot;&gt;&lt;strong&gt;http_protocol&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#trigger_name\&quot;&gt;&lt;strong&gt;trigger_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;webhook_id&lt;/strong&gt;&lt;/a&gt;: webhook_id&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400CreateSystemAccountNotificationWebhookRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateSystemAccountNotificationWebhookApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateSystemAccountNotificationWebhookApiResponse> OBPv400CreateSystemAccountNotificationWebhookAsync(OBPv400CreateSystemAccountNotificationWebhookRequest oBPv400CreateSystemAccountNotificationWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateSystemAccountNotificationWebhook(oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                FormatOBPv400CreateSystemAccountNotificationWebhook(oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction");
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateSystemAccountNotificationWebhookRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateSystemAccountNotificationWebhookRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv400CreateSystemAccountNotificationWebhookApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateSystemAccountNotificationWebhookApiResponse>();
-                        OBPv400CreateSystemAccountNotificationWebhookApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateSystemAccountNotificationWebhookDefaultImplementation(apiResponseLocalVar, oBPv400CreateSystemAccountNotificationWebhookRequest);
-
-                        Events.ExecuteOnOBPv400CreateSystemAccountNotificationWebhook(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateSystemAccountNotificationWebhookDefaultImplementation(e, "/obp/v4.0.0/web-hooks/account/notifications/on-create-transaction", uriBuilderLocalVar.Path, oBPv400CreateSystemAccountNotificationWebhookRequest);
-                Events.ExecuteOnErrorOBPv400CreateSystemAccountNotificationWebhook(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv400CreateSystemAccountNotificationWebhookApiResponse"/>
-        /// </summary>
-        public partial class OBPv400CreateSystemAccountNotificationWebhookApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateSystemAccountNotificationWebhookApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv400CreateSystemAccountNotificationWebhookApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateSystemAccountNotificationWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateSystemAccountNotificationWebhookApiResponse(ILogger<OBPv400CreateSystemAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateSystemAccountNotificationWebhookApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateSystemAccountNotificationWebhookApiResponse(ILogger<OBPv400CreateSystemAccountNotificationWebhookApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv400CreateSystemAccountNotificationWebhook200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400CreateSystemAccountNotificationWebhook200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400CreateSystemAccountNotificationWebhook200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400DeleteBankAttribute(ref string bankid, ref string bankattributeid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400DeleteBankAttribute(string bankid, string bankattributeid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (bankattributeid == null)
-                throw new ArgumentNullException(nameof(bankattributeid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        private void AfterOBPv400DeleteBankAttributeDefaultImplementation(IOBPv400DeleteBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400DeleteBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        partial void AfterOBPv400DeleteBankAttribute(ref bool suppressDefaultLog, IOBPv400DeleteBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        private void OnErrorOBPv400DeleteBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        partial void OnErrorOBPv400DeleteBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid);
-
-        /// <summary>
-        /// Delete Bank Attribute &lt;p&gt;Delete Bank Attribute&lt;/p&gt; &lt;p&gt;Delete a Bank Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankAttributeApiResponse?> OBPv400DeleteBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400DeleteBankAttributeAsync(bankid, bankattributeid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete Bank Attribute &lt;p&gt;Delete Bank Attribute&lt;/p&gt; &lt;p&gt;Delete a Bank Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankAttributeApiResponse> OBPv400DeleteBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400DeleteBankAttribute(bankid, bankattributeid);
-
-                FormatOBPv400DeleteBankAttribute(ref bankid, ref bankattributeid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400DeleteBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteBankAttributeApiResponse>();
-                        AttributeApi.OBPv400DeleteBankAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400DeleteBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid);
-
-                        Events.ExecuteOnOBPv400DeleteBankAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400DeleteBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid);
-                Events.ExecuteOnErrorOBPv400DeleteBankAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400DeleteBankCascade(ref string bankid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400DeleteBankCascade(string bankid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void AfterOBPv400DeleteBankCascadeDefaultImplementation(IOBPv400DeleteBankCascadeApiResponse apiResponseLocalVar, string bankid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400DeleteBankCascade(ref suppressDefaultLog, apiResponseLocalVar, bankid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void AfterOBPv400DeleteBankCascade(ref bool suppressDefaultLog, IOBPv400DeleteBankCascadeApiResponse apiResponseLocalVar, string bankid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void OnErrorOBPv400DeleteBankCascadeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteBankCascade(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void OnErrorOBPv400DeleteBankCascade(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
-
-        /// <summary>
-        /// Delete Bank Cascade &lt;p&gt;Delete a Bank Cascade specified by BANK_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankCascadeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankCascadeApiResponse?> OBPv400DeleteBankCascadeOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400DeleteBankCascadeAsync(bankid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete Bank Cascade &lt;p&gt;Delete a Bank Cascade specified by BANK_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankCascadeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankCascadeApiResponse> OBPv400DeleteBankCascadeAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400DeleteBankCascade(bankid);
-
-                FormatOBPv400DeleteBankCascade(ref bankid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/management/cascading/banks/{bankid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/cascading/banks/{bankid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv400DeleteBankCascadeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteBankCascadeApiResponse>();
-                        OBPv400DeleteBankCascadeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/management/cascading/banks/{bankid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400DeleteBankCascadeDefaultImplementation(apiResponseLocalVar, bankid);
-
-                        Events.ExecuteOnOBPv400DeleteBankCascade(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400DeleteBankCascadeDefaultImplementation(e, "/obp/v4.0.0/management/cascading/banks/{bankid}", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400DeleteBankCascade(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv400DeleteBankCascadeApiResponse"/>
-        /// </summary>
-        public partial class OBPv400DeleteBankCascadeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteBankCascadeApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv400DeleteBankCascadeApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv400DeleteBankCascadeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankCascadeApiResponse(ILogger<OBPv400DeleteBankCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv400DeleteBankCascadeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteBankCascadeApiResponse(ILogger<OBPv400DeleteBankCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400GetBankAttribute(ref string bankid, ref string bankattributeid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400GetBankAttribute(string bankid, string bankattributeid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (bankattributeid == null)
-                throw new ArgumentNullException(nameof(bankattributeid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        private void AfterOBPv400GetBankAttributeDefaultImplementation(IOBPv400GetBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400GetBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        partial void AfterOBPv400GetBankAttribute(ref bool suppressDefaultLog, IOBPv400GetBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        private void OnErrorOBPv400GetBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        partial void OnErrorOBPv400GetBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid);
-
-        /// <summary>
-        /// Get Bank Attribute By BANK_ATTRIBUTE_ID &lt;p&gt;Get Bank Attribute By BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankAttributeApiResponse?> OBPv400GetBankAttributeOrDefaultAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400GetBankAttributeAsync(bankid, bankattributeid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Bank Attribute By BANK_ATTRIBUTE_ID &lt;p&gt;Get Bank Attribute By BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankAttributeApiResponse> OBPv400GetBankAttributeAsync(string bankid, string bankattributeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400GetBankAttribute(bankid, bankattributeid);
-
-                FormatOBPv400GetBankAttribute(ref bankid, ref bankattributeid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400GetBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetBankAttributeApiResponse>();
-                        AttributeApi.OBPv400GetBankAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400GetBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid);
-
-                        Events.ExecuteOnOBPv400GetBankAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400GetBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid);
-                Events.ExecuteOnErrorOBPv400GetBankAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400GetBankAttributes(ref string bankid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400GetBankAttributes(string bankid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void AfterOBPv400GetBankAttributesDefaultImplementation(IOBPv400GetBankAttributesApiResponse apiResponseLocalVar, string bankid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400GetBankAttributes(ref suppressDefaultLog, apiResponseLocalVar, bankid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void AfterOBPv400GetBankAttributes(ref bool suppressDefaultLog, IOBPv400GetBankAttributesApiResponse apiResponseLocalVar, string bankid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetBankAttributesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankAttributes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetBankAttributes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
-
-        /// <summary>
-        /// Get Bank Attributes &lt;p&gt;Get Bank Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attributes&lt;/strong&gt;&lt;/a&gt;: bank_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankAttributesApiResponse?> OBPv400GetBankAttributesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400GetBankAttributesAsync(bankid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Bank Attributes &lt;p&gt;Get Bank Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attribute_id&lt;/strong&gt;&lt;/a&gt;: bank_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_attributes&lt;/strong&gt;&lt;/a&gt;: bank_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankAttributesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankAttributesApiResponse> OBPv400GetBankAttributesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400GetBankAttributes(bankid);
-
-                FormatOBPv400GetBankAttributes(ref bankid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attributes"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400GetBankAttributesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetBankAttributesApiResponse>();
-                        AttributeApi.OBPv400GetBankAttributesApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400GetBankAttributesDefaultImplementation(apiResponseLocalVar, bankid);
-
-                        Events.ExecuteOnOBPv400GetBankAttributes(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400GetBankAttributesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetBankAttributes(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400GetSettlementAccounts(ref string bankid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400GetSettlementAccounts(string bankid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void AfterOBPv400GetSettlementAccountsDefaultImplementation(IOBPv400GetSettlementAccountsApiResponse apiResponseLocalVar, string bankid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400GetSettlementAccounts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void AfterOBPv400GetSettlementAccounts(ref bool suppressDefaultLog, IOBPv400GetSettlementAccountsApiResponse apiResponseLocalVar, string bankid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetSettlementAccountsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetSettlementAccounts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetSettlementAccounts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetSettlementAccounts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Settlement accounts at Bank &lt;p&gt;Get settlement accounts on this API instance&lt;br /&gt; Returns a list of settlement accounts at this Bank&lt;/p&gt; &lt;p&gt;Note: a settlement account is considered as a bank account.&lt;br /&gt; So you can update it and add account attributes to it using the regular account endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attributes\&quot;&gt;&lt;strong&gt;account_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance\&quot;&gt;&lt;strong&gt;balance&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;branch_id&lt;/strong&gt;&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;payment_system&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#settlement_accounts\&quot;&gt;&lt;strong&gt;settlement_accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSettlementAccountsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetSettlementAccountsApiResponse?> OBPv400GetSettlementAccountsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSettlementAccountsApiResponse"/>&gt;</returns>
+        public async Task<IGetSettlementAccountsApiResponse?> GetSettlementAccountsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetSettlementAccountsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetSettlementAccountsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5572,16 +5728,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetSettlementAccountsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetSettlementAccountsApiResponse> OBPv400GetSettlementAccountsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetSettlementAccountsApiResponse"/>&gt;</returns>
+        public async Task<IGetSettlementAccountsApiResponse> GetSettlementAccountsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetSettlementAccounts(bankid);
+                ValidateGetSettlementAccounts(bankid);
 
-                FormatOBPv400GetSettlementAccounts(ref bankid);
+                FormatGetSettlementAccounts(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5598,7 +5754,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5625,8 +5781,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetSettlementAccountsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetSettlementAccountsApiResponse>();
-                        OBPv400GetSettlementAccountsApiResponse apiResponseLocalVar;
+                        ILogger<GetSettlementAccountsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetSettlementAccountsApiResponse>();
+                        GetSettlementAccountsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5637,9 +5793,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetSettlementAccountsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetSettlementAccountsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetSettlementAccounts(apiResponseLocalVar);
+                        Events.ExecuteOnGetSettlementAccounts(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5651,24 +5807,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetSettlementAccountsDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetSettlementAccounts(e);
+                OnErrorGetSettlementAccountsDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/settlement-accounts", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetSettlementAccounts(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetSettlementAccountsApiResponse"/>
+        /// The <see cref="GetSettlementAccountsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetSettlementAccountsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetSettlementAccountsApiResponse
+        public partial class GetSettlementAccountsApiResponse : OpenBankProject.Client.ApiResponse, IGetSettlementAccountsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetSettlementAccountsApiResponse> Logger { get; }
+            public ILogger<GetSettlementAccountsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetSettlementAccountsApiResponse"/>
+            /// The <see cref="GetSettlementAccountsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5677,14 +5833,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetSettlementAccountsApiResponse(ILogger<OBPv400GetSettlementAccountsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetSettlementAccountsApiResponse(ILogger<GetSettlementAccountsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetSettlementAccountsApiResponse"/>
+            /// The <see cref="GetSettlementAccountsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5693,7 +5849,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetSettlementAccountsApiResponse(ILogger<OBPv400GetSettlementAccountsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetSettlementAccountsApiResponse(ILogger<GetSettlementAccountsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5711,11 +5867,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetSettlementAccounts200Response? Ok()
+            public OpenBankProject.Model.GetSettlementAccounts200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetSettlementAccounts200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetSettlementAccounts200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5724,7 +5880,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetSettlementAccounts200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetSettlementAccounts200Response? result)
             {
                 result = null;
 
@@ -5762,25 +5918,17 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateBankAttribute(ref string bankid, ref string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatGetTransactionRequestTypesSupportedByBank(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateBankAttribute(string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateGetTransactionRequestTypesSupportedByBank(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
-
-            if (bankattributeid == null)
-                throw new ArgumentNullException(nameof(bankattributeid));
-
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -5788,12 +5936,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400UpdateBankAttributeDefaultImplementation(IOBPv400UpdateBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void AfterGetTransactionRequestTypesSupportedByBankDefaultImplementation(IGetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+            AfterGetTransactionRequestTypesSupportedByBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5804,9 +5950,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400UpdateBankAttribute(ref bool suppressDefaultLog, IOBPv400UpdateBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void AfterGetTransactionRequestTypesSupportedByBank(ref bool suppressDefaultLog, IGetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5815,12 +5959,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400UpdateBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void OnErrorGetTransactionRequestTypesSupportedByBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+            OnErrorGetTransactionRequestTypesSupportedByBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5833,23 +5975,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="bankattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400UpdateBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void OnErrorGetTransactionRequestTypesSupportedByBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
-        /// Update Bank Attribute &lt;p&gt;Update Bank Attribute.&lt;/p&gt; &lt;p&gt;Update one Bak Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Get Transaction Request Types at Bank &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankAttributeApiResponse?> OBPv400UpdateBankAttributeOrDefaultAsync(string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestTypesSupportedByBankApiResponse?> GetTransactionRequestTypesSupportedByBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateBankAttributeAsync(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await GetTransactionRequestTypesSupportedByBankAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5858,23 +5996,21 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Update Bank Attribute &lt;p&gt;Update Bank Attribute.&lt;/p&gt; &lt;p&gt;Update one Bak Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Get Transaction Request Types at Bank &lt;p&gt;Get the list of the Transaction Request Types supported by the bank.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_type&lt;/strong&gt;&lt;/a&gt;: SEPA&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_request_types\&quot;&gt;&lt;strong&gt;transaction_request_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankAttributeApiResponse> OBPv400UpdateBankAttributeAsync(string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionRequestTypesSupportedByBankApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionRequestTypesSupportedByBankApiResponse> GetTransactionRequestTypesSupportedByBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+                ValidateGetTransactionRequestTypesSupportedByBank(bankid);
 
-                FormatOBPv400UpdateBankAttribute(ref bankid, ref bankattributeid, oBPv510UpdateAtmAttributeRequest);
+                FormatGetTransactionRequestTypesSupportedByBank(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5882,40 +6018,11 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
+                        ? "/obp/v2.1.0/banks/{bankid}/transaction-request-types"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.1.0/banks/{bankid}/transaction-request-types");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
 
                     string[] acceptLocalVars = new string[] {
                         "application/json"
@@ -5926,31 +6033,27 @@ namespace OpenBankProject.Api
                     foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
                         httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
                     DateTime requestedAtLocalVar = DateTime.UtcNow;
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400UpdateBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400UpdateBankAttributeApiResponse>();
-                        AttributeApi.OBPv400UpdateBankAttributeApiResponse apiResponseLocalVar;
+                        ILogger<GetTransactionRequestTypesSupportedByBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetTransactionRequestTypesSupportedByBankApiResponse>();
+                        GetTransactionRequestTypesSupportedByBankApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.1.0/banks/{bankid}/transaction-request-types", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv400UpdateBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
+                        AfterGetTransactionRequestTypesSupportedByBankDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400UpdateBankAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
+                        Events.ExecuteOnGetTransactionRequestTypesSupportedByBank(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -5958,34 +6061,133 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400UpdateBankAttribute(e);
+                OnErrorGetTransactionRequestTypesSupportedByBankDefaultImplementation(e, "/obp/v2.1.0/banks/{bankid}/transaction-request-types", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetTransactionRequestTypesSupportedByBank(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv500UpdateBank(OBPv500UpdateBankRequest oBPv500UpdateBankRequest);
+        /// <summary>
+        /// The <see cref="GetTransactionRequestTypesSupportedByBankApiResponse"/>
+        /// </summary>
+        public partial class GetTransactionRequestTypesSupportedByBankApiResponse : OpenBankProject.Client.ApiResponse, IGetTransactionRequestTypesSupportedByBankApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<GetTransactionRequestTypesSupportedByBankApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="GetTransactionRequestTypesSupportedByBankApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetTransactionRequestTypesSupportedByBankApiResponse(ILogger<GetTransactionRequestTypesSupportedByBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="GetTransactionRequestTypesSupportedByBankApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetTransactionRequestTypesSupportedByBankApiResponse(ILogger<GetTransactionRequestTypesSupportedByBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetTransactionRequestTypesSupportedByBank200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetTransactionRequestTypesSupportedByBank200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetTransactionRequestTypesSupportedByBank200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatGetTransactionTypes(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv500UpdateBankRequest"></param>
+        /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv500UpdateBank(OBPv500UpdateBankRequest oBPv500UpdateBankRequest)
+        private void ValidateGetTransactionTypes(string bankid)
         {
-            if (oBPv500UpdateBankRequest == null)
-                throw new ArgumentNullException(nameof(oBPv500UpdateBankRequest));
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv500UpdateBankRequest"></param>
-        private void AfterOBPv500UpdateBankDefaultImplementation(IOBPv500UpdateBankApiResponse apiResponseLocalVar, OBPv500UpdateBankRequest oBPv500UpdateBankRequest)
+        /// <param name="bankid"></param>
+        private void AfterGetTransactionTypesDefaultImplementation(IGetTransactionTypesApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv500UpdateBank(ref suppressDefaultLog, apiResponseLocalVar, oBPv500UpdateBankRequest);
+            AfterGetTransactionTypes(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5995,8 +6197,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv500UpdateBankRequest"></param>
-        partial void AfterOBPv500UpdateBank(ref bool suppressDefaultLog, IOBPv500UpdateBankApiResponse apiResponseLocalVar, OBPv500UpdateBankRequest oBPv500UpdateBankRequest);
+        /// <param name="bankid"></param>
+        partial void AfterGetTransactionTypes(ref bool suppressDefaultLog, IGetTransactionTypesApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -6004,11 +6206,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv500UpdateBankRequest"></param>
-        private void OnErrorOBPv500UpdateBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv500UpdateBankRequest oBPv500UpdateBankRequest)
+        /// <param name="bankid"></param>
+        private void OnErrorGetTransactionTypesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv500UpdateBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv500UpdateBankRequest);
+            OnErrorGetTransactionTypes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -6020,20 +6222,169 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv500UpdateBankRequest"></param>
-        partial void OnErrorOBPv500UpdateBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv500UpdateBankRequest oBPv500UpdateBankRequest);
+        /// <param name="bankid"></param>
+        partial void OnErrorGetTransactionTypes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+
+        /// <summary>
+        /// Get Transaction Types at Bank &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionTypesApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionTypesApiResponse?> GetTransactionTypesOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetTransactionTypesAsync(bankid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Transaction Types at Bank &lt;p&gt;Get Transaction Types for the bank specified by BANK_ID:&lt;/p&gt; &lt;p&gt;Lists the possible Transaction Types available at the bank (as opposed to Transaction Request Types which are the possible ways Transactions can be created by this API Server).&lt;/p&gt; &lt;ul&gt; &lt;li&gt;id : Unique transaction type id across the API instance. SHOULD be a UUID. MUST be unique.&lt;/li&gt; &lt;li&gt;bank_id : The bank that supports this TransactionType&lt;/li&gt; &lt;li&gt;short_code : A short code (SHOULD have no-spaces) which MUST be unique across the bank. May be stored with Transactions to link here&lt;/li&gt; &lt;li&gt;summary : A succinct summary&lt;/li&gt; &lt;li&gt;description : A longer description&lt;/li&gt; &lt;li&gt;charge : The charge to the customer for each one of these&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#charge\&quot;&gt;&lt;strong&gt;charge&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_code\&quot;&gt;&lt;strong&gt;short_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#summary\&quot;&gt;&lt;strong&gt;summary&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_types\&quot;&gt;&lt;strong&gt;transaction_types&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetTransactionTypesApiResponse"/>&gt;</returns>
+        public async Task<IGetTransactionTypesApiResponse> GetTransactionTypesAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetTransactionTypes(bankid);
+
+                FormatGetTransactionTypes(ref bankid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v2.0.0/banks/{bankid}/transaction-types"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.0.0/banks/{bankid}/transaction-types");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AccountInformationServiceAISApi.GetTransactionTypesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.GetTransactionTypesApiResponse>();
+                        AccountInformationServiceAISApi.GetTransactionTypesApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.0.0/banks/{bankid}/transaction-types", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetTransactionTypesDefaultImplementation(apiResponseLocalVar, bankid);
+
+                        Events.ExecuteOnGetTransactionTypes(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetTransactionTypesDefaultImplementation(e, "/obp/v2.0.0/banks/{bankid}/transaction-types", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetTransactionTypes(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateBank(UpdateBankRequest updateBankRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="updateBankRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateBank(UpdateBankRequest updateBankRequest)
+        {
+            if (updateBankRequest == null)
+                throw new ArgumentNullException(nameof(updateBankRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="updateBankRequest"></param>
+        private void AfterUpdateBankDefaultImplementation(IUpdateBankApiResponse apiResponseLocalVar, UpdateBankRequest updateBankRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateBank(ref suppressDefaultLog, apiResponseLocalVar, updateBankRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="updateBankRequest"></param>
+        partial void AfterUpdateBank(ref bool suppressDefaultLog, IUpdateBankApiResponse apiResponseLocalVar, UpdateBankRequest updateBankRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="updateBankRequest"></param>
+        private void OnErrorUpdateBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankRequest updateBankRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, updateBankRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="updateBankRequest"></param>
+        partial void OnErrorUpdateBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, UpdateBankRequest updateBankRequest);
 
         /// <summary>
         /// Update Bank &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv500UpdateBankRequest">Request body</param>
+        /// <param name="updateBankRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500UpdateBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv500UpdateBankApiResponse?> OBPv500UpdateBankOrDefaultAsync(OBPv500UpdateBankRequest oBPv500UpdateBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankApiResponse?> UpdateBankOrDefaultAsync(UpdateBankRequest updateBankRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv500UpdateBankAsync(oBPv500UpdateBankRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankAsync(updateBankRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -6045,18 +6396,18 @@ namespace OpenBankProject.Api
         /// Update Bank &lt;p&gt;Update an existing bank (Authenticated access).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv500UpdateBankRequest">Request body</param>
+        /// <param name="updateBankRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500UpdateBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv500UpdateBankApiResponse> OBPv500UpdateBankAsync(OBPv500UpdateBankRequest oBPv500UpdateBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankApiResponse> UpdateBankAsync(UpdateBankRequest updateBankRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv500UpdateBank(oBPv500UpdateBankRequest);
+                ValidateUpdateBank(updateBankRequest);
 
-                FormatOBPv500UpdateBank(oBPv500UpdateBankRequest);
+                FormatUpdateBank(updateBankRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -6067,16 +6418,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v5.0.0/banks"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.0.0/banks");
 
-                    httpRequestMessageLocalVar.Content = (oBPv500UpdateBankRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv500UpdateBankRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -6112,8 +6463,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv500UpdateBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv500UpdateBankApiResponse>();
-                        OBPv500UpdateBankApiResponse apiResponseLocalVar;
+                        ILogger<UpdateBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateBankApiResponse>();
+                        UpdateBankApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -6124,9 +6475,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv500UpdateBankDefaultImplementation(apiResponseLocalVar, oBPv500UpdateBankRequest);
+                        AfterUpdateBankDefaultImplementation(apiResponseLocalVar, updateBankRequest);
 
-                        Events.ExecuteOnOBPv500UpdateBank(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBank(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -6138,24 +6489,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv500UpdateBankDefaultImplementation(e, "/obp/v5.0.0/banks", uriBuilderLocalVar.Path, oBPv500UpdateBankRequest);
-                Events.ExecuteOnErrorOBPv500UpdateBank(e);
+                OnErrorUpdateBankDefaultImplementation(e, "/obp/v5.0.0/banks", uriBuilderLocalVar.Path, updateBankRequest);
+                Events.ExecuteOnErrorUpdateBank(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv500UpdateBankApiResponse"/>
+        /// The <see cref="UpdateBankApiResponse"/>
         /// </summary>
-        public partial class OBPv500UpdateBankApiResponse : OpenBankProject.Client.ApiResponse, IOBPv500UpdateBankApiResponse
+        public partial class UpdateBankApiResponse : OpenBankProject.Client.ApiResponse, IUpdateBankApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv500UpdateBankApiResponse> Logger { get; }
+            public ILogger<UpdateBankApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv500UpdateBankApiResponse"/>
+            /// The <see cref="UpdateBankApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6164,14 +6515,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv500UpdateBankApiResponse(ILogger<OBPv500UpdateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankApiResponse(ILogger<UpdateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv500UpdateBankApiResponse"/>
+            /// The <see cref="UpdateBankApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -6180,7 +6531,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv500UpdateBankApiResponse(ILogger<OBPv500UpdateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateBankApiResponse(ILogger<UpdateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -6198,11 +6549,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv500UpdateBank200Response? Ok()
+            public OpenBankProject.Model.UpdateBank200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv500UpdateBank200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.UpdateBank200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -6211,7 +6562,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv500UpdateBank200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.UpdateBank200Response? result)
             {
                 result = null;
 
@@ -6255,28 +6606,38 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600CreateBank(OBPv600CreateBankRequest oBPv600CreateBankRequest);
+        partial void FormatUpdateBankAttribute(ref string bankid, ref string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600CreateBankRequest"></param>
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateBank(OBPv600CreateBankRequest oBPv600CreateBankRequest)
+        private void ValidateUpdateBankAttribute(string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
-            if (oBPv600CreateBankRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateBankRequest));
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (bankattributeid == null)
+                throw new ArgumentNullException(nameof(bankattributeid));
+
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateBankRequest"></param>
-        private void AfterOBPv600CreateBankDefaultImplementation(IOBPv600CreateBankApiResponse apiResponseLocalVar, OBPv600CreateBankRequest oBPv600CreateBankRequest)
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterUpdateBankAttributeDefaultImplementation(IUpdateBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateBank(ref suppressDefaultLog, apiResponseLocalVar, oBPv600CreateBankRequest);
+            AfterUpdateBankAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, bankattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -6286,8 +6647,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateBankRequest"></param>
-        partial void AfterOBPv600CreateBank(ref bool suppressDefaultLog, IOBPv600CreateBankApiResponse apiResponseLocalVar, OBPv600CreateBankRequest oBPv600CreateBankRequest);
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterUpdateBankAttribute(ref bool suppressDefaultLog, IUpdateBankAttributeApiResponse apiResponseLocalVar, string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -6295,11 +6658,13 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateBankRequest"></param>
-        private void OnErrorOBPv600CreateBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateBankRequest oBPv600CreateBankRequest)
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorUpdateBankAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600CreateBankRequest);
+            OnErrorUpdateBankAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, bankattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -6311,20 +6676,24 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateBankRequest"></param>
-        partial void OnErrorOBPv600CreateBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateBankRequest oBPv600CreateBankRequest);
+        /// <param name="bankid"></param>
+        /// <param name="bankattributeid"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorUpdateBankAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
-        /// Create Bank &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// Update Bank Attribute &lt;p&gt;Update Bank Attribute.&lt;/p&gt; &lt;p&gt;Update one Bak Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600CreateBankRequest">Request body</param>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateBankApiResponse?> OBPv600CreateBankOrDefaultAsync(OBPv600CreateBankRequest oBPv600CreateBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankAttributeApiResponse?> UpdateBankAttributeOrDefaultAsync(string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateBankAsync(oBPv600CreateBankRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankAttributeAsync(bankid, bankattributeid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -6333,21 +6702,23 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Create Bank &lt;p&gt;Create a new bank (Authenticated access).&lt;/p&gt; &lt;p&gt;The user creating this will be automatically assigned the Role CanCreateEntitlementAtOneBank.&lt;br /&gt; Thus the User can manage the bank they create and assign Roles to other Users.&lt;/p&gt; &lt;pre&gt;&lt;code&gt;     Only SANDBOX mode (i.e. when connector&#x3D;mapped in properties file) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;The settlement accounts are automatically created by the system when the bank is created.&lt;br /&gt; Name and account id are created in accordance to the next rules:&lt;br /&gt; - Incoming account (name: Default incoming settlement account, Account ID: OBP_DEFAULT_INCOMING_ACCOUNT_ID, currency: EUR)&lt;br /&gt; - Outgoing account (name: Default outgoing settlement account, Account ID: OBP_DEFAULT_OUTGOING_ACCOUNT_ID, currency: EUR)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;bank_routings&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;full_name&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;logo&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;website&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
+        /// Update Bank Attribute &lt;p&gt;Update Bank Attribute.&lt;/p&gt; &lt;p&gt;Update one Bak Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BANK_ATTRIBUTE_ID&lt;/a&gt;: BANK_ATTRIBUTE_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateBankRequest">Request body</param>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="bankattributeid">The BANKATTRIBUTEID identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateBankApiResponse> OBPv600CreateBankAsync(OBPv600CreateBankRequest oBPv600CreateBankRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankAttributeApiResponse> UpdateBankAttributeAsync(string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateBank(oBPv600CreateBankRequest);
+                ValidateUpdateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest);
 
-                FormatOBPv600CreateBank(oBPv600CreateBankRequest);
+                FormatUpdateBankAttribute(ref bankid, ref bankattributeid, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -6355,19 +6726,21 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/banks"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks");
+                        ? "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankattributeid%7D", Uri.EscapeDataString(bankattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateBankRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateBankRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -6397,27 +6770,27 @@ namespace OpenBankProject.Api
                     foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
                         httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
 
                     DateTime requestedAtLocalVar = DateTime.UtcNow;
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600CreateBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600CreateBankApiResponse>();
-                        OBPv600CreateBankApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateBankAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateBankAttributeApiResponse>();
+                        AttributeApi.UpdateBankAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv600CreateBankDefaultImplementation(apiResponseLocalVar, oBPv600CreateBankRequest);
+                        AfterUpdateBankAttributeDefaultImplementation(apiResponseLocalVar, bankid, bankattributeid, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv600CreateBank(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBankAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -6429,381 +6802,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateBankDefaultImplementation(e, "/obp/v6.0.0/banks", uriBuilderLocalVar.Path, oBPv600CreateBankRequest);
-                Events.ExecuteOnErrorOBPv600CreateBank(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv600CreateBankApiResponse"/>
-        /// </summary>
-        public partial class OBPv600CreateBankApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600CreateBankApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv600CreateBankApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv600CreateBankApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateBankApiResponse(ILogger<OBPv600CreateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv600CreateBankApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateBankApiResponse(ILogger<OBPv600CreateBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetBank200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetBank200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetBank200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv600GetBank(ref string bankid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv600GetBank(string bankid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void AfterOBPv600GetBankDefaultImplementation(IOBPv600GetBankApiResponse apiResponseLocalVar, string bankid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600GetBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void AfterOBPv600GetBank(ref bool suppressDefaultLog, IOBPv600GetBankApiResponse apiResponseLocalVar, string bankid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        private void OnErrorOBPv600GetBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        partial void OnErrorOBPv600GetBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
-
-        /// <summary>
-        /// Get Bank &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetBankApiResponse?> OBPv600GetBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600GetBankAsync(bankid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Bank &lt;p&gt;Get the bank specified by BANK_ID&lt;br /&gt; Returns information about a single bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id: The unique identifier of this bank&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetBankApiResponse> OBPv600GetBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv600GetBank(bankid);
-
-                FormatOBPv600GetBank(ref bankid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/banks/{bankid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks/{bankid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AccountInformationServiceAISApi.OBPv600GetBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.OBPv600GetBankApiResponse>();
-                        AccountInformationServiceAISApi.OBPv600GetBankApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks/{bankid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600GetBankDefaultImplementation(apiResponseLocalVar, bankid);
-
-                        Events.ExecuteOnOBPv600GetBank(apiResponseLocalVar);
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600GetBankDefaultImplementation(e, "/obp/v6.0.0/banks/{bankid}", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv600GetBank(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetBanksDefaultImplementation(IOBPv600GetBanksApiResponse apiResponseLocalVar)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv600GetBanks(ref suppressDefaultLog, apiResponseLocalVar);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetBanks(ref bool suppressDefaultLog, IOBPv600GetBanksApiResponse apiResponseLocalVar);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetBanksDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetBanks(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetBanks(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
-
-        /// <summary>
-        /// Get Banks &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBanksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetBanksApiResponse?> OBPv600GetBanksOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv600GetBanksAsync(cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Banks &lt;p&gt;Get banks on this API instance&lt;br /&gt; Returns a list of banks supported on this server:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;bank_id used as parameter in URLs&lt;/li&gt; &lt;li&gt;Short and full name of bank&lt;/li&gt; &lt;li&gt;Logo URL&lt;/li&gt; &lt;li&gt;Website&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_code\&quot;&gt;&lt;strong&gt;bank_code&lt;/strong&gt;&lt;/a&gt;: CGHZ&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routings\&quot;&gt;&lt;strong&gt;bank_routings&lt;/strong&gt;&lt;/a&gt;: bank routing in form of (scheme, address)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#banks\&quot;&gt;&lt;strong&gt;banks&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#full_name\&quot;&gt;&lt;strong&gt;full_name&lt;/strong&gt;&lt;/a&gt;: full name string&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#logo\&quot;&gt;&lt;strong&gt;logo&lt;/strong&gt;&lt;/a&gt;: logo url&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#website\&quot;&gt;&lt;strong&gt;website&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.openbankproject.com\&quot;&gt;www.openbankproject.com&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetBanksApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetBanksApiResponse> OBPv600GetBanksAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v6.0.0/banks"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/banks");
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AccountInformationServiceAISApi.OBPv600GetBanksApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountInformationServiceAISApi.OBPv600GetBanksApiResponse>();
-                        AccountInformationServiceAISApi.OBPv600GetBanksApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v6.0.0/banks", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv600GetBanksDefaultImplementation(apiResponseLocalVar);
-
-                        Events.ExecuteOnOBPv600GetBanks(apiResponseLocalVar);
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv600GetBanksDefaultImplementation(e, "/obp/v6.0.0/banks", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetBanks(e);
+                OnErrorUpdateBankAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid}", uriBuilderLocalVar.Path, bankid, bankattributeid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorUpdateBankAttribute(e);
                 throw;
             }
         }

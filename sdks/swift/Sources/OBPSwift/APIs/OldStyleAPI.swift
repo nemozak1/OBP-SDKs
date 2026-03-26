@@ -13,10 +13,10 @@ open class OldStyleAPI {
      Search API Metrics via Elasticsearch
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     - returns: JSONValue
      */
-    open class func oBPv200ElasticSearchMetrics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage {
-        return try await oBPv200ElasticSearchMetricsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func elasticSearchMetrics(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> JSONValue {
+        return try await elasticSearchMetricsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -30,12 +30,12 @@ open class OldStyleAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> 
+     - returns: RequestBuilder<JSONValue> 
      */
-    open class func oBPv200ElasticSearchMetricsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> {
+    open class func elasticSearchMetricsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<JSONValue> {
         let localVariablePath = "/obp/v2.0.0/search/metrics"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +48,7 @@ open class OldStyleAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<JSONValue>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

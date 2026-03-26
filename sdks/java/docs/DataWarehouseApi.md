@@ -1,19 +1,19 @@
 # DataWarehouseApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv300DataWarehouseSearch**](DataWarehouseApi.md#oBPv300DataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**oBPv300DataWarehouseSearchWithHttpInfo**](DataWarehouseApi.md#oBPv300DataWarehouseSearchWithHttpInfo) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
-| [**oBPv300DataWarehouseStatistics**](DataWarehouseApi.md#oBPv300DataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
-| [**oBPv300DataWarehouseStatisticsWithHttpInfo**](DataWarehouseApi.md#oBPv300DataWarehouseStatisticsWithHttpInfo) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**dataWarehouseSearch**](DataWarehouseApi.md#dataWarehouseSearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**dataWarehouseSearchWithHttpInfo**](DataWarehouseApi.md#dataWarehouseSearchWithHttpInfo) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search |
+| [**dataWarehouseStatistics**](DataWarehouseApi.md#dataWarehouseStatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
+| [**dataWarehouseStatisticsWithHttpInfo**](DataWarehouseApi.md#dataWarehouseStatisticsWithHttpInfo) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics |
 
 
 
-## oBPv300DataWarehouseSearch
+## dataWarehouseSearch
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(index, obPv300DataWarehouseSearchRequest)
+> Object dataWarehouseSearch(index, dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -33,7 +33,7 @@ import com.openbankproject.api.DataWarehouseApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -53,12 +53,12 @@ public class Example {
 
         DataWarehouseApi apiInstance = new DataWarehouseApi(defaultClient);
         String index = "index_example"; // String | The INDEX identifier
-        OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest = new OBPv300DataWarehouseSearchRequest(); // OBPv300DataWarehouseSearchRequest | Request body
+        DataWarehouseSearchRequest dataWarehouseSearchRequest = new DataWarehouseSearchRequest(); // DataWarehouseSearchRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage result = apiInstance.oBPv300DataWarehouseSearch(index, obPv300DataWarehouseSearchRequest);
+            Object result = apiInstance.dataWarehouseSearch(index, dataWarehouseSearchRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DataWarehouseApi#oBPv300DataWarehouseSearch");
+            System.err.println("Exception when calling DataWarehouseApi#dataWarehouseSearch");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -74,11 +74,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **index** | **String**| The INDEX identifier | |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 
 ### Authorization
@@ -96,9 +96,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv300DataWarehouseSearchWithHttpInfo
+## dataWarehouseSearchWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseSearch oBPv300DataWarehouseSearchWithHttpInfo(index, obPv300DataWarehouseSearchRequest)
+> ApiResponse<Object> dataWarehouseSearch dataWarehouseSearchWithHttpInfo(index, dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -119,7 +119,7 @@ import com.openbankproject.api.DataWarehouseApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -139,14 +139,14 @@ public class Example {
 
         DataWarehouseApi apiInstance = new DataWarehouseApi(defaultClient);
         String index = "index_example"; // String | The INDEX identifier
-        OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest = new OBPv300DataWarehouseSearchRequest(); // OBPv300DataWarehouseSearchRequest | Request body
+        DataWarehouseSearchRequest dataWarehouseSearchRequest = new DataWarehouseSearchRequest(); // DataWarehouseSearchRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> response = apiInstance.oBPv300DataWarehouseSearchWithHttpInfo(index, obPv300DataWarehouseSearchRequest);
+            ApiResponse<Object> response = apiInstance.dataWarehouseSearchWithHttpInfo(index, dataWarehouseSearchRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DataWarehouseApi#oBPv300DataWarehouseSearch");
+            System.err.println("Exception when calling DataWarehouseApi#dataWarehouseSearch");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -162,11 +162,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **index** | **String**| The INDEX identifier | |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)>
+ApiResponse<**Object**>
 
 
 ### Authorization
@@ -185,9 +185,9 @@ ApiResponse<[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMes
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv300DataWarehouseStatistics
+## dataWarehouseStatistics
 
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(index, field, obPv300DataWarehouseSearchRequest)
+> Object dataWarehouseStatistics(index, field, dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -207,7 +207,7 @@ import com.openbankproject.api.DataWarehouseApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -228,12 +228,12 @@ public class Example {
         DataWarehouseApi apiInstance = new DataWarehouseApi(defaultClient);
         String index = "index_example"; // String | The INDEX identifier
         String field = "field_example"; // String | The FIELD identifier
-        OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest = new OBPv300DataWarehouseSearchRequest(); // OBPv300DataWarehouseSearchRequest | Request body
+        DataWarehouseSearchRequest dataWarehouseSearchRequest = new DataWarehouseSearchRequest(); // DataWarehouseSearchRequest | Request body
         try {
-            OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage result = apiInstance.oBPv300DataWarehouseStatistics(index, field, obPv300DataWarehouseSearchRequest);
+            Object result = apiInstance.dataWarehouseStatistics(index, field, dataWarehouseSearchRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DataWarehouseApi#oBPv300DataWarehouseStatistics");
+            System.err.println("Exception when calling DataWarehouseApi#dataWarehouseStatistics");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -250,11 +250,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **index** | **String**| The INDEX identifier | |
 | **field** | **String**| The FIELD identifier | |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**Object**
 
 
 ### Authorization
@@ -272,9 +272,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv300DataWarehouseStatisticsWithHttpInfo
+## dataWarehouseStatisticsWithHttpInfo
 
-> ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseStatistics oBPv300DataWarehouseStatisticsWithHttpInfo(index, field, obPv300DataWarehouseSearchRequest)
+> ApiResponse<Object> dataWarehouseStatistics dataWarehouseStatisticsWithHttpInfo(index, field, dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -295,7 +295,7 @@ import com.openbankproject.api.DataWarehouseApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -316,14 +316,14 @@ public class Example {
         DataWarehouseApi apiInstance = new DataWarehouseApi(defaultClient);
         String index = "index_example"; // String | The INDEX identifier
         String field = "field_example"; // String | The FIELD identifier
-        OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest = new OBPv300DataWarehouseSearchRequest(); // OBPv300DataWarehouseSearchRequest | Request body
+        DataWarehouseSearchRequest dataWarehouseSearchRequest = new DataWarehouseSearchRequest(); // DataWarehouseSearchRequest | Request body
         try {
-            ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> response = apiInstance.oBPv300DataWarehouseStatisticsWithHttpInfo(index, field, obPv300DataWarehouseSearchRequest);
+            ApiResponse<Object> response = apiInstance.dataWarehouseStatisticsWithHttpInfo(index, field, dataWarehouseSearchRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DataWarehouseApi#oBPv300DataWarehouseStatistics");
+            System.err.println("Exception when calling DataWarehouseApi#dataWarehouseStatistics");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -340,11 +340,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **index** | **String**| The INDEX identifier | |
 | **field** | **String**| The FIELD identifier | |
-| **obPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | |
+| **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)>
+ApiResponse<**Object**>
 
 
 ### Authorization

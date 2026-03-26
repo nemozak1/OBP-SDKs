@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,6 +39,31 @@ namespace OpenBankProject.Api
         ScopeApiEvents Events { get; }
 
         /// <summary>
+        /// Create Scope for a Consumer
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Scope. Grant Role to Consumer.&lt;/p&gt; &lt;p&gt;Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)&lt;/p&gt; &lt;p&gt;For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &amp;quot;bank_id&amp;quot;:&amp;quot;&amp;quot;&lt;/p&gt; &lt;p&gt;For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &amp;quot;bank_id&amp;quot;:&amp;quot;my-bank-id&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="createConsentImplicitRequestEntitlementsInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddScopeApiResponse"/>&gt;</returns>
+        Task<IAddScopeApiResponse> AddScopeAsync(string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Scope for a Consumer
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Scope. Grant Role to Consumer.&lt;/p&gt; &lt;p&gt;Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)&lt;/p&gt; &lt;p&gt;For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &amp;quot;bank_id&amp;quot;:&amp;quot;&amp;quot;&lt;/p&gt; &lt;p&gt;For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &amp;quot;bank_id&amp;quot;:&amp;quot;my-bank-id&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="createConsentImplicitRequestEntitlementsInner">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddScopeApiResponse"/>?&gt;</returns>
+        Task<IAddScopeApiResponse?> AddScopeOrDefaultAsync(string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
         /// Delete Consumer Scope
         /// </summary>
         /// <remarks>
@@ -48,8 +73,8 @@ namespace OpenBankProject.Api
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="scopeid">The SCOPEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DeleteScopeApiResponse"/>&gt;</returns>
-        Task<IOBPv300DeleteScopeApiResponse> OBPv300DeleteScopeAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteScopeApiResponse"/>&gt;</returns>
+        Task<IDeleteScopeApiResponse> DeleteScopeAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Consumer Scope
@@ -60,33 +85,8 @@ namespace OpenBankProject.Api
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="scopeid">The SCOPEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DeleteScopeApiResponse"/>?&gt;</returns>
-        Task<IOBPv300DeleteScopeApiResponse?> OBPv300DeleteScopeOrDefaultAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Scope for a Consumer
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Scope. Grant Role to Consumer.&lt;/p&gt; &lt;p&gt;Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)&lt;/p&gt; &lt;p&gt;For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &amp;quot;bank_id&amp;quot;:&amp;quot;&amp;quot;&lt;/p&gt; &lt;p&gt;For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &amp;quot;bank_id&amp;quot;:&amp;quot;my-bank-id&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddScopeApiResponse"/>&gt;</returns>
-        Task<IOBPv400AddScopeApiResponse> OBPv400AddScopeAsync(string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Scope for a Consumer
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Scope. Grant Role to Consumer.&lt;/p&gt; &lt;p&gt;Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)&lt;/p&gt; &lt;p&gt;For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &amp;quot;bank_id&amp;quot;:&amp;quot;&amp;quot;&lt;/p&gt; &lt;p&gt;For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &amp;quot;bank_id&amp;quot;:&amp;quot;my-bank-id&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddScopeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400AddScopeApiResponse?> OBPv400AddScopeOrDefaultAsync(string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteScopeApiResponse"/>?&gt;</returns>
+        Task<IDeleteScopeApiResponse?> DeleteScopeOrDefaultAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Scopes for Consumer
@@ -97,8 +97,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetScopesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetScopesApiResponse> OBPv400GetScopesAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetScopesApiResponse"/>&gt;</returns>
+        Task<IGetScopesApiResponse> GetScopesAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Scopes for Consumer
@@ -108,8 +108,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetScopesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetScopesApiResponse?> OBPv400GetScopesOrDefaultAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetScopesApiResponse"/>?&gt;</returns>
+        Task<IGetScopesApiResponse?> GetScopesOrDefaultAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -120,61 +120,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv300DeleteScope;
+        public event EventHandler<ApiResponseEventArgs>? OnAddScope;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv300DeleteScope;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddScope;
 
-        internal void ExecuteOnOBPv300DeleteScope(ConsumerApi.OBPv300DeleteScopeApiResponse apiResponse)
+        internal void ExecuteOnAddScope(ConsumerApi.AddScopeApiResponse apiResponse)
         {
-            OnOBPv300DeleteScope?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddScope?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv300DeleteScope(Exception exception)
+        internal void ExecuteOnErrorAddScope(Exception exception)
         {
-            OnErrorOBPv300DeleteScope?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddScope?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400AddScope;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteScope;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400AddScope;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteScope;
 
-        internal void ExecuteOnOBPv400AddScope(ConsumerApi.OBPv400AddScopeApiResponse apiResponse)
+        internal void ExecuteOnDeleteScope(ConsumerApi.DeleteScopeApiResponse apiResponse)
         {
-            OnOBPv400AddScope?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteScope?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400AddScope(Exception exception)
+        internal void ExecuteOnErrorDeleteScope(Exception exception)
         {
-            OnErrorOBPv400AddScope?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteScope?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetScopes;
+        public event EventHandler<ApiResponseEventArgs>? OnGetScopes;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetScopes;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetScopes;
 
-        internal void ExecuteOnOBPv400GetScopes(ConsumerApi.OBPv400GetScopesApiResponse apiResponse)
+        internal void ExecuteOnGetScopes(ConsumerApi.GetScopesApiResponse apiResponse)
         {
-            OnOBPv400GetScopes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetScopes?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetScopes(Exception exception)
+        internal void ExecuteOnErrorGetScopes(Exception exception)
         {
-            OnErrorOBPv400GetScopes?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetScopes?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -232,21 +232,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv300DeleteScope(ref string consumerid, ref string scopeid);
+        partial void FormatAddScope(ref string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="consumerid"></param>
-        /// <param name="scopeid"></param>
+        /// <param name="createConsentImplicitRequestEntitlementsInner"></param>
         /// <returns></returns>
-        private void ValidateOBPv300DeleteScope(string consumerid, string scopeid)
+        private void ValidateAddScope(string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner)
         {
             if (consumerid == null)
                 throw new ArgumentNullException(nameof(consumerid));
 
-            if (scopeid == null)
-                throw new ArgumentNullException(nameof(scopeid));
+            if (createConsentImplicitRequestEntitlementsInner == null)
+                throw new ArgumentNullException(nameof(createConsentImplicitRequestEntitlementsInner));
         }
 
         /// <summary>
@@ -254,11 +254,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
-        /// <param name="scopeid"></param>
-        private void AfterOBPv300DeleteScopeDefaultImplementation(IOBPv300DeleteScopeApiResponse apiResponseLocalVar, string consumerid, string scopeid)
+        /// <param name="createConsentImplicitRequestEntitlementsInner"></param>
+        private void AfterAddScopeDefaultImplementation(IAddScopeApiResponse apiResponseLocalVar, string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv300DeleteScope(ref suppressDefaultLog, apiResponseLocalVar, consumerid, scopeid);
+            AfterAddScope(ref suppressDefaultLog, apiResponseLocalVar, consumerid, createConsentImplicitRequestEntitlementsInner);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -269,8 +269,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
-        /// <param name="scopeid"></param>
-        partial void AfterOBPv300DeleteScope(ref bool suppressDefaultLog, IOBPv300DeleteScopeApiResponse apiResponseLocalVar, string consumerid, string scopeid);
+        /// <param name="createConsentImplicitRequestEntitlementsInner"></param>
+        partial void AfterAddScope(ref bool suppressDefaultLog, IAddScopeApiResponse apiResponseLocalVar, string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -279,11 +279,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
-        /// <param name="scopeid"></param>
-        private void OnErrorOBPv300DeleteScopeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string scopeid)
+        /// <param name="createConsentImplicitRequestEntitlementsInner"></param>
+        private void OnErrorAddScopeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv300DeleteScope(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, scopeid);
+            OnErrorAddScope(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, createConsentImplicitRequestEntitlementsInner);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -296,191 +296,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
-        /// <param name="scopeid"></param>
-        partial void OnErrorOBPv300DeleteScope(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string scopeid);
-
-        /// <summary>
-        /// Delete Consumer Scope &lt;p&gt;Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID&lt;/p&gt; &lt;p&gt;Authentication is required and the user needs to be a Super Admin.&lt;br /&gt; Super Admins are listed in the Props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;SCOPE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="scopeid">The SCOPEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DeleteScopeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DeleteScopeApiResponse?> OBPv300DeleteScopeOrDefaultAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv300DeleteScopeAsync(consumerid, scopeid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Delete Consumer Scope &lt;p&gt;Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID&lt;/p&gt; &lt;p&gt;Authentication is required and the user needs to be a Super Admin.&lt;br /&gt; Super Admins are listed in the Props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;SCOPE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="scopeid">The SCOPEID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv300DeleteScopeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv300DeleteScopeApiResponse> OBPv300DeleteScopeAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv300DeleteScope(consumerid, scopeid);
-
-                FormatOBPv300DeleteScope(ref consumerid, ref scopeid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bscopeid%7D", Uri.EscapeDataString(scopeid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<ConsumerApi.OBPv300DeleteScopeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.OBPv300DeleteScopeApiResponse>();
-                        ConsumerApi.OBPv300DeleteScopeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv300DeleteScopeDefaultImplementation(apiResponseLocalVar, consumerid, scopeid);
-
-                        Events.ExecuteOnOBPv300DeleteScope(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv300DeleteScopeDefaultImplementation(e, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}", uriBuilderLocalVar.Path, consumerid, scopeid);
-                Events.ExecuteOnErrorOBPv300DeleteScope(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400AddScope(ref string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400AddScope(string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems)
-        {
-            if (consumerid == null)
-                throw new ArgumentNullException(nameof(consumerid));
-
-            if (oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems == null)
-                throw new ArgumentNullException(nameof(oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems"></param>
-        private void AfterOBPv400AddScopeDefaultImplementation(IOBPv400AddScopeApiResponse apiResponseLocalVar, string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400AddScope(ref suppressDefaultLog, apiResponseLocalVar, consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems"></param>
-        partial void AfterOBPv400AddScope(ref bool suppressDefaultLog, IOBPv400AddScopeApiResponse apiResponseLocalVar, string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems"></param>
-        private void OnErrorOBPv400AddScopeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400AddScope(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="consumerid"></param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems"></param>
-        partial void OnErrorOBPv400AddScope(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
+        /// <param name="createConsentImplicitRequestEntitlementsInner"></param>
+        partial void OnErrorAddScope(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner);
 
         /// <summary>
         /// Create Scope for a Consumer &lt;p&gt;Create Scope. Grant Role to Consumer.&lt;/p&gt; &lt;p&gt;Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)&lt;/p&gt; &lt;p&gt;For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &amp;quot;bank_id&amp;quot;:&amp;quot;&amp;quot;&lt;/p&gt; &lt;p&gt;For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &amp;quot;bank_id&amp;quot;:&amp;quot;my-bank-id&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems">Request body</param>
+        /// <param name="createConsentImplicitRequestEntitlementsInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddScopeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400AddScopeApiResponse?> OBPv400AddScopeOrDefaultAsync(string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddScopeApiResponse"/>&gt;</returns>
+        public async Task<IAddScopeApiResponse?> AddScopeOrDefaultAsync(string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400AddScopeAsync(consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, cancellationToken).ConfigureAwait(false);
+                return await AddScopeAsync(consumerid, createConsentImplicitRequestEntitlementsInner, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -493,18 +323,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
-        /// <param name="oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems">Request body</param>
+        /// <param name="createConsentImplicitRequestEntitlementsInner">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400AddScopeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400AddScopeApiResponse> OBPv400AddScopeAsync(string consumerid, OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddScopeApiResponse"/>&gt;</returns>
+        public async Task<IAddScopeApiResponse> AddScopeAsync(string consumerid, CreateConsentImplicitRequestEntitlementsInner createConsentImplicitRequestEntitlementsInner, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400AddScope(consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
+                ValidateAddScope(consumerid, createConsentImplicitRequestEntitlementsInner);
 
-                FormatOBPv400AddScope(ref consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
+                FormatAddScope(ref consumerid, createConsentImplicitRequestEntitlementsInner);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -516,16 +346,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/consumers/{consumerid}/scopes");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createConsentImplicitRequestEntitlementsInner as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createConsentImplicitRequestEntitlementsInner, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -561,8 +391,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ConsumerApi.OBPv400AddScopeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.OBPv400AddScopeApiResponse>();
-                        ConsumerApi.OBPv400AddScopeApiResponse apiResponseLocalVar;
+                        ILogger<ConsumerApi.AddScopeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.AddScopeApiResponse>();
+                        ConsumerApi.AddScopeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -573,9 +403,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400AddScopeDefaultImplementation(apiResponseLocalVar, consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
+                        AfterAddScopeDefaultImplementation(apiResponseLocalVar, consumerid, createConsentImplicitRequestEntitlementsInner);
 
-                        Events.ExecuteOnOBPv400AddScope(apiResponseLocalVar);
+                        Events.ExecuteOnAddScope(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -587,23 +417,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400AddScopeDefaultImplementation(e, "/obp/v4.0.0/consumers/{consumerid}/scopes", uriBuilderLocalVar.Path, consumerid, oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems);
-                Events.ExecuteOnErrorOBPv400AddScope(e);
+                OnErrorAddScopeDefaultImplementation(e, "/obp/v4.0.0/consumers/{consumerid}/scopes", uriBuilderLocalVar.Path, consumerid, createConsentImplicitRequestEntitlementsInner);
+                Events.ExecuteOnErrorAddScope(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetScopes(ref string consumerid);
+        partial void FormatDeleteScope(ref string consumerid, ref string scopeid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="consumerid"></param>
+        /// <param name="scopeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetScopes(string consumerid)
+        private void ValidateDeleteScope(string consumerid, string scopeid)
         {
             if (consumerid == null)
                 throw new ArgumentNullException(nameof(consumerid));
+
+            if (scopeid == null)
+                throw new ArgumentNullException(nameof(scopeid));
         }
 
         /// <summary>
@@ -611,10 +445,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
-        private void AfterOBPv400GetScopesDefaultImplementation(IOBPv400GetScopesApiResponse apiResponseLocalVar, string consumerid)
+        /// <param name="scopeid"></param>
+        private void AfterDeleteScopeDefaultImplementation(IDeleteScopeApiResponse apiResponseLocalVar, string consumerid, string scopeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetScopes(ref suppressDefaultLog, apiResponseLocalVar, consumerid);
+            AfterDeleteScope(ref suppressDefaultLog, apiResponseLocalVar, consumerid, scopeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -625,7 +460,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="consumerid"></param>
-        partial void AfterOBPv400GetScopes(ref bool suppressDefaultLog, IOBPv400GetScopesApiResponse apiResponseLocalVar, string consumerid);
+        /// <param name="scopeid"></param>
+        partial void AfterDeleteScope(ref bool suppressDefaultLog, IDeleteScopeApiResponse apiResponseLocalVar, string consumerid, string scopeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -634,10 +470,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
-        private void OnErrorOBPv400GetScopesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid)
+        /// <param name="scopeid"></param>
+        private void OnErrorDeleteScopeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string scopeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetScopes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid);
+            OnErrorDeleteScope(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid, scopeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -650,19 +487,182 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="consumerid"></param>
-        partial void OnErrorOBPv400GetScopes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid);
+        /// <param name="scopeid"></param>
+        partial void OnErrorDeleteScope(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid, string scopeid);
+
+        /// <summary>
+        /// Delete Consumer Scope &lt;p&gt;Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID&lt;/p&gt; &lt;p&gt;Authentication is required and the user needs to be a Super Admin.&lt;br /&gt; Super Admins are listed in the Props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;SCOPE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="scopeid">The SCOPEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteScopeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteScopeApiResponse?> DeleteScopeOrDefaultAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await DeleteScopeAsync(consumerid, scopeid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Delete Consumer Scope &lt;p&gt;Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID&lt;/p&gt; &lt;p&gt;Authentication is required and the user needs to be a Super Admin.&lt;br /&gt; Super Admins are listed in the Props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;SCOPE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="consumerid">The CONSUMERID identifier</param>
+        /// <param name="scopeid">The SCOPEID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteScopeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteScopeApiResponse> DeleteScopeAsync(string consumerid, string scopeid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateDeleteScope(consumerid, scopeid);
+
+                FormatDeleteScope(ref consumerid, ref scopeid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bconsumerid%7D", Uri.EscapeDataString(consumerid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bscopeid%7D", Uri.EscapeDataString(scopeid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Delete;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<ConsumerApi.DeleteScopeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.DeleteScopeApiResponse>();
+                        ConsumerApi.DeleteScopeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterDeleteScopeDefaultImplementation(apiResponseLocalVar, consumerid, scopeid);
+
+                        Events.ExecuteOnDeleteScope(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorDeleteScopeDefaultImplementation(e, "/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}", uriBuilderLocalVar.Path, consumerid, scopeid);
+                Events.ExecuteOnErrorDeleteScope(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetScopes(ref string consumerid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="consumerid"></param>
+        /// <returns></returns>
+        private void ValidateGetScopes(string consumerid)
+        {
+            if (consumerid == null)
+                throw new ArgumentNullException(nameof(consumerid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="consumerid"></param>
+        private void AfterGetScopesDefaultImplementation(IGetScopesApiResponse apiResponseLocalVar, string consumerid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetScopes(ref suppressDefaultLog, apiResponseLocalVar, consumerid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="consumerid"></param>
+        partial void AfterGetScopes(ref bool suppressDefaultLog, IGetScopesApiResponse apiResponseLocalVar, string consumerid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="consumerid"></param>
+        private void OnErrorGetScopesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetScopes(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, consumerid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="consumerid"></param>
+        partial void OnErrorGetScopes(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string consumerid);
 
         /// <summary>
         /// Get Scopes for Consumer &lt;p&gt;Get all the scopes for an consumer specified by CONSUMER_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONSUMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#list\&quot;&gt;&lt;strong&gt;list&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scope_id\&quot;&gt;&lt;strong&gt;scope_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetScopesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetScopesApiResponse?> OBPv400GetScopesOrDefaultAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetScopesApiResponse"/>&gt;</returns>
+        public async Task<IGetScopesApiResponse?> GetScopesOrDefaultAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetScopesAsync(consumerid, cancellationToken).ConfigureAwait(false);
+                return await GetScopesAsync(consumerid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -676,16 +676,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="consumerid">The CONSUMERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetScopesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetScopesApiResponse> OBPv400GetScopesAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetScopesApiResponse"/>&gt;</returns>
+        public async Task<IGetScopesApiResponse> GetScopesAsync(string consumerid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetScopes(consumerid);
+                ValidateGetScopes(consumerid);
 
-                FormatOBPv400GetScopes(ref consumerid);
+                FormatGetScopes(ref consumerid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -702,7 +702,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -729,8 +729,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<ConsumerApi.OBPv400GetScopesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.OBPv400GetScopesApiResponse>();
-                        ConsumerApi.OBPv400GetScopesApiResponse apiResponseLocalVar;
+                        ILogger<ConsumerApi.GetScopesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<ConsumerApi.GetScopesApiResponse>();
+                        ConsumerApi.GetScopesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -741,9 +741,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetScopesDefaultImplementation(apiResponseLocalVar, consumerid);
+                        AfterGetScopesDefaultImplementation(apiResponseLocalVar, consumerid);
 
-                        Events.ExecuteOnOBPv400GetScopes(apiResponseLocalVar);
+                        Events.ExecuteOnGetScopes(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -755,8 +755,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetScopesDefaultImplementation(e, "/obp/v4.0.0/consumers/{consumerid}/scopes", uriBuilderLocalVar.Path, consumerid);
-                Events.ExecuteOnErrorOBPv400GetScopes(e);
+                OnErrorGetScopesDefaultImplementation(e, "/obp/v4.0.0/consumers/{consumerid}/scopes", uriBuilderLocalVar.Path, consumerid);
+                Events.ExecuteOnErrorGetScopes(e);
                 throw;
             }
         }

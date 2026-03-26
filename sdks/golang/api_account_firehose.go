@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,7 +24,343 @@ import (
 // AccountFirehoseAPIService AccountFirehoseAPI service
 type AccountFirehoseAPIService service
 
-type ApiOBPv300GetFirehoseTransactionsForBankAccountRequest struct {
+type ApiGetFastFirehoseAccountsAtOneBankRequest struct {
+	ctx context.Context
+	ApiService *AccountFirehoseAPIService
+	bankid string
+}
+
+func (r ApiGetFastFirehoseAccountsAtOneBankRequest) Execute() (*GetFastFirehoseAccountsAtOneBank200Response, *http.Response, error) {
+	return r.ApiService.GetFastFirehoseAccountsAtOneBankExecute(r)
+}
+
+/*
+GetFastFirehoseAccountsAtOneBank Get Fast Firehose Accounts at Bank
+
+<p>This endpoint allows bulk access to accounts.</p>
+<p>optional pagination parameters for filter with accounts</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_attributes"><strong>account_attributes</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetFastFirehoseAccountsAtOneBankRequest
+*/
+func (a *AccountFirehoseAPIService) GetFastFirehoseAccountsAtOneBank(ctx context.Context, bankid string) ApiGetFastFirehoseAccountsAtOneBankRequest {
+	return ApiGetFastFirehoseAccountsAtOneBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetFastFirehoseAccountsAtOneBank200Response
+func (a *AccountFirehoseAPIService) GetFastFirehoseAccountsAtOneBankExecute(r ApiGetFastFirehoseAccountsAtOneBankRequest) (*GetFastFirehoseAccountsAtOneBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFastFirehoseAccountsAtOneBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.GetFastFirehoseAccountsAtOneBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetFirehoseAccountsAtOneBankRequest struct {
+	ctx context.Context
+	ApiService *AccountFirehoseAPIService
+	bankid string
+	viewid string
+}
+
+func (r ApiGetFirehoseAccountsAtOneBankRequest) Execute() (*GetFirehoseAccountsAtOneBank200Response, *http.Response, error) {
+	return r.ApiService.GetFirehoseAccountsAtOneBankExecute(r)
+}
+
+/*
+GetFirehoseAccountsAtOneBank Get Firehose Accounts at Bank
+
+<p>Get all Accounts at a Bank.</p>
+<p>This endpoint allows bulk access to all accounts at the specified bank.</p>
+<p>Requires the CanUseFirehoseAtAnyBank Role or CanUseAccountFirehose Role</p>
+<p>Returns all accounts at the bank. The VIEW_ID parameter determines what account data fields are visible according to the view's permissions.</p>
+<p>The view specified must have is_firehose = true</p>
+<p>For VIEW_ID try 'owner' or 'firehose'</p>
+<p>Optional request parameters for filtering by account attributes:<br />
+URL params example:<br />
+/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1</p>
+<p>To invalidate browser cache, add timestamp query parameter as follows (the parameter name must be <code>_timestamp_</code>):<br />
+URL params example:<br />
+<code>/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1&amp;_timestamp_=1596762180358</code></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#account_rules"><strong>account_rules</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#account_attributes">account_attributes</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetFirehoseAccountsAtOneBankRequest
+*/
+func (a *AccountFirehoseAPIService) GetFirehoseAccountsAtOneBank(ctx context.Context, bankid string, viewid string) ApiGetFirehoseAccountsAtOneBankRequest {
+	return ApiGetFirehoseAccountsAtOneBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetFirehoseAccountsAtOneBank200Response
+func (a *AccountFirehoseAPIService) GetFirehoseAccountsAtOneBankExecute(r ApiGetFirehoseAccountsAtOneBankRequest) (*GetFirehoseAccountsAtOneBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFirehoseAccountsAtOneBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.GetFirehoseAccountsAtOneBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetFirehoseTransactionsForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *AccountFirehoseAPIService
 	bankid string
@@ -32,12 +368,12 @@ type ApiOBPv300GetFirehoseTransactionsForBankAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) Execute() (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetFirehoseTransactionsForBankAccountExecute(r)
+func (r ApiGetFirehoseTransactionsForBankAccountRequest) Execute() (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetFirehoseTransactionsForBankAccountExecute(r)
 }
 
 /*
-OBPv300GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
+GetFirehoseTransactionsForBankAccount Get Firehose Transactions for Account
 
 <p>Get Transactions for an Account that has a firehose View.</p>
 <p>Allows bulk access to an account's transactions.<br />
@@ -56,7 +392,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
 <ul>
 <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li>
 </ul>
 <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
 <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
@@ -116,10 +452,10 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest
+ @return ApiGetFirehoseTransactionsForBankAccountRequest
 */
-func (a *AccountFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv300GetFirehoseTransactionsForBankAccountRequest {
-	return ApiOBPv300GetFirehoseTransactionsForBankAccountRequest{
+func (a *AccountFirehoseAPIService) GetFirehoseTransactionsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetFirehoseTransactionsForBankAccountRequest {
+	return ApiGetFirehoseTransactionsForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -129,16 +465,16 @@ func (a *AccountFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccount
 }
 
 // Execute executes the request
-//  @return OBPv300GetFirehoseTransactionsForBankAccount200Response
-func (a *AccountFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccountExecute(r ApiOBPv300GetFirehoseTransactionsForBankAccountRequest) (*OBPv300GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
+//  @return GetFirehoseTransactionsForBankAccount200Response
+func (a *AccountFirehoseAPIService) GetFirehoseTransactionsForBankAccountExecute(r ApiGetFirehoseTransactionsForBankAccountRequest) (*GetFirehoseTransactionsForBankAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetFirehoseTransactionsForBankAccount200Response
+		localVarReturnValue  *GetFirehoseTransactionsForBankAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.OBPv300GetFirehoseTransactionsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.GetFirehoseTransactionsForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -193,343 +529,7 @@ func (a *AccountFirehoseAPIService) OBPv300GetFirehoseTransactionsForBankAccount
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest struct {
-	ctx context.Context
-	ApiService *AccountFirehoseAPIService
-	bankid string
-}
-
-func (r ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest) Execute() (*OBPv400GetFastFirehoseAccountsAtOneBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetFastFirehoseAccountsAtOneBankExecute(r)
-}
-
-/*
-OBPv400GetFastFirehoseAccountsAtOneBank Get Fast Firehose Accounts at Bank
-
-<p>This endpoint allows bulk access to accounts.</p>
-<p>optional pagination parameters for filter with accounts</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_attributes"><strong>account_attributes</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest
-*/
-func (a *AccountFirehoseAPIService) OBPv400GetFastFirehoseAccountsAtOneBank(ctx context.Context, bankid string) ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest {
-	return ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetFastFirehoseAccountsAtOneBank200Response
-func (a *AccountFirehoseAPIService) OBPv400GetFastFirehoseAccountsAtOneBankExecute(r ApiOBPv400GetFastFirehoseAccountsAtOneBankRequest) (*OBPv400GetFastFirehoseAccountsAtOneBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetFastFirehoseAccountsAtOneBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.OBPv400GetFastFirehoseAccountsAtOneBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetFirehoseAccountsAtOneBankRequest struct {
-	ctx context.Context
-	ApiService *AccountFirehoseAPIService
-	bankid string
-	viewid string
-}
-
-func (r ApiOBPv400GetFirehoseAccountsAtOneBankRequest) Execute() (*OBPv400GetFirehoseAccountsAtOneBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetFirehoseAccountsAtOneBankExecute(r)
-}
-
-/*
-OBPv400GetFirehoseAccountsAtOneBank Get Firehose Accounts at Bank
-
-<p>Get all Accounts at a Bank.</p>
-<p>This endpoint allows bulk access to all accounts at the specified bank.</p>
-<p>Requires the CanUseFirehoseAtAnyBank Role or CanUseAccountFirehose Role</p>
-<p>Returns all accounts at the bank. The VIEW_ID parameter determines what account data fields are visible according to the view's permissions.</p>
-<p>The view specified must have is_firehose = true</p>
-<p>For VIEW_ID try 'owner' or 'firehose'</p>
-<p>Optional request parameters for filtering by account attributes:<br />
-URL params example:<br />
-/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1</p>
-<p>To invalidate browser cache, add timestamp query parameter as follows (the parameter name must be <code>_timestamp_</code>):<br />
-URL params example:<br />
-<code>/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1&amp;_timestamp_=1596762180358</code></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#account_rules"><strong>account_rules</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#account_attributes">account_attributes</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv400GetFirehoseAccountsAtOneBankRequest
-*/
-func (a *AccountFirehoseAPIService) OBPv400GetFirehoseAccountsAtOneBank(ctx context.Context, bankid string, viewid string) ApiOBPv400GetFirehoseAccountsAtOneBankRequest {
-	return ApiOBPv400GetFirehoseAccountsAtOneBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetFirehoseAccountsAtOneBank200Response
-func (a *AccountFirehoseAPIService) OBPv400GetFirehoseAccountsAtOneBankExecute(r ApiOBPv400GetFirehoseAccountsAtOneBankRequest) (*OBPv400GetFirehoseAccountsAtOneBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetFirehoseAccountsAtOneBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountFirehoseAPIService.OBPv400GetFirehoseAccountsAtOneBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

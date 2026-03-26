@@ -1,25 +1,25 @@
 # OpenBankProject::ABACApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_create_abac_rule**](ABACApi.md#o_bpv6_0_0_create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**o_bpv6_0_0_delete_abac_rule**](ABACApi.md#o_bpv6_0_0_delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**o_bpv6_0_0_execute_abac_policy**](ABACApi.md#o_bpv6_0_0_execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**o_bpv6_0_0_execute_abac_rule**](ABACApi.md#o_bpv6_0_0_execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**o_bpv6_0_0_get_abac_policies**](ABACApi.md#o_bpv6_0_0_get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**o_bpv6_0_0_get_abac_rule**](ABACApi.md#o_bpv6_0_0_get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**o_bpv6_0_0_get_abac_rule_schema**](ABACApi.md#o_bpv6_0_0_get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**o_bpv6_0_0_get_abac_rules**](ABACApi.md#o_bpv6_0_0_get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**o_bpv6_0_0_get_abac_rules_by_policy**](ABACApi.md#o_bpv6_0_0_get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**o_bpv6_0_0_update_abac_rule**](ABACApi.md#o_bpv6_0_0_update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**o_bpv6_0_0_validate_abac_rule**](ABACApi.md#o_bpv6_0_0_validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**create_abac_rule**](ABACApi.md#create_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**delete_abac_rule**](ABACApi.md#delete_abac_rule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**execute_abac_policy**](ABACApi.md#execute_abac_policy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**execute_abac_rule**](ABACApi.md#execute_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**get_abac_policies**](ABACApi.md#get_abac_policies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**get_abac_rule**](ABACApi.md#get_abac_rule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**get_abac_rule_schema**](ABACApi.md#get_abac_rule_schema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**get_abac_rules**](ABACApi.md#get_abac_rules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**get_abac_rules_by_policy**](ABACApi.md#get_abac_rules_by_policy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**update_abac_rule**](ABACApi.md#update_abac_rule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**validate_abac_rule**](ABACApi.md#validate_abac_rule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
 
-## o_bpv6_0_0_create_abac_rule
+## create_abac_rule
 
-> <OBPv600GetAbacRule200Response> o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request)
+> <GetAbacRule200Response> create_abac_rule(update_abac_rule_request)
 
 Create ABAC Rule
 
@@ -41,38 +41,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
-obpv600_update_abac_rule_request = OpenBankProject::OBPv600UpdateAbacRuleRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600UpdateAbacRuleRequestProperties.new({rule_code: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , rule_name: , policy: })}) # OBPv600UpdateAbacRuleRequest | Request body
+update_abac_rule_request = OpenBankProject::UpdateAbacRuleRequest.new # UpdateAbacRuleRequest | Request body
 
 begin
   # Create ABAC Rule
-  result = api_instance.o_bpv6_0_0_create_abac_rule(obpv600_update_abac_rule_request)
+  result = api_instance.create_abac_rule(update_abac_rule_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_create_abac_rule: #{e}"
+  puts "Error when calling ABACApi->create_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_abac_rule_with_http_info variant
+#### Using the create_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRule200Response>, Integer, Hash)> o_bpv6_0_0_create_abac_rule_with_http_info(obpv600_update_abac_rule_request)
+> <Array(<GetAbacRule200Response>, Integer, Hash)> create_abac_rule_with_http_info(update_abac_rule_request)
 
 ```ruby
 begin
   # Create ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_abac_rule_with_http_info(obpv600_update_abac_rule_request)
+  data, status_code, headers = api_instance.create_abac_rule_with_http_info(update_abac_rule_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRule200Response>
+  p data # => <GetAbacRule200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_create_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->create_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -80,11 +80,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_update_abac_rule_request** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body |  |
+| **update_abac_rule_request** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -96,9 +96,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_delete_abac_rule
+## delete_abac_rule
 
-> o_bpv6_0_0_delete_abac_rule(abacruleid)
+> delete_abac_rule(abacruleid)
 
 Delete ABAC Rule
 
@@ -120,9 +120,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
@@ -130,27 +130,27 @@ abacruleid = 'abacruleid_example' # String | The ABACRULEID identifier
 
 begin
   # Delete ABAC Rule
-  api_instance.o_bpv6_0_0_delete_abac_rule(abacruleid)
+  api_instance.delete_abac_rule(abacruleid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_delete_abac_rule: #{e}"
+  puts "Error when calling ABACApi->delete_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_abac_rule_with_http_info variant
+#### Using the delete_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv6_0_0_delete_abac_rule_with_http_info(abacruleid)
+> <Array(nil, Integer, Hash)> delete_abac_rule_with_http_info(abacruleid)
 
 ```ruby
 begin
   # Delete ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_abac_rule_with_http_info(abacruleid)
+  data, status_code, headers = api_instance.delete_abac_rule_with_http_info(abacruleid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_delete_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->delete_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -174,9 +174,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv6_0_0_execute_abac_policy
+## execute_abac_policy
 
-> <OBPv600ExecuteAbacPolicy200Response> o_bpv6_0_0_execute_abac_policy(policy, obpv600_execute_abac_policy_request)
+> <ExecuteAbacPolicy200Response> execute_abac_policy(policy, execute_abac_policy_request)
 
 Execute ABAC Policy
 
@@ -198,39 +198,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 policy = 'policy_example' # String | The POLICY identifier
-obpv600_execute_abac_policy_request = OpenBankProject::OBPv600ExecuteAbacPolicyRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600ExecuteAbacPolicyRequestProperties.new({transaction_request_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), user_id: , on_behalf_of_user_id: , view_id: , bank_id: , transaction_id: , account_id: , authenticated_user_id: })}) # OBPv600ExecuteAbacPolicyRequest | Request body
+execute_abac_policy_request = OpenBankProject::ExecuteAbacPolicyRequest.new # ExecuteAbacPolicyRequest | Request body
 
 begin
   # Execute ABAC Policy
-  result = api_instance.o_bpv6_0_0_execute_abac_policy(policy, obpv600_execute_abac_policy_request)
+  result = api_instance.execute_abac_policy(policy, execute_abac_policy_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_execute_abac_policy: #{e}"
+  puts "Error when calling ABACApi->execute_abac_policy: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_execute_abac_policy_with_http_info variant
+#### Using the execute_abac_policy_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600ExecuteAbacPolicy200Response>, Integer, Hash)> o_bpv6_0_0_execute_abac_policy_with_http_info(policy, obpv600_execute_abac_policy_request)
+> <Array(<ExecuteAbacPolicy200Response>, Integer, Hash)> execute_abac_policy_with_http_info(policy, execute_abac_policy_request)
 
 ```ruby
 begin
   # Execute ABAC Policy
-  data, status_code, headers = api_instance.o_bpv6_0_0_execute_abac_policy_with_http_info(policy, obpv600_execute_abac_policy_request)
+  data, status_code, headers = api_instance.execute_abac_policy_with_http_info(policy, execute_abac_policy_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600ExecuteAbacPolicy200Response>
+  p data # => <ExecuteAbacPolicy200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_execute_abac_policy_with_http_info: #{e}"
+  puts "Error when calling ABACApi->execute_abac_policy_with_http_info: #{e}"
 end
 ```
 
@@ -239,11 +239,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **policy** | **String** | The POLICY identifier |  |
-| **obpv600_execute_abac_policy_request** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body |  |
+| **execute_abac_policy_request** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -255,9 +255,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_execute_abac_rule
+## execute_abac_rule
 
-> <OBPv600ExecuteAbacPolicy200Response> o_bpv6_0_0_execute_abac_rule(abacruleid, obpv600_execute_abac_policy_request)
+> <ExecuteAbacPolicy200Response> execute_abac_rule(abacruleid, execute_abac_policy_request)
 
 Execute ABAC Rule
 
@@ -279,39 +279,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 abacruleid = 'abacruleid_example' # String | The ABACRULEID identifier
-obpv600_execute_abac_policy_request = OpenBankProject::OBPv600ExecuteAbacPolicyRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600ExecuteAbacPolicyRequestProperties.new({transaction_request_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), user_id: , on_behalf_of_user_id: , view_id: , bank_id: , transaction_id: , account_id: , authenticated_user_id: })}) # OBPv600ExecuteAbacPolicyRequest | Request body
+execute_abac_policy_request = OpenBankProject::ExecuteAbacPolicyRequest.new # ExecuteAbacPolicyRequest | Request body
 
 begin
   # Execute ABAC Rule
-  result = api_instance.o_bpv6_0_0_execute_abac_rule(abacruleid, obpv600_execute_abac_policy_request)
+  result = api_instance.execute_abac_rule(abacruleid, execute_abac_policy_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_execute_abac_rule: #{e}"
+  puts "Error when calling ABACApi->execute_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_execute_abac_rule_with_http_info variant
+#### Using the execute_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600ExecuteAbacPolicy200Response>, Integer, Hash)> o_bpv6_0_0_execute_abac_rule_with_http_info(abacruleid, obpv600_execute_abac_policy_request)
+> <Array(<ExecuteAbacPolicy200Response>, Integer, Hash)> execute_abac_rule_with_http_info(abacruleid, execute_abac_policy_request)
 
 ```ruby
 begin
   # Execute ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_execute_abac_rule_with_http_info(abacruleid, obpv600_execute_abac_policy_request)
+  data, status_code, headers = api_instance.execute_abac_rule_with_http_info(abacruleid, execute_abac_policy_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600ExecuteAbacPolicy200Response>
+  p data # => <ExecuteAbacPolicy200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_execute_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->execute_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -320,11 +320,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **abacruleid** | **String** | The ABACRULEID identifier |  |
-| **obpv600_execute_abac_policy_request** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md) | Request body |  |
+| **execute_abac_policy_request** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -336,9 +336,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_abac_policies
+## get_abac_policies
 
-> <OBPv600GetAbacPolicies200Response> o_bpv6_0_0_get_abac_policies
+> <GetAbacPolicies200Response> get_abac_policies
 
 Get ABAC Policies
 
@@ -360,37 +360,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 
 begin
   # Get ABAC Policies
-  result = api_instance.o_bpv6_0_0_get_abac_policies
+  result = api_instance.get_abac_policies
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_policies: #{e}"
+  puts "Error when calling ABACApi->get_abac_policies: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_abac_policies_with_http_info variant
+#### Using the get_abac_policies_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacPolicies200Response>, Integer, Hash)> o_bpv6_0_0_get_abac_policies_with_http_info
+> <Array(<GetAbacPolicies200Response>, Integer, Hash)> get_abac_policies_with_http_info
 
 ```ruby
 begin
   # Get ABAC Policies
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_abac_policies_with_http_info
+  data, status_code, headers = api_instance.get_abac_policies_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacPolicies200Response>
+  p data # => <GetAbacPolicies200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_policies_with_http_info: #{e}"
+  puts "Error when calling ABACApi->get_abac_policies_with_http_info: #{e}"
 end
 ```
 
@@ -400,7 +400,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -412,9 +412,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_abac_rule
+## get_abac_rule
 
-> <OBPv600GetAbacRule200Response> o_bpv6_0_0_get_abac_rule(abacruleid)
+> <GetAbacRule200Response> get_abac_rule(abacruleid)
 
 Get ABAC Rule
 
@@ -436,9 +436,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
@@ -446,28 +446,28 @@ abacruleid = 'abacruleid_example' # String | The ABACRULEID identifier
 
 begin
   # Get ABAC Rule
-  result = api_instance.o_bpv6_0_0_get_abac_rule(abacruleid)
+  result = api_instance.get_abac_rule(abacruleid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rule: #{e}"
+  puts "Error when calling ABACApi->get_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_abac_rule_with_http_info variant
+#### Using the get_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRule200Response>, Integer, Hash)> o_bpv6_0_0_get_abac_rule_with_http_info(abacruleid)
+> <Array(<GetAbacRule200Response>, Integer, Hash)> get_abac_rule_with_http_info(abacruleid)
 
 ```ruby
 begin
   # Get ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_abac_rule_with_http_info(abacruleid)
+  data, status_code, headers = api_instance.get_abac_rule_with_http_info(abacruleid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRule200Response>
+  p data # => <GetAbacRule200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->get_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -479,7 +479,7 @@ end
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -491,9 +491,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_abac_rule_schema
+## get_abac_rule_schema
 
-> <OBPv600GetAbacRuleSchema200Response> o_bpv6_0_0_get_abac_rule_schema
+> <GetAbacRuleSchema200Response> get_abac_rule_schema
 
 Get ABAC Rule Schema
 
@@ -515,37 +515,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 
 begin
   # Get ABAC Rule Schema
-  result = api_instance.o_bpv6_0_0_get_abac_rule_schema
+  result = api_instance.get_abac_rule_schema
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rule_schema: #{e}"
+  puts "Error when calling ABACApi->get_abac_rule_schema: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_abac_rule_schema_with_http_info variant
+#### Using the get_abac_rule_schema_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRuleSchema200Response>, Integer, Hash)> o_bpv6_0_0_get_abac_rule_schema_with_http_info
+> <Array(<GetAbacRuleSchema200Response>, Integer, Hash)> get_abac_rule_schema_with_http_info
 
 ```ruby
 begin
   # Get ABAC Rule Schema
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_abac_rule_schema_with_http_info
+  data, status_code, headers = api_instance.get_abac_rule_schema_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRuleSchema200Response>
+  p data # => <GetAbacRuleSchema200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rule_schema_with_http_info: #{e}"
+  puts "Error when calling ABACApi->get_abac_rule_schema_with_http_info: #{e}"
 end
 ```
 
@@ -555,7 +555,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -567,9 +567,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_abac_rules
+## get_abac_rules
 
-> <OBPv600GetAbacRulesByPolicy200Response> o_bpv6_0_0_get_abac_rules
+> <GetAbacRulesByPolicy200Response> get_abac_rules
 
 Get ABAC Rules
 
@@ -591,37 +591,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 
 begin
   # Get ABAC Rules
-  result = api_instance.o_bpv6_0_0_get_abac_rules
+  result = api_instance.get_abac_rules
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rules: #{e}"
+  puts "Error when calling ABACApi->get_abac_rules: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_abac_rules_with_http_info variant
+#### Using the get_abac_rules_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRulesByPolicy200Response>, Integer, Hash)> o_bpv6_0_0_get_abac_rules_with_http_info
+> <Array(<GetAbacRulesByPolicy200Response>, Integer, Hash)> get_abac_rules_with_http_info
 
 ```ruby
 begin
   # Get ABAC Rules
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_abac_rules_with_http_info
+  data, status_code, headers = api_instance.get_abac_rules_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRulesByPolicy200Response>
+  p data # => <GetAbacRulesByPolicy200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rules_with_http_info: #{e}"
+  puts "Error when calling ABACApi->get_abac_rules_with_http_info: #{e}"
 end
 ```
 
@@ -631,7 +631,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -643,9 +643,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_abac_rules_by_policy
+## get_abac_rules_by_policy
 
-> <OBPv600GetAbacRulesByPolicy200Response> o_bpv6_0_0_get_abac_rules_by_policy(policy)
+> <GetAbacRulesByPolicy200Response> get_abac_rules_by_policy(policy)
 
 Get ABAC Rules by Policy
 
@@ -667,9 +667,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
@@ -677,28 +677,28 @@ policy = 'policy_example' # String | The POLICY identifier
 
 begin
   # Get ABAC Rules by Policy
-  result = api_instance.o_bpv6_0_0_get_abac_rules_by_policy(policy)
+  result = api_instance.get_abac_rules_by_policy(policy)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rules_by_policy: #{e}"
+  puts "Error when calling ABACApi->get_abac_rules_by_policy: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_abac_rules_by_policy_with_http_info variant
+#### Using the get_abac_rules_by_policy_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRulesByPolicy200Response>, Integer, Hash)> o_bpv6_0_0_get_abac_rules_by_policy_with_http_info(policy)
+> <Array(<GetAbacRulesByPolicy200Response>, Integer, Hash)> get_abac_rules_by_policy_with_http_info(policy)
 
 ```ruby
 begin
   # Get ABAC Rules by Policy
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_abac_rules_by_policy_with_http_info(policy)
+  data, status_code, headers = api_instance.get_abac_rules_by_policy_with_http_info(policy)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRulesByPolicy200Response>
+  p data # => <GetAbacRulesByPolicy200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_get_abac_rules_by_policy_with_http_info: #{e}"
+  puts "Error when calling ABACApi->get_abac_rules_by_policy_with_http_info: #{e}"
 end
 ```
 
@@ -710,7 +710,7 @@ end
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -722,9 +722,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_update_abac_rule
+## update_abac_rule
 
-> <OBPv600GetAbacRule200Response> o_bpv6_0_0_update_abac_rule(abacruleid, obpv600_update_abac_rule_request)
+> <GetAbacRule200Response> update_abac_rule(abacruleid, update_abac_rule_request)
 
 Update ABAC Rule
 
@@ -746,39 +746,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
 abacruleid = 'abacruleid_example' # String | The ABACRULEID identifier
-obpv600_update_abac_rule_request = OpenBankProject::OBPv600UpdateAbacRuleRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600UpdateAbacRuleRequestProperties.new({rule_code: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), is_active: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), description: , rule_name: , policy: })}) # OBPv600UpdateAbacRuleRequest | Request body
+update_abac_rule_request = OpenBankProject::UpdateAbacRuleRequest.new # UpdateAbacRuleRequest | Request body
 
 begin
   # Update ABAC Rule
-  result = api_instance.o_bpv6_0_0_update_abac_rule(abacruleid, obpv600_update_abac_rule_request)
+  result = api_instance.update_abac_rule(abacruleid, update_abac_rule_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_update_abac_rule: #{e}"
+  puts "Error when calling ABACApi->update_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_update_abac_rule_with_http_info variant
+#### Using the update_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAbacRule200Response>, Integer, Hash)> o_bpv6_0_0_update_abac_rule_with_http_info(abacruleid, obpv600_update_abac_rule_request)
+> <Array(<GetAbacRule200Response>, Integer, Hash)> update_abac_rule_with_http_info(abacruleid, update_abac_rule_request)
 
 ```ruby
 begin
   # Update ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_update_abac_rule_with_http_info(abacruleid, obpv600_update_abac_rule_request)
+  data, status_code, headers = api_instance.update_abac_rule_with_http_info(abacruleid, update_abac_rule_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAbacRule200Response>
+  p data # => <GetAbacRule200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_update_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->update_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -787,11 +787,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **abacruleid** | **String** | The ABACRULEID identifier |  |
-| **obpv600_update_abac_rule_request** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md) | Request body |  |
+| **update_abac_rule_request** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -803,9 +803,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_validate_abac_rule
+## validate_abac_rule
 
-> <OBPv600ValidateAbacRule200Response> o_bpv6_0_0_validate_abac_rule(obpv600_validate_abac_rule_request)
+> <ValidateAbacRule200Response> validate_abac_rule(validate_abac_rule_request)
 
 Validate ABAC Rule
 
@@ -827,38 +827,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ABACApi.new
-obpv600_validate_abac_rule_request = OpenBankProject::OBPv600ValidateAbacRuleRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600ValidateAbacRuleRequestProperties.new({rule_code: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600ValidateAbacRuleRequest | Request body
+validate_abac_rule_request = OpenBankProject::ValidateAbacRuleRequest.new # ValidateAbacRuleRequest | Request body
 
 begin
   # Validate ABAC Rule
-  result = api_instance.o_bpv6_0_0_validate_abac_rule(obpv600_validate_abac_rule_request)
+  result = api_instance.validate_abac_rule(validate_abac_rule_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_validate_abac_rule: #{e}"
+  puts "Error when calling ABACApi->validate_abac_rule: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_validate_abac_rule_with_http_info variant
+#### Using the validate_abac_rule_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600ValidateAbacRule200Response>, Integer, Hash)> o_bpv6_0_0_validate_abac_rule_with_http_info(obpv600_validate_abac_rule_request)
+> <Array(<ValidateAbacRule200Response>, Integer, Hash)> validate_abac_rule_with_http_info(validate_abac_rule_request)
 
 ```ruby
 begin
   # Validate ABAC Rule
-  data, status_code, headers = api_instance.o_bpv6_0_0_validate_abac_rule_with_http_info(obpv600_validate_abac_rule_request)
+  data, status_code, headers = api_instance.validate_abac_rule_with_http_info(validate_abac_rule_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600ValidateAbacRule200Response>
+  p data # => <ValidateAbacRule200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ABACApi->o_bpv6_0_0_validate_abac_rule_with_http_info: #{e}"
+  puts "Error when calling ABACApi->validate_abac_rule_with_http_info: #{e}"
 end
 ```
 
@@ -866,11 +866,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_validate_abac_rule_request** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md) | Request body |  |
+| **validate_abac_rule_request** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

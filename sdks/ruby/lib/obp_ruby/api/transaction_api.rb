@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -25,11 +25,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
+      data, _status_code, _headers = add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts)
       data
     end
 
@@ -39,32 +39,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def add_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.add_comment_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.add_comment_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.add_comment_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-      if @api_client.config.client_side_validation && obpv400_delete_system_level_endpoint_tag200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' when calling TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction"
+      # verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+      if @api_client.config.client_side_validation && get_transaction_types200_response_transaction_types_inner_id.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_types200_response_transaction_types_inner_id' when calling TransactionApi.add_comment_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -86,16 +86,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_delete_system_level_endpoint_tag200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_types200_response_transaction_types_inner_id)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_add_comment_for_view_on_transaction",
+        :operation => :"TransactionApi.add_comment_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -106,7 +106,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_add_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#add_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -117,11 +117,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_add_image_for_view_on_transaction_request [OBPv121AddImageForViewOnTransactionRequest] Request body
+    # @param add_image_for_view_on_transaction_request [AddImageForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems]
-    def o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts)
+    # @return [GetTransactionByIdForBankAccount200ResponseMetadataImagesInner]
+    def add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts)
       data
     end
 
@@ -131,32 +131,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_add_image_for_view_on_transaction_request [OBPv121AddImageForViewOnTransactionRequest] Request body
+    # @param add_image_for_view_on_transaction_request [AddImageForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems, Integer, Hash)>] OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems data, response status code and response headers
-    def o_bpv1_2_1_add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request, opts = {})
+    # @return [Array<(GetTransactionByIdForBankAccount200ResponseMetadataImagesInner, Integer, Hash)>] GetTransactionByIdForBankAccount200ResponseMetadataImagesInner data, response status code and response headers
+    def add_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.add_image_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.add_image_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.add_image_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv121_add_image_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_add_image_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_add_image_for_view_on_transaction_request' when calling TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction"
+      # verify the required parameter 'add_image_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && add_image_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'add_image_for_view_on_transaction_request' when calling TransactionApi.add_image_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -178,16 +178,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_add_image_for_view_on_transaction_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(add_image_for_view_on_transaction_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesMetadataPropertiesImagesItems'
+      return_type = opts[:debug_return_type] || 'GetTransactionByIdForBankAccount200ResponseMetadataImagesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_add_image_for_view_on_transaction",
+        :operation => :"TransactionApi.add_image_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -198,7 +198,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_add_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#add_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -209,11 +209,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
+      data, _status_code, _headers = add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts)
       data
     end
 
@@ -223,32 +223,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def add_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.add_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.add_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.add_tag_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-      if @api_client.config.client_side_validation && obpv400_delete_system_level_endpoint_tag200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' when calling TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction"
+      # verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+      if @api_client.config.client_side_validation && get_transaction_types200_response_transaction_types_inner_id.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_types200_response_transaction_types_inner_id' when calling TransactionApi.add_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -270,16 +270,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_delete_system_level_endpoint_tag200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_types200_response_transaction_types_inner_id)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_add_tag_for_view_on_transaction",
+        :operation => :"TransactionApi.add_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -290,7 +290,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_add_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#add_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -301,11 +301,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
+      data, _status_code, _headers = add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts)
       data
     end
 
@@ -315,32 +315,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_add_transaction_narrative ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.add_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.add_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.add_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.add_transaction_narrative"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_add_transaction_narrative"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.add_transaction_narrative"
       end
-      # verify the required parameter 'obpv121_get_transaction_narrative200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_transaction_narrative200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_transaction_narrative200_response' when calling TransactionApi.o_bpv1_2_1_add_transaction_narrative"
+      # verify the required parameter 'get_transaction_narrative200_response' is set
+      if @api_client.config.client_side_validation && get_transaction_narrative200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_narrative200_response' when calling TransactionApi.add_transaction_narrative"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -362,16 +362,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_transaction_narrative200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_narrative200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_add_transaction_narrative",
+        :operation => :"TransactionApi.add_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -382,7 +382,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_add_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#add_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -393,11 +393,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts)
       data
     end
 
@@ -407,32 +407,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.add_where_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.add_where_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.add_where_tag_for_view_on_transaction"
       end
-      # verify the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_where_tag_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' when calling TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction"
+      # verify the required parameter 'update_where_tag_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && update_where_tag_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_where_tag_for_view_on_transaction_request' when calling TransactionApi.add_where_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -454,16 +454,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_where_tag_for_view_on_transaction_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_where_tag_for_view_on_transaction_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_add_where_tag_for_view_on_transaction",
+        :operation => :"TransactionApi.add_where_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -474,7 +474,167 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_add_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#add_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create or Update Transaction Attribute Definition
+    # <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [GetTransactionRequestAttributeDefinition200ResponseAttributesInner]
+    def create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      data, _status_code, _headers = create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts)
+      data
+    end
+
+    # Create or Update Transaction Attribute Definition
+    # &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Integer, Hash)>] GetTransactionRequestAttributeDefinition200ResponseAttributesInner data, response status code and response headers
+    def create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.create_or_update_transaction_attribute_definition ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.create_or_update_transaction_attribute_definition"
+      end
+      # verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+      if @api_client.config.client_side_validation && create_or_update_transaction_request_attribute_definition_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_or_update_transaction_request_attribute_definition_request' when calling TransactionApi.create_or_update_transaction_attribute_definition"
+      end
+      # resource path
+      local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_or_update_transaction_request_attribute_definition_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200ResponseAttributesInner'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.create_or_update_transaction_attribute_definition",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#create_or_update_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Create Transaction Attribute
+    # <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request, opts)
+      data
+    end
+
+    # Create Transaction Attribute
+    # &lt;p&gt;Create Transaction Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.create_transaction_attribute ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.create_transaction_attribute"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.create_transaction_attribute"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.create_transaction_attribute"
+      end
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling TransactionApi.create_transaction_attribute"
+      end
+      # resource path
+      local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.create_transaction_attribute",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#create_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -488,8 +648,8 @@ module OpenBankProject
     # @param commentid [String] The COMMENTID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid, opts = {})
-      o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts)
+    def delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid, opts = {})
+      delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts)
       nil
     end
 
@@ -502,29 +662,29 @@ module OpenBankProject
     # @param commentid [String] The COMMENTID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts = {})
+    def delete_comment_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, commentid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_comment_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_comment_for_view_on_transaction"
       end
       # verify the required parameter 'commentid' is set
       if @api_client.config.client_side_validation && commentid.nil?
-        fail ArgumentError, "Missing the required parameter 'commentid' when calling TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'commentid' when calling TransactionApi.delete_comment_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'commentid' + '}', CGI.escape(commentid.to_s))
@@ -548,7 +708,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_delete_comment_for_view_on_transaction",
+        :operation => :"TransactionApi.delete_comment_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -559,7 +719,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_delete_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#delete_comment_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -573,8 +733,8 @@ module OpenBankProject
     # @param imageid [String] The IMAGEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid, opts = {})
-      o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts)
+    def delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid, opts = {})
+      delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts)
       nil
     end
 
@@ -587,29 +747,29 @@ module OpenBankProject
     # @param imageid [String] The IMAGEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts = {})
+    def delete_image_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, imageid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_image_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_image_for_view_on_transaction"
       end
       # verify the required parameter 'imageid' is set
       if @api_client.config.client_side_validation && imageid.nil?
-        fail ArgumentError, "Missing the required parameter 'imageid' when calling TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'imageid' when calling TransactionApi.delete_image_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'imageid' + '}', CGI.escape(imageid.to_s))
@@ -633,7 +793,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_delete_image_for_view_on_transaction",
+        :operation => :"TransactionApi.delete_image_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -644,7 +804,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_delete_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#delete_image_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -658,8 +818,8 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid, opts = {})
-      o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts)
+    def delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid, opts = {})
+      delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts)
       nil
     end
 
@@ -672,29 +832,29 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts = {})
+    def delete_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, tagid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_tag_for_view_on_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_tag_for_view_on_transaction"
       end
       # verify the required parameter 'tagid' is set
       if @api_client.config.client_side_validation && tagid.nil?
-        fail ArgumentError, "Missing the required parameter 'tagid' when calling TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction"
+        fail ArgumentError, "Missing the required parameter 'tagid' when calling TransactionApi.delete_tag_for_view_on_transaction"
       end
       # resource path
       local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'tagid' + '}', CGI.escape(tagid.to_s))
@@ -718,7 +878,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_delete_tag_for_view_on_transaction",
+        :operation => :"TransactionApi.delete_tag_for_view_on_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -729,1220 +889,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_delete_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Delete a Transaction Narrative
-    # <p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
-      o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      nil
-    end
-
-    # Delete a Transaction Narrative
-    # &lt;p&gt;Deletes the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_delete_transaction_narrative ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_delete_transaction_narrative"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_delete_transaction_narrative"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_delete_transaction_narrative"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_delete_transaction_narrative"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_delete_transaction_narrative",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_delete_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Delete a Transaction Tag
-    # <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      nil
-    end
-
-    # Delete a Transaction Tag
-    # &lt;p&gt;Deletes the where tag of the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The user must either have owner privileges for this account, or must be the user that posted the geo tag.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv1_2_1_delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_delete_where_tag_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_delete_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Transaction Comments
-    # <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetCommentsForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get Transaction Comments
-    # &lt;p&gt;Returns the transaction TRANSACTION_ID comments made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetCommentsForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetCommentsForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetCommentsForViewOnTransaction200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_comments_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_comments_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Transaction Images
-    # <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetImagesForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get Transaction Images
-    # &lt;p&gt;Returns the transaction TRANSACTION_ID images made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetImagesForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetImagesForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetImagesForViewOnTransaction200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_images_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_images_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Other Account of Transaction
-    # <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetOtherAccountForTransaction200Response]
-    def o_bpv1_2_1_get_other_account_for_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get Other Account of Transaction
-    # &lt;p&gt;Get other account of a transaction.&lt;br /&gt; Returns details of the other party involved in the transaction, moderated by the &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;IBAN&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank\&quot;&gt;&lt;strong&gt;bank&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kind\&quot;&gt;&lt;strong&gt;kind&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#national_identifier\&quot;&gt;&lt;strong&gt;national_identifier&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#swift_bic\&quot;&gt;&lt;strong&gt;swift_bic&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetOtherAccountForTransaction200Response, Integer, Hash)>] OBPv121GetOtherAccountForTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_other_account_for_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_other_account_for_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_other_account_for_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_other_account_for_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_other_account_for_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetOtherAccountForTransaction200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_other_account_for_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_other_account_for_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Transaction Tags
-    # <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get Transaction Tags
-    # &lt;p&gt;Returns the transaction TRANSACTION_ID tags made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv1_2_1_get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_tags_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_tags_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get a Transaction Narrative
-    # <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetTransactionNarrative200Response]
-    def o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get a Transaction Narrative
-    # &lt;p&gt;Returns the account owner description of the transaction &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetTransactionNarrative200Response, Integer, Hash)>] OBPv121GetTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_transaction_narrative ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_transaction_narrative"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_transaction_narrative"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_transaction_narrative"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_transaction_narrative"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_transaction_narrative",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get a Transaction where Tag
-    # <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121GetWhereTagForViewOnTransaction200Response]
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get a Transaction where Tag
-    # &lt;p&gt;Returns the &amp;quot;where&amp;quot; Geo tag added to the transaction TRANSACTION_ID made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; It represents the location where the transaction has been initiated.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121GetWhereTagForViewOnTransaction200Response, Integer, Hash)>] OBPv121GetWhereTagForViewOnTransaction200Response data, response status code and response headers
-    def o_bpv1_2_1_get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121GetWhereTagForViewOnTransaction200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_get_where_tag_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_get_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update a Transaction Narrative
-    # <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts)
-      data
-    end
-
-    # Update a Transaction Narrative
-    # &lt;p&gt;Updates the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_get_transaction_narrative200_response [OBPv121GetTransactionNarrative200Response] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_update_transaction_narrative ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_update_transaction_narrative"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_update_transaction_narrative"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_update_transaction_narrative"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_update_transaction_narrative"
-      end
-      # verify the required parameter 'obpv121_get_transaction_narrative200_response' is set
-      if @api_client.config.client_side_validation && obpv121_get_transaction_narrative200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_get_transaction_narrative200_response' when calling TransactionApi.o_bpv1_2_1_update_transaction_narrative"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_get_transaction_narrative200_response)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_update_transaction_narrative",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_update_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update a Transaction where Tag
-    # <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
-      data, _status_code, _headers = o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts)
-      data
-    end
-
-    # Update a Transaction where Tag
-    # &lt;p&gt;Updates the &amp;quot;where&amp;quot; Geo tag on a transaction TRANSACTION_ID in a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The geo tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv121_update_where_tag_for_view_on_transaction_request [OBPv121UpdateWhereTagForViewOnTransactionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_2_1_update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
-      end
-      # verify the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' is set
-      if @api_client.config.client_side_validation && obpv121_update_where_tag_for_view_on_transaction_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv121_update_where_tag_for_view_on_transaction_request' when calling TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction"
-      end
-      # resource path
-      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv121_update_where_tag_for_view_on_transaction_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv1_2_1_update_where_tag_for_view_on_transaction",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv1_2_1_update_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Transactions for Account (Core)
-    # <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200Response]
-    def o_bpv3_0_0_get_core_transactions_for_bank_account(bankid, accountid, opts = {})
-      data, _status_code, _headers = o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info(bankid, accountid, opts)
-      data
-    end
-
-    # Get Transactions for Account (Core)
-    # &lt;p&gt;Returns transactions list (Core info) of the account specified by ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200Response, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200Response data, response status code and response headers
-    def o_bpv3_0_0_get_core_transactions_for_bank_account_with_http_info(bankid, accountid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv3_0_0_get_core_transactions_for_bank_account ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv3_0_0_get_core_transactions_for_bank_account"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv3_0_0_get_core_transactions_for_bank_account"
-      end
-      # resource path
-      local_var_path = '/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv3_0_0_get_core_transactions_for_bank_account",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv3_0_0_get_core_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Firehose Transactions for Account
-    # <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account's transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try 'owner'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetFirehoseTransactionsForBankAccount200Response]
-    def o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid, opts = {})
-      data, _status_code, _headers = o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts)
-      data
-    end
-
-    # Get Firehose Transactions for Account
-    # &lt;p&gt;Get Transactions for an Account that has a firehose View.&lt;/p&gt; &lt;p&gt;Allows bulk access to an account&#39;s transactions.&lt;br /&gt; User must have the CanUseFirehoseAtAnyBank Role&lt;/p&gt; &lt;p&gt;To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.&lt;/p&gt; &lt;p&gt;For VIEW_ID try &#39;owner&#39;&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-16T19:25:56.865Z. NOTE! The default value is now (2026-03-16T19:25:56.865Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetFirehoseTransactionsForBankAccount200Response, Integer, Hash)>] OBPv300GetFirehoseTransactionsForBankAccount200Response data, response status code and response headers
-    def o_bpv3_0_0_get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv3_0_0_get_firehose_transactions_for_bank_account ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv3_0_0_get_firehose_transactions_for_bank_account"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv3_0_0_get_firehose_transactions_for_bank_account"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv3_0_0_get_firehose_transactions_for_bank_account"
-      end
-      # resource path
-      local_var_path = '/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetFirehoseTransactionsForBankAccount200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv3_0_0_get_firehose_transactions_for_bank_account",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv3_0_0_get_firehose_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Transaction by Id
-    # <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv310GetTransactionByIdForBankAccount200Response]
-    def o_bpv3_1_0_get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid, opts)
-      data
-    end
-
-    # Get Transaction by Id
-    # &lt;p&gt;Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view (VIEW_ID).&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param viewid [String] The VIEWID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv310GetTransactionByIdForBankAccount200Response, Integer, Hash)>] OBPv310GetTransactionByIdForBankAccount200Response data, response status code and response headers
-    def o_bpv3_1_0_get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account"
-      end
-      # verify the required parameter 'viewid' is set
-      if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account"
-      end
-      # resource path
-      local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv310GetTransactionByIdForBankAccount200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv3_1_0_get_transaction_by_id_for_bank_account",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv3_1_0_get_transaction_by_id_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create or Update Transaction Attribute Definition
-    # <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]
-    def o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts)
-      data
-    end
-
-    # Create or Update Transaction Attribute Definition
-    # &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition"
-      end
-      # verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_or_update_transaction_request_attribute_definition_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' when calling TransactionApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition"
-      end
-      # resource path
-      local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_or_update_transaction_request_attribute_definition_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_create_or_update_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Create Transaction Attribute
-    # <p>Create Transaction Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts)
-      data
-    end
-
-    # Create Transaction Attribute
-    # &lt;p&gt;Create Transaction Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_create_transaction_attribute ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_create_transaction_attribute"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_create_transaction_attribute"
-      end
-      # verify the required parameter 'transactionid' is set
-      if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_create_transaction_attribute"
-      end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling TransactionApi.o_bpv4_0_0_create_transaction_attribute"
-      end
-      # resource path
-      local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_create_transaction_attribute",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_create_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#delete_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1953,8 +900,8 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid, opts = {})
-      o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
+    def delete_transaction_attribute_definition(bankid, attributedefinitionid, opts = {})
+      delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
       nil
     end
 
@@ -1964,17 +911,17 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
+    def delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_delete_transaction_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_transaction_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_delete_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_transaction_attribute_definition"
       end
       # verify the required parameter 'attributedefinitionid' is set
       if @api_client.config.client_side_validation && attributedefinitionid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling TransactionApi.o_bpv4_0_0_delete_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling TransactionApi.delete_transaction_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'attributedefinitionid' + '}', CGI.escape(attributedefinitionid.to_s))
@@ -1998,7 +945,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_delete_transaction_attribute_definition",
+        :operation => :"TransactionApi.delete_transaction_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2009,7 +956,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_delete_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#delete_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2021,8 +968,8 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_transaction_cascade(bankid, accountid, transactionid, opts = {})
-      o_bpv4_0_0_delete_transaction_cascade_with_http_info(bankid, accountid, transactionid, opts)
+    def delete_transaction_cascade(bankid, accountid, transactionid, opts = {})
+      delete_transaction_cascade_with_http_info(bankid, accountid, transactionid, opts)
       nil
     end
 
@@ -2033,21 +980,21 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_transaction_cascade_with_http_info(bankid, accountid, transactionid, opts = {})
+    def delete_transaction_cascade_with_http_info(bankid, accountid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_delete_transaction_cascade ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_transaction_cascade ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_delete_transaction_cascade"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_transaction_cascade"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_delete_transaction_cascade"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_transaction_cascade"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_delete_transaction_cascade"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_transaction_cascade"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -2071,7 +1018,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_delete_transaction_cascade",
+        :operation => :"TransactionApi.delete_transaction_cascade",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2082,7 +1029,165 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_delete_transaction_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#delete_transaction_cascade\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a Transaction Narrative
+    # <p>Deletes the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
+      delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      nil
+    end
+
+    # Delete a Transaction Narrative
+    # &lt;p&gt;Deletes the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_transaction_narrative ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_transaction_narrative"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_transaction_narrative"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.delete_transaction_narrative"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_transaction_narrative"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.delete_transaction_narrative",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#delete_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a Transaction Tag
+    # <p>Deletes the where tag of the transaction TRANSACTION_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The user must either have owner privileges for this account, or must be the user that posted the geo tag.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      nil
+    end
+
+    # Delete a Transaction Tag
+    # &lt;p&gt;Deletes the where tag of the transaction TRANSACTION_ID made on &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The user must either have owner privileges for this account, or must be the user that posted the geo tag.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.delete_where_tag_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.delete_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.delete_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.delete_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.delete_where_tag_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.delete_where_tag_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#delete_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2091,9 +1196,9 @@ module OpenBankProject
     # <p>Get Balancing Transaction</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>credit_transaction</strong></a>: credit_transaction</p> <p><a href=\"/glossary#\"><strong>debit_transaction</strong></a>: debit_transaction</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#\"><strong>transaction_request</strong></a>: transaction_request</p> <p><a href=\"/glossary#\"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p> 
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDoubleEntryTransaction200Response]
-    def o_bpv4_0_0_get_balancing_transaction(transactionid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_balancing_transaction_with_http_info(transactionid, opts)
+    # @return [GetDoubleEntryTransaction200Response]
+    def get_balancing_transaction(transactionid, opts = {})
+      data, _status_code, _headers = get_balancing_transaction_with_http_info(transactionid, opts)
       data
     end
 
@@ -2101,14 +1206,14 @@ module OpenBankProject
     # &lt;p&gt;Get Balancing Transaction&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;credit_transaction&lt;/strong&gt;&lt;/a&gt;: credit_transaction&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;debit_transaction&lt;/strong&gt;&lt;/a&gt;: debit_transaction&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_id&lt;/strong&gt;&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request&lt;/strong&gt;&lt;/a&gt;: transaction_request&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_request_id&lt;/strong&gt;&lt;/a&gt;: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1&lt;/p&gt; 
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDoubleEntryTransaction200Response, Integer, Hash)>] OBPv400GetDoubleEntryTransaction200Response data, response status code and response headers
-    def o_bpv4_0_0_get_balancing_transaction_with_http_info(transactionid, opts = {})
+    # @return [Array<(GetDoubleEntryTransaction200Response, Integer, Hash)>] GetDoubleEntryTransaction200Response data, response status code and response headers
+    def get_balancing_transaction_with_http_info(transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_get_balancing_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_balancing_transaction ...'
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_get_balancing_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_balancing_transaction"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/transactions/{transactionid}/balancing-transaction'.sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -2128,13 +1233,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDoubleEntryTransaction200Response'
+      return_type = opts[:debug_return_type] || 'GetDoubleEntryTransaction200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_get_balancing_transaction",
+        :operation => :"TransactionApi.get_balancing_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2145,7 +1250,157 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_get_balancing_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#get_balancing_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transaction Comments
+    # <p>Returns the transaction TRANSACTION_ID comments made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetCommentsForViewOnTransaction200Response]
+    def get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get Transaction Comments
+    # &lt;p&gt;Returns the transaction TRANSACTION_ID comments made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCommentsForViewOnTransaction200Response, Integer, Hash)>] GetCommentsForViewOnTransaction200Response data, response status code and response headers
+    def get_comments_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_comments_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_comments_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_comments_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_comments_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_comments_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCommentsForViewOnTransaction200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_comments_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_comments_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transactions for Account (Core)
+    # <p>Returns transactions list (Core info) of the account specified by ACCOUNT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetCoreTransactionsForBankAccount200Response]
+    def get_core_transactions_for_bank_account(bankid, accountid, opts = {})
+      data, _status_code, _headers = get_core_transactions_for_bank_account_with_http_info(bankid, accountid, opts)
+      data
+    end
+
+    # Get Transactions for Account (Core)
+    # &lt;p&gt;Returns transactions list (Core info) of the account specified by ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCoreTransactionsForBankAccount200Response, Integer, Hash)>] GetCoreTransactionsForBankAccount200Response data, response status code and response headers
+    def get_core_transactions_for_bank_account_with_http_info(bankid, accountid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_core_transactions_for_bank_account ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_core_transactions_for_bank_account"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_core_transactions_for_bank_account"
+      end
+      # resource path
+      local_var_path = '/obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_core_transactions_for_bank_account",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_core_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2157,9 +1412,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDoubleEntryTransaction200Response]
-    def o_bpv4_0_0_get_double_entry_transaction(bankid, accountid, viewid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+    # @return [GetDoubleEntryTransaction200Response]
+    def get_double_entry_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
       data
     end
 
@@ -2170,26 +1425,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDoubleEntryTransaction200Response, Integer, Hash)>] OBPv400GetDoubleEntryTransaction200Response data, response status code and response headers
-    def o_bpv4_0_0_get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+    # @return [Array<(GetDoubleEntryTransaction200Response, Integer, Hash)>] GetDoubleEntryTransaction200Response data, response status code and response headers
+    def get_double_entry_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_get_double_entry_transaction ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_double_entry_transaction ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_get_double_entry_transaction"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_double_entry_transaction"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_get_double_entry_transaction"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_double_entry_transaction"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv4_0_0_get_double_entry_transaction"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_double_entry_transaction"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_get_double_entry_transaction"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_double_entry_transaction"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -2209,13 +1464,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDoubleEntryTransaction200Response'
+      return_type = opts[:debug_return_type] || 'GetDoubleEntryTransaction200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_get_double_entry_transaction",
+        :operation => :"TransactionApi.get_double_entry_transaction",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2226,7 +1481,325 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_get_double_entry_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#get_double_entry_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Firehose Transactions for Account
+    # <p>Get Transactions for an Account that has a firehose View.</p> <p>Allows bulk access to an account's transactions.<br /> User must have the CanUseFirehoseAtAnyBank Role</p> <p>To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.</p> <p>For VIEW_ID try 'owner'</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetFirehoseTransactionsForBankAccount200Response]
+    def get_firehose_transactions_for_bank_account(bankid, accountid, viewid, opts = {})
+      data, _status_code, _headers = get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts)
+      data
+    end
+
+    # Get Firehose Transactions for Account
+    # &lt;p&gt;Get Transactions for an Account that has a firehose View.&lt;/p&gt; &lt;p&gt;Allows bulk access to an account&#39;s transactions.&lt;br /&gt; User must have the CanUseFirehoseAtAnyBank Role&lt;/p&gt; &lt;p&gt;To find ACCOUNT_IDs, use the getFirehoseAccountsAtOneBank call.&lt;/p&gt; &lt;p&gt;For VIEW_ID try &#39;owner&#39;&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-25T12:16:24.487Z. NOTE! The default value is now (2026-03-25T12:16:24.487Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetFirehoseTransactionsForBankAccount200Response, Integer, Hash)>] GetFirehoseTransactionsForBankAccount200Response data, response status code and response headers
+    def get_firehose_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_firehose_transactions_for_bank_account ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_firehose_transactions_for_bank_account"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_firehose_transactions_for_bank_account"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_firehose_transactions_for_bank_account"
+      end
+      # resource path
+      local_var_path = '/obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetFirehoseTransactionsForBankAccount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_firehose_transactions_for_bank_account",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_firehose_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transaction Images
+    # <p>Returns the transaction TRANSACTION_ID images made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetImagesForViewOnTransaction200Response]
+    def get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get Transaction Images
+    # &lt;p&gt;Returns the transaction TRANSACTION_ID images made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetImagesForViewOnTransaction200Response, Integer, Hash)>] GetImagesForViewOnTransaction200Response data, response status code and response headers
+    def get_images_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_images_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_images_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_images_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_images_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_images_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetImagesForViewOnTransaction200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_images_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_images_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Other Account of Transaction
+    # <p>Get other account of a transaction.<br /> Returns details of the other party involved in the transaction, moderated by the <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#Bank\"><strong>bank</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#kind\"><strong>kind</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#national_identifier\"><strong>national_identifier</strong></a>:</p> <p><a href=\"/glossary#number\"><strong>number</strong></a>:</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#swift_bic\"><strong>swift_bic</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetOtherAccountForTransaction200Response]
+    def get_other_account_for_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get Other Account of Transaction
+    # &lt;p&gt;Get other account of a transaction.&lt;br /&gt; Returns details of the other party involved in the transaction, moderated by the &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;IBAN&lt;/strong&gt;&lt;/a&gt;: DE91 1000 0000 0123 4567 89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank\&quot;&gt;&lt;strong&gt;bank&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#kind\&quot;&gt;&lt;strong&gt;kind&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#national_identifier\&quot;&gt;&lt;strong&gt;national_identifier&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#number\&quot;&gt;&lt;strong&gt;number&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#swift_bic\&quot;&gt;&lt;strong&gt;swift_bic&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetOtherAccountForTransaction200Response, Integer, Hash)>] GetOtherAccountForTransaction200Response data, response status code and response headers
+    def get_other_account_for_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_other_account_for_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_other_account_for_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_other_account_for_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_other_account_for_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_other_account_for_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetOtherAccountForTransaction200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_other_account_for_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_other_account_for_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transaction Tags
+    # <p>Returns the transaction TRANSACTION_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get Transaction Tags
+    # &lt;p&gt;Returns the transaction TRANSACTION_ID tags made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def get_tags_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_tags_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_tags_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_tags_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_tags_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_tags_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_tags_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_tags_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2238,9 +1811,9 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts)
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid, opts = {})
+      data, _status_code, _headers = get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts)
       data
     end
 
@@ -2251,26 +1824,26 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts = {})
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transaction_attribute_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'attributeid' is set
       if @api_client.config.client_side_validation && attributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributeid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'attributeid' when calling TransactionApi.get_transaction_attribute_by_id"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'attributeid' + '}', CGI.escape(attributeid.to_s))
@@ -2290,13 +1863,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_get_transaction_attribute_by_id",
+        :operation => :"TransactionApi.get_transaction_attribute_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2307,7 +1880,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_get_transaction_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#get_transaction_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2316,9 +1889,9 @@ module OpenBankProject
     # <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200Response]
-    def o_bpv4_0_0_get_transaction_attribute_definition(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid, opts)
+    # @return [GetTransactionRequestAttributeDefinition200Response]
+    def get_transaction_attribute_definition(bankid, opts = {})
+      data, _status_code, _headers = get_transaction_attribute_definition_with_http_info(bankid, opts)
       data
     end
 
@@ -2326,14 +1899,14 @@ module OpenBankProject
     # &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
+    def get_transaction_attribute_definition_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_get_transaction_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transaction_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transaction_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -2353,13 +1926,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_get_transaction_attribute_definition",
+        :operation => :"TransactionApi.get_transaction_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2370,7 +1943,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_get_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#get_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2381,9 +1954,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionAttributes200Response]
-    def o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts)
+    # @return [GetTransactionAttributes200Response]
+    def get_transaction_attributes(bankid, accountid, transactionid, opts = {})
+      data, _status_code, _headers = get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts)
       data
     end
 
@@ -2393,22 +1966,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionAttributes200Response, Integer, Hash)>] OBPv400GetTransactionAttributes200Response data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts = {})
+    # @return [Array<(GetTransactionAttributes200Response, Integer, Hash)>] GetTransactionAttributes200Response data, response status code and response headers
+    def get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_get_transaction_attributes ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transaction_attributes ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transaction_attributes"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_transaction_attributes"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_transaction_attributes"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -2428,13 +2001,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionAttributes200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionAttributes200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_get_transaction_attributes",
+        :operation => :"TransactionApi.get_transaction_attributes",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2445,7 +2018,325 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_get_transaction_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#get_transaction_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transaction by Id
+    # <p>Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetTransactionByIdForBankAccount200Response]
+    def get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get Transaction by Id
+    # &lt;p&gt;Returns one transaction specified by TRANSACTION_ID of the account ACCOUNT_ID and &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view (VIEW_ID).&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTransactionByIdForBankAccount200Response, Integer, Hash)>] GetTransactionByIdForBankAccount200Response data, response status code and response headers
+    def get_transaction_by_id_for_bank_account_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transaction_by_id_for_bank_account ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transaction_by_id_for_bank_account"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_transaction_by_id_for_bank_account"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_transaction_by_id_for_bank_account"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_transaction_by_id_for_bank_account"
+      end
+      # resource path
+      local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTransactionByIdForBankAccount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_transaction_by_id_for_bank_account",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_transaction_by_id_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a Transaction Narrative
+    # <p>Returns the account owner description of the transaction <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetTransactionNarrative200Response]
+    def get_transaction_narrative(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get a Transaction Narrative
+    # &lt;p&gt;Returns the account owner description of the transaction &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTransactionNarrative200Response, Integer, Hash)>] GetTransactionNarrative200Response data, response status code and response headers
+    def get_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transaction_narrative ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transaction_narrative"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_transaction_narrative"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_transaction_narrative"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_transaction_narrative"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_transaction_narrative",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Transactions for Account (Full)
+    # <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetTransactionsForBankAccount200Response]
+    def get_transactions_for_bank_account(bankid, accountid, viewid, opts = {})
+      data, _status_code, _headers = get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts)
+      data
+    end
+
+    # Get Transactions for Account (Full)
+    # &lt;p&gt;Returns transactions list of the account specified by ACCOUNT_ID and &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view (VIEW_ID).&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-25T12:16:25.480Z. NOTE! The default value is now (2026-03-25T12:16:25.480Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This v6.0.0 endpoint returns &lt;code&gt;bank_id&lt;/code&gt; directly in both &lt;code&gt;this_account&lt;/code&gt; and &lt;code&gt;other_account&lt;/code&gt; objects,&lt;br /&gt; making it easier to identify which bank each account belongs to without parsing the &lt;code&gt;bank_routing&lt;/code&gt; object.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_id&lt;/strong&gt;&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetTransactionsForBankAccount200Response, Integer, Hash)>] GetTransactionsForBankAccount200Response data, response status code and response headers
+    def get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_transactions_for_bank_account ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_transactions_for_bank_account"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_transactions_for_bank_account"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_transactions_for_bank_account"
+      end
+      # resource path
+      local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetTransactionsForBankAccount200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_transactions_for_bank_account",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a Transaction where Tag
+    # <p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> It represents the location where the transaction has been initiated.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetWhereTagForViewOnTransaction200Response]
+    def get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, opts = {})
+      data, _status_code, _headers = get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts)
+      data
+    end
+
+    # Get a Transaction where Tag
+    # &lt;p&gt;Returns the &amp;quot;where&amp;quot; Geo tag added to the transaction TRANSACTION_ID made on a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt; (VIEW_ID).&lt;br /&gt; It represents the location where the transaction has been initiated.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetWhereTagForViewOnTransaction200Response, Integer, Hash)>] GetWhereTagForViewOnTransaction200Response data, response status code and response headers
+    def get_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.get_where_tag_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.get_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.get_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.get_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.get_where_tag_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetWhereTagForViewOnTransaction200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.get_where_tag_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#get_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2456,11 +2347,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts)
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts)
       data
     end
 
@@ -2470,32 +2361,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts = {})
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv4_0_0_update_transaction_attribute ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.update_transaction_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.update_transaction_attribute"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.update_transaction_attribute"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.update_transaction_attribute"
       end
       # verify the required parameter 'accountattributeid' is set
       if @api_client.config.client_side_validation && accountattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling TransactionApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling TransactionApi.update_transaction_attribute"
       end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling TransactionApi.o_bpv4_0_0_update_transaction_attribute"
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling TransactionApi.update_transaction_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'accountattributeid' + '}', CGI.escape(accountattributeid.to_s))
@@ -2517,16 +2408,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv4_0_0_update_transaction_attribute",
+        :operation => :"TransactionApi.update_transaction_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2537,48 +2428,60 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv4_0_0_update_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#update_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Get Transactions for Account (Full)
-    # <p>Returns transactions list of the account specified by ACCOUNT_ID and <a href=\"#1_2_1-getViewsForBankAccount\">moderated</a> by the view (VIEW_ID).</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p>Authentication is required if the view is not public.</p> <p>Possible custom url parameters for pagination:</p> <ul> <li>limit=NUMBER ==&gt; default value: 50</li> <li>offset=NUMBER ==&gt; default value: 0</li> </ul> <p>eg1:?limit=100&amp;offset=0</p> <ul> <li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li> </ul> <p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p> <ul> <li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li> <li>to_date=DATE =&gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).</li> </ul> <p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p> <p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p> <p><strong>Note:</strong> This v6.0.0 endpoint returns <code>bank_id</code> directly in both <code>this_account</code> and <code>other_account</code> objects,<br /> making it easier to identify which bank each account belongs to without parsing the <code>bank_routing</code> object.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#account_routings\"><strong>account_routings</strong></a>:</p> <p><a href=\"/glossary#address\"><strong>address</strong></a>:</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#bank_routing\"><strong>bank_routing</strong></a>:</p> <p><a href=\"/glossary#comments\"><strong>comments</strong></a>:</p> <p><a href=\"/glossary#completed\"><strong>completed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#details\"><strong>details</strong></a>:</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#holder\"><strong>holder</strong></a>:</p> <p><a href=\"/glossary#holders\"><strong>holders</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#images\"><strong>images</strong></a>:</p> <p><a href=\"/glossary#is_alias\"><strong>is_alias</strong></a>:</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#narrative\"><strong>narrative</strong></a>:</p> <p><a href=\"/glossary#new_balance\"><strong>new_balance</strong></a>: 20</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#other_account\"><strong>other_account</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#posted\"><strong>posted</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#scheme\"><strong>scheme</strong></a>: OBP</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#this_account\"><strong>this_account</strong></a>:</p> <p><a href=\"/glossary#transaction_attributes\"><strong>transaction_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#transactions\"><strong>transactions</strong></a>:</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#where\"><strong>where</strong></a>:</p> 
+    # Update a Transaction Narrative
+    # <p>Updates the description of the transaction TRANSACTION_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv600GetTransactionsForBankAccount200Response]
-    def o_bpv6_0_0_get_transactions_for_bank_account(bankid, accountid, viewid, opts = {})
-      data, _status_code, _headers = o_bpv6_0_0_get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
+      data, _status_code, _headers = update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts)
       data
     end
 
-    # Get Transactions for Account (Full)
-    # &lt;p&gt;Returns transactions list of the account specified by ACCOUNT_ID and &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;moderated&lt;/a&gt; by the view (VIEW_ID).&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;Possible custom url parameters for pagination:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;limit&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 50&lt;/li&gt; &lt;li&gt;offset&#x3D;NUMBER &#x3D;&#x3D;&amp;gt; default value: 0&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg1:?limit&#x3D;100&amp;amp;offset&#x3D;0&lt;/p&gt; &lt;ul&gt; &lt;li&gt;sort_direction&#x3D;ASC/DESC &#x3D;&#x3D;&amp;gt; default value: DESC.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;eg2:?limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;sort_direction&#x3D;ASC&lt;/p&gt; &lt;ul&gt; &lt;li&gt;from_date&#x3D;DATE &#x3D;&amp;gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).&lt;/li&gt; &lt;li&gt;to_date&#x3D;DATE &#x3D;&amp;gt; example value: 2026-03-16T19:25:59.748Z. NOTE! The default value is now (2026-03-16T19:25:59.748Z).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Date format parameter: yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;(1100-01-01T01:01:01.000Z) &#x3D;&#x3D;&amp;gt; time zone is UTC.&lt;/p&gt; &lt;p&gt;eg3:?sort_direction&#x3D;ASC&amp;amp;limit&#x3D;100&amp;amp;offset&#x3D;0&amp;amp;from_date&#x3D;1100-01-01T01:01:01.000Z&amp;amp;to_date&#x3D;1100-01-01T01:01:01.000Z&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This v6.0.0 endpoint returns &lt;code&gt;bank_id&lt;/code&gt; directly in both &lt;code&gt;this_account&lt;/code&gt; and &lt;code&gt;other_account&lt;/code&gt; objects,&lt;br /&gt; making it easier to identify which bank each account belongs to without parsing the &lt;code&gt;bank_routing&lt;/code&gt; object.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bank_routing\&quot;&gt;&lt;strong&gt;bank_routing&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#comments\&quot;&gt;&lt;strong&gt;comments&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#completed\&quot;&gt;&lt;strong&gt;completed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holder\&quot;&gt;&lt;strong&gt;holder&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#holders\&quot;&gt;&lt;strong&gt;holders&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#images\&quot;&gt;&lt;strong&gt;images&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_alias\&quot;&gt;&lt;strong&gt;is_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#narrative\&quot;&gt;&lt;strong&gt;narrative&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#new_balance\&quot;&gt;&lt;strong&gt;new_balance&lt;/strong&gt;&lt;/a&gt;: 20&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account\&quot;&gt;&lt;strong&gt;other_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#posted\&quot;&gt;&lt;strong&gt;posted&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#tags\&quot;&gt;&lt;strong&gt;tags&lt;/strong&gt;&lt;/a&gt;: Create-My-User&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account\&quot;&gt;&lt;strong&gt;this_account&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_attributes\&quot;&gt;&lt;strong&gt;transaction_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;transaction_id&lt;/strong&gt;&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transactions\&quot;&gt;&lt;strong&gt;transactions&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#where\&quot;&gt;&lt;strong&gt;where&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # Update a Transaction Narrative
+    # &lt;p&gt;Updates the description of the transaction TRANSACTION_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param get_transaction_narrative200_response [GetTransactionNarrative200Response] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv600GetTransactionsForBankAccount200Response, Integer, Hash)>] OBPv600GetTransactionsForBankAccount200Response data, response status code and response headers
-    def o_bpv6_0_0_get_transactions_for_bank_account_with_http_info(bankid, accountid, viewid, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_transaction_narrative_with_http_info(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionApi.o_bpv6_0_0_get_transactions_for_bank_account ...'
+        @api_client.config.logger.debug 'Calling API: TransactionApi.update_transaction_narrative ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.o_bpv6_0_0_get_transactions_for_bank_account"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.update_transaction_narrative"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.o_bpv6_0_0_get_transactions_for_bank_account"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.update_transaction_narrative"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.o_bpv6_0_0_get_transactions_for_bank_account"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.update_transaction_narrative"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.update_transaction_narrative"
+      end
+      # verify the required parameter 'get_transaction_narrative200_response' is set
+      if @api_client.config.client_side_validation && get_transaction_narrative200_response.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_narrative200_response' when calling TransactionApi.update_transaction_narrative"
       end
       # resource path
-      local_var_path = '/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -2587,21 +2490,26 @@ module OpenBankProject
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body]
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_narrative200_response)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv600GetTransactionsForBankAccount200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+      auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"TransactionApi.o_bpv6_0_0_get_transactions_for_bank_account",
+        :operation => :"TransactionApi.update_transaction_narrative",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -2610,9 +2518,101 @@ module OpenBankProject
         :return_type => return_type
       )
 
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionApi#o_bpv6_0_0_get_transactions_for_bank_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionApi#update_transaction_narrative\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a Transaction where Tag
+    # <p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>The geo tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#transaction_ids\">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [UpdateTransactionNarrative200Response]
+    def update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
+      data, _status_code, _headers = update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts)
+      data
+    end
+
+    # Update a Transaction where Tag
+    # &lt;p&gt;Updates the &amp;quot;where&amp;quot; Geo tag on a transaction TRANSACTION_ID in a &lt;a href&#x3D;\&quot;#1_2_1-getViewsForBankAccount\&quot;&gt;view&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The geo tag is linked with the user.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transaction_ids\&quot;&gt;TRANSACTION_ID&lt;/a&gt;: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param viewid [String] The VIEWID identifier
+    # @param transactionid [String] The TRANSACTIONID identifier
+    # @param update_where_tag_for_view_on_transaction_request [UpdateWhereTagForViewOnTransactionRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def update_where_tag_for_view_on_transaction_with_http_info(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: TransactionApi.update_where_tag_for_view_on_transaction ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionApi.update_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionApi.update_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'viewid' is set
+      if @api_client.config.client_side_validation && viewid.nil?
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling TransactionApi.update_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'transactionid' is set
+      if @api_client.config.client_side_validation && transactionid.nil?
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionApi.update_where_tag_for_view_on_transaction"
+      end
+      # verify the required parameter 'update_where_tag_for_view_on_transaction_request' is set
+      if @api_client.config.client_side_validation && update_where_tag_for_view_on_transaction_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_where_tag_for_view_on_transaction_request' when calling TransactionApi.update_where_tag_for_view_on_transaction"
+      end
+      # resource path
+      local_var_path = '/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_where_tag_for_view_on_transaction_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"TransactionApi.update_where_tag_for_view_on_transaction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TransactionApi#update_where_tag_for_view_on_transaction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

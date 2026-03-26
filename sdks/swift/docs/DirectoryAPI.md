@@ -1,39 +1,39 @@
 # DirectoryAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateConsumerDynamicRegistration**](DirectoryAPI.md#obpv510createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-[**oBPv510CreateRegulatedEntity**](DirectoryAPI.md#obpv510createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-[**oBPv510CreateRegulatedEntityAttribute**](DirectoryAPI.md#obpv510createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-[**oBPv510DeleteRegulatedEntity**](DirectoryAPI.md#obpv510deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-[**oBPv510DeleteRegulatedEntityAttribute**](DirectoryAPI.md#obpv510deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-[**oBPv510GetAllRegulatedEntityAttributes**](DirectoryAPI.md#obpv510getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-[**oBPv510GetRegulatedEntityAttributeById**](DirectoryAPI.md#obpv510getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-[**oBPv510GetRegulatedEntityById**](DirectoryAPI.md#obpv510getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-[**oBPv510RegulatedEntities**](DirectoryAPI.md#obpv510regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-[**oBPv510UpdateRegulatedEntityAttribute**](DirectoryAPI.md#obpv510updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+[**createConsumerDynamicRegistration**](DirectoryAPI.md#createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+[**createRegulatedEntity**](DirectoryAPI.md#createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+[**createRegulatedEntityAttribute**](DirectoryAPI.md#createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+[**deleteRegulatedEntity**](DirectoryAPI.md#deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+[**deleteRegulatedEntityAttribute**](DirectoryAPI.md#deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+[**getAllRegulatedEntityAttributes**](DirectoryAPI.md#getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+[**getRegulatedEntityAttributeById**](DirectoryAPI.md#getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+[**getRegulatedEntityById**](DirectoryAPI.md#getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+[**regulatedEntities**](DirectoryAPI.md#regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+[**updateRegulatedEntityAttribute**](DirectoryAPI.md#updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
 
 
-# **oBPv510CreateConsumerDynamicRegistration**
+# **createConsumerDynamicRegistration**
 ```swift
-    open class func oBPv510CreateConsumerDynamicRegistration(oBPv510CreateConsumerDynamicRegistrationRequest: OBPv510CreateConsumerDynamicRegistrationRequest, completion: @escaping (_ data: OBPv510UpdateConsumerName200Response?, _ error: Error?) -> Void)
+    open class func createConsumerDynamicRegistration(createConsumerDynamicRegistrationRequest: CreateConsumerDynamicRegistrationRequest, completion: @escaping (_ data: UpdateConsumerName200Response?, _ error: Error?) -> Void)
 ```
 
 Create a Consumer(Dynamic Registration)
 
-<p>Create a Consumer with full certificate validation (mTLS access) - <strong>Recommended for PSD2/Berlin Group compliance</strong>.</p> <p>This endpoint provides <strong>secure, validated consumer registration</strong> unlike the standard <code>/management/consumers</code> endpoint.</p> <p><strong>How it works (for comprehension flow):</strong></p> <ol> <li><strong>Extract JWT from request</strong>: Parse the signed JWT from the request body</li> <li><strong>Extract certificate</strong>: Get certificate from <code>PSD2-CERT</code> header in PEM format</li> <li><strong>Verify JWT signature</strong>: Validate JWT is signed with the certificate's private key (proves possession)</li> <li><strong>Parse JWT payload</strong>: Extract consumer details (description, app_name, app_type, developer_email, redirect_url)</li> <li><strong>Extract certificate info</strong>: Parse certificate to get Common Name, Email, Organization</li> <li><strong>Validate against Regulated Entity</strong>: Check certificate exists in Regulated Entity registry (PSD2 requirement)</li> <li><strong>Create consumer</strong>: Generate credentials and create consumer record with validated certificate</li> <li><strong>Return consumer with certificate info</strong>: Returns consumer details including parsed certificate information</li> </ol> <p><strong>Certificate Validation (CRITICAL SECURITY DIFFERENCE from regular creation):</strong></p> <p>[YES] <strong>JWT Signature Verification</strong>: JWT must be signed with certificate's private key - proves TPP owns the certificate<br /> [YES] <strong>Regulated Entity Check</strong>: Certificate must match a pre-registered Regulated Entity in the database<br /> [YES] <strong>Certificate Binding</strong>: Certificate is permanently bound to the consumer at creation time<br /> [YES] <strong>CA Validation</strong>: Certificate chain can be validated against trusted root CAs during API requests<br /> [YES] <strong>PSD2 Compliance</strong>: Meets EU regulatory requirements for TPP registration</p> <p><strong>Security benefits vs regular consumer creation:</strong></p> <table> <thead> <tr><th>Feature </th><th> Regular Creation </th><th> Dynamic Registration </th></tr> </thead> <tbody> <tr><td>Certificate validation </td><td> [NO] None </td><td> [YES] Full validation </td></tr> <tr><td>Regulated Entity check </td><td> [NO] Not required </td><td> [YES] Required </td></tr> <tr><td>JWT signature proof </td><td> [NO] Not required </td><td> [YES] Required (proves private key possession) </td></tr> <tr><td>Self-signed certs </td><td> [YES] Accepted </td><td> [NO] Rejected </td></tr> <tr><td>PSD2 compliant </td><td> [NO] No </td><td> [YES] Yes </td></tr> <tr><td>Rogue TPP prevention </td><td> [NO] No </td><td> [YES] Yes </td></tr> </tbody> </table> <p><strong>Prerequisites:</strong><br /> 1. TPP must be registered as a Regulated Entity with their certificate<br /> 2. Certificate must be provided in <code>PSD2-CERT</code> request header (PEM format)<br /> 3. JWT must be signed with the private key corresponding to the certificate<br /> 4. Trust store must be configured with trusted root CAs</p> <p><strong>JWT Payload Structure:</strong></p> <p>Minimal:</p> <pre><code class=\"language-json\">{ &quot;description&quot;:&quot;TPP Application Description&quot; } </code></pre> <p>Full:</p> <pre><code class=\"language-json\">{   &quot;description&quot;: &quot;Payment Initiation Service&quot;,   &quot;app_name&quot;: &quot;Tesobe GmbH&quot;,   &quot;app_type&quot;: &quot;Confidential&quot;,   &quot;developer_email&quot;: &quot;contact@tesobe.com&quot;,   &quot;redirect_url&quot;: &quot;https://tpp.example.com/callback&quot; } </code></pre> <p><strong>Note:</strong> JWT must be signed with the private key that corresponds to the public key in the certificate sent via <code>PSD2-CERT</code> header.</p> <p><strong>Certificate Information Extraction:</strong></p> <p>The endpoint automatically extracts information from the certificate:<br /> - Common Name (CN) → used as app_name if not provided in JWT<br /> - Email Address → used as developer_email if not provided<br /> - Organization (O) → used as company<br /> - Certificate validity period<br /> - Issuer information</p> <p><strong>Configuration Required:</strong><br /> - <code>truststore.path.tpp_signature</code> - Path to trust store for CA validation<br /> - <code>truststore.password.tpp_signature</code> - Trust store password<br /> - Regulated Entity must be pre-registered with certificate public key</p> <p><strong>Error Scenarios:</strong><br /> - JWT signature invalid → <code>PostJsonIsNotSigned</code> (400)<br /> - Certificate not in Regulated Entity registry → <code>RegulatedEntityNotFoundByCertificate</code> (400)<br /> - Invalid JWT format → <code>InvalidJsonFormat</code> (400)<br /> - Missing PSD2-CERT header → Signature verification fails</p> <p><strong>This is the SECURE way to register consumers for production PSD2/Berlin Group implementations.</strong></p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#jwt\"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#app_name\"><strong>app_name</strong></a>: appNameBank</p> <p><a href=\"/glossary#app_type\"><strong>app_type</strong></a>: Web</p> <p><a href=\"/glossary#\"><strong>certificate_pem</strong></a>: certificate_pem</p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#created_by_user\"><strong>created_by_user</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#developer_email\"><strong>developer_email</strong></a>:</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;il&#116;o&#58;&#102;e&#x6c;ix&#x73;&#x6d;&#x69;&#116;&#104;&#x40;e&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;\">&#102;&#101;&#108;i&#x78;s&#109;i&#x74;&#104;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p> <p><a href=\"/glossary#\"><strong>not_after</strong></a>: not_after</p> <p><a href=\"/glossary#\"><strong>not_before</strong></a>: not_before</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#redirect_url\"><strong>redirect_url</strong></a>: <a href=\"https://apisandbox.openbankproject.com\">https://apisandbox.openbankproject.com</a></p> <p><a href=\"/glossary#\"><strong>subject_domain_name</strong></a>: subject_domain_name</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">certificate_info</a>: certificate_info</p> <p><a href=\"/glossary#logo_url\">logo_url</a>: logo_url</p> <p><a href=\"/glossary#roles\">roles</a>: CanCreateMyUser</p> <p><a href=\"/glossary#\">roles_info</a>: roles_info</p> 
+<p>Create a Consumer with full certificate validation (mTLS access) - <strong>Recommended for PSD2/Berlin Group compliance</strong>.</p> <p>This endpoint provides <strong>secure, validated consumer registration</strong> unlike the standard <code>/management/consumers</code> endpoint.</p> <p><strong>How it works (for comprehension flow):</strong></p> <ol> <li><strong>Extract JWT from request</strong>: Parse the signed JWT from the request body</li> <li><strong>Extract certificate</strong>: Get certificate from <code>PSD2-CERT</code> header in PEM format</li> <li><strong>Verify JWT signature</strong>: Validate JWT is signed with the certificate's private key (proves possession)</li> <li><strong>Parse JWT payload</strong>: Extract consumer details (description, app_name, app_type, developer_email, redirect_url)</li> <li><strong>Extract certificate info</strong>: Parse certificate to get Common Name, Email, Organization</li> <li><strong>Validate against Regulated Entity</strong>: Check certificate exists in Regulated Entity registry (PSD2 requirement)</li> <li><strong>Create consumer</strong>: Generate credentials and create consumer record with validated certificate</li> <li><strong>Return consumer with certificate info</strong>: Returns consumer details including parsed certificate information</li> </ol> <p><strong>Certificate Validation (CRITICAL SECURITY DIFFERENCE from regular creation):</strong></p> <p>[YES] <strong>JWT Signature Verification</strong>: JWT must be signed with certificate's private key - proves TPP owns the certificate<br /> [YES] <strong>Regulated Entity Check</strong>: Certificate must match a pre-registered Regulated Entity in the database<br /> [YES] <strong>Certificate Binding</strong>: Certificate is permanently bound to the consumer at creation time<br /> [YES] <strong>CA Validation</strong>: Certificate chain can be validated against trusted root CAs during API requests<br /> [YES] <strong>PSD2 Compliance</strong>: Meets EU regulatory requirements for TPP registration</p> <p><strong>Security benefits vs regular consumer creation:</strong></p> <table> <thead> <tr><th>Feature </th><th> Regular Creation </th><th> Dynamic Registration </th></tr> </thead> <tbody> <tr><td>Certificate validation </td><td> [NO] None </td><td> [YES] Full validation </td></tr> <tr><td>Regulated Entity check </td><td> [NO] Not required </td><td> [YES] Required </td></tr> <tr><td>JWT signature proof </td><td> [NO] Not required </td><td> [YES] Required (proves private key possession) </td></tr> <tr><td>Self-signed certs </td><td> [YES] Accepted </td><td> [NO] Rejected </td></tr> <tr><td>PSD2 compliant </td><td> [NO] No </td><td> [YES] Yes </td></tr> <tr><td>Rogue TPP prevention </td><td> [NO] No </td><td> [YES] Yes </td></tr> </tbody> </table> <p><strong>Prerequisites:</strong><br /> 1. TPP must be registered as a Regulated Entity with their certificate<br /> 2. Certificate must be provided in <code>PSD2-CERT</code> request header (PEM format)<br /> 3. JWT must be signed with the private key corresponding to the certificate<br /> 4. Trust store must be configured with trusted root CAs</p> <p><strong>JWT Payload Structure:</strong></p> <p>Minimal:</p> <pre><code class=\"language-json\">{ &quot;description&quot;:&quot;TPP Application Description&quot; } </code></pre> <p>Full:</p> <pre><code class=\"language-json\">{   &quot;description&quot;: &quot;Payment Initiation Service&quot;,   &quot;app_name&quot;: &quot;Tesobe GmbH&quot;,   &quot;app_type&quot;: &quot;Confidential&quot;,   &quot;developer_email&quot;: &quot;contact@tesobe.com&quot;,   &quot;redirect_url&quot;: &quot;https://tpp.example.com/callback&quot; } </code></pre> <p><strong>Note:</strong> JWT must be signed with the private key that corresponds to the public key in the certificate sent via <code>PSD2-CERT</code> header.</p> <p><strong>Certificate Information Extraction:</strong></p> <p>The endpoint automatically extracts information from the certificate:<br /> - Common Name (CN) → used as app_name if not provided in JWT<br /> - Email Address → used as developer_email if not provided<br /> - Organization (O) → used as company<br /> - Certificate validity period<br /> - Issuer information</p> <p><strong>Configuration Required:</strong><br /> - <code>truststore.path.tpp_signature</code> - Path to trust store for CA validation<br /> - <code>truststore.password.tpp_signature</code> - Trust store password<br /> - Regulated Entity must be pre-registered with certificate public key</p> <p><strong>Error Scenarios:</strong><br /> - JWT signature invalid → <code>PostJsonIsNotSigned</code> (400)<br /> - Certificate not in Regulated Entity registry → <code>RegulatedEntityNotFoundByCertificate</code> (400)<br /> - Invalid JWT format → <code>InvalidJsonFormat</code> (400)<br /> - Missing PSD2-CERT header → Signature verification fails</p> <p><strong>This is the SECURE way to register consumers for production PSD2/Berlin Group implementations.</strong></p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#jwt\"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#app_name\"><strong>app_name</strong></a>: appNameBank</p> <p><a href=\"/glossary#app_type\"><strong>app_type</strong></a>: Web</p> <p><a href=\"/glossary#\"><strong>certificate_pem</strong></a>: certificate_pem</p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#created_by_user\"><strong>created_by_user</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#developer_email\"><strong>developer_email</strong></a>:</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#108;to&#x3a;&#102;&#101;&#x6c;i&#x78;&#x73;m&#x69;&#116;&#x68;&#x40;&#101;&#x78;am&#112;l&#x65;&#x2e;c&#x6f;&#109;\">f&#x65;&#108;&#x69;&#120;&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;p&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p> <p><a href=\"/glossary#\"><strong>not_after</strong></a>: not_after</p> <p><a href=\"/glossary#\"><strong>not_before</strong></a>: not_before</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#redirect_url\"><strong>redirect_url</strong></a>: <a href=\"https://apisandbox.openbankproject.com\">https://apisandbox.openbankproject.com</a></p> <p><a href=\"/glossary#\"><strong>subject_domain_name</strong></a>: subject_domain_name</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">certificate_info</a>: certificate_info</p> <p><a href=\"/glossary#logo_url\">logo_url</a>: logo_url</p> <p><a href=\"/glossary#roles\">roles</a>: CanCreateMyUser</p> <p><a href=\"/glossary#\">roles_info</a>: roles_info</p> 
 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv510CreateConsumerDynamicRegistrationRequest = OBPv5_1_0_createConsumerDynamicRegistration_request(type: "type_example", properties: OBPv5_1_0_createConsumerDynamicRegistration_request_properties(jwt: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv510CreateConsumerDynamicRegistrationRequest | Request body
+let createConsumerDynamicRegistrationRequest = createConsumerDynamicRegistration_request(jwt: "jwt_example") // CreateConsumerDynamicRegistrationRequest | Request body
 
 // Create a Consumer(Dynamic Registration)
-DirectoryAPI.oBPv510CreateConsumerDynamicRegistration(oBPv510CreateConsumerDynamicRegistrationRequest: oBPv510CreateConsumerDynamicRegistrationRequest) { (response, error) in
+DirectoryAPI.createConsumerDynamicRegistration(createConsumerDynamicRegistrationRequest: createConsumerDynamicRegistrationRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -49,11 +49,11 @@ DirectoryAPI.oBPv510CreateConsumerDynamicRegistration(oBPv510CreateConsumerDynam
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateConsumerDynamicRegistrationRequest** | [**OBPv510CreateConsumerDynamicRegistrationRequest**](OBPv510CreateConsumerDynamicRegistrationRequest.md) | Request body | 
+ **createConsumerDynamicRegistrationRequest** | [**CreateConsumerDynamicRegistrationRequest**](CreateConsumerDynamicRegistrationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -66,9 +66,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510CreateRegulatedEntity**
+# **createRegulatedEntity**
 ```swift
-    open class func oBPv510CreateRegulatedEntity(oBPv510CreateRegulatedEntityRequest: OBPv510CreateRegulatedEntityRequest, completion: @escaping (_ data: OBPv510GetRegulatedEntityById200Response?, _ error: Error?) -> Void)
+    open class func createRegulatedEntity(createRegulatedEntityRequest: CreateRegulatedEntityRequest, completion: @escaping (_ data: GetRegulatedEntityById200Response?, _ error: Error?) -> Void)
 ```
 
 Create Regulated Entity
@@ -80,10 +80,10 @@ Create Regulated Entity
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv510CreateRegulatedEntityRequest = OBPv5_1_0_createRegulatedEntity_request(type: "type_example", properties: OBPv5_1_0_createRegulatedEntity_request_properties(services: OBPv5_1_0_getRegulatedEntityById_200_response_properties_services(type: "type_example", items: OBPv5_1_0_getRegulatedEntityById_200_response_properties_services_items(type: "type_example", properties: OBPv5_1_0_getRegulatedEntityById_200_response_properties_services_items_properties(CY: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))))))), entityCode: nil, entityWebSite: nil, entityCountry: nil, entityCertificatePublicKey: nil, entityType: nil, attributes: OBPv5_1_0_getRegulatedEntityById_200_response_properties_attributes(type: "type_example", items: OBPv5_1_0_getRegulatedEntityById_200_response_properties_attributes_items(type: "type_example", properties: OBPv5_1_0_getRegulatedEntityById_200_response_properties_attributes_items_properties(attributeType: nil, name: nil, value: nil))), entityPostCode: nil, entityName: nil, entityTownCity: nil, entityAddress: nil, certificateAuthorityCaOwnerId: nil)) // OBPv510CreateRegulatedEntityRequest | Request body
+let createRegulatedEntityRequest = createRegulatedEntity_request(services: [getRegulatedEntityById_200_response_services_inner(CY: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")])], entityCode: "entityCode_example", entityWebSite: "entityWebSite_example", entityCountry: "entityCountry_example", entityCertificatePublicKey: "entityCertificatePublicKey_example", entityType: "entityType_example", attributes: [getRegulatedEntityById_200_response_attributes_inner(attributeType: "attributeType_example", name: "name_example", value: "value_example")], entityPostCode: "entityPostCode_example", entityName: "entityName_example", entityTownCity: "entityTownCity_example", entityAddress: "entityAddress_example", certificateAuthorityCaOwnerId: "certificateAuthorityCaOwnerId_example") // CreateRegulatedEntityRequest | Request body
 
 // Create Regulated Entity
-DirectoryAPI.oBPv510CreateRegulatedEntity(oBPv510CreateRegulatedEntityRequest: oBPv510CreateRegulatedEntityRequest) { (response, error) in
+DirectoryAPI.createRegulatedEntity(createRegulatedEntityRequest: createRegulatedEntityRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -99,11 +99,11 @@ DirectoryAPI.oBPv510CreateRegulatedEntity(oBPv510CreateRegulatedEntityRequest: o
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateRegulatedEntityRequest** | [**OBPv510CreateRegulatedEntityRequest**](OBPv510CreateRegulatedEntityRequest.md) | Request body | 
+ **createRegulatedEntityRequest** | [**CreateRegulatedEntityRequest**](CreateRegulatedEntityRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -116,9 +116,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510CreateRegulatedEntityAttribute**
+# **createRegulatedEntityAttribute**
 ```swift
-    open class func oBPv510CreateRegulatedEntityAttribute(regulatedentityid: String, oBPv510UpdateRegulatedEntityAttributeRequest: OBPv510UpdateRegulatedEntityAttributeRequest, completion: @escaping (_ data: OBPv510GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
+    open class func createRegulatedEntityAttribute(regulatedentityid: String, createCounterpartyAttributeRequest: CreateCounterpartyAttributeRequest, completion: @escaping (_ data: GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Create Regulated Entity Attribute
@@ -131,10 +131,10 @@ Create Regulated Entity Attribute
 import OBPSwift
 
 let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENTITYID identifier
-let oBPv510UpdateRegulatedEntityAttributeRequest = OBPv5_1_0_updateRegulatedEntityAttribute_request(type: "type_example", properties: OBPv5_1_0_updateRegulatedEntityAttribute_request_properties(attributeType: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, name: nil)) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+let createCounterpartyAttributeRequest = createCounterpartyAttribute_request(attributeType: "attributeType_example", name: "name_example", isActive: false, value: "value_example") // CreateCounterpartyAttributeRequest | Request body
 
 // Create Regulated Entity Attribute
-DirectoryAPI.oBPv510CreateRegulatedEntityAttribute(regulatedentityid: regulatedentityid, oBPv510UpdateRegulatedEntityAttributeRequest: oBPv510UpdateRegulatedEntityAttributeRequest) { (response, error) in
+DirectoryAPI.createRegulatedEntityAttribute(regulatedentityid: regulatedentityid, createCounterpartyAttributeRequest: createCounterpartyAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -151,11 +151,11 @@ DirectoryAPI.oBPv510CreateRegulatedEntityAttribute(regulatedentityid: regulatede
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **String** | The REGULATEDENTITYID identifier | 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -168,9 +168,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteRegulatedEntity**
+# **deleteRegulatedEntity**
 ```swift
-    open class func oBPv510DeleteRegulatedEntity(regulatedentityid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteRegulatedEntity(regulatedentityid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Regulated Entity
@@ -185,7 +185,7 @@ import OBPSwift
 let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENTITYID identifier
 
 // Delete Regulated Entity
-DirectoryAPI.oBPv510DeleteRegulatedEntity(regulatedentityid: regulatedentityid) { (response, error) in
+DirectoryAPI.deleteRegulatedEntity(regulatedentityid: regulatedentityid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -218,9 +218,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteRegulatedEntityAttribute**
+# **deleteRegulatedEntityAttribute**
 ```swift
-    open class func oBPv510DeleteRegulatedEntityAttribute(regulatedentityid: String, regulatedentityattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteRegulatedEntityAttribute(regulatedentityid: String, regulatedentityattributeid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Regulated Entity Attribute
@@ -236,7 +236,7 @@ let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENT
 let regulatedentityattributeid = "regulatedentityattributeid_example" // String | The REGULATEDENTITYATTRIBUTEID identifier
 
 // Delete Regulated Entity Attribute
-DirectoryAPI.oBPv510DeleteRegulatedEntityAttribute(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid) { (response, error) in
+DirectoryAPI.deleteRegulatedEntityAttribute(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -270,9 +270,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAllRegulatedEntityAttributes**
+# **getAllRegulatedEntityAttributes**
 ```swift
-    open class func oBPv510GetAllRegulatedEntityAttributes(regulatedentityid: String, completion: @escaping (_ data: OBPv510GetAllRegulatedEntityAttributes200Response?, _ error: Error?) -> Void)
+    open class func getAllRegulatedEntityAttributes(regulatedentityid: String, completion: @escaping (_ data: GetAllRegulatedEntityAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get All Regulated Entity Attributes
@@ -287,7 +287,7 @@ import OBPSwift
 let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENTITYID identifier
 
 // Get All Regulated Entity Attributes
-DirectoryAPI.oBPv510GetAllRegulatedEntityAttributes(regulatedentityid: regulatedentityid) { (response, error) in
+DirectoryAPI.getAllRegulatedEntityAttributes(regulatedentityid: regulatedentityid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllRegulatedEntityAttributes200Response**](OBPv510GetAllRegulatedEntityAttributes200Response.md)
+[**GetAllRegulatedEntityAttributes200Response**](GetAllRegulatedEntityAttributes200Response.md)
 
 ### Authorization
 
@@ -320,9 +320,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetRegulatedEntityAttributeById**
+# **getRegulatedEntityAttributeById**
 ```swift
-    open class func oBPv510GetRegulatedEntityAttributeById(regulatedentityid: String, regulatedentityattributeid: String, completion: @escaping (_ data: OBPv510GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
+    open class func getRegulatedEntityAttributeById(regulatedentityid: String, regulatedentityattributeid: String, completion: @escaping (_ data: GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Get Regulated Entity Attribute By ID
@@ -338,7 +338,7 @@ let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENT
 let regulatedentityattributeid = "regulatedentityattributeid_example" // String | The REGULATEDENTITYATTRIBUTEID identifier
 
 // Get Regulated Entity Attribute By ID
-DirectoryAPI.oBPv510GetRegulatedEntityAttributeById(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid) { (response, error) in
+DirectoryAPI.getRegulatedEntityAttributeById(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -372,9 +372,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetRegulatedEntityById**
+# **getRegulatedEntityById**
 ```swift
-    open class func oBPv510GetRegulatedEntityById(regulatedentityid: String, completion: @escaping (_ data: OBPv510GetRegulatedEntityById200Response?, _ error: Error?) -> Void)
+    open class func getRegulatedEntityById(regulatedentityid: String, completion: @escaping (_ data: GetRegulatedEntityById200Response?, _ error: Error?) -> Void)
 ```
 
 Get Regulated Entity
@@ -389,7 +389,7 @@ import OBPSwift
 let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENTITYID identifier
 
 // Get Regulated Entity
-DirectoryAPI.oBPv510GetRegulatedEntityById(regulatedentityid: regulatedentityid) { (response, error) in
+DirectoryAPI.getRegulatedEntityById(regulatedentityid: regulatedentityid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -422,9 +422,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510RegulatedEntities**
+# **regulatedEntities**
 ```swift
-    open class func oBPv510RegulatedEntities(completion: @escaping (_ data: OBPv510RegulatedEntities200Response?, _ error: Error?) -> Void)
+    open class func regulatedEntities(completion: @escaping (_ data: RegulatedEntities200Response?, _ error: Error?) -> Void)
 ```
 
 Get Regulated Entities
@@ -438,7 +438,7 @@ import OBPSwift
 
 
 // Get Regulated Entities
-DirectoryAPI.oBPv510RegulatedEntities() { (response, error) in
+DirectoryAPI.regulatedEntities() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -455,7 +455,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510RegulatedEntities200Response**](OBPv510RegulatedEntities200Response.md)
+[**RegulatedEntities200Response**](RegulatedEntities200Response.md)
 
 ### Authorization
 
@@ -468,9 +468,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateRegulatedEntityAttribute**
+# **updateRegulatedEntityAttribute**
 ```swift
-    open class func oBPv510UpdateRegulatedEntityAttribute(regulatedentityid: String, regulatedentityattributeid: String, oBPv510UpdateRegulatedEntityAttributeRequest: OBPv510UpdateRegulatedEntityAttributeRequest, completion: @escaping (_ data: OBPv510GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
+    open class func updateRegulatedEntityAttribute(regulatedentityid: String, regulatedentityattributeid: String, createCounterpartyAttributeRequest: CreateCounterpartyAttributeRequest, completion: @escaping (_ data: GetRegulatedEntityAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Update Regulated Entity Attribute
@@ -484,10 +484,10 @@ import OBPSwift
 
 let regulatedentityid = "regulatedentityid_example" // String | The REGULATEDENTITYID identifier
 let regulatedentityattributeid = "regulatedentityattributeid_example" // String | The REGULATEDENTITYATTRIBUTEID identifier
-let oBPv510UpdateRegulatedEntityAttributeRequest = OBPv5_1_0_updateRegulatedEntityAttribute_request(type: "type_example", properties: OBPv5_1_0_updateRegulatedEntityAttribute_request_properties(attributeType: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), value: nil, isActive: nil, name: nil)) // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+let createCounterpartyAttributeRequest = createCounterpartyAttribute_request(attributeType: "attributeType_example", name: "name_example", isActive: false, value: "value_example") // CreateCounterpartyAttributeRequest | Request body
 
 // Update Regulated Entity Attribute
-DirectoryAPI.oBPv510UpdateRegulatedEntityAttribute(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid, oBPv510UpdateRegulatedEntityAttributeRequest: oBPv510UpdateRegulatedEntityAttributeRequest) { (response, error) in
+DirectoryAPI.updateRegulatedEntityAttribute(regulatedentityid: regulatedentityid, regulatedentityattributeid: regulatedentityattributeid, createCounterpartyAttributeRequest: createCounterpartyAttributeRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -505,11 +505,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **String** | The REGULATEDENTITYID identifier | 
  **regulatedentityattributeid** | **String** | The REGULATEDENTITYATTRIBUTEID identifier | 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md) | Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 

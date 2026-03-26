@@ -2,21 +2,21 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateApiProduct()**](ApiProductApi.md#oBPv600CreateApiProduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
-| [**oBPv600CreateOrUpdateApiProduct()**](ApiProductApi.md#oBPv600CreateOrUpdateApiProduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
-| [**oBPv600DeleteApiProduct()**](ApiProductApi.md#oBPv600DeleteApiProduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
-| [**oBPv600GetApiProduct()**](ApiProductApi.md#oBPv600GetApiProduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
-| [**oBPv600GetApiProducts()**](ApiProductApi.md#oBPv600GetApiProducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
+| [**createApiProduct()**](ApiProductApi.md#createApiProduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product |
+| [**createOrUpdateApiProduct()**](ApiProductApi.md#createOrUpdateApiProduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product |
+| [**deleteApiProduct()**](ApiProductApi.md#deleteApiProduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product |
+| [**getApiProduct()**](ApiProductApi.md#getApiProduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product |
+| [**getApiProducts()**](ApiProductApi.md#getApiProducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products |
 
 
-## `oBPv600CreateApiProduct()`
+## `createApiProduct()`
 
 ```php
-oBPv600CreateApiProduct($bankid, $apiproductcode, $obpv600_create_or_update_api_product_request): \OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+createApiProduct($bankid, $apiproductcode, $create_or_update_api_product_request): \OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner
 ```
 
 Create Api Product
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductApi(
@@ -52,13 +52,13 @@ $apiInstance = new OpenBankProject\Api\ApiProductApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
-$obpv600_create_or_update_api_product_request = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}}; // \OpenBankProject\Model\OBPv600CreateOrUpdateApiProductRequest | Request body
+$create_or_update_api_product_request = {type=object, properties={name={type=string}, category={type=string}, monthly_subscription_currency={type=string}, description={type=string}, monthly_subscription_amount={type=string}, terms_and_conditions_url={type=string}, collection_id={type=string}, per_month_call_limit={type=integer}, per_second_call_limit={type=integer}, parent_api_product_code={type=string}, per_minute_call_limit={type=integer}, per_hour_call_limit={type=integer}, more_info_url={type=string}, per_week_call_limit={type=integer}, per_day_call_limit={type=integer}}}; // \OpenBankProject\Model\CreateOrUpdateApiProductRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateApiProduct($bankid, $apiproductcode, $obpv600_create_or_update_api_product_request);
+    $result = $apiInstance->createApiProduct($bankid, $apiproductcode, $create_or_update_api_product_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductApi->oBPv600CreateApiProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductApi->createApiProduct: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,11 +68,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **apiproductcode** | **string**| The APIPRODUCTCODE identifier | |
-| **obpv600_create_or_update_api_product_request** | [**\OpenBankProject\Model\OBPv600CreateOrUpdateApiProductRequest**](../Model/OBPv600CreateOrUpdateApiProductRequest.md)| Request body | |
+| **create_or_update_api_product_request** | [**\OpenBankProject\Model\CreateOrUpdateApiProductRequest**](../Model/CreateOrUpdateApiProductRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](../Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**\OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner**](../Model/GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -87,10 +87,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600CreateOrUpdateApiProduct()`
+## `createOrUpdateApiProduct()`
 
 ```php
-oBPv600CreateOrUpdateApiProduct($bankid, $apiproductcode, $obpv600_create_or_update_api_product_request): \OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+createOrUpdateApiProduct($bankid, $apiproductcode, $create_or_update_api_product_request): \OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner
 ```
 
 Create or Update Api Product
@@ -113,9 +113,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductApi(
@@ -126,13 +126,13 @@ $apiInstance = new OpenBankProject\Api\ApiProductApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
-$obpv600_create_or_update_api_product_request = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}}; // \OpenBankProject\Model\OBPv600CreateOrUpdateApiProductRequest | Request body
+$create_or_update_api_product_request = {"type":"object","properties":{"name":{"type":"string"},"category":{"type":"string"},"monthly_subscription_currency":{"type":"string"},"description":{"type":"string"},"monthly_subscription_amount":{"type":"string"},"terms_and_conditions_url":{"type":"string"},"collection_id":{"type":"string"},"per_month_call_limit":{"type":"integer"},"per_second_call_limit":{"type":"integer"},"parent_api_product_code":{"type":"string"},"per_minute_call_limit":{"type":"integer"},"per_hour_call_limit":{"type":"integer"},"more_info_url":{"type":"string"},"per_week_call_limit":{"type":"integer"},"per_day_call_limit":{"type":"integer"}}}; // \OpenBankProject\Model\CreateOrUpdateApiProductRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateOrUpdateApiProduct($bankid, $apiproductcode, $obpv600_create_or_update_api_product_request);
+    $result = $apiInstance->createOrUpdateApiProduct($bankid, $apiproductcode, $create_or_update_api_product_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductApi->oBPv600CreateOrUpdateApiProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductApi->createOrUpdateApiProduct: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -142,11 +142,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **apiproductcode** | **string**| The APIPRODUCTCODE identifier | |
-| **obpv600_create_or_update_api_product_request** | [**\OpenBankProject\Model\OBPv600CreateOrUpdateApiProductRequest**](../Model/OBPv600CreateOrUpdateApiProductRequest.md)| Request body | |
+| **create_or_update_api_product_request** | [**\OpenBankProject\Model\CreateOrUpdateApiProductRequest**](../Model/CreateOrUpdateApiProductRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](../Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**\OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner**](../Model/GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -161,10 +161,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeleteApiProduct()`
+## `deleteApiProduct()`
 
 ```php
-oBPv600DeleteApiProduct($bankid, $apiproductcode)
+deleteApiProduct($bankid, $apiproductcode)
 ```
 
 Delete Api Product
@@ -187,9 +187,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ApiProductApi(
@@ -202,9 +202,9 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
 
 try {
-    $apiInstance->oBPv600DeleteApiProduct($bankid, $apiproductcode);
+    $apiInstance->deleteApiProduct($bankid, $apiproductcode);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductApi->oBPv600DeleteApiProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductApi->deleteApiProduct: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -232,10 +232,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetApiProduct()`
+## `getApiProduct()`
 
 ```php
-oBPv600GetApiProduct($bankid, $apiproductcode): \OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+getApiProduct($bankid, $apiproductcode): \OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner
 ```
 
 Get Api Product
@@ -259,10 +259,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $apiproductcode = 'apiproductcode_example'; // string | The APIPRODUCTCODE identifier
 
 try {
-    $result = $apiInstance->oBPv600GetApiProduct($bankid, $apiproductcode);
+    $result = $apiInstance->getApiProduct($bankid, $apiproductcode);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductApi->oBPv600GetApiProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductApi->getApiProduct: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -275,7 +275,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](../Model/OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**\OpenBankProject\Model\GetApiProducts200ResponseApiProductsInner**](../Model/GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -290,10 +290,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetApiProducts()`
+## `getApiProducts()`
 
 ```php
-oBPv600GetApiProducts($bankid): \OpenBankProject\Model\OBPv600GetApiProducts200Response
+getApiProducts($bankid): \OpenBankProject\Model\GetApiProducts200Response
 ```
 
 Get Api Products
@@ -316,10 +316,10 @@ $apiInstance = new OpenBankProject\Api\ApiProductApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetApiProducts($bankid);
+    $result = $apiInstance->getApiProducts($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ApiProductApi->oBPv600GetApiProducts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ApiProductApi->getApiProducts: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -331,7 +331,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetApiProducts200Response**](../Model/OBPv600GetApiProducts200Response.md)
+[**\OpenBankProject\Model\GetApiProducts200Response**](../Model/GetApiProducts200Response.md)
 
 ### Authorization
 

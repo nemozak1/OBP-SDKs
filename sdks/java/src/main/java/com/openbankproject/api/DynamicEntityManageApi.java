@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,17 +18,17 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600BackupBankLevelDynamicEntity200Response;
-import com.openbankproject.model.OBPv600BackupSystemDynamicEntity200Response;
-import com.openbankproject.model.OBPv600CreateBankLevelDynamicEntity200Response;
-import com.openbankproject.model.OBPv600CreateSystemDynamicEntity200Response;
-import com.openbankproject.model.OBPv600CreateSystemDynamicEntityRequest;
-import com.openbankproject.model.OBPv600GetAvailablePersonalDynamicEntities200Response;
-import com.openbankproject.model.OBPv600GetBankLevelDynamicEntities200Response;
-import com.openbankproject.model.OBPv600GetSystemDynamicEntities200Response;
-import com.openbankproject.model.OBPv600UpdateBankLevelDynamicEntity200Response;
-import com.openbankproject.model.OBPv600UpdateSystemDynamicEntity200Response;
-import com.openbankproject.model.OBPv600UpdateSystemDynamicEntityRequest;
+import com.openbankproject.model.BackupBankLevelDynamicEntity200Response;
+import com.openbankproject.model.BackupSystemDynamicEntity200Response;
+import com.openbankproject.model.CreateBankLevelDynamicEntity200Response;
+import com.openbankproject.model.CreateSystemDynamicEntity200Response;
+import com.openbankproject.model.CreateSystemDynamicEntityRequest;
+import com.openbankproject.model.GetAvailablePersonalDynamicEntities200Response;
+import com.openbankproject.model.GetBankLevelDynamicEntities200Response;
+import com.openbankproject.model.GetSystemDynamicEntities200Response;
+import com.openbankproject.model.UpdateBankLevelDynamicEntity200Response;
+import com.openbankproject.model.UpdateSystemDynamicEntity200Response;
+import com.openbankproject.model.UpdateSystemDynamicEntityRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -55,7 +55,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DynamicEntityManageApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -173,51 +173,54 @@ public class DynamicEntityManageApi {
   }
 
   /**
-   * Delete Bank Level Dynamic Entity
-   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * Backup Bank Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @return BackupBankLevelDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    oBPv400DeleteBankLevelDynamicEntity(bankid, dynamicentityid, null);
+  public BackupBankLevelDynamicEntity200Response backupBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return backupBankLevelDynamicEntity(bankid, dynamicentityid, null);
   }
 
   /**
-   * Delete Bank Level Dynamic Entity
-   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * Backup Bank Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
    * @param headers Optional headers to include in the request
+   * @return BackupBankLevelDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, headers);
+  public BackupBankLevelDynamicEntity200Response backupBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    ApiResponse<BackupBankLevelDynamicEntity200Response> localVarResponse = backupBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, headers);
+    return localVarResponse.getData();
   }
 
   /**
-   * Delete Bank Level Dynamic Entity
-   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * Backup Bank Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @return ApiResponse&lt;Void&gt;
+   * @return ApiResponse&lt;BackupBankLevelDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, null);
+  public ApiResponse<BackupBankLevelDynamicEntity200Response> backupBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return backupBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, null);
   }
 
   /**
-   * Delete Bank Level Dynamic Entity
-   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * Backup Bank Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;Void&gt;
+   * @return ApiResponse&lt;BackupBankLevelDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, headers);
+  public ApiResponse<BackupBankLevelDynamicEntity200Response> backupBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = backupBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -228,7 +231,504 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteBankLevelDynamicEntity", localVarResponse);
+          throw getApiException("backupBankLevelDynamicEntity", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<BackupBankLevelDynamicEntity200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        BackupBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<BackupBankLevelDynamicEntity200Response>() {});
+        
+
+        return new ApiResponse<BackupBankLevelDynamicEntity200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder backupBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'bankid' is set
+    if (bankid == null) {
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling backupBankLevelDynamicEntity");
+    }
+    // verify the required parameter 'dynamicentityid' is set
+    if (dynamicentityid == null) {
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling backupBankLevelDynamicEntity");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup"
+        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
+        .replace("{dynamicentityid}", ApiClient.urlEncode(dynamicentityid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Backup System Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @return BackupSystemDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public BackupSystemDynamicEntity200Response backupSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return backupSystemDynamicEntity(dynamicentityid, null);
+  }
+
+  /**
+   * Backup System Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return BackupSystemDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public BackupSystemDynamicEntity200Response backupSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    ApiResponse<BackupSystemDynamicEntity200Response> localVarResponse = backupSystemDynamicEntityWithHttpInfo(dynamicentityid, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Backup System Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @return ApiResponse&lt;BackupSystemDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<BackupSystemDynamicEntity200Response> backupSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return backupSystemDynamicEntityWithHttpInfo(dynamicentityid, null);
+  }
+
+  /**
+   * Backup System Level Dynamic Entity
+   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;BackupSystemDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<BackupSystemDynamicEntity200Response> backupSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = backupSystemDynamicEntityRequestBuilder(dynamicentityid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("backupSystemDynamicEntity", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<BackupSystemDynamicEntity200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        BackupSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<BackupSystemDynamicEntity200Response>() {});
+        
+
+        return new ApiResponse<BackupSystemDynamicEntity200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder backupSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'dynamicentityid' is set
+    if (dynamicentityid == null) {
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling backupSystemDynamicEntity");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup"
+        .replace("{dynamicentityid}", ApiClient.urlEncode(dynamicentityid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Create Bank Level Dynamic Entity
+   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @return CreateBankLevelDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateBankLevelDynamicEntity200Response createBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest) throws ApiException {
+    return createBankLevelDynamicEntity(bankid, createSystemDynamicEntityRequest, null);
+  }
+
+  /**
+   * Create Bank Level Dynamic Entity
+   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return CreateBankLevelDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateBankLevelDynamicEntity200Response createBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateBankLevelDynamicEntity200Response> localVarResponse = createBankLevelDynamicEntityWithHttpInfo(bankid, createSystemDynamicEntityRequest, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Create Bank Level Dynamic Entity
+   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @return ApiResponse&lt;CreateBankLevelDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateBankLevelDynamicEntity200Response> createBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest) throws ApiException {
+    return createBankLevelDynamicEntityWithHttpInfo(bankid, createSystemDynamicEntityRequest, null);
+  }
+
+  /**
+   * Create Bank Level Dynamic Entity
+   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateBankLevelDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateBankLevelDynamicEntity200Response> createBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankLevelDynamicEntityRequestBuilder(bankid, createSystemDynamicEntityRequest, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("createBankLevelDynamicEntity", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<CreateBankLevelDynamicEntity200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateBankLevelDynamicEntity200Response>() {});
+        
+
+        return new ApiResponse<CreateBankLevelDynamicEntity200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder createBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'bankid' is set
+    if (bankid == null) {
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankLevelDynamicEntity");
+    }
+    // verify the required parameter 'createSystemDynamicEntityRequest' is set
+    if (createSystemDynamicEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createSystemDynamicEntityRequest' when calling createBankLevelDynamicEntity");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities"
+        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createSystemDynamicEntityRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Create System Level Dynamic Entity
+   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @return CreateSystemDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateSystemDynamicEntity200Response createSystemDynamicEntity(@javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest) throws ApiException {
+    return createSystemDynamicEntity(createSystemDynamicEntityRequest, null);
+  }
+
+  /**
+   * Create System Level Dynamic Entity
+   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return CreateSystemDynamicEntity200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateSystemDynamicEntity200Response createSystemDynamicEntity(@javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateSystemDynamicEntity200Response> localVarResponse = createSystemDynamicEntityWithHttpInfo(createSystemDynamicEntityRequest, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Create System Level Dynamic Entity
+   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @return ApiResponse&lt;CreateSystemDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateSystemDynamicEntity200Response> createSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest) throws ApiException {
+    return createSystemDynamicEntityWithHttpInfo(createSystemDynamicEntityRequest, null);
+  }
+
+  /**
+   * Create System Level Dynamic Entity
+   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; 
+   * @param createSystemDynamicEntityRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateSystemDynamicEntity200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateSystemDynamicEntity200Response> createSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createSystemDynamicEntityRequestBuilder(createSystemDynamicEntityRequest, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("createSystemDynamicEntity", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<CreateSystemDynamicEntity200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateSystemDynamicEntity200Response>() {});
+        
+
+        return new ApiResponse<CreateSystemDynamicEntity200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder createSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull CreateSystemDynamicEntityRequest createSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createSystemDynamicEntityRequest' is set
+    if (createSystemDynamicEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createSystemDynamicEntityRequest' when calling createSystemDynamicEntity");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/system-dynamic-entities";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createSystemDynamicEntityRequest);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Delete Bank Level Dynamic Entity
+   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    deleteBankLevelDynamicEntity(bankid, dynamicentityid, null);
+  }
+
+  /**
+   * Delete Bank Level Dynamic Entity
+   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    deleteBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, headers);
+  }
+
+  /**
+   * Delete Bank Level Dynamic Entity
+   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<Void> deleteBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return deleteBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, null);
+  }
+
+  /**
+   * Delete Bank Level Dynamic Entity
+   * &lt;p&gt;Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;Void&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<Void> deleteBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("deleteBankLevelDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -253,14 +753,14 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteBankLevelDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankLevelDynamicEntity");
     }
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv400DeleteBankLevelDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling deleteBankLevelDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -291,8 +791,8 @@ public class DynamicEntityManageApi {
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    oBPv400DeleteMyDynamicEntity(dynamicentityid, null);
+  public void deleteMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    deleteMyDynamicEntity(dynamicentityid, null);
   }
 
   /**
@@ -302,8 +802,8 @@ public class DynamicEntityManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteMyDynamicEntityWithHttpInfo(dynamicentityid, headers);
+  public void deleteMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    deleteMyDynamicEntityWithHttpInfo(dynamicentityid, headers);
   }
 
   /**
@@ -313,8 +813,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv400DeleteMyDynamicEntityWithHttpInfo(dynamicentityid, null);
+  public ApiResponse<Void> deleteMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return deleteMyDynamicEntityWithHttpInfo(dynamicentityid, null);
   }
 
   /**
@@ -325,8 +825,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyDynamicEntityRequestBuilder(dynamicentityid, headers);
+  public ApiResponse<Void> deleteMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyDynamicEntityRequestBuilder(dynamicentityid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -337,7 +837,7 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyDynamicEntity", localVarResponse);
+          throw getApiException("deleteMyDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -362,10 +862,10 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv400DeleteMyDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling deleteMyDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -395,8 +895,8 @@ public class DynamicEntityManageApi {
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    oBPv400DeleteSystemDynamicEntity(dynamicentityid, null);
+  public void deleteSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    deleteSystemDynamicEntity(dynamicentityid, null);
   }
 
   /**
@@ -406,8 +906,8 @@ public class DynamicEntityManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteSystemDynamicEntityWithHttpInfo(dynamicentityid, headers);
+  public void deleteSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    deleteSystemDynamicEntityWithHttpInfo(dynamicentityid, headers);
   }
 
   /**
@@ -417,8 +917,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv400DeleteSystemDynamicEntityWithHttpInfo(dynamicentityid, null);
+  public ApiResponse<Void> deleteSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return deleteSystemDynamicEntityWithHttpInfo(dynamicentityid, null);
   }
 
   /**
@@ -429,8 +929,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteSystemDynamicEntityRequestBuilder(dynamicentityid, headers);
+  public ApiResponse<Void> deleteSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteSystemDynamicEntityRequestBuilder(dynamicentityid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -441,7 +941,7 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteSystemDynamicEntity", localVarResponse);
+          throw getApiException("deleteSystemDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -466,10 +966,10 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv400DeleteSystemDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling deleteSystemDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -494,513 +994,13 @@ public class DynamicEntityManageApi {
   }
 
   /**
-   * Backup Bank Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @return OBPv600BackupBankLevelDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600BackupBankLevelDynamicEntity200Response oBPv600BackupBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv600BackupBankLevelDynamicEntity(bankid, dynamicentityid, null);
-  }
-
-  /**
-   * Backup Bank Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv600BackupBankLevelDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600BackupBankLevelDynamicEntity200Response oBPv600BackupBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response> localVarResponse = oBPv600BackupBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Backup Bank Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @return ApiResponse&lt;OBPv600BackupBankLevelDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response> oBPv600BackupBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv600BackupBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, null);
-  }
-
-  /**
-   * Backup Bank Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600BackupBankLevelDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response> oBPv600BackupBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600BackupBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600BackupBankLevelDynamicEntity", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600BackupBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600BackupBankLevelDynamicEntity200Response>() {});
-        
-
-        return new ApiResponse<OBPv600BackupBankLevelDynamicEntity200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600BackupBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'bankid' is set
-    if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600BackupBankLevelDynamicEntity");
-    }
-    // verify the required parameter 'dynamicentityid' is set
-    if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600BackupBankLevelDynamicEntity");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}/backup"
-        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
-        .replace("{dynamicentityid}", ApiClient.urlEncode(dynamicentityid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Backup System Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @return OBPv600BackupSystemDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600BackupSystemDynamicEntity200Response oBPv600BackupSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv600BackupSystemDynamicEntity(dynamicentityid, null);
-  }
-
-  /**
-   * Backup System Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv600BackupSystemDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600BackupSystemDynamicEntity200Response oBPv600BackupSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600BackupSystemDynamicEntity200Response> localVarResponse = oBPv600BackupSystemDynamicEntityWithHttpInfo(dynamicentityid, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Backup System Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @return ApiResponse&lt;OBPv600BackupSystemDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600BackupSystemDynamicEntity200Response> oBPv600BackupSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv600BackupSystemDynamicEntityWithHttpInfo(dynamicentityid, null);
-  }
-
-  /**
-   * Backup System Level Dynamic Entity
-   * &lt;p&gt;Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.&lt;/p&gt; &lt;p&gt;This endpoint creates a backup of the dynamic entity definition and all its data records.&lt;br /&gt; The backup entity will be named with a _BAK suffix (e.g. my_entity_BAK).&lt;br /&gt; If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.&lt;/p&gt; &lt;p&gt;The calling user will be granted CanGetDynamicEntity_&lt;code&gt;&amp;lt;BackupEntityName&amp;gt;&lt;/code&gt; on the newly created backup entity.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Authentication is Required&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600BackupSystemDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600BackupSystemDynamicEntity200Response> oBPv600BackupSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600BackupSystemDynamicEntityRequestBuilder(dynamicentityid, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600BackupSystemDynamicEntity", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600BackupSystemDynamicEntity200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600BackupSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600BackupSystemDynamicEntity200Response>() {});
-        
-
-        return new ApiResponse<OBPv600BackupSystemDynamicEntity200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600BackupSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'dynamicentityid' is set
-    if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600BackupSystemDynamicEntity");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/system-dynamic-entities/{dynamicentityid}/backup"
-        .replace("{dynamicentityid}", ApiClient.urlEncode(dynamicentityid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Create Bank Level Dynamic Entity
-   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @return OBPv600CreateBankLevelDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600CreateBankLevelDynamicEntity200Response oBPv600CreateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600CreateBankLevelDynamicEntity(bankid, obPv600CreateSystemDynamicEntityRequest, null);
-  }
-
-  /**
-   * Create Bank Level Dynamic Entity
-   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv600CreateBankLevelDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600CreateBankLevelDynamicEntity200Response oBPv600CreateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response> localVarResponse = oBPv600CreateBankLevelDynamicEntityWithHttpInfo(bankid, obPv600CreateSystemDynamicEntityRequest, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Create Bank Level Dynamic Entity
-   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600CreateBankLevelDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response> oBPv600CreateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600CreateBankLevelDynamicEntityWithHttpInfo(bankid, obPv600CreateSystemDynamicEntityRequest, null);
-  }
-
-  /**
-   * Create Bank Level Dynamic Entity
-   * &lt;p&gt;Create a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600CreateBankLevelDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response> oBPv600CreateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateBankLevelDynamicEntityRequestBuilder(bankid, obPv600CreateSystemDynamicEntityRequest, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateBankLevelDynamicEntity", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600CreateBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600CreateBankLevelDynamicEntity200Response>() {});
-        
-
-        return new ApiResponse<OBPv600CreateBankLevelDynamicEntity200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600CreateBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'bankid' is set
-    if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600CreateBankLevelDynamicEntity");
-    }
-    // verify the required parameter 'obPv600CreateSystemDynamicEntityRequest' is set
-    if (obPv600CreateSystemDynamicEntityRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreateSystemDynamicEntityRequest' when calling oBPv600CreateBankLevelDynamicEntity");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/banks/{bankid}/dynamic-entities"
-        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreateSystemDynamicEntityRequest);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Create System Level Dynamic Entity
-   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @return OBPv600CreateSystemDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600CreateSystemDynamicEntity200Response oBPv600CreateSystemDynamicEntity(@javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600CreateSystemDynamicEntity(obPv600CreateSystemDynamicEntityRequest, null);
-  }
-
-  /**
-   * Create System Level Dynamic Entity
-   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv600CreateSystemDynamicEntity200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600CreateSystemDynamicEntity200Response oBPv600CreateSystemDynamicEntity(@javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600CreateSystemDynamicEntity200Response> localVarResponse = oBPv600CreateSystemDynamicEntityWithHttpInfo(obPv600CreateSystemDynamicEntityRequest, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Create System Level Dynamic Entity
-   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600CreateSystemDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600CreateSystemDynamicEntity200Response> oBPv600CreateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600CreateSystemDynamicEntityWithHttpInfo(obPv600CreateSystemDynamicEntityRequest, null);
-  }
-
-  /**
-   * Create System Level Dynamic Entity
-   * &lt;p&gt;Create a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property MUST include an &lt;code&gt;example&lt;/code&gt; field with a valid example value.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv600CreateSystemDynamicEntityRequest Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600CreateSystemDynamicEntity200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600CreateSystemDynamicEntity200Response> oBPv600CreateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateSystemDynamicEntityRequestBuilder(obPv600CreateSystemDynamicEntityRequest, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateSystemDynamicEntity", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600CreateSystemDynamicEntity200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600CreateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600CreateSystemDynamicEntity200Response>() {});
-        
-
-        return new ApiResponse<OBPv600CreateSystemDynamicEntity200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600CreateSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull OBPv600CreateSystemDynamicEntityRequest obPv600CreateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv600CreateSystemDynamicEntityRequest' is set
-    if (obPv600CreateSystemDynamicEntityRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreateSystemDynamicEntityRequest' when calling oBPv600CreateSystemDynamicEntity");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/system-dynamic-entities";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreateSystemDynamicEntityRequest);
-      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
    * Delete System Level Dynamic Entity Cascade
    * &lt;p&gt;Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.&lt;/p&gt; &lt;p&gt;This endpoint performs a cascade delete:&lt;br /&gt; 1. Automatically backs up the entity definition and all data records to a ZZ_BAK_ prefixed entity (e.g. my_entity is backed up to ZZ_BAK_my_entity). If a previous ZZ_BAK_ backup exists, it is overwritten.&lt;br /&gt; 2. Deletes all data records associated with the dynamic entity&lt;br /&gt; 3. Deletes the dynamic entity definition itself&lt;/p&gt; &lt;p&gt;Note: Entities whose name already starts with ZZ_BAK_ are not backed up again (to avoid infinite backup chains).&lt;/p&gt; &lt;p&gt;This operation is only allowed for non-personal entities (hasPersonalEntity&#x3D;false).&lt;br /&gt; For personal entities (hasPersonalEntity&#x3D;true), you must delete the records and definition separately.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;/&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteSystemDynamicEntityCascade(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    oBPv600DeleteSystemDynamicEntityCascade(dynamicentityid, null);
+  public void deleteSystemDynamicEntityCascade(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    deleteSystemDynamicEntityCascade(dynamicentityid, null);
   }
 
   /**
@@ -1010,8 +1010,8 @@ public class DynamicEntityManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteSystemDynamicEntityCascade(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid, headers);
+  public void deleteSystemDynamicEntityCascade(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    deleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid, headers);
   }
 
   /**
@@ -1021,8 +1021,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
-    return oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid, null);
+  public ApiResponse<Void> deleteSystemDynamicEntityCascadeWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid) throws ApiException {
+    return deleteSystemDynamicEntityCascadeWithHttpInfo(dynamicentityid, null);
   }
 
   /**
@@ -1033,8 +1033,8 @@ public class DynamicEntityManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteSystemDynamicEntityCascadeRequestBuilder(dynamicentityid, headers);
+  public ApiResponse<Void> deleteSystemDynamicEntityCascadeWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteSystemDynamicEntityCascadeRequestBuilder(dynamicentityid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1045,7 +1045,7 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteSystemDynamicEntityCascade", localVarResponse);
+          throw getApiException("deleteSystemDynamicEntityCascade", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1070,10 +1070,10 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeleteSystemDynamicEntityCascadeRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteSystemDynamicEntityCascadeRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600DeleteSystemDynamicEntityCascade");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling deleteSystemDynamicEntityCascade");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1101,11 +1101,11 @@ public class DynamicEntityManageApi {
    * Get Bank Level Dynamic Entities
    * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv600GetBankLevelDynamicEntities200Response
+   * @return GetBankLevelDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetBankLevelDynamicEntities200Response oBPv600GetBankLevelDynamicEntities(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv600GetBankLevelDynamicEntities(bankid, null);
+  public GetBankLevelDynamicEntities200Response getBankLevelDynamicEntities(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicEntities(bankid, null);
   }
 
   /**
@@ -1113,11 +1113,11 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetBankLevelDynamicEntities200Response
+   * @return GetBankLevelDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetBankLevelDynamicEntities200Response oBPv600GetBankLevelDynamicEntities(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetBankLevelDynamicEntities200Response> localVarResponse = oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(bankid, headers);
+  public GetBankLevelDynamicEntities200Response getBankLevelDynamicEntities(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetBankLevelDynamicEntities200Response> localVarResponse = getBankLevelDynamicEntitiesWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -1125,11 +1125,11 @@ public class DynamicEntityManageApi {
    * Get Bank Level Dynamic Entities
    * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetBankLevelDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetBankLevelDynamicEntities200Response> oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(bankid, null);
+  public ApiResponse<GetBankLevelDynamicEntities200Response> getBankLevelDynamicEntitiesWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicEntitiesWithHttpInfo(bankid, null);
   }
 
   /**
@@ -1137,11 +1137,11 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Get all Bank Level Dynamic Entities for one bank with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetBankLevelDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetBankLevelDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetBankLevelDynamicEntities200Response> oBPv600GetBankLevelDynamicEntitiesWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetBankLevelDynamicEntitiesRequestBuilder(bankid, headers);
+  public ApiResponse<GetBankLevelDynamicEntities200Response> getBankLevelDynamicEntitiesWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelDynamicEntitiesRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1152,11 +1152,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetBankLevelDynamicEntities", localVarResponse);
+          throw getApiException("getBankLevelDynamicEntities", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetBankLevelDynamicEntities200Response>(
+          return new ApiResponse<GetBankLevelDynamicEntities200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1166,10 +1166,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetBankLevelDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetBankLevelDynamicEntities200Response>() {});
+        GetBankLevelDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetBankLevelDynamicEntities200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetBankLevelDynamicEntities200Response>(
+        return new ApiResponse<GetBankLevelDynamicEntities200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1188,10 +1188,10 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetBankLevelDynamicEntitiesRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelDynamicEntitiesRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600GetBankLevelDynamicEntities");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelDynamicEntities");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1218,44 +1218,44 @@ public class DynamicEntityManageApi {
   /**
    * Get My Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+   * @return GetAvailablePersonalDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetMyDynamicEntities() throws ApiException {
-    return oBPv600GetMyDynamicEntities(null);
+  public GetAvailablePersonalDynamicEntities200Response getMyDynamicEntities() throws ApiException {
+    return getMyDynamicEntities(null);
   }
 
   /**
    * Get My Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+   * @return GetAvailablePersonalDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetMyDynamicEntities(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> localVarResponse = oBPv600GetMyDynamicEntitiesWithHttpInfo(headers);
+  public GetAvailablePersonalDynamicEntities200Response getMyDynamicEntities(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAvailablePersonalDynamicEntities200Response> localVarResponse = getMyDynamicEntitiesWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get My Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetAvailablePersonalDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetAvailablePersonalDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> oBPv600GetMyDynamicEntitiesWithHttpInfo() throws ApiException {
-    return oBPv600GetMyDynamicEntitiesWithHttpInfo(null);
+  public ApiResponse<GetAvailablePersonalDynamicEntities200Response> getMyDynamicEntitiesWithHttpInfo() throws ApiException {
+    return getMyDynamicEntitiesWithHttpInfo(null);
   }
 
   /**
    * Get My Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entity definitions I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns a cleaner response format with:&lt;br /&gt; * snake_case field names (dynamic_entity_id, user_id, bank_id, has_personal_entity)&lt;br /&gt; * An explicit entity_name field instead of using the entity name as a dynamic JSON key&lt;br /&gt; * The entity schema in a separate definition object&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetAvailablePersonalDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetAvailablePersonalDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> oBPv600GetMyDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetMyDynamicEntitiesRequestBuilder(headers);
+  public ApiResponse<GetAvailablePersonalDynamicEntities200Response> getMyDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyDynamicEntitiesRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1266,11 +1266,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetMyDynamicEntities", localVarResponse);
+          throw getApiException("getMyDynamicEntities", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+          return new ApiResponse<GetAvailablePersonalDynamicEntities200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1280,10 +1280,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetAvailablePersonalDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetAvailablePersonalDynamicEntities200Response>() {});
+        GetAvailablePersonalDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAvailablePersonalDynamicEntities200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+        return new ApiResponse<GetAvailablePersonalDynamicEntities200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1302,7 +1302,7 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetMyDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1327,44 +1327,44 @@ public class DynamicEntityManageApi {
   /**
    * Get System Dynamic Entities
    * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return OBPv600GetSystemDynamicEntities200Response
+   * @return GetSystemDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSystemDynamicEntities200Response oBPv600GetSystemDynamicEntities() throws ApiException {
-    return oBPv600GetSystemDynamicEntities(null);
+  public GetSystemDynamicEntities200Response getSystemDynamicEntities() throws ApiException {
+    return getSystemDynamicEntities(null);
   }
 
   /**
    * Get System Dynamic Entities
    * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetSystemDynamicEntities200Response
+   * @return GetSystemDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetSystemDynamicEntities200Response oBPv600GetSystemDynamicEntities(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetSystemDynamicEntities200Response> localVarResponse = oBPv600GetSystemDynamicEntitiesWithHttpInfo(headers);
+  public GetSystemDynamicEntities200Response getSystemDynamicEntities(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetSystemDynamicEntities200Response> localVarResponse = getSystemDynamicEntitiesWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get System Dynamic Entities
    * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetSystemDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetSystemDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSystemDynamicEntities200Response> oBPv600GetSystemDynamicEntitiesWithHttpInfo() throws ApiException {
-    return oBPv600GetSystemDynamicEntitiesWithHttpInfo(null);
+  public ApiResponse<GetSystemDynamicEntities200Response> getSystemDynamicEntitiesWithHttpInfo() throws ApiException {
+    return getSystemDynamicEntitiesWithHttpInfo(null);
   }
 
   /**
    * Get System Dynamic Entities
    * &lt;p&gt;Get all System Dynamic Entities with record counts.&lt;/p&gt; &lt;p&gt;Each dynamic entity in the response includes a &lt;code&gt;record_count&lt;/code&gt; field showing how many data records exist for that entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint returns snake_case field names and an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetSystemDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetSystemDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetSystemDynamicEntities200Response> oBPv600GetSystemDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetSystemDynamicEntitiesRequestBuilder(headers);
+  public ApiResponse<GetSystemDynamicEntities200Response> getSystemDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getSystemDynamicEntitiesRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1375,11 +1375,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetSystemDynamicEntities", localVarResponse);
+          throw getApiException("getSystemDynamicEntities", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetSystemDynamicEntities200Response>(
+          return new ApiResponse<GetSystemDynamicEntities200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1389,10 +1389,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetSystemDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetSystemDynamicEntities200Response>() {});
+        GetSystemDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetSystemDynamicEntities200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetSystemDynamicEntities200Response>(
+        return new ApiResponse<GetSystemDynamicEntities200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1411,7 +1411,7 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetSystemDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getSystemDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1438,12 +1438,12 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return OBPv600UpdateBankLevelDynamicEntity200Response
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return UpdateBankLevelDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateBankLevelDynamicEntity200Response oBPv600UpdateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateBankLevelDynamicEntity(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public UpdateBankLevelDynamicEntity200Response updateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateBankLevelDynamicEntity(bankid, dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
@@ -1451,13 +1451,13 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600UpdateBankLevelDynamicEntity200Response
+   * @return UpdateBankLevelDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateBankLevelDynamicEntity200Response oBPv600UpdateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response> localVarResponse = oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public UpdateBankLevelDynamicEntity200Response updateBankLevelDynamicEntity(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateBankLevelDynamicEntity200Response> localVarResponse = updateBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, updateSystemDynamicEntityRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1466,12 +1466,12 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600UpdateBankLevelDynamicEntity200Response&gt;
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response> oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public ApiResponse<UpdateBankLevelDynamicEntity200Response> updateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateBankLevelDynamicEntityWithHttpInfo(bankid, dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
@@ -1479,13 +1479,13 @@ public class DynamicEntityManageApi {
    * &lt;p&gt;Update a bank level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600UpdateBankLevelDynamicEntity200Response&gt;
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response> oBPv600UpdateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public ApiResponse<UpdateBankLevelDynamicEntity200Response> updateBankLevelDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankLevelDynamicEntityRequestBuilder(bankid, dynamicentityid, updateSystemDynamicEntityRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1496,11 +1496,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateBankLevelDynamicEntity", localVarResponse);
+          throw getApiException("updateBankLevelDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response>(
+          return new ApiResponse<UpdateBankLevelDynamicEntity200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1510,10 +1510,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600UpdateBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600UpdateBankLevelDynamicEntity200Response>() {});
+        UpdateBankLevelDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateBankLevelDynamicEntity200Response>() {});
         
 
-        return new ApiResponse<OBPv600UpdateBankLevelDynamicEntity200Response>(
+        return new ApiResponse<UpdateBankLevelDynamicEntity200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1532,18 +1532,18 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankLevelDynamicEntityRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600UpdateBankLevelDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankLevelDynamicEntity");
     }
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600UpdateBankLevelDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling updateBankLevelDynamicEntity");
     }
-    // verify the required parameter 'obPv600UpdateSystemDynamicEntityRequest' is set
-    if (obPv600UpdateSystemDynamicEntityRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600UpdateSystemDynamicEntityRequest' when calling oBPv600UpdateBankLevelDynamicEntity");
+    // verify the required parameter 'updateSystemDynamicEntityRequest' is set
+    if (updateSystemDynamicEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateSystemDynamicEntityRequest' when calling updateBankLevelDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1558,7 +1558,7 @@ public class DynamicEntityManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600UpdateSystemDynamicEntityRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateSystemDynamicEntityRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1578,25 +1578,25 @@ public class DynamicEntityManageApi {
    * Update My Dynamic Entity
    * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return OBPv600UpdateSystemDynamicEntity200Response
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return UpdateSystemDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateMyDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public UpdateSystemDynamicEntity200Response updateMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateMyDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
    * Update My Dynamic Entity
    * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600UpdateSystemDynamicEntity200Response
+   * @return UpdateSystemDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> localVarResponse = oBPv600UpdateMyDynamicEntityWithHttpInfo(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public UpdateSystemDynamicEntity200Response updateMyDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateSystemDynamicEntity200Response> localVarResponse = updateMyDynamicEntityWithHttpInfo(dynamicentityid, updateSystemDynamicEntityRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1604,25 +1604,25 @@ public class DynamicEntityManageApi {
    * Update My Dynamic Entity
    * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600UpdateSystemDynamicEntity200Response&gt;
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return ApiResponse&lt;UpdateSystemDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> oBPv600UpdateMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateMyDynamicEntityWithHttpInfo(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public ApiResponse<UpdateSystemDynamicEntity200Response> updateMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateMyDynamicEntityWithHttpInfo(dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
    * Update My Dynamic Entity
    * &lt;p&gt;Update a Dynamic Entity that I created.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600UpdateSystemDynamicEntity200Response&gt;
+   * @return ApiResponse&lt;UpdateSystemDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> oBPv600UpdateMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateMyDynamicEntityRequestBuilder(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public ApiResponse<UpdateSystemDynamicEntity200Response> updateMyDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateMyDynamicEntityRequestBuilder(dynamicentityid, updateSystemDynamicEntityRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1633,11 +1633,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateMyDynamicEntity", localVarResponse);
+          throw getApiException("updateMyDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>(
+          return new ApiResponse<UpdateSystemDynamicEntity200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1647,10 +1647,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600UpdateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600UpdateSystemDynamicEntity200Response>() {});
+        UpdateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateSystemDynamicEntity200Response>() {});
         
 
-        return new ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>(
+        return new ApiResponse<UpdateSystemDynamicEntity200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1669,14 +1669,14 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateMyDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateMyDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600UpdateMyDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling updateMyDynamicEntity");
     }
-    // verify the required parameter 'obPv600UpdateSystemDynamicEntityRequest' is set
-    if (obPv600UpdateSystemDynamicEntityRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600UpdateSystemDynamicEntityRequest' when calling oBPv600UpdateMyDynamicEntity");
+    // verify the required parameter 'updateSystemDynamicEntityRequest' is set
+    if (updateSystemDynamicEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateSystemDynamicEntityRequest' when calling updateMyDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1690,7 +1690,7 @@ public class DynamicEntityManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600UpdateSystemDynamicEntityRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateSystemDynamicEntityRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1710,25 +1710,25 @@ public class DynamicEntityManageApi {
    * Update System Level Dynamic Entity
    * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return OBPv600UpdateSystemDynamicEntity200Response
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return UpdateSystemDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateSystemDynamicEntity(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public UpdateSystemDynamicEntity200Response updateSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateSystemDynamicEntity(dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
    * Update System Level Dynamic Entity
    * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600UpdateSystemDynamicEntity200Response
+   * @return UpdateSystemDynamicEntity200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600UpdateSystemDynamicEntity200Response oBPv600UpdateSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> localVarResponse = oBPv600UpdateSystemDynamicEntityWithHttpInfo(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public UpdateSystemDynamicEntity200Response updateSystemDynamicEntity(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateSystemDynamicEntity200Response> localVarResponse = updateSystemDynamicEntityWithHttpInfo(dynamicentityid, updateSystemDynamicEntityRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1736,25 +1736,25 @@ public class DynamicEntityManageApi {
    * Update System Level Dynamic Entity
    * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600UpdateSystemDynamicEntity200Response&gt;
+   * @param updateSystemDynamicEntityRequest Request body (required)
+   * @return ApiResponse&lt;UpdateSystemDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> oBPv600UpdateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest) throws ApiException {
-    return oBPv600UpdateSystemDynamicEntityWithHttpInfo(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, null);
+  public ApiResponse<UpdateSystemDynamicEntity200Response> updateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest) throws ApiException {
+    return updateSystemDynamicEntityWithHttpInfo(dynamicentityid, updateSystemDynamicEntityRequest, null);
   }
 
   /**
    * Update System Level Dynamic Entity
    * &lt;p&gt;Update a system level Dynamic Entity.&lt;/p&gt; &lt;p&gt;This v6.0.0 endpoint accepts and returns snake_case field names with an explicit &lt;code&gt;entity_name&lt;/code&gt; field.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Request format:&lt;/strong&gt;&lt;/p&gt; &lt;pre&gt;&lt;code class&#x3D;\&quot;language-json\&quot;&gt;{   &amp;quot;entity_name&amp;quot;: &amp;quot;customer_preferences&amp;quot;,   &amp;quot;has_personal_entity&amp;quot;: true,   &amp;quot;has_public_access&amp;quot;: false,   &amp;quot;has_community_access&amp;quot;: false,   &amp;quot;personal_requires_role&amp;quot;: false,   &amp;quot;schema&amp;quot;: {     &amp;quot;description&amp;quot;: &amp;quot;User preferences updated&amp;quot;,     &amp;quot;required&amp;quot;: [&amp;quot;theme&amp;quot;],     &amp;quot;properties&amp;quot;: {       &amp;quot;theme&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 1, &amp;quot;maxLength&amp;quot;: 20, &amp;quot;example&amp;quot;: &amp;quot;dark&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;The UI theme preference&amp;quot;},       &amp;quot;language&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;minLength&amp;quot;: 2, &amp;quot;maxLength&amp;quot;: 5, &amp;quot;example&amp;quot;: &amp;quot;en&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;ISO language code&amp;quot;},       &amp;quot;notifications_enabled&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;boolean&amp;quot;, &amp;quot;example&amp;quot;: &amp;quot;true&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;Whether to send notifications&amp;quot;}     }   } } &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt; * The &lt;code&gt;entity_name&lt;/code&gt; must be lowercase with underscores (snake_case), e.g. &lt;code&gt;customer_preferences&lt;/code&gt;. No uppercase letters or spaces allowed.&lt;br /&gt; * Each property can optionally include &lt;code&gt;description&lt;/code&gt; (markdown text), and for string types: &lt;code&gt;minLength&lt;/code&gt; and &lt;code&gt;maxLength&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_public_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only public endpoints (GET only, no authentication required) under &lt;code&gt;/public/&lt;/code&gt;.&lt;br /&gt; * Set &lt;code&gt;has_community_access&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to generate read-only community endpoints (GET only, authentication required + CanGet role) under &lt;code&gt;/community/&lt;/code&gt;. Community endpoints return ALL records (personal + non-personal from all users).&lt;br /&gt; * Set &lt;code&gt;personal_requires_role&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for &lt;code&gt;/my/&lt;/code&gt; personal entity endpoints. Default is &lt;code&gt;false&lt;/code&gt; (any authenticated user can use &lt;code&gt;/my/&lt;/code&gt; endpoints).&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicentityid The DYNAMICENTITYID identifier (required)
-   * @param obPv600UpdateSystemDynamicEntityRequest Request body (required)
+   * @param updateSystemDynamicEntityRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600UpdateSystemDynamicEntity200Response&gt;
+   * @return ApiResponse&lt;UpdateSystemDynamicEntity200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600UpdateSystemDynamicEntity200Response> oBPv600UpdateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateSystemDynamicEntityRequestBuilder(dynamicentityid, obPv600UpdateSystemDynamicEntityRequest, headers);
+  public ApiResponse<UpdateSystemDynamicEntity200Response> updateSystemDynamicEntityWithHttpInfo(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateSystemDynamicEntityRequestBuilder(dynamicentityid, updateSystemDynamicEntityRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1765,11 +1765,11 @@ public class DynamicEntityManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateSystemDynamicEntity", localVarResponse);
+          throw getApiException("updateSystemDynamicEntity", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>(
+          return new ApiResponse<UpdateSystemDynamicEntity200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1779,10 +1779,10 @@ public class DynamicEntityManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600UpdateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600UpdateSystemDynamicEntity200Response>() {});
+        UpdateSystemDynamicEntity200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateSystemDynamicEntity200Response>() {});
         
 
-        return new ApiResponse<OBPv600UpdateSystemDynamicEntity200Response>(
+        return new ApiResponse<UpdateSystemDynamicEntity200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1801,14 +1801,14 @@ public class DynamicEntityManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull OBPv600UpdateSystemDynamicEntityRequest obPv600UpdateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateSystemDynamicEntityRequestBuilder(@javax.annotation.Nonnull String dynamicentityid, @javax.annotation.Nonnull UpdateSystemDynamicEntityRequest updateSystemDynamicEntityRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicentityid' is set
     if (dynamicentityid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling oBPv600UpdateSystemDynamicEntity");
+      throw new ApiException(400, "Missing the required parameter 'dynamicentityid' when calling updateSystemDynamicEntity");
     }
-    // verify the required parameter 'obPv600UpdateSystemDynamicEntityRequest' is set
-    if (obPv600UpdateSystemDynamicEntityRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600UpdateSystemDynamicEntityRequest' when calling oBPv600UpdateSystemDynamicEntity");
+    // verify the required parameter 'updateSystemDynamicEntityRequest' is set
+    if (updateSystemDynamicEntityRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateSystemDynamicEntityRequest' when calling updateSystemDynamicEntity");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1822,7 +1822,7 @@ public class DynamicEntityManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600UpdateSystemDynamicEntityRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateSystemDynamicEntityRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

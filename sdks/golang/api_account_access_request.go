@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // AccountAccessRequestAPIService AccountAccessRequestAPI service
 type AccountAccessRequestAPIService service
 
-type ApiOBPv600ApproveAccountAccessRequestRequest struct {
+type ApiApproveAccountAccessRequestRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 	bankid string
 	accountid string
 	accountaccessrequestid string
-	oBPv600RejectAccountAccessRequestRequest *OBPv600RejectAccountAccessRequestRequest
+	rejectAccountAccessRequestRequest *RejectAccountAccessRequestRequest
 }
 
 // Request body
-func (r ApiOBPv600ApproveAccountAccessRequestRequest) OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest OBPv600RejectAccountAccessRequestRequest) ApiOBPv600ApproveAccountAccessRequestRequest {
-	r.oBPv600RejectAccountAccessRequestRequest = &oBPv600RejectAccountAccessRequestRequest
+func (r ApiApproveAccountAccessRequestRequest) RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest RejectAccountAccessRequestRequest) ApiApproveAccountAccessRequestRequest {
+	r.rejectAccountAccessRequestRequest = &rejectAccountAccessRequestRequest
 	return r
 }
 
-func (r ApiOBPv600ApproveAccountAccessRequestRequest) Execute() (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv600ApproveAccountAccessRequestExecute(r)
+func (r ApiApproveAccountAccessRequestRequest) Execute() (*RejectAccountAccessRequest200Response, *http.Response, error) {
+	return r.ApiService.ApproveAccountAccessRequestExecute(r)
 }
 
 /*
-OBPv600ApproveAccountAccessRequest Approve Account Access Request
+ApproveAccountAccessRequest Approve Account Access Request
 
 <p>Approve an Account Access Request (checker step in maker/checker workflow).</p>
 <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p>
@@ -78,10 +78,10 @@ OBPv600ApproveAccountAccessRequest Approve Account Access Request
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
- @return ApiOBPv600ApproveAccountAccessRequestRequest
+ @return ApiApproveAccountAccessRequestRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequest(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiOBPv600ApproveAccountAccessRequestRequest {
-	return ApiOBPv600ApproveAccountAccessRequestRequest{
+func (a *AccountAccessRequestAPIService) ApproveAccountAccessRequest(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiApproveAccountAccessRequestRequest {
+	return ApiApproveAccountAccessRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -91,16 +91,16 @@ func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequest(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv600RejectAccountAccessRequest200Response
-func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequestExecute(r ApiOBPv600ApproveAccountAccessRequestRequest) (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
+//  @return RejectAccountAccessRequest200Response
+func (a *AccountAccessRequestAPIService) ApproveAccountAccessRequestExecute(r ApiApproveAccountAccessRequestRequest) (*RejectAccountAccessRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600RejectAccountAccessRequest200Response
+		localVarReturnValue  *RejectAccountAccessRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600ApproveAccountAccessRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.ApproveAccountAccessRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -113,8 +113,8 @@ func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequestExecu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600RejectAccountAccessRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600RejectAccountAccessRequestRequest is required and must be specified")
+	if r.rejectAccountAccessRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("rejectAccountAccessRequestRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -135,7 +135,7 @@ func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequestExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600RejectAccountAccessRequestRequest
+	localVarPostBody = r.rejectAccountAccessRequestRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -160,7 +160,7 @@ func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequestExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -201,26 +201,26 @@ func (a *AccountAccessRequestAPIService) OBPv600ApproveAccountAccessRequestExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateAccountAccessRequestRequest struct {
+type ApiCreateAccountAccessRequestRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 	bankid string
 	accountid string
-	oBPv600CreateAccountAccessRequestRequest *OBPv600CreateAccountAccessRequestRequest
+	createAccountAccessRequestRequest *CreateAccountAccessRequestRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateAccountAccessRequestRequest) OBPv600CreateAccountAccessRequestRequest(oBPv600CreateAccountAccessRequestRequest OBPv600CreateAccountAccessRequestRequest) ApiOBPv600CreateAccountAccessRequestRequest {
-	r.oBPv600CreateAccountAccessRequestRequest = &oBPv600CreateAccountAccessRequestRequest
+func (r ApiCreateAccountAccessRequestRequest) CreateAccountAccessRequestRequest(createAccountAccessRequestRequest CreateAccountAccessRequestRequest) ApiCreateAccountAccessRequestRequest {
+	r.createAccountAccessRequestRequest = &createAccountAccessRequestRequest
 	return r
 }
 
-func (r ApiOBPv600CreateAccountAccessRequestRequest) Execute() (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateAccountAccessRequestExecute(r)
+func (r ApiCreateAccountAccessRequestRequest) Execute() (*RejectAccountAccessRequest200Response, *http.Response, error) {
+	return r.ApiService.CreateAccountAccessRequestExecute(r)
 }
 
 /*
-OBPv600CreateAccountAccessRequest Create Account Access Request
+CreateAccountAccessRequest Create Account Access Request
 
 <p>Create a new Account Access Request (maker step in maker/checker workflow).</p>
 <p>The requestor (maker) creates a request to grant a target user access to a specific view on an account.<br />
@@ -255,10 +255,10 @@ A business justification is required.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv600CreateAccountAccessRequestRequest
+ @return ApiCreateAccountAccessRequestRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequest(ctx context.Context, bankid string, accountid string) ApiOBPv600CreateAccountAccessRequestRequest {
-	return ApiOBPv600CreateAccountAccessRequestRequest{
+func (a *AccountAccessRequestAPIService) CreateAccountAccessRequest(ctx context.Context, bankid string, accountid string) ApiCreateAccountAccessRequestRequest {
+	return ApiCreateAccountAccessRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -267,16 +267,16 @@ func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequest(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv600RejectAccountAccessRequest200Response
-func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequestExecute(r ApiOBPv600CreateAccountAccessRequestRequest) (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
+//  @return RejectAccountAccessRequest200Response
+func (a *AccountAccessRequestAPIService) CreateAccountAccessRequestExecute(r ApiCreateAccountAccessRequestRequest) (*RejectAccountAccessRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600RejectAccountAccessRequest200Response
+		localVarReturnValue  *RejectAccountAccessRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600CreateAccountAccessRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.CreateAccountAccessRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -288,8 +288,8 @@ func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequestExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateAccountAccessRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateAccountAccessRequestRequest is required and must be specified")
+	if r.createAccountAccessRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("createAccountAccessRequestRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -310,7 +310,7 @@ func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequestExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateAccountAccessRequestRequest
+	localVarPostBody = r.createAccountAccessRequestRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -335,7 +335,7 @@ func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequestExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -376,7 +376,7 @@ func (a *AccountAccessRequestAPIService) OBPv600CreateAccountAccessRequestExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAccountAccessRequestByIdRequest struct {
+type ApiGetAccountAccessRequestByIdRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 	bankid string
@@ -384,12 +384,12 @@ type ApiOBPv600GetAccountAccessRequestByIdRequest struct {
 	accountaccessrequestid string
 }
 
-func (r ApiOBPv600GetAccountAccessRequestByIdRequest) Execute() (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAccountAccessRequestByIdExecute(r)
+func (r ApiGetAccountAccessRequestByIdRequest) Execute() (*RejectAccountAccessRequest200Response, *http.Response, error) {
+	return r.ApiService.GetAccountAccessRequestByIdExecute(r)
 }
 
 /*
-OBPv600GetAccountAccessRequestById Get Account Access Request by Id
+GetAccountAccessRequestById Get Account Access Request by Id
 
 <p>Get a single Account Access Request by its ID.</p>
 <p>Authentication is Required</p>
@@ -418,10 +418,10 @@ OBPv600GetAccountAccessRequestById Get Account Access Request by Id
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
- @return ApiOBPv600GetAccountAccessRequestByIdRequest
+ @return ApiGetAccountAccessRequestByIdRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestById(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiOBPv600GetAccountAccessRequestByIdRequest {
-	return ApiOBPv600GetAccountAccessRequestByIdRequest{
+func (a *AccountAccessRequestAPIService) GetAccountAccessRequestById(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiGetAccountAccessRequestByIdRequest {
+	return ApiGetAccountAccessRequestByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -431,16 +431,16 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestById(ctx 
 }
 
 // Execute executes the request
-//  @return OBPv600RejectAccountAccessRequest200Response
-func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestByIdExecute(r ApiOBPv600GetAccountAccessRequestByIdRequest) (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
+//  @return RejectAccountAccessRequest200Response
+func (a *AccountAccessRequestAPIService) GetAccountAccessRequestByIdExecute(r ApiGetAccountAccessRequestByIdRequest) (*RejectAccountAccessRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600RejectAccountAccessRequest200Response
+		localVarReturnValue  *RejectAccountAccessRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600GetAccountAccessRequestById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.GetAccountAccessRequestById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -495,7 +495,7 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestByIdExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -536,19 +536,19 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestByIdExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAccountAccessRequestsForAccountRequest struct {
+type ApiGetAccountAccessRequestsForAccountRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 	bankid string
 	accountid string
 }
 
-func (r ApiOBPv600GetAccountAccessRequestsForAccountRequest) Execute() (*OBPv600GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAccountAccessRequestsForAccountExecute(r)
+func (r ApiGetAccountAccessRequestsForAccountRequest) Execute() (*GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
+	return r.ApiService.GetAccountAccessRequestsForAccountExecute(r)
 }
 
 /*
-OBPv600GetAccountAccessRequestsForAccount Get Account Access Requests for Account
+GetAccountAccessRequestsForAccount Get Account Access Requests for Account
 
 <p>Get Account Access Requests for a specific account (checker view).</p>
 <p>Optionally filter by status using the query parameter: ?status=INITIATED</p>
@@ -577,10 +577,10 @@ OBPv600GetAccountAccessRequestsForAccount Get Account Access Requests for Accoun
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv600GetAccountAccessRequestsForAccountRequest
+ @return ApiGetAccountAccessRequestsForAccountRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestsForAccount(ctx context.Context, bankid string, accountid string) ApiOBPv600GetAccountAccessRequestsForAccountRequest {
-	return ApiOBPv600GetAccountAccessRequestsForAccountRequest{
+func (a *AccountAccessRequestAPIService) GetAccountAccessRequestsForAccount(ctx context.Context, bankid string, accountid string) ApiGetAccountAccessRequestsForAccountRequest {
+	return ApiGetAccountAccessRequestsForAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -589,16 +589,16 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestsForAccou
 }
 
 // Execute executes the request
-//  @return OBPv600GetAccountAccessRequestsForAccount200Response
-func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestsForAccountExecute(r ApiOBPv600GetAccountAccessRequestsForAccountRequest) (*OBPv600GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
+//  @return GetAccountAccessRequestsForAccount200Response
+func (a *AccountAccessRequestAPIService) GetAccountAccessRequestsForAccountExecute(r ApiGetAccountAccessRequestsForAccountRequest) (*GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAccountAccessRequestsForAccount200Response
+		localVarReturnValue  *GetAccountAccessRequestsForAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600GetAccountAccessRequestsForAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.GetAccountAccessRequestsForAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -652,7 +652,7 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestsForAccou
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -693,17 +693,17 @@ func (a *AccountAccessRequestAPIService) OBPv600GetAccountAccessRequestsForAccou
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMyAccountAccessRequestsRequest struct {
+type ApiGetMyAccountAccessRequestsRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 }
 
-func (r ApiOBPv600GetMyAccountAccessRequestsRequest) Execute() (*OBPv600GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMyAccountAccessRequestsExecute(r)
+func (r ApiGetMyAccountAccessRequestsRequest) Execute() (*GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
+	return r.ApiService.GetMyAccountAccessRequestsExecute(r)
 }
 
 /*
-OBPv600GetMyAccountAccessRequests Get My Account Access Requests
+GetMyAccountAccessRequests Get My Account Access Requests
 
 <p>Get Account Access Requests created by the current user (maker view).</p>
 <p>No special roles are required — a user can always see their own requests.</p>
@@ -727,26 +727,26 @@ OBPv600GetMyAccountAccessRequests Get My Account Access Requests
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMyAccountAccessRequestsRequest
+ @return ApiGetMyAccountAccessRequestsRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600GetMyAccountAccessRequests(ctx context.Context) ApiOBPv600GetMyAccountAccessRequestsRequest {
-	return ApiOBPv600GetMyAccountAccessRequestsRequest{
+func (a *AccountAccessRequestAPIService) GetMyAccountAccessRequests(ctx context.Context) ApiGetMyAccountAccessRequestsRequest {
+	return ApiGetMyAccountAccessRequestsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAccountAccessRequestsForAccount200Response
-func (a *AccountAccessRequestAPIService) OBPv600GetMyAccountAccessRequestsExecute(r ApiOBPv600GetMyAccountAccessRequestsRequest) (*OBPv600GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
+//  @return GetAccountAccessRequestsForAccount200Response
+func (a *AccountAccessRequestAPIService) GetMyAccountAccessRequestsExecute(r ApiGetMyAccountAccessRequestsRequest) (*GetAccountAccessRequestsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAccountAccessRequestsForAccount200Response
+		localVarReturnValue  *GetAccountAccessRequestsForAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600GetMyAccountAccessRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.GetMyAccountAccessRequests")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -798,7 +798,7 @@ func (a *AccountAccessRequestAPIService) OBPv600GetMyAccountAccessRequestsExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -839,27 +839,27 @@ func (a *AccountAccessRequestAPIService) OBPv600GetMyAccountAccessRequestsExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600RejectAccountAccessRequestRequest struct {
+type ApiRejectAccountAccessRequestRequest struct {
 	ctx context.Context
 	ApiService *AccountAccessRequestAPIService
 	bankid string
 	accountid string
 	accountaccessrequestid string
-	oBPv600RejectAccountAccessRequestRequest *OBPv600RejectAccountAccessRequestRequest
+	rejectAccountAccessRequestRequest *RejectAccountAccessRequestRequest
 }
 
 // Request body
-func (r ApiOBPv600RejectAccountAccessRequestRequest) OBPv600RejectAccountAccessRequestRequest(oBPv600RejectAccountAccessRequestRequest OBPv600RejectAccountAccessRequestRequest) ApiOBPv600RejectAccountAccessRequestRequest {
-	r.oBPv600RejectAccountAccessRequestRequest = &oBPv600RejectAccountAccessRequestRequest
+func (r ApiRejectAccountAccessRequestRequest) RejectAccountAccessRequestRequest(rejectAccountAccessRequestRequest RejectAccountAccessRequestRequest) ApiRejectAccountAccessRequestRequest {
+	r.rejectAccountAccessRequestRequest = &rejectAccountAccessRequestRequest
 	return r
 }
 
-func (r ApiOBPv600RejectAccountAccessRequestRequest) Execute() (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
-	return r.ApiService.OBPv600RejectAccountAccessRequestExecute(r)
+func (r ApiRejectAccountAccessRequestRequest) Execute() (*RejectAccountAccessRequest200Response, *http.Response, error) {
+	return r.ApiService.RejectAccountAccessRequestExecute(r)
 }
 
 /*
-OBPv600RejectAccountAccessRequest Reject Account Access Request
+RejectAccountAccessRequest Reject Account Access Request
 
 <p>Reject an Account Access Request (checker step in maker/checker workflow).</p>
 <p>The checker must be a different user than the maker (requestor). This enforces dual control / maker-checker separation.</p>
@@ -893,10 +893,10 @@ OBPv600RejectAccountAccessRequest Reject Account Access Request
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier
- @return ApiOBPv600RejectAccountAccessRequestRequest
+ @return ApiRejectAccountAccessRequestRequest
 */
-func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequest(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiOBPv600RejectAccountAccessRequestRequest {
-	return ApiOBPv600RejectAccountAccessRequestRequest{
+func (a *AccountAccessRequestAPIService) RejectAccountAccessRequest(ctx context.Context, bankid string, accountid string, accountaccessrequestid string) ApiRejectAccountAccessRequestRequest {
+	return ApiRejectAccountAccessRequestRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -906,16 +906,16 @@ func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequest(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv600RejectAccountAccessRequest200Response
-func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequestExecute(r ApiOBPv600RejectAccountAccessRequestRequest) (*OBPv600RejectAccountAccessRequest200Response, *http.Response, error) {
+//  @return RejectAccountAccessRequest200Response
+func (a *AccountAccessRequestAPIService) RejectAccountAccessRequestExecute(r ApiRejectAccountAccessRequestRequest) (*RejectAccountAccessRequest200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600RejectAccountAccessRequest200Response
+		localVarReturnValue  *RejectAccountAccessRequest200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.OBPv600RejectAccountAccessRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountAccessRequestAPIService.RejectAccountAccessRequest")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -928,8 +928,8 @@ func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequestExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600RejectAccountAccessRequestRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600RejectAccountAccessRequestRequest is required and must be specified")
+	if r.rejectAccountAccessRequestRequest == nil {
+		return localVarReturnValue, nil, reportError("rejectAccountAccessRequestRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -950,7 +950,7 @@ func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequestExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600RejectAccountAccessRequestRequest
+	localVarPostBody = r.rejectAccountAccessRequestRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -975,7 +975,7 @@ func (a *AccountAccessRequestAPIService) OBPv600RejectAccountAccessRequestExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

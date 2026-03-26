@@ -1,20 +1,20 @@
 # OpenBankProject::ChannelApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_delete_signal_channel**](ChannelApi.md#o_bpv6_0_0_delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**o_bpv6_0_0_get_signal_channel_info**](ChannelApi.md#o_bpv6_0_0_get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**o_bpv6_0_0_get_signal_channels**](ChannelApi.md#o_bpv6_0_0_get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**o_bpv6_0_0_get_signal_messages**](ChannelApi.md#o_bpv6_0_0_get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**o_bpv6_0_0_get_signal_stats**](ChannelApi.md#o_bpv6_0_0_get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**o_bpv6_0_0_publish_signal_message**](ChannelApi.md#o_bpv6_0_0_publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**delete_signal_channel**](ChannelApi.md#delete_signal_channel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**get_signal_channel_info**](ChannelApi.md#get_signal_channel_info) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**get_signal_channels**](ChannelApi.md#get_signal_channels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**get_signal_messages**](ChannelApi.md#get_signal_messages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**get_signal_stats**](ChannelApi.md#get_signal_stats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**publish_signal_message**](ChannelApi.md#publish_signal_message) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
 
-## o_bpv6_0_0_delete_signal_channel
+## delete_signal_channel
 
-> <OBPv600DeleteSignalChannel200Response> o_bpv6_0_0_delete_signal_channel(channelname)
+> <DeleteSignalChannel200Response> delete_signal_channel(channelname)
 
 Delete Signal Channel
 
@@ -36,9 +36,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
@@ -46,28 +46,28 @@ channelname = 'channelname_example' # String | The CHANNELNAME identifier
 
 begin
   # Delete Signal Channel
-  result = api_instance.o_bpv6_0_0_delete_signal_channel(channelname)
+  result = api_instance.delete_signal_channel(channelname)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_delete_signal_channel: #{e}"
+  puts "Error when calling ChannelApi->delete_signal_channel: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_delete_signal_channel_with_http_info variant
+#### Using the delete_signal_channel_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600DeleteSignalChannel200Response>, Integer, Hash)> o_bpv6_0_0_delete_signal_channel_with_http_info(channelname)
+> <Array(<DeleteSignalChannel200Response>, Integer, Hash)> delete_signal_channel_with_http_info(channelname)
 
 ```ruby
 begin
   # Delete Signal Channel
-  data, status_code, headers = api_instance.o_bpv6_0_0_delete_signal_channel_with_http_info(channelname)
+  data, status_code, headers = api_instance.delete_signal_channel_with_http_info(channelname)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600DeleteSignalChannel200Response>
+  p data # => <DeleteSignalChannel200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_delete_signal_channel_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->delete_signal_channel_with_http_info: #{e}"
 end
 ```
 
@@ -79,7 +79,7 @@ end
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_signal_channel_info
+## get_signal_channel_info
 
-> <OBPv600GetSignalChannelInfo200Response> o_bpv6_0_0_get_signal_channel_info(channelname)
+> <GetSignalChannelInfo200Response> get_signal_channel_info(channelname)
 
 Get Signal Channel Info
 
@@ -115,9 +115,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
@@ -125,28 +125,28 @@ channelname = 'channelname_example' # String | The CHANNELNAME identifier
 
 begin
   # Get Signal Channel Info
-  result = api_instance.o_bpv6_0_0_get_signal_channel_info(channelname)
+  result = api_instance.get_signal_channel_info(channelname)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_channel_info: #{e}"
+  puts "Error when calling ChannelApi->get_signal_channel_info: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_signal_channel_info_with_http_info variant
+#### Using the get_signal_channel_info_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetSignalChannelInfo200Response>, Integer, Hash)> o_bpv6_0_0_get_signal_channel_info_with_http_info(channelname)
+> <Array(<GetSignalChannelInfo200Response>, Integer, Hash)> get_signal_channel_info_with_http_info(channelname)
 
 ```ruby
 begin
   # Get Signal Channel Info
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_signal_channel_info_with_http_info(channelname)
+  data, status_code, headers = api_instance.get_signal_channel_info_with_http_info(channelname)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetSignalChannelInfo200Response>
+  p data # => <GetSignalChannelInfo200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_channel_info_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->get_signal_channel_info_with_http_info: #{e}"
 end
 ```
 
@@ -158,7 +158,7 @@ end
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -170,9 +170,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_signal_channels
+## get_signal_channels
 
-> <OBPv600GetSignalChannels200Response> o_bpv6_0_0_get_signal_channels
+> <GetSignalChannels200Response> get_signal_channels
 
 List Signal Channels
 
@@ -194,37 +194,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
 
 begin
   # List Signal Channels
-  result = api_instance.o_bpv6_0_0_get_signal_channels
+  result = api_instance.get_signal_channels
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_channels: #{e}"
+  puts "Error when calling ChannelApi->get_signal_channels: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_signal_channels_with_http_info variant
+#### Using the get_signal_channels_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetSignalChannels200Response>, Integer, Hash)> o_bpv6_0_0_get_signal_channels_with_http_info
+> <Array(<GetSignalChannels200Response>, Integer, Hash)> get_signal_channels_with_http_info
 
 ```ruby
 begin
   # List Signal Channels
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_signal_channels_with_http_info
+  data, status_code, headers = api_instance.get_signal_channels_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetSignalChannels200Response>
+  p data # => <GetSignalChannels200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_channels_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->get_signal_channels_with_http_info: #{e}"
 end
 ```
 
@@ -234,7 +234,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -246,9 +246,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_signal_messages
+## get_signal_messages
 
-> <OBPv600GetSignalMessages200Response> o_bpv6_0_0_get_signal_messages(channelname)
+> <GetSignalMessages200Response> get_signal_messages(channelname)
 
 Get Signal Messages
 
@@ -270,9 +270,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
@@ -280,28 +280,28 @@ channelname = 'channelname_example' # String | The CHANNELNAME identifier
 
 begin
   # Get Signal Messages
-  result = api_instance.o_bpv6_0_0_get_signal_messages(channelname)
+  result = api_instance.get_signal_messages(channelname)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_messages: #{e}"
+  puts "Error when calling ChannelApi->get_signal_messages: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_signal_messages_with_http_info variant
+#### Using the get_signal_messages_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetSignalMessages200Response>, Integer, Hash)> o_bpv6_0_0_get_signal_messages_with_http_info(channelname)
+> <Array(<GetSignalMessages200Response>, Integer, Hash)> get_signal_messages_with_http_info(channelname)
 
 ```ruby
 begin
   # Get Signal Messages
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_signal_messages_with_http_info(channelname)
+  data, status_code, headers = api_instance.get_signal_messages_with_http_info(channelname)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetSignalMessages200Response>
+  p data # => <GetSignalMessages200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_messages_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->get_signal_messages_with_http_info: #{e}"
 end
 ```
 
@@ -313,7 +313,7 @@ end
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -325,9 +325,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_signal_stats
+## get_signal_stats
 
-> <OBPv600GetSignalStats200Response> o_bpv6_0_0_get_signal_stats
+> <GetSignalStats200Response> get_signal_stats
 
 Get Signal Channel Stats
 
@@ -349,37 +349,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
 
 begin
   # Get Signal Channel Stats
-  result = api_instance.o_bpv6_0_0_get_signal_stats
+  result = api_instance.get_signal_stats
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_stats: #{e}"
+  puts "Error when calling ChannelApi->get_signal_stats: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_signal_stats_with_http_info variant
+#### Using the get_signal_stats_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetSignalStats200Response>, Integer, Hash)> o_bpv6_0_0_get_signal_stats_with_http_info
+> <Array(<GetSignalStats200Response>, Integer, Hash)> get_signal_stats_with_http_info
 
 ```ruby
 begin
   # Get Signal Channel Stats
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_signal_stats_with_http_info
+  data, status_code, headers = api_instance.get_signal_stats_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetSignalStats200Response>
+  p data # => <GetSignalStats200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_get_signal_stats_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->get_signal_stats_with_http_info: #{e}"
 end
 ```
 
@@ -389,7 +389,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -401,9 +401,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_publish_signal_message
+## publish_signal_message
 
-> <OBPv600PublishSignalMessage200Response> o_bpv6_0_0_publish_signal_message(channelname, obpv600_publish_signal_message_request)
+> <PublishSignalMessage200Response> publish_signal_message(channelname, publish_signal_message_request)
 
 Publish Signal Message
 
@@ -425,39 +425,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ChannelApi.new
 channelname = 'channelname_example' # String | The CHANNELNAME identifier
-obpv600_publish_signal_message_request = OpenBankProject::OBPv600PublishSignalMessageRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600PublishSignalMessageRequestProperties.new({message_type: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), payload: OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayload.new({type: 'type_example', properties: OpenBankProject::OBPv600GetSignalMessages200ResponsePropertiesMessagesItemsPropertiesPayloadProperties.new({agent_name: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), capabilities: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFields.new({type: 'type_example', items: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItems.new({type: 'type_example', properties: OpenBankProject::OBPv400GetBankLevelDynamicResourceDoc200ResponsePropertiesSuccessResponseBodyPropertiesOptionalFieldsItemsProperties.new({s: })})})})})})}) # OBPv600PublishSignalMessageRequest | Request body
+publish_signal_message_request = OpenBankProject::PublishSignalMessageRequest.new # PublishSignalMessageRequest | Request body
 
 begin
   # Publish Signal Message
-  result = api_instance.o_bpv6_0_0_publish_signal_message(channelname, obpv600_publish_signal_message_request)
+  result = api_instance.publish_signal_message(channelname, publish_signal_message_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_publish_signal_message: #{e}"
+  puts "Error when calling ChannelApi->publish_signal_message: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_publish_signal_message_with_http_info variant
+#### Using the publish_signal_message_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600PublishSignalMessage200Response>, Integer, Hash)> o_bpv6_0_0_publish_signal_message_with_http_info(channelname, obpv600_publish_signal_message_request)
+> <Array(<PublishSignalMessage200Response>, Integer, Hash)> publish_signal_message_with_http_info(channelname, publish_signal_message_request)
 
 ```ruby
 begin
   # Publish Signal Message
-  data, status_code, headers = api_instance.o_bpv6_0_0_publish_signal_message_with_http_info(channelname, obpv600_publish_signal_message_request)
+  data, status_code, headers = api_instance.publish_signal_message_with_http_info(channelname, publish_signal_message_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600PublishSignalMessage200Response>
+  p data # => <PublishSignalMessage200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ChannelApi->o_bpv6_0_0_publish_signal_message_with_http_info: #{e}"
+  puts "Error when calling ChannelApi->publish_signal_message_with_http_info: #{e}"
 end
 ```
 
@@ -466,11 +466,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **channelname** | **String** | The CHANNELNAME identifier |  |
-| **obpv600_publish_signal_message_request** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md) | Request body |  |
+| **publish_signal_message_request** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

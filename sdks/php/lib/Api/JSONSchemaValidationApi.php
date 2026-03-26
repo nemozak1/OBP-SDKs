@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,22 +75,22 @@ class JSONSchemaValidationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateJsonSchemaValidation' => [
+        'createJsonSchemaValidation' => [
             'application/json',
         ],
-        'oBPv400DeleteJsonSchemaValidation' => [
+        'deleteJsonSchemaValidation' => [
             'application/json',
         ],
-        'oBPv400GetAllJsonSchemaValidations' => [
+        'getAllJsonSchemaValidations' => [
             'application/json',
         ],
-        'oBPv400GetAllJsonSchemaValidationsPublic' => [
+        'getAllJsonSchemaValidationsPublic' => [
             'application/json',
         ],
-        'oBPv400GetJsonSchemaValidation' => [
+        'getJsonSchemaValidation' => [
             'application/json',
         ],
-        'oBPv400UpdateJsonSchemaValidation' => [
+        'updateJsonSchemaValidation' => [
             'application/json',
         ],
     ];
@@ -142,40 +142,40 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400CreateJsonSchemaValidation
+     * Operation createJsonSchemaValidation
      *
      * Create a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     * @return \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    public function oBPv400CreateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400CreateJsonSchemaValidation'][0])
+    public function createJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['createJsonSchemaValidation'][0])
     {
-        list($response) = $this->oBPv400CreateJsonSchemaValidationWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        list($response) = $this->createJsonSchemaValidationWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateJsonSchemaValidationWithHttpInfo
+     * Operation createJsonSchemaValidationWithHttpInfo
      *
      * Create a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateJsonSchemaValidationWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400CreateJsonSchemaValidation'][0])
+    public function createJsonSchemaValidationWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['createJsonSchemaValidation'][0])
     {
-        $request = $this->oBPv400CreateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        $request = $this->createJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -203,7 +203,7 @@ class JSONSchemaValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $request,
                         $response,
                     );
@@ -225,7 +225,7 @@ class JSONSchemaValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                 $request,
                 $response,
             );
@@ -234,7 +234,7 @@ class JSONSchemaValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -247,20 +247,20 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400CreateJsonSchemaValidationAsync
+     * Operation createJsonSchemaValidationAsync
      *
      * Create a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateJsonSchemaValidationAsync($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400CreateJsonSchemaValidation'][0])
+    public function createJsonSchemaValidationAsync($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['createJsonSchemaValidation'][0])
     {
-        return $this->oBPv400CreateJsonSchemaValidationAsyncWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType)
+        return $this->createJsonSchemaValidationAsyncWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,21 +269,21 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400CreateJsonSchemaValidationAsyncWithHttpInfo
+     * Operation createJsonSchemaValidationAsyncWithHttpInfo
      *
      * Create a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateJsonSchemaValidationAsyncWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400CreateJsonSchemaValidation'][0])
+    public function createJsonSchemaValidationAsyncWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['createJsonSchemaValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems';
-        $request = $this->oBPv400CreateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner';
+        $request = $this->createJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -322,29 +322,29 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateJsonSchemaValidation'
+     * Create request for operation 'createJsonSchemaValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400CreateJsonSchemaValidation'][0])
+    public function createJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['createJsonSchemaValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400CreateJsonSchemaValidation'
+                'Missing the required parameter $operationid when calling createJsonSchemaValidation'
             );
         }
 
-        // verify the required parameter 'obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema' is set
-        if ($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema === null || (is_array($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema) && count($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema) === 0)) {
+        // verify the required parameter 'get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema' is set
+        if ($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema === null || (is_array($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema) && count($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema when calling oBPv400CreateJsonSchemaValidation'
+                'Missing the required parameter $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema when calling createJsonSchemaValidation'
             );
         }
 
@@ -375,12 +375,12 @@ class JSONSchemaValidationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)) {
+        if (isset($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema));
             } else {
-                $httpBody = $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema;
+                $httpBody = $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -416,9 +416,9 @@ class JSONSchemaValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -443,37 +443,37 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteJsonSchemaValidation
+     * Operation deleteJsonSchemaValidation
      *
      * Delete a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteJsonSchemaValidation($operationid, string $contentType = self::contentTypes['oBPv400DeleteJsonSchemaValidation'][0])
+    public function deleteJsonSchemaValidation($operationid, string $contentType = self::contentTypes['deleteJsonSchemaValidation'][0])
     {
-        $this->oBPv400DeleteJsonSchemaValidationWithHttpInfo($operationid, $contentType);
+        $this->deleteJsonSchemaValidationWithHttpInfo($operationid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteJsonSchemaValidationWithHttpInfo
+     * Operation deleteJsonSchemaValidationWithHttpInfo
      *
      * Delete a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteJsonSchemaValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400DeleteJsonSchemaValidation'][0])
+    public function deleteJsonSchemaValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['deleteJsonSchemaValidation'][0])
     {
-        $request = $this->oBPv400DeleteJsonSchemaValidationRequest($operationid, $contentType);
+        $request = $this->deleteJsonSchemaValidationRequest($operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -509,19 +509,19 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteJsonSchemaValidationAsync
+     * Operation deleteJsonSchemaValidationAsync
      *
      * Delete a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteJsonSchemaValidationAsync($operationid, string $contentType = self::contentTypes['oBPv400DeleteJsonSchemaValidation'][0])
+    public function deleteJsonSchemaValidationAsync($operationid, string $contentType = self::contentTypes['deleteJsonSchemaValidation'][0])
     {
-        return $this->oBPv400DeleteJsonSchemaValidationAsyncWithHttpInfo($operationid, $contentType)
+        return $this->deleteJsonSchemaValidationAsyncWithHttpInfo($operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -530,20 +530,20 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteJsonSchemaValidationAsyncWithHttpInfo
+     * Operation deleteJsonSchemaValidationAsyncWithHttpInfo
      *
      * Delete a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteJsonSchemaValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400DeleteJsonSchemaValidation'][0])
+    public function deleteJsonSchemaValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['deleteJsonSchemaValidation'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteJsonSchemaValidationRequest($operationid, $contentType);
+        $request = $this->deleteJsonSchemaValidationRequest($operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -569,21 +569,21 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteJsonSchemaValidation'
+     * Create request for operation 'deleteJsonSchemaValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteJsonSchemaValidationRequest($operationid, string $contentType = self::contentTypes['oBPv400DeleteJsonSchemaValidation'][0])
+    public function deleteJsonSchemaValidationRequest($operationid, string $contentType = self::contentTypes['deleteJsonSchemaValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400DeleteJsonSchemaValidation'
+                'Missing the required parameter $operationid when calling deleteJsonSchemaValidation'
             );
         }
 
@@ -648,9 +648,9 @@ class JSONSchemaValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -675,36 +675,36 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidations
+     * Operation getAllJsonSchemaValidations
      *
      * Get all JSON Schema Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response
+     * @return \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response
      */
-    public function oBPv400GetAllJsonSchemaValidations(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidations'][0])
+    public function getAllJsonSchemaValidations(string $contentType = self::contentTypes['getAllJsonSchemaValidations'][0])
     {
-        list($response) = $this->oBPv400GetAllJsonSchemaValidationsWithHttpInfo($contentType);
+        list($response) = $this->getAllJsonSchemaValidationsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsWithHttpInfo
+     * Operation getAllJsonSchemaValidationsWithHttpInfo
      *
      * Get all JSON Schema Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllJsonSchemaValidationsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidations'][0])
+    public function getAllJsonSchemaValidationsWithHttpInfo(string $contentType = self::contentTypes['getAllJsonSchemaValidations'][0])
     {
-        $request = $this->oBPv400GetAllJsonSchemaValidationsRequest($contentType);
+        $request = $this->getAllJsonSchemaValidationsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -732,7 +732,7 @@ class JSONSchemaValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                         $request,
                         $response,
                     );
@@ -754,7 +754,7 @@ class JSONSchemaValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                 $request,
                 $response,
             );
@@ -763,7 +763,7 @@ class JSONSchemaValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -776,18 +776,18 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsAsync
+     * Operation getAllJsonSchemaValidationsAsync
      *
      * Get all JSON Schema Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllJsonSchemaValidationsAsync(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidations'][0])
+    public function getAllJsonSchemaValidationsAsync(string $contentType = self::contentTypes['getAllJsonSchemaValidations'][0])
     {
-        return $this->oBPv400GetAllJsonSchemaValidationsAsyncWithHttpInfo($contentType)
+        return $this->getAllJsonSchemaValidationsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -796,19 +796,19 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsAsyncWithHttpInfo
+     * Operation getAllJsonSchemaValidationsAsyncWithHttpInfo
      *
      * Get all JSON Schema Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllJsonSchemaValidationsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidations'][0])
+    public function getAllJsonSchemaValidationsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllJsonSchemaValidations'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response';
-        $request = $this->oBPv400GetAllJsonSchemaValidationsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response';
+        $request = $this->getAllJsonSchemaValidationsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -847,14 +847,14 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllJsonSchemaValidations'
+     * Create request for operation 'getAllJsonSchemaValidations'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllJsonSchemaValidationsRequest(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidations'][0])
+    public function getAllJsonSchemaValidationsRequest(string $contentType = self::contentTypes['getAllJsonSchemaValidations'][0])
     {
 
 
@@ -910,9 +910,9 @@ class JSONSchemaValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -937,36 +937,36 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsPublic
+     * Operation getAllJsonSchemaValidationsPublic
      *
      * Get all JSON Schema Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidationsPublic'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response
+     * @return \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response
      */
-    public function oBPv400GetAllJsonSchemaValidationsPublic(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'][0])
+    public function getAllJsonSchemaValidationsPublic(string $contentType = self::contentTypes['getAllJsonSchemaValidationsPublic'][0])
     {
-        list($response) = $this->oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo($contentType);
+        list($response) = $this->getAllJsonSchemaValidationsPublicWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo
+     * Operation getAllJsonSchemaValidationsPublicWithHttpInfo
      *
      * Get all JSON Schema Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidationsPublic'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllJsonSchemaValidationsPublicWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'][0])
+    public function getAllJsonSchemaValidationsPublicWithHttpInfo(string $contentType = self::contentTypes['getAllJsonSchemaValidationsPublic'][0])
     {
-        $request = $this->oBPv400GetAllJsonSchemaValidationsPublicRequest($contentType);
+        $request = $this->getAllJsonSchemaValidationsPublicRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -994,7 +994,7 @@ class JSONSchemaValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                         $request,
                         $response,
                     );
@@ -1016,7 +1016,7 @@ class JSONSchemaValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                 $request,
                 $response,
             );
@@ -1025,7 +1025,7 @@ class JSONSchemaValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1038,18 +1038,18 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsPublicAsync
+     * Operation getAllJsonSchemaValidationsPublicAsync
      *
      * Get all JSON Schema Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllJsonSchemaValidationsPublicAsync(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'][0])
+    public function getAllJsonSchemaValidationsPublicAsync(string $contentType = self::contentTypes['getAllJsonSchemaValidationsPublic'][0])
     {
-        return $this->oBPv400GetAllJsonSchemaValidationsPublicAsyncWithHttpInfo($contentType)
+        return $this->getAllJsonSchemaValidationsPublicAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1058,19 +1058,19 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllJsonSchemaValidationsPublicAsyncWithHttpInfo
+     * Operation getAllJsonSchemaValidationsPublicAsyncWithHttpInfo
      *
      * Get all JSON Schema Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllJsonSchemaValidationsPublicAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'][0])
+    public function getAllJsonSchemaValidationsPublicAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllJsonSchemaValidationsPublic'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200Response';
-        $request = $this->oBPv400GetAllJsonSchemaValidationsPublicRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200Response';
+        $request = $this->getAllJsonSchemaValidationsPublicRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1109,14 +1109,14 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllJsonSchemaValidationsPublic'
+     * Create request for operation 'getAllJsonSchemaValidationsPublic'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllJsonSchemaValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllJsonSchemaValidationsPublicRequest(string $contentType = self::contentTypes['oBPv400GetAllJsonSchemaValidationsPublic'][0])
+    public function getAllJsonSchemaValidationsPublicRequest(string $contentType = self::contentTypes['getAllJsonSchemaValidationsPublic'][0])
     {
 
 
@@ -1185,38 +1185,38 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetJsonSchemaValidation
+     * Operation getJsonSchemaValidation
      *
      * Get a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     * @return \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    public function oBPv400GetJsonSchemaValidation($operationid, string $contentType = self::contentTypes['oBPv400GetJsonSchemaValidation'][0])
+    public function getJsonSchemaValidation($operationid, string $contentType = self::contentTypes['getJsonSchemaValidation'][0])
     {
-        list($response) = $this->oBPv400GetJsonSchemaValidationWithHttpInfo($operationid, $contentType);
+        list($response) = $this->getJsonSchemaValidationWithHttpInfo($operationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetJsonSchemaValidationWithHttpInfo
+     * Operation getJsonSchemaValidationWithHttpInfo
      *
      * Get a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetJsonSchemaValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400GetJsonSchemaValidation'][0])
+    public function getJsonSchemaValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['getJsonSchemaValidation'][0])
     {
-        $request = $this->oBPv400GetJsonSchemaValidationRequest($operationid, $contentType);
+        $request = $this->getJsonSchemaValidationRequest($operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1244,7 +1244,7 @@ class JSONSchemaValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $request,
                         $response,
                     );
@@ -1266,7 +1266,7 @@ class JSONSchemaValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                 $request,
                 $response,
             );
@@ -1275,7 +1275,7 @@ class JSONSchemaValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1288,19 +1288,19 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetJsonSchemaValidationAsync
+     * Operation getJsonSchemaValidationAsync
      *
      * Get a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetJsonSchemaValidationAsync($operationid, string $contentType = self::contentTypes['oBPv400GetJsonSchemaValidation'][0])
+    public function getJsonSchemaValidationAsync($operationid, string $contentType = self::contentTypes['getJsonSchemaValidation'][0])
     {
-        return $this->oBPv400GetJsonSchemaValidationAsyncWithHttpInfo($operationid, $contentType)
+        return $this->getJsonSchemaValidationAsyncWithHttpInfo($operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1309,20 +1309,20 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400GetJsonSchemaValidationAsyncWithHttpInfo
+     * Operation getJsonSchemaValidationAsyncWithHttpInfo
      *
      * Get a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetJsonSchemaValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400GetJsonSchemaValidation'][0])
+    public function getJsonSchemaValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['getJsonSchemaValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems';
-        $request = $this->oBPv400GetJsonSchemaValidationRequest($operationid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner';
+        $request = $this->getJsonSchemaValidationRequest($operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1361,21 +1361,21 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetJsonSchemaValidation'
+     * Create request for operation 'getJsonSchemaValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetJsonSchemaValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetJsonSchemaValidationRequest($operationid, string $contentType = self::contentTypes['oBPv400GetJsonSchemaValidation'][0])
+    public function getJsonSchemaValidationRequest($operationid, string $contentType = self::contentTypes['getJsonSchemaValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400GetJsonSchemaValidation'
+                'Missing the required parameter $operationid when calling getJsonSchemaValidation'
             );
         }
 
@@ -1440,9 +1440,9 @@ class JSONSchemaValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1467,40 +1467,40 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateJsonSchemaValidation
+     * Operation updateJsonSchemaValidation
      *
      * Update a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     * @return \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    public function oBPv400UpdateJsonSchemaValidation($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400UpdateJsonSchemaValidation'][0])
+    public function updateJsonSchemaValidation($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['updateJsonSchemaValidation'][0])
     {
-        list($response) = $this->oBPv400UpdateJsonSchemaValidationWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        list($response) = $this->updateJsonSchemaValidationWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateJsonSchemaValidationWithHttpInfo
+     * Operation updateJsonSchemaValidationWithHttpInfo
      *
      * Update a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateJsonSchemaValidationWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400UpdateJsonSchemaValidation'][0])
+    public function updateJsonSchemaValidationWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['updateJsonSchemaValidation'][0])
     {
-        $request = $this->oBPv400UpdateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        $request = $this->updateJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1528,7 +1528,7 @@ class JSONSchemaValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $request,
                         $response,
                     );
@@ -1550,7 +1550,7 @@ class JSONSchemaValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                 $request,
                 $response,
             );
@@ -1559,7 +1559,7 @@ class JSONSchemaValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems',
+                        '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1572,20 +1572,20 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateJsonSchemaValidationAsync
+     * Operation updateJsonSchemaValidationAsync
      *
      * Update a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateJsonSchemaValidationAsync($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400UpdateJsonSchemaValidation'][0])
+    public function updateJsonSchemaValidationAsync($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['updateJsonSchemaValidation'][0])
     {
-        return $this->oBPv400UpdateJsonSchemaValidationAsyncWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType)
+        return $this->updateJsonSchemaValidationAsyncWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1594,21 +1594,21 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateJsonSchemaValidationAsyncWithHttpInfo
+     * Operation updateJsonSchemaValidationAsyncWithHttpInfo
      *
      * Update a JSON Schema Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateJsonSchemaValidationAsyncWithHttpInfo($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400UpdateJsonSchemaValidation'][0])
+    public function updateJsonSchemaValidationAsyncWithHttpInfo($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['updateJsonSchemaValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems';
-        $request = $this->oBPv400UpdateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner';
+        $request = $this->updateJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1647,29 +1647,29 @@ class JSONSchemaValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateJsonSchemaValidation'
+     * Create request for operation 'updateJsonSchemaValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateJsonSchemaValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateJsonSchemaValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateJsonSchemaValidationRequest($operationid, $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema, string $contentType = self::contentTypes['oBPv400UpdateJsonSchemaValidation'][0])
+    public function updateJsonSchemaValidationRequest($operationid, $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema, string $contentType = self::contentTypes['updateJsonSchemaValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400UpdateJsonSchemaValidation'
+                'Missing the required parameter $operationid when calling updateJsonSchemaValidation'
             );
         }
 
-        // verify the required parameter 'obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema' is set
-        if ($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema === null || (is_array($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema) && count($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema) === 0)) {
+        // verify the required parameter 'get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema' is set
+        if ($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema === null || (is_array($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema) && count($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema when calling oBPv400UpdateJsonSchemaValidation'
+                'Missing the required parameter $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema when calling updateJsonSchemaValidation'
             );
         }
 
@@ -1700,12 +1700,12 @@ class JSONSchemaValidationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema)) {
+        if (isset($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema));
             } else {
-                $httpBody = $obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema;
+                $httpBody = $get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1741,9 +1741,9 @@ class JSONSchemaValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

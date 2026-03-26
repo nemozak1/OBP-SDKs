@@ -5,19 +5,19 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateAtmAttribute**](ATMAttributeApi.md#obpv510createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-[**oBPv510DeleteAtmAttribute**](ATMAttributeApi.md#obpv510deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-[**oBPv510GetAtmAttribute**](ATMAttributeApi.md#obpv510getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-[**oBPv510GetAtmAttributes**](ATMAttributeApi.md#obpv510getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-[**oBPv510UpdateAtmAttribute**](ATMAttributeApi.md#obpv510updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+[**createAtmAttribute**](ATMAttributeApi.md#createatmattribute) | **POST** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+[**deleteAtmAttribute**](ATMAttributeApi.md#deleteatmattribute) | **DELETE** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+[**getAtmAttribute**](ATMAttributeApi.md#getatmattribute) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+[**getAtmAttributes**](ATMAttributeApi.md#getatmattributes) | **GET** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+[**updateAtmAttribute**](ATMAttributeApi.md#updateatmattribute) | **PUT** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
 
 
-# **oBPv510CreateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(bankid, atmid, oBPv510UpdateAtmAttributeRequest)
+# **createAtmAttribute**
+> GetAtmAttribute200Response createAtmAttribute(bankid, atmid, updateAtmAttributeRequest)
 
 Create ATM Attribute
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getATMAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String atmid = atmid_example; // String | The ATMID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv510CreateAtmAttribute(bankid, atmid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.createAtmAttribute(bankid, atmid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ATMAttributeApi->oBPv510CreateAtmAttribute: $e\n');
+    print('Exception when calling ATMAttributeApi->createAtmAttribute: $e\n');
 }
 ```
 
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **atmid** | **String**| The ATMID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteAtmAttribute**
-> oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid)
+# **deleteAtmAttribute**
+> deleteAtmAttribute(bankid, atmid, atmattributeid)
 
 Delete ATM Attribute
 
@@ -100,9 +100,9 @@ final String atmid = atmid_example; // String | The ATMID identifier
 final String atmattributeid = atmattributeid_example; // String | The ATMATTRIBUTEID identifier
 
 try {
-    api.oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid);
+    api.deleteAtmAttribute(bankid, atmid, atmattributeid);
 } on DioException catch (e) {
-    print('Exception when calling ATMAttributeApi->oBPv510DeleteAtmAttribute: $e\n');
+    print('Exception when calling ATMAttributeApi->deleteAtmAttribute: $e\n');
 }
 ```
 
@@ -129,8 +129,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(bankid, atmid, atmattributeid)
+# **getAtmAttribute**
+> GetAtmAttribute200Response getAtmAttribute(bankid, atmid, atmattributeid)
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -156,10 +156,10 @@ final String atmid = atmid_example; // String | The ATMID identifier
 final String atmattributeid = atmattributeid_example; // String | The ATMATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv510GetAtmAttribute(bankid, atmid, atmattributeid);
+    final response = api.getAtmAttribute(bankid, atmid, atmattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ATMAttributeApi->oBPv510GetAtmAttribute: $e\n');
+    print('Exception when calling ATMAttributeApi->getAtmAttribute: $e\n');
 }
 ```
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -186,8 +186,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAtmAttributes**
-> OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(bankid, atmid)
+# **getAtmAttributes**
+> GetAtmAttributes200Response getAtmAttributes(bankid, atmid)
 
 Get ATM Attributes
 
@@ -212,10 +212,10 @@ final String bankid = bankid_example; // String | The BANKID identifier
 final String atmid = atmid_example; // String | The ATMID identifier
 
 try {
-    final response = api.oBPv510GetAtmAttributes(bankid, atmid);
+    final response = api.getAtmAttributes(bankid, atmid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ATMAttributeApi->oBPv510GetAtmAttributes: $e\n');
+    print('Exception when calling ATMAttributeApi->getAtmAttributes: $e\n');
 }
 ```
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -241,8 +241,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateAtmAttribute**
-> OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest)
+# **updateAtmAttribute**
+> GetAtmAttribute200Response updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest)
 
 Update ATM Attribute
 
@@ -266,13 +266,13 @@ final api = ObpDart().getATMAttributeApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String atmid = atmid_example; // String | The ATMID identifier
 final String atmattributeid = atmattributeid_example; // String | The ATMATTRIBUTEID identifier
-final OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}}; // OBPv510UpdateAtmAttributeRequest | Request body
+final UpdateAtmAttributeRequest updateAtmAttributeRequest = {"type":"object","properties":{"name":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"type":{"type":"string"}}}; // UpdateAtmAttributeRequest | Request body
 
 try {
-    final response = api.oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, oBPv510UpdateAtmAttributeRequest);
+    final response = api.updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ATMAttributeApi->oBPv510UpdateAtmAttribute: $e\n');
+    print('Exception when calling ATMAttributeApi->updateAtmAttribute: $e\n');
 }
 ```
 
@@ -283,11 +283,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **atmid** | **String**| The ATMID identifier | 
  **atmattributeid** | **String**| The ATMATTRIBUTEID identifier | 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

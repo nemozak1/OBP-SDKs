@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest;
-import com.openbankproject.model.OBPv600GetPersonalDataFields200Response;
-import com.openbankproject.model.OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems;
+import com.openbankproject.model.CreatePersonalDataFieldRequest;
+import com.openbankproject.model.GetPersonalDataFields200Response;
+import com.openbankproject.model.GetPersonalDataFields200ResponseUserAttributesInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class UserAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -167,48 +167,48 @@ public class UserAttributeApi {
   /**
    * Create Personal Data Field
    * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(@javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(@javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createPersonalDataField(createPersonalDataFieldRequest, null);
   }
 
   /**
    * Create Personal Data Field
    * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(@javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(@javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Personal Data Field
    * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600CreatePersonalDataFieldWithHttpInfo(obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createPersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createPersonalDataFieldWithHttpInfo(createPersonalDataFieldRequest, null);
   }
 
   /**
    * Create Personal Data Field
    * &lt;p&gt;Create a Personal Data Field for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Personal Data Fields (IsPersonal&#x3D;true) are managed by the user themselves and do not require special roles.&lt;br /&gt; This data is not available in ABAC rules for privacy reasons.&lt;/p&gt; &lt;p&gt;For non-personal attributes that can be used in ABAC rules, see the /users/USER_ID/attributes endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreatePersonalDataFieldRequestBuilder(obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createPersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createPersonalDataFieldRequestBuilder(createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -219,11 +219,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreatePersonalDataField", localVarResponse);
+          throw getApiException("createPersonalDataField", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -233,10 +233,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -255,10 +255,10 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreatePersonalDataFieldRequestBuilder(@javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv600CreatePersonalDataField");
+  private HttpRequest.Builder createPersonalDataFieldRequestBuilder(@javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling createPersonalDataField");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -271,7 +271,7 @@ public class UserAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -291,25 +291,25 @@ public class UserAttributeApi {
    * Create User Attribute
    * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600CreateUserAttribute(userid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createUserAttribute(userid, createPersonalDataFieldRequest, null);
   }
 
   /**
    * Create User Attribute
    * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600CreateUserAttributeWithHttpInfo(userid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = createUserAttributeWithHttpInfo(userid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -317,25 +317,25 @@ public class UserAttributeApi {
    * Create User Attribute
    * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600CreateUserAttributeWithHttpInfo(userid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createUserAttributeWithHttpInfo(userid, createPersonalDataFieldRequest, null);
   }
 
   /**
    * Create User Attribute
    * &lt;p&gt;Create a User Attribute for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Attributes are non-personal attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;br /&gt; They require a role to set, similar to Customer Attributes, Account Attributes, etc.&lt;/p&gt; &lt;p&gt;For personal attributes that users manage themselves, see the /my/personal-data-fields endpoints.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or &amp;quot;DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600CreateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateUserAttributeRequestBuilder(userid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> createUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createUserAttributeRequestBuilder(userid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -346,11 +346,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateUserAttribute", localVarResponse);
+          throw getApiException("createUserAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -360,10 +360,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -382,14 +382,14 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreateUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600CreateUserAttribute");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling createUserAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv600CreateUserAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling createUserAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -403,7 +403,7 @@ public class UserAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -425,8 +425,8 @@ public class UserAttributeApi {
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeletePersonalDataField(@javax.annotation.Nonnull String userattributeid) throws ApiException {
-    oBPv600DeletePersonalDataField(userattributeid, null);
+  public void deletePersonalDataField(@javax.annotation.Nonnull String userattributeid) throws ApiException {
+    deletePersonalDataField(userattributeid, null);
   }
 
   /**
@@ -436,8 +436,8 @@ public class UserAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeletePersonalDataField(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid, headers);
+  public void deletePersonalDataField(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    deletePersonalDataFieldWithHttpInfo(userattributeid, headers);
   }
 
   /**
@@ -447,8 +447,8 @@ public class UserAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeletePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600DeletePersonalDataFieldWithHttpInfo(userattributeid, null);
+  public ApiResponse<Void> deletePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return deletePersonalDataFieldWithHttpInfo(userattributeid, null);
   }
 
   /**
@@ -459,8 +459,8 @@ public class UserAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeletePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeletePersonalDataFieldRequestBuilder(userattributeid, headers);
+  public ApiResponse<Void> deletePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deletePersonalDataFieldRequestBuilder(userattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -471,7 +471,7 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeletePersonalDataField", localVarResponse);
+          throw getApiException("deletePersonalDataField", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -496,10 +496,10 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeletePersonalDataFieldRequestBuilder(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deletePersonalDataFieldRequestBuilder(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600DeletePersonalDataField");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling deletePersonalDataField");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -530,8 +530,8 @@ public class UserAttributeApi {
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
-    oBPv600DeleteUserAttribute(userid, userattributeid, null);
+  public void deleteUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
+    deleteUserAttribute(userid, userattributeid, null);
   }
 
   /**
@@ -542,8 +542,8 @@ public class UserAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteUserAttributeWithHttpInfo(userid, userattributeid, headers);
+  public void deleteUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    deleteUserAttributeWithHttpInfo(userid, userattributeid, headers);
   }
 
   /**
@@ -554,8 +554,8 @@ public class UserAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600DeleteUserAttributeWithHttpInfo(userid, userattributeid, null);
+  public ApiResponse<Void> deleteUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return deleteUserAttributeWithHttpInfo(userid, userattributeid, null);
   }
 
   /**
@@ -567,8 +567,8 @@ public class UserAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteUserAttributeRequestBuilder(userid, userattributeid, headers);
+  public ApiResponse<Void> deleteUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteUserAttributeRequestBuilder(userid, userattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -579,7 +579,7 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteUserAttribute", localVarResponse);
+          throw getApiException("deleteUserAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -604,14 +604,14 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeleteUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600DeleteUserAttribute");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling deleteUserAttribute");
     }
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600DeleteUserAttribute");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling deleteUserAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -640,11 +640,11 @@ public class UserAttributeApi {
    * Get Personal Data Field By Id
    * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(@javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600GetPersonalDataFieldById(userattributeid, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(@javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return getPersonalDataFieldById(userattributeid, null);
   }
 
   /**
@@ -652,11 +652,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = getPersonalDataFieldByIdWithHttpInfo(userattributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -664,11 +664,11 @@ public class UserAttributeApi {
    * Get Personal Data Field By Id
    * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetPersonalDataFieldByIdWithHttpInfo(@javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600GetPersonalDataFieldByIdWithHttpInfo(userattributeid, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getPersonalDataFieldByIdWithHttpInfo(@javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return getPersonalDataFieldByIdWithHttpInfo(userattributeid, null);
   }
 
   /**
@@ -676,11 +676,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetPersonalDataFieldByIdWithHttpInfo(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetPersonalDataFieldByIdRequestBuilder(userattributeid, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getPersonalDataFieldByIdWithHttpInfo(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getPersonalDataFieldByIdRequestBuilder(userattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -691,11 +691,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetPersonalDataFieldById", localVarResponse);
+          throw getApiException("getPersonalDataFieldById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -705,10 +705,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -727,10 +727,10 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetPersonalDataFieldByIdRequestBuilder(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getPersonalDataFieldByIdRequestBuilder(@javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600GetPersonalDataFieldById");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling getPersonalDataFieldById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -757,44 +757,44 @@ public class UserAttributeApi {
   /**
    * Get Personal Data Fields
    * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @return OBPv600GetPersonalDataFields200Response
+   * @return GetPersonalDataFields200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields() throws ApiException {
-    return oBPv600GetPersonalDataFields(null);
+  public GetPersonalDataFields200Response getPersonalDataFields() throws ApiException {
+    return getPersonalDataFields(null);
   }
 
   /**
    * Get Personal Data Fields
    * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200Response
+   * @return GetPersonalDataFields200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200Response> localVarResponse = oBPv600GetPersonalDataFieldsWithHttpInfo(headers);
+  public GetPersonalDataFields200Response getPersonalDataFields(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200Response> localVarResponse = getPersonalDataFieldsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Personal Data Fields
    * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200Response&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetPersonalDataFieldsWithHttpInfo() throws ApiException {
-    return oBPv600GetPersonalDataFieldsWithHttpInfo(null);
+  public ApiResponse<GetPersonalDataFields200Response> getPersonalDataFieldsWithHttpInfo() throws ApiException {
+    return getPersonalDataFieldsWithHttpInfo(null);
   }
 
   /**
    * Get Personal Data Fields
    * &lt;p&gt;Get Personal Data Fields for the currently authenticated user.&lt;/p&gt; &lt;p&gt;Returns Personal Data Fields (IsPersonal&#x3D;true) that are managed by the user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200Response&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetPersonalDataFieldsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetPersonalDataFieldsRequestBuilder(headers);
+  public ApiResponse<GetPersonalDataFields200Response> getPersonalDataFieldsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getPersonalDataFieldsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -805,11 +805,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetPersonalDataFields", localVarResponse);
+          throw getApiException("getPersonalDataFields", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200Response>(
+          return new ApiResponse<GetPersonalDataFields200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -819,10 +819,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200Response>() {});
+        GetPersonalDataFields200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200Response>(
+        return new ApiResponse<GetPersonalDataFields200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -841,7 +841,7 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetPersonalDataFieldsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getPersonalDataFieldsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -868,11 +868,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600GetUserAttributeById(userid, userattributeid, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return getUserAttributeById(userid, userattributeid, null);
   }
 
   /**
@@ -881,11 +881,11 @@ public class UserAttributeApi {
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600GetUserAttributeByIdWithHttpInfo(userid, userattributeid, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = getUserAttributeByIdWithHttpInfo(userid, userattributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -894,11 +894,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetUserAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
-    return oBPv600GetUserAttributeByIdWithHttpInfo(userid, userattributeid, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getUserAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid) throws ApiException {
+    return getUserAttributeByIdWithHttpInfo(userid, userattributeid, null);
   }
 
   /**
@@ -907,11 +907,11 @@ public class UserAttributeApi {
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600GetUserAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetUserAttributeByIdRequestBuilder(userid, userattributeid, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> getUserAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getUserAttributeByIdRequestBuilder(userid, userattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -922,11 +922,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetUserAttributeById", localVarResponse);
+          throw getApiException("getUserAttributeById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -936,10 +936,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -958,14 +958,14 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetUserAttributeByIdRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getUserAttributeByIdRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600GetUserAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling getUserAttributeById");
     }
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600GetUserAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling getUserAttributeById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -994,11 +994,11 @@ public class UserAttributeApi {
    * Get User Attributes
    * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return OBPv600GetPersonalDataFields200Response
+   * @return GetPersonalDataFields200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv600GetUserAttributes(userid, null);
+  public GetPersonalDataFields200Response getUserAttributes(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getUserAttributes(userid, null);
   }
 
   /**
@@ -1006,11 +1006,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200Response
+   * @return GetPersonalDataFields200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200Response> localVarResponse = oBPv600GetUserAttributesWithHttpInfo(userid, headers);
+  public GetPersonalDataFields200Response getUserAttributes(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200Response> localVarResponse = getUserAttributesWithHttpInfo(userid, headers);
     return localVarResponse.getData();
   }
 
@@ -1018,11 +1018,11 @@ public class UserAttributeApi {
    * Get User Attributes
    * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200Response&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetUserAttributesWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
-    return oBPv600GetUserAttributesWithHttpInfo(userid, null);
+  public ApiResponse<GetPersonalDataFields200Response> getUserAttributesWithHttpInfo(@javax.annotation.Nonnull String userid) throws ApiException {
+    return getUserAttributesWithHttpInfo(userid, null);
   }
 
   /**
@@ -1030,11 +1030,11 @@ public class UserAttributeApi {
    * &lt;p&gt;Get User Attributes for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;Returns non-personal user attributes (IsPersonal&#x3D;false) that can be used in ABAC rules.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attributes&lt;/strong&gt;&lt;/a&gt;: user_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200Response&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200Response> oBPv600GetUserAttributesWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetUserAttributesRequestBuilder(userid, headers);
+  public ApiResponse<GetPersonalDataFields200Response> getUserAttributesWithHttpInfo(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getUserAttributesRequestBuilder(userid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1045,11 +1045,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetUserAttributes", localVarResponse);
+          throw getApiException("getUserAttributes", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200Response>(
+          return new ApiResponse<GetPersonalDataFields200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1059,10 +1059,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200Response>() {});
+        GetPersonalDataFields200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200Response>(
+        return new ApiResponse<GetPersonalDataFields200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1081,10 +1081,10 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetUserAttributesRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getUserAttributesRequestBuilder(@javax.annotation.Nonnull String userid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600GetUserAttributes");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling getUserAttributes");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1112,25 +1112,25 @@ public class UserAttributeApi {
    * Update Personal Data Field
    * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600UpdatePersonalDataField(userattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updatePersonalDataField(userattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
    * Update Personal Data Field
    * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = updatePersonalDataFieldWithHttpInfo(userattributeid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1138,25 +1138,25 @@ public class UserAttributeApi {
    * Update Personal Data Field
    * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600UpdatePersonalDataFieldWithHttpInfo(userattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updatePersonalDataFieldWithHttpInfo(userattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
    * Update Personal Data Field
    * &lt;p&gt;Update a Personal Data Field by USER_ATTRIBUTE_ID for the currently authenticated user.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdatePersonalDataFieldRequestBuilder(userattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updatePersonalDataFieldWithHttpInfo(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updatePersonalDataFieldRequestBuilder(userattributeid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1167,11 +1167,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdatePersonalDataField", localVarResponse);
+          throw getApiException("updatePersonalDataField", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1181,10 +1181,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1203,14 +1203,14 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdatePersonalDataFieldRequestBuilder(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updatePersonalDataFieldRequestBuilder(@javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600UpdatePersonalDataField");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling updatePersonalDataField");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv600UpdatePersonalDataField");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling updatePersonalDataField");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1224,7 +1224,7 @@ public class UserAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1245,12 +1245,12 @@ public class UserAttributeApi {
    * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600UpdateUserAttribute(userid, userattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -1258,13 +1258,13 @@ public class UserAttributeApi {
    * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+   * @return GetPersonalDataFields200ResponseUserAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> localVarResponse = oBPv600UpdateUserAttributeWithHttpInfo(userid, userattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> localVarResponse = updateUserAttributeWithHttpInfo(userid, userattributeid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1273,12 +1273,12 @@ public class UserAttributeApi {
    * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv600UpdateUserAttributeWithHttpInfo(userid, userattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateUserAttributeWithHttpInfo(userid, userattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -1286,13 +1286,13 @@ public class UserAttributeApi {
    * &lt;p&gt;Update a User Attribute by USER_ATTRIBUTE_ID for the user specified by USER_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;USER_ATTRIBUTE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;insert_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_personal&lt;/strong&gt;&lt;/a&gt;: is_personal&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param userid The USERID identifier (required)
    * @param userattributeid The USERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems&gt;
+   * @return ApiResponse&lt;GetPersonalDataFields200ResponseUserAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> oBPv600UpdateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateUserAttributeRequestBuilder(userid, userattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner> updateUserAttributeWithHttpInfo(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateUserAttributeRequestBuilder(userid, userattributeid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1303,11 +1303,11 @@ public class UserAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateUserAttribute", localVarResponse);
+          throw getApiException("updateUserAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+          return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1317,10 +1317,10 @@ public class UserAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>() {});
+        GetPersonalDataFields200ResponseUserAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetPersonalDataFields200ResponseUserAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>(
+        return new ApiResponse<GetPersonalDataFields200ResponseUserAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1339,18 +1339,18 @@ public class UserAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateUserAttributeRequestBuilder(@javax.annotation.Nonnull String userid, @javax.annotation.Nonnull String userattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'userid' is set
     if (userid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userid' when calling oBPv600UpdateUserAttribute");
+      throw new ApiException(400, "Missing the required parameter 'userid' when calling updateUserAttribute");
     }
     // verify the required parameter 'userattributeid' is set
     if (userattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling oBPv600UpdateUserAttribute");
+      throw new ApiException(400, "Missing the required parameter 'userattributeid' when calling updateUserAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv600UpdateUserAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling updateUserAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1365,7 +1365,7 @@ public class UserAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

@@ -1,20 +1,20 @@
 # AccountAccessRequestAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600ApproveAccountAccessRequest**](AccountAccessRequestAPI.md#obpv600approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
-[**oBPv600CreateAccountAccessRequest**](AccountAccessRequestAPI.md#obpv600createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
-[**oBPv600GetAccountAccessRequestById**](AccountAccessRequestAPI.md#obpv600getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
-[**oBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestAPI.md#obpv600getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
-[**oBPv600GetMyAccountAccessRequests**](AccountAccessRequestAPI.md#obpv600getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
-[**oBPv600RejectAccountAccessRequest**](AccountAccessRequestAPI.md#obpv600rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
+[**approveAccountAccessRequest**](AccountAccessRequestAPI.md#approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request
+[**createAccountAccessRequest**](AccountAccessRequestAPI.md#createaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request
+[**getAccountAccessRequestById**](AccountAccessRequestAPI.md#getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id
+[**getAccountAccessRequestsForAccount**](AccountAccessRequestAPI.md#getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account
+[**getMyAccountAccessRequests**](AccountAccessRequestAPI.md#getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests
+[**rejectAccountAccessRequest**](AccountAccessRequestAPI.md#rejectaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request
 
 
-# **oBPv600ApproveAccountAccessRequest**
+# **approveAccountAccessRequest**
 ```swift
-    open class func oBPv600ApproveAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, completion: @escaping (_ data: OBPv600RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
+    open class func approveAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, completion: @escaping (_ data: RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
 ```
 
 Approve Account Access Request
@@ -29,10 +29,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let accountaccessrequestid = "accountaccessrequestid_example" // String | The ACCOUNTACCESSREQUESTID identifier
-let oBPv600RejectAccountAccessRequestRequest = OBPv6_0_0_rejectAccountAccessRequest_request(type: "type_example", properties: OBPv6_0_0_rejectAccountAccessRequest_request_properties(comment: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600RejectAccountAccessRequestRequest | Request body
+let rejectAccountAccessRequestRequest = rejectAccountAccessRequest_request(comment: "comment_example") // RejectAccountAccessRequestRequest | Request body
 
 // Approve Account Access Request
-AccountAccessRequestAPI.oBPv600ApproveAccountAccessRequest(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest: oBPv600RejectAccountAccessRequestRequest) { (response, error) in
+AccountAccessRequestAPI.approveAccountAccessRequest(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, rejectAccountAccessRequestRequest: rejectAccountAccessRequestRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -51,11 +51,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **accountaccessrequestid** | **String** | The ACCOUNTACCESSREQUESTID identifier | 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateAccountAccessRequest**
+# **createAccountAccessRequest**
 ```swift
-    open class func oBPv600CreateAccountAccessRequest(bankid: String, accountid: String, oBPv600CreateAccountAccessRequestRequest: OBPv600CreateAccountAccessRequestRequest, completion: @escaping (_ data: OBPv600RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
+    open class func createAccountAccessRequest(bankid: String, accountid: String, createAccountAccessRequestRequest: CreateAccountAccessRequestRequest, completion: @escaping (_ data: RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
 ```
 
 Create Account Access Request
@@ -84,10 +84,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let oBPv600CreateAccountAccessRequestRequest = OBPv6_0_0_createAccountAccessRequest_request(type: "type_example", properties: OBPv6_0_0_createAccountAccessRequest_request_properties(isSystemView: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), businessJustification: nil, viewId: nil, targetUserId: nil)) // OBPv600CreateAccountAccessRequestRequest | Request body
+let createAccountAccessRequestRequest = createAccountAccessRequest_request(isSystemView: false, businessJustification: "businessJustification_example", viewId: "viewId_example", targetUserId: "targetUserId_example") // CreateAccountAccessRequestRequest | Request body
 
 // Create Account Access Request
-AccountAccessRequestAPI.oBPv600CreateAccountAccessRequest(bankid: bankid, accountid: accountid, oBPv600CreateAccountAccessRequestRequest: oBPv600CreateAccountAccessRequestRequest) { (response, error) in
+AccountAccessRequestAPI.createAccountAccessRequest(bankid: bankid, accountid: accountid, createAccountAccessRequestRequest: createAccountAccessRequestRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -105,11 +105,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
- **oBPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md) | Request body | 
+ **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -122,9 +122,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountAccessRequestById**
+# **getAccountAccessRequestById**
 ```swift
-    open class func oBPv600GetAccountAccessRequestById(bankid: String, accountid: String, accountaccessrequestid: String, completion: @escaping (_ data: OBPv600RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
+    open class func getAccountAccessRequestById(bankid: String, accountid: String, accountaccessrequestid: String, completion: @escaping (_ data: RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
 ```
 
 Get Account Access Request by Id
@@ -141,7 +141,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let accountaccessrequestid = "accountaccessrequestid_example" // String | The ACCOUNTACCESSREQUESTID identifier
 
 // Get Account Access Request by Id
-AccountAccessRequestAPI.oBPv600GetAccountAccessRequestById(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid) { (response, error) in
+AccountAccessRequestAPI.getAccountAccessRequestById(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -176,9 +176,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAccountAccessRequestsForAccount**
+# **getAccountAccessRequestsForAccount**
 ```swift
-    open class func oBPv600GetAccountAccessRequestsForAccount(bankid: String, accountid: String, completion: @escaping (_ data: OBPv600GetAccountAccessRequestsForAccount200Response?, _ error: Error?) -> Void)
+    open class func getAccountAccessRequestsForAccount(bankid: String, accountid: String, completion: @escaping (_ data: GetAccountAccessRequestsForAccount200Response?, _ error: Error?) -> Void)
 ```
 
 Get Account Access Requests for Account
@@ -194,7 +194,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 
 // Get Account Access Requests for Account
-AccountAccessRequestAPI.oBPv600GetAccountAccessRequestsForAccount(bankid: bankid, accountid: accountid) { (response, error) in
+AccountAccessRequestAPI.getAccountAccessRequestsForAccount(bankid: bankid, accountid: accountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetMyAccountAccessRequests**
+# **getMyAccountAccessRequests**
 ```swift
-    open class func oBPv600GetMyAccountAccessRequests(completion: @escaping (_ data: OBPv600GetAccountAccessRequestsForAccount200Response?, _ error: Error?) -> Void)
+    open class func getMyAccountAccessRequests(completion: @escaping (_ data: GetAccountAccessRequestsForAccount200Response?, _ error: Error?) -> Void)
 ```
 
 Get My Account Access Requests
@@ -244,7 +244,7 @@ import OBPSwift
 
 
 // Get My Account Access Requests
-AccountAccessRequestAPI.oBPv600GetMyAccountAccessRequests() { (response, error) in
+AccountAccessRequestAPI.getMyAccountAccessRequests() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -261,7 +261,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -274,9 +274,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600RejectAccountAccessRequest**
+# **rejectAccountAccessRequest**
 ```swift
-    open class func oBPv600RejectAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, oBPv600RejectAccountAccessRequestRequest: OBPv600RejectAccountAccessRequestRequest, completion: @escaping (_ data: OBPv600RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
+    open class func rejectAccountAccessRequest(bankid: String, accountid: String, accountaccessrequestid: String, rejectAccountAccessRequestRequest: RejectAccountAccessRequestRequest, completion: @escaping (_ data: RejectAccountAccessRequest200Response?, _ error: Error?) -> Void)
 ```
 
 Reject Account Access Request
@@ -291,10 +291,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let accountaccessrequestid = "accountaccessrequestid_example" // String | The ACCOUNTACCESSREQUESTID identifier
-let oBPv600RejectAccountAccessRequestRequest = OBPv6_0_0_rejectAccountAccessRequest_request(type: "type_example", properties: OBPv6_0_0_rejectAccountAccessRequest_request_properties(comment: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600RejectAccountAccessRequestRequest | Request body
+let rejectAccountAccessRequestRequest = rejectAccountAccessRequest_request(comment: "comment_example") // RejectAccountAccessRequestRequest | Request body
 
 // Reject Account Access Request
-AccountAccessRequestAPI.oBPv600RejectAccountAccessRequest(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest: oBPv600RejectAccountAccessRequestRequest) { (response, error) in
+AccountAccessRequestAPI.rejectAccountAccessRequest(bankid: bankid, accountid: accountid, accountaccessrequestid: accountaccessrequestid, rejectAccountAccessRequestRequest: rejectAccountAccessRequestRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -313,11 +313,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **accountaccessrequestid** | **String** | The ACCOUNTACCESSREQUESTID identifier | 
- **oBPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body | 
+ **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

@@ -1,20 +1,20 @@
 # AuthenticationTypeValidationAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#obpv400createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
-[**oBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#obpv400deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
-[**oBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationAPI.md#obpv400getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
-[**oBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationAPI.md#obpv400getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
-[**oBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#obpv400getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
-[**oBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#obpv400updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
+[**createAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#createauthenticationtypevalidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
+[**deleteAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#deleteauthenticationtypevalidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
+[**getAllAuthenticationTypeValidations**](AuthenticationTypeValidationAPI.md#getallauthenticationtypevalidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
+[**getAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationAPI.md#getallauthenticationtypevalidationspublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
+[**getAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#getauthenticationtypevalidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
+[**updateAuthenticationTypeValidation**](AuthenticationTypeValidationAPI.md#updateauthenticationtypevalidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
 
 
-# **oBPv400CreateAuthenticationTypeValidation**
+# **createAuthenticationTypeValidation**
 ```swift
-    open class func oBPv400CreateAuthenticationTypeValidation(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, completion: @escaping (_ data: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?, _ error: Error?) -> Void)
+    open class func createAuthenticationTypeValidation(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, completion: @escaping (_ data: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Create an Authentication Type Validation
@@ -27,10 +27,10 @@ Create an Authentication Type Validation
 import OBPSwift
 
 let operationid = "operationid_example" // String | The OPERATIONID identifier
-let oBPv400UpdateAuthenticationTypeValidationRequest = OBPv4_0_0_updateAuthenticationTypeValidation_request(type: "type_example", properties: OBPv4_0_0_updateAuthenticationTypeValidation_request_properties(tl: OBPv4_0_0_getAllAuthenticationTypeValidationsPublic_200_response_properties_authentication_types_validations_items_properties_authTypes(type: "type_example", items: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123)), head: OBPv3_1_0_createCardAttribute_200_response_properties_attribute_type(type: "type_example", _enum: ["_enum_example"]))) // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+let updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidation_request(head: "head_example", tl: [123]) // UpdateAuthenticationTypeValidationRequest | Request body
 
 // Create an Authentication Type Validation
-AuthenticationTypeValidationAPI.oBPv400CreateAuthenticationTypeValidation(operationid: operationid, oBPv400UpdateAuthenticationTypeValidationRequest: oBPv400UpdateAuthenticationTypeValidationRequest) { (response, error) in
+AuthenticationTypeValidationAPI.createAuthenticationTypeValidation(operationid: operationid, updateAuthenticationTypeValidationRequest: updateAuthenticationTypeValidationRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ AuthenticationTypeValidationAPI.oBPv400CreateAuthenticationTypeValidation(operat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String** | The OPERATIONID identifier | 
- **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body | 
+ **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteAuthenticationTypeValidation**
+# **deleteAuthenticationTypeValidation**
 ```swift
-    open class func oBPv400DeleteAuthenticationTypeValidation(operationid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteAuthenticationTypeValidation(operationid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete an Authentication Type Validation
@@ -81,7 +81,7 @@ import OBPSwift
 let operationid = "operationid_example" // String | The OPERATIONID identifier
 
 // Delete an Authentication Type Validation
-AuthenticationTypeValidationAPI.oBPv400DeleteAuthenticationTypeValidation(operationid: operationid) { (response, error) in
+AuthenticationTypeValidationAPI.deleteAuthenticationTypeValidation(operationid: operationid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -114,9 +114,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllAuthenticationTypeValidations**
+# **getAllAuthenticationTypeValidations**
 ```swift
-    open class func oBPv400GetAllAuthenticationTypeValidations(completion: @escaping (_ data: OBPv400GetAllAuthenticationTypeValidationsPublic200Response?, _ error: Error?) -> Void)
+    open class func getAllAuthenticationTypeValidations(completion: @escaping (_ data: GetAllAuthenticationTypeValidationsPublic200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Authentication Type Validations
@@ -130,7 +130,7 @@ import OBPSwift
 
 
 // Get all Authentication Type Validations
-AuthenticationTypeValidationAPI.oBPv400GetAllAuthenticationTypeValidations() { (response, error) in
+AuthenticationTypeValidationAPI.getAllAuthenticationTypeValidations() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -147,7 +147,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -160,9 +160,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllAuthenticationTypeValidationsPublic**
+# **getAllAuthenticationTypeValidationsPublic**
 ```swift
-    open class func oBPv400GetAllAuthenticationTypeValidationsPublic(completion: @escaping (_ data: OBPv400GetAllAuthenticationTypeValidationsPublic200Response?, _ error: Error?) -> Void)
+    open class func getAllAuthenticationTypeValidationsPublic(completion: @escaping (_ data: GetAllAuthenticationTypeValidationsPublic200Response?, _ error: Error?) -> Void)
 ```
 
 Get all Authentication Type Validations - public
@@ -176,7 +176,7 @@ import OBPSwift
 
 
 // Get all Authentication Type Validations - public
-AuthenticationTypeValidationAPI.oBPv400GetAllAuthenticationTypeValidationsPublic() { (response, error) in
+AuthenticationTypeValidationAPI.getAllAuthenticationTypeValidationsPublic() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -193,7 +193,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -206,9 +206,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAuthenticationTypeValidation**
+# **getAuthenticationTypeValidation**
 ```swift
-    open class func oBPv400GetAuthenticationTypeValidation(operationid: String, completion: @escaping (_ data: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?, _ error: Error?) -> Void)
+    open class func getAuthenticationTypeValidation(operationid: String, completion: @escaping (_ data: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Get an Authentication Type Validation
@@ -223,7 +223,7 @@ import OBPSwift
 let operationid = "operationid_example" // String | The OPERATIONID identifier
 
 // Get an Authentication Type Validation
-AuthenticationTypeValidationAPI.oBPv400GetAuthenticationTypeValidation(operationid: operationid) { (response, error) in
+AuthenticationTypeValidationAPI.getAuthenticationTypeValidation(operationid: operationid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -256,9 +256,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateAuthenticationTypeValidation**
+# **updateAuthenticationTypeValidation**
 ```swift
-    open class func oBPv400UpdateAuthenticationTypeValidation(operationid: String, oBPv400UpdateAuthenticationTypeValidationRequest: OBPv400UpdateAuthenticationTypeValidationRequest, completion: @escaping (_ data: OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems?, _ error: Error?) -> Void)
+    open class func updateAuthenticationTypeValidation(operationid: String, updateAuthenticationTypeValidationRequest: UpdateAuthenticationTypeValidationRequest, completion: @escaping (_ data: GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner?, _ error: Error?) -> Void)
 ```
 
 Update an Authentication Type Validation
@@ -271,10 +271,10 @@ Update an Authentication Type Validation
 import OBPSwift
 
 let operationid = "operationid_example" // String | The OPERATIONID identifier
-let oBPv400UpdateAuthenticationTypeValidationRequest = OBPv4_0_0_updateAuthenticationTypeValidation_request(type: "type_example", properties: OBPv4_0_0_updateAuthenticationTypeValidation_request_properties(tl: OBPv4_0_0_getAllAuthenticationTypeValidationsPublic_200_response_properties_authentication_types_validations_items_properties_authTypes(type: "type_example", items: OBPv4_0_0_getDynamicMessageDoc_200_response_properties_example_inbound_message(type: "type_example", properties: 123)), head: OBPv3_1_0_createCardAttribute_200_response_properties_attribute_type(type: "type_example", _enum: ["_enum_example"]))) // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+let updateAuthenticationTypeValidationRequest = updateAuthenticationTypeValidation_request(head: "head_example", tl: [123]) // UpdateAuthenticationTypeValidationRequest | Request body
 
 // Update an Authentication Type Validation
-AuthenticationTypeValidationAPI.oBPv400UpdateAuthenticationTypeValidation(operationid: operationid, oBPv400UpdateAuthenticationTypeValidationRequest: oBPv400UpdateAuthenticationTypeValidationRequest) { (response, error) in
+AuthenticationTypeValidationAPI.updateAuthenticationTypeValidation(operationid: operationid, updateAuthenticationTypeValidationRequest: updateAuthenticationTypeValidationRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -291,11 +291,11 @@ AuthenticationTypeValidationAPI.oBPv400UpdateAuthenticationTypeValidation(operat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String** | The OPERATIONID identifier | 
- **oBPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body | 
+ **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

@@ -5,20 +5,20 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
-[**oBPv400DeleteJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
-[**oBPv400GetAllJsonSchemaValidations**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
-[**oBPv400GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#obpv400getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
-[**oBPv400GetJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
-[**oBPv400UpdateJsonSchemaValidation**](JSONSchemaValidationApi.md#obpv400updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
+[**createJsonSchemaValidation**](JSONSchemaValidationApi.md#createjsonschemavalidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
+[**deleteJsonSchemaValidation**](JSONSchemaValidationApi.md#deletejsonschemavalidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
+[**getAllJsonSchemaValidations**](JSONSchemaValidationApi.md#getalljsonschemavalidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
+[**getAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#getalljsonschemavalidationspublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
+[**getJsonSchemaValidation**](JSONSchemaValidationApi.md#getjsonschemavalidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
+[**updateJsonSchemaValidation**](JSONSchemaValidationApi.md#updatejsonschemavalidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
 
 
-# **oBPv400CreateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400CreateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+# **createJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -40,13 +40,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getJSONSchemaValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
-final OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}}; // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+final GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}}; // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 try {
-    final response = api.oBPv400CreateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+    final response = api.createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400CreateJsonSchemaValidation: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->createJsonSchemaValidation: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String**| The OPERATIONID identifier | 
- **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | 
+ **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteJsonSchemaValidation**
-> oBPv400DeleteJsonSchemaValidation(operationid)
+# **deleteJsonSchemaValidation**
+> deleteJsonSchemaValidation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -97,9 +97,9 @@ final api = ObpDart().getJSONSchemaValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
 
 try {
-    api.oBPv400DeleteJsonSchemaValidation(operationid);
+    api.deleteJsonSchemaValidation(operationid);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400DeleteJsonSchemaValidation: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->deleteJsonSchemaValidation: $e\n');
 }
 ```
 
@@ -124,8 +124,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllJsonSchemaValidations**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidations()
+# **getAllJsonSchemaValidations**
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidations()
 
 Get all JSON Schema Validations
 
@@ -148,10 +148,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getJSONSchemaValidationApi();
 
 try {
-    final response = api.oBPv400GetAllJsonSchemaValidations();
+    final response = api.getAllJsonSchemaValidations();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400GetAllJsonSchemaValidations: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->getAllJsonSchemaValidations: $e\n');
 }
 ```
 
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -173,8 +173,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllJsonSchemaValidationsPublic**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidationsPublic()
+# **getAllJsonSchemaValidationsPublic**
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidationsPublic()
 
 Get all JSON Schema Validations - public
 
@@ -187,10 +187,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getJSONSchemaValidationApi();
 
 try {
-    final response = api.oBPv400GetAllJsonSchemaValidationsPublic();
+    final response = api.getAllJsonSchemaValidationsPublic();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400GetAllJsonSchemaValidationsPublic: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->getAllJsonSchemaValidationsPublic: $e\n');
 }
 ```
 
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -212,8 +212,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400GetJsonSchemaValidation(operationid)
+# **getJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner getJsonSchemaValidation(operationid)
 
 Get a JSON Schema Validation
 
@@ -237,10 +237,10 @@ final api = ObpDart().getJSONSchemaValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
 
 try {
-    final response = api.oBPv400GetJsonSchemaValidation(operationid);
+    final response = api.getJsonSchemaValidation(operationid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400GetJsonSchemaValidation: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->getJsonSchemaValidation: $e\n');
 }
 ```
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -265,8 +265,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400UpdateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+# **updateJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -288,13 +288,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getJSONSchemaValidationApi();
 final String operationid = operationid_example; // String | The OPERATIONID identifier
-final OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}}; // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+final GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}}; // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
 try {
-    final response = api.oBPv400UpdateJsonSchemaValidation(operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
+    final response = api.updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling JSONSchemaValidationApi->oBPv400UpdateJsonSchemaValidation: $e\n');
+    print('Exception when calling JSONSchemaValidationApi->updateJsonSchemaValidation: $e\n');
 }
 ```
 
@@ -303,11 +303,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **String**| The OPERATIONID identifier | 
- **oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | 
+ **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

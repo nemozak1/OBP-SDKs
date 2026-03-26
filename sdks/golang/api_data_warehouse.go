@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // DataWarehouseAPIService DataWarehouseAPI service
 type DataWarehouseAPIService service
 
-type ApiOBPv300DataWarehouseSearchRequest struct {
+type ApiDataWarehouseSearchRequest struct {
 	ctx context.Context
 	ApiService *DataWarehouseAPIService
 	index string
-	oBPv300DataWarehouseSearchRequest *OBPv300DataWarehouseSearchRequest
+	dataWarehouseSearchRequest *DataWarehouseSearchRequest
 }
 
 // Request body
-func (r ApiOBPv300DataWarehouseSearchRequest) OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest OBPv300DataWarehouseSearchRequest) ApiOBPv300DataWarehouseSearchRequest {
-	r.oBPv300DataWarehouseSearchRequest = &oBPv300DataWarehouseSearchRequest
+func (r ApiDataWarehouseSearchRequest) DataWarehouseSearchRequest(dataWarehouseSearchRequest DataWarehouseSearchRequest) ApiDataWarehouseSearchRequest {
+	r.dataWarehouseSearchRequest = &dataWarehouseSearchRequest
 	return r
 }
 
-func (r ApiOBPv300DataWarehouseSearchRequest) Execute() (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
-	return r.ApiService.OBPv300DataWarehouseSearchExecute(r)
+func (r ApiDataWarehouseSearchRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DataWarehouseSearchExecute(r)
 }
 
 /*
-OBPv300DataWarehouseSearch Data Warehouse Search
+DataWarehouseSearch Data Warehouse Search
 
 <p>Search the data warehouse and get row level results.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -68,10 +68,10 @@ OBPv300DataWarehouseSearch Data Warehouse Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param index The INDEX identifier
- @return ApiOBPv300DataWarehouseSearchRequest
+ @return ApiDataWarehouseSearchRequest
 */
-func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearch(ctx context.Context, index string) ApiOBPv300DataWarehouseSearchRequest {
-	return ApiOBPv300DataWarehouseSearchRequest{
+func (a *DataWarehouseAPIService) DataWarehouseSearch(ctx context.Context, index string) ApiDataWarehouseSearchRequest {
+	return ApiDataWarehouseSearchRequest{
 		ApiService: a,
 		ctx: ctx,
 		index: index,
@@ -79,16 +79,16 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearch(ctx context.Context
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearchExecute(r ApiOBPv300DataWarehouseSearchRequest) (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *DataWarehouseAPIService) DataWarehouseSearchExecute(r ApiDataWarehouseSearchRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataWarehouseAPIService.OBPv300DataWarehouseSearch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataWarehouseAPIService.DataWarehouseSearch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -99,8 +99,8 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearchExecute(r ApiOBPv300
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv300DataWarehouseSearchRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv300DataWarehouseSearchRequest is required and must be specified")
+	if r.dataWarehouseSearchRequest == nil {
+		return localVarReturnValue, nil, reportError("dataWarehouseSearchRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -121,7 +121,7 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearchExecute(r ApiOBPv300
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv300DataWarehouseSearchRequest
+	localVarPostBody = r.dataWarehouseSearchRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -146,7 +146,7 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearchExecute(r ApiOBPv300
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -187,26 +187,26 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseSearchExecute(r ApiOBPv300
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv300DataWarehouseStatisticsRequest struct {
+type ApiDataWarehouseStatisticsRequest struct {
 	ctx context.Context
 	ApiService *DataWarehouseAPIService
 	index string
 	field string
-	oBPv300DataWarehouseSearchRequest *OBPv300DataWarehouseSearchRequest
+	dataWarehouseSearchRequest *DataWarehouseSearchRequest
 }
 
 // Request body
-func (r ApiOBPv300DataWarehouseStatisticsRequest) OBPv300DataWarehouseSearchRequest(oBPv300DataWarehouseSearchRequest OBPv300DataWarehouseSearchRequest) ApiOBPv300DataWarehouseStatisticsRequest {
-	r.oBPv300DataWarehouseSearchRequest = &oBPv300DataWarehouseSearchRequest
+func (r ApiDataWarehouseStatisticsRequest) DataWarehouseSearchRequest(dataWarehouseSearchRequest DataWarehouseSearchRequest) ApiDataWarehouseStatisticsRequest {
+	r.dataWarehouseSearchRequest = &dataWarehouseSearchRequest
 	return r
 }
 
-func (r ApiOBPv300DataWarehouseStatisticsRequest) Execute() (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
-	return r.ApiService.OBPv300DataWarehouseStatisticsExecute(r)
+func (r ApiDataWarehouseStatisticsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DataWarehouseStatisticsExecute(r)
 }
 
 /*
-OBPv300DataWarehouseStatistics Data Warehouse Statistics
+DataWarehouseStatistics Data Warehouse Statistics
 
 <p>Search the data warehouse and get statistical aggregations over a warehouse field</p>
 <p>Does a stats aggregation over some numeric field:</p>
@@ -235,10 +235,10 @@ OBPv300DataWarehouseStatistics Data Warehouse Statistics
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param index The INDEX identifier
  @param field The FIELD identifier
- @return ApiOBPv300DataWarehouseStatisticsRequest
+ @return ApiDataWarehouseStatisticsRequest
 */
-func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatistics(ctx context.Context, index string, field string) ApiOBPv300DataWarehouseStatisticsRequest {
-	return ApiOBPv300DataWarehouseStatisticsRequest{
+func (a *DataWarehouseAPIService) DataWarehouseStatistics(ctx context.Context, index string, field string) ApiDataWarehouseStatisticsRequest {
+	return ApiDataWarehouseStatisticsRequest{
 		ApiService: a,
 		ctx: ctx,
 		index: index,
@@ -247,16 +247,16 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatistics(ctx context.Con
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatisticsExecute(r ApiOBPv300DataWarehouseStatisticsRequest) (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *DataWarehouseAPIService) DataWarehouseStatisticsExecute(r ApiDataWarehouseStatisticsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataWarehouseAPIService.OBPv300DataWarehouseStatistics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DataWarehouseAPIService.DataWarehouseStatistics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -268,8 +268,8 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatisticsExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv300DataWarehouseSearchRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv300DataWarehouseSearchRequest is required and must be specified")
+	if r.dataWarehouseSearchRequest == nil {
+		return localVarReturnValue, nil, reportError("dataWarehouseSearchRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -290,7 +290,7 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatisticsExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv300DataWarehouseSearchRequest
+	localVarPostBody = r.dataWarehouseSearchRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -315,7 +315,7 @@ func (a *DataWarehouseAPIService) OBPv300DataWarehouseStatisticsExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

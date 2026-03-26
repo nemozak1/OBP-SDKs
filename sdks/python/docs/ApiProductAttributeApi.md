@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_create_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
-[**o_bpv6_0_0_delete_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
-[**o_bpv6_0_0_get_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
-[**o_bpv6_0_0_update_api_product_attribute**](ApiProductAttributeApi.md#o_bpv6_0_0_update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
+[**create_api_product_attribute**](ApiProductAttributeApi.md#create_api_product_attribute) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attribute | Create Api Product Attribute
+[**delete_api_product_attribute**](ApiProductAttributeApi.md#delete_api_product_attribute) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Delete Api Product Attribute
+[**get_api_product_attribute**](ApiProductAttributeApi.md#get_api_product_attribute) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Get Api Product Attribute
+[**update_api_product_attribute**](ApiProductAttributeApi.md#update_api_product_attribute) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode}/attributes/{apiproductattributeid} | Update Api Product Attribute
 
 
-# **o_bpv6_0_0_create_api_product_attribute**
-> OBPv600CreateApiProductAttribute200Response o_bpv6_0_0_create_api_product_attribute(bankid, apiproductcode, obpv510_update_atm_attribute_request)
+# **create_api_product_attribute**
+> CreateApiProductAttribute200Response create_api_product_attribute(bankid, apiproductcode, update_atm_attribute_request)
 
 Create Api Product Attribute
 
@@ -44,8 +44,8 @@ Create Api Product Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
-from obp_python.models.obpv600_create_api_product_attribute200_response import OBPv600CreateApiProductAttribute200Response
+from obp_python.models.create_api_product_attribute200_response import CreateApiProductAttribute200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -80,15 +80,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ApiProductAttributeApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     apiproductcode = 'apiproductcode_example' # str | The APIPRODUCTCODE identifier
-    obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Create Api Product Attribute
-        api_response = api_instance.o_bpv6_0_0_create_api_product_attribute(bankid, apiproductcode, obpv510_update_atm_attribute_request)
-        print("The response of ApiProductAttributeApi->o_bpv6_0_0_create_api_product_attribute:\n")
+        api_response = api_instance.create_api_product_attribute(bankid, apiproductcode, update_atm_attribute_request)
+        print("The response of ApiProductAttributeApi->create_api_product_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductAttributeApi->o_bpv6_0_0_create_api_product_attribute: %s\n" % e)
+        print("Exception when calling ApiProductAttributeApi->create_api_product_attribute: %s\n" % e)
 ```
 
 
@@ -100,11 +100,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **apiproductcode** | **str**| The APIPRODUCTCODE identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -125,8 +125,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_delete_api_product_attribute**
-> o_bpv6_0_0_delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+# **delete_api_product_attribute**
+> delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
 
 Delete Api Product Attribute
 
@@ -186,9 +186,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Api Product Attribute
-        api_instance.o_bpv6_0_0_delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+        api_instance.delete_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
     except Exception as e:
-        print("Exception when calling ApiProductAttributeApi->o_bpv6_0_0_delete_api_product_attribute: %s\n" % e)
+        print("Exception when calling ApiProductAttributeApi->delete_api_product_attribute: %s\n" % e)
 ```
 
 
@@ -225,8 +225,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_api_product_attribute**
-> OBPv600CreateApiProductAttribute200Response o_bpv6_0_0_get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+# **get_api_product_attribute**
+> CreateApiProductAttribute200Response get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
 
 Get Api Product Attribute
 
@@ -251,7 +251,7 @@ Get Api Product Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv600_create_api_product_attribute200_response import OBPv600CreateApiProductAttribute200Response
+from obp_python.models.create_api_product_attribute200_response import CreateApiProductAttribute200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -272,11 +272,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Api Product Attribute
-        api_response = api_instance.o_bpv6_0_0_get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
-        print("The response of ApiProductAttributeApi->o_bpv6_0_0_get_api_product_attribute:\n")
+        api_response = api_instance.get_api_product_attribute(bankid, apiproductcode, apiproductattributeid)
+        print("The response of ApiProductAttributeApi->get_api_product_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductAttributeApi->o_bpv6_0_0_get_api_product_attribute: %s\n" % e)
+        print("Exception when calling ApiProductAttributeApi->get_api_product_attribute: %s\n" % e)
 ```
 
 
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 
@@ -313,8 +313,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_api_product_attribute**
-> OBPv600CreateApiProductAttribute200Response o_bpv6_0_0_update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
+# **update_api_product_attribute**
+> CreateApiProductAttribute200Response update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
 
 Update Api Product Attribute
 
@@ -343,8 +343,8 @@ Update Api Product Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv510_update_atm_attribute_request import OBPv510UpdateAtmAttributeRequest
-from obp_python.models.obpv600_create_api_product_attribute200_response import OBPv600CreateApiProductAttribute200Response
+from obp_python.models.create_api_product_attribute200_response import CreateApiProductAttribute200Response
+from obp_python.models.update_atm_attribute_request import UpdateAtmAttributeRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -380,15 +380,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     apiproductcode = 'apiproductcode_example' # str | The APIPRODUCTCODE identifier
     apiproductattributeid = 'apiproductattributeid_example' # str | The APIPRODUCTATTRIBUTEID identifier
-    obpv510_update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # OBPv510UpdateAtmAttributeRequest | Request body
+    update_atm_attribute_request = {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}} # UpdateAtmAttributeRequest | Request body
 
     try:
         # Update Api Product Attribute
-        api_response = api_instance.o_bpv6_0_0_update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, obpv510_update_atm_attribute_request)
-        print("The response of ApiProductAttributeApi->o_bpv6_0_0_update_api_product_attribute:\n")
+        api_response = api_instance.update_api_product_attribute(bankid, apiproductcode, apiproductattributeid, update_atm_attribute_request)
+        print("The response of ApiProductAttributeApi->update_api_product_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ApiProductAttributeApi->o_bpv6_0_0_update_api_product_attribute: %s\n" % e)
+        print("Exception when calling ApiProductAttributeApi->update_api_product_attribute: %s\n" % e)
 ```
 
 
@@ -401,11 +401,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **apiproductcode** | **str**| The APIPRODUCTCODE identifier | 
  **apiproductattributeid** | **str**| The APIPRODUCTATTRIBUTEID identifier | 
- **obpv510_update_atm_attribute_request** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md)| Request body | 
+ **update_atm_attribute_request** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600CreateApiProductAttribute200Response**](OBPv600CreateApiProductAttribute200Response.md)
+[**CreateApiProductAttribute200Response**](CreateApiProductAttribute200Response.md)
 
 ### Authorization
 

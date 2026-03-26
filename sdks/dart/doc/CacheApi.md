@@ -5,18 +5,18 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600GetCacheConfig**](CacheApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**oBPv600GetCacheInfo**](CacheApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**oBPv600GetCacheNamespaces**](CacheApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**oBPv600InvalidateCacheNamespace**](CacheApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**getCacheConfig**](CacheApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**getCacheInfo**](CacheApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**getCacheNamespaces**](CacheApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**invalidateCacheNamespace**](CacheApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
 
 
-# **oBPv600GetCacheConfig**
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+# **getCacheConfig**
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -39,10 +39,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getCacheApi();
 
 try {
-    final response = api.oBPv600GetCacheConfig();
+    final response = api.getCacheConfig();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CacheApi->oBPv600GetCacheConfig: $e\n');
+    print('Exception when calling CacheApi->getCacheConfig: $e\n');
 }
 ```
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -64,8 +64,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheInfo**
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+# **getCacheInfo**
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -88,10 +88,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getCacheApi();
 
 try {
-    final response = api.oBPv600GetCacheInfo();
+    final response = api.getCacheInfo();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CacheApi->oBPv600GetCacheInfo: $e\n');
+    print('Exception when calling CacheApi->getCacheInfo: $e\n');
 }
 ```
 
@@ -100,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -113,8 +113,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheNamespaces**
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+# **getCacheNamespaces**
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -137,10 +137,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getCacheApi();
 
 try {
-    final response = api.oBPv600GetCacheNamespaces();
+    final response = api.getCacheNamespaces();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CacheApi->oBPv600GetCacheNamespaces: $e\n');
+    print('Exception when calling CacheApi->getCacheNamespaces: $e\n');
 }
 ```
 
@@ -149,7 +149,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -162,8 +162,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600InvalidateCacheNamespace**
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest)
+# **invalidateCacheNamespace**
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -184,13 +184,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getCacheApi();
-final OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // OBPv600InvalidateCacheNamespaceRequest | Request body
+final InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // InvalidateCacheNamespaceRequest | Request body
 
 try {
-    final response = api.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest);
+    final response = api.invalidateCacheNamespace(invalidateCacheNamespaceRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling CacheApi->oBPv600InvalidateCacheNamespace: $e\n');
+    print('Exception when calling CacheApi->invalidateCacheNamespace: $e\n');
 }
 ```
 
@@ -198,11 +198,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

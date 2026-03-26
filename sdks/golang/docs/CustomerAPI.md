@@ -1,95 +1,95 @@
 # \CustomerAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv140AddCustomerMessage**](CustomerAPI.md#OBPv140AddCustomerMessage) | **Post** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
-[**OBPv140GetCrmEvents**](CustomerAPI.md#OBPv140GetCrmEvents) | **Get** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
-[**OBPv140GetCustomersMessages**](CustomerAPI.md#OBPv140GetCustomersMessages) | **Get** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
-[**OBPv200AddKycCheck**](CustomerAPI.md#OBPv200AddKycCheck) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
-[**OBPv200AddKycDocument**](CustomerAPI.md#OBPv200AddKycDocument) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
-[**OBPv200AddKycMedia**](CustomerAPI.md#OBPv200AddKycMedia) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
-[**OBPv200AddKycStatus**](CustomerAPI.md#OBPv200AddKycStatus) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
-[**OBPv200AddSocialMediaHandle**](CustomerAPI.md#OBPv200AddSocialMediaHandle) | **Post** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
-[**OBPv200GetKycChecks**](CustomerAPI.md#OBPv200GetKycChecks) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
-[**OBPv200GetKycDocuments**](CustomerAPI.md#OBPv200GetKycDocuments) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
-[**OBPv200GetKycMedia**](CustomerAPI.md#OBPv200GetKycMedia) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
-[**OBPv200GetKycStatuses**](CustomerAPI.md#OBPv200GetKycStatuses) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
-[**OBPv200GetSocialMediaHandles**](CustomerAPI.md#OBPv200GetSocialMediaHandles) | **Get** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
-[**OBPv300GetCustomersForUser**](CustomerAPI.md#OBPv300GetCustomersForUser) | **Get** /obp/v3.0.0/users/current/customers | Get Customers for Current User
-[**OBPv310CreateCustomerAddress**](CustomerAPI.md#OBPv310CreateCustomerAddress) | **Post** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
-[**OBPv310CreateMeeting**](CustomerAPI.md#OBPv310CreateMeeting) | **Post** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-[**OBPv310CreateTaxResidence**](CustomerAPI.md#OBPv310CreateTaxResidence) | **Post** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
-[**OBPv310DeleteCustomerAddress**](CustomerAPI.md#OBPv310DeleteCustomerAddress) | **Delete** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
-[**OBPv310DeleteTaxResidence**](CustomerAPI.md#OBPv310DeleteTaxResidence) | **Delete** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
-[**OBPv310GetCustomerAddresses**](CustomerAPI.md#OBPv310GetCustomerAddresses) | **Get** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
-[**OBPv310GetFirehoseCustomers**](CustomerAPI.md#OBPv310GetFirehoseCustomers) | **Get** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-[**OBPv310GetMeeting**](CustomerAPI.md#OBPv310GetMeeting) | **Get** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-[**OBPv310GetMeetings**](CustomerAPI.md#OBPv310GetMeetings) | **Get** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
-[**OBPv310GetTaxResidence**](CustomerAPI.md#OBPv310GetTaxResidence) | **Get** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
-[**OBPv310UpdateCustomerAddress**](CustomerAPI.md#OBPv310UpdateCustomerAddress) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
-[**OBPv310UpdateCustomerBranch**](CustomerAPI.md#OBPv310UpdateCustomerBranch) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
-[**OBPv310UpdateCustomerCreditLimit**](CustomerAPI.md#OBPv310UpdateCustomerCreditLimit) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
-[**OBPv310UpdateCustomerCreditRatingAndSource**](CustomerAPI.md#OBPv310UpdateCustomerCreditRatingAndSource) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
-[**OBPv310UpdateCustomerData**](CustomerAPI.md#OBPv310UpdateCustomerData) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
-[**OBPv310UpdateCustomerEmail**](CustomerAPI.md#OBPv310UpdateCustomerEmail) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
-[**OBPv310UpdateCustomerIdentity**](CustomerAPI.md#OBPv310UpdateCustomerIdentity) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
-[**OBPv310UpdateCustomerMobileNumber**](CustomerAPI.md#OBPv310UpdateCustomerMobileNumber) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
-[**OBPv310UpdateCustomerNumber**](CustomerAPI.md#OBPv310UpdateCustomerNumber) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
-[**OBPv400CreateCustomerAttribute**](CustomerAPI.md#OBPv400CreateCustomerAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-[**OBPv400CreateCustomerMessage**](CustomerAPI.md#OBPv400CreateCustomerMessage) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
-[**OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAPI.md#OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-[**OBPv400CreateUserCustomerLinks**](CustomerAPI.md#OBPv400CreateUserCustomerLinks) | **Post** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
-[**OBPv400DeleteCustomerAttribute**](CustomerAPI.md#OBPv400DeleteCustomerAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-[**OBPv400DeleteCustomerAttributeDefinition**](CustomerAPI.md#OBPv400DeleteCustomerAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-[**OBPv400DeleteCustomerCascade**](CustomerAPI.md#OBPv400DeleteCustomerCascade) | **Delete** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
-[**OBPv400DeleteUserCustomerLink**](CustomerAPI.md#OBPv400DeleteUserCustomerLink) | **Delete** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
-[**OBPv400GetCorrelatedUsersInfoByCustomerId**](CustomerAPI.md#OBPv400GetCorrelatedUsersInfoByCustomerId) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
-[**OBPv400GetCustomerAttributeById**](CustomerAPI.md#OBPv400GetCustomerAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-[**OBPv400GetCustomerAttributeDefinition**](CustomerAPI.md#OBPv400GetCustomerAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-[**OBPv400GetCustomerAttributes**](CustomerAPI.md#OBPv400GetCustomerAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-[**OBPv400GetCustomerMessages**](CustomerAPI.md#OBPv400GetCustomerMessages) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
-[**OBPv400GetCustomersByCustomerPhoneNumber**](CustomerAPI.md#OBPv400GetCustomersByCustomerPhoneNumber) | **Post** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
-[**OBPv400GetCustomersMinimalAtAnyBank**](CustomerAPI.md#OBPv400GetCustomersMinimalAtAnyBank) | **Get** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
-[**OBPv400GetMyCorrelatedEntities**](CustomerAPI.md#OBPv400GetMyCorrelatedEntities) | **Get** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
-[**OBPv400GetUserCustomerLinksByCustomerId**](CustomerAPI.md#OBPv400GetUserCustomerLinksByCustomerId) | **Get** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
-[**OBPv400GetUserCustomerLinksByUserId**](CustomerAPI.md#OBPv400GetUserCustomerLinksByUserId) | **Get** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
-[**OBPv400UpdateCustomerAttribute**](CustomerAPI.md#OBPv400UpdateCustomerAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
-[**OBPv500CreateCustomerAccountLink**](CustomerAPI.md#OBPv500CreateCustomerAccountLink) | **Post** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
-[**OBPv500DeleteCustomerAccountLinkById**](CustomerAPI.md#OBPv500DeleteCustomerAccountLinkById) | **Delete** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
-[**OBPv500GetCustomerAccountLinkById**](CustomerAPI.md#OBPv500GetCustomerAccountLinkById) | **Get** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
-[**OBPv500GetCustomerAccountLinksByBankIdAccountId**](CustomerAPI.md#OBPv500GetCustomerAccountLinksByBankIdAccountId) | **Get** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
-[**OBPv500GetCustomerAccountLinksByCustomerId**](CustomerAPI.md#OBPv500GetCustomerAccountLinksByCustomerId) | **Get** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
-[**OBPv500GetCustomerOverview**](CustomerAPI.md#OBPv500GetCustomerOverview) | **Post** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
-[**OBPv500GetCustomerOverviewFlat**](CustomerAPI.md#OBPv500GetCustomerOverviewFlat) | **Post** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
-[**OBPv500GetCustomersMinimalAtOneBank**](CustomerAPI.md#OBPv500GetCustomersMinimalAtOneBank) | **Get** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
-[**OBPv500GetMyCustomersAtAnyBank**](CustomerAPI.md#OBPv500GetMyCustomersAtAnyBank) | **Get** /obp/v5.0.0/my/customers | Get My Customers
-[**OBPv500GetMyCustomersAtBank**](CustomerAPI.md#OBPv500GetMyCustomersAtBank) | **Get** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
-[**OBPv500UpdateCustomerAccountLinkById**](CustomerAPI.md#OBPv500UpdateCustomerAccountLinkById) | **Put** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
-[**OBPv510CreateAgent**](CustomerAPI.md#OBPv510CreateAgent) | **Post** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
-[**OBPv510GetCustomersForUserIdsOnly**](CustomerAPI.md#OBPv510GetCustomersForUserIdsOnly) | **Get** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
-[**OBPv510UpdateAgentStatus**](CustomerAPI.md#OBPv510UpdateAgentStatus) | **Put** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
-[**OBPv600CreateCorporateCustomer**](CustomerAPI.md#OBPv600CreateCorporateCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
-[**OBPv600CreateCustomer**](CustomerAPI.md#OBPv600CreateCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
-[**OBPv600CreateRetailCustomer**](CustomerAPI.md#OBPv600CreateRetailCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
-[**OBPv600GetCorporateCustomerByCustomerId**](CustomerAPI.md#OBPv600GetCorporateCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
-[**OBPv600GetCorporateCustomerSubsidiaries**](CustomerAPI.md#OBPv600GetCorporateCustomerSubsidiaries) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
-[**OBPv600GetCorporateCustomersAtOneBank**](CustomerAPI.md#OBPv600GetCorporateCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
-[**OBPv600GetCustomerByCustomerId**](CustomerAPI.md#OBPv600GetCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
-[**OBPv600GetCustomerByCustomerNumber**](CustomerAPI.md#OBPv600GetCustomerByCustomerNumber) | **Post** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
-[**OBPv600GetCustomerChildren**](CustomerAPI.md#OBPv600GetCustomerChildren) | **Get** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
-[**OBPv600GetCustomersAtAllBanks**](CustomerAPI.md#OBPv600GetCustomersAtAllBanks) | **Get** /obp/v6.0.0/customers | Get Customers at All Banks
-[**OBPv600GetCustomersAtOneBank**](CustomerAPI.md#OBPv600GetCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
-[**OBPv600GetCustomersByLegalName**](CustomerAPI.md#OBPv600GetCustomersByLegalName) | **Post** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
-[**OBPv600GetRetailCustomerByCustomerId**](CustomerAPI.md#OBPv600GetRetailCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
-[**OBPv600GetRetailCustomersAtOneBank**](CustomerAPI.md#OBPv600GetRetailCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+[**AddCustomerMessage**](CustomerAPI.md#AddCustomerMessage) | **Post** /obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages | Create Customer Message
+[**AddKycCheck**](CustomerAPI.md#AddKycCheck) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_check/{kyccheckid} | Add KYC Check
+[**AddKycDocument**](CustomerAPI.md#AddKycDocument) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_documents/{kycdocumentid} | Add KYC Document
+[**AddKycMedia**](CustomerAPI.md#AddKycMedia) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_media/{kycmediaid} | Add KYC Media
+[**AddKycStatus**](CustomerAPI.md#AddKycStatus) | **Put** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/kyc_statuses | Add KYC Status
+[**AddSocialMediaHandle**](CustomerAPI.md#AddSocialMediaHandle) | **Post** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Create Customer Social Media Handle
+[**CreateAgent**](CustomerAPI.md#CreateAgent) | **Post** /obp/v5.1.0/banks/{bankid}/agents | Create Agent
+[**CreateCorporateCustomer**](CustomerAPI.md#CreateCorporateCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/corporate-customers | Create Corporate Customer
+[**CreateCustomer**](CustomerAPI.md#CreateCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/customers | Create Customer
+[**CreateCustomerAccountLink**](CustomerAPI.md#CreateCustomerAccountLink) | **Post** /obp/v5.0.0/banks/{bankid}/customer-account-links | Create Customer Account Link
+[**CreateCustomerAddress**](CustomerAPI.md#CreateCustomerAddress) | **Post** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/address | Create Address
+[**CreateCustomerAttribute**](CustomerAPI.md#CreateCustomerAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+[**CreateCustomerMessage**](CustomerAPI.md#CreateCustomerMessage) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Create Customer Message
+[**CreateMeeting**](CustomerAPI.md#CreateMeeting) | **Post** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+[**CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAPI.md#CreateOrUpdateCustomerAttributeAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+[**CreateRetailCustomer**](CustomerAPI.md#CreateRetailCustomer) | **Post** /obp/v6.0.0/banks/{bankid}/retail-customers | Create Retail Customer
+[**CreateTaxResidence**](CustomerAPI.md#CreateTaxResidence) | **Post** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residence | Create Tax Residence
+[**CreateUserCustomerLinks**](CustomerAPI.md#CreateUserCustomerLinks) | **Post** /obp/v4.0.0/banks/{bankid}/user_customer_links | Create User Customer Link
+[**DeleteCustomerAccountLinkById**](CustomerAPI.md#DeleteCustomerAccountLinkById) | **Delete** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Delete Customer Account Link
+[**DeleteCustomerAddress**](CustomerAPI.md#DeleteCustomerAddress) | **Delete** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Delete Customer Address
+[**DeleteCustomerAttribute**](CustomerAPI.md#DeleteCustomerAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+[**DeleteCustomerAttributeDefinition**](CustomerAPI.md#DeleteCustomerAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+[**DeleteCustomerCascade**](CustomerAPI.md#DeleteCustomerCascade) | **Delete** /obp/v4.0.0/management/cascading/banks/{bankid}/customers/{customerid} | Delete Customer Cascade
+[**DeleteTaxResidence**](CustomerAPI.md#DeleteTaxResidence) | **Delete** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax_residencies/{taxresidenceid} | Delete Tax Residence
+[**DeleteUserCustomerLink**](CustomerAPI.md#DeleteUserCustomerLink) | **Delete** /obp/v4.0.0/banks/{bankid}/user_customer_links/{usercustomerlinkid} | Delete User Customer Link
+[**GetCorporateCustomerByCustomerId**](CustomerAPI.md#GetCorporateCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid} | Get Corporate Customer by CUSTOMER_ID
+[**GetCorporateCustomerSubsidiaries**](CustomerAPI.md#GetCorporateCustomerSubsidiaries) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers/{customerid}/subsidiaries | Get Corporate Customer Subsidiaries
+[**GetCorporateCustomersAtOneBank**](CustomerAPI.md#GetCorporateCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/corporate-customers | Get Corporate Customers at Bank
+[**GetCorrelatedUsersInfoByCustomerId**](CustomerAPI.md#GetCorrelatedUsersInfoByCustomerId) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/correlated-users | Get Correlated User Info by Customer
+[**GetCrmEvents**](CustomerAPI.md#GetCrmEvents) | **Get** /obp/v1.4.0/banks/{bankid}/crm-events | Get CRM Events
+[**GetCustomerAccountLinkById**](CustomerAPI.md#GetCustomerAccountLinkById) | **Get** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Get Customer Account Link by Id
+[**GetCustomerAccountLinksByBankIdAccountId**](CustomerAPI.md#GetCustomerAccountLinksByBankIdAccountId) | **Get** /obp/v5.0.0/banks/{bankid}/accounts/{accountid}/customer-account-links | Get Customer Account Links by ACCOUNT_ID
+[**GetCustomerAccountLinksByCustomerId**](CustomerAPI.md#GetCustomerAccountLinksByCustomerId) | **Get** /obp/v5.0.0/banks/{bankid}/customers/{customerid}/customer-account-links | Get Customer Account Links by CUSTOMER_ID
+[**GetCustomerAddresses**](CustomerAPI.md#GetCustomerAddresses) | **Get** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses | Get Customer Addresses
+[**GetCustomerAttributeById**](CustomerAPI.md#GetCustomerAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+[**GetCustomerAttributeDefinition**](CustomerAPI.md#GetCustomerAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+[**GetCustomerAttributes**](CustomerAPI.md#GetCustomerAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+[**GetCustomerByCustomerId**](CustomerAPI.md#GetCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/customers/{customerid} | Get Customer by CUSTOMER_ID
+[**GetCustomerByCustomerNumber**](CustomerAPI.md#GetCustomerByCustomerNumber) | **Post** /obp/v6.0.0/banks/{bankid}/customers/customer-number | Get Customer by CUSTOMER_NUMBER
+[**GetCustomerChildren**](CustomerAPI.md#GetCustomerChildren) | **Get** /obp/v6.0.0/banks/{bankid}/customers/{customerid}/children | Get Customer Children
+[**GetCustomerMessages**](CustomerAPI.md#GetCustomerMessages) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages | Get Customer Messages for a Customer
+[**GetCustomerOverview**](CustomerAPI.md#GetCustomerOverview) | **Post** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview | Get Customer Overview
+[**GetCustomerOverviewFlat**](CustomerAPI.md#GetCustomerOverviewFlat) | **Post** /obp/v5.0.0/banks/{bankid}/customers/customer-number-query/overview-flat | Get Customer Overview Flat
+[**GetCustomersAtAllBanks**](CustomerAPI.md#GetCustomersAtAllBanks) | **Get** /obp/v6.0.0/customers | Get Customers at All Banks
+[**GetCustomersAtOneBank**](CustomerAPI.md#GetCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/customers | Get Customers at Bank
+[**GetCustomersByCustomerPhoneNumber**](CustomerAPI.md#GetCustomersByCustomerPhoneNumber) | **Post** /obp/v4.0.0/banks/{bankid}/search/customers/mobile-phone-number | Get Customers by MOBILE_PHONE_NUMBER
+[**GetCustomersByLegalName**](CustomerAPI.md#GetCustomersByLegalName) | **Post** /obp/v6.0.0/banks/{bankid}/customers/legal-name | Get Customers by Legal Name
+[**GetCustomersForUser**](CustomerAPI.md#GetCustomersForUser) | **Get** /obp/v3.0.0/users/current/customers | Get Customers for Current User
+[**GetCustomersForUserIdsOnly**](CustomerAPI.md#GetCustomersForUserIdsOnly) | **Get** /obp/v5.1.0/users/current/customers/customer_ids | Get Customers for Current User (IDs only)
+[**GetCustomersMessages**](CustomerAPI.md#GetCustomersMessages) | **Get** /obp/v1.4.0/banks/{bankid}/customer/messages | Get Customer Messages for all Customers
+[**GetCustomersMinimalAtAnyBank**](CustomerAPI.md#GetCustomersMinimalAtAnyBank) | **Get** /obp/v4.0.0/customers-minimal | Get Customers Minimal at Any Bank
+[**GetCustomersMinimalAtOneBank**](CustomerAPI.md#GetCustomersMinimalAtOneBank) | **Get** /obp/v5.0.0/banks/{bankid}/customers-minimal | Get Customers Minimal at Bank
+[**GetFirehoseCustomers**](CustomerAPI.md#GetFirehoseCustomers) | **Get** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+[**GetKycChecks**](CustomerAPI.md#GetKycChecks) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_checks | Get Customer KYC Checks
+[**GetKycDocuments**](CustomerAPI.md#GetKycDocuments) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_documents | Get Customer KYC Documents
+[**GetKycMedia**](CustomerAPI.md#GetKycMedia) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_media | Get KYC Media for a customer
+[**GetKycStatuses**](CustomerAPI.md#GetKycStatuses) | **Get** /obp/v2.0.0/customers/{customerid}/kyc_statuses | Get Customer KYC statuses
+[**GetMeeting**](CustomerAPI.md#GetMeeting) | **Get** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+[**GetMeetings**](CustomerAPI.md#GetMeetings) | **Get** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+[**GetMyCorrelatedEntities**](CustomerAPI.md#GetMyCorrelatedEntities) | **Get** /obp/v4.0.0/my/correlated-entities | Get Correlated Entities for the current User
+[**GetMyCustomersAtAnyBank**](CustomerAPI.md#GetMyCustomersAtAnyBank) | **Get** /obp/v5.0.0/my/customers | Get My Customers
+[**GetMyCustomersAtBank**](CustomerAPI.md#GetMyCustomersAtBank) | **Get** /obp/v5.0.0/banks/{bankid}/my/customers | Get My Customers at Bank
+[**GetRetailCustomerByCustomerId**](CustomerAPI.md#GetRetailCustomerByCustomerId) | **Get** /obp/v6.0.0/banks/{bankid}/retail-customers/{customerid} | Get Retail Customer by CUSTOMER_ID
+[**GetRetailCustomersAtOneBank**](CustomerAPI.md#GetRetailCustomersAtOneBank) | **Get** /obp/v6.0.0/banks/{bankid}/retail-customers | Get Retail Customers at Bank
+[**GetSocialMediaHandles**](CustomerAPI.md#GetSocialMediaHandles) | **Get** /obp/v2.0.0/banks/{bankid}/customers/{customerid}/social_media_handles | Get Customer Social Media Handles
+[**GetTaxResidence**](CustomerAPI.md#GetTaxResidence) | **Get** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/tax-residences | Get Tax Residences of Customer
+[**GetUserCustomerLinksByCustomerId**](CustomerAPI.md#GetUserCustomerLinksByCustomerId) | **Get** /obp/v4.0.0/banks/{bankid}/user_customer_links/customers/{customerid} | Get User Customer Links by Customer
+[**GetUserCustomerLinksByUserId**](CustomerAPI.md#GetUserCustomerLinksByUserId) | **Get** /obp/v4.0.0/banks/{bankid}/user_customer_links/users/{userid} | Get User Customer Links by User
+[**UpdateAgentStatus**](CustomerAPI.md#UpdateAgentStatus) | **Put** /obp/v5.1.0/banks/{bankid}/agents/{agentid} | Update Agent status
+[**UpdateCustomerAccountLinkById**](CustomerAPI.md#UpdateCustomerAccountLinkById) | **Put** /obp/v5.0.0/banks/{bankid}/customer-account-links/{customeraccountlinkid} | Update Customer Account Link by Id
+[**UpdateCustomerAddress**](CustomerAPI.md#UpdateCustomerAddress) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/addresses/{customeraddressid} | Update the Address of a Customer
+[**UpdateCustomerAttribute**](CustomerAPI.md#UpdateCustomerAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+[**UpdateCustomerBranch**](CustomerAPI.md#UpdateCustomerBranch) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/branch | Update the Branch of a Customer
+[**UpdateCustomerCreditLimit**](CustomerAPI.md#UpdateCustomerCreditLimit) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-limit | Update the credit limit of a Customer
+[**UpdateCustomerCreditRatingAndSource**](CustomerAPI.md#UpdateCustomerCreditRatingAndSource) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/credit-rating-and-source | Update the credit rating and source of a Customer
+[**UpdateCustomerData**](CustomerAPI.md#UpdateCustomerData) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/data | Update the other data of a Customer
+[**UpdateCustomerEmail**](CustomerAPI.md#UpdateCustomerEmail) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/email | Update the email of a Customer
+[**UpdateCustomerIdentity**](CustomerAPI.md#UpdateCustomerIdentity) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/identity | Update the identity data of a Customer
+[**UpdateCustomerMobileNumber**](CustomerAPI.md#UpdateCustomerMobileNumber) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/mobile-number | Update the mobile number of a Customer
+[**UpdateCustomerNumber**](CustomerAPI.md#UpdateCustomerNumber) | **Put** /obp/v3.1.0/banks/{bankid}/customers/{customerid}/number | Update the number of a Customer
 
 
 
-## OBPv140AddCustomerMessage
+## AddCustomerMessage
 
-> OBPv121UpdateTransactionNarrative200Response OBPv140AddCustomerMessage(ctx, bankid, customerid).OBPv140AddCustomerMessageRequest(oBPv140AddCustomerMessageRequest).Execute()
+> UpdateTransactionNarrative200Response AddCustomerMessage(ctx, bankid, customerid).AddCustomerMessageRequest(addCustomerMessageRequest).Execute()
 
 Create Customer Message
 
@@ -110,17 +110,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv140AddCustomerMessageRequest := *openapiclient.NewOBPv140AddCustomerMessageRequest("Type_example", *openapiclient.NewOBPv140AddCustomerMessageRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv140AddCustomerMessageRequest | Request body
+	addCustomerMessageRequest := *openapiclient.NewAddCustomerMessageRequest() // AddCustomerMessageRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv140AddCustomerMessage(context.Background(), bankid, customerid).OBPv140AddCustomerMessageRequest(oBPv140AddCustomerMessageRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddCustomerMessage(context.Background(), bankid, customerid).AddCustomerMessageRequest(addCustomerMessageRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv140AddCustomerMessage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddCustomerMessage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv140AddCustomerMessage`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv140AddCustomerMessage`: %v\n", resp)
+	// response from `AddCustomerMessage`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddCustomerMessage`: %v\n", resp)
 }
 ```
 
@@ -135,18 +135,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv140AddCustomerMessageRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddCustomerMessageRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv140AddCustomerMessageRequest** | [**OBPv140AddCustomerMessageRequest**](OBPv140AddCustomerMessageRequest.md) | Request body | 
+ **addCustomerMessageRequest** | [**AddCustomerMessageRequest**](AddCustomerMessageRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -162,149 +162,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv140GetCrmEvents
+## AddKycCheck
 
-> OBPv140GetCrmEvents200Response OBPv140GetCrmEvents(ctx, bankid).Execute()
-
-Get CRM Events
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv140GetCrmEvents(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv140GetCrmEvents``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv140GetCrmEvents`: OBPv140GetCrmEvents200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv140GetCrmEvents`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetCrmEventsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv140GetCrmEvents200Response**](OBPv140GetCrmEvents200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv140GetCustomersMessages
-
-> OBPv140GetCustomersMessages200Response OBPv140GetCustomersMessages(ctx, bankid).Execute()
-
-Get Customer Messages for all Customers
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv140GetCustomersMessages(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv140GetCustomersMessages``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv140GetCustomersMessages`: OBPv140GetCustomersMessages200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv140GetCustomersMessages`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetCustomersMessagesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv140GetCustomersMessages200Response**](OBPv140GetCustomersMessages200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200AddKycCheck
-
-> OBPv200GetKycChecks200ResponsePropertiesChecksItems OBPv200AddKycCheck(ctx, bankid, customerid, kyccheckid).OBPv200AddKycCheckRequest(oBPv200AddKycCheckRequest).Execute()
+> GetKycChecks200ResponseChecksInner AddKycCheck(ctx, bankid, customerid, kyccheckid).AddKycCheckRequest(addKycCheckRequest).Execute()
 
 Add KYC Check
 
@@ -326,17 +186,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
 	kyccheckid := "kyccheckid_example" // string | The KYCCHECKID identifier
-	oBPv200AddKycCheckRequest := *openapiclient.NewOBPv200AddKycCheckRequest("Type_example", *openapiclient.NewOBPv200AddKycCheckRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv200AddKycCheckRequest | Request body
+	addKycCheckRequest := *openapiclient.NewAddKycCheckRequest() // AddKycCheckRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200AddKycCheck(context.Background(), bankid, customerid, kyccheckid).OBPv200AddKycCheckRequest(oBPv200AddKycCheckRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddKycCheck(context.Background(), bankid, customerid, kyccheckid).AddKycCheckRequest(addKycCheckRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200AddKycCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddKycCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200AddKycCheck`: OBPv200GetKycChecks200ResponsePropertiesChecksItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200AddKycCheck`: %v\n", resp)
+	// response from `AddKycCheck`: GetKycChecks200ResponseChecksInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddKycCheck`: %v\n", resp)
 }
 ```
 
@@ -352,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200AddKycCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddKycCheckRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -360,11 +220,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv200AddKycCheckRequest** | [**OBPv200AddKycCheckRequest**](OBPv200AddKycCheckRequest.md) | Request body | 
+ **addKycCheckRequest** | [**AddKycCheckRequest**](AddKycCheckRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200GetKycChecks200ResponsePropertiesChecksItems**](OBPv200GetKycChecks200ResponsePropertiesChecksItems.md)
+[**GetKycChecks200ResponseChecksInner**](GetKycChecks200ResponseChecksInner.md)
 
 ### Authorization
 
@@ -380,9 +240,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv200AddKycDocument
+## AddKycDocument
 
-> OBPv200AddKycDocument200Response OBPv200AddKycDocument(ctx, bankid, customerid, kycdocumentid).OBPv200AddKycDocumentRequest(oBPv200AddKycDocumentRequest).Execute()
+> AddKycDocument200Response AddKycDocument(ctx, bankid, customerid, kycdocumentid).AddKycDocumentRequest(addKycDocumentRequest).Execute()
 
 Add KYC Document
 
@@ -404,17 +264,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
 	kycdocumentid := "kycdocumentid_example" // string | The KYCDOCUMENTID identifier
-	oBPv200AddKycDocumentRequest := *openapiclient.NewOBPv200AddKycDocumentRequest("Type_example", *openapiclient.NewOBPv200AddKycDocumentRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"))) // OBPv200AddKycDocumentRequest | Request body
+	addKycDocumentRequest := *openapiclient.NewAddKycDocumentRequest() // AddKycDocumentRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200AddKycDocument(context.Background(), bankid, customerid, kycdocumentid).OBPv200AddKycDocumentRequest(oBPv200AddKycDocumentRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddKycDocument(context.Background(), bankid, customerid, kycdocumentid).AddKycDocumentRequest(addKycDocumentRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200AddKycDocument``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddKycDocument``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200AddKycDocument`: OBPv200AddKycDocument200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200AddKycDocument`: %v\n", resp)
+	// response from `AddKycDocument`: AddKycDocument200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddKycDocument`: %v\n", resp)
 }
 ```
 
@@ -430,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200AddKycDocumentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddKycDocumentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -438,11 +298,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv200AddKycDocumentRequest** | [**OBPv200AddKycDocumentRequest**](OBPv200AddKycDocumentRequest.md) | Request body | 
+ **addKycDocumentRequest** | [**AddKycDocumentRequest**](AddKycDocumentRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200AddKycDocument200Response**](OBPv200AddKycDocument200Response.md)
+[**AddKycDocument200Response**](AddKycDocument200Response.md)
 
 ### Authorization
 
@@ -458,9 +318,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv200AddKycMedia
+## AddKycMedia
 
-> OBPv200AddKycMedia200Response OBPv200AddKycMedia(ctx, bankid, customerid, kycmediaid).OBPv200AddKycMediaRequest(oBPv200AddKycMediaRequest).Execute()
+> AddKycMedia200Response AddKycMedia(ctx, bankid, customerid, kycmediaid).AddKycMediaRequest(addKycMediaRequest).Execute()
 
 Add KYC Media
 
@@ -482,17 +342,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
 	kycmediaid := "kycmediaid_example" // string | The KYCMEDIAID identifier
-	oBPv200AddKycMediaRequest := *openapiclient.NewOBPv200AddKycMediaRequest("Type_example", *openapiclient.NewOBPv200AddKycMediaRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv200AddKycMediaRequest | Request body
+	addKycMediaRequest := *openapiclient.NewAddKycMediaRequest() // AddKycMediaRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200AddKycMedia(context.Background(), bankid, customerid, kycmediaid).OBPv200AddKycMediaRequest(oBPv200AddKycMediaRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddKycMedia(context.Background(), bankid, customerid, kycmediaid).AddKycMediaRequest(addKycMediaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200AddKycMedia``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddKycMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200AddKycMedia`: OBPv200AddKycMedia200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200AddKycMedia`: %v\n", resp)
+	// response from `AddKycMedia`: AddKycMedia200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddKycMedia`: %v\n", resp)
 }
 ```
 
@@ -508,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200AddKycMediaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddKycMediaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -516,11 +376,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv200AddKycMediaRequest** | [**OBPv200AddKycMediaRequest**](OBPv200AddKycMediaRequest.md) | Request body | 
+ **addKycMediaRequest** | [**AddKycMediaRequest**](AddKycMediaRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200AddKycMedia200Response**](OBPv200AddKycMedia200Response.md)
+[**AddKycMedia200Response**](AddKycMedia200Response.md)
 
 ### Authorization
 
@@ -536,9 +396,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv200AddKycStatus
+## AddKycStatus
 
-> OBPv200GetKycStatuses200ResponsePropertiesStatusesItems OBPv200AddKycStatus(ctx, bankid, customerid).OBPv200AddKycStatusRequest(oBPv200AddKycStatusRequest).Execute()
+> GetKycStatuses200ResponseStatusesInner AddKycStatus(ctx, bankid, customerid).AddKycStatusRequest(addKycStatusRequest).Execute()
 
 Add KYC Status
 
@@ -559,17 +419,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv200AddKycStatusRequest := *openapiclient.NewOBPv200AddKycStatusRequest("Type_example", *openapiclient.NewOBPv200AddKycStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv200AddKycStatusRequest | Request body
+	addKycStatusRequest := *openapiclient.NewAddKycStatusRequest() // AddKycStatusRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200AddKycStatus(context.Background(), bankid, customerid).OBPv200AddKycStatusRequest(oBPv200AddKycStatusRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddKycStatus(context.Background(), bankid, customerid).AddKycStatusRequest(addKycStatusRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200AddKycStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddKycStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200AddKycStatus`: OBPv200GetKycStatuses200ResponsePropertiesStatusesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200AddKycStatus`: %v\n", resp)
+	// response from `AddKycStatus`: GetKycStatuses200ResponseStatusesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddKycStatus`: %v\n", resp)
 }
 ```
 
@@ -584,18 +444,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200AddKycStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddKycStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv200AddKycStatusRequest** | [**OBPv200AddKycStatusRequest**](OBPv200AddKycStatusRequest.md) | Request body | 
+ **addKycStatusRequest** | [**AddKycStatusRequest**](AddKycStatusRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200GetKycStatuses200ResponsePropertiesStatusesItems**](OBPv200GetKycStatuses200ResponsePropertiesStatusesItems.md)
+[**GetKycStatuses200ResponseStatusesInner**](GetKycStatuses200ResponseStatusesInner.md)
 
 ### Authorization
 
@@ -611,9 +471,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv200AddSocialMediaHandle
+## AddSocialMediaHandle
 
-> OBPv121UpdateTransactionNarrative200Response OBPv200AddSocialMediaHandle(ctx, bankid, customerid).OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems(oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems).Execute()
+> UpdateTransactionNarrative200Response AddSocialMediaHandle(ctx, bankid, customerid).GetSocialMediaHandles200ResponseChecksInner(getSocialMediaHandles200ResponseChecksInner).Execute()
 
 Create Customer Social Media Handle
 
@@ -634,17 +494,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems := *openapiclient.NewOBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems("Type_example", *openapiclient.NewOBPv200GetSocialMediaHandles200ResponsePropertiesChecksItemsProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems | Request body
+	getSocialMediaHandles200ResponseChecksInner := *openapiclient.NewGetSocialMediaHandles200ResponseChecksInner() // GetSocialMediaHandles200ResponseChecksInner | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200AddSocialMediaHandle(context.Background(), bankid, customerid).OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems(oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems).Execute()
+	resp, r, err := apiClient.CustomerAPI.AddSocialMediaHandle(context.Background(), bankid, customerid).GetSocialMediaHandles200ResponseChecksInner(getSocialMediaHandles200ResponseChecksInner).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200AddSocialMediaHandle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.AddSocialMediaHandle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200AddSocialMediaHandle`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200AddSocialMediaHandle`: %v\n", resp)
+	// response from `AddSocialMediaHandle`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.AddSocialMediaHandle`: %v\n", resp)
 }
 ```
 
@@ -659,18 +519,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200AddSocialMediaHandleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddSocialMediaHandleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems** | [**OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems**](OBPv200GetSocialMediaHandles200ResponsePropertiesChecksItems.md) | Request body | 
+ **getSocialMediaHandles200ResponseChecksInner** | [**GetSocialMediaHandles200ResponseChecksInner**](GetSocialMediaHandles200ResponseChecksInner.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -686,291 +546,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv200GetKycChecks
+## CreateAgent
 
-> OBPv200GetKycChecks200Response OBPv200GetKycChecks(ctx, customerid).Execute()
+> GetAgent200Response CreateAgent(ctx, bankid).CreateAgentRequest(createAgentRequest).Execute()
 
-Get Customer KYC Checks
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200GetKycChecks(context.Background(), customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200GetKycChecks``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200GetKycChecks`: OBPv200GetKycChecks200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200GetKycChecks`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200GetKycChecksRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv200GetKycChecks200Response**](OBPv200GetKycChecks200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200GetKycDocuments
-
-> OBPv200GetKycDocuments200Response OBPv200GetKycDocuments(ctx, customerid).Execute()
-
-Get Customer KYC Documents
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200GetKycDocuments(context.Background(), customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200GetKycDocuments``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200GetKycDocuments`: OBPv200GetKycDocuments200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200GetKycDocuments`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200GetKycDocumentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv200GetKycDocuments200Response**](OBPv200GetKycDocuments200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200GetKycMedia
-
-> OBPv200GetKycMedia200Response OBPv200GetKycMedia(ctx, customerid).Execute()
-
-Get KYC Media for a customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200GetKycMedia(context.Background(), customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200GetKycMedia``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200GetKycMedia`: OBPv200GetKycMedia200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200GetKycMedia`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200GetKycMediaRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv200GetKycMedia200Response**](OBPv200GetKycMedia200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200GetKycStatuses
-
-> OBPv200GetKycStatuses200Response OBPv200GetKycStatuses(ctx, customerid).Execute()
-
-Get Customer KYC statuses
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200GetKycStatuses(context.Background(), customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200GetKycStatuses``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv200GetKycStatuses`: OBPv200GetKycStatuses200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200GetKycStatuses`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv200GetKycStatusesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv200GetKycStatuses200Response**](OBPv200GetKycStatuses200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv200GetSocialMediaHandles
-
-> OBPv200GetSocialMediaHandles200Response OBPv200GetSocialMediaHandles(ctx, bankid, customerid).Execute()
-
-Get Customer Social Media Handles
+Create Agent
 
 
 
@@ -988,17 +568,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	createAgentRequest := *openapiclient.NewCreateAgentRequest() // CreateAgentRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv200GetSocialMediaHandles(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.CreateAgent(context.Background(), bankid).CreateAgentRequest(createAgentRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv200GetSocialMediaHandles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateAgent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv200GetSocialMediaHandles`: OBPv200GetSocialMediaHandles200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv200GetSocialMediaHandles`: %v\n", resp)
+	// response from `CreateAgent`: GetAgent200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateAgent`: %v\n", resp)
 }
 ```
 
@@ -1009,21 +589,20 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv200GetSocialMediaHandlesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
-
+ **createAgentRequest** | [**CreateAgentRequest**](CreateAgentRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv200GetSocialMediaHandles200Response**](OBPv200GetSocialMediaHandles200Response.md)
+[**GetAgent200Response**](GetAgent200Response.md)
 
 ### Authorization
 
@@ -1031,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1039,11 +618,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv300GetCustomersForUser
+## CreateCorporateCustomer
 
-> OBPv300GetCustomersForUser200Response OBPv300GetCustomersForUser(ctx).Execute()
+> GetCustomerChildren200ResponseCustomersInner CreateCorporateCustomer(ctx, bankid).CreateCorporateCustomerRequest(createCorporateCustomerRequest).Execute()
 
-Get Customers for Current User
+Create Corporate Customer
 
 
 
@@ -1060,31 +639,42 @@ import (
 )
 
 func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createCorporateCustomerRequest := *openapiclient.NewCreateCorporateCustomerRequest() // CreateCorporateCustomerRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv300GetCustomersForUser(context.Background()).Execute()
+	resp, r, err := apiClient.CustomerAPI.CreateCorporateCustomer(context.Background(), bankid).CreateCorporateCustomerRequest(createCorporateCustomerRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv300GetCustomersForUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCorporateCustomer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300GetCustomersForUser`: OBPv300GetCustomersForUser200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv300GetCustomersForUser`: %v\n", resp)
+	// response from `CreateCorporateCustomer`: GetCustomerChildren200ResponseCustomersInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCorporateCustomer`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300GetCustomersForUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCorporateCustomerRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createCorporateCustomerRequest** | [**CreateCorporateCustomerRequest**](CreateCorporateCustomerRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv300GetCustomersForUser200Response**](OBPv300GetCustomersForUser200Response.md)
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
 
 ### Authorization
 
@@ -1092,7 +682,7 @@ Other parameters are passed through a pointer to a apiOBPv300GetCustomersForUser
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1100,9 +690,153 @@ Other parameters are passed through a pointer to a apiOBPv300GetCustomersForUser
 [[Back to README]](../README.md)
 
 
-## OBPv310CreateCustomerAddress
+## CreateCustomer
 
-> OBPv310CreateCustomerAddress200Response OBPv310CreateCustomerAddress(ctx, bankid, customerid).OBPv310CreateCustomerAddressRequest(oBPv310CreateCustomerAddressRequest).Execute()
+> GetCustomerChildren200ResponseCustomersInner CreateCustomer(ctx, bankid).CreateCustomerRequest(createCustomerRequest).Execute()
+
+Create Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createCustomerRequest := *openapiclient.NewCreateCustomerRequest() // CreateCustomerRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateCustomer(context.Background(), bankid).CreateCustomerRequest(createCustomerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomer`: GetCustomerChildren200ResponseCustomersInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCustomer`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createCustomerRequest** | [**CreateCustomerRequest**](CreateCustomerRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomerAccountLink
+
+> GetCustomerAccountLinksByCustomerId200ResponseLinksInner CreateCustomerAccountLink(ctx, bankid).CreateCustomerAccountLinkRequest(createCustomerAccountLinkRequest).Execute()
+
+Create Customer Account Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createCustomerAccountLinkRequest := *openapiclient.NewCreateCustomerAccountLinkRequest() // CreateCustomerAccountLinkRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateCustomerAccountLink(context.Background(), bankid).CreateCustomerAccountLinkRequest(createCustomerAccountLinkRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCustomerAccountLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomerAccountLink`: GetCustomerAccountLinksByCustomerId200ResponseLinksInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCustomerAccountLink`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerAccountLinkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createCustomerAccountLinkRequest** | [**CreateCustomerAccountLinkRequest**](CreateCustomerAccountLinkRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomerAddress
+
+> CreateCustomerAddress200Response CreateCustomerAddress(ctx, bankid, customerid).CreateCustomerAddressRequest(createCustomerAddressRequest).Execute()
 
 Create Address
 
@@ -1123,17 +857,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310CreateCustomerAddressRequest := *openapiclient.NewOBPv310CreateCustomerAddressRequest("Type_example", *openapiclient.NewOBPv310CreateCustomerAddressRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , , , , , )) // OBPv310CreateCustomerAddressRequest | Request body
+	createCustomerAddressRequest := *openapiclient.NewCreateCustomerAddressRequest() // CreateCustomerAddressRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310CreateCustomerAddress(context.Background(), bankid, customerid).OBPv310CreateCustomerAddressRequest(oBPv310CreateCustomerAddressRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.CreateCustomerAddress(context.Background(), bankid, customerid).CreateCustomerAddressRequest(createCustomerAddressRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310CreateCustomerAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCustomerAddress``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateCustomerAddress`: OBPv310CreateCustomerAddress200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310CreateCustomerAddress`: %v\n", resp)
+	// response from `CreateCustomerAddress`: CreateCustomerAddress200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCustomerAddress`: %v\n", resp)
 }
 ```
 
@@ -1148,18 +882,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateCustomerAddressRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCustomerAddressRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv310CreateCustomerAddressRequest** | [**OBPv310CreateCustomerAddressRequest**](OBPv310CreateCustomerAddressRequest.md) | Request body | 
+ **createCustomerAddressRequest** | [**CreateCustomerAddressRequest**](CreateCustomerAddressRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310CreateCustomerAddress200Response**](OBPv310CreateCustomerAddress200Response.md)
+[**CreateCustomerAddress200Response**](CreateCustomerAddress200Response.md)
 
 ### Authorization
 
@@ -1175,9 +909,159 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310CreateMeeting
+## CreateCustomerAttribute
 
-> OBPv310GetMeeting200Response OBPv310CreateMeeting(ctx, bankid).OBPv310CreateMeetingRequest(oBPv310CreateMeetingRequest).Execute()
+> GetCustomerAttributes200ResponseCustomerAttributesInner CreateCustomerAttribute(ctx, bankid, customerid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
+
+Create Customer Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateCustomerAttribute(context.Background(), bankid, customerid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomerAttribute`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCustomerAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCustomerMessage
+
+> UpdateTransactionNarrative200Response CreateCustomerMessage(ctx, bankid, customerid).CreateCustomerMessageRequest(createCustomerMessageRequest).Execute()
+
+Create Customer Message
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	createCustomerMessageRequest := *openapiclient.NewCreateCustomerMessageRequest() // CreateCustomerMessageRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateCustomerMessage(context.Background(), bankid, customerid).CreateCustomerMessageRequest(createCustomerMessageRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateCustomerMessage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateCustomerMessage`: UpdateTransactionNarrative200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateCustomerMessage`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCustomerMessageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createCustomerMessageRequest** | [**CreateCustomerMessageRequest**](CreateCustomerMessageRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateMeeting
+
+> GetMeeting200Response CreateMeeting(ctx, bankid).CreateMeetingRequest(createMeetingRequest).Execute()
 
 Create Meeting (video conference/call)
 
@@ -1197,17 +1081,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv310CreateMeetingRequest := *openapiclient.NewOBPv310CreateMeetingRequest("Type_example", *openapiclient.NewOBPv310CreateMeetingRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreator("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreatorProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , )), *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInvitees("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInviteesItems("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesInviteesItemsProperties(, *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreator("Type_example", *openapiclient.NewOBPv310GetMeeting200ResponsePropertiesCreatorProperties(, , ))))), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), )) // OBPv310CreateMeetingRequest | Request body
+	createMeetingRequest := *openapiclient.NewCreateMeetingRequest() // CreateMeetingRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310CreateMeeting(context.Background(), bankid).OBPv310CreateMeetingRequest(oBPv310CreateMeetingRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.CreateMeeting(context.Background(), bankid).CreateMeetingRequest(createMeetingRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310CreateMeeting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateMeeting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateMeeting`: OBPv310GetMeeting200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310CreateMeeting`: %v\n", resp)
+	// response from `CreateMeeting`: GetMeeting200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateMeeting`: %v\n", resp)
 }
 ```
 
@@ -1221,17 +1105,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateMeetingRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateMeetingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md) | Request body | 
+ **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -1247,9 +1131,153 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310CreateTaxResidence
+## CreateOrUpdateCustomerAttributeAttributeDefinition
 
-> OBPv310CreateTaxResidence200Response OBPv310CreateTaxResidence(ctx, bankid, customerid).OBPv310CreateTaxResidenceRequest(oBPv310CreateTaxResidenceRequest).Execute()
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateCustomerAttributeAttributeDefinition(ctx, bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+
+Create or Update Customer Attribute Definition
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewCreateOrUpdateTransactionRequestAttributeDefinitionRequest() // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateOrUpdateCustomerAttributeAttributeDefinition(context.Background(), bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateOrUpdateCustomerAttributeAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateOrUpdateCustomerAttributeAttributeDefinition`: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateOrUpdateCustomerAttributeAttributeDefinition`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateRetailCustomer
+
+> GetCustomerChildren200ResponseCustomersInner CreateRetailCustomer(ctx, bankid).CreateRetailCustomerRequest(createRetailCustomerRequest).Execute()
+
+Create Retail Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createRetailCustomerRequest := *openapiclient.NewCreateRetailCustomerRequest() // CreateRetailCustomerRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateRetailCustomer(context.Background(), bankid).CreateRetailCustomerRequest(createRetailCustomerRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateRetailCustomer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateRetailCustomer`: GetCustomerChildren200ResponseCustomersInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateRetailCustomer`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRetailCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createRetailCustomerRequest** | [**CreateRetailCustomerRequest**](CreateRetailCustomerRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerChildren200ResponseCustomersInner**](GetCustomerChildren200ResponseCustomersInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTaxResidence
+
+> CreateTaxResidence200Response CreateTaxResidence(ctx, bankid, customerid).CreateTaxResidenceRequest(createTaxResidenceRequest).Execute()
 
 Create Tax Residence
 
@@ -1270,17 +1298,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310CreateTaxResidenceRequest := *openapiclient.NewOBPv310CreateTaxResidenceRequest("Type_example", *openapiclient.NewOBPv310CreateTaxResidenceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310CreateTaxResidenceRequest | Request body
+	createTaxResidenceRequest := *openapiclient.NewCreateTaxResidenceRequest() // CreateTaxResidenceRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310CreateTaxResidence(context.Background(), bankid, customerid).OBPv310CreateTaxResidenceRequest(oBPv310CreateTaxResidenceRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.CreateTaxResidence(context.Background(), bankid, customerid).CreateTaxResidenceRequest(createTaxResidenceRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310CreateTaxResidence``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateTaxResidence``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv310CreateTaxResidence`: OBPv310CreateTaxResidence200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310CreateTaxResidence`: %v\n", resp)
+	// response from `CreateTaxResidence`: CreateTaxResidence200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateTaxResidence`: %v\n", resp)
 }
 ```
 
@@ -1295,18 +1323,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310CreateTaxResidenceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTaxResidenceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv310CreateTaxResidenceRequest** | [**OBPv310CreateTaxResidenceRequest**](OBPv310CreateTaxResidenceRequest.md) | Request body | 
+ **createTaxResidenceRequest** | [**CreateTaxResidenceRequest**](CreateTaxResidenceRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310CreateTaxResidence200Response**](OBPv310CreateTaxResidence200Response.md)
+[**CreateTaxResidence200Response**](CreateTaxResidence200Response.md)
 
 ### Authorization
 
@@ -1322,9 +1350,152 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310DeleteCustomerAddress
+## CreateUserCustomerLinks
 
-> OBPv310DeleteCustomerAddress(ctx, bankid, customerid, customeraddressid).Execute()
+> GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner CreateUserCustomerLinks(ctx, bankid).CreateUserCustomerLinksRequest(createUserCustomerLinksRequest).Execute()
+
+Create User Customer Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createUserCustomerLinksRequest := *openapiclient.NewCreateUserCustomerLinksRequest() // CreateUserCustomerLinksRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.CreateUserCustomerLinks(context.Background(), bankid).CreateUserCustomerLinksRequest(createUserCustomerLinksRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.CreateUserCustomerLinks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateUserCustomerLinks`: GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.CreateUserCustomerLinks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateUserCustomerLinksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createUserCustomerLinksRequest** | [**CreateUserCustomerLinksRequest**](CreateUserCustomerLinksRequest.md) | Request body | 
+
+### Return type
+
+[**GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner**](GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCustomerAccountLinkById
+
+> DeleteCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).Execute()
+
+Delete Customer Account Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CustomerAPI.DeleteCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteCustomerAccountLinkById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteCustomerAccountLinkByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteCustomerAddress
+
+> DeleteCustomerAddress(ctx, bankid, customerid, customeraddressid).Execute()
 
 Delete Customer Address
 
@@ -1349,9 +1520,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv310DeleteCustomerAddress(context.Background(), bankid, customerid, customeraddressid).Execute()
+	r, err := apiClient.CustomerAPI.DeleteCustomerAddress(context.Background(), bankid, customerid, customeraddressid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310DeleteCustomerAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteCustomerAddress``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1369,7 +1540,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310DeleteCustomerAddressRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerAddressRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1396,1414 +1567,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv310DeleteTaxResidence
+## DeleteCustomerAttribute
 
-> OBPv310DeleteTaxResidence(ctx, bankid, customerid, taxresidenceid).Execute()
-
-Delete Tax Residence
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	taxresidenceid := "taxresidenceid_example" // string | The TAXRESIDENCEID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv310DeleteTaxResidence(context.Background(), bankid, customerid, taxresidenceid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310DeleteTaxResidence``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-**taxresidenceid** | **string** | The TAXRESIDENCEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310DeleteTaxResidenceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetCustomerAddresses
-
-> OBPv310GetCustomerAddresses200Response OBPv310GetCustomerAddresses(ctx, bankid, customerid).Execute()
-
-Get Customer Addresses
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310GetCustomerAddresses(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310GetCustomerAddresses``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetCustomerAddresses`: OBPv310GetCustomerAddresses200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310GetCustomerAddresses`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetCustomerAddressesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv310GetCustomerAddresses200Response**](OBPv310GetCustomerAddresses200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetFirehoseCustomers
-
-> OBPv500GetMyCustomersAtBank200Response OBPv310GetFirehoseCustomers(ctx, bankid).Execute()
-
-Get Firehose Customers
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310GetFirehoseCustomers(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310GetFirehoseCustomers``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetFirehoseCustomers`: OBPv500GetMyCustomersAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310GetFirehoseCustomers`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetFirehoseCustomersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500GetMyCustomersAtBank200Response**](OBPv500GetMyCustomersAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetMeeting
-
-> OBPv310GetMeeting200Response OBPv310GetMeeting(ctx, bankid, meetingid).Execute()
-
-Get Meeting
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	meetingid := "meetingid_example" // string | The MEETINGID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310GetMeeting(context.Background(), bankid, meetingid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310GetMeeting``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetMeeting`: OBPv310GetMeeting200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310GetMeeting`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**meetingid** | **string** | The MEETINGID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetMeetingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetMeetings
-
-> OBPv310GetMeetings200Response OBPv310GetMeetings(ctx, bankid).Execute()
-
-Get Meetings
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310GetMeetings(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310GetMeetings``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetMeetings`: OBPv310GetMeetings200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310GetMeetings`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetMeetingsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310GetTaxResidence
-
-> OBPv310GetTaxResidence200Response OBPv310GetTaxResidence(ctx, bankid, customerid).Execute()
-
-Get Tax Residences of Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310GetTaxResidence(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310GetTaxResidence``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310GetTaxResidence`: OBPv310GetTaxResidence200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310GetTaxResidence`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310GetTaxResidenceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv310GetTaxResidence200Response**](OBPv310GetTaxResidence200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerAddress
-
-> OBPv310CreateCustomerAddress200Response OBPv310UpdateCustomerAddress(ctx, bankid, customerid, customeraddressid).OBPv310CreateCustomerAddressRequest(oBPv310CreateCustomerAddressRequest).Execute()
-
-Update the Address of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	customeraddressid := "customeraddressid_example" // string | The CUSTOMERADDRESSID identifier
-	oBPv310CreateCustomerAddressRequest := *openapiclient.NewOBPv310CreateCustomerAddressRequest("Type_example", *openapiclient.NewOBPv310CreateCustomerAddressRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , , , , , )) // OBPv310CreateCustomerAddressRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerAddress(context.Background(), bankid, customerid, customeraddressid).OBPv310CreateCustomerAddressRequest(oBPv310CreateCustomerAddressRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerAddress``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerAddress`: OBPv310CreateCustomerAddress200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerAddress`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-**customeraddressid** | **string** | The CUSTOMERADDRESSID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerAddressRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv310CreateCustomerAddressRequest** | [**OBPv310CreateCustomerAddressRequest**](OBPv310CreateCustomerAddressRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310CreateCustomerAddress200Response**](OBPv310CreateCustomerAddress200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerBranch
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerBranch(ctx, bankid, customerid).OBPv310UpdateCustomerBranchRequest(oBPv310UpdateCustomerBranchRequest).Execute()
-
-Update the Branch of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerBranchRequest := *openapiclient.NewOBPv310UpdateCustomerBranchRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerBranchRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310UpdateCustomerBranchRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerBranch(context.Background(), bankid, customerid).OBPv310UpdateCustomerBranchRequest(oBPv310UpdateCustomerBranchRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerBranch``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerBranch`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerBranch`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerBranchRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerBranchRequest** | [**OBPv310UpdateCustomerBranchRequest**](OBPv310UpdateCustomerBranchRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerCreditLimit
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerCreditLimit(ctx, bankid, customerid).OBPv310UpdateCustomerCreditLimitRequest(oBPv310UpdateCustomerCreditLimitRequest).Execute()
-
-Update the credit limit of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerCreditLimitRequest := *openapiclient.NewOBPv310UpdateCustomerCreditLimitRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerCreditLimitRequestProperties(*openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))))) // OBPv310UpdateCustomerCreditLimitRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerCreditLimit(context.Background(), bankid, customerid).OBPv310UpdateCustomerCreditLimitRequest(oBPv310UpdateCustomerCreditLimitRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerCreditLimit``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerCreditLimit`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerCreditLimit`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerCreditLimitRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerCreditLimitRequest** | [**OBPv310UpdateCustomerCreditLimitRequest**](OBPv310UpdateCustomerCreditLimitRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerCreditRatingAndSource
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerCreditRatingAndSource(ctx, bankid, customerid).OBPv310UpdateCustomerCreditRatingAndSourceRequest(oBPv310UpdateCustomerCreditRatingAndSourceRequest).Execute()
-
-Update the credit rating and source of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerCreditRatingAndSourceRequest := *openapiclient.NewOBPv310UpdateCustomerCreditRatingAndSourceRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerCreditRatingAndSourceRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310UpdateCustomerCreditRatingAndSourceRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerCreditRatingAndSource(context.Background(), bankid, customerid).OBPv310UpdateCustomerCreditRatingAndSourceRequest(oBPv310UpdateCustomerCreditRatingAndSourceRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerCreditRatingAndSource``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerCreditRatingAndSource`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerCreditRatingAndSource`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerCreditRatingAndSourceRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerCreditRatingAndSourceRequest** | [**OBPv310UpdateCustomerCreditRatingAndSourceRequest**](OBPv310UpdateCustomerCreditRatingAndSourceRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerData
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerData(ctx, bankid, customerid).OBPv310UpdateCustomerDataRequest(oBPv310UpdateCustomerDataRequest).Execute()
-
-Update the other data of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerDataRequest := *openapiclient.NewOBPv310UpdateCustomerDataRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerDataRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"))), , )) // OBPv310UpdateCustomerDataRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerData(context.Background(), bankid, customerid).OBPv310UpdateCustomerDataRequest(oBPv310UpdateCustomerDataRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerData``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerData`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerData`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerDataRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerDataRequest** | [**OBPv310UpdateCustomerDataRequest**](OBPv310UpdateCustomerDataRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerEmail
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerEmail(ctx, bankid, customerid).OBPv310UpdateCustomerEmailRequest(oBPv310UpdateCustomerEmailRequest).Execute()
-
-Update the email of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerEmailRequest := *openapiclient.NewOBPv310UpdateCustomerEmailRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerEmailRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310UpdateCustomerEmailRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerEmail(context.Background(), bankid, customerid).OBPv310UpdateCustomerEmailRequest(oBPv310UpdateCustomerEmailRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerEmail``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerEmail`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerEmail`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerEmailRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerEmailRequest** | [**OBPv310UpdateCustomerEmailRequest**](OBPv310UpdateCustomerEmailRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerIdentity
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerIdentity(ctx, bankid, customerid).OBPv310UpdateCustomerIdentityRequest(oBPv310UpdateCustomerIdentityRequest).Execute()
-
-Update the identity data of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv310UpdateCustomerIdentityRequest := *openapiclient.NewOBPv310UpdateCustomerIdentityRequest("Type_example", *openapiclient.NewOBPv310UpdateCustomerIdentityRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"))) // OBPv310UpdateCustomerIdentityRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerIdentity(context.Background(), bankid, customerid).OBPv310UpdateCustomerIdentityRequest(oBPv310UpdateCustomerIdentityRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerIdentity``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerIdentity`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerIdentity`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerIdentityRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310UpdateCustomerIdentityRequest** | [**OBPv310UpdateCustomerIdentityRequest**](OBPv310UpdateCustomerIdentityRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerMobileNumber
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerMobileNumber(ctx, bankid, customerid).OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo).Execute()
-
-Update the mobile number of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo := *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerMobileNumber(context.Background(), bankid, customerid).OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerMobileNumber``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerMobileNumber`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerMobileNumber`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerMobileNumberRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo** | [**OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo**](OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310UpdateCustomerNumber
-
-> OBPv310UpdateCustomerBranch200Response OBPv310UpdateCustomerNumber(ctx, bankid, customerid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-
-Update the number of a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv500GetCustomerOverviewFlatRequest := *openapiclient.NewOBPv500GetCustomerOverviewFlatRequest("Type_example", *openapiclient.NewOBPv500GetCustomerOverviewFlatRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500GetCustomerOverviewFlatRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv310UpdateCustomerNumber(context.Background(), bankid, customerid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv310UpdateCustomerNumber``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310UpdateCustomerNumber`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv310UpdateCustomerNumber`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310UpdateCustomerNumberRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv500GetCustomerOverviewFlatRequest** | [**OBPv500GetCustomerOverviewFlatRequest**](OBPv500GetCustomerOverviewFlatRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateCustomerAttribute
-
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400CreateCustomerAttribute(ctx, bankid, customerid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
-
-Create Customer Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400CreateCustomerAttribute(context.Background(), bankid, customerid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400CreateCustomerAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateCustomerAttribute`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400CreateCustomerAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateCustomerAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateCustomerMessage
-
-> OBPv121UpdateTransactionNarrative200Response OBPv400CreateCustomerMessage(ctx, bankid, customerid).OBPv400CreateCustomerMessageRequest(oBPv400CreateCustomerMessageRequest).Execute()
-
-Create Customer Message
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv400CreateCustomerMessageRequest := *openapiclient.NewOBPv400CreateCustomerMessageRequest("Type_example", *openapiclient.NewOBPv400CreateCustomerMessageRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateCustomerMessageRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400CreateCustomerMessage(context.Background(), bankid, customerid).OBPv400CreateCustomerMessageRequest(oBPv400CreateCustomerMessageRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400CreateCustomerMessage``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateCustomerMessage`: OBPv121UpdateTransactionNarrative200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400CreateCustomerMessage`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateCustomerMessageRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv400CreateCustomerMessageRequest** | [**OBPv400CreateCustomerMessageRequest**](OBPv400CreateCustomerMessageRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition
-
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ctx, bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
-
-Create or Update Customer Attribute Definition
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest("Type_example", *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , )) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(context.Background(), bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400CreateUserCustomerLinks
-
-> OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems OBPv400CreateUserCustomerLinks(ctx, bankid).OBPv400CreateUserCustomerLinksRequest(oBPv400CreateUserCustomerLinksRequest).Execute()
-
-Create User Customer Link
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateUserCustomerLinksRequest := *openapiclient.NewOBPv400CreateUserCustomerLinksRequest("Type_example", *openapiclient.NewOBPv400CreateUserCustomerLinksRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateUserCustomerLinksRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400CreateUserCustomerLinks(context.Background(), bankid).OBPv400CreateUserCustomerLinksRequest(oBPv400CreateUserCustomerLinksRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400CreateUserCustomerLinks``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400CreateUserCustomerLinks`: OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400CreateUserCustomerLinks`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400CreateUserCustomerLinksRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400CreateUserCustomerLinksRequest** | [**OBPv400CreateUserCustomerLinksRequest**](OBPv400CreateUserCustomerLinksRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems**](OBPv400GetUserCustomerLinksByCustomerId200ResponsePropertiesUserCustomerLinksItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400DeleteCustomerAttribute
-
-> OBPv400DeleteCustomerAttribute(ctx, bankid, customerid, customerattributeid).Execute()
+> DeleteCustomerAttribute(ctx, bankid, customerid, customerattributeid).Execute()
 
 Delete Customer Attribute
 
@@ -2828,9 +1594,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv400DeleteCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).Execute()
+	r, err := apiClient.CustomerAPI.DeleteCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400DeleteCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteCustomerAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2848,7 +1614,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCustomerAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2875,9 +1641,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteCustomerAttributeDefinition
+## DeleteCustomerAttributeDefinition
 
-> OBPv400DeleteCustomerAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
+> DeleteCustomerAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
 
 Delete Customer Attribute Definition
 
@@ -2901,9 +1667,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv400DeleteCustomerAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
+	r, err := apiClient.CustomerAPI.DeleteCustomerAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400DeleteCustomerAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteCustomerAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2920,7 +1686,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCustomerAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2946,9 +1712,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteCustomerCascade
+## DeleteCustomerCascade
 
-> OBPv400DeleteCustomerCascade(ctx, bankid, customerid).Execute()
+> DeleteCustomerCascade(ctx, bankid, customerid).Execute()
 
 Delete Customer Cascade
 
@@ -2972,9 +1738,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv400DeleteCustomerCascade(context.Background(), bankid, customerid).Execute()
+	r, err := apiClient.CustomerAPI.DeleteCustomerCascade(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400DeleteCustomerCascade``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteCustomerCascade``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -2991,7 +1757,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCustomerCascadeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerCascadeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3017,9 +1783,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteUserCustomerLink
+## DeleteTaxResidence
 
-> OBPv400DeleteUserCustomerLink(ctx, bankid, usercustomerlinkid).Execute()
+> DeleteTaxResidence(ctx, bankid, customerid, taxresidenceid).Execute()
+
+Delete Tax Residence
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	taxresidenceid := "taxresidenceid_example" // string | The TAXRESIDENCEID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.CustomerAPI.DeleteTaxResidence(context.Background(), bankid, customerid, taxresidenceid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteTaxResidence``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+**taxresidenceid** | **string** | The TAXRESIDENCEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteTaxResidenceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteUserCustomerLink
+
+> DeleteUserCustomerLink(ctx, bankid, usercustomerlinkid).Execute()
 
 Delete User Customer Link
 
@@ -3043,9 +1883,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv400DeleteUserCustomerLink(context.Background(), bankid, usercustomerlinkid).Execute()
+	r, err := apiClient.CustomerAPI.DeleteUserCustomerLink(context.Background(), bankid, usercustomerlinkid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400DeleteUserCustomerLink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.DeleteUserCustomerLink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -3062,7 +1902,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteUserCustomerLinkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteUserCustomerLinkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3088,9 +1928,225 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCorrelatedUsersInfoByCustomerId
+## GetCorporateCustomerByCustomerId
 
-> OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems OBPv400GetCorrelatedUsersInfoByCustomerId(ctx, bankid, customerid).Execute()
+> GetCustomerByCustomerNumber200Response GetCorporateCustomerByCustomerId(ctx, bankid, customerid).Execute()
+
+Get Corporate Customer by CUSTOMER_ID
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCorporateCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCorporateCustomerByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCorporateCustomerByCustomerId`: GetCustomerByCustomerNumber200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCorporateCustomerByCustomerId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCorporateCustomerByCustomerIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCorporateCustomerSubsidiaries
+
+> GetCustomerChildren200Response GetCorporateCustomerSubsidiaries(ctx, bankid, customerid).Execute()
+
+Get Corporate Customer Subsidiaries
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCorporateCustomerSubsidiaries(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCorporateCustomerSubsidiaries``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCorporateCustomerSubsidiaries`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCorporateCustomerSubsidiaries`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCorporateCustomerSubsidiariesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCorporateCustomersAtOneBank
+
+> GetCustomerChildren200Response GetCorporateCustomersAtOneBank(ctx, bankid).Execute()
+
+Get Corporate Customers at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCorporateCustomersAtOneBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCorporateCustomersAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCorporateCustomersAtOneBank`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCorporateCustomersAtOneBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCorporateCustomersAtOneBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCorrelatedUsersInfoByCustomerId
+
+> GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner GetCorrelatedUsersInfoByCustomerId(ctx, bankid, customerid).Execute()
 
 Get Correlated User Info by Customer
 
@@ -3114,13 +2170,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCorrelatedUsersInfoByCustomerId(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCorrelatedUsersInfoByCustomerId(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCorrelatedUsersInfoByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCorrelatedUsersInfoByCustomerId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCorrelatedUsersInfoByCustomerId`: OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCorrelatedUsersInfoByCustomerId`: %v\n", resp)
+	// response from `GetCorrelatedUsersInfoByCustomerId`: GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCorrelatedUsersInfoByCustomerId`: %v\n", resp)
 }
 ```
 
@@ -3135,7 +2191,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCorrelatedUsersInfoByCustomerIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCorrelatedUsersInfoByCustomerIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3145,7 +2201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems**](OBPv400GetMyCorrelatedEntities200ResponsePropertiesCorrelatedEntitiesItems.md)
+[**GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner**](GetMyCorrelatedEntities200ResponseCorrelatedEntitiesInner.md)
 
 ### Authorization
 
@@ -3161,9 +2217,371 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributeById
+## GetCrmEvents
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400GetCustomerAttributeById(ctx, bankid, customerid, attributeid).Execute()
+> GetCrmEvents200Response GetCrmEvents(ctx, bankid).Execute()
+
+Get CRM Events
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCrmEvents(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCrmEvents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCrmEvents`: GetCrmEvents200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCrmEvents`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCrmEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetCrmEvents200Response**](GetCrmEvents200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerAccountLinkById
+
+> GetCustomerAccountLinksByCustomerId200ResponseLinksInner GetCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).Execute()
+
+Get Customer Account Link by Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAccountLinkById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerAccountLinkById`: GetCustomerAccountLinksByCustomerId200ResponseLinksInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAccountLinkById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerAccountLinkByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerAccountLinksByBankIdAccountId
+
+> GetCustomerAccountLinksByCustomerId200Response GetCustomerAccountLinksByBankIdAccountId(ctx, bankid, accountid).Execute()
+
+Get Customer Account Links by ACCOUNT_ID
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAccountLinksByBankIdAccountId(context.Background(), bankid, accountid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAccountLinksByBankIdAccountId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerAccountLinksByBankIdAccountId`: GetCustomerAccountLinksByCustomerId200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAccountLinksByBankIdAccountId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerAccountLinksByBankIdAccountIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200Response**](GetCustomerAccountLinksByCustomerId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerAccountLinksByCustomerId
+
+> GetCustomerAccountLinksByCustomerId200Response GetCustomerAccountLinksByCustomerId(ctx, bankid, customerid).Execute()
+
+Get Customer Account Links by CUSTOMER_ID
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAccountLinksByCustomerId(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAccountLinksByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerAccountLinksByCustomerId`: GetCustomerAccountLinksByCustomerId200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAccountLinksByCustomerId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerAccountLinksByCustomerIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200Response**](GetCustomerAccountLinksByCustomerId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerAddresses
+
+> GetCustomerAddresses200Response GetCustomerAddresses(ctx, bankid, customerid).Execute()
+
+Get Customer Addresses
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAddresses(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAddresses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerAddresses`: GetCustomerAddresses200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAddresses`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerAddressesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerAddresses200Response**](GetCustomerAddresses200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerAttributeById
+
+> GetCustomerAttributes200ResponseCustomerAttributesInner GetCustomerAttributeById(ctx, bankid, customerid, attributeid).Execute()
 
 Get Customer Attribute By Id
 
@@ -3188,13 +2606,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomerAttributeById(context.Background(), bankid, customerid, attributeid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAttributeById(context.Background(), bankid, customerid, attributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomerAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAttributeById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributeById`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomerAttributeById`: %v\n", resp)
+	// response from `GetCustomerAttributeById`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAttributeById`: %v\n", resp)
 }
 ```
 
@@ -3210,7 +2628,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributeByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3221,7 +2639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -3237,9 +2655,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributeDefinition
+## GetCustomerAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetCustomerAttributeDefinition(ctx, bankid).Execute()
+> GetTransactionRequestAttributeDefinition200Response GetCustomerAttributeDefinition(ctx, bankid).Execute()
 
 Get Customer Attribute Definition
 
@@ -3262,13 +2680,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomerAttributeDefinition(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAttributeDefinition(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomerAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomerAttributeDefinition`: %v\n", resp)
+	// response from `GetCustomerAttributeDefinition`: GetTransactionRequestAttributeDefinition200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -3282,7 +2700,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3291,7 +2709,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -3307,9 +2725,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributes
+## GetCustomerAttributes
 
-> OBPv400GetCustomerAttributes200Response OBPv400GetCustomerAttributes(ctx, bankid, customerid).Execute()
+> GetCustomerAttributes200Response GetCustomerAttributes(ctx, bankid, customerid).Execute()
 
 Get Customer Attributes
 
@@ -3333,13 +2751,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomerAttributes(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerAttributes(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomerAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributes`: OBPv400GetCustomerAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomerAttributes`: %v\n", resp)
+	// response from `GetCustomerAttributes`: GetCustomerAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerAttributes`: %v\n", resp)
 }
 ```
 
@@ -3354,7 +2772,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3364,7 +2782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -3380,1922 +2798,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerMessages
+## GetCustomerByCustomerId
 
-> OBPv400GetCustomerMessages200Response OBPv400GetCustomerMessages(ctx, bankid, customerid).Execute()
-
-Get Customer Messages for a Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomerMessages(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomerMessages``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCustomerMessages`: OBPv400GetCustomerMessages200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomerMessages`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerMessagesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetCustomerMessages200Response**](OBPv400GetCustomerMessages200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCustomersByCustomerPhoneNumber
-
-> OBPv310UpdateCustomerBranch200Response OBPv400GetCustomersByCustomerPhoneNumber(ctx, bankid).OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo).Execute()
-
-Get Customers by MOBILE_PHONE_NUMBER
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo := *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesToProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomersByCustomerPhoneNumber(context.Background(), bankid).OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo(oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomersByCustomerPhoneNumber``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCustomersByCustomerPhoneNumber`: OBPv310UpdateCustomerBranch200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomersByCustomerPhoneNumber`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCustomersByCustomerPhoneNumberRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo** | [**OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo**](OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToTransferToPhonePropertiesTo.md) | Request body | 
-
-### Return type
-
-[**OBPv310UpdateCustomerBranch200Response**](OBPv310UpdateCustomerBranch200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetCustomersMinimalAtAnyBank
-
-> OBPv400GetCustomersMinimalAtAnyBank200Response OBPv400GetCustomersMinimalAtAnyBank(ctx).Execute()
-
-Get Customers Minimal at Any Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetCustomersMinimalAtAnyBank(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetCustomersMinimalAtAnyBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetCustomersMinimalAtAnyBank`: OBPv400GetCustomersMinimalAtAnyBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetCustomersMinimalAtAnyBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetCustomersMinimalAtAnyBankRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetCustomersMinimalAtAnyBank200Response**](OBPv400GetCustomersMinimalAtAnyBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetMyCorrelatedEntities
-
-> OBPv400GetMyCorrelatedEntities200Response OBPv400GetMyCorrelatedEntities(ctx).Execute()
-
-Get Correlated Entities for the current User
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetMyCorrelatedEntities(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetMyCorrelatedEntities``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetMyCorrelatedEntities`: OBPv400GetMyCorrelatedEntities200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetMyCorrelatedEntities`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetMyCorrelatedEntitiesRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetMyCorrelatedEntities200Response**](OBPv400GetMyCorrelatedEntities200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetUserCustomerLinksByCustomerId
-
-> OBPv400GetUserCustomerLinksByCustomerId200Response OBPv400GetUserCustomerLinksByCustomerId(ctx, bankid, customerid).Execute()
-
-Get User Customer Links by Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetUserCustomerLinksByCustomerId(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetUserCustomerLinksByCustomerId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetUserCustomerLinksByCustomerId`: OBPv400GetUserCustomerLinksByCustomerId200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetUserCustomerLinksByCustomerId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetUserCustomerLinksByCustomerIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetUserCustomerLinksByCustomerId200Response**](OBPv400GetUserCustomerLinksByCustomerId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetUserCustomerLinksByUserId
-
-> OBPv400GetUserCustomerLinksByCustomerId200Response OBPv400GetUserCustomerLinksByUserId(ctx, bankid, userid).Execute()
-
-Get User Customer Links by User
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	userid := "userid_example" // string | The USERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400GetUserCustomerLinksByUserId(context.Background(), bankid, userid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400GetUserCustomerLinksByUserId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetUserCustomerLinksByUserId`: OBPv400GetUserCustomerLinksByCustomerId200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400GetUserCustomerLinksByUserId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**userid** | **string** | The USERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetUserCustomerLinksByUserIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv400GetUserCustomerLinksByCustomerId200Response**](OBPv400GetUserCustomerLinksByCustomerId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateCustomerAttribute
-
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400UpdateCustomerAttribute(ctx, bankid, customerid, customerattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
-
-Update Customer Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	customerattributeid := "customerattributeid_example" // string | The CUSTOMERATTRIBUTEID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv400UpdateCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv400UpdateCustomerAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateCustomerAttribute`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv400UpdateCustomerAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-**customerattributeid** | **string** | The CUSTOMERATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateCustomerAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500CreateCustomerAccountLink
-
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems OBPv500CreateCustomerAccountLink(ctx, bankid).OBPv500CreateCustomerAccountLinkRequest(oBPv500CreateCustomerAccountLinkRequest).Execute()
-
-Create Customer Account Link
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv500CreateCustomerAccountLinkRequest := *openapiclient.NewOBPv500CreateCustomerAccountLinkRequest("Type_example", *openapiclient.NewOBPv500CreateCustomerAccountLinkRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500CreateCustomerAccountLinkRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500CreateCustomerAccountLink(context.Background(), bankid).OBPv500CreateCustomerAccountLinkRequest(oBPv500CreateCustomerAccountLinkRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500CreateCustomerAccountLink``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500CreateCustomerAccountLink`: OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500CreateCustomerAccountLink`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500CreateCustomerAccountLinkRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv500CreateCustomerAccountLinkRequest** | [**OBPv500CreateCustomerAccountLinkRequest**](OBPv500CreateCustomerAccountLinkRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500DeleteCustomerAccountLinkById
-
-> OBPv500DeleteCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).Execute()
-
-Delete Customer Account Link
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAPI.OBPv500DeleteCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500DeleteCustomerAccountLinkById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500DeleteCustomerAccountLinkByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomerAccountLinkById
-
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems OBPv500GetCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).Execute()
-
-Get Customer Account Link by Id
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomerAccountLinkById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomerAccountLinkById`: OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomerAccountLinkById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomerAccountLinkByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomerAccountLinksByBankIdAccountId
-
-> OBPv500GetCustomerAccountLinksByCustomerId200Response OBPv500GetCustomerAccountLinksByBankIdAccountId(ctx, bankid, accountid).Execute()
-
-Get Customer Account Links by ACCOUNT_ID
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomerAccountLinksByBankIdAccountId(context.Background(), bankid, accountid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomerAccountLinksByBankIdAccountId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomerAccountLinksByBankIdAccountId`: OBPv500GetCustomerAccountLinksByCustomerId200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomerAccountLinksByBankIdAccountId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomerAccountLinksByBankIdAccountIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200Response**](OBPv500GetCustomerAccountLinksByCustomerId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomerAccountLinksByCustomerId
-
-> OBPv500GetCustomerAccountLinksByCustomerId200Response OBPv500GetCustomerAccountLinksByCustomerId(ctx, bankid, customerid).Execute()
-
-Get Customer Account Links by CUSTOMER_ID
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomerAccountLinksByCustomerId(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomerAccountLinksByCustomerId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomerAccountLinksByCustomerId`: OBPv500GetCustomerAccountLinksByCustomerId200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomerAccountLinksByCustomerId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomerAccountLinksByCustomerIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200Response**](OBPv500GetCustomerAccountLinksByCustomerId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomerOverview
-
-> OBPv500GetCustomerOverview200Response OBPv500GetCustomerOverview(ctx, bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-
-Get Customer Overview
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv500GetCustomerOverviewFlatRequest := *openapiclient.NewOBPv500GetCustomerOverviewFlatRequest("Type_example", *openapiclient.NewOBPv500GetCustomerOverviewFlatRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500GetCustomerOverviewFlatRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomerOverview(context.Background(), bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomerOverview``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomerOverview`: OBPv500GetCustomerOverview200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomerOverview`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomerOverviewRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv500GetCustomerOverviewFlatRequest** | [**OBPv500GetCustomerOverviewFlatRequest**](OBPv500GetCustomerOverviewFlatRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv500GetCustomerOverview200Response**](OBPv500GetCustomerOverview200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomerOverviewFlat
-
-> OBPv500GetCustomerOverviewFlat200Response OBPv500GetCustomerOverviewFlat(ctx, bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-
-Get Customer Overview Flat
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv500GetCustomerOverviewFlatRequest := *openapiclient.NewOBPv500GetCustomerOverviewFlatRequest("Type_example", *openapiclient.NewOBPv500GetCustomerOverviewFlatRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500GetCustomerOverviewFlatRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomerOverviewFlat(context.Background(), bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomerOverviewFlat``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomerOverviewFlat`: OBPv500GetCustomerOverviewFlat200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomerOverviewFlat`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomerOverviewFlatRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv500GetCustomerOverviewFlatRequest** | [**OBPv500GetCustomerOverviewFlatRequest**](OBPv500GetCustomerOverviewFlatRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv500GetCustomerOverviewFlat200Response**](OBPv500GetCustomerOverviewFlat200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetCustomersMinimalAtOneBank
-
-> OBPv400GetCustomersMinimalAtAnyBank200Response OBPv500GetCustomersMinimalAtOneBank(ctx, bankid).Execute()
-
-Get Customers Minimal at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetCustomersMinimalAtOneBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetCustomersMinimalAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetCustomersMinimalAtOneBank`: OBPv400GetCustomersMinimalAtAnyBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetCustomersMinimalAtOneBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetCustomersMinimalAtOneBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetCustomersMinimalAtAnyBank200Response**](OBPv400GetCustomersMinimalAtAnyBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetMyCustomersAtAnyBank
-
-> OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems OBPv500GetMyCustomersAtAnyBank(ctx).Execute()
-
-Get My Customers
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetMyCustomersAtAnyBank(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetMyCustomersAtAnyBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetMyCustomersAtAnyBank`: OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetMyCustomersAtAnyBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetMyCustomersAtAnyBankRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems**](OBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetMyCustomersAtBank
-
-> OBPv500GetMyCustomersAtBank200Response OBPv500GetMyCustomersAtBank(ctx, bankid).Execute()
-
-Get My Customers at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500GetMyCustomersAtBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500GetMyCustomersAtBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetMyCustomersAtBank`: OBPv500GetMyCustomersAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500GetMyCustomersAtBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetMyCustomersAtBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500GetMyCustomersAtBank200Response**](OBPv500GetMyCustomersAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500UpdateCustomerAccountLinkById
-
-> OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems OBPv500UpdateCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).OBPv500UpdateCustomerAccountLinkByIdRequest(oBPv500UpdateCustomerAccountLinkByIdRequest).Execute()
-
-Update Customer Account Link by Id
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
-	oBPv500UpdateCustomerAccountLinkByIdRequest := *openapiclient.NewOBPv500UpdateCustomerAccountLinkByIdRequest("Type_example", *openapiclient.NewOBPv500UpdateCustomerAccountLinkByIdRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500UpdateCustomerAccountLinkByIdRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv500UpdateCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).OBPv500UpdateCustomerAccountLinkByIdRequest(oBPv500UpdateCustomerAccountLinkByIdRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv500UpdateCustomerAccountLinkById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500UpdateCustomerAccountLinkById`: OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv500UpdateCustomerAccountLinkById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500UpdateCustomerAccountLinkByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv500UpdateCustomerAccountLinkByIdRequest** | [**OBPv500UpdateCustomerAccountLinkByIdRequest**](OBPv500UpdateCustomerAccountLinkByIdRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems**](OBPv500GetCustomerAccountLinksByCustomerId200ResponsePropertiesLinksItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateAgent
-
-> OBPv510GetAgent200Response OBPv510CreateAgent(ctx, bankid).OBPv510CreateAgentRequest(oBPv510CreateAgentRequest).Execute()
-
-Create Agent
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv510CreateAgentRequest := *openapiclient.NewOBPv510CreateAgentRequest("Type_example", *openapiclient.NewOBPv510CreateAgentRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510CreateAgentRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv510CreateAgent(context.Background(), bankid).OBPv510CreateAgentRequest(oBPv510CreateAgentRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv510CreateAgent``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateAgent`: OBPv510GetAgent200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv510CreateAgent`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateAgentRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv510CreateAgentRequest** | [**OBPv510CreateAgentRequest**](OBPv510CreateAgentRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetAgent200Response**](OBPv510GetAgent200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetCustomersForUserIdsOnly
-
-> OBPv300GetCustomersForUser200Response OBPv510GetCustomersForUserIdsOnly(ctx).Execute()
-
-Get Customers for Current User (IDs only)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv510GetCustomersForUserIdsOnly(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv510GetCustomersForUserIdsOnly``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetCustomersForUserIdsOnly`: OBPv300GetCustomersForUser200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv510GetCustomersForUserIdsOnly`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetCustomersForUserIdsOnlyRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv300GetCustomersForUser200Response**](OBPv300GetCustomersForUser200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510UpdateAgentStatus
-
-> OBPv510GetAgent200Response OBPv510UpdateAgentStatus(ctx, bankid, agentid).OBPv510UpdateAgentStatusRequest(oBPv510UpdateAgentStatusRequest).Execute()
-
-Update Agent status
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	agentid := "agentid_example" // string | The AGENTID identifier
-	oBPv510UpdateAgentStatusRequest := *openapiclient.NewOBPv510UpdateAgentStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateAgentStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAgentStatusRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv510UpdateAgentStatus(context.Background(), bankid, agentid).OBPv510UpdateAgentStatusRequest(oBPv510UpdateAgentStatusRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv510UpdateAgentStatus``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510UpdateAgentStatus`: OBPv510GetAgent200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv510UpdateAgentStatus`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**agentid** | **string** | The AGENTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510UpdateAgentStatusRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv510UpdateAgentStatusRequest** | [**OBPv510UpdateAgentStatusRequest**](OBPv510UpdateAgentStatusRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetAgent200Response**](OBPv510GetAgent200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateCorporateCustomer
-
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems OBPv600CreateCorporateCustomer(ctx, bankid).OBPv600CreateCorporateCustomerRequest(oBPv600CreateCorporateCustomerRequest).Execute()
-
-Create Corporate Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv600CreateCorporateCustomerRequest := *openapiclient.NewOBPv600CreateCorporateCustomerRequest("Type_example", *openapiclient.NewOBPv600CreateCorporateCustomerRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), )) // OBPv600CreateCorporateCustomerRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600CreateCorporateCustomer(context.Background(), bankid).OBPv600CreateCorporateCustomerRequest(oBPv600CreateCorporateCustomerRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600CreateCorporateCustomer``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateCorporateCustomer`: OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600CreateCorporateCustomer`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateCorporateCustomerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv600CreateCorporateCustomerRequest** | [**OBPv600CreateCorporateCustomerRequest**](OBPv600CreateCorporateCustomerRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateCustomer
-
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems OBPv600CreateCustomer(ctx, bankid).OBPv600CreateCustomerRequest(oBPv600CreateCustomerRequest).Execute()
-
-Create Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv600CreateCustomerRequest := *openapiclient.NewOBPv600CreateCustomerRequest("Type_example", *openapiclient.NewOBPv600CreateCustomerRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties(, )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , , , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties(, *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"))), , , )) // OBPv600CreateCustomerRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600CreateCustomer(context.Background(), bankid).OBPv600CreateCustomerRequest(oBPv600CreateCustomerRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600CreateCustomer``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateCustomer`: OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600CreateCustomer`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateCustomerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv600CreateCustomerRequest** | [**OBPv600CreateCustomerRequest**](OBPv600CreateCustomerRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateRetailCustomer
-
-> OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems OBPv600CreateRetailCustomer(ctx, bankid).OBPv600CreateRetailCustomerRequest(oBPv600CreateRetailCustomerRequest).Execute()
-
-Create Retail Customer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv600CreateRetailCustomerRequest := *openapiclient.NewOBPv600CreateRetailCustomerRequest("Type_example", *openapiclient.NewOBPv600CreateRetailCustomerRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRating("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditRatingProperties(, )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImage("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesFaceImageProperties(, *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"))), , , )) // OBPv600CreateRetailCustomerRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600CreateRetailCustomer(context.Background(), bankid).OBPv600CreateRetailCustomerRequest(oBPv600CreateRetailCustomerRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600CreateRetailCustomer``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateRetailCustomer`: OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600CreateRetailCustomer`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateRetailCustomerRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **oBPv600CreateRetailCustomerRequest** | [**OBPv600CreateRetailCustomerRequest**](OBPv600CreateRetailCustomerRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems**](OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCorporateCustomerByCustomerId
-
-> OBPv600GetCustomerByCustomerNumber200Response OBPv600GetCorporateCustomerByCustomerId(ctx, bankid, customerid).Execute()
-
-Get Corporate Customer by CUSTOMER_ID
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCorporateCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCorporateCustomerByCustomerId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetCorporateCustomerByCustomerId`: OBPv600GetCustomerByCustomerNumber200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCorporateCustomerByCustomerId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetCorporateCustomerByCustomerIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCorporateCustomerSubsidiaries
-
-> OBPv600GetCustomerChildren200Response OBPv600GetCorporateCustomerSubsidiaries(ctx, bankid, customerid).Execute()
-
-Get Corporate Customer Subsidiaries
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	customerid := "customerid_example" // string | The CUSTOMERID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCorporateCustomerSubsidiaries(context.Background(), bankid, customerid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCorporateCustomerSubsidiaries``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetCorporateCustomerSubsidiaries`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCorporateCustomerSubsidiaries`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**customerid** | **string** | The CUSTOMERID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetCorporateCustomerSubsidiariesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCorporateCustomersAtOneBank
-
-> OBPv600GetCustomerChildren200Response OBPv600GetCorporateCustomersAtOneBank(ctx, bankid).Execute()
-
-Get Corporate Customers at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCorporateCustomersAtOneBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCorporateCustomersAtOneBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600GetCorporateCustomersAtOneBank`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCorporateCustomersAtOneBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600GetCorporateCustomersAtOneBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600GetCustomerByCustomerId
-
-> OBPv600GetCustomerByCustomerNumber200Response OBPv600GetCustomerByCustomerId(ctx, bankid, customerid).Execute()
+> GetCustomerByCustomerNumber200Response GetCustomerByCustomerId(ctx, bankid, customerid).Execute()
 
 Get Customer by CUSTOMER_ID
 
@@ -5319,13 +2824,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomerByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerByCustomerId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomerByCustomerId`: OBPv600GetCustomerByCustomerNumber200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomerByCustomerId`: %v\n", resp)
+	// response from `GetCustomerByCustomerId`: GetCustomerByCustomerNumber200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerByCustomerId`: %v\n", resp)
 }
 ```
 
@@ -5340,7 +2845,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomerByCustomerIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerByCustomerIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5350,7 +2855,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -5366,9 +2871,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCustomerByCustomerNumber
+## GetCustomerByCustomerNumber
 
-> OBPv600GetCustomerByCustomerNumber200Response OBPv600GetCustomerByCustomerNumber(ctx, bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
+> GetCustomerByCustomerNumber200Response GetCustomerByCustomerNumber(ctx, bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
 
 Get Customer by CUSTOMER_NUMBER
 
@@ -5388,17 +2893,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv500GetCustomerOverviewFlatRequest := *openapiclient.NewOBPv500GetCustomerOverviewFlatRequest("Type_example", *openapiclient.NewOBPv500GetCustomerOverviewFlatRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv500GetCustomerOverviewFlatRequest | Request body
+	getCustomerOverviewFlatRequest := *openapiclient.NewGetCustomerOverviewFlatRequest() // GetCustomerOverviewFlatRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomerByCustomerNumber(context.Background(), bankid).OBPv500GetCustomerOverviewFlatRequest(oBPv500GetCustomerOverviewFlatRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerByCustomerNumber(context.Background(), bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomerByCustomerNumber``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerByCustomerNumber``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomerByCustomerNumber`: OBPv600GetCustomerByCustomerNumber200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomerByCustomerNumber`: %v\n", resp)
+	// response from `GetCustomerByCustomerNumber`: GetCustomerByCustomerNumber200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerByCustomerNumber`: %v\n", resp)
 }
 ```
 
@@ -5412,17 +2917,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomerByCustomerNumberRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerByCustomerNumberRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv500GetCustomerOverviewFlatRequest** | [**OBPv500GetCustomerOverviewFlatRequest**](OBPv500GetCustomerOverviewFlatRequest.md) | Request body | 
+ **getCustomerOverviewFlatRequest** | [**GetCustomerOverviewFlatRequest**](GetCustomerOverviewFlatRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -5438,9 +2943,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCustomerChildren
+## GetCustomerChildren
 
-> OBPv600GetCustomerChildren200Response OBPv600GetCustomerChildren(ctx, bankid, customerid).Execute()
+> GetCustomerChildren200Response GetCustomerChildren(ctx, bankid, customerid).Execute()
 
 Get Customer Children
 
@@ -5464,13 +2969,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomerChildren(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomerChildren(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomerChildren``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerChildren``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomerChildren`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomerChildren`: %v\n", resp)
+	// response from `GetCustomerChildren`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerChildren`: %v\n", resp)
 }
 ```
 
@@ -5485,7 +2990,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomerChildrenRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerChildrenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5495,7 +3000,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -5511,9 +3016,226 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCustomersAtAllBanks
+## GetCustomerMessages
 
-> OBPv600GetCustomerChildren200Response OBPv600GetCustomersAtAllBanks(ctx).Execute()
+> GetCustomerMessages200Response GetCustomerMessages(ctx, bankid, customerid).Execute()
+
+Get Customer Messages for a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerMessages(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerMessages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerMessages`: GetCustomerMessages200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerMessages`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerMessagesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetCustomerMessages200Response**](GetCustomerMessages200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerOverview
+
+> GetCustomerOverview200Response GetCustomerOverview(ctx, bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+
+Get Customer Overview
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	getCustomerOverviewFlatRequest := *openapiclient.NewGetCustomerOverviewFlatRequest() // GetCustomerOverviewFlatRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerOverview(context.Background(), bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerOverview``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerOverview`: GetCustomerOverview200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerOverview`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerOverviewRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **getCustomerOverviewFlatRequest** | [**GetCustomerOverviewFlatRequest**](GetCustomerOverviewFlatRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerOverview200Response**](GetCustomerOverview200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerOverviewFlat
+
+> GetCustomerOverviewFlat200Response GetCustomerOverviewFlat(ctx, bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+
+Get Customer Overview Flat
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	getCustomerOverviewFlatRequest := *openapiclient.NewGetCustomerOverviewFlatRequest() // GetCustomerOverviewFlatRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomerOverviewFlat(context.Background(), bankid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomerOverviewFlat``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomerOverviewFlat`: GetCustomerOverviewFlat200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomerOverviewFlat`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomerOverviewFlatRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **getCustomerOverviewFlatRequest** | [**GetCustomerOverviewFlatRequest**](GetCustomerOverviewFlatRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerOverviewFlat200Response**](GetCustomerOverviewFlat200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersAtAllBanks
+
+> GetCustomerChildren200Response GetCustomersAtAllBanks(ctx).Execute()
 
 Get Customers at All Banks
 
@@ -5535,13 +3257,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomersAtAllBanks(context.Background()).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomersAtAllBanks(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomersAtAllBanks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersAtAllBanks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomersAtAllBanks`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomersAtAllBanks`: %v\n", resp)
+	// response from `GetCustomersAtAllBanks`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersAtAllBanks`: %v\n", resp)
 }
 ```
 
@@ -5551,12 +3273,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomersAtAllBanksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomersAtAllBanksRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -5572,9 +3294,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetCustomersAtAllBa
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCustomersAtOneBank
+## GetCustomersAtOneBank
 
-> OBPv600GetCustomerChildren200Response OBPv600GetCustomersAtOneBank(ctx, bankid).Execute()
+> GetCustomerChildren200Response GetCustomersAtOneBank(ctx, bankid).Execute()
 
 Get Customers at Bank
 
@@ -5597,13 +3319,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomersAtOneBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomersAtOneBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomersAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersAtOneBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomersAtOneBank`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomersAtOneBank`: %v\n", resp)
+	// response from `GetCustomersAtOneBank`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersAtOneBank`: %v\n", resp)
 }
 ```
 
@@ -5617,7 +3339,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomersAtOneBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomersAtOneBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5626,7 +3348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -5642,9 +3364,81 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetCustomersByLegalName
+## GetCustomersByCustomerPhoneNumber
 
-> OBPv600GetCustomerChildren200Response OBPv600GetCustomersByLegalName(ctx, bankid).OBPv600GetCustomersByLegalNameRequest(oBPv600GetCustomersByLegalNameRequest).Execute()
+> UpdateCustomerBranch200Response GetCustomersByCustomerPhoneNumber(ctx, bankid).CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo).Execute()
+
+Get Customers by MOBILE_PHONE_NUMBER
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo := *openapiclient.NewCreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo() // CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersByCustomerPhoneNumber(context.Background(), bankid).CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersByCustomerPhoneNumber``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersByCustomerPhoneNumber`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersByCustomerPhoneNumber`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersByCustomerPhoneNumberRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo** | [**CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo**](CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersByLegalName
+
+> GetCustomerChildren200Response GetCustomersByLegalName(ctx, bankid).GetCustomersByLegalNameRequest(getCustomersByLegalNameRequest).Execute()
 
 Get Customers by Legal Name
 
@@ -5664,17 +3458,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv600GetCustomersByLegalNameRequest := *openapiclient.NewOBPv600GetCustomersByLegalNameRequest("Type_example", *openapiclient.NewOBPv600GetCustomersByLegalNameRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600GetCustomersByLegalNameRequest | Request body
+	getCustomersByLegalNameRequest := *openapiclient.NewGetCustomersByLegalNameRequest() // GetCustomersByLegalNameRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetCustomersByLegalName(context.Background(), bankid).OBPv600GetCustomersByLegalNameRequest(oBPv600GetCustomersByLegalNameRequest).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetCustomersByLegalName(context.Background(), bankid).GetCustomersByLegalNameRequest(getCustomersByLegalNameRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetCustomersByLegalName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersByLegalName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetCustomersByLegalName`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetCustomersByLegalName`: %v\n", resp)
+	// response from `GetCustomersByLegalName`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersByLegalName`: %v\n", resp)
 }
 ```
 
@@ -5688,17 +3482,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetCustomersByLegalNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomersByLegalNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv600GetCustomersByLegalNameRequest** | [**OBPv600GetCustomersByLegalNameRequest**](OBPv600GetCustomersByLegalNameRequest.md) | Request body | 
+ **getCustomersByLegalNameRequest** | [**GetCustomersByLegalNameRequest**](GetCustomersByLegalNameRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -5714,9 +3508,1017 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetRetailCustomerByCustomerId
+## GetCustomersForUser
 
-> OBPv600GetCustomerByCustomerNumber200Response OBPv600GetRetailCustomerByCustomerId(ctx, bankid, customerid).Execute()
+> GetCustomersForUser200Response GetCustomersForUser(ctx).Execute()
+
+Get Customers for Current User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersForUser(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersForUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersForUser`: GetCustomersForUser200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersForUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersForUserRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetCustomersForUser200Response**](GetCustomersForUser200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersForUserIdsOnly
+
+> GetCustomersForUser200Response GetCustomersForUserIdsOnly(ctx).Execute()
+
+Get Customers for Current User (IDs only)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersForUserIdsOnly(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersForUserIdsOnly``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersForUserIdsOnly`: GetCustomersForUser200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersForUserIdsOnly`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersForUserIdsOnlyRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetCustomersForUser200Response**](GetCustomersForUser200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersMessages
+
+> GetCustomersMessages200Response GetCustomersMessages(ctx, bankid).Execute()
+
+Get Customer Messages for all Customers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersMessages(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersMessages``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersMessages`: GetCustomersMessages200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersMessages`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersMessagesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetCustomersMessages200Response**](GetCustomersMessages200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersMinimalAtAnyBank
+
+> GetCustomersMinimalAtAnyBank200Response GetCustomersMinimalAtAnyBank(ctx).Execute()
+
+Get Customers Minimal at Any Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersMinimalAtAnyBank(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersMinimalAtAnyBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersMinimalAtAnyBank`: GetCustomersMinimalAtAnyBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersMinimalAtAnyBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersMinimalAtAnyBankRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetCustomersMinimalAtAnyBank200Response**](GetCustomersMinimalAtAnyBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomersMinimalAtOneBank
+
+> GetCustomersMinimalAtAnyBank200Response GetCustomersMinimalAtOneBank(ctx, bankid).Execute()
+
+Get Customers Minimal at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetCustomersMinimalAtOneBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetCustomersMinimalAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCustomersMinimalAtOneBank`: GetCustomersMinimalAtAnyBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetCustomersMinimalAtOneBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomersMinimalAtOneBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetCustomersMinimalAtAnyBank200Response**](GetCustomersMinimalAtAnyBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetFirehoseCustomers
+
+> GetMyCustomersAtBank200Response GetFirehoseCustomers(ctx, bankid).Execute()
+
+Get Firehose Customers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetFirehoseCustomers(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetFirehoseCustomers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetFirehoseCustomers`: GetMyCustomersAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetFirehoseCustomers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFirehoseCustomersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMyCustomersAtBank200Response**](GetMyCustomersAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKycChecks
+
+> GetKycChecks200Response GetKycChecks(ctx, customerid).Execute()
+
+Get Customer KYC Checks
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetKycChecks(context.Background(), customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetKycChecks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKycChecks`: GetKycChecks200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetKycChecks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKycChecksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetKycChecks200Response**](GetKycChecks200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKycDocuments
+
+> GetKycDocuments200Response GetKycDocuments(ctx, customerid).Execute()
+
+Get Customer KYC Documents
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetKycDocuments(context.Background(), customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetKycDocuments``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKycDocuments`: GetKycDocuments200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetKycDocuments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKycDocumentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetKycDocuments200Response**](GetKycDocuments200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKycMedia
+
+> GetKycMedia200Response GetKycMedia(ctx, customerid).Execute()
+
+Get KYC Media for a customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetKycMedia(context.Background(), customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetKycMedia``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKycMedia`: GetKycMedia200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetKycMedia`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKycMediaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetKycMedia200Response**](GetKycMedia200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKycStatuses
+
+> GetKycStatuses200Response GetKycStatuses(ctx, customerid).Execute()
+
+Get Customer KYC statuses
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetKycStatuses(context.Background(), customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetKycStatuses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetKycStatuses`: GetKycStatuses200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetKycStatuses`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKycStatusesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetKycStatuses200Response**](GetKycStatuses200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMeeting
+
+> GetMeeting200Response GetMeeting(ctx, bankid, meetingid).Execute()
+
+Get Meeting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	meetingid := "meetingid_example" // string | The MEETINGID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetMeeting(context.Background(), bankid, meetingid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetMeeting``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMeeting`: GetMeeting200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetMeeting`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**meetingid** | **string** | The MEETINGID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMeetingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetMeeting200Response**](GetMeeting200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMeetings
+
+> GetMeetings200Response GetMeetings(ctx, bankid).Execute()
+
+Get Meetings
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetMeetings(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetMeetings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMeetings`: GetMeetings200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetMeetings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMeetingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMeetings200Response**](GetMeetings200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMyCorrelatedEntities
+
+> GetMyCorrelatedEntities200Response GetMyCorrelatedEntities(ctx).Execute()
+
+Get Correlated Entities for the current User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetMyCorrelatedEntities(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetMyCorrelatedEntities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMyCorrelatedEntities`: GetMyCorrelatedEntities200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetMyCorrelatedEntities`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMyCorrelatedEntitiesRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMyCorrelatedEntities200Response**](GetMyCorrelatedEntities200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMyCustomersAtAnyBank
+
+> GetMyCustomersAtBank200ResponseCustomersInner GetMyCustomersAtAnyBank(ctx).Execute()
+
+Get My Customers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetMyCustomersAtAnyBank(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetMyCustomersAtAnyBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMyCustomersAtAnyBank`: GetMyCustomersAtBank200ResponseCustomersInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetMyCustomersAtAnyBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMyCustomersAtAnyBankRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetMyCustomersAtBank200ResponseCustomersInner**](GetMyCustomersAtBank200ResponseCustomersInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetMyCustomersAtBank
+
+> GetMyCustomersAtBank200Response GetMyCustomersAtBank(ctx, bankid).Execute()
+
+Get My Customers at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetMyCustomersAtBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetMyCustomersAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetMyCustomersAtBank`: GetMyCustomersAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetMyCustomersAtBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMyCustomersAtBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetMyCustomersAtBank200Response**](GetMyCustomersAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRetailCustomerByCustomerId
+
+> GetCustomerByCustomerNumber200Response GetRetailCustomerByCustomerId(ctx, bankid, customerid).Execute()
 
 Get Retail Customer by CUSTOMER_ID
 
@@ -5740,13 +4542,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetRetailCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetRetailCustomerByCustomerId(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetRetailCustomerByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetRetailCustomerByCustomerId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetRetailCustomerByCustomerId`: OBPv600GetCustomerByCustomerNumber200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetRetailCustomerByCustomerId`: %v\n", resp)
+	// response from `GetRetailCustomerByCustomerId`: GetCustomerByCustomerNumber200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetRetailCustomerByCustomerId`: %v\n", resp)
 }
 ```
 
@@ -5761,7 +4563,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetRetailCustomerByCustomerIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRetailCustomerByCustomerIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5771,7 +4573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerByCustomerNumber200Response**](OBPv600GetCustomerByCustomerNumber200Response.md)
+[**GetCustomerByCustomerNumber200Response**](GetCustomerByCustomerNumber200Response.md)
 
 ### Authorization
 
@@ -5787,9 +4589,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600GetRetailCustomersAtOneBank
+## GetRetailCustomersAtOneBank
 
-> OBPv600GetCustomerChildren200Response OBPv600GetRetailCustomersAtOneBank(ctx, bankid).Execute()
+> GetCustomerChildren200Response GetRetailCustomersAtOneBank(ctx, bankid).Execute()
 
 Get Retail Customers at Bank
 
@@ -5812,13 +4614,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAPI.OBPv600GetRetailCustomersAtOneBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.CustomerAPI.GetRetailCustomersAtOneBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.OBPv600GetRetailCustomersAtOneBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetRetailCustomersAtOneBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetRetailCustomersAtOneBank`: OBPv600GetCustomerChildren200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.OBPv600GetRetailCustomersAtOneBank`: %v\n", resp)
+	// response from `GetRetailCustomersAtOneBank`: GetCustomerChildren200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetRetailCustomersAtOneBank`: %v\n", resp)
 }
 ```
 
@@ -5832,7 +4634,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetRetailCustomersAtOneBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRetailCustomersAtOneBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5841,7 +4643,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCustomerChildren200Response**](OBPv600GetCustomerChildren200Response.md)
+[**GetCustomerChildren200Response**](GetCustomerChildren200Response.md)
 
 ### Authorization
 
@@ -5850,6 +4652,1204 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSocialMediaHandles
+
+> GetSocialMediaHandles200Response GetSocialMediaHandles(ctx, bankid, customerid).Execute()
+
+Get Customer Social Media Handles
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetSocialMediaHandles(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetSocialMediaHandles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSocialMediaHandles`: GetSocialMediaHandles200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetSocialMediaHandles`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSocialMediaHandlesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetSocialMediaHandles200Response**](GetSocialMediaHandles200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTaxResidence
+
+> GetTaxResidence200Response GetTaxResidence(ctx, bankid, customerid).Execute()
+
+Get Tax Residences of Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetTaxResidence(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetTaxResidence``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTaxResidence`: GetTaxResidence200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetTaxResidence`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTaxResidenceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetTaxResidence200Response**](GetTaxResidence200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetUserCustomerLinksByCustomerId
+
+> GetUserCustomerLinksByCustomerId200Response GetUserCustomerLinksByCustomerId(ctx, bankid, customerid).Execute()
+
+Get User Customer Links by Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetUserCustomerLinksByCustomerId(context.Background(), bankid, customerid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetUserCustomerLinksByCustomerId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetUserCustomerLinksByCustomerId`: GetUserCustomerLinksByCustomerId200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetUserCustomerLinksByCustomerId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetUserCustomerLinksByCustomerIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetUserCustomerLinksByCustomerId200Response**](GetUserCustomerLinksByCustomerId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetUserCustomerLinksByUserId
+
+> GetUserCustomerLinksByCustomerId200Response GetUserCustomerLinksByUserId(ctx, bankid, userid).Execute()
+
+Get User Customer Links by User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	userid := "userid_example" // string | The USERID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.GetUserCustomerLinksByUserId(context.Background(), bankid, userid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.GetUserCustomerLinksByUserId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetUserCustomerLinksByUserId`: GetUserCustomerLinksByCustomerId200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.GetUserCustomerLinksByUserId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**userid** | **string** | The USERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetUserCustomerLinksByUserIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetUserCustomerLinksByCustomerId200Response**](GetUserCustomerLinksByCustomerId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAgentStatus
+
+> GetAgent200Response UpdateAgentStatus(ctx, bankid, agentid).UpdateAgentStatusRequest(updateAgentStatusRequest).Execute()
+
+Update Agent status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	agentid := "agentid_example" // string | The AGENTID identifier
+	updateAgentStatusRequest := *openapiclient.NewUpdateAgentStatusRequest() // UpdateAgentStatusRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateAgentStatus(context.Background(), bankid, agentid).UpdateAgentStatusRequest(updateAgentStatusRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateAgentStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateAgentStatus`: GetAgent200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateAgentStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**agentid** | **string** | The AGENTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAgentStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateAgentStatusRequest** | [**UpdateAgentStatusRequest**](UpdateAgentStatusRequest.md) | Request body | 
+
+### Return type
+
+[**GetAgent200Response**](GetAgent200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerAccountLinkById
+
+> GetCustomerAccountLinksByCustomerId200ResponseLinksInner UpdateCustomerAccountLinkById(ctx, bankid, customeraccountlinkid).UpdateCustomerAccountLinkByIdRequest(updateCustomerAccountLinkByIdRequest).Execute()
+
+Update Customer Account Link by Id
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customeraccountlinkid := "customeraccountlinkid_example" // string | The CUSTOMERACCOUNTLINKID identifier
+	updateCustomerAccountLinkByIdRequest := *openapiclient.NewUpdateCustomerAccountLinkByIdRequest() // UpdateCustomerAccountLinkByIdRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerAccountLinkById(context.Background(), bankid, customeraccountlinkid).UpdateCustomerAccountLinkByIdRequest(updateCustomerAccountLinkByIdRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerAccountLinkById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerAccountLinkById`: GetCustomerAccountLinksByCustomerId200ResponseLinksInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerAccountLinkById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customeraccountlinkid** | **string** | The CUSTOMERACCOUNTLINKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerAccountLinkByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerAccountLinkByIdRequest** | [**UpdateCustomerAccountLinkByIdRequest**](UpdateCustomerAccountLinkByIdRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerAccountLinksByCustomerId200ResponseLinksInner**](GetCustomerAccountLinksByCustomerId200ResponseLinksInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerAddress
+
+> CreateCustomerAddress200Response UpdateCustomerAddress(ctx, bankid, customerid, customeraddressid).CreateCustomerAddressRequest(createCustomerAddressRequest).Execute()
+
+Update the Address of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	customeraddressid := "customeraddressid_example" // string | The CUSTOMERADDRESSID identifier
+	createCustomerAddressRequest := *openapiclient.NewCreateCustomerAddressRequest() // CreateCustomerAddressRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerAddress(context.Background(), bankid, customerid, customeraddressid).CreateCustomerAddressRequest(createCustomerAddressRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerAddress``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerAddress`: CreateCustomerAddress200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerAddress`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+**customeraddressid** | **string** | The CUSTOMERADDRESSID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerAddressRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createCustomerAddressRequest** | [**CreateCustomerAddressRequest**](CreateCustomerAddressRequest.md) | Request body | 
+
+### Return type
+
+[**CreateCustomerAddress200Response**](CreateCustomerAddress200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerAttribute
+
+> GetCustomerAttributes200ResponseCustomerAttributesInner UpdateCustomerAttribute(ctx, bankid, customerid, customerattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
+
+Update Customer Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	customerattributeid := "customerattributeid_example" // string | The CUSTOMERATTRIBUTEID identifier
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerAttribute`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+**customerattributeid** | **string** | The CUSTOMERATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
+
+### Return type
+
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerBranch
+
+> UpdateCustomerBranch200Response UpdateCustomerBranch(ctx, bankid, customerid).UpdateCustomerBranchRequest(updateCustomerBranchRequest).Execute()
+
+Update the Branch of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerBranchRequest := *openapiclient.NewUpdateCustomerBranchRequest() // UpdateCustomerBranchRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerBranch(context.Background(), bankid, customerid).UpdateCustomerBranchRequest(updateCustomerBranchRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerBranch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerBranch`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerBranch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerBranchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerBranchRequest** | [**UpdateCustomerBranchRequest**](UpdateCustomerBranchRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerCreditLimit
+
+> UpdateCustomerBranch200Response UpdateCustomerCreditLimit(ctx, bankid, customerid).UpdateCustomerCreditLimitRequest(updateCustomerCreditLimitRequest).Execute()
+
+Update the credit limit of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerCreditLimitRequest := *openapiclient.NewUpdateCustomerCreditLimitRequest() // UpdateCustomerCreditLimitRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerCreditLimit(context.Background(), bankid, customerid).UpdateCustomerCreditLimitRequest(updateCustomerCreditLimitRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerCreditLimit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerCreditLimit`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerCreditLimit`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerCreditLimitRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerCreditLimitRequest** | [**UpdateCustomerCreditLimitRequest**](UpdateCustomerCreditLimitRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerCreditRatingAndSource
+
+> UpdateCustomerBranch200Response UpdateCustomerCreditRatingAndSource(ctx, bankid, customerid).UpdateCustomerCreditRatingAndSourceRequest(updateCustomerCreditRatingAndSourceRequest).Execute()
+
+Update the credit rating and source of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerCreditRatingAndSourceRequest := *openapiclient.NewUpdateCustomerCreditRatingAndSourceRequest() // UpdateCustomerCreditRatingAndSourceRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerCreditRatingAndSource(context.Background(), bankid, customerid).UpdateCustomerCreditRatingAndSourceRequest(updateCustomerCreditRatingAndSourceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerCreditRatingAndSource``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerCreditRatingAndSource`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerCreditRatingAndSource`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerCreditRatingAndSourceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerCreditRatingAndSourceRequest** | [**UpdateCustomerCreditRatingAndSourceRequest**](UpdateCustomerCreditRatingAndSourceRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerData
+
+> UpdateCustomerBranch200Response UpdateCustomerData(ctx, bankid, customerid).UpdateCustomerDataRequest(updateCustomerDataRequest).Execute()
+
+Update the other data of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerDataRequest := *openapiclient.NewUpdateCustomerDataRequest() // UpdateCustomerDataRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerData(context.Background(), bankid, customerid).UpdateCustomerDataRequest(updateCustomerDataRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerData``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerData`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerData`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerDataRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerDataRequest** | [**UpdateCustomerDataRequest**](UpdateCustomerDataRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerEmail
+
+> UpdateCustomerBranch200Response UpdateCustomerEmail(ctx, bankid, customerid).UpdateCustomerEmailRequest(updateCustomerEmailRequest).Execute()
+
+Update the email of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerEmailRequest := *openapiclient.NewUpdateCustomerEmailRequest() // UpdateCustomerEmailRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerEmail(context.Background(), bankid, customerid).UpdateCustomerEmailRequest(updateCustomerEmailRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerEmail``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerEmail`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerEmail`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerEmailRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerEmailRequest** | [**UpdateCustomerEmailRequest**](UpdateCustomerEmailRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerIdentity
+
+> UpdateCustomerBranch200Response UpdateCustomerIdentity(ctx, bankid, customerid).UpdateCustomerIdentityRequest(updateCustomerIdentityRequest).Execute()
+
+Update the identity data of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	updateCustomerIdentityRequest := *openapiclient.NewUpdateCustomerIdentityRequest() // UpdateCustomerIdentityRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerIdentity(context.Background(), bankid, customerid).UpdateCustomerIdentityRequest(updateCustomerIdentityRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerIdentity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerIdentity`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerIdentity`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerIdentityRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateCustomerIdentityRequest** | [**UpdateCustomerIdentityRequest**](UpdateCustomerIdentityRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerMobileNumber
+
+> UpdateCustomerBranch200Response UpdateCustomerMobileNumber(ctx, bankid, customerid).CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo).Execute()
+
+Update the mobile number of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo := *openapiclient.NewCreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo() // CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerMobileNumber(context.Background(), bankid, customerid).CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo(createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerMobileNumber``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerMobileNumber`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerMobileNumber`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerMobileNumberRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo** | [**CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo**](CreateTransactionRequestCounterparty200ResponseDetailsToTransferToPhoneTo.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCustomerNumber
+
+> UpdateCustomerBranch200Response UpdateCustomerNumber(ctx, bankid, customerid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+
+Update the number of a Customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	customerid := "customerid_example" // string | The CUSTOMERID identifier
+	getCustomerOverviewFlatRequest := *openapiclient.NewGetCustomerOverviewFlatRequest() // GetCustomerOverviewFlatRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomerAPI.UpdateCustomerNumber(context.Background(), bankid, customerid).GetCustomerOverviewFlatRequest(getCustomerOverviewFlatRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAPI.UpdateCustomerNumber``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCustomerNumber`: UpdateCustomerBranch200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAPI.UpdateCustomerNumber`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**customerid** | **string** | The CUSTOMERID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCustomerNumberRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **getCustomerOverviewFlatRequest** | [**GetCustomerOverviewFlatRequest**](GetCustomerOverviewFlatRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateCustomerBranch200Response**](UpdateCustomerBranch200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

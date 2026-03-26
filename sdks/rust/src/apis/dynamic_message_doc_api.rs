@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,97 +15,97 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_bank_level_dynamic_message_doc`]
+/// struct for typed errors of method [`create_bank_level_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateBankLevelDynamicMessageDocError {
+pub enum CreateBankLevelDynamicMessageDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_create_dynamic_message_doc`]
+/// struct for typed errors of method [`create_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400CreateDynamicMessageDocError {
+pub enum CreateDynamicMessageDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_bank_level_dynamic_message_doc`]
+/// struct for typed errors of method [`delete_bank_level_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteBankLevelDynamicMessageDocError {
+pub enum DeleteBankLevelDynamicMessageDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_dynamic_message_doc`]
+/// struct for typed errors of method [`delete_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteDynamicMessageDocError {
+pub enum DeleteDynamicMessageDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_bank_level_dynamic_message_docs`]
+/// struct for typed errors of method [`get_all_bank_level_dynamic_message_docs`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllBankLevelDynamicMessageDocsError {
+pub enum GetAllBankLevelDynamicMessageDocsError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_all_dynamic_message_docs`]
+/// struct for typed errors of method [`get_all_dynamic_message_docs`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetAllDynamicMessageDocsError {
+pub enum GetAllDynamicMessageDocsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_bank_level_dynamic_message_doc`]
+/// struct for typed errors of method [`get_bank_level_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetBankLevelDynamicMessageDocError {
+pub enum GetBankLevelDynamicMessageDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_dynamic_message_doc`]
+/// struct for typed errors of method [`get_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetDynamicMessageDocError {
+pub enum GetDynamicMessageDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_bank_level_dynamic_message_doc`]
+/// struct for typed errors of method [`update_bank_level_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateBankLevelDynamicMessageDocError {
+pub enum UpdateBankLevelDynamicMessageDocError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_update_dynamic_message_doc`]
+/// struct for typed errors of method [`update_dynamic_message_doc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400UpdateDynamicMessageDocError {
+pub enum UpdateDynamicMessageDocError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_create_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, obpv400_update_dynamic_message_doc_request: models::Obpv400UpdateDynamicMessageDocRequest) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400CreateBankLevelDynamicMessageDocError>> {
+pub async fn create_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, update_dynamic_message_doc_request: models::UpdateDynamicMessageDocRequest) -> Result<models::GetDynamicMessageDoc200Response, Error<CreateBankLevelDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
-    let p_body_obpv400_update_dynamic_message_doc_request = obpv400_update_dynamic_message_doc_request;
+    let p_body_update_dynamic_message_doc_request = update_dynamic_message_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -130,9 +130,9 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_message_doc(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_dynamic_message_doc_request);
+    req_builder = req_builder.json(&p_body_update_dynamic_message_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -149,20 +149,20 @@ pub async fn o_bpv4_0_0_create_bank_level_dynamic_message_doc(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_create_dynamic_message_doc(configuration: &configuration::Configuration, obpv400_update_dynamic_message_doc_request: models::Obpv400UpdateDynamicMessageDocRequest) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400CreateDynamicMessageDocError>> {
+pub async fn create_dynamic_message_doc(configuration: &configuration::Configuration, update_dynamic_message_doc_request: models::UpdateDynamicMessageDocRequest) -> Result<models::GetDynamicMessageDoc200Response, Error<CreateDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_obpv400_update_dynamic_message_doc_request = obpv400_update_dynamic_message_doc_request;
+    let p_body_update_dynamic_message_doc_request = update_dynamic_message_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-message-docs", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -187,9 +187,9 @@ pub async fn o_bpv4_0_0_create_dynamic_message_doc(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_dynamic_message_doc_request);
+    req_builder = req_builder.json(&p_body_update_dynamic_message_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -206,18 +206,18 @@ pub async fn o_bpv4_0_0_create_dynamic_message_doc(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400CreateDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str) -> Result<(), Error<OBpv400DeleteBankLevelDynamicMessageDocError>> {
+pub async fn delete_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str) -> Result<(), Error<DeleteBankLevelDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
@@ -245,7 +245,7 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_message_doc(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -257,13 +257,13 @@ pub async fn o_bpv4_0_0_delete_bank_level_dynamic_message_doc(configuration: &co
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str) -> Result<(), Error<OBpv400DeleteDynamicMessageDocError>> {
+pub async fn delete_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str) -> Result<(), Error<DeleteDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
 
@@ -290,7 +290,7 @@ pub async fn o_bpv4_0_0_delete_dynamic_message_doc(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -302,13 +302,13 @@ pub async fn o_bpv4_0_0_delete_dynamic_message_doc(configuration: &configuration
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv400GetAllBankLevelDynamicMessageDocs200Response, Error<OBpv400GetAllBankLevelDynamicMessageDocsError>> {
+pub async fn get_all_bank_level_dynamic_message_docs(configuration: &configuration::Configuration, bankid: &str) -> Result<models::GetAllBankLevelDynamicMessageDocs200Response, Error<GetAllBankLevelDynamicMessageDocsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -335,7 +335,7 @@ pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(configuration: &
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -353,18 +353,18 @@ pub async fn o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(configuration: &
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllBankLevelDynamicMessageDocs200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllBankLevelDynamicMessageDocs200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankLevelDynamicMessageDocs200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankLevelDynamicMessageDocs200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllBankLevelDynamicMessageDocsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllBankLevelDynamicMessageDocsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_get_all_dynamic_message_docs(configuration: &configuration::Configuration, ) -> Result<models::Obpv400GetAllBankLevelDynamicMessageDocs200Response, Error<OBpv400GetAllDynamicMessageDocsError>> {
+pub async fn get_all_dynamic_message_docs(configuration: &configuration::Configuration, ) -> Result<models::GetAllBankLevelDynamicMessageDocs200Response, Error<GetAllDynamicMessageDocsError>> {
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-message-docs", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -389,7 +389,7 @@ pub async fn o_bpv4_0_0_get_all_dynamic_message_docs(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -407,18 +407,18 @@ pub async fn o_bpv4_0_0_get_all_dynamic_message_docs(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetAllBankLevelDynamicMessageDocs200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetAllBankLevelDynamicMessageDocs200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankLevelDynamicMessageDocs200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankLevelDynamicMessageDocs200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetAllDynamicMessageDocsError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllDynamicMessageDocsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_get_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400GetBankLevelDynamicMessageDocError>> {
+pub async fn get_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str) -> Result<models::GetDynamicMessageDoc200Response, Error<GetBankLevelDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
@@ -446,7 +446,7 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_message_doc(configuration: &confi
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -464,18 +464,18 @@ pub async fn o_bpv4_0_0_get_bank_level_dynamic_message_doc(configuration: &confi
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_get_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400GetDynamicMessageDocError>> {
+pub async fn get_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str) -> Result<models::GetDynamicMessageDoc200Response, Error<GetDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
 
@@ -502,7 +502,7 @@ pub async fn o_bpv4_0_0_get_dynamic_message_doc(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -520,22 +520,22 @@ pub async fn o_bpv4_0_0_get_dynamic_message_doc(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_update_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str, obpv400_update_dynamic_message_doc_request: models::Obpv400UpdateDynamicMessageDocRequest) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400UpdateBankLevelDynamicMessageDocError>> {
+pub async fn update_bank_level_dynamic_message_doc(configuration: &configuration::Configuration, bankid: &str, dynamicmessagedocid: &str, update_dynamic_message_doc_request: models::UpdateDynamicMessageDocRequest) -> Result<models::GetDynamicMessageDoc200Response, Error<UpdateBankLevelDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
-    let p_body_obpv400_update_dynamic_message_doc_request = obpv400_update_dynamic_message_doc_request;
+    let p_body_update_dynamic_message_doc_request = update_dynamic_message_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), dynamicmessagedocid=crate::apis::urlencode(p_path_dynamicmessagedocid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -560,9 +560,9 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_message_doc(configuration: &co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_dynamic_message_doc_request);
+    req_builder = req_builder.json(&p_body_update_dynamic_message_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -579,21 +579,21 @@ pub async fn o_bpv4_0_0_update_bank_level_dynamic_message_doc(configuration: &co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateBankLevelDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-pub async fn o_bpv4_0_0_update_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str, obpv400_update_dynamic_message_doc_request: models::Obpv400UpdateDynamicMessageDocRequest) -> Result<models::Obpv400GetDynamicMessageDoc200Response, Error<OBpv400UpdateDynamicMessageDocError>> {
+pub async fn update_dynamic_message_doc(configuration: &configuration::Configuration, dynamicmessagedocid: &str, update_dynamic_message_doc_request: models::UpdateDynamicMessageDocRequest) -> Result<models::GetDynamicMessageDoc200Response, Error<UpdateDynamicMessageDocError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dynamicmessagedocid = dynamicmessagedocid;
-    let p_body_obpv400_update_dynamic_message_doc_request = obpv400_update_dynamic_message_doc_request;
+    let p_body_update_dynamic_message_doc_request = update_dynamic_message_doc_request;
 
     let uri_str = format!("{}/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}", configuration.base_path, dynamicmessagedocid=crate::apis::urlencode(p_path_dynamicmessagedocid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -618,9 +618,9 @@ pub async fn o_bpv4_0_0_update_dynamic_message_doc(configuration: &configuration
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_update_dynamic_message_doc_request);
+    req_builder = req_builder.json(&p_body_update_dynamic_message_doc_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -637,12 +637,12 @@ pub async fn o_bpv4_0_0_update_dynamic_message_doc(configuration: &configuration
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetDynamicMessageDoc200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400UpdateDynamicMessageDocError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateDynamicMessageDocError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

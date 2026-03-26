@@ -5,16 +5,16 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv300DataWarehouseSearch**](DataWarehouseApi.md#obpv300datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-[**oBPv300DataWarehouseStatistics**](DataWarehouseApi.md#obpv300datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+[**dataWarehouseSearch**](DataWarehouseApi.md#datawarehousesearch) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+[**dataWarehouseStatistics**](DataWarehouseApi.md#datawarehousestatistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
 
 
-# **oBPv300DataWarehouseSearch**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(index, oBPv300DataWarehouseSearchRequest)
+# **dataWarehouseSearch**
+> JsonObject dataWarehouseSearch(index, dataWarehouseSearchRequest)
 
 Data Warehouse Search
 
@@ -36,13 +36,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDataWarehouseApi();
 final String index = index_example; // String | The INDEX identifier
-final OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}}; // OBPv300DataWarehouseSearchRequest | Request body
+final DataWarehouseSearchRequest dataWarehouseSearchRequest = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}}; // DataWarehouseSearchRequest | Request body
 
 try {
-    final response = api.oBPv300DataWarehouseSearch(index, oBPv300DataWarehouseSearchRequest);
+    final response = api.dataWarehouseSearch(index, dataWarehouseSearchRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DataWarehouseApi->oBPv300DataWarehouseSearch: $e\n');
+    print('Exception when calling DataWarehouseApi->dataWarehouseSearch: $e\n');
 }
 ```
 
@@ -51,11 +51,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **String**| The INDEX identifier | 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**JsonObject**](JsonObject.md)
 
 ### Authorization
 
@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv300DataWarehouseStatistics**
-> OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(index, field, oBPv300DataWarehouseSearchRequest)
+# **dataWarehouseStatistics**
+> JsonObject dataWarehouseStatistics(index, field, dataWarehouseSearchRequest)
 
 Data Warehouse Statistics
 
@@ -92,13 +92,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDataWarehouseApi();
 final String index = index_example; // String | The INDEX identifier
 final String field = field_example; // String | The FIELD identifier
-final OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}}; // OBPv300DataWarehouseSearchRequest | Request body
+final DataWarehouseSearchRequest dataWarehouseSearchRequest = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}}; // DataWarehouseSearchRequest | Request body
 
 try {
-    final response = api.oBPv300DataWarehouseStatistics(index, field, oBPv300DataWarehouseSearchRequest);
+    final response = api.dataWarehouseStatistics(index, field, dataWarehouseSearchRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DataWarehouseApi->oBPv300DataWarehouseStatistics: $e\n');
+    print('Exception when calling DataWarehouseApi->dataWarehouseStatistics: $e\n');
 }
 ```
 
@@ -108,11 +108,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **String**| The INDEX identifier | 
  **field** | **String**| The FIELD identifier | 
- **oBPv300DataWarehouseSearchRequest** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | 
+ **dataWarehouseSearchRequest** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+[**JsonObject**](JsonObject.md)
 
 ### Authorization
 

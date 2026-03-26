@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv300PrivateAccountsAtOneBank200Response
-import com.openbankproject.models.OBPv600GetAccountsAtBank200Response
+import com.openbankproject.models.GetAccountsAtBank200Response
+import com.openbankproject.models.PrivateAccountsAtOneBank200Response
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -50,7 +50,7 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * GET /obp/v3.0.0/my/accounts
      * Get Accounts at all Banks (private)
      * &lt;p&gt;Returns the list of accounts containing private views for the user.&lt;br /&gt; Each account lists the views available to the user.&lt;/p&gt; &lt;p&gt;optional request parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_type_filter: one or many accountType value, split by comma&lt;/li&gt; &lt;li&gt;account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;whole url example:&lt;br /&gt; /my/accounts?account_type_filter&#x3D;330,CURRENT+PLUS&amp;amp;account_type_filter_operation&#x3D;INCLUDE&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_type&lt;/strong&gt;&lt;/a&gt;: AC&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views\&quot;&gt;&lt;strong&gt;views&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-     * @return OBPv300PrivateAccountsAtOneBank200Response
+     * @return PrivateAccountsAtOneBank200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -59,11 +59,11 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv300CorePrivateAccountsAllBanks() : OBPv300PrivateAccountsAtOneBank200Response {
-        val localVarResponse = oBPv300CorePrivateAccountsAllBanksWithHttpInfo()
+    fun corePrivateAccountsAllBanks() : PrivateAccountsAtOneBank200Response {
+        val localVarResponse = corePrivateAccountsAllBanksWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv300PrivateAccountsAtOneBank200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as PrivateAccountsAtOneBank200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -81,26 +81,26 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * GET /obp/v3.0.0/my/accounts
      * Get Accounts at all Banks (private)
      * &lt;p&gt;Returns the list of accounts containing private views for the user.&lt;br /&gt; Each account lists the views available to the user.&lt;/p&gt; &lt;p&gt;optional request parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;account_type_filter: one or many accountType value, split by comma&lt;/li&gt; &lt;li&gt;account_type_filter_operation: the filter type of account_type_filter, value must be INCLUDE or EXCLUDE&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;whole url example:&lt;br /&gt; /my/accounts?account_type_filter&#x3D;330,CURRENT+PLUS&amp;amp;account_type_filter_operation&#x3D;INCLUDE&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_routings\&quot;&gt;&lt;strong&gt;account_routings&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_type&lt;/strong&gt;&lt;/a&gt;: AC&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#address\&quot;&gt;&lt;strong&gt;address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#scheme\&quot;&gt;&lt;strong&gt;scheme&lt;/strong&gt;&lt;/a&gt;: OBP&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views\&quot;&gt;&lt;strong&gt;views&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-     * @return ApiResponse<OBPv300PrivateAccountsAtOneBank200Response?>
+     * @return ApiResponse<PrivateAccountsAtOneBank200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv300CorePrivateAccountsAllBanksWithHttpInfo() : ApiResponse<OBPv300PrivateAccountsAtOneBank200Response?> {
-        val localVariableConfig = oBPv300CorePrivateAccountsAllBanksRequestConfig()
+    fun corePrivateAccountsAllBanksWithHttpInfo() : ApiResponse<PrivateAccountsAtOneBank200Response?> {
+        val localVariableConfig = corePrivateAccountsAllBanksRequestConfig()
 
-        return request<Unit, OBPv300PrivateAccountsAtOneBank200Response>(
+        return request<Unit, PrivateAccountsAtOneBank200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv300CorePrivateAccountsAllBanks
+     * To obtain the request config of the operation corePrivateAccountsAllBanks
      *
      * @return RequestConfig
      */
-    fun oBPv300CorePrivateAccountsAllBanksRequestConfig() : RequestConfig<Unit> {
+    fun corePrivateAccountsAllBanksRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -121,7 +121,7 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get Accounts at Bank
      * &lt;p&gt;Returns the list of accounts at BANK_ID that the user has access to.&lt;br /&gt; For each account the API returns the account ID and the views available to the user.&lt;br /&gt; Each account must have at least one private View.&lt;/p&gt; &lt;p&gt;This v6.0.0 version returns &lt;code&gt;account_id&lt;/code&gt; instead of &lt;code&gt;id&lt;/code&gt; for consistency with other v6.0.0 endpoints.&lt;/p&gt; &lt;p&gt;Optional request parameters for filtering with attributes:&lt;br /&gt; URL params example: /banks/some-bank-id/accounts?limit&#x3D;50&amp;amp;offset&#x3D;1&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv600GetAccountsAtBank200Response
+     * @return GetAccountsAtBank200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -130,11 +130,11 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv600GetAccountsAtBank(bankid: kotlin.String) : OBPv600GetAccountsAtBank200Response {
-        val localVarResponse = oBPv600GetAccountsAtBankWithHttpInfo(bankid = bankid)
+    fun getAccountsAtBank(bankid: kotlin.String) : GetAccountsAtBank200Response {
+        val localVarResponse = getAccountsAtBankWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv600GetAccountsAtBank200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAccountsAtBank200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -153,27 +153,27 @@ open class PrivateDataApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get Accounts at Bank
      * &lt;p&gt;Returns the list of accounts at BANK_ID that the user has access to.&lt;br /&gt; For each account the API returns the account ID and the views available to the user.&lt;br /&gt; Each account must have at least one private View.&lt;/p&gt; &lt;p&gt;This v6.0.0 version returns &lt;code&gt;account_id&lt;/code&gt; instead of &lt;code&gt;id&lt;/code&gt; for consistency with other v6.0.0 endpoints.&lt;/p&gt; &lt;p&gt;Optional request parameters for filtering with attributes:&lt;br /&gt; URL params example: /banks/some-bank-id/accounts?limit&#x3D;50&amp;amp;offset&#x3D;1&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#accounts\&quot;&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_public\&quot;&gt;&lt;strong&gt;is_public&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;label&lt;/strong&gt;&lt;/a&gt;: My Account&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#short_name\&quot;&gt;&lt;strong&gt;short_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#views_available\&quot;&gt;&lt;strong&gt;views_available&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv600GetAccountsAtBank200Response?>
+     * @return ApiResponse<GetAccountsAtBank200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv600GetAccountsAtBankWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv600GetAccountsAtBank200Response?> {
-        val localVariableConfig = oBPv600GetAccountsAtBankRequestConfig(bankid = bankid)
+    fun getAccountsAtBankWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetAccountsAtBank200Response?> {
+        val localVariableConfig = getAccountsAtBankRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv600GetAccountsAtBank200Response>(
+        return request<Unit, GetAccountsAtBank200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv600GetAccountsAtBank
+     * To obtain the request config of the operation getAccountsAtBank
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv600GetAccountsAtBankRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getAccountsAtBankRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

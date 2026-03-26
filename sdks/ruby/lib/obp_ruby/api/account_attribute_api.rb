@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -24,11 +24,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv310_update_account_attribute_request [OBPv310UpdateAccountAttributeRequest] Request body
+    # @param update_account_attribute_request [UpdateAccountAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems]
-    def o_bpv3_1_0_create_account_attribute(bankid, accountid, productcode, obpv310_update_account_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_create_account_attribute_with_http_info(bankid, accountid, productcode, obpv310_update_account_attribute_request, opts)
+    # @return [GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner]
+    def create_account_attribute(bankid, accountid, productcode, update_account_attribute_request, opts = {})
+      data, _status_code, _headers = create_account_attribute_with_http_info(bankid, accountid, productcode, update_account_attribute_request, opts)
       data
     end
 
@@ -37,28 +37,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param productcode [String] The PRODUCTCODE identifier
-    # @param obpv310_update_account_attribute_request [OBPv310UpdateAccountAttributeRequest] Request body
+    # @param update_account_attribute_request [UpdateAccountAttributeRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, Integer, Hash)>] OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems data, response status code and response headers
-    def o_bpv3_1_0_create_account_attribute_with_http_info(bankid, accountid, productcode, obpv310_update_account_attribute_request, opts = {})
+    # @return [Array<(GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, Integer, Hash)>] GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner data, response status code and response headers
+    def create_account_attribute_with_http_info(bankid, accountid, productcode, update_account_attribute_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.o_bpv3_1_0_create_account_attribute ...'
+        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.create_account_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.o_bpv3_1_0_create_account_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.create_account_attribute"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAttributeApi.o_bpv3_1_0_create_account_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAttributeApi.create_account_attribute"
       end
       # verify the required parameter 'productcode' is set
       if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling AccountAttributeApi.o_bpv3_1_0_create_account_attribute"
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling AccountAttributeApi.create_account_attribute"
       end
-      # verify the required parameter 'obpv310_update_account_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv310_update_account_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv310_update_account_attribute_request' when calling AccountAttributeApi.o_bpv3_1_0_create_account_attribute"
+      # verify the required parameter 'update_account_attribute_request' is set
+      if @api_client.config.client_side_validation && update_account_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_account_attribute_request' when calling AccountAttributeApi.create_account_attribute"
       end
       # resource path
       local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s))
@@ -80,16 +80,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv310_update_account_attribute_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_account_attribute_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAttributeApi.o_bpv3_1_0_create_account_attribute",
+        :operation => :"AccountAttributeApi.create_account_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -100,99 +100,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAttributeApi#o_bpv3_1_0_create_account_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update Account Attribute
-    # <p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv310_update_account_attribute_request [OBPv310UpdateAccountAttributeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems]
-    def o_bpv3_1_0_update_account_attribute(bankid, accountid, productcode, accountattributeid, obpv310_update_account_attribute_request, opts = {})
-      data, _status_code, _headers = o_bpv3_1_0_update_account_attribute_with_http_info(bankid, accountid, productcode, accountattributeid, obpv310_update_account_attribute_request, opts)
-      data
-    end
-
-    # Update Account Attribute
-    # &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param accountid [String] The ACCOUNTID identifier
-    # @param productcode [String] The PRODUCTCODE identifier
-    # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv310_update_account_attribute_request [OBPv310UpdateAccountAttributeRequest] Request body
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems, Integer, Hash)>] OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems data, response status code and response headers
-    def o_bpv3_1_0_update_account_attribute_with_http_info(bankid, accountid, productcode, accountattributeid, obpv310_update_account_attribute_request, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.o_bpv3_1_0_update_account_attribute ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.o_bpv3_1_0_update_account_attribute"
-      end
-      # verify the required parameter 'accountid' is set
-      if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAttributeApi.o_bpv3_1_0_update_account_attribute"
-      end
-      # verify the required parameter 'productcode' is set
-      if @api_client.config.client_side_validation && productcode.nil?
-        fail ArgumentError, "Missing the required parameter 'productcode' when calling AccountAttributeApi.o_bpv3_1_0_update_account_attribute"
-      end
-      # verify the required parameter 'accountattributeid' is set
-      if @api_client.config.client_side_validation && accountattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling AccountAttributeApi.o_bpv3_1_0_update_account_attribute"
-      end
-      # verify the required parameter 'obpv310_update_account_attribute_request' is set
-      if @api_client.config.client_side_validation && obpv310_update_account_attribute_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv310_update_account_attribute_request' when calling AccountAttributeApi.o_bpv3_1_0_update_account_attribute"
-      end
-      # resource path
-      local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'accountattributeid' + '}', CGI.escape(accountattributeid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-      # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
-      if !content_type.nil?
-          header_params['Content-Type'] = content_type
-      end
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv310_update_account_attribute_request)
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetPrivateAccountByIdFull200ResponsePropertiesAccountAttributesItems'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"AccountAttributeApi.o_bpv3_1_0_update_account_attribute",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAttributeApi#o_bpv3_1_0_update_account_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAttributeApi#create_account_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -200,31 +108,31 @@ module OpenBankProject
     # Create or Update Account Attribute Definition
     # <p>Create or Update Account Attribute Definition</p> <p>The category field must be Account</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]
-    def o_bpv4_0_0_create_or_update_account_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_or_update_account_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts)
+    # @return [GetTransactionRequestAttributeDefinition200ResponseAttributesInner]
+    def create_or_update_account_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      data, _status_code, _headers = create_or_update_account_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts)
       data
     end
 
     # Create or Update Account Attribute Definition
     # &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_or_update_account_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Integer, Hash)>] GetTransactionRequestAttributeDefinition200ResponseAttributesInner data, response status code and response headers
+    def create_or_update_account_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.o_bpv4_0_0_create_or_update_account_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.create_or_update_account_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.o_bpv4_0_0_create_or_update_account_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.create_or_update_account_attribute_definition"
       end
-      # verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_or_update_transaction_request_attribute_definition_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' when calling AccountAttributeApi.o_bpv4_0_0_create_or_update_account_attribute_definition"
+      # verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+      if @api_client.config.client_side_validation && create_or_update_transaction_request_attribute_definition_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_or_update_transaction_request_attribute_definition_request' when calling AccountAttributeApi.create_or_update_account_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/account'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -246,16 +154,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_or_update_transaction_request_attribute_definition_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_or_update_transaction_request_attribute_definition_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200ResponseAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAttributeApi.o_bpv4_0_0_create_or_update_account_attribute_definition",
+        :operation => :"AccountAttributeApi.create_or_update_account_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -266,7 +174,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAttributeApi#o_bpv4_0_0_create_or_update_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAttributeApi#create_or_update_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -277,8 +185,8 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_account_attribute_definition(bankid, attributedefinitionid, opts = {})
-      o_bpv4_0_0_delete_account_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
+    def delete_account_attribute_definition(bankid, attributedefinitionid, opts = {})
+      delete_account_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
       nil
     end
 
@@ -288,17 +196,17 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_account_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
+    def delete_account_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.o_bpv4_0_0_delete_account_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.delete_account_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.o_bpv4_0_0_delete_account_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.delete_account_attribute_definition"
       end
       # verify the required parameter 'attributedefinitionid' is set
       if @api_client.config.client_side_validation && attributedefinitionid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling AccountAttributeApi.o_bpv4_0_0_delete_account_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling AccountAttributeApi.delete_account_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'attributedefinitionid' + '}', CGI.escape(attributedefinitionid.to_s))
@@ -322,7 +230,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAttributeApi.o_bpv4_0_0_delete_account_attribute_definition",
+        :operation => :"AccountAttributeApi.delete_account_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -333,7 +241,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAttributeApi#o_bpv4_0_0_delete_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAttributeApi#delete_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -342,9 +250,9 @@ module OpenBankProject
     # <p>Get Account Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200Response]
-    def o_bpv4_0_0_get_account_attribute_definition(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_account_attribute_definition_with_http_info(bankid, opts)
+    # @return [GetTransactionRequestAttributeDefinition200Response]
+    def get_account_attribute_definition(bankid, opts = {})
+      data, _status_code, _headers = get_account_attribute_definition_with_http_info(bankid, opts)
       data
     end
 
@@ -352,14 +260,14 @@ module OpenBankProject
     # &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
-    def o_bpv4_0_0_get_account_attribute_definition_with_http_info(bankid, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
+    def get_account_attribute_definition_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.o_bpv4_0_0_get_account_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.get_account_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.o_bpv4_0_0_get_account_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.get_account_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/account'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -379,13 +287,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountAttributeApi.o_bpv4_0_0_get_account_attribute_definition",
+        :operation => :"AccountAttributeApi.get_account_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -396,7 +304,99 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountAttributeApi#o_bpv4_0_0_get_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountAttributeApi#get_account_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Account Attribute
+    # <p>Update Account Attribute</p> <p>Account Attributes are used to describe a financial Product with a list of typed key value pairs.</p> <p>Each Account Attribute is linked to its Account by ACCOUNT_ID</p> <p>Typical account attributes might be:</p> <p>ISIN (for International bonds)<br /> VKN (for German bonds)<br /> REDCODE (markit short code for credit derivative)<br /> LOAN_ID (e.g. used for Anacredit reporting)</p> <p>ISSUE_DATE (When the bond was issued in the market)<br /> MATURITY_DATE (End of life time of a product)<br /> TRADABLE</p> <p>See <a href=\"http://www.fpml.org/\">FPML</a> for more examples.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#account_attribute_id\">ACCOUNT_ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#product_code\">PRODUCT_CODE</a>: 1234BW</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#account_attribute_id\"><strong>account_attribute_id</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#product_code\"><strong>product_code</strong></a>: 1234BW</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#\">product_instance_code</a>: product_instance_code</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
+    # @param update_account_attribute_request [UpdateAccountAttributeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner]
+    def update_account_attribute(bankid, accountid, productcode, accountattributeid, update_account_attribute_request, opts = {})
+      data, _status_code, _headers = update_account_attribute_with_http_info(bankid, accountid, productcode, accountattributeid, update_account_attribute_request, opts)
+      data
+    end
+
+    # Update Account Attribute
+    # &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param accountid [String] The ACCOUNTID identifier
+    # @param productcode [String] The PRODUCTCODE identifier
+    # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
+    # @param update_account_attribute_request [UpdateAccountAttributeRequest] Request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner, Integer, Hash)>] GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner data, response status code and response headers
+    def update_account_attribute_with_http_info(bankid, accountid, productcode, accountattributeid, update_account_attribute_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AccountAttributeApi.update_account_attribute ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountAttributeApi.update_account_attribute"
+      end
+      # verify the required parameter 'accountid' is set
+      if @api_client.config.client_side_validation && accountid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountAttributeApi.update_account_attribute"
+      end
+      # verify the required parameter 'productcode' is set
+      if @api_client.config.client_side_validation && productcode.nil?
+        fail ArgumentError, "Missing the required parameter 'productcode' when calling AccountAttributeApi.update_account_attribute"
+      end
+      # verify the required parameter 'accountattributeid' is set
+      if @api_client.config.client_side_validation && accountattributeid.nil?
+        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling AccountAttributeApi.update_account_attribute"
+      end
+      # verify the required parameter 'update_account_attribute_request' is set
+      if @api_client.config.client_side_validation && update_account_attribute_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_account_attribute_request' when calling AccountAttributeApi.update_account_attribute"
+      end
+      # resource path
+      local_var_path = '/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'productcode' + '}', CGI.escape(productcode.to_s)).sub('{' + 'accountattributeid' + '}', CGI.escape(accountattributeid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_account_attribute_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetAccountsByAccountRoutingRegex200ResponseAccountsInnerAccountAttributesInner'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"AccountAttributeApi.update_account_attribute",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AccountAttributeApi#update_account_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

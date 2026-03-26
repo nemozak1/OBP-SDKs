@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,18 +11,18 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-import com.openbankproject.model.OBPv400GetCustomerAttributes200Response
-import com.openbankproject.model.OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+import com.openbankproject.model.CreatePersonalDataFieldRequest
+import com.openbankproject.model.GetCustomerAttributes200Response
+import com.openbankproject.model.GetCustomerAttributes200ResponseCustomerAttributesInner
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object CustomerAttributeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new CustomerAttributeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new CustomerAttributeApi(baseUrl)
 }
 
 class CustomerAttributeApi(baseUrl: String) {
@@ -31,7 +31,7 @@ class CustomerAttributeApi(baseUrl: String) {
    * <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -41,22 +41,22 @@ class CustomerAttributeApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv400CreateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
+  def createCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attribute")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
   /**
    * <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeDefinition200ResponseAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -65,16 +65,16 @@ class CustomerAttributeApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
    */
-  def oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]] =
+  def createOrUpdateCustomerAttributeAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200ResponseAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/customer")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createOrUpdateTransactionRequestAttributeDefinitionRequest)
+      .response(asJson[GetTransactionRequestAttributeDefinition200ResponseAttributesInner])
 
   /**
    * <p>Delete Customer Attribute</p> <p>CustomerAttributes are used to enhance the OBP Customer object with Bank specific entities.</p> <p>Delete a Customer Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -92,12 +92,12 @@ class CustomerAttributeApi(baseUrl: String) {
    * @param customerid The CUSTOMERID identifier
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier
    */
-  def oBPv400DeleteCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/${customerid}/attributes/${customerattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -115,19 +115,19 @@ class CustomerAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
    */
-  def oBPv400DeleteCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, attributedefinitionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/${attributedefinitionid}/customer")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get Customer Attribute By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Adapter.card_attribute_id\">ATTRIBUTE_ID</a>:</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -139,19 +139,19 @@ class CustomerAttributeApi(baseUrl: String) {
    * @param customerid The CUSTOMERID identifier
    * @param attributeid The ATTRIBUTEID identifier
    */
-  def oBPv400GetCustomerAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, attributeid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
+  def getCustomerAttributeById(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, attributeid: String): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes/${attributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
   /**
    * <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTransactionRequestAttributeDefinition200Response (Successful operation)
+   *   code 200 : GetTransactionRequestAttributeDefinition200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -161,19 +161,19 @@ class CustomerAttributeApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTransactionRequestAttributeDefinition200Response]] =
+  def getCustomerAttributeDefinition(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetTransactionRequestAttributeDefinition200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/attribute-definitions/customer")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTransactionRequestAttributeDefinition200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTransactionRequestAttributeDefinition200Response])
 
   /**
    * <p>Get Customer Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200Response (Successful operation)
+   *   code 200 : GetCustomerAttributes200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -184,19 +184,19 @@ class CustomerAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetCustomerAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200Response]] =
+  def getCustomerAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerAttributes200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerAttributes200Response])
 
   /**
    * <p>Update Customer Attribute</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">CUSTOMER_ATTRIBUTE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems (Successful operation)
+   *   code 200 : GetCustomerAttributes200ResponseCustomerAttributesInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -207,15 +207,15 @@ class CustomerAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier
-   * @param oBPv600CreatePersonalDataFieldRequest Request body
+   * @param createPersonalDataFieldRequest Request body
    */
-  def oBPv400UpdateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]] =
+  def updateCustomerAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, customerattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest): Request[Either[ResponseException[String, Exception], GetCustomerAttributes200ResponseCustomerAttributesInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/attributes/${customerattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreatePersonalDataFieldRequest)
-      .response(asJson[OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createPersonalDataFieldRequest)
+      .response(asJson[GetCustomerAttributes200ResponseCustomerAttributesInner])
 
 }

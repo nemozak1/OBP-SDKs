@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,7 +18,7 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv600GetAvailablePersonalDynamicEntities200Response;
+import com.openbankproject.model.GetAvailablePersonalDynamicEntities200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -45,7 +45,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class PersonalDynamicEntityApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -165,44 +165,44 @@ public class PersonalDynamicEntityApi {
   /**
    * Get Available Personal Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+   * @return GetAvailablePersonalDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities() throws ApiException {
-    return oBPv600GetAvailablePersonalDynamicEntities(null);
+  public GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities() throws ApiException {
+    return getAvailablePersonalDynamicEntities(null);
   }
 
   /**
    * Get Available Personal Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetAvailablePersonalDynamicEntities200Response
+   * @return GetAvailablePersonalDynamicEntities200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> localVarResponse = oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo(headers);
+  public GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAvailablePersonalDynamicEntities200Response> localVarResponse = getAvailablePersonalDynamicEntitiesWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get Available Personal Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetAvailablePersonalDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetAvailablePersonalDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo() throws ApiException {
-    return oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo(null);
+  public ApiResponse<GetAvailablePersonalDynamicEntities200Response> getAvailablePersonalDynamicEntitiesWithHttpInfo() throws ApiException {
+    return getAvailablePersonalDynamicEntitiesWithHttpInfo(null);
   }
 
   /**
    * Get Available Personal Dynamic Entities
    * &lt;p&gt;Get all Dynamic Entities that support personal data storage (hasPersonalEntity &#x3D;&#x3D; true).&lt;/p&gt; &lt;p&gt;This endpoint allows regular users (without admin roles) to discover which dynamic entities&lt;br /&gt; they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.&lt;/p&gt; &lt;p&gt;Authentication: User must be logged in (no special roles required).&lt;/p&gt; &lt;p&gt;Use case: Portals and apps can show users what personal data types are available&lt;br /&gt; without needing admin access to view all dynamic entity definitions.&lt;/p&gt; &lt;p&gt;For more information see &lt;a href&#x3D;\&quot;/glossary#My-Dynamic-Entities\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetAvailablePersonalDynamicEntities200Response&gt;
+   * @return ApiResponse&lt;GetAvailablePersonalDynamicEntities200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response> oBPv600GetAvailablePersonalDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetAvailablePersonalDynamicEntitiesRequestBuilder(headers);
+  public ApiResponse<GetAvailablePersonalDynamicEntities200Response> getAvailablePersonalDynamicEntitiesWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAvailablePersonalDynamicEntitiesRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -213,11 +213,11 @@ public class PersonalDynamicEntityApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetAvailablePersonalDynamicEntities", localVarResponse);
+          throw getApiException("getAvailablePersonalDynamicEntities", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+          return new ApiResponse<GetAvailablePersonalDynamicEntities200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -227,10 +227,10 @@ public class PersonalDynamicEntityApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetAvailablePersonalDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetAvailablePersonalDynamicEntities200Response>() {});
+        GetAvailablePersonalDynamicEntities200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAvailablePersonalDynamicEntities200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+        return new ApiResponse<GetAvailablePersonalDynamicEntities200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -249,7 +249,7 @@ public class PersonalDynamicEntityApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetAvailablePersonalDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAvailablePersonalDynamicEntitiesRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

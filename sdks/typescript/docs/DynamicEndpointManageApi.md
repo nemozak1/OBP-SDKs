@@ -1,27 +1,27 @@
 # DynamicEndpointManageApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
-| [**oBPv400CreateDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
-| [**oBPv400DeleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
-| [**oBPv400DeleteDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
-| [**oBPv400DeleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
-| [**oBPv400GetBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
-| [**oBPv400GetDynamicEndpoint**](DynamicEndpointManageApi.md#obpv400getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
-| [**oBPv400GetDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
-| [**oBPv400GetMyDynamicEndpoints**](DynamicEndpointManageApi.md#obpv400getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
-| [**oBPv400UpdateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#obpv400updatebankleveldynamicendpointhostoperation) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
-| [**oBPv400UpdateDynamicEndpointHost**](DynamicEndpointManageApi.md#obpv400updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
+| [**createBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#createbankleveldynamicendpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint |
+| [**createDynamicEndpoint**](DynamicEndpointManageApi.md#createdynamicendpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint |
+| [**deleteBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#deletebankleveldynamicendpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint |
+| [**deleteDynamicEndpoint**](DynamicEndpointManageApi.md#deletedynamicendpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint |
+| [**deleteMyDynamicEndpoint**](DynamicEndpointManageApi.md#deletemydynamicendpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoint**](DynamicEndpointManageApi.md#getbankleveldynamicendpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint |
+| [**getBankLevelDynamicEndpoints**](DynamicEndpointManageApi.md#getbankleveldynamicendpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints |
+| [**getDynamicEndpoint**](DynamicEndpointManageApi.md#getdynamicendpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint |
+| [**getDynamicEndpoints**](DynamicEndpointManageApi.md#getdynamicendpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints |
+| [**getMyDynamicEndpoints**](DynamicEndpointManageApi.md#getmydynamicendpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints |
+| [**updateBankLevelDynamicEndpointHost**](DynamicEndpointManageApi.md#updatebankleveldynamicendpointhostoperation) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host |
+| [**updateDynamicEndpointHost**](DynamicEndpointManageApi.md#updatedynamicendpointhost) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host |
 
 
 
-## oBPv400CreateBankLevelDynamicEndpoint
+## createBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateBankLevelDynamicEndpoint(bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Bank Level Dynamic Endpoint
 
@@ -34,7 +34,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400CreateBankLevelDynamicEndpointRequest } from 'obp-typescript';
+import type { CreateBankLevelDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -51,12 +51,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
-    oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}},
-  } satisfies OBPv400CreateBankLevelDynamicEndpointRequest;
+    // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+    getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}},
+  } satisfies CreateBankLevelDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400CreateBankLevelDynamicEndpoint(body);
+    const data = await api.createBankLevelDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -73,11 +73,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -99,9 +99,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateDynamicEndpoint
+## createDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
 Create Dynamic Endpoint
 
@@ -114,7 +114,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400CreateDynamicEndpointRequest } from 'obp-typescript';
+import type { CreateDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -129,12 +129,12 @@ async function example() {
   const api = new DynamicEndpointManageApi(config);
 
   const body = {
-    // OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString | Request body
-    oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}},
-  } satisfies OBPv400CreateDynamicEndpointRequest;
+    // GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+    getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}},
+  } satisfies CreateDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400CreateDynamicEndpoint(body);
+    const data = await api.createDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -150,11 +150,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString** | [OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString.md) | Request body | |
+| **getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString** | [GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -175,9 +175,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteBankLevelDynamicEndpoint
+## deleteBankLevelDynamicEndpoint
 
-> oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+> deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -190,7 +190,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteBankLevelDynamicEndpointRequest } from 'obp-typescript';
+import type { DeleteBankLevelDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -209,10 +209,10 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-  } satisfies OBPv400DeleteBankLevelDynamicEndpointRequest;
+  } satisfies DeleteBankLevelDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400DeleteBankLevelDynamicEndpoint(body);
+    const data = await api.deleteBankLevelDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -255,9 +255,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteDynamicEndpoint
+## deleteDynamicEndpoint
 
-> oBPv400DeleteDynamicEndpoint(dynamicendpointid)
+> deleteDynamicEndpoint(dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -270,7 +270,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteDynamicEndpointRequest } from 'obp-typescript';
+import type { DeleteDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -287,10 +287,10 @@ async function example() {
   const body = {
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-  } satisfies OBPv400DeleteDynamicEndpointRequest;
+  } satisfies DeleteDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400DeleteDynamicEndpoint(body);
+    const data = await api.deleteDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -332,9 +332,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteMyDynamicEndpoint
+## deleteMyDynamicEndpoint
 
-> oBPv400DeleteMyDynamicEndpoint(dynamicendpointid)
+> deleteMyDynamicEndpoint(dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -347,7 +347,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteMyDynamicEndpointRequest } from 'obp-typescript';
+import type { DeleteMyDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -364,10 +364,10 @@ async function example() {
   const body = {
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-  } satisfies OBPv400DeleteMyDynamicEndpointRequest;
+  } satisfies DeleteMyDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400DeleteMyDynamicEndpoint(body);
+    const data = await api.deleteMyDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -409,9 +409,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankLevelDynamicEndpoint
+## getBankLevelDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getBankLevelDynamicEndpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -424,7 +424,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankLevelDynamicEndpointRequest } from 'obp-typescript';
+import type { GetBankLevelDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -443,10 +443,10 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-  } satisfies OBPv400GetBankLevelDynamicEndpointRequest;
+  } satisfies GetBankLevelDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400GetBankLevelDynamicEndpoint(body);
+    const data = await api.getBankLevelDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -467,7 +467,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -489,9 +489,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankLevelDynamicEndpoints
+## getBankLevelDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetBankLevelDynamicEndpoints(bankid)
+> GetDynamicEndpoints200Response getBankLevelDynamicEndpoints(bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -504,7 +504,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankLevelDynamicEndpointsRequest } from 'obp-typescript';
+import type { GetBankLevelDynamicEndpointsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -521,10 +521,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetBankLevelDynamicEndpointsRequest;
+  } satisfies GetBankLevelDynamicEndpointsRequest;
 
   try {
-    const data = await api.oBPv400GetBankLevelDynamicEndpoints(body);
+    const data = await api.getBankLevelDynamicEndpoints(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -544,7 +544,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -566,9 +566,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetDynamicEndpoint
+## getDynamicEndpoint
 
-> OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetDynamicEndpoint(dynamicendpointid)
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner getDynamicEndpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -581,7 +581,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400GetDynamicEndpointRequest } from 'obp-typescript';
+import type { GetDynamicEndpointRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -598,10 +598,10 @@ async function example() {
   const body = {
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-  } satisfies OBPv400GetDynamicEndpointRequest;
+  } satisfies GetDynamicEndpointRequest;
 
   try {
-    const data = await api.oBPv400GetDynamicEndpoint(body);
+    const data = await api.getDynamicEndpoint(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -621,7 +621,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems**](OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -643,9 +643,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetDynamicEndpoints
+## getDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetDynamicEndpoints()
+> GetDynamicEndpoints200Response getDynamicEndpoints()
 
  Get Dynamic Endpoints
 
@@ -658,7 +658,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400GetDynamicEndpointsRequest } from 'obp-typescript';
+import type { GetDynamicEndpointsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -673,7 +673,7 @@ async function example() {
   const api = new DynamicEndpointManageApi(config);
 
   try {
-    const data = await api.oBPv400GetDynamicEndpoints();
+    const data = await api.getDynamicEndpoints();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -690,7 +690,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -711,9 +711,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetMyDynamicEndpoints
+## getMyDynamicEndpoints
 
-> OBPv400GetDynamicEndpoints200Response oBPv400GetMyDynamicEndpoints()
+> GetDynamicEndpoints200Response getMyDynamicEndpoints()
 
 Get My Dynamic Endpoints
 
@@ -726,7 +726,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400GetMyDynamicEndpointsRequest } from 'obp-typescript';
+import type { GetMyDynamicEndpointsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -741,7 +741,7 @@ async function example() {
   const api = new DynamicEndpointManageApi(config);
 
   try {
-    const data = await api.oBPv400GetMyDynamicEndpoints();
+    const data = await api.getMyDynamicEndpoints();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -758,7 +758,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -779,9 +779,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateBankLevelDynamicEndpointHost
+## updateBankLevelDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+> UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -794,7 +794,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest } from 'obp-typescript';
+import type { UpdateBankLevelDynamicEndpointHostOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -813,12 +813,12 @@ async function example() {
     bankid: bankid_example,
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-    // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
-    oBPv400UpdateBankLevelDynamicEndpointHostRequest: {"type":"object","properties":{"host":{"type":"string"}}},
-  } satisfies OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest;
+    // UpdateBankLevelDynamicEndpointHostRequest | Request body
+    updateBankLevelDynamicEndpointHostRequest: {"type":"object","properties":{"host":{"type":"string"}}},
+  } satisfies UpdateBankLevelDynamicEndpointHostOperationRequest;
 
   try {
-    const data = await api.oBPv400UpdateBankLevelDynamicEndpointHost(body);
+    const data = await api.updateBankLevelDynamicEndpointHost(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -836,11 +836,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **dynamicendpointid** | `string` | The DYNAMICENDPOINTID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [OBPv400UpdateBankLevelDynamicEndpointHostRequest](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [UpdateBankLevelDynamicEndpointHostRequest](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -862,9 +862,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateDynamicEndpointHost
+## updateDynamicEndpointHost
 
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateDynamicEndpointHost(dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+> UpdateBankLevelDynamicEndpointHostRequest updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest)
 
  Update Dynamic Endpoint Host
 
@@ -877,7 +877,7 @@ import {
   Configuration,
   DynamicEndpointManageApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateDynamicEndpointHostRequest } from 'obp-typescript';
+import type { UpdateDynamicEndpointHostRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -894,12 +894,12 @@ async function example() {
   const body = {
     // string | The DYNAMICENDPOINTID identifier
     dynamicendpointid: dynamicendpointid_example,
-    // OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
-    oBPv400UpdateBankLevelDynamicEndpointHostRequest: {type=object, properties={host={type=string}}},
-  } satisfies OBPv400UpdateDynamicEndpointHostRequest;
+    // UpdateBankLevelDynamicEndpointHostRequest | Request body
+    updateBankLevelDynamicEndpointHostRequest: {type=object, properties={host={type=string}}},
+  } satisfies UpdateDynamicEndpointHostRequest;
 
   try {
-    const data = await api.oBPv400UpdateDynamicEndpointHost(body);
+    const data = await api.updateDynamicEndpointHost(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -916,11 +916,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **dynamicendpointid** | `string` | The DYNAMICENDPOINTID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateBankLevelDynamicEndpointHostRequest** | [OBPv400UpdateBankLevelDynamicEndpointHostRequest](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | |
+| **updateBankLevelDynamicEndpointHostRequest** | [UpdateBankLevelDynamicEndpointHostRequest](UpdateBankLevelDynamicEndpointHostRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 

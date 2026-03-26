@@ -4,67 +4,138 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_4_0_get_transaction_request_types**](TransactionRequestApi.md#o_bpv1_4_0_get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-[**o_bpv2_1_0_create_transaction_request_sandbox_tan**](TransactionRequestApi.md#o_bpv2_1_0_create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-[**o_bpv2_1_0_get_transaction_request_types_supported_by_bank**](TransactionRequestApi.md#o_bpv2_1_0_get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-[**o_bpv3_1_0_save_historical_transaction**](TransactionRequestApi.md#o_bpv3_1_0_save_historical_transaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
-[**o_bpv4_0_0_answer_transaction_request_challenge**](TransactionRequestApi.md#o_bpv4_0_0_answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-[**o_bpv4_0_0_create_historical_transaction_at_bank**](TransactionRequestApi.md#o_bpv4_0_0_create_historical_transaction_at_bank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
-[**o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**](TransactionRequestApi.md#o_bpv4_0_0_create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-[**o_bpv4_0_0_create_transaction_request_account**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-[**o_bpv4_0_0_create_transaction_request_account_otp**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-[**o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-[**o_bpv4_0_0_create_transaction_request_attribute**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-[**o_bpv4_0_0_create_transaction_request_card**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-[**o_bpv4_0_0_create_transaction_request_counterparty**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-[**o_bpv4_0_0_create_transaction_request_free_form**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-[**o_bpv4_0_0_create_transaction_request_refund**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-[**o_bpv4_0_0_create_transaction_request_sepa**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-[**o_bpv4_0_0_create_transaction_request_simple**](TransactionRequestApi.md#o_bpv4_0_0_create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-[**o_bpv4_0_0_delete_transaction_request_attribute_definition**](TransactionRequestApi.md#o_bpv4_0_0_delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-[**o_bpv4_0_0_get_transaction_request**](TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-[**o_bpv4_0_0_get_transaction_request_attribute_by_id**](TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-[**o_bpv4_0_0_get_transaction_request_attribute_definition**](TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-[**o_bpv4_0_0_get_transaction_request_attributes**](TransactionRequestApi.md#o_bpv4_0_0_get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-[**o_bpv4_0_0_update_transaction_request_attribute**](TransactionRequestApi.md#o_bpv4_0_0_update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-[**o_bpv5_1_0_create_vrp_consent_request**](TransactionRequestApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-[**o_bpv5_1_0_get_transaction_request_by_id**](TransactionRequestApi.md#o_bpv5_1_0_get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-[**o_bpv5_1_0_get_transaction_requests**](TransactionRequestApi.md#o_bpv5_1_0_get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-[**o_bpv5_1_0_update_transaction_request_status**](TransactionRequestApi.md#o_bpv5_1_0_update_transaction_request_status) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
-[**o_bpv6_0_0_create_transaction_request_cardano**](TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-[**o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction**](TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-[**o_bpv6_0_0_create_transaction_request_ethereume_send_transaction**](TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-[**o_bpv6_0_0_create_transaction_request_hold**](TransactionRequestApi.md#o_bpv6_0_0_create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+[**answer_transaction_request_challenge**](TransactionRequestApi.md#answer_transaction_request_challenge) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+[**create_historical_transaction_at_bank**](TransactionRequestApi.md#create_historical_transaction_at_bank) | **POST** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
+[**create_or_update_transaction_request_attribute_definition**](TransactionRequestApi.md#create_or_update_transaction_request_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+[**create_transaction_request_account**](TransactionRequestApi.md#create_transaction_request_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+[**create_transaction_request_account_otp**](TransactionRequestApi.md#create_transaction_request_account_otp) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+[**create_transaction_request_agent_cash_with_drawal**](TransactionRequestApi.md#create_transaction_request_agent_cash_with_drawal) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+[**create_transaction_request_attribute**](TransactionRequestApi.md#create_transaction_request_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+[**create_transaction_request_card**](TransactionRequestApi.md#create_transaction_request_card) | **POST** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+[**create_transaction_request_cardano**](TransactionRequestApi.md#create_transaction_request_cardano) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+[**create_transaction_request_counterparty**](TransactionRequestApi.md#create_transaction_request_counterparty) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+[**create_transaction_request_eth_send_raw_transaction**](TransactionRequestApi.md#create_transaction_request_eth_send_raw_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+[**create_transaction_request_ethereume_send_transaction**](TransactionRequestApi.md#create_transaction_request_ethereume_send_transaction) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+[**create_transaction_request_free_form**](TransactionRequestApi.md#create_transaction_request_free_form) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+[**create_transaction_request_hold**](TransactionRequestApi.md#create_transaction_request_hold) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+[**create_transaction_request_refund**](TransactionRequestApi.md#create_transaction_request_refund) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+[**create_transaction_request_sandbox_tan**](TransactionRequestApi.md#create_transaction_request_sandbox_tan) | **POST** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+[**create_transaction_request_sepa**](TransactionRequestApi.md#create_transaction_request_sepa) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+[**create_transaction_request_simple**](TransactionRequestApi.md#create_transaction_request_simple) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+[**create_vrp_consent_request**](TransactionRequestApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+[**delete_transaction_request_attribute_definition**](TransactionRequestApi.md#delete_transaction_request_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+[**get_transaction_request**](TransactionRequestApi.md#get_transaction_request) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+[**get_transaction_request_attribute_by_id**](TransactionRequestApi.md#get_transaction_request_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+[**get_transaction_request_attribute_definition**](TransactionRequestApi.md#get_transaction_request_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+[**get_transaction_request_attributes**](TransactionRequestApi.md#get_transaction_request_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+[**get_transaction_request_by_id**](TransactionRequestApi.md#get_transaction_request_by_id) | **GET** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+[**get_transaction_request_types**](TransactionRequestApi.md#get_transaction_request_types) | **GET** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+[**get_transaction_request_types_supported_by_bank**](TransactionRequestApi.md#get_transaction_request_types_supported_by_bank) | **GET** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+[**get_transaction_requests**](TransactionRequestApi.md#get_transaction_requests) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+[**save_historical_transaction**](TransactionRequestApi.md#save_historical_transaction) | **POST** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
+[**update_transaction_request_attribute**](TransactionRequestApi.md#update_transaction_request_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+[**update_transaction_request_status**](TransactionRequestApi.md#update_transaction_request_status) | **PUT** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
 
 
-# **o_bpv1_4_0_get_transaction_request_types**
-> OBPv140GetTransactionRequestTypes200Response o_bpv1_4_0_get_transaction_request_types(bankid, accountid, viewid)
+# **answer_transaction_request_challenge**
+> GetTransactionRequestById200Response answer_transaction_request_challenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answer_transaction_request_challenge_request)
 
-Get Transaction Request Types for Account
+Answer Transaction Request Challenge
 
-<p>Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.</p>
-<p>These are the ways this API Server can create a Transaction via a Transaction Request<br />
-(as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)</p>
-<p>A Transaction Request Type internally determines:</p>
-<ul>
-<li>the required Transaction Request 'body' i.e. fields that define the 'what' and 'to' of a Transaction Request,</li>
-<li>the type of security challenge that may be be raised before the Transaction Request proceeds, and</li>
-<li>the threshold of that challenge.</li>
-</ul>
-<p>For instance in a 'SANDBOX_TAN' Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.</p>
-<p>This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.</p>
+<p>In Sandbox mode, any string that can be converted to a positive integer will be accepted as an answer.</p>
+<p>This endpoint totally depends on createTransactionRequest, it need get the following data from createTransactionRequest response body.</p>
+<p>1)<code>TRANSACTION_REQUEST_TYPE</code> : is the same as createTransactionRequest request URL .</p>
+<p>2)<code>TRANSACTION_REQUEST_ID</code> : is the <code>id</code> field in createTransactionRequest response body.</p>
+<p>3) <code>id</code> :  is <code>challenge.id</code> field in createTransactionRequest response body.</p>
+<p>4) <code>answer</code> : must be <code>123</code> in case that Strong Customer Authentication method for OTP challenge is dummy.<br />
+For instance: SANDBOX_TAN_OTP_INSTRUCTION_TRANSPORT=dummy<br />
+Possible values are dummy,email and sms<br />
+In CBS mode, the answer can be got by phone message or other SCA methods.</p>
+<p>Note that each Transaction Request Type can have its own OTP_INSTRUCTION_TRANSPORT method.<br />
+OTP_INSTRUCTION_TRANSPORT methods are set in Props. See sample.props.template for instructions.</p>
+<p>Single or Multiple authorisations</p>
+<p>OBP allows single or multi party authorisations.</p>
+<p>Single party authorisation:</p>
+<p>In the case that only one person needs to authorise i.e. answer a security challenge we have the following change of state of a <code>transaction request</code>:<br />
+INITIATED =&gt; COMPLETED</p>
+<p>Multiparty authorisation:</p>
+<p>In the case that multiple parties (n persons) need to authorise a transaction request i.e. answer security challenges, we have the followings state flow for a <code>transaction request</code>:<br />
+INITIATED =&gt; NEXT_CHALLENGE_PENDING =&gt; ... =&gt; NEXT_CHALLENGE_PENDING =&gt; COMPLETED</p>
+<p>The security challenge is bound to a user i.e. in the case of a correct answer but the user is different than expected the challenge will fail.</p>
+<p>Rule for calculating number of security challenges:<br />
+If Product Account attribute REQUIRED_CHALLENGE_ANSWERS=N then create N challenges<br />
+(one for every user that has a View where permission can_add_transaction_request_to_any_account=true)<br />
+In the case REQUIRED_CHALLENGE_ANSWERS is not defined as an account attribute, the default number of security challenges created is one.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_TYPE</a>: SEPA</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#answer"><strong>answer</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#">additional_information</a>: additional_information</p>
+<p><a href="/glossary#">reason_code</a>: reason_code</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
 <p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
 <p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
 <p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
 <p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#transaction_request_types"><strong>transaction_request_types</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
 <p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
 
 
 ### Example
@@ -75,7 +146,8 @@ Get Transaction Request Types for Account
 
 ```python
 import obp_python
-from obp_python.models.obpv140_get_transaction_request_types200_response import OBPv140GetTransactionRequestTypes200Response
+from obp_python.models.answer_transaction_request_challenge_request import AnswerTransactionRequestChallengeRequest
+from obp_python.models.get_transaction_request_by_id200_response import GetTransactionRequestById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -111,14 +183,17 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionrequesttype = 'transactionrequesttype_example' # str | The TRANSACTIONREQUESTTYPE identifier
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+    answer_transaction_request_challenge_request = {"type":"object","properties":{"additional_information":{"type":"string"},"answer":{"type":"string"},"reason_code":{"type":"string"},"id":{"type":"string"}}} # AnswerTransactionRequestChallengeRequest | Request body
 
     try:
-        # Get Transaction Request Types for Account
-        api_response = api_instance.o_bpv1_4_0_get_transaction_request_types(bankid, accountid, viewid)
-        print("The response of TransactionRequestApi->o_bpv1_4_0_get_transaction_request_types:\n")
+        # Answer Transaction Request Challenge
+        api_response = api_instance.answer_transaction_request_challenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, answer_transaction_request_challenge_request)
+        print("The response of TransactionRequestApi->answer_transaction_request_challenge:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv1_4_0_get_transaction_request_types: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->answer_transaction_request_challenge: %s\n" % e)
 ```
 
 
@@ -131,10 +206,13 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
+ **transactionrequesttype** | **str**| The TRANSACTIONREQUESTTYPE identifier | 
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+ **answer_transaction_request_challenge_request** | [**AnswerTransactionRequestChallengeRequest**](AnswerTransactionRequestChallengeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv140GetTransactionRequestTypes200Response**](OBPv140GetTransactionRequestTypes200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 ### Authorization
 
@@ -142,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -156,8 +234,2345 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_1_0_create_transaction_request_sandbox_tan**
-> OBPv510GetTransactionRequestById200Response o_bpv2_1_0_create_transaction_request_sandbox_tan(bankid, accountid, viewid, sandboxtan, obpv400_create_transaction_request_account_request)
+# **create_historical_transaction_at_bank**
+> SaveHistoricalTransaction200Response create_historical_transaction_at_bank(bankid, create_historical_transaction_at_bank_request)
+
+Create Historical Transactions 
+
+<p>Create historical transactions at one Bank</p>
+<p>Use this endpoint to create transactions between any two accounts at the same bank.<br />
+From account and to account must be at the same bank.<br />
+Example:<br />
+{<br />
+&quot;from_account_id&quot;: &quot;1ca8a7e4-6d02-48e3-a029-0b2bf89de9f0&quot;,<br />
+&quot;to_account_id&quot;: &quot;2ca8a7e4-6d02-48e3-a029-0b2bf89de9f0&quot;,<br />
+&quot;value&quot;: {<br />
+&quot;currency&quot;: &quot;GBP&quot;,<br />
+&quot;amount&quot;: &quot;10&quot;<br />
+},<br />
+&quot;description&quot;: &quot;this is for work&quot;,<br />
+&quot;posted&quot;: &quot;2017-09-19T02:31:05Z&quot;,<br />
+&quot;completed&quot;: &quot;2017-09-19T02:31:05Z&quot;,<br />
+&quot;type&quot;: &quot;SANDBOX_TAN&quot;,<br />
+&quot;charge_policy&quot;: &quot;SHARED&quot;<br />
+}</p>
+<p>This call is experimental.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>from_account_id</strong></a>: from_account_id</p>
+<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>to_account_id</strong></a>: to_account_id</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>transaction_request_type</strong></a>: SEPA</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
+<p><a href="/glossary#">counterparty_id</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_historical_transaction_at_bank_request import CreateHistoricalTransactionAtBankRequest
+from obp_python.models.save_historical_transaction200_response import SaveHistoricalTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    create_historical_transaction_at_bank_request = {"type":"object","properties":{"type":{"type":"string"},"from_account_id":{"type":"string"},"completed":{"type":"string"},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"posted":{"type":"string"},"to_account_id":{"type":"string"}}} # CreateHistoricalTransactionAtBankRequest | Request body
+
+    try:
+        # Create Historical Transactions 
+        api_response = api_instance.create_historical_transaction_at_bank(bankid, create_historical_transaction_at_bank_request)
+        print("The response of TransactionRequestApi->create_historical_transaction_at_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_historical_transaction_at_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **create_historical_transaction_at_bank_request** | [**CreateHistoricalTransactionAtBankRequest**](CreateHistoricalTransactionAtBankRequest.md)| Request body | 
+
+### Return type
+
+[**SaveHistoricalTransaction200Response**](SaveHistoricalTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_or_update_transaction_request_attribute_definition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner create_or_update_transaction_request_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+
+Create or Update Transaction Request Attribute Definition
+
+<p>Create or Update Transaction Request Attribute Definition</p>
+<p>The category field must be TransactionRequest</p>
+<p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+
+    try:
+        # Create or Update Transaction Request Attribute Definition
+        api_response = api_instance.create_or_update_transaction_request_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+        print("The response of TransactionRequestApi->create_or_update_transaction_request_attribute_definition:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_or_update_transaction_request_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_account**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_account(bankid, accountid, viewid, account, create_transaction_request_account_request)
+
+Create Transaction Request (ACCOUNT)
+
+<p>When using ACCOUNT, the payee is set in the request body.</p>
+<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account">ACCOUNT</a>:</p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_account_request import CreateTransactionRequestAccountRequest
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    account = 'account_example' # str | The ACCOUNT identifier
+    create_transaction_request_account_request = {"type":"object","properties":{"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"}}},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # CreateTransactionRequestAccountRequest | Request body
+
+    try:
+        # Create Transaction Request (ACCOUNT)
+        api_response = api_instance.create_transaction_request_account(bankid, accountid, viewid, account, create_transaction_request_account_request)
+        print("The response of TransactionRequestApi->create_transaction_request_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **account** | **str**| The ACCOUNT identifier | 
+ **create_transaction_request_account_request** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_account_otp**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_account_otp(bankid, accountid, viewid, accountotp, create_transaction_request_account_request)
+
+Create Transaction Request (ACCOUNT_OTP)
+
+<p>When using ACCOUNT, the payee is set in the request body.</p>
+<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#account_otp">ACCOUNT_OTP</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_account_request import CreateTransactionRequestAccountRequest
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    accountotp = 'accountotp_example' # str | The ACCOUNTOTP identifier
+    create_transaction_request_account_request = {type=object, properties={to={type=object, properties={bank_id={type=string}, account_id={type=string}}}, description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # CreateTransactionRequestAccountRequest | Request body
+
+    try:
+        # Create Transaction Request (ACCOUNT_OTP)
+        api_response = api_instance.create_transaction_request_account_otp(bankid, accountid, viewid, accountotp, create_transaction_request_account_request)
+        print("The response of TransactionRequestApi->create_transaction_request_account_otp:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_account_otp: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **accountotp** | **str**| The ACCOUNTOTP identifier | 
+ **create_transaction_request_account_request** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_agent_cash_with_drawal**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_agent_cash_with_drawal(bankid, accountid, viewid, agentcashwithdrawal, create_transaction_request_agent_cash_with_drawal_request)
+
+Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+
+<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
+<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
+In the <code>from</code> object, you have two choices :<br />
+- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
+- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
+<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
+(This case is not managed by the OBP-API and require an external adapter)</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">AGENT_CASH_WITHDRAWAL</a>: AGENT_CASH_WITHDRAWAL</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_agent_cash_with_drawal_request import CreateTransactionRequestAgentCashWithDrawalRequest
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    agentcashwithdrawal = 'agentcashwithdrawal_example' # str | The AGENTCASHWITHDRAWAL identifier
+    create_transaction_request_agent_cash_with_drawal_request = {"type":"object","properties":{"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"description":{"type":"string"},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"agent_number":{"type":"string"}}}}} # CreateTransactionRequestAgentCashWithDrawalRequest | Request body
+
+    try:
+        # Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+        api_response = api_instance.create_transaction_request_agent_cash_with_drawal(bankid, accountid, viewid, agentcashwithdrawal, create_transaction_request_agent_cash_with_drawal_request)
+        print("The response of TransactionRequestApi->create_transaction_request_agent_cash_with_drawal:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_agent_cash_with_drawal: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **agentcashwithdrawal** | **str**| The AGENTCASHWITHDRAWAL identifier | 
+ **create_transaction_request_agent_cash_with_drawal_request** | [**CreateTransactionRequestAgentCashWithDrawalRequest**](CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_attribute**
+> GetTransactionRequestAttributeById200Response create_transaction_request_attribute(bankid, accountid, transactionrequestid, create_transaction_request_counterparty_request_attributes_inner)
+
+Create Transaction Request Attribute
+
+<p>Create Transaction Request Attribute</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty_request_attributes_inner import CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+    create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
+
+    try:
+        # Create Transaction Request Attribute
+        api_response = api_instance.create_transaction_request_attribute(bankid, accountid, transactionrequestid, create_transaction_request_counterparty_request_attributes_inner)
+        print("The response of TransactionRequestApi->create_transaction_request_attribute:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+ **create_transaction_request_counterparty_request_attributes_inner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
+
+### Return type
+
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_card**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_card(card, create_transaction_request_card_request)
+
+Create Transaction Request (CARD)
+
+<p>When using CARD, the payee is set in the request body .</p>
+<p>Money goes into the Counterparty in the request body.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CARD</a>: CARD</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>brand</strong></a>: Visa</p>
+<p><a href="/glossary#"><strong>card</strong></a>: card</p>
+<p><a href="/glossary#"><strong>card_number</strong></a>: 364435172576215</p>
+<p><a href="/glossary#"><strong>card_type</strong></a>: Credit</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>cvv</strong></a>: 123</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>expiry_month</strong></a>: 01</p>
+<p><a href="/glossary#"><strong>expiry_year</strong></a>: 2023</p>
+<p><a href="/glossary#"><strong>name_on_card</strong></a>: SusanSmith</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_card_request import CreateTransactionRequestCardRequest
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    card = 'card_example' # str | The CARD identifier
+    create_transaction_request_card_request = {"type":"object","properties":{"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"card":{"type":"object","properties":{"card_number":{"type":"string"},"cvv":{"type":"string"},"card_type":{"type":"string"},"name_on_card":{"type":"string"},"brand":{"type":"string"},"expiry_month":{"type":"string"},"expiry_year":{"type":"string"}}},"to":{"type":"object","properties":{"counterparty_id":{"type":"string"}}}}} # CreateTransactionRequestCardRequest | Request body
+
+    try:
+        # Create Transaction Request (CARD)
+        api_response = api_instance.create_transaction_request_card(card, create_transaction_request_card_request)
+        print("The response of TransactionRequestApi->create_transaction_request_card:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_card: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **card** | **str**| The CARD identifier | 
+ **create_transaction_request_card_request** | [**CreateTransactionRequestCardRequest**](CreateTransactionRequestCardRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_cardano**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_cardano(bankid, accountid, cardano, create_transaction_request_cardano_request)
+
+Create Transaction Request (CARDANO)
+
+<p>For sandbox mode, it will use the Cardano Preprod Network.<br />
+The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">CARDANO</a>: CARDANO</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>asset_name</strong></a>: asset_name</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>passphrase</strong></a>: passphrase</p>
+<p><a href="/glossary#"><strong>policy_id</strong></a>: policy_id</p>
+<p><a href="/glossary#"><strong>quantity</strong></a>: quantity</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>unit</strong></a>: unit</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">assets</a>: assets</p>
+<p><a href="/glossary#metadata">metadata</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_cardano_request import CreateTransactionRequestCardanoRequest
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    cardano = 'cardano_example' # str | The CARDANO identifier
+    create_transaction_request_cardano_request = {"type":"object","properties":{"to":{"type":"object","properties":{"amount":{"type":"object","properties":{"quantity":{"type":"integer"},"unit":{"type":"string"}}},"address":{"type":"string"},"assets":{"type":"array","items":{"type":"object","properties":{"quantity":{"type":"integer"},"asset_name":{"type":"string"},"policy_id":{"type":"string"}}}}}},"metadata":{"type":"object","properties":{"value1":{"type":"object","properties":{"string":{"type":"string"}}},"key1":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"description":{"type":"string"},"passphrase":{"type":"string"}}} # CreateTransactionRequestCardanoRequest | Request body
+
+    try:
+        # Create Transaction Request (CARDANO)
+        api_response = api_instance.create_transaction_request_cardano(bankid, accountid, cardano, create_transaction_request_cardano_request)
+        print("The response of TransactionRequestApi->create_transaction_request_cardano:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_cardano: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **cardano** | **str**| The CARDANO identifier | 
+ **create_transaction_request_cardano_request** | [**CreateTransactionRequestCardanoRequest**](CreateTransactionRequestCardanoRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_counterparty**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_counterparty(bankid, accountid, viewid, counterparty, create_transaction_request_counterparty_request)
+
+Create Transaction Request (COUNTERPARTY)
+
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.<br />
+The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.</p>
+<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#counterparty">COUNTERPARTY</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_counterparty_request import CreateTransactionRequestCounterpartyRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    counterparty = 'counterparty_example' # str | The COUNTERPARTY identifier
+    create_transaction_request_counterparty_request = {"type":"object","properties":{"description":{"type":"string"},"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"to":{"type":"object","properties":{"counterparty_id":{"type":"string"}}}}} # CreateTransactionRequestCounterpartyRequest | Request body
+
+    try:
+        # Create Transaction Request (COUNTERPARTY)
+        api_response = api_instance.create_transaction_request_counterparty(bankid, accountid, viewid, counterparty, create_transaction_request_counterparty_request)
+        print("The response of TransactionRequestApi->create_transaction_request_counterparty:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_counterparty: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **counterparty** | **str**| The COUNTERPARTY identifier | 
+ **create_transaction_request_counterparty_request** | [**CreateTransactionRequestCounterpartyRequest**](CreateTransactionRequestCounterpartyRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_eth_send_raw_transaction**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_eth_send_raw_transaction(bankid, accountid, ethsendrawtransaction, create_transaction_request_eth_send_raw_transaction_request)
+
+CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+
+<p>Send ETH via Ethereum JSON-RPC.<br />
+AccountId should hold the 0x address for now.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ETH_SEND_RAW_TRANSACTION</a>: ETH_SEND_RAW_TRANSACTION</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>params</strong></a>: params</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_eth_send_raw_transaction_request import CreateTransactionRequestEthSendRawTransactionRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    ethsendrawtransaction = 'ethsendrawtransaction_example' # str | The ETHSENDRAWTRANSACTION identifier
+    create_transaction_request_eth_send_raw_transaction_request = {"type":"object","properties":{"description":{"type":"string"},"params":{"type":"string"}}} # CreateTransactionRequestEthSendRawTransactionRequest | Request body
+
+    try:
+        # CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+        api_response = api_instance.create_transaction_request_eth_send_raw_transaction(bankid, accountid, ethsendrawtransaction, create_transaction_request_eth_send_raw_transaction_request)
+        print("The response of TransactionRequestApi->create_transaction_request_eth_send_raw_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_eth_send_raw_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **ethsendrawtransaction** | **str**| The ETHSENDRAWTRANSACTION identifier | 
+ **create_transaction_request_eth_send_raw_transaction_request** | [**CreateTransactionRequestEthSendRawTransactionRequest**](CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_ethereume_send_transaction**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_ethereume_send_transaction(bankid, accountid, ethsendtransaction, create_transaction_request_ethereume_send_transaction_request)
+
+Create Transaction Request (ETH_SEND_TRANSACTION)
+
+<p>Send ETH via Ethereum JSON-RPC.<br />
+AccountId should hold the 0x address for now.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ETH_SEND_TRANSACTION</a>: ETH_SEND_TRANSACTION</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">params</a>: params</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_ethereume_send_transaction_request import CreateTransactionRequestEthereumeSendTransactionRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    ethsendtransaction = 'ethsendtransaction_example' # str | The ETHSENDTRANSACTION identifier
+    create_transaction_request_ethereume_send_transaction_request = {"type":"object","properties":{"value":{"type":"object","properties":{"amount":{"type":"string"},"currency":{"type":"string"}}},"description":{"type":"string"},"to":{"type":"string"}}} # CreateTransactionRequestEthereumeSendTransactionRequest | Request body
+
+    try:
+        # Create Transaction Request (ETH_SEND_TRANSACTION)
+        api_response = api_instance.create_transaction_request_ethereume_send_transaction(bankid, accountid, ethsendtransaction, create_transaction_request_ethereume_send_transaction_request)
+        print("The response of TransactionRequestApi->create_transaction_request_ethereume_send_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_ethereume_send_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **ethsendtransaction** | **str**| The ETHSENDTRANSACTION identifier | 
+ **create_transaction_request_ethereume_send_transaction_request** | [**CreateTransactionRequestEthereumeSendTransactionRequest**](CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_free_form**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_free_form(bankid, accountid, viewid, freeform, create_transaction_request_free_form_request)
+
+Create Transaction Request (FREE_FORM)
+
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#free_form">FREE_FORM</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_free_form_request import CreateTransactionRequestFreeFormRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    freeform = 'freeform_example' # str | The FREEFORM identifier
+    create_transaction_request_free_form_request = {"type":"object","properties":{"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # CreateTransactionRequestFreeFormRequest | Request body
+
+    try:
+        # Create Transaction Request (FREE_FORM)
+        api_response = api_instance.create_transaction_request_free_form(bankid, accountid, viewid, freeform, create_transaction_request_free_form_request)
+        print("The response of TransactionRequestApi->create_transaction_request_free_form:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_free_form: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **freeform** | **str**| The FREEFORM identifier | 
+ **create_transaction_request_free_form_request** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_hold**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_hold(bankid, accountid, hold, create_transaction_request_free_form_request)
+
+Create Transaction Request (HOLD)
+
+<p>Create a transaction request to move funds from the account to its Holding Account.<br />
+If the Holding Account does not exist, it will be created automatically.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">HOLD</a>: HOLD</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_free_form_request import CreateTransactionRequestFreeFormRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    hold = 'hold_example' # str | The HOLD identifier
+    create_transaction_request_free_form_request = {type=object, properties={description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # CreateTransactionRequestFreeFormRequest | Request body
+
+    try:
+        # Create Transaction Request (HOLD)
+        api_response = api_instance.create_transaction_request_hold(bankid, accountid, hold, create_transaction_request_free_form_request)
+        print("The response of TransactionRequestApi->create_transaction_request_hold:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_hold: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **hold** | **str**| The HOLD identifier | 
+ **create_transaction_request_free_form_request** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_refund**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_refund(bankid, accountid, viewid, refund, create_transaction_request_refund_request)
+
+Create Transaction Request (REFUND)
+
+<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
+<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
+In the <code>from</code> object, you have two choices :<br />
+- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
+- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
+<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
+(This case is not managed by the OBP-API and require an external adapter)</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">REFUND</a>: REFUND</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>reason_code</strong></a>: reason_code</p>
+<p><a href="/glossary#"><strong>refund</strong></a>: refund</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#from">from</a>:</p>
+<p><a href="/glossary#to">to</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_refund_request import CreateTransactionRequestRefundRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    refund = 'refund_example' # str | The REFUND identifier
+    create_transaction_request_refund_request = {"type":"object","properties":{"description":{"type":"string"},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"from":{"type":"object","properties":{"counterparty_id":{"type":"string"}}},"refund":{"type":"object","properties":{"reason_code":{"type":"string"},"transaction_id":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # CreateTransactionRequestRefundRequest | Request body
+
+    try:
+        # Create Transaction Request (REFUND)
+        api_response = api_instance.create_transaction_request_refund(bankid, accountid, viewid, refund, create_transaction_request_refund_request)
+        print("The response of TransactionRequestApi->create_transaction_request_refund:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_refund: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **refund** | **str**| The REFUND identifier | 
+ **create_transaction_request_refund_request** | [**CreateTransactionRequestRefundRequest**](CreateTransactionRequestRefundRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_sandbox_tan**
+> GetTransactionRequestById200Response create_transaction_request_sandbox_tan(bankid, accountid, viewid, sandboxtan, create_transaction_request_account_request)
 
 Create Transaction Request (SANDBOX_TAN)
 
@@ -492,8 +2907,8 @@ This provides some commonality and one URL for many different payment or transfe
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_account_request import OBPv400CreateTransactionRequestAccountRequest
-from obp_python.models.obpv510_get_transaction_request_by_id200_response import OBPv510GetTransactionRequestById200Response
+from obp_python.models.create_transaction_request_account_request import CreateTransactionRequestAccountRequest
+from obp_python.models.get_transaction_request_by_id200_response import GetTransactionRequestById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -530,15 +2945,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     sandboxtan = 'sandboxtan_example' # str | The SANDBOXTAN identifier
-    obpv400_create_transaction_request_account_request = {type=object, properties={to={type=object, properties={bank_id={type=string}, account_id={type=string}}}, description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # OBPv400CreateTransactionRequestAccountRequest | Request body
+    create_transaction_request_account_request = {type=object, properties={to={type=object, properties={bank_id={type=string}, account_id={type=string}}}, description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # CreateTransactionRequestAccountRequest | Request body
 
     try:
         # Create Transaction Request (SANDBOX_TAN)
-        api_response = api_instance.o_bpv2_1_0_create_transaction_request_sandbox_tan(bankid, accountid, viewid, sandboxtan, obpv400_create_transaction_request_account_request)
-        print("The response of TransactionRequestApi->o_bpv2_1_0_create_transaction_request_sandbox_tan:\n")
+        api_response = api_instance.create_transaction_request_sandbox_tan(bankid, accountid, viewid, sandboxtan, create_transaction_request_account_request)
+        print("The response of TransactionRequestApi->create_transaction_request_sandbox_tan:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv2_1_0_create_transaction_request_sandbox_tan: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->create_transaction_request_sandbox_tan: %s\n" % e)
 ```
 
 
@@ -552,11 +2967,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **sandboxtan** | **str**| The SANDBOXTAN identifier | 
- **obpv400_create_transaction_request_account_request** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | 
+ **create_transaction_request_account_request** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 ### Authorization
 
@@ -578,8 +2993,1387 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_1_0_get_transaction_request_types_supported_by_bank**
-> OBPv210GetTransactionRequestTypesSupportedByBank200Response o_bpv2_1_0_get_transaction_request_types_supported_by_bank(bankid)
+# **create_transaction_request_sepa**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_sepa(bankid, accountid, viewid, sepa, create_transaction_request_sepa_request)
+
+Create Transaction Request (SEPA)
+
+<p>Special instructions for SEPA:</p>
+<p>When using a SEPA Transaction Request, you specify the IBAN of a Counterparty in the body of the request.<br />
+The routing details (IBAN) of the counterparty will be forwarded to the core banking system for the transfer.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#sepa">SEPA</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#document_number">document_number</a>:</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><a href="/glossary#reasons">reasons</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_sepa_request import CreateTransactionRequestSepaRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    sepa = 'sepa_example' # str | The SEPA identifier
+    create_transaction_request_sepa_request = {"type":"object","properties":{"future_date":{"type":"string"},"reasons":{"type":"array","items":{"type":"object","properties":{"description":{"type":"string"},"code":{"type":"string"},"amount":{"type":"string"},"document_number":{"type":"string"},"currency":{"type":"string"}}}},"to":{"type":"object","properties":{"iban":{"type":"string"}}},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"}}} # CreateTransactionRequestSepaRequest | Request body
+
+    try:
+        # Create Transaction Request (SEPA)
+        api_response = api_instance.create_transaction_request_sepa(bankid, accountid, viewid, sepa, create_transaction_request_sepa_request)
+        print("The response of TransactionRequestApi->create_transaction_request_sepa:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_sepa: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **sepa** | **str**| The SEPA identifier | 
+ **create_transaction_request_sepa_request** | [**CreateTransactionRequestSepaRequest**](CreateTransactionRequestSepaRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_request_simple**
+> CreateTransactionRequestCounterparty200Response create_transaction_request_simple(bankid, accountid, viewid, simple, create_transaction_request_simple_request)
+
+Create Transaction Request (SIMPLE)
+
+<p>Special instructions for SIMPLE:</p>
+<p>You can transfer money to the Bank Account Number or IBAN directly.</p>
+<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">SIMPLE</a>: SIMPLE</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#link"><strong>link</strong></a>:</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_transaction_request_counterparty200_response import CreateTransactionRequestCounterparty200Response
+from obp_python.models.create_transaction_request_simple_request import CreateTransactionRequestSimpleRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    simple = 'simple_example' # str | The SIMPLE identifier
+    create_transaction_request_simple_request = {"type":"object","properties":{"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"description":{"type":"string"},"to":{"type":"object","properties":{"other_account_routing_address":{"type":"string"},"description":{"type":"string"},"other_bank_routing_scheme":{"type":"string"},"other_account_secondary_routing_address":{"type":"string"},"name":{"type":"string"},"other_account_routing_scheme":{"type":"string"},"other_bank_routing_address":{"type":"string"},"other_branch_routing_scheme":{"type":"string"},"other_account_secondary_routing_scheme":{"type":"string"},"other_branch_routing_address":{"type":"string"}}}}} # CreateTransactionRequestSimpleRequest | Request body
+
+    try:
+        # Create Transaction Request (SIMPLE)
+        api_response = api_instance.create_transaction_request_simple(bankid, accountid, viewid, simple, create_transaction_request_simple_request)
+        print("The response of TransactionRequestApi->create_transaction_request_simple:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_transaction_request_simple: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **simple** | **str**| The SIMPLE identifier | 
+ **create_transaction_request_simple_request** | [**CreateTransactionRequestSimpleRequest**](CreateTransactionRequestSimpleRequest.md)| Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_vrp_consent_request**
+> CreateVRPConsentRequest200Response create_vrp_consent_request(create_vrp_consent_request_request)
+
+Create Consent Request VRP
+
+<p>This endpoint is used to begin the process of creating a consent that may be used for Variable Recurring Payments (VRPs).</p>
+<p>VRPs are useful in situations when a beneficiary needs to be paid different amounts on a regular basis.</p>
+<p>Once granted, the consent allows its holder to initiate multiple Transaction Requests to the Counterparty defined in this endpoint as long as the<br />
+Counterparty Limits linked to this particular consent are respected.</p>
+<p>Client, Consumer or Application Authentication is mandatory for this endpoint.</p>
+<p>i.e. the caller of this endpoint is the API Client, Consumer or Application rather than a specific User.</p>
+<p>At the end of the process the following objects are created in OBP or connected backend systems:<br />
+- An automatically generated View which controls access.<br />
+- A Counterparty that is the Beneficiary of the Variable Recurring Payments. The Counterparty specifies the Bank Account number or other routing address.<br />
+- Limits for the Counterparty which constrain the amount of money that can be sent to it in various periods (yearly, monthly, weekly).</p>
+<p>The Account holder may modify the Counterparty or Limits e.g. to increase or decrease the maximum possible payment amounts or the frequencey of the payments.</p>
+<p>In the case of a public client we use the client_id and private key to obtain an access token, otherwise we use the client_id and client_secret.<br />
+The obtained access token is used in the HTTP Authorization header of the request as follows:</p>
+<p>Example:<br />
+Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
+<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent using the CONSENT_REQUEST_ID returned by this endpoint.</p>
+<p>Application Access is Required. The Application must be authenticated.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
+<p><a href="/glossary#branch_routing"><strong>branch_routing</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_name</strong></a>: John Smith Ltd.</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>from_account</strong></a>: from_account</p>
+<p><a href="/glossary#"><strong>limit</strong></a>: 100</p>
+<p><a href="/glossary#max_monthly_amount"><strong>max_monthly_amount</strong></a>: 10000.11</p>
+<p><a href="/glossary#max_number_of_monthly_transactions"><strong>max_number_of_monthly_transactions</strong></a>: 10</p>
+<p><a href="/glossary#max_number_of_transactions"><strong>max_number_of_transactions</strong></a>: 100</p>
+<p><a href="/glossary#max_number_of_yearly_transactions"><strong>max_number_of_yearly_transactions</strong></a>: 100</p>
+<p><a href="/glossary#max_single_amount"><strong>max_single_amount</strong></a>: 1000.11</p>
+<p><a href="/glossary#max_total_amount"><strong>max_total_amount</strong></a>: 10000.12</p>
+<p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
+<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p><a href="/glossary#phone_number">phone_number</a>:</p>
+<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
+<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_vrp_consent_request200_response import CreateVRPConsentRequest200Response
+from obp_python.models.create_vrp_consent_request_request import CreateVRPConsentRequestRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # CreateVRPConsentRequestRequest | Request body
+
+    try:
+        # Create Consent Request VRP
+        api_response = api_instance.create_vrp_consent_request(create_vrp_consent_request_request)
+        print("The response of TransactionRequestApi->create_vrp_consent_request:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->create_vrp_consent_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_vrp_consent_request_request** | [**CreateVRPConsentRequestRequest**](CreateVRPConsentRequestRequest.md)| Request body | 
+
+### Return type
+
+[**CreateVRPConsentRequest200Response**](CreateVRPConsentRequest200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_transaction_request_attribute_definition**
+> DeleteSystemLevelEndpointTag200Response delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
+
+Delete Transaction Request Attribute Definition
+
+<p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.delete_system_level_endpoint_tag200_response import DeleteSystemLevelEndpointTag200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    attributedefinitionid = 'attributedefinitionid_example' # str | The ATTRIBUTEDEFINITIONID identifier
+
+    try:
+        # Delete Transaction Request Attribute Definition
+        api_response = api_instance.delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
+        print("The response of TransactionRequestApi->delete_transaction_request_attribute_definition:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->delete_transaction_request_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **attributedefinitionid** | **str**| The ATTRIBUTEDEFINITIONID identifier | 
+
+### Return type
+
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request**
+> GetTransactionRequestById200Response get_transaction_request(bankid, accountid, viewid, transactionrequestid)
+
+Get Transaction Request
+
+<p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID and for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
+<p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
+<p>Version 2.0.0 now returns charge information.</p>
+<p>Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:</p>
+<ul>
+<li>Transaction Request Id</li>
+<li>Type</li>
+<li>Status (INITIATED, COMPLETED)</li>
+<li>Challenge (in order to confirm the request)</li>
+<li>From Bank / Account</li>
+<li>Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)</li>
+<li>Related Transactions</li>
+</ul>
+<p>PSD2 Context: PSD2 requires transparency of charges to the customer.<br />
+This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.<br />
+The customer can proceed with the Transaction by answering the security challenge.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_by_id200_response import GetTransactionRequestById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+
+    try:
+        # Get Transaction Request
+        api_response = api_instance.get_transaction_request(bankid, accountid, viewid, transactionrequestid)
+        print("The response of TransactionRequestApi->get_transaction_request:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+
+### Return type
+
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_attribute_by_id**
+> GetTransactionRequestAttributeById200Response get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
+
+Get Transaction Request Attribute By Id
+
+<p>Get Transaction Request Attribute By Id</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+    attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
+
+    try:
+        # Get Transaction Request Attribute By Id
+        api_response = api_instance.get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
+        print("The response of TransactionRequestApi->get_transaction_request_attribute_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request_attribute_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+ **attributeid** | **str**| The ATTRIBUTEID identifier | 
+
+### Return type
+
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_attribute_definition**
+> GetTransactionRequestAttributeDefinition200Response get_transaction_request_attribute_definition(bankid)
+
+Get Transaction Request Attribute Definition
+
+<p>Get Transaction Request Attribute Definition</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Transaction Request Attribute Definition
+        api_response = api_instance.get_transaction_request_attribute_definition(bankid)
+        print("The response of TransactionRequestApi->get_transaction_request_attribute_definition:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_attributes**
+> GetTransactionRequestAttributes200Response get_transaction_request_attributes(bankid, accountid, transactionrequestid)
+
+Get Transaction Request Attributes
+
+<p>Get Transaction Request Attributes</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>transaction_request_attributes</strong></a>: transaction_request_attributes</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_attributes200_response import GetTransactionRequestAttributes200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+
+    try:
+        # Get Transaction Request Attributes
+        api_response = api_instance.get_transaction_request_attributes(bankid, accountid, transactionrequestid)
+        print("The response of TransactionRequestApi->get_transaction_request_attributes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request_attributes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+
+### Return type
+
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_by_id**
+> GetTransactionRequestById200Response get_transaction_request_by_id(transactionrequestid)
+
+Get Transaction Request by ID
+
+<p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_by_id200_response import GetTransactionRequestById200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
+
+    try:
+        # Get Transaction Request by ID
+        api_response = api_instance.get_transaction_request_by_id(transactionrequestid)
+        print("The response of TransactionRequestApi->get_transaction_request_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
+
+### Return type
+
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_types**
+> GetTransactionRequestTypes200Response get_transaction_request_types(bankid, accountid, viewid)
+
+Get Transaction Request Types for Account
+
+<p>Returns the Transaction Request Types that the account specified by ACCOUNT_ID and view specified by VIEW_ID has access to.</p>
+<p>These are the ways this API Server can create a Transaction via a Transaction Request<br />
+(as opposed to Transaction Types which include external types too e.g. for Transactions created by core banking etc.)</p>
+<p>A Transaction Request Type internally determines:</p>
+<ul>
+<li>the required Transaction Request 'body' i.e. fields that define the 'what' and 'to' of a Transaction Request,</li>
+<li>the type of security challenge that may be be raised before the Transaction Request proceeds, and</li>
+<li>the threshold of that challenge.</li>
+</ul>
+<p>For instance in a 'SANDBOX_TAN' Transaction Request, for amounts over 1000 currency units, the user must supply a positive integer to complete the Transaction Request and create a Transaction.</p>
+<p>This approach aims to provide only one endpoint for initiating transactions, and one that handles challenges, whilst still allowing flexibility with the payload and internal logic.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#transaction_request_types"><strong>transaction_request_types</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_types200_response import GetTransactionRequestTypes200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Transaction Request Types for Account
+        api_response = api_instance.get_transaction_request_types(bankid, accountid, viewid)
+        print("The response of TransactionRequestApi->get_transaction_request_types:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_request_types: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetTransactionRequestTypes200Response**](GetTransactionRequestTypes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_request_types_supported_by_bank**
+> GetTransactionRequestTypesSupportedByBank200Response get_transaction_request_types_supported_by_bank(bankid)
 
 Get Transaction Request Types at Bank
 
@@ -597,7 +4391,7 @@ Get Transaction Request Types at Bank
 
 ```python
 import obp_python
-from obp_python.models.obpv210_get_transaction_request_types_supported_by_bank200_response import OBPv210GetTransactionRequestTypesSupportedByBank200Response
+from obp_python.models.get_transaction_request_types_supported_by_bank200_response import GetTransactionRequestTypesSupportedByBank200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -616,11 +4410,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Request Types at Bank
-        api_response = api_instance.o_bpv2_1_0_get_transaction_request_types_supported_by_bank(bankid)
-        print("The response of TransactionRequestApi->o_bpv2_1_0_get_transaction_request_types_supported_by_bank:\n")
+        api_response = api_instance.get_transaction_request_types_supported_by_bank(bankid)
+        print("The response of TransactionRequestApi->get_transaction_request_types_supported_by_bank:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv2_1_0_get_transaction_request_types_supported_by_bank: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->get_transaction_request_types_supported_by_bank: %s\n" % e)
 ```
 
 
@@ -634,7 +4428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv210GetTransactionRequestTypesSupportedByBank200Response**](OBPv210GetTransactionRequestTypesSupportedByBank200Response.md)
+[**GetTransactionRequestTypesSupportedByBank200Response**](GetTransactionRequestTypesSupportedByBank200Response.md)
 
 ### Authorization
 
@@ -654,8 +4448,185 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_save_historical_transaction**
-> OBPv310SaveHistoricalTransaction200Response o_bpv3_1_0_save_historical_transaction(obpv310_save_historical_transaction_request)
+# **get_transaction_requests**
+> GetTransactionRequests200Response get_transaction_requests(bankid, accountid, viewid)
+
+Get Transaction Requests
+
+<p>Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
+<p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
+<p>Version 2.0.0 now returns charge information.</p>
+<p>Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:</p>
+<ul>
+<li>Transaction Request Id</li>
+<li>Type</li>
+<li>Status (INITIATED, COMPLETED)</li>
+<li>Challenge (in order to confirm the request)</li>
+<li>From Bank / Account</li>
+<li>Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)</li>
+<li>Related Transactions</li>
+</ul>
+<p>PSD2 Context: PSD2 requires transparency of charges to the customer.<br />
+This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.<br />
+The customer can proceed with the Transaction by answering the security challenge.</p>
+<p>We support query transaction request by attribute<br />
+URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber=123&amp;referenceNumber=456</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
+<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
+<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
+<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
+<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
+<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#details"><strong>details</strong></a>:</p>
+<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
+<p><a href="/glossary#from"><strong>from</strong></a>:</p>
+<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
+<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
+<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
+<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
+<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
+<p><a href="/glossary#to"><strong>to</strong></a>:</p>
+<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
+<p><a href="/glossary#transaction_requests_with_charges"><strong>transaction_requests_with_charges</strong></a>:</p>
+<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#">to_agent</a>: to_agent</p>
+<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
+<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
+<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
+<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
+<p><a href="/glossary#">to_simple</a>: to_simple</p>
+<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
+<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
+<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_requests200_response import GetTransactionRequests200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionRequestApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Transaction Requests
+        api_response = api_instance.get_transaction_requests(bankid, accountid, viewid)
+        print("The response of TransactionRequestApi->get_transaction_requests:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionRequestApi->get_transaction_requests: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetTransactionRequests200Response**](GetTransactionRequests200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_historical_transaction**
+> SaveHistoricalTransaction200Response save_historical_transaction(save_historical_transaction_request)
 
 Save Historical Transactions 
 
@@ -762,8 +4733,8 @@ When you need the account to account, just omit counterparty_id field.eg:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv310_save_historical_transaction200_response import OBPv310SaveHistoricalTransaction200Response
-from obp_python.models.obpv310_save_historical_transaction_request import OBPv310SaveHistoricalTransactionRequest
+from obp_python.models.save_historical_transaction200_response import SaveHistoricalTransaction200Response
+from obp_python.models.save_historical_transaction_request import SaveHistoricalTransactionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -796,15 +4767,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.TransactionRequestApi(api_client)
-    obpv310_save_historical_transaction_request = {"type":"object","properties":{"type":{"type":"string"},"completed":{"type":"string"},"description":{"type":"string"},"from":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"posted":{"type":"string"}}} # OBPv310SaveHistoricalTransactionRequest | Request body
+    save_historical_transaction_request = {"type":"object","properties":{"type":{"type":"string"},"completed":{"type":"string"},"description":{"type":"string"},"from":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"posted":{"type":"string"}}} # SaveHistoricalTransactionRequest | Request body
 
     try:
         # Save Historical Transactions 
-        api_response = api_instance.o_bpv3_1_0_save_historical_transaction(obpv310_save_historical_transaction_request)
-        print("The response of TransactionRequestApi->o_bpv3_1_0_save_historical_transaction:\n")
+        api_response = api_instance.save_historical_transaction(save_historical_transaction_request)
+        print("The response of TransactionRequestApi->save_historical_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv3_1_0_save_historical_transaction: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->save_historical_transaction: %s\n" % e)
 ```
 
 
@@ -814,11 +4785,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv310_save_historical_transaction_request** | [**OBPv310SaveHistoricalTransactionRequest**](OBPv310SaveHistoricalTransactionRequest.md)| Request body | 
+ **save_historical_transaction_request** | [**SaveHistoricalTransactionRequest**](SaveHistoricalTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310SaveHistoricalTransaction200Response**](OBPv310SaveHistoricalTransaction200Response.md)
+[**SaveHistoricalTransaction200Response**](SaveHistoricalTransaction200Response.md)
 
 ### Authorization
 
@@ -840,2814 +4811,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_answer_transaction_request_challenge**
-> OBPv510GetTransactionRequestById200Response o_bpv4_0_0_answer_transaction_request_challenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obpv400_answer_transaction_request_challenge_request)
-
-Answer Transaction Request Challenge
-
-<p>In Sandbox mode, any string that can be converted to a positive integer will be accepted as an answer.</p>
-<p>This endpoint totally depends on createTransactionRequest, it need get the following data from createTransactionRequest response body.</p>
-<p>1)<code>TRANSACTION_REQUEST_TYPE</code> : is the same as createTransactionRequest request URL .</p>
-<p>2)<code>TRANSACTION_REQUEST_ID</code> : is the <code>id</code> field in createTransactionRequest response body.</p>
-<p>3) <code>id</code> :  is <code>challenge.id</code> field in createTransactionRequest response body.</p>
-<p>4) <code>answer</code> : must be <code>123</code> in case that Strong Customer Authentication method for OTP challenge is dummy.<br />
-For instance: SANDBOX_TAN_OTP_INSTRUCTION_TRANSPORT=dummy<br />
-Possible values are dummy,email and sms<br />
-In CBS mode, the answer can be got by phone message or other SCA methods.</p>
-<p>Note that each Transaction Request Type can have its own OTP_INSTRUCTION_TRANSPORT method.<br />
-OTP_INSTRUCTION_TRANSPORT methods are set in Props. See sample.props.template for instructions.</p>
-<p>Single or Multiple authorisations</p>
-<p>OBP allows single or multi party authorisations.</p>
-<p>Single party authorisation:</p>
-<p>In the case that only one person needs to authorise i.e. answer a security challenge we have the following change of state of a <code>transaction request</code>:<br />
-INITIATED =&gt; COMPLETED</p>
-<p>Multiparty authorisation:</p>
-<p>In the case that multiple parties (n persons) need to authorise a transaction request i.e. answer security challenges, we have the followings state flow for a <code>transaction request</code>:<br />
-INITIATED =&gt; NEXT_CHALLENGE_PENDING =&gt; ... =&gt; NEXT_CHALLENGE_PENDING =&gt; COMPLETED</p>
-<p>The security challenge is bound to a user i.e. in the case of a correct answer but the user is different than expected the challenge will fail.</p>
-<p>Rule for calculating number of security challenges:<br />
-If Product Account attribute REQUIRED_CHALLENGE_ANSWERS=N then create N challenges<br />
-(one for every user that has a View where permission can_add_transaction_request_to_any_account=true)<br />
-In the case REQUIRED_CHALLENGE_ANSWERS is not defined as an account attribute, the default number of security challenges created is one.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_TYPE</a>: SEPA</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#answer"><strong>answer</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#">additional_information</a>: additional_information</p>
-<p><a href="/glossary#">reason_code</a>: reason_code</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_answer_transaction_request_challenge_request import OBPv400AnswerTransactionRequestChallengeRequest
-from obp_python.models.obpv510_get_transaction_request_by_id200_response import OBPv510GetTransactionRequestById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionrequesttype = 'transactionrequesttype_example' # str | The TRANSACTIONREQUESTTYPE identifier
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    obpv400_answer_transaction_request_challenge_request = {"type":"object","properties":{"additional_information":{"type":"string"},"answer":{"type":"string"},"reason_code":{"type":"string"},"id":{"type":"string"}}} # OBPv400AnswerTransactionRequestChallengeRequest | Request body
-
-    try:
-        # Answer Transaction Request Challenge
-        api_response = api_instance.o_bpv4_0_0_answer_transaction_request_challenge(bankid, accountid, viewid, transactionrequesttype, transactionrequestid, obpv400_answer_transaction_request_challenge_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_answer_transaction_request_challenge:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_answer_transaction_request_challenge: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionrequesttype** | **str**| The TRANSACTIONREQUESTTYPE identifier | 
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **obpv400_answer_transaction_request_challenge_request** | [**OBPv400AnswerTransactionRequestChallengeRequest**](OBPv400AnswerTransactionRequestChallengeRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_historical_transaction_at_bank**
-> OBPv310SaveHistoricalTransaction200Response o_bpv4_0_0_create_historical_transaction_at_bank(bankid, obpv400_create_historical_transaction_at_bank_request)
-
-Create Historical Transactions 
-
-<p>Create historical transactions at one Bank</p>
-<p>Use this endpoint to create transactions between any two accounts at the same bank.<br />
-From account and to account must be at the same bank.<br />
-Example:<br />
-{<br />
-&quot;from_account_id&quot;: &quot;1ca8a7e4-6d02-48e3-a029-0b2bf89de9f0&quot;,<br />
-&quot;to_account_id&quot;: &quot;2ca8a7e4-6d02-48e3-a029-0b2bf89de9f0&quot;,<br />
-&quot;value&quot;: {<br />
-&quot;currency&quot;: &quot;GBP&quot;,<br />
-&quot;amount&quot;: &quot;10&quot;<br />
-},<br />
-&quot;description&quot;: &quot;this is for work&quot;,<br />
-&quot;posted&quot;: &quot;2017-09-19T02:31:05Z&quot;,<br />
-&quot;completed&quot;: &quot;2017-09-19T02:31:05Z&quot;,<br />
-&quot;type&quot;: &quot;SANDBOX_TAN&quot;,<br />
-&quot;charge_policy&quot;: &quot;SHARED&quot;<br />
-}</p>
-<p>This call is experimental.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>from_account_id</strong></a>: from_account_id</p>
-<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>to_account_id</strong></a>: to_account_id</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#completed"><strong>completed</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#posted"><strong>posted</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>transaction_request_type</strong></a>: SEPA</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-<p><a href="/glossary#">counterparty_id</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_save_historical_transaction200_response import OBPv310SaveHistoricalTransaction200Response
-from obp_python.models.obpv400_create_historical_transaction_at_bank_request import OBPv400CreateHistoricalTransactionAtBankRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_historical_transaction_at_bank_request = {"type":"object","properties":{"type":{"type":"string"},"from_account_id":{"type":"string"},"completed":{"type":"string"},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"posted":{"type":"string"},"to_account_id":{"type":"string"}}} # OBPv400CreateHistoricalTransactionAtBankRequest | Request body
-
-    try:
-        # Create Historical Transactions 
-        api_response = api_instance.o_bpv4_0_0_create_historical_transaction_at_bank(bankid, obpv400_create_historical_transaction_at_bank_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_historical_transaction_at_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_historical_transaction_at_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_historical_transaction_at_bank_request** | [**OBPv400CreateHistoricalTransactionAtBankRequest**](OBPv400CreateHistoricalTransactionAtBankRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv310SaveHistoricalTransaction200Response**](OBPv310SaveHistoricalTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_or_update_transaction_request_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-
-Create or Update Transaction Request Attribute Definition
-
-<p>Create or Update Transaction Request Attribute Definition</p>
-<p>The category field must be TransactionRequest</p>
-<p>The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_or_update_transaction_request_attribute_definition_request = {"type":"object","properties":{"can_be_seen_on_views":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"},"type":{"type":"string"},"category":{"type":"string"},"alias":{"type":"string"}}} # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-
-    try:
-        # Create or Update Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_create_or_update_transaction_request_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_or_update_transaction_request_attribute_definition:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_or_update_transaction_request_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_account**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_account(bankid, accountid, viewid, account, obpv400_create_transaction_request_account_request)
-
-Create Transaction Request (ACCOUNT)
-
-<p>When using ACCOUNT, the payee is set in the request body.</p>
-<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account">ACCOUNT</a>:</p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_account_request import OBPv400CreateTransactionRequestAccountRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    account = 'account_example' # str | The ACCOUNT identifier
-    obpv400_create_transaction_request_account_request = {"type":"object","properties":{"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"}}},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # OBPv400CreateTransactionRequestAccountRequest | Request body
-
-    try:
-        # Create Transaction Request (ACCOUNT)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_account(bankid, accountid, viewid, account, obpv400_create_transaction_request_account_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_account:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_account: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **account** | **str**| The ACCOUNT identifier | 
- **obpv400_create_transaction_request_account_request** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_account_otp**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_account_otp(bankid, accountid, viewid, accountotp, obpv400_create_transaction_request_account_request)
-
-Create Transaction Request (ACCOUNT_OTP)
-
-<p>When using ACCOUNT, the payee is set in the request body.</p>
-<p>Money goes into the BANK_ID and ACCOUNT_ID specified in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#account_otp">ACCOUNT_OTP</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_account_request import OBPv400CreateTransactionRequestAccountRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    accountotp = 'accountotp_example' # str | The ACCOUNTOTP identifier
-    obpv400_create_transaction_request_account_request = {type=object, properties={to={type=object, properties={bank_id={type=string}, account_id={type=string}}}, description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # OBPv400CreateTransactionRequestAccountRequest | Request body
-
-    try:
-        # Create Transaction Request (ACCOUNT_OTP)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_account_otp(bankid, accountid, viewid, accountotp, obpv400_create_transaction_request_account_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_account_otp:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_account_otp: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **accountotp** | **str**| The ACCOUNTOTP identifier | 
- **obpv400_create_transaction_request_account_request** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal(bankid, accountid, viewid, agentcashwithdrawal, obpv400_create_transaction_request_agent_cash_with_drawal_request)
-
-Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-
-<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
-<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
-In the <code>from</code> object, you have two choices :<br />
-- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
-- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
-<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
-(This case is not managed by the OBP-API and require an external adapter)</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">AGENT_CASH_WITHDRAWAL</a>: AGENT_CASH_WITHDRAWAL</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_agent_cash_with_drawal_request import OBPv400CreateTransactionRequestAgentCashWithDrawalRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    agentcashwithdrawal = 'agentcashwithdrawal_example' # str | The AGENTCASHWITHDRAWAL identifier
-    obpv400_create_transaction_request_agent_cash_with_drawal_request = {"type":"object","properties":{"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"description":{"type":"string"},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"agent_number":{"type":"string"}}}}} # OBPv400CreateTransactionRequestAgentCashWithDrawalRequest | Request body
-
-    try:
-        # Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal(bankid, accountid, viewid, agentcashwithdrawal, obpv400_create_transaction_request_agent_cash_with_drawal_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_agent_cash_with_drawal: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **agentcashwithdrawal** | **str**| The AGENTCASHWITHDRAWAL identifier | 
- **obpv400_create_transaction_request_agent_cash_with_drawal_request** | [**OBPv400CreateTransactionRequestAgentCashWithDrawalRequest**](OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
-
-Create Transaction Request Attribute
-
-<p>Create Transaction Request Attribute</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    obpv400_create_transaction_request_counterparty_request_attributes_inner = {type=object, properties={attribute_type={type=string}, name={type=string}, value={type=string}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
-
-    try:
-        # Create Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_attribute(bankid, accountid, transactionrequestid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_attribute:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_attribute: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_card**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_card(card, obpv400_create_transaction_request_card_request)
-
-Create Transaction Request (CARD)
-
-<p>When using CARD, the payee is set in the request body .</p>
-<p>Money goes into the Counterparty in the request body.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CARD</a>: CARD</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>brand</strong></a>: Visa</p>
-<p><a href="/glossary#"><strong>card</strong></a>: card</p>
-<p><a href="/glossary#"><strong>card_number</strong></a>: 364435172576215</p>
-<p><a href="/glossary#"><strong>card_type</strong></a>: Credit</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>cvv</strong></a>: 123</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>expiry_month</strong></a>: 01</p>
-<p><a href="/glossary#"><strong>expiry_year</strong></a>: 2023</p>
-<p><a href="/glossary#"><strong>name_on_card</strong></a>: SusanSmith</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_card_request import OBPv400CreateTransactionRequestCardRequest
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    card = 'card_example' # str | The CARD identifier
-    obpv400_create_transaction_request_card_request = {"type":"object","properties":{"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"card":{"type":"object","properties":{"card_number":{"type":"string"},"cvv":{"type":"string"},"card_type":{"type":"string"},"name_on_card":{"type":"string"},"brand":{"type":"string"},"expiry_month":{"type":"string"},"expiry_year":{"type":"string"}}},"to":{"type":"object","properties":{"counterparty_id":{"type":"string"}}}}} # OBPv400CreateTransactionRequestCardRequest | Request body
-
-    try:
-        # Create Transaction Request (CARD)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_card(card, obpv400_create_transaction_request_card_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_card:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_card: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **card** | **str**| The CARD identifier | 
- **obpv400_create_transaction_request_card_request** | [**OBPv400CreateTransactionRequestCardRequest**](OBPv400CreateTransactionRequestCardRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_counterparty**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_counterparty(bankid, accountid, viewid, counterparty, obpv400_create_transaction_request_counterparty_request)
-
-Create Transaction Request (COUNTERPARTY)
-
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>When using a COUNTERPARTY to create a Transaction Request, specify the counterparty_id in the body of the request.<br />
-The routing details of the counterparty will be forwarded to the Core Banking System (CBS) for the transfer.</p>
-<p>COUNTERPARTY Transaction Requests are used for Variable Recurring Payments (VRP). Use the following <a href="http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest">endpoint</a> to create a consent for VRPs.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#counterparty">COUNTERPARTY</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_counterparty_request import OBPv400CreateTransactionRequestCounterpartyRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    counterparty = 'counterparty_example' # str | The COUNTERPARTY identifier
-    obpv400_create_transaction_request_counterparty_request = {"type":"object","properties":{"description":{"type":"string"},"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"to":{"type":"object","properties":{"counterparty_id":{"type":"string"}}}}} # OBPv400CreateTransactionRequestCounterpartyRequest | Request body
-
-    try:
-        # Create Transaction Request (COUNTERPARTY)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_counterparty(bankid, accountid, viewid, counterparty, obpv400_create_transaction_request_counterparty_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_counterparty:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_counterparty: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **counterparty** | **str**| The COUNTERPARTY identifier | 
- **obpv400_create_transaction_request_counterparty_request** | [**OBPv400CreateTransactionRequestCounterpartyRequest**](OBPv400CreateTransactionRequestCounterpartyRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_free_form**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_free_form(bankid, accountid, viewid, freeform, obpv400_create_transaction_request_free_form_request)
-
-Create Transaction Request (FREE_FORM)
-
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#free_form">FREE_FORM</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_free_form_request import OBPv400CreateTransactionRequestFreeFormRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    freeform = 'freeform_example' # str | The FREEFORM identifier
-    obpv400_create_transaction_request_free_form_request = {"type":"object","properties":{"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # OBPv400CreateTransactionRequestFreeFormRequest | Request body
-
-    try:
-        # Create Transaction Request (FREE_FORM)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_free_form(bankid, accountid, viewid, freeform, obpv400_create_transaction_request_free_form_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_free_form:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_free_form: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **freeform** | **str**| The FREEFORM identifier | 
- **obpv400_create_transaction_request_free_form_request** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_refund**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_refund(bankid, accountid, viewid, refund, obpv400_create_transaction_request_refund_request)
-
-Create Transaction Request (REFUND)
-
-<p>Either the <code>from</code> or the <code>to</code> field must be filled. Those fields refers to the information about the party that will be refunded.</p>
-<p>In case the <code>from</code> object is used, it means that the refund comes from the part that sent you a transaction.<br />
-In the <code>from</code> object, you have two choices :<br />
-- Use <code>bank_id</code> and <code>account_id</code> fields if the other account is registered on the OBP-API<br />
-- Use the <code>counterparty_id</code> field in case the counterparty account is out of the OBP-API</p>
-<p>In case the <code>to</code> object is used, it means you send a request to a counterparty to ask for a refund on a previous transaction you sent.<br />
-(This case is not managed by the OBP-API and require an external adapter)</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">REFUND</a>: REFUND</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>reason_code</strong></a>: reason_code</p>
-<p><a href="/glossary#"><strong>refund</strong></a>: refund</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">account_id</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#from">from</a>:</p>
-<p><a href="/glossary#to">to</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_refund_request import OBPv400CreateTransactionRequestRefundRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    refund = 'refund_example' # str | The REFUND identifier
-    obpv400_create_transaction_request_refund_request = {"type":"object","properties":{"description":{"type":"string"},"to":{"type":"object","properties":{"bank_id":{"type":"string"},"account_id":{"type":"string"},"counterparty_id":{"type":"string"}}},"from":{"type":"object","properties":{"counterparty_id":{"type":"string"}}},"refund":{"type":"object","properties":{"reason_code":{"type":"string"},"transaction_id":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}}}} # OBPv400CreateTransactionRequestRefundRequest | Request body
-
-    try:
-        # Create Transaction Request (REFUND)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_refund(bankid, accountid, viewid, refund, obpv400_create_transaction_request_refund_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_refund:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_refund: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **refund** | **str**| The REFUND identifier | 
- **obpv400_create_transaction_request_refund_request** | [**OBPv400CreateTransactionRequestRefundRequest**](OBPv400CreateTransactionRequestRefundRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_sepa**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_sepa(bankid, accountid, viewid, sepa, obpv400_create_transaction_request_sepa_request)
-
-Create Transaction Request (SEPA)
-
-<p>Special instructions for SEPA:</p>
-<p>When using a SEPA Transaction Request, you specify the IBAN of a Counterparty in the body of the request.<br />
-The routing details (IBAN) of the counterparty will be forwarded to the core banking system for the transfer.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#sepa">SEPA</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#document_number">document_number</a>:</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><a href="/glossary#reasons">reasons</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_sepa_request import OBPv400CreateTransactionRequestSepaRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    sepa = 'sepa_example' # str | The SEPA identifier
-    obpv400_create_transaction_request_sepa_request = {"type":"object","properties":{"future_date":{"type":"string"},"reasons":{"type":"array","items":{"type":"object","properties":{"description":{"type":"string"},"code":{"type":"string"},"amount":{"type":"string"},"document_number":{"type":"string"},"currency":{"type":"string"}}}},"to":{"type":"object","properties":{"iban":{"type":"string"}}},"description":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"}}} # OBPv400CreateTransactionRequestSepaRequest | Request body
-
-    try:
-        # Create Transaction Request (SEPA)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_sepa(bankid, accountid, viewid, sepa, obpv400_create_transaction_request_sepa_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_sepa:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_sepa: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **sepa** | **str**| The SEPA identifier | 
- **obpv400_create_transaction_request_sepa_request** | [**OBPv400CreateTransactionRequestSepaRequest**](OBPv400CreateTransactionRequestSepaRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_request_simple**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv4_0_0_create_transaction_request_simple(bankid, accountid, viewid, simple, obpv400_create_transaction_request_simple_request)
-
-Create Transaction Request (SIMPLE)
-
-<p>Special instructions for SIMPLE:</p>
-<p>You can transfer money to the Bank Account Number or IBAN directly.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">SIMPLE</a>: SIMPLE</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>charge_policy</strong></a>: SHARED</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#future_date">future_date</a>: 20200127</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_simple_request import OBPv400CreateTransactionRequestSimpleRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    simple = 'simple_example' # str | The SIMPLE identifier
-    obpv400_create_transaction_request_simple_request = {"type":"object","properties":{"future_date":{"type":"string"},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"charge_policy":{"type":"string"},"description":{"type":"string"},"to":{"type":"object","properties":{"other_account_routing_address":{"type":"string"},"description":{"type":"string"},"other_bank_routing_scheme":{"type":"string"},"other_account_secondary_routing_address":{"type":"string"},"name":{"type":"string"},"other_account_routing_scheme":{"type":"string"},"other_bank_routing_address":{"type":"string"},"other_branch_routing_scheme":{"type":"string"},"other_account_secondary_routing_scheme":{"type":"string"},"other_branch_routing_address":{"type":"string"}}}}} # OBPv400CreateTransactionRequestSimpleRequest | Request body
-
-    try:
-        # Create Transaction Request (SIMPLE)
-        api_response = api_instance.o_bpv4_0_0_create_transaction_request_simple(bankid, accountid, viewid, simple, obpv400_create_transaction_request_simple_request)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_create_transaction_request_simple:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_create_transaction_request_simple: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **simple** | **str**| The SIMPLE identifier | 
- **obpv400_create_transaction_request_simple_request** | [**OBPv400CreateTransactionRequestSimpleRequest**](OBPv400CreateTransactionRequestSimpleRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_delete_transaction_request_attribute_definition**
-> OBPv400DeleteSystemLevelEndpointTag200Response o_bpv4_0_0_delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
-
-Delete Transaction Request Attribute Definition
-
-<p>Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_delete_system_level_endpoint_tag200_response import OBPv400DeleteSystemLevelEndpointTag200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    attributedefinitionid = 'attributedefinitionid_example' # str | The ATTRIBUTEDEFINITIONID identifier
-
-    try:
-        # Delete Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_delete_transaction_request_attribute_definition(bankid, attributedefinitionid)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_delete_transaction_request_attribute_definition:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_delete_transaction_request_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **attributedefinitionid** | **str**| The ATTRIBUTEDEFINITIONID identifier | 
-
-### Return type
-
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_request**
-> OBPv510GetTransactionRequestById200Response o_bpv4_0_0_get_transaction_request(bankid, accountid, viewid, transactionrequestid)
-
-Get Transaction Request
-
-<p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID and for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
-<p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
-<p>Version 2.0.0 now returns charge information.</p>
-<p>Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:</p>
-<ul>
-<li>Transaction Request Id</li>
-<li>Type</li>
-<li>Status (INITIATED, COMPLETED)</li>
-<li>Challenge (in order to confirm the request)</li>
-<li>From Bank / Account</li>
-<li>Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)</li>
-<li>Related Transactions</li>
-</ul>
-<p>PSD2 Context: PSD2 requires transparency of charges to the customer.<br />
-This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.<br />
-The customer can proceed with the Transaction by answering the security challenge.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_transaction_request_by_id200_response import OBPv510GetTransactionRequestById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-
-    try:
-        # Get Transaction Request
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request(bankid, accountid, viewid, transactionrequestid)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_get_transaction_request:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_get_transaction_request: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
-
-### Return type
-
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_request_attribute_by_id**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
-
-Get Transaction Request Attribute By Id
-
-<p>Get Transaction Request Attribute By Id</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
-
-    try:
-        # Get Transaction Request Attribute By Id
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attribute_by_id(bankid, accountid, transactionrequestid, attributeid)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attribute_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attribute_by_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **attributeid** | **str**| The ATTRIBUTEID identifier | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_request_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response o_bpv4_0_0_get_transaction_request_attribute_definition(bankid)
-
-Get Transaction Request Attribute Definition
-
-<p>Get Transaction Request Attribute Definition</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Transaction Request Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attribute_definition(bankid)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attribute_definition:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_request_attributes**
-> OBPv400GetTransactionRequestAttributes200Response o_bpv4_0_0_get_transaction_request_attributes(bankid, accountid, transactionrequestid)
-
-Get Transaction Request Attributes
-
-<p>Get Transaction Request Attributes</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_request_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>transaction_request_attributes</strong></a>: transaction_request_attributes</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_transaction_request_attributes200_response import OBPv400GetTransactionRequestAttributes200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-
-    try:
-        # Get Transaction Request Attributes
-        api_response = api_instance.o_bpv4_0_0_get_transaction_request_attributes(bankid, accountid, transactionrequestid)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attributes:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_get_transaction_request_attributes: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_update_transaction_request_attribute**
-> OBPv400GetTransactionRequestAttributeById200Response o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
+# **update_transaction_request_attribute**
+> GetTransactionRequestAttributeById200Response update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, create_transaction_request_counterparty_request_attributes_inner)
 
 Update Transaction Request Attribute
 
@@ -3673,8 +4838,8 @@ Update Transaction Request Attribute
 
 ```python
 import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty_request_attributes_inner import OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner
-from obp_python.models.obpv400_get_transaction_request_attribute_by_id200_response import OBPv400GetTransactionRequestAttributeById200Response
+from obp_python.models.create_transaction_request_counterparty_request_attributes_inner import CreateTransactionRequestCounterpartyRequestAttributesInner
+from obp_python.models.get_transaction_request_attribute_by_id200_response import GetTransactionRequestAttributeById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3711,15 +4876,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
     attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
-    obpv400_create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
+    create_transaction_request_counterparty_request_attributes_inner = {"type":"object","properties":{"attribute_type":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}} # CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
     try:
         # Update Transaction Request Attribute
-        api_response = api_instance.o_bpv4_0_0_update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, obpv400_create_transaction_request_counterparty_request_attributes_inner)
-        print("The response of TransactionRequestApi->o_bpv4_0_0_update_transaction_request_attribute:\n")
+        api_response = api_instance.update_transaction_request_attribute(bankid, accountid, transactionrequestid, attributeid, create_transaction_request_counterparty_request_attributes_inner)
+        print("The response of TransactionRequestApi->update_transaction_request_attribute:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv4_0_0_update_transaction_request_attribute: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->update_transaction_request_attribute: %s\n" % e)
 ```
 
 
@@ -3733,11 +4898,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
  **attributeid** | **str**| The ATTRIBUTEID identifier | 
- **obpv400_create_transaction_request_counterparty_request_attributes_inner** | [**OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner**](OBPv400CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
+ **create_transaction_request_counterparty_request_attributes_inner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -3758,472 +4923,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_vrp_consent_request**
-> OBPv510CreateVRPConsentRequest200Response o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
-
-Create Consent Request VRP
-
-<p>This endpoint is used to begin the process of creating a consent that may be used for Variable Recurring Payments (VRPs).</p>
-<p>VRPs are useful in situations when a beneficiary needs to be paid different amounts on a regular basis.</p>
-<p>Once granted, the consent allows its holder to initiate multiple Transaction Requests to the Counterparty defined in this endpoint as long as the<br />
-Counterparty Limits linked to this particular consent are respected.</p>
-<p>Client, Consumer or Application Authentication is mandatory for this endpoint.</p>
-<p>i.e. the caller of this endpoint is the API Client, Consumer or Application rather than a specific User.</p>
-<p>At the end of the process the following objects are created in OBP or connected backend systems:<br />
-- An automatically generated View which controls access.<br />
-- A Counterparty that is the Beneficiary of the Variable Recurring Payments. The Counterparty specifies the Bank Account number or other routing address.<br />
-- Limits for the Counterparty which constrain the amount of money that can be sent to it in various periods (yearly, monthly, weekly).</p>
-<p>The Account holder may modify the Counterparty or Limits e.g. to increase or decrease the maximum possible payment amounts or the frequencey of the payments.</p>
-<p>In the case of a public client we use the client_id and private key to obtain an access token, otherwise we use the client_id and client_secret.<br />
-The obtained access token is used in the HTTP Authorization header of the request as follows:</p>
-<p>Example:<br />
-Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqGTVR0YrIjvAolPIVg7GZ-jz83y6nA0</p>
-<p>After successfully creating the VRP consent request, you need to call the <code>Create Consent By CONSENT_REQUEST_ID</code> endpoint to finalize the consent using the CONSENT_REQUEST_ID returned by this endpoint.</p>
-<p>Application Access is Required. The Application must be authenticated.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#account_routing"><strong>account_routing</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
-<p><a href="/glossary#branch_routing"><strong>branch_routing</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_name</strong></a>: John Smith Ltd.</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>from_account</strong></a>: from_account</p>
-<p><a href="/glossary#"><strong>limit</strong></a>: 100</p>
-<p><a href="/glossary#max_monthly_amount"><strong>max_monthly_amount</strong></a>: 10000.11</p>
-<p><a href="/glossary#max_number_of_monthly_transactions"><strong>max_number_of_monthly_transactions</strong></a>: 10</p>
-<p><a href="/glossary#max_number_of_transactions"><strong>max_number_of_transactions</strong></a>: 100</p>
-<p><a href="/glossary#max_number_of_yearly_transactions"><strong>max_number_of_yearly_transactions</strong></a>: 100</p>
-<p><a href="/glossary#max_single_amount"><strong>max_single_amount</strong></a>: 1000.11</p>
-<p><a href="/glossary#max_total_amount"><strong>max_total_amount</strong></a>: 10000.12</p>
-<p><a href="/glossary#max_yearly_amount"><strong>max_yearly_amount</strong></a>: 12000.11</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#"><strong>to_account</strong></a>: to_account</p>
-<p><a href="/glossary#">email</a>: <a href="&#109;&#x61;i&#x6c;&#116;&#111;:&#102;&#x65;l&#x69;&#x78;sm&#x69;t&#104;@&#x65;&#120;&#x61;&#x6d;ple&#x2e;&#99;&#111;m">&#102;&#x65;&#x6c;&#x69;&#120;&#x73;m&#105;t&#x68;&#64;&#101;&#x78;&#x61;m&#112;&#x6c;e&#x2e;&#x63;&#111;&#x6d;</a></p>
-<p><a href="/glossary#phone_number">phone_number</a>:</p>
-<p><a href="/glossary#time_to_live">time_to_live</a>:</p>
-<p><a href="/glossary#valid_from">valid_from</a>: 2020-01-27</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#consent_request_id"><strong>consent_request_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#payload"><strong>payload</strong></a>: payload</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request200_response import OBPv510CreateVRPConsentRequest200Response
-from obp_python.models.obpv510_create_vrp_consent_request_request import OBPv510CreateVRPConsentRequestRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
-
-    try:
-        # Create Consent Request VRP
-        api_response = api_instance.o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
-        print("The response of TransactionRequestApi->o_bpv5_1_0_create_vrp_consent_request:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv5_1_0_create_vrp_consent_request: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **obpv510_create_vrp_consent_request_request** | [**OBPv510CreateVRPConsentRequestRequest**](OBPv510CreateVRPConsentRequestRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510CreateVRPConsentRequest200Response**](OBPv510CreateVRPConsentRequest200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_get_transaction_request_by_id**
-> OBPv510GetTransactionRequestById200Response o_bpv5_1_0_get_transaction_request_by_id(transactionrequestid)
-
-Get Transaction Request by ID
-
-<p>Returns transaction request for transaction specified by TRANSACTION_REQUEST_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">TRANSACTION_REQUEST_ID</a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_transaction_request_by_id200_response import OBPv510GetTransactionRequestById200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-
-    try:
-        # Get Transaction Request by ID
-        api_response = api_instance.o_bpv5_1_0_get_transaction_request_by_id(transactionrequestid)
-        print("The response of TransactionRequestApi->o_bpv5_1_0_get_transaction_request_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv5_1_0_get_transaction_request_by_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
-
-### Return type
-
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_get_transaction_requests**
-> OBPv510GetTransactionRequests200Response o_bpv5_1_0_get_transaction_requests(bankid, accountid, viewid)
-
-Get Transaction Requests
-
-<p>Returns transaction requests for account specified by ACCOUNT_ID at bank specified by BANK_ID.</p>
-<p>The VIEW_ID specified must be 'owner' and the user must have access to this view.</p>
-<p>Version 2.0.0 now returns charge information.</p>
-<p>Transaction Requests serve to initiate transactions that may or may not proceed. They contain information including:</p>
-<ul>
-<li>Transaction Request Id</li>
-<li>Type</li>
-<li>Status (INITIATED, COMPLETED)</li>
-<li>Challenge (in order to confirm the request)</li>
-<li>From Bank / Account</li>
-<li>Details including Currency, Value, Description and other initiation information specific to each type. (Could potentialy include a list of future transactions.)</li>
-<li>Related Transactions</li>
-</ul>
-<p>PSD2 Context: PSD2 requires transparency of charges to the customer.<br />
-This endpoint provides the charge that would be applied if the Transaction Request proceeds - and a record of that charge there after.<br />
-The customer can proceed with the Transaction by answering the security challenge.</p>
-<p>We support query transaction request by attribute<br />
-URL params example:/banks/BANK_ID/accounts/ACCOUNT_ID/VIEW_ID/transaction-requests?invoiceNumber=123&amp;referenceNumber=456</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge"><strong>challenge</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transaction_requests_with_charges"><strong>transaction_requests_with_charges</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_transaction_requests200_response import OBPv510GetTransactionRequests200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Get Transaction Requests
-        api_response = api_instance.o_bpv5_1_0_get_transaction_requests(bankid, accountid, viewid)
-        print("The response of TransactionRequestApi->o_bpv5_1_0_get_transaction_requests:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv5_1_0_get_transaction_requests: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv510GetTransactionRequests200Response**](OBPv510GetTransactionRequests200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_update_transaction_request_status**
-> OBPv510UpdateTransactionRequestStatusRequest o_bpv5_1_0_update_transaction_request_status(transactionrequestid, obpv510_update_transaction_request_status_request)
+# **update_transaction_request_status**
+> UpdateTransactionRequestStatusRequest update_transaction_request_status(transactionrequestid, update_transaction_request_status_request)
 
 Update Transaction Request Status
 
@@ -4243,7 +4944,7 @@ Update Transaction Request Status
 
 ```python
 import obp_python
-from obp_python.models.obpv510_update_transaction_request_status_request import OBPv510UpdateTransactionRequestStatusRequest
+from obp_python.models.update_transaction_request_status_request import UpdateTransactionRequestStatusRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -4277,15 +4978,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.TransactionRequestApi(api_client)
     transactionrequestid = 'transactionrequestid_example' # str | The TRANSACTIONREQUESTID identifier
-    obpv510_update_transaction_request_status_request = {"type":"object","properties":{"status":{"type":"string"}}} # OBPv510UpdateTransactionRequestStatusRequest | Request body
+    update_transaction_request_status_request = {"type":"object","properties":{"status":{"type":"string"}}} # UpdateTransactionRequestStatusRequest | Request body
 
     try:
         # Update Transaction Request Status
-        api_response = api_instance.o_bpv5_1_0_update_transaction_request_status(transactionrequestid, obpv510_update_transaction_request_status_request)
-        print("The response of TransactionRequestApi->o_bpv5_1_0_update_transaction_request_status:\n")
+        api_response = api_instance.update_transaction_request_status(transactionrequestid, update_transaction_request_status_request)
+        print("The response of TransactionRequestApi->update_transaction_request_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv5_1_0_update_transaction_request_status: %s\n" % e)
+        print("Exception when calling TransactionRequestApi->update_transaction_request_status: %s\n" % e)
 ```
 
 
@@ -4296,11 +4997,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transactionrequestid** | **str**| The TRANSACTIONREQUESTID identifier | 
- **obpv510_update_transaction_request_status_request** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)| Request body | 
+ **update_transaction_request_status_request** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)
+[**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)
 
 ### Authorization
 
@@ -4316,707 +5017,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_transaction_request_cardano**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv6_0_0_create_transaction_request_cardano(bankid, accountid, cardano, obpv600_create_transaction_request_cardano_request)
-
-Create Transaction Request (CARDANO)
-
-<p>For sandbox mode, it will use the Cardano Preprod Network.<br />
-The accountId can be the wallet_id for now, as it uses cardano-wallet in the backend.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">CARDANO</a>: CARDANO</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>asset_name</strong></a>: asset_name</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>passphrase</strong></a>: passphrase</p>
-<p><a href="/glossary#"><strong>policy_id</strong></a>: policy_id</p>
-<p><a href="/glossary#"><strong>quantity</strong></a>: quantity</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>unit</strong></a>: unit</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">assets</a>: assets</p>
-<p><a href="/glossary#metadata">metadata</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv600_create_transaction_request_cardano_request import OBPv600CreateTransactionRequestCardanoRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    cardano = 'cardano_example' # str | The CARDANO identifier
-    obpv600_create_transaction_request_cardano_request = {"type":"object","properties":{"to":{"type":"object","properties":{"amount":{"type":"object","properties":{"quantity":{"type":"integer"},"unit":{"type":"string"}}},"address":{"type":"string"},"assets":{"type":"array","items":{"type":"object","properties":{"quantity":{"type":"integer"},"asset_name":{"type":"string"},"policy_id":{"type":"string"}}}}}},"metadata":{"type":"object","properties":{"value1":{"type":"object","properties":{"string":{"type":"string"}}},"key1":{"type":"string"}}},"value":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"description":{"type":"string"},"passphrase":{"type":"string"}}} # OBPv600CreateTransactionRequestCardanoRequest | Request body
-
-    try:
-        # Create Transaction Request (CARDANO)
-        api_response = api_instance.o_bpv6_0_0_create_transaction_request_cardano(bankid, accountid, cardano, obpv600_create_transaction_request_cardano_request)
-        print("The response of TransactionRequestApi->o_bpv6_0_0_create_transaction_request_cardano:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv6_0_0_create_transaction_request_cardano: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **cardano** | **str**| The CARDANO identifier | 
- **obpv600_create_transaction_request_cardano_request** | [**OBPv600CreateTransactionRequestCardanoRequest**](OBPv600CreateTransactionRequestCardanoRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction(bankid, accountid, ethsendrawtransaction, obpv600_create_transaction_request_eth_send_raw_transaction_request)
-
-CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-
-<p>Send ETH via Ethereum JSON-RPC.<br />
-AccountId should hold the 0x address for now.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ETH_SEND_RAW_TRANSACTION</a>: ETH_SEND_RAW_TRANSACTION</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>params</strong></a>: params</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv600_create_transaction_request_eth_send_raw_transaction_request import OBPv600CreateTransactionRequestEthSendRawTransactionRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    ethsendrawtransaction = 'ethsendrawtransaction_example' # str | The ETHSENDRAWTRANSACTION identifier
-    obpv600_create_transaction_request_eth_send_raw_transaction_request = {"type":"object","properties":{"description":{"type":"string"},"params":{"type":"string"}}} # OBPv600CreateTransactionRequestEthSendRawTransactionRequest | Request body
-
-    try:
-        # CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-        api_response = api_instance.o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction(bankid, accountid, ethsendrawtransaction, obpv600_create_transaction_request_eth_send_raw_transaction_request)
-        print("The response of TransactionRequestApi->o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv6_0_0_create_transaction_request_eth_send_raw_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **ethsendrawtransaction** | **str**| The ETHSENDRAWTRANSACTION identifier | 
- **obpv600_create_transaction_request_eth_send_raw_transaction_request** | [**OBPv600CreateTransactionRequestEthSendRawTransactionRequest**](OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_transaction_request_ethereume_send_transaction**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv6_0_0_create_transaction_request_ethereume_send_transaction(bankid, accountid, ethsendtransaction, obpv600_create_transaction_request_ethereume_send_transaction_request)
-
-Create Transaction Request (ETH_SEND_TRANSACTION)
-
-<p>Send ETH via Ethereum JSON-RPC.<br />
-AccountId should hold the 0x address for now.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ETH_SEND_TRANSACTION</a>: ETH_SEND_TRANSACTION</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#">params</a>: params</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv600_create_transaction_request_ethereume_send_transaction_request import OBPv600CreateTransactionRequestEthereumeSendTransactionRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    ethsendtransaction = 'ethsendtransaction_example' # str | The ETHSENDTRANSACTION identifier
-    obpv600_create_transaction_request_ethereume_send_transaction_request = {"type":"object","properties":{"value":{"type":"object","properties":{"amount":{"type":"string"},"currency":{"type":"string"}}},"description":{"type":"string"},"to":{"type":"string"}}} # OBPv600CreateTransactionRequestEthereumeSendTransactionRequest | Request body
-
-    try:
-        # Create Transaction Request (ETH_SEND_TRANSACTION)
-        api_response = api_instance.o_bpv6_0_0_create_transaction_request_ethereume_send_transaction(bankid, accountid, ethsendtransaction, obpv600_create_transaction_request_ethereume_send_transaction_request)
-        print("The response of TransactionRequestApi->o_bpv6_0_0_create_transaction_request_ethereume_send_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv6_0_0_create_transaction_request_ethereume_send_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **ethsendtransaction** | **str**| The ETHSENDTRANSACTION identifier | 
- **obpv600_create_transaction_request_ethereume_send_transaction_request** | [**OBPv600CreateTransactionRequestEthereumeSendTransactionRequest**](OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_transaction_request_hold**
-> OBPv400CreateTransactionRequestCounterparty200Response o_bpv6_0_0_create_transaction_request_hold(bankid, accountid, hold, obpv400_create_transaction_request_free_form_request)
-
-Create Transaction Request (HOLD)
-
-<p>Create a transaction request to move funds from the account to its Holding Account.<br />
-If the Holding Account does not exist, it will be created automatically.</p>
-<p>For an introduction to Transaction Requests, see: <a href="/glossary#Transaction-Request-Introduction">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">HOLD</a>: HOLD</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#Account"><strong>account</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>agent_number</strong></a>: 5987953</p>
-<p><a href="/glossary#allowed_attempts"><strong>allowed_attempts</strong></a>: 5</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#bank_code"><strong>bank_code</strong></a>: CGHZ</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#branch_number"><strong>branch_number</strong></a>:</p>
-<p><a href="/glossary#challenge_type"><strong>challenge_type</strong></a>:</p>
-<p><a href="/glossary#"><strong>challenges</strong></a>: challenges</p>
-<p><a href="/glossary#charge"><strong>charge</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#creditoraccount"><strong>creditorAccount</strong></a>:</p>
-<p><a href="/glossary#creditorname"><strong>creditorName</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#debtoraccount"><strong>debtorAccount</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#details"><strong>details</strong></a>:</p>
-<p><a href="/glossary#end_date"><strong>end_date</strong></a>:</p>
-<p><a href="/glossary#from"><strong>from</strong></a>:</p>
-<p><a href="/glossary#future_date"><strong>future_date</strong></a>: 20200127</p>
-<p><a href="/glossary#"><strong>iban</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#instructedamount"><strong>instructedAmount</strong></a>: 100</p>
-<p><a href="/glossary#kyc_document"><strong>kyc_document</strong></a>:</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#link"><strong>link</strong></a>:</p>
-<p><a href="/glossary#message"><strong>message</strong></a>: 123456</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#nickname"><strong>nickname</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingAddress</strong></a>: otherAccountRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountRoutingScheme</strong></a>: otherAccountRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingAddress</strong></a>: otherAccountSecondaryRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherAccountSecondaryRoutingScheme</strong></a>: otherAccountSecondaryRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBankRoutingAddress</strong></a>: otherBankRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBankRoutingScheme</strong></a>: otherBankRoutingScheme</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingAddress</strong></a>: otherBranchRoutingAddress</p>
-<p><a href="/glossary#"><strong>otherBranchRoutingScheme</strong></a>: otherBranchRoutingScheme</p>
-<p><a href="/glossary#"><strong>start_date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#summary"><strong>summary</strong></a>:</p>
-<p><a href="/glossary#to"><strong>to</strong></a>:</p>
-<p><a href="/glossary#transaction_ids"><strong>transaction_ids</strong></a>:</p>
-<p><a href="/glossary#transfer_type"><strong>transfer_type</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#">to_agent</a>: to_agent</p>
-<p><a href="/glossary#to_counterparty">to_counterparty</a>:</p>
-<p><a href="/glossary#to_sandbox_tan">to_sandbox_tan</a>:</p>
-<p><a href="/glossary#to_sepa">to_sepa</a>:</p>
-<p><a href="/glossary#to_sepa_credit_transfers">to_sepa_credit_transfers</a>:</p>
-<p><a href="/glossary#">to_simple</a>: to_simple</p>
-<p><a href="/glossary#to_transfer_to_account">to_transfer_to_account</a>:</p>
-<p><a href="/glossary#to_transfer_to_atm">to_transfer_to_atm</a>:</p>
-<p><a href="/glossary#to_transfer_to_phone">to_transfer_to_phone</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_transaction_request_counterparty200_response import OBPv400CreateTransactionRequestCounterparty200Response
-from obp_python.models.obpv400_create_transaction_request_free_form_request import OBPv400CreateTransactionRequestFreeFormRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionRequestApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    hold = 'hold_example' # str | The HOLD identifier
-    obpv400_create_transaction_request_free_form_request = {type=object, properties={description={type=string}, value={type=object, properties={currency={type=string}, amount={type=string}}}}} # OBPv400CreateTransactionRequestFreeFormRequest | Request body
-
-    try:
-        # Create Transaction Request (HOLD)
-        api_response = api_instance.o_bpv6_0_0_create_transaction_request_hold(bankid, accountid, hold, obpv400_create_transaction_request_free_form_request)
-        print("The response of TransactionRequestApi->o_bpv6_0_0_create_transaction_request_hold:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionRequestApi->o_bpv6_0_0_create_transaction_request_hold: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **hold** | **str**| The HOLD identifier | 
- **obpv400_create_transaction_request_free_form_request** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
 **404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 

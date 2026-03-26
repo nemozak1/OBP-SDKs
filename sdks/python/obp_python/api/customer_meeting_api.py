@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv310_create_meeting_request import OBPv310CreateMeetingRequest
-from obp_python.models.obpv310_get_meeting200_response import OBPv310GetMeeting200Response
-from obp_python.models.obpv310_get_meetings200_response import OBPv310GetMeetings200Response
+from obp_python.models.create_meeting_request import CreateMeetingRequest
+from obp_python.models.get_meeting200_response import GetMeeting200Response
+from obp_python.models.get_meetings200_response import GetMeetings200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,10 +41,10 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_create_meeting(
+    def create_meeting(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv310_create_meeting_request: Annotated[OBPv310CreateMeetingRequest, Field(description="Request body")],
+        create_meeting_request: Annotated[CreateMeetingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,15 +57,15 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetMeeting200Response:
+    ) -> GetMeeting200Response:
         """Create Meeting (video conference/call)
 
         <p>Create Meeting: Initiate a video conference/call with the bank.</p> <p>The Meetings resource contains meta data about video/other conference sessions</p> <p>provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).</p> <p>purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong>. Currently staff_user_id is not set. Further calls will be needed to correctly set this.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv310_create_meeting_request: Request body (required)
-        :type obpv310_create_meeting_request: OBPv310CreateMeetingRequest
+        :param create_meeting_request: Request body (required)
+        :type create_meeting_request: CreateMeetingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,9 +88,9 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_create_meeting_serialize(
+        _param = self._create_meeting_serialize(
             bankid=bankid,
-            obpv310_create_meeting_request=obpv310_create_meeting_request,
+            create_meeting_request=create_meeting_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -98,7 +98,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -114,10 +114,10 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_create_meeting_with_http_info(
+    def create_meeting_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv310_create_meeting_request: Annotated[OBPv310CreateMeetingRequest, Field(description="Request body")],
+        create_meeting_request: Annotated[CreateMeetingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,15 +130,15 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetMeeting200Response]:
+    ) -> ApiResponse[GetMeeting200Response]:
         """Create Meeting (video conference/call)
 
         <p>Create Meeting: Initiate a video conference/call with the bank.</p> <p>The Meetings resource contains meta data about video/other conference sessions</p> <p>provider_id determines the provider of the meeting / video chat service. MUST be url friendly (no spaces).</p> <p>purpose_id explains the purpose of the chat. onboarding | mortgage | complaint etc. MUST be url friendly (no spaces).</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong>. Currently staff_user_id is not set. Further calls will be needed to correctly set this.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv310_create_meeting_request: Request body (required)
-        :type obpv310_create_meeting_request: OBPv310CreateMeetingRequest
+        :param create_meeting_request: Request body (required)
+        :type create_meeting_request: CreateMeetingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -161,9 +161,9 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_create_meeting_serialize(
+        _param = self._create_meeting_serialize(
             bankid=bankid,
-            obpv310_create_meeting_request=obpv310_create_meeting_request,
+            create_meeting_request=create_meeting_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -171,7 +171,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -187,10 +187,10 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_create_meeting_without_preload_content(
+    def create_meeting_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv310_create_meeting_request: Annotated[OBPv310CreateMeetingRequest, Field(description="Request body")],
+        create_meeting_request: Annotated[CreateMeetingRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -210,8 +210,8 @@ class CustomerMeetingApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv310_create_meeting_request: Request body (required)
-        :type obpv310_create_meeting_request: OBPv310CreateMeetingRequest
+        :param create_meeting_request: Request body (required)
+        :type create_meeting_request: CreateMeetingRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -234,9 +234,9 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_create_meeting_serialize(
+        _param = self._create_meeting_serialize(
             bankid=bankid,
-            obpv310_create_meeting_request=obpv310_create_meeting_request,
+            create_meeting_request=create_meeting_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -244,7 +244,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -255,10 +255,10 @@ class CustomerMeetingApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_create_meeting_serialize(
+    def _create_meeting_serialize(
         self,
         bankid,
-        obpv310_create_meeting_request,
+        create_meeting_request,
         _request_auth,
         _content_type,
         _headers,
@@ -286,8 +286,8 @@ class CustomerMeetingApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv310_create_meeting_request is not None:
-            _body_params = obpv310_create_meeting_request
+        if create_meeting_request is not None:
+            _body_params = create_meeting_request
 
 
         # set the HTTP header `Accept`
@@ -338,7 +338,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meeting(
+    def get_meeting(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         meetingid: Annotated[StrictStr, Field(description="The MEETINGID identifier")],
@@ -354,7 +354,7 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetMeeting200Response:
+    ) -> GetMeeting200Response:
         """Get Meeting
 
         <p>Get Meeting specified by BANK_ID / MEETING_ID<br /> Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#meeting_id\">MEETING_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -385,7 +385,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meeting_serialize(
+        _param = self._get_meeting_serialize(
             bankid=bankid,
             meetingid=meetingid,
             _request_auth=_request_auth,
@@ -395,7 +395,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -411,7 +411,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meeting_with_http_info(
+    def get_meeting_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         meetingid: Annotated[StrictStr, Field(description="The MEETINGID identifier")],
@@ -427,7 +427,7 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetMeeting200Response]:
+    ) -> ApiResponse[GetMeeting200Response]:
         """Get Meeting
 
         <p>Get Meeting specified by BANK_ID / MEETING_ID<br /> Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#meeting_id\">MEETING_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -458,7 +458,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meeting_serialize(
+        _param = self._get_meeting_serialize(
             bankid=bankid,
             meetingid=meetingid,
             _request_auth=_request_auth,
@@ -468,7 +468,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -484,7 +484,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meeting_without_preload_content(
+    def get_meeting_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         meetingid: Annotated[StrictStr, Field(description="The MEETINGID identifier")],
@@ -531,7 +531,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meeting_serialize(
+        _param = self._get_meeting_serialize(
             bankid=bankid,
             meetingid=meetingid,
             _request_auth=_request_auth,
@@ -541,7 +541,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeeting200Response",
+            '200': "GetMeeting200Response",
             '404': None,
             '500': None,
         }
@@ -552,7 +552,7 @@ class CustomerMeetingApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_get_meeting_serialize(
+    def _get_meeting_serialize(
         self,
         bankid,
         meetingid,
@@ -622,7 +622,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meetings(
+    def get_meetings(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -637,7 +637,7 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv310GetMeetings200Response:
+    ) -> GetMeetings200Response:
         """Get Meetings
 
         <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#meetings\"><strong>meetings</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -666,7 +666,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meetings_serialize(
+        _param = self._get_meetings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -675,7 +675,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeetings200Response",
+            '200': "GetMeetings200Response",
             '404': None,
             '500': None,
         }
@@ -691,7 +691,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meetings_with_http_info(
+    def get_meetings_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -706,7 +706,7 @@ class CustomerMeetingApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv310GetMeetings200Response]:
+    ) -> ApiResponse[GetMeetings200Response]:
         """Get Meetings
 
         <p>Meetings contain meta data about, and are used to facilitate, video conferences / chats etc.</p> <p>The actual conference/chats are handled by external services.</p> <p>Login is required.</p> <p>This call is <strong>experimental</strong> and will require further authorisation in the future.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#contact_details\"><strong>contact_details</strong></a>:</p> <p><a href=\"/glossary#creator\"><strong>creator</strong></a>:</p> <p><a href=\"/glossary#customer_token\"><strong>customer_token</strong></a>:</p> <p><a href=\"/glossary#customer_user_id\"><strong>customer_user_id</strong></a>:</p> <p><a href=\"/glossary#email_address\"><strong>email_address</strong></a>:</p> <p><a href=\"/glossary#invitees\"><strong>invitees</strong></a>:</p> <p><a href=\"/glossary#keys\"><strong>keys</strong></a>:</p> <p><a href=\"/glossary#meeting_id\"><strong>meeting_id</strong></a>:</p> <p><a href=\"/glossary#meetings\"><strong>meetings</strong></a>:</p> <p><a href=\"/glossary#mobile_phone\"><strong>mobile_phone</strong></a>:</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#present\"><strong>present</strong></a>:</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#purpose_id\"><strong>purpose_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>session_id</strong></a>: b4e0352a-9a0f-4bfa-b30b-9003aa467f50</p> <p><a href=\"/glossary#staff_token\"><strong>staff_token</strong></a>:</p> <p><a href=\"/glossary#staff_user_id\"><strong>staff_user_id</strong></a>:</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -735,7 +735,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meetings_serialize(
+        _param = self._get_meetings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -744,7 +744,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeetings200Response",
+            '200': "GetMeetings200Response",
             '404': None,
             '500': None,
         }
@@ -760,7 +760,7 @@ class CustomerMeetingApi:
 
 
     @validate_call
-    def o_bpv3_1_0_get_meetings_without_preload_content(
+    def get_meetings_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -804,7 +804,7 @@ class CustomerMeetingApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv3_1_0_get_meetings_serialize(
+        _param = self._get_meetings_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -813,7 +813,7 @@ class CustomerMeetingApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv310GetMeetings200Response",
+            '200': "GetMeetings200Response",
             '404': None,
             '500': None,
         }
@@ -824,7 +824,7 @@ class CustomerMeetingApi:
         return response_data.response
 
 
-    def _o_bpv3_1_0_get_meetings_serialize(
+    def _get_meetings_serialize(
         self,
         bankid,
         _request_auth,

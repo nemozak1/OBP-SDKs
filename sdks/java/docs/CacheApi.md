@@ -1,23 +1,23 @@
 # CacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetCacheConfig**](CacheApi.md#oBPv600GetCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheConfigWithHttpInfo**](CacheApi.md#oBPv600GetCacheConfigWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo**](CacheApi.md#oBPv600GetCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheInfoWithHttpInfo**](CacheApi.md#oBPv600GetCacheInfoWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces**](CacheApi.md#oBPv600GetCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600GetCacheNamespacesWithHttpInfo**](CacheApi.md#oBPv600GetCacheNamespacesWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600InvalidateCacheNamespace**](CacheApi.md#oBPv600InvalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
-| [**oBPv600InvalidateCacheNamespaceWithHttpInfo**](CacheApi.md#oBPv600InvalidateCacheNamespaceWithHttpInfo) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**getCacheConfig**](CacheApi.md#getCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheConfigWithHttpInfo**](CacheApi.md#getCacheConfigWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo**](CacheApi.md#getCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheInfoWithHttpInfo**](CacheApi.md#getCacheInfoWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces**](CacheApi.md#getCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**getCacheNamespacesWithHttpInfo**](CacheApi.md#getCacheNamespacesWithHttpInfo) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**invalidateCacheNamespace**](CacheApi.md#invalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**invalidateCacheNamespaceWithHttpInfo**](CacheApi.md#invalidateCacheNamespaceWithHttpInfo) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
 
 
-## oBPv600GetCacheConfig
+## getCacheConfig
 
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -37,7 +37,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -57,10 +57,10 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            OBPv600GetCacheConfig200Response result = apiInstance.oBPv600GetCacheConfig();
+            GetCacheConfig200Response result = apiInstance.getCacheConfig();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheConfig");
+            System.err.println("Exception when calling CacheApi#getCacheConfig");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 
 ### Authorization
@@ -94,9 +94,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetCacheConfigWithHttpInfo
+## getCacheConfigWithHttpInfo
 
-> ApiResponse<OBPv600GetCacheConfig200Response> oBPv600GetCacheConfig oBPv600GetCacheConfigWithHttpInfo()
+> ApiResponse<GetCacheConfig200Response> getCacheConfig getCacheConfigWithHttpInfo()
 
 Get Cache Configuration
 
@@ -117,7 +117,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -137,12 +137,12 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetCacheConfig200Response> response = apiInstance.oBPv600GetCacheConfigWithHttpInfo();
+            ApiResponse<GetCacheConfig200Response> response = apiInstance.getCacheConfigWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheConfig");
+            System.err.println("Exception when calling CacheApi#getCacheConfig");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -158,7 +158,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)>
+ApiResponse<[**GetCacheConfig200Response**](GetCacheConfig200Response.md)>
 
 
 ### Authorization
@@ -177,9 +177,9 @@ ApiResponse<[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Respo
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetCacheInfo
+## getCacheInfo
 
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -199,7 +199,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -219,10 +219,10 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            OBPv600GetCacheInfo200Response result = apiInstance.oBPv600GetCacheInfo();
+            GetCacheInfo200Response result = apiInstance.getCacheInfo();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheInfo");
+            System.err.println("Exception when calling CacheApi#getCacheInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -238,7 +238,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 
 ### Authorization
@@ -256,9 +256,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetCacheInfoWithHttpInfo
+## getCacheInfoWithHttpInfo
 
-> ApiResponse<OBPv600GetCacheInfo200Response> oBPv600GetCacheInfo oBPv600GetCacheInfoWithHttpInfo()
+> ApiResponse<GetCacheInfo200Response> getCacheInfo getCacheInfoWithHttpInfo()
 
 Get Cache Information
 
@@ -279,7 +279,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -299,12 +299,12 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetCacheInfo200Response> response = apiInstance.oBPv600GetCacheInfoWithHttpInfo();
+            ApiResponse<GetCacheInfo200Response> response = apiInstance.getCacheInfoWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheInfo");
+            System.err.println("Exception when calling CacheApi#getCacheInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)>
+ApiResponse<[**GetCacheInfo200Response**](GetCacheInfo200Response.md)>
 
 
 ### Authorization
@@ -339,9 +339,9 @@ ApiResponse<[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetCacheNamespaces
+## getCacheNamespaces
 
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -361,7 +361,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -381,10 +381,10 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            OBPv600GetCacheNamespaces200Response result = apiInstance.oBPv600GetCacheNamespaces();
+            GetCacheNamespaces200Response result = apiInstance.getCacheNamespaces();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheNamespaces");
+            System.err.println("Exception when calling CacheApi#getCacheNamespaces");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -400,7 +400,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 
 ### Authorization
@@ -418,9 +418,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetCacheNamespacesWithHttpInfo
+## getCacheNamespacesWithHttpInfo
 
-> ApiResponse<OBPv600GetCacheNamespaces200Response> oBPv600GetCacheNamespaces oBPv600GetCacheNamespacesWithHttpInfo()
+> ApiResponse<GetCacheNamespaces200Response> getCacheNamespaces getCacheNamespacesWithHttpInfo()
 
 Get Cache Namespaces
 
@@ -441,7 +441,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -461,12 +461,12 @@ public class Example {
 
         CacheApi apiInstance = new CacheApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetCacheNamespaces200Response> response = apiInstance.oBPv600GetCacheNamespacesWithHttpInfo();
+            ApiResponse<GetCacheNamespaces200Response> response = apiInstance.getCacheNamespacesWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600GetCacheNamespaces");
+            System.err.println("Exception when calling CacheApi#getCacheNamespaces");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -482,7 +482,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)>
+ApiResponse<[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)>
 
 
 ### Authorization
@@ -501,9 +501,9 @@ ApiResponse<[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600InvalidateCacheNamespace
+## invalidateCacheNamespace
 
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest)
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -523,7 +523,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -542,12 +542,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         CacheApi apiInstance = new CacheApi(defaultClient);
-        OBPv600InvalidateCacheNamespaceRequest obPv600InvalidateCacheNamespaceRequest = new OBPv600InvalidateCacheNamespaceRequest(); // OBPv600InvalidateCacheNamespaceRequest | Request body
+        InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest = new InvalidateCacheNamespaceRequest(); // InvalidateCacheNamespaceRequest | Request body
         try {
-            OBPv600InvalidateCacheNamespace200Response result = apiInstance.oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest);
+            InvalidateCacheNamespace200Response result = apiInstance.invalidateCacheNamespace(invalidateCacheNamespaceRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600InvalidateCacheNamespace");
+            System.err.println("Exception when calling CacheApi#invalidateCacheNamespace");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -562,11 +562,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | |
+| **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 
 ### Authorization
@@ -584,9 +584,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600InvalidateCacheNamespaceWithHttpInfo
+## invalidateCacheNamespaceWithHttpInfo
 
-> ApiResponse<OBPv600InvalidateCacheNamespace200Response> oBPv600InvalidateCacheNamespace oBPv600InvalidateCacheNamespaceWithHttpInfo(obPv600InvalidateCacheNamespaceRequest)
+> ApiResponse<InvalidateCacheNamespace200Response> invalidateCacheNamespace invalidateCacheNamespaceWithHttpInfo(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -607,7 +607,7 @@ import com.openbankproject.api.CacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -626,14 +626,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         CacheApi apiInstance = new CacheApi(defaultClient);
-        OBPv600InvalidateCacheNamespaceRequest obPv600InvalidateCacheNamespaceRequest = new OBPv600InvalidateCacheNamespaceRequest(); // OBPv600InvalidateCacheNamespaceRequest | Request body
+        InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest = new InvalidateCacheNamespaceRequest(); // InvalidateCacheNamespaceRequest | Request body
         try {
-            ApiResponse<OBPv600InvalidateCacheNamespace200Response> response = apiInstance.oBPv600InvalidateCacheNamespaceWithHttpInfo(obPv600InvalidateCacheNamespaceRequest);
+            ApiResponse<InvalidateCacheNamespace200Response> response = apiInstance.invalidateCacheNamespaceWithHttpInfo(invalidateCacheNamespaceRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling CacheApi#oBPv600InvalidateCacheNamespace");
+            System.err.println("Exception when calling CacheApi#invalidateCacheNamespace");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -648,11 +648,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | |
+| **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)>
+ApiResponse<[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)>
 
 
 ### Authorization

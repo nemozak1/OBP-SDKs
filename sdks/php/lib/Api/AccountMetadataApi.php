@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class AccountMetadataApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400AddTagForViewOnAccount' => [
+        'addTagForViewOnAccount' => [
             'application/json',
         ],
-        'oBPv400DeleteTagForViewOnAccount' => [
+        'deleteTagForViewOnAccount' => [
             'application/json',
         ],
-        'oBPv400GetTagsForViewOnAccount' => [
+        'getTagsForViewOnAccount' => [
             'application/json',
         ],
     ];
@@ -133,44 +133,44 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400AddTagForViewOnAccount
+     * Operation addTagForViewOnAccount
      *
      * Create a tag on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddTagForViewOnAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+     * @return \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner
      */
-    public function oBPv400AddTagForViewOnAccount($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv400AddTagForViewOnAccount'][0])
+    public function addTagForViewOnAccount($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['addTagForViewOnAccount'][0])
     {
-        list($response) = $this->oBPv400AddTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
+        list($response) = $this->addTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400AddTagForViewOnAccountWithHttpInfo
+     * Operation addTagForViewOnAccountWithHttpInfo
      *
      * Create a tag on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddTagForViewOnAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400AddTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv400AddTagForViewOnAccount'][0])
+    public function addTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['addTagForViewOnAccount'][0])
     {
-        $request = $this->oBPv400AddTagForViewOnAccountRequest($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
+        $request = $this->addTagForViewOnAccountRequest($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -198,7 +198,7 @@ class AccountMetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems',
+                        '\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner',
                         $request,
                         $response,
                     );
@@ -220,7 +220,7 @@ class AccountMetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems',
+                '\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner',
                 $request,
                 $response,
             );
@@ -229,7 +229,7 @@ class AccountMetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems',
+                        '\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -242,22 +242,22 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400AddTagForViewOnAccountAsync
+     * Operation addTagForViewOnAccountAsync
      *
      * Create a tag on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddTagForViewOnAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400AddTagForViewOnAccountAsync($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv400AddTagForViewOnAccount'][0])
+    public function addTagForViewOnAccountAsync($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['addTagForViewOnAccount'][0])
     {
-        return $this->oBPv400AddTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, $contentType)
+        return $this->addTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -266,23 +266,23 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400AddTagForViewOnAccountAsyncWithHttpInfo
+     * Operation addTagForViewOnAccountAsyncWithHttpInfo
      *
      * Create a tag on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddTagForViewOnAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400AddTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv400AddTagForViewOnAccount'][0])
+    public function addTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['addTagForViewOnAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems';
-        $request = $this->oBPv400AddTagForViewOnAccountRequest($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner';
+        $request = $this->addTagForViewOnAccountRequest($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -321,45 +321,45 @@ class AccountMetadataApi
     }
 
     /**
-     * Create request for operation 'oBPv400AddTagForViewOnAccount'
+     * Create request for operation 'addTagForViewOnAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response $obpv400_delete_system_level_endpoint_tag200_response Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400AddTagForViewOnAccount'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId $get_transaction_types200_response_transaction_types_inner_id Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400AddTagForViewOnAccountRequest($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response, string $contentType = self::contentTypes['oBPv400AddTagForViewOnAccount'][0])
+    public function addTagForViewOnAccountRequest($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id, string $contentType = self::contentTypes['addTagForViewOnAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400AddTagForViewOnAccount'
+                'Missing the required parameter $bankid when calling addTagForViewOnAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400AddTagForViewOnAccount'
+                'Missing the required parameter $accountid when calling addTagForViewOnAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400AddTagForViewOnAccount'
+                'Missing the required parameter $viewid when calling addTagForViewOnAccount'
             );
         }
 
-        // verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-        if ($obpv400_delete_system_level_endpoint_tag200_response === null || (is_array($obpv400_delete_system_level_endpoint_tag200_response) && count($obpv400_delete_system_level_endpoint_tag200_response) === 0)) {
+        // verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+        if ($get_transaction_types200_response_transaction_types_inner_id === null || (is_array($get_transaction_types200_response_transaction_types_inner_id) && count($get_transaction_types200_response_transaction_types_inner_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_delete_system_level_endpoint_tag200_response when calling oBPv400AddTagForViewOnAccount'
+                'Missing the required parameter $get_transaction_types200_response_transaction_types_inner_id when calling addTagForViewOnAccount'
             );
         }
 
@@ -406,12 +406,12 @@ class AccountMetadataApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_delete_system_level_endpoint_tag200_response)) {
+        if (isset($get_transaction_types200_response_transaction_types_inner_id)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_delete_system_level_endpoint_tag200_response));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_transaction_types200_response_transaction_types_inner_id));
             } else {
-                $httpBody = $obpv400_delete_system_level_endpoint_tag200_response;
+                $httpBody = $get_transaction_types200_response_transaction_types_inner_id;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -447,9 +447,9 @@ class AccountMetadataApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -474,7 +474,7 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400DeleteTagForViewOnAccount
+     * Operation deleteTagForViewOnAccount
      *
      * Delete a tag on account
      *
@@ -482,19 +482,19 @@ class AccountMetadataApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $tagid The TAGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTagForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['oBPv400DeleteTagForViewOnAccount'][0])
+    public function deleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['deleteTagForViewOnAccount'][0])
     {
-        $this->oBPv400DeleteTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $tagid, $contentType);
+        $this->deleteTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $tagid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteTagForViewOnAccountWithHttpInfo
+     * Operation deleteTagForViewOnAccountWithHttpInfo
      *
      * Delete a tag on account
      *
@@ -502,15 +502,15 @@ class AccountMetadataApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $tagid The TAGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTagForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['oBPv400DeleteTagForViewOnAccount'][0])
+    public function deleteTagForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['deleteTagForViewOnAccount'][0])
     {
-        $request = $this->oBPv400DeleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, $contentType);
+        $request = $this->deleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -546,7 +546,7 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400DeleteTagForViewOnAccountAsync
+     * Operation deleteTagForViewOnAccountAsync
      *
      * Delete a tag on account
      *
@@ -554,14 +554,14 @@ class AccountMetadataApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $tagid The TAGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTagForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteTagForViewOnAccountAsync($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['oBPv400DeleteTagForViewOnAccount'][0])
+    public function deleteTagForViewOnAccountAsync($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['deleteTagForViewOnAccount'][0])
     {
-        return $this->oBPv400DeleteTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $tagid, $contentType)
+        return $this->deleteTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $tagid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -570,7 +570,7 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400DeleteTagForViewOnAccountAsyncWithHttpInfo
+     * Operation deleteTagForViewOnAccountAsyncWithHttpInfo
      *
      * Delete a tag on account
      *
@@ -578,15 +578,15 @@ class AccountMetadataApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $tagid The TAGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTagForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['oBPv400DeleteTagForViewOnAccount'][0])
+    public function deleteTagForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['deleteTagForViewOnAccount'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, $contentType);
+        $request = $this->deleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -612,45 +612,45 @@ class AccountMetadataApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteTagForViewOnAccount'
+     * Create request for operation 'deleteTagForViewOnAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
      * @param  string $tagid The TAGID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTagForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTagForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['oBPv400DeleteTagForViewOnAccount'][0])
+    public function deleteTagForViewOnAccountRequest($bankid, $accountid, $viewid, $tagid, string $contentType = self::contentTypes['deleteTagForViewOnAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteTagForViewOnAccount'
+                'Missing the required parameter $bankid when calling deleteTagForViewOnAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400DeleteTagForViewOnAccount'
+                'Missing the required parameter $accountid when calling deleteTagForViewOnAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400DeleteTagForViewOnAccount'
+                'Missing the required parameter $viewid when calling deleteTagForViewOnAccount'
             );
         }
 
         // verify the required parameter 'tagid' is set
         if ($tagid === null || (is_array($tagid) && count($tagid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tagid when calling oBPv400DeleteTagForViewOnAccount'
+                'Missing the required parameter $tagid when calling deleteTagForViewOnAccount'
             );
         }
 
@@ -739,9 +739,9 @@ class AccountMetadataApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -766,42 +766,42 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400GetTagsForViewOnAccount
+     * Operation getTagsForViewOnAccount
      *
      * Get tags on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTagsForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTagsForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response
+     * @return \OpenBankProject\Model\GetTagsForViewOnAccount200Response
      */
-    public function oBPv400GetTagsForViewOnAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetTagsForViewOnAccount'][0])
+    public function getTagsForViewOnAccount($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getTagsForViewOnAccount'][0])
     {
-        list($response) = $this->oBPv400GetTagsForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
+        list($response) = $this->getTagsForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetTagsForViewOnAccountWithHttpInfo
+     * Operation getTagsForViewOnAccountWithHttpInfo
      *
      * Get tags on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTagsForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTagsForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTagsForViewOnAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetTagsForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetTagsForViewOnAccount'][0])
+    public function getTagsForViewOnAccountWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getTagsForViewOnAccount'][0])
     {
-        $request = $this->oBPv400GetTagsForViewOnAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $request = $this->getTagsForViewOnAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -829,7 +829,7 @@ class AccountMetadataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response',
+                        '\OpenBankProject\Model\GetTagsForViewOnAccount200Response',
                         $request,
                         $response,
                     );
@@ -851,7 +851,7 @@ class AccountMetadataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response',
+                '\OpenBankProject\Model\GetTagsForViewOnAccount200Response',
                 $request,
                 $response,
             );
@@ -860,7 +860,7 @@ class AccountMetadataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response',
+                        '\OpenBankProject\Model\GetTagsForViewOnAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -873,21 +873,21 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400GetTagsForViewOnAccountAsync
+     * Operation getTagsForViewOnAccountAsync
      *
      * Get tags on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTagsForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTagsForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTagsForViewOnAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetTagsForViewOnAccount'][0])
+    public function getTagsForViewOnAccountAsync($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getTagsForViewOnAccount'][0])
     {
-        return $this->oBPv400GetTagsForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
+        return $this->getTagsForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -896,22 +896,22 @@ class AccountMetadataApi
     }
 
     /**
-     * Operation oBPv400GetTagsForViewOnAccountAsyncWithHttpInfo
+     * Operation getTagsForViewOnAccountAsyncWithHttpInfo
      *
      * Get tags on account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTagsForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTagsForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTagsForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetTagsForViewOnAccount'][0])
+    public function getTagsForViewOnAccountAsyncWithHttpInfo($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getTagsForViewOnAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response';
-        $request = $this->oBPv400GetTagsForViewOnAccountRequest($bankid, $accountid, $viewid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTagsForViewOnAccount200Response';
+        $request = $this->getTagsForViewOnAccountRequest($bankid, $accountid, $viewid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -950,37 +950,37 @@ class AccountMetadataApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetTagsForViewOnAccount'
+     * Create request for operation 'getTagsForViewOnAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $viewid The VIEWID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTagsForViewOnAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTagsForViewOnAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetTagsForViewOnAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['oBPv400GetTagsForViewOnAccount'][0])
+    public function getTagsForViewOnAccountRequest($bankid, $accountid, $viewid, string $contentType = self::contentTypes['getTagsForViewOnAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetTagsForViewOnAccount'
+                'Missing the required parameter $bankid when calling getTagsForViewOnAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetTagsForViewOnAccount'
+                'Missing the required parameter $accountid when calling getTagsForViewOnAccount'
             );
         }
 
         // verify the required parameter 'viewid' is set
         if ($viewid === null || (is_array($viewid) && count($viewid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $viewid when calling oBPv400GetTagsForViewOnAccount'
+                'Missing the required parameter $viewid when calling getTagsForViewOnAccount'
             );
         }
 
@@ -1061,9 +1061,9 @@ class AccountMetadataApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -13,7 +13,7 @@
  */
 
 
-export const BASE_PATH = "https://apisandbox.openbankproject.com".replace(/\/+$/, "");
+export const BASE_PATH = "http://127.0.0.1:8080".replace(/\/+$/, "");
 
 export interface ConfigurationParameters {
     basePath?: string; // override base path

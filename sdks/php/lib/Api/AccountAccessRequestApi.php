@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,22 +75,22 @@ class AccountAccessRequestApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600ApproveAccountAccessRequest' => [
+        'approveAccountAccessRequest' => [
             'application/json',
         ],
-        'oBPv600CreateAccountAccessRequest' => [
+        'createAccountAccessRequest' => [
             'application/json',
         ],
-        'oBPv600GetAccountAccessRequestById' => [
+        'getAccountAccessRequestById' => [
             'application/json',
         ],
-        'oBPv600GetAccountAccessRequestsForAccount' => [
+        'getAccountAccessRequestsForAccount' => [
             'application/json',
         ],
-        'oBPv600GetMyAccountAccessRequests' => [
+        'getMyAccountAccessRequests' => [
             'application/json',
         ],
-        'oBPv600RejectAccountAccessRequest' => [
+        'rejectAccountAccessRequest' => [
             'application/json',
         ],
     ];
@@ -142,44 +142,44 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600ApproveAccountAccessRequest
+     * Operation approveAccountAccessRequest
      *
      * Approve Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ApproveAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['approveAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+     * @return \OpenBankProject\Model\RejectAccountAccessRequest200Response
      */
-    public function oBPv600ApproveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600ApproveAccountAccessRequest'][0])
+    public function approveAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['approveAccountAccessRequest'][0])
     {
-        list($response) = $this->oBPv600ApproveAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        list($response) = $this->approveAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600ApproveAccountAccessRequestWithHttpInfo
+     * Operation approveAccountAccessRequestWithHttpInfo
      *
      * Approve Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ApproveAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['approveAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600ApproveAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600ApproveAccountAccessRequest'][0])
+    public function approveAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['approveAccountAccessRequest'][0])
     {
-        $request = $this->oBPv600ApproveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        $request = $this->approveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -207,7 +207,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $request,
                         $response,
                     );
@@ -229,7 +229,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                 $request,
                 $response,
             );
@@ -238,7 +238,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -251,22 +251,22 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600ApproveAccountAccessRequestAsync
+     * Operation approveAccountAccessRequestAsync
      *
      * Approve Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ApproveAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['approveAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ApproveAccountAccessRequestAsync($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600ApproveAccountAccessRequest'][0])
+    public function approveAccountAccessRequestAsync($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['approveAccountAccessRequest'][0])
     {
-        return $this->oBPv600ApproveAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType)
+        return $this->approveAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -275,23 +275,23 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600ApproveAccountAccessRequestAsyncWithHttpInfo
+     * Operation approveAccountAccessRequestAsyncWithHttpInfo
      *
      * Approve Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ApproveAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['approveAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600ApproveAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600ApproveAccountAccessRequest'][0])
+    public function approveAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['approveAccountAccessRequest'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response';
-        $request = $this->oBPv600ApproveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        $returnType = '\OpenBankProject\Model\RejectAccountAccessRequest200Response';
+        $request = $this->approveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -330,45 +330,45 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600ApproveAccountAccessRequest'
+     * Create request for operation 'approveAccountAccessRequest'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600ApproveAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['approveAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600ApproveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600ApproveAccountAccessRequest'][0])
+    public function approveAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['approveAccountAccessRequest'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600ApproveAccountAccessRequest'
+                'Missing the required parameter $bankid when calling approveAccountAccessRequest'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv600ApproveAccountAccessRequest'
+                'Missing the required parameter $accountid when calling approveAccountAccessRequest'
             );
         }
 
         // verify the required parameter 'accountaccessrequestid' is set
         if ($accountaccessrequestid === null || (is_array($accountaccessrequestid) && count($accountaccessrequestid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountaccessrequestid when calling oBPv600ApproveAccountAccessRequest'
+                'Missing the required parameter $accountaccessrequestid when calling approveAccountAccessRequest'
             );
         }
 
-        // verify the required parameter 'obpv600_reject_account_access_request_request' is set
-        if ($obpv600_reject_account_access_request_request === null || (is_array($obpv600_reject_account_access_request_request) && count($obpv600_reject_account_access_request_request) === 0)) {
+        // verify the required parameter 'reject_account_access_request_request' is set
+        if ($reject_account_access_request_request === null || (is_array($reject_account_access_request_request) && count($reject_account_access_request_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_reject_account_access_request_request when calling oBPv600ApproveAccountAccessRequest'
+                'Missing the required parameter $reject_account_access_request_request when calling approveAccountAccessRequest'
             );
         }
 
@@ -415,12 +415,12 @@ class AccountAccessRequestApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_reject_account_access_request_request)) {
+        if (isset($reject_account_access_request_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_reject_account_access_request_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($reject_account_access_request_request));
             } else {
-                $httpBody = $obpv600_reject_account_access_request_request;
+                $httpBody = $reject_account_access_request_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -456,9 +456,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -483,42 +483,42 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600CreateAccountAccessRequest
+     * Operation createAccountAccessRequest
      *
      * Create Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest $obpv600_create_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountAccessRequestRequest $create_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+     * @return \OpenBankProject\Model\RejectAccountAccessRequest200Response
      */
-    public function oBPv600CreateAccountAccessRequest($bankid, $accountid, $obpv600_create_account_access_request_request, string $contentType = self::contentTypes['oBPv600CreateAccountAccessRequest'][0])
+    public function createAccountAccessRequest($bankid, $accountid, $create_account_access_request_request, string $contentType = self::contentTypes['createAccountAccessRequest'][0])
     {
-        list($response) = $this->oBPv600CreateAccountAccessRequestWithHttpInfo($bankid, $accountid, $obpv600_create_account_access_request_request, $contentType);
+        list($response) = $this->createAccountAccessRequestWithHttpInfo($bankid, $accountid, $create_account_access_request_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateAccountAccessRequestWithHttpInfo
+     * Operation createAccountAccessRequestWithHttpInfo
      *
      * Create Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest $obpv600_create_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountAccessRequestRequest $create_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateAccountAccessRequestWithHttpInfo($bankid, $accountid, $obpv600_create_account_access_request_request, string $contentType = self::contentTypes['oBPv600CreateAccountAccessRequest'][0])
+    public function createAccountAccessRequestWithHttpInfo($bankid, $accountid, $create_account_access_request_request, string $contentType = self::contentTypes['createAccountAccessRequest'][0])
     {
-        $request = $this->oBPv600CreateAccountAccessRequestRequest($bankid, $accountid, $obpv600_create_account_access_request_request, $contentType);
+        $request = $this->createAccountAccessRequestRequest($bankid, $accountid, $create_account_access_request_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -546,7 +546,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $request,
                         $response,
                     );
@@ -568,7 +568,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                 $request,
                 $response,
             );
@@ -577,7 +577,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -590,21 +590,21 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600CreateAccountAccessRequestAsync
+     * Operation createAccountAccessRequestAsync
      *
      * Create Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest $obpv600_create_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountAccessRequestRequest $create_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateAccountAccessRequestAsync($bankid, $accountid, $obpv600_create_account_access_request_request, string $contentType = self::contentTypes['oBPv600CreateAccountAccessRequest'][0])
+    public function createAccountAccessRequestAsync($bankid, $accountid, $create_account_access_request_request, string $contentType = self::contentTypes['createAccountAccessRequest'][0])
     {
-        return $this->oBPv600CreateAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $obpv600_create_account_access_request_request, $contentType)
+        return $this->createAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $create_account_access_request_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -613,22 +613,22 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600CreateAccountAccessRequestAsyncWithHttpInfo
+     * Operation createAccountAccessRequestAsyncWithHttpInfo
      *
      * Create Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest $obpv600_create_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountAccessRequestRequest $create_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $obpv600_create_account_access_request_request, string $contentType = self::contentTypes['oBPv600CreateAccountAccessRequest'][0])
+    public function createAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $create_account_access_request_request, string $contentType = self::contentTypes['createAccountAccessRequest'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response';
-        $request = $this->oBPv600CreateAccountAccessRequestRequest($bankid, $accountid, $obpv600_create_account_access_request_request, $contentType);
+        $returnType = '\OpenBankProject\Model\RejectAccountAccessRequest200Response';
+        $request = $this->createAccountAccessRequestRequest($bankid, $accountid, $create_account_access_request_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -667,37 +667,37 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateAccountAccessRequest'
+     * Create request for operation 'createAccountAccessRequest'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateAccountAccessRequestRequest $obpv600_create_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateAccountAccessRequestRequest $create_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateAccountAccessRequestRequest($bankid, $accountid, $obpv600_create_account_access_request_request, string $contentType = self::contentTypes['oBPv600CreateAccountAccessRequest'][0])
+    public function createAccountAccessRequestRequest($bankid, $accountid, $create_account_access_request_request, string $contentType = self::contentTypes['createAccountAccessRequest'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600CreateAccountAccessRequest'
+                'Missing the required parameter $bankid when calling createAccountAccessRequest'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv600CreateAccountAccessRequest'
+                'Missing the required parameter $accountid when calling createAccountAccessRequest'
             );
         }
 
-        // verify the required parameter 'obpv600_create_account_access_request_request' is set
-        if ($obpv600_create_account_access_request_request === null || (is_array($obpv600_create_account_access_request_request) && count($obpv600_create_account_access_request_request) === 0)) {
+        // verify the required parameter 'create_account_access_request_request' is set
+        if ($create_account_access_request_request === null || (is_array($create_account_access_request_request) && count($create_account_access_request_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_account_access_request_request when calling oBPv600CreateAccountAccessRequest'
+                'Missing the required parameter $create_account_access_request_request when calling createAccountAccessRequest'
             );
         }
 
@@ -736,12 +736,12 @@ class AccountAccessRequestApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_account_access_request_request)) {
+        if (isset($create_account_access_request_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_account_access_request_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_account_access_request_request));
             } else {
-                $httpBody = $obpv600_create_account_access_request_request;
+                $httpBody = $create_account_access_request_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -777,9 +777,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -804,42 +804,42 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestById
+     * Operation getAccountAccessRequestById
      *
      * Get Account Access Request by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+     * @return \OpenBankProject\Model\RejectAccountAccessRequest200Response
      */
-    public function oBPv600GetAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestById'][0])
+    public function getAccountAccessRequestById($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['getAccountAccessRequestById'][0])
     {
-        list($response) = $this->oBPv600GetAccountAccessRequestByIdWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $contentType);
+        list($response) = $this->getAccountAccessRequestByIdWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestByIdWithHttpInfo
+     * Operation getAccountAccessRequestByIdWithHttpInfo
      *
      * Get Account Access Request by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAccountAccessRequestByIdWithHttpInfo($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestById'][0])
+    public function getAccountAccessRequestByIdWithHttpInfo($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['getAccountAccessRequestById'][0])
     {
-        $request = $this->oBPv600GetAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, $contentType);
+        $request = $this->getAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -867,7 +867,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $request,
                         $response,
                     );
@@ -889,7 +889,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                 $request,
                 $response,
             );
@@ -898,7 +898,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -911,21 +911,21 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestByIdAsync
+     * Operation getAccountAccessRequestByIdAsync
      *
      * Get Account Access Request by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAccountAccessRequestByIdAsync($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestById'][0])
+    public function getAccountAccessRequestByIdAsync($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['getAccountAccessRequestById'][0])
     {
-        return $this->oBPv600GetAccountAccessRequestByIdAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $contentType)
+        return $this->getAccountAccessRequestByIdAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -934,22 +934,22 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestByIdAsyncWithHttpInfo
+     * Operation getAccountAccessRequestByIdAsyncWithHttpInfo
      *
      * Get Account Access Request by Id
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAccountAccessRequestByIdAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestById'][0])
+    public function getAccountAccessRequestByIdAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['getAccountAccessRequestById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response';
-        $request = $this->oBPv600GetAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, $contentType);
+        $returnType = '\OpenBankProject\Model\RejectAccountAccessRequest200Response';
+        $request = $this->getAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -988,37 +988,37 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAccountAccessRequestById'
+     * Create request for operation 'getAccountAccessRequestById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestById'][0])
+    public function getAccountAccessRequestByIdRequest($bankid, $accountid, $accountaccessrequestid, string $contentType = self::contentTypes['getAccountAccessRequestById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetAccountAccessRequestById'
+                'Missing the required parameter $bankid when calling getAccountAccessRequestById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv600GetAccountAccessRequestById'
+                'Missing the required parameter $accountid when calling getAccountAccessRequestById'
             );
         }
 
         // verify the required parameter 'accountaccessrequestid' is set
         if ($accountaccessrequestid === null || (is_array($accountaccessrequestid) && count($accountaccessrequestid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountaccessrequestid when calling oBPv600GetAccountAccessRequestById'
+                'Missing the required parameter $accountaccessrequestid when calling getAccountAccessRequestById'
             );
         }
 
@@ -1099,9 +1099,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1126,40 +1126,40 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestsForAccount
+     * Operation getAccountAccessRequestsForAccount
      *
      * Get Account Access Requests for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestsForAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response
+     * @return \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response
      */
-    public function oBPv600GetAccountAccessRequestsForAccount($bankid, $accountid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'][0])
+    public function getAccountAccessRequestsForAccount($bankid, $accountid, string $contentType = self::contentTypes['getAccountAccessRequestsForAccount'][0])
     {
-        list($response) = $this->oBPv600GetAccountAccessRequestsForAccountWithHttpInfo($bankid, $accountid, $contentType);
+        list($response) = $this->getAccountAccessRequestsForAccountWithHttpInfo($bankid, $accountid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestsForAccountWithHttpInfo
+     * Operation getAccountAccessRequestsForAccountWithHttpInfo
      *
      * Get Account Access Requests for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestsForAccount'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetAccountAccessRequestsForAccountWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'][0])
+    public function getAccountAccessRequestsForAccountWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getAccountAccessRequestsForAccount'][0])
     {
-        $request = $this->oBPv600GetAccountAccessRequestsForAccountRequest($bankid, $accountid, $contentType);
+        $request = $this->getAccountAccessRequestsForAccountRequest($bankid, $accountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1187,7 +1187,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                        '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                         $request,
                         $response,
                     );
@@ -1209,7 +1209,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                 $request,
                 $response,
             );
@@ -1218,7 +1218,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                        '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1231,20 +1231,20 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestsForAccountAsync
+     * Operation getAccountAccessRequestsForAccountAsync
      *
      * Get Account Access Requests for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestsForAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAccountAccessRequestsForAccountAsync($bankid, $accountid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'][0])
+    public function getAccountAccessRequestsForAccountAsync($bankid, $accountid, string $contentType = self::contentTypes['getAccountAccessRequestsForAccount'][0])
     {
-        return $this->oBPv600GetAccountAccessRequestsForAccountAsyncWithHttpInfo($bankid, $accountid, $contentType)
+        return $this->getAccountAccessRequestsForAccountAsyncWithHttpInfo($bankid, $accountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1253,21 +1253,21 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetAccountAccessRequestsForAccountAsyncWithHttpInfo
+     * Operation getAccountAccessRequestsForAccountAsyncWithHttpInfo
      *
      * Get Account Access Requests for Account
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestsForAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetAccountAccessRequestsForAccountAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'][0])
+    public function getAccountAccessRequestsForAccountAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getAccountAccessRequestsForAccount'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response';
-        $request = $this->oBPv600GetAccountAccessRequestsForAccountRequest($bankid, $accountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response';
+        $request = $this->getAccountAccessRequestsForAccountRequest($bankid, $accountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1306,29 +1306,29 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetAccountAccessRequestsForAccount'
+     * Create request for operation 'getAccountAccessRequestsForAccount'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountAccessRequestsForAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetAccountAccessRequestsForAccountRequest($bankid, $accountid, string $contentType = self::contentTypes['oBPv600GetAccountAccessRequestsForAccount'][0])
+    public function getAccountAccessRequestsForAccountRequest($bankid, $accountid, string $contentType = self::contentTypes['getAccountAccessRequestsForAccount'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetAccountAccessRequestsForAccount'
+                'Missing the required parameter $bankid when calling getAccountAccessRequestsForAccount'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv600GetAccountAccessRequestsForAccount'
+                'Missing the required parameter $accountid when calling getAccountAccessRequestsForAccount'
             );
         }
 
@@ -1401,9 +1401,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1428,36 +1428,36 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetMyAccountAccessRequests
+     * Operation getMyAccountAccessRequests
      *
      * Get My Account Access Requests
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyAccountAccessRequests'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyAccountAccessRequests'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response
+     * @return \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response
      */
-    public function oBPv600GetMyAccountAccessRequests(string $contentType = self::contentTypes['oBPv600GetMyAccountAccessRequests'][0])
+    public function getMyAccountAccessRequests(string $contentType = self::contentTypes['getMyAccountAccessRequests'][0])
     {
-        list($response) = $this->oBPv600GetMyAccountAccessRequestsWithHttpInfo($contentType);
+        list($response) = $this->getMyAccountAccessRequestsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetMyAccountAccessRequestsWithHttpInfo
+     * Operation getMyAccountAccessRequestsWithHttpInfo
      *
      * Get My Account Access Requests
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyAccountAccessRequests'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyAccountAccessRequests'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetMyAccountAccessRequestsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMyAccountAccessRequests'][0])
+    public function getMyAccountAccessRequestsWithHttpInfo(string $contentType = self::contentTypes['getMyAccountAccessRequests'][0])
     {
-        $request = $this->oBPv600GetMyAccountAccessRequestsRequest($contentType);
+        $request = $this->getMyAccountAccessRequestsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1485,7 +1485,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                        '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                         $request,
                         $response,
                     );
@@ -1507,7 +1507,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                 $request,
                 $response,
             );
@@ -1516,7 +1516,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response',
+                        '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1529,18 +1529,18 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetMyAccountAccessRequestsAsync
+     * Operation getMyAccountAccessRequestsAsync
      *
      * Get My Account Access Requests
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyAccountAccessRequests'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyAccountAccessRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMyAccountAccessRequestsAsync(string $contentType = self::contentTypes['oBPv600GetMyAccountAccessRequests'][0])
+    public function getMyAccountAccessRequestsAsync(string $contentType = self::contentTypes['getMyAccountAccessRequests'][0])
     {
-        return $this->oBPv600GetMyAccountAccessRequestsAsyncWithHttpInfo($contentType)
+        return $this->getMyAccountAccessRequestsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1549,19 +1549,19 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600GetMyAccountAccessRequestsAsyncWithHttpInfo
+     * Operation getMyAccountAccessRequestsAsyncWithHttpInfo
      *
      * Get My Account Access Requests
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyAccountAccessRequests'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyAccountAccessRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMyAccountAccessRequestsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMyAccountAccessRequests'][0])
+    public function getMyAccountAccessRequestsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMyAccountAccessRequests'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAccountAccessRequestsForAccount200Response';
-        $request = $this->oBPv600GetMyAccountAccessRequestsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountAccessRequestsForAccount200Response';
+        $request = $this->getMyAccountAccessRequestsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1600,14 +1600,14 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetMyAccountAccessRequests'
+     * Create request for operation 'getMyAccountAccessRequests'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyAccountAccessRequests'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyAccountAccessRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetMyAccountAccessRequestsRequest(string $contentType = self::contentTypes['oBPv600GetMyAccountAccessRequests'][0])
+    public function getMyAccountAccessRequestsRequest(string $contentType = self::contentTypes['getMyAccountAccessRequests'][0])
     {
 
 
@@ -1663,9 +1663,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1690,44 +1690,44 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600RejectAccountAccessRequest
+     * Operation rejectAccountAccessRequest
      *
      * Reject Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RejectAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rejectAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response
+     * @return \OpenBankProject\Model\RejectAccountAccessRequest200Response
      */
-    public function oBPv600RejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600RejectAccountAccessRequest'][0])
+    public function rejectAccountAccessRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['rejectAccountAccessRequest'][0])
     {
-        list($response) = $this->oBPv600RejectAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        list($response) = $this->rejectAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600RejectAccountAccessRequestWithHttpInfo
+     * Operation rejectAccountAccessRequestWithHttpInfo
      *
      * Reject Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RejectAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rejectAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\RejectAccountAccessRequest200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600RejectAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600RejectAccountAccessRequest'][0])
+    public function rejectAccountAccessRequestWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['rejectAccountAccessRequest'][0])
     {
-        $request = $this->oBPv600RejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        $request = $this->rejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1755,7 +1755,7 @@ class AccountAccessRequestApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $request,
                         $response,
                     );
@@ -1777,7 +1777,7 @@ class AccountAccessRequestApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                 $request,
                 $response,
             );
@@ -1786,7 +1786,7 @@ class AccountAccessRequestApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response',
+                        '\OpenBankProject\Model\RejectAccountAccessRequest200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1799,22 +1799,22 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600RejectAccountAccessRequestAsync
+     * Operation rejectAccountAccessRequestAsync
      *
      * Reject Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RejectAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rejectAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RejectAccountAccessRequestAsync($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600RejectAccountAccessRequest'][0])
+    public function rejectAccountAccessRequestAsync($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['rejectAccountAccessRequest'][0])
     {
-        return $this->oBPv600RejectAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType)
+        return $this->rejectAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1823,23 +1823,23 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Operation oBPv600RejectAccountAccessRequestAsyncWithHttpInfo
+     * Operation rejectAccountAccessRequestAsyncWithHttpInfo
      *
      * Reject Account Access Request
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RejectAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rejectAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600RejectAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600RejectAccountAccessRequest'][0])
+    public function rejectAccountAccessRequestAsyncWithHttpInfo($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['rejectAccountAccessRequest'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600RejectAccountAccessRequest200Response';
-        $request = $this->oBPv600RejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, $contentType);
+        $returnType = '\OpenBankProject\Model\RejectAccountAccessRequest200Response';
+        $request = $this->rejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1878,45 +1878,45 @@ class AccountAccessRequestApi
     }
 
     /**
-     * Create request for operation 'oBPv600RejectAccountAccessRequest'
+     * Create request for operation 'rejectAccountAccessRequest'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $accountaccessrequestid The ACCOUNTACCESSREQUESTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600RejectAccountAccessRequestRequest $obpv600_reject_account_access_request_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600RejectAccountAccessRequest'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\RejectAccountAccessRequestRequest $reject_account_access_request_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['rejectAccountAccessRequest'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600RejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $obpv600_reject_account_access_request_request, string $contentType = self::contentTypes['oBPv600RejectAccountAccessRequest'][0])
+    public function rejectAccountAccessRequestRequest($bankid, $accountid, $accountaccessrequestid, $reject_account_access_request_request, string $contentType = self::contentTypes['rejectAccountAccessRequest'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600RejectAccountAccessRequest'
+                'Missing the required parameter $bankid when calling rejectAccountAccessRequest'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv600RejectAccountAccessRequest'
+                'Missing the required parameter $accountid when calling rejectAccountAccessRequest'
             );
         }
 
         // verify the required parameter 'accountaccessrequestid' is set
         if ($accountaccessrequestid === null || (is_array($accountaccessrequestid) && count($accountaccessrequestid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountaccessrequestid when calling oBPv600RejectAccountAccessRequest'
+                'Missing the required parameter $accountaccessrequestid when calling rejectAccountAccessRequest'
             );
         }
 
-        // verify the required parameter 'obpv600_reject_account_access_request_request' is set
-        if ($obpv600_reject_account_access_request_request === null || (is_array($obpv600_reject_account_access_request_request) && count($obpv600_reject_account_access_request_request) === 0)) {
+        // verify the required parameter 'reject_account_access_request_request' is set
+        if ($reject_account_access_request_request === null || (is_array($reject_account_access_request_request) && count($reject_account_access_request_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_reject_account_access_request_request when calling oBPv600RejectAccountAccessRequest'
+                'Missing the required parameter $reject_account_access_request_request when calling rejectAccountAccessRequest'
             );
         }
 
@@ -1963,12 +1963,12 @@ class AccountAccessRequestApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_reject_account_access_request_request)) {
+        if (isset($reject_account_access_request_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_reject_account_access_request_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($reject_account_access_request_request));
             } else {
-                $httpBody = $obpv600_reject_account_access_request_request;
+                $httpBody = $reject_account_access_request_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2004,9 +2004,9 @@ class AccountAccessRequestApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

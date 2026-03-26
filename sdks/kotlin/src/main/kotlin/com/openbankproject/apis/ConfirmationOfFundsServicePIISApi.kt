@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv310CheckFundsAvailable200Response
+import com.openbankproject.models.CheckFundsAvailable200Response
 
 import com.squareup.moshi.Json
 
@@ -41,7 +41,7 @@ open class ConfirmationOfFundsServicePIISApi(basePath: kotlin.String = defaultBa
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -52,7 +52,7 @@ open class ConfirmationOfFundsServicePIISApi(basePath: kotlin.String = defaultBa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @return OBPv310CheckFundsAvailable200Response
+     * @return CheckFundsAvailable200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -61,11 +61,11 @@ open class ConfirmationOfFundsServicePIISApi(basePath: kotlin.String = defaultBa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv310CheckFundsAvailable(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : OBPv310CheckFundsAvailable200Response {
-        val localVarResponse = oBPv310CheckFundsAvailableWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid)
+    fun checkFundsAvailable(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : CheckFundsAvailable200Response {
+        val localVarResponse = checkFundsAvailableWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv310CheckFundsAvailable200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CheckFundsAvailable200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,29 +86,29 @@ open class ConfirmationOfFundsServicePIISApi(basePath: kotlin.String = defaultBa
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @return ApiResponse<OBPv310CheckFundsAvailable200Response?>
+     * @return ApiResponse<CheckFundsAvailable200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv310CheckFundsAvailableWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : ApiResponse<OBPv310CheckFundsAvailable200Response?> {
-        val localVariableConfig = oBPv310CheckFundsAvailableRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid)
+    fun checkFundsAvailableWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : ApiResponse<CheckFundsAvailable200Response?> {
+        val localVariableConfig = checkFundsAvailableRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid)
 
-        return request<Unit, OBPv310CheckFundsAvailable200Response>(
+        return request<Unit, CheckFundsAvailable200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv310CheckFundsAvailable
+     * To obtain the request config of the operation checkFundsAvailable
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @return RequestConfig
      */
-    fun oBPv310CheckFundsAvailableRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : RequestConfig<Unit> {
+    fun checkFundsAvailableRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

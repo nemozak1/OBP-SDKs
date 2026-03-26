@@ -1,20 +1,20 @@
 # AccountAccessRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600ApproveAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600ApproveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**oBPv600CreateAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600CreateAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**oBPv600GetAccountAccessRequestById**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**oBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**oBPv600GetMyAccountAccessRequests**](AccountAccessRequestApi.md#oBPv600GetMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**oBPv600RejectAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600RejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**approveAccountAccessRequest**](AccountAccessRequestApi.md#approveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**createAccountAccessRequest**](AccountAccessRequestApi.md#createAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**getAccountAccessRequestById**](AccountAccessRequestApi.md#getAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**getAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#getAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**getMyAccountAccessRequests**](AccountAccessRequestApi.md#getMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**rejectAccountAccessRequest**](AccountAccessRequestApi.md#rejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
 
-<a id="oBPv600ApproveAccountAccessRequest"></a>
-# **oBPv600ApproveAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+<a id="approveAccountAccessRequest"></a>
+# **approveAccountAccessRequest**
+> RejectAccountAccessRequest200Response approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -30,15 +30,15 @@ val apiInstance = AccountAccessRequestApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val accountaccessrequestid : kotlin.String = accountaccessrequestid_example // kotlin.String | The ACCOUNTACCESSREQUESTID identifier
-val obPv600RejectAccountAccessRequestRequest : OBPv600RejectAccountAccessRequestRequest = {type=object, properties={comment={type=string}}} // OBPv600RejectAccountAccessRequestRequest | Request body
+val rejectAccountAccessRequestRequest : RejectAccountAccessRequestRequest = {type=object, properties={comment={type=string}}} // RejectAccountAccessRequestRequest | Request body
 try {
-    val result : OBPv600RejectAccountAccessRequest200Response = apiInstance.oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+    val result : RejectAccountAccessRequest200Response = apiInstance.approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600ApproveAccountAccessRequest")
+    println("4xx response calling AccountAccessRequestApi#approveAccountAccessRequest")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600ApproveAccountAccessRequest")
+    println("5xx response calling AccountAccessRequestApi#approveAccountAccessRequest")
     e.printStackTrace()
 }
 ```
@@ -49,11 +49,11 @@ try {
 | **accountaccessrequestid** | **kotlin.String**| The ACCOUNTACCESSREQUESTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -64,17 +64,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600CreateAccountAccessRequest"></a>
-# **oBPv600CreateAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(bankid, accountid, obPv600CreateAccountAccessRequestRequest)
+<a id="createAccountAccessRequest"></a>
+# **createAccountAccessRequest**
+> RejectAccountAccessRequest200Response createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -89,15 +89,15 @@ Create Account Access Request
 val apiInstance = AccountAccessRequestApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
-val obPv600CreateAccountAccessRequestRequest : OBPv600CreateAccountAccessRequestRequest = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}} // OBPv600CreateAccountAccessRequestRequest | Request body
+val createAccountAccessRequestRequest : CreateAccountAccessRequestRequest = {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}} // CreateAccountAccessRequestRequest | Request body
 try {
-    val result : OBPv600RejectAccountAccessRequest200Response = apiInstance.oBPv600CreateAccountAccessRequest(bankid, accountid, obPv600CreateAccountAccessRequestRequest)
+    val result : RejectAccountAccessRequest200Response = apiInstance.createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600CreateAccountAccessRequest")
+    println("4xx response calling AccountAccessRequestApi#createAccountAccessRequest")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600CreateAccountAccessRequest")
+    println("5xx response calling AccountAccessRequestApi#createAccountAccessRequest")
     e.printStackTrace()
 }
 ```
@@ -107,11 +107,11 @@ try {
 | **accountid** | **kotlin.String**| The ACCOUNTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md)| Request body | |
+| **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -122,17 +122,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600GetAccountAccessRequestById"></a>
-# **oBPv600GetAccountAccessRequestById**
-> OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
+<a id="getAccountAccessRequestById"></a>
+# **getAccountAccessRequestById**
+> RejectAccountAccessRequest200Response getAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -149,13 +149,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val accountaccessrequestid : kotlin.String = accountaccessrequestid_example // kotlin.String | The ACCOUNTACCESSREQUESTID identifier
 try {
-    val result : OBPv600RejectAccountAccessRequest200Response = apiInstance.oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
+    val result : RejectAccountAccessRequest200Response = apiInstance.getAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestById")
+    println("4xx response calling AccountAccessRequestApi#getAccountAccessRequestById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestById")
+    println("5xx response calling AccountAccessRequestApi#getAccountAccessRequestById")
     e.printStackTrace()
 }
 ```
@@ -169,7 +169,7 @@ try {
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -180,17 +180,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAccountAccessRequestsForAccount"></a>
-# **oBPv600GetAccountAccessRequestsForAccount**
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(bankid, accountid)
+<a id="getAccountAccessRequestsForAccount"></a>
+# **getAccountAccessRequestsForAccount**
+> GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -206,13 +206,13 @@ val apiInstance = AccountAccessRequestApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 try {
-    val result : OBPv600GetAccountAccessRequestsForAccount200Response = apiInstance.oBPv600GetAccountAccessRequestsForAccount(bankid, accountid)
+    val result : GetAccountAccessRequestsForAccount200Response = apiInstance.getAccountAccessRequestsForAccount(bankid, accountid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestsForAccount")
+    println("4xx response calling AccountAccessRequestApi#getAccountAccessRequestsForAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestsForAccount")
+    println("5xx response calling AccountAccessRequestApi#getAccountAccessRequestsForAccount")
     e.printStackTrace()
 }
 ```
@@ -225,7 +225,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -236,17 +236,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetMyAccountAccessRequests"></a>
-# **oBPv600GetMyAccountAccessRequests**
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests()
+<a id="getMyAccountAccessRequests"></a>
+# **getMyAccountAccessRequests**
+> GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests()
 
 Get My Account Access Requests
 
@@ -260,13 +260,13 @@ Get My Account Access Requests
 
 val apiInstance = AccountAccessRequestApi()
 try {
-    val result : OBPv600GetAccountAccessRequestsForAccount200Response = apiInstance.oBPv600GetMyAccountAccessRequests()
+    val result : GetAccountAccessRequestsForAccount200Response = apiInstance.getMyAccountAccessRequests()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600GetMyAccountAccessRequests")
+    println("4xx response calling AccountAccessRequestApi#getMyAccountAccessRequests")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600GetMyAccountAccessRequests")
+    println("5xx response calling AccountAccessRequestApi#getMyAccountAccessRequests")
     e.printStackTrace()
 }
 ```
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -287,17 +287,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600RejectAccountAccessRequest"></a>
-# **oBPv600RejectAccountAccessRequest**
-> OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+<a id="rejectAccountAccessRequest"></a>
+# **rejectAccountAccessRequest**
+> RejectAccountAccessRequest200Response rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -313,15 +313,15 @@ val apiInstance = AccountAccessRequestApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val accountaccessrequestid : kotlin.String = accountaccessrequestid_example // kotlin.String | The ACCOUNTACCESSREQUESTID identifier
-val obPv600RejectAccountAccessRequestRequest : OBPv600RejectAccountAccessRequestRequest = {"type":"object","properties":{"comment":{"type":"string"}}} // OBPv600RejectAccountAccessRequestRequest | Request body
+val rejectAccountAccessRequestRequest : RejectAccountAccessRequestRequest = {"type":"object","properties":{"comment":{"type":"string"}}} // RejectAccountAccessRequestRequest | Request body
 try {
-    val result : OBPv600RejectAccountAccessRequest200Response = apiInstance.oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+    val result : RejectAccountAccessRequest200Response = apiInstance.rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountAccessRequestApi#oBPv600RejectAccountAccessRequest")
+    println("4xx response calling AccountAccessRequestApi#rejectAccountAccessRequest")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountAccessRequestApi#oBPv600RejectAccountAccessRequest")
+    println("5xx response calling AccountAccessRequestApi#rejectAccountAccessRequest")
     e.printStackTrace()
 }
 ```
@@ -332,11 +332,11 @@ try {
 | **accountaccessrequestid** | **kotlin.String**| The ACCOUNTACCESSREQUESTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -347,8 +347,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

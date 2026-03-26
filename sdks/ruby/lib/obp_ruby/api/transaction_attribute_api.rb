@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create or Update Transaction Attribute Definition
     # <p>Create or Update Transaction Attribute Definition</p> <p>The category field must be Transaction</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]
-    def o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts)
+    # @return [GetTransactionRequestAttributeDefinition200ResponseAttributesInner]
+    def create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      data, _status_code, _headers = create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts)
       data
     end
 
     # Create or Update Transaction Attribute Definition
     # &lt;p&gt;Create or Update Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Transaction&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_or_update_transaction_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Integer, Hash)>] GetTransactionRequestAttributeDefinition200ResponseAttributesInner data, response status code and response headers
+    def create_or_update_transaction_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.create_or_update_transaction_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.create_or_update_transaction_attribute_definition"
       end
-      # verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_or_update_transaction_request_attribute_definition_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' when calling TransactionAttributeApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition"
+      # verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+      if @api_client.config.client_side_validation && create_or_update_transaction_request_attribute_definition_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_or_update_transaction_request_attribute_definition_request' when calling TransactionAttributeApi.create_or_update_transaction_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_or_update_transaction_request_attribute_definition_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_or_update_transaction_request_attribute_definition_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200ResponseAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_create_or_update_transaction_attribute_definition",
+        :operation => :"TransactionAttributeApi.create_or_update_transaction_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,7 +88,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_create_or_update_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#create_or_update_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -98,11 +98,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts)
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request, opts)
       data
     end
 
@@ -111,28 +111,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_transaction_attribute_with_http_info(bankid, accountid, transactionid, obpv600_create_personal_data_field_request, opts = {})
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def create_transaction_attribute_with_http_info(bankid, accountid, transactionid, create_personal_data_field_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.create_transaction_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.create_transaction_attribute"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.create_transaction_attribute"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.create_transaction_attribute"
       end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute"
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling TransactionAttributeApi.create_transaction_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -154,16 +154,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_create_transaction_attribute",
+        :operation => :"TransactionAttributeApi.create_transaction_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -174,7 +174,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_create_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#create_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -185,8 +185,8 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid, opts = {})
-      o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
+    def delete_transaction_attribute_definition(bankid, attributedefinitionid, opts = {})
+      delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
       nil
     end
 
@@ -196,17 +196,17 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
+    def delete_transaction_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_delete_transaction_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.delete_transaction_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_delete_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.delete_transaction_attribute_definition"
       end
       # verify the required parameter 'attributedefinitionid' is set
       if @api_client.config.client_side_validation && attributedefinitionid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling TransactionAttributeApi.o_bpv4_0_0_delete_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling TransactionAttributeApi.delete_transaction_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'attributedefinitionid' + '}', CGI.escape(attributedefinitionid.to_s))
@@ -230,7 +230,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_delete_transaction_attribute_definition",
+        :operation => :"TransactionAttributeApi.delete_transaction_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -241,7 +241,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_delete_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#delete_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -253,9 +253,9 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts)
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid, opts = {})
+      data, _status_code, _headers = get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts)
       data
     end
 
@@ -266,26 +266,26 @@ module OpenBankProject
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts = {})
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def get_transaction_attribute_by_id_with_http_info(bankid, accountid, transactionid, attributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.get_transaction_attribute_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.get_transaction_attribute_by_id"
       end
       # verify the required parameter 'attributeid' is set
       if @api_client.config.client_side_validation && attributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributeid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'attributeid' when calling TransactionAttributeApi.get_transaction_attribute_by_id"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'attributeid' + '}', CGI.escape(attributeid.to_s))
@@ -305,13 +305,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_by_id",
+        :operation => :"TransactionAttributeApi.get_transaction_attribute_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -322,7 +322,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_get_transaction_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#get_transaction_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -331,9 +331,9 @@ module OpenBankProject
     # <p>Get Transaction Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200Response]
-    def o_bpv4_0_0_get_transaction_attribute_definition(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid, opts)
+    # @return [GetTransactionRequestAttributeDefinition200Response]
+    def get_transaction_attribute_definition(bankid, opts = {})
+      data, _status_code, _headers = get_transaction_attribute_definition_with_http_info(bankid, opts)
       data
     end
 
@@ -341,14 +341,14 @@ module OpenBankProject
     # &lt;p&gt;Get Transaction Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attribute_definition_with_http_info(bankid, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
+    def get_transaction_attribute_definition_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.get_transaction_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.get_transaction_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -368,13 +368,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_get_transaction_attribute_definition",
+        :operation => :"TransactionAttributeApi.get_transaction_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -385,7 +385,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_get_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#get_transaction_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -396,9 +396,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionAttributes200Response]
-    def o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts)
+    # @return [GetTransactionAttributes200Response]
+    def get_transaction_attributes(bankid, accountid, transactionid, opts = {})
+      data, _status_code, _headers = get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts)
       data
     end
 
@@ -408,22 +408,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionAttributes200Response, Integer, Hash)>] OBPv400GetTransactionAttributes200Response data, response status code and response headers
-    def o_bpv4_0_0_get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts = {})
+    # @return [Array<(GetTransactionAttributes200Response, Integer, Hash)>] GetTransactionAttributes200Response data, response status code and response headers
+    def get_transaction_attributes_with_http_info(bankid, accountid, transactionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_get_transaction_attributes ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.get_transaction_attributes ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.get_transaction_attributes"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.get_transaction_attributes"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.o_bpv4_0_0_get_transaction_attributes"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.get_transaction_attributes"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s))
@@ -443,13 +443,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionAttributes200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionAttributes200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_get_transaction_attributes",
+        :operation => :"TransactionAttributeApi.get_transaction_attributes",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -460,7 +460,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_get_transaction_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#get_transaction_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -471,11 +471,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems]
-    def o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts)
+    # @return [GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner]
+    def update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts)
       data
     end
 
@@ -485,32 +485,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param transactionid [String] The TRANSACTIONID identifier
     # @param accountattributeid [String] The ACCOUNTATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, Integer, Hash)>] OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request, opts = {})
+    # @return [Array<(GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, Integer, Hash)>] GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner data, response status code and response headers
+    def update_transaction_attribute_with_http_info(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute ...'
+        @api_client.config.logger.debug 'Calling API: TransactionAttributeApi.update_transaction_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling TransactionAttributeApi.update_transaction_attribute"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling TransactionAttributeApi.update_transaction_attribute"
       end
       # verify the required parameter 'transactionid' is set
       if @api_client.config.client_side_validation && transactionid.nil?
-        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'transactionid' when calling TransactionAttributeApi.update_transaction_attribute"
       end
       # verify the required parameter 'accountattributeid' is set
       if @api_client.config.client_side_validation && accountattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute"
+        fail ArgumentError, "Missing the required parameter 'accountattributeid' when calling TransactionAttributeApi.update_transaction_attribute"
       end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute"
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling TransactionAttributeApi.update_transaction_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'transactionid' + '}', CGI.escape(transactionid.to_s)).sub('{' + 'accountattributeid' + '}', CGI.escape(accountattributeid.to_s))
@@ -532,16 +532,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"TransactionAttributeApi.o_bpv4_0_0_update_transaction_attribute",
+        :operation => :"TransactionAttributeApi.update_transaction_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -552,7 +552,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TransactionAttributeApi#o_bpv4_0_0_update_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TransactionAttributeApi#update_transaction_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

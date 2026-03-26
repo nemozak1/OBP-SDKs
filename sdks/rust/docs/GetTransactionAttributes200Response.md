@@ -1,0 +1,11 @@
+# GetTransactionAttributes200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**transaction_attributes** | Option<[**Vec<models::GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)> |  | [optional]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

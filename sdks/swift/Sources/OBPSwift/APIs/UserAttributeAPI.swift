@@ -12,12 +12,12 @@ open class UserAttributeAPI {
     /**
      Create Personal Data Field
      
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600CreatePersonalDataFieldWithRequestBuilder(oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createPersonalDataField(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await createPersonalDataFieldWithRequestBuilder(createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -31,16 +31,16 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600CreatePersonalDataFieldWithRequestBuilder(oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func createPersonalDataFieldWithRequestBuilder(createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         let localVariablePath = "/obp/v6.0.0/my/personal-data-fields"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -50,7 +50,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -59,12 +59,12 @@ open class UserAttributeAPI {
      Create User Attribute
      
      - parameter userid: (path) The USERID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600CreateUserAttribute(userid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600CreateUserAttributeWithRequestBuilder(userid: userid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createUserAttribute(userid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await createUserAttributeWithRequestBuilder(userid: userid, createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -78,20 +78,20 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600CreateUserAttributeWithRequestBuilder(userid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func createUserAttributeWithRequestBuilder(userid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/attributes"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{userid}", with: useridPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -113,8 +113,8 @@ open class UserAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeletePersonalDataField(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeletePersonalDataFieldWithRequestBuilder(userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deletePersonalDataField(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deletePersonalDataFieldWithRequestBuilder(userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -128,13 +128,13 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeletePersonalDataFieldWithRequestBuilder(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deletePersonalDataFieldWithRequestBuilder(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
         let userattributeidPreEscape = "\(APIHelper.mapValueToPathItem(userattributeid))"
         let userattributeidPostEscape = userattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -163,8 +163,8 @@ open class UserAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteUserAttribute(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteUserAttributeWithRequestBuilder(userid: userid, userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteUserAttribute(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteUserAttributeWithRequestBuilder(userid: userid, userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -178,14 +178,14 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteUserAttributeWithRequestBuilder(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteUserAttributeWithRequestBuilder(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -214,10 +214,10 @@ open class UserAttributeAPI {
      
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600GetPersonalDataFieldById(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600GetPersonalDataFieldByIdWithRequestBuilder(userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getPersonalDataFieldById(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await getPersonalDataFieldByIdWithRequestBuilder(userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -231,13 +231,13 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600GetPersonalDataFieldByIdWithRequestBuilder(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func getPersonalDataFieldByIdWithRequestBuilder(userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         var localVariablePath = "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
         let userattributeidPreEscape = "\(APIHelper.mapValueToPathItem(userattributeid))"
         let userattributeidPostEscape = userattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -253,7 +253,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -262,10 +262,10 @@ open class UserAttributeAPI {
      Get Personal Data Fields
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200Response
+     - returns: GetPersonalDataFields200Response
      */
-    open class func oBPv600GetPersonalDataFields(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200Response {
-        return try await oBPv600GetPersonalDataFieldsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getPersonalDataFields(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200Response {
+        return try await getPersonalDataFieldsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -279,12 +279,12 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200Response> 
+     - returns: RequestBuilder<GetPersonalDataFields200Response> 
      */
-    open class func oBPv600GetPersonalDataFieldsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200Response> {
+    open class func getPersonalDataFieldsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200Response> {
         let localVariablePath = "/obp/v6.0.0/my/personal-data-fields"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -297,7 +297,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -308,10 +308,10 @@ open class UserAttributeAPI {
      - parameter userid: (path) The USERID identifier 
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600GetUserAttributeById(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600GetUserAttributeByIdWithRequestBuilder(userid: userid, userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getUserAttributeById(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await getUserAttributeByIdWithRequestBuilder(userid: userid, userattributeid: userattributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -325,14 +325,14 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600GetUserAttributeByIdWithRequestBuilder(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func getUserAttributeByIdWithRequestBuilder(userid: String, userattributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -351,7 +351,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -361,10 +361,10 @@ open class UserAttributeAPI {
      
      - parameter userid: (path) The USERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200Response
+     - returns: GetPersonalDataFields200Response
      */
-    open class func oBPv600GetUserAttributes(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200Response {
-        return try await oBPv600GetUserAttributesWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
+    open class func getUserAttributes(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200Response {
+        return try await getUserAttributesWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -378,13 +378,13 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200Response> 
+     - returns: RequestBuilder<GetPersonalDataFields200Response> 
      */
-    open class func oBPv600GetUserAttributesWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200Response> {
+    open class func getUserAttributesWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200Response> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/attributes"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -400,7 +400,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -409,12 +409,12 @@ open class UserAttributeAPI {
      Update Personal Data Field
      
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600UpdatePersonalDataField(userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600UpdatePersonalDataFieldWithRequestBuilder(userattributeid: userattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updatePersonalDataField(userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await updatePersonalDataFieldWithRequestBuilder(userattributeid: userattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -428,20 +428,20 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600UpdatePersonalDataFieldWithRequestBuilder(userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func updatePersonalDataFieldWithRequestBuilder(userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         var localVariablePath = "/obp/v6.0.0/my/personal-data-fields/{userattributeid}"
         let userattributeidPreEscape = "\(APIHelper.mapValueToPathItem(userattributeid))"
         let userattributeidPostEscape = userattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{userattributeid}", with: userattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -451,7 +451,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -461,12 +461,12 @@ open class UserAttributeAPI {
      
      - parameter userid: (path) The USERID identifier 
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+     - returns: GetPersonalDataFields200ResponseUserAttributesInner
      */
-    open class func oBPv600UpdateUserAttribute(userid: String, userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems {
-        return try await oBPv600UpdateUserAttributeWithRequestBuilder(userid: userid, userattributeid: userattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateUserAttribute(userid: String, userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPersonalDataFields200ResponseUserAttributesInner {
+        return try await updateUserAttributeWithRequestBuilder(userid: userid, userattributeid: userattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -480,15 +480,15 @@ open class UserAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter userid: (path) The USERID identifier 
      - parameter userattributeid: (path) The USERATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> 
+     - returns: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> 
      */
-    open class func oBPv600UpdateUserAttributeWithRequestBuilder(userid: String, userattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems> {
+    open class func updateUserAttributeWithRequestBuilder(userid: String, userattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner> {
         var localVariablePath = "/obp/v6.0.0/users/{userid}/attributes/{userattributeid}"
         let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
         let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -497,7 +497,7 @@ open class UserAttributeAPI {
         let userattributeidPostEscape = userattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{userattributeid}", with: userattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -507,7 +507,7 @@ open class UserAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPersonalDataFields200ResponseUserAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

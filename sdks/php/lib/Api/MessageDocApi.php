@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class MessageDocApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv220GetMessageDocs' => [
+        'getMessageDocs' => [
             'application/json',
         ],
-        'oBPv310GetMessageDocsSwagger' => [
+        'getMessageDocsJsonSchema' => [
             'application/json',
         ],
-        'oBPv600GetMessageDocsJsonSchema' => [
+        'getMessageDocsSwagger' => [
             'application/json',
         ],
     ];
@@ -133,38 +133,38 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv220GetMessageDocs
+     * Operation getMessageDocs
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv220GetMessageDocs200Response
+     * @return \OpenBankProject\Model\GetMessageDocs200Response
      */
-    public function oBPv220GetMessageDocs($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocs($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        list($response) = $this->oBPv220GetMessageDocsWithHttpInfo($connector, $contentType);
+        list($response) = $this->getMessageDocsWithHttpInfo($connector, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv220GetMessageDocsWithHttpInfo
+     * Operation getMessageDocsWithHttpInfo
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv220GetMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMessageDocs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv220GetMessageDocsWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        $request = $this->oBPv220GetMessageDocsRequest($connector, $contentType);
+        $request = $this->getMessageDocsRequest($connector, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -192,7 +192,7 @@ class MessageDocApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                        '\OpenBankProject\Model\GetMessageDocs200Response',
                         $request,
                         $response,
                     );
@@ -214,7 +214,7 @@ class MessageDocApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                '\OpenBankProject\Model\GetMessageDocs200Response',
                 $request,
                 $response,
             );
@@ -223,7 +223,7 @@ class MessageDocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv220GetMessageDocs200Response',
+                        '\OpenBankProject\Model\GetMessageDocs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -236,19 +236,19 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv220GetMessageDocsAsync
+     * Operation getMessageDocsAsync
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetMessageDocsAsync($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsAsync($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        return $this->oBPv220GetMessageDocsAsyncWithHttpInfo($connector, $contentType)
+        return $this->getMessageDocsAsyncWithHttpInfo($connector, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,20 +257,20 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv220GetMessageDocsAsyncWithHttpInfo
+     * Operation getMessageDocsAsyncWithHttpInfo
      *
      * Get Message Docs
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetMessageDocsAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv220GetMessageDocs200Response';
-        $request = $this->oBPv220GetMessageDocsRequest($connector, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMessageDocs200Response';
+        $request = $this->getMessageDocsRequest($connector, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -309,21 +309,21 @@ class MessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv220GetMessageDocs'
+     * Create request for operation 'getMessageDocs'
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetMessageDocs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv220GetMessageDocsRequest($connector, string $contentType = self::contentTypes['oBPv220GetMessageDocs'][0])
+    public function getMessageDocsRequest($connector, string $contentType = self::contentTypes['getMessageDocs'][0])
     {
 
         // verify the required parameter 'connector' is set
         if ($connector === null || (is_array($connector) && count($connector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv220GetMessageDocs'
+                'Missing the required parameter $connector when calling getMessageDocs'
             );
         }
 
@@ -401,37 +401,37 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwagger
+     * Operation getMessageDocsJsonSchema
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv310GetMessageDocsSwagger($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchema($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        $this->oBPv310GetMessageDocsSwaggerWithHttpInfo($connector, $contentType);
+        $this->getMessageDocsJsonSchemaWithHttpInfo($connector, $contentType);
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerWithHttpInfo
+     * Operation getMessageDocsJsonSchemaWithHttpInfo
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetMessageDocsSwaggerWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        $request = $this->oBPv310GetMessageDocsSwaggerRequest($connector, $contentType);
+        $request = $this->getMessageDocsJsonSchemaRequest($connector, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -467,19 +467,19 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerAsync
+     * Operation getMessageDocsJsonSchemaAsync
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMessageDocsSwaggerAsync($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaAsync($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
-        return $this->oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo($connector, $contentType)
+        return $this->getMessageDocsJsonSchemaAsyncWithHttpInfo($connector, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -488,20 +488,20 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo
+     * Operation getMessageDocsJsonSchemaAsyncWithHttpInfo
      *
-     * Get Message Docs Swagger
+     * Get Message Docs as JSON Schema
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetMessageDocsSwaggerAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
         $returnType = '';
-        $request = $this->oBPv310GetMessageDocsSwaggerRequest($connector, $contentType);
+        $request = $this->getMessageDocsJsonSchemaRequest($connector, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -527,26 +527,26 @@ class MessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetMessageDocsSwagger'
+     * Create request for operation 'getMessageDocsJsonSchema'
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetMessageDocsSwagger'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsJsonSchema'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetMessageDocsSwaggerRequest($connector, string $contentType = self::contentTypes['oBPv310GetMessageDocsSwagger'][0])
+    public function getMessageDocsJsonSchemaRequest($connector, string $contentType = self::contentTypes['getMessageDocsJsonSchema'][0])
     {
 
         // verify the required parameter 'connector' is set
         if ($connector === null || (is_array($connector) && count($connector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv310GetMessageDocsSwagger'
+                'Missing the required parameter $connector when calling getMessageDocsJsonSchema'
             );
         }
 
 
-        $resourcePath = '/obp/v3.1.0/message-docs/{connector}/swagger2.0';
+        $resourcePath = '/obp/v6.0.0/message-docs/{connector}/json-schema';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -619,37 +619,37 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv600GetMessageDocsJsonSchema
+     * Operation getMessageDocsSwagger
      *
-     * Get Message Docs as JSON Schema
+     * Get Message Docs Swagger
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600GetMessageDocsJsonSchema($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
+    public function getMessageDocsSwagger($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
-        $this->oBPv600GetMessageDocsJsonSchemaWithHttpInfo($connector, $contentType);
+        $this->getMessageDocsSwaggerWithHttpInfo($connector, $contentType);
     }
 
     /**
-     * Operation oBPv600GetMessageDocsJsonSchemaWithHttpInfo
+     * Operation getMessageDocsSwaggerWithHttpInfo
      *
-     * Get Message Docs as JSON Schema
+     * Get Message Docs Swagger
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetMessageDocsJsonSchemaWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
+    public function getMessageDocsSwaggerWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
-        $request = $this->oBPv600GetMessageDocsJsonSchemaRequest($connector, $contentType);
+        $request = $this->getMessageDocsSwaggerRequest($connector, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -685,19 +685,19 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv600GetMessageDocsJsonSchemaAsync
+     * Operation getMessageDocsSwaggerAsync
      *
-     * Get Message Docs as JSON Schema
+     * Get Message Docs Swagger
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMessageDocsJsonSchemaAsync($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
+    public function getMessageDocsSwaggerAsync($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
-        return $this->oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo($connector, $contentType)
+        return $this->getMessageDocsSwaggerAsyncWithHttpInfo($connector, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -706,20 +706,20 @@ class MessageDocApi
     }
 
     /**
-     * Operation oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo
+     * Operation getMessageDocsSwaggerAsyncWithHttpInfo
      *
-     * Get Message Docs as JSON Schema
+     * Get Message Docs Swagger
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMessageDocsJsonSchemaAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
+    public function getMessageDocsSwaggerAsyncWithHttpInfo($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600GetMessageDocsJsonSchemaRequest($connector, $contentType);
+        $request = $this->getMessageDocsSwaggerRequest($connector, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -745,26 +745,26 @@ class MessageDocApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetMessageDocsJsonSchema'
+     * Create request for operation 'getMessageDocsSwagger'
      *
      * @param  string $connector The CONNECTOR identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMessageDocsJsonSchema'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMessageDocsSwagger'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetMessageDocsJsonSchemaRequest($connector, string $contentType = self::contentTypes['oBPv600GetMessageDocsJsonSchema'][0])
+    public function getMessageDocsSwaggerRequest($connector, string $contentType = self::contentTypes['getMessageDocsSwagger'][0])
     {
 
         // verify the required parameter 'connector' is set
         if ($connector === null || (is_array($connector) && count($connector) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $connector when calling oBPv600GetMessageDocsJsonSchema'
+                'Missing the required parameter $connector when calling getMessageDocsSwagger'
             );
         }
 
 
-        $resourcePath = '/obp/v6.0.0/message-docs/{connector}/json-schema';
+        $resourcePath = '/obp/v3.1.0/message-docs/{connector}/swagger2.0';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

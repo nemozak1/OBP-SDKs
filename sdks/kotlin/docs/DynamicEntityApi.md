@@ -1,18 +1,18 @@
 # DynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#oBPv600CleanupOrphanedDynamicEntityRecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
-| [**oBPv600GetAvailablePersonalDynamicEntities**](DynamicEntityApi.md#oBPv600GetAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
-| [**oBPv600GetDynamicEntityDiagnostics**](DynamicEntityApi.md#oBPv600GetDynamicEntityDiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
-| [**oBPv600GetReferenceTypes**](DynamicEntityApi.md#oBPv600GetReferenceTypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
+| [**cleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#cleanupOrphanedDynamicEntityRecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
+| [**getAvailablePersonalDynamicEntities**](DynamicEntityApi.md#getAvailablePersonalDynamicEntities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getDynamicEntityDiagnostics**](DynamicEntityApi.md#getDynamicEntityDiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
+| [**getReferenceTypes**](DynamicEntityApi.md#getReferenceTypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
 
 
-<a id="oBPv600CleanupOrphanedDynamicEntityRecords"></a>
-# **oBPv600CleanupOrphanedDynamicEntityRecords**
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response oBPv600CleanupOrphanedDynamicEntityRecords()
+<a id="cleanupOrphanedDynamicEntityRecords"></a>
+# **cleanupOrphanedDynamicEntityRecords**
+> CleanupOrphanedDynamicEntityRecords200Response cleanupOrphanedDynamicEntityRecords()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -26,13 +26,13 @@ Cleanup Orphaned Dynamic Entity Records
 
 val apiInstance = DynamicEntityApi()
 try {
-    val result : OBPv600CleanupOrphanedDynamicEntityRecords200Response = apiInstance.oBPv600CleanupOrphanedDynamicEntityRecords()
+    val result : CleanupOrphanedDynamicEntityRecords200Response = apiInstance.cleanupOrphanedDynamicEntityRecords()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityApi#oBPv600CleanupOrphanedDynamicEntityRecords")
+    println("4xx response calling DynamicEntityApi#cleanupOrphanedDynamicEntityRecords")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityApi#oBPv600CleanupOrphanedDynamicEntityRecords")
+    println("5xx response calling DynamicEntityApi#cleanupOrphanedDynamicEntityRecords")
     e.printStackTrace()
 }
 ```
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -53,17 +53,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAvailablePersonalDynamicEntities"></a>
-# **oBPv600GetAvailablePersonalDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+<a id="getAvailablePersonalDynamicEntities"></a>
+# **getAvailablePersonalDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -77,13 +77,13 @@ Get Available Personal Dynamic Entities
 
 val apiInstance = DynamicEntityApi()
 try {
-    val result : OBPv600GetAvailablePersonalDynamicEntities200Response = apiInstance.oBPv600GetAvailablePersonalDynamicEntities()
+    val result : GetAvailablePersonalDynamicEntities200Response = apiInstance.getAvailablePersonalDynamicEntities()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities")
+    println("4xx response calling DynamicEntityApi#getAvailablePersonalDynamicEntities")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityApi#oBPv600GetAvailablePersonalDynamicEntities")
+    println("5xx response calling DynamicEntityApi#getAvailablePersonalDynamicEntities")
     e.printStackTrace()
 }
 ```
@@ -93,7 +93,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -104,17 +104,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetDynamicEntityDiagnostics"></a>
-# **oBPv600GetDynamicEntityDiagnostics**
-> OBPv600GetDynamicEntityDiagnostics200Response oBPv600GetDynamicEntityDiagnostics()
+<a id="getDynamicEntityDiagnostics"></a>
+# **getDynamicEntityDiagnostics**
+> GetDynamicEntityDiagnostics200Response getDynamicEntityDiagnostics()
 
 Get Dynamic Entity Diagnostics
 
@@ -128,13 +128,13 @@ Get Dynamic Entity Diagnostics
 
 val apiInstance = DynamicEntityApi()
 try {
-    val result : OBPv600GetDynamicEntityDiagnostics200Response = apiInstance.oBPv600GetDynamicEntityDiagnostics()
+    val result : GetDynamicEntityDiagnostics200Response = apiInstance.getDynamicEntityDiagnostics()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityApi#oBPv600GetDynamicEntityDiagnostics")
+    println("4xx response calling DynamicEntityApi#getDynamicEntityDiagnostics")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityApi#oBPv600GetDynamicEntityDiagnostics")
+    println("5xx response calling DynamicEntityApi#getDynamicEntityDiagnostics")
     e.printStackTrace()
 }
 ```
@@ -144,7 +144,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -155,17 +155,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetReferenceTypes"></a>
-# **oBPv600GetReferenceTypes**
-> OBPv600GetReferenceTypes200Response oBPv600GetReferenceTypes()
+<a id="getReferenceTypes"></a>
+# **getReferenceTypes**
+> GetReferenceTypes200Response getReferenceTypes()
 
 Get Reference Types for Dynamic Entities
 
@@ -179,13 +179,13 @@ Get Reference Types for Dynamic Entities
 
 val apiInstance = DynamicEntityApi()
 try {
-    val result : OBPv600GetReferenceTypes200Response = apiInstance.oBPv600GetReferenceTypes()
+    val result : GetReferenceTypes200Response = apiInstance.getReferenceTypes()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicEntityApi#oBPv600GetReferenceTypes")
+    println("4xx response calling DynamicEntityApi#getReferenceTypes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicEntityApi#oBPv600GetReferenceTypes")
+    println("5xx response calling DynamicEntityApi#getReferenceTypes")
     e.printStackTrace()
 }
 ```
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 
@@ -206,8 +206,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

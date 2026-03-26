@@ -1,29 +1,29 @@
 # TransactionRequestAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
-| [**oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
-| [**oBPv400CreateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#oBPv400CreateTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
-| [**oBPv400CreateTransactionRequestAttributeWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400CreateTransactionRequestAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
-| [**oBPv400DeleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400DeleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
-| [**oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributeById**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
-| [**oBPv400GetTransactionRequestAttributeByIdWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
-| [**oBPv400GetTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
-| [**oBPv400GetTransactionRequestAttributes**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
-| [**oBPv400GetTransactionRequestAttributesWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400GetTransactionRequestAttributesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
-| [**oBPv400UpdateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#oBPv400UpdateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
-| [**oBPv400UpdateTransactionRequestAttributeWithHttpInfo**](TransactionRequestAttributeApi.md#oBPv400UpdateTransactionRequestAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
+| [**createOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#createOrUpdateTransactionRequestAttributeDefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
+| [**createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition |
+| [**createTransactionRequestAttribute**](TransactionRequestAttributeApi.md#createTransactionRequestAttribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
+| [**createTransactionRequestAttributeWithHttpInfo**](TransactionRequestAttributeApi.md#createTransactionRequestAttributeWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute |
+| [**deleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#deleteTransactionRequestAttributeDefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
+| [**deleteTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#deleteTransactionRequestAttributeDefinitionWithHttpInfo) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributeById**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
+| [**getTransactionRequestAttributeByIdWithHttpInfo**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeByIdWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id |
+| [**getTransactionRequestAttributeDefinition**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeDefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributeDefinitionWithHttpInfo**](TransactionRequestAttributeApi.md#getTransactionRequestAttributeDefinitionWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition |
+| [**getTransactionRequestAttributes**](TransactionRequestAttributeApi.md#getTransactionRequestAttributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
+| [**getTransactionRequestAttributesWithHttpInfo**](TransactionRequestAttributeApi.md#getTransactionRequestAttributesWithHttpInfo) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes |
+| [**updateTransactionRequestAttribute**](TransactionRequestAttributeApi.md#updateTransactionRequestAttribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
+| [**updateTransactionRequestAttributeWithHttpInfo**](TransactionRequestAttributeApi.md#updateTransactionRequestAttributeWithHttpInfo) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute |
 
 
 
-## oBPv400CreateOrUpdateTransactionRequestAttributeDefinition
+## createOrUpdateTransactionRequestAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateTransactionRequestAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Request Attribute Definition
 
@@ -43,7 +43,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -63,12 +63,12 @@ public class Example {
 
         TransactionRequestAttributeApi apiInstance = new TransactionRequestAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems result = apiInstance.oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            GetTransactionRequestAttributeDefinition200ResponseAttributesInner result = apiInstance.createOrUpdateTransactionRequestAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#createOrUpdateTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -84,11 +84,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 
 ### Authorization
@@ -107,9 +107,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo
+## createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateTransactionRequestAttributeDefinition oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateTransactionRequestAttributeDefinition createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Request Attribute Definition
 
@@ -130,7 +130,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -150,14 +150,14 @@ public class Example {
 
         TransactionRequestAttributeApi apiInstance = new TransactionRequestAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = new OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+        CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest = new CreateOrUpdateTransactionRequestAttributeDefinitionRequest(); // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> response = apiInstance.oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+            ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> response = apiInstance.createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400CreateOrUpdateTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#createOrUpdateTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -173,11 +173,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)>
 
 
 ### Authorization
@@ -197,9 +197,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropert
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateTransactionRequestAttribute
+## createTransactionRequestAttribute
 
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400CreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+> GetTransactionRequestAttributeById200Response createTransactionRequestAttribute(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Create Transaction Request Attribute
 
@@ -219,7 +219,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -241,12 +241,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
-        OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = new OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(); // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+        CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner = new CreateTransactionRequestCounterpartyRequestAttributesInner(); // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
         try {
-            OBPv400GetTransactionRequestAttributeById200Response result = apiInstance.oBPv400CreateTransactionRequestAttribute(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            GetTransactionRequestAttributeById200Response result = apiInstance.createTransactionRequestAttribute(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400CreateTransactionRequestAttribute");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#createTransactionRequestAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -264,11 +264,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 
 ### Authorization
@@ -287,9 +287,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateTransactionRequestAttributeWithHttpInfo
+## createTransactionRequestAttributeWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> oBPv400CreateTransactionRequestAttribute oBPv400CreateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+> ApiResponse<GetTransactionRequestAttributeById200Response> createTransactionRequestAttribute createTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Create Transaction Request Attribute
 
@@ -310,7 +310,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -332,14 +332,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
-        OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = new OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(); // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+        CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner = new CreateTransactionRequestCounterpartyRequestAttributesInner(); // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> response = apiInstance.oBPv400CreateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            ApiResponse<GetTransactionRequestAttributeById200Response> response = apiInstance.createTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400CreateTransactionRequestAttribute");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#createTransactionRequestAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -357,11 +357,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)>
 
 
 ### Authorization
@@ -381,9 +381,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400Ge
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteTransactionRequestAttributeDefinition
+## deleteTransactionRequestAttributeDefinition
 
-> OBPv400DeleteSystemLevelEndpointTag200Response oBPv400DeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
+> DeleteSystemLevelEndpointTag200Response deleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Transaction Request Attribute Definition
 
@@ -403,7 +403,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -425,10 +425,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            OBPv400DeleteSystemLevelEndpointTag200Response result = apiInstance.oBPv400DeleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid);
+            DeleteSystemLevelEndpointTag200Response result = apiInstance.deleteTransactionRequestAttributeDefinition(bankid, attributedefinitionid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400DeleteTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#deleteTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -448,7 +448,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
 
 
 ### Authorization
@@ -467,9 +467,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo
+## deleteTransactionRequestAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> oBPv400DeleteTransactionRequestAttributeDefinition oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
+> ApiResponse<DeleteSystemLevelEndpointTag200Response> deleteTransactionRequestAttributeDefinition deleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid)
 
 Delete Transaction Request Attribute Definition
 
@@ -490,7 +490,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -512,12 +512,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String attributedefinitionid = "attributedefinitionid_example"; // String | The ATTRIBUTEDEFINITIONID identifier
         try {
-            ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response> response = apiInstance.oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
+            ApiResponse<DeleteSystemLevelEndpointTag200Response> response = apiInstance.deleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400DeleteTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#deleteTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -537,7 +537,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)>
+ApiResponse<[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)>
 
 
 ### Authorization
@@ -557,9 +557,9 @@ ApiResponse<[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSy
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetTransactionRequestAttributeById
+## getTransactionRequestAttributeById
 
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400GetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
+> GetTransactionRequestAttributeById200Response getTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid)
 
 Get Transaction Request Attribute By Id
 
@@ -579,7 +579,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -603,10 +603,10 @@ public class Example {
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
         try {
-            OBPv400GetTransactionRequestAttributeById200Response result = apiInstance.oBPv400GetTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid);
+            GetTransactionRequestAttributeById200Response result = apiInstance.getTransactionRequestAttributeById(bankid, accountid, transactionrequestid, attributeid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeById");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -628,7 +628,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 
 ### Authorization
@@ -647,9 +647,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetTransactionRequestAttributeByIdWithHttpInfo
+## getTransactionRequestAttributeByIdWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> oBPv400GetTransactionRequestAttributeById oBPv400GetTransactionRequestAttributeByIdWithHttpInfo(bankid, accountid, transactionrequestid, attributeid)
+> ApiResponse<GetTransactionRequestAttributeById200Response> getTransactionRequestAttributeById getTransactionRequestAttributeByIdWithHttpInfo(bankid, accountid, transactionrequestid, attributeid)
 
 Get Transaction Request Attribute By Id
 
@@ -670,7 +670,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -694,12 +694,12 @@ public class Example {
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> response = apiInstance.oBPv400GetTransactionRequestAttributeByIdWithHttpInfo(bankid, accountid, transactionrequestid, attributeid);
+            ApiResponse<GetTransactionRequestAttributeById200Response> response = apiInstance.getTransactionRequestAttributeByIdWithHttpInfo(bankid, accountid, transactionrequestid, attributeid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeById");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributeById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -721,7 +721,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)>
 
 
 ### Authorization
@@ -741,9 +741,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400Ge
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetTransactionRequestAttributeDefinition
+## getTransactionRequestAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetTransactionRequestAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getTransactionRequestAttributeDefinition(bankid)
 
 Get Transaction Request Attribute Definition
 
@@ -763,7 +763,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -784,10 +784,10 @@ public class Example {
         TransactionRequestAttributeApi apiInstance = new TransactionRequestAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetTransactionRequestAttributeDefinition200Response result = apiInstance.oBPv400GetTransactionRequestAttributeDefinition(bankid);
+            GetTransactionRequestAttributeDefinition200Response result = apiInstance.getTransactionRequestAttributeDefinition(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -806,7 +806,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 
 ### Authorization
@@ -825,9 +825,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo
+## getTransactionRequestAttributeDefinitionWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetTransactionRequestAttributeDefinition oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo(bankid)
+> ApiResponse<GetTransactionRequestAttributeDefinition200Response> getTransactionRequestAttributeDefinition getTransactionRequestAttributeDefinitionWithHttpInfo(bankid)
 
 Get Transaction Request Attribute Definition
 
@@ -848,7 +848,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -869,12 +869,12 @@ public class Example {
         TransactionRequestAttributeApi apiInstance = new TransactionRequestAttributeApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> response = apiInstance.oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo(bankid);
+            ApiResponse<GetTransactionRequestAttributeDefinition200Response> response = apiInstance.getTransactionRequestAttributeDefinitionWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributeDefinition");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributeDefinition");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -893,7 +893,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)>
 
 
 ### Authorization
@@ -913,9 +913,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBP
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetTransactionRequestAttributes
+## getTransactionRequestAttributes
 
-> OBPv400GetTransactionRequestAttributes200Response oBPv400GetTransactionRequestAttributes(bankid, accountid, transactionrequestid)
+> GetTransactionRequestAttributes200Response getTransactionRequestAttributes(bankid, accountid, transactionrequestid)
 
 Get Transaction Request Attributes
 
@@ -935,7 +935,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -958,10 +958,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            OBPv400GetTransactionRequestAttributes200Response result = apiInstance.oBPv400GetTransactionRequestAttributes(bankid, accountid, transactionrequestid);
+            GetTransactionRequestAttributes200Response result = apiInstance.getTransactionRequestAttributes(bankid, accountid, transactionrequestid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributes");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -982,7 +982,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
 
 
 ### Authorization
@@ -1001,9 +1001,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetTransactionRequestAttributesWithHttpInfo
+## getTransactionRequestAttributesWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributes200Response> oBPv400GetTransactionRequestAttributes oBPv400GetTransactionRequestAttributesWithHttpInfo(bankid, accountid, transactionrequestid)
+> ApiResponse<GetTransactionRequestAttributes200Response> getTransactionRequestAttributes getTransactionRequestAttributesWithHttpInfo(bankid, accountid, transactionrequestid)
 
 Get Transaction Request Attributes
 
@@ -1024,7 +1024,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1047,12 +1047,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributes200Response> response = apiInstance.oBPv400GetTransactionRequestAttributesWithHttpInfo(bankid, accountid, transactionrequestid);
+            ApiResponse<GetTransactionRequestAttributes200Response> response = apiInstance.getTransactionRequestAttributesWithHttpInfo(bankid, accountid, transactionrequestid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400GetTransactionRequestAttributes");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#getTransactionRequestAttributes");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1073,7 +1073,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)>
 
 
 ### Authorization
@@ -1093,9 +1093,9 @@ ApiResponse<[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTr
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateTransactionRequestAttribute
+## updateTransactionRequestAttribute
 
-> OBPv400GetTransactionRequestAttributeById200Response oBPv400UpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+> GetTransactionRequestAttributeById200Response updateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Update Transaction Request Attribute
 
@@ -1115,7 +1115,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1138,12 +1138,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
-        OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = new OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(); // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+        CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner = new CreateTransactionRequestCounterpartyRequestAttributesInner(); // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
         try {
-            OBPv400GetTransactionRequestAttributeById200Response result = apiInstance.oBPv400UpdateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            GetTransactionRequestAttributeById200Response result = apiInstance.updateTransactionRequestAttribute(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400UpdateTransactionRequestAttribute");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#updateTransactionRequestAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1162,11 +1162,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
 | **attributeid** | **String**| The ATTRIBUTEID identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 
 ### Authorization
@@ -1185,9 +1185,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateTransactionRequestAttributeWithHttpInfo
+## updateTransactionRequestAttributeWithHttpInfo
 
-> ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> oBPv400UpdateTransactionRequestAttribute oBPv400UpdateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+> ApiResponse<GetTransactionRequestAttributeById200Response> updateTransactionRequestAttribute updateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner)
 
 Update Transaction Request Attribute
 
@@ -1208,7 +1208,7 @@ import com.openbankproject.api.TransactionRequestAttributeApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1231,14 +1231,14 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String transactionrequestid = "transactionrequestid_example"; // String | The TRANSACTIONREQUESTID identifier
         String attributeid = "attributeid_example"; // String | The ATTRIBUTEID identifier
-        OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = new OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(); // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+        CreateTransactionRequestCounterpartyRequestAttributesInner createTransactionRequestCounterpartyRequestAttributesInner = new CreateTransactionRequestCounterpartyRequestAttributesInner(); // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
         try {
-            ApiResponse<OBPv400GetTransactionRequestAttributeById200Response> response = apiInstance.oBPv400UpdateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems);
+            ApiResponse<GetTransactionRequestAttributeById200Response> response = apiInstance.updateTransactionRequestAttributeWithHttpInfo(bankid, accountid, transactionrequestid, attributeid, createTransactionRequestCounterpartyRequestAttributesInner);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling TransactionRequestAttributeApi#oBPv400UpdateTransactionRequestAttribute");
+            System.err.println("Exception when calling TransactionRequestAttributeApi#updateTransactionRequestAttribute");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1257,11 +1257,11 @@ public class Example {
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **transactionrequestid** | **String**| The TRANSACTIONREQUESTID identifier | |
 | **attributeid** | **String**| The ATTRIBUTEID identifier | |
-| **obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md)| Request body | |
+| **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)>
+ApiResponse<[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)>
 
 
 ### Authorization

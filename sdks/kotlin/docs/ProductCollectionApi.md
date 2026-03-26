@@ -1,16 +1,16 @@
 # ProductCollectionApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateProductCollection**](ProductCollectionApi.md#oBPv310CreateProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
-| [**oBPv310GetProductCollection**](ProductCollectionApi.md#oBPv310GetProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
+| [**createProductCollection**](ProductCollectionApi.md#createProductCollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection |
+| [**getProductCollection**](ProductCollectionApi.md#getProductCollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection |
 
 
-<a id="oBPv310CreateProductCollection"></a>
-# **oBPv310CreateProductCollection**
-> OBPv310CreateProductCollection200Response oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+<a id="createProductCollection"></a>
+# **createProductCollection**
+> CreateProductCollection200Response createProductCollection(bankid, collectioncode, createProductCollectionRequest)
 
 Create Product Collection
 
@@ -25,15 +25,15 @@ Create Product Collection
 val apiInstance = ProductCollectionApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val collectioncode : kotlin.String = collectioncode_example // kotlin.String | The COLLECTIONCODE identifier
-val obPv310CreateProductCollectionRequest : OBPv310CreateProductCollectionRequest = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} // OBPv310CreateProductCollectionRequest | Request body
+val createProductCollectionRequest : CreateProductCollectionRequest = {"type":"object","properties":{"parent_product_code":{"type":"string"},"children_product_codes":{"type":"array","items":{"type":"string"}}}} // CreateProductCollectionRequest | Request body
 try {
-    val result : OBPv310CreateProductCollection200Response = apiInstance.oBPv310CreateProductCollection(bankid, collectioncode, obPv310CreateProductCollectionRequest)
+    val result : CreateProductCollection200Response = apiInstance.createProductCollection(bankid, collectioncode, createProductCollectionRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductCollectionApi#oBPv310CreateProductCollection")
+    println("4xx response calling ProductCollectionApi#createProductCollection")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductCollectionApi#oBPv310CreateProductCollection")
+    println("5xx response calling ProductCollectionApi#createProductCollection")
     e.printStackTrace()
 }
 ```
@@ -43,11 +43,11 @@ try {
 | **collectioncode** | **kotlin.String**| The COLLECTIONCODE identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md)| Request body | |
+| **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -58,17 +58,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv310GetProductCollection"></a>
-# **oBPv310GetProductCollection**
-> OBPv310GetProductCollection200Response oBPv310GetProductCollection(bankid, collectioncode)
+<a id="getProductCollection"></a>
+# **getProductCollection**
+> GetProductCollection200Response getProductCollection(bankid, collectioncode)
 
 Get Product Collection
 
@@ -84,13 +84,13 @@ val apiInstance = ProductCollectionApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val collectioncode : kotlin.String = collectioncode_example // kotlin.String | The COLLECTIONCODE identifier
 try {
-    val result : OBPv310GetProductCollection200Response = apiInstance.oBPv310GetProductCollection(bankid, collectioncode)
+    val result : GetProductCollection200Response = apiInstance.getProductCollection(bankid, collectioncode)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProductCollectionApi#oBPv310GetProductCollection")
+    println("4xx response calling ProductCollectionApi#getProductCollection")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProductCollectionApi#oBPv310GetProductCollection")
+    println("5xx response calling ProductCollectionApi#getProductCollection")
     e.printStackTrace()
 }
 ```
@@ -103,7 +103,7 @@ try {
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 
@@ -114,8 +114,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

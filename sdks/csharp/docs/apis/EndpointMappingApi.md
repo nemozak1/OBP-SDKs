@@ -1,23 +1,23 @@
 # OpenBankProject.Api.EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**OBPv400CreateEndpointMapping**](EndpointMappingApi.md#obpv400createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**OBPv400DeleteBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**OBPv400DeleteEndpointMapping**](EndpointMappingApi.md#obpv400deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**OBPv400GetAllBankLevelEndpointMappings**](EndpointMappingApi.md#obpv400getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**OBPv400GetAllEndpointMappings**](EndpointMappingApi.md#obpv400getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**OBPv400GetBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**OBPv400GetEndpointMapping**](EndpointMappingApi.md#obpv400getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**OBPv400UpdateBankLevelEndpointMapping**](EndpointMappingApi.md#obpv400updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**OBPv400UpdateEndpointMapping**](EndpointMappingApi.md#obpv400updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**CreateBankLevelEndpointMapping**](EndpointMappingApi.md#createbanklevelendpointmapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**CreateEndpointMapping**](EndpointMappingApi.md#createendpointmapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**DeleteBankLevelEndpointMapping**](EndpointMappingApi.md#deletebanklevelendpointmapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**DeleteEndpointMapping**](EndpointMappingApi.md#deleteendpointmapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**GetAllBankLevelEndpointMappings**](EndpointMappingApi.md#getallbanklevelendpointmappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**GetAllEndpointMappings**](EndpointMappingApi.md#getallendpointmappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**GetBankLevelEndpointMapping**](EndpointMappingApi.md#getbanklevelendpointmapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**GetEndpointMapping**](EndpointMappingApi.md#getendpointmapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**UpdateBankLevelEndpointMapping**](EndpointMappingApi.md#updatebanklevelendpointmapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**UpdateEndpointMapping**](EndpointMappingApi.md#updateendpointmapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
 
-<a id="obpv400createbanklevelendpointmapping"></a>
-# **OBPv400CreateBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400CreateBankLevelEndpointMapping (string bankid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+<a id="createbanklevelendpointmapping"></a>
+# **CreateBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner CreateBankLevelEndpointMapping (string bankid, CreateEndpointMappingRequest createEndpointMappingRequest)
 
 Create Bank Level Endpoint Mapping
 
@@ -29,11 +29,11 @@ Create Bank Level Endpoint Mapping
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -54,9 +54,9 @@ Create Bank Level Endpoint Mapping
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createendpointmapping"></a>
-# **OBPv400CreateEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400CreateEndpointMapping (OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+<a id="createendpointmapping"></a>
+# **CreateEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner CreateEndpointMapping (CreateEndpointMappingRequest createEndpointMappingRequest)
 
 Create Endpoint Mapping
 
@@ -67,11 +67,11 @@ Create Endpoint Mapping
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -91,9 +91,9 @@ Create Endpoint Mapping
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletebanklevelendpointmapping"></a>
-# **OBPv400DeleteBankLevelEndpointMapping**
-> void OBPv400DeleteBankLevelEndpointMapping (string bankid, string endpointmappingid)
+<a id="deletebanklevelendpointmapping"></a>
+# **DeleteBankLevelEndpointMapping**
+> void DeleteBankLevelEndpointMapping (string bankid, string endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -130,9 +130,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deleteendpointmapping"></a>
-# **OBPv400DeleteEndpointMapping**
-> void OBPv400DeleteEndpointMapping (string endpointmappingid)
+<a id="deleteendpointmapping"></a>
+# **DeleteEndpointMapping**
+> void DeleteEndpointMapping (string endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -167,9 +167,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallbanklevelendpointmappings"></a>
-# **OBPv400GetAllBankLevelEndpointMappings**
-> OBPv400GetAllEndpointMappings200Response OBPv400GetAllBankLevelEndpointMappings (string bankid)
+<a id="getallbanklevelendpointmappings"></a>
+# **GetAllBankLevelEndpointMappings**
+> GetAllEndpointMappings200Response GetAllBankLevelEndpointMappings (string bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -184,7 +184,7 @@ Get all Bank Level Endpoint Mappings
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -205,9 +205,9 @@ Get all Bank Level Endpoint Mappings
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getallendpointmappings"></a>
-# **OBPv400GetAllEndpointMappings**
-> OBPv400GetAllEndpointMappings200Response OBPv400GetAllEndpointMappings ()
+<a id="getallendpointmappings"></a>
+# **GetAllEndpointMappings**
+> GetAllEndpointMappings200Response GetAllEndpointMappings ()
 
 Get all Endpoint Mappings
 
@@ -218,7 +218,7 @@ Get all Endpoint Mappings
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -238,9 +238,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbanklevelendpointmapping"></a>
-# **OBPv400GetBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400GetBankLevelEndpointMapping (string bankid, string endpointmappingid)
+<a id="getbanklevelendpointmapping"></a>
+# **GetBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner GetBankLevelEndpointMapping (string bankid, string endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -256,7 +256,7 @@ Get Bank Level Endpoint Mapping
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -277,9 +277,9 @@ Get Bank Level Endpoint Mapping
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getendpointmapping"></a>
-# **OBPv400GetEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400GetEndpointMapping (string endpointmappingid)
+<a id="getendpointmapping"></a>
+# **GetEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner GetEndpointMapping (string endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -294,7 +294,7 @@ Get Endpoint Mapping by Id
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -314,9 +314,9 @@ Get Endpoint Mapping by Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatebanklevelendpointmapping"></a>
-# **OBPv400UpdateBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400UpdateBankLevelEndpointMapping (string bankid, string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+<a id="updatebanklevelendpointmapping"></a>
+# **UpdateBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner UpdateBankLevelEndpointMapping (string bankid, string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
 
 Update Bank Level Endpoint Mapping
 
@@ -329,11 +329,11 @@ Update Bank Level Endpoint Mapping
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **endpointmappingid** | **string** | The ENDPOINTMAPPINGID identifier |  |
-| **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -354,9 +354,9 @@ Update Bank Level Endpoint Mapping
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updateendpointmapping"></a>
-# **OBPv400UpdateEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems OBPv400UpdateEndpointMapping (string endpointmappingid, OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest)
+<a id="updateendpointmapping"></a>
+# **UpdateEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner UpdateEndpointMapping (string endpointmappingid, CreateEndpointMappingRequest createEndpointMappingRequest)
 
 Update Endpoint Mapping
 
@@ -368,11 +368,11 @@ Update Endpoint Mapping
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **endpointmappingid** | **string** | The ENDPOINTMAPPINGID identifier |  |
-| **oBPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

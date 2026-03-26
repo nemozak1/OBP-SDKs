@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,59 +15,59 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400CreateEndpointMappingRequest,
-  OBPv400GetAllEndpointMappings200Response,
-  OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems,
+  CreateEndpointMappingRequest,
+  GetAllEndpointMappings200Response,
+  GetAllEndpointMappings200ResponseEndpointMappingsInner,
 } from '../models/index';
 import {
-    OBPv400CreateEndpointMappingRequestFromJSON,
-    OBPv400CreateEndpointMappingRequestToJSON,
-    OBPv400GetAllEndpointMappings200ResponseFromJSON,
-    OBPv400GetAllEndpointMappings200ResponseToJSON,
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON,
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsToJSON,
+    CreateEndpointMappingRequestFromJSON,
+    CreateEndpointMappingRequestToJSON,
+    GetAllEndpointMappings200ResponseFromJSON,
+    GetAllEndpointMappings200ResponseToJSON,
+    GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON,
+    GetAllEndpointMappings200ResponseEndpointMappingsInnerToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateBankLevelEndpointMappingRequest {
+export interface CreateBankLevelEndpointMappingRequest {
     bankid: string;
-    oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest;
+    createEndpointMappingRequest: CreateEndpointMappingRequest;
 }
 
-export interface OBPv400CreateEndpointMappingOperationRequest {
-    oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest;
+export interface CreateEndpointMappingOperationRequest {
+    createEndpointMappingRequest: CreateEndpointMappingRequest;
 }
 
-export interface OBPv400DeleteBankLevelEndpointMappingRequest {
-    bankid: string;
-    endpointmappingid: string;
-}
-
-export interface OBPv400DeleteEndpointMappingRequest {
-    endpointmappingid: string;
-}
-
-export interface OBPv400GetAllBankLevelEndpointMappingsRequest {
-    bankid: string;
-}
-
-export interface OBPv400GetBankLevelEndpointMappingRequest {
+export interface DeleteBankLevelEndpointMappingRequest {
     bankid: string;
     endpointmappingid: string;
 }
 
-export interface OBPv400GetEndpointMappingRequest {
+export interface DeleteEndpointMappingRequest {
     endpointmappingid: string;
 }
 
-export interface OBPv400UpdateBankLevelEndpointMappingRequest {
+export interface GetAllBankLevelEndpointMappingsRequest {
+    bankid: string;
+}
+
+export interface GetBankLevelEndpointMappingRequest {
     bankid: string;
     endpointmappingid: string;
-    oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest;
 }
 
-export interface OBPv400UpdateEndpointMappingRequest {
+export interface GetEndpointMappingRequest {
     endpointmappingid: string;
-    oBPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest;
+}
+
+export interface UpdateBankLevelEndpointMappingRequest {
+    bankid: string;
+    endpointmappingid: string;
+    createEndpointMappingRequest: CreateEndpointMappingRequest;
+}
+
+export interface UpdateEndpointMappingRequest {
+    endpointmappingid: string;
+    createEndpointMappingRequest: CreateEndpointMappingRequest;
 }
 
 /**
@@ -76,20 +76,20 @@ export interface OBPv400UpdateEndpointMappingRequest {
 export class EndpointMappingApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateBankLevelEndpointMapping without sending the request
+     * Creates request options for createBankLevelEndpointMapping without sending the request
      */
-    async oBPv400CreateBankLevelEndpointMappingRequestOpts(requestParameters: OBPv400CreateBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async createBankLevelEndpointMappingRequestOpts(requestParameters: CreateBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateBankLevelEndpointMapping().'
+                'Required parameter "bankid" was null or undefined when calling createBankLevelEndpointMapping().'
             );
         }
 
-        if (requestParameters['oBPv400CreateEndpointMappingRequest'] == null) {
+        if (requestParameters['createEndpointMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateEndpointMappingRequest',
-                'Required parameter "oBPv400CreateEndpointMappingRequest" was null or undefined when calling oBPv400CreateBankLevelEndpointMapping().'
+                'createEndpointMappingRequest',
+                'Required parameter "createEndpointMappingRequest" was null or undefined when calling createBankLevelEndpointMapping().'
             );
         }
 
@@ -109,7 +109,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -121,7 +121,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateEndpointMappingRequestToJSON(requestParameters['oBPv400CreateEndpointMappingRequest']),
+            body: CreateEndpointMappingRequestToJSON(requestParameters['createEndpointMappingRequest']),
         };
     }
 
@@ -129,30 +129,30 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Create Bank Level Endpoint Mapping
      */
-    async oBPv400CreateBankLevelEndpointMappingRaw(requestParameters: OBPv400CreateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400CreateBankLevelEndpointMappingRequestOpts(requestParameters);
+    async createBankLevelEndpointMappingRaw(requestParameters: CreateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.createBankLevelEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Create Bank Level Endpoint Mapping
      */
-    async oBPv400CreateBankLevelEndpointMapping(requestParameters: OBPv400CreateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400CreateBankLevelEndpointMappingRaw(requestParameters, initOverrides);
+    async createBankLevelEndpointMapping(requestParameters: CreateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.createBankLevelEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateEndpointMapping without sending the request
+     * Creates request options for createEndpointMapping without sending the request
      */
-    async oBPv400CreateEndpointMappingRequestOpts(requestParameters: OBPv400CreateEndpointMappingOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400CreateEndpointMappingRequest'] == null) {
+    async createEndpointMappingRequestOpts(requestParameters: CreateEndpointMappingOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createEndpointMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateEndpointMappingRequest',
-                'Required parameter "oBPv400CreateEndpointMappingRequest" was null or undefined when calling oBPv400CreateEndpointMapping().'
+                'createEndpointMappingRequest',
+                'Required parameter "createEndpointMappingRequest" was null or undefined when calling createEndpointMapping().'
             );
         }
 
@@ -172,7 +172,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,7 +183,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateEndpointMappingRequestToJSON(requestParameters['oBPv400CreateEndpointMappingRequest']),
+            body: CreateEndpointMappingRequestToJSON(requestParameters['createEndpointMappingRequest']),
         };
     }
 
@@ -191,37 +191,37 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Create Endpoint Mapping
      */
-    async oBPv400CreateEndpointMappingRaw(requestParameters: OBPv400CreateEndpointMappingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400CreateEndpointMappingRequestOpts(requestParameters);
+    async createEndpointMappingRaw(requestParameters: CreateEndpointMappingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.createEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Create Endpoint Mapping
      */
-    async oBPv400CreateEndpointMapping(requestParameters: OBPv400CreateEndpointMappingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400CreateEndpointMappingRaw(requestParameters, initOverrides);
+    async createEndpointMapping(requestParameters: CreateEndpointMappingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.createEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteBankLevelEndpointMapping without sending the request
+     * Creates request options for deleteBankLevelEndpointMapping without sending the request
      */
-    async oBPv400DeleteBankLevelEndpointMappingRequestOpts(requestParameters: OBPv400DeleteBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async deleteBankLevelEndpointMappingRequestOpts(requestParameters: DeleteBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankLevelEndpointMapping().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankLevelEndpointMapping().'
             );
         }
 
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400DeleteBankLevelEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling deleteBankLevelEndpointMapping().'
             );
         }
 
@@ -239,7 +239,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -259,8 +259,8 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Endpoint Mapping
      */
-    async oBPv400DeleteBankLevelEndpointMappingRaw(requestParameters: OBPv400DeleteBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankLevelEndpointMappingRequestOpts(requestParameters);
+    async deleteBankLevelEndpointMappingRaw(requestParameters: DeleteBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankLevelEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -270,18 +270,18 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Endpoint Mapping
      */
-    async oBPv400DeleteBankLevelEndpointMapping(requestParameters: OBPv400DeleteBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankLevelEndpointMappingRaw(requestParameters, initOverrides);
+    async deleteBankLevelEndpointMapping(requestParameters: DeleteBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankLevelEndpointMappingRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400DeleteEndpointMapping without sending the request
+     * Creates request options for deleteEndpointMapping without sending the request
      */
-    async oBPv400DeleteEndpointMappingRequestOpts(requestParameters: OBPv400DeleteEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async deleteEndpointMappingRequestOpts(requestParameters: DeleteEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400DeleteEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling deleteEndpointMapping().'
             );
         }
 
@@ -299,7 +299,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -318,8 +318,8 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Delete a Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Endpoint Mapping
      */
-    async oBPv400DeleteEndpointMappingRaw(requestParameters: OBPv400DeleteEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteEndpointMappingRequestOpts(requestParameters);
+    async deleteEndpointMappingRaw(requestParameters: DeleteEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -329,18 +329,18 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Delete a Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Endpoint Mapping
      */
-    async oBPv400DeleteEndpointMapping(requestParameters: OBPv400DeleteEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteEndpointMappingRaw(requestParameters, initOverrides);
+    async deleteEndpointMapping(requestParameters: DeleteEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteEndpointMappingRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetAllBankLevelEndpointMappings without sending the request
+     * Creates request options for getAllBankLevelEndpointMappings without sending the request
      */
-    async oBPv400GetAllBankLevelEndpointMappingsRequestOpts(requestParameters: OBPv400GetAllBankLevelEndpointMappingsRequest): Promise<runtime.RequestOpts> {
+    async getAllBankLevelEndpointMappingsRequestOpts(requestParameters: GetAllBankLevelEndpointMappingsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetAllBankLevelEndpointMappings().'
+                'Required parameter "bankid" was null or undefined when calling getAllBankLevelEndpointMappings().'
             );
         }
 
@@ -358,7 +358,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -377,26 +377,26 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get all Bank Level Endpoint Mappings
      */
-    async oBPv400GetAllBankLevelEndpointMappingsRaw(requestParameters: OBPv400GetAllBankLevelEndpointMappingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200Response>> {
-        const requestOptions = await this.oBPv400GetAllBankLevelEndpointMappingsRequestOpts(requestParameters);
+    async getAllBankLevelEndpointMappingsRaw(requestParameters: GetAllBankLevelEndpointMappingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200Response>> {
+        const requestOptions = await this.getAllBankLevelEndpointMappingsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get all Bank Level Endpoint Mappings
      */
-    async oBPv400GetAllBankLevelEndpointMappings(requestParameters: OBPv400GetAllBankLevelEndpointMappingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200Response> {
-        const response = await this.oBPv400GetAllBankLevelEndpointMappingsRaw(requestParameters, initOverrides);
+    async getAllBankLevelEndpointMappings(requestParameters: GetAllBankLevelEndpointMappingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200Response> {
+        const response = await this.getAllBankLevelEndpointMappingsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllEndpointMappings without sending the request
+     * Creates request options for getAllEndpointMappings without sending the request
      */
-    async oBPv400GetAllEndpointMappingsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllEndpointMappingsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -411,7 +411,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -429,37 +429,37 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get all Endpoint Mappings
      */
-    async oBPv400GetAllEndpointMappingsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200Response>> {
-        const requestOptions = await this.oBPv400GetAllEndpointMappingsRequestOpts();
+    async getAllEndpointMappingsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200Response>> {
+        const requestOptions = await this.getAllEndpointMappingsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get all Endpoint Mappings
      */
-    async oBPv400GetAllEndpointMappings(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200Response> {
-        const response = await this.oBPv400GetAllEndpointMappingsRaw(initOverrides);
+    async getAllEndpointMappings(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200Response> {
+        const response = await this.getAllEndpointMappingsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetBankLevelEndpointMapping without sending the request
+     * Creates request options for getBankLevelEndpointMapping without sending the request
      */
-    async oBPv400GetBankLevelEndpointMappingRequestOpts(requestParameters: OBPv400GetBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelEndpointMappingRequestOpts(requestParameters: GetBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankLevelEndpointMapping().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelEndpointMapping().'
             );
         }
 
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400GetBankLevelEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling getBankLevelEndpointMapping().'
             );
         }
 
@@ -477,7 +477,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -497,30 +497,30 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get Bank Level Endpoint Mapping
      */
-    async oBPv400GetBankLevelEndpointMappingRaw(requestParameters: OBPv400GetBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400GetBankLevelEndpointMappingRequestOpts(requestParameters);
+    async getBankLevelEndpointMappingRaw(requestParameters: GetBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.getBankLevelEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get Bank Level Endpoint Mapping
      */
-    async oBPv400GetBankLevelEndpointMapping(requestParameters: OBPv400GetBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400GetBankLevelEndpointMappingRaw(requestParameters, initOverrides);
+    async getBankLevelEndpointMapping(requestParameters: GetBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.getBankLevelEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetEndpointMapping without sending the request
+     * Creates request options for getEndpointMapping without sending the request
      */
-    async oBPv400GetEndpointMappingRequestOpts(requestParameters: OBPv400GetEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async getEndpointMappingRequestOpts(requestParameters: GetEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400GetEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling getEndpointMapping().'
             );
         }
 
@@ -538,7 +538,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -557,44 +557,44 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get Endpoint Mapping by Id
      */
-    async oBPv400GetEndpointMappingRaw(requestParameters: OBPv400GetEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400GetEndpointMappingRequestOpts(requestParameters);
+    async getEndpointMappingRaw(requestParameters: GetEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.getEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Get Endpoint Mapping by Id
      */
-    async oBPv400GetEndpointMapping(requestParameters: OBPv400GetEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400GetEndpointMappingRaw(requestParameters, initOverrides);
+    async getEndpointMapping(requestParameters: GetEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.getEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateBankLevelEndpointMapping without sending the request
+     * Creates request options for updateBankLevelEndpointMapping without sending the request
      */
-    async oBPv400UpdateBankLevelEndpointMappingRequestOpts(requestParameters: OBPv400UpdateBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async updateBankLevelEndpointMappingRequestOpts(requestParameters: UpdateBankLevelEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateBankLevelEndpointMapping().'
+                'Required parameter "bankid" was null or undefined when calling updateBankLevelEndpointMapping().'
             );
         }
 
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400UpdateBankLevelEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling updateBankLevelEndpointMapping().'
             );
         }
 
-        if (requestParameters['oBPv400CreateEndpointMappingRequest'] == null) {
+        if (requestParameters['createEndpointMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateEndpointMappingRequest',
-                'Required parameter "oBPv400CreateEndpointMappingRequest" was null or undefined when calling oBPv400UpdateBankLevelEndpointMapping().'
+                'createEndpointMappingRequest',
+                'Required parameter "createEndpointMappingRequest" was null or undefined when calling updateBankLevelEndpointMapping().'
             );
         }
 
@@ -614,7 +614,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -627,7 +627,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateEndpointMappingRequestToJSON(requestParameters['oBPv400CreateEndpointMappingRequest']),
+            body: CreateEndpointMappingRequestToJSON(requestParameters['createEndpointMappingRequest']),
         };
     }
 
@@ -635,37 +635,37 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Update Bank Level Endpoint Mapping
      */
-    async oBPv400UpdateBankLevelEndpointMappingRaw(requestParameters: OBPv400UpdateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400UpdateBankLevelEndpointMappingRequestOpts(requestParameters);
+    async updateBankLevelEndpointMappingRaw(requestParameters: UpdateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.updateBankLevelEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Update Bank Level Endpoint Mapping
      */
-    async oBPv400UpdateBankLevelEndpointMapping(requestParameters: OBPv400UpdateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400UpdateBankLevelEndpointMappingRaw(requestParameters, initOverrides);
+    async updateBankLevelEndpointMapping(requestParameters: UpdateBankLevelEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.updateBankLevelEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateEndpointMapping without sending the request
+     * Creates request options for updateEndpointMapping without sending the request
      */
-    async oBPv400UpdateEndpointMappingRequestOpts(requestParameters: OBPv400UpdateEndpointMappingRequest): Promise<runtime.RequestOpts> {
+    async updateEndpointMappingRequestOpts(requestParameters: UpdateEndpointMappingRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['endpointmappingid'] == null) {
             throw new runtime.RequiredError(
                 'endpointmappingid',
-                'Required parameter "endpointmappingid" was null or undefined when calling oBPv400UpdateEndpointMapping().'
+                'Required parameter "endpointmappingid" was null or undefined when calling updateEndpointMapping().'
             );
         }
 
-        if (requestParameters['oBPv400CreateEndpointMappingRequest'] == null) {
+        if (requestParameters['createEndpointMappingRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateEndpointMappingRequest',
-                'Required parameter "oBPv400CreateEndpointMappingRequest" was null or undefined when calling oBPv400UpdateEndpointMapping().'
+                'createEndpointMappingRequest',
+                'Required parameter "createEndpointMappingRequest" was null or undefined when calling updateEndpointMapping().'
             );
         }
 
@@ -685,7 +685,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -697,7 +697,7 @@ export class EndpointMappingApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateEndpointMappingRequestToJSON(requestParameters['oBPv400CreateEndpointMappingRequest']),
+            body: CreateEndpointMappingRequestToJSON(requestParameters['createEndpointMappingRequest']),
         };
     }
 
@@ -705,19 +705,19 @@ export class EndpointMappingApi extends runtime.BaseAPI {
      * <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Update Endpoint Mapping
      */
-    async oBPv400UpdateEndpointMappingRaw(requestParameters: OBPv400UpdateEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> {
-        const requestOptions = await this.oBPv400UpdateEndpointMappingRequestOpts(requestParameters);
+    async updateEndpointMappingRaw(requestParameters: UpdateEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner>> {
+        const requestOptions = await this.updateEndpointMappingRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllEndpointMappings200ResponseEndpointMappingsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
      * Update Endpoint Mapping
      */
-    async oBPv400UpdateEndpointMapping(requestParameters: OBPv400UpdateEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> {
-        const response = await this.oBPv400UpdateEndpointMappingRaw(requestParameters, initOverrides);
+    async updateEndpointMapping(requestParameters: UpdateEndpointMappingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllEndpointMappings200ResponseEndpointMappingsInner> {
+        const response = await this.updateEndpointMappingRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

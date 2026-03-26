@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_create_user_with_account_access_by_id**](OwnerViewRequiredApi.md#o_bpv5_1_0_create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-[**o_bpv5_1_0_grant_user_access_to_view_by_id**](OwnerViewRequiredApi.md#o_bpv5_1_0_grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-[**o_bpv5_1_0_revoke_user_access_to_view_by_id**](OwnerViewRequiredApi.md#o_bpv5_1_0_revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+[**create_user_with_account_access_by_id**](OwnerViewRequiredApi.md#create_user_with_account_access_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**grant_user_access_to_view_by_id**](OwnerViewRequiredApi.md#grant_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+[**revoke_user_access_to_view_by_id**](OwnerViewRequiredApi.md#revoke_user_access_to_view_by_id) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
 
 
-# **o_bpv5_1_0_create_user_with_account_access_by_id**
-> OBPv510CreateUserWithAccountAccessById200Response o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
+# **create_user_with_account_access_by_id**
+> CreateUserWithAccountAccessById200Response create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
 
 Create (DAuth) User with Account Access
 
@@ -224,8 +224,8 @@ Each parameter MUST NOT appear more than once per request.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response import OBPv510CreateUserWithAccountAccessById200Response
-from obp_python.models.obpv510_create_user_with_account_access_by_id_request import OBPv510CreateUserWithAccountAccessByIdRequest
+from obp_python.models.create_user_with_account_access_by_id200_response import CreateUserWithAccountAccessById200Response
+from obp_python.models.create_user_with_account_access_by_id_request import CreateUserWithAccountAccessByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -261,15 +261,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # OBPv510CreateUserWithAccountAccessByIdRequest | Request body
+    create_user_with_account_access_by_id_request = {"type":"object","properties":{"views":{"type":"array","items":{"type":"object","properties":{"is_system":{"type":"boolean"},"view_id":{"type":"string"}}}},"provider":{"type":"string"},"username":{"type":"string"}}} # CreateUserWithAccountAccessByIdRequest | Request body
 
     try:
         # Create (DAuth) User with Account Access
-        api_response = api_instance.o_bpv5_1_0_create_user_with_account_access_by_id(bankid, accountid, viewid, obpv510_create_user_with_account_access_by_id_request)
-        print("The response of OwnerViewRequiredApi->o_bpv5_1_0_create_user_with_account_access_by_id:\n")
+        api_response = api_instance.create_user_with_account_access_by_id(bankid, accountid, viewid, create_user_with_account_access_by_id_request)
+        print("The response of OwnerViewRequiredApi->create_user_with_account_access_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OwnerViewRequiredApi->o_bpv5_1_0_create_user_with_account_access_by_id: %s\n" % e)
+        print("Exception when calling OwnerViewRequiredApi->create_user_with_account_access_by_id: %s\n" % e)
 ```
 
 
@@ -282,11 +282,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_create_user_with_account_access_by_id_request** | [**OBPv510CreateUserWithAccountAccessByIdRequest**](OBPv510CreateUserWithAccountAccessByIdRequest.md)| Request body | 
+ **create_user_with_account_access_by_id_request** | [**CreateUserWithAccountAccessByIdRequest**](CreateUserWithAccountAccessByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200Response**](OBPv510CreateUserWithAccountAccessById200Response.md)
+[**CreateUserWithAccountAccessById200Response**](CreateUserWithAccountAccessById200Response.md)
 
 ### Authorization
 
@@ -307,8 +307,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_grant_user_access_to_view_by_id**
-> OBPv510CreateUserWithAccountAccessById200ResponseHead o_bpv5_1_0_grant_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
+# **grant_user_access_to_view_by_id**
+> CreateUserWithAccountAccessById200ResponseHead grant_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
 
 Grant User access to View
 
@@ -437,8 +437,8 @@ This operation includes:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_user_with_account_access_by_id200_response_head import OBPv510CreateUserWithAccountAccessById200ResponseHead
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id_request import OBPv510RevokeUserAccessToViewByIdRequest
+from obp_python.models.create_user_with_account_access_by_id200_response_head import CreateUserWithAccountAccessById200ResponseHead
+from obp_python.models.revoke_user_access_to_view_by_id_request import RevokeUserAccessToViewByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -474,15 +474,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_revoke_user_access_to_view_by_id_request = {type=object, properties={view_id={type=string}, user_id={type=string}}} # OBPv510RevokeUserAccessToViewByIdRequest | Request body
+    revoke_user_access_to_view_by_id_request = {type=object, properties={view_id={type=string}, user_id={type=string}}} # RevokeUserAccessToViewByIdRequest | Request body
 
     try:
         # Grant User access to View
-        api_response = api_instance.o_bpv5_1_0_grant_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
-        print("The response of OwnerViewRequiredApi->o_bpv5_1_0_grant_user_access_to_view_by_id:\n")
+        api_response = api_instance.grant_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
+        print("The response of OwnerViewRequiredApi->grant_user_access_to_view_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OwnerViewRequiredApi->o_bpv5_1_0_grant_user_access_to_view_by_id: %s\n" % e)
+        print("Exception when calling OwnerViewRequiredApi->grant_user_access_to_view_by_id: %s\n" % e)
 ```
 
 
@@ -495,11 +495,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_revoke_user_access_to_view_by_id_request** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md)| Request body | 
+ **revoke_user_access_to_view_by_id_request** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200ResponseHead**](OBPv510CreateUserWithAccountAccessById200ResponseHead.md)
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
 
 ### Authorization
 
@@ -520,8 +520,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_revoke_user_access_to_view_by_id**
-> OBPv510RevokeUserAccessToViewById200Response o_bpv5_1_0_revoke_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
+# **revoke_user_access_to_view_by_id**
+> RevokeUserAccessToViewById200Response revoke_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
 
 Revoke User access to View
 
@@ -546,8 +546,8 @@ Revoke User access to View
 
 ```python
 import obp_python
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id200_response import OBPv510RevokeUserAccessToViewById200Response
-from obp_python.models.obpv510_revoke_user_access_to_view_by_id_request import OBPv510RevokeUserAccessToViewByIdRequest
+from obp_python.models.revoke_user_access_to_view_by_id200_response import RevokeUserAccessToViewById200Response
+from obp_python.models.revoke_user_access_to_view_by_id_request import RevokeUserAccessToViewByIdRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -583,15 +583,15 @@ with obp_python.ApiClient(configuration) as api_client:
     bankid = 'bankid_example' # str | The BANKID identifier
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
-    obpv510_revoke_user_access_to_view_by_id_request = {"type":"object","properties":{"view_id":{"type":"string"},"user_id":{"type":"string"}}} # OBPv510RevokeUserAccessToViewByIdRequest | Request body
+    revoke_user_access_to_view_by_id_request = {"type":"object","properties":{"view_id":{"type":"string"},"user_id":{"type":"string"}}} # RevokeUserAccessToViewByIdRequest | Request body
 
     try:
         # Revoke User access to View
-        api_response = api_instance.o_bpv5_1_0_revoke_user_access_to_view_by_id(bankid, accountid, viewid, obpv510_revoke_user_access_to_view_by_id_request)
-        print("The response of OwnerViewRequiredApi->o_bpv5_1_0_revoke_user_access_to_view_by_id:\n")
+        api_response = api_instance.revoke_user_access_to_view_by_id(bankid, accountid, viewid, revoke_user_access_to_view_by_id_request)
+        print("The response of OwnerViewRequiredApi->revoke_user_access_to_view_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OwnerViewRequiredApi->o_bpv5_1_0_revoke_user_access_to_view_by_id: %s\n" % e)
+        print("Exception when calling OwnerViewRequiredApi->revoke_user_access_to_view_by_id: %s\n" % e)
 ```
 
 
@@ -604,11 +604,11 @@ Name | Type | Description  | Notes
  **bankid** | **str**| The BANKID identifier | 
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
- **obpv510_revoke_user_access_to_view_by_id_request** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md)| Request body | 
+ **revoke_user_access_to_view_by_id_request** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510RevokeUserAccessToViewById200Response**](OBPv510RevokeUserAccessToViewById200Response.md)
+[**RevokeUserAccessToViewById200Response**](RevokeUserAccessToViewById200Response.md)
 
 ### Authorization
 

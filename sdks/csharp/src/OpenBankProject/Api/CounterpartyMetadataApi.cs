@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -49,10 +49,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyCorporateLocationApiResponse> OBPv121AddCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyCorporateLocationApiResponse> AddCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add Corporate Location to Counterparty
@@ -64,10 +64,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyCorporateLocationApiResponse?> OBPv121AddCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyCorporateLocationApiResponse?> AddCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add image url to other bank account
@@ -80,10 +80,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyImageUrlApiResponse> OBPv121AddCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyImageUrlApiResponse> AddCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add image url to other bank account
@@ -95,10 +95,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyImageUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyImageUrlApiResponse?> OBPv121AddCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyImageUrlApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyImageUrlApiResponse?> AddCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add Counterparty More Info
@@ -111,10 +111,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyMoreInfoApiResponse> OBPv121AddCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyMoreInfoApiResponse> AddCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add Counterparty More Info
@@ -126,10 +126,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyMoreInfoApiResponse?> OBPv121AddCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyMoreInfoApiResponse?> AddCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add Open Corporates URL to Counterparty
@@ -142,10 +142,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse> OBPv121AddCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyOpenCorporatesUrlApiResponse> AddCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add Open Corporates URL to Counterparty
@@ -157,10 +157,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse?> OBPv121AddCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyOpenCorporatesUrlApiResponse?> AddCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add physical location to other bank account
@@ -173,10 +173,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyPhysicalLocationApiResponse> OBPv121AddCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyPhysicalLocationApiResponse> AddCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add physical location to other bank account
@@ -188,10 +188,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyPhysicalLocationApiResponse?> OBPv121AddCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyPhysicalLocationApiResponse?> AddCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add public alias to other bank account
@@ -204,10 +204,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyPublicAliasApiResponse> OBPv121AddCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyPublicAliasApiResponse> AddCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add public alias to other bank account
@@ -219,10 +219,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyPublicAliasApiResponse?> OBPv121AddCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyPublicAliasApiResponse?> AddCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add url to other bank account
@@ -235,10 +235,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddCounterpartyUrlApiResponse> OBPv121AddCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyUrlApiResponse"/>&gt;</returns>
+        Task<IAddCounterpartyUrlApiResponse> AddCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add url to other bank account
@@ -250,10 +250,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddCounterpartyUrlApiResponse?> OBPv121AddCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyUrlApiResponse"/>?&gt;</returns>
+        Task<IAddCounterpartyUrlApiResponse?> AddCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Other Account Private Alias
@@ -266,10 +266,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121AddOtherAccountPrivateAliasApiResponse> OBPv121AddOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        Task<IAddOtherAccountPrivateAliasApiResponse> AddOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Other Account Private Alias
@@ -281,10 +281,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddOtherAccountPrivateAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121AddOtherAccountPrivateAliasApiResponse?> OBPv121AddOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddOtherAccountPrivateAliasApiResponse"/>?&gt;</returns>
+        Task<IAddOtherAccountPrivateAliasApiResponse?> AddOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Corporate Location
@@ -298,8 +298,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyCorporateLocationApiResponse> OBPv121DeleteCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyCorporateLocationApiResponse> DeleteCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Corporate Location
@@ -312,8 +312,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyCorporateLocationApiResponse?> OBPv121DeleteCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyCorporateLocationApiResponse?> DeleteCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Image URL
@@ -327,8 +327,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyImageUrlApiResponse> OBPv121DeleteCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyImageUrlApiResponse> DeleteCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Image URL
@@ -341,8 +341,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyImageUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyImageUrlApiResponse?> OBPv121DeleteCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyImageUrlApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyImageUrlApiResponse?> DeleteCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete more info of other bank account
@@ -356,8 +356,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyMoreInfoApiResponse> OBPv121DeleteCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyMoreInfoApiResponse> DeleteCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete more info of other bank account
@@ -370,8 +370,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyMoreInfoApiResponse?> OBPv121DeleteCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyMoreInfoApiResponse?> DeleteCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Open Corporates URL
@@ -385,8 +385,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse> OBPv121DeleteCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyOpenCorporatesUrlApiResponse> DeleteCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Open Corporates URL
@@ -399,8 +399,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse?> OBPv121DeleteCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyOpenCorporatesUrlApiResponse?> DeleteCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Physical Location
@@ -414,8 +414,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPhysicalLocationApiResponse> OBPv121DeleteCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyPhysicalLocationApiResponse> DeleteCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Physical Location
@@ -428,8 +428,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPhysicalLocationApiResponse?> OBPv121DeleteCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyPhysicalLocationApiResponse?> DeleteCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Private Alias
@@ -443,8 +443,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPrivateAliasApiResponse> OBPv121DeleteCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyPrivateAliasApiResponse> DeleteCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Private Alias
@@ -457,8 +457,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPrivateAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPrivateAliasApiResponse?> OBPv121DeleteCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPrivateAliasApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyPrivateAliasApiResponse?> DeleteCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Public Alias
@@ -472,8 +472,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPublicAliasApiResponse> OBPv121DeleteCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyPublicAliasApiResponse> DeleteCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Counterparty Public Alias
@@ -486,8 +486,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyPublicAliasApiResponse?> OBPv121DeleteCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyPublicAliasApiResponse?> DeleteCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete url of other bank account
@@ -501,8 +501,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyUrlApiResponse> OBPv121DeleteCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyUrlApiResponse"/>&gt;</returns>
+        Task<IDeleteCounterpartyUrlApiResponse> DeleteCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete url of other bank account
@@ -515,8 +515,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121DeleteCounterpartyUrlApiResponse?> OBPv121DeleteCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyUrlApiResponse"/>?&gt;</returns>
+        Task<IDeleteCounterpartyUrlApiResponse?> DeleteCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get public alias of other bank account
@@ -530,8 +530,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetCounterpartyPublicAliasApiResponse> OBPv121GetCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        Task<IGetCounterpartyPublicAliasApiResponse> GetCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get public alias of other bank account
@@ -544,314 +544,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetCounterpartyPublicAliasApiResponse?> OBPv121GetCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Other Account Metadata
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountMetadataApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetOtherAccountMetadataApiResponse> OBPv121GetOtherAccountMetadataAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Other Account Metadata
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountMetadataApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetOtherAccountMetadataApiResponse?> OBPv121GetOtherAccountMetadataOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Other Account Private Alias
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121GetOtherAccountPrivateAliasApiResponse> OBPv121GetOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Other Account Private Alias
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountPrivateAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121GetOtherAccountPrivateAliasApiResponse?> OBPv121GetOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Corporate Location
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyCorporateLocationApiResponse> OBPv121UpdateCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Corporate Location
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyCorporateLocationApiResponse?> OBPv121UpdateCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Image Url
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyImageUrlApiResponse> OBPv121UpdateCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Image Url
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyImageUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyImageUrlApiResponse?> OBPv121UpdateCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty More Info
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyMoreInfoApiResponse> OBPv121UpdateCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty More Info
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyMoreInfoApiResponse?> OBPv121UpdateCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Open Corporates Url of Counterparty
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse> OBPv121UpdateCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Open Corporates Url of Counterparty
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse?> OBPv121UpdateCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Physical Location
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPhysicalLocationApiResponse> OBPv121UpdateCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Physical Location
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPhysicalLocationApiResponse?> OBPv121UpdateCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Private Alias
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPrivateAliasApiResponse> OBPv121UpdateCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Counterparty Private Alias
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPrivateAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPrivateAliasApiResponse?> OBPv121UpdateCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update public alias of other bank account
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPublicAliasApiResponse> OBPv121UpdateCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update public alias of other bank account
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyPublicAliasApiResponse?> OBPv121UpdateCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update url of other bank account
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyUrlApiResponse"/>&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyUrlApiResponse> OBPv121UpdateCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update url of other bank account
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyUrlApiResponse"/>?&gt;</returns>
-        Task<IOBPv121UpdateCounterpartyUrlApiResponse?> OBPv121UpdateCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
+        Task<IGetCounterpartyPublicAliasApiResponse?> GetCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty by Id (Explicit)
@@ -865,8 +559,8 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetExplicitCounterpartyByIdApiResponse> OBPv400GetExplicitCounterpartyByIdAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
+        Task<IGetExplicitCounterpartyByIdApiResponse> GetExplicitCounterpartyByIdAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Counterparty by Id (Explicit)
@@ -879,8 +573,314 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetExplicitCounterpartyByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetExplicitCounterpartyByIdApiResponse?> OBPv400GetExplicitCounterpartyByIdOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetExplicitCounterpartyByIdApiResponse"/>?&gt;</returns>
+        Task<IGetExplicitCounterpartyByIdApiResponse?> GetExplicitCounterpartyByIdOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Other Account Metadata
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountMetadataApiResponse"/>&gt;</returns>
+        Task<IGetOtherAccountMetadataApiResponse> GetOtherAccountMetadataAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Other Account Metadata
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountMetadataApiResponse"/>?&gt;</returns>
+        Task<IGetOtherAccountMetadataApiResponse?> GetOtherAccountMetadataOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Other Account Private Alias
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        Task<IGetOtherAccountPrivateAliasApiResponse> GetOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Other Account Private Alias
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountPrivateAliasApiResponse"/>?&gt;</returns>
+        Task<IGetOtherAccountPrivateAliasApiResponse?> GetOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Corporate Location
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyCorporateLocationApiResponse> UpdateCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Corporate Location
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyCorporateLocationApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyCorporateLocationApiResponse?> UpdateCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Image Url
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyImageUrlApiResponse> UpdateCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Image Url
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyImageUrlApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyImageUrlApiResponse?> UpdateCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty More Info
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyMoreInfoApiResponse> UpdateCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty More Info
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyMoreInfoApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyMoreInfoApiResponse?> UpdateCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Open Corporates Url of Counterparty
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyOpenCorporatesUrlApiResponse> UpdateCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Open Corporates Url of Counterparty
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyOpenCorporatesUrlApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyOpenCorporatesUrlApiResponse?> UpdateCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Physical Location
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyPhysicalLocationApiResponse> UpdateCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Physical Location
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPhysicalLocationApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyPhysicalLocationApiResponse?> UpdateCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Private Alias
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyPrivateAliasApiResponse> UpdateCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Counterparty Private Alias
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPrivateAliasApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyPrivateAliasApiResponse?> UpdateCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update public alias of other bank account
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyPublicAliasApiResponse> UpdateCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update public alias of other bank account
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPublicAliasApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyPublicAliasApiResponse?> UpdateCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update url of other bank account
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyUrlApiResponse"/>&gt;</returns>
+        Task<IUpdateCounterpartyUrlApiResponse> UpdateCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update url of other bank account
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyUrlApiResponse"/>?&gt;</returns>
+        Task<IUpdateCounterpartyUrlApiResponse?> UpdateCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -891,561 +891,561 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyCorporateLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyCorporateLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyCorporateLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyCorporateLocation;
 
-        internal void ExecuteOnOBPv121AddCounterpartyCorporateLocation(CounterpartyApi.OBPv121AddCounterpartyCorporateLocationApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyCorporateLocation(CounterpartyApi.AddCounterpartyCorporateLocationApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyCorporateLocation(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyCorporateLocation(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyImageUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyImageUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyImageUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyImageUrl;
 
-        internal void ExecuteOnOBPv121AddCounterpartyImageUrl(CounterpartyApi.OBPv121AddCounterpartyImageUrlApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyImageUrl(CounterpartyApi.AddCounterpartyImageUrlApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyImageUrl(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyImageUrl(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyMoreInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyMoreInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyMoreInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyMoreInfo;
 
-        internal void ExecuteOnOBPv121AddCounterpartyMoreInfo(CounterpartyApi.OBPv121AddCounterpartyMoreInfoApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyMoreInfo(CounterpartyApi.AddCounterpartyMoreInfoApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyMoreInfo(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyMoreInfo(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyOpenCorporatesUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyOpenCorporatesUrl;
 
-        internal void ExecuteOnOBPv121AddCounterpartyOpenCorporatesUrl(CounterpartyApi.OBPv121AddCounterpartyOpenCorporatesUrlApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyOpenCorporatesUrl(CounterpartyApi.AddCounterpartyOpenCorporatesUrlApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyOpenCorporatesUrl(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyOpenCorporatesUrl(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyPhysicalLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyPhysicalLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyPhysicalLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyPhysicalLocation;
 
-        internal void ExecuteOnOBPv121AddCounterpartyPhysicalLocation(CounterpartyApi.OBPv121AddCounterpartyPhysicalLocationApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyPhysicalLocation(CounterpartyApi.AddCounterpartyPhysicalLocationApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyPhysicalLocation(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyPhysicalLocation(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyPublicAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyPublicAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyPublicAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyPublicAlias;
 
-        internal void ExecuteOnOBPv121AddCounterpartyPublicAlias(CounterpartyApi.OBPv121AddCounterpartyPublicAliasApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyPublicAlias(CounterpartyApi.AddCounterpartyPublicAliasApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyPublicAlias(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyPublicAlias(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddCounterpartyUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnAddCounterpartyUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddCounterpartyUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddCounterpartyUrl;
 
-        internal void ExecuteOnOBPv121AddCounterpartyUrl(CounterpartyApi.OBPv121AddCounterpartyUrlApiResponse apiResponse)
+        internal void ExecuteOnAddCounterpartyUrl(CounterpartyApi.AddCounterpartyUrlApiResponse apiResponse)
         {
-            OnOBPv121AddCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddCounterpartyUrl(Exception exception)
+        internal void ExecuteOnErrorAddCounterpartyUrl(Exception exception)
         {
-            OnErrorOBPv121AddCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121AddOtherAccountPrivateAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnAddOtherAccountPrivateAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121AddOtherAccountPrivateAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddOtherAccountPrivateAlias;
 
-        internal void ExecuteOnOBPv121AddOtherAccountPrivateAlias(CounterpartyApi.OBPv121AddOtherAccountPrivateAliasApiResponse apiResponse)
+        internal void ExecuteOnAddOtherAccountPrivateAlias(CounterpartyApi.AddOtherAccountPrivateAliasApiResponse apiResponse)
         {
-            OnOBPv121AddOtherAccountPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddOtherAccountPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121AddOtherAccountPrivateAlias(Exception exception)
+        internal void ExecuteOnErrorAddOtherAccountPrivateAlias(Exception exception)
         {
-            OnErrorOBPv121AddOtherAccountPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddOtherAccountPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyCorporateLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyCorporateLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyCorporateLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyCorporateLocation;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyCorporateLocation(CounterpartyApi.OBPv121DeleteCounterpartyCorporateLocationApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyCorporateLocation(CounterpartyApi.DeleteCounterpartyCorporateLocationApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyCorporateLocation(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyCorporateLocation(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyImageUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyImageUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyImageUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyImageUrl;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyImageUrl(CounterpartyApi.OBPv121DeleteCounterpartyImageUrlApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyImageUrl(CounterpartyApi.DeleteCounterpartyImageUrlApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyImageUrl(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyImageUrl(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyMoreInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyMoreInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyMoreInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyMoreInfo;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyMoreInfo(CounterpartyApi.OBPv121DeleteCounterpartyMoreInfoApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyMoreInfo(CounterpartyApi.DeleteCounterpartyMoreInfoApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyMoreInfo(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyMoreInfo(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyOpenCorporatesUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyOpenCorporatesUrl;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyOpenCorporatesUrl(CounterpartyApi.OBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyOpenCorporatesUrl(CounterpartyApi.DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyOpenCorporatesUrl(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyPhysicalLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyPhysicalLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyPhysicalLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyPhysicalLocation;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyPhysicalLocation(CounterpartyApi.OBPv121DeleteCounterpartyPhysicalLocationApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyPhysicalLocation(CounterpartyApi.DeleteCounterpartyPhysicalLocationApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyPhysicalLocation(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyPhysicalLocation(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyPrivateAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyPrivateAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyPrivateAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyPrivateAlias;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyPrivateAlias(CounterpartyApi.OBPv121DeleteCounterpartyPrivateAliasApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyPrivateAlias(CounterpartyApi.DeleteCounterpartyPrivateAliasApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyPrivateAlias(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyPrivateAlias(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyPublicAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyPublicAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyPublicAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyPublicAlias;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyPublicAlias(CounterpartyApi.OBPv121DeleteCounterpartyPublicAliasApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyPublicAlias(CounterpartyApi.DeleteCounterpartyPublicAliasApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyPublicAlias(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyPublicAlias(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121DeleteCounterpartyUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteCounterpartyUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121DeleteCounterpartyUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteCounterpartyUrl;
 
-        internal void ExecuteOnOBPv121DeleteCounterpartyUrl(CounterpartyApi.OBPv121DeleteCounterpartyUrlApiResponse apiResponse)
+        internal void ExecuteOnDeleteCounterpartyUrl(CounterpartyApi.DeleteCounterpartyUrlApiResponse apiResponse)
         {
-            OnOBPv121DeleteCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121DeleteCounterpartyUrl(Exception exception)
+        internal void ExecuteOnErrorDeleteCounterpartyUrl(Exception exception)
         {
-            OnErrorOBPv121DeleteCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetCounterpartyPublicAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCounterpartyPublicAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetCounterpartyPublicAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCounterpartyPublicAlias;
 
-        internal void ExecuteOnOBPv121GetCounterpartyPublicAlias(CounterpartyApi.OBPv121GetCounterpartyPublicAliasApiResponse apiResponse)
+        internal void ExecuteOnGetCounterpartyPublicAlias(CounterpartyApi.GetCounterpartyPublicAliasApiResponse apiResponse)
         {
-            OnOBPv121GetCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetCounterpartyPublicAlias(Exception exception)
+        internal void ExecuteOnErrorGetCounterpartyPublicAlias(Exception exception)
         {
-            OnErrorOBPv121GetCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetOtherAccountMetadata;
+        public event EventHandler<ApiResponseEventArgs>? OnGetExplicitCounterpartyById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetOtherAccountMetadata;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetExplicitCounterpartyById;
 
-        internal void ExecuteOnOBPv121GetOtherAccountMetadata(CounterpartyApi.OBPv121GetOtherAccountMetadataApiResponse apiResponse)
+        internal void ExecuteOnGetExplicitCounterpartyById(CounterpartyApi.GetExplicitCounterpartyByIdApiResponse apiResponse)
         {
-            OnOBPv121GetOtherAccountMetadata?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetExplicitCounterpartyById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetOtherAccountMetadata(Exception exception)
+        internal void ExecuteOnErrorGetExplicitCounterpartyById(Exception exception)
         {
-            OnErrorOBPv121GetOtherAccountMetadata?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetExplicitCounterpartyById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121GetOtherAccountPrivateAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnGetOtherAccountMetadata;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121GetOtherAccountPrivateAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetOtherAccountMetadata;
 
-        internal void ExecuteOnOBPv121GetOtherAccountPrivateAlias(CounterpartyApi.OBPv121GetOtherAccountPrivateAliasApiResponse apiResponse)
+        internal void ExecuteOnGetOtherAccountMetadata(CounterpartyApi.GetOtherAccountMetadataApiResponse apiResponse)
         {
-            OnOBPv121GetOtherAccountPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetOtherAccountMetadata?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121GetOtherAccountPrivateAlias(Exception exception)
+        internal void ExecuteOnErrorGetOtherAccountMetadata(Exception exception)
         {
-            OnErrorOBPv121GetOtherAccountPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetOtherAccountMetadata?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyCorporateLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnGetOtherAccountPrivateAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyCorporateLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetOtherAccountPrivateAlias;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyCorporateLocation(CounterpartyApi.OBPv121UpdateCounterpartyCorporateLocationApiResponse apiResponse)
+        internal void ExecuteOnGetOtherAccountPrivateAlias(CounterpartyApi.GetOtherAccountPrivateAliasApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetOtherAccountPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyCorporateLocation(Exception exception)
+        internal void ExecuteOnErrorGetOtherAccountPrivateAlias(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetOtherAccountPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyImageUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyCorporateLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyImageUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyCorporateLocation;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyImageUrl(CounterpartyApi.OBPv121UpdateCounterpartyImageUrlApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyCorporateLocation(CounterpartyApi.UpdateCounterpartyCorporateLocationApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyCorporateLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyImageUrl(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyCorporateLocation(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyCorporateLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyMoreInfo;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyImageUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyMoreInfo;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyImageUrl;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyMoreInfo(CounterpartyApi.OBPv121UpdateCounterpartyMoreInfoApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyImageUrl(CounterpartyApi.UpdateCounterpartyImageUrlApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyImageUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyMoreInfo(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyImageUrl(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyImageUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyMoreInfo;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyMoreInfo;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyOpenCorporatesUrl(CounterpartyApi.OBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyMoreInfo(CounterpartyApi.UpdateCounterpartyMoreInfoApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyMoreInfo?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyMoreInfo(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyMoreInfo?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyPhysicalLocation;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyOpenCorporatesUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyPhysicalLocation;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyOpenCorporatesUrl;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyPhysicalLocation(CounterpartyApi.OBPv121UpdateCounterpartyPhysicalLocationApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyOpenCorporatesUrl(CounterpartyApi.UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyOpenCorporatesUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyPhysicalLocation(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyOpenCorporatesUrl(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyOpenCorporatesUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyPrivateAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyPhysicalLocation;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyPrivateAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyPhysicalLocation;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyPrivateAlias(CounterpartyApi.OBPv121UpdateCounterpartyPrivateAliasApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyPhysicalLocation(CounterpartyApi.UpdateCounterpartyPhysicalLocationApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyPhysicalLocation?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyPrivateAlias(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyPhysicalLocation(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyPhysicalLocation?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyPublicAlias;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyPrivateAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyPublicAlias;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyPrivateAlias;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyPublicAlias(CounterpartyApi.OBPv121UpdateCounterpartyPublicAliasApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyPrivateAlias(CounterpartyApi.UpdateCounterpartyPrivateAliasApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyPrivateAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyPublicAlias(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyPrivateAlias(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyPrivateAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv121UpdateCounterpartyUrl;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyPublicAlias;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv121UpdateCounterpartyUrl;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyPublicAlias;
 
-        internal void ExecuteOnOBPv121UpdateCounterpartyUrl(CounterpartyApi.OBPv121UpdateCounterpartyUrlApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyPublicAlias(CounterpartyApi.UpdateCounterpartyPublicAliasApiResponse apiResponse)
         {
-            OnOBPv121UpdateCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyPublicAlias?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv121UpdateCounterpartyUrl(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyPublicAlias(Exception exception)
         {
-            OnErrorOBPv121UpdateCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyPublicAlias?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetExplicitCounterpartyById;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateCounterpartyUrl;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetExplicitCounterpartyById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateCounterpartyUrl;
 
-        internal void ExecuteOnOBPv400GetExplicitCounterpartyById(CounterpartyApi.OBPv400GetExplicitCounterpartyByIdApiResponse apiResponse)
+        internal void ExecuteOnUpdateCounterpartyUrl(CounterpartyApi.UpdateCounterpartyUrlApiResponse apiResponse)
         {
-            OnOBPv400GetExplicitCounterpartyById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateCounterpartyUrl?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetExplicitCounterpartyById(Exception exception)
+        internal void ExecuteOnErrorUpdateCounterpartyUrl(Exception exception)
         {
-            OnErrorOBPv400GetExplicitCounterpartyById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateCounterpartyUrl?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -1503,7 +1503,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv121AddCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
+        partial void FormatAddCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1512,9 +1512,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
+        private void ValidateAddCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1528,8 +1528,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyCorporateLocationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyCorporateLocationRequest));
+            if (updateCounterpartyCorporateLocationRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyCorporateLocationRequest));
         }
 
         /// <summary>
@@ -1540,11 +1540,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        private void AfterOBPv121AddCounterpartyCorporateLocationDefaultImplementation(IOBPv121AddCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        private void AfterAddCounterpartyCorporateLocationDefaultImplementation(IAddCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+            AfterAddCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1558,8 +1558,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        partial void AfterOBPv121AddCounterpartyCorporateLocation(ref bool suppressDefaultLog, IOBPv121AddCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        partial void AfterAddCounterpartyCorporateLocation(ref bool suppressDefaultLog, IAddCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1571,11 +1571,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        private void OnErrorAddCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+            OnErrorAddCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1591,8 +1591,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        partial void OnErrorAddCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
 
         /// <summary>
         /// Add Corporate Location to Counterparty &lt;p&gt;Add the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -1601,14 +1601,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyCorporateLocationApiResponse?> OBPv121AddCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyCorporateLocationApiResponse?> AddCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1624,18 +1624,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyCorporateLocationApiResponse> OBPv121AddCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyCorporateLocationApiResponse> AddCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+                ValidateAddCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
 
-                FormatOBPv121AddCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+                FormatAddCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyCorporateLocationRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1650,16 +1650,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyCorporateLocationRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyCorporateLocationRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyCorporateLocationRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyCorporateLocationRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1695,8 +1695,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyCorporateLocationApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyCorporateLocationApiResponse>();
+                        CounterpartyApi.AddCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1707,9 +1707,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
+                        AfterAddCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyCorporateLocation(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyCorporateLocation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1721,13 +1721,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyCorporateLocation(e);
+                OnErrorAddCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+                Events.ExecuteOnErrorAddCounterpartyCorporateLocation(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
+        partial void FormatAddCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1736,9 +1736,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
+        private void ValidateAddCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1752,8 +1752,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyImageUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyImageUrlRequest));
+            if (updateCounterpartyImageUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyImageUrlRequest));
         }
 
         /// <summary>
@@ -1764,11 +1764,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        private void AfterOBPv121AddCounterpartyImageUrlDefaultImplementation(IOBPv121AddCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        private void AfterAddCounterpartyImageUrlDefaultImplementation(IAddCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+            AfterAddCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1782,8 +1782,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        partial void AfterOBPv121AddCounterpartyImageUrl(ref bool suppressDefaultLog, IOBPv121AddCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        partial void AfterAddCounterpartyImageUrl(ref bool suppressDefaultLog, IAddCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1795,11 +1795,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        private void OnErrorAddCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+            OnErrorAddCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1815,8 +1815,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        partial void OnErrorAddCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
 
         /// <summary>
         /// Add image url to other bank account &lt;p&gt;Add a url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -1825,14 +1825,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyImageUrlApiResponse?> OBPv121AddCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyImageUrlApiResponse?> AddCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1848,18 +1848,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyImageUrlApiResponse> OBPv121AddCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyImageUrlApiResponse> AddCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+                ValidateAddCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
 
-                FormatOBPv121AddCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+                FormatAddCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyImageUrlRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1874,16 +1874,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyImageUrlRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyImageUrlRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyImageUrlRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyImageUrlRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1919,8 +1919,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyImageUrlApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyImageUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyImageUrlApiResponse>();
+                        CounterpartyApi.AddCounterpartyImageUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1931,9 +1931,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
+                        AfterAddCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyImageUrl(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyImageUrl(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1945,13 +1945,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyImageUrl(e);
+                OnErrorAddCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+                Events.ExecuteOnErrorAddCounterpartyImageUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
+        partial void FormatAddCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1960,9 +1960,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
+        private void ValidateAddCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1976,8 +1976,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyMoreInfoRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyMoreInfoRequest));
+            if (updateCounterpartyMoreInfoRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyMoreInfoRequest));
         }
 
         /// <summary>
@@ -1988,11 +1988,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        private void AfterOBPv121AddCounterpartyMoreInfoDefaultImplementation(IOBPv121AddCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        private void AfterAddCounterpartyMoreInfoDefaultImplementation(IAddCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+            AfterAddCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2006,8 +2006,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        partial void AfterOBPv121AddCounterpartyMoreInfo(ref bool suppressDefaultLog, IOBPv121AddCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        partial void AfterAddCounterpartyMoreInfo(ref bool suppressDefaultLog, IAddCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2019,11 +2019,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        private void OnErrorAddCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+            OnErrorAddCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2039,8 +2039,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        partial void OnErrorAddCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
 
         /// <summary>
         /// Add Counterparty More Info &lt;p&gt;Add a description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2049,14 +2049,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyMoreInfoApiResponse?> OBPv121AddCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyMoreInfoApiResponse?> AddCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2072,18 +2072,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyMoreInfoApiResponse> OBPv121AddCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyMoreInfoApiResponse> AddCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+                ValidateAddCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
 
-                FormatOBPv121AddCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+                FormatAddCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyMoreInfoRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2098,16 +2098,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyMoreInfoRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyMoreInfoRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyMoreInfoRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyMoreInfoRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2143,8 +2143,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyMoreInfoApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyMoreInfoApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyMoreInfoApiResponse>();
+                        CounterpartyApi.AddCounterpartyMoreInfoApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2155,9 +2155,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
+                        AfterAddCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyMoreInfo(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyMoreInfo(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2169,13 +2169,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyMoreInfo(e);
+                OnErrorAddCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+                Events.ExecuteOnErrorAddCounterpartyMoreInfo(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+        partial void FormatAddCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -2184,9 +2184,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+        private void ValidateAddCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2200,8 +2200,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyOpenCorporatesUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest));
+            if (updateCounterpartyOpenCorporatesUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyOpenCorporatesUrlRequest));
         }
 
         /// <summary>
@@ -2212,11 +2212,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        private void AfterOBPv121AddCounterpartyOpenCorporatesUrlDefaultImplementation(IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        private void AfterAddCounterpartyOpenCorporatesUrlDefaultImplementation(IAddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+            AfterAddCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2230,8 +2230,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        partial void AfterOBPv121AddCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        partial void AfterAddCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IAddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2243,11 +2243,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        private void OnErrorAddCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+            OnErrorAddCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2263,8 +2263,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        partial void OnErrorAddCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
 
         /// <summary>
         /// Add Open Corporates URL to Counterparty &lt;p&gt;Add open corporates url to other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2273,14 +2273,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse?> OBPv121AddCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyOpenCorporatesUrlApiResponse?> AddCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2296,18 +2296,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyOpenCorporatesUrlApiResponse> OBPv121AddCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyOpenCorporatesUrlApiResponse> AddCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+                ValidateAddCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
 
-                FormatOBPv121AddCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+                FormatAddCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2322,9 +2322,9 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyOpenCorporatesUrlRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyOpenCorporatesUrlRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyOpenCorporatesUrlRequest, _jsonSerializerOptions));
 
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
 
@@ -2352,8 +2352,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyOpenCorporatesUrlApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyOpenCorporatesUrlApiResponse>();
+                        CounterpartyApi.AddCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2364,9 +2364,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+                        AfterAddCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -2374,13 +2374,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyOpenCorporatesUrl(e);
+                OnErrorAddCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+                Events.ExecuteOnErrorAddCounterpartyOpenCorporatesUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
+        partial void FormatAddCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -2389,9 +2389,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
+        private void ValidateAddCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2405,8 +2405,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyPhysicalLocationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyPhysicalLocationRequest));
+            if (updateCounterpartyPhysicalLocationRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyPhysicalLocationRequest));
         }
 
         /// <summary>
@@ -2417,11 +2417,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        private void AfterOBPv121AddCounterpartyPhysicalLocationDefaultImplementation(IOBPv121AddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        private void AfterAddCounterpartyPhysicalLocationDefaultImplementation(IAddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+            AfterAddCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2435,8 +2435,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        partial void AfterOBPv121AddCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IOBPv121AddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        partial void AfterAddCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IAddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2448,11 +2448,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        private void OnErrorAddCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+            OnErrorAddCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2468,8 +2468,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        partial void OnErrorAddCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
 
         /// <summary>
         /// Add physical location to other bank account &lt;p&gt;Add geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2478,14 +2478,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyPhysicalLocationApiResponse?> OBPv121AddCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyPhysicalLocationApiResponse?> AddCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2501,18 +2501,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyPhysicalLocationApiResponse> OBPv121AddCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyPhysicalLocationApiResponse> AddCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+                ValidateAddCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
 
-                FormatOBPv121AddCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+                FormatAddCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyPhysicalLocationRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2527,16 +2527,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyPhysicalLocationRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyPhysicalLocationRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyPhysicalLocationRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyPhysicalLocationRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2572,8 +2572,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyPhysicalLocationApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyPhysicalLocationApiResponse>();
+                        CounterpartyApi.AddCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2584,9 +2584,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
+                        AfterAddCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyPhysicalLocation(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyPhysicalLocation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2598,13 +2598,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyPhysicalLocation(e);
+                OnErrorAddCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+                Events.ExecuteOnErrorAddCounterpartyPhysicalLocation(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        partial void FormatAddCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Validates the request parameters
@@ -2613,9 +2613,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        private void ValidateAddCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2629,8 +2629,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121GetCounterpartyPublicAlias200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetCounterpartyPublicAlias200Response));
+            if (getCounterpartyPublicAlias200Response == null)
+                throw new ArgumentNullException(nameof(getCounterpartyPublicAlias200Response));
         }
 
         /// <summary>
@@ -2641,11 +2641,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void AfterOBPv121AddCounterpartyPublicAliasDefaultImplementation(IOBPv121AddCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void AfterAddCounterpartyPublicAliasDefaultImplementation(IAddCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+            AfterAddCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2659,8 +2659,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void AfterOBPv121AddCounterpartyPublicAlias(ref bool suppressDefaultLog, IOBPv121AddCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void AfterAddCounterpartyPublicAlias(ref bool suppressDefaultLog, IAddCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2672,11 +2672,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void OnErrorOBPv121AddCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void OnErrorAddCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+            OnErrorAddCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2692,8 +2692,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void OnErrorOBPv121AddCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void OnErrorAddCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Add public alias to other bank account &lt;p&gt;Creates the public alias for the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;Note: Public aliases are automatically generated for new &#39;other accounts / counterparties&#39;, so this call should only be used if&lt;br /&gt; the public alias was deleted.&lt;/p&gt; &lt;p&gt;The VIEW_ID parameter should be a view the caller is permitted to access to and that has permission to create public aliases.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2702,14 +2702,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyPublicAliasApiResponse?> OBPv121AddCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyPublicAliasApiResponse?> AddCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2725,18 +2725,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyPublicAliasApiResponse> OBPv121AddCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyPublicAliasApiResponse> AddCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                ValidateAddCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
 
-                FormatOBPv121AddCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                FormatAddCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, getCounterpartyPublicAlias200Response);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2751,16 +2751,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121GetCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetCounterpartyPublicAlias200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getCounterpartyPublicAlias200Response, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2796,8 +2796,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyPublicAliasApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyPublicAliasApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyPublicAliasApiResponse>();
+                        CounterpartyApi.AddCounterpartyPublicAliasApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2808,9 +2808,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                        AfterAddCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyPublicAlias(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyPublicAlias(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2822,13 +2822,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyPublicAlias(e);
+                OnErrorAddCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+                Events.ExecuteOnErrorAddCounterpartyPublicAlias(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
+        partial void FormatAddCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -2837,9 +2837,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
+        private void ValidateAddCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2853,8 +2853,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121UpdateCounterpartyUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyUrlRequest));
+            if (updateCounterpartyUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyUrlRequest));
         }
 
         /// <summary>
@@ -2865,11 +2865,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        private void AfterOBPv121AddCounterpartyUrlDefaultImplementation(IOBPv121AddCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        private void AfterAddCounterpartyUrlDefaultImplementation(IAddCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+            AfterAddCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2883,8 +2883,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        partial void AfterOBPv121AddCounterpartyUrl(ref bool suppressDefaultLog, IOBPv121AddCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        partial void AfterAddCounterpartyUrl(ref bool suppressDefaultLog, IAddCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2896,11 +2896,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        private void OnErrorOBPv121AddCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        private void OnErrorAddCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+            OnErrorAddCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2916,8 +2916,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        partial void OnErrorOBPv121AddCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        partial void OnErrorAddCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
 
         /// <summary>
         /// Add url to other bank account &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -2926,14 +2926,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyUrlApiResponse?> OBPv121AddCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyUrlApiResponse?> AddCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest, cancellationToken).ConfigureAwait(false);
+                return await AddCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2949,18 +2949,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddCounterpartyUrlApiResponse> OBPv121AddCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IAddCounterpartyUrlApiResponse> AddCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+                ValidateAddCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
 
-                FormatOBPv121AddCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+                FormatAddCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyUrlRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2975,16 +2975,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyUrlRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyUrlRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyUrlRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyUrlRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3020,8 +3020,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddCounterpartyUrlApiResponse>();
-                        CounterpartyApi.OBPv121AddCounterpartyUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddCounterpartyUrlApiResponse>();
+                        CounterpartyApi.AddCounterpartyUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3032,9 +3032,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
+                        AfterAddCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
 
-                        Events.ExecuteOnOBPv121AddCounterpartyUrl(apiResponseLocalVar);
+                        Events.ExecuteOnAddCounterpartyUrl(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3046,13 +3046,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-                Events.ExecuteOnErrorOBPv121AddCounterpartyUrl(e);
+                OnErrorAddCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+                Events.ExecuteOnErrorAddCounterpartyUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121AddOtherAccountPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        partial void FormatAddOtherAccountPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Validates the request parameters
@@ -3061,9 +3061,9 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
         /// <returns></returns>
-        private void ValidateOBPv121AddOtherAccountPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        private void ValidateAddOtherAccountPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3077,8 +3077,8 @@ namespace OpenBankProject.Api
             if (otheraccountid == null)
                 throw new ArgumentNullException(nameof(otheraccountid));
 
-            if (oBPv121GetCounterpartyPublicAlias200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetCounterpartyPublicAlias200Response));
+            if (getCounterpartyPublicAlias200Response == null)
+                throw new ArgumentNullException(nameof(getCounterpartyPublicAlias200Response));
         }
 
         /// <summary>
@@ -3089,11 +3089,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void AfterOBPv121AddOtherAccountPrivateAliasDefaultImplementation(IOBPv121AddOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void AfterAddOtherAccountPrivateAliasDefaultImplementation(IAddOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121AddOtherAccountPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+            AfterAddOtherAccountPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3107,8 +3107,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void AfterOBPv121AddOtherAccountPrivateAlias(ref bool suppressDefaultLog, IOBPv121AddOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void AfterAddOtherAccountPrivateAlias(ref bool suppressDefaultLog, IAddOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3120,11 +3120,11 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void OnErrorOBPv121AddOtherAccountPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void OnErrorAddOtherAccountPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121AddOtherAccountPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+            OnErrorAddOtherAccountPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3140,8 +3140,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void OnErrorOBPv121AddOtherAccountPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void OnErrorAddOtherAccountPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
 
         /// <summary>
         /// Create Other Account Private Alias &lt;p&gt;Creates a private alias for the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -3150,14 +3150,14 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddOtherAccountPrivateAliasApiResponse?> OBPv121AddOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IAddOtherAccountPrivateAliasApiResponse?> AddOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121AddOtherAccountPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
+                return await AddOtherAccountPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3173,18 +3173,18 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121AddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121AddOtherAccountPrivateAliasApiResponse> OBPv121AddOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IAddOtherAccountPrivateAliasApiResponse> AddOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121AddOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                ValidateAddOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
 
-                FormatOBPv121AddOtherAccountPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                FormatAddOtherAccountPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, getCounterpartyPublicAlias200Response);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3199,16 +3199,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv121GetCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetCounterpartyPublicAlias200Response, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getCounterpartyPublicAlias200Response, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3244,8 +3244,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121AddOtherAccountPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121AddOtherAccountPrivateAliasApiResponse>();
-                        CounterpartyApi.OBPv121AddOtherAccountPrivateAliasApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.AddOtherAccountPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.AddOtherAccountPrivateAliasApiResponse>();
+                        CounterpartyApi.AddOtherAccountPrivateAliasApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3256,9 +3256,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121AddOtherAccountPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
+                        AfterAddOtherAccountPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
 
-                        Events.ExecuteOnOBPv121AddOtherAccountPrivateAlias(apiResponseLocalVar);
+                        Events.ExecuteOnAddOtherAccountPrivateAlias(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3270,13 +3270,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121AddOtherAccountPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-                Events.ExecuteOnErrorOBPv121AddOtherAccountPrivateAlias(e);
+                OnErrorAddOtherAccountPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+                Events.ExecuteOnErrorAddOtherAccountPrivateAlias(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3286,7 +3286,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3309,10 +3309,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyCorporateLocationDefaultImplementation(IOBPv121DeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyCorporateLocationDefaultImplementation(IDeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3326,7 +3326,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyCorporateLocation(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyCorporateLocation(ref bool suppressDefaultLog, IDeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3338,10 +3338,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3357,7 +3357,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Corporate Location &lt;p&gt;Delete corporate location of other bank account. Delete the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3367,12 +3367,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyCorporateLocationApiResponse?> OBPv121DeleteCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyCorporateLocationApiResponse?> DeleteCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3389,16 +3389,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyCorporateLocationApiResponse> OBPv121DeleteCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyCorporateLocationApiResponse> DeleteCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3418,7 +3418,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3436,8 +3436,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyCorporateLocationApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyCorporateLocationApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3448,9 +3448,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyCorporateLocation(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyCorporateLocation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3462,13 +3462,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyCorporateLocation(e);
+                OnErrorDeleteCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyCorporateLocation(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3478,7 +3478,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3501,10 +3501,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyImageUrlDefaultImplementation(IOBPv121DeleteCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyImageUrlDefaultImplementation(IDeleteCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3518,7 +3518,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyImageUrl(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyImageUrl(ref bool suppressDefaultLog, IDeleteCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3530,10 +3530,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3549,7 +3549,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Image URL &lt;p&gt;Delete image url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3559,12 +3559,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyImageUrlApiResponse?> OBPv121DeleteCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyImageUrlApiResponse?> DeleteCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3581,16 +3581,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyImageUrlApiResponse> OBPv121DeleteCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyImageUrlApiResponse> DeleteCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3613,8 +3613,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyImageUrlApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyImageUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyImageUrlApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyImageUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3625,9 +3625,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyImageUrl(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyImageUrl(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3635,13 +3635,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyImageUrl(e);
+                OnErrorDeleteCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyImageUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3651,7 +3651,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3674,10 +3674,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyMoreInfoDefaultImplementation(IOBPv121DeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyMoreInfoDefaultImplementation(IDeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3691,7 +3691,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyMoreInfo(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyMoreInfo(ref bool suppressDefaultLog, IDeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3703,10 +3703,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3722,7 +3722,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete more info of other bank account &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3732,12 +3732,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyMoreInfoApiResponse?> OBPv121DeleteCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyMoreInfoApiResponse?> DeleteCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3754,16 +3754,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyMoreInfoApiResponse> OBPv121DeleteCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyMoreInfoApiResponse> DeleteCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3783,7 +3783,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3801,8 +3801,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyMoreInfoApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyMoreInfoApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyMoreInfoApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3813,9 +3813,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyMoreInfo(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyMoreInfo(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3827,13 +3827,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyMoreInfo(e);
+                OnErrorDeleteCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyMoreInfo(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3843,7 +3843,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3866,10 +3866,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyOpenCorporatesUrlDefaultImplementation(IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyOpenCorporatesUrlDefaultImplementation(IDeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3883,7 +3883,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IDeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3895,10 +3895,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3914,7 +3914,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Open Corporates URL &lt;p&gt;Delete open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3924,12 +3924,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse?> OBPv121DeleteCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyOpenCorporatesUrlApiResponse?> DeleteCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3946,16 +3946,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse> OBPv121DeleteCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyOpenCorporatesUrlApiResponse> DeleteCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3975,7 +3975,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3993,8 +3993,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyOpenCorporatesUrlApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4005,9 +4005,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4019,13 +4019,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyOpenCorporatesUrl(e);
+                OnErrorDeleteCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyOpenCorporatesUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4035,7 +4035,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4058,10 +4058,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyPhysicalLocationDefaultImplementation(IOBPv121DeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyPhysicalLocationDefaultImplementation(IDeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4075,7 +4075,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IDeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4087,10 +4087,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4106,7 +4106,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Physical Location &lt;p&gt;Delete physical location of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -4116,12 +4116,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPhysicalLocationApiResponse?> OBPv121DeleteCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPhysicalLocationApiResponse?> DeleteCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4138,16 +4138,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPhysicalLocationApiResponse> OBPv121DeleteCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPhysicalLocationApiResponse> DeleteCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4167,7 +4167,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4185,8 +4185,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyPhysicalLocationApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyPhysicalLocationApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4197,9 +4197,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyPhysicalLocation(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyPhysicalLocation(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4211,13 +4211,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyPhysicalLocation(e);
+                OnErrorDeleteCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyPhysicalLocation(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4227,7 +4227,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4250,10 +4250,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyPrivateAliasDefaultImplementation(IOBPv121DeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyPrivateAliasDefaultImplementation(IDeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4267,7 +4267,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyPrivateAlias(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyPrivateAlias(ref bool suppressDefaultLog, IDeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4279,10 +4279,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4298,7 +4298,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Private Alias &lt;p&gt;Deletes the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -4308,12 +4308,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPrivateAliasApiResponse?> OBPv121DeleteCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPrivateAliasApiResponse?> DeleteCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4330,16 +4330,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPrivateAliasApiResponse> OBPv121DeleteCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPrivateAliasApiResponse> DeleteCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4359,7 +4359,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4377,8 +4377,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyPrivateAliasApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyPrivateAliasApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyPrivateAliasApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4389,9 +4389,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyPrivateAlias(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyPrivateAlias(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4403,13 +4403,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyPrivateAlias(e);
+                OnErrorDeleteCounterpartyPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyPrivateAlias(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4419,7 +4419,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4442,10 +4442,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyPublicAliasDefaultImplementation(IOBPv121DeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyPublicAliasDefaultImplementation(IDeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4459,7 +4459,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyPublicAlias(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyPublicAlias(ref bool suppressDefaultLog, IDeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4471,10 +4471,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4490,7 +4490,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete Counterparty Public Alias &lt;p&gt;Deletes the public alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -4500,12 +4500,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPublicAliasApiResponse?> OBPv121DeleteCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPublicAliasApiResponse?> DeleteCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4522,16 +4522,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyPublicAliasApiResponse> OBPv121DeleteCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyPublicAliasApiResponse> DeleteCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4551,7 +4551,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4569,8 +4569,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyPublicAliasApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyPublicAliasApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyPublicAliasApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4581,9 +4581,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyPublicAlias(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyPublicAlias(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4595,13 +4595,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyPublicAlias(e);
+                OnErrorDeleteCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyPublicAlias(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121DeleteCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatDeleteCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4611,7 +4611,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121DeleteCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateDeleteCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4634,10 +4634,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121DeleteCounterpartyUrlDefaultImplementation(IOBPv121DeleteCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterDeleteCounterpartyUrlDefaultImplementation(IDeleteCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121DeleteCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterDeleteCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4651,7 +4651,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121DeleteCounterpartyUrl(ref bool suppressDefaultLog, IOBPv121DeleteCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterDeleteCounterpartyUrl(ref bool suppressDefaultLog, IDeleteCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4663,10 +4663,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121DeleteCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorDeleteCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121DeleteCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorDeleteCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4682,7 +4682,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121DeleteCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorDeleteCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Delete url of other bank account &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -4692,12 +4692,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyUrlApiResponse?> OBPv121DeleteCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyUrlApiResponse?> DeleteCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121DeleteCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await DeleteCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4714,16 +4714,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121DeleteCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121DeleteCounterpartyUrlApiResponse> OBPv121DeleteCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IDeleteCounterpartyUrlApiResponse> DeleteCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121DeleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid);
+                ValidateDeleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121DeleteCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatDeleteCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4743,7 +4743,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4761,8 +4761,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121DeleteCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121DeleteCounterpartyUrlApiResponse>();
-                        CounterpartyApi.OBPv121DeleteCounterpartyUrlApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.DeleteCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.DeleteCounterpartyUrlApiResponse>();
+                        CounterpartyApi.DeleteCounterpartyUrlApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4773,9 +4773,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121DeleteCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterDeleteCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121DeleteCounterpartyUrl(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteCounterpartyUrl(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4787,13 +4787,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121DeleteCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121DeleteCounterpartyUrl(e);
+                OnErrorDeleteCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorDeleteCounterpartyUrl(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+        partial void FormatGetCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4803,7 +4803,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv121GetCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid)
+        private void ValidateGetCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4826,10 +4826,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void AfterOBPv121GetCounterpartyPublicAliasDefaultImplementation(IOBPv121GetCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void AfterGetCounterpartyPublicAliasDefaultImplementation(IGetCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv121GetCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            AfterGetCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4843,7 +4843,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121GetCounterpartyPublicAlias(ref bool suppressDefaultLog, IOBPv121GetCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void AfterGetCounterpartyPublicAlias(ref bool suppressDefaultLog, IGetCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4855,10 +4855,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121GetCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        private void OnErrorGetCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            OnErrorGetCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4874,7 +4874,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121GetCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+        partial void OnErrorGetCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
 
         /// <summary>
         /// Get public alias of other bank account &lt;p&gt;Returns the public alias of the other account OTHER_ACCOUNT_ID.&lt;br /&gt; User Authentication is Optional. The User need not be logged in.&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated. if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
@@ -4884,12 +4884,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetCounterpartyPublicAliasApiResponse?> OBPv121GetCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyPublicAliasApiResponse?> GetCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv121GetCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+                return await GetCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4906,16 +4906,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetCounterpartyPublicAliasApiResponse> OBPv121GetCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IGetCounterpartyPublicAliasApiResponse> GetCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv121GetCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
+                ValidateGetCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid);
 
-                FormatOBPv121GetCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+                FormatGetCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4935,7 +4935,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4962,8 +4962,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv121GetCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121GetCounterpartyPublicAliasApiResponse>();
-                        CounterpartyApi.OBPv121GetCounterpartyPublicAliasApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.GetCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.GetCounterpartyPublicAliasApiResponse>();
+                        CounterpartyApi.GetCounterpartyPublicAliasApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4974,210 +4974,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv121GetCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+                        AfterGetCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
 
-                        Events.ExecuteOnOBPv121GetCounterpartyPublicAlias(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121GetCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121GetCounterpartyPublicAlias(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121GetOtherAccountMetadata(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121GetOtherAccountMetadata(string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        private void AfterOBPv121GetOtherAccountMetadataDefaultImplementation(IOBPv121GetOtherAccountMetadataApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121GetOtherAccountMetadata(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121GetOtherAccountMetadata(ref bool suppressDefaultLog, IOBPv121GetOtherAccountMetadataApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121GetOtherAccountMetadataDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetOtherAccountMetadata(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121GetOtherAccountMetadata(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
-
-        /// <summary>
-        /// Get Other Account Metadata &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountMetadataApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetOtherAccountMetadataApiResponse?> OBPv121GetOtherAccountMetadataOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121GetOtherAccountMetadataAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Other Account Metadata &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountMetadataApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetOtherAccountMetadataApiResponse> OBPv121GetOtherAccountMetadataAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121GetOtherAccountMetadata(bankid, accountid, viewid, otheraccountid);
-
-                FormatOBPv121GetOtherAccountMetadata(ref bankid, ref accountid, ref viewid, ref otheraccountid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121GetOtherAccountMetadataApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121GetOtherAccountMetadataApiResponse>();
-                        CounterpartyApi.OBPv121GetOtherAccountMetadataApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121GetOtherAccountMetadataDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
-
-                        Events.ExecuteOnOBPv121GetOtherAccountMetadata(apiResponseLocalVar);
+                        Events.ExecuteOnGetCounterpartyPublicAlias(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5189,1987 +4988,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv121GetOtherAccountMetadataDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121GetOtherAccountMetadata(e);
+                OnErrorGetCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorGetCounterpartyPublicAlias(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv121GetOtherAccountPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121GetOtherAccountPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        private void AfterOBPv121GetOtherAccountPrivateAliasDefaultImplementation(IOBPv121GetOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121GetOtherAccountPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        partial void AfterOBPv121GetOtherAccountPrivateAlias(ref bool suppressDefaultLog, IOBPv121GetOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        private void OnErrorOBPv121GetOtherAccountPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121GetOtherAccountPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        partial void OnErrorOBPv121GetOtherAccountPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
-
-        /// <summary>
-        /// Get Other Account Private Alias &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetOtherAccountPrivateAliasApiResponse?> OBPv121GetOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121GetOtherAccountPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Other Account Private Alias &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121GetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121GetOtherAccountPrivateAliasApiResponse> OBPv121GetOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121GetOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid);
-
-                FormatOBPv121GetOtherAccountPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121GetOtherAccountPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121GetOtherAccountPrivateAliasApiResponse>();
-                        CounterpartyApi.OBPv121GetOtherAccountPrivateAliasApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121GetOtherAccountPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
-
-                        Events.ExecuteOnOBPv121GetOtherAccountPrivateAlias(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121GetOtherAccountPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
-                Events.ExecuteOnErrorOBPv121GetOtherAccountPrivateAlias(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyCorporateLocationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyCorporateLocationRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyCorporateLocationDefaultImplementation(IOBPv121UpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyCorporateLocation(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-        /// <summary>
-        /// Update Counterparty Corporate Location &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyCorporateLocationApiResponse?> OBPv121UpdateCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Counterparty Corporate Location &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyCorporateLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyCorporateLocationApiResponse> OBPv121UpdateCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyCorporateLocationRequest oBPv121UpdateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-                FormatOBPv121UpdateCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyCorporateLocationRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyCorporateLocationRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyCorporateLocationApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyCorporateLocation(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyCorporateLocation(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyImageUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyImageUrlRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyImageUrlDefaultImplementation(IOBPv121UpdateCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyImageUrl(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest);
-
-        /// <summary>
-        /// Update Counterparty Image Url &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyImageUrlApiResponse?> OBPv121UpdateCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Counterparty Image Url &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyImageUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyImageUrlApiResponse> OBPv121UpdateCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyImageUrlRequest oBPv121UpdateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-
-                FormatOBPv121UpdateCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyImageUrlRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyImageUrlRequest, _jsonSerializerOptions));
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyImageUrlApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyImageUrlApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyImageUrl(apiResponseLocalVar);
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyImageUrl(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyMoreInfoRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyMoreInfoRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyMoreInfoDefaultImplementation(IOBPv121UpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyMoreInfo(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest);
-
-        /// <summary>
-        /// Update Counterparty More Info &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyMoreInfoApiResponse?> OBPv121UpdateCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Counterparty More Info &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyMoreInfoRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyMoreInfoApiResponse> OBPv121UpdateCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyMoreInfoRequest oBPv121UpdateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-
-                FormatOBPv121UpdateCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyMoreInfoRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyMoreInfoRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyMoreInfoApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyMoreInfo(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyMoreInfo(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyOpenCorporatesUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyOpenCorporatesUrlDefaultImplementation(IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-        /// <summary>
-        /// Update Open Corporates Url of Counterparty &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse?> OBPv121UpdateCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Open Corporates Url of Counterparty &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyOpenCorporatesUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse> OBPv121UpdateCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyOpenCorporatesUrlRequest oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-                FormatOBPv121UpdateCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyOpenCorporatesUrlRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyOpenCorporatesUrl(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyPhysicalLocationRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyPhysicalLocationRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyPhysicalLocationDefaultImplementation(IOBPv121UpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-        /// <summary>
-        /// Update Counterparty Physical Location &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPhysicalLocationApiResponse?> OBPv121UpdateCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Counterparty Physical Location &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyPhysicalLocationRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPhysicalLocationApiResponse> OBPv121UpdateCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyPhysicalLocationRequest oBPv121UpdateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-                FormatOBPv121UpdateCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyPhysicalLocationRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyPhysicalLocationRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyPhysicalLocationApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyPhysicalLocation(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyPhysicalLocation(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121GetCounterpartyPublicAlias200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetCounterpartyPublicAlias200Response));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void AfterOBPv121UpdateCounterpartyPrivateAliasDefaultImplementation(IOBPv121UpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void AfterOBPv121UpdateCounterpartyPrivateAlias(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void OnErrorOBPv121UpdateCounterpartyPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Update Counterparty Private Alias &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPrivateAliasApiResponse?> OBPv121UpdateCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Counterparty Private Alias &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPrivateAliasApiResponse> OBPv121UpdateCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                FormatOBPv121UpdateCounterpartyPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121GetCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetCounterpartyPublicAlias200Response, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyPrivateAliasApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyPrivateAlias(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyPrivateAlias(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121GetCounterpartyPublicAlias200Response == null)
-                throw new ArgumentNullException(nameof(oBPv121GetCounterpartyPublicAlias200Response));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void AfterOBPv121UpdateCounterpartyPublicAliasDefaultImplementation(IOBPv121UpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void AfterOBPv121UpdateCounterpartyPublicAlias(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        private void OnErrorOBPv121UpdateCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response);
-
-        /// <summary>
-        /// Update public alias of other bank account &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPublicAliasApiResponse?> OBPv121UpdateCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update public alias of other bank account &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121GetCounterpartyPublicAlias200Response">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyPublicAliasApiResponse> OBPv121UpdateCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                FormatOBPv121UpdateCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121GetCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121GetCounterpartyPublicAlias200Response, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyPublicAliasApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyPublicAlias(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121GetCounterpartyPublicAlias200Response);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyPublicAlias(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv121UpdateCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv121UpdateCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (viewid == null)
-                throw new ArgumentNullException(nameof(viewid));
-
-            if (otheraccountid == null)
-                throw new ArgumentNullException(nameof(otheraccountid));
-
-            if (oBPv121UpdateCounterpartyUrlRequest == null)
-                throw new ArgumentNullException(nameof(oBPv121UpdateCounterpartyUrlRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        private void AfterOBPv121UpdateCounterpartyUrlDefaultImplementation(IOBPv121UpdateCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv121UpdateCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        partial void AfterOBPv121UpdateCounterpartyUrl(ref bool suppressDefaultLog, IOBPv121UpdateCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        private void OnErrorOBPv121UpdateCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv121UpdateCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="viewid"></param>
-        /// <param name="otheraccountid"></param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest"></param>
-        partial void OnErrorOBPv121UpdateCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest);
-
-        /// <summary>
-        /// Update url of other bank account &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyUrlApiResponse?> OBPv121UpdateCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv121UpdateCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update url of other bank account &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
-        /// <param name="oBPv121UpdateCounterpartyUrlRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv121UpdateCounterpartyUrlApiResponse"/>&gt;</returns>
-        public async Task<IOBPv121UpdateCounterpartyUrlApiResponse> OBPv121UpdateCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, OBPv121UpdateCounterpartyUrlRequest oBPv121UpdateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv121UpdateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-
-                FormatOBPv121UpdateCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv121UpdateCounterpartyUrlRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv121UpdateCounterpartyUrlRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<CounterpartyApi.OBPv121UpdateCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv121UpdateCounterpartyUrlApiResponse>();
-                        CounterpartyApi.OBPv121UpdateCounterpartyUrlApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv121UpdateCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-
-                        Events.ExecuteOnOBPv121UpdateCounterpartyUrl(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv121UpdateCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, oBPv121UpdateCounterpartyUrlRequest);
-                Events.ExecuteOnErrorOBPv121UpdateCounterpartyUrl(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400GetExplicitCounterpartyById(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
+        partial void FormatGetExplicitCounterpartyById(ref string bankid, ref string accountid, ref string viewid, ref string counterpartyid);
 
         /// <summary>
         /// Validates the request parameters
@@ -7179,7 +5004,7 @@ namespace OpenBankProject.Api
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetExplicitCounterpartyById(string bankid, string accountid, string viewid, string counterpartyid)
+        private void ValidateGetExplicitCounterpartyById(string bankid, string accountid, string viewid, string counterpartyid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -7202,10 +5027,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void AfterOBPv400GetExplicitCounterpartyByIdDefaultImplementation(IOBPv400GetExplicitCounterpartyByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void AfterGetExplicitCounterpartyByIdDefaultImplementation(IGetExplicitCounterpartyByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetExplicitCounterpartyById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+            AfterGetExplicitCounterpartyById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -7219,7 +5044,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void AfterOBPv400GetExplicitCounterpartyById(ref bool suppressDefaultLog, IOBPv400GetExplicitCounterpartyByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void AfterGetExplicitCounterpartyById(ref bool suppressDefaultLog, IGetExplicitCounterpartyByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -7231,10 +5056,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        private void OnErrorOBPv400GetExplicitCounterpartyByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
+        private void OnErrorGetExplicitCounterpartyByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetExplicitCounterpartyById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
+            OnErrorGetExplicitCounterpartyById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, counterpartyid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -7250,7 +5075,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <param name="counterpartyid"></param>
-        partial void OnErrorOBPv400GetExplicitCounterpartyById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
+        partial void OnErrorGetExplicitCounterpartyById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string counterpartyid);
 
         /// <summary>
         /// Get Counterparty by Id (Explicit) &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -7260,12 +5085,12 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetExplicitCounterpartyByIdApiResponse?> OBPv400GetExplicitCounterpartyByIdOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetExplicitCounterpartyByIdApiResponse?> GetExplicitCounterpartyByIdOrDefaultAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetExplicitCounterpartyByIdAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
+                return await GetExplicitCounterpartyByIdAsync(bankid, accountid, viewid, counterpartyid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -7282,16 +5107,16 @@ namespace OpenBankProject.Api
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="counterpartyid">The COUNTERPARTYID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetExplicitCounterpartyByIdApiResponse> OBPv400GetExplicitCounterpartyByIdAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetExplicitCounterpartyByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetExplicitCounterpartyByIdApiResponse> GetExplicitCounterpartyByIdAsync(string bankid, string accountid, string viewid, string counterpartyid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
+                ValidateGetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid);
 
-                FormatOBPv400GetExplicitCounterpartyById(ref bankid, ref accountid, ref viewid, ref counterpartyid);
+                FormatGetExplicitCounterpartyById(ref bankid, ref accountid, ref viewid, ref counterpartyid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -7311,7 +5136,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -7338,8 +5163,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<CounterpartyApi.OBPv400GetExplicitCounterpartyByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.OBPv400GetExplicitCounterpartyByIdApiResponse>();
-                        CounterpartyApi.OBPv400GetExplicitCounterpartyByIdApiResponse apiResponseLocalVar;
+                        ILogger<CounterpartyApi.GetExplicitCounterpartyByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.GetExplicitCounterpartyByIdApiResponse>();
+                        CounterpartyApi.GetExplicitCounterpartyByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -7350,9 +5175,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetExplicitCounterpartyByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
+                        AfterGetExplicitCounterpartyByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, counterpartyid);
 
-                        Events.ExecuteOnOBPv400GetExplicitCounterpartyById(apiResponseLocalVar);
+                        Events.ExecuteOnGetExplicitCounterpartyById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -7364,8 +5189,2183 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetExplicitCounterpartyByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
-                Events.ExecuteOnErrorOBPv400GetExplicitCounterpartyById(e);
+                OnErrorGetExplicitCounterpartyByIdDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}", uriBuilderLocalVar.Path, bankid, accountid, viewid, counterpartyid);
+                Events.ExecuteOnErrorGetExplicitCounterpartyById(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetOtherAccountMetadata(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <returns></returns>
+        private void ValidateGetOtherAccountMetadata(string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        private void AfterGetOtherAccountMetadataDefaultImplementation(IGetOtherAccountMetadataApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetOtherAccountMetadata(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        partial void AfterGetOtherAccountMetadata(ref bool suppressDefaultLog, IGetOtherAccountMetadataApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        private void OnErrorGetOtherAccountMetadataDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetOtherAccountMetadata(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        partial void OnErrorGetOtherAccountMetadata(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+
+        /// <summary>
+        /// Get Other Account Metadata &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountMetadataApiResponse"/>&gt;</returns>
+        public async Task<IGetOtherAccountMetadataApiResponse?> GetOtherAccountMetadataOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetOtherAccountMetadataAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Other Account Metadata &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountMetadataApiResponse"/>&gt;</returns>
+        public async Task<IGetOtherAccountMetadataApiResponse> GetOtherAccountMetadataAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetOtherAccountMetadata(bankid, accountid, viewid, otheraccountid);
+
+                FormatGetOtherAccountMetadata(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.GetOtherAccountMetadataApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.GetOtherAccountMetadataApiResponse>();
+                        CounterpartyApi.GetOtherAccountMetadataApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetOtherAccountMetadataDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+
+                        Events.ExecuteOnGetOtherAccountMetadata(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetOtherAccountMetadataDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorGetOtherAccountMetadata(e);
+                throw;
+            }
+        }
+
+        partial void FormatGetOtherAccountPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <returns></returns>
+        private void ValidateGetOtherAccountPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        private void AfterGetOtherAccountPrivateAliasDefaultImplementation(IGetOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetOtherAccountPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        partial void AfterGetOtherAccountPrivateAlias(ref bool suppressDefaultLog, IGetOtherAccountPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        private void OnErrorGetOtherAccountPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetOtherAccountPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        partial void OnErrorGetOtherAccountPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid);
+
+        /// <summary>
+        /// Get Other Account Private Alias &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IGetOtherAccountPrivateAliasApiResponse?> GetOtherAccountPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetOtherAccountPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Other Account Private Alias &lt;p&gt;Returns the private alias of the other account OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetOtherAccountPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IGetOtherAccountPrivateAliasApiResponse> GetOtherAccountPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid);
+
+                FormatGetOtherAccountPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.GetOtherAccountPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.GetOtherAccountPrivateAliasApiResponse>();
+                        CounterpartyApi.GetOtherAccountPrivateAliasApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetOtherAccountPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid);
+
+                        Events.ExecuteOnGetOtherAccountPrivateAlias(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetOtherAccountPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid);
+                Events.ExecuteOnErrorGetOtherAccountPrivateAlias(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyCorporateLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyCorporateLocation(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyCorporateLocationRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyCorporateLocationRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        private void AfterUpdateCounterpartyCorporateLocationDefaultImplementation(IUpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyCorporateLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        partial void AfterUpdateCounterpartyCorporateLocation(ref bool suppressDefaultLog, IUpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        private void OnErrorUpdateCounterpartyCorporateLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyCorporateLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyCorporateLocationRequest"></param>
+        partial void OnErrorUpdateCounterpartyCorporateLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest);
+
+        /// <summary>
+        /// Update Counterparty Corporate Location &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyCorporateLocationApiResponse?> UpdateCounterpartyCorporateLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyCorporateLocationAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Counterparty Corporate Location &lt;p&gt;Update the geolocation of the counterparty&#39;s registered address&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyCorporateLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyCorporateLocationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyCorporateLocationApiResponse> UpdateCounterpartyCorporateLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+
+                FormatUpdateCounterpartyCorporateLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyCorporateLocationRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyCorporateLocationRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyCorporateLocationRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyCorporateLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyCorporateLocationApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyCorporateLocationApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyCorporateLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyCorporateLocation(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyCorporateLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyCorporateLocation(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyImageUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyImageUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyImageUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyImageUrlRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        private void AfterUpdateCounterpartyImageUrlDefaultImplementation(IUpdateCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyImageUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        partial void AfterUpdateCounterpartyImageUrl(ref bool suppressDefaultLog, IUpdateCounterpartyImageUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        private void OnErrorUpdateCounterpartyImageUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyImageUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyImageUrlRequest"></param>
+        partial void OnErrorUpdateCounterpartyImageUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest);
+
+        /// <summary>
+        /// Update Counterparty Image Url &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyImageUrlApiResponse?> UpdateCounterpartyImageUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyImageUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Counterparty Image Url &lt;p&gt;Update the url that points to the logo of the counterparty&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyImageUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyImageUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyImageUrlApiResponse> UpdateCounterpartyImageUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+
+                FormatUpdateCounterpartyImageUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyImageUrlRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyImageUrlRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyImageUrlRequest, _jsonSerializerOptions));
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyImageUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyImageUrlApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyImageUrlApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyImageUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyImageUrl(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyImageUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyImageUrl(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyMoreInfo(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyMoreInfo(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyMoreInfoRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyMoreInfoRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        private void AfterUpdateCounterpartyMoreInfoDefaultImplementation(IUpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyMoreInfo(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        partial void AfterUpdateCounterpartyMoreInfo(ref bool suppressDefaultLog, IUpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        private void OnErrorUpdateCounterpartyMoreInfoDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyMoreInfo(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyMoreInfoRequest"></param>
+        partial void OnErrorUpdateCounterpartyMoreInfo(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest);
+
+        /// <summary>
+        /// Update Counterparty More Info &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyMoreInfoApiResponse?> UpdateCounterpartyMoreInfoOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyMoreInfoAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Counterparty More Info &lt;p&gt;Update the more info description of the counter party from the perpestive of the account e.g. My dentist&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyMoreInfoRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyMoreInfoApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyMoreInfoApiResponse> UpdateCounterpartyMoreInfoAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+
+                FormatUpdateCounterpartyMoreInfo(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyMoreInfoRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyMoreInfoRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyMoreInfoRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyMoreInfoApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyMoreInfoApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyMoreInfoApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyMoreInfoDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyMoreInfo(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyMoreInfoDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyMoreInfo(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyOpenCorporatesUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyOpenCorporatesUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyOpenCorporatesUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyOpenCorporatesUrlRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        private void AfterUpdateCounterpartyOpenCorporatesUrlDefaultImplementation(IUpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyOpenCorporatesUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        partial void AfterUpdateCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLog, IUpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        private void OnErrorUpdateCounterpartyOpenCorporatesUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyOpenCorporatesUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest"></param>
+        partial void OnErrorUpdateCounterpartyOpenCorporatesUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest);
+
+        /// <summary>
+        /// Update Open Corporates Url of Counterparty &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyOpenCorporatesUrlApiResponse?> UpdateCounterpartyOpenCorporatesUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyOpenCorporatesUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Open Corporates Url of Counterparty &lt;p&gt;Update open corporate url of other bank account&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyOpenCorporatesUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyOpenCorporatesUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyOpenCorporatesUrlApiResponse> UpdateCounterpartyOpenCorporatesUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+
+                FormatUpdateCounterpartyOpenCorporatesUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyOpenCorporatesUrlRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyOpenCorporatesUrlRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyOpenCorporatesUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyOpenCorporatesUrlApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyOpenCorporatesUrlApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyOpenCorporatesUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyOpenCorporatesUrl(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyOpenCorporatesUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyOpenCorporatesUrl(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyPhysicalLocation(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyPhysicalLocation(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyPhysicalLocationRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyPhysicalLocationRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        private void AfterUpdateCounterpartyPhysicalLocationDefaultImplementation(IUpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyPhysicalLocation(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        partial void AfterUpdateCounterpartyPhysicalLocation(ref bool suppressDefaultLog, IUpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        private void OnErrorUpdateCounterpartyPhysicalLocationDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyPhysicalLocation(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest"></param>
+        partial void OnErrorUpdateCounterpartyPhysicalLocation(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest);
+
+        /// <summary>
+        /// Update Counterparty Physical Location &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPhysicalLocationApiResponse?> UpdateCounterpartyPhysicalLocationOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyPhysicalLocationAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Counterparty Physical Location &lt;p&gt;Update geocoordinates of the counterparty&#39;s main location&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyPhysicalLocationRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPhysicalLocationApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPhysicalLocationApiResponse> UpdateCounterpartyPhysicalLocationAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+
+                FormatUpdateCounterpartyPhysicalLocation(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyPhysicalLocationRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyPhysicalLocationRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyPhysicalLocationRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyPhysicalLocationApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyPhysicalLocationApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyPhysicalLocationApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyPhysicalLocationDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyPhysicalLocation(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyPhysicalLocationDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyPhysicalLocation(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyPrivateAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyPrivateAlias(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (getCounterpartyPublicAlias200Response == null)
+                throw new ArgumentNullException(nameof(getCounterpartyPublicAlias200Response));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void AfterUpdateCounterpartyPrivateAliasDefaultImplementation(IUpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyPrivateAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void AfterUpdateCounterpartyPrivateAlias(ref bool suppressDefaultLog, IUpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void OnErrorUpdateCounterpartyPrivateAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyPrivateAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void OnErrorUpdateCounterpartyPrivateAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Update Counterparty Private Alias &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPrivateAliasApiResponse?> UpdateCounterpartyPrivateAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyPrivateAliasAsync(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Counterparty Private Alias &lt;p&gt;Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPrivateAliasApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPrivateAliasApiResponse> UpdateCounterpartyPrivateAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+
+                FormatUpdateCounterpartyPrivateAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, getCounterpartyPublicAlias200Response);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (getCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getCounterpartyPublicAlias200Response, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyPrivateAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyPrivateAliasApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyPrivateAliasApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyPrivateAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+
+                        Events.ExecuteOnUpdateCounterpartyPrivateAlias(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyPrivateAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+                Events.ExecuteOnErrorUpdateCounterpartyPrivateAlias(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyPublicAlias(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyPublicAlias(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (getCounterpartyPublicAlias200Response == null)
+                throw new ArgumentNullException(nameof(getCounterpartyPublicAlias200Response));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void AfterUpdateCounterpartyPublicAliasDefaultImplementation(IUpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyPublicAlias(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void AfterUpdateCounterpartyPublicAlias(ref bool suppressDefaultLog, IUpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        private void OnErrorUpdateCounterpartyPublicAliasDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyPublicAlias(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="getCounterpartyPublicAlias200Response"></param>
+        partial void OnErrorUpdateCounterpartyPublicAlias(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response);
+
+        /// <summary>
+        /// Update public alias of other bank account &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPublicAliasApiResponse?> UpdateCounterpartyPublicAliasOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyPublicAliasAsync(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update public alias of other bank account &lt;p&gt;Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;br /&gt; Authentication is required if the view is not public.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="getCounterpartyPublicAlias200Response">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyPublicAliasApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyPublicAliasApiResponse> UpdateCounterpartyPublicAliasAsync(string bankid, string accountid, string viewid, string otheraccountid, GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+
+                FormatUpdateCounterpartyPublicAlias(ref bankid, ref accountid, ref viewid, ref otheraccountid, getCounterpartyPublicAlias200Response);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (getCounterpartyPublicAlias200Response as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getCounterpartyPublicAlias200Response, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyPublicAliasApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyPublicAliasApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyPublicAliasApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyPublicAliasDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+
+                        Events.ExecuteOnUpdateCounterpartyPublicAlias(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyPublicAliasDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response);
+                Events.ExecuteOnErrorUpdateCounterpartyPublicAlias(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateCounterpartyUrl(ref string bankid, ref string accountid, ref string viewid, ref string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateCounterpartyUrl(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (viewid == null)
+                throw new ArgumentNullException(nameof(viewid));
+
+            if (otheraccountid == null)
+                throw new ArgumentNullException(nameof(otheraccountid));
+
+            if (updateCounterpartyUrlRequest == null)
+                throw new ArgumentNullException(nameof(updateCounterpartyUrlRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        private void AfterUpdateCounterpartyUrlDefaultImplementation(IUpdateCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateCounterpartyUrl(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        partial void AfterUpdateCounterpartyUrl(ref bool suppressDefaultLog, IUpdateCounterpartyUrlApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        private void OnErrorUpdateCounterpartyUrlDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateCounterpartyUrl(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="viewid"></param>
+        /// <param name="otheraccountid"></param>
+        /// <param name="updateCounterpartyUrlRequest"></param>
+        partial void OnErrorUpdateCounterpartyUrl(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest);
+
+        /// <summary>
+        /// Update url of other bank account &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyUrlApiResponse?> UpdateCounterpartyUrlOrDefaultAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateCounterpartyUrlAsync(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update url of other bank account &lt;p&gt;A url which represents the counterparty (home page url etc.)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="viewid">The VIEWID identifier</param>
+        /// <param name="otheraccountid">The OTHERACCOUNTID identifier</param>
+        /// <param name="updateCounterpartyUrlRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateCounterpartyUrlApiResponse"/>&gt;</returns>
+        public async Task<IUpdateCounterpartyUrlApiResponse> UpdateCounterpartyUrlAsync(string bankid, string accountid, string viewid, string otheraccountid, UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+
+                FormatUpdateCounterpartyUrl(ref bankid, ref accountid, ref viewid, ref otheraccountid, updateCounterpartyUrlRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Botheraccountid%7D", Uri.EscapeDataString(otheraccountid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateCounterpartyUrlRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateCounterpartyUrlRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CounterpartyApi.UpdateCounterpartyUrlApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CounterpartyApi.UpdateCounterpartyUrlApiResponse>();
+                        CounterpartyApi.UpdateCounterpartyUrlApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateCounterpartyUrlDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+
+                        Events.ExecuteOnUpdateCounterpartyUrl(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateCounterpartyUrlDefaultImplementation(e, "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url", uriBuilderLocalVar.Path, bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest);
+                Events.ExecuteOnErrorUpdateCounterpartyUrl(e);
                 throw;
             }
         }

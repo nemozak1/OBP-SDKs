@@ -1,26 +1,26 @@
 # DynamicResourceDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#obpv400builddynamicendpointtemplateoperation) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**oBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**oBPv400CreateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**oBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**oBPv400DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**oBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**oBPv400GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#obpv400getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**oBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**oBPv400GetDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**oBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatebankleveldynamicresourcedocoperation) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**oBPv400UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#obpv400updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**buildDynamicEndpointTemplate**](DynamicResourceDocApi.md#builddynamicendpointtemplateoperation) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**createBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#createbankleveldynamicresourcedoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**createDynamicResourceDoc**](DynamicResourceDocApi.md#createdynamicresourcedoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**deleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#deletebankleveldynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**deleteDynamicResourceDoc**](DynamicResourceDocApi.md#deletedynamicresourcedoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**getAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#getallbankleveldynamicresourcedocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**getAllDynamicResourceDocs**](DynamicResourceDocApi.md#getalldynamicresourcedocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**getBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#getbankleveldynamicresourcedoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**getDynamicResourceDoc**](DynamicResourceDocApi.md#getdynamicresourcedoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**updateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#updatebankleveldynamicresourcedocoperation) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**updateDynamicResourceDoc**](DynamicResourceDocApi.md#updatedynamicresourcedoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
 
 
-## oBPv400BuildDynamicEndpointTemplate
+## buildDynamicEndpointTemplate
 
-> OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(oBPv400BuildDynamicEndpointTemplateRequest)
+> BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -33,7 +33,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400BuildDynamicEndpointTemplateOperationRequest } from 'obp-typescript';
+import type { BuildDynamicEndpointTemplateOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -48,12 +48,12 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   const body = {
-    // OBPv400BuildDynamicEndpointTemplateRequest | Request body
-    oBPv400BuildDynamicEndpointTemplateRequest: {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}},
-  } satisfies OBPv400BuildDynamicEndpointTemplateOperationRequest;
+    // BuildDynamicEndpointTemplateRequest | Request body
+    buildDynamicEndpointTemplateRequest: {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}},
+  } satisfies BuildDynamicEndpointTemplateOperationRequest;
 
   try {
-    const data = await api.oBPv400BuildDynamicEndpointTemplate(body);
+    const data = await api.buildDynamicEndpointTemplate(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400BuildDynamicEndpointTemplateRequest** | [OBPv400BuildDynamicEndpointTemplateRequest](OBPv400BuildDynamicEndpointTemplateRequest.md) | Request body | |
+| **buildDynamicEndpointTemplateRequest** | [BuildDynamicEndpointTemplateRequest](BuildDynamicEndpointTemplateRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateBankLevelDynamicResourceDoc
+## createBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -109,7 +109,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400CreateBankLevelDynamicResourceDocRequest } from 'obp-typescript';
+import type { CreateBankLevelDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -126,12 +126,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
-  } satisfies OBPv400CreateBankLevelDynamicResourceDocRequest;
+    // UpdateBankLevelDynamicResourceDocRequest | Request body
+    updateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
+  } satisfies CreateBankLevelDynamicResourceDocRequest;
 
   try {
-    const data = await api.oBPv400CreateBankLevelDynamicResourceDoc(body);
+    const data = await api.createBankLevelDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -148,11 +148,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [OBPv400UpdateBankLevelDynamicResourceDocRequest](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [UpdateBankLevelDynamicResourceDocRequest](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -174,9 +174,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateDynamicResourceDoc
+## createDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -189,7 +189,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400CreateDynamicResourceDocRequest } from 'obp-typescript';
+import type { CreateDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -204,12 +204,12 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   const body = {
-    // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
-  } satisfies OBPv400CreateDynamicResourceDocRequest;
+    // UpdateBankLevelDynamicResourceDocRequest | Request body
+    updateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
+  } satisfies CreateDynamicResourceDocRequest;
 
   try {
-    const data = await api.oBPv400CreateDynamicResourceDoc(body);
+    const data = await api.createDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -225,11 +225,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [OBPv400UpdateBankLevelDynamicResourceDocRequest](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [UpdateBankLevelDynamicResourceDocRequest](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -250,9 +250,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteBankLevelDynamicResourceDoc
+## deleteBankLevelDynamicResourceDoc
 
-> oBPv400DeleteBankLevelDynamicResourceDoc(bankid)
+> deleteBankLevelDynamicResourceDoc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -265,7 +265,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteBankLevelDynamicResourceDocRequest } from 'obp-typescript';
+import type { DeleteBankLevelDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -282,10 +282,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400DeleteBankLevelDynamicResourceDocRequest;
+  } satisfies DeleteBankLevelDynamicResourceDocRequest;
 
   try {
-    const data = await api.oBPv400DeleteBankLevelDynamicResourceDoc(body);
+    const data = await api.deleteBankLevelDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -327,9 +327,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteDynamicResourceDoc
+## deleteDynamicResourceDoc
 
-> oBPv400DeleteDynamicResourceDoc()
+> deleteDynamicResourceDoc()
 
 Delete Dynamic Resource Doc
 
@@ -342,7 +342,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteDynamicResourceDocRequest } from 'obp-typescript';
+import type { DeleteDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -357,7 +357,7 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   try {
-    const data = await api.oBPv400DeleteDynamicResourceDoc();
+    const data = await api.deleteDynamicResourceDoc();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -395,9 +395,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllBankLevelDynamicResourceDocs
+## getAllBankLevelDynamicResourceDocs
 
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(bankid)
+> GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -410,7 +410,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllBankLevelDynamicResourceDocsRequest } from 'obp-typescript';
+import type { GetAllBankLevelDynamicResourceDocsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -427,10 +427,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetAllBankLevelDynamicResourceDocsRequest;
+  } satisfies GetAllBankLevelDynamicResourceDocsRequest;
 
   try {
-    const data = await api.oBPv400GetAllBankLevelDynamicResourceDocs(body);
+    const data = await api.getAllBankLevelDynamicResourceDocs(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -450,7 +450,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -472,9 +472,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetAllDynamicResourceDocs
+## getAllDynamicResourceDocs
 
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs()
+> GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs()
 
 Get all Dynamic Resource Docs
 
@@ -487,7 +487,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetAllDynamicResourceDocsRequest } from 'obp-typescript';
+import type { GetAllDynamicResourceDocsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -502,7 +502,7 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   try {
-    const data = await api.oBPv400GetAllDynamicResourceDocs();
+    const data = await api.getAllDynamicResourceDocs();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -519,7 +519,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -540,9 +540,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankLevelDynamicResourceDoc
+## getBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(bankid)
+> GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -555,7 +555,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankLevelDynamicResourceDocRequest } from 'obp-typescript';
+import type { GetBankLevelDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -572,10 +572,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetBankLevelDynamicResourceDocRequest;
+  } satisfies GetBankLevelDynamicResourceDocRequest;
 
   try {
-    const data = await api.oBPv400GetBankLevelDynamicResourceDoc(body);
+    const data = await api.getBankLevelDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -595,7 +595,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -617,9 +617,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetDynamicResourceDoc
+## getDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc()
+> GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc()
 
 Get Dynamic Resource Doc by Id
 
@@ -632,7 +632,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400GetDynamicResourceDocRequest } from 'obp-typescript';
+import type { GetDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -647,7 +647,7 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   try {
-    const data = await api.oBPv400GetDynamicResourceDoc();
+    const data = await api.getDynamicResourceDoc();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -664,7 +664,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -685,9 +685,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateBankLevelDynamicResourceDoc
+## updateBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(bankid, oBPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -700,7 +700,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateBankLevelDynamicResourceDocOperationRequest } from 'obp-typescript';
+import type { UpdateBankLevelDynamicResourceDocOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -717,12 +717,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}},
-  } satisfies OBPv400UpdateBankLevelDynamicResourceDocOperationRequest;
+    // UpdateBankLevelDynamicResourceDocRequest | Request body
+    updateBankLevelDynamicResourceDocRequest: {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}},
+  } satisfies UpdateBankLevelDynamicResourceDocOperationRequest;
 
   try {
-    const data = await api.oBPv400UpdateBankLevelDynamicResourceDoc(body);
+    const data = await api.updateBankLevelDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -739,11 +739,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [OBPv400UpdateBankLevelDynamicResourceDocRequest](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [UpdateBankLevelDynamicResourceDocRequest](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -765,9 +765,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateDynamicResourceDoc
+## updateDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(oBPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -780,7 +780,7 @@ import {
   Configuration,
   DynamicResourceDocApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateDynamicResourceDocRequest } from 'obp-typescript';
+import type { UpdateDynamicResourceDocRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -795,12 +795,12 @@ async function example() {
   const api = new DynamicResourceDocApi(config);
 
   const body = {
-    // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
-    oBPv400UpdateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
-  } satisfies OBPv400UpdateDynamicResourceDocRequest;
+    // UpdateBankLevelDynamicResourceDocRequest | Request body
+    updateBankLevelDynamicResourceDocRequest: {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}},
+  } satisfies UpdateDynamicResourceDocRequest;
 
   try {
-    const data = await api.oBPv400UpdateDynamicResourceDoc(body);
+    const data = await api.updateDynamicResourceDoc(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -816,11 +816,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oBPv400UpdateBankLevelDynamicResourceDocRequest** | [OBPv400UpdateBankLevelDynamicResourceDocRequest](OBPv400UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [UpdateBankLevelDynamicResourceDocRequest](UpdateBankLevelDynamicResourceDocRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 

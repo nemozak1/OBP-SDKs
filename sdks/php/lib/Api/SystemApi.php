@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,49 +75,49 @@ class SystemApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510LogCacheAllEndpoint' => [
+        'getCacheConfig' => [
             'application/json',
         ],
-        'oBPv510LogCacheDebugEndpoint' => [
+        'getCacheInfo' => [
             'application/json',
         ],
-        'oBPv510LogCacheErrorEndpoint' => [
+        'getCacheNamespaces' => [
             'application/json',
         ],
-        'oBPv510LogCacheInfoEndpoint' => [
+        'getConnectorMethodNames' => [
             'application/json',
         ],
-        'oBPv510LogCacheTraceEndpoint' => [
+        'getConnectors' => [
             'application/json',
         ],
-        'oBPv510LogCacheWarningEndpoint' => [
+        'getDatabasePoolInfo' => [
             'application/json',
         ],
-        'oBPv600GetCacheConfig' => [
+        'getMigrations' => [
             'application/json',
         ],
-        'oBPv600GetCacheInfo' => [
+        'getStoredProcedureConnectorHealth' => [
             'application/json',
         ],
-        'oBPv600GetCacheNamespaces' => [
+        'invalidateCacheNamespace' => [
             'application/json',
         ],
-        'oBPv600GetConnectorMethodNames' => [
+        'logCacheAllEndpoint' => [
             'application/json',
         ],
-        'oBPv600GetConnectors' => [
+        'logCacheDebugEndpoint' => [
             'application/json',
         ],
-        'oBPv600GetDatabasePoolInfo' => [
+        'logCacheErrorEndpoint' => [
             'application/json',
         ],
-        'oBPv600GetMigrations' => [
+        'logCacheInfoEndpoint' => [
             'application/json',
         ],
-        'oBPv600GetStoredProcedureConnectorHealth' => [
+        'logCacheTraceEndpoint' => [
             'application/json',
         ],
-        'oBPv600InvalidateCacheNamespace' => [
+        'logCacheWarningEndpoint' => [
             'application/json',
         ],
     ];
@@ -169,1308 +169,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv510LogCacheAllEndpoint
-     *
-     * Get All Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheAllEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
-    {
-        $this->oBPv510LogCacheAllEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheAllEndpointWithHttpInfo
-     *
-     * Get All Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheAllEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheAllEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheAllEndpointAsync
-     *
-     * Get All Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheAllEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheAllEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheAllEndpointAsyncWithHttpInfo
-     *
-     * Get All Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheAllEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheAllEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheAllEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheAllEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheAllEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheAllEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/all';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510LogCacheDebugEndpoint
-     *
-     * Get Debug Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheDebugEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
-    {
-        $this->oBPv510LogCacheDebugEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheDebugEndpointWithHttpInfo
-     *
-     * Get Debug Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheDebugEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheDebugEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheDebugEndpointAsync
-     *
-     * Get Debug Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheDebugEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheDebugEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheDebugEndpointAsyncWithHttpInfo
-     *
-     * Get Debug Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheDebugEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheDebugEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheDebugEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheDebugEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheDebugEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheDebugEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/debug';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510LogCacheErrorEndpoint
-     *
-     * Get Error Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheErrorEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
-    {
-        $this->oBPv510LogCacheErrorEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheErrorEndpointWithHttpInfo
-     *
-     * Get Error Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheErrorEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheErrorEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheErrorEndpointAsync
-     *
-     * Get Error Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheErrorEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheErrorEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheErrorEndpointAsyncWithHttpInfo
-     *
-     * Get Error Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheErrorEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheErrorEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheErrorEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheErrorEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheErrorEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheErrorEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/error';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510LogCacheInfoEndpoint
-     *
-     * Get Info Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheInfoEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
-    {
-        $this->oBPv510LogCacheInfoEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheInfoEndpointWithHttpInfo
-     *
-     * Get Info Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheInfoEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheInfoEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheInfoEndpointAsync
-     *
-     * Get Info Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheInfoEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheInfoEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheInfoEndpointAsyncWithHttpInfo
-     *
-     * Get Info Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheInfoEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheInfoEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheInfoEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheInfoEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheInfoEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheInfoEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/info';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510LogCacheTraceEndpoint
-     *
-     * Get Trace Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheTraceEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
-    {
-        $this->oBPv510LogCacheTraceEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheTraceEndpointWithHttpInfo
-     *
-     * Get Trace Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheTraceEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheTraceEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheTraceEndpointAsync
-     *
-     * Get Trace Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheTraceEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheTraceEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheTraceEndpointAsyncWithHttpInfo
-     *
-     * Get Trace Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheTraceEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheTraceEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheTraceEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheTraceEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheTraceEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheTraceEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/trace';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510LogCacheWarningEndpoint
-     *
-     * Get Warning Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv510LogCacheWarningEndpoint(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
-    {
-        $this->oBPv510LogCacheWarningEndpointWithHttpInfo($contentType);
-    }
-
-    /**
-     * Operation oBPv510LogCacheWarningEndpointWithHttpInfo
-     *
-     * Get Warning Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510LogCacheWarningEndpointWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
-    {
-        $request = $this->oBPv510LogCacheWarningEndpointRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510LogCacheWarningEndpointAsync
-     *
-     * Get Warning Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheWarningEndpointAsync(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
-    {
-        return $this->oBPv510LogCacheWarningEndpointAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510LogCacheWarningEndpointAsyncWithHttpInfo
-     *
-     * Get Warning Level Log Cache
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510LogCacheWarningEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv510LogCacheWarningEndpointRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510LogCacheWarningEndpoint'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510LogCacheWarningEndpoint'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510LogCacheWarningEndpointRequest(string $contentType = self::contentTypes['oBPv510LogCacheWarningEndpoint'][0])
-    {
-
-
-        $resourcePath = '/obp/v5.1.0/system/log-cache/warning';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetCacheConfig
+     * Operation getCacheConfig
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheConfig200Response
+     * @return \OpenBankProject\Model\GetCacheConfig200Response
      */
-    public function oBPv600GetCacheConfig(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfig(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        list($response) = $this->oBPv600GetCacheConfigWithHttpInfo($contentType);
+        list($response) = $this->getCacheConfigWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheConfigWithHttpInfo
+     * Operation getCacheConfigWithHttpInfo
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheConfig200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheConfig200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheConfigWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigWithHttpInfo(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        $request = $this->oBPv600GetCacheConfigRequest($contentType);
+        $request = $this->getCacheConfigRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1498,7 +226,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                        '\OpenBankProject\Model\GetCacheConfig200Response',
                         $request,
                         $response,
                     );
@@ -1520,7 +248,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                '\OpenBankProject\Model\GetCacheConfig200Response',
                 $request,
                 $response,
             );
@@ -1529,7 +257,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheConfig200Response',
+                        '\OpenBankProject\Model\GetCacheConfig200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1542,18 +270,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheConfigAsync
+     * Operation getCacheConfigAsync
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheConfigAsync(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigAsync(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        return $this->oBPv600GetCacheConfigAsyncWithHttpInfo($contentType)
+        return $this->getCacheConfigAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1562,19 +290,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheConfigAsyncWithHttpInfo
+     * Operation getCacheConfigAsyncWithHttpInfo
      *
      * Get Cache Configuration
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheConfigAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheConfig200Response';
-        $request = $this->oBPv600GetCacheConfigRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheConfig200Response';
+        $request = $this->getCacheConfigRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1613,14 +341,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheConfig'
+     * Create request for operation 'getCacheConfig'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheConfig'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheConfig'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheConfigRequest(string $contentType = self::contentTypes['oBPv600GetCacheConfig'][0])
+    public function getCacheConfigRequest(string $contentType = self::contentTypes['getCacheConfig'][0])
     {
 
 
@@ -1676,9 +404,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1703,36 +431,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfo
+     * Operation getCacheInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheInfo200Response
+     * @return \OpenBankProject\Model\GetCacheInfo200Response
      */
-    public function oBPv600GetCacheInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        list($response) = $this->oBPv600GetCacheInfoWithHttpInfo($contentType);
+        list($response) = $this->getCacheInfoWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheInfoWithHttpInfo
+     * Operation getCacheInfoWithHttpInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheInfoWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoWithHttpInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        $request = $this->oBPv600GetCacheInfoRequest($contentType);
+        $request = $this->getCacheInfoRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1760,7 +488,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                        '\OpenBankProject\Model\GetCacheInfo200Response',
                         $request,
                         $response,
                     );
@@ -1782,7 +510,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                '\OpenBankProject\Model\GetCacheInfo200Response',
                 $request,
                 $response,
             );
@@ -1791,7 +519,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheInfo200Response',
+                        '\OpenBankProject\Model\GetCacheInfo200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1804,18 +532,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfoAsync
+     * Operation getCacheInfoAsync
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheInfoAsync(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoAsync(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        return $this->oBPv600GetCacheInfoAsyncWithHttpInfo($contentType)
+        return $this->getCacheInfoAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1824,19 +552,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheInfoAsyncWithHttpInfo
+     * Operation getCacheInfoAsyncWithHttpInfo
      *
      * Get Cache Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheInfo200Response';
-        $request = $this->oBPv600GetCacheInfoRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheInfo200Response';
+        $request = $this->getCacheInfoRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1875,14 +603,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheInfo'
+     * Create request for operation 'getCacheInfo'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheInfoRequest(string $contentType = self::contentTypes['oBPv600GetCacheInfo'][0])
+    public function getCacheInfoRequest(string $contentType = self::contentTypes['getCacheInfo'][0])
     {
 
 
@@ -1938,9 +666,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1965,36 +693,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespaces
+     * Operation getCacheNamespaces
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCacheNamespaces200Response
+     * @return \OpenBankProject\Model\GetCacheNamespaces200Response
      */
-    public function oBPv600GetCacheNamespaces(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespaces(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        list($response) = $this->oBPv600GetCacheNamespacesWithHttpInfo($contentType);
+        list($response) = $this->getCacheNamespacesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesWithHttpInfo
+     * Operation getCacheNamespacesWithHttpInfo
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCacheNamespaces200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCacheNamespaces200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetCacheNamespacesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesWithHttpInfo(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        $request = $this->oBPv600GetCacheNamespacesRequest($contentType);
+        $request = $this->getCacheNamespacesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2022,7 +750,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                        '\OpenBankProject\Model\GetCacheNamespaces200Response',
                         $request,
                         $response,
                     );
@@ -2044,7 +772,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                '\OpenBankProject\Model\GetCacheNamespaces200Response',
                 $request,
                 $response,
             );
@@ -2053,7 +781,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response',
+                        '\OpenBankProject\Model\GetCacheNamespaces200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2066,18 +794,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesAsync
+     * Operation getCacheNamespacesAsync
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheNamespacesAsync(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesAsync(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        return $this->oBPv600GetCacheNamespacesAsyncWithHttpInfo($contentType)
+        return $this->getCacheNamespacesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2086,19 +814,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetCacheNamespacesAsyncWithHttpInfo
+     * Operation getCacheNamespacesAsyncWithHttpInfo
      *
      * Get Cache Namespaces
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetCacheNamespacesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesAsyncWithHttpInfo(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCacheNamespaces200Response';
-        $request = $this->oBPv600GetCacheNamespacesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetCacheNamespaces200Response';
+        $request = $this->getCacheNamespacesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2137,14 +865,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetCacheNamespaces'
+     * Create request for operation 'getCacheNamespaces'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetCacheNamespaces'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCacheNamespaces'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetCacheNamespacesRequest(string $contentType = self::contentTypes['oBPv600GetCacheNamespaces'][0])
+    public function getCacheNamespacesRequest(string $contentType = self::contentTypes['getCacheNamespaces'][0])
     {
 
 
@@ -2200,9 +928,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2227,36 +955,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectorMethodNames
+     * Operation getConnectorMethodNames
      *
      * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response
+     * @return \OpenBankProject\Model\GetConnectorMethodNames200Response
      */
-    public function oBPv600GetConnectorMethodNames(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNames(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        list($response) = $this->oBPv600GetConnectorMethodNamesWithHttpInfo($contentType);
+        list($response) = $this->getConnectorMethodNamesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConnectorMethodNamesWithHttpInfo
+     * Operation getConnectorMethodNamesWithHttpInfo
      *
      * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectorMethodNames200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2284,7 +1012,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $request,
                         $response,
                     );
@@ -2306,7 +1034,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
+                '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                 $request,
                 $response,
             );
@@ -2315,7 +1043,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response',
+                        '\OpenBankProject\Model\GetConnectorMethodNames200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2328,18 +1056,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectorMethodNamesAsync
+     * Operation getConnectorMethodNamesAsync
      *
      * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorMethodNamesAsync(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesAsync(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        return $this->oBPv600GetConnectorMethodNamesAsyncWithHttpInfo($contentType)
+        return $this->getConnectorMethodNamesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2348,19 +1076,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectorMethodNamesAsyncWithHttpInfo
+     * Operation getConnectorMethodNamesAsyncWithHttpInfo
      *
      * Get Connector Method Names
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectorMethodNames200Response';
-        $request = $this->oBPv600GetConnectorMethodNamesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectorMethodNames200Response';
+        $request = $this->getConnectorMethodNamesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2399,14 +1127,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConnectorMethodNames'
+     * Create request for operation 'getConnectorMethodNames'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectorMethodNames'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectorMethodNames'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConnectorMethodNamesRequest(string $contentType = self::contentTypes['oBPv600GetConnectorMethodNames'][0])
+    public function getConnectorMethodNamesRequest(string $contentType = self::contentTypes['getConnectorMethodNames'][0])
     {
 
 
@@ -2462,9 +1190,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2489,36 +1217,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectors
+     * Operation getConnectors
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectors200Response
+     * @return \OpenBankProject\Model\GetConnectors200Response
      */
-    public function oBPv600GetConnectors(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectors(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        list($response) = $this->oBPv600GetConnectorsWithHttpInfo($contentType);
+        list($response) = $this->getConnectorsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConnectorsWithHttpInfo
+     * Operation getConnectorsWithHttpInfo
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectors200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectors200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConnectorsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsWithHttpInfo(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        $request = $this->oBPv600GetConnectorsRequest($contentType);
+        $request = $this->getConnectorsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2546,7 +1274,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                        '\OpenBankProject\Model\GetConnectors200Response',
                         $request,
                         $response,
                     );
@@ -2568,7 +1296,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                '\OpenBankProject\Model\GetConnectors200Response',
                 $request,
                 $response,
             );
@@ -2577,7 +1305,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                        '\OpenBankProject\Model\GetConnectors200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2590,18 +1318,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectorsAsync
+     * Operation getConnectorsAsync
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorsAsync(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsAsync(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        return $this->oBPv600GetConnectorsAsyncWithHttpInfo($contentType)
+        return $this->getConnectorsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2610,19 +1338,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetConnectorsAsyncWithHttpInfo
+     * Operation getConnectorsAsyncWithHttpInfo
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectors200Response';
-        $request = $this->oBPv600GetConnectorsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectors200Response';
+        $request = $this->getConnectorsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2661,14 +1389,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConnectors'
+     * Create request for operation 'getConnectors'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConnectorsRequest(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsRequest(string $contentType = self::contentTypes['getConnectors'][0])
     {
 
 
@@ -2714,20 +1442,6 @@ class SystemApi
             }
         }
 
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2751,36 +1465,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetDatabasePoolInfo
+     * Operation getDatabasePoolInfo
      *
      * Get Database Pool Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDatabasePoolInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabasePoolInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response
+     * @return \OpenBankProject\Model\GetDatabasePoolInfo200Response
      */
-    public function oBPv600GetDatabasePoolInfo(string $contentType = self::contentTypes['oBPv600GetDatabasePoolInfo'][0])
+    public function getDatabasePoolInfo(string $contentType = self::contentTypes['getDatabasePoolInfo'][0])
     {
-        list($response) = $this->oBPv600GetDatabasePoolInfoWithHttpInfo($contentType);
+        list($response) = $this->getDatabasePoolInfoWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetDatabasePoolInfoWithHttpInfo
+     * Operation getDatabasePoolInfoWithHttpInfo
      *
      * Get Database Pool Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDatabasePoolInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabasePoolInfo'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDatabasePoolInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetDatabasePoolInfoWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetDatabasePoolInfo'][0])
+    public function getDatabasePoolInfoWithHttpInfo(string $contentType = self::contentTypes['getDatabasePoolInfo'][0])
     {
-        $request = $this->oBPv600GetDatabasePoolInfoRequest($contentType);
+        $request = $this->getDatabasePoolInfoRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2808,7 +1522,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response',
+                        '\OpenBankProject\Model\GetDatabasePoolInfo200Response',
                         $request,
                         $response,
                     );
@@ -2830,7 +1544,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response',
+                '\OpenBankProject\Model\GetDatabasePoolInfo200Response',
                 $request,
                 $response,
             );
@@ -2839,7 +1553,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response',
+                        '\OpenBankProject\Model\GetDatabasePoolInfo200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2852,18 +1566,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetDatabasePoolInfoAsync
+     * Operation getDatabasePoolInfoAsync
      *
      * Get Database Pool Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDatabasePoolInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabasePoolInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetDatabasePoolInfoAsync(string $contentType = self::contentTypes['oBPv600GetDatabasePoolInfo'][0])
+    public function getDatabasePoolInfoAsync(string $contentType = self::contentTypes['getDatabasePoolInfo'][0])
     {
-        return $this->oBPv600GetDatabasePoolInfoAsyncWithHttpInfo($contentType)
+        return $this->getDatabasePoolInfoAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2872,19 +1586,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetDatabasePoolInfoAsyncWithHttpInfo
+     * Operation getDatabasePoolInfoAsyncWithHttpInfo
      *
      * Get Database Pool Information
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDatabasePoolInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabasePoolInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetDatabasePoolInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetDatabasePoolInfo'][0])
+    public function getDatabasePoolInfoAsyncWithHttpInfo(string $contentType = self::contentTypes['getDatabasePoolInfo'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetDatabasePoolInfo200Response';
-        $request = $this->oBPv600GetDatabasePoolInfoRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetDatabasePoolInfo200Response';
+        $request = $this->getDatabasePoolInfoRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2923,14 +1637,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetDatabasePoolInfo'
+     * Create request for operation 'getDatabasePoolInfo'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetDatabasePoolInfo'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDatabasePoolInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetDatabasePoolInfoRequest(string $contentType = self::contentTypes['oBPv600GetDatabasePoolInfo'][0])
+    public function getDatabasePoolInfoRequest(string $contentType = self::contentTypes['getDatabasePoolInfo'][0])
     {
 
 
@@ -2986,9 +1700,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3013,36 +1727,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetMigrations
+     * Operation getMigrations
      *
      * Get Database Migrations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMigrations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetMigrations200Response
+     * @return \OpenBankProject\Model\GetMigrations200Response
      */
-    public function oBPv600GetMigrations(string $contentType = self::contentTypes['oBPv600GetMigrations'][0])
+    public function getMigrations(string $contentType = self::contentTypes['getMigrations'][0])
     {
-        list($response) = $this->oBPv600GetMigrationsWithHttpInfo($contentType);
+        list($response) = $this->getMigrationsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetMigrationsWithHttpInfo
+     * Operation getMigrationsWithHttpInfo
      *
      * Get Database Migrations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMigrations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetMigrations200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMigrations200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetMigrationsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMigrations'][0])
+    public function getMigrationsWithHttpInfo(string $contentType = self::contentTypes['getMigrations'][0])
     {
-        $request = $this->oBPv600GetMigrationsRequest($contentType);
+        $request = $this->getMigrationsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3070,7 +1784,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetMigrations200Response',
+                        '\OpenBankProject\Model\GetMigrations200Response',
                         $request,
                         $response,
                     );
@@ -3092,7 +1806,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetMigrations200Response',
+                '\OpenBankProject\Model\GetMigrations200Response',
                 $request,
                 $response,
             );
@@ -3101,7 +1815,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetMigrations200Response',
+                        '\OpenBankProject\Model\GetMigrations200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3114,18 +1828,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetMigrationsAsync
+     * Operation getMigrationsAsync
      *
      * Get Database Migrations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMigrations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMigrationsAsync(string $contentType = self::contentTypes['oBPv600GetMigrations'][0])
+    public function getMigrationsAsync(string $contentType = self::contentTypes['getMigrations'][0])
     {
-        return $this->oBPv600GetMigrationsAsyncWithHttpInfo($contentType)
+        return $this->getMigrationsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3134,19 +1848,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetMigrationsAsyncWithHttpInfo
+     * Operation getMigrationsAsyncWithHttpInfo
      *
      * Get Database Migrations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMigrations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMigrationsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMigrations'][0])
+    public function getMigrationsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMigrations'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetMigrations200Response';
-        $request = $this->oBPv600GetMigrationsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetMigrations200Response';
+        $request = $this->getMigrationsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3185,14 +1899,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetMigrations'
+     * Create request for operation 'getMigrations'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMigrations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMigrations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetMigrationsRequest(string $contentType = self::contentTypes['oBPv600GetMigrations'][0])
+    public function getMigrationsRequest(string $contentType = self::contentTypes['getMigrations'][0])
     {
 
 
@@ -3248,9 +1962,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3275,36 +1989,36 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealth
+     * Operation getStoredProcedureConnectorHealth
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response
+     * @return \OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response
      */
-    public function oBPv600GetStoredProcedureConnectorHealth(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealth(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        list($response) = $this->oBPv600GetStoredProcedureConnectorHealthWithHttpInfo($contentType);
+        list($response) = $this->getStoredProcedureConnectorHealthWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthWithHttpInfo
+     * Operation getStoredProcedureConnectorHealthWithHttpInfo
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetStoredProcedureConnectorHealthWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthWithHttpInfo(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        $request = $this->oBPv600GetStoredProcedureConnectorHealthRequest($contentType);
+        $request = $this->getStoredProcedureConnectorHealthRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3332,7 +2046,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                        '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                         $request,
                         $response,
                     );
@@ -3354,7 +2068,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                 $request,
                 $response,
             );
@@ -3363,7 +2077,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                        '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3376,18 +2090,18 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthAsync
+     * Operation getStoredProcedureConnectorHealthAsync
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetStoredProcedureConnectorHealthAsync(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthAsync(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        return $this->oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo($contentType)
+        return $this->getStoredProcedureConnectorHealthAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3396,19 +2110,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo
+     * Operation getStoredProcedureConnectorHealthAsyncWithHttpInfo
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthAsyncWithHttpInfo(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response';
-        $request = $this->oBPv600GetStoredProcedureConnectorHealthRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response';
+        $request = $this->getStoredProcedureConnectorHealthRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3447,14 +2161,14 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetStoredProcedureConnectorHealth'
+     * Create request for operation 'getStoredProcedureConnectorHealth'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetStoredProcedureConnectorHealthRequest(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthRequest(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
 
 
@@ -3510,9 +2224,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3537,38 +2251,38 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespace
+     * Operation invalidateCacheNamespace
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response
+     * @return \OpenBankProject\Model\InvalidateCacheNamespace200Response
      */
-    public function oBPv600InvalidateCacheNamespace($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespace($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        list($response) = $this->oBPv600InvalidateCacheNamespaceWithHttpInfo($obpv600_invalidate_cache_namespace_request, $contentType);
+        list($response) = $this->invalidateCacheNamespaceWithHttpInfo($invalidate_cache_namespace_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceWithHttpInfo
+     * Operation invalidateCacheNamespaceWithHttpInfo
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\InvalidateCacheNamespace200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600InvalidateCacheNamespaceWithHttpInfo($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceWithHttpInfo($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        $request = $this->oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, $contentType);
+        $request = $this->invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3596,7 +2310,7 @@ class SystemApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                        '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                         $request,
                         $response,
                     );
@@ -3618,7 +2332,7 @@ class SystemApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                 $request,
                 $response,
             );
@@ -3627,7 +2341,7 @@ class SystemApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response',
+                        '\OpenBankProject\Model\InvalidateCacheNamespace200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3640,19 +2354,19 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceAsync
+     * Operation invalidateCacheNamespaceAsync
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600InvalidateCacheNamespaceAsync($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceAsync($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        return $this->oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo($obpv600_invalidate_cache_namespace_request, $contentType)
+        return $this->invalidateCacheNamespaceAsyncWithHttpInfo($invalidate_cache_namespace_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3661,20 +2375,20 @@ class SystemApi
     }
 
     /**
-     * Operation oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo
+     * Operation invalidateCacheNamespaceAsyncWithHttpInfo
      *
      * Invalidate Cache Namespace
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600InvalidateCacheNamespaceAsyncWithHttpInfo($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceAsyncWithHttpInfo($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600InvalidateCacheNamespace200Response';
-        $request = $this->oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, $contentType);
+        $returnType = '\OpenBankProject\Model\InvalidateCacheNamespace200Response';
+        $request = $this->invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3713,21 +2427,21 @@ class SystemApi
     }
 
     /**
-     * Create request for operation 'oBPv600InvalidateCacheNamespace'
+     * Create request for operation 'invalidateCacheNamespace'
      *
-     * @param  \OpenBankProject\Model\OBPv600InvalidateCacheNamespaceRequest $obpv600_invalidate_cache_namespace_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600InvalidateCacheNamespace'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\InvalidateCacheNamespaceRequest $invalidate_cache_namespace_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['invalidateCacheNamespace'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600InvalidateCacheNamespaceRequest($obpv600_invalidate_cache_namespace_request, string $contentType = self::contentTypes['oBPv600InvalidateCacheNamespace'][0])
+    public function invalidateCacheNamespaceRequest($invalidate_cache_namespace_request, string $contentType = self::contentTypes['invalidateCacheNamespace'][0])
     {
 
-        // verify the required parameter 'obpv600_invalidate_cache_namespace_request' is set
-        if ($obpv600_invalidate_cache_namespace_request === null || (is_array($obpv600_invalidate_cache_namespace_request) && count($obpv600_invalidate_cache_namespace_request) === 0)) {
+        // verify the required parameter 'invalidate_cache_namespace_request' is set
+        if ($invalidate_cache_namespace_request === null || (is_array($invalidate_cache_namespace_request) && count($invalidate_cache_namespace_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_invalidate_cache_namespace_request when calling oBPv600InvalidateCacheNamespace'
+                'Missing the required parameter $invalidate_cache_namespace_request when calling invalidateCacheNamespace'
             );
         }
 
@@ -3750,12 +2464,12 @@ class SystemApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_invalidate_cache_namespace_request)) {
+        if (isset($invalidate_cache_namespace_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_invalidate_cache_namespace_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($invalidate_cache_namespace_request));
             } else {
-                $httpBody = $obpv600_invalidate_cache_namespace_request;
+                $httpBody = $invalidate_cache_namespace_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3791,9 +2505,9 @@ class SystemApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3811,6 +2525,1278 @@ class SystemApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheAllEndpoint
+     *
+     * Get All Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheAllEndpoint(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
+    {
+        $this->logCacheAllEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheAllEndpointWithHttpInfo
+     *
+     * Get All Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheAllEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
+    {
+        $request = $this->logCacheAllEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheAllEndpointAsync
+     *
+     * Get All Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheAllEndpointAsync(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
+    {
+        return $this->logCacheAllEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheAllEndpointAsyncWithHttpInfo
+     *
+     * Get All Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheAllEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheAllEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheAllEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheAllEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheAllEndpointRequest(string $contentType = self::contentTypes['logCacheAllEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/all';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheDebugEndpoint
+     *
+     * Get Debug Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheDebugEndpoint(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
+    {
+        $this->logCacheDebugEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheDebugEndpointWithHttpInfo
+     *
+     * Get Debug Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheDebugEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
+    {
+        $request = $this->logCacheDebugEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheDebugEndpointAsync
+     *
+     * Get Debug Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheDebugEndpointAsync(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
+    {
+        return $this->logCacheDebugEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheDebugEndpointAsyncWithHttpInfo
+     *
+     * Get Debug Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheDebugEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheDebugEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheDebugEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheDebugEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheDebugEndpointRequest(string $contentType = self::contentTypes['logCacheDebugEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/debug';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheErrorEndpoint
+     *
+     * Get Error Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheErrorEndpoint(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
+    {
+        $this->logCacheErrorEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheErrorEndpointWithHttpInfo
+     *
+     * Get Error Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheErrorEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
+    {
+        $request = $this->logCacheErrorEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheErrorEndpointAsync
+     *
+     * Get Error Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheErrorEndpointAsync(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
+    {
+        return $this->logCacheErrorEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheErrorEndpointAsyncWithHttpInfo
+     *
+     * Get Error Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheErrorEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheErrorEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheErrorEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheErrorEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheErrorEndpointRequest(string $contentType = self::contentTypes['logCacheErrorEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/error';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheInfoEndpoint
+     *
+     * Get Info Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheInfoEndpoint(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
+    {
+        $this->logCacheInfoEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheInfoEndpointWithHttpInfo
+     *
+     * Get Info Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheInfoEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
+    {
+        $request = $this->logCacheInfoEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheInfoEndpointAsync
+     *
+     * Get Info Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheInfoEndpointAsync(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
+    {
+        return $this->logCacheInfoEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheInfoEndpointAsyncWithHttpInfo
+     *
+     * Get Info Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheInfoEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheInfoEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheInfoEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheInfoEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheInfoEndpointRequest(string $contentType = self::contentTypes['logCacheInfoEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/info';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheTraceEndpoint
+     *
+     * Get Trace Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheTraceEndpoint(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
+    {
+        $this->logCacheTraceEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheTraceEndpointWithHttpInfo
+     *
+     * Get Trace Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheTraceEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
+    {
+        $request = $this->logCacheTraceEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheTraceEndpointAsync
+     *
+     * Get Trace Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheTraceEndpointAsync(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
+    {
+        return $this->logCacheTraceEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheTraceEndpointAsyncWithHttpInfo
+     *
+     * Get Trace Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheTraceEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheTraceEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheTraceEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheTraceEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheTraceEndpointRequest(string $contentType = self::contentTypes['logCacheTraceEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/trace';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation logCacheWarningEndpoint
+     *
+     * Get Warning Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function logCacheWarningEndpoint(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
+    {
+        $this->logCacheWarningEndpointWithHttpInfo($contentType);
+    }
+
+    /**
+     * Operation logCacheWarningEndpointWithHttpInfo
+     *
+     * Get Warning Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function logCacheWarningEndpointWithHttpInfo(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
+    {
+        $request = $this->logCacheWarningEndpointRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation logCacheWarningEndpointAsync
+     *
+     * Get Warning Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheWarningEndpointAsync(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
+    {
+        return $this->logCacheWarningEndpointAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation logCacheWarningEndpointAsyncWithHttpInfo
+     *
+     * Get Warning Level Log Cache
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function logCacheWarningEndpointAsyncWithHttpInfo(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
+    {
+        $returnType = '';
+        $request = $this->logCacheWarningEndpointRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'logCacheWarningEndpoint'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['logCacheWarningEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function logCacheWarningEndpointRequest(string $contentType = self::contentTypes['logCacheWarningEndpoint'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/system/log-cache/warning';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -1,17 +1,17 @@
 # \ConnectorAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv600GetConnectors**](ConnectorAPI.md#OBPv600GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
-[**OBPv600GetStoredProcedureConnectorHealth**](ConnectorAPI.md#OBPv600GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**GetConnectors**](ConnectorAPI.md#GetConnectors) | **Get** /obp/v6.0.0/system/connectors | Get Connectors
+[**GetStoredProcedureConnectorHealth**](ConnectorAPI.md#GetStoredProcedureConnectorHealth) | **Get** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
 
 
 
-## OBPv600GetConnectors
+## GetConnectors
 
-> OBPv600GetConnectors200Response OBPv600GetConnectors(ctx).Execute()
+> GetConnectors200Response GetConnectors(ctx).Execute()
 
 Get Connectors
 
@@ -33,13 +33,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorAPI.OBPv600GetConnectors(context.Background()).Execute()
+	resp, r, err := apiClient.ConnectorAPI.GetConnectors(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorAPI.OBPv600GetConnectors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorAPI.GetConnectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetConnectors`: OBPv600GetConnectors200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorAPI.OBPv600GetConnectors`: %v\n", resp)
+	// response from `GetConnectors`: GetConnectors200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorAPI.GetConnectors`: %v\n", resp)
 }
 ```
 
@@ -49,16 +49,16 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetConnectorsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConnectorsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -70,9 +70,9 @@ Other parameters are passed through a pointer to a apiOBPv600GetConnectorsReques
 [[Back to README]](../README.md)
 
 
-## OBPv600GetStoredProcedureConnectorHealth
+## GetStoredProcedureConnectorHealth
 
-> OBPv600GetStoredProcedureConnectorHealth200Response OBPv600GetStoredProcedureConnectorHealth(ctx).Execute()
+> GetStoredProcedureConnectorHealth200Response GetStoredProcedureConnectorHealth(ctx).Execute()
 
 Get Stored Procedure Connector Health
 
@@ -94,13 +94,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConnectorAPI.OBPv600GetStoredProcedureConnectorHealth(context.Background()).Execute()
+	resp, r, err := apiClient.ConnectorAPI.GetStoredProcedureConnectorHealth(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorAPI.OBPv600GetStoredProcedureConnectorHealth``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConnectorAPI.GetStoredProcedureConnectorHealth``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600GetStoredProcedureConnectorHealth`: OBPv600GetStoredProcedureConnectorHealth200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConnectorAPI.OBPv600GetStoredProcedureConnectorHealth`: %v\n", resp)
+	// response from `GetStoredProcedureConnectorHealth`: GetStoredProcedureConnectorHealth200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConnectorAPI.GetStoredProcedureConnectorHealth`: %v\n", resp)
 }
 ```
 
@@ -110,12 +110,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600GetStoredProcedureConnectorHealthRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetStoredProcedureConnectorHealthRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 

@@ -44,6 +44,7 @@ import 'package:obp_dart/src/api/consent_api.dart';
 import 'package:obp_dart/src/api/consumer_api.dart';
 import 'package:obp_dart/src/api/corporate_customer_api.dart';
 import 'package:obp_dart/src/api/counterparty_api.dart';
+import 'package:obp_dart/src/api/counterparty_attribute_api.dart';
 import 'package:obp_dart/src/api/counterparty_limits_api.dart';
 import 'package:obp_dart/src/api/counterparty_metadata_api.dart';
 import 'package:obp_dart/src/api/customer_api.dart';
@@ -69,6 +70,7 @@ import 'package:obp_dart/src/api/group_api.dart';
 import 'package:obp_dart/src/api/json_schema_validation_api.dart';
 import 'package:obp_dart/src/api/kyc_api.dart';
 import 'package:obp_dart/src/api/log_cache_api.dart';
+import 'package:obp_dart/src/api/mandate_api.dart';
 import 'package:obp_dart/src/api/message_doc_api.dart';
 import 'package:obp_dart/src/api/method_routing_api.dart';
 import 'package:obp_dart/src/api/metric_api.dart';
@@ -112,7 +114,7 @@ import 'package:obp_dart/src/api/web_ui_props_api.dart';
 import 'package:obp_dart/src/api/webhook_api.dart';
 
 class ObpDart {
-  static const String basePath = r'https://apisandbox.openbankproject.com';
+  static const String basePath = r'http://127.0.0.1:8080';
 
   final Dio dio;
   final Serializers serializers;
@@ -375,6 +377,12 @@ class ObpDart {
     return CounterpartyApi(dio, serializers);
   }
 
+  /// Get CounterpartyAttributeApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  CounterpartyAttributeApi getCounterpartyAttributeApi() {
+    return CounterpartyAttributeApi(dio, serializers);
+  }
+
   /// Get CounterpartyLimitsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   CounterpartyLimitsApi getCounterpartyLimitsApi() {
@@ -523,6 +531,12 @@ class ObpDart {
   /// by doing that all interceptors will not be executed
   LogCacheApi getLogCacheApi() {
     return LogCacheApi(dio, serializers);
+  }
+
+  /// Get MandateApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MandateApi getMandateApi() {
+    return MandateApi(dio, serializers);
   }
 
   /// Get MessageDocApi instance, base route and serializer can be overridden by a given but be careful,

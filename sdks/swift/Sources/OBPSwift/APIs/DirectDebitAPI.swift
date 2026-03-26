@@ -15,12 +15,12 @@ open class DirectDebitAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
-     - parameter oBPv400CreateDirectDebitRequest: (body) Request body 
+     - parameter createDirectDebitRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateDirectDebit200Response
+     - returns: CreateDirectDebit200Response
      */
-    open class func oBPv400CreateDirectDebit(bankid: String, accountid: String, viewid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateDirectDebit200Response {
-        return try await oBPv400CreateDirectDebitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, oBPv400CreateDirectDebitRequest: oBPv400CreateDirectDebitRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createDirectDebit(bankid: String, accountid: String, viewid: String, createDirectDebitRequest: CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateDirectDebit200Response {
+        return try await createDirectDebitWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, createDirectDebitRequest: createDirectDebitRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -34,16 +34,16 @@ open class DirectDebitAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
-     - parameter oBPv400CreateDirectDebitRequest: (body) Request body 
+     - parameter createDirectDebitRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateDirectDebit200Response> 
+     - returns: RequestBuilder<CreateDirectDebit200Response> 
      */
-    open class func oBPv400CreateDirectDebitWithRequestBuilder(bankid: String, accountid: String, viewid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateDirectDebit200Response> {
+    open class func createDirectDebitWithRequestBuilder(bankid: String, accountid: String, viewid: String, createDirectDebitRequest: CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateDirectDebit200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -55,7 +55,7 @@ open class DirectDebitAPI {
         let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateDirectDebitRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createDirectDebitRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -65,7 +65,7 @@ open class DirectDebitAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateDirectDebit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateDirectDebit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -75,12 +75,12 @@ open class DirectDebitAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv400CreateDirectDebitRequest: (body) Request body 
+     - parameter createDirectDebitRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400CreateDirectDebit200Response
+     - returns: CreateDirectDebit200Response
      */
-    open class func oBPv400CreateDirectDebitManagement(bankid: String, accountid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400CreateDirectDebit200Response {
-        return try await oBPv400CreateDirectDebitManagementWithRequestBuilder(bankid: bankid, accountid: accountid, oBPv400CreateDirectDebitRequest: oBPv400CreateDirectDebitRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createDirectDebitManagement(bankid: String, accountid: String, createDirectDebitRequest: CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> CreateDirectDebit200Response {
+        return try await createDirectDebitManagementWithRequestBuilder(bankid: bankid, accountid: accountid, createDirectDebitRequest: createDirectDebitRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -94,15 +94,15 @@ open class DirectDebitAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter oBPv400CreateDirectDebitRequest: (body) Request body 
+     - parameter createDirectDebitRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400CreateDirectDebit200Response> 
+     - returns: RequestBuilder<CreateDirectDebit200Response> 
      */
-    open class func oBPv400CreateDirectDebitManagementWithRequestBuilder(bankid: String, accountid: String, oBPv400CreateDirectDebitRequest: OBPv400CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400CreateDirectDebit200Response> {
+    open class func createDirectDebitManagementWithRequestBuilder(bankid: String, accountid: String, createDirectDebitRequest: CreateDirectDebitRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<CreateDirectDebit200Response> {
         var localVariablePath = "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -111,7 +111,7 @@ open class DirectDebitAPI {
         let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateDirectDebitRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createDirectDebitRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -121,7 +121,7 @@ open class DirectDebitAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400CreateDirectDebit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<CreateDirectDebit200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

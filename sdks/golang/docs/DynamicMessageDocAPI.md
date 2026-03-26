@@ -1,25 +1,25 @@
 # \DynamicMessageDocAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400CreateBankLevelDynamicMessageDoc) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
-[**OBPv400CreateDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400CreateDynamicMessageDoc) | **Post** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
-[**OBPv400DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400DeleteBankLevelDynamicMessageDoc) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
-[**OBPv400DeleteDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400DeleteDynamicMessageDoc) | **Delete** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
-[**OBPv400GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocAPI.md#OBPv400GetAllBankLevelDynamicMessageDocs) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
-[**OBPv400GetAllDynamicMessageDocs**](DynamicMessageDocAPI.md#OBPv400GetAllDynamicMessageDocs) | **Get** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
-[**OBPv400GetBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400GetBankLevelDynamicMessageDoc) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
-[**OBPv400GetDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400GetDynamicMessageDoc) | **Get** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
-[**OBPv400UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400UpdateBankLevelDynamicMessageDoc) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
-[**OBPv400UpdateDynamicMessageDoc**](DynamicMessageDocAPI.md#OBPv400UpdateDynamicMessageDoc) | **Put** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
+[**CreateBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#CreateBankLevelDynamicMessageDoc) | **Post** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc
+[**CreateDynamicMessageDoc**](DynamicMessageDocAPI.md#CreateDynamicMessageDoc) | **Post** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc
+[**DeleteBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#DeleteBankLevelDynamicMessageDoc) | **Delete** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc
+[**DeleteDynamicMessageDoc**](DynamicMessageDocAPI.md#DeleteDynamicMessageDoc) | **Delete** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc
+[**GetAllBankLevelDynamicMessageDocs**](DynamicMessageDocAPI.md#GetAllBankLevelDynamicMessageDocs) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs
+[**GetAllDynamicMessageDocs**](DynamicMessageDocAPI.md#GetAllDynamicMessageDocs) | **Get** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs
+[**GetBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#GetBankLevelDynamicMessageDoc) | **Get** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc
+[**GetDynamicMessageDoc**](DynamicMessageDocAPI.md#GetDynamicMessageDoc) | **Get** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc
+[**UpdateBankLevelDynamicMessageDoc**](DynamicMessageDocAPI.md#UpdateBankLevelDynamicMessageDoc) | **Put** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc
+[**UpdateDynamicMessageDoc**](DynamicMessageDocAPI.md#UpdateDynamicMessageDoc) | **Put** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc
 
 
 
-## OBPv400CreateBankLevelDynamicMessageDoc
+## CreateBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400CreateBankLevelDynamicMessageDoc(ctx, bankid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+> GetDynamicMessageDoc200Response CreateBankLevelDynamicMessageDoc(ctx, bankid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 
 Create Bank Level Dynamic Message Doc
 
@@ -39,17 +39,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400UpdateDynamicMessageDocRequest := *openapiclient.NewOBPv400UpdateDynamicMessageDocRequest("Type_example", *openapiclient.NewOBPv400UpdateDynamicMessageDocRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateDynamicMessageDocRequest | Request body
+	updateDynamicMessageDocRequest := *openapiclient.NewUpdateDynamicMessageDocRequest() // UpdateDynamicMessageDocRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400CreateBankLevelDynamicMessageDoc(context.Background(), bankid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.CreateBankLevelDynamicMessageDoc(context.Background(), bankid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400CreateBankLevelDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.CreateBankLevelDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateBankLevelDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400CreateBankLevelDynamicMessageDoc`: %v\n", resp)
+	// response from `CreateBankLevelDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.CreateBankLevelDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -63,17 +63,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateBankLevelDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBankLevelDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateDynamicMessageDoc
+## CreateDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400CreateDynamicMessageDoc(ctx).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+> GetDynamicMessageDoc200Response CreateDynamicMessageDoc(ctx).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 
 Create Dynamic Message Doc
 
@@ -110,17 +110,17 @@ import (
 )
 
 func main() {
-	oBPv400UpdateDynamicMessageDocRequest := *openapiclient.NewOBPv400UpdateDynamicMessageDocRequest("Type_example", *openapiclient.NewOBPv400UpdateDynamicMessageDocRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateDynamicMessageDocRequest | Request body
+	updateDynamicMessageDocRequest := *openapiclient.NewUpdateDynamicMessageDocRequest() // UpdateDynamicMessageDocRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400CreateDynamicMessageDoc(context.Background()).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.CreateDynamicMessageDoc(context.Background()).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400CreateDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.CreateDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400CreateDynamicMessageDoc`: %v\n", resp)
+	// response from `CreateDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.CreateDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -130,16 +130,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -155,9 +155,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteBankLevelDynamicMessageDoc
+## DeleteBankLevelDynamicMessageDoc
 
-> OBPv400DeleteBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).Execute()
+> DeleteBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).Execute()
 
 Delete Bank Level Dynamic Message Doc
 
@@ -181,9 +181,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DynamicMessageDocAPI.OBPv400DeleteBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).Execute()
+	r, err := apiClient.DynamicMessageDocAPI.DeleteBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400DeleteBankLevelDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.DeleteBankLevelDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteBankLevelDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBankLevelDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -226,9 +226,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteDynamicMessageDoc
+## DeleteDynamicMessageDoc
 
-> OBPv400DeleteDynamicMessageDoc(ctx, dynamicmessagedocid).Execute()
+> DeleteDynamicMessageDoc(ctx, dynamicmessagedocid).Execute()
 
 Delete Dynamic Message Doc
 
@@ -251,9 +251,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DynamicMessageDocAPI.OBPv400DeleteDynamicMessageDoc(context.Background(), dynamicmessagedocid).Execute()
+	r, err := apiClient.DynamicMessageDocAPI.DeleteDynamicMessageDoc(context.Background(), dynamicmessagedocid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400DeleteDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.DeleteDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -294,9 +294,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetAllBankLevelDynamicMessageDocs
+## GetAllBankLevelDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response OBPv400GetAllBankLevelDynamicMessageDocs(ctx, bankid).Execute()
+> GetAllBankLevelDynamicMessageDocs200Response GetAllBankLevelDynamicMessageDocs(ctx, bankid).Execute()
 
 Get all Bank Level Dynamic Message Docs
 
@@ -319,13 +319,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400GetAllBankLevelDynamicMessageDocs(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.GetAllBankLevelDynamicMessageDocs(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400GetAllBankLevelDynamicMessageDocs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.GetAllBankLevelDynamicMessageDocs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetAllBankLevelDynamicMessageDocs`: OBPv400GetAllBankLevelDynamicMessageDocs200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400GetAllBankLevelDynamicMessageDocs`: %v\n", resp)
+	// response from `GetAllBankLevelDynamicMessageDocs`: GetAllBankLevelDynamicMessageDocs200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.GetAllBankLevelDynamicMessageDocs`: %v\n", resp)
 }
 ```
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetAllBankLevelDynamicMessageDocsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllBankLevelDynamicMessageDocsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -364,9 +364,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetAllDynamicMessageDocs
+## GetAllDynamicMessageDocs
 
-> OBPv400GetAllBankLevelDynamicMessageDocs200Response OBPv400GetAllDynamicMessageDocs(ctx).Execute()
+> GetAllBankLevelDynamicMessageDocs200Response GetAllDynamicMessageDocs(ctx).Execute()
 
 Get all Dynamic Message Docs
 
@@ -388,13 +388,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400GetAllDynamicMessageDocs(context.Background()).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.GetAllDynamicMessageDocs(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400GetAllDynamicMessageDocs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.GetAllDynamicMessageDocs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetAllDynamicMessageDocs`: OBPv400GetAllBankLevelDynamicMessageDocs200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400GetAllDynamicMessageDocs`: %v\n", resp)
+	// response from `GetAllDynamicMessageDocs`: GetAllBankLevelDynamicMessageDocs200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.GetAllDynamicMessageDocs`: %v\n", resp)
 }
 ```
 
@@ -404,12 +404,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetAllDynamicMessageDocsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAllDynamicMessageDocsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv400GetAllBankLevelDynamicMessageDocs200Response**](OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**GetAllBankLevelDynamicMessageDocs200Response**](GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -425,9 +425,9 @@ Other parameters are passed through a pointer to a apiOBPv400GetAllDynamicMessag
 [[Back to README]](../README.md)
 
 
-## OBPv400GetBankLevelDynamicMessageDoc
+## GetBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400GetBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).Execute()
+> GetDynamicMessageDoc200Response GetBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).Execute()
 
 Get Bank Level Dynamic Message Doc
 
@@ -451,13 +451,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400GetBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.GetBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400GetBankLevelDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.GetBankLevelDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetBankLevelDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400GetBankLevelDynamicMessageDoc`: %v\n", resp)
+	// response from `GetBankLevelDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.GetBankLevelDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetBankLevelDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBankLevelDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -498,9 +498,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetDynamicMessageDoc
+## GetDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400GetDynamicMessageDoc(ctx, dynamicmessagedocid).Execute()
+> GetDynamicMessageDoc200Response GetDynamicMessageDoc(ctx, dynamicmessagedocid).Execute()
 
 Get Dynamic Message Doc
 
@@ -523,13 +523,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400GetDynamicMessageDoc(context.Background(), dynamicmessagedocid).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.GetDynamicMessageDoc(context.Background(), dynamicmessagedocid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400GetDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.GetDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400GetDynamicMessageDoc`: %v\n", resp)
+	// response from `GetDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.GetDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -568,9 +568,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateBankLevelDynamicMessageDoc
+## UpdateBankLevelDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400UpdateBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+> GetDynamicMessageDoc200Response UpdateBankLevelDynamicMessageDoc(ctx, bankid, dynamicmessagedocid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 
 Update Bank Level Dynamic Message Doc
 
@@ -591,17 +591,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	dynamicmessagedocid := "dynamicmessagedocid_example" // string | The DYNAMICMESSAGEDOCID identifier
-	oBPv400UpdateDynamicMessageDocRequest := *openapiclient.NewOBPv400UpdateDynamicMessageDocRequest("Type_example", *openapiclient.NewOBPv400UpdateDynamicMessageDocRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateDynamicMessageDocRequest | Request body
+	updateDynamicMessageDocRequest := *openapiclient.NewUpdateDynamicMessageDocRequest() // UpdateDynamicMessageDocRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400UpdateBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.UpdateBankLevelDynamicMessageDoc(context.Background(), bankid, dynamicmessagedocid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400UpdateBankLevelDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.UpdateBankLevelDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateBankLevelDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400UpdateBankLevelDynamicMessageDoc`: %v\n", resp)
+	// response from `UpdateBankLevelDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.UpdateBankLevelDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -616,18 +616,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateBankLevelDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBankLevelDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -643,9 +643,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateDynamicMessageDoc
+## UpdateDynamicMessageDoc
 
-> OBPv400GetDynamicMessageDoc200Response OBPv400UpdateDynamicMessageDoc(ctx, dynamicmessagedocid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+> GetDynamicMessageDoc200Response UpdateDynamicMessageDoc(ctx, dynamicmessagedocid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 
 Update Dynamic Message Doc
 
@@ -665,17 +665,17 @@ import (
 
 func main() {
 	dynamicmessagedocid := "dynamicmessagedocid_example" // string | The DYNAMICMESSAGEDOCID identifier
-	oBPv400UpdateDynamicMessageDocRequest := *openapiclient.NewOBPv400UpdateDynamicMessageDocRequest("Type_example", *openapiclient.NewOBPv400UpdateDynamicMessageDocRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage("Type_example", map[string]interface{}(123)), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400UpdateDynamicMessageDocRequest | Request body
+	updateDynamicMessageDocRequest := *openapiclient.NewUpdateDynamicMessageDocRequest() // UpdateDynamicMessageDocRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DynamicMessageDocAPI.OBPv400UpdateDynamicMessageDoc(context.Background(), dynamicmessagedocid).OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest).Execute()
+	resp, r, err := apiClient.DynamicMessageDocAPI.UpdateDynamicMessageDoc(context.Background(), dynamicmessagedocid).UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.OBPv400UpdateDynamicMessageDoc``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DynamicMessageDocAPI.UpdateDynamicMessageDoc``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateDynamicMessageDoc`: OBPv400GetDynamicMessageDoc200Response
-	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.OBPv400UpdateDynamicMessageDoc`: %v\n", resp)
+	// response from `UpdateDynamicMessageDoc`: GetDynamicMessageDoc200Response
+	fmt.Fprintf(os.Stdout, "Response from `DynamicMessageDocAPI.UpdateDynamicMessageDoc`: %v\n", resp)
 }
 ```
 
@@ -689,17 +689,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateDynamicMessageDocRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateDynamicMessageDocRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400UpdateDynamicMessageDocRequest** | [**OBPv400UpdateDynamicMessageDocRequest**](OBPv400UpdateDynamicMessageDocRequest.md) | Request body | 
+ **updateDynamicMessageDocRequest** | [**UpdateDynamicMessageDocRequest**](UpdateDynamicMessageDocRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200Response**](OBPv400GetDynamicMessageDoc200Response.md)
+[**GetDynamicMessageDoc200Response**](GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

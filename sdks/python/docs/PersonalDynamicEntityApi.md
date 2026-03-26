@@ -4,11 +4,11 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv6_0_0_get_available_personal_dynamic_entities**](PersonalDynamicEntityApi.md#o_bpv6_0_0_get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**get_available_personal_dynamic_entities**](PersonalDynamicEntityApi.md#get_available_personal_dynamic_entities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
 
 
-# **o_bpv6_0_0_get_available_personal_dynamic_entities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response o_bpv6_0_0_get_available_personal_dynamic_entities()
+# **get_available_personal_dynamic_entities**
+> GetAvailablePersonalDynamicEntities200Response get_available_personal_dynamic_entities()
 
 Get Available Personal Dynamic Entities
 
@@ -30,7 +30,7 @@ without needing admin access to view all dynamic entity definitions.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_available_personal_dynamic_entities200_response import OBPv600GetAvailablePersonalDynamicEntities200Response
+from obp_python.models.get_available_personal_dynamic_entities200_response import GetAvailablePersonalDynamicEntities200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -66,11 +66,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Available Personal Dynamic Entities
-        api_response = api_instance.o_bpv6_0_0_get_available_personal_dynamic_entities()
-        print("The response of PersonalDynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities:\n")
+        api_response = api_instance.get_available_personal_dynamic_entities()
+        print("The response of PersonalDynamicEntityApi->get_available_personal_dynamic_entities:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PersonalDynamicEntityApi->o_bpv6_0_0_get_available_personal_dynamic_entities: %s\n" % e)
+        print("Exception when calling PersonalDynamicEntityApi->get_available_personal_dynamic_entities: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 

@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400CreateEndpointMappingRequest
-import com.openbankproject.models.OBPv400GetAllEndpointMappings200Response
-import com.openbankproject.models.OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+import com.openbankproject.models.CreateEndpointMappingRequest
+import com.openbankproject.models.GetAllEndpointMappings200Response
+import com.openbankproject.models.GetAllEndpointMappings200ResponseEndpointMappingsInner
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -52,8 +52,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Create Bank Level Endpoint Mapping
      * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @param createEndpointMappingRequest Request body
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateBankLevelEndpointMapping(bankid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid = bankid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun createBankLevelEndpointMapping(bankid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = createBankLevelEndpointMappingWithHttpInfo(bankid = bankid, createEndpointMappingRequest = createEndpointMappingRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,30 +85,30 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Create Bank Level Endpoint Mapping
      * &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @param createEndpointMappingRequest Request body
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400CreateBankLevelEndpointMappingRequestConfig(bankid = bankid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun createBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = createBankLevelEndpointMappingRequestConfig(bankid = bankid, createEndpointMappingRequest = createEndpointMappingRequest)
 
-        return request<OBPv400CreateEndpointMappingRequest, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<CreateEndpointMappingRequest, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateBankLevelEndpointMapping
+     * To obtain the request config of the operation createBankLevelEndpointMapping
      *
      * @param bankid The BANKID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
+     * @param createEndpointMappingRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : RequestConfig<OBPv400CreateEndpointMappingRequest> {
-        val localVariableBody = obPv400CreateEndpointMappingRequest
+    fun createBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : RequestConfig<CreateEndpointMappingRequest> {
+        val localVariableBody = createEndpointMappingRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -128,8 +128,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * POST /obp/v4.0.0/management/endpoint-mappings
      * Create Endpoint Mapping
      * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @param createEndpointMappingRequest Request body
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -138,11 +138,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun createEndpointMapping(createEndpointMappingRequest: CreateEndpointMappingRequest) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = createEndpointMappingWithHttpInfo(createEndpointMappingRequest = createEndpointMappingRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -160,29 +160,29 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * POST /obp/v4.0.0/management/endpoint-mappings
      * Create Endpoint Mapping
      * &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @param createEndpointMappingRequest Request body
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateEndpointMappingWithHttpInfo(obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400CreateEndpointMappingRequestConfig(obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun createEndpointMappingWithHttpInfo(createEndpointMappingRequest: CreateEndpointMappingRequest) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = createEndpointMappingRequestConfig(createEndpointMappingRequest = createEndpointMappingRequest)
 
-        return request<OBPv400CreateEndpointMappingRequest, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<CreateEndpointMappingRequest, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateEndpointMapping
+     * To obtain the request config of the operation createEndpointMapping
      *
-     * @param obPv400CreateEndpointMappingRequest Request body
+     * @param createEndpointMappingRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateEndpointMappingRequestConfig(obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : RequestConfig<OBPv400CreateEndpointMappingRequest> {
-        val localVariableBody = obPv400CreateEndpointMappingRequest
+    fun createEndpointMappingRequestConfig(createEndpointMappingRequest: CreateEndpointMappingRequest) : RequestConfig<CreateEndpointMappingRequest> {
+        val localVariableBody = createEndpointMappingRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -212,8 +212,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid)
+    fun deleteBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -241,8 +241,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid)
+    fun deleteBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -250,13 +250,13 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteBankLevelEndpointMapping
+     * To obtain the request config of the operation deleteBankLevelEndpointMapping
      *
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -284,8 +284,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteEndpointMapping(endpointmappingid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid)
+    fun deleteEndpointMapping(endpointmappingid: kotlin.String) : Unit {
+        val localVarResponse = deleteEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -312,8 +312,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteEndpointMappingRequestConfig(endpointmappingid = endpointmappingid)
+    fun deleteEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteEndpointMappingRequestConfig(endpointmappingid = endpointmappingid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -321,12 +321,12 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteEndpointMapping
+     * To obtain the request config of the operation deleteEndpointMapping
      *
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteEndpointMappingRequestConfig(endpointmappingid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteEndpointMappingRequestConfig(endpointmappingid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -346,7 +346,7 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Get all Bank Level Endpoint Mappings
      * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetAllEndpointMappings200Response
+     * @return GetAllEndpointMappings200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -355,11 +355,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllBankLevelEndpointMappings(bankid: kotlin.String) : OBPv400GetAllEndpointMappings200Response {
-        val localVarResponse = oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid = bankid)
+    fun getAllBankLevelEndpointMappings(bankid: kotlin.String) : GetAllEndpointMappings200Response {
+        val localVarResponse = getAllBankLevelEndpointMappingsWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -378,27 +378,27 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Get all Bank Level Endpoint Mappings
      * &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200Response?>
+     * @return ApiResponse<GetAllEndpointMappings200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllBankLevelEndpointMappingsWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetAllEndpointMappings200Response?> {
-        val localVariableConfig = oBPv400GetAllBankLevelEndpointMappingsRequestConfig(bankid = bankid)
+    fun getAllBankLevelEndpointMappingsWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetAllEndpointMappings200Response?> {
+        val localVariableConfig = getAllBankLevelEndpointMappingsRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetAllEndpointMappings200Response>(
+        return request<Unit, GetAllEndpointMappings200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllBankLevelEndpointMappings
+     * To obtain the request config of the operation getAllBankLevelEndpointMappings
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetAllBankLevelEndpointMappingsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getAllBankLevelEndpointMappingsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -418,7 +418,7 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v4.0.0/management/endpoint-mappings
      * Get all Endpoint Mappings
      * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-     * @return OBPv400GetAllEndpointMappings200Response
+     * @return GetAllEndpointMappings200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -427,11 +427,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetAllEndpointMappings() : OBPv400GetAllEndpointMappings200Response {
-        val localVarResponse = oBPv400GetAllEndpointMappingsWithHttpInfo()
+    fun getAllEndpointMappings() : GetAllEndpointMappings200Response {
+        val localVarResponse = getAllEndpointMappingsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -449,26 +449,26 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * GET /obp/v4.0.0/management/endpoint-mappings
      * Get all Endpoint Mappings
      * &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200Response?>
+     * @return ApiResponse<GetAllEndpointMappings200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetAllEndpointMappingsWithHttpInfo() : ApiResponse<OBPv400GetAllEndpointMappings200Response?> {
-        val localVariableConfig = oBPv400GetAllEndpointMappingsRequestConfig()
+    fun getAllEndpointMappingsWithHttpInfo() : ApiResponse<GetAllEndpointMappings200Response?> {
+        val localVariableConfig = getAllEndpointMappingsRequestConfig()
 
-        return request<Unit, OBPv400GetAllEndpointMappings200Response>(
+        return request<Unit, GetAllEndpointMappings200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetAllEndpointMappings
+     * To obtain the request config of the operation getAllEndpointMappings
      *
      * @return RequestConfig
      */
-    fun oBPv400GetAllEndpointMappingsRequestConfig() : RequestConfig<Unit> {
+    fun getAllEndpointMappingsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -490,7 +490,7 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * &lt;p&gt;Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -499,11 +499,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid)
+    fun getBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = getBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -523,28 +523,28 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * &lt;p&gt;Get an Bank Level Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400GetBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid)
+    fun getBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = getBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid)
 
-        return request<Unit, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<Unit, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetBankLevelEndpointMapping
+     * To obtain the request config of the operation getBankLevelEndpointMapping
      *
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -565,7 +565,7 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Get Endpoint Mapping by Id
      * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -574,11 +574,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetEndpointMapping(endpointmappingid: kotlin.String) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid)
+    fun getEndpointMapping(endpointmappingid: kotlin.String) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = getEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -597,27 +597,27 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Get Endpoint Mapping by Id
      * &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400GetEndpointMappingRequestConfig(endpointmappingid = endpointmappingid)
+    fun getEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = getEndpointMappingRequestConfig(endpointmappingid = endpointmappingid)
 
-        return request<Unit, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<Unit, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetEndpointMapping
+     * To obtain the request config of the operation getEndpointMapping
      *
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetEndpointMappingRequestConfig(endpointmappingid: kotlin.String) : RequestConfig<Unit> {
+    fun getEndpointMappingRequestConfig(endpointmappingid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -639,8 +639,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @param createEndpointMappingRequest Request body
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -649,11 +649,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun updateBankLevelEndpointMapping(bankid: kotlin.String, endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = updateBankLevelEndpointMappingWithHttpInfo(bankid = bankid, endpointmappingid = endpointmappingid, createEndpointMappingRequest = createEndpointMappingRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -673,31 +673,31 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @param createEndpointMappingRequest Request body
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400UpdateBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun updateBankLevelEndpointMappingWithHttpInfo(bankid: kotlin.String, endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = updateBankLevelEndpointMappingRequestConfig(bankid = bankid, endpointmappingid = endpointmappingid, createEndpointMappingRequest = createEndpointMappingRequest)
 
-        return request<OBPv400CreateEndpointMappingRequest, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<CreateEndpointMappingRequest, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateBankLevelEndpointMapping
+     * To obtain the request config of the operation updateBankLevelEndpointMapping
      *
      * @param bankid The BANKID identifier
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
+     * @param createEndpointMappingRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : RequestConfig<OBPv400CreateEndpointMappingRequest> {
-        val localVariableBody = obPv400CreateEndpointMappingRequest
+    fun updateBankLevelEndpointMappingRequestConfig(bankid: kotlin.String, endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : RequestConfig<CreateEndpointMappingRequest> {
+        val localVariableBody = createEndpointMappingRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -718,8 +718,8 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Update Endpoint Mapping
      * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+     * @param createEndpointMappingRequest Request body
+     * @return GetAllEndpointMappings200ResponseEndpointMappingsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -728,11 +728,11 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateEndpointMapping(endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems {
-        val localVarResponse = oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun updateEndpointMapping(endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : GetAllEndpointMappings200ResponseEndpointMappingsInner {
+        val localVarResponse = updateEndpointMappingWithHttpInfo(endpointmappingid = endpointmappingid, createEndpointMappingRequest = createEndpointMappingRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetAllEndpointMappings200ResponseEndpointMappingsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -751,30 +751,30 @@ open class EndpointMappingApi(basePath: kotlin.String = defaultBasePath, client:
      * Update Endpoint Mapping
      * &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
-     * @return ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?>
+     * @param createEndpointMappingRequest Request body
+     * @return ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : ApiResponse<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems?> {
-        val localVariableConfig = oBPv400UpdateEndpointMappingRequestConfig(endpointmappingid = endpointmappingid, obPv400CreateEndpointMappingRequest = obPv400CreateEndpointMappingRequest)
+    fun updateEndpointMappingWithHttpInfo(endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : ApiResponse<GetAllEndpointMappings200ResponseEndpointMappingsInner?> {
+        val localVariableConfig = updateEndpointMappingRequestConfig(endpointmappingid = endpointmappingid, createEndpointMappingRequest = createEndpointMappingRequest)
 
-        return request<OBPv400CreateEndpointMappingRequest, OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+        return request<CreateEndpointMappingRequest, GetAllEndpointMappings200ResponseEndpointMappingsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateEndpointMapping
+     * To obtain the request config of the operation updateEndpointMapping
      *
      * @param endpointmappingid The ENDPOINTMAPPINGID identifier
-     * @param obPv400CreateEndpointMappingRequest Request body
+     * @param createEndpointMappingRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateEndpointMappingRequestConfig(endpointmappingid: kotlin.String, obPv400CreateEndpointMappingRequest: OBPv400CreateEndpointMappingRequest) : RequestConfig<OBPv400CreateEndpointMappingRequest> {
-        val localVariableBody = obPv400CreateEndpointMappingRequest
+    fun updateEndpointMappingRequestConfig(endpointmappingid: kotlin.String, createEndpointMappingRequest: CreateEndpointMappingRequest) : RequestConfig<CreateEndpointMappingRequest> {
+        val localVariableBody = createEndpointMappingRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

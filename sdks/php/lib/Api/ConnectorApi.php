@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,10 +75,10 @@ class ConnectorApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600GetConnectors' => [
+        'getConnectors' => [
             'application/json',
         ],
-        'oBPv600GetStoredProcedureConnectorHealth' => [
+        'getStoredProcedureConnectorHealth' => [
             'application/json',
         ],
     ];
@@ -130,36 +130,36 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetConnectors
+     * Operation getConnectors
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetConnectors200Response
+     * @return \OpenBankProject\Model\GetConnectors200Response
      */
-    public function oBPv600GetConnectors(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectors(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        list($response) = $this->oBPv600GetConnectorsWithHttpInfo($contentType);
+        list($response) = $this->getConnectorsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetConnectorsWithHttpInfo
+     * Operation getConnectorsWithHttpInfo
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetConnectors200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetConnectors200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetConnectorsWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsWithHttpInfo(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        $request = $this->oBPv600GetConnectorsRequest($contentType);
+        $request = $this->getConnectorsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,7 +187,7 @@ class ConnectorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                        '\OpenBankProject\Model\GetConnectors200Response',
                         $request,
                         $response,
                     );
@@ -209,7 +209,7 @@ class ConnectorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                '\OpenBankProject\Model\GetConnectors200Response',
                 $request,
                 $response,
             );
@@ -218,7 +218,7 @@ class ConnectorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetConnectors200Response',
+                        '\OpenBankProject\Model\GetConnectors200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -231,18 +231,18 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetConnectorsAsync
+     * Operation getConnectorsAsync
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorsAsync(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsAsync(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        return $this->oBPv600GetConnectorsAsyncWithHttpInfo($contentType)
+        return $this->getConnectorsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,19 +251,19 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetConnectorsAsyncWithHttpInfo
+     * Operation getConnectorsAsyncWithHttpInfo
      *
      * Get Connectors
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetConnectorsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsAsyncWithHttpInfo(string $contentType = self::contentTypes['getConnectors'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetConnectors200Response';
-        $request = $this->oBPv600GetConnectorsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetConnectors200Response';
+        $request = $this->getConnectorsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -302,14 +302,14 @@ class ConnectorApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetConnectors'
+     * Create request for operation 'getConnectors'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetConnectors'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectors'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetConnectorsRequest(string $contentType = self::contentTypes['oBPv600GetConnectors'][0])
+    public function getConnectorsRequest(string $contentType = self::contentTypes['getConnectors'][0])
     {
 
 
@@ -355,20 +355,6 @@ class ConnectorApi
             }
         }
 
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -392,36 +378,36 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealth
+     * Operation getStoredProcedureConnectorHealth
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response
+     * @return \OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response
      */
-    public function oBPv600GetStoredProcedureConnectorHealth(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealth(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        list($response) = $this->oBPv600GetStoredProcedureConnectorHealthWithHttpInfo($contentType);
+        list($response) = $this->getStoredProcedureConnectorHealthWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthWithHttpInfo
+     * Operation getStoredProcedureConnectorHealthWithHttpInfo
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetStoredProcedureConnectorHealthWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthWithHttpInfo(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        $request = $this->oBPv600GetStoredProcedureConnectorHealthRequest($contentType);
+        $request = $this->getStoredProcedureConnectorHealthRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -449,7 +435,7 @@ class ConnectorApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                        '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                         $request,
                         $response,
                     );
@@ -471,7 +457,7 @@ class ConnectorApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                 $request,
                 $response,
             );
@@ -480,7 +466,7 @@ class ConnectorApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response',
+                        '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,18 +479,18 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthAsync
+     * Operation getStoredProcedureConnectorHealthAsync
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetStoredProcedureConnectorHealthAsync(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthAsync(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        return $this->oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo($contentType)
+        return $this->getStoredProcedureConnectorHealthAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -513,19 +499,19 @@ class ConnectorApi
     }
 
     /**
-     * Operation oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo
+     * Operation getStoredProcedureConnectorHealthAsyncWithHttpInfo
      *
      * Get Stored Procedure Connector Health
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetStoredProcedureConnectorHealthAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthAsyncWithHttpInfo(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetStoredProcedureConnectorHealth200Response';
-        $request = $this->oBPv600GetStoredProcedureConnectorHealthRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetStoredProcedureConnectorHealth200Response';
+        $request = $this->getStoredProcedureConnectorHealthRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -564,14 +550,14 @@ class ConnectorApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetStoredProcedureConnectorHealth'
+     * Create request for operation 'getStoredProcedureConnectorHealth'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStoredProcedureConnectorHealth'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetStoredProcedureConnectorHealthRequest(string $contentType = self::contentTypes['oBPv600GetStoredProcedureConnectorHealth'][0])
+    public function getStoredProcedureConnectorHealthRequest(string $contentType = self::contentTypes['getStoredProcedureConnectorHealth'][0])
     {
 
 
@@ -627,9 +613,9 @@ class ConnectorApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -24,11 +24,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]
-    def o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response, opts)
+    # @return [GetTagsForViewOnAccount200ResponseTagsInner]
+    def add_tag_for_view_on_account(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
+      data, _status_code, _headers = add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id, opts)
       data
     end
 
@@ -37,28 +37,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
-    # @param obpv400_delete_system_level_endpoint_tag200_response [OBPv400DeleteSystemLevelEndpointTag200Response] Request body
+    # @param get_transaction_types200_response_transaction_types_inner_id [GetTransactionTypes200ResponseTransactionTypesInnerId] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems data, response status code and response headers
-    def o_bpv4_0_0_add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200ResponseTagsInner, Integer, Hash)>] GetTagsForViewOnAccount200ResponseTagsInner data, response status code and response headers
+    def add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account ...'
+        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.add_tag_for_view_on_account ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.add_tag_for_view_on_account"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.add_tag_for_view_on_account"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.add_tag_for_view_on_account"
       end
-      # verify the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' is set
-      if @api_client.config.client_side_validation && obpv400_delete_system_level_endpoint_tag200_response.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_delete_system_level_endpoint_tag200_response' when calling AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account"
+      # verify the required parameter 'get_transaction_types200_response_transaction_types_inner_id' is set
+      if @api_client.config.client_side_validation && get_transaction_types200_response_transaction_types_inner_id.nil?
+        fail ArgumentError, "Missing the required parameter 'get_transaction_types200_response_transaction_types_inner_id' when calling AccountMetadataApi.add_tag_for_view_on_account"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
@@ -80,16 +80,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_delete_system_level_endpoint_tag200_response)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(get_transaction_types200_response_transaction_types_inner_id)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200ResponseTagsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountMetadataApi.o_bpv4_0_0_add_tag_for_view_on_account",
+        :operation => :"AccountMetadataApi.add_tag_for_view_on_account",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -100,7 +100,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountMetadataApi#o_bpv4_0_0_add_tag_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountMetadataApi#add_tag_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -113,8 +113,8 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_tag_for_view_on_account(bankid, accountid, viewid, tagid, opts = {})
-      o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid, opts)
+    def delete_tag_for_view_on_account(bankid, accountid, viewid, tagid, opts = {})
+      delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid, opts)
       nil
     end
 
@@ -126,25 +126,25 @@ module OpenBankProject
     # @param tagid [String] The TAGID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid, opts = {})
+    def delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account ...'
+        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.delete_tag_for_view_on_account ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.delete_tag_for_view_on_account"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.delete_tag_for_view_on_account"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.delete_tag_for_view_on_account"
       end
       # verify the required parameter 'tagid' is set
       if @api_client.config.client_side_validation && tagid.nil?
-        fail ArgumentError, "Missing the required parameter 'tagid' when calling AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'tagid' when calling AccountMetadataApi.delete_tag_for_view_on_account"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'tagid' + '}', CGI.escape(tagid.to_s))
@@ -168,7 +168,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountMetadataApi.o_bpv4_0_0_delete_tag_for_view_on_account",
+        :operation => :"AccountMetadataApi.delete_tag_for_view_on_account",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -179,7 +179,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountMetadataApi#o_bpv4_0_0_delete_tag_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountMetadataApi#delete_tag_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -190,9 +190,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTagsForViewOnAccount200Response]
-    def o_bpv4_0_0_get_tags_for_view_on_account(bankid, accountid, viewid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid, opts)
+    # @return [GetTagsForViewOnAccount200Response]
+    def get_tags_for_view_on_account(bankid, accountid, viewid, opts = {})
+      data, _status_code, _headers = get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid, opts)
       data
     end
 
@@ -202,22 +202,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTagsForViewOnAccount200Response, Integer, Hash)>] OBPv400GetTagsForViewOnAccount200Response data, response status code and response headers
-    def o_bpv4_0_0_get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid, opts = {})
+    # @return [Array<(GetTagsForViewOnAccount200Response, Integer, Hash)>] GetTagsForViewOnAccount200Response data, response status code and response headers
+    def get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.o_bpv4_0_0_get_tags_for_view_on_account ...'
+        @api_client.config.logger.debug 'Calling API: AccountMetadataApi.get_tags_for_view_on_account ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.o_bpv4_0_0_get_tags_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling AccountMetadataApi.get_tags_for_view_on_account"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.o_bpv4_0_0_get_tags_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling AccountMetadataApi.get_tags_for_view_on_account"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.o_bpv4_0_0_get_tags_for_view_on_account"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling AccountMetadataApi.get_tags_for_view_on_account"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s))
@@ -237,13 +237,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTagsForViewOnAccount200Response'
+      return_type = opts[:debug_return_type] || 'GetTagsForViewOnAccount200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AccountMetadataApi.o_bpv4_0_0_get_tags_for_view_on_account",
+        :operation => :"AccountMetadataApi.get_tags_for_view_on_account",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -254,7 +254,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AccountMetadataApi#o_bpv4_0_0_get_tags_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AccountMetadataApi#get_tags_for_view_on_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

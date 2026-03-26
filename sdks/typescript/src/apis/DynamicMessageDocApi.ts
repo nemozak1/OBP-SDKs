@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,59 +15,59 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400GetAllBankLevelDynamicMessageDocs200Response,
-  OBPv400GetDynamicMessageDoc200Response,
-  OBPv400UpdateDynamicMessageDocRequest,
+  GetAllBankLevelDynamicMessageDocs200Response,
+  GetDynamicMessageDoc200Response,
+  UpdateDynamicMessageDocRequest,
 } from '../models/index';
 import {
-    OBPv400GetAllBankLevelDynamicMessageDocs200ResponseFromJSON,
-    OBPv400GetAllBankLevelDynamicMessageDocs200ResponseToJSON,
-    OBPv400GetDynamicMessageDoc200ResponseFromJSON,
-    OBPv400GetDynamicMessageDoc200ResponseToJSON,
-    OBPv400UpdateDynamicMessageDocRequestFromJSON,
-    OBPv400UpdateDynamicMessageDocRequestToJSON,
+    GetAllBankLevelDynamicMessageDocs200ResponseFromJSON,
+    GetAllBankLevelDynamicMessageDocs200ResponseToJSON,
+    GetDynamicMessageDoc200ResponseFromJSON,
+    GetDynamicMessageDoc200ResponseToJSON,
+    UpdateDynamicMessageDocRequestFromJSON,
+    UpdateDynamicMessageDocRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateBankLevelDynamicMessageDocRequest {
+export interface CreateBankLevelDynamicMessageDocRequest {
     bankid: string;
-    oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest;
+    updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest;
 }
 
-export interface OBPv400CreateDynamicMessageDocRequest {
-    oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest;
+export interface CreateDynamicMessageDocRequest {
+    updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest;
 }
 
-export interface OBPv400DeleteBankLevelDynamicMessageDocRequest {
-    bankid: string;
-    dynamicmessagedocid: string;
-}
-
-export interface OBPv400DeleteDynamicMessageDocRequest {
-    dynamicmessagedocid: string;
-}
-
-export interface OBPv400GetAllBankLevelDynamicMessageDocsRequest {
-    bankid: string;
-}
-
-export interface OBPv400GetBankLevelDynamicMessageDocRequest {
+export interface DeleteBankLevelDynamicMessageDocRequest {
     bankid: string;
     dynamicmessagedocid: string;
 }
 
-export interface OBPv400GetDynamicMessageDocRequest {
+export interface DeleteDynamicMessageDocRequest {
     dynamicmessagedocid: string;
 }
 
-export interface OBPv400UpdateBankLevelDynamicMessageDocRequest {
+export interface GetAllBankLevelDynamicMessageDocsRequest {
+    bankid: string;
+}
+
+export interface GetBankLevelDynamicMessageDocRequest {
     bankid: string;
     dynamicmessagedocid: string;
-    oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest;
 }
 
-export interface OBPv400UpdateDynamicMessageDocOperationRequest {
+export interface GetDynamicMessageDocRequest {
     dynamicmessagedocid: string;
-    oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest;
+}
+
+export interface UpdateBankLevelDynamicMessageDocRequest {
+    bankid: string;
+    dynamicmessagedocid: string;
+    updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest;
+}
+
+export interface UpdateDynamicMessageDocOperationRequest {
+    dynamicmessagedocid: string;
+    updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest;
 }
 
 /**
@@ -76,20 +76,20 @@ export interface OBPv400UpdateDynamicMessageDocOperationRequest {
 export class DynamicMessageDocApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateBankLevelDynamicMessageDoc without sending the request
+     * Creates request options for createBankLevelDynamicMessageDoc without sending the request
      */
-    async oBPv400CreateBankLevelDynamicMessageDocRequestOpts(requestParameters: OBPv400CreateBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async createBankLevelDynamicMessageDocRequestOpts(requestParameters: CreateBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateBankLevelDynamicMessageDoc().'
+                'Required parameter "bankid" was null or undefined when calling createBankLevelDynamicMessageDoc().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateDynamicMessageDocRequest'] == null) {
+        if (requestParameters['updateDynamicMessageDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateDynamicMessageDocRequest',
-                'Required parameter "oBPv400UpdateDynamicMessageDocRequest" was null or undefined when calling oBPv400CreateBankLevelDynamicMessageDoc().'
+                'updateDynamicMessageDocRequest',
+                'Required parameter "updateDynamicMessageDocRequest" was null or undefined when calling createBankLevelDynamicMessageDoc().'
             );
         }
 
@@ -109,7 +109,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -121,7 +121,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateDynamicMessageDocRequestToJSON(requestParameters['oBPv400UpdateDynamicMessageDocRequest']),
+            body: UpdateDynamicMessageDocRequestToJSON(requestParameters['updateDynamicMessageDocRequest']),
         };
     }
 
@@ -129,30 +129,30 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Create Bank Level Dynamic Message Doc
      */
-    async oBPv400CreateBankLevelDynamicMessageDocRaw(requestParameters: OBPv400CreateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400CreateBankLevelDynamicMessageDocRequestOpts(requestParameters);
+    async createBankLevelDynamicMessageDocRaw(requestParameters: CreateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.createBankLevelDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Create Bank Level Dynamic Message Doc
      */
-    async oBPv400CreateBankLevelDynamicMessageDoc(requestParameters: OBPv400CreateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400CreateBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
+    async createBankLevelDynamicMessageDoc(requestParameters: CreateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.createBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateDynamicMessageDoc without sending the request
+     * Creates request options for createDynamicMessageDoc without sending the request
      */
-    async oBPv400CreateDynamicMessageDocRequestOpts(requestParameters: OBPv400CreateDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400UpdateDynamicMessageDocRequest'] == null) {
+    async createDynamicMessageDocRequestOpts(requestParameters: CreateDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['updateDynamicMessageDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateDynamicMessageDocRequest',
-                'Required parameter "oBPv400UpdateDynamicMessageDocRequest" was null or undefined when calling oBPv400CreateDynamicMessageDoc().'
+                'updateDynamicMessageDocRequest',
+                'Required parameter "updateDynamicMessageDocRequest" was null or undefined when calling createDynamicMessageDoc().'
             );
         }
 
@@ -172,7 +172,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,7 +183,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateDynamicMessageDocRequestToJSON(requestParameters['oBPv400UpdateDynamicMessageDocRequest']),
+            body: UpdateDynamicMessageDocRequestToJSON(requestParameters['updateDynamicMessageDocRequest']),
         };
     }
 
@@ -191,37 +191,37 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Create Dynamic Message Doc
      */
-    async oBPv400CreateDynamicMessageDocRaw(requestParameters: OBPv400CreateDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400CreateDynamicMessageDocRequestOpts(requestParameters);
+    async createDynamicMessageDocRaw(requestParameters: CreateDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.createDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Create Dynamic Message Doc
      */
-    async oBPv400CreateDynamicMessageDoc(requestParameters: OBPv400CreateDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400CreateDynamicMessageDocRaw(requestParameters, initOverrides);
+    async createDynamicMessageDoc(requestParameters: CreateDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.createDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteBankLevelDynamicMessageDoc without sending the request
+     * Creates request options for deleteBankLevelDynamicMessageDoc without sending the request
      */
-    async oBPv400DeleteBankLevelDynamicMessageDocRequestOpts(requestParameters: OBPv400DeleteBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async deleteBankLevelDynamicMessageDocRequestOpts(requestParameters: DeleteBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankLevelDynamicMessageDoc().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankLevelDynamicMessageDoc().'
             );
         }
 
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400DeleteBankLevelDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling deleteBankLevelDynamicMessageDoc().'
             );
         }
 
@@ -239,7 +239,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -259,8 +259,8 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Dynamic Message Doc
      */
-    async oBPv400DeleteBankLevelDynamicMessageDocRaw(requestParameters: OBPv400DeleteBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankLevelDynamicMessageDocRequestOpts(requestParameters);
+    async deleteBankLevelDynamicMessageDocRaw(requestParameters: DeleteBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankLevelDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -270,18 +270,18 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Bank Level Dynamic Message Doc
      */
-    async oBPv400DeleteBankLevelDynamicMessageDoc(requestParameters: OBPv400DeleteBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
+    async deleteBankLevelDynamicMessageDoc(requestParameters: DeleteBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400DeleteDynamicMessageDoc without sending the request
+     * Creates request options for deleteDynamicMessageDoc without sending the request
      */
-    async oBPv400DeleteDynamicMessageDocRequestOpts(requestParameters: OBPv400DeleteDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async deleteDynamicMessageDocRequestOpts(requestParameters: DeleteDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400DeleteDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling deleteDynamicMessageDoc().'
             );
         }
 
@@ -299,7 +299,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -318,8 +318,8 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Delete a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Dynamic Message Doc
      */
-    async oBPv400DeleteDynamicMessageDocRaw(requestParameters: OBPv400DeleteDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteDynamicMessageDocRequestOpts(requestParameters);
+    async deleteDynamicMessageDocRaw(requestParameters: DeleteDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -329,18 +329,18 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Delete a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete Dynamic Message Doc
      */
-    async oBPv400DeleteDynamicMessageDoc(requestParameters: OBPv400DeleteDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteDynamicMessageDocRaw(requestParameters, initOverrides);
+    async deleteDynamicMessageDoc(requestParameters: DeleteDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteDynamicMessageDocRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetAllBankLevelDynamicMessageDocs without sending the request
+     * Creates request options for getAllBankLevelDynamicMessageDocs without sending the request
      */
-    async oBPv400GetAllBankLevelDynamicMessageDocsRequestOpts(requestParameters: OBPv400GetAllBankLevelDynamicMessageDocsRequest): Promise<runtime.RequestOpts> {
+    async getAllBankLevelDynamicMessageDocsRequestOpts(requestParameters: GetAllBankLevelDynamicMessageDocsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetAllBankLevelDynamicMessageDocs().'
+                'Required parameter "bankid" was null or undefined when calling getAllBankLevelDynamicMessageDocs().'
             );
         }
 
@@ -358,7 +358,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -377,26 +377,26 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get all Bank Level Dynamic Message Docs
      */
-    async oBPv400GetAllBankLevelDynamicMessageDocsRaw(requestParameters: OBPv400GetAllBankLevelDynamicMessageDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>> {
-        const requestOptions = await this.oBPv400GetAllBankLevelDynamicMessageDocsRequestOpts(requestParameters);
+    async getAllBankLevelDynamicMessageDocsRaw(requestParameters: GetAllBankLevelDynamicMessageDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>> {
+        const requestOptions = await this.getAllBankLevelDynamicMessageDocsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllBankLevelDynamicMessageDocs200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankLevelDynamicMessageDocs200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get all Bank Level Dynamic Message Docs
      */
-    async oBPv400GetAllBankLevelDynamicMessageDocs(requestParameters: OBPv400GetAllBankLevelDynamicMessageDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllBankLevelDynamicMessageDocs200Response> {
-        const response = await this.oBPv400GetAllBankLevelDynamicMessageDocsRaw(requestParameters, initOverrides);
+    async getAllBankLevelDynamicMessageDocs(requestParameters: GetAllBankLevelDynamicMessageDocsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankLevelDynamicMessageDocs200Response> {
+        const response = await this.getAllBankLevelDynamicMessageDocsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllDynamicMessageDocs without sending the request
+     * Creates request options for getAllDynamicMessageDocs without sending the request
      */
-    async oBPv400GetAllDynamicMessageDocsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllDynamicMessageDocsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -411,7 +411,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -429,37 +429,37 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get all Dynamic Message Docs
      */
-    async oBPv400GetAllDynamicMessageDocsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>> {
-        const requestOptions = await this.oBPv400GetAllDynamicMessageDocsRequestOpts();
+    async getAllDynamicMessageDocsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>> {
+        const requestOptions = await this.getAllDynamicMessageDocsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllBankLevelDynamicMessageDocs200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllBankLevelDynamicMessageDocs200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get all Dynamic Message Docs
      */
-    async oBPv400GetAllDynamicMessageDocs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllBankLevelDynamicMessageDocs200Response> {
-        const response = await this.oBPv400GetAllDynamicMessageDocsRaw(initOverrides);
+    async getAllDynamicMessageDocs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllBankLevelDynamicMessageDocs200Response> {
+        const response = await this.getAllDynamicMessageDocsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetBankLevelDynamicMessageDoc without sending the request
+     * Creates request options for getBankLevelDynamicMessageDoc without sending the request
      */
-    async oBPv400GetBankLevelDynamicMessageDocRequestOpts(requestParameters: OBPv400GetBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelDynamicMessageDocRequestOpts(requestParameters: GetBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankLevelDynamicMessageDoc().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelDynamicMessageDoc().'
             );
         }
 
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400GetBankLevelDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling getBankLevelDynamicMessageDoc().'
             );
         }
 
@@ -477,7 +477,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -497,30 +497,30 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get Bank Level Dynamic Message Doc
      */
-    async oBPv400GetBankLevelDynamicMessageDocRaw(requestParameters: OBPv400GetBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400GetBankLevelDynamicMessageDocRequestOpts(requestParameters);
+    async getBankLevelDynamicMessageDocRaw(requestParameters: GetBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.getBankLevelDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get Bank Level Dynamic Message Doc
      */
-    async oBPv400GetBankLevelDynamicMessageDoc(requestParameters: OBPv400GetBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400GetBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
+    async getBankLevelDynamicMessageDoc(requestParameters: GetBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.getBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetDynamicMessageDoc without sending the request
+     * Creates request options for getDynamicMessageDoc without sending the request
      */
-    async oBPv400GetDynamicMessageDocRequestOpts(requestParameters: OBPv400GetDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async getDynamicMessageDocRequestOpts(requestParameters: GetDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400GetDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling getDynamicMessageDoc().'
             );
         }
 
@@ -538,7 +538,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -557,44 +557,44 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get Dynamic Message Doc
      */
-    async oBPv400GetDynamicMessageDocRaw(requestParameters: OBPv400GetDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400GetDynamicMessageDocRequestOpts(requestParameters);
+    async getDynamicMessageDocRaw(requestParameters: GetDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.getDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Get Dynamic Message Doc
      */
-    async oBPv400GetDynamicMessageDoc(requestParameters: OBPv400GetDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400GetDynamicMessageDocRaw(requestParameters, initOverrides);
+    async getDynamicMessageDoc(requestParameters: GetDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.getDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateBankLevelDynamicMessageDoc without sending the request
+     * Creates request options for updateBankLevelDynamicMessageDoc without sending the request
      */
-    async oBPv400UpdateBankLevelDynamicMessageDocRequestOpts(requestParameters: OBPv400UpdateBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
+    async updateBankLevelDynamicMessageDocRequestOpts(requestParameters: UpdateBankLevelDynamicMessageDocRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateBankLevelDynamicMessageDoc().'
+                'Required parameter "bankid" was null or undefined when calling updateBankLevelDynamicMessageDoc().'
             );
         }
 
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400UpdateBankLevelDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling updateBankLevelDynamicMessageDoc().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateDynamicMessageDocRequest'] == null) {
+        if (requestParameters['updateDynamicMessageDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateDynamicMessageDocRequest',
-                'Required parameter "oBPv400UpdateDynamicMessageDocRequest" was null or undefined when calling oBPv400UpdateBankLevelDynamicMessageDoc().'
+                'updateDynamicMessageDocRequest',
+                'Required parameter "updateDynamicMessageDocRequest" was null or undefined when calling updateBankLevelDynamicMessageDoc().'
             );
         }
 
@@ -614,7 +614,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -627,7 +627,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateDynamicMessageDocRequestToJSON(requestParameters['oBPv400UpdateDynamicMessageDocRequest']),
+            body: UpdateDynamicMessageDocRequestToJSON(requestParameters['updateDynamicMessageDocRequest']),
         };
     }
 
@@ -635,37 +635,37 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Update Bank Level Dynamic Message Doc
      */
-    async oBPv400UpdateBankLevelDynamicMessageDocRaw(requestParameters: OBPv400UpdateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400UpdateBankLevelDynamicMessageDocRequestOpts(requestParameters);
+    async updateBankLevelDynamicMessageDocRaw(requestParameters: UpdateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.updateBankLevelDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Update Bank Level Dynamic Message Doc
      */
-    async oBPv400UpdateBankLevelDynamicMessageDoc(requestParameters: OBPv400UpdateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400UpdateBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
+    async updateBankLevelDynamicMessageDoc(requestParameters: UpdateBankLevelDynamicMessageDocRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.updateBankLevelDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateDynamicMessageDoc without sending the request
+     * Creates request options for updateDynamicMessageDoc without sending the request
      */
-    async oBPv400UpdateDynamicMessageDocRequestOpts(requestParameters: OBPv400UpdateDynamicMessageDocOperationRequest): Promise<runtime.RequestOpts> {
+    async updateDynamicMessageDocRequestOpts(requestParameters: UpdateDynamicMessageDocOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicmessagedocid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicmessagedocid',
-                'Required parameter "dynamicmessagedocid" was null or undefined when calling oBPv400UpdateDynamicMessageDoc().'
+                'Required parameter "dynamicmessagedocid" was null or undefined when calling updateDynamicMessageDoc().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateDynamicMessageDocRequest'] == null) {
+        if (requestParameters['updateDynamicMessageDocRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateDynamicMessageDocRequest',
-                'Required parameter "oBPv400UpdateDynamicMessageDocRequest" was null or undefined when calling oBPv400UpdateDynamicMessageDoc().'
+                'updateDynamicMessageDocRequest',
+                'Required parameter "updateDynamicMessageDocRequest" was null or undefined when calling updateDynamicMessageDoc().'
             );
         }
 
@@ -685,7 +685,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -697,7 +697,7 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateDynamicMessageDocRequestToJSON(requestParameters['oBPv400UpdateDynamicMessageDocRequest']),
+            body: UpdateDynamicMessageDocRequestToJSON(requestParameters['updateDynamicMessageDocRequest']),
         };
     }
 
@@ -705,19 +705,19 @@ export class DynamicMessageDocApi extends runtime.BaseAPI {
      * <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Update Dynamic Message Doc
      */
-    async oBPv400UpdateDynamicMessageDocRaw(requestParameters: OBPv400UpdateDynamicMessageDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicMessageDoc200Response>> {
-        const requestOptions = await this.oBPv400UpdateDynamicMessageDocRequestOpts(requestParameters);
+    async updateDynamicMessageDocRaw(requestParameters: UpdateDynamicMessageDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicMessageDoc200Response>> {
+        const requestOptions = await this.updateDynamicMessageDocRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicMessageDoc200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
      * Update Dynamic Message Doc
      */
-    async oBPv400UpdateDynamicMessageDoc(requestParameters: OBPv400UpdateDynamicMessageDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicMessageDoc200Response> {
-        const response = await this.oBPv400UpdateDynamicMessageDocRaw(requestParameters, initOverrides);
+    async updateDynamicMessageDoc(requestParameters: UpdateDynamicMessageDocOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicMessageDoc200Response> {
+        const response = await this.updateDynamicMessageDocRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

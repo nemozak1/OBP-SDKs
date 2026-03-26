@@ -13,10 +13,10 @@ open class PrivateDataAPI {
      Get Accounts at all Banks (private)
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv300PrivateAccountsAtOneBank200Response
+     - returns: PrivateAccountsAtOneBank200Response
      */
-    open class func oBPv300CorePrivateAccountsAllBanks(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv300PrivateAccountsAtOneBank200Response {
-        return try await oBPv300CorePrivateAccountsAllBanksWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func corePrivateAccountsAllBanks(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> PrivateAccountsAtOneBank200Response {
+        return try await corePrivateAccountsAllBanksWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -30,12 +30,12 @@ open class PrivateDataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv300PrivateAccountsAtOneBank200Response> 
+     - returns: RequestBuilder<PrivateAccountsAtOneBank200Response> 
      */
-    open class func oBPv300CorePrivateAccountsAllBanksWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv300PrivateAccountsAtOneBank200Response> {
+    open class func corePrivateAccountsAllBanksWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<PrivateAccountsAtOneBank200Response> {
         let localVariablePath = "/obp/v3.0.0/my/accounts"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -48,7 +48,7 @@ open class PrivateDataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv300PrivateAccountsAtOneBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<PrivateAccountsAtOneBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -58,10 +58,10 @@ open class PrivateDataAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetAccountsAtBank200Response
+     - returns: GetAccountsAtBank200Response
      */
-    open class func oBPv600GetAccountsAtBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetAccountsAtBank200Response {
-        return try await oBPv600GetAccountsAtBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getAccountsAtBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAccountsAtBank200Response {
+        return try await getAccountsAtBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -75,13 +75,13 @@ open class PrivateDataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetAccountsAtBank200Response> 
+     - returns: RequestBuilder<GetAccountsAtBank200Response> 
      */
-    open class func oBPv600GetAccountsAtBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetAccountsAtBank200Response> {
+    open class func getAccountsAtBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAccountsAtBank200Response> {
         var localVariablePath = "/obp/v6.0.0/banks/{bankid}/accounts"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -97,7 +97,7 @@ open class PrivateDataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetAccountsAtBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAccountsAtBank200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

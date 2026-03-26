@@ -4,447 +4,35 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_delete_scope**](ConsumerApi.md#o_bpv3_0_0_delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
-[**o_bpv3_1_0_enable_disable_consumers**](ConsumerApi.md#o_bpv3_1_0_enable_disable_consumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
-[**o_bpv3_1_0_get_calls_limit**](ConsumerApi.md#o_bpv3_1_0_get_calls_limit) | **GET** /obp/v3.1.0/management/consumers/{consumerid}/consumer/call-limits | Get Rate Limits for a Consumer
-[**o_bpv3_1_0_get_consumers_for_current_user**](ConsumerApi.md#o_bpv3_1_0_get_consumers_for_current_user) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
-[**o_bpv4_0_0_add_scope**](ConsumerApi.md#o_bpv4_0_0_add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
-[**o_bpv4_0_0_calls_limit**](ConsumerApi.md#o_bpv4_0_0_calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
-[**o_bpv4_0_0_get_scopes**](ConsumerApi.md#o_bpv4_0_0_get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
-[**o_bpv5_1_0_create_consumer**](ConsumerApi.md#o_bpv5_1_0_create_consumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
-[**o_bpv5_1_0_create_consumer_dynamic_registration**](ConsumerApi.md#o_bpv5_1_0_create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-[**o_bpv5_1_0_create_my_consumer**](ConsumerApi.md#o_bpv5_1_0_create_my_consumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
-[**o_bpv5_1_0_get_calls_limit**](ConsumerApi.md#o_bpv5_1_0_get_calls_limit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
-[**o_bpv5_1_0_get_consumers**](ConsumerApi.md#o_bpv5_1_0_get_consumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
-[**o_bpv5_1_0_update_consumer_certificate**](ConsumerApi.md#o_bpv5_1_0_update_consumer_certificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
-[**o_bpv5_1_0_update_consumer_logo_url**](ConsumerApi.md#o_bpv5_1_0_update_consumer_logo_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
-[**o_bpv5_1_0_update_consumer_name**](ConsumerApi.md#o_bpv5_1_0_update_consumer_name) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
-[**o_bpv5_1_0_update_consumer_redirect_url**](ConsumerApi.md#o_bpv5_1_0_update_consumer_redirect_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
-[**o_bpv6_0_0_create_call_limits**](ConsumerApi.md#o_bpv6_0_0_create_call_limits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
-[**o_bpv6_0_0_delete_call_limits**](ConsumerApi.md#o_bpv6_0_0_delete_call_limits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
-[**o_bpv6_0_0_get_active_rate_limits_at_date**](ConsumerApi.md#o_bpv6_0_0_get_active_rate_limits_at_date) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
-[**o_bpv6_0_0_get_active_rate_limits_now**](ConsumerApi.md#o_bpv6_0_0_get_active_rate_limits_now) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
-[**o_bpv6_0_0_get_consumer**](ConsumerApi.md#o_bpv6_0_0_get_consumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
-[**o_bpv6_0_0_get_consumer_call_counters**](ConsumerApi.md#o_bpv6_0_0_get_consumer_call_counters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
-[**o_bpv6_0_0_get_current_consumer**](ConsumerApi.md#o_bpv6_0_0_get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
-[**o_bpv6_0_0_get_oidc_client**](ConsumerApi.md#o_bpv6_0_0_get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
-[**o_bpv6_0_0_update_rate_limits**](ConsumerApi.md#o_bpv6_0_0_update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
-[**o_bpv6_0_0_verify_oidc_client**](ConsumerApi.md#o_bpv6_0_0_verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
-
-
-# **o_bpv3_0_0_delete_scope**
-> o_bpv3_0_0_delete_scope(consumerid, scopeid)
-
-Delete Consumer Scope
-
-<p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p>
-<p>Authentication is required and the user needs to be a Super Admin.<br />
-Super Admins are listed in the Props file.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#scope_id">SCOPE_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    scopeid = 'scopeid_example' # str | The SCOPEID identifier
-
-    try:
-        # Delete Consumer Scope
-        api_instance.o_bpv3_0_0_delete_scope(consumerid, scopeid)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv3_0_0_delete_scope: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **scopeid** | **str**| The SCOPEID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_enable_disable_consumers**
-> OBPv310EnableDisableConsumersRequest o_bpv3_1_0_enable_disable_consumers(consumerid, obpv310_enable_disable_consumers_request)
-
-Enable or Disable Consumers
-
-<p>Enable/Disable a Consumer specified by CONSUMER_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_enable_disable_consumers_request import OBPv310EnableDisableConsumersRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv310_enable_disable_consumers_request = {"type":"object","properties":{"enabled":{"type":"boolean"}}} # OBPv310EnableDisableConsumersRequest | Request body
-
-    try:
-        # Enable or Disable Consumers
-        api_response = api_instance.o_bpv3_1_0_enable_disable_consumers(consumerid, obpv310_enable_disable_consumers_request)
-        print("The response of ConsumerApi->o_bpv3_1_0_enable_disable_consumers:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv3_1_0_enable_disable_consumers: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv310_enable_disable_consumers_request** | [**OBPv310EnableDisableConsumersRequest**](OBPv310EnableDisableConsumersRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv310EnableDisableConsumersRequest**](OBPv310EnableDisableConsumersRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_calls_limit**
-> OBPv310GetCallsLimit200Response o_bpv3_1_0_get_calls_limit(consumerid)
-
-Get Rate Limits for a Consumer
-
-<p>Get Rate Limits per Consumer.<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
-<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
-<p><a href="/glossary#calls_made">calls_made</a>: 50</p>
-<p><a href="/glossary#current_state">current_state</a>:</p>
-<p><a href="/glossary#per_day">per_day</a>: 4000</p>
-<p><a href="/glossary#per_hour">per_hour</a>:</p>
-<p><a href="/glossary#per_minute">per_minute</a>:</p>
-<p><a href="/glossary#per_month">per_month</a>: 500</p>
-<p><a href="/glossary#per_second">per_second</a>: 1000</p>
-<p><a href="/glossary#per_week">per_week</a>: 50000</p>
-<p><a href="/glossary#reset_in_seconds">reset_in_seconds</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_calls_limit200_response import OBPv310GetCallsLimit200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-
-    try:
-        # Get Rate Limits for a Consumer
-        api_response = api_instance.o_bpv3_1_0_get_calls_limit(consumerid)
-        print("The response of ConsumerApi->o_bpv3_1_0_get_calls_limit:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv3_1_0_get_calls_limit: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
-
-### Return type
-
-[**OBPv310GetCallsLimit200Response**](OBPv310GetCallsLimit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_consumers_for_current_user**
-> OBPv310GetConsumersForCurrentUser200Response o_bpv3_1_0_get_consumers_for_current_user()
-
-Get Consumers (logged in User)
-
-<p>Get the Consumers for logged in User.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#consumers"><strong>consumers</strong></a>:</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;&#102;&#x65;&#108;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#x78;&#x61;m&#x70;&#108;e&#46;&#99;&#x6f;&#109;">f&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;it&#x68;&#64;&#x65;&#120;a&#x6d;&#112;&#x6c;&#x65;&#46;&#x63;o&#109;</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_consumers_for_current_user200_response import OBPv310GetConsumersForCurrentUser200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-
-    try:
-        # Get Consumers (logged in User)
-        api_response = api_instance.o_bpv3_1_0_get_consumers_for_current_user()
-        print("The response of ConsumerApi->o_bpv3_1_0_get_consumers_for_current_user:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv3_1_0_get_consumers_for_current_user: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv310GetConsumersForCurrentUser200Response**](OBPv310GetConsumersForCurrentUser200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_add_scope**
-> OBPv400GetScopes200ResponseListInner o_bpv4_0_0_add_scope(consumerid, obpv510_create_consent_implicit_request_entitlements_inner)
+[**add_scope**](ConsumerApi.md#add_scope) | **POST** /obp/v4.0.0/consumers/{consumerid}/scopes | Create Scope for a Consumer
+[**calls_limit**](ConsumerApi.md#calls_limit) | **PUT** /obp/v4.0.0/management/consumers/{consumerid}/consumer/call-limits | Set Rate Limits / Call Limits per Consumer
+[**create_call_limits**](ConsumerApi.md#create_call_limits) | **POST** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits | Create Rate Limits for a Consumer
+[**create_consumer**](ConsumerApi.md#create_consumer) | **POST** /obp/v5.1.0/management/consumers | Create a Consumer
+[**create_consumer_dynamic_registration**](ConsumerApi.md#create_consumer_dynamic_registration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+[**create_my_consumer**](ConsumerApi.md#create_my_consumer) | **POST** /obp/v5.1.0/my/consumers | Create a Consumer
+[**delete_call_limits**](ConsumerApi.md#delete_call_limits) | **DELETE** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Delete Rate Limit by Rate Limiting ID
+[**delete_scope**](ConsumerApi.md#delete_scope) | **DELETE** /obp/v3.0.0/consumers/{consumerid}/scope/{scopeid} | Delete Consumer Scope
+[**enable_disable_consumers**](ConsumerApi.md#enable_disable_consumers) | **PUT** /obp/v3.1.0/management/consumers/{consumerid} | Enable or Disable Consumers
+[**get_active_rate_limits_at_date**](ConsumerApi.md#get_active_rate_limits_at_date) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits/{datewithhour} | Get Active Rate Limits for Hour
+[**get_active_rate_limits_now**](ConsumerApi.md#get_active_rate_limits_now) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/active-rate-limits | Get Active Rate Limits (Current)
+[**get_calls_limit**](ConsumerApi.md#get_calls_limit) | **GET** /obp/v5.1.0/management/consumers/{consumerid}/consumer/rate-limits | Get Rate Limits for a Consumer
+[**get_consumer**](ConsumerApi.md#get_consumer) | **GET** /obp/v6.0.0/management/consumers/{consumerid} | Get Consumer
+[**get_consumer_call_counters**](ConsumerApi.md#get_consumer_call_counters) | **GET** /obp/v6.0.0/management/consumers/{consumerid}/call-counters | Get Call Counts for Consumer
+[**get_consumers**](ConsumerApi.md#get_consumers) | **GET** /obp/v5.1.0/management/consumers | Get Consumers
+[**get_consumers_for_current_user**](ConsumerApi.md#get_consumers_for_current_user) | **GET** /obp/v3.1.0/management/users/current/consumers | Get Consumers (logged in User)
+[**get_current_consumer**](ConsumerApi.md#get_current_consumer) | **GET** /obp/v6.0.0/consumers/current | Get Current Consumer
+[**get_oidc_client**](ConsumerApi.md#get_oidc_client) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client
+[**get_scopes**](ConsumerApi.md#get_scopes) | **GET** /obp/v4.0.0/consumers/{consumerid}/scopes | Get Scopes for Consumer
+[**update_consumer_certificate**](ConsumerApi.md#update_consumer_certificate) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/certificate | Update Consumer Certificate
+[**update_consumer_logo_url**](ConsumerApi.md#update_consumer_logo_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/logo_url | Update Consumer LogoURL
+[**update_consumer_name**](ConsumerApi.md#update_consumer_name) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/name | Update Consumer Name
+[**update_consumer_redirect_url**](ConsumerApi.md#update_consumer_redirect_url) | **PUT** /obp/v5.1.0/management/consumers/{consumerid}/consumer/redirect_url | Update Consumer RedirectURL
+[**update_rate_limits**](ConsumerApi.md#update_rate_limits) | **PUT** /obp/v6.0.0/management/consumers/{consumerid}/consumer/rate-limits/{ratelimitingid} | Set Rate Limits / Call Limits per Consumer
+[**verify_oidc_client**](ConsumerApi.md#verify_oidc_client) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client
+
+
+# **add_scope**
+> GetScopes200ResponseListInner add_scope(consumerid, create_consent_implicit_request_entitlements_inner)
 
 Create Scope for a Consumer
 
@@ -472,8 +60,8 @@ Create Scope for a Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_scopes200_response_list_inner import OBPv400GetScopes200ResponseListInner
-from obp_python.models.obpv510_create_consent_implicit_request_entitlements_inner import OBPv510CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.create_consent_implicit_request_entitlements_inner import CreateConsentImplicitRequestEntitlementsInner
+from obp_python.models.get_scopes200_response_list_inner import GetScopes200ResponseListInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -507,15 +95,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_create_consent_implicit_request_entitlements_inner = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # OBPv510CreateConsentImplicitRequestEntitlementsInner | Request body
+    create_consent_implicit_request_entitlements_inner = {type=object, properties={bank_id={type=string}, role_name={type=string}}} # CreateConsentImplicitRequestEntitlementsInner | Request body
 
     try:
         # Create Scope for a Consumer
-        api_response = api_instance.o_bpv4_0_0_add_scope(consumerid, obpv510_create_consent_implicit_request_entitlements_inner)
-        print("The response of ConsumerApi->o_bpv4_0_0_add_scope:\n")
+        api_response = api_instance.add_scope(consumerid, create_consent_implicit_request_entitlements_inner)
+        print("The response of ConsumerApi->add_scope:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv4_0_0_add_scope: %s\n" % e)
+        print("Exception when calling ConsumerApi->add_scope: %s\n" % e)
 ```
 
 
@@ -526,11 +114,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_create_consent_implicit_request_entitlements_inner** | [**OBPv510CreateConsentImplicitRequestEntitlementsInner**](OBPv510CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
+ **create_consent_implicit_request_entitlements_inner** | [**CreateConsentImplicitRequestEntitlementsInner**](CreateConsentImplicitRequestEntitlementsInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetScopes200ResponseListInner**](OBPv400GetScopes200ResponseListInner.md)
+[**GetScopes200ResponseListInner**](GetScopes200ResponseListInner.md)
 
 ### Authorization
 
@@ -551,8 +139,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_calls_limit**
-> OBPv600UpdateRateLimitsRequest o_bpv4_0_0_calls_limit(consumerid, obpv600_update_rate_limits_request)
+# **calls_limit**
+> UpdateRateLimitsRequest calls_limit(consumerid, update_rate_limits_request)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -588,7 +176,7 @@ Per Month</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_update_rate_limits_request import OBPv600UpdateRateLimitsRequest
+from obp_python.models.update_rate_limits_request import UpdateRateLimitsRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -622,15 +210,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv600_update_rate_limits_request = {type=object, properties={per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, from_date={type=string, format=date-time}, to_date={type=string, format=date-time}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}}} # OBPv600UpdateRateLimitsRequest | Request body
+    update_rate_limits_request = {type=object, properties={per_week_call_limit={type=string}, per_day_call_limit={type=string}, per_second_call_limit={type=string}, per_month_call_limit={type=string}, from_date={type=string, format=date-time}, to_date={type=string, format=date-time}, per_hour_call_limit={type=string}, per_minute_call_limit={type=string}}} # UpdateRateLimitsRequest | Request body
 
     try:
         # Set Rate Limits / Call Limits per Consumer
-        api_response = api_instance.o_bpv4_0_0_calls_limit(consumerid, obpv600_update_rate_limits_request)
-        print("The response of ConsumerApi->o_bpv4_0_0_calls_limit:\n")
+        api_response = api_instance.calls_limit(consumerid, update_rate_limits_request)
+        print("The response of ConsumerApi->calls_limit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv4_0_0_calls_limit: %s\n" % e)
+        print("Exception when calling ConsumerApi->calls_limit: %s\n" % e)
 ```
 
 
@@ -641,11 +229,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv600_update_rate_limits_request** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)| Request body | 
+ **update_rate_limits_request** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -666,20 +254,42 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_scopes**
-> OBPv400GetScopes200Response o_bpv4_0_0_get_scopes(consumerid)
+# **create_call_limits**
+> CreateCallLimits200Response create_call_limits(consumerid, create_call_limits_request)
 
-Get Scopes for Consumer
+Create Rate Limits for a Consumer
 
-<p>Get all the scopes for an consumer specified by CONSUMER_ID</p>
+<p>Create Rate Limits for a Consumer</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
+<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
+<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#">api_name</a>: api_name</p>
+<p><a href="/glossary#api_version">api_version</a>:</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#list"><strong>list</strong></a>:</p>
-<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
-<p><a href="/glossary#scope_id"><strong>scope_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>created_at</strong></a>: created_at</p>
+<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
+<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
+<p><a href="/glossary#"><strong>rate_limiting_id</strong></a>: rate_limiting_id</p>
+<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#"><strong>updated_at</strong></a>: updated_at</p>
+<p><a href="/glossary#">api_name</a>: api_name</p>
+<p><a href="/glossary#api_version">api_version</a>:</p>
+<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
 
 
 ### Example
@@ -690,7 +300,8 @@ Get Scopes for Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_scopes200_response import OBPv400GetScopes200Response
+from obp_python.models.create_call_limits200_response import CreateCallLimits200Response
+from obp_python.models.create_call_limits_request import CreateCallLimitsRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -724,14 +335,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    create_call_limits_request = {"type":"object","properties":{"per_second_call_limit":{"type":"string"},"api_name":{"type":"string"},"per_minute_call_limit":{"type":"string"},"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"api_version":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"}}} # CreateCallLimitsRequest | Request body
 
     try:
-        # Get Scopes for Consumer
-        api_response = api_instance.o_bpv4_0_0_get_scopes(consumerid)
-        print("The response of ConsumerApi->o_bpv4_0_0_get_scopes:\n")
+        # Create Rate Limits for a Consumer
+        api_response = api_instance.create_call_limits(consumerid, create_call_limits_request)
+        print("The response of ConsumerApi->create_call_limits:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv4_0_0_get_scopes: %s\n" % e)
+        print("Exception when calling ConsumerApi->create_call_limits: %s\n" % e)
 ```
 
 
@@ -742,10 +354,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consumerid** | **str**| The CONSUMERID identifier | 
+ **create_call_limits_request** | [**CreateCallLimitsRequest**](CreateCallLimitsRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetScopes200Response**](OBPv400GetScopes200Response.md)
+[**CreateCallLimits200Response**](CreateCallLimits200Response.md)
 
 ### Authorization
 
@@ -753,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -766,8 +379,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_consumer**
-> OBPv510CreateConsumer200Response o_bpv5_1_0_create_consumer(obpv510_create_consumer_request)
+# **create_consumer**
+> CreateConsumer200Response create_consumer(create_consumer_request)
 
 Create a Consumer
 
@@ -894,8 +507,8 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consumer200_response import OBPv510CreateConsumer200Response
-from obp_python.models.obpv510_create_consumer_request import OBPv510CreateConsumerRequest
+from obp_python.models.create_consumer200_response import CreateConsumer200Response
+from obp_python.models.create_consumer_request import CreateConsumerRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -928,15 +541,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
-    obpv510_create_consumer_request = {"type":"object","properties":{"enabled":{"type":"boolean"},"logo_url":{"type":"string"},"developer_email":{"type":"string"},"client_certificate":{"type":"string"},"company":{"type":"string"},"redirect_url":{"type":"string"},"description":{"type":"string"},"app_type":{"type":"string"},"app_name":{"type":"string"}}} # OBPv510CreateConsumerRequest | Request body
+    create_consumer_request = {"type":"object","properties":{"enabled":{"type":"boolean"},"logo_url":{"type":"string"},"developer_email":{"type":"string"},"client_certificate":{"type":"string"},"company":{"type":"string"},"redirect_url":{"type":"string"},"description":{"type":"string"},"app_type":{"type":"string"},"app_name":{"type":"string"}}} # CreateConsumerRequest | Request body
 
     try:
         # Create a Consumer
-        api_response = api_instance.o_bpv5_1_0_create_consumer(obpv510_create_consumer_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_create_consumer:\n")
+        api_response = api_instance.create_consumer(create_consumer_request)
+        print("The response of ConsumerApi->create_consumer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_create_consumer: %s\n" % e)
+        print("Exception when calling ConsumerApi->create_consumer: %s\n" % e)
 ```
 
 
@@ -946,11 +559,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_consumer_request** | [**OBPv510CreateConsumerRequest**](OBPv510CreateConsumerRequest.md)| Request body | 
+ **create_consumer_request** | [**CreateConsumerRequest**](CreateConsumerRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsumer200Response**](OBPv510CreateConsumer200Response.md)
+[**CreateConsumer200Response**](CreateConsumer200Response.md)
 
 ### Authorization
 
@@ -970,8 +583,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_consumer_dynamic_registration**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_create_consumer_dynamic_registration(obpv510_create_consumer_dynamic_registration_request)
+# **create_consumer_dynamic_registration**
+> UpdateConsumerName200Response create_consumer_dynamic_registration(create_consumer_dynamic_registration_request)
 
 Create a Consumer(Dynamic Registration)
 
@@ -1083,8 +696,8 @@ Create a Consumer(Dynamic Registration)
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consumer_dynamic_registration_request import OBPv510CreateConsumerDynamicRegistrationRequest
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
+from obp_python.models.create_consumer_dynamic_registration_request import CreateConsumerDynamicRegistrationRequest
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1117,15 +730,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
-    obpv510_create_consumer_dynamic_registration_request = {"type":"object","properties":{"jwt":{"type":"string"}}} # OBPv510CreateConsumerDynamicRegistrationRequest | Request body
+    create_consumer_dynamic_registration_request = {"type":"object","properties":{"jwt":{"type":"string"}}} # CreateConsumerDynamicRegistrationRequest | Request body
 
     try:
         # Create a Consumer(Dynamic Registration)
-        api_response = api_instance.o_bpv5_1_0_create_consumer_dynamic_registration(obpv510_create_consumer_dynamic_registration_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_create_consumer_dynamic_registration:\n")
+        api_response = api_instance.create_consumer_dynamic_registration(create_consumer_dynamic_registration_request)
+        print("The response of ConsumerApi->create_consumer_dynamic_registration:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_create_consumer_dynamic_registration: %s\n" % e)
+        print("Exception when calling ConsumerApi->create_consumer_dynamic_registration: %s\n" % e)
 ```
 
 
@@ -1135,11 +748,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_consumer_dynamic_registration_request** | [**OBPv510CreateConsumerDynamicRegistrationRequest**](OBPv510CreateConsumerDynamicRegistrationRequest.md)| Request body | 
+ **create_consumer_dynamic_registration_request** | [**CreateConsumerDynamicRegistrationRequest**](CreateConsumerDynamicRegistrationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -1159,8 +772,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_my_consumer**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_create_my_consumer(obpv510_create_consumer_request)
+# **create_my_consumer**
+> UpdateConsumerName200Response create_my_consumer(create_consumer_request)
 
 Create a Consumer
 
@@ -1212,8 +825,8 @@ Create a Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_consumer_request import OBPv510CreateConsumerRequest
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
+from obp_python.models.create_consumer_request import CreateConsumerRequest
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1246,15 +859,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
-    obpv510_create_consumer_request = {type=object, properties={enabled={type=boolean}, logo_url={type=string}, developer_email={type=string}, client_certificate={type=string}, company={type=string}, redirect_url={type=string}, description={type=string}, app_type={type=string}, app_name={type=string}}} # OBPv510CreateConsumerRequest | Request body
+    create_consumer_request = {type=object, properties={enabled={type=boolean}, logo_url={type=string}, developer_email={type=string}, client_certificate={type=string}, company={type=string}, redirect_url={type=string}, description={type=string}, app_type={type=string}, app_name={type=string}}} # CreateConsumerRequest | Request body
 
     try:
         # Create a Consumer
-        api_response = api_instance.o_bpv5_1_0_create_my_consumer(obpv510_create_consumer_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_create_my_consumer:\n")
+        api_response = api_instance.create_my_consumer(create_consumer_request)
+        print("The response of ConsumerApi->create_my_consumer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_create_my_consumer: %s\n" % e)
+        print("Exception when calling ConsumerApi->create_my_consumer: %s\n" % e)
 ```
 
 
@@ -1264,11 +877,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_consumer_request** | [**OBPv510CreateConsumerRequest**](OBPv510CreateConsumerRequest.md)| Request body | 
+ **create_consumer_request** | [**CreateConsumerRequest**](CreateConsumerRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -1288,872 +901,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_calls_limit**
-> OBPv510GetCallsLimit200Response o_bpv5_1_0_get_calls_limit(consumerid)
-
-Get Rate Limits for a Consumer
-
-<p>Get Calls limits per Consumer.<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>created_at</strong></a>: created_at</p>
-<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#"><strong>limits</strong></a>: limits</p>
-<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
-<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
-<p><a href="/glossary#"><strong>rate_limiting_id</strong></a>: rate_limiting_id</p>
-<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#"><strong>updated_at</strong></a>: updated_at</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_calls_limit200_response import OBPv510GetCallsLimit200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-
-    try:
-        # Get Rate Limits for a Consumer
-        api_response = api_instance.o_bpv5_1_0_get_calls_limit(consumerid)
-        print("The response of ConsumerApi->o_bpv5_1_0_get_calls_limit:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_get_calls_limit: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
-
-### Return type
-
-[**OBPv510GetCallsLimit200Response**](OBPv510GetCallsLimit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_get_consumers**
-> OBPv510GetConsumers200Response o_bpv5_1_0_get_consumers()
-
-Get Consumers
-
-<p>Get the all Consumers.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.409Z. NOTE! The default value is now (2026-03-25T12:16:25.409Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
-<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
-See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
-<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
-See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
-<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
-See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
-<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
-<p><a href="/glossary#consumers"><strong>consumers</strong></a>:</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#x69;&#x6c;&#x74;o&#58;&#x66;e&#108;&#x69;&#120;&#115;&#109;&#105;&#116;h&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;o&#109;">f&#101;&#x6c;i&#x78;&#x73;&#x6d;&#x69;&#116;h@&#x65;&#120;&#97;m&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
-<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
-<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
-<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
-<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
-<p><a href="/glossary#">roles_info</a>: roles_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_get_consumers200_response import OBPv510GetConsumers200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-
-    try:
-        # Get Consumers
-        api_response = api_instance.o_bpv5_1_0_get_consumers()
-        print("The response of ConsumerApi->o_bpv5_1_0_get_consumers:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_get_consumers: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv510GetConsumers200Response**](OBPv510GetConsumers200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_update_consumer_certificate**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_update_consumer_certificate(consumerid, obpv510_update_consumer_certificate_request)
-
-Update Consumer Certificate
-
-<p>Update a Certificate for a Consumer specified by CONSUMER_ID.</p>
-<p>Please note: Your consumer may be disabled as a result of this action.</p>
-<p>CONSUMER_ID can be obtained after you register the application.</p>
-<p>Or use the endpoint 'Get Consumers' to get it</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
-<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;h&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;">&#102;&#x65;&#108;i&#x78;&#x73;m&#x69;t&#x68;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;e&#x2e;&#99;&#111;m</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
-<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
-<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
-<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
-<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
-<p><a href="/glossary#">roles_info</a>: roles_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_update_consumer_certificate_request import OBPv510UpdateConsumerCertificateRequest
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_update_consumer_certificate_request = {"type":"object","properties":{"certificate":{"type":"string"}}} # OBPv510UpdateConsumerCertificateRequest | Request body
-
-    try:
-        # Update Consumer Certificate
-        api_response = api_instance.o_bpv5_1_0_update_consumer_certificate(consumerid, obpv510_update_consumer_certificate_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_update_consumer_certificate:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_update_consumer_certificate: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_update_consumer_certificate_request** | [**OBPv510UpdateConsumerCertificateRequest**](OBPv510UpdateConsumerCertificateRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_update_consumer_logo_url**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_update_consumer_logo_url(consumerid, obpv510_update_consumer_logo_url_request)
-
-Update Consumer LogoURL
-
-<p>Update an existing logoURL for a Consumer specified by CONSUMER_ID.</p>
-<p>Please note: Your consumer may be disabled as a result of this action.</p>
-<p>CONSUMER_ID can be obtained after you register the application.</p>
-<p>Or use the endpoint 'Get Consumers' to get it</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
-<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;lto&#58;f&#101;l&#x69;&#120;&#115;&#x6d;i&#116;h&#64;&#101;&#x78;&#97;&#x6d;p&#x6c;&#x65;.c&#111;&#109;">&#102;&#101;l&#105;x&#115;&#109;&#105;&#x74;h&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;e.&#99;&#x6f;&#109;</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
-<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
-<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
-<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
-<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
-<p><a href="/glossary#">roles_info</a>: roles_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_update_consumer_logo_url_request import OBPv510UpdateConsumerLogoURLRequest
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_update_consumer_logo_url_request = {"type":"object","properties":{"logo_url":{"type":"string"}}} # OBPv510UpdateConsumerLogoURLRequest | Request body
-
-    try:
-        # Update Consumer LogoURL
-        api_response = api_instance.o_bpv5_1_0_update_consumer_logo_url(consumerid, obpv510_update_consumer_logo_url_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_update_consumer_logo_url:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_update_consumer_logo_url: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_update_consumer_logo_url_request** | [**OBPv510UpdateConsumerLogoURLRequest**](OBPv510UpdateConsumerLogoURLRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_update_consumer_name**
-> OBPv510UpdateConsumerName200Response o_bpv5_1_0_update_consumer_name(consumerid, obpv510_update_consumer_name_request)
-
-Update Consumer Name
-
-<p>Update an existing name for a Consumer specified by CONSUMER_ID.</p>
-<p>Please note: Your consumer may be disabled as a result of this action.</p>
-<p>CONSUMER_ID can be obtained after you register the application.</p>
-<p>Or use the endpoint 'Get Consumers' to get it</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
-<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#x65;l&#x69;&#x78;s&#x6d;&#105;&#116;&#x68;&#64;&#101;&#x78;am&#x70;&#x6c;e&#x2e;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#64;&#x65;&#x78;&#97;m&#x70;&#108;e&#x2e;&#x63;&#111;&#x6d;</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
-<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
-<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
-<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
-<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
-<p><a href="/glossary#">roles_info</a>: roles_info</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_update_consumer_name200_response import OBPv510UpdateConsumerName200Response
-from obp_python.models.obpv510_update_consumer_name_request import OBPv510UpdateConsumerNameRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_update_consumer_name_request = {"type":"object","properties":{"app_name":{"type":"string"}}} # OBPv510UpdateConsumerNameRequest | Request body
-
-    try:
-        # Update Consumer Name
-        api_response = api_instance.o_bpv5_1_0_update_consumer_name(consumerid, obpv510_update_consumer_name_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_update_consumer_name:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_update_consumer_name: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_update_consumer_name_request** | [**OBPv510UpdateConsumerNameRequest**](OBPv510UpdateConsumerNameRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_1_0_update_consumer_redirect_url**
-> OBPv510UpdateConsumerRedirectURL200Response o_bpv5_1_0_update_consumer_redirect_url(consumerid, obpv510_update_consumer_redirect_url_request)
-
-Update Consumer RedirectURL
-
-<p>Update an existing redirectUrl for a Consumer specified by CONSUMER_ID.</p>
-<p>Please note: Your consumer may be disabled as a result of this action.</p>
-<p>CONSUMER_ID can be obtained after you register the application.</p>
-<p>Or use the endpoint 'Get Consumers' to get it</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created"><strong>created</strong></a>:</p>
-<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#x6c;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;i&#120;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#x78;am&#x70;&#108;&#x65;.co&#x6d;">&#x66;&#x65;&#108;&#105;x&#x73;&#109;&#x69;t&#x68;&#64;&#x65;x&#97;&#x6d;pl&#x65;&#46;com</a></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
-<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv510_update_consumer_redirect_url200_response import OBPv510UpdateConsumerRedirectURL200Response
-from obp_python.models.obpv510_update_consumer_redirect_url_request import OBPv510UpdateConsumerRedirectURLRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv510_update_consumer_redirect_url_request = {"type":"object","properties":{"redirect_url":{"type":"string"}}} # OBPv510UpdateConsumerRedirectURLRequest | Request body
-
-    try:
-        # Update Consumer RedirectURL
-        api_response = api_instance.o_bpv5_1_0_update_consumer_redirect_url(consumerid, obpv510_update_consumer_redirect_url_request)
-        print("The response of ConsumerApi->o_bpv5_1_0_update_consumer_redirect_url:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv5_1_0_update_consumer_redirect_url: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv510_update_consumer_redirect_url_request** | [**OBPv510UpdateConsumerRedirectURLRequest**](OBPv510UpdateConsumerRedirectURLRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv510UpdateConsumerRedirectURL200Response**](OBPv510UpdateConsumerRedirectURL200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_create_call_limits**
-> OBPv600CreateCallLimits200Response o_bpv6_0_0_create_call_limits(consumerid, obpv600_create_call_limits_request)
-
-Create Rate Limits for a Consumer
-
-<p>Create Rate Limits for a Consumer</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
-<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
-<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#">api_name</a>: api_name</p>
-<p><a href="/glossary#api_version">api_version</a>:</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>created_at</strong></a>: created_at</p>
-<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
-<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
-<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
-<p><a href="/glossary#"><strong>rate_limiting_id</strong></a>: rate_limiting_id</p>
-<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
-<p><a href="/glossary#"><strong>updated_at</strong></a>: updated_at</p>
-<p><a href="/glossary#">api_name</a>: api_name</p>
-<p><a href="/glossary#api_version">api_version</a>:</p>
-<p><a href="/glossary#">bank_id</a>: gh.29.uk</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_create_call_limits200_response import OBPv600CreateCallLimits200Response
-from obp_python.models.obpv600_create_call_limits_request import OBPv600CreateCallLimitsRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.ConsumerApi(api_client)
-    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
-    obpv600_create_call_limits_request = {"type":"object","properties":{"per_second_call_limit":{"type":"string"},"api_name":{"type":"string"},"per_minute_call_limit":{"type":"string"},"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"api_version":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"}}} # OBPv600CreateCallLimitsRequest | Request body
-
-    try:
-        # Create Rate Limits for a Consumer
-        api_response = api_instance.o_bpv6_0_0_create_call_limits(consumerid, obpv600_create_call_limits_request)
-        print("The response of ConsumerApi->o_bpv6_0_0_create_call_limits:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_create_call_limits: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **consumerid** | **str**| The CONSUMERID identifier | 
- **obpv600_create_call_limits_request** | [**OBPv600CreateCallLimitsRequest**](OBPv600CreateCallLimitsRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv600CreateCallLimits200Response**](OBPv600CreateCallLimits200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_delete_call_limits**
-> o_bpv6_0_0_delete_call_limits(consumerid, ratelimitingid)
+# **delete_call_limits**
+> delete_call_limits(consumerid, ratelimitingid)
 
 Delete Rate Limit by Rate Limiting ID
 
@@ -2210,9 +959,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Rate Limit by Rate Limiting ID
-        api_instance.o_bpv6_0_0_delete_call_limits(consumerid, ratelimitingid)
+        api_instance.delete_call_limits(consumerid, ratelimitingid)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_delete_call_limits: %s\n" % e)
+        print("Exception when calling ConsumerApi->delete_call_limits: %s\n" % e)
 ```
 
 
@@ -2248,8 +997,204 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_active_rate_limits_at_date**
-> OBPv600GetActiveRateLimitsAtDate200Response o_bpv6_0_0_get_active_rate_limits_at_date(consumerid, datewithhour)
+# **delete_scope**
+> delete_scope(consumerid, scopeid)
+
+Delete Consumer Scope
+
+<p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p>
+<p>Authentication is required and the user needs to be a Super Admin.<br />
+Super Admins are listed in the Props file.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#scope_id">SCOPE_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    scopeid = 'scopeid_example' # str | The SCOPEID identifier
+
+    try:
+        # Delete Consumer Scope
+        api_instance.delete_scope(consumerid, scopeid)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->delete_scope: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **scopeid** | **str**| The SCOPEID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **enable_disable_consumers**
+> EnableDisableConsumersRequest enable_disable_consumers(consumerid, enable_disable_consumers_request)
+
+Enable or Disable Consumers
+
+<p>Enable/Disable a Consumer specified by CONSUMER_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.enable_disable_consumers_request import EnableDisableConsumersRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    enable_disable_consumers_request = {"type":"object","properties":{"enabled":{"type":"boolean"}}} # EnableDisableConsumersRequest | Request body
+
+    try:
+        # Enable or Disable Consumers
+        api_response = api_instance.enable_disable_consumers(consumerid, enable_disable_consumers_request)
+        print("The response of ConsumerApi->enable_disable_consumers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->enable_disable_consumers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **enable_disable_consumers_request** | [**EnableDisableConsumersRequest**](EnableDisableConsumersRequest.md)| Request body | 
+
+### Return type
+
+[**EnableDisableConsumersRequest**](EnableDisableConsumersRequest.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_active_rate_limits_at_date**
+> GetActiveRateLimitsAtDate200Response get_active_rate_limits_at_date(consumerid, datewithhour)
 
 Get Active Rate Limits for Hour
 
@@ -2281,7 +1226,7 @@ Get Active Rate Limits for Hour
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_active_rate_limits_at_date200_response import OBPv600GetActiveRateLimitsAtDate200Response
+from obp_python.models.get_active_rate_limits_at_date200_response import GetActiveRateLimitsAtDate200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2319,11 +1264,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Active Rate Limits for Hour
-        api_response = api_instance.o_bpv6_0_0_get_active_rate_limits_at_date(consumerid, datewithhour)
-        print("The response of ConsumerApi->o_bpv6_0_0_get_active_rate_limits_at_date:\n")
+        api_response = api_instance.get_active_rate_limits_at_date(consumerid, datewithhour)
+        print("The response of ConsumerApi->get_active_rate_limits_at_date:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_active_rate_limits_at_date: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_active_rate_limits_at_date: %s\n" % e)
 ```
 
 
@@ -2338,7 +1283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetActiveRateLimitsAtDate200Response**](OBPv600GetActiveRateLimitsAtDate200Response.md)
+[**GetActiveRateLimitsAtDate200Response**](GetActiveRateLimitsAtDate200Response.md)
 
 ### Authorization
 
@@ -2359,8 +1304,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_active_rate_limits_now**
-> OBPv600GetActiveRateLimitsAtDate200Response o_bpv6_0_0_get_active_rate_limits_now(consumerid)
+# **get_active_rate_limits_now**
+> GetActiveRateLimitsAtDate200Response get_active_rate_limits_now(consumerid)
 
 Get Active Rate Limits (Current)
 
@@ -2389,7 +1334,7 @@ Get Active Rate Limits (Current)
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_active_rate_limits_at_date200_response import OBPv600GetActiveRateLimitsAtDate200Response
+from obp_python.models.get_active_rate_limits_at_date200_response import GetActiveRateLimitsAtDate200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2426,11 +1371,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Active Rate Limits (Current)
-        api_response = api_instance.o_bpv6_0_0_get_active_rate_limits_now(consumerid)
-        print("The response of ConsumerApi->o_bpv6_0_0_get_active_rate_limits_now:\n")
+        api_response = api_instance.get_active_rate_limits_now(consumerid)
+        print("The response of ConsumerApi->get_active_rate_limits_now:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_active_rate_limits_now: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_active_rate_limits_now: %s\n" % e)
 ```
 
 
@@ -2444,7 +1389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetActiveRateLimitsAtDate200Response**](OBPv600GetActiveRateLimitsAtDate200Response.md)
+[**GetActiveRateLimitsAtDate200Response**](GetActiveRateLimitsAtDate200Response.md)
 
 ### Authorization
 
@@ -2465,8 +1410,116 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_consumer**
-> OBPv600GetConsumer200Response o_bpv6_0_0_get_consumer(consumerid)
+# **get_calls_limit**
+> GetCallsLimit200Response get_calls_limit(consumerid)
+
+Get Rate Limits for a Consumer
+
+<p>Get Calls limits per Consumer.<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>created_at</strong></a>: created_at</p>
+<p><a href="/glossary#from_date"><strong>from_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#"><strong>limits</strong></a>: limits</p>
+<p><a href="/glossary#per_day_call_limit"><strong>per_day_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_hour_call_limit"><strong>per_hour_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_minute_call_limit"><strong>per_minute_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_month_call_limit"><strong>per_month_call_limit</strong></a>:</p>
+<p><a href="/glossary#per_second_call_limit"><strong>per_second_call_limit</strong></a>: 10</p>
+<p><a href="/glossary#per_week_call_limit"><strong>per_week_call_limit</strong></a>:</p>
+<p><a href="/glossary#"><strong>rate_limiting_id</strong></a>: rate_limiting_id</p>
+<p><a href="/glossary#to_date"><strong>to_date</strong></a>: 1100-01-01T01:01:01.000Z</p>
+<p><a href="/glossary#"><strong>updated_at</strong></a>: updated_at</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_calls_limit200_response import GetCallsLimit200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+
+    try:
+        # Get Rate Limits for a Consumer
+        api_response = api_instance.get_calls_limit(consumerid)
+        print("The response of ConsumerApi->get_calls_limit:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->get_calls_limit: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+
+### Return type
+
+[**GetCallsLimit200Response**](GetCallsLimit200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consumer**
+> GetConsumer200Response get_consumer(consumerid)
 
 Get Consumer
 
@@ -2545,7 +1598,7 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_consumer200_response import OBPv600GetConsumer200Response
+from obp_python.models.get_consumer200_response import GetConsumer200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2582,11 +1635,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Consumer
-        api_response = api_instance.o_bpv6_0_0_get_consumer(consumerid)
-        print("The response of ConsumerApi->o_bpv6_0_0_get_consumer:\n")
+        api_response = api_instance.get_consumer(consumerid)
+        print("The response of ConsumerApi->get_consumer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_consumer: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_consumer: %s\n" % e)
 ```
 
 
@@ -2600,7 +1653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetConsumer200Response**](OBPv600GetConsumer200Response.md)
+[**GetConsumer200Response**](GetConsumer200Response.md)
 
 ### Authorization
 
@@ -2621,8 +1674,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_consumer_call_counters**
-> OBPv600GetCurrentConsumer200ResponseCallCounters o_bpv6_0_0_get_consumer_call_counters(consumerid)
+# **get_consumer_call_counters**
+> GetCurrentConsumer200ResponseCallCounters get_consumer_call_counters(consumerid)
 
 Get Call Counts for Consumer
 
@@ -2663,7 +1716,7 @@ The response always contains a consistent structure with all six time periods, r
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_current_consumer200_response_call_counters import OBPv600GetCurrentConsumer200ResponseCallCounters
+from obp_python.models.get_current_consumer200_response_call_counters import GetCurrentConsumer200ResponseCallCounters
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2700,11 +1753,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Call Counts for Consumer
-        api_response = api_instance.o_bpv6_0_0_get_consumer_call_counters(consumerid)
-        print("The response of ConsumerApi->o_bpv6_0_0_get_consumer_call_counters:\n")
+        api_response = api_instance.get_consumer_call_counters(consumerid)
+        print("The response of ConsumerApi->get_consumer_call_counters:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_consumer_call_counters: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_consumer_call_counters: %s\n" % e)
 ```
 
 
@@ -2718,7 +1771,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetCurrentConsumer200ResponseCallCounters**](OBPv600GetCurrentConsumer200ResponseCallCounters.md)
+[**GetCurrentConsumer200ResponseCallCounters**](GetCurrentConsumer200ResponseCallCounters.md)
 
 ### Authorization
 
@@ -2739,8 +1792,249 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_current_consumer**
-> OBPv600GetCurrentConsumer200Response o_bpv6_0_0_get_current_consumer()
+# **get_consumers**
+> GetConsumers200Response get_consumers()
+
+Get Consumers
+
+<p>Get the all Consumers.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:25.409Z. NOTE! The default value is now (2026-03-25T12:16:25.409Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
+<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
+<p><a href="/glossary#consumers"><strong>consumers</strong></a>:</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#x69;&#x6c;&#x74;o&#58;&#x66;e&#108;&#x69;&#120;&#115;&#109;&#105;&#116;h&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;o&#109;">f&#101;&#x6c;i&#x78;&#x73;&#x6d;&#x69;&#116;h@&#x65;&#120;&#97;m&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
+<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
+<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
+<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
+<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
+<p><a href="/glossary#">roles_info</a>: roles_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consumers200_response import GetConsumers200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+
+    try:
+        # Get Consumers
+        api_response = api_instance.get_consumers()
+        print("The response of ConsumerApi->get_consumers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->get_consumers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetConsumers200Response**](GetConsumers200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consumers_for_current_user**
+> GetConsumersForCurrentUser200Response get_consumers_for_current_user()
+
+Get Consumers (logged in User)
+
+<p>Get the Consumers for logged in User.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#consumers"><strong>consumers</strong></a>:</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;a&#x69;&#108;&#x74;&#x6f;&#x3a;&#102;&#x65;&#108;&#105;&#120;&#x73;&#109;i&#x74;&#104;&#x40;&#x65;&#x78;&#x61;m&#x70;&#108;e&#46;&#99;&#x6f;&#109;">f&#x65;&#x6c;&#105;&#x78;&#115;&#x6d;it&#x68;&#64;&#x65;&#120;a&#x6d;&#112;&#x6c;&#x65;&#46;&#x63;o&#109;</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_consumers_for_current_user200_response import GetConsumersForCurrentUser200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+
+    try:
+        # Get Consumers (logged in User)
+        api_response = api_instance.get_consumers_for_current_user()
+        print("The response of ConsumerApi->get_consumers_for_current_user:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->get_consumers_for_current_user: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetConsumersForCurrentUser200Response**](GetConsumersForCurrentUser200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_current_consumer**
+> GetCurrentConsumer200Response get_current_consumer()
 
 Get Current Consumer
 
@@ -2783,7 +2077,7 @@ Get Current Consumer
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_current_consumer200_response import OBPv600GetCurrentConsumer200Response
+from obp_python.models.get_current_consumer200_response import GetCurrentConsumer200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2819,11 +2113,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Current Consumer
-        api_response = api_instance.o_bpv6_0_0_get_current_consumer()
-        print("The response of ConsumerApi->o_bpv6_0_0_get_current_consumer:\n")
+        api_response = api_instance.get_current_consumer()
+        print("The response of ConsumerApi->get_current_consumer:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_current_consumer: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_current_consumer: %s\n" % e)
 ```
 
 
@@ -2834,7 +2128,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCurrentConsumer200Response**](OBPv600GetCurrentConsumer200Response.md)
+[**GetCurrentConsumer200Response**](GetCurrentConsumer200Response.md)
 
 ### Authorization
 
@@ -2854,8 +2148,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_oidc_client**
-> OBPv600GetOidcClient200Response o_bpv6_0_0_get_oidc_client(clientid)
+# **get_oidc_client**
+> GetOidcClient200Response get_oidc_client(clientid)
 
 Get OIDC Client
 
@@ -2887,7 +2181,7 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_oidc_client200_response import OBPv600GetOidcClient200Response
+from obp_python.models.get_oidc_client200_response import GetOidcClient200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2924,11 +2218,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get OIDC Client
-        api_response = api_instance.o_bpv6_0_0_get_oidc_client(clientid)
-        print("The response of ConsumerApi->o_bpv6_0_0_get_oidc_client:\n")
+        api_response = api_instance.get_oidc_client(clientid)
+        print("The response of ConsumerApi->get_oidc_client:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_get_oidc_client: %s\n" % e)
+        print("Exception when calling ConsumerApi->get_oidc_client: %s\n" % e)
 ```
 
 
@@ -2942,7 +2236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -2962,8 +2256,602 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_update_rate_limits**
-> OBPv600UpdateRateLimitsRequest o_bpv6_0_0_update_rate_limits(consumerid, ratelimitingid, obpv600_update_rate_limits_request)
+# **get_scopes**
+> GetScopes200Response get_scopes(consumerid)
+
+Get Scopes for Consumer
+
+<p>Get all the scopes for an consumer specified by CONSUMER_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#list"><strong>list</strong></a>:</p>
+<p><a href="/glossary#role_name"><strong>role_name</strong></a>:</p>
+<p><a href="/glossary#scope_id"><strong>scope_id</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_scopes200_response import GetScopes200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+
+    try:
+        # Get Scopes for Consumer
+        api_response = api_instance.get_scopes(consumerid)
+        print("The response of ConsumerApi->get_scopes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->get_scopes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+
+### Return type
+
+[**GetScopes200Response**](GetScopes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_consumer_certificate**
+> UpdateConsumerName200Response update_consumer_certificate(consumerid, update_consumer_certificate_request)
+
+Update Consumer Certificate
+
+<p>Update a Certificate for a Consumer specified by CONSUMER_ID.</p>
+<p>Please note: Your consumer may be disabled as a result of this action.</p>
+<p>CONSUMER_ID can be obtained after you register the application.</p>
+<p>Or use the endpoint 'Get Consumers' to get it</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
+<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;a&#105;&#x6c;&#x74;&#x6f;&#x3a;&#102;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#105;&#x74;h&#x40;&#101;&#120;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;">&#102;&#x65;&#108;i&#x78;&#x73;m&#x69;t&#x68;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;e&#x2e;&#99;&#111;m</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
+<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
+<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
+<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
+<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
+<p><a href="/glossary#">roles_info</a>: roles_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_consumer_certificate_request import UpdateConsumerCertificateRequest
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    update_consumer_certificate_request = {"type":"object","properties":{"certificate":{"type":"string"}}} # UpdateConsumerCertificateRequest | Request body
+
+    try:
+        # Update Consumer Certificate
+        api_response = api_instance.update_consumer_certificate(consumerid, update_consumer_certificate_request)
+        print("The response of ConsumerApi->update_consumer_certificate:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->update_consumer_certificate: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **update_consumer_certificate_request** | [**UpdateConsumerCertificateRequest**](UpdateConsumerCertificateRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_consumer_logo_url**
+> UpdateConsumerName200Response update_consumer_logo_url(consumerid, update_consumer_logo_url_request)
+
+Update Consumer LogoURL
+
+<p>Update an existing logoURL for a Consumer specified by CONSUMER_ID.</p>
+<p>Please note: Your consumer may be disabled as a result of this action.</p>
+<p>CONSUMER_ID can be obtained after you register the application.</p>
+<p>Or use the endpoint 'Get Consumers' to get it</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
+<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#x61;&#105;lto&#58;f&#101;l&#x69;&#120;&#115;&#x6d;i&#116;h&#64;&#101;&#x78;&#97;&#x6d;p&#x6c;&#x65;.c&#111;&#109;">&#102;&#101;l&#105;x&#115;&#109;&#105;&#x74;h&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;e.&#99;&#x6f;&#109;</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
+<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
+<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
+<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
+<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
+<p><a href="/glossary#">roles_info</a>: roles_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_consumer_logo_url_request import UpdateConsumerLogoURLRequest
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    update_consumer_logo_url_request = {"type":"object","properties":{"logo_url":{"type":"string"}}} # UpdateConsumerLogoURLRequest | Request body
+
+    try:
+        # Update Consumer LogoURL
+        api_response = api_instance.update_consumer_logo_url(consumerid, update_consumer_logo_url_request)
+        print("The response of ConsumerApi->update_consumer_logo_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->update_consumer_logo_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **update_consumer_logo_url_request** | [**UpdateConsumerLogoURLRequest**](UpdateConsumerLogoURLRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_consumer_name**
+> UpdateConsumerName200Response update_consumer_name(consumerid, update_consumer_name_request)
+
+Update Consumer Name
+
+<p>Update an existing name for a Consumer specified by CONSUMER_ID.</p>
+<p>Please note: Your consumer may be disabled as a result of this action.</p>
+<p>CONSUMER_ID can be obtained after you register the application.</p>
+<p>Or use the endpoint 'Get Consumers' to get it</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>certificate_pem</strong></a>: certificate_pem</p>
+<p><a href="/glossary#company"><strong>company</strong></a>: Tesobe GmbH</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="m&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#x65;l&#x69;&#x78;s&#x6d;&#105;&#116;&#x68;&#64;&#101;&#x78;am&#x70;&#x6c;e&#x2e;&#99;&#111;&#109;">&#102;&#x65;&#x6c;&#105;x&#x73;&#x6d;&#105;&#x74;&#104;&#64;&#x65;&#x78;&#97;m&#x70;&#108;e&#x2e;&#x63;&#111;&#x6d;</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p>
+<p><a href="/glossary#"><strong>not_after</strong></a>: not_after</p>
+<p><a href="/glossary#"><strong>not_before</strong></a>: not_before</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>subject_domain_name</strong></a>: subject_domain_name</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#">certificate_info</a>: certificate_info</p>
+<p><a href="/glossary#logo_url">logo_url</a>: logo_url</p>
+<p><a href="/glossary#roles">roles</a>: CanCreateMyUser</p>
+<p><a href="/glossary#">roles_info</a>: roles_info</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_consumer_name200_response import UpdateConsumerName200Response
+from obp_python.models.update_consumer_name_request import UpdateConsumerNameRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    update_consumer_name_request = {"type":"object","properties":{"app_name":{"type":"string"}}} # UpdateConsumerNameRequest | Request body
+
+    try:
+        # Update Consumer Name
+        api_response = api_instance.update_consumer_name(consumerid, update_consumer_name_request)
+        print("The response of ConsumerApi->update_consumer_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->update_consumer_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **update_consumer_name_request** | [**UpdateConsumerNameRequest**](UpdateConsumerNameRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_consumer_redirect_url**
+> UpdateConsumerRedirectURL200Response update_consumer_redirect_url(consumerid, update_consumer_redirect_url_request)
+
+Update Consumer RedirectURL
+
+<p>Update an existing redirectUrl for a Consumer specified by CONSUMER_ID.</p>
+<p>Please note: Your consumer may be disabled as a result of this action.</p>
+<p>CONSUMER_ID can be obtained after you register the application.</p>
+<p>Or use the endpoint 'Get Consumers' to get it</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#app_type"><strong>app_type</strong></a>: Web</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created"><strong>created</strong></a>:</p>
+<p><a href="/glossary#created_by_user"><strong>created_by_user</strong></a>:</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;ai&#x6c;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;i&#120;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#x78;am&#x70;&#108;&#x65;.co&#x6d;">&#x66;&#x65;&#108;&#105;x&#x73;&#109;&#x69;t&#x68;&#64;&#x65;x&#97;&#x6d;pl&#x65;&#46;com</a></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#provider_id"><strong>provider_id</strong></a>:</p>
+<p><a href="/glossary#redirect_url"><strong>redirect_url</strong></a>: <a href="https://apisandbox.openbankproject.com">https://apisandbox.openbankproject.com</a></p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_consumer_redirect_url200_response import UpdateConsumerRedirectURL200Response
+from obp_python.models.update_consumer_redirect_url_request import UpdateConsumerRedirectURLRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.ConsumerApi(api_client)
+    consumerid = 'consumerid_example' # str | The CONSUMERID identifier
+    update_consumer_redirect_url_request = {"type":"object","properties":{"redirect_url":{"type":"string"}}} # UpdateConsumerRedirectURLRequest | Request body
+
+    try:
+        # Update Consumer RedirectURL
+        api_response = api_instance.update_consumer_redirect_url(consumerid, update_consumer_redirect_url_request)
+        print("The response of ConsumerApi->update_consumer_redirect_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ConsumerApi->update_consumer_redirect_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerid** | **str**| The CONSUMERID identifier | 
+ **update_consumer_redirect_url_request** | [**UpdateConsumerRedirectURLRequest**](UpdateConsumerRedirectURLRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateConsumerRedirectURL200Response**](UpdateConsumerRedirectURL200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_rate_limits**
+> UpdateRateLimitsRequest update_rate_limits(consumerid, ratelimitingid, update_rate_limits_request)
 
 Set Rate Limits / Call Limits per Consumer
 
@@ -3000,7 +2888,7 @@ Per Month</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_update_rate_limits_request import OBPv600UpdateRateLimitsRequest
+from obp_python.models.update_rate_limits_request import UpdateRateLimitsRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3035,15 +2923,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.ConsumerApi(api_client)
     consumerid = 'consumerid_example' # str | The CONSUMERID identifier
     ratelimitingid = 'ratelimitingid_example' # str | The RATELIMITINGID identifier
-    obpv600_update_rate_limits_request = {"type":"object","properties":{"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"}}} # OBPv600UpdateRateLimitsRequest | Request body
+    update_rate_limits_request = {"type":"object","properties":{"per_week_call_limit":{"type":"string"},"per_day_call_limit":{"type":"string"},"per_second_call_limit":{"type":"string"},"per_month_call_limit":{"type":"string"},"from_date":{"type":"string","format":"date-time"},"to_date":{"type":"string","format":"date-time"},"per_hour_call_limit":{"type":"string"},"per_minute_call_limit":{"type":"string"}}} # UpdateRateLimitsRequest | Request body
 
     try:
         # Set Rate Limits / Call Limits per Consumer
-        api_response = api_instance.o_bpv6_0_0_update_rate_limits(consumerid, ratelimitingid, obpv600_update_rate_limits_request)
-        print("The response of ConsumerApi->o_bpv6_0_0_update_rate_limits:\n")
+        api_response = api_instance.update_rate_limits(consumerid, ratelimitingid, update_rate_limits_request)
+        print("The response of ConsumerApi->update_rate_limits:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_update_rate_limits: %s\n" % e)
+        print("Exception when calling ConsumerApi->update_rate_limits: %s\n" % e)
 ```
 
 
@@ -3055,11 +2943,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consumerid** | **str**| The CONSUMERID identifier | 
  **ratelimitingid** | **str**| The RATELIMITINGID identifier | 
- **obpv600_update_rate_limits_request** | [**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)| Request body | 
+ **update_rate_limits_request** | [**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600UpdateRateLimitsRequest**](OBPv600UpdateRateLimitsRequest.md)
+[**UpdateRateLimitsRequest**](UpdateRateLimitsRequest.md)
 
 ### Authorization
 
@@ -3080,8 +2968,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_verify_oidc_client**
-> OBPv600VerifyOidcClient200Response o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
+# **verify_oidc_client**
+> VerifyOidcClient200Response verify_oidc_client(verify_oidc_client_request)
 
 Verify OIDC Client
 
@@ -3113,8 +3001,8 @@ See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_verify_oidc_client200_response import OBPv600VerifyOidcClient200Response
-from obp_python.models.obpv600_verify_oidc_client_request import OBPv600VerifyOidcClientRequest
+from obp_python.models.verify_oidc_client200_response import VerifyOidcClient200Response
+from obp_python.models.verify_oidc_client_request import VerifyOidcClientRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3147,15 +3035,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.ConsumerApi(api_client)
-    obpv600_verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} # OBPv600VerifyOidcClientRequest | Request body
+    verify_oidc_client_request = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} # VerifyOidcClientRequest | Request body
 
     try:
         # Verify OIDC Client
-        api_response = api_instance.o_bpv6_0_0_verify_oidc_client(obpv600_verify_oidc_client_request)
-        print("The response of ConsumerApi->o_bpv6_0_0_verify_oidc_client:\n")
+        api_response = api_instance.verify_oidc_client(verify_oidc_client_request)
+        print("The response of ConsumerApi->verify_oidc_client:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ConsumerApi->o_bpv6_0_0_verify_oidc_client: %s\n" % e)
+        print("Exception when calling ConsumerApi->verify_oidc_client: %s\n" % e)
 ```
 
 
@@ -3165,11 +3053,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv600_verify_oidc_client_request** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | 
+ **verify_oidc_client_request** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 

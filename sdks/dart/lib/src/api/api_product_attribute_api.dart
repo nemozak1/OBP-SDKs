@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv510_update_atm_attribute_request.dart';
-import 'package:obp_dart/src/model/obpv600_create_api_product_attribute200_response.dart';
+import 'package:obp_dart/src/model/create_api_product_attribute200_response.dart';
+import 'package:obp_dart/src/model/update_atm_attribute_request.dart';
 
 class ApiProductAttributeApi {
 
@@ -26,7 +26,7 @@ class ApiProductAttributeApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [apiproductcode] - The APIPRODUCTCODE identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,12 +34,12 @@ class ApiProductAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600CreateApiProductAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateApiProductAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600CreateApiProductAttribute200Response>> oBPv600CreateApiProductAttribute({ 
+  Future<Response<CreateApiProductAttribute200Response>> createApiProductAttribute({ 
     required String bankid,
     required String apiproductcode,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class ApiProductAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -79,8 +79,8 @@ class ApiProductAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -103,14 +103,14 @@ class ApiProductAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600CreateApiProductAttribute200Response? _responseData;
+    CreateApiProductAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600CreateApiProductAttribute200Response),
-      ) as OBPv600CreateApiProductAttribute200Response;
+        specifiedType: const FullType(CreateApiProductAttribute200Response),
+      ) as CreateApiProductAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -122,7 +122,7 @@ class ApiProductAttributeApi {
       );
     }
 
-    return Response<OBPv600CreateApiProductAttribute200Response>(
+    return Response<CreateApiProductAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -150,7 +150,7 @@ class ApiProductAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv600DeleteApiProductAttribute({ 
+  Future<Response<void>> deleteApiProductAttribute({ 
     required String bankid,
     required String apiproductcode,
     required String apiproductattributeid,
@@ -180,7 +180,7 @@ class ApiProductAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -214,9 +214,9 @@ class ApiProductAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600CreateApiProductAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateApiProductAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600CreateApiProductAttribute200Response>> oBPv600GetApiProductAttribute({ 
+  Future<Response<CreateApiProductAttribute200Response>> getApiProductAttribute({ 
     required String bankid,
     required String apiproductcode,
     required String apiproductattributeid,
@@ -248,14 +248,14 @@ class ApiProductAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600CreateApiProductAttribute200Response? _responseData;
+    CreateApiProductAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600CreateApiProductAttribute200Response),
-      ) as OBPv600CreateApiProductAttribute200Response;
+        specifiedType: const FullType(CreateApiProductAttribute200Response),
+      ) as CreateApiProductAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -267,7 +267,7 @@ class ApiProductAttributeApi {
       );
     }
 
-    return Response<OBPv600CreateApiProductAttribute200Response>(
+    return Response<CreateApiProductAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -286,7 +286,7 @@ class ApiProductAttributeApi {
   /// * [bankid] - The BANKID identifier
   /// * [apiproductcode] - The APIPRODUCTCODE identifier
   /// * [apiproductattributeid] - The APIPRODUCTATTRIBUTEID identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -294,13 +294,13 @@ class ApiProductAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600CreateApiProductAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CreateApiProductAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600CreateApiProductAttribute200Response>> oBPv600UpdateApiProductAttribute({ 
+  Future<Response<CreateApiProductAttribute200Response>> updateApiProductAttribute({ 
     required String bankid,
     required String apiproductcode,
     required String apiproductattributeid,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -327,7 +327,7 @@ class ApiProductAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -340,8 +340,8 @@ class ApiProductAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -364,14 +364,14 @@ class ApiProductAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600CreateApiProductAttribute200Response? _responseData;
+    CreateApiProductAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600CreateApiProductAttribute200Response),
-      ) as OBPv600CreateApiProductAttribute200Response;
+        specifiedType: const FullType(CreateApiProductAttribute200Response),
+      ) as CreateApiProductAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -383,7 +383,7 @@ class ApiProductAttributeApi {
       );
     }
 
-    return Response<OBPv600CreateApiProductAttribute200Response>(
+    return Response<CreateApiProductAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

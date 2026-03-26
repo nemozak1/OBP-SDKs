@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,16 +75,16 @@ class OIDCApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv310GetOAuth2ServerJWKsURIs' => [
+        'getOAuth2ServerJWKsURIs' => [
             'application/json',
         ],
-        'oBPv310GetObpConnectorLoopback' => [
+        'getObpConnectorLoopback' => [
             'application/json',
         ],
-        'oBPv600GetOidcClient' => [
+        'getOidcClient' => [
             'application/json',
         ],
-        'oBPv600VerifyOidcClient' => [
+        'verifyOidcClient' => [
             'application/json',
         ],
     ];
@@ -136,36 +136,36 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetOAuth2ServerJWKsURIs
+     * Operation getOAuth2ServerJWKsURIs
      *
      * Get JSON Web Key (JWK) URIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOAuth2ServerJWKsURIs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response
+     * @return \OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response
      */
-    public function oBPv310GetOAuth2ServerJWKsURIs(string $contentType = self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'][0])
+    public function getOAuth2ServerJWKsURIs(string $contentType = self::contentTypes['getOAuth2ServerJWKsURIs'][0])
     {
-        list($response) = $this->oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo($contentType);
+        list($response) = $this->getOAuth2ServerJWKsURIsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo
+     * Operation getOAuth2ServerJWKsURIsWithHttpInfo
      *
      * Get JSON Web Key (JWK) URIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOAuth2ServerJWKsURIs'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetOAuth2ServerJWKsURIsWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'][0])
+    public function getOAuth2ServerJWKsURIsWithHttpInfo(string $contentType = self::contentTypes['getOAuth2ServerJWKsURIs'][0])
     {
-        $request = $this->oBPv310GetOAuth2ServerJWKsURIsRequest($contentType);
+        $request = $this->getOAuth2ServerJWKsURIsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -193,7 +193,7 @@ class OIDCApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response',
+                        '\OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response',
                         $request,
                         $response,
                     );
@@ -215,7 +215,7 @@ class OIDCApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response',
+                '\OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response',
                 $request,
                 $response,
             );
@@ -224,7 +224,7 @@ class OIDCApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response',
+                        '\OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,18 +237,18 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetOAuth2ServerJWKsURIsAsync
+     * Operation getOAuth2ServerJWKsURIsAsync
      *
      * Get JSON Web Key (JWK) URIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOAuth2ServerJWKsURIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetOAuth2ServerJWKsURIsAsync(string $contentType = self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'][0])
+    public function getOAuth2ServerJWKsURIsAsync(string $contentType = self::contentTypes['getOAuth2ServerJWKsURIs'][0])
     {
-        return $this->oBPv310GetOAuth2ServerJWKsURIsAsyncWithHttpInfo($contentType)
+        return $this->getOAuth2ServerJWKsURIsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -257,19 +257,19 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetOAuth2ServerJWKsURIsAsyncWithHttpInfo
+     * Operation getOAuth2ServerJWKsURIsAsyncWithHttpInfo
      *
      * Get JSON Web Key (JWK) URIs
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOAuth2ServerJWKsURIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetOAuth2ServerJWKsURIsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'][0])
+    public function getOAuth2ServerJWKsURIsAsyncWithHttpInfo(string $contentType = self::contentTypes['getOAuth2ServerJWKsURIs'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetOAuth2ServerJWKsURIs200Response';
-        $request = $this->oBPv310GetOAuth2ServerJWKsURIsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetOAuth2ServerJWKsURIs200Response';
+        $request = $this->getOAuth2ServerJWKsURIsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -308,14 +308,14 @@ class OIDCApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetOAuth2ServerJWKsURIs'
+     * Create request for operation 'getOAuth2ServerJWKsURIs'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOAuth2ServerJWKsURIs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetOAuth2ServerJWKsURIsRequest(string $contentType = self::contentTypes['oBPv310GetOAuth2ServerJWKsURIs'][0])
+    public function getOAuth2ServerJWKsURIsRequest(string $contentType = self::contentTypes['getOAuth2ServerJWKsURIs'][0])
     {
 
 
@@ -384,36 +384,36 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetObpConnectorLoopback
+     * Operation getObpConnectorLoopback
      *
      * Get Connector Status (Loopback)
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetObpConnectorLoopback'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getObpConnectorLoopback'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response
+     * @return \OpenBankProject\Model\GetObpConnectorLoopback200Response
      */
-    public function oBPv310GetObpConnectorLoopback(string $contentType = self::contentTypes['oBPv310GetObpConnectorLoopback'][0])
+    public function getObpConnectorLoopback(string $contentType = self::contentTypes['getObpConnectorLoopback'][0])
     {
-        list($response) = $this->oBPv310GetObpConnectorLoopbackWithHttpInfo($contentType);
+        list($response) = $this->getObpConnectorLoopbackWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv310GetObpConnectorLoopbackWithHttpInfo
+     * Operation getObpConnectorLoopbackWithHttpInfo
      *
      * Get Connector Status (Loopback)
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetObpConnectorLoopback'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getObpConnectorLoopback'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetObpConnectorLoopback200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv310GetObpConnectorLoopbackWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetObpConnectorLoopback'][0])
+    public function getObpConnectorLoopbackWithHttpInfo(string $contentType = self::contentTypes['getObpConnectorLoopback'][0])
     {
-        $request = $this->oBPv310GetObpConnectorLoopbackRequest($contentType);
+        $request = $this->getObpConnectorLoopbackRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -441,7 +441,7 @@ class OIDCApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response',
+                        '\OpenBankProject\Model\GetObpConnectorLoopback200Response',
                         $request,
                         $response,
                     );
@@ -463,7 +463,7 @@ class OIDCApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response',
+                '\OpenBankProject\Model\GetObpConnectorLoopback200Response',
                 $request,
                 $response,
             );
@@ -472,7 +472,7 @@ class OIDCApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response',
+                        '\OpenBankProject\Model\GetObpConnectorLoopback200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -485,18 +485,18 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetObpConnectorLoopbackAsync
+     * Operation getObpConnectorLoopbackAsync
      *
      * Get Connector Status (Loopback)
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetObpConnectorLoopback'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getObpConnectorLoopback'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetObpConnectorLoopbackAsync(string $contentType = self::contentTypes['oBPv310GetObpConnectorLoopback'][0])
+    public function getObpConnectorLoopbackAsync(string $contentType = self::contentTypes['getObpConnectorLoopback'][0])
     {
-        return $this->oBPv310GetObpConnectorLoopbackAsyncWithHttpInfo($contentType)
+        return $this->getObpConnectorLoopbackAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -505,19 +505,19 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv310GetObpConnectorLoopbackAsyncWithHttpInfo
+     * Operation getObpConnectorLoopbackAsyncWithHttpInfo
      *
      * Get Connector Status (Loopback)
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetObpConnectorLoopback'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getObpConnectorLoopback'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv310GetObpConnectorLoopbackAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv310GetObpConnectorLoopback'][0])
+    public function getObpConnectorLoopbackAsyncWithHttpInfo(string $contentType = self::contentTypes['getObpConnectorLoopback'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv310GetObpConnectorLoopback200Response';
-        $request = $this->oBPv310GetObpConnectorLoopbackRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetObpConnectorLoopback200Response';
+        $request = $this->getObpConnectorLoopbackRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -556,14 +556,14 @@ class OIDCApi
     }
 
     /**
-     * Create request for operation 'oBPv310GetObpConnectorLoopback'
+     * Create request for operation 'getObpConnectorLoopback'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv310GetObpConnectorLoopback'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getObpConnectorLoopback'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv310GetObpConnectorLoopbackRequest(string $contentType = self::contentTypes['oBPv310GetObpConnectorLoopback'][0])
+    public function getObpConnectorLoopbackRequest(string $contentType = self::contentTypes['getObpConnectorLoopback'][0])
     {
 
 
@@ -619,9 +619,9 @@ class OIDCApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -646,38 +646,38 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600GetOidcClient
+     * Operation getOidcClient
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetOidcClient200Response
+     * @return \OpenBankProject\Model\GetOidcClient200Response
      */
-    public function oBPv600GetOidcClient($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClient($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        list($response) = $this->oBPv600GetOidcClientWithHttpInfo($clientid, $contentType);
+        list($response) = $this->getOidcClientWithHttpInfo($clientid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetOidcClientWithHttpInfo
+     * Operation getOidcClientWithHttpInfo
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetOidcClientWithHttpInfo($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientWithHttpInfo($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        $request = $this->oBPv600GetOidcClientRequest($clientid, $contentType);
+        $request = $this->getOidcClientRequest($clientid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -705,7 +705,7 @@ class OIDCApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                        '\OpenBankProject\Model\GetOidcClient200Response',
                         $request,
                         $response,
                     );
@@ -727,7 +727,7 @@ class OIDCApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                '\OpenBankProject\Model\GetOidcClient200Response',
                 $request,
                 $response,
             );
@@ -736,7 +736,7 @@ class OIDCApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetOidcClient200Response',
+                        '\OpenBankProject\Model\GetOidcClient200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -749,19 +749,19 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600GetOidcClientAsync
+     * Operation getOidcClientAsync
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetOidcClientAsync($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientAsync($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        return $this->oBPv600GetOidcClientAsyncWithHttpInfo($clientid, $contentType)
+        return $this->getOidcClientAsyncWithHttpInfo($clientid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -770,20 +770,20 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600GetOidcClientAsyncWithHttpInfo
+     * Operation getOidcClientAsyncWithHttpInfo
      *
      * Get OIDC Client
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetOidcClientAsyncWithHttpInfo($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientAsyncWithHttpInfo($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetOidcClient200Response';
-        $request = $this->oBPv600GetOidcClientRequest($clientid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetOidcClient200Response';
+        $request = $this->getOidcClientRequest($clientid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -822,21 +822,21 @@ class OIDCApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetOidcClient'
+     * Create request for operation 'getOidcClient'
      *
      * @param  string $clientid The CLIENTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetOidcClient'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetOidcClientRequest($clientid, string $contentType = self::contentTypes['oBPv600GetOidcClient'][0])
+    public function getOidcClientRequest($clientid, string $contentType = self::contentTypes['getOidcClient'][0])
     {
 
         // verify the required parameter 'clientid' is set
         if ($clientid === null || (is_array($clientid) && count($clientid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $clientid when calling oBPv600GetOidcClient'
+                'Missing the required parameter $clientid when calling getOidcClient'
             );
         }
 
@@ -901,9 +901,9 @@ class OIDCApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -928,38 +928,38 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClient
+     * Operation verifyOidcClient
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600VerifyOidcClient200Response
+     * @return \OpenBankProject\Model\VerifyOidcClient200Response
      */
-    public function oBPv600VerifyOidcClient($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClient($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        list($response) = $this->oBPv600VerifyOidcClientWithHttpInfo($obpv600_verify_oidc_client_request, $contentType);
+        list($response) = $this->verifyOidcClientWithHttpInfo($verify_oidc_client_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientWithHttpInfo
+     * Operation verifyOidcClientWithHttpInfo
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600VerifyOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\VerifyOidcClient200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600VerifyOidcClientWithHttpInfo($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientWithHttpInfo($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        $request = $this->oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, $contentType);
+        $request = $this->verifyOidcClientRequest($verify_oidc_client_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -987,7 +987,7 @@ class OIDCApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                        '\OpenBankProject\Model\VerifyOidcClient200Response',
                         $request,
                         $response,
                     );
@@ -1009,7 +1009,7 @@ class OIDCApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                '\OpenBankProject\Model\VerifyOidcClient200Response',
                 $request,
                 $response,
             );
@@ -1018,7 +1018,7 @@ class OIDCApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response',
+                        '\OpenBankProject\Model\VerifyOidcClient200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1031,19 +1031,19 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientAsync
+     * Operation verifyOidcClientAsync
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600VerifyOidcClientAsync($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientAsync($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        return $this->oBPv600VerifyOidcClientAsyncWithHttpInfo($obpv600_verify_oidc_client_request, $contentType)
+        return $this->verifyOidcClientAsyncWithHttpInfo($verify_oidc_client_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1052,20 +1052,20 @@ class OIDCApi
     }
 
     /**
-     * Operation oBPv600VerifyOidcClientAsyncWithHttpInfo
+     * Operation verifyOidcClientAsyncWithHttpInfo
      *
      * Verify OIDC Client
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600VerifyOidcClientAsyncWithHttpInfo($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientAsyncWithHttpInfo($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600VerifyOidcClient200Response';
-        $request = $this->oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, $contentType);
+        $returnType = '\OpenBankProject\Model\VerifyOidcClient200Response';
+        $request = $this->verifyOidcClientRequest($verify_oidc_client_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1104,21 +1104,21 @@ class OIDCApi
     }
 
     /**
-     * Create request for operation 'oBPv600VerifyOidcClient'
+     * Create request for operation 'verifyOidcClient'
      *
-     * @param  \OpenBankProject\Model\OBPv600VerifyOidcClientRequest $obpv600_verify_oidc_client_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600VerifyOidcClient'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\VerifyOidcClientRequest $verify_oidc_client_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['verifyOidcClient'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600VerifyOidcClientRequest($obpv600_verify_oidc_client_request, string $contentType = self::contentTypes['oBPv600VerifyOidcClient'][0])
+    public function verifyOidcClientRequest($verify_oidc_client_request, string $contentType = self::contentTypes['verifyOidcClient'][0])
     {
 
-        // verify the required parameter 'obpv600_verify_oidc_client_request' is set
-        if ($obpv600_verify_oidc_client_request === null || (is_array($obpv600_verify_oidc_client_request) && count($obpv600_verify_oidc_client_request) === 0)) {
+        // verify the required parameter 'verify_oidc_client_request' is set
+        if ($verify_oidc_client_request === null || (is_array($verify_oidc_client_request) && count($verify_oidc_client_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_verify_oidc_client_request when calling oBPv600VerifyOidcClient'
+                'Missing the required parameter $verify_oidc_client_request when calling verifyOidcClient'
             );
         }
 
@@ -1141,12 +1141,12 @@ class OIDCApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_verify_oidc_client_request)) {
+        if (isset($verify_oidc_client_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_verify_oidc_client_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($verify_oidc_client_request));
             } else {
-                $httpBody = $obpv600_verify_oidc_client_request;
+                $httpBody = $verify_oidc_client_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1182,9 +1182,9 @@ class OIDCApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

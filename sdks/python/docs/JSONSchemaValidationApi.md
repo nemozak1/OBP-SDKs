@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
-[**o_bpv4_0_0_delete_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
-[**o_bpv4_0_0_get_all_json_schema_validations**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
-[**o_bpv4_0_0_get_all_json_schema_validations_public**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
-[**o_bpv4_0_0_get_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
-[**o_bpv4_0_0_update_json_schema_validation**](JSONSchemaValidationApi.md#o_bpv4_0_0_update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
+[**create_json_schema_validation**](JSONSchemaValidationApi.md#create_json_schema_validation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation
+[**delete_json_schema_validation**](JSONSchemaValidationApi.md#delete_json_schema_validation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation
+[**get_all_json_schema_validations**](JSONSchemaValidationApi.md#get_all_json_schema_validations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations
+[**get_all_json_schema_validations_public**](JSONSchemaValidationApi.md#get_all_json_schema_validations_public) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public
+[**get_json_schema_validation**](JSONSchemaValidationApi.md#get_json_schema_validation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation
+[**update_json_schema_validation**](JSONSchemaValidationApi.md#update_json_schema_validation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation
 
 
-# **o_bpv4_0_0_create_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
+# **create_json_schema_validation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner create_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Create a JSON Schema Validation
 
@@ -68,8 +68,8 @@ Create a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
+from obp_python.models.get_all_json_schema_validations_public200_response_json_schema_validations_inner import GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+from obp_python.models.get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -103,15 +103,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.JSONSchemaValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
+    get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} # GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
     try:
         # Create a JSON Schema Validation
-        api_response = api_instance.o_bpv4_0_0_create_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
-        print("The response of JSONSchemaValidationApi->o_bpv4_0_0_create_json_schema_validation:\n")
+        api_response = api_instance.create_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
+        print("The response of JSONSchemaValidationApi->create_json_schema_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_create_json_schema_validation: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->create_json_schema_validation: %s\n" % e)
 ```
 
 
@@ -122,11 +122,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
+ **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -146,8 +146,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_json_schema_validation**
-> o_bpv4_0_0_delete_json_schema_validation(operationid)
+# **delete_json_schema_validation**
+> delete_json_schema_validation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -202,9 +202,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a JSON Schema Validation
-        api_instance.o_bpv4_0_0_delete_json_schema_validation(operationid)
+        api_instance.delete_json_schema_validation(operationid)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_delete_json_schema_validation: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->delete_json_schema_validation: %s\n" % e)
 ```
 
 
@@ -238,8 +238,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_json_schema_validations**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response o_bpv4_0_0_get_all_json_schema_validations()
+# **get_all_json_schema_validations**
+> GetAllJsonSchemaValidationsPublic200Response get_all_json_schema_validations()
 
 Get all JSON Schema Validations
 
@@ -269,7 +269,7 @@ Get all JSON Schema Validations
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response import OBPv400GetAllJsonSchemaValidationsPublic200Response
+from obp_python.models.get_all_json_schema_validations_public200_response import GetAllJsonSchemaValidationsPublic200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -305,11 +305,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all JSON Schema Validations
-        api_response = api_instance.o_bpv4_0_0_get_all_json_schema_validations()
-        print("The response of JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations:\n")
+        api_response = api_instance.get_all_json_schema_validations()
+        print("The response of JSONSchemaValidationApi->get_all_json_schema_validations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->get_all_json_schema_validations: %s\n" % e)
 ```
 
 
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -340,8 +340,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_json_schema_validations_public**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response o_bpv4_0_0_get_all_json_schema_validations_public()
+# **get_all_json_schema_validations_public**
+> GetAllJsonSchemaValidationsPublic200Response get_all_json_schema_validations_public()
 
 Get all JSON Schema Validations - public
 
@@ -368,7 +368,7 @@ Get all JSON Schema Validations - public
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response import OBPv400GetAllJsonSchemaValidationsPublic200Response
+from obp_python.models.get_all_json_schema_validations_public200_response import GetAllJsonSchemaValidationsPublic200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -386,11 +386,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all JSON Schema Validations - public
-        api_response = api_instance.o_bpv4_0_0_get_all_json_schema_validations_public()
-        print("The response of JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations_public:\n")
+        api_response = api_instance.get_all_json_schema_validations_public()
+        print("The response of JSONSchemaValidationApi->get_all_json_schema_validations_public:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_get_all_json_schema_validations_public: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->get_all_json_schema_validations_public: %s\n" % e)
 ```
 
 
@@ -401,7 +401,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -421,8 +421,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_get_json_schema_validation(operationid)
+# **get_json_schema_validation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner get_json_schema_validation(operationid)
 
 Get a JSON Schema Validation
 
@@ -454,7 +454,7 @@ Get a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+from obp_python.models.get_all_json_schema_validations_public200_response_json_schema_validations_inner import GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -491,11 +491,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get a JSON Schema Validation
-        api_response = api_instance.o_bpv4_0_0_get_json_schema_validation(operationid)
-        print("The response of JSONSchemaValidationApi->o_bpv4_0_0_get_json_schema_validation:\n")
+        api_response = api_instance.get_json_schema_validation(operationid)
+        print("The response of JSONSchemaValidationApi->get_json_schema_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_get_json_schema_validation: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->get_json_schema_validation: %s\n" % e)
 ```
 
 
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -529,8 +529,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_json_schema_validation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
+# **update_json_schema_validation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner update_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
 
 Update a JSON Schema Validation
 
@@ -572,8 +572,8 @@ Update a JSON Schema Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
-from obp_python.models.obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
+from obp_python.models.get_all_json_schema_validations_public200_response_json_schema_validations_inner import GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+from obp_python.models.get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema import GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -607,15 +607,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.JSONSchemaValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} # OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
+    get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} # GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 
     try:
         # Update a JSON Schema Validation
-        api_response = api_instance.o_bpv4_0_0_update_json_schema_validation(operationid, obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
-        print("The response of JSONSchemaValidationApi->o_bpv4_0_0_update_json_schema_validation:\n")
+        api_response = api_instance.update_json_schema_validation(operationid, get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema)
+        print("The response of JSONSchemaValidationApi->update_json_schema_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling JSONSchemaValidationApi->o_bpv4_0_0_update_json_schema_validation: %s\n" % e)
+        print("Exception when calling JSONSchemaValidationApi->update_json_schema_validation: %s\n" % e)
 ```
 
 
@@ -626,11 +626,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
+ **get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](OBPv400GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 

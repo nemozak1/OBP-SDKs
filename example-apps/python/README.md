@@ -10,6 +10,17 @@ cd example-apps/python
 uv sync
 ```
 
+> **Note:** This example app is configured to use the local copy of the SDK
+> (via `tool.uv.sources` in `pyproject.toml`) so that changes to the SDK are
+> picked up immediately during development. For your own applications, depend on
+> the SDK from the git repository instead:
+>
+> ```toml
+> dependencies = [
+>     "obp-python @ git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python",
+> ]
+> ```
+
 ## Usage
 
 Run with no credentials to hit the public Get Banks endpoint:

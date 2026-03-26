@@ -1,23 +1,23 @@
 # GroupAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600AddUserToGroup**](GroupAPI.md#obpv600addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
-[**oBPv600CreateGroup**](GroupAPI.md#obpv600creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group
-[**oBPv600DeleteGroup**](GroupAPI.md#obpv600deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
-[**oBPv600GetGroup**](GroupAPI.md#obpv600getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
-[**oBPv600GetGroupEntitlements**](GroupAPI.md#obpv600getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
-[**oBPv600GetGroups**](GroupAPI.md#obpv600getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups
-[**oBPv600GetUserGroupMemberships**](GroupAPI.md#obpv600getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
-[**oBPv600RemoveUserFromGroup**](GroupAPI.md#obpv600removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
-[**oBPv600UpdateGroup**](GroupAPI.md#obpv600updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
+[**addUserToGroup**](GroupAPI.md#addusertogroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements
+[**createGroup**](GroupAPI.md#creategroup) | **POST** /obp/v6.0.0/management/groups | Create Group
+[**deleteGroup**](GroupAPI.md#deletegroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group
+[**getGroup**](GroupAPI.md#getgroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group
+[**getGroupEntitlements**](GroupAPI.md#getgroupentitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements
+[**getGroups**](GroupAPI.md#getgroups) | **GET** /obp/v6.0.0/management/groups | Get Groups
+[**getUserGroupMemberships**](GroupAPI.md#getusergroupmemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships
+[**removeUserFromGroup**](GroupAPI.md#removeuserfromgroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group
+[**updateGroup**](GroupAPI.md#updategroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group
 
 
-# **oBPv600AddUserToGroup**
+# **addUserToGroup**
 ```swift
-    open class func oBPv600AddUserToGroup(userid: String, oBPv600AddUserToGroupRequest: OBPv600AddUserToGroupRequest, completion: @escaping (_ data: OBPv600AddUserToGroup200Response?, _ error: Error?) -> Void)
+    open class func addUserToGroup(userid: String, addUserToGroupRequest: AddUserToGroupRequest, completion: @escaping (_ data: AddUserToGroup200Response?, _ error: Error?) -> Void)
 ```
 
 Grant User Membership to Group Entitlements
@@ -30,10 +30,10 @@ Grant User Membership to Group Entitlements
 import OBPSwift
 
 let userid = "userid_example" // String | The USERID identifier
-let oBPv600AddUserToGroupRequest = OBPv6_0_0_addUserToGroup_request(type: "type_example", properties: OBPv6_0_0_addUserToGroup_request_properties(groupId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv600AddUserToGroupRequest | Request body
+let addUserToGroupRequest = addUserToGroup_request(groupId: "groupId_example") // AddUserToGroupRequest | Request body
 
 // Grant User Membership to Group Entitlements
-GroupAPI.oBPv600AddUserToGroup(userid: userid, oBPv600AddUserToGroupRequest: oBPv600AddUserToGroupRequest) { (response, error) in
+GroupAPI.addUserToGroup(userid: userid, addUserToGroupRequest: addUserToGroupRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -50,11 +50,11 @@ GroupAPI.oBPv600AddUserToGroup(userid: userid, oBPv600AddUserToGroupRequest: oBP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **String** | The USERID identifier | 
- **oBPv600AddUserToGroupRequest** | [**OBPv600AddUserToGroupRequest**](OBPv600AddUserToGroupRequest.md) | Request body | 
+ **addUserToGroupRequest** | [**AddUserToGroupRequest**](AddUserToGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600AddUserToGroup200Response**](OBPv600AddUserToGroup200Response.md)
+[**AddUserToGroup200Response**](AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -67,9 +67,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateGroup**
+# **createGroup**
 ```swift
-    open class func oBPv600CreateGroup(oBPv600CreateGroupRequest: OBPv600CreateGroupRequest, completion: @escaping (_ data: OBPv600GetGroups200ResponsePropertiesGroupsItems?, _ error: Error?) -> Void)
+    open class func createGroup(createGroupRequest: CreateGroupRequest, completion: @escaping (_ data: GetGroups200ResponseGroupsInner?, _ error: Error?) -> Void)
 ```
 
 Create Group
@@ -81,10 +81,10 @@ Create Group
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OBPSwift
 
-let oBPv600CreateGroupRequest = OBPv6_0_0_createGroup_request(type: "type_example", properties: OBPv6_0_0_createGroup_request_properties(listOfRoles: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example")), bankId: nil, groupName: nil, isEnabled: nil, groupDescription: nil)) // OBPv600CreateGroupRequest | Request body
+let createGroupRequest = createGroup_request(listOfRoles: ["listOfRoles_example"], bankId: "bankId_example", groupName: "groupName_example", isEnabled: false, groupDescription: "groupDescription_example") // CreateGroupRequest | Request body
 
 // Create Group
-GroupAPI.oBPv600CreateGroup(oBPv600CreateGroupRequest: oBPv600CreateGroupRequest) { (response, error) in
+GroupAPI.createGroup(createGroupRequest: createGroupRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -100,11 +100,11 @@ GroupAPI.oBPv600CreateGroup(oBPv600CreateGroupRequest: oBPv600CreateGroupRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateGroupRequest** | [**OBPv600CreateGroupRequest**](OBPv600CreateGroupRequest.md) | Request body | 
+ **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -117,9 +117,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteGroup**
+# **deleteGroup**
 ```swift
-    open class func oBPv600DeleteGroup(groupid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteGroup(groupid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Group
@@ -134,7 +134,7 @@ import OBPSwift
 let groupid = "groupid_example" // String | The GROUPID identifier
 
 // Delete Group
-GroupAPI.oBPv600DeleteGroup(groupid: groupid) { (response, error) in
+GroupAPI.deleteGroup(groupid: groupid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -167,9 +167,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetGroup**
+# **getGroup**
 ```swift
-    open class func oBPv600GetGroup(groupid: String, completion: @escaping (_ data: OBPv600GetGroups200ResponsePropertiesGroupsItems?, _ error: Error?) -> Void)
+    open class func getGroup(groupid: String, completion: @escaping (_ data: GetGroups200ResponseGroupsInner?, _ error: Error?) -> Void)
 ```
 
 Get Group
@@ -184,7 +184,7 @@ import OBPSwift
 let groupid = "groupid_example" // String | The GROUPID identifier
 
 // Get Group
-GroupAPI.oBPv600GetGroup(groupid: groupid) { (response, error) in
+GroupAPI.getGroup(groupid: groupid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetGroupEntitlements**
+# **getGroupEntitlements**
 ```swift
-    open class func oBPv600GetGroupEntitlements(groupid: String, completion: @escaping (_ data: OBPv600GetGroupEntitlements200Response?, _ error: Error?) -> Void)
+    open class func getGroupEntitlements(groupid: String, completion: @escaping (_ data: GetGroupEntitlements200Response?, _ error: Error?) -> Void)
 ```
 
 Get Group Entitlements
@@ -234,7 +234,7 @@ import OBPSwift
 let groupid = "groupid_example" // String | The GROUPID identifier
 
 // Get Group Entitlements
-GroupAPI.oBPv600GetGroupEntitlements(groupid: groupid) { (response, error) in
+GroupAPI.getGroupEntitlements(groupid: groupid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetGroupEntitlements200Response**](OBPv600GetGroupEntitlements200Response.md)
+[**GetGroupEntitlements200Response**](GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -267,9 +267,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetGroups**
+# **getGroups**
 ```swift
-    open class func oBPv600GetGroups(completion: @escaping (_ data: OBPv600GetGroups200Response?, _ error: Error?) -> Void)
+    open class func getGroups(completion: @escaping (_ data: GetGroups200Response?, _ error: Error?) -> Void)
 ```
 
 Get Groups
@@ -283,7 +283,7 @@ import OBPSwift
 
 
 // Get Groups
-GroupAPI.oBPv600GetGroups() { (response, error) in
+GroupAPI.getGroups() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -300,7 +300,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetGroups200Response**](OBPv600GetGroups200Response.md)
+[**GetGroups200Response**](GetGroups200Response.md)
 
 ### Authorization
 
@@ -313,9 +313,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetUserGroupMemberships**
+# **getUserGroupMemberships**
 ```swift
-    open class func oBPv600GetUserGroupMemberships(userid: String, completion: @escaping (_ data: OBPv600GetUserGroupMemberships200Response?, _ error: Error?) -> Void)
+    open class func getUserGroupMemberships(userid: String, completion: @escaping (_ data: GetUserGroupMemberships200Response?, _ error: Error?) -> Void)
 ```
 
 Get User's Group Memberships
@@ -330,7 +330,7 @@ import OBPSwift
 let userid = "userid_example" // String | The USERID identifier
 
 // Get User's Group Memberships
-GroupAPI.oBPv600GetUserGroupMemberships(userid: userid) { (response, error) in
+GroupAPI.getUserGroupMemberships(userid: userid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetUserGroupMemberships200Response**](OBPv600GetUserGroupMemberships200Response.md)
+[**GetUserGroupMemberships200Response**](GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -363,9 +363,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600RemoveUserFromGroup**
+# **removeUserFromGroup**
 ```swift
-    open class func oBPv600RemoveUserFromGroup(userid: String, groupid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func removeUserFromGroup(userid: String, groupid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Remove User from Group
@@ -381,7 +381,7 @@ let userid = "userid_example" // String | The USERID identifier
 let groupid = "groupid_example" // String | The GROUPID identifier
 
 // Remove User from Group
-GroupAPI.oBPv600RemoveUserFromGroup(userid: userid, groupid: groupid) { (response, error) in
+GroupAPI.removeUserFromGroup(userid: userid, groupid: groupid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -415,9 +415,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateGroup**
+# **updateGroup**
 ```swift
-    open class func oBPv600UpdateGroup(groupid: String, oBPv600UpdateGroupRequest: OBPv600UpdateGroupRequest, completion: @escaping (_ data: OBPv600GetGroups200ResponsePropertiesGroupsItems?, _ error: Error?) -> Void)
+    open class func updateGroup(groupid: String, updateGroupRequest: UpdateGroupRequest, completion: @escaping (_ data: GetGroups200ResponseGroupsInner?, _ error: Error?) -> Void)
 ```
 
 Update Group
@@ -430,10 +430,10 @@ Update Group
 import OBPSwift
 
 let groupid = "groupid_example" // String | The GROUPID identifier
-let oBPv600UpdateGroupRequest = OBPv6_0_0_updateGroup_request(type: "type_example", properties: OBPv6_0_0_updateGroup_request_properties(groupName: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), groupDescription: nil, listOfRoles: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), isEnabled: nil)) // OBPv600UpdateGroupRequest | Request body
+let updateGroupRequest = updateGroup_request(groupName: "groupName_example", groupDescription: "groupDescription_example", listOfRoles: ["listOfRoles_example"], isEnabled: false) // UpdateGroupRequest | Request body
 
 // Update Group
-GroupAPI.oBPv600UpdateGroup(groupid: groupid, oBPv600UpdateGroupRequest: oBPv600UpdateGroupRequest) { (response, error) in
+GroupAPI.updateGroup(groupid: groupid, updateGroupRequest: updateGroupRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -450,11 +450,11 @@ GroupAPI.oBPv600UpdateGroup(groupid: groupid, oBPv600UpdateGroupRequest: oBPv600
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupid** | **String** | The GROUPID identifier | 
- **oBPv600UpdateGroupRequest** | [**OBPv600UpdateGroupRequest**](OBPv600UpdateGroupRequest.md) | Request body | 
+ **updateGroupRequest** | [**UpdateGroupRequest**](UpdateGroupRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetGroups200ResponsePropertiesGroupsItems**](OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**GetGroups200ResponseGroupsInner**](GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

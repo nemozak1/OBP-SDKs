@@ -2,26 +2,26 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400CreateBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
-| [**oBPv400CreateDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400CreateDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
-| [**oBPv400DeleteBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400DeleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
-| [**oBPv400DeleteDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400DeleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
-| [**oBPv400GetAllBankLevelDynamicMessageDocs()**](DynamicMessageDocApi.md#oBPv400GetAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
-| [**oBPv400GetAllDynamicMessageDocs()**](DynamicMessageDocApi.md#oBPv400GetAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
-| [**oBPv400GetBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400GetBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
-| [**oBPv400GetDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400GetDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
-| [**oBPv400UpdateBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400UpdateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
-| [**oBPv400UpdateDynamicMessageDoc()**](DynamicMessageDocApi.md#oBPv400UpdateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
+| [**createBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#createBankLevelDynamicMessageDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Create Bank Level Dynamic Message Doc |
+| [**createDynamicMessageDoc()**](DynamicMessageDocApi.md#createDynamicMessageDoc) | **POST** /obp/v4.0.0/management/dynamic-message-docs | Create Dynamic Message Doc |
+| [**deleteBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#deleteBankLevelDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Delete Bank Level Dynamic Message Doc |
+| [**deleteDynamicMessageDoc()**](DynamicMessageDocApi.md#deleteDynamicMessageDoc) | **DELETE** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Delete Dynamic Message Doc |
+| [**getAllBankLevelDynamicMessageDocs()**](DynamicMessageDocApi.md#getAllBankLevelDynamicMessageDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs | Get all Bank Level Dynamic Message Docs |
+| [**getAllDynamicMessageDocs()**](DynamicMessageDocApi.md#getAllDynamicMessageDocs) | **GET** /obp/v4.0.0/management/dynamic-message-docs | Get all Dynamic Message Docs |
+| [**getBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#getBankLevelDynamicMessageDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Get Bank Level Dynamic Message Doc |
+| [**getDynamicMessageDoc()**](DynamicMessageDocApi.md#getDynamicMessageDoc) | **GET** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Get Dynamic Message Doc |
+| [**updateBankLevelDynamicMessageDoc()**](DynamicMessageDocApi.md#updateBankLevelDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid} | Update Bank Level Dynamic Message Doc |
+| [**updateDynamicMessageDoc()**](DynamicMessageDocApi.md#updateDynamicMessageDoc) | **PUT** /obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid} | Update Dynamic Message Doc |
 
 
-## `oBPv400CreateBankLevelDynamicMessageDoc()`
+## `createBankLevelDynamicMessageDoc()`
 
 ```php
-oBPv400CreateBankLevelDynamicMessageDoc($bankid, $obpv400_update_dynamic_message_doc_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+createBankLevelDynamicMessageDoc($bankid, $update_dynamic_message_doc_request): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Create Bank Level Dynamic Message Doc
@@ -44,9 +44,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -56,13 +56,13 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest | Request body
+$update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\UpdateDynamicMessageDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateBankLevelDynamicMessageDoc($bankid, $obpv400_update_dynamic_message_doc_request);
+    $result = $apiInstance->createBankLevelDynamicMessageDoc($bankid, $update_dynamic_message_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400CreateBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->createBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -71,11 +71,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv400_update_dynamic_message_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest**](../Model/OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **update_dynamic_message_doc_request** | [**\OpenBankProject\Model\UpdateDynamicMessageDocRequest**](../Model/UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -90,10 +90,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateDynamicMessageDoc()`
+## `createDynamicMessageDoc()`
 
 ```php
-oBPv400CreateDynamicMessageDoc($obpv400_update_dynamic_message_doc_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+createDynamicMessageDoc($update_dynamic_message_doc_request): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Create Dynamic Message Doc
@@ -116,9 +116,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -127,13 +127,13 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest | Request body
+$update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\UpdateDynamicMessageDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateDynamicMessageDoc($obpv400_update_dynamic_message_doc_request);
+    $result = $apiInstance->createDynamicMessageDoc($update_dynamic_message_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400CreateDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->createDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -141,11 +141,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv400_update_dynamic_message_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest**](../Model/OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **update_dynamic_message_doc_request** | [**\OpenBankProject\Model\UpdateDynamicMessageDocRequest**](../Model/UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -160,10 +160,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteBankLevelDynamicMessageDoc()`
+## `deleteBankLevelDynamicMessageDoc()`
 
 ```php
-oBPv400DeleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid)
+deleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid)
 ```
 
 Delete Bank Level Dynamic Message Doc
@@ -186,9 +186,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -201,9 +201,9 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    $apiInstance->oBPv400DeleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid);
+    $apiInstance->deleteBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400DeleteBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->deleteBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -231,10 +231,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteDynamicMessageDoc()`
+## `deleteDynamicMessageDoc()`
 
 ```php
-oBPv400DeleteDynamicMessageDoc($dynamicmessagedocid)
+deleteDynamicMessageDoc($dynamicmessagedocid)
 ```
 
 Delete Dynamic Message Doc
@@ -257,9 +257,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -271,9 +271,9 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    $apiInstance->oBPv400DeleteDynamicMessageDoc($dynamicmessagedocid);
+    $apiInstance->deleteDynamicMessageDoc($dynamicmessagedocid);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400DeleteDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->deleteDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -300,10 +300,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllBankLevelDynamicMessageDocs()`
+## `getAllBankLevelDynamicMessageDocs()`
 
 ```php
-oBPv400GetAllBankLevelDynamicMessageDocs($bankid): \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response
+getAllBankLevelDynamicMessageDocs($bankid): \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response
 ```
 
 Get all Bank Level Dynamic Message Docs
@@ -326,9 +326,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -340,10 +340,10 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetAllBankLevelDynamicMessageDocs($bankid);
+    $result = $apiInstance->getAllBankLevelDynamicMessageDocs($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400GetAllBankLevelDynamicMessageDocs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->getAllBankLevelDynamicMessageDocs: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response**](../Model/OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response**](../Model/GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -370,10 +370,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetAllDynamicMessageDocs()`
+## `getAllDynamicMessageDocs()`
 
 ```php
-oBPv400GetAllDynamicMessageDocs(): \OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response
+getAllDynamicMessageDocs(): \OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response
 ```
 
 Get all Dynamic Message Docs
@@ -396,9 +396,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -409,10 +409,10 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
 );
 
 try {
-    $result = $apiInstance->oBPv400GetAllDynamicMessageDocs();
+    $result = $apiInstance->getAllDynamicMessageDocs();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400GetAllDynamicMessageDocs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->getAllDynamicMessageDocs: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -422,7 +422,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetAllBankLevelDynamicMessageDocs200Response**](../Model/OBPv400GetAllBankLevelDynamicMessageDocs200Response.md)
+[**\OpenBankProject\Model\GetAllBankLevelDynamicMessageDocs200Response**](../Model/GetAllBankLevelDynamicMessageDocs200Response.md)
 
 ### Authorization
 
@@ -437,10 +437,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetBankLevelDynamicMessageDoc()`
+## `getBankLevelDynamicMessageDoc()`
 
 ```php
-oBPv400GetBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+getBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Get Bank Level Dynamic Message Doc
@@ -463,9 +463,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -478,10 +478,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid);
+    $result = $apiInstance->getBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400GetBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->getBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -494,7 +494,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -509,10 +509,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetDynamicMessageDoc()`
+## `getDynamicMessageDoc()`
 
 ```php
-oBPv400GetDynamicMessageDoc($dynamicmessagedocid): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+getDynamicMessageDoc($dynamicmessagedocid): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Get Dynamic Message Doc
@@ -535,9 +535,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -549,10 +549,10 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetDynamicMessageDoc($dynamicmessagedocid);
+    $result = $apiInstance->getDynamicMessageDoc($dynamicmessagedocid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400GetDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->getDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -564,7 +564,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -579,10 +579,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateBankLevelDynamicMessageDoc()`
+## `updateBankLevelDynamicMessageDoc()`
 
 ```php
-oBPv400UpdateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+updateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Update Bank Level Dynamic Message Doc
@@ -605,9 +605,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -618,13 +618,13 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
-$obpv400_update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest | Request body
+$update_dynamic_message_doc_request = {type=object, properties={example_outbound_message={type=object, properties={}}, outbound_topic={type=string}, example_inbound_message={type=object, properties={}}, bank_id={type=string}, inbound_topic={type=string}, programming_lang={type=string}, process={type=string}, outbound_avro_schema={type=string}, method_body={type=string}, description={type=string}, message_format={type=string}, adapter_implementation={type=string}, inbound_avro_schema={type=string}}}; // \OpenBankProject\Model\UpdateDynamicMessageDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request);
+    $result = $apiInstance->updateBankLevelDynamicMessageDoc($bankid, $dynamicmessagedocid, $update_dynamic_message_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400UpdateBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->updateBankLevelDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -634,11 +634,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **dynamicmessagedocid** | **string**| The DYNAMICMESSAGEDOCID identifier | |
-| **obpv400_update_dynamic_message_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest**](../Model/OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **update_dynamic_message_doc_request** | [**\OpenBankProject\Model\UpdateDynamicMessageDocRequest**](../Model/UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 
@@ -653,10 +653,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400UpdateDynamicMessageDoc()`
+## `updateDynamicMessageDoc()`
 
 ```php
-oBPv400UpdateDynamicMessageDoc($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request): \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response
+updateDynamicMessageDoc($dynamicmessagedocid, $update_dynamic_message_doc_request): \OpenBankProject\Model\GetDynamicMessageDoc200Response
 ```
 
 Update Dynamic Message Doc
@@ -679,9 +679,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
@@ -691,13 +691,13 @@ $apiInstance = new OpenBankProject\Api\DynamicMessageDocApi(
     $config
 );
 $dynamicmessagedocid = 'dynamicmessagedocid_example'; // string | The DYNAMICMESSAGEDOCID identifier
-$obpv400_update_dynamic_message_doc_request = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest | Request body
+$update_dynamic_message_doc_request = {"type":"object","properties":{"example_outbound_message":{"type":"object","properties":{}},"outbound_topic":{"type":"string"},"example_inbound_message":{"type":"object","properties":{}},"bank_id":{"type":"string"},"inbound_topic":{"type":"string"},"programming_lang":{"type":"string"},"process":{"type":"string"},"outbound_avro_schema":{"type":"string"},"method_body":{"type":"string"},"description":{"type":"string"},"message_format":{"type":"string"},"adapter_implementation":{"type":"string"},"inbound_avro_schema":{"type":"string"}}}; // \OpenBankProject\Model\UpdateDynamicMessageDocRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400UpdateDynamicMessageDoc($dynamicmessagedocid, $obpv400_update_dynamic_message_doc_request);
+    $result = $apiInstance->updateDynamicMessageDoc($dynamicmessagedocid, $update_dynamic_message_doc_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DynamicMessageDocApi->oBPv400UpdateDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DynamicMessageDocApi->updateDynamicMessageDoc: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -706,11 +706,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **dynamicmessagedocid** | **string**| The DYNAMICMESSAGEDOCID identifier | |
-| **obpv400_update_dynamic_message_doc_request** | [**\OpenBankProject\Model\OBPv400UpdateDynamicMessageDocRequest**](../Model/OBPv400UpdateDynamicMessageDocRequest.md)| Request body | |
+| **update_dynamic_message_doc_request** | [**\OpenBankProject\Model\UpdateDynamicMessageDocRequest**](../Model/UpdateDynamicMessageDocRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200Response**](../Model/OBPv400GetDynamicMessageDoc200Response.md)
+[**\OpenBankProject\Model\GetDynamicMessageDoc200Response**](../Model/GetDynamicMessageDoc200Response.md)
 
 ### Authorization
 

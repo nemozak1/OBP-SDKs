@@ -1,17 +1,17 @@
 # OpenBankProject.Api.CacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600GetCacheConfig**](CacheApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**OBPv600GetCacheInfo**](CacheApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**OBPv600GetCacheNamespaces**](CacheApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**OBPv600InvalidateCacheNamespace**](CacheApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**GetCacheConfig**](CacheApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**GetCacheInfo**](CacheApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**GetCacheNamespaces**](CacheApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**InvalidateCacheNamespace**](CacheApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
 
-<a id="obpv600getcacheconfig"></a>
-# **OBPv600GetCacheConfig**
-> OBPv600GetCacheConfig200Response OBPv600GetCacheConfig ()
+<a id="getcacheconfig"></a>
+# **GetCacheConfig**
+> GetCacheConfig200Response GetCacheConfig ()
 
 Get Cache Configuration
 
@@ -22,7 +22,7 @@ Get Cache Configuration
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -42,9 +42,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getcacheinfo"></a>
-# **OBPv600GetCacheInfo**
-> OBPv600GetCacheInfo200Response OBPv600GetCacheInfo ()
+<a id="getcacheinfo"></a>
+# **GetCacheInfo**
+> GetCacheInfo200Response GetCacheInfo ()
 
 Get Cache Information
 
@@ -55,7 +55,7 @@ Get Cache Information
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -75,9 +75,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getcachenamespaces"></a>
-# **OBPv600GetCacheNamespaces**
-> OBPv600GetCacheNamespaces200Response OBPv600GetCacheNamespaces ()
+<a id="getcachenamespaces"></a>
+# **GetCacheNamespaces**
+> GetCacheNamespaces200Response GetCacheNamespaces ()
 
 Get Cache Namespaces
 
@@ -88,7 +88,7 @@ Get Cache Namespaces
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -108,9 +108,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600invalidatecachenamespace"></a>
-# **OBPv600InvalidateCacheNamespace**
-> OBPv600InvalidateCacheNamespace200Response OBPv600InvalidateCacheNamespace (OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest)
+<a id="invalidatecachenamespace"></a>
+# **InvalidateCacheNamespace**
+> InvalidateCacheNamespace200Response InvalidateCacheNamespace (InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -121,11 +121,11 @@ Invalidate Cache Namespace
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body |  |
+| **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 

@@ -1,19 +1,19 @@
 # ApiProductAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateApiProduct**](ApiProductAPI.md#obpv600createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
-[**oBPv600CreateOrUpdateApiProduct**](ApiProductAPI.md#obpv600createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
-[**oBPv600DeleteApiProduct**](ApiProductAPI.md#obpv600deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
-[**oBPv600GetApiProduct**](ApiProductAPI.md#obpv600getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
-[**oBPv600GetApiProducts**](ApiProductAPI.md#obpv600getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
+[**createApiProduct**](ApiProductAPI.md#createapiproduct) | **POST** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create Api Product
+[**createOrUpdateApiProduct**](ApiProductAPI.md#createorupdateapiproduct) | **PUT** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Create or Update Api Product
+[**deleteApiProduct**](ApiProductAPI.md#deleteapiproduct) | **DELETE** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Delete Api Product
+[**getApiProduct**](ApiProductAPI.md#getapiproduct) | **GET** /obp/v6.0.0/banks/{bankid}/api-products/{apiproductcode} | Get Api Product
+[**getApiProducts**](ApiProductAPI.md#getapiproducts) | **GET** /obp/v6.0.0/banks/{bankid}/api-products | Get Api Products
 
 
-# **oBPv600CreateApiProduct**
+# **createApiProduct**
 ```swift
-    open class func oBPv600CreateApiProduct(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, completion: @escaping (_ data: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems?, _ error: Error?) -> Void)
+    open class func createApiProduct(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, completion: @escaping (_ data: GetApiProducts200ResponseApiProductsInner?, _ error: Error?) -> Void)
 ```
 
 Create Api Product
@@ -27,10 +27,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
-let oBPv600CreateOrUpdateApiProductRequest = OBPv6_0_0_createOrUpdateApiProduct_request(type: "type_example", properties: OBPv6_0_0_createOrUpdateApiProduct_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), monthlySubscriptionCurrency: nil, perMonthCallLimit: nil, description: nil, termsAndConditionsUrl: nil, perWeekCallLimit: nil, collectionId: nil, monthlySubscriptionAmount: nil, moreInfoUrl: nil, perHourCallLimit: nil, perSecondCallLimit: nil, parentApiProductCode: nil, category: nil, perMinuteCallLimit: nil, perDayCallLimit: nil)) // OBPv600CreateOrUpdateApiProductRequest | Request body
+let createOrUpdateApiProductRequest = createOrUpdateApiProduct_request(name: "name_example", monthlySubscriptionCurrency: "monthlySubscriptionCurrency_example", perMonthCallLimit: 123, description: "description_example", termsAndConditionsUrl: "termsAndConditionsUrl_example", perWeekCallLimit: 123, collectionId: "collectionId_example", monthlySubscriptionAmount: "monthlySubscriptionAmount_example", moreInfoUrl: "moreInfoUrl_example", perHourCallLimit: 123, perSecondCallLimit: 123, parentApiProductCode: "parentApiProductCode_example", category: "category_example", perMinuteCallLimit: 123, perDayCallLimit: 123) // CreateOrUpdateApiProductRequest | Request body
 
 // Create Api Product
-ApiProductAPI.oBPv600CreateApiProduct(bankid: bankid, apiproductcode: apiproductcode, oBPv600CreateOrUpdateApiProductRequest: oBPv600CreateOrUpdateApiProductRequest) { (response, error) in
+ApiProductAPI.createApiProduct(bankid: bankid, apiproductcode: apiproductcode, createOrUpdateApiProductRequest: createOrUpdateApiProductRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **apiproductcode** | **String** | The APIPRODUCTCODE identifier | 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateOrUpdateApiProduct**
+# **createOrUpdateApiProduct**
 ```swift
-    open class func oBPv600CreateOrUpdateApiProduct(bankid: String, apiproductcode: String, oBPv600CreateOrUpdateApiProductRequest: OBPv600CreateOrUpdateApiProductRequest, completion: @escaping (_ data: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateApiProduct(bankid: String, apiproductcode: String, createOrUpdateApiProductRequest: CreateOrUpdateApiProductRequest, completion: @escaping (_ data: GetApiProducts200ResponseApiProductsInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Api Product
@@ -81,10 +81,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
-let oBPv600CreateOrUpdateApiProductRequest = OBPv6_0_0_createOrUpdateApiProduct_request(type: "type_example", properties: OBPv6_0_0_createOrUpdateApiProduct_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), monthlySubscriptionCurrency: nil, perMonthCallLimit: nil, description: nil, termsAndConditionsUrl: nil, perWeekCallLimit: nil, collectionId: nil, monthlySubscriptionAmount: nil, moreInfoUrl: nil, perHourCallLimit: nil, perSecondCallLimit: nil, parentApiProductCode: nil, category: nil, perMinuteCallLimit: nil, perDayCallLimit: nil)) // OBPv600CreateOrUpdateApiProductRequest | Request body
+let createOrUpdateApiProductRequest = createOrUpdateApiProduct_request(name: "name_example", monthlySubscriptionCurrency: "monthlySubscriptionCurrency_example", perMonthCallLimit: 123, description: "description_example", termsAndConditionsUrl: "termsAndConditionsUrl_example", perWeekCallLimit: 123, collectionId: "collectionId_example", monthlySubscriptionAmount: "monthlySubscriptionAmount_example", moreInfoUrl: "moreInfoUrl_example", perHourCallLimit: 123, perSecondCallLimit: 123, parentApiProductCode: "parentApiProductCode_example", category: "category_example", perMinuteCallLimit: 123, perDayCallLimit: 123) // CreateOrUpdateApiProductRequest | Request body
 
 // Create or Update Api Product
-ApiProductAPI.oBPv600CreateOrUpdateApiProduct(bankid: bankid, apiproductcode: apiproductcode, oBPv600CreateOrUpdateApiProductRequest: oBPv600CreateOrUpdateApiProductRequest) { (response, error) in
+ApiProductAPI.createOrUpdateApiProduct(bankid: bankid, apiproductcode: apiproductcode, createOrUpdateApiProductRequest: createOrUpdateApiProductRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -102,11 +102,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **apiproductcode** | **String** | The APIPRODUCTCODE identifier | 
- **oBPv600CreateOrUpdateApiProductRequest** | [**OBPv600CreateOrUpdateApiProductRequest**](OBPv600CreateOrUpdateApiProductRequest.md) | Request body | 
+ **createOrUpdateApiProductRequest** | [**CreateOrUpdateApiProductRequest**](CreateOrUpdateApiProductRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -119,9 +119,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteApiProduct**
+# **deleteApiProduct**
 ```swift
-    open class func oBPv600DeleteApiProduct(bankid: String, apiproductcode: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteApiProduct(bankid: String, apiproductcode: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Api Product
@@ -137,7 +137,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
 
 // Delete Api Product
-ApiProductAPI.oBPv600DeleteApiProduct(bankid: bankid, apiproductcode: apiproductcode) { (response, error) in
+ApiProductAPI.deleteApiProduct(bankid: bankid, apiproductcode: apiproductcode) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -171,9 +171,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProduct**
+# **getApiProduct**
 ```swift
-    open class func oBPv600GetApiProduct(bankid: String, apiproductcode: String, completion: @escaping (_ data: OBPv600GetApiProducts200ResponsePropertiesApiProductsItems?, _ error: Error?) -> Void)
+    open class func getApiProduct(bankid: String, apiproductcode: String, completion: @escaping (_ data: GetApiProducts200ResponseApiProductsInner?, _ error: Error?) -> Void)
 ```
 
 Get Api Product
@@ -189,7 +189,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let apiproductcode = "apiproductcode_example" // String | The APIPRODUCTCODE identifier
 
 // Get Api Product
-ApiProductAPI.oBPv600GetApiProduct(bankid: bankid, apiproductcode: apiproductcode) { (response, error) in
+ApiProductAPI.getApiProduct(bankid: bankid, apiproductcode: apiproductcode) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200ResponsePropertiesApiProductsItems**](OBPv600GetApiProducts200ResponsePropertiesApiProductsItems.md)
+[**GetApiProducts200ResponseApiProductsInner**](GetApiProducts200ResponseApiProductsInner.md)
 
 ### Authorization
 
@@ -223,9 +223,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetApiProducts**
+# **getApiProducts**
 ```swift
-    open class func oBPv600GetApiProducts(bankid: String, completion: @escaping (_ data: OBPv600GetApiProducts200Response?, _ error: Error?) -> Void)
+    open class func getApiProducts(bankid: String, completion: @escaping (_ data: GetApiProducts200Response?, _ error: Error?) -> Void)
 ```
 
 Get Api Products
@@ -240,7 +240,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Api Products
-ApiProductAPI.oBPv600GetApiProducts(bankid: bankid) { (response, error) in
+ApiProductAPI.getApiProducts(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetApiProducts200Response**](OBPv600GetApiProducts200Response.md)
+[**GetApiProducts200Response**](GetApiProducts200Response.md)
 
 ### Authorization
 

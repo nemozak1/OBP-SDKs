@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,11 +23,11 @@ module OpenBankProject
     # <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv140_add_customer_message_request [OBPv140AddCustomerMessageRequest] Request body
+    # @param add_customer_message_request [AddCustomerMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv1_4_0_add_customer_message(bankid, customerid, obpv140_add_customer_message_request, opts = {})
-      data, _status_code, _headers = o_bpv1_4_0_add_customer_message_with_http_info(bankid, customerid, obpv140_add_customer_message_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def add_customer_message(bankid, customerid, add_customer_message_request, opts = {})
+      data, _status_code, _headers = add_customer_message_with_http_info(bankid, customerid, add_customer_message_request, opts)
       data
     end
 
@@ -35,24 +35,24 @@ module OpenBankProject
     # &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv140_add_customer_message_request [OBPv140AddCustomerMessageRequest] Request body
+    # @param add_customer_message_request [AddCustomerMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv1_4_0_add_customer_message_with_http_info(bankid, customerid, obpv140_add_customer_message_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def add_customer_message_with_http_info(bankid, customerid, add_customer_message_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.o_bpv1_4_0_add_customer_message ...'
+        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.add_customer_message ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.o_bpv1_4_0_add_customer_message"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.add_customer_message"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.o_bpv1_4_0_add_customer_message"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.add_customer_message"
       end
-      # verify the required parameter 'obpv140_add_customer_message_request' is set
-      if @api_client.config.client_side_validation && obpv140_add_customer_message_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv140_add_customer_message_request' when calling CustomerMessageApi.o_bpv1_4_0_add_customer_message"
+      # verify the required parameter 'add_customer_message_request' is set
+      if @api_client.config.client_side_validation && add_customer_message_request.nil?
+        fail ArgumentError, "Missing the required parameter 'add_customer_message_request' when calling CustomerMessageApi.add_customer_message"
       end
       # resource path
       local_var_path = '/obp/v1.4.0/banks/{bankid}/customer/{customerid}/messages'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s))
@@ -74,16 +74,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv140_add_customer_message_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(add_customer_message_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerMessageApi.o_bpv1_4_0_add_customer_message",
+        :operation => :"CustomerMessageApi.add_customer_message",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -94,70 +94,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerMessageApi#o_bpv1_4_0_add_customer_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get Customer Messages for all Customers
-    # <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-    # @param bankid [String] The BANKID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [OBPv140GetCustomersMessages200Response]
-    def o_bpv1_4_0_get_customers_messages(bankid, opts = {})
-      data, _status_code, _headers = o_bpv1_4_0_get_customers_messages_with_http_info(bankid, opts)
-      data
-    end
-
-    # Get Customer Messages for all Customers
-    # &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-    # @param bankid [String] The BANKID identifier
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv140GetCustomersMessages200Response, Integer, Hash)>] OBPv140GetCustomersMessages200Response data, response status code and response headers
-    def o_bpv1_4_0_get_customers_messages_with_http_info(bankid, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.o_bpv1_4_0_get_customers_messages ...'
-      end
-      # verify the required parameter 'bankid' is set
-      if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.o_bpv1_4_0_get_customers_messages"
-      end
-      # resource path
-      local_var_path = '/obp/v1.4.0/banks/{bankid}/customer/messages'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OBPv140GetCustomersMessages200Response'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
-
-      new_options = opts.merge(
-        :operation => :"CustomerMessageApi.o_bpv1_4_0_get_customers_messages",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerMessageApi#o_bpv1_4_0_get_customers_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerMessageApi#add_customer_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -166,11 +103,11 @@ module OpenBankProject
     # <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv400_create_customer_message_request [OBPv400CreateCustomerMessageRequest] Request body
+    # @param create_customer_message_request [CreateCustomerMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv121UpdateTransactionNarrative200Response]
-    def o_bpv4_0_0_create_customer_message(bankid, customerid, obpv400_create_customer_message_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_customer_message_with_http_info(bankid, customerid, obpv400_create_customer_message_request, opts)
+    # @return [UpdateTransactionNarrative200Response]
+    def create_customer_message(bankid, customerid, create_customer_message_request, opts = {})
+      data, _status_code, _headers = create_customer_message_with_http_info(bankid, customerid, create_customer_message_request, opts)
       data
     end
 
@@ -178,24 +115,24 @@ module OpenBankProject
     # &lt;p&gt;Create a message for the customer specified by CUSTOMER_ID&lt;br /&gt; User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#transport\&quot;&gt;&lt;strong&gt;transport&lt;/strong&gt;&lt;/a&gt;: SMS&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#success\&quot;&gt;&lt;strong&gt;success&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv400_create_customer_message_request [OBPv400CreateCustomerMessageRequest] Request body
+    # @param create_customer_message_request [CreateCustomerMessageRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv121UpdateTransactionNarrative200Response, Integer, Hash)>] OBPv121UpdateTransactionNarrative200Response data, response status code and response headers
-    def o_bpv4_0_0_create_customer_message_with_http_info(bankid, customerid, obpv400_create_customer_message_request, opts = {})
+    # @return [Array<(UpdateTransactionNarrative200Response, Integer, Hash)>] UpdateTransactionNarrative200Response data, response status code and response headers
+    def create_customer_message_with_http_info(bankid, customerid, create_customer_message_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.o_bpv4_0_0_create_customer_message ...'
+        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.create_customer_message ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.o_bpv4_0_0_create_customer_message"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.create_customer_message"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.o_bpv4_0_0_create_customer_message"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.create_customer_message"
       end
-      # verify the required parameter 'obpv400_create_customer_message_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_customer_message_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_customer_message_request' when calling CustomerMessageApi.o_bpv4_0_0_create_customer_message"
+      # verify the required parameter 'create_customer_message_request' is set
+      if @api_client.config.client_side_validation && create_customer_message_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_customer_message_request' when calling CustomerMessageApi.create_customer_message"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s))
@@ -217,16 +154,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_customer_message_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_customer_message_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv121UpdateTransactionNarrative200Response'
+      return_type = opts[:debug_return_type] || 'UpdateTransactionNarrative200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerMessageApi.o_bpv4_0_0_create_customer_message",
+        :operation => :"CustomerMessageApi.create_customer_message",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -237,7 +174,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerMessageApi#o_bpv4_0_0_create_customer_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerMessageApi#create_customer_message\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -247,9 +184,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetCustomerMessages200Response]
-    def o_bpv4_0_0_get_customer_messages(bankid, customerid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_customer_messages_with_http_info(bankid, customerid, opts)
+    # @return [GetCustomerMessages200Response]
+    def get_customer_messages(bankid, customerid, opts = {})
+      data, _status_code, _headers = get_customer_messages_with_http_info(bankid, customerid, opts)
       data
     end
 
@@ -258,18 +195,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetCustomerMessages200Response, Integer, Hash)>] OBPv400GetCustomerMessages200Response data, response status code and response headers
-    def o_bpv4_0_0_get_customer_messages_with_http_info(bankid, customerid, opts = {})
+    # @return [Array<(GetCustomerMessages200Response, Integer, Hash)>] GetCustomerMessages200Response data, response status code and response headers
+    def get_customer_messages_with_http_info(bankid, customerid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.o_bpv4_0_0_get_customer_messages ...'
+        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.get_customer_messages ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.o_bpv4_0_0_get_customer_messages"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.get_customer_messages"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.o_bpv4_0_0_get_customer_messages"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerMessageApi.get_customer_messages"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s))
@@ -289,13 +226,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetCustomerMessages200Response'
+      return_type = opts[:debug_return_type] || 'GetCustomerMessages200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerMessageApi.o_bpv4_0_0_get_customer_messages",
+        :operation => :"CustomerMessageApi.get_customer_messages",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -306,7 +243,70 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerMessageApi#o_bpv4_0_0_get_customer_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerMessageApi#get_customer_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get Customer Messages for all Customers
+    # <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+    # @param bankid [String] The BANKID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [GetCustomersMessages200Response]
+    def get_customers_messages(bankid, opts = {})
+      data, _status_code, _headers = get_customers_messages_with_http_info(bankid, opts)
+      data
+    end
+
+    # Get Customer Messages for all Customers
+    # &lt;p&gt;Get messages for the logged in customer&lt;br /&gt; Messages sent to the currently authenticated user.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_department\&quot;&gt;&lt;strong&gt;from_department&lt;/strong&gt;&lt;/a&gt;: Open Bank&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_person\&quot;&gt;&lt;strong&gt;from_person&lt;/strong&gt;&lt;/a&gt;: Tom&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#message\&quot;&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/a&gt;: 123456&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#messages\&quot;&gt;&lt;strong&gt;messages&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+    # @param bankid [String] The BANKID identifier
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetCustomersMessages200Response, Integer, Hash)>] GetCustomersMessages200Response data, response status code and response headers
+    def get_customers_messages_with_http_info(bankid, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CustomerMessageApi.get_customers_messages ...'
+      end
+      # verify the required parameter 'bankid' is set
+      if @api_client.config.client_side_validation && bankid.nil?
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerMessageApi.get_customers_messages"
+      end
+      # resource path
+      local_var_path = '/obp/v1.4.0/banks/{bankid}/customer/messages'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'GetCustomersMessages200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
+
+      new_options = opts.merge(
+        :operation => :"CustomerMessageApi.get_customers_messages",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CustomerMessageApi#get_customers_messages\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

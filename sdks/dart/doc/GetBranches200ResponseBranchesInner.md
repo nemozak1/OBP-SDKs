@@ -1,0 +1,28 @@
+# obp_dart.model.GetBranches200ResponseBranchesInner
+
+## Load the model package
+```dart
+import 'package:obp_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **String** |  | [optional] 
+**phoneNumber** | **String** |  | [optional] 
+**location** | [**GetBranches200ResponseBranchesInnerLocation**](GetBranches200ResponseBranchesInnerLocation.md) |  | [optional] 
+**branchType** | **String** |  | [optional] 
+**branchRouting** | [**GetCheckbookOrders200ResponseAccountAccountRoutingsInner**](GetCheckbookOrders200ResponseAccountAccountRoutingsInner.md) |  | [optional] 
+**driveUp** | [**GetBranches200ResponseBranchesInnerDriveUp**](GetBranches200ResponseBranchesInnerDriveUp.md) |  | [optional] 
+**moreInfo** | **String** |  | [optional] 
+**bankId** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
+**meta** | [**GetProductTree200ResponseParentProductParentProductMeta**](GetProductTree200ResponseParentProductParentProductMeta.md) |  | [optional] 
+**lobby** | [**GetBranches200ResponseBranchesInnerLobby**](GetBranches200ResponseBranchesInnerLobby.md) |  | [optional] 
+**accessibleFeatures** | **String** |  | [optional] 
+**address** | [**GetBranches200ResponseBranchesInnerAddress**](GetBranches200ResponseBranchesInnerAddress.md) |  | [optional] 
+**isAccessible** | **String** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

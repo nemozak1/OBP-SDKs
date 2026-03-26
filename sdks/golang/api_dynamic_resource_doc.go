@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,24 @@ import (
 // DynamicResourceDocAPIService DynamicResourceDocAPI service
 type DynamicResourceDocAPIService service
 
-type ApiOBPv400BuildDynamicEndpointTemplateRequest struct {
+type ApiBuildDynamicEndpointTemplateRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
-	oBPv400BuildDynamicEndpointTemplateRequest *OBPv400BuildDynamicEndpointTemplateRequest
+	buildDynamicEndpointTemplateRequest *BuildDynamicEndpointTemplateRequest
 }
 
 // Request body
-func (r ApiOBPv400BuildDynamicEndpointTemplateRequest) OBPv400BuildDynamicEndpointTemplateRequest(oBPv400BuildDynamicEndpointTemplateRequest OBPv400BuildDynamicEndpointTemplateRequest) ApiOBPv400BuildDynamicEndpointTemplateRequest {
-	r.oBPv400BuildDynamicEndpointTemplateRequest = &oBPv400BuildDynamicEndpointTemplateRequest
+func (r ApiBuildDynamicEndpointTemplateRequest) BuildDynamicEndpointTemplateRequest(buildDynamicEndpointTemplateRequest BuildDynamicEndpointTemplateRequest) ApiBuildDynamicEndpointTemplateRequest {
+	r.buildDynamicEndpointTemplateRequest = &buildDynamicEndpointTemplateRequest
 	return r
 }
 
-func (r ApiOBPv400BuildDynamicEndpointTemplateRequest) Execute() (*OBPv400BuildDynamicEndpointTemplate200Response, *http.Response, error) {
-	return r.ApiService.OBPv400BuildDynamicEndpointTemplateExecute(r)
+func (r ApiBuildDynamicEndpointTemplateRequest) Execute() (*BuildDynamicEndpointTemplate200Response, *http.Response, error) {
+	return r.ApiService.BuildDynamicEndpointTemplateExecute(r)
 }
 
 /*
-OBPv400BuildDynamicEndpointTemplate Create Dynamic Resource Doc endpoint code
+BuildDynamicEndpointTemplate Create Dynamic Resource Doc endpoint code
 
 <p>Create a Dynamic Resource Doc endpoint code.</p>
 <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br />
@@ -54,26 +54,26 @@ auto compilation and debug</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400BuildDynamicEndpointTemplateRequest
+ @return ApiBuildDynamicEndpointTemplateRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplate(ctx context.Context) ApiOBPv400BuildDynamicEndpointTemplateRequest {
-	return ApiOBPv400BuildDynamicEndpointTemplateRequest{
+func (a *DynamicResourceDocAPIService) BuildDynamicEndpointTemplate(ctx context.Context) ApiBuildDynamicEndpointTemplateRequest {
+	return ApiBuildDynamicEndpointTemplateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400BuildDynamicEndpointTemplate200Response
-func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplateExecute(r ApiOBPv400BuildDynamicEndpointTemplateRequest) (*OBPv400BuildDynamicEndpointTemplate200Response, *http.Response, error) {
+//  @return BuildDynamicEndpointTemplate200Response
+func (a *DynamicResourceDocAPIService) BuildDynamicEndpointTemplateExecute(r ApiBuildDynamicEndpointTemplateRequest) (*BuildDynamicEndpointTemplate200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400BuildDynamicEndpointTemplate200Response
+		localVarReturnValue  *BuildDynamicEndpointTemplate200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400BuildDynamicEndpointTemplate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.BuildDynamicEndpointTemplate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -83,8 +83,8 @@ func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplateExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400BuildDynamicEndpointTemplateRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400BuildDynamicEndpointTemplateRequest is required and must be specified")
+	if r.buildDynamicEndpointTemplateRequest == nil {
+		return localVarReturnValue, nil, reportError("buildDynamicEndpointTemplateRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -105,7 +105,7 @@ func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplateExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400BuildDynamicEndpointTemplateRequest
+	localVarPostBody = r.buildDynamicEndpointTemplateRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -130,7 +130,7 @@ func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplateExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -171,25 +171,25 @@ func (a *DynamicResourceDocAPIService) OBPv400BuildDynamicEndpointTemplateExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateBankLevelDynamicResourceDocRequest struct {
+type ApiCreateBankLevelDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 	bankid string
-	oBPv400UpdateBankLevelDynamicResourceDocRequest *OBPv400UpdateBankLevelDynamicResourceDocRequest
+	updateBankLevelDynamicResourceDocRequest *UpdateBankLevelDynamicResourceDocRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateBankLevelDynamicResourceDocRequest) OBPv400UpdateBankLevelDynamicResourceDocRequest(oBPv400UpdateBankLevelDynamicResourceDocRequest OBPv400UpdateBankLevelDynamicResourceDocRequest) ApiOBPv400CreateBankLevelDynamicResourceDocRequest {
-	r.oBPv400UpdateBankLevelDynamicResourceDocRequest = &oBPv400UpdateBankLevelDynamicResourceDocRequest
+func (r ApiCreateBankLevelDynamicResourceDocRequest) UpdateBankLevelDynamicResourceDocRequest(updateBankLevelDynamicResourceDocRequest UpdateBankLevelDynamicResourceDocRequest) ApiCreateBankLevelDynamicResourceDocRequest {
+	r.updateBankLevelDynamicResourceDocRequest = &updateBankLevelDynamicResourceDocRequest
 	return r
 }
 
-func (r ApiOBPv400CreateBankLevelDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelDynamicResourceDocExecute(r)
+func (r ApiCreateBankLevelDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400CreateBankLevelDynamicResourceDoc Create Bank Level Dynamic Resource Doc
+CreateBankLevelDynamicResourceDoc Create Bank Level Dynamic Resource Doc
 
 <p>Create a Bank Level Dynamic Resource Doc.</p>
 <p>The connector_method_body is URL-encoded format String</p>
@@ -212,10 +212,10 @@ OBPv400CreateBankLevelDynamicResourceDoc Create Bank Level Dynamic Resource Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankLevelDynamicResourceDocRequest
+ @return ApiCreateBankLevelDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiOBPv400CreateBankLevelDynamicResourceDocRequest {
-	return ApiOBPv400CreateBankLevelDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) CreateBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiCreateBankLevelDynamicResourceDocRequest {
+	return ApiCreateBankLevelDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -223,16 +223,16 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDoc(
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDocExecute(r ApiOBPv400CreateBankLevelDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) CreateBankLevelDynamicResourceDocExecute(r ApiCreateBankLevelDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400CreateBankLevelDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.CreateBankLevelDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -243,8 +243,8 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDocE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicResourceDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicResourceDocRequest is required and must be specified")
+	if r.updateBankLevelDynamicResourceDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicResourceDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -265,7 +265,7 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDocE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicResourceDocRequest
+	localVarPostBody = r.updateBankLevelDynamicResourceDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -290,7 +290,7 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDocE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -331,24 +331,24 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateBankLevelDynamicResourceDocE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateDynamicResourceDocRequest struct {
+type ApiCreateDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
-	oBPv400UpdateBankLevelDynamicResourceDocRequest *OBPv400UpdateBankLevelDynamicResourceDocRequest
+	updateBankLevelDynamicResourceDocRequest *UpdateBankLevelDynamicResourceDocRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateDynamicResourceDocRequest) OBPv400UpdateBankLevelDynamicResourceDocRequest(oBPv400UpdateBankLevelDynamicResourceDocRequest OBPv400UpdateBankLevelDynamicResourceDocRequest) ApiOBPv400CreateDynamicResourceDocRequest {
-	r.oBPv400UpdateBankLevelDynamicResourceDocRequest = &oBPv400UpdateBankLevelDynamicResourceDocRequest
+func (r ApiCreateDynamicResourceDocRequest) UpdateBankLevelDynamicResourceDocRequest(updateBankLevelDynamicResourceDocRequest UpdateBankLevelDynamicResourceDocRequest) ApiCreateDynamicResourceDocRequest {
+	r.updateBankLevelDynamicResourceDocRequest = &updateBankLevelDynamicResourceDocRequest
 	return r
 }
 
-func (r ApiOBPv400CreateDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDynamicResourceDocExecute(r)
+func (r ApiCreateDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.CreateDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400CreateDynamicResourceDoc Create Dynamic Resource Doc
+CreateDynamicResourceDoc Create Dynamic Resource Doc
 
 <p>Create a Dynamic Resource Doc.</p>
 <p>The connector_method_body is URL-encoded format String</p>
@@ -368,26 +368,26 @@ OBPv400CreateDynamicResourceDoc Create Dynamic Resource Doc
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateDynamicResourceDocRequest
+ @return ApiCreateDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDoc(ctx context.Context) ApiOBPv400CreateDynamicResourceDocRequest {
-	return ApiOBPv400CreateDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) CreateDynamicResourceDoc(ctx context.Context) ApiCreateDynamicResourceDocRequest {
+	return ApiCreateDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDocExecute(r ApiOBPv400CreateDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) CreateDynamicResourceDocExecute(r ApiCreateDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400CreateDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.CreateDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -397,8 +397,8 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDocExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicResourceDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicResourceDocRequest is required and must be specified")
+	if r.updateBankLevelDynamicResourceDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicResourceDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -419,7 +419,7 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDocExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicResourceDocRequest
+	localVarPostBody = r.updateBankLevelDynamicResourceDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -444,7 +444,7 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDocExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -485,18 +485,18 @@ func (a *DynamicResourceDocAPIService) OBPv400CreateDynamicResourceDocExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankLevelDynamicResourceDocRequest struct {
+type ApiDeleteBankLevelDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 	bankid string
 }
 
-func (r ApiOBPv400DeleteBankLevelDynamicResourceDocRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicResourceDocExecute(r)
+func (r ApiDeleteBankLevelDynamicResourceDocRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelDynamicResourceDoc Delete Bank Level Dynamic Resource Doc
+DeleteBankLevelDynamicResourceDoc Delete Bank Level Dynamic Resource Doc
 
 <p>Delete a Bank Level Dynamic Resource Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -507,10 +507,10 @@ OBPv400DeleteBankLevelDynamicResourceDoc Delete Bank Level Dynamic Resource Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400DeleteBankLevelDynamicResourceDocRequest
+ @return ApiDeleteBankLevelDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400DeleteBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiOBPv400DeleteBankLevelDynamicResourceDocRequest {
-	return ApiOBPv400DeleteBankLevelDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) DeleteBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiDeleteBankLevelDynamicResourceDocRequest {
+	return ApiDeleteBankLevelDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -518,14 +518,14 @@ func (a *DynamicResourceDocAPIService) OBPv400DeleteBankLevelDynamicResourceDoc(
 }
 
 // Execute executes the request
-func (a *DynamicResourceDocAPIService) OBPv400DeleteBankLevelDynamicResourceDocExecute(r ApiOBPv400DeleteBankLevelDynamicResourceDocRequest) (*http.Response, error) {
+func (a *DynamicResourceDocAPIService) DeleteBankLevelDynamicResourceDocExecute(r ApiDeleteBankLevelDynamicResourceDocRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400DeleteBankLevelDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.DeleteBankLevelDynamicResourceDoc")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -578,7 +578,7 @@ func (a *DynamicResourceDocAPIService) OBPv400DeleteBankLevelDynamicResourceDocE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -610,17 +610,17 @@ func (a *DynamicResourceDocAPIService) OBPv400DeleteBankLevelDynamicResourceDocE
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteDynamicResourceDocRequest struct {
+type ApiDeleteDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 }
 
-func (r ApiOBPv400DeleteDynamicResourceDocRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteDynamicResourceDocExecute(r)
+func (r ApiDeleteDynamicResourceDocRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400DeleteDynamicResourceDoc Delete Dynamic Resource Doc
+DeleteDynamicResourceDoc Delete Dynamic Resource Doc
 
 <p>Delete a Dynamic Resource Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -628,24 +628,24 @@ OBPv400DeleteDynamicResourceDoc Delete Dynamic Resource Doc
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400DeleteDynamicResourceDocRequest
+ @return ApiDeleteDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400DeleteDynamicResourceDoc(ctx context.Context) ApiOBPv400DeleteDynamicResourceDocRequest {
-	return ApiOBPv400DeleteDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) DeleteDynamicResourceDoc(ctx context.Context) ApiDeleteDynamicResourceDocRequest {
+	return ApiDeleteDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DynamicResourceDocAPIService) OBPv400DeleteDynamicResourceDocExecute(r ApiOBPv400DeleteDynamicResourceDocRequest) (*http.Response, error) {
+func (a *DynamicResourceDocAPIService) DeleteDynamicResourceDocExecute(r ApiDeleteDynamicResourceDocRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400DeleteDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.DeleteDynamicResourceDoc")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -697,7 +697,7 @@ func (a *DynamicResourceDocAPIService) OBPv400DeleteDynamicResourceDocExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -729,18 +729,18 @@ func (a *DynamicResourceDocAPIService) OBPv400DeleteDynamicResourceDocExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest struct {
+type ApiGetAllBankLevelDynamicResourceDocsRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest) Execute() (*OBPv400GetAllDynamicResourceDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllBankLevelDynamicResourceDocsExecute(r)
+func (r ApiGetAllBankLevelDynamicResourceDocsRequest) Execute() (*GetAllDynamicResourceDocs200Response, *http.Response, error) {
+	return r.ApiService.GetAllBankLevelDynamicResourceDocsExecute(r)
 }
 
 /*
-OBPv400GetAllBankLevelDynamicResourceDocs Get all Bank Level Dynamic Resource Docs
+GetAllBankLevelDynamicResourceDocs Get all Bank Level Dynamic Resource Docs
 
 <p>Get all Bank Level Dynamic Resource Docs.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -756,10 +756,10 @@ OBPv400GetAllBankLevelDynamicResourceDocs Get all Bank Level Dynamic Resource Do
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest
+ @return ApiGetAllBankLevelDynamicResourceDocsRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400GetAllBankLevelDynamicResourceDocs(ctx context.Context, bankid string) ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest {
-	return ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest{
+func (a *DynamicResourceDocAPIService) GetAllBankLevelDynamicResourceDocs(ctx context.Context, bankid string) ApiGetAllBankLevelDynamicResourceDocsRequest {
+	return ApiGetAllBankLevelDynamicResourceDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -767,16 +767,16 @@ func (a *DynamicResourceDocAPIService) OBPv400GetAllBankLevelDynamicResourceDocs
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllDynamicResourceDocs200Response
-func (a *DynamicResourceDocAPIService) OBPv400GetAllBankLevelDynamicResourceDocsExecute(r ApiOBPv400GetAllBankLevelDynamicResourceDocsRequest) (*OBPv400GetAllDynamicResourceDocs200Response, *http.Response, error) {
+//  @return GetAllDynamicResourceDocs200Response
+func (a *DynamicResourceDocAPIService) GetAllBankLevelDynamicResourceDocsExecute(r ApiGetAllBankLevelDynamicResourceDocsRequest) (*GetAllDynamicResourceDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllDynamicResourceDocs200Response
+		localVarReturnValue  *GetAllDynamicResourceDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400GetAllBankLevelDynamicResourceDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.GetAllBankLevelDynamicResourceDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -829,7 +829,7 @@ func (a *DynamicResourceDocAPIService) OBPv400GetAllBankLevelDynamicResourceDocs
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -870,17 +870,17 @@ func (a *DynamicResourceDocAPIService) OBPv400GetAllBankLevelDynamicResourceDocs
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllDynamicResourceDocsRequest struct {
+type ApiGetAllDynamicResourceDocsRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 }
 
-func (r ApiOBPv400GetAllDynamicResourceDocsRequest) Execute() (*OBPv400GetAllDynamicResourceDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllDynamicResourceDocsExecute(r)
+func (r ApiGetAllDynamicResourceDocsRequest) Execute() (*GetAllDynamicResourceDocs200Response, *http.Response, error) {
+	return r.ApiService.GetAllDynamicResourceDocsExecute(r)
 }
 
 /*
-OBPv400GetAllDynamicResourceDocs Get all Dynamic Resource Docs
+GetAllDynamicResourceDocs Get all Dynamic Resource Docs
 
 <p>Get all Dynamic Resource Docs.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -893,26 +893,26 @@ OBPv400GetAllDynamicResourceDocs Get all Dynamic Resource Docs
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllDynamicResourceDocsRequest
+ @return ApiGetAllDynamicResourceDocsRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400GetAllDynamicResourceDocs(ctx context.Context) ApiOBPv400GetAllDynamicResourceDocsRequest {
-	return ApiOBPv400GetAllDynamicResourceDocsRequest{
+func (a *DynamicResourceDocAPIService) GetAllDynamicResourceDocs(ctx context.Context) ApiGetAllDynamicResourceDocsRequest {
+	return ApiGetAllDynamicResourceDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllDynamicResourceDocs200Response
-func (a *DynamicResourceDocAPIService) OBPv400GetAllDynamicResourceDocsExecute(r ApiOBPv400GetAllDynamicResourceDocsRequest) (*OBPv400GetAllDynamicResourceDocs200Response, *http.Response, error) {
+//  @return GetAllDynamicResourceDocs200Response
+func (a *DynamicResourceDocAPIService) GetAllDynamicResourceDocsExecute(r ApiGetAllDynamicResourceDocsRequest) (*GetAllDynamicResourceDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllDynamicResourceDocs200Response
+		localVarReturnValue  *GetAllDynamicResourceDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400GetAllDynamicResourceDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.GetAllDynamicResourceDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -964,7 +964,7 @@ func (a *DynamicResourceDocAPIService) OBPv400GetAllDynamicResourceDocsExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1005,18 +1005,18 @@ func (a *DynamicResourceDocAPIService) OBPv400GetAllDynamicResourceDocsExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankLevelDynamicResourceDocRequest struct {
+type ApiGetBankLevelDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetBankLevelDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicResourceDocExecute(r)
+func (r ApiGetBankLevelDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400GetBankLevelDynamicResourceDoc Get Bank Level Dynamic Resource Doc by Id
+GetBankLevelDynamicResourceDoc Get Bank Level Dynamic Resource Doc by Id
 
 <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1032,10 +1032,10 @@ OBPv400GetBankLevelDynamicResourceDoc Get Bank Level Dynamic Resource Doc by Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetBankLevelDynamicResourceDocRequest
+ @return ApiGetBankLevelDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400GetBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiOBPv400GetBankLevelDynamicResourceDocRequest {
-	return ApiOBPv400GetBankLevelDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) GetBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiGetBankLevelDynamicResourceDocRequest {
+	return ApiGetBankLevelDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1043,16 +1043,16 @@ func (a *DynamicResourceDocAPIService) OBPv400GetBankLevelDynamicResourceDoc(ctx
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400GetBankLevelDynamicResourceDocExecute(r ApiOBPv400GetBankLevelDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) GetBankLevelDynamicResourceDocExecute(r ApiGetBankLevelDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400GetBankLevelDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.GetBankLevelDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1105,7 +1105,7 @@ func (a *DynamicResourceDocAPIService) OBPv400GetBankLevelDynamicResourceDocExec
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1146,17 +1146,17 @@ func (a *DynamicResourceDocAPIService) OBPv400GetBankLevelDynamicResourceDocExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetDynamicResourceDocRequest struct {
+type ApiGetDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 }
 
-func (r ApiOBPv400GetDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicResourceDocExecute(r)
+func (r ApiGetDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.GetDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400GetDynamicResourceDoc Get Dynamic Resource Doc by Id
+GetDynamicResourceDoc Get Dynamic Resource Doc by Id
 
 <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1169,26 +1169,26 @@ OBPv400GetDynamicResourceDoc Get Dynamic Resource Doc by Id
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetDynamicResourceDocRequest
+ @return ApiGetDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400GetDynamicResourceDoc(ctx context.Context) ApiOBPv400GetDynamicResourceDocRequest {
-	return ApiOBPv400GetDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) GetDynamicResourceDoc(ctx context.Context) ApiGetDynamicResourceDocRequest {
+	return ApiGetDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400GetDynamicResourceDocExecute(r ApiOBPv400GetDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) GetDynamicResourceDocExecute(r ApiGetDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400GetDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.GetDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1240,7 +1240,7 @@ func (a *DynamicResourceDocAPIService) OBPv400GetDynamicResourceDocExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1281,25 +1281,25 @@ func (a *DynamicResourceDocAPIService) OBPv400GetDynamicResourceDocExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankLevelDynamicResourceDocRequest struct {
+type ApiUpdateBankLevelDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
 	bankid string
-	oBPv400UpdateBankLevelDynamicResourceDocRequest *OBPv400UpdateBankLevelDynamicResourceDocRequest
+	updateBankLevelDynamicResourceDocRequest *UpdateBankLevelDynamicResourceDocRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankLevelDynamicResourceDocRequest) OBPv400UpdateBankLevelDynamicResourceDocRequest(oBPv400UpdateBankLevelDynamicResourceDocRequest OBPv400UpdateBankLevelDynamicResourceDocRequest) ApiOBPv400UpdateBankLevelDynamicResourceDocRequest {
-	r.oBPv400UpdateBankLevelDynamicResourceDocRequest = &oBPv400UpdateBankLevelDynamicResourceDocRequest
+func (r ApiUpdateBankLevelDynamicResourceDocRequest) UpdateBankLevelDynamicResourceDocRequest(updateBankLevelDynamicResourceDocRequest UpdateBankLevelDynamicResourceDocRequest) ApiUpdateBankLevelDynamicResourceDocRequest {
+	r.updateBankLevelDynamicResourceDocRequest = &updateBankLevelDynamicResourceDocRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankLevelDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelDynamicResourceDocExecute(r)
+func (r ApiUpdateBankLevelDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400UpdateBankLevelDynamicResourceDoc Update Bank Level Dynamic Resource Doc
+UpdateBankLevelDynamicResourceDoc Update Bank Level Dynamic Resource Doc
 
 <p>Update a Bank Level Dynamic Resource Doc.</p>
 <p>The connector_method_body is URL-encoded format String</p>
@@ -1316,10 +1316,10 @@ OBPv400UpdateBankLevelDynamicResourceDoc Update Bank Level Dynamic Resource Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400UpdateBankLevelDynamicResourceDocRequest
+ @return ApiUpdateBankLevelDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiOBPv400UpdateBankLevelDynamicResourceDocRequest {
-	return ApiOBPv400UpdateBankLevelDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) UpdateBankLevelDynamicResourceDoc(ctx context.Context, bankid string) ApiUpdateBankLevelDynamicResourceDocRequest {
+	return ApiUpdateBankLevelDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1327,16 +1327,16 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDoc(
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDocExecute(r ApiOBPv400UpdateBankLevelDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) UpdateBankLevelDynamicResourceDocExecute(r ApiUpdateBankLevelDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400UpdateBankLevelDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.UpdateBankLevelDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1347,8 +1347,8 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDocE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicResourceDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicResourceDocRequest is required and must be specified")
+	if r.updateBankLevelDynamicResourceDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicResourceDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1369,7 +1369,7 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDocE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicResourceDocRequest
+	localVarPostBody = r.updateBankLevelDynamicResourceDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1394,7 +1394,7 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDocE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1435,24 +1435,24 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateBankLevelDynamicResourceDocE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateDynamicResourceDocRequest struct {
+type ApiUpdateDynamicResourceDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicResourceDocAPIService
-	oBPv400UpdateBankLevelDynamicResourceDocRequest *OBPv400UpdateBankLevelDynamicResourceDocRequest
+	updateBankLevelDynamicResourceDocRequest *UpdateBankLevelDynamicResourceDocRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateDynamicResourceDocRequest) OBPv400UpdateBankLevelDynamicResourceDocRequest(oBPv400UpdateBankLevelDynamicResourceDocRequest OBPv400UpdateBankLevelDynamicResourceDocRequest) ApiOBPv400UpdateDynamicResourceDocRequest {
-	r.oBPv400UpdateBankLevelDynamicResourceDocRequest = &oBPv400UpdateBankLevelDynamicResourceDocRequest
+func (r ApiUpdateDynamicResourceDocRequest) UpdateBankLevelDynamicResourceDocRequest(updateBankLevelDynamicResourceDocRequest UpdateBankLevelDynamicResourceDocRequest) ApiUpdateDynamicResourceDocRequest {
+	r.updateBankLevelDynamicResourceDocRequest = &updateBankLevelDynamicResourceDocRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateDynamicResourceDocRequest) Execute() (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateDynamicResourceDocExecute(r)
+func (r ApiUpdateDynamicResourceDocRequest) Execute() (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+	return r.ApiService.UpdateDynamicResourceDocExecute(r)
 }
 
 /*
-OBPv400UpdateDynamicResourceDoc Update Dynamic Resource Doc
+UpdateDynamicResourceDoc Update Dynamic Resource Doc
 
 <p>Update a Dynamic Resource Doc.</p>
 <p>The connector_method_body is URL-encoded format String</p>
@@ -1466,26 +1466,26 @@ OBPv400UpdateDynamicResourceDoc Update Dynamic Resource Doc
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400UpdateDynamicResourceDocRequest
+ @return ApiUpdateDynamicResourceDocRequest
 */
-func (a *DynamicResourceDocAPIService) OBPv400UpdateDynamicResourceDoc(ctx context.Context) ApiOBPv400UpdateDynamicResourceDocRequest {
-	return ApiOBPv400UpdateDynamicResourceDocRequest{
+func (a *DynamicResourceDocAPIService) UpdateDynamicResourceDoc(ctx context.Context) ApiUpdateDynamicResourceDocRequest {
+	return ApiUpdateDynamicResourceDocRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetBankLevelDynamicResourceDoc200Response
-func (a *DynamicResourceDocAPIService) OBPv400UpdateDynamicResourceDocExecute(r ApiOBPv400UpdateDynamicResourceDocRequest) (*OBPv400GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicResourceDoc200Response
+func (a *DynamicResourceDocAPIService) UpdateDynamicResourceDocExecute(r ApiUpdateDynamicResourceDocRequest) (*GetBankLevelDynamicResourceDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelDynamicResourceDoc200Response
+		localVarReturnValue  *GetBankLevelDynamicResourceDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.OBPv400UpdateDynamicResourceDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicResourceDocAPIService.UpdateDynamicResourceDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1495,8 +1495,8 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateDynamicResourceDocExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicResourceDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicResourceDocRequest is required and must be specified")
+	if r.updateBankLevelDynamicResourceDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicResourceDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1517,7 +1517,7 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateDynamicResourceDocExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicResourceDocRequest
+	localVarPostBody = r.updateBankLevelDynamicResourceDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1542,7 +1542,7 @@ func (a *DynamicResourceDocAPIService) OBPv400UpdateDynamicResourceDocExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

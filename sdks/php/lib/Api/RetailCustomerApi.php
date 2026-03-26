@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class RetailCustomerApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv600CreateRetailCustomer' => [
+        'createRetailCustomer' => [
             'application/json',
         ],
-        'oBPv600GetRetailCustomerByCustomerId' => [
+        'getRetailCustomerByCustomerId' => [
             'application/json',
         ],
-        'oBPv600GetRetailCustomersAtOneBank' => [
+        'getRetailCustomersAtOneBank' => [
             'application/json',
         ],
     ];
@@ -133,40 +133,40 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600CreateRetailCustomer
+     * Operation createRetailCustomer
      *
      * Create Retail Customer
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateRetailCustomerRequest $obpv600_create_retail_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateRetailCustomer'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRetailCustomerRequest $create_retail_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRetailCustomer'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems
+     * @return \OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner
      */
-    public function oBPv600CreateRetailCustomer($bankid, $obpv600_create_retail_customer_request, string $contentType = self::contentTypes['oBPv600CreateRetailCustomer'][0])
+    public function createRetailCustomer($bankid, $create_retail_customer_request, string $contentType = self::contentTypes['createRetailCustomer'][0])
     {
-        list($response) = $this->oBPv600CreateRetailCustomerWithHttpInfo($bankid, $obpv600_create_retail_customer_request, $contentType);
+        list($response) = $this->createRetailCustomerWithHttpInfo($bankid, $create_retail_customer_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateRetailCustomerWithHttpInfo
+     * Operation createRetailCustomerWithHttpInfo
      *
      * Create Retail Customer
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateRetailCustomerRequest $obpv600_create_retail_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateRetailCustomer'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRetailCustomerRequest $create_retail_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRetailCustomer'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateRetailCustomerWithHttpInfo($bankid, $obpv600_create_retail_customer_request, string $contentType = self::contentTypes['oBPv600CreateRetailCustomer'][0])
+    public function createRetailCustomerWithHttpInfo($bankid, $create_retail_customer_request, string $contentType = self::contentTypes['createRetailCustomer'][0])
     {
-        $request = $this->oBPv600CreateRetailCustomerRequest($bankid, $obpv600_create_retail_customer_request, $contentType);
+        $request = $this->createRetailCustomerRequest($bankid, $create_retail_customer_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -194,7 +194,7 @@ class RetailCustomerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
+                        '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
                         $request,
                         $response,
                     );
@@ -216,7 +216,7 @@ class RetailCustomerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
+                '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
                 $request,
                 $response,
             );
@@ -225,7 +225,7 @@ class RetailCustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems',
+                        '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -238,20 +238,20 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600CreateRetailCustomerAsync
+     * Operation createRetailCustomerAsync
      *
      * Create Retail Customer
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateRetailCustomerRequest $obpv600_create_retail_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateRetailCustomer'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRetailCustomerRequest $create_retail_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRetailCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateRetailCustomerAsync($bankid, $obpv600_create_retail_customer_request, string $contentType = self::contentTypes['oBPv600CreateRetailCustomer'][0])
+    public function createRetailCustomerAsync($bankid, $create_retail_customer_request, string $contentType = self::contentTypes['createRetailCustomer'][0])
     {
-        return $this->oBPv600CreateRetailCustomerAsyncWithHttpInfo($bankid, $obpv600_create_retail_customer_request, $contentType)
+        return $this->createRetailCustomerAsyncWithHttpInfo($bankid, $create_retail_customer_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,21 +260,21 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600CreateRetailCustomerAsyncWithHttpInfo
+     * Operation createRetailCustomerAsyncWithHttpInfo
      *
      * Create Retail Customer
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateRetailCustomerRequest $obpv600_create_retail_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateRetailCustomer'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRetailCustomerRequest $create_retail_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRetailCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateRetailCustomerAsyncWithHttpInfo($bankid, $obpv600_create_retail_customer_request, string $contentType = self::contentTypes['oBPv600CreateRetailCustomer'][0])
+    public function createRetailCustomerAsyncWithHttpInfo($bankid, $create_retail_customer_request, string $contentType = self::contentTypes['createRetailCustomer'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCustomerChildren200ResponsePropertiesCustomersItems';
-        $request = $this->oBPv600CreateRetailCustomerRequest($bankid, $obpv600_create_retail_customer_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCustomerChildren200ResponseCustomersInner';
+        $request = $this->createRetailCustomerRequest($bankid, $create_retail_customer_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,29 +313,29 @@ class RetailCustomerApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateRetailCustomer'
+     * Create request for operation 'createRetailCustomer'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateRetailCustomerRequest $obpv600_create_retail_customer_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateRetailCustomer'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateRetailCustomerRequest $create_retail_customer_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRetailCustomer'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateRetailCustomerRequest($bankid, $obpv600_create_retail_customer_request, string $contentType = self::contentTypes['oBPv600CreateRetailCustomer'][0])
+    public function createRetailCustomerRequest($bankid, $create_retail_customer_request, string $contentType = self::contentTypes['createRetailCustomer'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600CreateRetailCustomer'
+                'Missing the required parameter $bankid when calling createRetailCustomer'
             );
         }
 
-        // verify the required parameter 'obpv600_create_retail_customer_request' is set
-        if ($obpv600_create_retail_customer_request === null || (is_array($obpv600_create_retail_customer_request) && count($obpv600_create_retail_customer_request) === 0)) {
+        // verify the required parameter 'create_retail_customer_request' is set
+        if ($create_retail_customer_request === null || (is_array($create_retail_customer_request) && count($create_retail_customer_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_retail_customer_request when calling oBPv600CreateRetailCustomer'
+                'Missing the required parameter $create_retail_customer_request when calling createRetailCustomer'
             );
         }
 
@@ -366,12 +366,12 @@ class RetailCustomerApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_retail_customer_request)) {
+        if (isset($create_retail_customer_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_retail_customer_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_retail_customer_request));
             } else {
-                $httpBody = $obpv600_create_retail_customer_request;
+                $httpBody = $create_retail_customer_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -407,9 +407,9 @@ class RetailCustomerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -434,40 +434,40 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomerByCustomerId
+     * Operation getRetailCustomerByCustomerId
      *
      * Get Retail Customer by CUSTOMER_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomerByCustomerId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomerByCustomerId'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response
+     * @return \OpenBankProject\Model\GetCustomerByCustomerNumber200Response
      */
-    public function oBPv600GetRetailCustomerByCustomerId($bankid, $customerid, string $contentType = self::contentTypes['oBPv600GetRetailCustomerByCustomerId'][0])
+    public function getRetailCustomerByCustomerId($bankid, $customerid, string $contentType = self::contentTypes['getRetailCustomerByCustomerId'][0])
     {
-        list($response) = $this->oBPv600GetRetailCustomerByCustomerIdWithHttpInfo($bankid, $customerid, $contentType);
+        list($response) = $this->getRetailCustomerByCustomerIdWithHttpInfo($bankid, $customerid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetRetailCustomerByCustomerIdWithHttpInfo
+     * Operation getRetailCustomerByCustomerIdWithHttpInfo
      *
      * Get Retail Customer by CUSTOMER_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomerByCustomerId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomerByCustomerId'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCustomerByCustomerNumber200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetRetailCustomerByCustomerIdWithHttpInfo($bankid, $customerid, string $contentType = self::contentTypes['oBPv600GetRetailCustomerByCustomerId'][0])
+    public function getRetailCustomerByCustomerIdWithHttpInfo($bankid, $customerid, string $contentType = self::contentTypes['getRetailCustomerByCustomerId'][0])
     {
-        $request = $this->oBPv600GetRetailCustomerByCustomerIdRequest($bankid, $customerid, $contentType);
+        $request = $this->getRetailCustomerByCustomerIdRequest($bankid, $customerid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -495,7 +495,7 @@ class RetailCustomerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response',
+                        '\OpenBankProject\Model\GetCustomerByCustomerNumber200Response',
                         $request,
                         $response,
                     );
@@ -517,7 +517,7 @@ class RetailCustomerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response',
+                '\OpenBankProject\Model\GetCustomerByCustomerNumber200Response',
                 $request,
                 $response,
             );
@@ -526,7 +526,7 @@ class RetailCustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response',
+                        '\OpenBankProject\Model\GetCustomerByCustomerNumber200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -539,20 +539,20 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomerByCustomerIdAsync
+     * Operation getRetailCustomerByCustomerIdAsync
      *
      * Get Retail Customer by CUSTOMER_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomerByCustomerId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomerByCustomerId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRetailCustomerByCustomerIdAsync($bankid, $customerid, string $contentType = self::contentTypes['oBPv600GetRetailCustomerByCustomerId'][0])
+    public function getRetailCustomerByCustomerIdAsync($bankid, $customerid, string $contentType = self::contentTypes['getRetailCustomerByCustomerId'][0])
     {
-        return $this->oBPv600GetRetailCustomerByCustomerIdAsyncWithHttpInfo($bankid, $customerid, $contentType)
+        return $this->getRetailCustomerByCustomerIdAsyncWithHttpInfo($bankid, $customerid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -561,21 +561,21 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomerByCustomerIdAsyncWithHttpInfo
+     * Operation getRetailCustomerByCustomerIdAsyncWithHttpInfo
      *
      * Get Retail Customer by CUSTOMER_ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomerByCustomerId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomerByCustomerId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRetailCustomerByCustomerIdAsyncWithHttpInfo($bankid, $customerid, string $contentType = self::contentTypes['oBPv600GetRetailCustomerByCustomerId'][0])
+    public function getRetailCustomerByCustomerIdAsyncWithHttpInfo($bankid, $customerid, string $contentType = self::contentTypes['getRetailCustomerByCustomerId'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCustomerByCustomerNumber200Response';
-        $request = $this->oBPv600GetRetailCustomerByCustomerIdRequest($bankid, $customerid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCustomerByCustomerNumber200Response';
+        $request = $this->getRetailCustomerByCustomerIdRequest($bankid, $customerid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -614,29 +614,29 @@ class RetailCustomerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetRetailCustomerByCustomerId'
+     * Create request for operation 'getRetailCustomerByCustomerId'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $customerid The CUSTOMERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomerByCustomerId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomerByCustomerId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetRetailCustomerByCustomerIdRequest($bankid, $customerid, string $contentType = self::contentTypes['oBPv600GetRetailCustomerByCustomerId'][0])
+    public function getRetailCustomerByCustomerIdRequest($bankid, $customerid, string $contentType = self::contentTypes['getRetailCustomerByCustomerId'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetRetailCustomerByCustomerId'
+                'Missing the required parameter $bankid when calling getRetailCustomerByCustomerId'
             );
         }
 
         // verify the required parameter 'customerid' is set
         if ($customerid === null || (is_array($customerid) && count($customerid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $customerid when calling oBPv600GetRetailCustomerByCustomerId'
+                'Missing the required parameter $customerid when calling getRetailCustomerByCustomerId'
             );
         }
 
@@ -709,9 +709,9 @@ class RetailCustomerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -736,38 +736,38 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomersAtOneBank
+     * Operation getRetailCustomersAtOneBank
      *
      * Get Retail Customers at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomersAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomersAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetCustomerChildren200Response
+     * @return \OpenBankProject\Model\GetCustomerChildren200Response
      */
-    public function oBPv600GetRetailCustomersAtOneBank($bankid, string $contentType = self::contentTypes['oBPv600GetRetailCustomersAtOneBank'][0])
+    public function getRetailCustomersAtOneBank($bankid, string $contentType = self::contentTypes['getRetailCustomersAtOneBank'][0])
     {
-        list($response) = $this->oBPv600GetRetailCustomersAtOneBankWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getRetailCustomersAtOneBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetRetailCustomersAtOneBankWithHttpInfo
+     * Operation getRetailCustomersAtOneBankWithHttpInfo
      *
      * Get Retail Customers at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomersAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomersAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetCustomerChildren200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCustomerChildren200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetRetailCustomersAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetRetailCustomersAtOneBank'][0])
+    public function getRetailCustomersAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getRetailCustomersAtOneBank'][0])
     {
-        $request = $this->oBPv600GetRetailCustomersAtOneBankRequest($bankid, $contentType);
+        $request = $this->getRetailCustomersAtOneBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -795,7 +795,7 @@ class RetailCustomerApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200Response',
+                        '\OpenBankProject\Model\GetCustomerChildren200Response',
                         $request,
                         $response,
                     );
@@ -817,7 +817,7 @@ class RetailCustomerApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetCustomerChildren200Response',
+                '\OpenBankProject\Model\GetCustomerChildren200Response',
                 $request,
                 $response,
             );
@@ -826,7 +826,7 @@ class RetailCustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetCustomerChildren200Response',
+                        '\OpenBankProject\Model\GetCustomerChildren200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -839,19 +839,19 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomersAtOneBankAsync
+     * Operation getRetailCustomersAtOneBankAsync
      *
      * Get Retail Customers at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomersAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomersAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRetailCustomersAtOneBankAsync($bankid, string $contentType = self::contentTypes['oBPv600GetRetailCustomersAtOneBank'][0])
+    public function getRetailCustomersAtOneBankAsync($bankid, string $contentType = self::contentTypes['getRetailCustomersAtOneBank'][0])
     {
-        return $this->oBPv600GetRetailCustomersAtOneBankAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getRetailCustomersAtOneBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -860,20 +860,20 @@ class RetailCustomerApi
     }
 
     /**
-     * Operation oBPv600GetRetailCustomersAtOneBankAsyncWithHttpInfo
+     * Operation getRetailCustomersAtOneBankAsyncWithHttpInfo
      *
      * Get Retail Customers at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomersAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomersAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetRetailCustomersAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetRetailCustomersAtOneBank'][0])
+    public function getRetailCustomersAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getRetailCustomersAtOneBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetCustomerChildren200Response';
-        $request = $this->oBPv600GetRetailCustomersAtOneBankRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCustomerChildren200Response';
+        $request = $this->getRetailCustomersAtOneBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -912,21 +912,21 @@ class RetailCustomerApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetRetailCustomersAtOneBank'
+     * Create request for operation 'getRetailCustomersAtOneBank'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetRetailCustomersAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRetailCustomersAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetRetailCustomersAtOneBankRequest($bankid, string $contentType = self::contentTypes['oBPv600GetRetailCustomersAtOneBank'][0])
+    public function getRetailCustomersAtOneBankRequest($bankid, string $contentType = self::contentTypes['getRetailCustomersAtOneBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetRetailCustomersAtOneBank'
+                'Missing the required parameter $bankid when calling getRetailCustomersAtOneBank'
             );
         }
 
@@ -991,9 +991,9 @@ class RetailCustomerApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

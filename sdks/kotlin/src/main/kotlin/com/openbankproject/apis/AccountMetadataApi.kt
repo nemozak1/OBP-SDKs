@@ -19,9 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.models.OBPv400GetTagsForViewOnAccount200Response
-import com.openbankproject.models.OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+import com.openbankproject.models.GetTagsForViewOnAccount200Response
+import com.openbankproject.models.GetTagsForViewOnAccount200ResponseTagsInner
+import com.openbankproject.models.GetTransactionTypes200ResponseTransactionTypesInnerId
 
 import com.squareup.moshi.Json
 
@@ -43,7 +43,7 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -54,8 +54,8 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400DeleteSystemLevelEndpointTag200Response Request body
-     * @return OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+     * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
+     * @return GetTagsForViewOnAccount200ResponseTagsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -64,11 +64,11 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400AddTagForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response) : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems {
-        val localVarResponse = oBPv400AddTagForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, obPv400DeleteSystemLevelEndpointTag200Response = obPv400DeleteSystemLevelEndpointTag200Response)
+    fun addTagForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId) : GetTagsForViewOnAccount200ResponseTagsInner {
+        val localVarResponse = addTagForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, getTransactionTypes200ResponseTransactionTypesInnerId = getTransactionTypes200ResponseTransactionTypesInnerId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTagsForViewOnAccount200ResponseTagsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -89,32 +89,32 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400DeleteSystemLevelEndpointTag200Response Request body
-     * @return ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems?>
+     * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
+     * @return ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400AddTagForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response) : ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems?> {
-        val localVariableConfig = oBPv400AddTagForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, obPv400DeleteSystemLevelEndpointTag200Response = obPv400DeleteSystemLevelEndpointTag200Response)
+    fun addTagForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId) : ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner?> {
+        val localVariableConfig = addTagForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, getTransactionTypes200ResponseTransactionTypesInnerId = getTransactionTypes200ResponseTransactionTypesInnerId)
 
-        return request<OBPv400DeleteSystemLevelEndpointTag200Response, OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>(
+        return request<GetTransactionTypes200ResponseTransactionTypesInnerId, GetTagsForViewOnAccount200ResponseTagsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400AddTagForViewOnAccount
+     * To obtain the request config of the operation addTagForViewOnAccount
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400DeleteSystemLevelEndpointTag200Response Request body
+     * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
      * @return RequestConfig
      */
-    fun oBPv400AddTagForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response) : RequestConfig<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        val localVariableBody = obPv400DeleteSystemLevelEndpointTag200Response
+    fun addTagForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId) : RequestConfig<GetTransactionTypes200ResponseTransactionTypesInnerId> {
+        val localVariableBody = getTransactionTypes200ResponseTransactionTypesInnerId
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -146,8 +146,8 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteTagForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, tagid = tagid)
+    fun deleteTagForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : Unit {
+        val localVarResponse = deleteTagForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, tagid = tagid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -177,8 +177,8 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteTagForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteTagForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, tagid = tagid)
+    fun deleteTagForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteTagForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, tagid = tagid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -186,7 +186,7 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteTagForViewOnAccount
+     * To obtain the request config of the operation deleteTagForViewOnAccount
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
@@ -194,7 +194,7 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @param tagid The TAGID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteTagForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteTagForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, tagid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -216,7 +216,7 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @return OBPv400GetTagsForViewOnAccount200Response
+     * @return GetTagsForViewOnAccount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -225,11 +225,11 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetTagsForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : OBPv400GetTagsForViewOnAccount200Response {
-        val localVarResponse = oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid)
+    fun getTagsForViewOnAccount(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : GetTagsForViewOnAccount200Response {
+        val localVarResponse = getTagsForViewOnAccountWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTagsForViewOnAccount200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTagsForViewOnAccount200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -250,29 +250,29 @@ open class AccountMetadataApi(basePath: kotlin.String = defaultBasePath, client:
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @return ApiResponse<OBPv400GetTagsForViewOnAccount200Response?>
+     * @return ApiResponse<GetTagsForViewOnAccount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetTagsForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : ApiResponse<OBPv400GetTagsForViewOnAccount200Response?> {
-        val localVariableConfig = oBPv400GetTagsForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid)
+    fun getTagsForViewOnAccountWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : ApiResponse<GetTagsForViewOnAccount200Response?> {
+        val localVariableConfig = getTagsForViewOnAccountRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid)
 
-        return request<Unit, OBPv400GetTagsForViewOnAccount200Response>(
+        return request<Unit, GetTagsForViewOnAccount200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetTagsForViewOnAccount
+     * To obtain the request config of the operation getTagsForViewOnAccount
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetTagsForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : RequestConfig<Unit> {
+    fun getTagsForViewOnAccountRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

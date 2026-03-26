@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // DynamicMessageDocAPIService DynamicMessageDocAPI service
 type DynamicMessageDocAPIService service
 
-type ApiOBPv400CreateBankLevelDynamicMessageDocRequest struct {
+type ApiCreateBankLevelDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	bankid string
-	oBPv400UpdateDynamicMessageDocRequest *OBPv400UpdateDynamicMessageDocRequest
+	updateDynamicMessageDocRequest *UpdateDynamicMessageDocRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateBankLevelDynamicMessageDocRequest) OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest OBPv400UpdateDynamicMessageDocRequest) ApiOBPv400CreateBankLevelDynamicMessageDocRequest {
-	r.oBPv400UpdateDynamicMessageDocRequest = &oBPv400UpdateDynamicMessageDocRequest
+func (r ApiCreateBankLevelDynamicMessageDocRequest) UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest UpdateDynamicMessageDocRequest) ApiCreateBankLevelDynamicMessageDocRequest {
+	r.updateDynamicMessageDocRequest = &updateDynamicMessageDocRequest
 	return r
 }
 
-func (r ApiOBPv400CreateBankLevelDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelDynamicMessageDocExecute(r)
+func (r ApiCreateBankLevelDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400CreateBankLevelDynamicMessageDoc Create Bank Level Dynamic Message Doc
+CreateBankLevelDynamicMessageDoc Create Bank Level Dynamic Message Doc
 
 <p>Create a Bank Level Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -58,10 +58,10 @@ OBPv400CreateBankLevelDynamicMessageDoc Create Bank Level Dynamic Message Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankLevelDynamicMessageDocRequest
+ @return ApiCreateBankLevelDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDoc(ctx context.Context, bankid string) ApiOBPv400CreateBankLevelDynamicMessageDocRequest {
-	return ApiOBPv400CreateBankLevelDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) CreateBankLevelDynamicMessageDoc(ctx context.Context, bankid string) ApiCreateBankLevelDynamicMessageDocRequest {
+	return ApiCreateBankLevelDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -69,16 +69,16 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDoc(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDocExecute(r ApiOBPv400CreateBankLevelDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) CreateBankLevelDynamicMessageDocExecute(r ApiCreateBankLevelDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400CreateBankLevelDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.CreateBankLevelDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -89,8 +89,8 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDocExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateDynamicMessageDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateDynamicMessageDocRequest is required and must be specified")
+	if r.updateDynamicMessageDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateDynamicMessageDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -111,7 +111,7 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDocExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateDynamicMessageDocRequest
+	localVarPostBody = r.updateDynamicMessageDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -136,7 +136,7 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDocExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -177,24 +177,24 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateBankLevelDynamicMessageDocExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateDynamicMessageDocRequest struct {
+type ApiCreateDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
-	oBPv400UpdateDynamicMessageDocRequest *OBPv400UpdateDynamicMessageDocRequest
+	updateDynamicMessageDocRequest *UpdateDynamicMessageDocRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateDynamicMessageDocRequest) OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest OBPv400UpdateDynamicMessageDocRequest) ApiOBPv400CreateDynamicMessageDocRequest {
-	r.oBPv400UpdateDynamicMessageDocRequest = &oBPv400UpdateDynamicMessageDocRequest
+func (r ApiCreateDynamicMessageDocRequest) UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest UpdateDynamicMessageDocRequest) ApiCreateDynamicMessageDocRequest {
+	r.updateDynamicMessageDocRequest = &updateDynamicMessageDocRequest
 	return r
 }
 
-func (r ApiOBPv400CreateDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDynamicMessageDocExecute(r)
+func (r ApiCreateDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.CreateDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400CreateDynamicMessageDoc Create Dynamic Message Doc
+CreateDynamicMessageDoc Create Dynamic Message Doc
 
 <p>Create a Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -207,26 +207,26 @@ OBPv400CreateDynamicMessageDoc Create Dynamic Message Doc
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateDynamicMessageDocRequest
+ @return ApiCreateDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDoc(ctx context.Context) ApiOBPv400CreateDynamicMessageDocRequest {
-	return ApiOBPv400CreateDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) CreateDynamicMessageDoc(ctx context.Context) ApiCreateDynamicMessageDocRequest {
+	return ApiCreateDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDocExecute(r ApiOBPv400CreateDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) CreateDynamicMessageDocExecute(r ApiCreateDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400CreateDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.CreateDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,8 +236,8 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDocExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateDynamicMessageDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateDynamicMessageDocRequest is required and must be specified")
+	if r.updateDynamicMessageDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateDynamicMessageDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -258,7 +258,7 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDocExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateDynamicMessageDocRequest
+	localVarPostBody = r.updateDynamicMessageDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -283,7 +283,7 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDocExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -324,19 +324,19 @@ func (a *DynamicMessageDocAPIService) OBPv400CreateDynamicMessageDocExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankLevelDynamicMessageDocRequest struct {
+type ApiDeleteBankLevelDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	bankid string
 	dynamicmessagedocid string
 }
 
-func (r ApiOBPv400DeleteBankLevelDynamicMessageDocRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicMessageDocExecute(r)
+func (r ApiDeleteBankLevelDynamicMessageDocRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelDynamicMessageDoc Delete Bank Level Dynamic Message Doc
+DeleteBankLevelDynamicMessageDoc Delete Bank Level Dynamic Message Doc
 
 <p>Delete a Bank Level Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -349,10 +349,10 @@ OBPv400DeleteBankLevelDynamicMessageDoc Delete Bank Level Dynamic Message Doc
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400DeleteBankLevelDynamicMessageDocRequest
+ @return ApiDeleteBankLevelDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400DeleteBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiOBPv400DeleteBankLevelDynamicMessageDocRequest {
-	return ApiOBPv400DeleteBankLevelDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) DeleteBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiDeleteBankLevelDynamicMessageDocRequest {
+	return ApiDeleteBankLevelDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -361,14 +361,14 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteBankLevelDynamicMessageDoc(ct
 }
 
 // Execute executes the request
-func (a *DynamicMessageDocAPIService) OBPv400DeleteBankLevelDynamicMessageDocExecute(r ApiOBPv400DeleteBankLevelDynamicMessageDocRequest) (*http.Response, error) {
+func (a *DynamicMessageDocAPIService) DeleteBankLevelDynamicMessageDocExecute(r ApiDeleteBankLevelDynamicMessageDocRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400DeleteBankLevelDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.DeleteBankLevelDynamicMessageDoc")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -422,7 +422,7 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteBankLevelDynamicMessageDocExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -454,18 +454,18 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteBankLevelDynamicMessageDocExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteDynamicMessageDocRequest struct {
+type ApiDeleteDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	dynamicmessagedocid string
 }
 
-func (r ApiOBPv400DeleteDynamicMessageDocRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteDynamicMessageDocExecute(r)
+func (r ApiDeleteDynamicMessageDocRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400DeleteDynamicMessageDoc Delete Dynamic Message Doc
+DeleteDynamicMessageDoc Delete Dynamic Message Doc
 
 <p>Delete a Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -476,10 +476,10 @@ OBPv400DeleteDynamicMessageDoc Delete Dynamic Message Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400DeleteDynamicMessageDocRequest
+ @return ApiDeleteDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400DeleteDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiOBPv400DeleteDynamicMessageDocRequest {
-	return ApiOBPv400DeleteDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) DeleteDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiDeleteDynamicMessageDocRequest {
+	return ApiDeleteDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicmessagedocid: dynamicmessagedocid,
@@ -487,14 +487,14 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteDynamicMessageDoc(ctx context
 }
 
 // Execute executes the request
-func (a *DynamicMessageDocAPIService) OBPv400DeleteDynamicMessageDocExecute(r ApiOBPv400DeleteDynamicMessageDocRequest) (*http.Response, error) {
+func (a *DynamicMessageDocAPIService) DeleteDynamicMessageDocExecute(r ApiDeleteDynamicMessageDocRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400DeleteDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.DeleteDynamicMessageDoc")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -547,7 +547,7 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteDynamicMessageDocExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -579,18 +579,18 @@ func (a *DynamicMessageDocAPIService) OBPv400DeleteDynamicMessageDocExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest struct {
+type ApiGetAllBankLevelDynamicMessageDocsRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest) Execute() (*OBPv400GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllBankLevelDynamicMessageDocsExecute(r)
+func (r ApiGetAllBankLevelDynamicMessageDocsRequest) Execute() (*GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
+	return r.ApiService.GetAllBankLevelDynamicMessageDocsExecute(r)
 }
 
 /*
-OBPv400GetAllBankLevelDynamicMessageDocs Get all Bank Level Dynamic Message Docs
+GetAllBankLevelDynamicMessageDocs Get all Bank Level Dynamic Message Docs
 
 <p>Get all Bank Level Dynamic Message Docs.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -603,10 +603,10 @@ OBPv400GetAllBankLevelDynamicMessageDocs Get all Bank Level Dynamic Message Docs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest
+ @return ApiGetAllBankLevelDynamicMessageDocsRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400GetAllBankLevelDynamicMessageDocs(ctx context.Context, bankid string) ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest {
-	return ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest{
+func (a *DynamicMessageDocAPIService) GetAllBankLevelDynamicMessageDocs(ctx context.Context, bankid string) ApiGetAllBankLevelDynamicMessageDocsRequest {
+	return ApiGetAllBankLevelDynamicMessageDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -614,16 +614,16 @@ func (a *DynamicMessageDocAPIService) OBPv400GetAllBankLevelDynamicMessageDocs(c
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
-func (a *DynamicMessageDocAPIService) OBPv400GetAllBankLevelDynamicMessageDocsExecute(r ApiOBPv400GetAllBankLevelDynamicMessageDocsRequest) (*OBPv400GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
+//  @return GetAllBankLevelDynamicMessageDocs200Response
+func (a *DynamicMessageDocAPIService) GetAllBankLevelDynamicMessageDocsExecute(r ApiGetAllBankLevelDynamicMessageDocsRequest) (*GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllBankLevelDynamicMessageDocs200Response
+		localVarReturnValue  *GetAllBankLevelDynamicMessageDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400GetAllBankLevelDynamicMessageDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.GetAllBankLevelDynamicMessageDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -676,7 +676,7 @@ func (a *DynamicMessageDocAPIService) OBPv400GetAllBankLevelDynamicMessageDocsEx
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -717,17 +717,17 @@ func (a *DynamicMessageDocAPIService) OBPv400GetAllBankLevelDynamicMessageDocsEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllDynamicMessageDocsRequest struct {
+type ApiGetAllDynamicMessageDocsRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 }
 
-func (r ApiOBPv400GetAllDynamicMessageDocsRequest) Execute() (*OBPv400GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllDynamicMessageDocsExecute(r)
+func (r ApiGetAllDynamicMessageDocsRequest) Execute() (*GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
+	return r.ApiService.GetAllDynamicMessageDocsExecute(r)
 }
 
 /*
-OBPv400GetAllDynamicMessageDocs Get all Dynamic Message Docs
+GetAllDynamicMessageDocs Get all Dynamic Message Docs
 
 <p>Get all Dynamic Message Docs.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -737,26 +737,26 @@ OBPv400GetAllDynamicMessageDocs Get all Dynamic Message Docs
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllDynamicMessageDocsRequest
+ @return ApiGetAllDynamicMessageDocsRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400GetAllDynamicMessageDocs(ctx context.Context) ApiOBPv400GetAllDynamicMessageDocsRequest {
-	return ApiOBPv400GetAllDynamicMessageDocsRequest{
+func (a *DynamicMessageDocAPIService) GetAllDynamicMessageDocs(ctx context.Context) ApiGetAllDynamicMessageDocsRequest {
+	return ApiGetAllDynamicMessageDocsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
-func (a *DynamicMessageDocAPIService) OBPv400GetAllDynamicMessageDocsExecute(r ApiOBPv400GetAllDynamicMessageDocsRequest) (*OBPv400GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
+//  @return GetAllBankLevelDynamicMessageDocs200Response
+func (a *DynamicMessageDocAPIService) GetAllDynamicMessageDocsExecute(r ApiGetAllDynamicMessageDocsRequest) (*GetAllBankLevelDynamicMessageDocs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllBankLevelDynamicMessageDocs200Response
+		localVarReturnValue  *GetAllBankLevelDynamicMessageDocs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400GetAllDynamicMessageDocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.GetAllDynamicMessageDocs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -808,7 +808,7 @@ func (a *DynamicMessageDocAPIService) OBPv400GetAllDynamicMessageDocsExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -849,19 +849,19 @@ func (a *DynamicMessageDocAPIService) OBPv400GetAllDynamicMessageDocsExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankLevelDynamicMessageDocRequest struct {
+type ApiGetBankLevelDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	bankid string
 	dynamicmessagedocid string
 }
 
-func (r ApiOBPv400GetBankLevelDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicMessageDocExecute(r)
+func (r ApiGetBankLevelDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400GetBankLevelDynamicMessageDoc Get Bank Level Dynamic Message Doc
+GetBankLevelDynamicMessageDoc Get Bank Level Dynamic Message Doc
 
 <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -876,10 +876,10 @@ OBPv400GetBankLevelDynamicMessageDoc Get Bank Level Dynamic Message Doc
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400GetBankLevelDynamicMessageDocRequest
+ @return ApiGetBankLevelDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400GetBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiOBPv400GetBankLevelDynamicMessageDocRequest {
-	return ApiOBPv400GetBankLevelDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) GetBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiGetBankLevelDynamicMessageDocRequest {
+	return ApiGetBankLevelDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -888,16 +888,16 @@ func (a *DynamicMessageDocAPIService) OBPv400GetBankLevelDynamicMessageDoc(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400GetBankLevelDynamicMessageDocExecute(r ApiOBPv400GetBankLevelDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) GetBankLevelDynamicMessageDocExecute(r ApiGetBankLevelDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400GetBankLevelDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.GetBankLevelDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -951,7 +951,7 @@ func (a *DynamicMessageDocAPIService) OBPv400GetBankLevelDynamicMessageDocExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -992,18 +992,18 @@ func (a *DynamicMessageDocAPIService) OBPv400GetBankLevelDynamicMessageDocExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetDynamicMessageDocRequest struct {
+type ApiGetDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	dynamicmessagedocid string
 }
 
-func (r ApiOBPv400GetDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicMessageDocExecute(r)
+func (r ApiGetDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.GetDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400GetDynamicMessageDoc Get Dynamic Message Doc
+GetDynamicMessageDoc Get Dynamic Message Doc
 
 <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1016,10 +1016,10 @@ OBPv400GetDynamicMessageDoc Get Dynamic Message Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400GetDynamicMessageDocRequest
+ @return ApiGetDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400GetDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiOBPv400GetDynamicMessageDocRequest {
-	return ApiOBPv400GetDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) GetDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiGetDynamicMessageDocRequest {
+	return ApiGetDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicmessagedocid: dynamicmessagedocid,
@@ -1027,16 +1027,16 @@ func (a *DynamicMessageDocAPIService) OBPv400GetDynamicMessageDoc(ctx context.Co
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400GetDynamicMessageDocExecute(r ApiOBPv400GetDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) GetDynamicMessageDocExecute(r ApiGetDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400GetDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.GetDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1089,7 +1089,7 @@ func (a *DynamicMessageDocAPIService) OBPv400GetDynamicMessageDocExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1130,26 +1130,26 @@ func (a *DynamicMessageDocAPIService) OBPv400GetDynamicMessageDocExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankLevelDynamicMessageDocRequest struct {
+type ApiUpdateBankLevelDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	bankid string
 	dynamicmessagedocid string
-	oBPv400UpdateDynamicMessageDocRequest *OBPv400UpdateDynamicMessageDocRequest
+	updateDynamicMessageDocRequest *UpdateDynamicMessageDocRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankLevelDynamicMessageDocRequest) OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest OBPv400UpdateDynamicMessageDocRequest) ApiOBPv400UpdateBankLevelDynamicMessageDocRequest {
-	r.oBPv400UpdateDynamicMessageDocRequest = &oBPv400UpdateDynamicMessageDocRequest
+func (r ApiUpdateBankLevelDynamicMessageDocRequest) UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest UpdateDynamicMessageDocRequest) ApiUpdateBankLevelDynamicMessageDocRequest {
+	r.updateDynamicMessageDocRequest = &updateDynamicMessageDocRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankLevelDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelDynamicMessageDocExecute(r)
+func (r ApiUpdateBankLevelDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400UpdateBankLevelDynamicMessageDoc Update Bank Level Dynamic Message Doc
+UpdateBankLevelDynamicMessageDoc Update Bank Level Dynamic Message Doc
 
 <p>Update a Bank Level Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1164,10 +1164,10 @@ OBPv400UpdateBankLevelDynamicMessageDoc Update Bank Level Dynamic Message Doc
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400UpdateBankLevelDynamicMessageDocRequest
+ @return ApiUpdateBankLevelDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiOBPv400UpdateBankLevelDynamicMessageDocRequest {
-	return ApiOBPv400UpdateBankLevelDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) UpdateBankLevelDynamicMessageDoc(ctx context.Context, bankid string, dynamicmessagedocid string) ApiUpdateBankLevelDynamicMessageDocRequest {
+	return ApiUpdateBankLevelDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1176,16 +1176,16 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDoc(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDocExecute(r ApiOBPv400UpdateBankLevelDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) UpdateBankLevelDynamicMessageDocExecute(r ApiUpdateBankLevelDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400UpdateBankLevelDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.UpdateBankLevelDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1197,8 +1197,8 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDocExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateDynamicMessageDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateDynamicMessageDocRequest is required and must be specified")
+	if r.updateDynamicMessageDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateDynamicMessageDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1219,7 +1219,7 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDocExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateDynamicMessageDocRequest
+	localVarPostBody = r.updateDynamicMessageDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1244,7 +1244,7 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDocExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1285,25 +1285,25 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateBankLevelDynamicMessageDocExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateDynamicMessageDocRequest struct {
+type ApiUpdateDynamicMessageDocRequest struct {
 	ctx context.Context
 	ApiService *DynamicMessageDocAPIService
 	dynamicmessagedocid string
-	oBPv400UpdateDynamicMessageDocRequest *OBPv400UpdateDynamicMessageDocRequest
+	updateDynamicMessageDocRequest *UpdateDynamicMessageDocRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateDynamicMessageDocRequest) OBPv400UpdateDynamicMessageDocRequest(oBPv400UpdateDynamicMessageDocRequest OBPv400UpdateDynamicMessageDocRequest) ApiOBPv400UpdateDynamicMessageDocRequest {
-	r.oBPv400UpdateDynamicMessageDocRequest = &oBPv400UpdateDynamicMessageDocRequest
+func (r ApiUpdateDynamicMessageDocRequest) UpdateDynamicMessageDocRequest(updateDynamicMessageDocRequest UpdateDynamicMessageDocRequest) ApiUpdateDynamicMessageDocRequest {
+	r.updateDynamicMessageDocRequest = &updateDynamicMessageDocRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateDynamicMessageDocRequest) Execute() (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateDynamicMessageDocExecute(r)
+func (r ApiUpdateDynamicMessageDocRequest) Execute() (*GetDynamicMessageDoc200Response, *http.Response, error) {
+	return r.ApiService.UpdateDynamicMessageDocExecute(r)
 }
 
 /*
-OBPv400UpdateDynamicMessageDoc Update Dynamic Message Doc
+UpdateDynamicMessageDoc Update Dynamic Message Doc
 
 <p>Update a Dynamic Message Doc.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1316,10 +1316,10 @@ OBPv400UpdateDynamicMessageDoc Update Dynamic Message Doc
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
- @return ApiOBPv400UpdateDynamicMessageDocRequest
+ @return ApiUpdateDynamicMessageDocRequest
 */
-func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiOBPv400UpdateDynamicMessageDocRequest {
-	return ApiOBPv400UpdateDynamicMessageDocRequest{
+func (a *DynamicMessageDocAPIService) UpdateDynamicMessageDoc(ctx context.Context, dynamicmessagedocid string) ApiUpdateDynamicMessageDocRequest {
+	return ApiUpdateDynamicMessageDocRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicmessagedocid: dynamicmessagedocid,
@@ -1327,16 +1327,16 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDoc(ctx context
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200Response
-func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDocExecute(r ApiOBPv400UpdateDynamicMessageDocRequest) (*OBPv400GetDynamicMessageDoc200Response, *http.Response, error) {
+//  @return GetDynamicMessageDoc200Response
+func (a *DynamicMessageDocAPIService) UpdateDynamicMessageDocExecute(r ApiUpdateDynamicMessageDocRequest) (*GetDynamicMessageDoc200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200Response
+		localVarReturnValue  *GetDynamicMessageDoc200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.OBPv400UpdateDynamicMessageDoc")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicMessageDocAPIService.UpdateDynamicMessageDoc")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1347,8 +1347,8 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDocExecute(r Ap
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateDynamicMessageDocRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateDynamicMessageDocRequest is required and must be specified")
+	if r.updateDynamicMessageDocRequest == nil {
+		return localVarReturnValue, nil, reportError("updateDynamicMessageDocRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1369,7 +1369,7 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDocExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateDynamicMessageDocRequest
+	localVarPostBody = r.updateDynamicMessageDocRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1394,7 +1394,7 @@ func (a *DynamicMessageDocAPIService) OBPv400UpdateDynamicMessageDocExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

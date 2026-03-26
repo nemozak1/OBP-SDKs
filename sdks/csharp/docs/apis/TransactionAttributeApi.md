@@ -1,20 +1,20 @@
 # OpenBankProject.Api.TransactionAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
-| [**OBPv400CreateTransactionAttribute**](TransactionAttributeApi.md#obpv400createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
-| [**OBPv400DeleteTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
-| [**OBPv400GetTransactionAttributeById**](TransactionAttributeApi.md#obpv400gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
-| [**OBPv400GetTransactionAttributeDefinition**](TransactionAttributeApi.md#obpv400gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
-| [**OBPv400GetTransactionAttributes**](TransactionAttributeApi.md#obpv400gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
-| [**OBPv400UpdateTransactionAttribute**](TransactionAttributeApi.md#obpv400updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
+| [**CreateOrUpdateTransactionAttributeDefinition**](TransactionAttributeApi.md#createorupdatetransactionattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition |
+| [**CreateTransactionAttribute**](TransactionAttributeApi.md#createtransactionattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute |
+| [**DeleteTransactionAttributeDefinition**](TransactionAttributeApi.md#deletetransactionattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition |
+| [**GetTransactionAttributeById**](TransactionAttributeApi.md#gettransactionattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id |
+| [**GetTransactionAttributeDefinition**](TransactionAttributeApi.md#gettransactionattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition |
+| [**GetTransactionAttributes**](TransactionAttributeApi.md#gettransactionattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes |
+| [**UpdateTransactionAttribute**](TransactionAttributeApi.md#updatetransactionattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute |
 
-<a id="obpv400createorupdatetransactionattributedefinition"></a>
-# **OBPv400CreateOrUpdateTransactionAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateTransactionAttributeDefinition (string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+<a id="createorupdatetransactionattributedefinition"></a>
+# **CreateOrUpdateTransactionAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateTransactionAttributeDefinition (string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Transaction Attribute Definition
 
@@ -26,11 +26,11 @@ Create or Update Transaction Attribute Definition
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -51,9 +51,9 @@ Create or Update Transaction Attribute Definition
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createtransactionattribute"></a>
-# **OBPv400CreateTransactionAttribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems OBPv400CreateTransactionAttribute (string bankid, string accountid, string transactionid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="createtransactionattribute"></a>
+# **CreateTransactionAttribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner CreateTransactionAttribute (string bankid, string accountid, string transactionid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Create Transaction Attribute
 
@@ -67,11 +67,11 @@ Create Transaction Attribute
 | **bankid** | **string** | The BANKID identifier |  |
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ Create Transaction Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletetransactionattributedefinition"></a>
-# **OBPv400DeleteTransactionAttributeDefinition**
-> void OBPv400DeleteTransactionAttributeDefinition (string bankid, string attributedefinitionid)
+<a id="deletetransactionattributedefinition"></a>
+# **DeleteTransactionAttributeDefinition**
+> void DeleteTransactionAttributeDefinition (string bankid, string attributedefinitionid)
 
 Delete Transaction Attribute Definition
 
@@ -131,9 +131,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400gettransactionattributebyid"></a>
-# **OBPv400GetTransactionAttributeById**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems OBPv400GetTransactionAttributeById (string bankid, string accountid, string transactionid, string attributeid)
+<a id="gettransactionattributebyid"></a>
+# **GetTransactionAttributeById**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner GetTransactionAttributeById (string bankid, string accountid, string transactionid, string attributeid)
 
 Get Transaction Attribute By Id
 
@@ -151,7 +151,7 @@ Get Transaction Attribute By Id
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 
@@ -172,9 +172,9 @@ Get Transaction Attribute By Id
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400gettransactionattributedefinition"></a>
-# **OBPv400GetTransactionAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetTransactionAttributeDefinition (string bankid)
+<a id="gettransactionattributedefinition"></a>
+# **GetTransactionAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200Response GetTransactionAttributeDefinition (string bankid)
 
 Get Transaction Attribute Definition
 
@@ -189,7 +189,7 @@ Get Transaction Attribute Definition
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -210,9 +210,9 @@ Get Transaction Attribute Definition
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400gettransactionattributes"></a>
-# **OBPv400GetTransactionAttributes**
-> OBPv400GetTransactionAttributes200Response OBPv400GetTransactionAttributes (string bankid, string accountid, string transactionid)
+<a id="gettransactionattributes"></a>
+# **GetTransactionAttributes**
+> GetTransactionAttributes200Response GetTransactionAttributes (string bankid, string accountid, string transactionid)
 
 Get Transaction Attributes
 
@@ -229,7 +229,7 @@ Get Transaction Attributes
 
 ### Return type
 
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
 
 ### Authorization
 
@@ -250,9 +250,9 @@ Get Transaction Attributes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatetransactionattribute"></a>
-# **OBPv400UpdateTransactionAttribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems OBPv400UpdateTransactionAttribute (string bankid, string accountid, string transactionid, string accountattributeid, OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest)
+<a id="updatetransactionattribute"></a>
+# **UpdateTransactionAttribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner UpdateTransactionAttribute (string bankid, string accountid, string transactionid, string accountattributeid, CreatePersonalDataFieldRequest createPersonalDataFieldRequest)
 
 Update Transaction Attribute
 
@@ -267,11 +267,11 @@ Update Transaction Attribute
 | **accountid** | **string** | The ACCOUNTID identifier |  |
 | **transactionid** | **string** | The TRANSACTIONID identifier |  |
 | **accountattributeid** | **string** | The ACCOUNTATTRIBUTEID identifier |  |
-| **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body |  |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems**](OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems.md)
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
 
 ### Authorization
 

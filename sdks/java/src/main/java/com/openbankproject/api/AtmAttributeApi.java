@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv510GetAtmAttribute200Response;
-import com.openbankproject.model.OBPv510GetAtmAttributes200Response;
-import com.openbankproject.model.OBPv510UpdateAtmAttributeRequest;
+import com.openbankproject.model.GetAtmAttribute200Response;
+import com.openbankproject.model.GetAtmAttributes200Response;
+import com.openbankproject.model.UpdateAtmAttributeRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class AtmAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,12 +169,12 @@ public class AtmAttributeApi {
    * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return OBPv510GetAtmAttribute200Response
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv510CreateAtmAttribute(bankid, atmid, obPv510UpdateAtmAttributeRequest, null);
+  public GetAtmAttribute200Response createAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return createAtmAttribute(bankid, atmid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -182,13 +182,13 @@ public class AtmAttributeApi {
    * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAtmAttribute200Response
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510CreateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAtmAttribute200Response> localVarResponse = oBPv510CreateAtmAttributeWithHttpInfo(bankid, atmid, obPv510UpdateAtmAttributeRequest, headers);
+  public GetAtmAttribute200Response createAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAtmAttribute200Response> localVarResponse = createAtmAttributeWithHttpInfo(bankid, atmid, updateAtmAttributeRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -197,12 +197,12 @@ public class AtmAttributeApi {
    * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510CreateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv510CreateAtmAttributeWithHttpInfo(bankid, atmid, obPv510UpdateAtmAttributeRequest, null);
+  public ApiResponse<GetAtmAttribute200Response> createAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return createAtmAttributeWithHttpInfo(bankid, atmid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -210,13 +210,13 @@ public class AtmAttributeApi {
    * &lt;p&gt;Create ATM Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510CreateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510CreateAtmAttributeRequestBuilder(bankid, atmid, obPv510UpdateAtmAttributeRequest, headers);
+  public ApiResponse<GetAtmAttribute200Response> createAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createAtmAttributeRequestBuilder(bankid, atmid, updateAtmAttributeRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -227,11 +227,11 @@ public class AtmAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510CreateAtmAttribute", localVarResponse);
+          throw getApiException("createAtmAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+          return new ApiResponse<GetAtmAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -241,10 +241,10 @@ public class AtmAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAtmAttribute200Response>() {});
+        GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAtmAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+        return new ApiResponse<GetAtmAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -263,18 +263,18 @@ public class AtmAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510CreateAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510CreateAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createAtmAttribute");
     }
     // verify the required parameter 'atmid' is set
     if (atmid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmid' when calling oBPv510CreateAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmid' when calling createAtmAttribute");
     }
-    // verify the required parameter 'obPv510UpdateAtmAttributeRequest' is set
-    if (obPv510UpdateAtmAttributeRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510UpdateAtmAttributeRequest' when calling oBPv510CreateAtmAttribute");
+    // verify the required parameter 'updateAtmAttributeRequest' is set
+    if (updateAtmAttributeRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAtmAttributeRequest' when calling createAtmAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -289,7 +289,7 @@ public class AtmAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510UpdateAtmAttributeRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAtmAttributeRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -313,8 +313,8 @@ public class AtmAttributeApi {
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
-    oBPv510DeleteAtmAttribute(bankid, atmid, atmattributeid, null);
+  public void deleteAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
+    deleteAtmAttribute(bankid, atmid, atmattributeid, null);
   }
 
   /**
@@ -326,8 +326,8 @@ public class AtmAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
-    oBPv510DeleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, headers);
+  public void deleteAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+    deleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, headers);
   }
 
   /**
@@ -339,8 +339,8 @@ public class AtmAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
-    return oBPv510DeleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, null);
+  public ApiResponse<Void> deleteAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
+    return deleteAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, null);
   }
 
   /**
@@ -353,8 +353,8 @@ public class AtmAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510DeleteAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, headers);
+  public ApiResponse<Void> deleteAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -365,7 +365,7 @@ public class AtmAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510DeleteAtmAttribute", localVarResponse);
+          throw getApiException("deleteAtmAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -390,18 +390,18 @@ public class AtmAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510DeleteAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510DeleteAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteAtmAttribute");
     }
     // verify the required parameter 'atmid' is set
     if (atmid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmid' when calling oBPv510DeleteAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmid' when calling deleteAtmAttribute");
     }
     // verify the required parameter 'atmattributeid' is set
     if (atmattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling oBPv510DeleteAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling deleteAtmAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -433,11 +433,11 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @return OBPv510GetAtmAttribute200Response
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
-    return oBPv510GetAtmAttribute(bankid, atmid, atmattributeid, null);
+  public GetAtmAttribute200Response getAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
+    return getAtmAttribute(bankid, atmid, atmattributeid, null);
   }
 
   /**
@@ -447,11 +447,11 @@ public class AtmAttributeApi {
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAtmAttribute200Response
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510GetAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAtmAttribute200Response> localVarResponse = oBPv510GetAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, headers);
+  public GetAtmAttribute200Response getAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAtmAttribute200Response> localVarResponse = getAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -461,11 +461,11 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510GetAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
-    return oBPv510GetAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, null);
+  public ApiResponse<GetAtmAttribute200Response> getAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid) throws ApiException {
+    return getAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, null);
   }
 
   /**
@@ -475,11 +475,11 @@ public class AtmAttributeApi {
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510GetAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, headers);
+  public ApiResponse<GetAtmAttribute200Response> getAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -490,11 +490,11 @@ public class AtmAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetAtmAttribute", localVarResponse);
+          throw getApiException("getAtmAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+          return new ApiResponse<GetAtmAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -504,10 +504,10 @@ public class AtmAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAtmAttribute200Response>() {});
+        GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAtmAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+        return new ApiResponse<GetAtmAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -526,18 +526,18 @@ public class AtmAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAtmAttribute");
     }
     // verify the required parameter 'atmid' is set
     if (atmid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmid' when calling oBPv510GetAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmid' when calling getAtmAttribute");
     }
     // verify the required parameter 'atmattributeid' is set
     if (atmattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling oBPv510GetAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling getAtmAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -568,11 +568,11 @@ public class AtmAttributeApi {
    * &lt;p&gt;Get ATM Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attributes&lt;/strong&gt;&lt;/a&gt;: atm_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @return OBPv510GetAtmAttributes200Response
+   * @return GetAtmAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid) throws ApiException {
-    return oBPv510GetAtmAttributes(bankid, atmid, null);
+  public GetAtmAttributes200Response getAtmAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid) throws ApiException {
+    return getAtmAttributes(bankid, atmid, null);
   }
 
   /**
@@ -581,11 +581,11 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAtmAttributes200Response
+   * @return GetAtmAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttributes200Response oBPv510GetAtmAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAtmAttributes200Response> localVarResponse = oBPv510GetAtmAttributesWithHttpInfo(bankid, atmid, headers);
+  public GetAtmAttributes200Response getAtmAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAtmAttributes200Response> localVarResponse = getAtmAttributesWithHttpInfo(bankid, atmid, headers);
     return localVarResponse.getData();
   }
 
@@ -594,11 +594,11 @@ public class AtmAttributeApi {
    * &lt;p&gt;Get ATM Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;ATM_ID&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attribute_id&lt;/strong&gt;&lt;/a&gt;: xxaf2a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;atm_attributes&lt;/strong&gt;&lt;/a&gt;: atm_attributes&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#atm_id\&quot;&gt;&lt;strong&gt;atm_id&lt;/strong&gt;&lt;/a&gt;: atme-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetAtmAttributes200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttributes200Response> oBPv510GetAtmAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid) throws ApiException {
-    return oBPv510GetAtmAttributesWithHttpInfo(bankid, atmid, null);
+  public ApiResponse<GetAtmAttributes200Response> getAtmAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid) throws ApiException {
+    return getAtmAttributesWithHttpInfo(bankid, atmid, null);
   }
 
   /**
@@ -607,11 +607,11 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAtmAttributes200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttributes200Response> oBPv510GetAtmAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetAtmAttributesRequestBuilder(bankid, atmid, headers);
+  public ApiResponse<GetAtmAttributes200Response> getAtmAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAtmAttributesRequestBuilder(bankid, atmid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -622,11 +622,11 @@ public class AtmAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetAtmAttributes", localVarResponse);
+          throw getApiException("getAtmAttributes", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAtmAttributes200Response>(
+          return new ApiResponse<GetAtmAttributes200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -636,10 +636,10 @@ public class AtmAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAtmAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAtmAttributes200Response>() {});
+        GetAtmAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAtmAttributes200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetAtmAttributes200Response>(
+        return new ApiResponse<GetAtmAttributes200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -658,14 +658,14 @@ public class AtmAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetAtmAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAtmAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetAtmAttributes");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAtmAttributes");
     }
     // verify the required parameter 'atmid' is set
     if (atmid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmid' when calling oBPv510GetAtmAttributes");
+      throw new ApiException(400, "Missing the required parameter 'atmid' when calling getAtmAttributes");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -696,12 +696,12 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return OBPv510GetAtmAttribute200Response
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv510UpdateAtmAttribute(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest, null);
+  public GetAtmAttribute200Response updateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return updateAtmAttribute(bankid, atmid, atmattributeid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -710,13 +710,13 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAtmAttribute200Response
+   * @return GetAtmAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAtmAttribute200Response oBPv510UpdateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAtmAttribute200Response> localVarResponse = oBPv510UpdateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest, headers);
+  public GetAtmAttribute200Response updateAtmAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAtmAttribute200Response> localVarResponse = updateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, updateAtmAttributeRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -726,12 +726,12 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510UpdateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv510UpdateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest, null);
+  public ApiResponse<GetAtmAttribute200Response> updateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return updateAtmAttributeWithHttpInfo(bankid, atmid, atmattributeid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -740,13 +740,13 @@ public class AtmAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param atmid The ATMID identifier (required)
    * @param atmattributeid The ATMATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAtmAttribute200Response&gt;
+   * @return ApiResponse&lt;GetAtmAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAtmAttribute200Response> oBPv510UpdateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510UpdateAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, obPv510UpdateAtmAttributeRequest, headers);
+  public ApiResponse<GetAtmAttribute200Response> updateAtmAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateAtmAttributeRequestBuilder(bankid, atmid, atmattributeid, updateAtmAttributeRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -757,11 +757,11 @@ public class AtmAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510UpdateAtmAttribute", localVarResponse);
+          throw getApiException("updateAtmAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+          return new ApiResponse<GetAtmAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -771,10 +771,10 @@ public class AtmAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAtmAttribute200Response>() {});
+        GetAtmAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAtmAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetAtmAttribute200Response>(
+        return new ApiResponse<GetAtmAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -793,22 +793,22 @@ public class AtmAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510UpdateAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateAtmAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String atmid, @javax.annotation.Nonnull String atmattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510UpdateAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateAtmAttribute");
     }
     // verify the required parameter 'atmid' is set
     if (atmid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmid' when calling oBPv510UpdateAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmid' when calling updateAtmAttribute");
     }
     // verify the required parameter 'atmattributeid' is set
     if (atmattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling oBPv510UpdateAtmAttribute");
+      throw new ApiException(400, "Missing the required parameter 'atmattributeid' when calling updateAtmAttribute");
     }
-    // verify the required parameter 'obPv510UpdateAtmAttributeRequest' is set
-    if (obPv510UpdateAtmAttributeRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510UpdateAtmAttributeRequest' when calling oBPv510UpdateAtmAttribute");
+    // verify the required parameter 'updateAtmAttributeRequest' is set
+    if (updateAtmAttributeRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAtmAttributeRequest' when calling updateAtmAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -824,7 +824,7 @@ public class AtmAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510UpdateAtmAttributeRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAtmAttributeRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -22,7 +22,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using OpenBankProject.Client;
-using OpenBankProject.Model;
 using System.Diagnostics.CodeAnalysis;
 
 namespace OpenBankProject.Api
@@ -46,8 +45,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200ElasticSearchMetricsApiResponse"/>&gt;</returns>
-        Task<IOBPv200ElasticSearchMetricsApiResponse> OBPv200ElasticSearchMetricsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IElasticSearchMetricsApiResponse"/>&gt;</returns>
+        Task<IElasticSearchMetricsApiResponse> ElasticSearchMetricsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search API Metrics via Elasticsearch
@@ -56,8 +55,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Search the API calls made to this API instance via Elastic Search.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;CanSearchMetrics entitlement is required to search metrics data.&lt;/p&gt; &lt;p&gt;parameters:&lt;/p&gt; &lt;p&gt;esType  - elasticsearch type&lt;/p&gt; &lt;p&gt;simple query:&lt;/p&gt; &lt;p&gt;q       - plain_text_query&lt;/p&gt; &lt;p&gt;df      - default field to search&lt;/p&gt; &lt;p&gt;sort    - field to sort on&lt;/p&gt; &lt;p&gt;size    - number of hits returned, default 10&lt;/p&gt; &lt;p&gt;from    - show hits starting from&lt;/p&gt; &lt;p&gt;json query:&lt;/p&gt; &lt;p&gt;source  - JSON_query_(URL-escaped)&lt;/p&gt; &lt;p&gt;example usage:&lt;/p&gt; &lt;p&gt;/search/metrics/q&#x3D;findThis&lt;/p&gt; &lt;p&gt;or:&lt;/p&gt; &lt;p&gt;/search/metrics/source&#x3D;{&amp;quot;query&amp;quot;:{&amp;quot;query_string&amp;quot;:{&amp;quot;query&amp;quot;:&amp;quot;findThis&amp;quot;}}}&lt;/p&gt; &lt;p&gt;Note!!&lt;/p&gt; &lt;p&gt;The whole JSON query string MUST be URL-encoded:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;For {  use %7B&lt;/li&gt; &lt;li&gt;For }  use %7D&lt;/li&gt; &lt;li&gt;For : use %3A&lt;/li&gt; &lt;li&gt;For &amp;quot; use %22&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;etc..&lt;/p&gt; &lt;p&gt;Only q, source and esType are passed to Elastic&lt;/p&gt; &lt;p&gt;Elastic simple query: &lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Elastic JSON query: &lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200ElasticSearchMetricsApiResponse"/>?&gt;</returns>
-        Task<IOBPv200ElasticSearchMetricsApiResponse?> OBPv200ElasticSearchMetricsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IElasticSearchMetricsApiResponse"/>?&gt;</returns>
+        Task<IElasticSearchMetricsApiResponse?> ElasticSearchMetricsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -68,21 +67,21 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv200ElasticSearchMetrics;
+        public event EventHandler<ApiResponseEventArgs>? OnElasticSearchMetrics;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv200ElasticSearchMetrics;
+        public event EventHandler<ExceptionEventArgs>? OnErrorElasticSearchMetrics;
 
-        internal void ExecuteOnOBPv200ElasticSearchMetrics(APIApi.OBPv200ElasticSearchMetricsApiResponse apiResponse)
+        internal void ExecuteOnElasticSearchMetrics(APIApi.ElasticSearchMetricsApiResponse apiResponse)
         {
-            OnOBPv200ElasticSearchMetrics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnElasticSearchMetrics?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv200ElasticSearchMetrics(Exception exception)
+        internal void ExecuteOnErrorElasticSearchMetrics(Exception exception)
         {
-            OnErrorOBPv200ElasticSearchMetrics?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorElasticSearchMetrics?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -144,10 +143,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv200ElasticSearchMetricsDefaultImplementation(IOBPv200ElasticSearchMetricsApiResponse apiResponseLocalVar)
+        private void AfterElasticSearchMetricsDefaultImplementation(IElasticSearchMetricsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv200ElasticSearchMetrics(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterElasticSearchMetrics(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -157,7 +156,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv200ElasticSearchMetrics(ref bool suppressDefaultLog, IOBPv200ElasticSearchMetricsApiResponse apiResponseLocalVar);
+        partial void AfterElasticSearchMetrics(ref bool suppressDefaultLog, IElasticSearchMetricsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -165,10 +164,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv200ElasticSearchMetricsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorElasticSearchMetricsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv200ElasticSearchMetrics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorElasticSearchMetrics(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -180,18 +179,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv200ElasticSearchMetrics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorElasticSearchMetrics(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Search API Metrics via Elasticsearch &lt;p&gt;Search the API calls made to this API instance via Elastic Search.&lt;/p&gt; &lt;p&gt;Login is required.&lt;/p&gt; &lt;p&gt;CanSearchMetrics entitlement is required to search metrics data.&lt;/p&gt; &lt;p&gt;parameters:&lt;/p&gt; &lt;p&gt;esType  - elasticsearch type&lt;/p&gt; &lt;p&gt;simple query:&lt;/p&gt; &lt;p&gt;q       - plain_text_query&lt;/p&gt; &lt;p&gt;df      - default field to search&lt;/p&gt; &lt;p&gt;sort    - field to sort on&lt;/p&gt; &lt;p&gt;size    - number of hits returned, default 10&lt;/p&gt; &lt;p&gt;from    - show hits starting from&lt;/p&gt; &lt;p&gt;json query:&lt;/p&gt; &lt;p&gt;source  - JSON_query_(URL-escaped)&lt;/p&gt; &lt;p&gt;example usage:&lt;/p&gt; &lt;p&gt;/search/metrics/q&#x3D;findThis&lt;/p&gt; &lt;p&gt;or:&lt;/p&gt; &lt;p&gt;/search/metrics/source&#x3D;{&amp;quot;query&amp;quot;:{&amp;quot;query_string&amp;quot;:{&amp;quot;query&amp;quot;:&amp;quot;findThis&amp;quot;}}}&lt;/p&gt; &lt;p&gt;Note!!&lt;/p&gt; &lt;p&gt;The whole JSON query string MUST be URL-encoded:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;For {  use %7B&lt;/li&gt; &lt;li&gt;For }  use %7D&lt;/li&gt; &lt;li&gt;For : use %3A&lt;/li&gt; &lt;li&gt;For &amp;quot; use %22&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;etc..&lt;/p&gt; &lt;p&gt;Only q, source and esType are passed to Elastic&lt;/p&gt; &lt;p&gt;Elastic simple query: &lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Elastic JSON query: &lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200ElasticSearchMetricsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv200ElasticSearchMetricsApiResponse?> OBPv200ElasticSearchMetricsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IElasticSearchMetricsApiResponse"/>&gt;</returns>
+        public async Task<IElasticSearchMetricsApiResponse?> ElasticSearchMetricsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv200ElasticSearchMetricsAsync(cancellationToken).ConfigureAwait(false);
+                return await ElasticSearchMetricsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -204,8 +203,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv200ElasticSearchMetricsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv200ElasticSearchMetricsApiResponse> OBPv200ElasticSearchMetricsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IElasticSearchMetricsApiResponse"/>&gt;</returns>
+        public async Task<IElasticSearchMetricsApiResponse> ElasticSearchMetricsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -225,7 +224,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -252,8 +251,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv200ElasticSearchMetricsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv200ElasticSearchMetricsApiResponse>();
-                        APIApi.OBPv200ElasticSearchMetricsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.ElasticSearchMetricsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.ElasticSearchMetricsApiResponse>();
+                        APIApi.ElasticSearchMetricsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -264,9 +263,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv200ElasticSearchMetricsDefaultImplementation(apiResponseLocalVar);
+                        AfterElasticSearchMetricsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv200ElasticSearchMetrics(apiResponseLocalVar);
+                        Events.ExecuteOnElasticSearchMetrics(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -278,8 +277,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv200ElasticSearchMetricsDefaultImplementation(e, "/obp/v2.0.0/search/metrics", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv200ElasticSearchMetrics(e);
+                OnErrorElasticSearchMetricsDefaultImplementation(e, "/obp/v2.0.0/search/metrics", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorElasticSearchMetrics(e);
                 throw;
             }
         }

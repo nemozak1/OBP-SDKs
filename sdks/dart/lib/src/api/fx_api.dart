@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv220_create_fx_request.dart';
-import 'package:obp_dart/src/model/obpv510_get_currencies_at_bank200_response.dart';
+import 'package:obp_dart/src/model/create_fx_request.dart';
+import 'package:obp_dart/src/model/get_currencies_at_bank200_response.dart';
 
 class FXApi {
 
@@ -25,7 +25,7 @@ class FXApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv220CreateFxRequest] - Request body
+  /// * [createFxRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,11 +33,11 @@ class FXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv220CreateFxRequest] as data
+  /// Returns a [Future] containing a [Response] with a [CreateFxRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv220CreateFxRequest>> oBPv220CreateFx({ 
+  Future<Response<CreateFxRequest>> createFx({ 
     required String bankid,
-    required OBPv220CreateFxRequest oBPv220CreateFxRequest,
+    required CreateFxRequest createFxRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class FXApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -77,8 +77,8 @@ class FXApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv220CreateFxRequest);
-      _bodyData = _serializers.serialize(oBPv220CreateFxRequest, specifiedType: _type);
+      const _type = FullType(CreateFxRequest);
+      _bodyData = _serializers.serialize(createFxRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -101,14 +101,14 @@ class FXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv220CreateFxRequest? _responseData;
+    CreateFxRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv220CreateFxRequest),
-      ) as OBPv220CreateFxRequest;
+        specifiedType: const FullType(CreateFxRequest),
+      ) as CreateFxRequest;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -120,7 +120,97 @@ class FXApi {
       );
     }
 
-    return Response<OBPv220CreateFxRequest>(
+    return Response<CreateFxRequest>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Get Currencies at a Bank
+  /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+  ///
+  /// Parameters:
+  /// * [bankid] - The BANKID identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetCurrenciesAtBank200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<GetCurrenciesAtBank200Response>> getCurrenciesAtBank({ 
+    required String bankid,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/obp/v5.1.0/banks/{bankid}/currencies'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'OAuth2',
+          },{
+            'type': 'apiKey',
+            'name': 'GatewayLogin',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },{
+            'type': 'apiKey',
+            'name': 'DirectLogin',
+            'keyName': 'DirectLogin',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetCurrenciesAtBank200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(GetCurrenciesAtBank200Response),
+      ) as GetCurrenciesAtBank200Response;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetCurrenciesAtBank200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -146,9 +236,9 @@ class FXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv220CreateFxRequest] as data
+  /// Returns a [Future] containing a [Response] with a [CreateFxRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv220CreateFxRequest>> oBPv220GetCurrentFxRate({ 
+  Future<Response<CreateFxRequest>> getCurrentFxRate({ 
     required String bankid,
     required String fromcurrencycode,
     required String tocurrencycode,
@@ -178,7 +268,7 @@ class FXApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -195,14 +285,14 @@ class FXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv220CreateFxRequest? _responseData;
+    CreateFxRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv220CreateFxRequest),
-      ) as OBPv220CreateFxRequest;
+        specifiedType: const FullType(CreateFxRequest),
+      ) as CreateFxRequest;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -214,97 +304,7 @@ class FXApi {
       );
     }
 
-    return Response<OBPv220CreateFxRequest>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Get Currencies at a Bank
-  /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-  ///
-  /// Parameters:
-  /// * [bankid] - The BANKID identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetCurrenciesAtBank200Response] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetCurrenciesAtBank200Response>> oBPv510GetCurrenciesAtBank({ 
-    required String bankid,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/obp/v5.1.0/banks/{bankid}/currencies'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },{
-            'type': 'apiKey',
-            'name': 'GatewayLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },{
-            'type': 'apiKey',
-            'name': 'DirectLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    OBPv510GetCurrenciesAtBank200Response? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(OBPv510GetCurrenciesAtBank200Response),
-      ) as OBPv510GetCurrenciesAtBank200Response;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<OBPv510GetCurrenciesAtBank200Response>(
+    return Response<CreateFxRequest>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

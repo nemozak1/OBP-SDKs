@@ -1,17 +1,17 @@
 # FXApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv220CreateFx**](FXApi.md#oBPv220CreateFx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
-| [**oBPv220GetCurrentFxRate**](FXApi.md#oBPv220GetCurrentFxRate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
-| [**oBPv510GetCurrenciesAtBank**](FXApi.md#oBPv510GetCurrenciesAtBank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**createFx**](FXApi.md#createFx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx |
+| [**getCurrenciesAtBank**](FXApi.md#getCurrenciesAtBank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank |
+| [**getCurrentFxRate**](FXApi.md#getCurrentFxRate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate |
 
 
-<a id="oBPv220CreateFx"></a>
-# **oBPv220CreateFx**
-> OBPv220CreateFxRequest oBPv220CreateFx(bankid, obPv220CreateFxRequest)
+<a id="createFx"></a>
+# **createFx**
+> CreateFxRequest createFx(bankid, createFxRequest)
 
 Create Fx
 
@@ -25,15 +25,15 @@ Create Fx
 
 val apiInstance = FXApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv220CreateFxRequest : OBPv220CreateFxRequest = {"type":"object","properties":{"effective_date":{"type":"string","format":"date-time"},"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"}}} // OBPv220CreateFxRequest | Request body
+val createFxRequest : CreateFxRequest = {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}} // CreateFxRequest | Request body
 try {
-    val result : OBPv220CreateFxRequest = apiInstance.oBPv220CreateFx(bankid, obPv220CreateFxRequest)
+    val result : CreateFxRequest = apiInstance.createFx(bankid, createFxRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FXApi#oBPv220CreateFx")
+    println("4xx response calling FXApi#createFx")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FXApi#oBPv220CreateFx")
+    println("5xx response calling FXApi#createFx")
     e.printStackTrace()
 }
 ```
@@ -42,11 +42,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)| Request body | |
+| **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -57,17 +57,71 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv220GetCurrentFxRate"></a>
-# **oBPv220GetCurrentFxRate**
-> OBPv220CreateFxRequest oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
+<a id="getCurrenciesAtBank"></a>
+# **getCurrenciesAtBank**
+> GetCurrenciesAtBank200Response getCurrenciesAtBank(bankid)
+
+Get Currencies at a Bank
+
+&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = FXApi()
+val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
+try {
+    val result : GetCurrenciesAtBank200Response = apiInstance.getCurrenciesAtBank(bankid)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling FXApi#getCurrenciesAtBank")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling FXApi#getCurrenciesAtBank")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **kotlin.String**| The BANKID identifier | |
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="getCurrentFxRate"></a>
+# **getCurrentFxRate**
+> CreateFxRequest getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -84,13 +138,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val fromcurrencycode : kotlin.String = fromcurrencycode_example // kotlin.String | The FROMCURRENCYCODE identifier
 val tocurrencycode : kotlin.String = tocurrencycode_example // kotlin.String | The TOCURRENCYCODE identifier
 try {
-    val result : OBPv220CreateFxRequest = apiInstance.oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
+    val result : CreateFxRequest = apiInstance.getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling FXApi#oBPv220GetCurrentFxRate")
+    println("4xx response calling FXApi#getCurrentFxRate")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling FXApi#oBPv220GetCurrentFxRate")
+    println("5xx response calling FXApi#getCurrentFxRate")
     e.printStackTrace()
 }
 ```
@@ -104,7 +158,7 @@ try {
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -115,62 +169,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="oBPv510GetCurrenciesAtBank"></a>
-# **oBPv510GetCurrenciesAtBank**
-> OBPv510GetCurrenciesAtBank200Response oBPv510GetCurrenciesAtBank(bankid)
-
-Get Currencies at a Bank
-
-&lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = FXApi()
-val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-try {
-    val result : OBPv510GetCurrenciesAtBank200Response = apiInstance.oBPv510GetCurrenciesAtBank(bankid)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling FXApi#oBPv510GetCurrenciesAtBank")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling FXApi#oBPv510GetCurrenciesAtBank")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **kotlin.String**| The BANKID identifier | |
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

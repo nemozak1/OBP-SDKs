@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_0_0_create_consent_by_consent_request_id_email**](VRPApi.md#o_bpv5_0_0_create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-[**o_bpv5_1_0_create_vrp_consent_request**](VRPApi.md#o_bpv5_1_0_create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+[**create_consent_by_consent_request_id_email**](VRPApi.md#create_consent_by_consent_request_id_email) | **POST** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+[**create_vrp_consent_request**](VRPApi.md#create_vrp_consent_request) | **POST** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
 
 
-# **o_bpv5_0_0_create_consent_by_consent_request_id_email**
-> OBPv500GetConsentByConsentRequestId200Response o_bpv5_0_0_create_consent_by_consent_request_id_email(consentrequestid, email)
+# **create_consent_by_consent_request_id_email**
+> GetConsentByConsentRequestId200Response create_consent_by_consent_request_id_email(consentrequestid, email)
 
 Create Consent By CONSENT_REQUEST_ID (EMAIL)
 
@@ -42,7 +42,7 @@ Create Consent By CONSENT_REQUEST_ID (EMAIL)
 
 ```python
 import obp_python
-from obp_python.models.obpv500_get_consent_by_consent_request_id200_response import OBPv500GetConsentByConsentRequestId200Response
+from obp_python.models.get_consent_by_consent_request_id200_response import GetConsentByConsentRequestId200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -80,11 +80,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Create Consent By CONSENT_REQUEST_ID (EMAIL)
-        api_response = api_instance.o_bpv5_0_0_create_consent_by_consent_request_id_email(consentrequestid, email)
-        print("The response of VRPApi->o_bpv5_0_0_create_consent_by_consent_request_id_email:\n")
+        api_response = api_instance.create_consent_by_consent_request_id_email(consentrequestid, email)
+        print("The response of VRPApi->create_consent_by_consent_request_id_email:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VRPApi->o_bpv5_0_0_create_consent_by_consent_request_id_email: %s\n" % e)
+        print("Exception when calling VRPApi->create_consent_by_consent_request_id_email: %s\n" % e)
 ```
 
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -120,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_create_vrp_consent_request**
-> OBPv510CreateVRPConsentRequest200Response o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
+# **create_vrp_consent_request**
+> CreateVRPConsentRequest200Response create_vrp_consent_request(create_vrp_consent_request_request)
 
 Create Consent Request VRP
 
@@ -179,8 +179,8 @@ Authorization: Bearer eXtneO-THbQtn3zvK_kQtXXfvOZyZFdBCItlPDbR2Bk.dOWqtXCtFX-tqG
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request200_response import OBPv510CreateVRPConsentRequest200Response
-from obp_python.models.obpv510_create_vrp_consent_request_request import OBPv510CreateVRPConsentRequestRequest
+from obp_python.models.create_vrp_consent_request200_response import CreateVRPConsentRequest200Response
+from obp_python.models.create_vrp_consent_request_request import CreateVRPConsentRequestRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -213,15 +213,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.VRPApi(api_client)
-    obpv510_create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # OBPv510CreateVRPConsentRequestRequest | Request body
+    create_vrp_consent_request_request = {"type":"object","properties":{"to_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"counterparty_name":{"type":"string"},"limit":{"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"phone_number":{"type":"string"},"email":{"type":"string"},"from_account":{"type":"object","properties":{"bank_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"account_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}}}},"time_to_live":{"type":"integer"},"valid_from":{"type":"string","format":"date-time"}}} # CreateVRPConsentRequestRequest | Request body
 
     try:
         # Create Consent Request VRP
-        api_response = api_instance.o_bpv5_1_0_create_vrp_consent_request(obpv510_create_vrp_consent_request_request)
-        print("The response of VRPApi->o_bpv5_1_0_create_vrp_consent_request:\n")
+        api_response = api_instance.create_vrp_consent_request(create_vrp_consent_request_request)
+        print("The response of VRPApi->create_vrp_consent_request:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VRPApi->o_bpv5_1_0_create_vrp_consent_request: %s\n" % e)
+        print("Exception when calling VRPApi->create_vrp_consent_request: %s\n" % e)
 ```
 
 
@@ -231,11 +231,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv510_create_vrp_consent_request_request** | [**OBPv510CreateVRPConsentRequestRequest**](OBPv510CreateVRPConsentRequestRequest.md)| Request body | 
+ **create_vrp_consent_request_request** | [**CreateVRPConsentRequestRequest**](CreateVRPConsentRequestRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510CreateVRPConsentRequest200Response**](OBPv510CreateVRPConsentRequest200Response.md)
+[**CreateVRPConsentRequest200Response**](CreateVRPConsentRequest200Response.md)
 
 ### Authorization
 

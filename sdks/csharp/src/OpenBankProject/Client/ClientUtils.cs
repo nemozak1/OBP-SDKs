@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,9 +47,9 @@ namespace OpenBankProject.Client
         public enum ApiKeyHeader
         {
             /// <summary>
-            /// The Authorization header
+            /// The DirectLogin header
             /// </summary>
-            Authorization,
+            DirectLogin,
             /// <summary>
             /// The Authorization header
             /// </summary>
@@ -66,7 +66,7 @@ namespace OpenBankProject.Client
         {
             return value switch
             {
-                ApiKeyHeader.Authorization => "Authorization",
+                ApiKeyHeader.DirectLogin => "DirectLogin",
                 ApiKeyHeader.Authorization => "Authorization",
                 _ => throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader)),
             };
@@ -144,6 +144,10 @@ namespace OpenBankProject.Client
                 return boolean
                     ? "true"
                     : "false";
+            if (obj is CreateCardAttribute200Response.AttributeTypeEnum createCardAttribute200ResponseAttributeTypeEnum)
+                return CreateCardAttribute200Response.AttributeTypeEnumToJsonValue(createCardAttribute200ResponseAttributeTypeEnum);
+            if (obj is UpdateAuthenticationTypeValidationRequest.HeadEnum updateAuthenticationTypeValidationRequestHeadEnum)
+                return UpdateAuthenticationTypeValidationRequest.HeadEnumToJsonValue(updateAuthenticationTypeValidationRequestHeadEnum);
             if (obj is ICollection collection)
             {
                 List<string?> entries = new();
@@ -336,12 +340,12 @@ namespace OpenBankProject.Client
         /// <summary>
         /// The base path of the API
         /// </summary>
-        public const string BASE_ADDRESS = "https://apisandbox.openbankproject.com";
+        public const string BASE_ADDRESS = "http://127.0.0.1:8080";
 
         /// <summary>
         /// The scheme of the API
         /// </summary>
-        public const string SCHEME = "https";
+        public const string SCHEME = "http";
 
         /// <summary>
         /// The context path of the API
@@ -351,7 +355,7 @@ namespace OpenBankProject.Client
         /// <summary>
         /// The host of the API
         /// </summary>
-        public const string HOST = "apisandbox.openbankproject.com";
+        public const string HOST = "127.0.0.1";
 
         /// <summary>
         /// The format to use for DateTime serialization

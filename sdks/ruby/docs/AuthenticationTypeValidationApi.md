@@ -1,20 +1,20 @@
 # OpenBankProject::AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**o_bpv4_0_0_delete_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**o_bpv4_0_0_get_all_authentication_type_validations**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**o_bpv4_0_0_get_all_authentication_type_validations_public**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**o_bpv4_0_0_get_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**o_bpv4_0_0_update_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**create_authentication_type_validation**](AuthenticationTypeValidationApi.md#create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**delete_authentication_type_validation**](AuthenticationTypeValidationApi.md#delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**get_all_authentication_type_validations**](AuthenticationTypeValidationApi.md#get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**get_all_authentication_type_validations_public**](AuthenticationTypeValidationApi.md#get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**get_authentication_type_validation**](AuthenticationTypeValidationApi.md#get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**update_authentication_type_validation**](AuthenticationTypeValidationApi.md#update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
 
-## o_bpv4_0_0_create_authentication_type_validation
+## create_authentication_type_validation
 
-> <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+> <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> create_authentication_type_validation(operationid, update_authentication_type_validation_request)
 
 Create an Authentication Type Validation
 
@@ -36,39 +36,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
 operationid = 'operationid_example' # String | The OPERATIONID identifier
-obpv400_update_authentication_type_validation_request = OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequestProperties.new({tl: OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes.new({type: 'type_example', items: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56})}), head: OpenBankProject::OBPv310CreateCardAttribute200ResponsePropertiesAttributeType.new({type: 'type_example', enum: ['enum_example']})})}) # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+update_authentication_type_validation_request = OpenBankProject::UpdateAuthenticationTypeValidationRequest.new # UpdateAuthenticationTypeValidationRequest | Request body
 
 begin
   # Create an Authentication Type Validation
-  result = api_instance.o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+  result = api_instance.create_authentication_type_validation(operationid, update_authentication_type_validation_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_create_authentication_type_validation: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->create_authentication_type_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_authentication_type_validation_with_http_info variant
+#### Using the create_authentication_type_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>, Integer, Hash)> o_bpv4_0_0_create_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request)
+> <Array(<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>, Integer, Hash)> create_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request)
 
 ```ruby
 begin
   # Create an Authentication Type Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request)
+  data, status_code, headers = api_instance.create_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>
+  p data # => <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_create_authentication_type_validation_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->create_authentication_type_validation_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **operationid** | **String** | The OPERATIONID identifier |  |
-| **obpv400_update_authentication_type_validation_request** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
+| **update_authentication_type_validation_request** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_authentication_type_validation
+## delete_authentication_type_validation
 
-> o_bpv4_0_0_delete_authentication_type_validation(operationid)
+> delete_authentication_type_validation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -117,9 +117,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
@@ -127,27 +127,27 @@ operationid = 'operationid_example' # String | The OPERATIONID identifier
 
 begin
   # Delete an Authentication Type Validation
-  api_instance.o_bpv4_0_0_delete_authentication_type_validation(operationid)
+  api_instance.delete_authentication_type_validation(operationid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_delete_authentication_type_validation: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->delete_authentication_type_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_authentication_type_validation_with_http_info variant
+#### Using the delete_authentication_type_validation_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_authentication_type_validation_with_http_info(operationid)
+> <Array(nil, Integer, Hash)> delete_authentication_type_validation_with_http_info(operationid)
 
 ```ruby
 begin
   # Delete an Authentication Type Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_authentication_type_validation_with_http_info(operationid)
+  data, status_code, headers = api_instance.delete_authentication_type_validation_with_http_info(operationid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_delete_authentication_type_validation_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->delete_authentication_type_validation_with_http_info: #{e}"
 end
 ```
 
@@ -171,9 +171,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_all_authentication_type_validations
+## get_all_authentication_type_validations
 
-> <OBPv400GetAllAuthenticationTypeValidationsPublic200Response> o_bpv4_0_0_get_all_authentication_type_validations
+> <GetAllAuthenticationTypeValidationsPublic200Response> get_all_authentication_type_validations
 
 Get all Authentication Type Validations
 
@@ -195,37 +195,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
 
 begin
   # Get all Authentication Type Validations
-  result = api_instance.o_bpv4_0_0_get_all_authentication_type_validations
+  result = api_instance.get_all_authentication_type_validations
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_authentication_type_validations_with_http_info variant
+#### Using the get_all_authentication_type_validations_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>, Integer, Hash)> o_bpv4_0_0_get_all_authentication_type_validations_with_http_info
+> <Array(<GetAllAuthenticationTypeValidationsPublic200Response>, Integer, Hash)> get_all_authentication_type_validations_with_http_info
 
 ```ruby
 begin
   # Get all Authentication Type Validations
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_authentication_type_validations_with_http_info
+  data, status_code, headers = api_instance.get_all_authentication_type_validations_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllAuthenticationTypeValidationsPublic200Response>
+  p data # => <GetAllAuthenticationTypeValidationsPublic200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations_with_http_info: #{e}"
 end
 ```
 
@@ -235,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -247,9 +247,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_authentication_type_validations_public
+## get_all_authentication_type_validations_public
 
-> <OBPv400GetAllAuthenticationTypeValidationsPublic200Response> o_bpv4_0_0_get_all_authentication_type_validations_public
+> <GetAllAuthenticationTypeValidationsPublic200Response> get_all_authentication_type_validations_public
 
 Get all Authentication Type Validations - public
 
@@ -265,28 +265,28 @@ api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
 
 begin
   # Get all Authentication Type Validations - public
-  result = api_instance.o_bpv4_0_0_get_all_authentication_type_validations_public
+  result = api_instance.get_all_authentication_type_validations_public
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations_public: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations_public: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info variant
+#### Using the get_all_authentication_type_validations_public_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllAuthenticationTypeValidationsPublic200Response>, Integer, Hash)> o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info
+> <Array(<GetAllAuthenticationTypeValidationsPublic200Response>, Integer, Hash)> get_all_authentication_type_validations_public_with_http_info
 
 ```ruby
 begin
   # Get all Authentication Type Validations - public
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info
+  data, status_code, headers = api_instance.get_all_authentication_type_validations_public_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllAuthenticationTypeValidationsPublic200Response>
+  p data # => <GetAllAuthenticationTypeValidationsPublic200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations_public_with_http_info: #{e}"
 end
 ```
 
@@ -296,7 +296,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -308,9 +308,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_authentication_type_validation
+## get_authentication_type_validation
 
-> <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> o_bpv4_0_0_get_authentication_type_validation(operationid)
+> <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> get_authentication_type_validation(operationid)
 
 Get an Authentication Type Validation
 
@@ -332,9 +332,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
@@ -342,28 +342,28 @@ operationid = 'operationid_example' # String | The OPERATIONID identifier
 
 begin
   # Get an Authentication Type Validation
-  result = api_instance.o_bpv4_0_0_get_authentication_type_validation(operationid)
+  result = api_instance.get_authentication_type_validation(operationid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_authentication_type_validation: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_authentication_type_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_authentication_type_validation_with_http_info variant
+#### Using the get_authentication_type_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>, Integer, Hash)> o_bpv4_0_0_get_authentication_type_validation_with_http_info(operationid)
+> <Array(<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>, Integer, Hash)> get_authentication_type_validation_with_http_info(operationid)
 
 ```ruby
 begin
   # Get an Authentication Type Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_authentication_type_validation_with_http_info(operationid)
+  data, status_code, headers = api_instance.get_authentication_type_validation_with_http_info(operationid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>
+  p data # => <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_authentication_type_validation_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->get_authentication_type_validation_with_http_info: #{e}"
 end
 ```
 
@@ -375,7 +375,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -387,9 +387,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_authentication_type_validation
+## update_authentication_type_validation
 
-> <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+> <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> update_authentication_type_validation(operationid, update_authentication_type_validation_request)
 
 Update an Authentication Type Validation
 
@@ -411,39 +411,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AuthenticationTypeValidationApi.new
 operationid = 'operationid_example' # String | The OPERATIONID identifier
-obpv400_update_authentication_type_validation_request = OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400UpdateAuthenticationTypeValidationRequestProperties.new({tl: OpenBankProject::OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItemsPropertiesAuthTypes.new({type: 'type_example', items: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56})}), head: OpenBankProject::OBPv310CreateCardAttribute200ResponsePropertiesAttributeType.new({type: 'type_example', enum: ['enum_example']})})}) # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+update_authentication_type_validation_request = OpenBankProject::UpdateAuthenticationTypeValidationRequest.new # UpdateAuthenticationTypeValidationRequest | Request body
 
 begin
   # Update an Authentication Type Validation
-  result = api_instance.o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+  result = api_instance.update_authentication_type_validation(operationid, update_authentication_type_validation_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_update_authentication_type_validation: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->update_authentication_type_validation: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_authentication_type_validation_with_http_info variant
+#### Using the update_authentication_type_validation_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>, Integer, Hash)> o_bpv4_0_0_update_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request)
+> <Array(<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>, Integer, Hash)> update_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request)
 
 ```ruby
 begin
   # Update an Authentication Type Validation
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request)
+  data, status_code, headers = api_instance.update_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems>
+  p data # => <GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AuthenticationTypeValidationApi->o_bpv4_0_0_update_authentication_type_validation_with_http_info: #{e}"
+  puts "Error when calling AuthenticationTypeValidationApi->update_authentication_type_validation_with_http_info: #{e}"
 end
 ```
 
@@ -452,11 +452,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **operationid** | **String** | The OPERATIONID identifier |  |
-| **obpv400_update_authentication_type_validation_request** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
+| **update_authentication_type_validation_request** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

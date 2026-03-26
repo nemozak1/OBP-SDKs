@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600AddUserToGroupRequest">Request body</param>
+        /// <param name="addUserToGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600AddUserToGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600AddUserToGroupApiResponse> OBPv600AddUserToGroupAsync(string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddUserToGroupApiResponse"/>&gt;</returns>
+        Task<IAddUserToGroupApiResponse> AddUserToGroupAsync(string userid, AddUserToGroupRequest addUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Grant User Membership to Group Entitlements
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600AddUserToGroupRequest">Request body</param>
+        /// <param name="addUserToGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600AddUserToGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600AddUserToGroupApiResponse?> OBPv600AddUserToGroupOrDefaultAsync(string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddUserToGroupApiResponse"/>?&gt;</returns>
+        Task<IAddUserToGroupApiResponse?> AddUserToGroupOrDefaultAsync(string userid, AddUserToGroupRequest addUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Group
@@ -70,10 +70,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateGroupRequest">Request body</param>
+        /// <param name="createGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600CreateGroupApiResponse> OBPv600CreateGroupAsync(OBPv600CreateGroupRequest oBPv600CreateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateGroupApiResponse"/>&gt;</returns>
+        Task<ICreateGroupApiResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Group
@@ -81,10 +81,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv600CreateGroupRequest">Request body</param>
+        /// <param name="createGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600CreateGroupApiResponse?> OBPv600CreateGroupOrDefaultAsync(OBPv600CreateGroupRequest oBPv600CreateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateGroupApiResponse"/>?&gt;</returns>
+        Task<ICreateGroupApiResponse?> CreateGroupOrDefaultAsync(CreateGroupRequest createGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Group
@@ -95,8 +95,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600DeleteGroupApiResponse> OBPv600DeleteGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteGroupApiResponse"/>&gt;</returns>
+        Task<IDeleteGroupApiResponse> DeleteGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Group
@@ -106,8 +106,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600DeleteGroupApiResponse?> OBPv600DeleteGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteGroupApiResponse"/>?&gt;</returns>
+        Task<IDeleteGroupApiResponse?> DeleteGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Group
@@ -118,8 +118,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetGroupApiResponse> OBPv600GetGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupApiResponse"/>&gt;</returns>
+        Task<IGetGroupApiResponse> GetGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Group
@@ -129,8 +129,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetGroupApiResponse?> OBPv600GetGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupApiResponse"/>?&gt;</returns>
+        Task<IGetGroupApiResponse?> GetGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Group Entitlements
@@ -141,8 +141,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupEntitlementsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetGroupEntitlementsApiResponse> OBPv600GetGroupEntitlementsAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupEntitlementsApiResponse"/>&gt;</returns>
+        Task<IGetGroupEntitlementsApiResponse> GetGroupEntitlementsAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Group Entitlements
@@ -152,8 +152,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupEntitlementsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetGroupEntitlementsApiResponse?> OBPv600GetGroupEntitlementsOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupEntitlementsApiResponse"/>?&gt;</returns>
+        Task<IGetGroupEntitlementsApiResponse?> GetGroupEntitlementsOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Groups
@@ -163,8 +163,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetGroupsApiResponse> OBPv600GetGroupsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupsApiResponse"/>&gt;</returns>
+        Task<IGetGroupsApiResponse> GetGroupsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Groups
@@ -173,8 +173,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetGroupsApiResponse?> OBPv600GetGroupsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupsApiResponse"/>?&gt;</returns>
+        Task<IGetGroupsApiResponse?> GetGroupsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User&#39;s Group Memberships
@@ -185,8 +185,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserGroupMembershipsApiResponse"/>&gt;</returns>
-        Task<IOBPv600GetUserGroupMembershipsApiResponse> OBPv600GetUserGroupMembershipsAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserGroupMembershipsApiResponse"/>&gt;</returns>
+        Task<IGetUserGroupMembershipsApiResponse> GetUserGroupMembershipsAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get User&#39;s Group Memberships
@@ -196,8 +196,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserGroupMembershipsApiResponse"/>?&gt;</returns>
-        Task<IOBPv600GetUserGroupMembershipsApiResponse?> OBPv600GetUserGroupMembershipsOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserGroupMembershipsApiResponse"/>?&gt;</returns>
+        Task<IGetUserGroupMembershipsApiResponse?> GetUserGroupMembershipsOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Remove User from Group
@@ -209,8 +209,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RemoveUserFromGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600RemoveUserFromGroupApiResponse> OBPv600RemoveUserFromGroupAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IRemoveUserFromGroupApiResponse"/>&gt;</returns>
+        Task<IRemoveUserFromGroupApiResponse> RemoveUserFromGroupAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Remove User from Group
@@ -221,8 +221,8 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RemoveUserFromGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600RemoveUserFromGroupApiResponse?> OBPv600RemoveUserFromGroupOrDefaultAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IRemoveUserFromGroupApiResponse"/>?&gt;</returns>
+        Task<IRemoveUserFromGroupApiResponse?> RemoveUserFromGroupOrDefaultAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Group
@@ -232,10 +232,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
-        /// <param name="oBPv600UpdateGroupRequest">Request body</param>
+        /// <param name="updateGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateGroupApiResponse"/>&gt;</returns>
-        Task<IOBPv600UpdateGroupApiResponse> OBPv600UpdateGroupAsync(string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateGroupApiResponse"/>&gt;</returns>
+        Task<IUpdateGroupApiResponse> UpdateGroupAsync(string groupid, UpdateGroupRequest updateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Group
@@ -244,16 +244,16 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </remarks>
         /// <param name="groupid">The GROUPID identifier</param>
-        /// <param name="oBPv600UpdateGroupRequest">Request body</param>
+        /// <param name="updateGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateGroupApiResponse"/>?&gt;</returns>
-        Task<IOBPv600UpdateGroupApiResponse?> OBPv600UpdateGroupOrDefaultAsync(string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateGroupApiResponse"/>?&gt;</returns>
+        Task<IUpdateGroupApiResponse?> UpdateGroupOrDefaultAsync(string groupid, UpdateGroupRequest updateGroupRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600CreateGroupApiResponse"/>
+    /// The <see cref="ICreateGroupApiResponse"/>
     /// </summary>
-    public interface IOBPv600CreateGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+    public interface ICreateGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetGroups200ResponseGroupsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -269,9 +269,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600DeleteGroupApiResponse"/>
+    /// The <see cref="IDeleteGroupApiResponse"/>
     /// </summary>
-    public interface IOBPv600DeleteGroupApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteGroupApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -287,9 +287,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetGroupApiResponse"/>
+    /// The <see cref="IGetGroupApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+    public interface IGetGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetGroups200ResponseGroupsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -305,9 +305,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600GetGroupsApiResponse"/>
+    /// The <see cref="IGetGroupsApiResponse"/>
     /// </summary>
-    public interface IOBPv600GetGroupsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetGroups200Response?>
+    public interface IGetGroupsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetGroups200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -323,9 +323,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv600UpdateGroupApiResponse"/>
+    /// The <see cref="IUpdateGroupApiResponse"/>
     /// </summary>
-    public interface IOBPv600UpdateGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems?>
+    public interface IUpdateGroupApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetGroups200ResponseGroupsInner?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -348,181 +348,181 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600AddUserToGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnAddUserToGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600AddUserToGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorAddUserToGroup;
 
-        internal void ExecuteOnOBPv600AddUserToGroup(EntitlementApi.OBPv600AddUserToGroupApiResponse apiResponse)
+        internal void ExecuteOnAddUserToGroup(EntitlementApi.AddUserToGroupApiResponse apiResponse)
         {
-            OnOBPv600AddUserToGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnAddUserToGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600AddUserToGroup(Exception exception)
+        internal void ExecuteOnErrorAddUserToGroup(Exception exception)
         {
-            OnErrorOBPv600AddUserToGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorAddUserToGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600CreateGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600CreateGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateGroup;
 
-        internal void ExecuteOnOBPv600CreateGroup(GroupApi.OBPv600CreateGroupApiResponse apiResponse)
+        internal void ExecuteOnCreateGroup(GroupApi.CreateGroupApiResponse apiResponse)
         {
-            OnOBPv600CreateGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600CreateGroup(Exception exception)
+        internal void ExecuteOnErrorCreateGroup(Exception exception)
         {
-            OnErrorOBPv600CreateGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600DeleteGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600DeleteGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteGroup;
 
-        internal void ExecuteOnOBPv600DeleteGroup(GroupApi.OBPv600DeleteGroupApiResponse apiResponse)
+        internal void ExecuteOnDeleteGroup(GroupApi.DeleteGroupApiResponse apiResponse)
         {
-            OnOBPv600DeleteGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600DeleteGroup(Exception exception)
+        internal void ExecuteOnErrorDeleteGroup(Exception exception)
         {
-            OnErrorOBPv600DeleteGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnGetGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetGroup;
 
-        internal void ExecuteOnOBPv600GetGroup(GroupApi.OBPv600GetGroupApiResponse apiResponse)
+        internal void ExecuteOnGetGroup(GroupApi.GetGroupApiResponse apiResponse)
         {
-            OnOBPv600GetGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetGroup(Exception exception)
+        internal void ExecuteOnErrorGetGroup(Exception exception)
         {
-            OnErrorOBPv600GetGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetGroupEntitlements;
+        public event EventHandler<ApiResponseEventArgs>? OnGetGroupEntitlements;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetGroupEntitlements;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetGroupEntitlements;
 
-        internal void ExecuteOnOBPv600GetGroupEntitlements(EntitlementApi.OBPv600GetGroupEntitlementsApiResponse apiResponse)
+        internal void ExecuteOnGetGroupEntitlements(EntitlementApi.GetGroupEntitlementsApiResponse apiResponse)
         {
-            OnOBPv600GetGroupEntitlements?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetGroupEntitlements?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetGroupEntitlements(Exception exception)
+        internal void ExecuteOnErrorGetGroupEntitlements(Exception exception)
         {
-            OnErrorOBPv600GetGroupEntitlements?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetGroupEntitlements?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetGroups;
+        public event EventHandler<ApiResponseEventArgs>? OnGetGroups;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetGroups;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetGroups;
 
-        internal void ExecuteOnOBPv600GetGroups(GroupApi.OBPv600GetGroupsApiResponse apiResponse)
+        internal void ExecuteOnGetGroups(GroupApi.GetGroupsApiResponse apiResponse)
         {
-            OnOBPv600GetGroups?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetGroups?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetGroups(Exception exception)
+        internal void ExecuteOnErrorGetGroups(Exception exception)
         {
-            OnErrorOBPv600GetGroups?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetGroups?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600GetUserGroupMemberships;
+        public event EventHandler<ApiResponseEventArgs>? OnGetUserGroupMemberships;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600GetUserGroupMemberships;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetUserGroupMemberships;
 
-        internal void ExecuteOnOBPv600GetUserGroupMemberships(EntitlementApi.OBPv600GetUserGroupMembershipsApiResponse apiResponse)
+        internal void ExecuteOnGetUserGroupMemberships(EntitlementApi.GetUserGroupMembershipsApiResponse apiResponse)
         {
-            OnOBPv600GetUserGroupMemberships?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetUserGroupMemberships?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600GetUserGroupMemberships(Exception exception)
+        internal void ExecuteOnErrorGetUserGroupMemberships(Exception exception)
         {
-            OnErrorOBPv600GetUserGroupMemberships?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetUserGroupMemberships?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600RemoveUserFromGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnRemoveUserFromGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600RemoveUserFromGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorRemoveUserFromGroup;
 
-        internal void ExecuteOnOBPv600RemoveUserFromGroup(EntitlementApi.OBPv600RemoveUserFromGroupApiResponse apiResponse)
+        internal void ExecuteOnRemoveUserFromGroup(EntitlementApi.RemoveUserFromGroupApiResponse apiResponse)
         {
-            OnOBPv600RemoveUserFromGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnRemoveUserFromGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600RemoveUserFromGroup(Exception exception)
+        internal void ExecuteOnErrorRemoveUserFromGroup(Exception exception)
         {
-            OnErrorOBPv600RemoveUserFromGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorRemoveUserFromGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv600UpdateGroup;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateGroup;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv600UpdateGroup;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateGroup;
 
-        internal void ExecuteOnOBPv600UpdateGroup(GroupApi.OBPv600UpdateGroupApiResponse apiResponse)
+        internal void ExecuteOnUpdateGroup(GroupApi.UpdateGroupApiResponse apiResponse)
         {
-            OnOBPv600UpdateGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateGroup?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv600UpdateGroup(Exception exception)
+        internal void ExecuteOnErrorUpdateGroup(Exception exception)
         {
-            OnErrorOBPv600UpdateGroup?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateGroup?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -580,21 +580,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv600AddUserToGroup(ref string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest);
+        partial void FormatAddUserToGroup(ref string userid, AddUserToGroupRequest addUserToGroupRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
-        /// <param name="oBPv600AddUserToGroupRequest"></param>
+        /// <param name="addUserToGroupRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600AddUserToGroup(string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest)
+        private void ValidateAddUserToGroup(string userid, AddUserToGroupRequest addUserToGroupRequest)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
 
-            if (oBPv600AddUserToGroupRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600AddUserToGroupRequest));
+            if (addUserToGroupRequest == null)
+                throw new ArgumentNullException(nameof(addUserToGroupRequest));
         }
 
         /// <summary>
@@ -602,11 +602,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600AddUserToGroupRequest"></param>
-        private void AfterOBPv600AddUserToGroupDefaultImplementation(IOBPv600AddUserToGroupApiResponse apiResponseLocalVar, string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest)
+        /// <param name="addUserToGroupRequest"></param>
+        private void AfterAddUserToGroupDefaultImplementation(IAddUserToGroupApiResponse apiResponseLocalVar, string userid, AddUserToGroupRequest addUserToGroupRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600AddUserToGroup(ref suppressDefaultLog, apiResponseLocalVar, userid, oBPv600AddUserToGroupRequest);
+            AfterAddUserToGroup(ref suppressDefaultLog, apiResponseLocalVar, userid, addUserToGroupRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -617,8 +617,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600AddUserToGroupRequest"></param>
-        partial void AfterOBPv600AddUserToGroup(ref bool suppressDefaultLog, IOBPv600AddUserToGroupApiResponse apiResponseLocalVar, string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest);
+        /// <param name="addUserToGroupRequest"></param>
+        partial void AfterAddUserToGroup(ref bool suppressDefaultLog, IAddUserToGroupApiResponse apiResponseLocalVar, string userid, AddUserToGroupRequest addUserToGroupRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -627,11 +627,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600AddUserToGroupRequest"></param>
-        private void OnErrorOBPv600AddUserToGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest)
+        /// <param name="addUserToGroupRequest"></param>
+        private void OnErrorAddUserToGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, AddUserToGroupRequest addUserToGroupRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600AddUserToGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, oBPv600AddUserToGroupRequest);
+            OnErrorAddUserToGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, addUserToGroupRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -644,21 +644,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        /// <param name="oBPv600AddUserToGroupRequest"></param>
-        partial void OnErrorOBPv600AddUserToGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest);
+        /// <param name="addUserToGroupRequest"></param>
+        partial void OnErrorAddUserToGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, AddUserToGroupRequest addUserToGroupRequest);
 
         /// <summary>
         /// Grant User Membership to Group Entitlements &lt;p&gt;Grant the User Group Entitlements.&lt;/p&gt; &lt;p&gt;This endpoint creates entitlements for every Role in the Group. If the user&lt;br /&gt; already has a particular role at the same bank, that entitlement is skipped (not duplicated).&lt;/p&gt; &lt;p&gt;Each entitlement created will have:&lt;br /&gt; - group_id set to the group ID&lt;br /&gt; - process set to &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;br /&gt; - target_entitlements: All roles defined in the group (the complete list of entitlements that this group aims to grant)&lt;br /&gt; - entitlements_created: Roles that were newly created as entitlements during this operation&lt;br /&gt; - entitlements_skipped: Roles that the user already possessed, so no new entitlement was created&lt;/p&gt; &lt;p&gt;Note: target_entitlements &#x3D; entitlements_created + entitlements_skipped&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanAddUserToGroupAtAllBanks (for any group)&lt;br /&gt; - CanAddUserToGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_created&lt;/strong&gt;&lt;/a&gt;: entitlements_created&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;entitlements_skipped&lt;/strong&gt;&lt;/a&gt;: entitlements_skipped&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;target_entitlements&lt;/strong&gt;&lt;/a&gt;: target_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600AddUserToGroupRequest">Request body</param>
+        /// <param name="addUserToGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600AddUserToGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600AddUserToGroupApiResponse?> OBPv600AddUserToGroupOrDefaultAsync(string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddUserToGroupApiResponse"/>&gt;</returns>
+        public async Task<IAddUserToGroupApiResponse?> AddUserToGroupOrDefaultAsync(string userid, AddUserToGroupRequest addUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600AddUserToGroupAsync(userid, oBPv600AddUserToGroupRequest, cancellationToken).ConfigureAwait(false);
+                return await AddUserToGroupAsync(userid, addUserToGroupRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -671,18 +671,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
-        /// <param name="oBPv600AddUserToGroupRequest">Request body</param>
+        /// <param name="addUserToGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600AddUserToGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600AddUserToGroupApiResponse> OBPv600AddUserToGroupAsync(string userid, OBPv600AddUserToGroupRequest oBPv600AddUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IAddUserToGroupApiResponse"/>&gt;</returns>
+        public async Task<IAddUserToGroupApiResponse> AddUserToGroupAsync(string userid, AddUserToGroupRequest addUserToGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600AddUserToGroup(userid, oBPv600AddUserToGroupRequest);
+                ValidateAddUserToGroup(userid, addUserToGroupRequest);
 
-                FormatOBPv600AddUserToGroup(ref userid, oBPv600AddUserToGroupRequest);
+                FormatAddUserToGroup(ref userid, addUserToGroupRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -694,16 +694,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/users/{userid}/group-entitlements");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Buserid%7D", Uri.EscapeDataString(userid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600AddUserToGroupRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (addUserToGroupRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600AddUserToGroupRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(addUserToGroupRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -739,8 +739,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<EntitlementApi.OBPv600AddUserToGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.OBPv600AddUserToGroupApiResponse>();
-                        EntitlementApi.OBPv600AddUserToGroupApiResponse apiResponseLocalVar;
+                        ILogger<EntitlementApi.AddUserToGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.AddUserToGroupApiResponse>();
+                        EntitlementApi.AddUserToGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -751,9 +751,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600AddUserToGroupDefaultImplementation(apiResponseLocalVar, userid, oBPv600AddUserToGroupRequest);
+                        AfterAddUserToGroupDefaultImplementation(apiResponseLocalVar, userid, addUserToGroupRequest);
 
-                        Events.ExecuteOnOBPv600AddUserToGroup(apiResponseLocalVar);
+                        Events.ExecuteOnAddUserToGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -765,34 +765,34 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600AddUserToGroupDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements", uriBuilderLocalVar.Path, userid, oBPv600AddUserToGroupRequest);
-                Events.ExecuteOnErrorOBPv600AddUserToGroup(e);
+                OnErrorAddUserToGroupDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements", uriBuilderLocalVar.Path, userid, addUserToGroupRequest);
+                Events.ExecuteOnErrorAddUserToGroup(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600CreateGroup(OBPv600CreateGroupRequest oBPv600CreateGroupRequest);
+        partial void FormatCreateGroup(CreateGroupRequest createGroupRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv600CreateGroupRequest"></param>
+        /// <param name="createGroupRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600CreateGroup(OBPv600CreateGroupRequest oBPv600CreateGroupRequest)
+        private void ValidateCreateGroup(CreateGroupRequest createGroupRequest)
         {
-            if (oBPv600CreateGroupRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600CreateGroupRequest));
+            if (createGroupRequest == null)
+                throw new ArgumentNullException(nameof(createGroupRequest));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateGroupRequest"></param>
-        private void AfterOBPv600CreateGroupDefaultImplementation(IOBPv600CreateGroupApiResponse apiResponseLocalVar, OBPv600CreateGroupRequest oBPv600CreateGroupRequest)
+        /// <param name="createGroupRequest"></param>
+        private void AfterCreateGroupDefaultImplementation(ICreateGroupApiResponse apiResponseLocalVar, CreateGroupRequest createGroupRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600CreateGroup(ref suppressDefaultLog, apiResponseLocalVar, oBPv600CreateGroupRequest);
+            AfterCreateGroup(ref suppressDefaultLog, apiResponseLocalVar, createGroupRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -802,8 +802,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv600CreateGroupRequest"></param>
-        partial void AfterOBPv600CreateGroup(ref bool suppressDefaultLog, IOBPv600CreateGroupApiResponse apiResponseLocalVar, OBPv600CreateGroupRequest oBPv600CreateGroupRequest);
+        /// <param name="createGroupRequest"></param>
+        partial void AfterCreateGroup(ref bool suppressDefaultLog, ICreateGroupApiResponse apiResponseLocalVar, CreateGroupRequest createGroupRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -811,11 +811,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateGroupRequest"></param>
-        private void OnErrorOBPv600CreateGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateGroupRequest oBPv600CreateGroupRequest)
+        /// <param name="createGroupRequest"></param>
+        private void OnErrorCreateGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateGroupRequest createGroupRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600CreateGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv600CreateGroupRequest);
+            OnErrorCreateGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createGroupRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -827,20 +827,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv600CreateGroupRequest"></param>
-        partial void OnErrorOBPv600CreateGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv600CreateGroupRequest oBPv600CreateGroupRequest);
+        /// <param name="createGroupRequest"></param>
+        partial void OnErrorCreateGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, CreateGroupRequest createGroupRequest);
 
         /// <summary>
         /// Create Group &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv600CreateGroupRequest">Request body</param>
+        /// <param name="createGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateGroupApiResponse?> OBPv600CreateGroupOrDefaultAsync(OBPv600CreateGroupRequest oBPv600CreateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateGroupApiResponse"/>&gt;</returns>
+        public async Task<ICreateGroupApiResponse?> CreateGroupOrDefaultAsync(CreateGroupRequest createGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600CreateGroupAsync(oBPv600CreateGroupRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateGroupAsync(createGroupRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -852,18 +852,18 @@ namespace OpenBankProject.Api
         /// Create Group &lt;p&gt;Create a new group of roles.&lt;/p&gt; &lt;p&gt;Groups can be either:&lt;br /&gt; - System-level (bank_id &#x3D; null) - requires CanCreateGroupAtAllBanks role&lt;br /&gt; - Bank-level (bank_id provided) - requires CanCreateGroupAtOneBank role&lt;/p&gt; &lt;p&gt;A group contains a list of role names that can be assigned together.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv600CreateGroupRequest">Request body</param>
+        /// <param name="createGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600CreateGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600CreateGroupApiResponse> OBPv600CreateGroupAsync(OBPv600CreateGroupRequest oBPv600CreateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateGroupApiResponse"/>&gt;</returns>
+        public async Task<ICreateGroupApiResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600CreateGroup(oBPv600CreateGroupRequest);
+                ValidateCreateGroup(createGroupRequest);
 
-                FormatOBPv600CreateGroup(oBPv600CreateGroupRequest);
+                FormatCreateGroup(createGroupRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -874,16 +874,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v6.0.0/management/groups"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/groups");
 
-                    httpRequestMessageLocalVar.Content = (oBPv600CreateGroupRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createGroupRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600CreateGroupRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createGroupRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -919,8 +919,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600CreateGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600CreateGroupApiResponse>();
-                        OBPv600CreateGroupApiResponse apiResponseLocalVar;
+                        ILogger<CreateGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateGroupApiResponse>();
+                        CreateGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -931,9 +931,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600CreateGroupDefaultImplementation(apiResponseLocalVar, oBPv600CreateGroupRequest);
+                        AfterCreateGroupDefaultImplementation(apiResponseLocalVar, createGroupRequest);
 
-                        Events.ExecuteOnOBPv600CreateGroup(apiResponseLocalVar);
+                        Events.ExecuteOnCreateGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -945,24 +945,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600CreateGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups", uriBuilderLocalVar.Path, oBPv600CreateGroupRequest);
-                Events.ExecuteOnErrorOBPv600CreateGroup(e);
+                OnErrorCreateGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups", uriBuilderLocalVar.Path, createGroupRequest);
+                Events.ExecuteOnErrorCreateGroup(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600CreateGroupApiResponse"/>
+        /// The <see cref="CreateGroupApiResponse"/>
         /// </summary>
-        public partial class OBPv600CreateGroupApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600CreateGroupApiResponse
+        public partial class CreateGroupApiResponse : OpenBankProject.Client.ApiResponse, ICreateGroupApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600CreateGroupApiResponse> Logger { get; }
+            public ILogger<CreateGroupApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateGroupApiResponse"/>
+            /// The <see cref="CreateGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -971,14 +971,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateGroupApiResponse(ILogger<OBPv600CreateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateGroupApiResponse(ILogger<CreateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600CreateGroupApiResponse"/>
+            /// The <see cref="CreateGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -987,7 +987,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600CreateGroupApiResponse(ILogger<OBPv600CreateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateGroupApiResponse(ILogger<CreateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1005,11 +1005,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? Ok()
+            public OpenBankProject.Model.GetGroups200ResponseGroupsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetGroups200ResponseGroupsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1018,7 +1018,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetGroups200ResponseGroupsInner? result)
             {
                 result = null;
 
@@ -1050,14 +1050,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600DeleteGroup(ref string groupid);
+        partial void FormatDeleteGroup(ref string groupid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="groupid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600DeleteGroup(string groupid)
+        private void ValidateDeleteGroup(string groupid)
         {
             if (groupid == null)
                 throw new ArgumentNullException(nameof(groupid));
@@ -1068,10 +1068,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        private void AfterOBPv600DeleteGroupDefaultImplementation(IOBPv600DeleteGroupApiResponse apiResponseLocalVar, string groupid)
+        private void AfterDeleteGroupDefaultImplementation(IDeleteGroupApiResponse apiResponseLocalVar, string groupid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600DeleteGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid);
+            AfterDeleteGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1082,7 +1082,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void AfterOBPv600DeleteGroup(ref bool suppressDefaultLog, IOBPv600DeleteGroupApiResponse apiResponseLocalVar, string groupid);
+        partial void AfterDeleteGroup(ref bool suppressDefaultLog, IDeleteGroupApiResponse apiResponseLocalVar, string groupid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1091,10 +1091,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        private void OnErrorOBPv600DeleteGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
+        private void OnErrorDeleteGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600DeleteGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
+            OnErrorDeleteGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1107,19 +1107,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void OnErrorOBPv600DeleteGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
+        partial void OnErrorDeleteGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
 
         /// <summary>
         /// Delete Group &lt;p&gt;Delete a Group.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanDeleteGroupAtAllBanks (for any group)&lt;br /&gt; - CanDeleteGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
         /// </summary>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteGroupApiResponse?> OBPv600DeleteGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteGroupApiResponse"/>&gt;</returns>
+        public async Task<IDeleteGroupApiResponse?> DeleteGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600DeleteGroupAsync(groupid, cancellationToken).ConfigureAwait(false);
+                return await DeleteGroupAsync(groupid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1133,16 +1133,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600DeleteGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600DeleteGroupApiResponse> OBPv600DeleteGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteGroupApiResponse"/>&gt;</returns>
+        public async Task<IDeleteGroupApiResponse> DeleteGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600DeleteGroup(groupid);
+                ValidateDeleteGroup(groupid);
 
-                FormatOBPv600DeleteGroup(ref groupid);
+                FormatDeleteGroup(ref groupid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1159,7 +1159,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1177,8 +1177,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600DeleteGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600DeleteGroupApiResponse>();
-                        OBPv600DeleteGroupApiResponse apiResponseLocalVar;
+                        ILogger<DeleteGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteGroupApiResponse>();
+                        DeleteGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1189,9 +1189,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600DeleteGroupDefaultImplementation(apiResponseLocalVar, groupid);
+                        AfterDeleteGroupDefaultImplementation(apiResponseLocalVar, groupid);
 
-                        Events.ExecuteOnOBPv600DeleteGroup(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1203,24 +1203,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600DeleteGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid);
-                Events.ExecuteOnErrorOBPv600DeleteGroup(e);
+                OnErrorDeleteGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid);
+                Events.ExecuteOnErrorDeleteGroup(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600DeleteGroupApiResponse"/>
+        /// The <see cref="DeleteGroupApiResponse"/>
         /// </summary>
-        public partial class OBPv600DeleteGroupApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600DeleteGroupApiResponse
+        public partial class DeleteGroupApiResponse : OpenBankProject.Client.ApiResponse, IDeleteGroupApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600DeleteGroupApiResponse> Logger { get; }
+            public ILogger<DeleteGroupApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteGroupApiResponse"/>
+            /// The <see cref="DeleteGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1229,14 +1229,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteGroupApiResponse(ILogger<OBPv600DeleteGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteGroupApiResponse(ILogger<DeleteGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600DeleteGroupApiResponse"/>
+            /// The <see cref="DeleteGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1245,7 +1245,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600DeleteGroupApiResponse(ILogger<OBPv600DeleteGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteGroupApiResponse(ILogger<DeleteGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1276,14 +1276,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetGroup(ref string groupid);
+        partial void FormatGetGroup(ref string groupid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="groupid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetGroup(string groupid)
+        private void ValidateGetGroup(string groupid)
         {
             if (groupid == null)
                 throw new ArgumentNullException(nameof(groupid));
@@ -1294,10 +1294,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        private void AfterOBPv600GetGroupDefaultImplementation(IOBPv600GetGroupApiResponse apiResponseLocalVar, string groupid)
+        private void AfterGetGroupDefaultImplementation(IGetGroupApiResponse apiResponseLocalVar, string groupid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid);
+            AfterGetGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1308,7 +1308,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void AfterOBPv600GetGroup(ref bool suppressDefaultLog, IOBPv600GetGroupApiResponse apiResponseLocalVar, string groupid);
+        partial void AfterGetGroup(ref bool suppressDefaultLog, IGetGroupApiResponse apiResponseLocalVar, string groupid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1317,10 +1317,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        private void OnErrorOBPv600GetGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
+        private void OnErrorGetGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
+            OnErrorGetGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1333,19 +1333,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void OnErrorOBPv600GetGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
+        partial void OnErrorGetGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
 
         /// <summary>
         /// Get Group &lt;p&gt;Get a group by its ID.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any group)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupApiResponse?> OBPv600GetGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupApiResponse?> GetGroupOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetGroupAsync(groupid, cancellationToken).ConfigureAwait(false);
+                return await GetGroupAsync(groupid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1359,16 +1359,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupApiResponse> OBPv600GetGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupApiResponse> GetGroupAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetGroup(groupid);
+                ValidateGetGroup(groupid);
 
-                FormatOBPv600GetGroup(ref groupid);
+                FormatGetGroup(ref groupid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1385,7 +1385,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1412,8 +1412,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetGroupApiResponse>();
-                        OBPv600GetGroupApiResponse apiResponseLocalVar;
+                        ILogger<GetGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetGroupApiResponse>();
+                        GetGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1424,9 +1424,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetGroupDefaultImplementation(apiResponseLocalVar, groupid);
+                        AfterGetGroupDefaultImplementation(apiResponseLocalVar, groupid);
 
-                        Events.ExecuteOnOBPv600GetGroup(apiResponseLocalVar);
+                        Events.ExecuteOnGetGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1438,24 +1438,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid);
-                Events.ExecuteOnErrorOBPv600GetGroup(e);
+                OnErrorGetGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid);
+                Events.ExecuteOnErrorGetGroup(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetGroupApiResponse"/>
+        /// The <see cref="GetGroupApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetGroupApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetGroupApiResponse
+        public partial class GetGroupApiResponse : OpenBankProject.Client.ApiResponse, IGetGroupApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetGroupApiResponse> Logger { get; }
+            public ILogger<GetGroupApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetGroupApiResponse"/>
+            /// The <see cref="GetGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1464,14 +1464,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetGroupApiResponse(ILogger<OBPv600GetGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetGroupApiResponse(ILogger<GetGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetGroupApiResponse"/>
+            /// The <see cref="GetGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1480,7 +1480,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetGroupApiResponse(ILogger<OBPv600GetGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetGroupApiResponse(ILogger<GetGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1498,11 +1498,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? Ok()
+            public OpenBankProject.Model.GetGroups200ResponseGroupsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetGroups200ResponseGroupsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1511,7 +1511,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetGroups200ResponseGroupsInner? result)
             {
                 result = null;
 
@@ -1543,14 +1543,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetGroupEntitlements(ref string groupid);
+        partial void FormatGetGroupEntitlements(ref string groupid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="groupid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetGroupEntitlements(string groupid)
+        private void ValidateGetGroupEntitlements(string groupid)
         {
             if (groupid == null)
                 throw new ArgumentNullException(nameof(groupid));
@@ -1561,10 +1561,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        private void AfterOBPv600GetGroupEntitlementsDefaultImplementation(IOBPv600GetGroupEntitlementsApiResponse apiResponseLocalVar, string groupid)
+        private void AfterGetGroupEntitlementsDefaultImplementation(IGetGroupEntitlementsApiResponse apiResponseLocalVar, string groupid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetGroupEntitlements(ref suppressDefaultLog, apiResponseLocalVar, groupid);
+            AfterGetGroupEntitlements(ref suppressDefaultLog, apiResponseLocalVar, groupid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1575,7 +1575,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void AfterOBPv600GetGroupEntitlements(ref bool suppressDefaultLog, IOBPv600GetGroupEntitlementsApiResponse apiResponseLocalVar, string groupid);
+        partial void AfterGetGroupEntitlements(ref bool suppressDefaultLog, IGetGroupEntitlementsApiResponse apiResponseLocalVar, string groupid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1584,10 +1584,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        private void OnErrorOBPv600GetGroupEntitlementsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
+        private void OnErrorGetGroupEntitlementsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetGroupEntitlements(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
+            OnErrorGetGroupEntitlements(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1600,19 +1600,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        partial void OnErrorOBPv600GetGroupEntitlements(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
+        partial void OnErrorGetGroupEntitlements(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid);
 
         /// <summary>
         /// Get Group Entitlements &lt;p&gt;Get all entitlements that have been granted from a specific group.&lt;/p&gt; &lt;p&gt;This returns all entitlements where the group_id matches the specified GROUP_ID.&lt;/p&gt; &lt;p&gt;Requires:&lt;br /&gt; - CanGetEntitlementsForAnyBank&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlement_id\&quot;&gt;&lt;strong&gt;entitlement_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#entitlements\&quot;&gt;&lt;strong&gt;entitlements&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#role_name\&quot;&gt;&lt;strong&gt;role_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;group_id&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;process&lt;/a&gt;: obp.getBank&lt;/p&gt; 
         /// </summary>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupEntitlementsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupEntitlementsApiResponse?> OBPv600GetGroupEntitlementsOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupEntitlementsApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupEntitlementsApiResponse?> GetGroupEntitlementsOrDefaultAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetGroupEntitlementsAsync(groupid, cancellationToken).ConfigureAwait(false);
+                return await GetGroupEntitlementsAsync(groupid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1626,16 +1626,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupEntitlementsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupEntitlementsApiResponse> OBPv600GetGroupEntitlementsAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupEntitlementsApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupEntitlementsApiResponse> GetGroupEntitlementsAsync(string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetGroupEntitlements(groupid);
+                ValidateGetGroupEntitlements(groupid);
 
-                FormatOBPv600GetGroupEntitlements(ref groupid);
+                FormatGetGroupEntitlements(ref groupid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1652,7 +1652,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1679,8 +1679,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<EntitlementApi.OBPv600GetGroupEntitlementsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.OBPv600GetGroupEntitlementsApiResponse>();
-                        EntitlementApi.OBPv600GetGroupEntitlementsApiResponse apiResponseLocalVar;
+                        ILogger<EntitlementApi.GetGroupEntitlementsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.GetGroupEntitlementsApiResponse>();
+                        EntitlementApi.GetGroupEntitlementsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1691,9 +1691,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetGroupEntitlementsDefaultImplementation(apiResponseLocalVar, groupid);
+                        AfterGetGroupEntitlementsDefaultImplementation(apiResponseLocalVar, groupid);
 
-                        Events.ExecuteOnOBPv600GetGroupEntitlements(apiResponseLocalVar);
+                        Events.ExecuteOnGetGroupEntitlements(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1705,8 +1705,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetGroupEntitlementsDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}/entitlements", uriBuilderLocalVar.Path, groupid);
-                Events.ExecuteOnErrorOBPv600GetGroupEntitlements(e);
+                OnErrorGetGroupEntitlementsDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}/entitlements", uriBuilderLocalVar.Path, groupid);
+                Events.ExecuteOnErrorGetGroupEntitlements(e);
                 throw;
             }
         }
@@ -1715,10 +1715,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv600GetGroupsDefaultImplementation(IOBPv600GetGroupsApiResponse apiResponseLocalVar)
+        private void AfterGetGroupsDefaultImplementation(IGetGroupsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetGroups(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetGroups(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1728,7 +1728,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv600GetGroups(ref bool suppressDefaultLog, IOBPv600GetGroupsApiResponse apiResponseLocalVar);
+        partial void AfterGetGroups(ref bool suppressDefaultLog, IGetGroupsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1736,10 +1736,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv600GetGroupsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetGroupsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetGroups(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetGroups(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1751,18 +1751,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv600GetGroups(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetGroups(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get Groups &lt;p&gt;Get all groups. Optionally filter by bank_id.&lt;/p&gt; &lt;p&gt;Query parameters:&lt;br /&gt; - bank_id (optional): Filter groups by bank. Use &amp;quot;null&amp;quot; or omit for system-level groups.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetGroupsAtAllBanks (for any/all groups)&lt;br /&gt; - CanGetGroupsAtOneBank (for groups at specific bank with bank_id parameter)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt;: groups&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupsApiResponse?> OBPv600GetGroupsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupsApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupsApiResponse?> GetGroupsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetGroupsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetGroupsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1775,8 +1775,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetGroupsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetGroupsApiResponse> OBPv600GetGroupsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetGroupsApiResponse"/>&gt;</returns>
+        public async Task<IGetGroupsApiResponse> GetGroupsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1796,7 +1796,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1823,8 +1823,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600GetGroupsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600GetGroupsApiResponse>();
-                        OBPv600GetGroupsApiResponse apiResponseLocalVar;
+                        ILogger<GetGroupsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetGroupsApiResponse>();
+                        GetGroupsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1835,9 +1835,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetGroupsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetGroupsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv600GetGroups(apiResponseLocalVar);
+                        Events.ExecuteOnGetGroups(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1849,24 +1849,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetGroupsDefaultImplementation(e, "/obp/v6.0.0/management/groups", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv600GetGroups(e);
+                OnErrorGetGroupsDefaultImplementation(e, "/obp/v6.0.0/management/groups", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetGroups(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600GetGroupsApiResponse"/>
+        /// The <see cref="GetGroupsApiResponse"/>
         /// </summary>
-        public partial class OBPv600GetGroupsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600GetGroupsApiResponse
+        public partial class GetGroupsApiResponse : OpenBankProject.Client.ApiResponse, IGetGroupsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600GetGroupsApiResponse> Logger { get; }
+            public ILogger<GetGroupsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600GetGroupsApiResponse"/>
+            /// The <see cref="GetGroupsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1875,14 +1875,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetGroupsApiResponse(ILogger<OBPv600GetGroupsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetGroupsApiResponse(ILogger<GetGroupsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600GetGroupsApiResponse"/>
+            /// The <see cref="GetGroupsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1891,7 +1891,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600GetGroupsApiResponse(ILogger<OBPv600GetGroupsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetGroupsApiResponse(ILogger<GetGroupsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1909,11 +1909,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetGroups200Response? Ok()
+            public OpenBankProject.Model.GetGroups200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetGroups200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetGroups200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1922,7 +1922,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetGroups200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetGroups200Response? result)
             {
                 result = null;
 
@@ -1954,14 +1954,14 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv600GetUserGroupMemberships(ref string userid);
+        partial void FormatGetUserGroupMemberships(ref string userid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600GetUserGroupMemberships(string userid)
+        private void ValidateGetUserGroupMemberships(string userid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -1972,10 +1972,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        private void AfterOBPv600GetUserGroupMembershipsDefaultImplementation(IOBPv600GetUserGroupMembershipsApiResponse apiResponseLocalVar, string userid)
+        private void AfterGetUserGroupMembershipsDefaultImplementation(IGetUserGroupMembershipsApiResponse apiResponseLocalVar, string userid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600GetUserGroupMemberships(ref suppressDefaultLog, apiResponseLocalVar, userid);
+            AfterGetUserGroupMemberships(ref suppressDefaultLog, apiResponseLocalVar, userid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1986,7 +1986,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
-        partial void AfterOBPv600GetUserGroupMemberships(ref bool suppressDefaultLog, IOBPv600GetUserGroupMembershipsApiResponse apiResponseLocalVar, string userid);
+        partial void AfterGetUserGroupMemberships(ref bool suppressDefaultLog, IGetUserGroupMembershipsApiResponse apiResponseLocalVar, string userid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1995,10 +1995,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        private void OnErrorOBPv600GetUserGroupMembershipsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
+        private void OnErrorGetUserGroupMembershipsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600GetUserGroupMemberships(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
+            OnErrorGetUserGroupMemberships(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2011,19 +2011,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
-        partial void OnErrorOBPv600GetUserGroupMemberships(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
+        partial void OnErrorGetUserGroupMemberships(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid);
 
         /// <summary>
         /// Get User&#39;s Group Memberships &lt;p&gt;Get all groups a user is a member of.&lt;/p&gt; &lt;p&gt;Returns groups where the user has entitlements with process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;.&lt;/p&gt; &lt;p&gt;The response includes:&lt;br /&gt; - list_of_entitlements: entitlements the user currently has from this group membership&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanGetUserGroupMembershipsAtAllBanks (for any user)&lt;br /&gt; - CanGetUserGroupMembershipsAtOneBank (for users at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_entitlements&lt;/strong&gt;&lt;/a&gt;: group_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_entitlements&lt;/strong&gt;&lt;/a&gt;: list_of_entitlements&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserGroupMembershipsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserGroupMembershipsApiResponse?> OBPv600GetUserGroupMembershipsOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserGroupMembershipsApiResponse"/>&gt;</returns>
+        public async Task<IGetUserGroupMembershipsApiResponse?> GetUserGroupMembershipsOrDefaultAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600GetUserGroupMembershipsAsync(userid, cancellationToken).ConfigureAwait(false);
+                return await GetUserGroupMembershipsAsync(userid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2037,16 +2037,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="userid">The USERID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600GetUserGroupMembershipsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600GetUserGroupMembershipsApiResponse> OBPv600GetUserGroupMembershipsAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetUserGroupMembershipsApiResponse"/>&gt;</returns>
+        public async Task<IGetUserGroupMembershipsApiResponse> GetUserGroupMembershipsAsync(string userid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600GetUserGroupMemberships(userid);
+                ValidateGetUserGroupMemberships(userid);
 
-                FormatOBPv600GetUserGroupMemberships(ref userid);
+                FormatGetUserGroupMemberships(ref userid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2063,7 +2063,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2090,8 +2090,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<EntitlementApi.OBPv600GetUserGroupMembershipsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.OBPv600GetUserGroupMembershipsApiResponse>();
-                        EntitlementApi.OBPv600GetUserGroupMembershipsApiResponse apiResponseLocalVar;
+                        ILogger<EntitlementApi.GetUserGroupMembershipsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.GetUserGroupMembershipsApiResponse>();
+                        EntitlementApi.GetUserGroupMembershipsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2102,9 +2102,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600GetUserGroupMembershipsDefaultImplementation(apiResponseLocalVar, userid);
+                        AfterGetUserGroupMembershipsDefaultImplementation(apiResponseLocalVar, userid);
 
-                        Events.ExecuteOnOBPv600GetUserGroupMemberships(apiResponseLocalVar);
+                        Events.ExecuteOnGetUserGroupMemberships(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2116,13 +2116,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600GetUserGroupMembershipsDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements", uriBuilderLocalVar.Path, userid);
-                Events.ExecuteOnErrorOBPv600GetUserGroupMemberships(e);
+                OnErrorGetUserGroupMembershipsDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements", uriBuilderLocalVar.Path, userid);
+                Events.ExecuteOnErrorGetUserGroupMemberships(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600RemoveUserFromGroup(ref string userid, ref string groupid);
+        partial void FormatRemoveUserFromGroup(ref string userid, ref string groupid);
 
         /// <summary>
         /// Validates the request parameters
@@ -2130,7 +2130,7 @@ namespace OpenBankProject.Api
         /// <param name="userid"></param>
         /// <param name="groupid"></param>
         /// <returns></returns>
-        private void ValidateOBPv600RemoveUserFromGroup(string userid, string groupid)
+        private void ValidateRemoveUserFromGroup(string userid, string groupid)
         {
             if (userid == null)
                 throw new ArgumentNullException(nameof(userid));
@@ -2145,10 +2145,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="groupid"></param>
-        private void AfterOBPv600RemoveUserFromGroupDefaultImplementation(IOBPv600RemoveUserFromGroupApiResponse apiResponseLocalVar, string userid, string groupid)
+        private void AfterRemoveUserFromGroupDefaultImplementation(IRemoveUserFromGroupApiResponse apiResponseLocalVar, string userid, string groupid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600RemoveUserFromGroup(ref suppressDefaultLog, apiResponseLocalVar, userid, groupid);
+            AfterRemoveUserFromGroup(ref suppressDefaultLog, apiResponseLocalVar, userid, groupid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2160,7 +2160,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="groupid"></param>
-        partial void AfterOBPv600RemoveUserFromGroup(ref bool suppressDefaultLog, IOBPv600RemoveUserFromGroupApiResponse apiResponseLocalVar, string userid, string groupid);
+        partial void AfterRemoveUserFromGroup(ref bool suppressDefaultLog, IRemoveUserFromGroupApiResponse apiResponseLocalVar, string userid, string groupid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2170,10 +2170,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="groupid"></param>
-        private void OnErrorOBPv600RemoveUserFromGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string groupid)
+        private void OnErrorRemoveUserFromGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string groupid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600RemoveUserFromGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, groupid);
+            OnErrorRemoveUserFromGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, userid, groupid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2187,7 +2187,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="userid"></param>
         /// <param name="groupid"></param>
-        partial void OnErrorOBPv600RemoveUserFromGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string groupid);
+        partial void OnErrorRemoveUserFromGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string userid, string groupid);
 
         /// <summary>
         /// Remove User from Group &lt;p&gt;Remove a user from a group. This will delete all entitlements that were created by this group membership.&lt;/p&gt; &lt;p&gt;Only removes entitlements with:&lt;br /&gt; - group_id matching GROUP_ID&lt;br /&gt; - process &#x3D; &amp;quot;GROUP_MEMBERSHIP&amp;quot;&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanRemoveUserFromGroupAtAllBanks (for any group)&lt;br /&gt; - CanRemoveUserFromGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User.user_id\&quot;&gt;USER_ID&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -2195,12 +2195,12 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RemoveUserFromGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600RemoveUserFromGroupApiResponse?> OBPv600RemoveUserFromGroupOrDefaultAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IRemoveUserFromGroupApiResponse"/>&gt;</returns>
+        public async Task<IRemoveUserFromGroupApiResponse?> RemoveUserFromGroupOrDefaultAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600RemoveUserFromGroupAsync(userid, groupid, cancellationToken).ConfigureAwait(false);
+                return await RemoveUserFromGroupAsync(userid, groupid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2215,16 +2215,16 @@ namespace OpenBankProject.Api
         /// <param name="userid">The USERID identifier</param>
         /// <param name="groupid">The GROUPID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600RemoveUserFromGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600RemoveUserFromGroupApiResponse> OBPv600RemoveUserFromGroupAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IRemoveUserFromGroupApiResponse"/>&gt;</returns>
+        public async Task<IRemoveUserFromGroupApiResponse> RemoveUserFromGroupAsync(string userid, string groupid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600RemoveUserFromGroup(userid, groupid);
+                ValidateRemoveUserFromGroup(userid, groupid);
 
-                FormatOBPv600RemoveUserFromGroup(ref userid, ref groupid);
+                FormatRemoveUserFromGroup(ref userid, ref groupid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2242,7 +2242,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2260,8 +2260,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<EntitlementApi.OBPv600RemoveUserFromGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.OBPv600RemoveUserFromGroupApiResponse>();
-                        EntitlementApi.OBPv600RemoveUserFromGroupApiResponse apiResponseLocalVar;
+                        ILogger<EntitlementApi.RemoveUserFromGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<EntitlementApi.RemoveUserFromGroupApiResponse>();
+                        EntitlementApi.RemoveUserFromGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2272,9 +2272,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600RemoveUserFromGroupDefaultImplementation(apiResponseLocalVar, userid, groupid);
+                        AfterRemoveUserFromGroupDefaultImplementation(apiResponseLocalVar, userid, groupid);
 
-                        Events.ExecuteOnOBPv600RemoveUserFromGroup(apiResponseLocalVar);
+                        Events.ExecuteOnRemoveUserFromGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2286,27 +2286,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600RemoveUserFromGroupDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements/{groupid}", uriBuilderLocalVar.Path, userid, groupid);
-                Events.ExecuteOnErrorOBPv600RemoveUserFromGroup(e);
+                OnErrorRemoveUserFromGroupDefaultImplementation(e, "/obp/v6.0.0/users/{userid}/group-entitlements/{groupid}", uriBuilderLocalVar.Path, userid, groupid);
+                Events.ExecuteOnErrorRemoveUserFromGroup(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv600UpdateGroup(ref string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest);
+        partial void FormatUpdateGroup(ref string groupid, UpdateGroupRequest updateGroupRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="groupid"></param>
-        /// <param name="oBPv600UpdateGroupRequest"></param>
+        /// <param name="updateGroupRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv600UpdateGroup(string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest)
+        private void ValidateUpdateGroup(string groupid, UpdateGroupRequest updateGroupRequest)
         {
             if (groupid == null)
                 throw new ArgumentNullException(nameof(groupid));
 
-            if (oBPv600UpdateGroupRequest == null)
-                throw new ArgumentNullException(nameof(oBPv600UpdateGroupRequest));
+            if (updateGroupRequest == null)
+                throw new ArgumentNullException(nameof(updateGroupRequest));
         }
 
         /// <summary>
@@ -2314,11 +2314,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        /// <param name="oBPv600UpdateGroupRequest"></param>
-        private void AfterOBPv600UpdateGroupDefaultImplementation(IOBPv600UpdateGroupApiResponse apiResponseLocalVar, string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest)
+        /// <param name="updateGroupRequest"></param>
+        private void AfterUpdateGroupDefaultImplementation(IUpdateGroupApiResponse apiResponseLocalVar, string groupid, UpdateGroupRequest updateGroupRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv600UpdateGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid, oBPv600UpdateGroupRequest);
+            AfterUpdateGroup(ref suppressDefaultLog, apiResponseLocalVar, groupid, updateGroupRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2329,8 +2329,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="groupid"></param>
-        /// <param name="oBPv600UpdateGroupRequest"></param>
-        partial void AfterOBPv600UpdateGroup(ref bool suppressDefaultLog, IOBPv600UpdateGroupApiResponse apiResponseLocalVar, string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest);
+        /// <param name="updateGroupRequest"></param>
+        partial void AfterUpdateGroup(ref bool suppressDefaultLog, IUpdateGroupApiResponse apiResponseLocalVar, string groupid, UpdateGroupRequest updateGroupRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2339,11 +2339,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        /// <param name="oBPv600UpdateGroupRequest"></param>
-        private void OnErrorOBPv600UpdateGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest)
+        /// <param name="updateGroupRequest"></param>
+        private void OnErrorUpdateGroupDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid, UpdateGroupRequest updateGroupRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv600UpdateGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid, oBPv600UpdateGroupRequest);
+            OnErrorUpdateGroup(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, groupid, updateGroupRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2356,21 +2356,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="groupid"></param>
-        /// <param name="oBPv600UpdateGroupRequest"></param>
-        partial void OnErrorOBPv600UpdateGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest);
+        /// <param name="updateGroupRequest"></param>
+        partial void OnErrorUpdateGroup(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string groupid, UpdateGroupRequest updateGroupRequest);
 
         /// <summary>
         /// Update Group &lt;p&gt;Update a group. All fields are optional.&lt;/p&gt; &lt;p&gt;Requires either:&lt;br /&gt; - CanUpdateGroupAtAllBanks (for any group)&lt;br /&gt; - CanUpdateGroupAtOneBank (for groups at specific bank)&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;GROUP_ID&lt;/a&gt;: GROUP_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_description&lt;/strong&gt;&lt;/a&gt;: group_description&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_id&lt;/strong&gt;&lt;/a&gt;: group_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;group_name&lt;/strong&gt;&lt;/a&gt;: group_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_enabled&lt;/strong&gt;&lt;/a&gt;: is_enabled&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;list_of_roles&lt;/strong&gt;&lt;/a&gt;: list_of_roles&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;bank_id&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="groupid">The GROUPID identifier</param>
-        /// <param name="oBPv600UpdateGroupRequest">Request body</param>
+        /// <param name="updateGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateGroupApiResponse?> OBPv600UpdateGroupOrDefaultAsync(string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateGroupApiResponse"/>&gt;</returns>
+        public async Task<IUpdateGroupApiResponse?> UpdateGroupOrDefaultAsync(string groupid, UpdateGroupRequest updateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv600UpdateGroupAsync(groupid, oBPv600UpdateGroupRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateGroupAsync(groupid, updateGroupRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2383,18 +2383,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupid">The GROUPID identifier</param>
-        /// <param name="oBPv600UpdateGroupRequest">Request body</param>
+        /// <param name="updateGroupRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv600UpdateGroupApiResponse"/>&gt;</returns>
-        public async Task<IOBPv600UpdateGroupApiResponse> OBPv600UpdateGroupAsync(string groupid, OBPv600UpdateGroupRequest oBPv600UpdateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateGroupApiResponse"/>&gt;</returns>
+        public async Task<IUpdateGroupApiResponse> UpdateGroupAsync(string groupid, UpdateGroupRequest updateGroupRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv600UpdateGroup(groupid, oBPv600UpdateGroupRequest);
+                ValidateUpdateGroup(groupid, updateGroupRequest);
 
-                FormatOBPv600UpdateGroup(ref groupid, oBPv600UpdateGroupRequest);
+                FormatUpdateGroup(ref groupid, updateGroupRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2406,16 +2406,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v6.0.0/management/groups/{groupid}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bgroupid%7D", Uri.EscapeDataString(groupid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv600UpdateGroupRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateGroupRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv600UpdateGroupRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateGroupRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2451,8 +2451,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv600UpdateGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv600UpdateGroupApiResponse>();
-                        OBPv600UpdateGroupApiResponse apiResponseLocalVar;
+                        ILogger<UpdateGroupApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateGroupApiResponse>();
+                        UpdateGroupApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2463,9 +2463,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv600UpdateGroupDefaultImplementation(apiResponseLocalVar, groupid, oBPv600UpdateGroupRequest);
+                        AfterUpdateGroupDefaultImplementation(apiResponseLocalVar, groupid, updateGroupRequest);
 
-                        Events.ExecuteOnOBPv600UpdateGroup(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateGroup(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2477,24 +2477,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv600UpdateGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid, oBPv600UpdateGroupRequest);
-                Events.ExecuteOnErrorOBPv600UpdateGroup(e);
+                OnErrorUpdateGroupDefaultImplementation(e, "/obp/v6.0.0/management/groups/{groupid}", uriBuilderLocalVar.Path, groupid, updateGroupRequest);
+                Events.ExecuteOnErrorUpdateGroup(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv600UpdateGroupApiResponse"/>
+        /// The <see cref="UpdateGroupApiResponse"/>
         /// </summary>
-        public partial class OBPv600UpdateGroupApiResponse : OpenBankProject.Client.ApiResponse, IOBPv600UpdateGroupApiResponse
+        public partial class UpdateGroupApiResponse : OpenBankProject.Client.ApiResponse, IUpdateGroupApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv600UpdateGroupApiResponse> Logger { get; }
+            public ILogger<UpdateGroupApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv600UpdateGroupApiResponse"/>
+            /// The <see cref="UpdateGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2503,14 +2503,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600UpdateGroupApiResponse(ILogger<OBPv600UpdateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateGroupApiResponse(ILogger<UpdateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv600UpdateGroupApiResponse"/>
+            /// The <see cref="UpdateGroupApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2519,7 +2519,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv600UpdateGroupApiResponse(ILogger<OBPv600UpdateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateGroupApiResponse(ILogger<UpdateGroupApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2537,11 +2537,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? Ok()
+            public OpenBankProject.Model.GetGroups200ResponseGroupsInner? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetGroups200ResponseGroupsInner>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2550,7 +2550,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv600GetGroups200ResponsePropertiesGroupsItems? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetGroups200ResponseGroupsInner? result)
             {
                 result = null;
 

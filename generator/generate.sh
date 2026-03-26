@@ -4,8 +4,8 @@
 #
 # Prerequisites:
 #   - OpenAPI Generator CLI installed (https://openapi-generator.tech/docs/installation)
-#   - The OpenAPI spec must exist at openapi-spec/obp-openapi.json
-#     (run fetch-spec.sh first)
+#   - The OpenAPI spec must exist at openapi-spec/obp-openapi-simplified.json
+#     (run fetch-spec.sh first, which also runs simplify-spec.py)
 #
 # Usage:
 #   ./generate.sh [language]    # Generate one: python, java, csharp, typescript, rust, golang, scala, swift, kotlin, php, ruby, dart
@@ -15,7 +15,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="${SCRIPT_DIR}/.."
-SPEC_FILE="${ROOT_DIR}/openapi-spec/obp-openapi.json"
+SPEC_FILE="${ROOT_DIR}/openapi-spec/obp-openapi-simplified.json"
 
 if [ ! -f "${SPEC_FILE}" ]; then
   echo "Error: OpenAPI spec not found at ${SPEC_FILE}"

@@ -1,24 +1,24 @@
 # EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400CreateBankLevelEndpointMapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**oBPv400CreateEndpointMapping**](EndpointMappingApi.md#oBPv400CreateEndpointMapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**oBPv400DeleteBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400DeleteBankLevelEndpointMapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**oBPv400DeleteEndpointMapping**](EndpointMappingApi.md#oBPv400DeleteEndpointMapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**oBPv400GetAllBankLevelEndpointMappings**](EndpointMappingApi.md#oBPv400GetAllBankLevelEndpointMappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**oBPv400GetAllEndpointMappings**](EndpointMappingApi.md#oBPv400GetAllEndpointMappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**oBPv400GetBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400GetBankLevelEndpointMapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**oBPv400GetEndpointMapping**](EndpointMappingApi.md#oBPv400GetEndpointMapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**oBPv400UpdateBankLevelEndpointMapping**](EndpointMappingApi.md#oBPv400UpdateBankLevelEndpointMapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**oBPv400UpdateEndpointMapping**](EndpointMappingApi.md#oBPv400UpdateEndpointMapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**createBankLevelEndpointMapping**](EndpointMappingApi.md#createBankLevelEndpointMapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**createEndpointMapping**](EndpointMappingApi.md#createEndpointMapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**deleteBankLevelEndpointMapping**](EndpointMappingApi.md#deleteBankLevelEndpointMapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**deleteEndpointMapping**](EndpointMappingApi.md#deleteEndpointMapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**getAllBankLevelEndpointMappings**](EndpointMappingApi.md#getAllBankLevelEndpointMappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**getAllEndpointMappings**](EndpointMappingApi.md#getAllEndpointMappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**getBankLevelEndpointMapping**](EndpointMappingApi.md#getBankLevelEndpointMapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**getEndpointMapping**](EndpointMappingApi.md#getEndpointMapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**updateBankLevelEndpointMapping**](EndpointMappingApi.md#updateBankLevelEndpointMapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**updateEndpointMapping**](EndpointMappingApi.md#updateEndpointMapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
 
 
-<a id="oBPv400CreateBankLevelEndpointMapping"></a>
-# **oBPv400CreateBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateBankLevelEndpointMapping(bankid, obPv400CreateEndpointMappingRequest)
+<a id="createBankLevelEndpointMapping"></a>
+# **createBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createBankLevelEndpointMapping(bankid, createEndpointMappingRequest)
 
 Create Bank Level Endpoint Mapping
 
@@ -32,15 +32,15 @@ Create Bank Level Endpoint Mapping
 
 val apiInstance = EndpointMappingApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400CreateEndpointMappingRequest : OBPv400CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // OBPv400CreateEndpointMappingRequest | Request body
+val createEndpointMappingRequest : CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // CreateEndpointMappingRequest | Request body
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400CreateBankLevelEndpointMapping(bankid, obPv400CreateEndpointMappingRequest)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.createBankLevelEndpointMapping(bankid, createEndpointMappingRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400CreateBankLevelEndpointMapping")
+    println("4xx response calling EndpointMappingApi#createBankLevelEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400CreateBankLevelEndpointMapping")
+    println("5xx response calling EndpointMappingApi#createBankLevelEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -49,11 +49,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -64,17 +64,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateEndpointMapping"></a>
-# **oBPv400CreateEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest)
+<a id="createEndpointMapping"></a>
+# **createEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner createEndpointMapping(createEndpointMappingRequest)
 
 Create Endpoint Mapping
 
@@ -87,15 +87,15 @@ Create Endpoint Mapping
 //import com.openbankproject.models.*
 
 val apiInstance = EndpointMappingApi()
-val obPv400CreateEndpointMappingRequest : OBPv400CreateEndpointMappingRequest = {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}} // OBPv400CreateEndpointMappingRequest | Request body
+val createEndpointMappingRequest : CreateEndpointMappingRequest = {"type":"object","properties":{"operation_id":{"type":"string"},"request_mapping":{"type":"object","properties":{}},"response_mapping":{"type":"object","properties":{"name":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}},"balance":{"type":"object","properties":{"entity":{"type":"string"},"field":{"type":"string"},"query":{"type":"string"}}}}}}} // CreateEndpointMappingRequest | Request body
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400CreateEndpointMapping(obPv400CreateEndpointMappingRequest)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.createEndpointMapping(createEndpointMappingRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400CreateEndpointMapping")
+    println("4xx response calling EndpointMappingApi#createEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400CreateEndpointMapping")
+    println("5xx response calling EndpointMappingApi#createEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -103,11 +103,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -118,17 +118,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteBankLevelEndpointMapping"></a>
-# **oBPv400DeleteBankLevelEndpointMapping**
-> oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid)
+<a id="deleteBankLevelEndpointMapping"></a>
+# **deleteBankLevelEndpointMapping**
+> deleteBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -144,12 +144,12 @@ val apiInstance = EndpointMappingApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
 try {
-    apiInstance.oBPv400DeleteBankLevelEndpointMapping(bankid, endpointmappingid)
+    apiInstance.deleteBankLevelEndpointMapping(bankid, endpointmappingid)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400DeleteBankLevelEndpointMapping")
+    println("4xx response calling EndpointMappingApi#deleteBankLevelEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400DeleteBankLevelEndpointMapping")
+    println("5xx response calling EndpointMappingApi#deleteBankLevelEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -173,17 +173,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteEndpointMapping"></a>
-# **oBPv400DeleteEndpointMapping**
-> oBPv400DeleteEndpointMapping(endpointmappingid)
+<a id="deleteEndpointMapping"></a>
+# **deleteEndpointMapping**
+> deleteEndpointMapping(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -198,12 +198,12 @@ Delete Endpoint Mapping
 val apiInstance = EndpointMappingApi()
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
 try {
-    apiInstance.oBPv400DeleteEndpointMapping(endpointmappingid)
+    apiInstance.deleteEndpointMapping(endpointmappingid)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400DeleteEndpointMapping")
+    println("4xx response calling EndpointMappingApi#deleteEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400DeleteEndpointMapping")
+    println("5xx response calling EndpointMappingApi#deleteEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -226,17 +226,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetAllBankLevelEndpointMappings"></a>
-# **oBPv400GetAllBankLevelEndpointMappings**
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllBankLevelEndpointMappings(bankid)
+<a id="getAllBankLevelEndpointMappings"></a>
+# **getAllBankLevelEndpointMappings**
+> GetAllEndpointMappings200Response getAllBankLevelEndpointMappings(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -251,13 +251,13 @@ Get all Bank Level Endpoint Mappings
 val apiInstance = EndpointMappingApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetAllEndpointMappings200Response = apiInstance.oBPv400GetAllBankLevelEndpointMappings(bankid)
+    val result : GetAllEndpointMappings200Response = apiInstance.getAllBankLevelEndpointMappings(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400GetAllBankLevelEndpointMappings")
+    println("4xx response calling EndpointMappingApi#getAllBankLevelEndpointMappings")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400GetAllBankLevelEndpointMappings")
+    println("5xx response calling EndpointMappingApi#getAllBankLevelEndpointMappings")
     e.printStackTrace()
 }
 ```
@@ -269,7 +269,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -280,17 +280,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAllEndpointMappings"></a>
-# **oBPv400GetAllEndpointMappings**
-> OBPv400GetAllEndpointMappings200Response oBPv400GetAllEndpointMappings()
+<a id="getAllEndpointMappings"></a>
+# **getAllEndpointMappings**
+> GetAllEndpointMappings200Response getAllEndpointMappings()
 
 Get all Endpoint Mappings
 
@@ -304,13 +304,13 @@ Get all Endpoint Mappings
 
 val apiInstance = EndpointMappingApi()
 try {
-    val result : OBPv400GetAllEndpointMappings200Response = apiInstance.oBPv400GetAllEndpointMappings()
+    val result : GetAllEndpointMappings200Response = apiInstance.getAllEndpointMappings()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400GetAllEndpointMappings")
+    println("4xx response calling EndpointMappingApi#getAllEndpointMappings")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400GetAllEndpointMappings")
+    println("5xx response calling EndpointMappingApi#getAllEndpointMappings")
     e.printStackTrace()
 }
 ```
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -331,17 +331,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetBankLevelEndpointMapping"></a>
-# **oBPv400GetBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid)
+<a id="getBankLevelEndpointMapping"></a>
+# **getBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getBankLevelEndpointMapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -357,13 +357,13 @@ val apiInstance = EndpointMappingApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400GetBankLevelEndpointMapping(bankid, endpointmappingid)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.getBankLevelEndpointMapping(bankid, endpointmappingid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400GetBankLevelEndpointMapping")
+    println("4xx response calling EndpointMappingApi#getBankLevelEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400GetBankLevelEndpointMapping")
+    println("5xx response calling EndpointMappingApi#getBankLevelEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -376,7 +376,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -387,17 +387,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetEndpointMapping"></a>
-# **oBPv400GetEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400GetEndpointMapping(endpointmappingid)
+<a id="getEndpointMapping"></a>
+# **getEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner getEndpointMapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -412,13 +412,13 @@ Get Endpoint Mapping by Id
 val apiInstance = EndpointMappingApi()
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400GetEndpointMapping(endpointmappingid)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.getEndpointMapping(endpointmappingid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400GetEndpointMapping")
+    println("4xx response calling EndpointMappingApi#getEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400GetEndpointMapping")
+    println("5xx response calling EndpointMappingApi#getEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -430,7 +430,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -441,17 +441,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateBankLevelEndpointMapping"></a>
-# **oBPv400UpdateBankLevelEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest)
+<a id="updateBankLevelEndpointMapping"></a>
+# **updateBankLevelEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest)
 
 Update Bank Level Endpoint Mapping
 
@@ -466,15 +466,15 @@ Update Bank Level Endpoint Mapping
 val apiInstance = EndpointMappingApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
-val obPv400CreateEndpointMappingRequest : OBPv400CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // OBPv400CreateEndpointMappingRequest | Request body
+val createEndpointMappingRequest : CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // CreateEndpointMappingRequest | Request body
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400UpdateBankLevelEndpointMapping(bankid, endpointmappingid, obPv400CreateEndpointMappingRequest)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.updateBankLevelEndpointMapping(bankid, endpointmappingid, createEndpointMappingRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400UpdateBankLevelEndpointMapping")
+    println("4xx response calling EndpointMappingApi#updateBankLevelEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400UpdateBankLevelEndpointMapping")
+    println("5xx response calling EndpointMappingApi#updateBankLevelEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -484,11 +484,11 @@ try {
 | **endpointmappingid** | **kotlin.String**| The ENDPOINTMAPPINGID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -499,17 +499,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400UpdateEndpointMapping"></a>
-# **oBPv400UpdateEndpointMapping**
-> OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems oBPv400UpdateEndpointMapping(endpointmappingid, obPv400CreateEndpointMappingRequest)
+<a id="updateEndpointMapping"></a>
+# **updateEndpointMapping**
+> GetAllEndpointMappings200ResponseEndpointMappingsInner updateEndpointMapping(endpointmappingid, createEndpointMappingRequest)
 
 Update Endpoint Mapping
 
@@ -523,15 +523,15 @@ Update Endpoint Mapping
 
 val apiInstance = EndpointMappingApi()
 val endpointmappingid : kotlin.String = endpointmappingid_example // kotlin.String | The ENDPOINTMAPPINGID identifier
-val obPv400CreateEndpointMappingRequest : OBPv400CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // OBPv400CreateEndpointMappingRequest | Request body
+val createEndpointMappingRequest : CreateEndpointMappingRequest = {type=object, properties={operation_id={type=string}, request_mapping={type=object, properties={}}, response_mapping={type=object, properties={name={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}, balance={type=object, properties={entity={type=string}, field={type=string}, query={type=string}}}}}}} // CreateEndpointMappingRequest | Request body
 try {
-    val result : OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems = apiInstance.oBPv400UpdateEndpointMapping(endpointmappingid, obPv400CreateEndpointMappingRequest)
+    val result : GetAllEndpointMappings200ResponseEndpointMappingsInner = apiInstance.updateEndpointMapping(endpointmappingid, createEndpointMappingRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling EndpointMappingApi#oBPv400UpdateEndpointMapping")
+    println("4xx response calling EndpointMappingApi#updateEndpointMapping")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling EndpointMappingApi#oBPv400UpdateEndpointMapping")
+    println("5xx response calling EndpointMappingApi#updateEndpointMapping")
     e.printStackTrace()
 }
 ```
@@ -540,11 +540,11 @@ try {
 | **endpointmappingid** | **kotlin.String**| The ENDPOINTMAPPINGID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateEndpointMappingRequest** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md)| Request body | |
+| **createEndpointMappingRequest** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -555,8 +555,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

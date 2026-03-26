@@ -1,20 +1,20 @@
 # \ATMAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510CreateAtmAttribute**](ATMAttributeAPI.md#OBPv510CreateAtmAttribute) | **Post** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
-[**OBPv510DeleteAtmAttribute**](ATMAttributeAPI.md#OBPv510DeleteAtmAttribute) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
-[**OBPv510GetAtmAttribute**](ATMAttributeAPI.md#OBPv510GetAtmAttribute) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
-[**OBPv510GetAtmAttributes**](ATMAttributeAPI.md#OBPv510GetAtmAttributes) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
-[**OBPv510UpdateAtmAttribute**](ATMAttributeAPI.md#OBPv510UpdateAtmAttribute) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
+[**CreateAtmAttribute**](ATMAttributeAPI.md#CreateAtmAttribute) | **Post** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Create ATM Attribute
+[**DeleteAtmAttribute**](ATMAttributeAPI.md#DeleteAtmAttribute) | **Delete** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Delete ATM Attribute
+[**GetAtmAttribute**](ATMAttributeAPI.md#GetAtmAttribute) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Get ATM Attribute By ATM_ATTRIBUTE_ID
+[**GetAtmAttributes**](ATMAttributeAPI.md#GetAtmAttributes) | **Get** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes | Get ATM Attributes
+[**UpdateAtmAttribute**](ATMAttributeAPI.md#UpdateAtmAttribute) | **Put** /obp/v5.1.0/banks/{bankid}/atms/{atmid}/attributes/{atmattributeid} | Update ATM Attribute
 
 
 
-## OBPv510CreateAtmAttribute
+## CreateAtmAttribute
 
-> OBPv510GetAtmAttribute200Response OBPv510CreateAtmAttribute(ctx, bankid, atmid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> GetAtmAttribute200Response CreateAtmAttribute(ctx, bankid, atmid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Create ATM Attribute
 
@@ -35,17 +35,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	atmid := "atmid_example" // string | The ATMID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAttributeAPI.OBPv510CreateAtmAttribute(context.Background(), bankid, atmid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ATMAttributeAPI.CreateAtmAttribute(context.Background(), bankid, atmid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.OBPv510CreateAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.CreateAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.OBPv510CreateAtmAttribute`: %v\n", resp)
+	// response from `CreateAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.CreateAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -60,18 +60,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -87,9 +87,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510DeleteAtmAttribute
+## DeleteAtmAttribute
 
-> OBPv510DeleteAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
+> DeleteAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
 
 Delete ATM Attribute
 
@@ -114,9 +114,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ATMAttributeAPI.OBPv510DeleteAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
+	r, err := apiClient.ATMAttributeAPI.DeleteAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.OBPv510DeleteAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.DeleteAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510DeleteAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -161,9 +161,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtmAttribute
+## GetAtmAttribute
 
-> OBPv510GetAtmAttribute200Response OBPv510GetAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
+> GetAtmAttribute200Response GetAtmAttribute(ctx, bankid, atmid, atmattributeid).Execute()
 
 Get ATM Attribute By ATM_ATTRIBUTE_ID
 
@@ -188,13 +188,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAttributeAPI.OBPv510GetAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
+	resp, r, err := apiClient.ATMAttributeAPI.GetAtmAttribute(context.Background(), bankid, atmid, atmattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.OBPv510GetAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.GetAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.OBPv510GetAtmAttribute`: %v\n", resp)
+	// response from `GetAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.GetAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 
@@ -237,9 +237,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetAtmAttributes
+## GetAtmAttributes
 
-> OBPv510GetAtmAttributes200Response OBPv510GetAtmAttributes(ctx, bankid, atmid).Execute()
+> GetAtmAttributes200Response GetAtmAttributes(ctx, bankid, atmid).Execute()
 
 Get ATM Attributes
 
@@ -263,13 +263,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAttributeAPI.OBPv510GetAtmAttributes(context.Background(), bankid, atmid).Execute()
+	resp, r, err := apiClient.ATMAttributeAPI.GetAtmAttributes(context.Background(), bankid, atmid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.OBPv510GetAtmAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.GetAtmAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetAtmAttributes`: OBPv510GetAtmAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.OBPv510GetAtmAttributes`: %v\n", resp)
+	// response from `GetAtmAttributes`: GetAtmAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.GetAtmAttributes`: %v\n", resp)
 }
 ```
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetAtmAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAtmAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAtmAttributes200Response**](OBPv510GetAtmAttributes200Response.md)
+[**GetAtmAttributes200Response**](GetAtmAttributes200Response.md)
 
 ### Authorization
 
@@ -310,9 +310,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateAtmAttribute
+## UpdateAtmAttribute
 
-> OBPv510GetAtmAttribute200Response OBPv510UpdateAtmAttribute(ctx, bankid, atmid, atmattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+> GetAtmAttribute200Response UpdateAtmAttribute(ctx, bankid, atmid, atmattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 
 Update ATM Attribute
 
@@ -334,17 +334,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	atmid := "atmid_example" // string | The ATMID identifier
 	atmattributeid := "atmattributeid_example" // string | The ATMATTRIBUTEID identifier
-	oBPv510UpdateAtmAttributeRequest := *openapiclient.NewOBPv510UpdateAtmAttributeRequest("Type_example", *openapiclient.NewOBPv510UpdateAtmAttributeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateAtmAttributeRequest | Request body
+	updateAtmAttributeRequest := *openapiclient.NewUpdateAtmAttributeRequest() // UpdateAtmAttributeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ATMAttributeAPI.OBPv510UpdateAtmAttribute(context.Background(), bankid, atmid, atmattributeid).OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest).Execute()
+	resp, r, err := apiClient.ATMAttributeAPI.UpdateAtmAttribute(context.Background(), bankid, atmid, atmattributeid).UpdateAtmAttributeRequest(updateAtmAttributeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.OBPv510UpdateAtmAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ATMAttributeAPI.UpdateAtmAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateAtmAttribute`: OBPv510GetAtmAttribute200Response
-	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.OBPv510UpdateAtmAttribute`: %v\n", resp)
+	// response from `UpdateAtmAttribute`: GetAtmAttribute200Response
+	fmt.Fprintf(os.Stdout, "Response from `ATMAttributeAPI.UpdateAtmAttribute`: %v\n", resp)
 }
 ```
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateAtmAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAtmAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -368,11 +368,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body | 
+ **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetAtmAttribute200Response**](OBPv510GetAtmAttribute200Response.md)
+[**GetAtmAttribute200Response**](GetAtmAttribute200Response.md)
 
 ### Authorization
 

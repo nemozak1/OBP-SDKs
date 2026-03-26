@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_endpoint_mapping_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_endpoint_mappings200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_endpoint_mappings200_response_properties_endpoint_mappings_items.dart';
+import 'package:obp_dart/src/model/create_endpoint_mapping_request.dart';
+import 'package:obp_dart/src/model/get_all_endpoint_mappings200_response.dart';
+import 'package:obp_dart/src/model/get_all_endpoint_mappings200_response_endpoint_mappings_inner.dart';
 
 class EndpointMappingApi {
 
@@ -26,7 +26,7 @@ class EndpointMappingApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400CreateEndpointMappingRequest] - Request body
+  /// * [createEndpointMappingRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,11 +34,11 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400CreateBankLevelEndpointMapping({ 
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> createBankLevelEndpointMapping({ 
     required String bankid,
-    required OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest,
+    required CreateEndpointMappingRequest createEndpointMappingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class EndpointMappingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateEndpointMappingRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateEndpointMappingRequest, specifiedType: _type);
+      const _type = FullType(CreateEndpointMappingRequest);
+      _bodyData = _serializers.serialize(createEndpointMappingRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -137,7 +137,7 @@ class EndpointMappingApi {
   /// &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400CreateEndpointMappingRequest] - Request body
+  /// * [createEndpointMappingRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -145,10 +145,10 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400CreateEndpointMapping({ 
-    required OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest,
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> createEndpointMapping({ 
+    required CreateEndpointMappingRequest createEndpointMappingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -175,7 +175,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -188,8 +188,8 @@ class EndpointMappingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateEndpointMappingRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateEndpointMappingRequest, specifiedType: _type);
+      const _type = FullType(CreateEndpointMappingRequest);
+      _bodyData = _serializers.serialize(createEndpointMappingRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -212,14 +212,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -231,7 +231,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -258,7 +258,7 @@ class EndpointMappingApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteBankLevelEndpointMapping({ 
+  Future<Response<void>> deleteBankLevelEndpointMapping({ 
     required String bankid,
     required String endpointmappingid,
     CancelToken? cancelToken,
@@ -287,7 +287,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -321,7 +321,7 @@ class EndpointMappingApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteEndpointMapping({ 
+  Future<Response<void>> deleteEndpointMapping({ 
     required String endpointmappingid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -349,7 +349,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -381,9 +381,9 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200Response>> oBPv400GetAllBankLevelEndpointMappings({ 
+  Future<Response<GetAllEndpointMappings200Response>> getAllBankLevelEndpointMappings({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -411,7 +411,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -428,14 +428,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200Response? _responseData;
+    GetAllEndpointMappings200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200Response),
-      ) as OBPv400GetAllEndpointMappings200Response;
+        specifiedType: const FullType(GetAllEndpointMappings200Response),
+      ) as GetAllEndpointMappings200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -447,7 +447,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200Response>(
+    return Response<GetAllEndpointMappings200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -470,9 +470,9 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200Response>> oBPv400GetAllEndpointMappings({ 
+  Future<Response<GetAllEndpointMappings200Response>> getAllEndpointMappings({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -499,7 +499,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -516,14 +516,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200Response? _responseData;
+    GetAllEndpointMappings200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200Response),
-      ) as OBPv400GetAllEndpointMappings200Response;
+        specifiedType: const FullType(GetAllEndpointMappings200Response),
+      ) as GetAllEndpointMappings200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -535,7 +535,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200Response>(
+    return Response<GetAllEndpointMappings200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -560,9 +560,9 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400GetBankLevelEndpointMapping({ 
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> getBankLevelEndpointMapping({ 
     required String bankid,
     required String endpointmappingid,
     CancelToken? cancelToken,
@@ -591,7 +591,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -608,14 +608,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -627,7 +627,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -651,9 +651,9 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400GetEndpointMapping({ 
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> getEndpointMapping({ 
     required String endpointmappingid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -681,7 +681,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -698,14 +698,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -717,7 +717,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -735,7 +735,7 @@ class EndpointMappingApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [endpointmappingid] - The ENDPOINTMAPPINGID identifier
-  /// * [oBPv400CreateEndpointMappingRequest] - Request body
+  /// * [createEndpointMappingRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -743,12 +743,12 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400UpdateBankLevelEndpointMapping({ 
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> updateBankLevelEndpointMapping({ 
     required String bankid,
     required String endpointmappingid,
-    required OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest,
+    required CreateEndpointMappingRequest createEndpointMappingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -775,7 +775,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -788,8 +788,8 @@ class EndpointMappingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateEndpointMappingRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateEndpointMappingRequest, specifiedType: _type);
+      const _type = FullType(CreateEndpointMappingRequest);
+      _bodyData = _serializers.serialize(createEndpointMappingRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -812,14 +812,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -831,7 +831,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -848,7 +848,7 @@ class EndpointMappingApi {
   ///
   /// Parameters:
   /// * [endpointmappingid] - The ENDPOINTMAPPINGID identifier
-  /// * [oBPv400CreateEndpointMappingRequest] - Request body
+  /// * [createEndpointMappingRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -856,11 +856,11 @@ class EndpointMappingApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllEndpointMappings200ResponseEndpointMappingsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>> oBPv400UpdateEndpointMapping({ 
+  Future<Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>> updateEndpointMapping({ 
     required String endpointmappingid,
-    required OBPv400CreateEndpointMappingRequest oBPv400CreateEndpointMappingRequest,
+    required CreateEndpointMappingRequest createEndpointMappingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -887,7 +887,7 @@ class EndpointMappingApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -900,8 +900,8 @@ class EndpointMappingApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateEndpointMappingRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateEndpointMappingRequest, specifiedType: _type);
+      const _type = FullType(CreateEndpointMappingRequest);
+      _bodyData = _serializers.serialize(createEndpointMappingRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -924,14 +924,14 @@ class EndpointMappingApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems? _responseData;
+    GetAllEndpointMappings200ResponseEndpointMappingsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems),
-      ) as OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems;
+        specifiedType: const FullType(GetAllEndpointMappings200ResponseEndpointMappingsInner),
+      ) as GetAllEndpointMappings200ResponseEndpointMappingsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -943,7 +943,7 @@ class EndpointMappingApi {
       );
     }
 
-    return Response<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>(
+    return Response<GetAllEndpointMappings200ResponseEndpointMappingsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

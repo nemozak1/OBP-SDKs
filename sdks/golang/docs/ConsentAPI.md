@@ -1,344 +1,43 @@
 # \ConsentAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv310AnswerConsentChallenge**](ConsentAPI.md#OBPv310AnswerConsentChallenge) | **Post** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
-[**OBPv310CreateConsentEmail**](ConsentAPI.md#OBPv310CreateConsentEmail) | **Post** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
-[**OBPv310CreateConsentImplicit**](ConsentAPI.md#OBPv310CreateConsentImplicit) | **Post** /obp/v3.1.0/banks/{bankid}/my/consents/{implicit} | Create Consent (IMPLICIT)
-[**OBPv310CreateConsentSms**](ConsentAPI.md#OBPv310CreateConsentSms) | **Post** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
-[**OBPv400AddConsentUser**](ConsentAPI.md#OBPv400AddConsentUser) | **Put** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
-[**OBPv400GetConsentInfos**](ConsentAPI.md#OBPv400GetConsentInfos) | **Get** /obp/v4.0.0/my/consent-infos | Get My Consents Info
-[**OBPv400GetConsentInfosByBank**](ConsentAPI.md#OBPv400GetConsentInfosByBank) | **Get** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
-[**OBPv400UpdateConsentStatus**](ConsentAPI.md#OBPv400UpdateConsentStatus) | **Put** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
-[**OBPv500CreateConsentByConsentRequestIdEmail**](ConsentAPI.md#OBPv500CreateConsentByConsentRequestIdEmail) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
-[**OBPv500CreateConsentByConsentRequestIdImplicit**](ConsentAPI.md#OBPv500CreateConsentByConsentRequestIdImplicit) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
-[**OBPv500CreateConsentByConsentRequestIdSms**](ConsentAPI.md#OBPv500CreateConsentByConsentRequestIdSms) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
-[**OBPv500CreateConsentRequest**](ConsentAPI.md#OBPv500CreateConsentRequest) | **Post** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
-[**OBPv500GetConsentByConsentRequestId**](ConsentAPI.md#OBPv500GetConsentByConsentRequestId) | **Get** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
-[**OBPv500GetConsentRequest**](ConsentAPI.md#OBPv500GetConsentRequest) | **Get** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
-[**OBPv510CreateConsentImplicit**](ConsentAPI.md#OBPv510CreateConsentImplicit) | **Post** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
-[**OBPv510CreateVRPConsentRequest**](ConsentAPI.md#OBPv510CreateVRPConsentRequest) | **Post** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-[**OBPv510GetConsentByConsentId**](ConsentAPI.md#OBPv510GetConsentByConsentId) | **Get** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
-[**OBPv510GetConsentByConsentIdViaConsumer**](ConsentAPI.md#OBPv510GetConsentByConsentIdViaConsumer) | **Get** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
-[**OBPv510GetConsents**](ConsentAPI.md#OBPv510GetConsents) | **Get** /obp/v5.1.0/management/consents | Get Consents
-[**OBPv510GetConsentsAtBank**](ConsentAPI.md#OBPv510GetConsentsAtBank) | **Get** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
-[**OBPv510GetMyConsents**](ConsentAPI.md#OBPv510GetMyConsents) | **Get** /obp/v5.1.0/my/consents | Get My Consents
-[**OBPv510GetMyConsentsByBank**](ConsentAPI.md#OBPv510GetMyConsentsByBank) | **Get** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
-[**OBPv510MtlsClientCertificateInfo**](ConsentAPI.md#OBPv510MtlsClientCertificateInfo) | **Get** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
-[**OBPv510RevokeConsentAtBank**](ConsentAPI.md#OBPv510RevokeConsentAtBank) | **Delete** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
-[**OBPv510RevokeMyConsent**](ConsentAPI.md#OBPv510RevokeMyConsent) | **Delete** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
-[**OBPv510SelfRevokeConsent**](ConsentAPI.md#OBPv510SelfRevokeConsent) | **Delete** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
-[**OBPv510UpdateConsentAccountAccessByConsentId**](ConsentAPI.md#OBPv510UpdateConsentAccountAccessByConsentId) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
-[**OBPv510UpdateConsentStatusByConsent**](ConsentAPI.md#OBPv510UpdateConsentStatusByConsent) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
-[**OBPv510UpdateConsentUserIdByConsentId**](ConsentAPI.md#OBPv510UpdateConsentUserIdByConsentId) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
-
-
-
-## OBPv310AnswerConsentChallenge
-
-> OBPv510CreateConsentImplicit200Response OBPv310AnswerConsentChallenge(ctx, bankid, consentid).OBPv310AnswerConsentChallengeRequest(oBPv310AnswerConsentChallengeRequest).Execute()
-
-Answer Consent Challenge
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv310AnswerConsentChallengeRequest := *openapiclient.NewOBPv310AnswerConsentChallengeRequest("Type_example", *openapiclient.NewOBPv310AnswerConsentChallengeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv310AnswerConsentChallengeRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv310AnswerConsentChallenge(context.Background(), bankid, consentid).OBPv310AnswerConsentChallengeRequest(oBPv310AnswerConsentChallengeRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv310AnswerConsentChallenge``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310AnswerConsentChallenge`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv310AnswerConsentChallenge`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**consentid** | **string** | The CONSENTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310AnswerConsentChallengeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310AnswerConsentChallengeRequest** | [**OBPv310AnswerConsentChallengeRequest**](OBPv310AnswerConsentChallengeRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310CreateConsentEmail
-
-> OBPv510CreateConsentImplicit200Response OBPv310CreateConsentEmail(ctx, bankid, email).OBPv310CreateConsentEmailRequest(oBPv310CreateConsentEmailRequest).Execute()
-
-Create Consent (EMAIL)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	email := "email_example" // string | The EMAIL identifier
-	oBPv310CreateConsentEmailRequest := *openapiclient.NewOBPv310CreateConsentEmailRequest("Type_example", *openapiclient.NewOBPv310CreateConsentEmailRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccounts("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItems("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , ))), *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties(, ))))) // OBPv310CreateConsentEmailRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv310CreateConsentEmail(context.Background(), bankid, email).OBPv310CreateConsentEmailRequest(oBPv310CreateConsentEmailRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv310CreateConsentEmail``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310CreateConsentEmail`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv310CreateConsentEmail`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**email** | **string** | The EMAIL identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310CreateConsentEmailRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310CreateConsentEmailRequest** | [**OBPv310CreateConsentEmailRequest**](OBPv310CreateConsentEmailRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310CreateConsentImplicit
-
-> OBPv510CreateConsentImplicit200Response OBPv310CreateConsentImplicit(ctx, bankid, implicit).OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest).Execute()
-
-Create Consent (IMPLICIT)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	implicit := "implicit_example" // string | The IMPLICIT identifier
-	oBPv510CreateConsentImplicitRequest := *openapiclient.NewOBPv510CreateConsentImplicitRequest("Type_example", *openapiclient.NewOBPv510CreateConsentImplicitRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccounts("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItems("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , ))), *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties(, ))))) // OBPv510CreateConsentImplicitRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv310CreateConsentImplicit(context.Background(), bankid, implicit).OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv310CreateConsentImplicit``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310CreateConsentImplicit`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv310CreateConsentImplicit`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**implicit** | **string** | The IMPLICIT identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310CreateConsentImplicitRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv510CreateConsentImplicitRequest** | [**OBPv510CreateConsentImplicitRequest**](OBPv510CreateConsentImplicitRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310CreateConsentSms
-
-> OBPv510CreateConsentImplicit200Response OBPv310CreateConsentSms(ctx, bankid, sms).OBPv310CreateConsentSmsRequest(oBPv310CreateConsentSmsRequest).Execute()
-
-Create Consent (SMS)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	sms := "sms_example" // string | The SMS identifier
-	oBPv310CreateConsentSmsRequest := *openapiclient.NewOBPv310CreateConsentSmsRequest("Type_example", *openapiclient.NewOBPv310CreateConsentSmsRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccounts("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItems("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , ))), *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties(, ))))) // OBPv310CreateConsentSmsRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv310CreateConsentSms(context.Background(), bankid, sms).OBPv310CreateConsentSmsRequest(oBPv310CreateConsentSmsRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv310CreateConsentSms``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310CreateConsentSms`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv310CreateConsentSms`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**sms** | **string** | The SMS identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310CreateConsentSmsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **oBPv310CreateConsentSmsRequest** | [**OBPv310CreateConsentSmsRequest**](OBPv310CreateConsentSmsRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400AddConsentUser
-
-> OBPv510CreateConsentImplicit200Response OBPv400AddConsentUser(ctx, bankid, consentid).OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest).Execute()
+[**AddConsentUser**](ConsentAPI.md#AddConsentUser) | **Put** /obp/v4.0.0/banks/{bankid}/consents/{consentid}/user-update-request | Add User to a Consent
+[**AnswerConsentChallenge**](ConsentAPI.md#AnswerConsentChallenge) | **Post** /obp/v3.1.0/banks/{bankid}/consents/{consentid}/challenge | Answer Consent Challenge
+[**CreateConsentByConsentRequestIdEmail**](ConsentAPI.md#CreateConsentByConsentRequestIdEmail) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{email}/consents | Create Consent By CONSENT_REQUEST_ID (EMAIL)
+[**CreateConsentByConsentRequestIdImplicit**](ConsentAPI.md#CreateConsentByConsentRequestIdImplicit) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{implicit}/consents | Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
+[**CreateConsentByConsentRequestIdSms**](ConsentAPI.md#CreateConsentByConsentRequestIdSms) | **Post** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/{sms}/consents | Create Consent By CONSENT_REQUEST_ID (SMS)
+[**CreateConsentEmail**](ConsentAPI.md#CreateConsentEmail) | **Post** /obp/v3.1.0/banks/{bankid}/my/consents/{email} | Create Consent (EMAIL)
+[**CreateConsentImplicit**](ConsentAPI.md#CreateConsentImplicit) | **Post** /obp/v5.1.0/my/consents/{implicit} | Create Consent (IMPLICIT)
+[**CreateConsentRequest**](ConsentAPI.md#CreateConsentRequest) | **Post** /obp/v5.0.0/consumer/consent-requests | Create Consent Request
+[**CreateConsentSms**](ConsentAPI.md#CreateConsentSms) | **Post** /obp/v3.1.0/banks/{bankid}/my/consents/{sms} | Create Consent (SMS)
+[**CreateVRPConsentRequest**](ConsentAPI.md#CreateVRPConsentRequest) | **Post** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+[**GetConsentByConsentId**](ConsentAPI.md#GetConsentByConsentId) | **Get** /obp/v5.1.0/user/current/consents/{consentid} | Get Consent By Consent Id via User
+[**GetConsentByConsentIdViaConsumer**](ConsentAPI.md#GetConsentByConsentIdViaConsumer) | **Get** /obp/v5.1.0/consumer/current/consents/{consentid} | Get Consent By Consent Id via Consumer
+[**GetConsentByConsentRequestId**](ConsentAPI.md#GetConsentByConsentRequestId) | **Get** /obp/v5.0.0/consumer/consent-requests/{consentrequestid}/consents | Get Consent By Consent Request Id via Consumer
+[**GetConsentInfos**](ConsentAPI.md#GetConsentInfos) | **Get** /obp/v4.0.0/my/consent-infos | Get My Consents Info
+[**GetConsentInfosByBank**](ConsentAPI.md#GetConsentInfosByBank) | **Get** /obp/v4.0.0/banks/{bankid}/my/consent-infos | Get My Consents Info At Bank
+[**GetConsentRequest**](ConsentAPI.md#GetConsentRequest) | **Get** /obp/v5.0.0/consumer/consent-requests/{consentrequestid} | Get Consent Request
+[**GetConsents**](ConsentAPI.md#GetConsents) | **Get** /obp/v5.1.0/management/consents | Get Consents
+[**GetConsentsAtBank**](ConsentAPI.md#GetConsentsAtBank) | **Get** /obp/v5.1.0/management/consents/banks/{bankid} | Get Consents at Bank
+[**GetMyConsents**](ConsentAPI.md#GetMyConsents) | **Get** /obp/v5.1.0/my/consents | Get My Consents
+[**GetMyConsentsByBank**](ConsentAPI.md#GetMyConsentsByBank) | **Get** /obp/v5.1.0/banks/{bankid}/my/consents | Get My Consents at Bank
+[**MtlsClientCertificateInfo**](ConsentAPI.md#MtlsClientCertificateInfo) | **Get** /obp/v5.1.0/my/mtls/certificate/current | Provide client&#39;s certificate info of a current call
+[**RevokeConsentAtBank**](ConsentAPI.md#RevokeConsentAtBank) | **Delete** /obp/v5.1.0/banks/{bankid}/consents/{consentid} | Revoke Consent at Bank
+[**RevokeMyConsent**](ConsentAPI.md#RevokeMyConsent) | **Delete** /obp/v5.1.0/my/consents/{consentid} | Revoke My Consent
+[**SelfRevokeConsent**](ConsentAPI.md#SelfRevokeConsent) | **Delete** /obp/v5.1.0/my/consent/current | Revoke Consent used in the Current Call
+[**UpdateConsentAccountAccessByConsentId**](ConsentAPI.md#UpdateConsentAccountAccessByConsentId) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/account-access | Update Consent Account Access by CONSENT_ID
+[**UpdateConsentStatus**](ConsentAPI.md#UpdateConsentStatus) | **Put** /obp/v4.0.0/banks/{bankid}/consents/{consentid} | Update Consent Status
+[**UpdateConsentStatusByConsent**](ConsentAPI.md#UpdateConsentStatusByConsent) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid} | Update Consent Status by CONSENT_ID
+[**UpdateConsentUserIdByConsentId**](ConsentAPI.md#UpdateConsentUserIdByConsentId) | **Put** /obp/v5.1.0/management/banks/{bankid}/consents/{consentid}/created-by-user | Update Created by User of Consent by CONSENT_ID
+
+
+
+## AddConsentUser
+
+> CreateConsentImplicit200Response AddConsentUser(ctx, bankid, consentid).AddConsentUserRequest(addConsentUserRequest).Execute()
 
 Add User to a Consent
 
@@ -359,17 +58,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv400AddConsentUserRequest := *openapiclient.NewOBPv400AddConsentUserRequest("Type_example", *openapiclient.NewOBPv400AddConsentUserRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400AddConsentUserRequest | Request body
+	addConsentUserRequest := *openapiclient.NewAddConsentUserRequest() // AddConsentUserRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv400AddConsentUser(context.Background(), bankid, consentid).OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.AddConsentUser(context.Background(), bankid, consentid).AddConsentUserRequest(addConsentUserRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv400AddConsentUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.AddConsentUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400AddConsentUser`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv400AddConsentUser`: %v\n", resp)
+	// response from `AddConsentUser`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.AddConsentUser`: %v\n", resp)
 }
 ```
 
@@ -384,18 +83,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400AddConsentUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAddConsentUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400AddConsentUserRequest** | [**OBPv400AddConsentUserRequest**](OBPv400AddConsentUserRequest.md) | Request body | 
+ **addConsentUserRequest** | [**AddConsentUserRequest**](AddConsentUserRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -411,142 +110,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetConsentInfos
+## AnswerConsentChallenge
 
-> OBPv400GetConsentInfos200Response OBPv400GetConsentInfos(ctx).Execute()
+> CreateConsentImplicit200Response AnswerConsentChallenge(ctx, bankid, consentid).AnswerConsentChallengeRequest(answerConsentChallengeRequest).Execute()
 
-Get My Consents Info
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv400GetConsentInfos(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv400GetConsentInfos``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetConsentInfos`: OBPv400GetConsentInfos200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv400GetConsentInfos`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetConsentInfosRequest struct via the builder pattern
-
-
-### Return type
-
-[**OBPv400GetConsentInfos200Response**](OBPv400GetConsentInfos200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400GetConsentInfosByBank
-
-> OBPv400GetConsentInfos200Response OBPv400GetConsentInfosByBank(ctx, bankid).Execute()
-
-Get My Consents Info At Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv400GetConsentInfosByBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv400GetConsentInfosByBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400GetConsentInfosByBank`: OBPv400GetConsentInfos200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv400GetConsentInfosByBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400GetConsentInfosByBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv400GetConsentInfos200Response**](OBPv400GetConsentInfos200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400UpdateConsentStatus
-
-> OBPv510CreateConsentImplicit200Response OBPv400UpdateConsentStatus(ctx, bankid, consentid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
-
-Update Consent Status
+Answer Consent Challenge
 
 
 
@@ -565,17 +133,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv510UpdateTransactionRequestStatusRequest := *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateTransactionRequestStatusRequest | Request body
+	answerConsentChallengeRequest := *openapiclient.NewAnswerConsentChallengeRequest() // AnswerConsentChallengeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv400UpdateConsentStatus(context.Background(), bankid, consentid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.AnswerConsentChallenge(context.Background(), bankid, consentid).AnswerConsentChallengeRequest(answerConsentChallengeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv400UpdateConsentStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.AnswerConsentChallenge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateConsentStatus`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv400UpdateConsentStatus`: %v\n", resp)
+	// response from `AnswerConsentChallenge`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.AnswerConsentChallenge`: %v\n", resp)
 }
 ```
 
@@ -590,18 +158,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateConsentStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAnswerConsentChallengeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateTransactionRequestStatusRequest** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md) | Request body | 
+ **answerConsentChallengeRequest** | [**AnswerConsentChallengeRequest**](AnswerConsentChallengeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -617,9 +185,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv500CreateConsentByConsentRequestIdEmail
+## CreateConsentByConsentRequestIdEmail
 
-> OBPv500GetConsentByConsentRequestId200Response OBPv500CreateConsentByConsentRequestIdEmail(ctx, consentrequestid, email).Execute()
+> GetConsentByConsentRequestId200Response CreateConsentByConsentRequestIdEmail(ctx, consentrequestid, email).Execute()
 
 Create Consent By CONSENT_REQUEST_ID (EMAIL)
 
@@ -643,13 +211,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500CreateConsentByConsentRequestIdEmail(context.Background(), consentrequestid, email).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateConsentByConsentRequestIdEmail(context.Background(), consentrequestid, email).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500CreateConsentByConsentRequestIdEmail``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentByConsentRequestIdEmail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500CreateConsentByConsentRequestIdEmail`: OBPv500GetConsentByConsentRequestId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500CreateConsentByConsentRequestIdEmail`: %v\n", resp)
+	// response from `CreateConsentByConsentRequestIdEmail`: GetConsentByConsentRequestId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentByConsentRequestIdEmail`: %v\n", resp)
 }
 ```
 
@@ -664,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500CreateConsentByConsentRequestIdEmailRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsentByConsentRequestIdEmailRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -674,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -690,9 +258,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv500CreateConsentByConsentRequestIdImplicit
+## CreateConsentByConsentRequestIdImplicit
 
-> OBPv500GetConsentByConsentRequestId200Response OBPv500CreateConsentByConsentRequestIdImplicit(ctx, consentrequestid, implicit).Execute()
+> GetConsentByConsentRequestId200Response CreateConsentByConsentRequestIdImplicit(ctx, consentrequestid, implicit).Execute()
 
 Create Consent By CONSENT_REQUEST_ID (IMPLICIT)
 
@@ -716,13 +284,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500CreateConsentByConsentRequestIdImplicit(context.Background(), consentrequestid, implicit).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateConsentByConsentRequestIdImplicit(context.Background(), consentrequestid, implicit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500CreateConsentByConsentRequestIdImplicit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentByConsentRequestIdImplicit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500CreateConsentByConsentRequestIdImplicit`: OBPv500GetConsentByConsentRequestId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500CreateConsentByConsentRequestIdImplicit`: %v\n", resp)
+	// response from `CreateConsentByConsentRequestIdImplicit`: GetConsentByConsentRequestId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentByConsentRequestIdImplicit`: %v\n", resp)
 }
 ```
 
@@ -737,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500CreateConsentByConsentRequestIdImplicitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsentByConsentRequestIdImplicitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -747,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -763,9 +331,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv500CreateConsentByConsentRequestIdSms
+## CreateConsentByConsentRequestIdSms
 
-> OBPv500GetConsentByConsentRequestId200Response OBPv500CreateConsentByConsentRequestIdSms(ctx, consentrequestid, sms).Execute()
+> GetConsentByConsentRequestId200Response CreateConsentByConsentRequestIdSms(ctx, consentrequestid, sms).Execute()
 
 Create Consent By CONSENT_REQUEST_ID (SMS)
 
@@ -789,13 +357,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500CreateConsentByConsentRequestIdSms(context.Background(), consentrequestid, sms).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateConsentByConsentRequestIdSms(context.Background(), consentrequestid, sms).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500CreateConsentByConsentRequestIdSms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentByConsentRequestIdSms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500CreateConsentByConsentRequestIdSms`: OBPv500GetConsentByConsentRequestId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500CreateConsentByConsentRequestIdSms`: %v\n", resp)
+	// response from `CreateConsentByConsentRequestIdSms`: GetConsentByConsentRequestId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentByConsentRequestIdSms`: %v\n", resp)
 }
 ```
 
@@ -810,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500CreateConsentByConsentRequestIdSmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsentByConsentRequestIdSmsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -820,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -836,11 +404,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv500CreateConsentRequest
+## CreateConsentEmail
 
-> OBPv500GetConsentRequest200Response OBPv500CreateConsentRequest(ctx).OBPv500CreateConsentRequestRequest(oBPv500CreateConsentRequestRequest).Execute()
+> CreateConsentImplicit200Response CreateConsentEmail(ctx, bankid, email).CreateConsentEmailRequest(createConsentEmailRequest).Execute()
 
-Create Consent Request
+Create Consent (EMAIL)
 
 
 
@@ -857,40 +425,49 @@ import (
 )
 
 func main() {
-	oBPv500CreateConsentRequestRequest := *openapiclient.NewOBPv500CreateConsentRequestRequest("Type_example", *openapiclient.NewOBPv500CreateConsentRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccess("Type_example", *openapiclient.NewOBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItems("Type_example", *openapiclient.NewOBPv500GetConsentRequest200ResponsePropertiesPayloadPropertiesAccountAccessItemsProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), ))), , , *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties(, ))))) // OBPv500CreateConsentRequestRequest | Request body
+	bankid := "bankid_example" // string | The BANKID identifier
+	email := "email_example" // string | The EMAIL identifier
+	createConsentEmailRequest := *openapiclient.NewCreateConsentEmailRequest() // CreateConsentEmailRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500CreateConsentRequest(context.Background()).OBPv500CreateConsentRequestRequest(oBPv500CreateConsentRequestRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateConsentEmail(context.Background(), bankid, email).CreateConsentEmailRequest(createConsentEmailRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500CreateConsentRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentEmail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500CreateConsentRequest`: OBPv500GetConsentRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500CreateConsentRequest`: %v\n", resp)
+	// response from `CreateConsentEmail`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentEmail`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**email** | **string** | The EMAIL identifier | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500CreateConsentRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsentEmailRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv500CreateConsentRequestRequest** | [**OBPv500CreateConsentRequestRequest**](OBPv500CreateConsentRequestRequest.md) | Request body | 
+
+
+ **createConsentEmailRequest** | [**CreateConsentEmailRequest**](CreateConsentEmailRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv500GetConsentRequest200Response**](OBPv500GetConsentRequest200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
 
 ### HTTP request headers
 
@@ -902,149 +479,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv500GetConsentByConsentRequestId
+## CreateConsentImplicit
 
-> OBPv500GetConsentByConsentRequestId200Response OBPv500GetConsentByConsentRequestId(ctx, consentrequestid).Execute()
-
-Get Consent By Consent Request Id via Consumer
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	consentrequestid := "consentrequestid_example" // string | The CONSENTREQUESTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500GetConsentByConsentRequestId(context.Background(), consentrequestid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500GetConsentByConsentRequestId``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetConsentByConsentRequestId`: OBPv500GetConsentByConsentRequestId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500GetConsentByConsentRequestId`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**consentrequestid** | **string** | The CONSENTREQUESTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetConsentByConsentRequestIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv500GetConsentRequest
-
-> OBPv500GetConsentRequest200Response OBPv500GetConsentRequest(ctx, consentrequestid).Execute()
-
-Get Consent Request
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	consentrequestid := "consentrequestid_example" // string | The CONSENTREQUESTID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv500GetConsentRequest(context.Background(), consentrequestid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv500GetConsentRequest``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv500GetConsentRequest`: OBPv500GetConsentRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv500GetConsentRequest`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**consentrequestid** | **string** | The CONSENTREQUESTID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv500GetConsentRequestRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv500GetConsentRequest200Response**](OBPv500GetConsentRequest200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateConsentImplicit
-
-> OBPv510CreateConsentImplicit200Response OBPv510CreateConsentImplicit(ctx, implicit).OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest).Execute()
+> CreateConsentImplicit200Response CreateConsentImplicit(ctx, implicit).CreateConsentImplicitRequest(createConsentImplicitRequest).Execute()
 
 Create Consent (IMPLICIT)
 
@@ -1064,17 +501,17 @@ import (
 
 func main() {
 	implicit := "implicit_example" // string | The IMPLICIT identifier
-	oBPv510CreateConsentImplicitRequest := *openapiclient.NewOBPv510CreateConsentImplicitRequest("Type_example", *openapiclient.NewOBPv510CreateConsentImplicitRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccounts("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItems("Type_example", *openapiclient.NewOBPv510GetApiTags200ResponsePropertiesAccountsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , ))), *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlements("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems("Type_example", *openapiclient.NewOBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsProperties(, ))))) // OBPv510CreateConsentImplicitRequest | Request body
+	createConsentImplicitRequest := *openapiclient.NewCreateConsentImplicitRequest() // CreateConsentImplicitRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510CreateConsentImplicit(context.Background(), implicit).OBPv510CreateConsentImplicitRequest(oBPv510CreateConsentImplicitRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateConsentImplicit(context.Background(), implicit).CreateConsentImplicitRequest(createConsentImplicitRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510CreateConsentImplicit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentImplicit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateConsentImplicit`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510CreateConsentImplicit`: %v\n", resp)
+	// response from `CreateConsentImplicit`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentImplicit`: %v\n", resp)
 }
 ```
 
@@ -1088,17 +525,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateConsentImplicitRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConsentImplicitRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv510CreateConsentImplicitRequest** | [**OBPv510CreateConsentImplicitRequest**](OBPv510CreateConsentImplicitRequest.md) | Request body | 
+ **createConsentImplicitRequest** | [**CreateConsentImplicitRequest**](CreateConsentImplicitRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1114,9 +551,150 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510CreateVRPConsentRequest
+## CreateConsentRequest
 
-> OBPv510CreateVRPConsentRequest200Response OBPv510CreateVRPConsentRequest(ctx).OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest).Execute()
+> GetConsentRequest200Response CreateConsentRequest(ctx).CreateConsentRequestRequest(createConsentRequestRequest).Execute()
+
+Create Consent Request
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	createConsentRequestRequest := *openapiclient.NewCreateConsentRequestRequest() // CreateConsentRequestRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.CreateConsentRequest(context.Background()).CreateConsentRequestRequest(createConsentRequestRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateConsentRequest`: GetConsentRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateConsentRequestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createConsentRequestRequest** | [**CreateConsentRequestRequest**](CreateConsentRequestRequest.md) | Request body | 
+
+### Return type
+
+[**GetConsentRequest200Response**](GetConsentRequest200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateConsentSms
+
+> CreateConsentImplicit200Response CreateConsentSms(ctx, bankid, sms).CreateConsentSmsRequest(createConsentSmsRequest).Execute()
+
+Create Consent (SMS)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	sms := "sms_example" // string | The SMS identifier
+	createConsentSmsRequest := *openapiclient.NewCreateConsentSmsRequest() // CreateConsentSmsRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.CreateConsentSms(context.Background(), bankid, sms).CreateConsentSmsRequest(createConsentSmsRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateConsentSms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateConsentSms`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateConsentSms`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**sms** | **string** | The SMS identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateConsentSmsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **createConsentSmsRequest** | [**CreateConsentSmsRequest**](CreateConsentSmsRequest.md) | Request body | 
+
+### Return type
+
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateVRPConsentRequest
+
+> CreateVRPConsentRequest200Response CreateVRPConsentRequest(ctx).CreateVRPConsentRequestRequest(createVRPConsentRequestRequest).Execute()
 
 Create Consent Request VRP
 
@@ -1135,17 +713,17 @@ import (
 )
 
 func main() {
-	oBPv510CreateVRPConsentRequestRequest := *openapiclient.NewOBPv510CreateVRPConsentRequestRequest("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesFromAccount("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )))), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccount("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), , *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties(, , , , , , , )))))) // OBPv510CreateVRPConsentRequestRequest | Request body
+	createVRPConsentRequestRequest := *openapiclient.NewCreateVRPConsentRequestRequest() // CreateVRPConsentRequestRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510CreateVRPConsentRequest(context.Background()).OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.CreateVRPConsentRequest(context.Background()).CreateVRPConsentRequestRequest(createVRPConsentRequestRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510CreateVRPConsentRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.CreateVRPConsentRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateVRPConsentRequest`: OBPv510CreateVRPConsentRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510CreateVRPConsentRequest`: %v\n", resp)
+	// response from `CreateVRPConsentRequest`: CreateVRPConsentRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.CreateVRPConsentRequest`: %v\n", resp)
 }
 ```
 
@@ -1155,20 +733,20 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateVRPConsentRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateVRPConsentRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateVRPConsentRequestRequest** | [**OBPv510CreateVRPConsentRequestRequest**](OBPv510CreateVRPConsentRequestRequest.md) | Request body | 
+ **createVRPConsentRequestRequest** | [**CreateVRPConsentRequestRequest**](CreateVRPConsentRequestRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateVRPConsentRequest200Response**](OBPv510CreateVRPConsentRequest200Response.md)
+[**CreateVRPConsentRequest200Response**](CreateVRPConsentRequest200Response.md)
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
 
 ### HTTP request headers
 
@@ -1180,9 +758,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## OBPv510GetConsentByConsentId
+## GetConsentByConsentId
 
-> OBPv510GetConsentByConsentId200Response OBPv510GetConsentByConsentId(ctx, consentid).Execute()
+> GetConsentByConsentId200Response GetConsentByConsentId(ctx, consentid).Execute()
 
 Get Consent By Consent Id via User
 
@@ -1205,13 +783,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetConsentByConsentId(context.Background(), consentid).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetConsentByConsentId(context.Background(), consentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetConsentByConsentId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentByConsentId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetConsentByConsentId`: OBPv510GetConsentByConsentId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetConsentByConsentId`: %v\n", resp)
+	// response from `GetConsentByConsentId`: GetConsentByConsentId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentByConsentId`: %v\n", resp)
 }
 ```
 
@@ -1225,7 +803,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetConsentByConsentIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConsentByConsentIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1234,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetConsentByConsentId200Response**](OBPv510GetConsentByConsentId200Response.md)
+[**GetConsentByConsentId200Response**](GetConsentByConsentId200Response.md)
 
 ### Authorization
 
@@ -1250,9 +828,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetConsentByConsentIdViaConsumer
+## GetConsentByConsentIdViaConsumer
 
-> OBPv500GetConsentByConsentRequestId200Response OBPv510GetConsentByConsentIdViaConsumer(ctx, consentid).Execute()
+> GetConsentByConsentRequestId200Response GetConsentByConsentIdViaConsumer(ctx, consentid).Execute()
 
 Get Consent By Consent Id via Consumer
 
@@ -1275,13 +853,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetConsentByConsentIdViaConsumer(context.Background(), consentid).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetConsentByConsentIdViaConsumer(context.Background(), consentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetConsentByConsentIdViaConsumer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentByConsentIdViaConsumer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetConsentByConsentIdViaConsumer`: OBPv500GetConsentByConsentRequestId200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetConsentByConsentIdViaConsumer`: %v\n", resp)
+	// response from `GetConsentByConsentIdViaConsumer`: GetConsentByConsentRequestId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentByConsentIdViaConsumer`: %v\n", resp)
 }
 ```
 
@@ -1295,7 +873,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetConsentByConsentIdViaConsumerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConsentByConsentIdViaConsumerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1304,7 +882,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv500GetConsentByConsentRequestId200Response**](OBPv500GetConsentByConsentRequestId200Response.md)
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
 
 ### Authorization
 
@@ -1320,9 +898,280 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetConsents
+## GetConsentByConsentRequestId
 
-> OBPv510GetConsents200Response OBPv510GetConsents(ctx).Execute()
+> GetConsentByConsentRequestId200Response GetConsentByConsentRequestId(ctx, consentrequestid).Execute()
+
+Get Consent By Consent Request Id via Consumer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	consentrequestid := "consentrequestid_example" // string | The CONSENTREQUESTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.GetConsentByConsentRequestId(context.Background(), consentrequestid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentByConsentRequestId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConsentByConsentRequestId`: GetConsentByConsentRequestId200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentByConsentRequestId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**consentrequestid** | **string** | The CONSENTREQUESTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConsentByConsentRequestIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetConsentByConsentRequestId200Response**](GetConsentByConsentRequestId200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConsentInfos
+
+> GetConsentInfos200Response GetConsentInfos(ctx).Execute()
+
+Get My Consents Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.GetConsentInfos(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentInfos``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConsentInfos`: GetConsentInfos200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentInfos`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConsentInfosRequest struct via the builder pattern
+
+
+### Return type
+
+[**GetConsentInfos200Response**](GetConsentInfos200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConsentInfosByBank
+
+> GetConsentInfos200Response GetConsentInfosByBank(ctx, bankid).Execute()
+
+Get My Consents Info At Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.GetConsentInfosByBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentInfosByBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConsentInfosByBank`: GetConsentInfos200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentInfosByBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConsentInfosByBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetConsentInfos200Response**](GetConsentInfos200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConsentRequest
+
+> GetConsentRequest200Response GetConsentRequest(ctx, consentrequestid).Execute()
+
+Get Consent Request
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	consentrequestid := "consentrequestid_example" // string | The CONSENTREQUESTID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.GetConsentRequest(context.Background(), consentrequestid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConsentRequest`: GetConsentRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**consentrequestid** | **string** | The CONSENTREQUESTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConsentRequestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetConsentRequest200Response**](GetConsentRequest200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConsents
+
+> GetConsents200Response GetConsents(ctx).Execute()
 
 Get Consents
 
@@ -1344,13 +1193,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetConsents(context.Background()).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetConsents(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetConsents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetConsents`: OBPv510GetConsents200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetConsents`: %v\n", resp)
+	// response from `GetConsents`: GetConsents200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsents`: %v\n", resp)
 }
 ```
 
@@ -1360,12 +1209,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetConsentsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConsentsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv510GetConsents200Response**](OBPv510GetConsents200Response.md)
+[**GetConsents200Response**](GetConsents200Response.md)
 
 ### Authorization
 
@@ -1381,9 +1230,9 @@ Other parameters are passed through a pointer to a apiOBPv510GetConsentsRequest 
 [[Back to README]](../README.md)
 
 
-## OBPv510GetConsentsAtBank
+## GetConsentsAtBank
 
-> OBPv510GetConsents200Response OBPv510GetConsentsAtBank(ctx, bankid).Execute()
+> GetConsents200Response GetConsentsAtBank(ctx, bankid).Execute()
 
 Get Consents at Bank
 
@@ -1406,13 +1255,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetConsentsAtBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetConsentsAtBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetConsentsAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetConsentsAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetConsentsAtBank`: OBPv510GetConsents200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetConsentsAtBank`: %v\n", resp)
+	// response from `GetConsentsAtBank`: GetConsents200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetConsentsAtBank`: %v\n", resp)
 }
 ```
 
@@ -1426,7 +1275,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetConsentsAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetConsentsAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1435,7 +1284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetConsents200Response**](OBPv510GetConsents200Response.md)
+[**GetConsents200Response**](GetConsents200Response.md)
 
 ### Authorization
 
@@ -1451,9 +1300,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetMyConsents
+## GetMyConsents
 
-> OBPv510GetMyConsentsByBank200Response OBPv510GetMyConsents(ctx).Execute()
+> GetMyConsentsByBank200Response GetMyConsents(ctx).Execute()
 
 Get My Consents
 
@@ -1475,13 +1324,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetMyConsents(context.Background()).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetMyConsents(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetMyConsents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetMyConsents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetMyConsents`: OBPv510GetMyConsentsByBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetMyConsents`: %v\n", resp)
+	// response from `GetMyConsents`: GetMyConsentsByBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetMyConsents`: %v\n", resp)
 }
 ```
 
@@ -1491,12 +1340,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetMyConsentsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMyConsentsRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv510GetMyConsentsByBank200Response**](OBPv510GetMyConsentsByBank200Response.md)
+[**GetMyConsentsByBank200Response**](GetMyConsentsByBank200Response.md)
 
 ### Authorization
 
@@ -1512,9 +1361,9 @@ Other parameters are passed through a pointer to a apiOBPv510GetMyConsentsReques
 [[Back to README]](../README.md)
 
 
-## OBPv510GetMyConsentsByBank
+## GetMyConsentsByBank
 
-> OBPv510GetMyConsentsByBank200Response OBPv510GetMyConsentsByBank(ctx, bankid).Execute()
+> GetMyConsentsByBank200Response GetMyConsentsByBank(ctx, bankid).Execute()
 
 Get My Consents at Bank
 
@@ -1537,13 +1386,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510GetMyConsentsByBank(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.ConsentAPI.GetMyConsentsByBank(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510GetMyConsentsByBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.GetMyConsentsByBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetMyConsentsByBank`: OBPv510GetMyConsentsByBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510GetMyConsentsByBank`: %v\n", resp)
+	// response from `GetMyConsentsByBank`: GetMyConsentsByBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.GetMyConsentsByBank`: %v\n", resp)
 }
 ```
 
@@ -1557,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetMyConsentsByBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMyConsentsByBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1566,7 +1415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetMyConsentsByBank200Response**](OBPv510GetMyConsentsByBank200Response.md)
+[**GetMyConsentsByBank200Response**](GetMyConsentsByBank200Response.md)
 
 ### Authorization
 
@@ -1582,9 +1431,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510MtlsClientCertificateInfo
+## MtlsClientCertificateInfo
 
-> OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo OBPv510MtlsClientCertificateInfo(ctx).Execute()
+> UpdateConsumerName200ResponseCertificateInfo MtlsClientCertificateInfo(ctx).Execute()
 
 Provide client's certificate info of a current call
 
@@ -1606,13 +1455,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510MtlsClientCertificateInfo(context.Background()).Execute()
+	resp, r, err := apiClient.ConsentAPI.MtlsClientCertificateInfo(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510MtlsClientCertificateInfo``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.MtlsClientCertificateInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510MtlsClientCertificateInfo`: OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510MtlsClientCertificateInfo`: %v\n", resp)
+	// response from `MtlsClientCertificateInfo`: UpdateConsumerName200ResponseCertificateInfo
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.MtlsClientCertificateInfo`: %v\n", resp)
 }
 ```
 
@@ -1622,12 +1471,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510MtlsClientCertificateInfoRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMtlsClientCertificateInfoRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo**](OBPv510UpdateConsumerName200ResponsePropertiesCertificateInfo.md)
+[**UpdateConsumerName200ResponseCertificateInfo**](UpdateConsumerName200ResponseCertificateInfo.md)
 
 ### Authorization
 
@@ -1643,9 +1492,9 @@ Other parameters are passed through a pointer to a apiOBPv510MtlsClientCertifica
 [[Back to README]](../README.md)
 
 
-## OBPv510RevokeConsentAtBank
+## RevokeConsentAtBank
 
-> OBPv510CreateConsentImplicit200Response OBPv510RevokeConsentAtBank(ctx, bankid, consentid).Execute()
+> CreateConsentImplicit200Response RevokeConsentAtBank(ctx, bankid, consentid).Execute()
 
 Revoke Consent at Bank
 
@@ -1669,13 +1518,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510RevokeConsentAtBank(context.Background(), bankid, consentid).Execute()
+	resp, r, err := apiClient.ConsentAPI.RevokeConsentAtBank(context.Background(), bankid, consentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510RevokeConsentAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.RevokeConsentAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510RevokeConsentAtBank`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510RevokeConsentAtBank`: %v\n", resp)
+	// response from `RevokeConsentAtBank`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.RevokeConsentAtBank`: %v\n", resp)
 }
 ```
 
@@ -1690,7 +1539,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510RevokeConsentAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRevokeConsentAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1700,7 +1549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1716,9 +1565,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510RevokeMyConsent
+## RevokeMyConsent
 
-> OBPv510CreateConsentImplicit200Response OBPv510RevokeMyConsent(ctx, consentid).Execute()
+> CreateConsentImplicit200Response RevokeMyConsent(ctx, consentid).Execute()
 
 Revoke My Consent
 
@@ -1741,13 +1590,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510RevokeMyConsent(context.Background(), consentid).Execute()
+	resp, r, err := apiClient.ConsentAPI.RevokeMyConsent(context.Background(), consentid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510RevokeMyConsent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.RevokeMyConsent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510RevokeMyConsent`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510RevokeMyConsent`: %v\n", resp)
+	// response from `RevokeMyConsent`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.RevokeMyConsent`: %v\n", resp)
 }
 ```
 
@@ -1761,7 +1610,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510RevokeMyConsentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRevokeMyConsentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1770,7 +1619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1786,9 +1635,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510SelfRevokeConsent
+## SelfRevokeConsent
 
-> OBPv510CreateConsentImplicit200Response OBPv510SelfRevokeConsent(ctx).Execute()
+> CreateConsentImplicit200Response SelfRevokeConsent(ctx).Execute()
 
 Revoke Consent used in the Current Call
 
@@ -1810,13 +1659,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510SelfRevokeConsent(context.Background()).Execute()
+	resp, r, err := apiClient.ConsentAPI.SelfRevokeConsent(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510SelfRevokeConsent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.SelfRevokeConsent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510SelfRevokeConsent`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510SelfRevokeConsent`: %v\n", resp)
+	// response from `SelfRevokeConsent`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.SelfRevokeConsent`: %v\n", resp)
 }
 ```
 
@@ -1826,12 +1675,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510SelfRevokeConsentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSelfRevokeConsentRequest struct via the builder pattern
 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1847,9 +1696,9 @@ Other parameters are passed through a pointer to a apiOBPv510SelfRevokeConsentRe
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateConsentAccountAccessByConsentId
+## UpdateConsentAccountAccessByConsentId
 
-> OBPv510CreateConsentImplicit200Response OBPv510UpdateConsentAccountAccessByConsentId(ctx, bankid, consentid).OBPv510UpdateConsentAccountAccessByConsentIdRequest(oBPv510UpdateConsentAccountAccessByConsentIdRequest).Execute()
+> CreateConsentImplicit200Response UpdateConsentAccountAccessByConsentId(ctx, bankid, consentid).UpdateConsentAccountAccessByConsentIdRequest(updateConsentAccountAccessByConsentIdRequest).Execute()
 
 Update Consent Account Access by CONSENT_ID
 
@@ -1870,17 +1719,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv510UpdateConsentAccountAccessByConsentIdRequest := *openapiclient.NewOBPv510UpdateConsentAccountAccessByConsentIdRequest("Type_example", *openapiclient.NewOBPv510UpdateConsentAccountAccessByConsentIdRequestProperties(*openapiclient.NewOBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccess("Type_example", *openapiclient.NewOBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessProperties(*openapiclient.NewOBPv510UpdateConsentAccountAccessByConsentIdRequestPropertiesAccessPropertiesAccounts("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))))))) // OBPv510UpdateConsentAccountAccessByConsentIdRequest | Request body
+	updateConsentAccountAccessByConsentIdRequest := *openapiclient.NewUpdateConsentAccountAccessByConsentIdRequest() // UpdateConsentAccountAccessByConsentIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510UpdateConsentAccountAccessByConsentId(context.Background(), bankid, consentid).OBPv510UpdateConsentAccountAccessByConsentIdRequest(oBPv510UpdateConsentAccountAccessByConsentIdRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.UpdateConsentAccountAccessByConsentId(context.Background(), bankid, consentid).UpdateConsentAccountAccessByConsentIdRequest(updateConsentAccountAccessByConsentIdRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510UpdateConsentAccountAccessByConsentId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.UpdateConsentAccountAccessByConsentId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateConsentAccountAccessByConsentId`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510UpdateConsentAccountAccessByConsentId`: %v\n", resp)
+	// response from `UpdateConsentAccountAccessByConsentId`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.UpdateConsentAccountAccessByConsentId`: %v\n", resp)
 }
 ```
 
@@ -1895,18 +1744,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateConsentAccountAccessByConsentIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateConsentAccountAccessByConsentIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateConsentAccountAccessByConsentIdRequest** | [**OBPv510UpdateConsentAccountAccessByConsentIdRequest**](OBPv510UpdateConsentAccountAccessByConsentIdRequest.md) | Request body | 
+ **updateConsentAccountAccessByConsentIdRequest** | [**UpdateConsentAccountAccessByConsentIdRequest**](UpdateConsentAccountAccessByConsentIdRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1922,9 +1771,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateConsentStatusByConsent
+## UpdateConsentStatus
 
-> OBPv510CreateConsentImplicit200Response OBPv510UpdateConsentStatusByConsent(ctx, bankid, consentid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+> CreateConsentImplicit200Response UpdateConsentStatus(ctx, bankid, consentid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
+
+Update Consent Status
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	consentid := "consentid_example" // string | The CONSENTID identifier
+	updateTransactionRequestStatusRequest := *openapiclient.NewUpdateTransactionRequestStatusRequest() // UpdateTransactionRequestStatusRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ConsentAPI.UpdateConsentStatus(context.Background(), bankid, consentid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.UpdateConsentStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateConsentStatus`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.UpdateConsentStatus`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**consentid** | **string** | The CONSENTID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateConsentStatusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **updateTransactionRequestStatusRequest** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md) | Request body | 
+
+### Return type
+
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateConsentStatusByConsent
+
+> CreateConsentImplicit200Response UpdateConsentStatusByConsent(ctx, bankid, consentid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 
 Update Consent Status by CONSENT_ID
 
@@ -1945,17 +1869,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv510UpdateTransactionRequestStatusRequest := *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateTransactionRequestStatusRequest | Request body
+	updateTransactionRequestStatusRequest := *openapiclient.NewUpdateTransactionRequestStatusRequest() // UpdateTransactionRequestStatusRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510UpdateConsentStatusByConsent(context.Background(), bankid, consentid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.UpdateConsentStatusByConsent(context.Background(), bankid, consentid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510UpdateConsentStatusByConsent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.UpdateConsentStatusByConsent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateConsentStatusByConsent`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510UpdateConsentStatusByConsent`: %v\n", resp)
+	// response from `UpdateConsentStatusByConsent`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.UpdateConsentStatusByConsent`: %v\n", resp)
 }
 ```
 
@@ -1970,18 +1894,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateConsentStatusByConsentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateConsentStatusByConsentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv510UpdateTransactionRequestStatusRequest** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md) | Request body | 
+ **updateTransactionRequestStatusRequest** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 
@@ -1997,9 +1921,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateConsentUserIdByConsentId
+## UpdateConsentUserIdByConsentId
 
-> OBPv510CreateConsentImplicit200Response OBPv510UpdateConsentUserIdByConsentId(ctx, bankid, consentid).OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest).Execute()
+> CreateConsentImplicit200Response UpdateConsentUserIdByConsentId(ctx, bankid, consentid).AddConsentUserRequest(addConsentUserRequest).Execute()
 
 Update Created by User of Consent by CONSENT_ID
 
@@ -2020,17 +1944,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	consentid := "consentid_example" // string | The CONSENTID identifier
-	oBPv400AddConsentUserRequest := *openapiclient.NewOBPv400AddConsentUserRequest("Type_example", *openapiclient.NewOBPv400AddConsentUserRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400AddConsentUserRequest | Request body
+	addConsentUserRequest := *openapiclient.NewAddConsentUserRequest() // AddConsentUserRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConsentAPI.OBPv510UpdateConsentUserIdByConsentId(context.Background(), bankid, consentid).OBPv400AddConsentUserRequest(oBPv400AddConsentUserRequest).Execute()
+	resp, r, err := apiClient.ConsentAPI.UpdateConsentUserIdByConsentId(context.Background(), bankid, consentid).AddConsentUserRequest(addConsentUserRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.OBPv510UpdateConsentUserIdByConsentId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ConsentAPI.UpdateConsentUserIdByConsentId``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateConsentUserIdByConsentId`: OBPv510CreateConsentImplicit200Response
-	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.OBPv510UpdateConsentUserIdByConsentId`: %v\n", resp)
+	// response from `UpdateConsentUserIdByConsentId`: CreateConsentImplicit200Response
+	fmt.Fprintf(os.Stdout, "Response from `ConsentAPI.UpdateConsentUserIdByConsentId`: %v\n", resp)
 }
 ```
 
@@ -2045,18 +1969,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateConsentUserIdByConsentIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateConsentUserIdByConsentIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400AddConsentUserRequest** | [**OBPv400AddConsentUserRequest**](OBPv400AddConsentUserRequest.md) | Request body | 
+ **addConsentUserRequest** | [**AddConsentUserRequest**](AddConsentUserRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateConsentImplicit200Response**](OBPv510CreateConsentImplicit200Response.md)
+[**CreateConsentImplicit200Response**](CreateConsentImplicit200Response.md)
 
 ### Authorization
 

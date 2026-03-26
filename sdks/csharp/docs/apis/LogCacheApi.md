@@ -1,19 +1,19 @@
 # OpenBankProject.Api.LogCacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv510LogCacheAllEndpoint**](LogCacheApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**OBPv510LogCacheDebugEndpoint**](LogCacheApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**OBPv510LogCacheErrorEndpoint**](LogCacheApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**OBPv510LogCacheInfoEndpoint**](LogCacheApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**OBPv510LogCacheTraceEndpoint**](LogCacheApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**OBPv510LogCacheWarningEndpoint**](LogCacheApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**LogCacheAllEndpoint**](LogCacheApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**LogCacheDebugEndpoint**](LogCacheApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**LogCacheErrorEndpoint**](LogCacheApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**LogCacheInfoEndpoint**](LogCacheApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**LogCacheTraceEndpoint**](LogCacheApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**LogCacheWarningEndpoint**](LogCacheApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
-<a id="obpv510logcacheallendpoint"></a>
-# **OBPv510LogCacheAllEndpoint**
-> void OBPv510LogCacheAllEndpoint ()
+<a id="logcacheallendpoint"></a>
+# **LogCacheAllEndpoint**
+> void LogCacheAllEndpoint ()
 
 Get All Level Log Cache
 
@@ -44,9 +44,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510logcachedebugendpoint"></a>
-# **OBPv510LogCacheDebugEndpoint**
-> void OBPv510LogCacheDebugEndpoint ()
+<a id="logcachedebugendpoint"></a>
+# **LogCacheDebugEndpoint**
+> void LogCacheDebugEndpoint ()
 
 Get Debug Level Log Cache
 
@@ -77,9 +77,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510logcacheerrorendpoint"></a>
-# **OBPv510LogCacheErrorEndpoint**
-> void OBPv510LogCacheErrorEndpoint ()
+<a id="logcacheerrorendpoint"></a>
+# **LogCacheErrorEndpoint**
+> void LogCacheErrorEndpoint ()
 
 Get Error Level Log Cache
 
@@ -110,9 +110,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510logcacheinfoendpoint"></a>
-# **OBPv510LogCacheInfoEndpoint**
-> void OBPv510LogCacheInfoEndpoint ()
+<a id="logcacheinfoendpoint"></a>
+# **LogCacheInfoEndpoint**
+> void LogCacheInfoEndpoint ()
 
 Get Info Level Log Cache
 
@@ -143,9 +143,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510logcachetraceendpoint"></a>
-# **OBPv510LogCacheTraceEndpoint**
-> void OBPv510LogCacheTraceEndpoint ()
+<a id="logcachetraceendpoint"></a>
+# **LogCacheTraceEndpoint**
+> void LogCacheTraceEndpoint ()
 
 Get Trace Level Log Cache
 
@@ -176,9 +176,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv510logcachewarningendpoint"></a>
-# **OBPv510LogCacheWarningEndpoint**
-> void OBPv510LogCacheWarningEndpoint ()
+<a id="logcachewarningendpoint"></a>
+# **LogCacheWarningEndpoint**
+> void LogCacheWarningEndpoint ()
 
 Get Warning Level Log Cache
 

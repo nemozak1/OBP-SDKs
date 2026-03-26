@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -20,51 +20,51 @@ module OpenBankProject
       @api_client = api_client
     end
     # Create Counterparty Limit
-    # <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
+    # <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
-    # @param obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit] Request body
+    # @param create_vrp_consent_request_request_to_account_limit [CreateVRPConsentRequestRequestToAccountLimit] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetCounterpartyLimit200Response]
-    def o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_create_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts)
+    # @return [GetCounterpartyLimit200Response]
+    def create_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts = {})
+      data, _status_code, _headers = create_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts)
       data
     end
 
     # Create Counterparty Limit
-    # &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;https://apiexplorer-ii-sandbox.openbankproject.com//operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
+    # &lt;p&gt;Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.&lt;/p&gt; &lt;p&gt;Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).&lt;/p&gt; &lt;p&gt;For more information on Counterparty Limits, see &lt;a href&#x3D;\&quot;/glossary#Counterparty-Limits\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For an introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;You can automate the process of creating counterparty limits and consents for VRP with this &lt;a href&#x3D;\&quot;http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\&quot;&gt;endpoint&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#counterparty_limit_id\&quot;&gt;&lt;strong&gt;counterparty_limit_id&lt;/strong&gt;&lt;/a&gt;: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_monthly_amount\&quot;&gt;&lt;strong&gt;max_monthly_amount&lt;/strong&gt;&lt;/a&gt;: 10000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_monthly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_monthly_transactions&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_transactions\&quot;&gt;&lt;strong&gt;max_number_of_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_number_of_yearly_transactions\&quot;&gt;&lt;strong&gt;max_number_of_yearly_transactions&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_single_amount\&quot;&gt;&lt;strong&gt;max_single_amount&lt;/strong&gt;&lt;/a&gt;: 1000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_total_amount\&quot;&gt;&lt;strong&gt;max_total_amount&lt;/strong&gt;&lt;/a&gt;: 10000.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#max_yearly_amount\&quot;&gt;&lt;strong&gt;max_yearly_amount&lt;/strong&gt;&lt;/a&gt;: 12000.11&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;view_id&lt;/strong&gt;&lt;/a&gt;: owner&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
-    # @param obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit] Request body
+    # @param create_vrp_consent_request_request_to_account_limit [CreateVRPConsentRequestRequestToAccountLimit] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetCounterpartyLimit200Response, Integer, Hash)>] OBPv510GetCounterpartyLimit200Response data, response status code and response headers
-    def o_bpv5_1_0_create_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts = {})
+    # @return [Array<(GetCounterpartyLimit200Response, Integer, Hash)>] GetCounterpartyLimit200Response data, response status code and response headers
+    def create_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.create_counterparty_limit ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.create_counterparty_limit"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.create_counterparty_limit"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.create_counterparty_limit"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.create_counterparty_limit"
       end
-      # verify the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' is set
-      if @api_client.config.client_side_validation && obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' when calling CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit"
+      # verify the required parameter 'create_vrp_consent_request_request_to_account_limit' is set
+      if @api_client.config.client_side_validation && create_vrp_consent_request_request_to_account_limit.nil?
+        fail ArgumentError, "Missing the required parameter 'create_vrp_consent_request_request_to_account_limit' when calling CounterpartyLimitsApi.create_counterparty_limit"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -86,16 +86,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_vrp_consent_request_request_to_account_limit)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetCounterpartyLimit200Response'
+      return_type = opts[:debug_return_type] || 'GetCounterpartyLimit200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyLimitsApi.o_bpv5_1_0_create_counterparty_limit",
+        :operation => :"CounterpartyLimitsApi.create_counterparty_limit",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -106,7 +106,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#o_bpv5_1_0_create_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#create_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -119,8 +119,8 @@ module OpenBankProject
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_delete_counterparty_limit(bankid, accountid, viewid, counterpartyid, opts = {})
-      o_bpv5_1_0_delete_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
+    def delete_counterparty_limit(bankid, accountid, viewid, counterpartyid, opts = {})
+      delete_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
       nil
     end
 
@@ -132,25 +132,25 @@ module OpenBankProject
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_delete_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
+    def delete_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.delete_counterparty_limit ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.delete_counterparty_limit"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.delete_counterparty_limit"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.delete_counterparty_limit"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.delete_counterparty_limit"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -174,7 +174,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyLimitsApi.o_bpv5_1_0_delete_counterparty_limit",
+        :operation => :"CounterpartyLimitsApi.delete_counterparty_limit",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -185,7 +185,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#o_bpv5_1_0_delete_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#delete_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -197,9 +197,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetCounterpartyLimit200Response]
-    def o_bpv5_1_0_get_counterparty_limit(bankid, accountid, viewid, counterpartyid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
+    # @return [GetCounterpartyLimit200Response]
+    def get_counterparty_limit(bankid, accountid, viewid, counterpartyid, opts = {})
+      data, _status_code, _headers = get_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
       data
     end
 
@@ -210,26 +210,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetCounterpartyLimit200Response, Integer, Hash)>] OBPv510GetCounterpartyLimit200Response data, response status code and response headers
-    def o_bpv5_1_0_get_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
+    # @return [Array<(GetCounterpartyLimit200Response, Integer, Hash)>] GetCounterpartyLimit200Response data, response status code and response headers
+    def get_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.get_counterparty_limit ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.get_counterparty_limit"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.get_counterparty_limit"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.get_counterparty_limit"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.get_counterparty_limit"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -249,13 +249,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetCounterpartyLimit200Response'
+      return_type = opts[:debug_return_type] || 'GetCounterpartyLimit200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit",
+        :operation => :"CounterpartyLimitsApi.get_counterparty_limit",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -266,7 +266,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#o_bpv5_1_0_get_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#get_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -278,9 +278,9 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetCounterpartyLimitStatus200Response]
-    def o_bpv5_1_0_get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_counterparty_limit_status_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
+    # @return [GetCounterpartyLimitStatus200Response]
+    def get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid, opts = {})
+      data, _status_code, _headers = get_counterparty_limit_status_with_http_info(bankid, accountid, viewid, counterpartyid, opts)
       data
     end
 
@@ -291,26 +291,26 @@ module OpenBankProject
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetCounterpartyLimitStatus200Response, Integer, Hash)>] OBPv510GetCounterpartyLimitStatus200Response data, response status code and response headers
-    def o_bpv5_1_0_get_counterparty_limit_status_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
+    # @return [Array<(GetCounterpartyLimitStatus200Response, Integer, Hash)>] GetCounterpartyLimitStatus200Response data, response status code and response headers
+    def get_counterparty_limit_status_with_http_info(bankid, accountid, viewid, counterpartyid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.get_counterparty_limit_status ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.get_counterparty_limit_status"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.get_counterparty_limit_status"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.get_counterparty_limit_status"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.get_counterparty_limit_status"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -330,13 +330,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetCounterpartyLimitStatus200Response'
+      return_type = opts[:debug_return_type] || 'GetCounterpartyLimitStatus200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyLimitsApi.o_bpv5_1_0_get_counterparty_limit_status",
+        :operation => :"CounterpartyLimitsApi.get_counterparty_limit_status",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -347,7 +347,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#o_bpv5_1_0_get_counterparty_limit_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#get_counterparty_limit_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -358,11 +358,11 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
-    # @param obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit] Request body
+    # @param create_vrp_consent_request_request_to_account_limit [CreateVRPConsentRequestRequestToAccountLimit] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetCounterpartyLimit200Response]
-    def o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_update_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts)
+    # @return [GetCounterpartyLimit200Response]
+    def update_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts = {})
+      data, _status_code, _headers = update_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts)
       data
     end
 
@@ -372,32 +372,32 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param viewid [String] The VIEWID identifier
     # @param counterpartyid [String] The COUNTERPARTYID identifier
-    # @param obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit [OBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit] Request body
+    # @param create_vrp_consent_request_request_to_account_limit [CreateVRPConsentRequestRequestToAccountLimit] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetCounterpartyLimit200Response, Integer, Hash)>] OBPv510GetCounterpartyLimit200Response data, response status code and response headers
-    def o_bpv5_1_0_update_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit, opts = {})
+    # @return [Array<(GetCounterpartyLimit200Response, Integer, Hash)>] GetCounterpartyLimit200Response data, response status code and response headers
+    def update_counterparty_limit_with_http_info(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit ...'
+        @api_client.config.logger.debug 'Calling API: CounterpartyLimitsApi.update_counterparty_limit ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CounterpartyLimitsApi.update_counterparty_limit"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling CounterpartyLimitsApi.update_counterparty_limit"
       end
       # verify the required parameter 'viewid' is set
       if @api_client.config.client_side_validation && viewid.nil?
-        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'viewid' when calling CounterpartyLimitsApi.update_counterparty_limit"
       end
       # verify the required parameter 'counterpartyid' is set
       if @api_client.config.client_side_validation && counterpartyid.nil?
-        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit"
+        fail ArgumentError, "Missing the required parameter 'counterpartyid' when calling CounterpartyLimitsApi.update_counterparty_limit"
       end
-      # verify the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' is set
-      if @api_client.config.client_side_validation && obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit' when calling CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit"
+      # verify the required parameter 'create_vrp_consent_request_request_to_account_limit' is set
+      if @api_client.config.client_side_validation && create_vrp_consent_request_request_to_account_limit.nil?
+        fail ArgumentError, "Missing the required parameter 'create_vrp_consent_request_request_to_account_limit' when calling CounterpartyLimitsApi.update_counterparty_limit"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'viewid' + '}', CGI.escape(viewid.to_s)).sub('{' + 'counterpartyid' + '}', CGI.escape(counterpartyid.to_s))
@@ -419,16 +419,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_create_vrp_consent_request_request_properties_to_account_properties_limit)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_vrp_consent_request_request_to_account_limit)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetCounterpartyLimit200Response'
+      return_type = opts[:debug_return_type] || 'GetCounterpartyLimit200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CounterpartyLimitsApi.o_bpv5_1_0_update_counterparty_limit",
+        :operation => :"CounterpartyLimitsApi.update_counterparty_limit",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -439,7 +439,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#o_bpv5_1_0_update_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CounterpartyLimitsApi#update_counterparty_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

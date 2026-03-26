@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,11 +18,11 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400CreateConnectorMethodRequest;
-import com.openbankproject.model.OBPv400GetAllConnectorMethods200Response;
-import com.openbankproject.model.OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems;
-import com.openbankproject.model.OBPv400UpdateConnectorMethodRequest;
-import com.openbankproject.model.OBPv600GetConnectorMethodNames200Response;
+import com.openbankproject.model.CreateConnectorMethodRequest;
+import com.openbankproject.model.GetAllConnectorMethods200Response;
+import com.openbankproject.model.GetAllConnectorMethods200ResponseConnectorsMethodsInner;
+import com.openbankproject.model.GetConnectorMethodNames200Response;
+import com.openbankproject.model.UpdateConnectorMethodRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ConnectorMethodApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,48 +169,48 @@ public class ConnectorMethodApi {
   /**
    * Create Connector Method
    * &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param obPv400CreateConnectorMethodRequest Request body (required)
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * @param createConnectorMethodRequest Request body (required)
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(@javax.annotation.Nonnull OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest) throws ApiException {
-    return oBPv400CreateConnectorMethod(obPv400CreateConnectorMethodRequest, null);
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(@javax.annotation.Nonnull CreateConnectorMethodRequest createConnectorMethodRequest) throws ApiException {
+    return createConnectorMethod(createConnectorMethodRequest, null);
   }
 
   /**
    * Create Connector Method
    * &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param obPv400CreateConnectorMethodRequest Request body (required)
+   * @param createConnectorMethodRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(@javax.annotation.Nonnull OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> localVarResponse = oBPv400CreateConnectorMethodWithHttpInfo(obPv400CreateConnectorMethodRequest, headers);
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(@javax.annotation.Nonnull CreateConnectorMethodRequest createConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> localVarResponse = createConnectorMethodWithHttpInfo(createConnectorMethodRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Connector Method
    * &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param obPv400CreateConnectorMethodRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * @param createConnectorMethodRequest Request body (required)
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400CreateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest) throws ApiException {
-    return oBPv400CreateConnectorMethodWithHttpInfo(obPv400CreateConnectorMethodRequest, null);
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> createConnectorMethodWithHttpInfo(@javax.annotation.Nonnull CreateConnectorMethodRequest createConnectorMethodRequest) throws ApiException {
+    return createConnectorMethodWithHttpInfo(createConnectorMethodRequest, null);
   }
 
   /**
    * Create Connector Method
    * &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param obPv400CreateConnectorMethodRequest Request body (required)
+   * @param createConnectorMethodRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400CreateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateConnectorMethodRequestBuilder(obPv400CreateConnectorMethodRequest, headers);
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> createConnectorMethodWithHttpInfo(@javax.annotation.Nonnull CreateConnectorMethodRequest createConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createConnectorMethodRequestBuilder(createConnectorMethodRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -221,11 +221,11 @@ public class ConnectorMethodApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateConnectorMethod", localVarResponse);
+          throw getApiException("createConnectorMethod", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+          return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -235,10 +235,10 @@ public class ConnectorMethodApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>() {});
+        GetAllConnectorMethods200ResponseConnectorsMethodsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllConnectorMethods200ResponseConnectorsMethodsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+        return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -257,10 +257,10 @@ public class ConnectorMethodApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateConnectorMethodRequestBuilder(@javax.annotation.Nonnull OBPv400CreateConnectorMethodRequest obPv400CreateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400CreateConnectorMethodRequest' is set
-    if (obPv400CreateConnectorMethodRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateConnectorMethodRequest' when calling oBPv400CreateConnectorMethod");
+  private HttpRequest.Builder createConnectorMethodRequestBuilder(@javax.annotation.Nonnull CreateConnectorMethodRequest createConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createConnectorMethodRequest' is set
+    if (createConnectorMethodRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createConnectorMethodRequest' when calling createConnectorMethod");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -273,7 +273,7 @@ public class ConnectorMethodApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateConnectorMethodRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createConnectorMethodRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -292,44 +292,44 @@ public class ConnectorMethodApi {
   /**
    * Get all Connector Methods
    * &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return OBPv400GetAllConnectorMethods200Response
+   * @return GetAllConnectorMethods200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods() throws ApiException {
-    return oBPv400GetAllConnectorMethods(null);
+  public GetAllConnectorMethods200Response getAllConnectorMethods() throws ApiException {
+    return getAllConnectorMethods(null);
   }
 
   /**
    * Get all Connector Methods
    * &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllConnectorMethods200Response
+   * @return GetAllConnectorMethods200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllConnectorMethods200Response> localVarResponse = oBPv400GetAllConnectorMethodsWithHttpInfo(headers);
+  public GetAllConnectorMethods200Response getAllConnectorMethods(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllConnectorMethods200Response> localVarResponse = getAllConnectorMethodsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Connector Methods
    * &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200Response&gt;
+   * @return ApiResponse&lt;GetAllConnectorMethods200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200Response> oBPv400GetAllConnectorMethodsWithHttpInfo() throws ApiException {
-    return oBPv400GetAllConnectorMethodsWithHttpInfo(null);
+  public ApiResponse<GetAllConnectorMethods200Response> getAllConnectorMethodsWithHttpInfo() throws ApiException {
+    return getAllConnectorMethodsWithHttpInfo(null);
   }
 
   /**
    * Get all Connector Methods
    * &lt;p&gt;Get all Connector Methods.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200Response&gt;
+   * @return ApiResponse&lt;GetAllConnectorMethods200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200Response> oBPv400GetAllConnectorMethodsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllConnectorMethodsRequestBuilder(headers);
+  public ApiResponse<GetAllConnectorMethods200Response> getAllConnectorMethodsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllConnectorMethodsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -340,11 +340,11 @@ public class ConnectorMethodApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllConnectorMethods", localVarResponse);
+          throw getApiException("getAllConnectorMethods", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllConnectorMethods200Response>(
+          return new ApiResponse<GetAllConnectorMethods200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -354,10 +354,10 @@ public class ConnectorMethodApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllConnectorMethods200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllConnectorMethods200Response>() {});
+        GetAllConnectorMethods200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllConnectorMethods200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllConnectorMethods200Response>(
+        return new ApiResponse<GetAllConnectorMethods200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -376,7 +376,7 @@ public class ConnectorMethodApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllConnectorMethodsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllConnectorMethodsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -402,11 +402,11 @@ public class ConnectorMethodApi {
    * Get Connector Method by Id
    * &lt;p&gt;Get an internal connector by CONNECTOR_METHOD_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(@javax.annotation.Nonnull String connectormethodid) throws ApiException {
-    return oBPv400GetConnectorMethod(connectormethodid, null);
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(@javax.annotation.Nonnull String connectormethodid) throws ApiException {
+    return getConnectorMethod(connectormethodid, null);
   }
 
   /**
@@ -414,11 +414,11 @@ public class ConnectorMethodApi {
    * &lt;p&gt;Get an internal connector by CONNECTOR_METHOD_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param connectormethodid The CONNECTORMETHODID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> localVarResponse = oBPv400GetConnectorMethodWithHttpInfo(connectormethodid, headers);
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> localVarResponse = getConnectorMethodWithHttpInfo(connectormethodid, headers);
     return localVarResponse.getData();
   }
 
@@ -426,11 +426,11 @@ public class ConnectorMethodApi {
    * Get Connector Method by Id
    * &lt;p&gt;Get an internal connector by CONNECTOR_METHOD_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400GetConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid) throws ApiException {
-    return oBPv400GetConnectorMethodWithHttpInfo(connectormethodid, null);
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> getConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid) throws ApiException {
+    return getConnectorMethodWithHttpInfo(connectormethodid, null);
   }
 
   /**
@@ -438,11 +438,11 @@ public class ConnectorMethodApi {
    * &lt;p&gt;Get an internal connector by CONNECTOR_METHOD_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
    * @param connectormethodid The CONNECTORMETHODID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400GetConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetConnectorMethodRequestBuilder(connectormethodid, headers);
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> getConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getConnectorMethodRequestBuilder(connectormethodid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -453,11 +453,11 @@ public class ConnectorMethodApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetConnectorMethod", localVarResponse);
+          throw getApiException("getConnectorMethod", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+          return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -467,10 +467,10 @@ public class ConnectorMethodApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>() {});
+        GetAllConnectorMethods200ResponseConnectorsMethodsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllConnectorMethods200ResponseConnectorsMethodsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+        return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -489,10 +489,10 @@ public class ConnectorMethodApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetConnectorMethodRequestBuilder(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getConnectorMethodRequestBuilder(@javax.annotation.Nonnull String connectormethodid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'connectormethodid' is set
     if (connectormethodid == null) {
-      throw new ApiException(400, "Missing the required parameter 'connectormethodid' when calling oBPv400GetConnectorMethod");
+      throw new ApiException(400, "Missing the required parameter 'connectormethodid' when calling getConnectorMethod");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -517,54 +517,46 @@ public class ConnectorMethodApi {
   }
 
   /**
-   * Update Connector Method
-   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @param obPv400UpdateConnectorMethodRequest Request body (required)
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * Get Connector Method Names
+   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
+   * @return GetConnectorMethodNames200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest) throws ApiException {
-    return oBPv400UpdateConnectorMethod(connectormethodid, obPv400UpdateConnectorMethodRequest, null);
+  public GetConnectorMethodNames200Response getConnectorMethodNames() throws ApiException {
+    return getConnectorMethodNames(null);
   }
 
   /**
-   * Update Connector Method
-   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @param obPv400UpdateConnectorMethodRequest Request body (required)
+   * Get Connector Method Names
+   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+   * @return GetConnectorMethodNames200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> localVarResponse = oBPv400UpdateConnectorMethodWithHttpInfo(connectormethodid, obPv400UpdateConnectorMethodRequest, headers);
+  public GetConnectorMethodNames200Response getConnectorMethodNames(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetConnectorMethodNames200Response> localVarResponse = getConnectorMethodNamesWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Update Connector Method
-   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @param obPv400UpdateConnectorMethodRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * Get Connector Method Names
+   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
+   * @return ApiResponse&lt;GetConnectorMethodNames200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400UpdateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest) throws ApiException {
-    return oBPv400UpdateConnectorMethodWithHttpInfo(connectormethodid, obPv400UpdateConnectorMethodRequest, null);
+  public ApiResponse<GetConnectorMethodNames200Response> getConnectorMethodNamesWithHttpInfo() throws ApiException {
+    return getConnectorMethodNamesWithHttpInfo(null);
   }
 
   /**
-   * Update Connector Method
-   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param connectormethodid The CONNECTORMETHODID identifier (required)
-   * @param obPv400UpdateConnectorMethodRequest Request body (required)
+   * Get Connector Method Names
+   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems&gt;
+   * @return ApiResponse&lt;GetConnectorMethodNames200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems> oBPv400UpdateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateConnectorMethodRequestBuilder(connectormethodid, obPv400UpdateConnectorMethodRequest, headers);
+  public ApiResponse<GetConnectorMethodNames200Response> getConnectorMethodNamesWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getConnectorMethodNamesRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -575,11 +567,11 @@ public class ConnectorMethodApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateConnectorMethod", localVarResponse);
+          throw getApiException("getConnectorMethodNames", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+          return new ApiResponse<GetConnectorMethodNames200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -589,10 +581,10 @@ public class ConnectorMethodApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>() {});
+        GetConnectorMethodNames200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetConnectorMethodNames200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+        return new ApiResponse<GetConnectorMethodNames200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -611,14 +603,131 @@ public class ConnectorMethodApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateConnectorMethodRequestBuilder(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull OBPv400UpdateConnectorMethodRequest obPv400UpdateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getConnectorMethodNamesRequestBuilder(Map<String, String> headers) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/system/connector-method-names";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Update Connector Method
+   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param connectormethodid The CONNECTORMETHODID identifier (required)
+   * @param updateConnectorMethodRequest Request body (required)
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull UpdateConnectorMethodRequest updateConnectorMethodRequest) throws ApiException {
+    return updateConnectorMethod(connectormethodid, updateConnectorMethodRequest, null);
+  }
+
+  /**
+   * Update Connector Method
+   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param connectormethodid The CONNECTORMETHODID identifier (required)
+   * @param updateConnectorMethodRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
+   * @throws ApiException if fails to make API call
+   */
+  public GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull UpdateConnectorMethodRequest updateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> localVarResponse = updateConnectorMethodWithHttpInfo(connectormethodid, updateConnectorMethodRequest, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Update Connector Method
+   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param connectormethodid The CONNECTORMETHODID identifier (required)
+   * @param updateConnectorMethodRequest Request body (required)
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> updateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull UpdateConnectorMethodRequest updateConnectorMethodRequest) throws ApiException {
+    return updateConnectorMethodWithHttpInfo(connectormethodid, updateConnectorMethodRequest, null);
+  }
+
+  /**
+   * Update Connector Method
+   * &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param connectormethodid The CONNECTORMETHODID identifier (required)
+   * @param updateConnectorMethodRequest Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetAllConnectorMethods200ResponseConnectorsMethodsInner&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner> updateConnectorMethodWithHttpInfo(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull UpdateConnectorMethodRequest updateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateConnectorMethodRequestBuilder(connectormethodid, updateConnectorMethodRequest, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("updateConnectorMethod", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetAllConnectorMethods200ResponseConnectorsMethodsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllConnectorMethods200ResponseConnectorsMethodsInner>() {});
+        
+
+        return new ApiResponse<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder updateConnectorMethodRequestBuilder(@javax.annotation.Nonnull String connectormethodid, @javax.annotation.Nonnull UpdateConnectorMethodRequest updateConnectorMethodRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'connectormethodid' is set
     if (connectormethodid == null) {
-      throw new ApiException(400, "Missing the required parameter 'connectormethodid' when calling oBPv400UpdateConnectorMethod");
+      throw new ApiException(400, "Missing the required parameter 'connectormethodid' when calling updateConnectorMethod");
     }
-    // verify the required parameter 'obPv400UpdateConnectorMethodRequest' is set
-    if (obPv400UpdateConnectorMethodRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateConnectorMethodRequest' when calling oBPv400UpdateConnectorMethod");
+    // verify the required parameter 'updateConnectorMethodRequest' is set
+    if (updateConnectorMethodRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateConnectorMethodRequest' when calling updateConnectorMethod");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -632,120 +741,11 @@ public class ConnectorMethodApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateConnectorMethodRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateConnectorMethodRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
     }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Get Connector Method Names
-   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-   * @return OBPv600GetConnectorMethodNames200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames() throws ApiException {
-    return oBPv600GetConnectorMethodNames(null);
-  }
-
-  /**
-   * Get Connector Method Names
-   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return OBPv600GetConnectorMethodNames200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetConnectorMethodNames200Response> localVarResponse = oBPv600GetConnectorMethodNamesWithHttpInfo(headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Get Connector Method Names
-   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetConnectorMethodNames200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetConnectorMethodNames200Response> oBPv600GetConnectorMethodNamesWithHttpInfo() throws ApiException {
-    return oBPv600GetConnectorMethodNamesWithHttpInfo(null);
-  }
-
-  /**
-   * Get Connector Method Names
-   * &lt;p&gt;Get the list of all available connector method names.&lt;/p&gt; &lt;p&gt;These are the method names that can be used in Method Routing configuration.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#data-source\&quot; id&#x3D;\&quot;data-source\&quot;&gt;Data Source&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The data comes from &lt;strong&gt;scanning the actual Scala connector code at runtime&lt;/strong&gt; using reflection, NOT from a database or configuration file.&lt;/p&gt; &lt;p&gt;The endpoint:&lt;br /&gt; 1. Reads the connector name from props (e.g., &lt;code&gt;connector&#x3D;mapped&lt;/code&gt;)&lt;br /&gt; 2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)&lt;br /&gt; 3. Uses Scala reflection to scan all public methods that override the base Connector trait&lt;br /&gt; 4. Filters for valid connector methods (public, has parameters, overrides base trait)&lt;br /&gt; 5. Returns the method names as a sorted list&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#which-connector\&quot; id&#x3D;\&quot;which-connector\&quot;&gt;Which Connector?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Depends on your &lt;code&gt;connector&lt;/code&gt; property:&lt;br /&gt; * &lt;code&gt;connector&#x3D;mapped&lt;/code&gt; → Returns methods from LocalMappedConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;kafka_vSept2018&lt;/code&gt; → Returns methods from KafkaConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;star&lt;/code&gt; → Returns methods from StarConnector&lt;br /&gt; * &lt;code&gt;connector&#x3D;rest_vMar2019&lt;/code&gt; → Returns methods from RestConnector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#when-does-it-change\&quot; id&#x3D;\&quot;when-does-it-change\&quot;&gt;When Does It Change?&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The list only changes when:&lt;br /&gt; * Code is deployed with new/modified connector methods&lt;br /&gt; * The &lt;code&gt;connector&lt;/code&gt; property is changed to point to a different connector&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#performance\&quot; id&#x3D;\&quot;performance\&quot;&gt;Performance&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.&lt;br /&gt; Configure via: &lt;code&gt;getConnectorMethodNames.cache.ttl.seconds&#x3D;3600&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connector methods are available when configuring Method Routing.&lt;br /&gt; These method names are different from API endpoint operation IDs (which you get from /resource-docs).&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetSystemConnectorMethodNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connector_method_names&lt;/strong&gt;&lt;/a&gt;: connector_method_names&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetConnectorMethodNames200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv600GetConnectorMethodNames200Response> oBPv600GetConnectorMethodNamesWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetConnectorMethodNamesRequestBuilder(headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetConnectorMethodNames", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetConnectorMethodNames200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetConnectorMethodNames200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetConnectorMethodNames200Response>() {});
-        
-
-        return new ApiResponse<OBPv600GetConnectorMethodNames200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600GetConnectorMethodNamesRequestBuilder(Map<String, String> headers) throws ApiException {
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/system/connector-method-names";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

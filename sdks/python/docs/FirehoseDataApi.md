@@ -4,14 +4,405 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](FirehoseDataApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-[**o_bpv3_1_0_get_firehose_customers**](FirehoseDataApi.md#o_bpv3_1_0_get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
-[**o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank**](FirehoseDataApi.md#o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
-[**o_bpv4_0_0_get_firehose_accounts_at_one_bank**](FirehoseDataApi.md#o_bpv4_0_0_get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+[**get_fast_firehose_accounts_at_one_bank**](FirehoseDataApi.md#get_fast_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/management/banks/{bankid}/fast-firehose/accounts | Get Fast Firehose Accounts at Bank
+[**get_firehose_accounts_at_one_bank**](FirehoseDataApi.md#get_firehose_accounts_at_one_bank) | **GET** /obp/v4.0.0/banks/{bankid}/firehose/accounts/views/{viewid} | Get Firehose Accounts at Bank
+[**get_firehose_customers**](FirehoseDataApi.md#get_firehose_customers) | **GET** /obp/v3.1.0/banks/{bankid}/firehose/customers | Get Firehose Customers
+[**get_firehose_transactions_for_bank_account**](FirehoseDataApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
 
 
-# **o_bpv3_0_0_get_firehose_transactions_for_bank_account**
-> OBPv300GetFirehoseTransactionsForBankAccount200Response o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+# **get_fast_firehose_accounts_at_one_bank**
+> GetFastFirehoseAccountsAtOneBank200Response get_fast_firehose_accounts_at_one_bank(bankid)
+
+Get Fast Firehose Accounts at Bank
+
+<p>This endpoint allows bulk access to accounts.</p>
+<p>optional pagination parameters for filter with accounts</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_attributes"><strong>account_attributes</strong></a>:</p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_fast_firehose_accounts_at_one_bank200_response import GetFastFirehoseAccountsAtOneBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.FirehoseDataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Fast Firehose Accounts at Bank
+        api_response = api_instance.get_fast_firehose_accounts_at_one_bank(bankid)
+        print("The response of FirehoseDataApi->get_fast_firehose_accounts_at_one_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FirehoseDataApi->get_fast_firehose_accounts_at_one_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetFastFirehoseAccountsAtOneBank200Response**](GetFastFirehoseAccountsAtOneBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_firehose_accounts_at_one_bank**
+> GetFirehoseAccountsAtOneBank200Response get_firehose_accounts_at_one_bank(bankid, viewid)
+
+Get Firehose Accounts at Bank
+
+<p>Get all Accounts at a Bank.</p>
+<p>This endpoint allows bulk access to all accounts at the specified bank.</p>
+<p>Requires the CanUseFirehoseAtAnyBank Role or CanUseAccountFirehose Role</p>
+<p>Returns all accounts at the bank. The VIEW_ID parameter determines what account data fields are visible according to the view's permissions.</p>
+<p>The view specified must have is_firehose = true</p>
+<p>For VIEW_ID try 'owner' or 'firehose'</p>
+<p>Optional request parameters for filtering by account attributes:<br />
+URL params example:<br />
+/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1</p>
+<p>To invalidate browser cache, add timestamp query parameter as follows (the parameter name must be <code>_timestamp_</code>):<br />
+URL params example:<br />
+<code>/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1&amp;_timestamp_=1596762180358</code></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#account_rules"><strong>account_rules</strong></a>:</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
+<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#account_attributes">account_attributes</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_firehose_accounts_at_one_bank200_response import GetFirehoseAccountsAtOneBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.FirehoseDataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+
+    try:
+        # Get Firehose Accounts at Bank
+        api_response = api_instance.get_firehose_accounts_at_one_bank(bankid, viewid)
+        print("The response of FirehoseDataApi->get_firehose_accounts_at_one_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FirehoseDataApi->get_firehose_accounts_at_one_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+
+### Return type
+
+[**GetFirehoseAccountsAtOneBank200Response**](GetFirehoseAccountsAtOneBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_firehose_customers**
+> GetMyCustomersAtBank200Response get_firehose_customers(bankid)
+
+Get Firehose Customers
+
+<p>Get Customers that has a firehose View.</p>
+<p>Allows bulk access to customers.<br />
+User must have the CanUseFirehoseAtAnyBank Role</p>
+<p>Possible custom url parameters for pagination:</p>
+<ul>
+<li>limit=NUMBER ==&gt; default value: 50</li>
+<li>offset=NUMBER ==&gt; default value: 0</li>
+</ul>
+<p>eg1:?limit=100&amp;offset=0</p>
+<ul>
+<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
+</ul>
+<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
+<ul>
+<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
+<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.499Z. NOTE! The default value is now (2026-03-25T12:16:24.499Z).</li>
+</ul>
+<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
+<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>customer_number</strong></a>: 5987953</p>
+<p><a href="/glossary#customers"><strong>customers</strong></a>:</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
+<p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
+<p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;f&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#120;a&#x6d;p&#x6c;&#x65;&#46;&#x63;o&#x6d;">&#102;&#x65;&#108;&#x69;xs&#x6d;&#105;t&#104;@&#x65;&#120;&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;om</a></p>
+<p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
+<p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
+<p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
+<p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
+<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
+<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
+<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
+<p><a href="/glossary#"><strong>rating</strong></a>:</p>
+<p><a href="/glossary#"><strong>relationship_status</strong></a>: single</p>
+<p><a href="/glossary#"><strong>source</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#credit_limit">credit_limit</a>:</p>
+<p><a href="/glossary#credit_rating">credit_rating</a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_my_customers_at_bank200_response import GetMyCustomersAtBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.FirehoseDataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Firehose Customers
+        api_response = api_instance.get_firehose_customers(bankid)
+        print("The response of FirehoseDataApi->get_firehose_customers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FirehoseDataApi->get_firehose_customers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetMyCustomersAtBank200Response**](GetMyCustomersAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_firehose_transactions_for_bank_account**
+> GetFirehoseTransactionsForBankAccount200Response get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
 
 Get Firehose Transactions for Account
 
@@ -96,7 +487,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_firehose_transactions_for_bank_account200_response import OBPv300GetFirehoseTransactionsForBankAccount200Response
+from obp_python.models.get_firehose_transactions_for_bank_account200_response import GetFirehoseTransactionsForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -135,11 +526,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Firehose Transactions for Account
-        api_response = api_instance.o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
-        print("The response of FirehoseDataApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account:\n")
+        api_response = api_instance.get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+        print("The response of FirehoseDataApi->get_firehose_transactions_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FirehoseDataApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account: %s\n" % e)
+        print("Exception when calling FirehoseDataApi->get_firehose_transactions_for_bank_account: %s\n" % e)
 ```
 
 
@@ -155,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetFirehoseTransactionsForBankAccount200Response**](OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
+[**GetFirehoseTransactionsForBankAccount200Response**](GetFirehoseTransactionsForBankAccount200Response.md)
 
 ### Authorization
 
@@ -171,397 +562,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_firehose_customers**
-> OBPv500GetMyCustomersAtBank200Response o_bpv3_1_0_get_firehose_customers(bankid)
-
-Get Firehose Customers
-
-<p>Get Customers that has a firehose View.</p>
-<p>Allows bulk access to customers.<br />
-User must have the CanUseFirehoseAtAnyBank Role</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<ul>
-<li>from_date=DATE =&gt; example value: 1970-01-01T00:00:00.000Z. NOTE! The default value is one year ago (1970-01-01T00:00:00.000Z).</li>
-<li>to_date=DATE =&gt; example value: 2026-03-25T12:16:24.499Z. NOTE! The default value is now (2026-03-25T12:16:24.499Z).</li>
-</ul>
-<p>Date format parameter: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'(1100-01-01T01:01:01.000Z) ==&gt; time zone is UTC.</p>
-<p>eg3:?sort_direction=ASC&amp;limit=100&amp;offset=0&amp;from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>customer_number</strong></a>: 5987953</p>
-<p><a href="/glossary#customers"><strong>customers</strong></a>:</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>date_of_birth</strong></a>: 2018-03-09</p>
-<p><a href="/glossary#"><strong>dependants</strong></a>: 1</p>
-<p><a href="/glossary#dob_of_dependants"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;f&#x65;&#108;&#x69;&#x78;&#115;&#109;&#x69;&#116;&#x68;@&#x65;&#120;a&#x6d;p&#x6c;&#x65;&#46;&#x63;o&#x6d;">&#102;&#x65;&#108;&#x69;xs&#x6d;&#105;t&#104;@&#x65;&#120;&#x61;&#x6d;&#x70;l&#x65;&#x2e;&#99;om</a></p>
-<p><a href="/glossary#"><strong>employment_status</strong></a>: worker</p>
-<p><a href="/glossary#face_image"><strong>face_image</strong></a>:</p>
-<p><a href="/glossary#"><strong>highest_education_attained</strong></a>: Master</p>
-<p><a href="/glossary#"><strong>kyc_status</strong></a>: false</p>
-<p><a href="/glossary#last_ok_date"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p>
-<p><a href="/glossary#"><strong>legal_name</strong></a>: Eveline Tripman</p>
-<p><a href="/glossary#mobile_phone_number"><strong>mobile_phone_number</strong></a>: +49 30 901820</p>
-<p><a href="/glossary#"><strong>rating</strong></a>:</p>
-<p><a href="/glossary#"><strong>relationship_status</strong></a>: single</p>
-<p><a href="/glossary#"><strong>source</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#credit_limit">credit_limit</a>:</p>
-<p><a href="/glossary#credit_rating">credit_rating</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_my_customers_at_bank200_response import OBPv500GetMyCustomersAtBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.FirehoseDataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Firehose Customers
-        api_response = api_instance.o_bpv3_1_0_get_firehose_customers(bankid)
-        print("The response of FirehoseDataApi->o_bpv3_1_0_get_firehose_customers:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FirehoseDataApi->o_bpv3_1_0_get_firehose_customers: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv500GetMyCustomersAtBank200Response**](OBPv500GetMyCustomersAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank**
-> OBPv400GetFastFirehoseAccountsAtOneBank200Response o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank(bankid)
-
-Get Fast Firehose Accounts at Bank
-
-<p>This endpoint allows bulk access to accounts.</p>
-<p>optional pagination parameters for filter with accounts</p>
-<p>Possible custom url parameters for pagination:</p>
-<ul>
-<li>limit=NUMBER ==&gt; default value: 50</li>
-<li>offset=NUMBER ==&gt; default value: 0</li>
-</ul>
-<p>eg1:?limit=100&amp;offset=0</p>
-<ul>
-<li>sort_direction=ASC/DESC ==&gt; default value: DESC.</li>
-</ul>
-<p>eg2:?limit=100&amp;offset=0&amp;sort_direction=ASC</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_attributes"><strong>account_attributes</strong></a>:</p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#code"><strong>code</strong></a>: 125</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_fast_firehose_accounts_at_one_bank200_response import OBPv400GetFastFirehoseAccountsAtOneBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.FirehoseDataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Fast Firehose Accounts at Bank
-        api_response = api_instance.o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank(bankid)
-        print("The response of FirehoseDataApi->o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FirehoseDataApi->o_bpv4_0_0_get_fast_firehose_accounts_at_one_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv400GetFastFirehoseAccountsAtOneBank200Response**](OBPv400GetFastFirehoseAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_firehose_accounts_at_one_bank**
-> OBPv400GetFirehoseAccountsAtOneBank200Response o_bpv4_0_0_get_firehose_accounts_at_one_bank(bankid, viewid)
-
-Get Firehose Accounts at Bank
-
-<p>Get all Accounts at a Bank.</p>
-<p>This endpoint allows bulk access to all accounts at the specified bank.</p>
-<p>Requires the CanUseFirehoseAtAnyBank Role or CanUseAccountFirehose Role</p>
-<p>Returns all accounts at the bank. The VIEW_ID parameter determines what account data fields are visible according to the view's permissions.</p>
-<p>The view specified must have is_firehose = true</p>
-<p>For VIEW_ID try 'owner' or 'firehose'</p>
-<p>Optional request parameters for filtering by account attributes:<br />
-URL params example:<br />
-/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1</p>
-<p>To invalidate browser cache, add timestamp query parameter as follows (the parameter name must be <code>_timestamp_</code>):<br />
-URL params example:<br />
-<code>/banks/some-bank-id/firehose/accounts/views/owner?limit=50&amp;offset=1&amp;_timestamp_=1596762180358</code></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#account_rules"><strong>account_rules</strong></a>:</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#"><strong>amount</strong></a>: 10.12</p>
-<p><a href="/glossary#balance"><strong>balance</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#owners"><strong>owners</strong></a>:</p>
-<p><a href="/glossary#product_code"><strong>product_code</strong></a>: 1234BW</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#account_attributes">account_attributes</a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_firehose_accounts_at_one_bank200_response import OBPv400GetFirehoseAccountsAtOneBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.FirehoseDataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-
-    try:
-        # Get Firehose Accounts at Bank
-        api_response = api_instance.o_bpv4_0_0_get_firehose_accounts_at_one_bank(bankid, viewid)
-        print("The response of FirehoseDataApi->o_bpv4_0_0_get_firehose_accounts_at_one_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling FirehoseDataApi->o_bpv4_0_0_get_firehose_accounts_at_one_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
-
-### Return type
-
-[**OBPv400GetFirehoseAccountsAtOneBank200Response**](OBPv400GetFirehoseAccountsAtOneBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

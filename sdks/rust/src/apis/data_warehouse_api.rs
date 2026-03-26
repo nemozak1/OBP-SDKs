@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,28 +15,28 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv3_0_0_data_warehouse_search`]
+/// struct for typed errors of method [`data_warehouse_search`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv300DataWarehouseSearchError {
+pub enum DataWarehouseSearchError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv3_0_0_data_warehouse_statistics`]
+/// struct for typed errors of method [`data_warehouse_statistics`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv300DataWarehouseStatisticsError {
+pub enum DataWarehouseStatisticsError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Search the data warehouse and get row level results.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouse entitlement is required. You can request the Role below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE</p> <p>POST /search/warehouse/INDEX1,INDEX2</p> <p>POST /search/warehouse/ALL</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
-pub async fn o_bpv3_0_0_data_warehouse_search(configuration: &configuration::Configuration, index: &str, obpv300_data_warehouse_search_request: models::Obpv300DataWarehouseSearchRequest) -> Result<models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, Error<OBpv300DataWarehouseSearchError>> {
+pub async fn data_warehouse_search(configuration: &configuration::Configuration, index: &str, data_warehouse_search_request: models::DataWarehouseSearchRequest) -> Result<serde_json::Value, Error<DataWarehouseSearchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_index = index;
-    let p_body_obpv300_data_warehouse_search_request = obpv300_data_warehouse_search_request;
+    let p_body_data_warehouse_search_request = data_warehouse_search_request;
 
     let uri_str = format!("{}/obp/v3.0.0/search/warehouse/{index}", configuration.base_path, index=crate::apis::urlencode(p_path_index));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -61,9 +61,9 @@ pub async fn o_bpv3_0_0_data_warehouse_search(configuration: &configuration::Con
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv300_data_warehouse_search_request);
+    req_builder = req_builder.json(&p_body_data_warehouse_search_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -80,22 +80,22 @@ pub async fn o_bpv3_0_0_data_warehouse_search(configuration: &configuration::Con
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `serde_json::Value`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `serde_json::Value`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv300DataWarehouseSearchError> = serde_json::from_str(&content).ok();
+        let entity: Option<DataWarehouseSearchError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Search the data warehouse and get statistical aggregations over a warehouse field</p> <p>Does a stats aggregation over some numeric field:</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanSearchWarehouseStats Role is required. You can request this below.</p> <p>Elastic (search) is used in the background. See links below for syntax.</p> <p>Examples of usage:</p> <p>POST /search/warehouse/statistics/INDEX/FIELD</p> <p>POST /search/warehouse/statistics/ALL/FIELD</p> <p>{ Any valid elasticsearch query DSL in the body }</p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\">Elasticsearch query DSL</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\">Elastic simple query</a></p> <p><a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\">Elastic aggregations</a></p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#field\">FIELD</a>:</p> <p><a href=\"/glossary#index\">INDEX</a>:</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#match_all\"><strong>match_all</strong></a>:</p> <p><a href=\"/glossary#query\"><strong>query</strong></a>:</p> <p><a href=\"/glossary#none\">none</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#none\">none</a>:</p> 
-pub async fn o_bpv3_0_0_data_warehouse_statistics(configuration: &configuration::Configuration, index: &str, field: &str, obpv300_data_warehouse_search_request: models::Obpv300DataWarehouseSearchRequest) -> Result<models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, Error<OBpv300DataWarehouseStatisticsError>> {
+pub async fn data_warehouse_statistics(configuration: &configuration::Configuration, index: &str, field: &str, data_warehouse_search_request: models::DataWarehouseSearchRequest) -> Result<serde_json::Value, Error<DataWarehouseStatisticsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_index = index;
     let p_path_field = field;
-    let p_body_obpv300_data_warehouse_search_request = obpv300_data_warehouse_search_request;
+    let p_body_data_warehouse_search_request = data_warehouse_search_request;
 
     let uri_str = format!("{}/obp/v3.0.0/search/warehouse/statistics/{index}/{field}", configuration.base_path, index=crate::apis::urlencode(p_path_index), field=crate::apis::urlencode(p_path_field));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -120,9 +120,9 @@ pub async fn o_bpv3_0_0_data_warehouse_statistics(configuration: &configuration:
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv300_data_warehouse_search_request);
+    req_builder = req_builder.json(&p_body_data_warehouse_search_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -139,12 +139,12 @@ pub async fn o_bpv3_0_0_data_warehouse_statistics(configuration: &configuration:
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `serde_json::Value`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `serde_json::Value`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv300DataWarehouseStatisticsError> = serde_json::from_str(&content).ok();
+        let entity: Option<DataWarehouseStatisticsError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

@@ -5,28 +5,28 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510CreateConsumerDynamicRegistration**](DirectoryApi.md#obpv510createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
-[**oBPv510CreateRegulatedEntity**](DirectoryApi.md#obpv510createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
-[**oBPv510CreateRegulatedEntityAttribute**](DirectoryApi.md#obpv510createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
-[**oBPv510DeleteRegulatedEntity**](DirectoryApi.md#obpv510deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
-[**oBPv510DeleteRegulatedEntityAttribute**](DirectoryApi.md#obpv510deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
-[**oBPv510GetAllRegulatedEntityAttributes**](DirectoryApi.md#obpv510getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
-[**oBPv510GetRegulatedEntityAttributeById**](DirectoryApi.md#obpv510getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
-[**oBPv510GetRegulatedEntityById**](DirectoryApi.md#obpv510getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
-[**oBPv510RegulatedEntities**](DirectoryApi.md#obpv510regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
-[**oBPv510UpdateRegulatedEntityAttribute**](DirectoryApi.md#obpv510updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
+[**createConsumerDynamicRegistration**](DirectoryApi.md#createconsumerdynamicregistration) | **POST** /obp/v5.1.0/dynamic-registration/consumers | Create a Consumer(Dynamic Registration)
+[**createRegulatedEntity**](DirectoryApi.md#createregulatedentity) | **POST** /obp/v5.1.0/regulated-entities | Create Regulated Entity
+[**createRegulatedEntityAttribute**](DirectoryApi.md#createregulatedentityattribute) | **POST** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Create Regulated Entity Attribute
+[**deleteRegulatedEntity**](DirectoryApi.md#deleteregulatedentity) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Delete Regulated Entity
+[**deleteRegulatedEntityAttribute**](DirectoryApi.md#deleteregulatedentityattribute) | **DELETE** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Delete Regulated Entity Attribute
+[**getAllRegulatedEntityAttributes**](DirectoryApi.md#getallregulatedentityattributes) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes | Get All Regulated Entity Attributes
+[**getRegulatedEntityAttributeById**](DirectoryApi.md#getregulatedentityattributebyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Get Regulated Entity Attribute By ID
+[**getRegulatedEntityById**](DirectoryApi.md#getregulatedentitybyid) | **GET** /obp/v5.1.0/regulated-entities/{regulatedentityid} | Get Regulated Entity
+[**regulatedEntities**](DirectoryApi.md#regulatedentities) | **GET** /obp/v5.1.0/regulated-entities | Get Regulated Entities
+[**updateRegulatedEntityAttribute**](DirectoryApi.md#updateregulatedentityattribute) | **PUT** /obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid} | Update Regulated Entity Attribute
 
 
-# **oBPv510CreateConsumerDynamicRegistration**
-> OBPv510UpdateConsumerName200Response oBPv510CreateConsumerDynamicRegistration(oBPv510CreateConsumerDynamicRegistrationRequest)
+# **createConsumerDynamicRegistration**
+> UpdateConsumerName200Response createConsumerDynamicRegistration(createConsumerDynamicRegistrationRequest)
 
 Create a Consumer(Dynamic Registration)
 
-<p>Create a Consumer with full certificate validation (mTLS access) - <strong>Recommended for PSD2/Berlin Group compliance</strong>.</p> <p>This endpoint provides <strong>secure, validated consumer registration</strong> unlike the standard <code>/management/consumers</code> endpoint.</p> <p><strong>How it works (for comprehension flow):</strong></p> <ol> <li><strong>Extract JWT from request</strong>: Parse the signed JWT from the request body</li> <li><strong>Extract certificate</strong>: Get certificate from <code>PSD2-CERT</code> header in PEM format</li> <li><strong>Verify JWT signature</strong>: Validate JWT is signed with the certificate's private key (proves possession)</li> <li><strong>Parse JWT payload</strong>: Extract consumer details (description, app_name, app_type, developer_email, redirect_url)</li> <li><strong>Extract certificate info</strong>: Parse certificate to get Common Name, Email, Organization</li> <li><strong>Validate against Regulated Entity</strong>: Check certificate exists in Regulated Entity registry (PSD2 requirement)</li> <li><strong>Create consumer</strong>: Generate credentials and create consumer record with validated certificate</li> <li><strong>Return consumer with certificate info</strong>: Returns consumer details including parsed certificate information</li> </ol> <p><strong>Certificate Validation (CRITICAL SECURITY DIFFERENCE from regular creation):</strong></p> <p>[YES] <strong>JWT Signature Verification</strong>: JWT must be signed with certificate's private key - proves TPP owns the certificate<br /> [YES] <strong>Regulated Entity Check</strong>: Certificate must match a pre-registered Regulated Entity in the database<br /> [YES] <strong>Certificate Binding</strong>: Certificate is permanently bound to the consumer at creation time<br /> [YES] <strong>CA Validation</strong>: Certificate chain can be validated against trusted root CAs during API requests<br /> [YES] <strong>PSD2 Compliance</strong>: Meets EU regulatory requirements for TPP registration</p> <p><strong>Security benefits vs regular consumer creation:</strong></p> <table> <thead> <tr><th>Feature </th><th> Regular Creation </th><th> Dynamic Registration </th></tr> </thead> <tbody> <tr><td>Certificate validation </td><td> [NO] None </td><td> [YES] Full validation </td></tr> <tr><td>Regulated Entity check </td><td> [NO] Not required </td><td> [YES] Required </td></tr> <tr><td>JWT signature proof </td><td> [NO] Not required </td><td> [YES] Required (proves private key possession) </td></tr> <tr><td>Self-signed certs </td><td> [YES] Accepted </td><td> [NO] Rejected </td></tr> <tr><td>PSD2 compliant </td><td> [NO] No </td><td> [YES] Yes </td></tr> <tr><td>Rogue TPP prevention </td><td> [NO] No </td><td> [YES] Yes </td></tr> </tbody> </table> <p><strong>Prerequisites:</strong><br /> 1. TPP must be registered as a Regulated Entity with their certificate<br /> 2. Certificate must be provided in <code>PSD2-CERT</code> request header (PEM format)<br /> 3. JWT must be signed with the private key corresponding to the certificate<br /> 4. Trust store must be configured with trusted root CAs</p> <p><strong>JWT Payload Structure:</strong></p> <p>Minimal:</p> <pre><code class=\"language-json\">{ &quot;description&quot;:&quot;TPP Application Description&quot; } </code></pre> <p>Full:</p> <pre><code class=\"language-json\">{   &quot;description&quot;: &quot;Payment Initiation Service&quot;,   &quot;app_name&quot;: &quot;Tesobe GmbH&quot;,   &quot;app_type&quot;: &quot;Confidential&quot;,   &quot;developer_email&quot;: &quot;contact@tesobe.com&quot;,   &quot;redirect_url&quot;: &quot;https://tpp.example.com/callback&quot; } </code></pre> <p><strong>Note:</strong> JWT must be signed with the private key that corresponds to the public key in the certificate sent via <code>PSD2-CERT</code> header.</p> <p><strong>Certificate Information Extraction:</strong></p> <p>The endpoint automatically extracts information from the certificate:<br /> - Common Name (CN) → used as app_name if not provided in JWT<br /> - Email Address → used as developer_email if not provided<br /> - Organization (O) → used as company<br /> - Certificate validity period<br /> - Issuer information</p> <p><strong>Configuration Required:</strong><br /> - <code>truststore.path.tpp_signature</code> - Path to trust store for CA validation<br /> - <code>truststore.password.tpp_signature</code> - Trust store password<br /> - Regulated Entity must be pre-registered with certificate public key</p> <p><strong>Error Scenarios:</strong><br /> - JWT signature invalid → <code>PostJsonIsNotSigned</code> (400)<br /> - Certificate not in Regulated Entity registry → <code>RegulatedEntityNotFoundByCertificate</code> (400)<br /> - Invalid JWT format → <code>InvalidJsonFormat</code> (400)<br /> - Missing PSD2-CERT header → Signature verification fails</p> <p><strong>This is the SECURE way to register consumers for production PSD2/Berlin Group implementations.</strong></p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#jwt\"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#app_name\"><strong>app_name</strong></a>: appNameBank</p> <p><a href=\"/glossary#app_type\"><strong>app_type</strong></a>: Web</p> <p><a href=\"/glossary#\"><strong>certificate_pem</strong></a>: certificate_pem</p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#created_by_user\"><strong>created_by_user</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#developer_email\"><strong>developer_email</strong></a>:</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;il&#116;o&#58;&#102;e&#x6c;ix&#x73;&#x6d;&#x69;&#116;&#104;&#x40;e&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;\">&#102;&#101;&#108;i&#x78;s&#109;i&#x74;&#104;&#64;&#101;&#120;&#97;m&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p> <p><a href=\"/glossary#\"><strong>not_after</strong></a>: not_after</p> <p><a href=\"/glossary#\"><strong>not_before</strong></a>: not_before</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#redirect_url\"><strong>redirect_url</strong></a>: <a href=\"https://apisandbox.openbankproject.com\">https://apisandbox.openbankproject.com</a></p> <p><a href=\"/glossary#\"><strong>subject_domain_name</strong></a>: subject_domain_name</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">certificate_info</a>: certificate_info</p> <p><a href=\"/glossary#logo_url\">logo_url</a>: logo_url</p> <p><a href=\"/glossary#roles\">roles</a>: CanCreateMyUser</p> <p><a href=\"/glossary#\">roles_info</a>: roles_info</p> 
+<p>Create a Consumer with full certificate validation (mTLS access) - <strong>Recommended for PSD2/Berlin Group compliance</strong>.</p> <p>This endpoint provides <strong>secure, validated consumer registration</strong> unlike the standard <code>/management/consumers</code> endpoint.</p> <p><strong>How it works (for comprehension flow):</strong></p> <ol> <li><strong>Extract JWT from request</strong>: Parse the signed JWT from the request body</li> <li><strong>Extract certificate</strong>: Get certificate from <code>PSD2-CERT</code> header in PEM format</li> <li><strong>Verify JWT signature</strong>: Validate JWT is signed with the certificate's private key (proves possession)</li> <li><strong>Parse JWT payload</strong>: Extract consumer details (description, app_name, app_type, developer_email, redirect_url)</li> <li><strong>Extract certificate info</strong>: Parse certificate to get Common Name, Email, Organization</li> <li><strong>Validate against Regulated Entity</strong>: Check certificate exists in Regulated Entity registry (PSD2 requirement)</li> <li><strong>Create consumer</strong>: Generate credentials and create consumer record with validated certificate</li> <li><strong>Return consumer with certificate info</strong>: Returns consumer details including parsed certificate information</li> </ol> <p><strong>Certificate Validation (CRITICAL SECURITY DIFFERENCE from regular creation):</strong></p> <p>[YES] <strong>JWT Signature Verification</strong>: JWT must be signed with certificate's private key - proves TPP owns the certificate<br /> [YES] <strong>Regulated Entity Check</strong>: Certificate must match a pre-registered Regulated Entity in the database<br /> [YES] <strong>Certificate Binding</strong>: Certificate is permanently bound to the consumer at creation time<br /> [YES] <strong>CA Validation</strong>: Certificate chain can be validated against trusted root CAs during API requests<br /> [YES] <strong>PSD2 Compliance</strong>: Meets EU regulatory requirements for TPP registration</p> <p><strong>Security benefits vs regular consumer creation:</strong></p> <table> <thead> <tr><th>Feature </th><th> Regular Creation </th><th> Dynamic Registration </th></tr> </thead> <tbody> <tr><td>Certificate validation </td><td> [NO] None </td><td> [YES] Full validation </td></tr> <tr><td>Regulated Entity check </td><td> [NO] Not required </td><td> [YES] Required </td></tr> <tr><td>JWT signature proof </td><td> [NO] Not required </td><td> [YES] Required (proves private key possession) </td></tr> <tr><td>Self-signed certs </td><td> [YES] Accepted </td><td> [NO] Rejected </td></tr> <tr><td>PSD2 compliant </td><td> [NO] No </td><td> [YES] Yes </td></tr> <tr><td>Rogue TPP prevention </td><td> [NO] No </td><td> [YES] Yes </td></tr> </tbody> </table> <p><strong>Prerequisites:</strong><br /> 1. TPP must be registered as a Regulated Entity with their certificate<br /> 2. Certificate must be provided in <code>PSD2-CERT</code> request header (PEM format)<br /> 3. JWT must be signed with the private key corresponding to the certificate<br /> 4. Trust store must be configured with trusted root CAs</p> <p><strong>JWT Payload Structure:</strong></p> <p>Minimal:</p> <pre><code class=\"language-json\">{ &quot;description&quot;:&quot;TPP Application Description&quot; } </code></pre> <p>Full:</p> <pre><code class=\"language-json\">{   &quot;description&quot;: &quot;Payment Initiation Service&quot;,   &quot;app_name&quot;: &quot;Tesobe GmbH&quot;,   &quot;app_type&quot;: &quot;Confidential&quot;,   &quot;developer_email&quot;: &quot;contact@tesobe.com&quot;,   &quot;redirect_url&quot;: &quot;https://tpp.example.com/callback&quot; } </code></pre> <p><strong>Note:</strong> JWT must be signed with the private key that corresponds to the public key in the certificate sent via <code>PSD2-CERT</code> header.</p> <p><strong>Certificate Information Extraction:</strong></p> <p>The endpoint automatically extracts information from the certificate:<br /> - Common Name (CN) → used as app_name if not provided in JWT<br /> - Email Address → used as developer_email if not provided<br /> - Organization (O) → used as company<br /> - Certificate validity period<br /> - Issuer information</p> <p><strong>Configuration Required:</strong><br /> - <code>truststore.path.tpp_signature</code> - Path to trust store for CA validation<br /> - <code>truststore.password.tpp_signature</code> - Trust store password<br /> - Regulated Entity must be pre-registered with certificate public key</p> <p><strong>Error Scenarios:</strong><br /> - JWT signature invalid → <code>PostJsonIsNotSigned</code> (400)<br /> - Certificate not in Regulated Entity registry → <code>RegulatedEntityNotFoundByCertificate</code> (400)<br /> - Invalid JWT format → <code>InvalidJsonFormat</code> (400)<br /> - Missing PSD2-CERT header → Signature verification fails</p> <p><strong>This is the SECURE way to register consumers for production PSD2/Berlin Group implementations.</strong></p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#jwt\"><strong>jwt</strong></a>: eyJhbGciOiJIUzI1NiJ9.eyJlbnRpdGxlbWVudHMiOltdLCJjcmVhdGVkQnlVc2VySWQiOiJhYjY1MzlhOS1iMTA1LTQ0ODktYTg4My0wYWQ4ZDZjNjE2NTciLCJzdWIiOiIyMWUxYzhjYy1mOTE4LTRlYWMtYjhlMy01ZTVlZWM2YjNiNGIiLCJhdWQiOiJlanpuazUwNWQxMzJyeW9tbmhieDFxbXRvaHVyYnNiYjBraWphanNrIiwibmJmIjoxNTUzNTU0ODk5LCJpc3MiOiJodHRwczpcL1wvd3d3Lm9wZW5iYW5rcHJvamVjdC5jb20iLCJleHAiOjE1NTM1NTg0OTksImlhdCI6MTU1MzU1NDg5OSwianRpIjoiMDlmODhkNWYtZWNlNi00Mzk4LThlOTktNjYxMWZhMWNkYmQ1Iiwidmlld3MiOlt7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAxIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifSx7ImFjY291bnRfaWQiOiJtYXJrb19wcml2aXRlXzAyIiwiYmFua19pZCI6ImdoLjI5LnVrLngiLCJ2aWV3X2lkIjoib3duZXIifV19.8cc7cBEf2NyQvJoukBCmDLT7LXYcuzTcSYLqSpbxLp4</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#app_name\"><strong>app_name</strong></a>: appNameBank</p> <p><a href=\"/glossary#app_type\"><strong>app_type</strong></a>: Web</p> <p><a href=\"/glossary#\"><strong>certificate_pem</strong></a>: certificate_pem</p> <p><a href=\"/glossary#company\"><strong>company</strong></a>: Tesobe GmbH</p> <p><a href=\"/glossary#\"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>consumer_key</strong></a>: bwf0ykmwoirip1yjxcn15wnhuyxcziwgtcoaildq</p> <p><a href=\"/glossary#created\"><strong>created</strong></a>:</p> <p><a href=\"/glossary#created_by_user\"><strong>created_by_user</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#developer_email\"><strong>developer_email</strong></a>:</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#97;&#x69;&#108;to&#x3a;&#102;&#101;&#x6c;i&#x78;&#x73;m&#x69;&#116;&#x68;&#x40;&#101;&#x78;am&#112;l&#x65;&#x2e;c&#x6f;&#109;\">f&#x65;&#108;&#x69;&#120;&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;p&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p> <p><a href=\"/glossary#enabled\"><strong>enabled</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>issuer_domain_name</strong></a>: issuer_domain_name</p> <p><a href=\"/glossary#\"><strong>not_after</strong></a>: not_after</p> <p><a href=\"/glossary#\"><strong>not_before</strong></a>: not_before</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#provider_id\"><strong>provider_id</strong></a>:</p> <p><a href=\"/glossary#redirect_url\"><strong>redirect_url</strong></a>: <a href=\"https://apisandbox.openbankproject.com\">https://apisandbox.openbankproject.com</a></p> <p><a href=\"/glossary#\"><strong>subject_domain_name</strong></a>: subject_domain_name</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\">certificate_info</a>: certificate_info</p> <p><a href=\"/glossary#logo_url\">logo_url</a>: logo_url</p> <p><a href=\"/glossary#roles\">roles</a>: CanCreateMyUser</p> <p><a href=\"/glossary#\">roles_info</a>: roles_info</p> 
 
 ### Example
 ```dart
@@ -43,13 +43,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDirectoryApi();
-final OBPv510CreateConsumerDynamicRegistrationRequest oBPv510CreateConsumerDynamicRegistrationRequest = {"type":"object","properties":{"jwt":{"type":"string"}}}; // OBPv510CreateConsumerDynamicRegistrationRequest | Request body
+final CreateConsumerDynamicRegistrationRequest createConsumerDynamicRegistrationRequest = {"type":"object","properties":{"jwt":{"type":"string"}}}; // CreateConsumerDynamicRegistrationRequest | Request body
 
 try {
-    final response = api.oBPv510CreateConsumerDynamicRegistration(oBPv510CreateConsumerDynamicRegistrationRequest);
+    final response = api.createConsumerDynamicRegistration(createConsumerDynamicRegistrationRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510CreateConsumerDynamicRegistration: $e\n');
+    print('Exception when calling DirectoryApi->createConsumerDynamicRegistration: $e\n');
 }
 ```
 
@@ -57,11 +57,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateConsumerDynamicRegistrationRequest** | [**OBPv510CreateConsumerDynamicRegistrationRequest**](OBPv510CreateConsumerDynamicRegistrationRequest.md)| Request body | 
+ **createConsumerDynamicRegistrationRequest** | [**CreateConsumerDynamicRegistrationRequest**](CreateConsumerDynamicRegistrationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510UpdateConsumerName200Response**](OBPv510UpdateConsumerName200Response.md)
+[**UpdateConsumerName200Response**](UpdateConsumerName200Response.md)
 
 ### Authorization
 
@@ -74,8 +74,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510CreateRegulatedEntity**
-> OBPv510GetRegulatedEntityById200Response oBPv510CreateRegulatedEntity(oBPv510CreateRegulatedEntityRequest)
+# **createRegulatedEntity**
+> GetRegulatedEntityById200Response createRegulatedEntity(createRegulatedEntityRequest)
 
 Create Regulated Entity
 
@@ -96,13 +96,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getDirectoryApi();
-final OBPv510CreateRegulatedEntityRequest oBPv510CreateRegulatedEntityRequest = {"type":"object","properties":{"entity_country":{"type":"string"},"entity_certificate_public_key":{"type":"string"},"entity_code":{"type":"string"},"services":{"type":"array","items":{"type":"object","properties":{"CY":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}},"entity_town_city":{"type":"string"},"entity_name":{"type":"string"},"entity_post_code":{"type":"string"},"entity_web_site":{"type":"string"},"entity_type":{"type":"string"},"certificate_authority_ca_owner_id":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attributeType":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"entity_address":{"type":"string"}}}; // OBPv510CreateRegulatedEntityRequest | Request body
+final CreateRegulatedEntityRequest createRegulatedEntityRequest = {"type":"object","properties":{"entity_country":{"type":"string"},"entity_certificate_public_key":{"type":"string"},"entity_code":{"type":"string"},"services":{"type":"array","items":{"type":"object","properties":{"CY":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}},"entity_town_city":{"type":"string"},"entity_name":{"type":"string"},"entity_post_code":{"type":"string"},"entity_web_site":{"type":"string"},"entity_type":{"type":"string"},"certificate_authority_ca_owner_id":{"type":"string"},"attributes":{"type":"array","items":{"type":"object","properties":{"attributeType":{"type":"string"},"name":{"type":"string"},"value":{"type":"string"}}}},"entity_address":{"type":"string"}}}; // CreateRegulatedEntityRequest | Request body
 
 try {
-    final response = api.oBPv510CreateRegulatedEntity(oBPv510CreateRegulatedEntityRequest);
+    final response = api.createRegulatedEntity(createRegulatedEntityRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510CreateRegulatedEntity: $e\n');
+    print('Exception when calling DirectoryApi->createRegulatedEntity: $e\n');
 }
 ```
 
@@ -110,11 +110,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv510CreateRegulatedEntityRequest** | [**OBPv510CreateRegulatedEntityRequest**](OBPv510CreateRegulatedEntityRequest.md)| Request body | 
+ **createRegulatedEntityRequest** | [**CreateRegulatedEntityRequest**](CreateRegulatedEntityRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -127,8 +127,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510CreateRegulatedEntityAttribute**
-> OBPv510GetRegulatedEntityAttributeById200Response oBPv510CreateRegulatedEntityAttribute(regulatedentityid, oBPv510UpdateRegulatedEntityAttributeRequest)
+# **createRegulatedEntityAttribute**
+> GetRegulatedEntityAttributeById200Response createRegulatedEntityAttribute(regulatedentityid, createCounterpartyAttributeRequest)
 
 Create Regulated Entity Attribute
 
@@ -150,13 +150,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getDirectoryApi();
 final String regulatedentityid = regulatedentityid_example; // String | The REGULATEDENTITYID identifier
-final OBPv510UpdateRegulatedEntityAttributeRequest oBPv510UpdateRegulatedEntityAttributeRequest = {type=object, properties={attribute_type={type=string}, value={type=string}, is_active={type=boolean}, name={type=string}}}; // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+final CreateCounterpartyAttributeRequest createCounterpartyAttributeRequest = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}}; // CreateCounterpartyAttributeRequest | Request body
 
 try {
-    final response = api.oBPv510CreateRegulatedEntityAttribute(regulatedentityid, oBPv510UpdateRegulatedEntityAttributeRequest);
+    final response = api.createRegulatedEntityAttribute(regulatedentityid, createCounterpartyAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510CreateRegulatedEntityAttribute: $e\n');
+    print('Exception when calling DirectoryApi->createRegulatedEntityAttribute: $e\n');
 }
 ```
 
@@ -165,11 +165,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **String**| The REGULATEDENTITYID identifier | 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteRegulatedEntity**
-> oBPv510DeleteRegulatedEntity(regulatedentityid)
+# **deleteRegulatedEntity**
+> deleteRegulatedEntity(regulatedentityid)
 
 Delete Regulated Entity
 
@@ -207,9 +207,9 @@ final api = ObpDart().getDirectoryApi();
 final String regulatedentityid = regulatedentityid_example; // String | The REGULATEDENTITYID identifier
 
 try {
-    api.oBPv510DeleteRegulatedEntity(regulatedentityid);
+    api.deleteRegulatedEntity(regulatedentityid);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510DeleteRegulatedEntity: $e\n');
+    print('Exception when calling DirectoryApi->deleteRegulatedEntity: $e\n');
 }
 ```
 
@@ -234,8 +234,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510DeleteRegulatedEntityAttribute**
-> oBPv510DeleteRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid)
+# **deleteRegulatedEntityAttribute**
+> deleteRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid)
 
 Delete Regulated Entity Attribute
 
@@ -260,9 +260,9 @@ final String regulatedentityid = regulatedentityid_example; // String | The REGU
 final String regulatedentityattributeid = regulatedentityattributeid_example; // String | The REGULATEDENTITYATTRIBUTEID identifier
 
 try {
-    api.oBPv510DeleteRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid);
+    api.deleteRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510DeleteRegulatedEntityAttribute: $e\n');
+    print('Exception when calling DirectoryApi->deleteRegulatedEntityAttribute: $e\n');
 }
 ```
 
@@ -288,8 +288,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetAllRegulatedEntityAttributes**
-> OBPv510GetAllRegulatedEntityAttributes200Response oBPv510GetAllRegulatedEntityAttributes(regulatedentityid)
+# **getAllRegulatedEntityAttributes**
+> GetAllRegulatedEntityAttributes200Response getAllRegulatedEntityAttributes(regulatedentityid)
 
 Get All Regulated Entity Attributes
 
@@ -313,10 +313,10 @@ final api = ObpDart().getDirectoryApi();
 final String regulatedentityid = regulatedentityid_example; // String | The REGULATEDENTITYID identifier
 
 try {
-    final response = api.oBPv510GetAllRegulatedEntityAttributes(regulatedentityid);
+    final response = api.getAllRegulatedEntityAttributes(regulatedentityid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510GetAllRegulatedEntityAttributes: $e\n');
+    print('Exception when calling DirectoryApi->getAllRegulatedEntityAttributes: $e\n');
 }
 ```
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetAllRegulatedEntityAttributes200Response**](OBPv510GetAllRegulatedEntityAttributes200Response.md)
+[**GetAllRegulatedEntityAttributes200Response**](GetAllRegulatedEntityAttributes200Response.md)
 
 ### Authorization
 
@@ -341,8 +341,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetRegulatedEntityAttributeById**
-> OBPv510GetRegulatedEntityAttributeById200Response oBPv510GetRegulatedEntityAttributeById(regulatedentityid, regulatedentityattributeid)
+# **getRegulatedEntityAttributeById**
+> GetRegulatedEntityAttributeById200Response getRegulatedEntityAttributeById(regulatedentityid, regulatedentityattributeid)
 
 Get Regulated Entity Attribute By ID
 
@@ -367,10 +367,10 @@ final String regulatedentityid = regulatedentityid_example; // String | The REGU
 final String regulatedentityattributeid = regulatedentityattributeid_example; // String | The REGULATEDENTITYATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv510GetRegulatedEntityAttributeById(regulatedentityid, regulatedentityattributeid);
+    final response = api.getRegulatedEntityAttributeById(regulatedentityid, regulatedentityattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510GetRegulatedEntityAttributeById: $e\n');
+    print('Exception when calling DirectoryApi->getRegulatedEntityAttributeById: $e\n');
 }
 ```
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 
@@ -396,8 +396,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510GetRegulatedEntityById**
-> OBPv510GetRegulatedEntityById200Response oBPv510GetRegulatedEntityById(regulatedentityid)
+# **getRegulatedEntityById**
+> GetRegulatedEntityById200Response getRegulatedEntityById(regulatedentityid)
 
 Get Regulated Entity
 
@@ -411,10 +411,10 @@ final api = ObpDart().getDirectoryApi();
 final String regulatedentityid = regulatedentityid_example; // String | The REGULATEDENTITYID identifier
 
 try {
-    final response = api.oBPv510GetRegulatedEntityById(regulatedentityid);
+    final response = api.getRegulatedEntityById(regulatedentityid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510GetRegulatedEntityById: $e\n');
+    print('Exception when calling DirectoryApi->getRegulatedEntityById: $e\n');
 }
 ```
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityById200Response**](OBPv510GetRegulatedEntityById200Response.md)
+[**GetRegulatedEntityById200Response**](GetRegulatedEntityById200Response.md)
 
 ### Authorization
 
@@ -439,8 +439,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510RegulatedEntities**
-> OBPv510RegulatedEntities200Response oBPv510RegulatedEntities()
+# **regulatedEntities**
+> RegulatedEntities200Response regulatedEntities()
 
 Get Regulated Entities
 
@@ -453,10 +453,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDirectoryApi();
 
 try {
-    final response = api.oBPv510RegulatedEntities();
+    final response = api.regulatedEntities();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510RegulatedEntities: $e\n');
+    print('Exception when calling DirectoryApi->regulatedEntities: $e\n');
 }
 ```
 
@@ -465,7 +465,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv510RegulatedEntities200Response**](OBPv510RegulatedEntities200Response.md)
+[**RegulatedEntities200Response**](RegulatedEntities200Response.md)
 
 ### Authorization
 
@@ -478,8 +478,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv510UpdateRegulatedEntityAttribute**
-> OBPv510GetRegulatedEntityAttributeById200Response oBPv510UpdateRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid, oBPv510UpdateRegulatedEntityAttributeRequest)
+# **updateRegulatedEntityAttribute**
+> GetRegulatedEntityAttributeById200Response updateRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid, createCounterpartyAttributeRequest)
 
 Update Regulated Entity Attribute
 
@@ -502,13 +502,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDirectoryApi();
 final String regulatedentityid = regulatedentityid_example; // String | The REGULATEDENTITYID identifier
 final String regulatedentityattributeid = regulatedentityattributeid_example; // String | The REGULATEDENTITYATTRIBUTEID identifier
-final OBPv510UpdateRegulatedEntityAttributeRequest oBPv510UpdateRegulatedEntityAttributeRequest = {"type":"object","properties":{"attribute_type":{"type":"string"},"value":{"type":"string"},"is_active":{"type":"boolean"},"name":{"type":"string"}}}; // OBPv510UpdateRegulatedEntityAttributeRequest | Request body
+final CreateCounterpartyAttributeRequest createCounterpartyAttributeRequest = {type=object, properties={attribute_type={type=string}, name={type=string}, is_active={type=boolean}, value={type=string}}}; // CreateCounterpartyAttributeRequest | Request body
 
 try {
-    final response = api.oBPv510UpdateRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid, oBPv510UpdateRegulatedEntityAttributeRequest);
+    final response = api.updateRegulatedEntityAttribute(regulatedentityid, regulatedentityattributeid, createCounterpartyAttributeRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectoryApi->oBPv510UpdateRegulatedEntityAttribute: $e\n');
+    print('Exception when calling DirectoryApi->updateRegulatedEntityAttribute: $e\n');
 }
 ```
 
@@ -518,11 +518,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **regulatedentityid** | **String**| The REGULATEDENTITYID identifier | 
  **regulatedentityattributeid** | **String**| The REGULATEDENTITYATTRIBUTEID identifier | 
- **oBPv510UpdateRegulatedEntityAttributeRequest** | [**OBPv510UpdateRegulatedEntityAttributeRequest**](OBPv510UpdateRegulatedEntityAttributeRequest.md)| Request body | 
+ **createCounterpartyAttributeRequest** | [**CreateCounterpartyAttributeRequest**](CreateCounterpartyAttributeRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetRegulatedEntityAttributeById200Response**](OBPv510GetRegulatedEntityAttributeById200Response.md)
+[**GetRegulatedEntityAttributeById200Response**](GetRegulatedEntityAttributeById200Response.md)
 
 ### Authorization
 

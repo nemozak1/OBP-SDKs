@@ -1,20 +1,20 @@
 # OpenBankProject::AccountAccessRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv6_0_0_approve_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**o_bpv6_0_0_create_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**o_bpv6_0_0_get_account_access_request_by_id**](AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**o_bpv6_0_0_get_account_access_requests_for_account**](AccountAccessRequestApi.md#o_bpv6_0_0_get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**o_bpv6_0_0_get_my_account_access_requests**](AccountAccessRequestApi.md#o_bpv6_0_0_get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**o_bpv6_0_0_reject_account_access_request**](AccountAccessRequestApi.md#o_bpv6_0_0_reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**approve_account_access_request**](AccountAccessRequestApi.md#approve_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**create_account_access_request**](AccountAccessRequestApi.md#create_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**get_account_access_request_by_id**](AccountAccessRequestApi.md#get_account_access_request_by_id) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**get_account_access_requests_for_account**](AccountAccessRequestApi.md#get_account_access_requests_for_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**get_my_account_access_requests**](AccountAccessRequestApi.md#get_my_account_access_requests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**reject_account_access_request**](AccountAccessRequestApi.md#reject_account_access_request) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
 
-## o_bpv6_0_0_approve_account_access_request
+## approve_account_access_request
 
-> <OBPv600RejectAccountAccessRequest200Response> o_bpv6_0_0_approve_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+> <RejectAccountAccessRequest200Response> approve_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 Approve Account Access Request
 
@@ -36,41 +36,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 accountaccessrequestid = 'accountaccessrequestid_example' # String | The ACCOUNTACCESSREQUESTID identifier
-obpv600_reject_account_access_request_request = OpenBankProject::OBPv600RejectAccountAccessRequestRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600RejectAccountAccessRequestRequestProperties.new({comment: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600RejectAccountAccessRequestRequest | Request body
+reject_account_access_request_request = OpenBankProject::RejectAccountAccessRequestRequest.new # RejectAccountAccessRequestRequest | Request body
 
 begin
   # Approve Account Access Request
-  result = api_instance.o_bpv6_0_0_approve_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+  result = api_instance.approve_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_approve_account_access_request: #{e}"
+  puts "Error when calling AccountAccessRequestApi->approve_account_access_request: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_approve_account_access_request_with_http_info variant
+#### Using the approve_account_access_request_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600RejectAccountAccessRequest200Response>, Integer, Hash)> o_bpv6_0_0_approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+> <Array(<RejectAccountAccessRequest200Response>, Integer, Hash)> approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 ```ruby
 begin
   # Approve Account Access Request
-  data, status_code, headers = api_instance.o_bpv6_0_0_approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+  data, status_code, headers = api_instance.approve_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600RejectAccountAccessRequest200Response>
+  p data # => <RejectAccountAccessRequest200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_approve_account_access_request_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->approve_account_access_request_with_http_info: #{e}"
 end
 ```
 
@@ -81,11 +81,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **accountaccessrequestid** | **String** | The ACCOUNTACCESSREQUESTID identifier |  |
-| **obpv600_reject_account_access_request_request** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body |  |
+| **reject_account_access_request_request** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_create_account_access_request
+## create_account_access_request
 
-> <OBPv600RejectAccountAccessRequest200Response> o_bpv6_0_0_create_account_access_request(bankid, accountid, obpv600_create_account_access_request_request)
+> <RejectAccountAccessRequest200Response> create_account_access_request(bankid, accountid, create_account_access_request_request)
 
 Create Account Access Request
 
@@ -121,40 +121,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
-obpv600_create_account_access_request_request = OpenBankProject::OBPv600CreateAccountAccessRequestRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600CreateAccountAccessRequestRequestProperties.new({is_system_view: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), business_justification: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), view_id: , target_user_id: })}) # OBPv600CreateAccountAccessRequestRequest | Request body
+create_account_access_request_request = OpenBankProject::CreateAccountAccessRequestRequest.new # CreateAccountAccessRequestRequest | Request body
 
 begin
   # Create Account Access Request
-  result = api_instance.o_bpv6_0_0_create_account_access_request(bankid, accountid, obpv600_create_account_access_request_request)
+  result = api_instance.create_account_access_request(bankid, accountid, create_account_access_request_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_create_account_access_request: #{e}"
+  puts "Error when calling AccountAccessRequestApi->create_account_access_request: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_create_account_access_request_with_http_info variant
+#### Using the create_account_access_request_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600RejectAccountAccessRequest200Response>, Integer, Hash)> o_bpv6_0_0_create_account_access_request_with_http_info(bankid, accountid, obpv600_create_account_access_request_request)
+> <Array(<RejectAccountAccessRequest200Response>, Integer, Hash)> create_account_access_request_with_http_info(bankid, accountid, create_account_access_request_request)
 
 ```ruby
 begin
   # Create Account Access Request
-  data, status_code, headers = api_instance.o_bpv6_0_0_create_account_access_request_with_http_info(bankid, accountid, obpv600_create_account_access_request_request)
+  data, status_code, headers = api_instance.create_account_access_request_with_http_info(bankid, accountid, create_account_access_request_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600RejectAccountAccessRequest200Response>
+  p data # => <RejectAccountAccessRequest200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_create_account_access_request_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->create_account_access_request_with_http_info: #{e}"
 end
 ```
 
@@ -164,11 +164,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
-| **obpv600_create_account_access_request_request** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md) | Request body |  |
+| **create_account_access_request_request** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -180,9 +180,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_account_access_request_by_id
+## get_account_access_request_by_id
 
-> <OBPv600RejectAccountAccessRequest200Response> o_bpv6_0_0_get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
+> <RejectAccountAccessRequest200Response> get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -204,9 +204,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
@@ -216,28 +216,28 @@ accountaccessrequestid = 'accountaccessrequestid_example' # String | The ACCOUNT
 
 begin
   # Get Account Access Request by Id
-  result = api_instance.o_bpv6_0_0_get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
+  result = api_instance.get_account_access_request_by_id(bankid, accountid, accountaccessrequestid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_request_by_id: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_account_access_request_by_id: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_account_access_request_by_id_with_http_info variant
+#### Using the get_account_access_request_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600RejectAccountAccessRequest200Response>, Integer, Hash)> o_bpv6_0_0_get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid)
+> <Array(<RejectAccountAccessRequest200Response>, Integer, Hash)> get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid)
 
 ```ruby
 begin
   # Get Account Access Request by Id
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid)
+  data, status_code, headers = api_instance.get_account_access_request_by_id_with_http_info(bankid, accountid, accountaccessrequestid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600RejectAccountAccessRequest200Response>
+  p data # => <RejectAccountAccessRequest200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_request_by_id_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_account_access_request_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -251,7 +251,7 @@ end
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -263,9 +263,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_account_access_requests_for_account
+## get_account_access_requests_for_account
 
-> <OBPv600GetAccountAccessRequestsForAccount200Response> o_bpv6_0_0_get_account_access_requests_for_account(bankid, accountid)
+> <GetAccountAccessRequestsForAccount200Response> get_account_access_requests_for_account(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -287,9 +287,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
@@ -298,28 +298,28 @@ accountid = 'accountid_example' # String | The ACCOUNTID identifier
 
 begin
   # Get Account Access Requests for Account
-  result = api_instance.o_bpv6_0_0_get_account_access_requests_for_account(bankid, accountid)
+  result = api_instance.get_account_access_requests_for_account(bankid, accountid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_requests_for_account: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_account_access_requests_for_account: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_account_access_requests_for_account_with_http_info variant
+#### Using the get_account_access_requests_for_account_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAccountAccessRequestsForAccount200Response>, Integer, Hash)> o_bpv6_0_0_get_account_access_requests_for_account_with_http_info(bankid, accountid)
+> <Array(<GetAccountAccessRequestsForAccount200Response>, Integer, Hash)> get_account_access_requests_for_account_with_http_info(bankid, accountid)
 
 ```ruby
 begin
   # Get Account Access Requests for Account
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_account_access_requests_for_account_with_http_info(bankid, accountid)
+  data, status_code, headers = api_instance.get_account_access_requests_for_account_with_http_info(bankid, accountid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAccountAccessRequestsForAccount200Response>
+  p data # => <GetAccountAccessRequestsForAccount200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_account_access_requests_for_account_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_account_access_requests_for_account_with_http_info: #{e}"
 end
 ```
 
@@ -332,7 +332,7 @@ end
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -344,9 +344,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_my_account_access_requests
+## get_my_account_access_requests
 
-> <OBPv600GetAccountAccessRequestsForAccount200Response> o_bpv6_0_0_get_my_account_access_requests
+> <GetAccountAccessRequestsForAccount200Response> get_my_account_access_requests
 
 Get My Account Access Requests
 
@@ -368,37 +368,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
 
 begin
   # Get My Account Access Requests
-  result = api_instance.o_bpv6_0_0_get_my_account_access_requests
+  result = api_instance.get_my_account_access_requests
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_my_account_access_requests: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_my_account_access_requests: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_my_account_access_requests_with_http_info variant
+#### Using the get_my_account_access_requests_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetAccountAccessRequestsForAccount200Response>, Integer, Hash)> o_bpv6_0_0_get_my_account_access_requests_with_http_info
+> <Array(<GetAccountAccessRequestsForAccount200Response>, Integer, Hash)> get_my_account_access_requests_with_http_info
 
 ```ruby
 begin
   # Get My Account Access Requests
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_my_account_access_requests_with_http_info
+  data, status_code, headers = api_instance.get_my_account_access_requests_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetAccountAccessRequestsForAccount200Response>
+  p data # => <GetAccountAccessRequestsForAccount200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_get_my_account_access_requests_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->get_my_account_access_requests_with_http_info: #{e}"
 end
 ```
 
@@ -408,7 +408,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -420,9 +420,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_reject_account_access_request
+## reject_account_access_request
 
-> <OBPv600RejectAccountAccessRequest200Response> o_bpv6_0_0_reject_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+> <RejectAccountAccessRequest200Response> reject_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 Reject Account Access Request
 
@@ -444,41 +444,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountAccessRequestApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 accountaccessrequestid = 'accountaccessrequestid_example' # String | The ACCOUNTACCESSREQUESTID identifier
-obpv600_reject_account_access_request_request = OpenBankProject::OBPv600RejectAccountAccessRequestRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600RejectAccountAccessRequestRequestProperties.new({comment: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600RejectAccountAccessRequestRequest | Request body
+reject_account_access_request_request = OpenBankProject::RejectAccountAccessRequestRequest.new # RejectAccountAccessRequestRequest | Request body
 
 begin
   # Reject Account Access Request
-  result = api_instance.o_bpv6_0_0_reject_account_access_request(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+  result = api_instance.reject_account_access_request(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_reject_account_access_request: #{e}"
+  puts "Error when calling AccountAccessRequestApi->reject_account_access_request: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_reject_account_access_request_with_http_info variant
+#### Using the reject_account_access_request_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600RejectAccountAccessRequest200Response>, Integer, Hash)> o_bpv6_0_0_reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+> <Array(<RejectAccountAccessRequest200Response>, Integer, Hash)> reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
 
 ```ruby
 begin
   # Reject Account Access Request
-  data, status_code, headers = api_instance.o_bpv6_0_0_reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, obpv600_reject_account_access_request_request)
+  data, status_code, headers = api_instance.reject_account_access_request_with_http_info(bankid, accountid, accountaccessrequestid, reject_account_access_request_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600RejectAccountAccessRequest200Response>
+  p data # => <RejectAccountAccessRequest200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountAccessRequestApi->o_bpv6_0_0_reject_account_access_request_with_http_info: #{e}"
+  puts "Error when calling AccountAccessRequestApi->reject_account_access_request_with_http_info: #{e}"
 end
 ```
 
@@ -489,11 +489,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **accountaccessrequestid** | **String** | The ACCOUNTACCESSREQUESTID identifier |  |
-| **obpv600_reject_account_access_request_request** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md) | Request body |  |
+| **reject_account_access_request_request** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

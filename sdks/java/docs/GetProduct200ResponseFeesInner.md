@@ -1,0 +1,17 @@
+
+
+# GetProduct200ResponseFeesInner
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**name** | **String** |  |  [optional] |
+|**isActive** | **Boolean** |  |  [optional] |
+|**moreInfo** | **String** |  |  [optional] |
+|**productFeeId** | **String** |  |  [optional] |
+|**value** | [**GetProductFee200ResponseValue**](GetProductFee200ResponseValue.md) |  |  [optional] |
+
+
+

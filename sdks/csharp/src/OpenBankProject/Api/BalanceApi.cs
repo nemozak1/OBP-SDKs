@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -47,10 +47,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateBankAccountBalanceApiResponse"/>&gt;</returns>
-        Task<IOBPv510CreateBankAccountBalanceApiResponse> OBPv510CreateBankAccountBalanceAsync(string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountBalanceApiResponse"/>&gt;</returns>
+        Task<ICreateBankAccountBalanceApiResponse> CreateBankAccountBalanceAsync(string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Account Balance
@@ -60,10 +60,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateBankAccountBalanceApiResponse"/>?&gt;</returns>
-        Task<IOBPv510CreateBankAccountBalanceApiResponse?> OBPv510CreateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountBalanceApiResponse"/>?&gt;</returns>
+        Task<ICreateBankAccountBalanceApiResponse?> CreateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Account Balance
@@ -76,8 +76,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteBankAccountBalanceApiResponse"/>&gt;</returns>
-        Task<IOBPv510DeleteBankAccountBalanceApiResponse> OBPv510DeleteBankAccountBalanceAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAccountBalanceApiResponse"/>&gt;</returns>
+        Task<IDeleteBankAccountBalanceApiResponse> DeleteBankAccountBalanceAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Bank Account Balance
@@ -89,8 +89,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteBankAccountBalanceApiResponse"/>?&gt;</returns>
-        Task<IOBPv510DeleteBankAccountBalanceApiResponse?> OBPv510DeleteBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAccountBalanceApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankAccountBalanceApiResponse?> DeleteBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get All Bank Account Balances
@@ -102,8 +102,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllBankAccountBalancesApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetAllBankAccountBalancesApiResponse> OBPv510GetAllBankAccountBalancesAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankAccountBalancesApiResponse"/>&gt;</returns>
+        Task<IGetAllBankAccountBalancesApiResponse> GetAllBankAccountBalancesAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get All Bank Account Balances
@@ -114,8 +114,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllBankAccountBalancesApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetAllBankAccountBalancesApiResponse?> OBPv510GetAllBankAccountBalancesOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankAccountBalancesApiResponse"/>?&gt;</returns>
+        Task<IGetAllBankAccountBalancesApiResponse?> GetAllBankAccountBalancesOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Account Balance By ID
@@ -128,8 +128,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetBankAccountBalanceByIdApiResponse> OBPv510GetBankAccountBalanceByIdAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
+        Task<IGetBankAccountBalanceByIdApiResponse> GetBankAccountBalanceByIdAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Account Balance By ID
@@ -141,8 +141,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetBankAccountBalanceByIdApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetBankAccountBalanceByIdApiResponse?> OBPv510GetBankAccountBalanceByIdOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAccountBalanceByIdApiResponse"/>?&gt;</returns>
+        Task<IGetBankAccountBalanceByIdApiResponse?> GetBankAccountBalanceByIdOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Account Balance
@@ -154,10 +154,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateBankAccountBalanceApiResponse"/>&gt;</returns>
-        Task<IOBPv510UpdateBankAccountBalanceApiResponse> OBPv510UpdateBankAccountBalanceAsync(string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAccountBalanceApiResponse"/>&gt;</returns>
+        Task<IUpdateBankAccountBalanceApiResponse> UpdateBankAccountBalanceAsync(string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Bank Account Balance
@@ -168,10 +168,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateBankAccountBalanceApiResponse"/>?&gt;</returns>
-        Task<IOBPv510UpdateBankAccountBalanceApiResponse?> OBPv510UpdateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAccountBalanceApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankAccountBalanceApiResponse?> UpdateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -182,101 +182,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510CreateBankAccountBalance;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankAccountBalance;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510CreateBankAccountBalance;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankAccountBalance;
 
-        internal void ExecuteOnOBPv510CreateBankAccountBalance(AccountApi.OBPv510CreateBankAccountBalanceApiResponse apiResponse)
+        internal void ExecuteOnCreateBankAccountBalance(AccountApi.CreateBankAccountBalanceApiResponse apiResponse)
         {
-            OnOBPv510CreateBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510CreateBankAccountBalance(Exception exception)
+        internal void ExecuteOnErrorCreateBankAccountBalance(Exception exception)
         {
-            OnErrorOBPv510CreateBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510DeleteBankAccountBalance;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankAccountBalance;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510DeleteBankAccountBalance;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankAccountBalance;
 
-        internal void ExecuteOnOBPv510DeleteBankAccountBalance(AccountApi.OBPv510DeleteBankAccountBalanceApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankAccountBalance(AccountApi.DeleteBankAccountBalanceApiResponse apiResponse)
         {
-            OnOBPv510DeleteBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510DeleteBankAccountBalance(Exception exception)
+        internal void ExecuteOnErrorDeleteBankAccountBalance(Exception exception)
         {
-            OnErrorOBPv510DeleteBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetAllBankAccountBalances;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAllBankAccountBalances;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetAllBankAccountBalances;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAllBankAccountBalances;
 
-        internal void ExecuteOnOBPv510GetAllBankAccountBalances(AccountApi.OBPv510GetAllBankAccountBalancesApiResponse apiResponse)
+        internal void ExecuteOnGetAllBankAccountBalances(AccountApi.GetAllBankAccountBalancesApiResponse apiResponse)
         {
-            OnOBPv510GetAllBankAccountBalances?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAllBankAccountBalances?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetAllBankAccountBalances(Exception exception)
+        internal void ExecuteOnErrorGetAllBankAccountBalances(Exception exception)
         {
-            OnErrorOBPv510GetAllBankAccountBalances?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAllBankAccountBalances?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetBankAccountBalanceById;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankAccountBalanceById;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetBankAccountBalanceById;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankAccountBalanceById;
 
-        internal void ExecuteOnOBPv510GetBankAccountBalanceById(AccountApi.OBPv510GetBankAccountBalanceByIdApiResponse apiResponse)
+        internal void ExecuteOnGetBankAccountBalanceById(AccountApi.GetBankAccountBalanceByIdApiResponse apiResponse)
         {
-            OnOBPv510GetBankAccountBalanceById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankAccountBalanceById?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetBankAccountBalanceById(Exception exception)
+        internal void ExecuteOnErrorGetBankAccountBalanceById(Exception exception)
         {
-            OnErrorOBPv510GetBankAccountBalanceById?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankAccountBalanceById?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510UpdateBankAccountBalance;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBankAccountBalance;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510UpdateBankAccountBalance;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBankAccountBalance;
 
-        internal void ExecuteOnOBPv510UpdateBankAccountBalance(AccountApi.OBPv510UpdateBankAccountBalanceApiResponse apiResponse)
+        internal void ExecuteOnUpdateBankAccountBalance(AccountApi.UpdateBankAccountBalanceApiResponse apiResponse)
         {
-            OnOBPv510UpdateBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBankAccountBalance?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510UpdateBankAccountBalance(Exception exception)
+        internal void ExecuteOnErrorUpdateBankAccountBalance(Exception exception)
         {
-            OnErrorOBPv510UpdateBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBankAccountBalance?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -334,16 +334,16 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv510CreateBankAccountBalance(ref string bankid, ref string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        partial void FormatCreateBankAccountBalance(ref string bankid, ref string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
+        /// <param name="createBankAccountBalanceRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv510CreateBankAccountBalance(string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        private void ValidateCreateBankAccountBalance(string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -351,8 +351,8 @@ namespace OpenBankProject.Api
             if (accountid == null)
                 throw new ArgumentNullException(nameof(accountid));
 
-            if (oBPv510CreateBankAccountBalanceRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510CreateBankAccountBalanceRequest));
+            if (createBankAccountBalanceRequest == null)
+                throw new ArgumentNullException(nameof(createBankAccountBalanceRequest));
         }
 
         /// <summary>
@@ -361,11 +361,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        private void AfterOBPv510CreateBankAccountBalanceDefaultImplementation(IOBPv510CreateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        /// <param name="createBankAccountBalanceRequest"></param>
+        private void AfterCreateBankAccountBalanceDefaultImplementation(ICreateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510CreateBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
+            AfterCreateBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, createBankAccountBalanceRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -377,8 +377,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        partial void AfterOBPv510CreateBankAccountBalance(ref bool suppressDefaultLog, IOBPv510CreateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        /// <param name="createBankAccountBalanceRequest"></param>
+        partial void AfterCreateBankAccountBalance(ref bool suppressDefaultLog, ICreateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -388,11 +388,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        private void OnErrorOBPv510CreateBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        /// <param name="createBankAccountBalanceRequest"></param>
+        private void OnErrorCreateBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510CreateBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
+            OnErrorCreateBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, createBankAccountBalanceRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -406,22 +406,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        partial void OnErrorOBPv510CreateBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        /// <param name="createBankAccountBalanceRequest"></param>
+        partial void OnErrorCreateBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Create Bank Account Balance &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateBankAccountBalanceApiResponse?> OBPv510CreateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAccountBalanceApiResponse?> CreateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510CreateBankAccountBalanceAsync(bankid, accountid, oBPv510CreateBankAccountBalanceRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateBankAccountBalanceAsync(bankid, accountid, createBankAccountBalanceRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -435,18 +435,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510CreateBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510CreateBankAccountBalanceApiResponse> OBPv510CreateBankAccountBalanceAsync(string bankid, string accountid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankAccountBalanceApiResponse> CreateBankAccountBalanceAsync(string bankid, string accountid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510CreateBankAccountBalance(bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
+                ValidateCreateBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest);
 
-                FormatOBPv510CreateBankAccountBalance(ref bankid, ref accountid, oBPv510CreateBankAccountBalanceRequest);
+                FormatCreateBankAccountBalance(ref bankid, ref accountid, createBankAccountBalanceRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -459,16 +459,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510CreateBankAccountBalanceRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createBankAccountBalanceRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510CreateBankAccountBalanceRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createBankAccountBalanceRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -504,8 +504,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv510CreateBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv510CreateBankAccountBalanceApiResponse>();
-                        AccountApi.OBPv510CreateBankAccountBalanceApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateBankAccountBalanceApiResponse>();
+                        AccountApi.CreateBankAccountBalanceApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -516,9 +516,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510CreateBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
+                        AfterCreateBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, createBankAccountBalanceRequest);
 
-                        Events.ExecuteOnOBPv510CreateBankAccountBalance(apiResponseLocalVar);
+                        Events.ExecuteOnCreateBankAccountBalance(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -530,13 +530,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510CreateBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances", uriBuilderLocalVar.Path, bankid, accountid, oBPv510CreateBankAccountBalanceRequest);
-                Events.ExecuteOnErrorOBPv510CreateBankAccountBalance(e);
+                OnErrorCreateBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances", uriBuilderLocalVar.Path, bankid, accountid, createBankAccountBalanceRequest);
+                Events.ExecuteOnErrorCreateBankAccountBalance(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510DeleteBankAccountBalance(ref string bankid, ref string accountid, ref string balanceid);
+        partial void FormatDeleteBankAccountBalance(ref string bankid, ref string accountid, ref string balanceid);
 
         /// <summary>
         /// Validates the request parameters
@@ -545,7 +545,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510DeleteBankAccountBalance(string bankid, string accountid, string balanceid)
+        private void ValidateDeleteBankAccountBalance(string bankid, string accountid, string balanceid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -564,10 +564,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        private void AfterOBPv510DeleteBankAccountBalanceDefaultImplementation(IOBPv510DeleteBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid)
+        private void AfterDeleteBankAccountBalanceDefaultImplementation(IDeleteBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510DeleteBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid);
+            AfterDeleteBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -580,7 +580,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        partial void AfterOBPv510DeleteBankAccountBalance(ref bool suppressDefaultLog, IOBPv510DeleteBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid);
+        partial void AfterDeleteBankAccountBalance(ref bool suppressDefaultLog, IDeleteBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -591,10 +591,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        private void OnErrorOBPv510DeleteBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid)
+        private void OnErrorDeleteBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510DeleteBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid);
+            OnErrorDeleteBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -609,7 +609,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        partial void OnErrorOBPv510DeleteBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid);
+        partial void OnErrorDeleteBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid);
 
         /// <summary>
         /// Delete Bank Account Balance &lt;p&gt;Delete a Bank Account Balance specified by BALANCE_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;BALANCE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -618,12 +618,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteBankAccountBalanceApiResponse?> OBPv510DeleteBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankAccountBalanceApiResponse?> DeleteBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510DeleteBankAccountBalanceAsync(bankid, accountid, balanceid, cancellationToken).ConfigureAwait(false);
+                return await DeleteBankAccountBalanceAsync(bankid, accountid, balanceid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -639,16 +639,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510DeleteBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510DeleteBankAccountBalanceApiResponse> OBPv510DeleteBankAccountBalanceAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankAccountBalanceApiResponse> DeleteBankAccountBalanceAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510DeleteBankAccountBalance(bankid, accountid, balanceid);
+                ValidateDeleteBankAccountBalance(bankid, accountid, balanceid);
 
-                FormatOBPv510DeleteBankAccountBalance(ref bankid, ref accountid, ref balanceid);
+                FormatDeleteBankAccountBalance(ref bankid, ref accountid, ref balanceid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -667,7 +667,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -685,8 +685,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv510DeleteBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv510DeleteBankAccountBalanceApiResponse>();
-                        AccountApi.OBPv510DeleteBankAccountBalanceApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.DeleteBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.DeleteBankAccountBalanceApiResponse>();
+                        AccountApi.DeleteBankAccountBalanceApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -697,9 +697,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510DeleteBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid);
+                        AfterDeleteBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid);
 
-                        Events.ExecuteOnOBPv510DeleteBankAccountBalance(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteBankAccountBalance(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -711,13 +711,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510DeleteBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid);
-                Events.ExecuteOnErrorOBPv510DeleteBankAccountBalance(e);
+                OnErrorDeleteBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid);
+                Events.ExecuteOnErrorDeleteBankAccountBalance(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510GetAllBankAccountBalances(ref string bankid, ref string accountid);
+        partial void FormatGetAllBankAccountBalances(ref string bankid, ref string accountid);
 
         /// <summary>
         /// Validates the request parameters
@@ -725,7 +725,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetAllBankAccountBalances(string bankid, string accountid)
+        private void ValidateGetAllBankAccountBalances(string bankid, string accountid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -740,10 +740,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        private void AfterOBPv510GetAllBankAccountBalancesDefaultImplementation(IOBPv510GetAllBankAccountBalancesApiResponse apiResponseLocalVar, string bankid, string accountid)
+        private void AfterGetAllBankAccountBalancesDefaultImplementation(IGetAllBankAccountBalancesApiResponse apiResponseLocalVar, string bankid, string accountid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetAllBankAccountBalances(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid);
+            AfterGetAllBankAccountBalances(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -755,7 +755,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        partial void AfterOBPv510GetAllBankAccountBalances(ref bool suppressDefaultLog, IOBPv510GetAllBankAccountBalancesApiResponse apiResponseLocalVar, string bankid, string accountid);
+        partial void AfterGetAllBankAccountBalances(ref bool suppressDefaultLog, IGetAllBankAccountBalancesApiResponse apiResponseLocalVar, string bankid, string accountid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -765,10 +765,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        private void OnErrorOBPv510GetAllBankAccountBalancesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid)
+        private void OnErrorGetAllBankAccountBalancesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetAllBankAccountBalances(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid);
+            OnErrorGetAllBankAccountBalances(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -782,7 +782,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        partial void OnErrorOBPv510GetAllBankAccountBalances(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid);
+        partial void OnErrorGetAllBankAccountBalances(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid);
 
         /// <summary>
         /// Get All Bank Account Balances &lt;p&gt;Get all Balances for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balances&lt;/strong&gt;&lt;/a&gt;: balances&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
@@ -790,12 +790,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllBankAccountBalancesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAllBankAccountBalancesApiResponse?> OBPv510GetAllBankAccountBalancesOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankAccountBalancesApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankAccountBalancesApiResponse?> GetAllBankAccountBalancesOrDefaultAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetAllBankAccountBalancesAsync(bankid, accountid, cancellationToken).ConfigureAwait(false);
+                return await GetAllBankAccountBalancesAsync(bankid, accountid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -810,16 +810,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetAllBankAccountBalancesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetAllBankAccountBalancesApiResponse> OBPv510GetAllBankAccountBalancesAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAllBankAccountBalancesApiResponse"/>&gt;</returns>
+        public async Task<IGetAllBankAccountBalancesApiResponse> GetAllBankAccountBalancesAsync(string bankid, string accountid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetAllBankAccountBalances(bankid, accountid);
+                ValidateGetAllBankAccountBalances(bankid, accountid);
 
-                FormatOBPv510GetAllBankAccountBalances(ref bankid, ref accountid);
+                FormatGetAllBankAccountBalances(ref bankid, ref accountid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -837,7 +837,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -864,8 +864,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv510GetAllBankAccountBalancesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv510GetAllBankAccountBalancesApiResponse>();
-                        AccountApi.OBPv510GetAllBankAccountBalancesApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.GetAllBankAccountBalancesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.GetAllBankAccountBalancesApiResponse>();
+                        AccountApi.GetAllBankAccountBalancesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -876,9 +876,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetAllBankAccountBalancesDefaultImplementation(apiResponseLocalVar, bankid, accountid);
+                        AfterGetAllBankAccountBalancesDefaultImplementation(apiResponseLocalVar, bankid, accountid);
 
-                        Events.ExecuteOnOBPv510GetAllBankAccountBalances(apiResponseLocalVar);
+                        Events.ExecuteOnGetAllBankAccountBalances(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -890,13 +890,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetAllBankAccountBalancesDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances", uriBuilderLocalVar.Path, bankid, accountid);
-                Events.ExecuteOnErrorOBPv510GetAllBankAccountBalances(e);
+                OnErrorGetAllBankAccountBalancesDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances", uriBuilderLocalVar.Path, bankid, accountid);
+                Events.ExecuteOnErrorGetAllBankAccountBalances(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510GetBankAccountBalanceById(ref string bankid, ref string accountid, ref string balanceid);
+        partial void FormatGetBankAccountBalanceById(ref string bankid, ref string accountid, ref string balanceid);
 
         /// <summary>
         /// Validates the request parameters
@@ -905,7 +905,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetBankAccountBalanceById(string bankid, string accountid, string balanceid)
+        private void ValidateGetBankAccountBalanceById(string bankid, string accountid, string balanceid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -924,10 +924,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        private void AfterOBPv510GetBankAccountBalanceByIdDefaultImplementation(IOBPv510GetBankAccountBalanceByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid)
+        private void AfterGetBankAccountBalanceByIdDefaultImplementation(IGetBankAccountBalanceByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetBankAccountBalanceById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid);
+            AfterGetBankAccountBalanceById(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -940,7 +940,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        partial void AfterOBPv510GetBankAccountBalanceById(ref bool suppressDefaultLog, IOBPv510GetBankAccountBalanceByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid);
+        partial void AfterGetBankAccountBalanceById(ref bool suppressDefaultLog, IGetBankAccountBalanceByIdApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -951,10 +951,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        private void OnErrorOBPv510GetBankAccountBalanceByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid)
+        private void OnErrorGetBankAccountBalanceByIdDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetBankAccountBalanceById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid);
+            OnErrorGetBankAccountBalanceById(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -969,7 +969,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        partial void OnErrorOBPv510GetBankAccountBalanceById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid);
+        partial void OnErrorGetBankAccountBalanceById(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid);
 
         /// <summary>
         /// Get Bank Account Balance By ID &lt;p&gt;Get a specific Bank Account Balance by its BALANCE_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;BALANCE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
@@ -978,12 +978,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetBankAccountBalanceByIdApiResponse?> OBPv510GetBankAccountBalanceByIdOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAccountBalanceByIdApiResponse?> GetBankAccountBalanceByIdOrDefaultAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetBankAccountBalanceByIdAsync(bankid, accountid, balanceid, cancellationToken).ConfigureAwait(false);
+                return await GetBankAccountBalanceByIdAsync(bankid, accountid, balanceid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -999,16 +999,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetBankAccountBalanceByIdApiResponse> OBPv510GetBankAccountBalanceByIdAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankAccountBalanceByIdApiResponse"/>&gt;</returns>
+        public async Task<IGetBankAccountBalanceByIdApiResponse> GetBankAccountBalanceByIdAsync(string bankid, string accountid, string balanceid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetBankAccountBalanceById(bankid, accountid, balanceid);
+                ValidateGetBankAccountBalanceById(bankid, accountid, balanceid);
 
-                FormatOBPv510GetBankAccountBalanceById(ref bankid, ref accountid, ref balanceid);
+                FormatGetBankAccountBalanceById(ref bankid, ref accountid, ref balanceid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1027,7 +1027,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1054,8 +1054,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv510GetBankAccountBalanceByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv510GetBankAccountBalanceByIdApiResponse>();
-                        AccountApi.OBPv510GetBankAccountBalanceByIdApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.GetBankAccountBalanceByIdApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.GetBankAccountBalanceByIdApiResponse>();
+                        AccountApi.GetBankAccountBalanceByIdApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1066,9 +1066,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510GetBankAccountBalanceByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid);
+                        AfterGetBankAccountBalanceByIdDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid);
 
-                        Events.ExecuteOnOBPv510GetBankAccountBalanceById(apiResponseLocalVar);
+                        Events.ExecuteOnGetBankAccountBalanceById(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1080,13 +1080,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetBankAccountBalanceByIdDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid);
-                Events.ExecuteOnErrorOBPv510GetBankAccountBalanceById(e);
+                OnErrorGetBankAccountBalanceByIdDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid);
+                Events.ExecuteOnErrorGetBankAccountBalanceById(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv510UpdateBankAccountBalance(ref string bankid, ref string accountid, ref string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        partial void FormatUpdateBankAccountBalance(ref string bankid, ref string accountid, ref string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -1094,9 +1094,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
+        /// <param name="createBankAccountBalanceRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv510UpdateBankAccountBalance(string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        private void ValidateUpdateBankAccountBalance(string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1107,8 +1107,8 @@ namespace OpenBankProject.Api
             if (balanceid == null)
                 throw new ArgumentNullException(nameof(balanceid));
 
-            if (oBPv510CreateBankAccountBalanceRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510CreateBankAccountBalanceRequest));
+            if (createBankAccountBalanceRequest == null)
+                throw new ArgumentNullException(nameof(createBankAccountBalanceRequest));
         }
 
         /// <summary>
@@ -1118,11 +1118,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        private void AfterOBPv510UpdateBankAccountBalanceDefaultImplementation(IOBPv510UpdateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        /// <param name="createBankAccountBalanceRequest"></param>
+        private void AfterUpdateBankAccountBalanceDefaultImplementation(IUpdateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510UpdateBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
+            AfterUpdateBankAccountBalance(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, balanceid, createBankAccountBalanceRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1135,8 +1135,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        partial void AfterOBPv510UpdateBankAccountBalance(ref bool suppressDefaultLog, IOBPv510UpdateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        /// <param name="createBankAccountBalanceRequest"></param>
+        partial void AfterUpdateBankAccountBalance(ref bool suppressDefaultLog, IUpdateBankAccountBalanceApiResponse apiResponseLocalVar, string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1147,11 +1147,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        private void OnErrorOBPv510UpdateBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest)
+        /// <param name="createBankAccountBalanceRequest"></param>
+        private void OnErrorUpdateBankAccountBalanceDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510UpdateBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
+            OnErrorUpdateBankAccountBalance(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, balanceid, createBankAccountBalanceRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1166,8 +1166,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="balanceid"></param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest"></param>
-        partial void OnErrorOBPv510UpdateBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest);
+        /// <param name="createBankAccountBalanceRequest"></param>
+        partial void OnErrorUpdateBankAccountBalance(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest);
 
         /// <summary>
         /// Update Bank Account Balance &lt;p&gt;Update an existing Bank Account Balance specified by BALANCE_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;BALANCE_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
@@ -1175,14 +1175,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateBankAccountBalanceApiResponse?> OBPv510UpdateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankAccountBalanceApiResponse?> UpdateBankAccountBalanceOrDefaultAsync(string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510UpdateBankAccountBalanceAsync(bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankAccountBalanceAsync(bankid, accountid, balanceid, createBankAccountBalanceRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1197,18 +1197,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="balanceid">The BALANCEID identifier</param>
-        /// <param name="oBPv510CreateBankAccountBalanceRequest">Request body</param>
+        /// <param name="createBankAccountBalanceRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510UpdateBankAccountBalanceApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510UpdateBankAccountBalanceApiResponse> OBPv510UpdateBankAccountBalanceAsync(string bankid, string accountid, string balanceid, OBPv510CreateBankAccountBalanceRequest oBPv510CreateBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankAccountBalanceApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankAccountBalanceApiResponse> UpdateBankAccountBalanceAsync(string bankid, string accountid, string balanceid, CreateBankAccountBalanceRequest createBankAccountBalanceRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
+                ValidateUpdateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest);
 
-                FormatOBPv510UpdateBankAccountBalance(ref bankid, ref accountid, ref balanceid, oBPv510CreateBankAccountBalanceRequest);
+                FormatUpdateBankAccountBalance(ref bankid, ref accountid, ref balanceid, createBankAccountBalanceRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1222,16 +1222,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbalanceid%7D", Uri.EscapeDataString(balanceid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510CreateBankAccountBalanceRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createBankAccountBalanceRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510CreateBankAccountBalanceRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createBankAccountBalanceRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1267,8 +1267,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv510UpdateBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv510UpdateBankAccountBalanceApiResponse>();
-                        AccountApi.OBPv510UpdateBankAccountBalanceApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.UpdateBankAccountBalanceApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.UpdateBankAccountBalanceApiResponse>();
+                        AccountApi.UpdateBankAccountBalanceApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1279,9 +1279,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv510UpdateBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
+                        AfterUpdateBankAccountBalanceDefaultImplementation(apiResponseLocalVar, bankid, accountid, balanceid, createBankAccountBalanceRequest);
 
-                        Events.ExecuteOnOBPv510UpdateBankAccountBalance(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBankAccountBalance(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1293,8 +1293,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510UpdateBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid, oBPv510CreateBankAccountBalanceRequest);
-                Events.ExecuteOnErrorOBPv510UpdateBankAccountBalance(e);
+                OnErrorUpdateBankAccountBalanceDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", uriBuilderLocalVar.Path, bankid, accountid, balanceid, createBankAccountBalanceRequest);
+                Events.ExecuteOnErrorUpdateBankAccountBalance(e);
                 throw;
             }
         }

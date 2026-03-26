@@ -1,17 +1,17 @@
 # OpenBankProject::AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_add_tag_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**o_bpv4_0_0_delete_tag_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**o_bpv4_0_0_get_tags_for_view_on_account**](AccountMetadataApi.md#o_bpv4_0_0_get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**add_tag_for_view_on_account**](AccountMetadataApi.md#add_tag_for_view_on_account) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**delete_tag_for_view_on_account**](AccountMetadataApi.md#delete_tag_for_view_on_account) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**get_tags_for_view_on_account**](AccountMetadataApi.md#get_tags_for_view_on_account) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
 
-## o_bpv4_0_0_add_tag_for_view_on_account
+## add_tag_for_view_on_account
 
-> <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+> <GetTagsForViewOnAccount200ResponseTagsInner> add_tag_for_view_on_account(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
 
 Create a tag on account
 
@@ -33,41 +33,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountMetadataApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
-obpv400_delete_system_level_endpoint_tag200_response = OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200Response.new({type: 'type_example', properties: OpenBankProject::OBPv400DeleteSystemLevelEndpointTag200ResponseProperties.new({value: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+get_transaction_types200_response_transaction_types_inner_id = OpenBankProject::GetTransactionTypes200ResponseTransactionTypesInnerId.new # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 begin
   # Create a tag on account
-  result = api_instance.o_bpv4_0_0_add_tag_for_view_on_account(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+  result = api_instance.add_tag_for_view_on_account(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_add_tag_for_view_on_account: #{e}"
+  puts "Error when calling AccountMetadataApi->add_tag_for_view_on_account: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_add_tag_for_view_on_account_with_http_info variant
+#### Using the add_tag_for_view_on_account_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>, Integer, Hash)> o_bpv4_0_0_add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+> <Array(<GetTagsForViewOnAccount200ResponseTagsInner>, Integer, Hash)> add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
 
 ```ruby
 begin
   # Create a tag on account
-  data, status_code, headers = api_instance.o_bpv4_0_0_add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, obpv400_delete_system_level_endpoint_tag200_response)
+  data, status_code, headers = api_instance.add_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, get_transaction_types200_response_transaction_types_inner_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>
+  p data # => <GetTagsForViewOnAccount200ResponseTagsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_add_tag_for_view_on_account_with_http_info: #{e}"
+  puts "Error when calling AccountMetadataApi->add_tag_for_view_on_account_with_http_info: #{e}"
 end
 ```
 
@@ -78,11 +78,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md) | Request body |  |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -94,9 +94,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_tag_for_view_on_account
+## delete_tag_for_view_on_account
 
-> o_bpv4_0_0_delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
+> delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -118,9 +118,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountMetadataApi.new
@@ -131,27 +131,27 @@ tagid = 'tagid_example' # String | The TAGID identifier
 
 begin
   # Delete a tag on account
-  api_instance.o_bpv4_0_0_delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
+  api_instance.delete_tag_for_view_on_account(bankid, accountid, viewid, tagid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_delete_tag_for_view_on_account: #{e}"
+  puts "Error when calling AccountMetadataApi->delete_tag_for_view_on_account: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info variant
+#### Using the delete_tag_for_view_on_account_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid)
+> <Array(nil, Integer, Hash)> delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid)
 
 ```ruby
 begin
   # Delete a tag on account
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid)
+  data, status_code, headers = api_instance.delete_tag_for_view_on_account_with_http_info(bankid, accountid, viewid, tagid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_delete_tag_for_view_on_account_with_http_info: #{e}"
+  puts "Error when calling AccountMetadataApi->delete_tag_for_view_on_account_with_http_info: #{e}"
 end
 ```
 
@@ -178,9 +178,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_tags_for_view_on_account
+## get_tags_for_view_on_account
 
-> <OBPv400GetTagsForViewOnAccount200Response> o_bpv4_0_0_get_tags_for_view_on_account(bankid, accountid, viewid)
+> <GetTagsForViewOnAccount200Response> get_tags_for_view_on_account(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -202,9 +202,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::AccountMetadataApi.new
@@ -214,28 +214,28 @@ viewid = 'viewid_example' # String | The VIEWID identifier
 
 begin
   # Get tags on account
-  result = api_instance.o_bpv4_0_0_get_tags_for_view_on_account(bankid, accountid, viewid)
+  result = api_instance.get_tags_for_view_on_account(bankid, accountid, viewid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_get_tags_for_view_on_account: #{e}"
+  puts "Error when calling AccountMetadataApi->get_tags_for_view_on_account: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_tags_for_view_on_account_with_http_info variant
+#### Using the get_tags_for_view_on_account_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetTagsForViewOnAccount200Response>, Integer, Hash)> o_bpv4_0_0_get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid)
+> <Array(<GetTagsForViewOnAccount200Response>, Integer, Hash)> get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid)
 
 ```ruby
 begin
   # Get tags on account
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid)
+  data, status_code, headers = api_instance.get_tags_for_view_on_account_with_http_info(bankid, accountid, viewid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetTagsForViewOnAccount200Response>
+  p data # => <GetTagsForViewOnAccount200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling AccountMetadataApi->o_bpv4_0_0_get_tags_for_view_on_account_with_http_info: #{e}"
+  puts "Error when calling AccountMetadataApi->get_tags_for_view_on_account_with_http_info: #{e}"
 end
 ```
 
@@ -249,7 +249,7 @@ end
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

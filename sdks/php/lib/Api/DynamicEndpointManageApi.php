@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,40 +75,40 @@ class DynamicEndpointManageApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateBankLevelDynamicEndpoint' => [
+        'createBankLevelDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400CreateDynamicEndpoint' => [
+        'createDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400DeleteBankLevelDynamicEndpoint' => [
+        'deleteBankLevelDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400DeleteDynamicEndpoint' => [
+        'deleteDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400DeleteMyDynamicEndpoint' => [
+        'deleteMyDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400GetBankLevelDynamicEndpoint' => [
+        'getBankLevelDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400GetBankLevelDynamicEndpoints' => [
+        'getBankLevelDynamicEndpoints' => [
             'application/json',
         ],
-        'oBPv400GetDynamicEndpoint' => [
+        'getDynamicEndpoint' => [
             'application/json',
         ],
-        'oBPv400GetDynamicEndpoints' => [
+        'getDynamicEndpoints' => [
             'application/json',
         ],
-        'oBPv400GetMyDynamicEndpoints' => [
+        'getMyDynamicEndpoints' => [
             'application/json',
         ],
-        'oBPv400UpdateBankLevelDynamicEndpointHost' => [
+        'updateBankLevelDynamicEndpointHost' => [
             'application/json',
         ],
-        'oBPv400UpdateDynamicEndpointHost' => [
+        'updateDynamicEndpointHost' => [
             'application/json',
         ],
     ];
@@ -160,40 +160,40 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicEndpoint
+     * Operation createBankLevelDynamicEndpoint
      *
      * Create Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    public function oBPv400CreateBankLevelDynamicEndpoint($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'][0])
+    public function createBankLevelDynamicEndpoint($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createBankLevelDynamicEndpoint'][0])
     {
-        list($response) = $this->oBPv400CreateBankLevelDynamicEndpointWithHttpInfo($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        list($response) = $this->createBankLevelDynamicEndpointWithHttpInfo($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicEndpointWithHttpInfo
+     * Operation createBankLevelDynamicEndpointWithHttpInfo
      *
      * Create Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateBankLevelDynamicEndpointWithHttpInfo($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'][0])
+    public function createBankLevelDynamicEndpointWithHttpInfo($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createBankLevelDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400CreateBankLevelDynamicEndpointRequest($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        $request = $this->createBankLevelDynamicEndpointRequest($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -221,7 +221,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $request,
                         $response,
                     );
@@ -243,7 +243,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                 $request,
                 $response,
             );
@@ -252,7 +252,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,20 +265,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicEndpointAsync
+     * Operation createBankLevelDynamicEndpointAsync
      *
      * Create Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicEndpointAsync($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'][0])
+    public function createBankLevelDynamicEndpointAsync($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createBankLevelDynamicEndpoint'][0])
     {
-        return $this->oBPv400CreateBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType)
+        return $this->createBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -287,21 +287,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateBankLevelDynamicEndpointAsyncWithHttpInfo
+     * Operation createBankLevelDynamicEndpointAsyncWithHttpInfo
      *
      * Create Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'][0])
+    public function createBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createBankLevelDynamicEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems';
-        $request = $this->oBPv400CreateBankLevelDynamicEndpointRequest($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner';
+        $request = $this->createBankLevelDynamicEndpointRequest($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -340,29 +340,29 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateBankLevelDynamicEndpoint'
+     * Create request for operation 'createBankLevelDynamicEndpoint'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateBankLevelDynamicEndpointRequest($bankid, $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateBankLevelDynamicEndpoint'][0])
+    public function createBankLevelDynamicEndpointRequest($bankid, $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createBankLevelDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateBankLevelDynamicEndpoint'
+                'Missing the required parameter $bankid when calling createBankLevelDynamicEndpoint'
             );
         }
 
-        // verify the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' is set
-        if ($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string === null || (is_array($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string) && count($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string) === 0)) {
+        // verify the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' is set
+        if ($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string === null || (is_array($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string) && count($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string when calling oBPv400CreateBankLevelDynamicEndpoint'
+                'Missing the required parameter $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string when calling createBankLevelDynamicEndpoint'
             );
         }
 
@@ -393,12 +393,12 @@ class DynamicEndpointManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)) {
+        if (isset($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string));
             } else {
-                $httpBody = $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string;
+                $httpBody = $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -434,9 +434,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -461,38 +461,38 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicEndpoint
+     * Operation createDynamicEndpoint
      *
      * Create Dynamic Endpoint
      *
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    public function oBPv400CreateDynamicEndpoint($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateDynamicEndpoint'][0])
+    public function createDynamicEndpoint($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createDynamicEndpoint'][0])
     {
-        list($response) = $this->oBPv400CreateDynamicEndpointWithHttpInfo($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        list($response) = $this->createDynamicEndpointWithHttpInfo($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateDynamicEndpointWithHttpInfo
+     * Operation createDynamicEndpointWithHttpInfo
      *
      * Create Dynamic Endpoint
      *
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateDynamicEndpointWithHttpInfo($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateDynamicEndpoint'][0])
+    public function createDynamicEndpointWithHttpInfo($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400CreateDynamicEndpointRequest($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        $request = $this->createDynamicEndpointRequest($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -520,7 +520,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $request,
                         $response,
                     );
@@ -542,7 +542,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                 $request,
                 $response,
             );
@@ -551,7 +551,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -564,19 +564,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicEndpointAsync
+     * Operation createDynamicEndpointAsync
      *
      * Create Dynamic Endpoint
      *
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicEndpointAsync($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateDynamicEndpoint'][0])
+    public function createDynamicEndpointAsync($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createDynamicEndpoint'][0])
     {
-        return $this->oBPv400CreateDynamicEndpointAsyncWithHttpInfo($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType)
+        return $this->createDynamicEndpointAsyncWithHttpInfo($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -585,20 +585,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400CreateDynamicEndpointAsyncWithHttpInfo
+     * Operation createDynamicEndpointAsyncWithHttpInfo
      *
      * Create Dynamic Endpoint
      *
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateDynamicEndpointAsyncWithHttpInfo($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateDynamicEndpoint'][0])
+    public function createDynamicEndpointAsyncWithHttpInfo($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createDynamicEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems';
-        $request = $this->oBPv400CreateDynamicEndpointRequest($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner';
+        $request = $this->createDynamicEndpointRequest($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -637,21 +637,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateDynamicEndpoint'
+     * Create request for operation 'createDynamicEndpoint'
      *
-     * @param  \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateDynamicEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateDynamicEndpointRequest($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string, string $contentType = self::contentTypes['oBPv400CreateDynamicEndpoint'][0])
+    public function createDynamicEndpointRequest($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string, string $contentType = self::contentTypes['createDynamicEndpoint'][0])
     {
 
-        // verify the required parameter 'obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string' is set
-        if ($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string === null || (is_array($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string) && count($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string) === 0)) {
+        // verify the required parameter 'get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string' is set
+        if ($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string === null || (is_array($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string) && count($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string when calling oBPv400CreateDynamicEndpoint'
+                'Missing the required parameter $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string when calling createDynamicEndpoint'
             );
         }
 
@@ -674,12 +674,12 @@ class DynamicEndpointManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string)) {
+        if (isset($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string));
             } else {
-                $httpBody = $obpv400_get_dynamic_endpoints200_response_properties_dynamic_endpoints_items_properties_swagger_string;
+                $httpBody = $get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -715,9 +715,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -742,39 +742,39 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicEndpoint
+     * Operation deleteBankLevelDynamicEndpoint
      *
      * Delete Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteBankLevelDynamicEndpoint($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'][0])
+    public function deleteBankLevelDynamicEndpoint($bankid, $dynamicendpointid, string $contentType = self::contentTypes['deleteBankLevelDynamicEndpoint'][0])
     {
-        $this->oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, $contentType);
+        $this->deleteBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo
+     * Operation deleteBankLevelDynamicEndpointWithHttpInfo
      *
      * Delete Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'][0])
+    public function deleteBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['deleteBankLevelDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400DeleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
+        $request = $this->deleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -810,20 +810,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicEndpointAsync
+     * Operation deleteBankLevelDynamicEndpointAsync
      *
      * Delete Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicEndpointAsync($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'][0])
+    public function deleteBankLevelDynamicEndpointAsync($bankid, $dynamicendpointid, string $contentType = self::contentTypes['deleteBankLevelDynamicEndpoint'][0])
     {
-        return $this->oBPv400DeleteBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, $contentType)
+        return $this->deleteBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -832,21 +832,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicEndpointAsyncWithHttpInfo
+     * Operation deleteBankLevelDynamicEndpointAsyncWithHttpInfo
      *
      * Delete Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'][0])
+    public function deleteBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['deleteBankLevelDynamicEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
+        $request = $this->deleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -872,29 +872,29 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteBankLevelDynamicEndpoint'
+     * Create request for operation 'deleteBankLevelDynamicEndpoint'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEndpoint'][0])
+    public function deleteBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, string $contentType = self::contentTypes['deleteBankLevelDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteBankLevelDynamicEndpoint'
+                'Missing the required parameter $bankid when calling deleteBankLevelDynamicEndpoint'
             );
         }
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400DeleteBankLevelDynamicEndpoint'
+                'Missing the required parameter $dynamicendpointid when calling deleteBankLevelDynamicEndpoint'
             );
         }
 
@@ -967,9 +967,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -994,37 +994,37 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicEndpoint
+     * Operation deleteDynamicEndpoint
      *
      * Delete Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteDynamicEndpoint'][0])
+    public function deleteDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['deleteDynamicEndpoint'][0])
     {
-        $this->oBPv400DeleteDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
+        $this->deleteDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteDynamicEndpointWithHttpInfo
+     * Operation deleteDynamicEndpointWithHttpInfo
      *
      * Delete Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteDynamicEndpoint'][0])
+    public function deleteDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['deleteDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400DeleteDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $request = $this->deleteDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1060,19 +1060,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicEndpointAsync
+     * Operation deleteDynamicEndpointAsync
      *
      * Delete Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteDynamicEndpoint'][0])
+    public function deleteDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['deleteDynamicEndpoint'][0])
     {
-        return $this->oBPv400DeleteDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
+        return $this->deleteDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1081,20 +1081,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteDynamicEndpointAsyncWithHttpInfo
+     * Operation deleteDynamicEndpointAsyncWithHttpInfo
      *
      * Delete Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteDynamicEndpoint'][0])
+    public function deleteDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['deleteDynamicEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $request = $this->deleteDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1120,21 +1120,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteDynamicEndpoint'
+     * Create request for operation 'deleteDynamicEndpoint'
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteDynamicEndpoint'][0])
+    public function deleteDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['deleteDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400DeleteDynamicEndpoint'
+                'Missing the required parameter $dynamicendpointid when calling deleteDynamicEndpoint'
             );
         }
 
@@ -1199,9 +1199,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1226,37 +1226,37 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteMyDynamicEndpoint
+     * Operation deleteMyDynamicEndpoint
      *
      * Delete My Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteMyDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEndpoint'][0])
+    public function deleteMyDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['deleteMyDynamicEndpoint'][0])
     {
-        $this->oBPv400DeleteMyDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
+        $this->deleteMyDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteMyDynamicEndpointWithHttpInfo
+     * Operation deleteMyDynamicEndpointWithHttpInfo
      *
      * Delete My Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteMyDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEndpoint'][0])
+    public function deleteMyDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['deleteMyDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400DeleteMyDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $request = $this->deleteMyDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1292,19 +1292,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteMyDynamicEndpointAsync
+     * Operation deleteMyDynamicEndpointAsync
      *
      * Delete My Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEndpoint'][0])
+    public function deleteMyDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['deleteMyDynamicEndpoint'][0])
     {
-        return $this->oBPv400DeleteMyDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
+        return $this->deleteMyDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1313,20 +1313,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400DeleteMyDynamicEndpointAsyncWithHttpInfo
+     * Operation deleteMyDynamicEndpointAsyncWithHttpInfo
      *
      * Delete My Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEndpoint'][0])
+    public function deleteMyDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['deleteMyDynamicEndpoint'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteMyDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $request = $this->deleteMyDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1352,21 +1352,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteMyDynamicEndpoint'
+     * Create request for operation 'deleteMyDynamicEndpoint'
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteMyDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEndpoint'][0])
+    public function deleteMyDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['deleteMyDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400DeleteMyDynamicEndpoint'
+                'Missing the required parameter $dynamicendpointid when calling deleteMyDynamicEndpoint'
             );
         }
 
@@ -1431,9 +1431,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1458,40 +1458,40 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpoint
+     * Operation getBankLevelDynamicEndpoint
      *
      * Get Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    public function oBPv400GetBankLevelDynamicEndpoint($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'][0])
+    public function getBankLevelDynamicEndpoint($bankid, $dynamicendpointid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoint'][0])
     {
-        list($response) = $this->oBPv400GetBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, $contentType);
+        list($response) = $this->getBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointWithHttpInfo
+     * Operation getBankLevelDynamicEndpointWithHttpInfo
      *
      * Get Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'][0])
+    public function getBankLevelDynamicEndpointWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400GetBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
+        $request = $this->getBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1519,7 +1519,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $request,
                         $response,
                     );
@@ -1541,7 +1541,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                 $request,
                 $response,
             );
@@ -1550,7 +1550,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1563,20 +1563,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointAsync
+     * Operation getBankLevelDynamicEndpointAsync
      *
      * Get Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicEndpointAsync($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'][0])
+    public function getBankLevelDynamicEndpointAsync($bankid, $dynamicendpointid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoint'][0])
     {
-        return $this->oBPv400GetBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, $contentType)
+        return $this->getBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1585,21 +1585,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointAsyncWithHttpInfo
+     * Operation getBankLevelDynamicEndpointAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Endpoint
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'][0])
+    public function getBankLevelDynamicEndpointAsyncWithHttpInfo($bankid, $dynamicendpointid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems';
-        $request = $this->oBPv400GetBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner';
+        $request = $this->getBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1638,29 +1638,29 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetBankLevelDynamicEndpoint'
+     * Create request for operation 'getBankLevelDynamicEndpoint'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoint'][0])
+    public function getBankLevelDynamicEndpointRequest($bankid, $dynamicendpointid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetBankLevelDynamicEndpoint'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicEndpoint'
             );
         }
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400GetBankLevelDynamicEndpoint'
+                'Missing the required parameter $dynamicendpointid when calling getBankLevelDynamicEndpoint'
             );
         }
 
@@ -1733,9 +1733,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1760,38 +1760,38 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpoints
+     * Operation getBankLevelDynamicEndpoints
      *
      * Get Bank Level Dynamic Endpoints
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200Response
      */
-    public function oBPv400GetBankLevelDynamicEndpoints($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'][0])
+    public function getBankLevelDynamicEndpoints($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoints'][0])
     {
-        list($response) = $this->oBPv400GetBankLevelDynamicEndpointsWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getBankLevelDynamicEndpointsWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointsWithHttpInfo
+     * Operation getBankLevelDynamicEndpointsWithHttpInfo
      *
      * Get Bank Level Dynamic Endpoints
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetBankLevelDynamicEndpointsWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'][0])
+    public function getBankLevelDynamicEndpointsWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoints'][0])
     {
-        $request = $this->oBPv400GetBankLevelDynamicEndpointsRequest($bankid, $contentType);
+        $request = $this->getBankLevelDynamicEndpointsRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1819,7 +1819,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $request,
                         $response,
                     );
@@ -1841,7 +1841,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                 $request,
                 $response,
             );
@@ -1850,7 +1850,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1863,19 +1863,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointsAsync
+     * Operation getBankLevelDynamicEndpointsAsync
      *
      * Get Bank Level Dynamic Endpoints
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicEndpointsAsync($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'][0])
+    public function getBankLevelDynamicEndpointsAsync($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoints'][0])
     {
-        return $this->oBPv400GetBankLevelDynamicEndpointsAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getBankLevelDynamicEndpointsAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1884,20 +1884,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetBankLevelDynamicEndpointsAsyncWithHttpInfo
+     * Operation getBankLevelDynamicEndpointsAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Endpoints
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetBankLevelDynamicEndpointsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'][0])
+    public function getBankLevelDynamicEndpointsAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoints'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response';
-        $request = $this->oBPv400GetBankLevelDynamicEndpointsRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200Response';
+        $request = $this->getBankLevelDynamicEndpointsRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1936,21 +1936,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetBankLevelDynamicEndpoints'
+     * Create request for operation 'getBankLevelDynamicEndpoints'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetBankLevelDynamicEndpointsRequest($bankid, string $contentType = self::contentTypes['oBPv400GetBankLevelDynamicEndpoints'][0])
+    public function getBankLevelDynamicEndpointsRequest($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEndpoints'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetBankLevelDynamicEndpoints'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicEndpoints'
             );
         }
 
@@ -2015,9 +2015,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2042,38 +2042,38 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpoint
+     * Operation getDynamicEndpoint
      *
      * Get Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner
      */
-    public function oBPv400GetDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetDynamicEndpoint'][0])
+    public function getDynamicEndpoint($dynamicendpointid, string $contentType = self::contentTypes['getDynamicEndpoint'][0])
     {
-        list($response) = $this->oBPv400GetDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
+        list($response) = $this->getDynamicEndpointWithHttpInfo($dynamicendpointid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointWithHttpInfo
+     * Operation getDynamicEndpointWithHttpInfo
      *
      * Get Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetDynamicEndpoint'][0])
+    public function getDynamicEndpointWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['getDynamicEndpoint'][0])
     {
-        $request = $this->oBPv400GetDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $request = $this->getDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2101,7 +2101,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $request,
                         $response,
                     );
@@ -2123,7 +2123,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                 $request,
                 $response,
             );
@@ -2132,7 +2132,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2145,19 +2145,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointAsync
+     * Operation getDynamicEndpointAsync
      *
      * Get Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetDynamicEndpoint'][0])
+    public function getDynamicEndpointAsync($dynamicendpointid, string $contentType = self::contentTypes['getDynamicEndpoint'][0])
     {
-        return $this->oBPv400GetDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
+        return $this->getDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2166,20 +2166,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointAsyncWithHttpInfo
+     * Operation getDynamicEndpointAsyncWithHttpInfo
      *
      * Get Dynamic Endpoint
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetDynamicEndpoint'][0])
+    public function getDynamicEndpointAsyncWithHttpInfo($dynamicendpointid, string $contentType = self::contentTypes['getDynamicEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems';
-        $request = $this->oBPv400GetDynamicEndpointRequest($dynamicendpointid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200ResponseDynamicEndpointsInner';
+        $request = $this->getDynamicEndpointRequest($dynamicendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2218,21 +2218,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetDynamicEndpoint'
+     * Create request for operation 'getDynamicEndpoint'
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['oBPv400GetDynamicEndpoint'][0])
+    public function getDynamicEndpointRequest($dynamicendpointid, string $contentType = self::contentTypes['getDynamicEndpoint'][0])
     {
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400GetDynamicEndpoint'
+                'Missing the required parameter $dynamicendpointid when calling getDynamicEndpoint'
             );
         }
 
@@ -2297,9 +2297,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2324,36 +2324,36 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpoints
+     * Operation getDynamicEndpoints
      *
      * Get Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200Response
      */
-    public function oBPv400GetDynamicEndpoints(string $contentType = self::contentTypes['oBPv400GetDynamicEndpoints'][0])
+    public function getDynamicEndpoints(string $contentType = self::contentTypes['getDynamicEndpoints'][0])
     {
-        list($response) = $this->oBPv400GetDynamicEndpointsWithHttpInfo($contentType);
+        list($response) = $this->getDynamicEndpointsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointsWithHttpInfo
+     * Operation getDynamicEndpointsWithHttpInfo
      *
      * Get Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetDynamicEndpointsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetDynamicEndpoints'][0])
+    public function getDynamicEndpointsWithHttpInfo(string $contentType = self::contentTypes['getDynamicEndpoints'][0])
     {
-        $request = $this->oBPv400GetDynamicEndpointsRequest($contentType);
+        $request = $this->getDynamicEndpointsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2381,7 +2381,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $request,
                         $response,
                     );
@@ -2403,7 +2403,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                 $request,
                 $response,
             );
@@ -2412,7 +2412,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2425,18 +2425,18 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointsAsync
+     * Operation getDynamicEndpointsAsync
      *
      * Get Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicEndpointsAsync(string $contentType = self::contentTypes['oBPv400GetDynamicEndpoints'][0])
+    public function getDynamicEndpointsAsync(string $contentType = self::contentTypes['getDynamicEndpoints'][0])
     {
-        return $this->oBPv400GetDynamicEndpointsAsyncWithHttpInfo($contentType)
+        return $this->getDynamicEndpointsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2445,19 +2445,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetDynamicEndpointsAsyncWithHttpInfo
+     * Operation getDynamicEndpointsAsyncWithHttpInfo
      *
      * Get Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetDynamicEndpointsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetDynamicEndpoints'][0])
+    public function getDynamicEndpointsAsyncWithHttpInfo(string $contentType = self::contentTypes['getDynamicEndpoints'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response';
-        $request = $this->oBPv400GetDynamicEndpointsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200Response';
+        $request = $this->getDynamicEndpointsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2496,14 +2496,14 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetDynamicEndpoints'
+     * Create request for operation 'getDynamicEndpoints'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetDynamicEndpointsRequest(string $contentType = self::contentTypes['oBPv400GetDynamicEndpoints'][0])
+    public function getDynamicEndpointsRequest(string $contentType = self::contentTypes['getDynamicEndpoints'][0])
     {
 
 
@@ -2559,9 +2559,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2586,36 +2586,36 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetMyDynamicEndpoints
+     * Operation getMyDynamicEndpoints
      *
      * Get My Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response
+     * @return \OpenBankProject\Model\GetDynamicEndpoints200Response
      */
-    public function oBPv400GetMyDynamicEndpoints(string $contentType = self::contentTypes['oBPv400GetMyDynamicEndpoints'][0])
+    public function getMyDynamicEndpoints(string $contentType = self::contentTypes['getMyDynamicEndpoints'][0])
     {
-        list($response) = $this->oBPv400GetMyDynamicEndpointsWithHttpInfo($contentType);
+        list($response) = $this->getMyDynamicEndpointsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyDynamicEndpointsWithHttpInfo
+     * Operation getMyDynamicEndpointsWithHttpInfo
      *
      * Get My Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetDynamicEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyDynamicEndpointsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetMyDynamicEndpoints'][0])
+    public function getMyDynamicEndpointsWithHttpInfo(string $contentType = self::contentTypes['getMyDynamicEndpoints'][0])
     {
-        $request = $this->oBPv400GetMyDynamicEndpointsRequest($contentType);
+        $request = $this->getMyDynamicEndpointsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2643,7 +2643,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $request,
                         $response,
                     );
@@ -2665,7 +2665,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                 $request,
                 $response,
             );
@@ -2674,7 +2674,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response',
+                        '\OpenBankProject\Model\GetDynamicEndpoints200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2687,18 +2687,18 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetMyDynamicEndpointsAsync
+     * Operation getMyDynamicEndpointsAsync
      *
      * Get My Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyDynamicEndpointsAsync(string $contentType = self::contentTypes['oBPv400GetMyDynamicEndpoints'][0])
+    public function getMyDynamicEndpointsAsync(string $contentType = self::contentTypes['getMyDynamicEndpoints'][0])
     {
-        return $this->oBPv400GetMyDynamicEndpointsAsyncWithHttpInfo($contentType)
+        return $this->getMyDynamicEndpointsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2707,19 +2707,19 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400GetMyDynamicEndpointsAsyncWithHttpInfo
+     * Operation getMyDynamicEndpointsAsyncWithHttpInfo
      *
      * Get My Dynamic Endpoints
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyDynamicEndpointsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetMyDynamicEndpoints'][0])
+    public function getMyDynamicEndpointsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMyDynamicEndpoints'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicEndpoints200Response';
-        $request = $this->oBPv400GetMyDynamicEndpointsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetDynamicEndpoints200Response';
+        $request = $this->getMyDynamicEndpointsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2758,14 +2758,14 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyDynamicEndpoints'
+     * Create request for operation 'getMyDynamicEndpoints'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyDynamicEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyDynamicEndpointsRequest(string $contentType = self::contentTypes['oBPv400GetMyDynamicEndpoints'][0])
+    public function getMyDynamicEndpointsRequest(string $contentType = self::contentTypes['getMyDynamicEndpoints'][0])
     {
 
 
@@ -2821,9 +2821,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2848,42 +2848,42 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicEndpointHost
+     * Operation updateBankLevelDynamicEndpointHost
      *
      * Update Bank Level Dynamic Endpoint Host
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     * @return \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest
      */
-    public function oBPv400UpdateBankLevelDynamicEndpointHost($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'][0])
+    public function updateBankLevelDynamicEndpointHost($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateBankLevelDynamicEndpointHost'][0])
     {
-        list($response) = $this->oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        list($response) = $this->updateBankLevelDynamicEndpointHostWithHttpInfo($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo
+     * Operation updateBankLevelDynamicEndpointHostWithHttpInfo
      *
      * Update Bank Level Dynamic Endpoint Host
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'][0])
+    public function updateBankLevelDynamicEndpointHostWithHttpInfo($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateBankLevelDynamicEndpointHost'][0])
     {
-        $request = $this->oBPv400UpdateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        $request = $this->updateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2911,7 +2911,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                         $request,
                         $response,
                     );
@@ -2933,7 +2933,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                 $request,
                 $response,
             );
@@ -2942,7 +2942,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2955,21 +2955,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicEndpointHostAsync
+     * Operation updateBankLevelDynamicEndpointHostAsync
      *
      * Update Bank Level Dynamic Endpoint Host
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicEndpointHostAsync($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'][0])
+    public function updateBankLevelDynamicEndpointHostAsync($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateBankLevelDynamicEndpointHost'][0])
     {
-        return $this->oBPv400UpdateBankLevelDynamicEndpointHostAsyncWithHttpInfo($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType)
+        return $this->updateBankLevelDynamicEndpointHostAsyncWithHttpInfo($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2978,22 +2978,22 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateBankLevelDynamicEndpointHostAsyncWithHttpInfo
+     * Operation updateBankLevelDynamicEndpointHostAsyncWithHttpInfo
      *
      * Update Bank Level Dynamic Endpoint Host
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateBankLevelDynamicEndpointHostAsyncWithHttpInfo($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'][0])
+    public function updateBankLevelDynamicEndpointHostAsyncWithHttpInfo($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateBankLevelDynamicEndpointHost'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest';
-        $request = $this->oBPv400UpdateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest';
+        $request = $this->updateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3032,37 +3032,37 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateBankLevelDynamicEndpointHost'
+     * Create request for operation 'updateBankLevelDynamicEndpointHost'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateBankLevelDynamicEndpointHost'][0])
+    public function updateBankLevelDynamicEndpointHostRequest($bankid, $dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateBankLevelDynamicEndpointHost'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateBankLevelDynamicEndpointHost'
+                'Missing the required parameter $bankid when calling updateBankLevelDynamicEndpointHost'
             );
         }
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400UpdateBankLevelDynamicEndpointHost'
+                'Missing the required parameter $dynamicendpointid when calling updateBankLevelDynamicEndpointHost'
             );
         }
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' is set
-        if ($obpv400_update_bank_level_dynamic_endpoint_host_request === null || (is_array($obpv400_update_bank_level_dynamic_endpoint_host_request) && count($obpv400_update_bank_level_dynamic_endpoint_host_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_endpoint_host_request' is set
+        if ($update_bank_level_dynamic_endpoint_host_request === null || (is_array($update_bank_level_dynamic_endpoint_host_request) && count($update_bank_level_dynamic_endpoint_host_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_endpoint_host_request when calling oBPv400UpdateBankLevelDynamicEndpointHost'
+                'Missing the required parameter $update_bank_level_dynamic_endpoint_host_request when calling updateBankLevelDynamicEndpointHost'
             );
         }
 
@@ -3101,12 +3101,12 @@ class DynamicEndpointManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_endpoint_host_request)) {
+        if (isset($update_bank_level_dynamic_endpoint_host_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_endpoint_host_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_endpoint_host_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_endpoint_host_request;
+                $httpBody = $update_bank_level_dynamic_endpoint_host_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3142,9 +3142,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3169,40 +3169,40 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicEndpointHost
+     * Operation updateDynamicEndpointHost
      *
      * Update Dynamic Endpoint Host
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     * @return \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest
      */
-    public function oBPv400UpdateDynamicEndpointHost($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicEndpointHost'][0])
+    public function updateDynamicEndpointHost($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateDynamicEndpointHost'][0])
     {
-        list($response) = $this->oBPv400UpdateDynamicEndpointHostWithHttpInfo($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        list($response) = $this->updateDynamicEndpointHostWithHttpInfo($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateDynamicEndpointHostWithHttpInfo
+     * Operation updateDynamicEndpointHostWithHttpInfo
      *
      * Update Dynamic Endpoint Host
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateDynamicEndpointHostWithHttpInfo($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicEndpointHost'][0])
+    public function updateDynamicEndpointHostWithHttpInfo($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateDynamicEndpointHost'][0])
     {
-        $request = $this->oBPv400UpdateDynamicEndpointHostRequest($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        $request = $this->updateDynamicEndpointHostRequest($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3230,7 +3230,7 @@ class DynamicEndpointManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                         $request,
                         $response,
                     );
@@ -3252,7 +3252,7 @@ class DynamicEndpointManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                 $request,
                 $response,
             );
@@ -3261,7 +3261,7 @@ class DynamicEndpointManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3274,20 +3274,20 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicEndpointHostAsync
+     * Operation updateDynamicEndpointHostAsync
      *
      * Update Dynamic Endpoint Host
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicEndpointHostAsync($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicEndpointHost'][0])
+    public function updateDynamicEndpointHostAsync($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateDynamicEndpointHost'][0])
     {
-        return $this->oBPv400UpdateDynamicEndpointHostAsyncWithHttpInfo($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType)
+        return $this->updateDynamicEndpointHostAsyncWithHttpInfo($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3296,21 +3296,21 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Operation oBPv400UpdateDynamicEndpointHostAsyncWithHttpInfo
+     * Operation updateDynamicEndpointHostAsyncWithHttpInfo
      *
      * Update Dynamic Endpoint Host
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateDynamicEndpointHostAsyncWithHttpInfo($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicEndpointHost'][0])
+    public function updateDynamicEndpointHostAsyncWithHttpInfo($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateDynamicEndpointHost'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest';
-        $request = $this->oBPv400UpdateDynamicEndpointHostRequest($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest';
+        $request = $this->updateDynamicEndpointHostRequest($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3349,29 +3349,29 @@ class DynamicEndpointManageApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateDynamicEndpointHost'
+     * Create request for operation 'updateDynamicEndpointHost'
      *
      * @param  string $dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateBankLevelDynamicEndpointHostRequest $obpv400_update_bank_level_dynamic_endpoint_host_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateDynamicEndpointHost'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateBankLevelDynamicEndpointHostRequest $update_bank_level_dynamic_endpoint_host_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDynamicEndpointHost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateDynamicEndpointHostRequest($dynamicendpointid, $obpv400_update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['oBPv400UpdateDynamicEndpointHost'][0])
+    public function updateDynamicEndpointHostRequest($dynamicendpointid, $update_bank_level_dynamic_endpoint_host_request, string $contentType = self::contentTypes['updateDynamicEndpointHost'][0])
     {
 
         // verify the required parameter 'dynamicendpointid' is set
         if ($dynamicendpointid === null || (is_array($dynamicendpointid) && count($dynamicendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicendpointid when calling oBPv400UpdateDynamicEndpointHost'
+                'Missing the required parameter $dynamicendpointid when calling updateDynamicEndpointHost'
             );
         }
 
-        // verify the required parameter 'obpv400_update_bank_level_dynamic_endpoint_host_request' is set
-        if ($obpv400_update_bank_level_dynamic_endpoint_host_request === null || (is_array($obpv400_update_bank_level_dynamic_endpoint_host_request) && count($obpv400_update_bank_level_dynamic_endpoint_host_request) === 0)) {
+        // verify the required parameter 'update_bank_level_dynamic_endpoint_host_request' is set
+        if ($update_bank_level_dynamic_endpoint_host_request === null || (is_array($update_bank_level_dynamic_endpoint_host_request) && count($update_bank_level_dynamic_endpoint_host_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_bank_level_dynamic_endpoint_host_request when calling oBPv400UpdateDynamicEndpointHost'
+                'Missing the required parameter $update_bank_level_dynamic_endpoint_host_request when calling updateDynamicEndpointHost'
             );
         }
 
@@ -3402,12 +3402,12 @@ class DynamicEndpointManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_bank_level_dynamic_endpoint_host_request)) {
+        if (isset($update_bank_level_dynamic_endpoint_host_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_bank_level_dynamic_endpoint_host_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_bank_level_dynamic_endpoint_host_request));
             } else {
-                $httpBody = $obpv400_update_bank_level_dynamic_endpoint_host_request;
+                $httpBody = $update_bank_level_dynamic_endpoint_host_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3443,9 +3443,9 @@ class DynamicEndpointManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

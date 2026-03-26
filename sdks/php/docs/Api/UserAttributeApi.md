@@ -2,26 +2,26 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreatePersonalDataField()**](UserAttributeApi.md#oBPv600CreatePersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**oBPv600CreateUserAttribute()**](UserAttributeApi.md#oBPv600CreateUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**oBPv600DeletePersonalDataField()**](UserAttributeApi.md#oBPv600DeletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**oBPv600DeleteUserAttribute()**](UserAttributeApi.md#oBPv600DeleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**oBPv600GetPersonalDataFieldById()**](UserAttributeApi.md#oBPv600GetPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**oBPv600GetPersonalDataFields()**](UserAttributeApi.md#oBPv600GetPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**oBPv600GetUserAttributeById()**](UserAttributeApi.md#oBPv600GetUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**oBPv600GetUserAttributes()**](UserAttributeApi.md#oBPv600GetUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**oBPv600UpdatePersonalDataField()**](UserAttributeApi.md#oBPv600UpdatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**oBPv600UpdateUserAttribute()**](UserAttributeApi.md#oBPv600UpdateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**createPersonalDataField()**](UserAttributeApi.md#createPersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**createUserAttribute()**](UserAttributeApi.md#createUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**deletePersonalDataField()**](UserAttributeApi.md#deletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**deleteUserAttribute()**](UserAttributeApi.md#deleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**getPersonalDataFieldById()**](UserAttributeApi.md#getPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**getPersonalDataFields()**](UserAttributeApi.md#getPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**getUserAttributeById()**](UserAttributeApi.md#getUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**getUserAttributes()**](UserAttributeApi.md#getUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**updatePersonalDataField()**](UserAttributeApi.md#updatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**updateUserAttribute()**](UserAttributeApi.md#updateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
 
-## `oBPv600CreatePersonalDataField()`
+## `createPersonalDataField()`
 
 ```php
-oBPv600CreatePersonalDataField($obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+createPersonalDataField($create_personal_data_field_request): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Create Personal Data Field
@@ -44,9 +44,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -55,13 +55,13 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_create_personal_data_field_request = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreatePersonalDataField($obpv600_create_personal_data_field_request);
+    $result = $apiInstance->createPersonalDataField($create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600CreatePersonalDataField: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->createPersonalDataField: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -69,11 +69,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -88,10 +88,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600CreateUserAttribute()`
+## `createUserAttribute()`
 
 ```php
-oBPv600CreateUserAttribute($userid, $obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+createUserAttribute($userid, $create_personal_data_field_request): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Create User Attribute
@@ -114,9 +114,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -126,13 +126,13 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
     $config
 );
 $userid = 'userid_example'; // string | The USERID identifier
-$obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateUserAttribute($userid, $obpv600_create_personal_data_field_request);
+    $result = $apiInstance->createUserAttribute($userid, $create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600CreateUserAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->createUserAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -141,11 +141,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userid** | **string**| The USERID identifier | |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -160,10 +160,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeletePersonalDataField()`
+## `deletePersonalDataField()`
 
 ```php
-oBPv600DeletePersonalDataField($userattributeid)
+deletePersonalDataField($userattributeid)
 ```
 
 Delete Personal Data Field
@@ -186,9 +186,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -200,9 +200,9 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
 
 try {
-    $apiInstance->oBPv600DeletePersonalDataField($userattributeid);
+    $apiInstance->deletePersonalDataField($userattributeid);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600DeletePersonalDataField: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->deletePersonalDataField: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -229,10 +229,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeleteUserAttribute()`
+## `deleteUserAttribute()`
 
 ```php
-oBPv600DeleteUserAttribute($userid, $userattributeid)
+deleteUserAttribute($userid, $userattributeid)
 ```
 
 Delete User Attribute
@@ -255,9 +255,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -270,9 +270,9 @@ $userid = 'userid_example'; // string | The USERID identifier
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
 
 try {
-    $apiInstance->oBPv600DeleteUserAttribute($userid, $userattributeid);
+    $apiInstance->deleteUserAttribute($userid, $userattributeid);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600DeleteUserAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->deleteUserAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -300,10 +300,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetPersonalDataFieldById()`
+## `getPersonalDataFieldById()`
 
 ```php
-oBPv600GetPersonalDataFieldById($userattributeid): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+getPersonalDataFieldById($userattributeid): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Get Personal Data Field By Id
@@ -326,9 +326,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -340,10 +340,10 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetPersonalDataFieldById($userattributeid);
+    $result = $apiInstance->getPersonalDataFieldById($userattributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600GetPersonalDataFieldById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->getPersonalDataFieldById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -370,10 +370,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetPersonalDataFields()`
+## `getPersonalDataFields()`
 
 ```php
-oBPv600GetPersonalDataFields(): \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response
+getPersonalDataFields(): \OpenBankProject\Model\GetPersonalDataFields200Response
 ```
 
 Get Personal Data Fields
@@ -396,9 +396,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -409,10 +409,10 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetPersonalDataFields();
+    $result = $apiInstance->getPersonalDataFields();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600GetPersonalDataFields: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->getPersonalDataFields: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -422,7 +422,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response**](../Model/OBPv600GetPersonalDataFields200Response.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200Response**](../Model/GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -437,10 +437,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetUserAttributeById()`
+## `getUserAttributeById()`
 
 ```php
-oBPv600GetUserAttributeById($userid, $userattributeid): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+getUserAttributeById($userid, $userattributeid): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Get User Attribute By Id
@@ -463,9 +463,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -478,10 +478,10 @@ $userid = 'userid_example'; // string | The USERID identifier
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetUserAttributeById($userid, $userattributeid);
+    $result = $apiInstance->getUserAttributeById($userid, $userattributeid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600GetUserAttributeById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->getUserAttributeById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -494,7 +494,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -509,10 +509,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetUserAttributes()`
+## `getUserAttributes()`
 
 ```php
-oBPv600GetUserAttributes($userid): \OpenBankProject\Model\OBPv600GetPersonalDataFields200Response
+getUserAttributes($userid): \OpenBankProject\Model\GetPersonalDataFields200Response
 ```
 
 Get User Attributes
@@ -535,9 +535,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -549,10 +549,10 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
 $userid = 'userid_example'; // string | The USERID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetUserAttributes($userid);
+    $result = $apiInstance->getUserAttributes($userid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600GetUserAttributes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->getUserAttributes: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -564,7 +564,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200Response**](../Model/OBPv600GetPersonalDataFields200Response.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200Response**](../Model/GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -579,10 +579,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdatePersonalDataField()`
+## `updatePersonalDataField()`
 
 ```php
-oBPv600UpdatePersonalDataField($userattributeid, $obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+updatePersonalDataField($userattributeid, $create_personal_data_field_request): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Update Personal Data Field
@@ -605,9 +605,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -617,13 +617,13 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
     $config
 );
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
-$obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdatePersonalDataField($userattributeid, $obpv600_create_personal_data_field_request);
+    $result = $apiInstance->updatePersonalDataField($userattributeid, $create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600UpdatePersonalDataField: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->updatePersonalDataField: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -632,11 +632,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userattributeid** | **string**| The USERATTRIBUTEID identifier | |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -651,10 +651,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdateUserAttribute()`
+## `updateUserAttribute()`
 
 ```php
-oBPv600UpdateUserAttribute($userid, $userattributeid, $obpv600_create_personal_data_field_request): \OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems
+updateUserAttribute($userid, $userattributeid, $create_personal_data_field_request): \OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner
 ```
 
 Update User Attribute
@@ -677,9 +677,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\UserAttributeApi(
@@ -690,13 +690,13 @@ $apiInstance = new OpenBankProject\Api\UserAttributeApi(
 );
 $userid = 'userid_example'; // string | The USERID identifier
 $userattributeid = 'userattributeid_example'; // string | The USERATTRIBUTEID identifier
-$obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest | Request body
+$create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // \OpenBankProject\Model\CreatePersonalDataFieldRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdateUserAttribute($userid, $userattributeid, $obpv600_create_personal_data_field_request);
+    $result = $apiInstance->updateUserAttribute($userid, $userattributeid, $create_personal_data_field_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAttributeApi->oBPv600UpdateUserAttribute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UserAttributeApi->updateUserAttribute: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -706,11 +706,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userid** | **string**| The USERID identifier | |
 | **userattributeid** | **string**| The USERATTRIBUTEID identifier | |
-| **obpv600_create_personal_data_field_request** | [**\OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest**](../Model/OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **create_personal_data_field_request** | [**\OpenBankProject\Model\CreatePersonalDataFieldRequest**](../Model/CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](../Model/OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**\OpenBankProject\Model\GetPersonalDataFields200ResponseUserAttributesInner**](../Model/GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

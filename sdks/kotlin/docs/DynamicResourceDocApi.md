@@ -1,25 +1,25 @@
 # DynamicResourceDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#oBPv400BuildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**oBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400CreateBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**oBPv400CreateDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400CreateDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**oBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400DeleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**oBPv400DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400DeleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**oBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#oBPv400GetAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**oBPv400GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#oBPv400GetAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**oBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400GetBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**oBPv400GetDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400GetDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**oBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400UpdateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**oBPv400UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400UpdateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**buildDynamicEndpointTemplate**](DynamicResourceDocApi.md#buildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**createBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#createBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**createDynamicResourceDoc**](DynamicResourceDocApi.md#createDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**deleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#deleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**deleteDynamicResourceDoc**](DynamicResourceDocApi.md#deleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**getAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#getAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**getAllDynamicResourceDocs**](DynamicResourceDocApi.md#getAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**getBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#getBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**getDynamicResourceDoc**](DynamicResourceDocApi.md#getDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**updateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#updateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**updateDynamicResourceDoc**](DynamicResourceDocApi.md#updateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
 
-<a id="oBPv400BuildDynamicEndpointTemplate"></a>
-# **oBPv400BuildDynamicEndpointTemplate**
-> OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest)
+<a id="buildDynamicEndpointTemplate"></a>
+# **buildDynamicEndpointTemplate**
+> BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -32,15 +32,15 @@ Create Dynamic Resource Doc endpoint code
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicResourceDocApi()
-val obPv400BuildDynamicEndpointTemplateRequest : OBPv400BuildDynamicEndpointTemplateRequest = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}} // OBPv400BuildDynamicEndpointTemplateRequest | Request body
+val buildDynamicEndpointTemplateRequest : BuildDynamicEndpointTemplateRequest = {"type":"object","properties":{"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"request_url":{"type":"string"}}} // BuildDynamicEndpointTemplateRequest | Request body
 try {
-    val result : OBPv400BuildDynamicEndpointTemplate200Response = apiInstance.oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest)
+    val result : BuildDynamicEndpointTemplate200Response = apiInstance.buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400BuildDynamicEndpointTemplate")
+    println("4xx response calling DynamicResourceDocApi#buildDynamicEndpointTemplate")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400BuildDynamicEndpointTemplate")
+    println("5xx response calling DynamicResourceDocApi#buildDynamicEndpointTemplate")
     e.printStackTrace()
 }
 ```
@@ -48,11 +48,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | |
+| **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 ### Authorization
 
@@ -63,17 +63,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateBankLevelDynamicResourceDoc"></a>
-# **oBPv400CreateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="createBankLevelDynamicResourceDoc"></a>
+# **createBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -87,15 +87,15 @@ Create Bank Level Dynamic Resource Doc
 
 val apiInstance = DynamicResourceDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400UpdateBankLevelDynamicResourceDocRequest : OBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+val updateBankLevelDynamicResourceDocRequest : UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // UpdateBankLevelDynamicResourceDocRequest | Request body
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400CreateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400CreateBankLevelDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#createBankLevelDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400CreateBankLevelDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#createBankLevelDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -104,11 +104,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -119,17 +119,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateDynamicResourceDoc"></a>
-# **oBPv400CreateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="createDynamicResourceDoc"></a>
+# **createDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -142,15 +142,15 @@ Create Dynamic Resource Doc
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicResourceDocApi()
-val obPv400UpdateBankLevelDynamicResourceDocRequest : OBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+val updateBankLevelDynamicResourceDocRequest : UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // UpdateBankLevelDynamicResourceDocRequest | Request body
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400CreateDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#createDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400CreateDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#createDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -158,11 +158,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -173,17 +173,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteBankLevelDynamicResourceDoc"></a>
-# **oBPv400DeleteBankLevelDynamicResourceDoc**
-> oBPv400DeleteBankLevelDynamicResourceDoc(bankid)
+<a id="deleteBankLevelDynamicResourceDoc"></a>
+# **deleteBankLevelDynamicResourceDoc**
+> deleteBankLevelDynamicResourceDoc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -198,12 +198,12 @@ Delete Bank Level Dynamic Resource Doc
 val apiInstance = DynamicResourceDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    apiInstance.oBPv400DeleteBankLevelDynamicResourceDoc(bankid)
+    apiInstance.deleteBankLevelDynamicResourceDoc(bankid)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400DeleteBankLevelDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#deleteBankLevelDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400DeleteBankLevelDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#deleteBankLevelDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -226,17 +226,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400DeleteDynamicResourceDoc"></a>
-# **oBPv400DeleteDynamicResourceDoc**
-> oBPv400DeleteDynamicResourceDoc()
+<a id="deleteDynamicResourceDoc"></a>
+# **deleteDynamicResourceDoc**
+> deleteDynamicResourceDoc()
 
 Delete Dynamic Resource Doc
 
@@ -250,12 +250,12 @@ Delete Dynamic Resource Doc
 
 val apiInstance = DynamicResourceDocApi()
 try {
-    apiInstance.oBPv400DeleteDynamicResourceDoc()
+    apiInstance.deleteDynamicResourceDoc()
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400DeleteDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#deleteDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400DeleteDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#deleteDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -276,17 +276,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetAllBankLevelDynamicResourceDocs"></a>
-# **oBPv400GetAllBankLevelDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(bankid)
+<a id="getAllBankLevelDynamicResourceDocs"></a>
+# **getAllBankLevelDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -301,13 +301,13 @@ Get all Bank Level Dynamic Resource Docs
 val apiInstance = DynamicResourceDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetAllDynamicResourceDocs200Response = apiInstance.oBPv400GetAllBankLevelDynamicResourceDocs(bankid)
+    val result : GetAllDynamicResourceDocs200Response = apiInstance.getAllBankLevelDynamicResourceDocs(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400GetAllBankLevelDynamicResourceDocs")
+    println("4xx response calling DynamicResourceDocApi#getAllBankLevelDynamicResourceDocs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400GetAllBankLevelDynamicResourceDocs")
+    println("5xx response calling DynamicResourceDocApi#getAllBankLevelDynamicResourceDocs")
     e.printStackTrace()
 }
 ```
@@ -319,7 +319,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -330,17 +330,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAllDynamicResourceDocs"></a>
-# **oBPv400GetAllDynamicResourceDocs**
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs()
+<a id="getAllDynamicResourceDocs"></a>
+# **getAllDynamicResourceDocs**
+> GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs()
 
 Get all Dynamic Resource Docs
 
@@ -354,13 +354,13 @@ Get all Dynamic Resource Docs
 
 val apiInstance = DynamicResourceDocApi()
 try {
-    val result : OBPv400GetAllDynamicResourceDocs200Response = apiInstance.oBPv400GetAllDynamicResourceDocs()
+    val result : GetAllDynamicResourceDocs200Response = apiInstance.getAllDynamicResourceDocs()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400GetAllDynamicResourceDocs")
+    println("4xx response calling DynamicResourceDocApi#getAllDynamicResourceDocs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400GetAllDynamicResourceDocs")
+    println("5xx response calling DynamicResourceDocApi#getAllDynamicResourceDocs")
     e.printStackTrace()
 }
 ```
@@ -370,7 +370,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 ### Authorization
 
@@ -381,17 +381,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetBankLevelDynamicResourceDoc"></a>
-# **oBPv400GetBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(bankid)
+<a id="getBankLevelDynamicResourceDoc"></a>
+# **getBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -406,13 +406,13 @@ Get Bank Level Dynamic Resource Doc by Id
 val apiInstance = DynamicResourceDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400GetBankLevelDynamicResourceDoc(bankid)
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.getBankLevelDynamicResourceDoc(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400GetBankLevelDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#getBankLevelDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400GetBankLevelDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#getBankLevelDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -424,7 +424,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -435,17 +435,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetDynamicResourceDoc"></a>
-# **oBPv400GetDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc()
+<a id="getDynamicResourceDoc"></a>
+# **getDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc()
 
 Get Dynamic Resource Doc by Id
 
@@ -459,13 +459,13 @@ Get Dynamic Resource Doc by Id
 
 val apiInstance = DynamicResourceDocApi()
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400GetDynamicResourceDoc()
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.getDynamicResourceDoc()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400GetDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#getDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400GetDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#getDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -475,7 +475,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -486,17 +486,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateBankLevelDynamicResourceDoc"></a>
-# **oBPv400UpdateBankLevelDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="updateBankLevelDynamicResourceDoc"></a>
+# **updateBankLevelDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -510,15 +510,15 @@ Update Bank Level Dynamic Resource Doc
 
 val apiInstance = DynamicResourceDocApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv400UpdateBankLevelDynamicResourceDocRequest : OBPv400UpdateBankLevelDynamicResourceDocRequest = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}} // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+val updateBankLevelDynamicResourceDocRequest : UpdateBankLevelDynamicResourceDocRequest = {"type":"object","properties":{"tags":{"type":"string"},"request_verb":{"type":"string"},"example_request_body":{"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"bank_id":{"type":"string"},"partial_function_name":{"type":"string"},"success_response_body":{"type":"object","properties":{"name":{"type":"string"},"hobby":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"my_user_id":{"type":"string"},"age":{"type":"integer"},"_optional_fields_":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}},"roles":{"type":"string"},"summary":{"type":"string"},"request_url":{"type":"string"},"description":{"type":"string"},"method_body":{"type":"string"},"error_response_bodies":{"type":"string"}}} // UpdateBankLevelDynamicResourceDocRequest | Request body
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400UpdateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400UpdateBankLevelDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#updateBankLevelDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400UpdateBankLevelDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#updateBankLevelDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -527,11 +527,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -542,17 +542,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400UpdateDynamicResourceDoc"></a>
-# **oBPv400UpdateDynamicResourceDoc**
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+<a id="updateDynamicResourceDoc"></a>
+# **updateDynamicResourceDoc**
+> GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -565,15 +565,15 @@ Update Dynamic Resource Doc
 //import com.openbankproject.models.*
 
 val apiInstance = DynamicResourceDocApi()
-val obPv400UpdateBankLevelDynamicResourceDocRequest : OBPv400UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+val updateBankLevelDynamicResourceDocRequest : UpdateBankLevelDynamicResourceDocRequest = {type=object, properties={tags={type=string}, request_verb={type=string}, example_request_body={type=object, properties={name={type=string}, age={type=integer}, hobby={type=array, items={type=object, properties={s={type=string}}}}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, bank_id={type=string}, partial_function_name={type=string}, success_response_body={type=object, properties={name={type=string}, hobby={type=array, items={type=object, properties={s={type=string}}}}, my_user_id={type=string}, age={type=integer}, _optional_fields_={type=array, items={type=object, properties={s={type=string}}}}}}, roles={type=string}, summary={type=string}, request_url={type=string}, description={type=string}, method_body={type=string}, error_response_bodies={type=string}}} // UpdateBankLevelDynamicResourceDocRequest | Request body
 try {
-    val result : OBPv400GetBankLevelDynamicResourceDoc200Response = apiInstance.oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+    val result : GetBankLevelDynamicResourceDoc200Response = apiInstance.updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DynamicResourceDocApi#oBPv400UpdateDynamicResourceDoc")
+    println("4xx response calling DynamicResourceDocApi#updateDynamicResourceDoc")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DynamicResourceDocApi#oBPv400UpdateDynamicResourceDoc")
+    println("5xx response calling DynamicResourceDocApi#updateDynamicResourceDoc")
     e.printStackTrace()
 }
 ```
@@ -581,11 +581,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 ### Authorization
 
@@ -596,8 +596,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

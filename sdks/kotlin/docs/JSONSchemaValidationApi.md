@@ -1,20 +1,20 @@
 # JSONSchemaValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateJsonSchemaValidation**](JSONSchemaValidationApi.md#oBPv400CreateJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
-| [**oBPv400DeleteJsonSchemaValidation**](JSONSchemaValidationApi.md#oBPv400DeleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
-| [**oBPv400GetAllJsonSchemaValidations**](JSONSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
-| [**oBPv400GetAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#oBPv400GetAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
-| [**oBPv400GetJsonSchemaValidation**](JSONSchemaValidationApi.md#oBPv400GetJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
-| [**oBPv400UpdateJsonSchemaValidation**](JSONSchemaValidationApi.md#oBPv400UpdateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
+| [**createJsonSchemaValidation**](JSONSchemaValidationApi.md#createJsonSchemaValidation) | **POST** /obp/v4.0.0/management/json-schema-validations/{operationid} | Create a JSON Schema Validation |
+| [**deleteJsonSchemaValidation**](JSONSchemaValidationApi.md#deleteJsonSchemaValidation) | **DELETE** /obp/v4.0.0/management/json-schema-validations/{operationid} | Delete a JSON Schema Validation |
+| [**getAllJsonSchemaValidations**](JSONSchemaValidationApi.md#getAllJsonSchemaValidations) | **GET** /obp/v4.0.0/management/json-schema-validations | Get all JSON Schema Validations |
+| [**getAllJsonSchemaValidationsPublic**](JSONSchemaValidationApi.md#getAllJsonSchemaValidationsPublic) | **GET** /obp/v4.0.0/endpoints/json-schema-validations | Get all JSON Schema Validations - public |
+| [**getJsonSchemaValidation**](JSONSchemaValidationApi.md#getJsonSchemaValidation) | **GET** /obp/v4.0.0/management/json-schema-validations/{operationid} | Get a JSON Schema Validation |
+| [**updateJsonSchemaValidation**](JSONSchemaValidationApi.md#updateJsonSchemaValidation) | **PUT** /obp/v4.0.0/management/json-schema-validations/{operationid} | Update a JSON Schema Validation |
 
 
-<a id="oBPv400CreateJsonSchemaValidation"></a>
-# **oBPv400CreateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400CreateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+<a id="createJsonSchemaValidation"></a>
+# **createJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Create a JSON Schema Validation
 
@@ -28,15 +28,15 @@ Create a JSON Schema Validation
 
 val apiInstance = JSONSchemaValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
-val obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema : OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+val getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema : GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = {type=object, properties={title={type=string}, required={type=array, items={type=string}}, $schema={type=string}, description={type=string}, type={type=string}, properties={type=object, properties={xxx_id={type=object, properties={minLength={type=integer}, maxLength={type=integer}, type={type=string}, examples={type=array, items={type=string}}}}}}, additionalProperties={type=boolean}}} // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 try {
-    val result : OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems = apiInstance.oBPv400CreateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+    val result : GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner = apiInstance.createJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400CreateJsonSchemaValidation")
+    println("4xx response calling JSONSchemaValidationApi#createJsonSchemaValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400CreateJsonSchemaValidation")
+    println("5xx response calling JSONSchemaValidationApi#createJsonSchemaValidation")
     e.printStackTrace()
 }
 ```
@@ -45,11 +45,11 @@ try {
 | **operationid** | **kotlin.String**| The OPERATIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -60,17 +60,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteJsonSchemaValidation"></a>
-# **oBPv400DeleteJsonSchemaValidation**
-> oBPv400DeleteJsonSchemaValidation(operationid)
+<a id="deleteJsonSchemaValidation"></a>
+# **deleteJsonSchemaValidation**
+> deleteJsonSchemaValidation(operationid)
 
 Delete a JSON Schema Validation
 
@@ -85,12 +85,12 @@ Delete a JSON Schema Validation
 val apiInstance = JSONSchemaValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
 try {
-    apiInstance.oBPv400DeleteJsonSchemaValidation(operationid)
+    apiInstance.deleteJsonSchemaValidation(operationid)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400DeleteJsonSchemaValidation")
+    println("4xx response calling JSONSchemaValidationApi#deleteJsonSchemaValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400DeleteJsonSchemaValidation")
+    println("5xx response calling JSONSchemaValidationApi#deleteJsonSchemaValidation")
     e.printStackTrace()
 }
 ```
@@ -113,17 +113,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetAllJsonSchemaValidations"></a>
-# **oBPv400GetAllJsonSchemaValidations**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidations()
+<a id="getAllJsonSchemaValidations"></a>
+# **getAllJsonSchemaValidations**
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidations()
 
 Get all JSON Schema Validations
 
@@ -137,13 +137,13 @@ Get all JSON Schema Validations
 
 val apiInstance = JSONSchemaValidationApi()
 try {
-    val result : OBPv400GetAllJsonSchemaValidationsPublic200Response = apiInstance.oBPv400GetAllJsonSchemaValidations()
+    val result : GetAllJsonSchemaValidationsPublic200Response = apiInstance.getAllJsonSchemaValidations()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400GetAllJsonSchemaValidations")
+    println("4xx response calling JSONSchemaValidationApi#getAllJsonSchemaValidations")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400GetAllJsonSchemaValidations")
+    println("5xx response calling JSONSchemaValidationApi#getAllJsonSchemaValidations")
     e.printStackTrace()
 }
 ```
@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -164,17 +164,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetAllJsonSchemaValidationsPublic"></a>
-# **oBPv400GetAllJsonSchemaValidationsPublic**
-> OBPv400GetAllJsonSchemaValidationsPublic200Response oBPv400GetAllJsonSchemaValidationsPublic()
+<a id="getAllJsonSchemaValidationsPublic"></a>
+# **getAllJsonSchemaValidationsPublic**
+> GetAllJsonSchemaValidationsPublic200Response getAllJsonSchemaValidationsPublic()
 
 Get all JSON Schema Validations - public
 
@@ -188,13 +188,13 @@ Get all JSON Schema Validations - public
 
 val apiInstance = JSONSchemaValidationApi()
 try {
-    val result : OBPv400GetAllJsonSchemaValidationsPublic200Response = apiInstance.oBPv400GetAllJsonSchemaValidationsPublic()
+    val result : GetAllJsonSchemaValidationsPublic200Response = apiInstance.getAllJsonSchemaValidationsPublic()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400GetAllJsonSchemaValidationsPublic")
+    println("4xx response calling JSONSchemaValidationApi#getAllJsonSchemaValidationsPublic")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400GetAllJsonSchemaValidationsPublic")
+    println("5xx response calling JSONSchemaValidationApi#getAllJsonSchemaValidationsPublic")
     e.printStackTrace()
 }
 ```
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200Response**](OBPv400GetAllJsonSchemaValidationsPublic200Response.md)
+[**GetAllJsonSchemaValidationsPublic200Response**](GetAllJsonSchemaValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -215,9 +215,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400GetJsonSchemaValidation"></a>
-# **oBPv400GetJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400GetJsonSchemaValidation(operationid)
+<a id="getJsonSchemaValidation"></a>
+# **getJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner getJsonSchemaValidation(operationid)
 
 Get a JSON Schema Validation
 
@@ -232,13 +232,13 @@ Get a JSON Schema Validation
 val apiInstance = JSONSchemaValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
 try {
-    val result : OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems = apiInstance.oBPv400GetJsonSchemaValidation(operationid)
+    val result : GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner = apiInstance.getJsonSchemaValidation(operationid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400GetJsonSchemaValidation")
+    println("4xx response calling JSONSchemaValidationApi#getJsonSchemaValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400GetJsonSchemaValidation")
+    println("5xx response calling JSONSchemaValidationApi#getJsonSchemaValidation")
     e.printStackTrace()
 }
 ```
@@ -250,7 +250,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -261,17 +261,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv400UpdateJsonSchemaValidation"></a>
-# **oBPv400UpdateJsonSchemaValidation**
-> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems oBPv400UpdateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+<a id="updateJsonSchemaValidation"></a>
+# **updateJsonSchemaValidation**
+> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
 
 Update a JSON Schema Validation
 
@@ -285,15 +285,15 @@ Update a JSON Schema Validation
 
 val apiInstance = JSONSchemaValidationApi()
 val operationid : kotlin.String = operationid_example // kotlin.String | The OPERATIONID identifier
-val obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema : OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} // OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema | Request body
+val getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema : GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = {"type":"object","properties":{"title":{"type":"string"},"required":{"type":"array","items":{"type":"string"}},"$schema":{"type":"string"},"description":{"type":"string"},"type":{"type":"string"},"properties":{"type":"object","properties":{"xxx_id":{"type":"object","properties":{"minLength":{"type":"integer"},"maxLength":{"type":"integer"},"type":{"type":"string"},"examples":{"type":"array","items":{"type":"string"}}}}}},"additionalProperties":{"type":"boolean"}}} // GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema | Request body
 try {
-    val result : OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems = apiInstance.oBPv400UpdateJsonSchemaValidation(operationid, obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema)
+    val result : GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner = apiInstance.updateJsonSchemaValidation(operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling JSONSchemaValidationApi#oBPv400UpdateJsonSchemaValidation")
+    println("4xx response calling JSONSchemaValidationApi#updateJsonSchemaValidation")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling JSONSchemaValidationApi#oBPv400UpdateJsonSchemaValidation")
+    println("5xx response calling JSONSchemaValidationApi#updateJsonSchemaValidation")
     e.printStackTrace()
 }
 ```
@@ -302,11 +302,11 @@ try {
 | **operationid** | **kotlin.String**| The OPERATIONID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema** | [**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema.md)| Request body | |
+| **getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema** | [**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems**](OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems.md)
+[**GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner**](GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner.md)
 
 ### Authorization
 
@@ -317,8 +317,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

@@ -4,16 +4,16 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
-[**o_bpv4_0_0_delete_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
-[**o_bpv4_0_0_get_all_authentication_type_validations**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
-[**o_bpv4_0_0_get_all_authentication_type_validations_public**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
-[**o_bpv4_0_0_get_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
-[**o_bpv4_0_0_update_authentication_type_validation**](AuthenticationTypeValidationApi.md#o_bpv4_0_0_update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
+[**create_authentication_type_validation**](AuthenticationTypeValidationApi.md#create_authentication_type_validation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation
+[**delete_authentication_type_validation**](AuthenticationTypeValidationApi.md#delete_authentication_type_validation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation
+[**get_all_authentication_type_validations**](AuthenticationTypeValidationApi.md#get_all_authentication_type_validations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations
+[**get_all_authentication_type_validations_public**](AuthenticationTypeValidationApi.md#get_all_authentication_type_validations_public) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public
+[**get_authentication_type_validation**](AuthenticationTypeValidationApi.md#get_authentication_type_validation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation
+[**update_authentication_type_validation**](AuthenticationTypeValidationApi.md#update_authentication_type_validation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation
 
 
-# **o_bpv4_0_0_create_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+# **create_authentication_type_validation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner create_authentication_type_validation(operationid, update_authentication_type_validation_request)
 
 Create an Authentication Type Validation
 
@@ -34,8 +34,8 @@ Create an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
-from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
+from obp_python.models.get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+from obp_python.models.update_authentication_type_validation_request import UpdateAuthenticationTypeValidationRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -69,15 +69,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.AuthenticationTypeValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_update_authentication_type_validation_request = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+    update_authentication_type_validation_request = {type=object, properties={head={type=string, enum=[DirectLogin, GatewayLogin, DAuth, OAuth2_OIDC, OAuth2_OIDC_FAPI, Anonymous]}, tl={type=array, items={type=object, properties={}}}}} # UpdateAuthenticationTypeValidationRequest | Request body
 
     try:
         # Create an Authentication Type Validation
-        api_response = api_instance.o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
-        print("The response of AuthenticationTypeValidationApi->o_bpv4_0_0_create_authentication_type_validation:\n")
+        api_response = api_instance.create_authentication_type_validation(operationid, update_authentication_type_validation_request)
+        print("The response of AuthenticationTypeValidationApi->create_authentication_type_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_create_authentication_type_validation: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->create_authentication_type_validation: %s\n" % e)
 ```
 
 
@@ -88,11 +88,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_update_authentication_type_validation_request** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | 
+ **update_authentication_type_validation_request** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -112,8 +112,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_authentication_type_validation**
-> o_bpv4_0_0_delete_authentication_type_validation(operationid)
+# **delete_authentication_type_validation**
+> delete_authentication_type_validation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -168,9 +168,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete an Authentication Type Validation
-        api_instance.o_bpv4_0_0_delete_authentication_type_validation(operationid)
+        api_instance.delete_authentication_type_validation(operationid)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_delete_authentication_type_validation: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->delete_authentication_type_validation: %s\n" % e)
 ```
 
 
@@ -204,8 +204,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_authentication_type_validations**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response o_bpv4_0_0_get_all_authentication_type_validations()
+# **get_all_authentication_type_validations**
+> GetAllAuthenticationTypeValidationsPublic200Response get_all_authentication_type_validations()
 
 Get all Authentication Type Validations
 
@@ -222,7 +222,7 @@ Get all Authentication Type Validations
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response import OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+from obp_python.models.get_all_authentication_type_validations_public200_response import GetAllAuthenticationTypeValidationsPublic200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -258,11 +258,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Authentication Type Validations
-        api_response = api_instance.o_bpv4_0_0_get_all_authentication_type_validations()
-        print("The response of AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations:\n")
+        api_response = api_instance.get_all_authentication_type_validations()
+        print("The response of AuthenticationTypeValidationApi->get_all_authentication_type_validations:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations: %s\n" % e)
 ```
 
 
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -293,8 +293,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_all_authentication_type_validations_public**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response o_bpv4_0_0_get_all_authentication_type_validations_public()
+# **get_all_authentication_type_validations_public**
+> GetAllAuthenticationTypeValidationsPublic200Response get_all_authentication_type_validations_public()
 
 Get all Authentication Type Validations - public
 
@@ -308,7 +308,7 @@ Get all Authentication Type Validations - public
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response import OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+from obp_python.models.get_all_authentication_type_validations_public200_response import GetAllAuthenticationTypeValidationsPublic200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -326,11 +326,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get all Authentication Type Validations - public
-        api_response = api_instance.o_bpv4_0_0_get_all_authentication_type_validations_public()
-        print("The response of AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations_public:\n")
+        api_response = api_instance.get_all_authentication_type_validations_public()
+        print("The response of AuthenticationTypeValidationApi->get_all_authentication_type_validations_public:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_all_authentication_type_validations_public: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->get_all_authentication_type_validations_public: %s\n" % e)
 ```
 
 
@@ -341,7 +341,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 ### Authorization
 
@@ -361,8 +361,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_get_authentication_type_validation(operationid)
+# **get_authentication_type_validation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner get_authentication_type_validation(operationid)
 
 Get an Authentication Type Validation
 
@@ -381,7 +381,7 @@ Get an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+from obp_python.models.get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -418,11 +418,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get an Authentication Type Validation
-        api_response = api_instance.o_bpv4_0_0_get_authentication_type_validation(operationid)
-        print("The response of AuthenticationTypeValidationApi->o_bpv4_0_0_get_authentication_type_validation:\n")
+        api_response = api_instance.get_authentication_type_validation(operationid)
+        print("The response of AuthenticationTypeValidationApi->get_authentication_type_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_get_authentication_type_validation: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->get_authentication_type_validation: %s\n" % e)
 ```
 
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 
@@ -456,8 +456,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_authentication_type_validation**
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
+# **update_authentication_type_validation**
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner update_authentication_type_validation(operationid, update_authentication_type_validation_request)
 
 Update an Authentication Type Validation
 
@@ -477,8 +477,8 @@ Update an Authentication Type Validation
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
-from obp_python.models.obpv400_update_authentication_type_validation_request import OBPv400UpdateAuthenticationTypeValidationRequest
+from obp_python.models.get_all_authentication_type_validations_public200_response_authentication_types_validations_inner import GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
+from obp_python.models.update_authentication_type_validation_request import UpdateAuthenticationTypeValidationRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -512,15 +512,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.AuthenticationTypeValidationApi(api_client)
     operationid = 'operationid_example' # str | The OPERATIONID identifier
-    obpv400_update_authentication_type_validation_request = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}} # OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+    update_authentication_type_validation_request = {"type":"object","properties":{"head":{"type":"string","enum":["DirectLogin","GatewayLogin","DAuth","OAuth2_OIDC","OAuth2_OIDC_FAPI","Anonymous"]},"tl":{"type":"array","items":{"type":"object","properties":{}}}}} # UpdateAuthenticationTypeValidationRequest | Request body
 
     try:
         # Update an Authentication Type Validation
-        api_response = api_instance.o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request)
-        print("The response of AuthenticationTypeValidationApi->o_bpv4_0_0_update_authentication_type_validation:\n")
+        api_response = api_instance.update_authentication_type_validation(operationid, update_authentication_type_validation_request)
+        print("The response of AuthenticationTypeValidationApi->update_authentication_type_validation:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AuthenticationTypeValidationApi->o_bpv4_0_0_update_authentication_type_validation: %s\n" % e)
+        print("Exception when calling AuthenticationTypeValidationApi->update_authentication_type_validation: %s\n" % e)
 ```
 
 
@@ -531,11 +531,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **operationid** | **str**| The OPERATIONID identifier | 
- **obpv400_update_authentication_type_validation_request** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | 
+ **update_authentication_type_validation_request** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 ### Authorization
 

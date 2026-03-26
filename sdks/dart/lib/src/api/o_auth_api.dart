@@ -9,11 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv310_get_o_auth2_server_jwks_uris200_response.dart';
-import 'package:obp_dart/src/model/obpv310_get_obp_connector_loopback200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_oidc_client200_response.dart';
-import 'package:obp_dart/src/model/obpv600_verify_oidc_client200_response.dart';
-import 'package:obp_dart/src/model/obpv600_verify_oidc_client_request.dart';
+import 'package:obp_dart/src/model/get_o_auth2_server_jwks_uris200_response.dart';
+import 'package:obp_dart/src/model/get_obp_connector_loopback200_response.dart';
+import 'package:obp_dart/src/model/get_oidc_client200_response.dart';
+import 'package:obp_dart/src/model/verify_oidc_client200_response.dart';
+import 'package:obp_dart/src/model/verify_oidc_client_request.dart';
 
 class OAuthApi {
 
@@ -34,9 +34,9 @@ class OAuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetOAuth2ServerJWKsURIs200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetOAuth2ServerJWKsURIs200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetOAuth2ServerJWKsURIs200Response>> oBPv310GetOAuth2ServerJWKsURIs({ 
+  Future<Response<GetOAuth2ServerJWKsURIs200Response>> getOAuth2ServerJWKsURIs({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,14 +65,14 @@ class OAuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetOAuth2ServerJWKsURIs200Response? _responseData;
+    GetOAuth2ServerJWKsURIs200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetOAuth2ServerJWKsURIs200Response),
-      ) as OBPv310GetOAuth2ServerJWKsURIs200Response;
+        specifiedType: const FullType(GetOAuth2ServerJWKsURIs200Response),
+      ) as GetOAuth2ServerJWKsURIs200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -84,7 +84,7 @@ class OAuthApi {
       );
     }
 
-    return Response<OBPv310GetOAuth2ServerJWKsURIs200Response>(
+    return Response<GetOAuth2ServerJWKsURIs200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -107,9 +107,9 @@ class OAuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetObpConnectorLoopback200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetObpConnectorLoopback200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetObpConnectorLoopback200Response>> oBPv310GetObpConnectorLoopback({ 
+  Future<Response<GetObpConnectorLoopback200Response>> getObpConnectorLoopback({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -136,7 +136,7 @@ class OAuthApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -153,14 +153,14 @@ class OAuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetObpConnectorLoopback200Response? _responseData;
+    GetObpConnectorLoopback200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetObpConnectorLoopback200Response),
-      ) as OBPv310GetObpConnectorLoopback200Response;
+        specifiedType: const FullType(GetObpConnectorLoopback200Response),
+      ) as GetObpConnectorLoopback200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -172,7 +172,7 @@ class OAuthApi {
       );
     }
 
-    return Response<OBPv310GetObpConnectorLoopback200Response>(
+    return Response<GetObpConnectorLoopback200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -185,7 +185,7 @@ class OAuthApi {
   }
 
   /// Get OIDC Client
-  /// &lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+  /// &lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
   ///
   /// Parameters:
   /// * [clientid] - The CLIENTID identifier
@@ -196,9 +196,9 @@ class OAuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetOidcClient200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetOidcClient200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetOidcClient200Response>> oBPv600GetOidcClient({ 
+  Future<Response<GetOidcClient200Response>> getOidcClient({ 
     required String clientid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -226,7 +226,7 @@ class OAuthApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -243,14 +243,14 @@ class OAuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetOidcClient200Response? _responseData;
+    GetOidcClient200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetOidcClient200Response),
-      ) as OBPv600GetOidcClient200Response;
+        specifiedType: const FullType(GetOidcClient200Response),
+      ) as GetOidcClient200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -262,7 +262,7 @@ class OAuthApi {
       );
     }
 
-    return Response<OBPv600GetOidcClient200Response>(
+    return Response<GetOidcClient200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -275,10 +275,10 @@ class OAuthApi {
   }
 
   /// Verify OIDC Client
-  /// &lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+  /// &lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv600VerifyOidcClientRequest] - Request body
+  /// * [verifyOidcClientRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -286,10 +286,10 @@ class OAuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600VerifyOidcClient200Response] as data
+  /// Returns a [Future] containing a [Response] with a [VerifyOidcClient200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600VerifyOidcClient200Response>> oBPv600VerifyOidcClient({ 
-    required OBPv600VerifyOidcClientRequest oBPv600VerifyOidcClientRequest,
+  Future<Response<VerifyOidcClient200Response>> verifyOidcClient({ 
+    required VerifyOidcClientRequest verifyOidcClientRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -316,7 +316,7 @@ class OAuthApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -329,8 +329,8 @@ class OAuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv600VerifyOidcClientRequest);
-      _bodyData = _serializers.serialize(oBPv600VerifyOidcClientRequest, specifiedType: _type);
+      const _type = FullType(VerifyOidcClientRequest);
+      _bodyData = _serializers.serialize(verifyOidcClientRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -353,14 +353,14 @@ class OAuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600VerifyOidcClient200Response? _responseData;
+    VerifyOidcClient200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600VerifyOidcClient200Response),
-      ) as OBPv600VerifyOidcClient200Response;
+        specifiedType: const FullType(VerifyOidcClient200Response),
+      ) as VerifyOidcClient200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -372,7 +372,7 @@ class OAuthApi {
       );
     }
 
-    return Response<OBPv600VerifyOidcClient200Response>(
+    return Response<VerifyOidcClient200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

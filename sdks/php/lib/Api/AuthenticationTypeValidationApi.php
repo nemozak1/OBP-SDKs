@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,22 +75,22 @@ class AuthenticationTypeValidationApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateAuthenticationTypeValidation' => [
+        'createAuthenticationTypeValidation' => [
             'application/json',
         ],
-        'oBPv400DeleteAuthenticationTypeValidation' => [
+        'deleteAuthenticationTypeValidation' => [
             'application/json',
         ],
-        'oBPv400GetAllAuthenticationTypeValidations' => [
+        'getAllAuthenticationTypeValidations' => [
             'application/json',
         ],
-        'oBPv400GetAllAuthenticationTypeValidationsPublic' => [
+        'getAllAuthenticationTypeValidationsPublic' => [
             'application/json',
         ],
-        'oBPv400GetAuthenticationTypeValidation' => [
+        'getAuthenticationTypeValidation' => [
             'application/json',
         ],
-        'oBPv400UpdateAuthenticationTypeValidation' => [
+        'updateAuthenticationTypeValidation' => [
             'application/json',
         ],
     ];
@@ -142,40 +142,40 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400CreateAuthenticationTypeValidation
+     * Operation createAuthenticationTypeValidation
      *
      * Create an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @return \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    public function oBPv400CreateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400CreateAuthenticationTypeValidation'][0])
+    public function createAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['createAuthenticationTypeValidation'][0])
     {
-        list($response) = $this->oBPv400CreateAuthenticationTypeValidationWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        list($response) = $this->createAuthenticationTypeValidationWithHttpInfo($operationid, $update_authentication_type_validation_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateAuthenticationTypeValidationWithHttpInfo
+     * Operation createAuthenticationTypeValidationWithHttpInfo
      *
      * Create an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateAuthenticationTypeValidationWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400CreateAuthenticationTypeValidation'][0])
+    public function createAuthenticationTypeValidationWithHttpInfo($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['createAuthenticationTypeValidation'][0])
     {
-        $request = $this->oBPv400CreateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        $request = $this->createAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -203,7 +203,7 @@ class AuthenticationTypeValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $request,
                         $response,
                     );
@@ -225,7 +225,7 @@ class AuthenticationTypeValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                 $request,
                 $response,
             );
@@ -234,7 +234,7 @@ class AuthenticationTypeValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -247,20 +247,20 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400CreateAuthenticationTypeValidationAsync
+     * Operation createAuthenticationTypeValidationAsync
      *
      * Create an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateAuthenticationTypeValidationAsync($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400CreateAuthenticationTypeValidation'][0])
+    public function createAuthenticationTypeValidationAsync($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['createAuthenticationTypeValidation'][0])
     {
-        return $this->oBPv400CreateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, $contentType)
+        return $this->createAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $update_authentication_type_validation_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,21 +269,21 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400CreateAuthenticationTypeValidationAsyncWithHttpInfo
+     * Operation createAuthenticationTypeValidationAsyncWithHttpInfo
      *
      * Create an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400CreateAuthenticationTypeValidation'][0])
+    public function createAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['createAuthenticationTypeValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems';
-        $request = $this->oBPv400CreateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner';
+        $request = $this->createAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -322,29 +322,29 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateAuthenticationTypeValidation'
+     * Create request for operation 'createAuthenticationTypeValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400CreateAuthenticationTypeValidation'][0])
+    public function createAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['createAuthenticationTypeValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400CreateAuthenticationTypeValidation'
+                'Missing the required parameter $operationid when calling createAuthenticationTypeValidation'
             );
         }
 
-        // verify the required parameter 'obpv400_update_authentication_type_validation_request' is set
-        if ($obpv400_update_authentication_type_validation_request === null || (is_array($obpv400_update_authentication_type_validation_request) && count($obpv400_update_authentication_type_validation_request) === 0)) {
+        // verify the required parameter 'update_authentication_type_validation_request' is set
+        if ($update_authentication_type_validation_request === null || (is_array($update_authentication_type_validation_request) && count($update_authentication_type_validation_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_authentication_type_validation_request when calling oBPv400CreateAuthenticationTypeValidation'
+                'Missing the required parameter $update_authentication_type_validation_request when calling createAuthenticationTypeValidation'
             );
         }
 
@@ -375,12 +375,12 @@ class AuthenticationTypeValidationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_authentication_type_validation_request)) {
+        if (isset($update_authentication_type_validation_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_authentication_type_validation_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_authentication_type_validation_request));
             } else {
-                $httpBody = $obpv400_update_authentication_type_validation_request;
+                $httpBody = $update_authentication_type_validation_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -416,9 +416,9 @@ class AuthenticationTypeValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -443,37 +443,37 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteAuthenticationTypeValidation
+     * Operation deleteAuthenticationTypeValidation
      *
      * Delete an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteAuthenticationTypeValidation($operationid, string $contentType = self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'][0])
+    public function deleteAuthenticationTypeValidation($operationid, string $contentType = self::contentTypes['deleteAuthenticationTypeValidation'][0])
     {
-        $this->oBPv400DeleteAuthenticationTypeValidationWithHttpInfo($operationid, $contentType);
+        $this->deleteAuthenticationTypeValidationWithHttpInfo($operationid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteAuthenticationTypeValidationWithHttpInfo
+     * Operation deleteAuthenticationTypeValidationWithHttpInfo
      *
      * Delete an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteAuthenticationTypeValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'][0])
+    public function deleteAuthenticationTypeValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['deleteAuthenticationTypeValidation'][0])
     {
-        $request = $this->oBPv400DeleteAuthenticationTypeValidationRequest($operationid, $contentType);
+        $request = $this->deleteAuthenticationTypeValidationRequest($operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -509,19 +509,19 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteAuthenticationTypeValidationAsync
+     * Operation deleteAuthenticationTypeValidationAsync
      *
      * Delete an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteAuthenticationTypeValidationAsync($operationid, string $contentType = self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'][0])
+    public function deleteAuthenticationTypeValidationAsync($operationid, string $contentType = self::contentTypes['deleteAuthenticationTypeValidation'][0])
     {
-        return $this->oBPv400DeleteAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $contentType)
+        return $this->deleteAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -530,20 +530,20 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400DeleteAuthenticationTypeValidationAsyncWithHttpInfo
+     * Operation deleteAuthenticationTypeValidationAsyncWithHttpInfo
      *
      * Delete an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteAuthenticationTypeValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'][0])
+    public function deleteAuthenticationTypeValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['deleteAuthenticationTypeValidation'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteAuthenticationTypeValidationRequest($operationid, $contentType);
+        $request = $this->deleteAuthenticationTypeValidationRequest($operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -569,21 +569,21 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteAuthenticationTypeValidation'
+     * Create request for operation 'deleteAuthenticationTypeValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteAuthenticationTypeValidationRequest($operationid, string $contentType = self::contentTypes['oBPv400DeleteAuthenticationTypeValidation'][0])
+    public function deleteAuthenticationTypeValidationRequest($operationid, string $contentType = self::contentTypes['deleteAuthenticationTypeValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400DeleteAuthenticationTypeValidation'
+                'Missing the required parameter $operationid when calling deleteAuthenticationTypeValidation'
             );
         }
 
@@ -648,9 +648,9 @@ class AuthenticationTypeValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -675,36 +675,36 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidations
+     * Operation getAllAuthenticationTypeValidations
      *
      * Get all Authentication Type Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     * @return \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response
      */
-    public function oBPv400GetAllAuthenticationTypeValidations(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'][0])
+    public function getAllAuthenticationTypeValidations(string $contentType = self::contentTypes['getAllAuthenticationTypeValidations'][0])
     {
-        list($response) = $this->oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo($contentType);
+        list($response) = $this->getAllAuthenticationTypeValidationsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo
+     * Operation getAllAuthenticationTypeValidationsWithHttpInfo
      *
      * Get all Authentication Type Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidations'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'][0])
+    public function getAllAuthenticationTypeValidationsWithHttpInfo(string $contentType = self::contentTypes['getAllAuthenticationTypeValidations'][0])
     {
-        $request = $this->oBPv400GetAllAuthenticationTypeValidationsRequest($contentType);
+        $request = $this->getAllAuthenticationTypeValidationsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -732,7 +732,7 @@ class AuthenticationTypeValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                         $request,
                         $response,
                     );
@@ -754,7 +754,7 @@ class AuthenticationTypeValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                 $request,
                 $response,
             );
@@ -763,7 +763,7 @@ class AuthenticationTypeValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -776,18 +776,18 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsAsync
+     * Operation getAllAuthenticationTypeValidationsAsync
      *
      * Get all Authentication Type Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsAsync(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'][0])
+    public function getAllAuthenticationTypeValidationsAsync(string $contentType = self::contentTypes['getAllAuthenticationTypeValidations'][0])
     {
-        return $this->oBPv400GetAllAuthenticationTypeValidationsAsyncWithHttpInfo($contentType)
+        return $this->getAllAuthenticationTypeValidationsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -796,19 +796,19 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsAsyncWithHttpInfo
+     * Operation getAllAuthenticationTypeValidationsAsyncWithHttpInfo
      *
      * Get all Authentication Type Validations
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'][0])
+    public function getAllAuthenticationTypeValidationsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllAuthenticationTypeValidations'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response';
-        $request = $this->oBPv400GetAllAuthenticationTypeValidationsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response';
+        $request = $this->getAllAuthenticationTypeValidationsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -847,14 +847,14 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllAuthenticationTypeValidations'
+     * Create request for operation 'getAllAuthenticationTypeValidations'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidations'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsRequest(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidations'][0])
+    public function getAllAuthenticationTypeValidationsRequest(string $contentType = self::contentTypes['getAllAuthenticationTypeValidations'][0])
     {
 
 
@@ -910,9 +910,9 @@ class AuthenticationTypeValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -937,36 +937,36 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsPublic
+     * Operation getAllAuthenticationTypeValidationsPublic
      *
      * Get all Authentication Type Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response
+     * @return \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsPublic(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'][0])
+    public function getAllAuthenticationTypeValidationsPublic(string $contentType = self::contentTypes['getAllAuthenticationTypeValidationsPublic'][0])
     {
-        list($response) = $this->oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo($contentType);
+        list($response) = $this->getAllAuthenticationTypeValidationsPublicWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo
+     * Operation getAllAuthenticationTypeValidationsPublicWithHttpInfo
      *
      * Get all Authentication Type Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'][0])
+    public function getAllAuthenticationTypeValidationsPublicWithHttpInfo(string $contentType = self::contentTypes['getAllAuthenticationTypeValidationsPublic'][0])
     {
-        $request = $this->oBPv400GetAllAuthenticationTypeValidationsPublicRequest($contentType);
+        $request = $this->getAllAuthenticationTypeValidationsPublicRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -994,7 +994,7 @@ class AuthenticationTypeValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                         $request,
                         $response,
                     );
@@ -1016,7 +1016,7 @@ class AuthenticationTypeValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                 $request,
                 $response,
             );
@@ -1025,7 +1025,7 @@ class AuthenticationTypeValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1038,18 +1038,18 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsPublicAsync
+     * Operation getAllAuthenticationTypeValidationsPublicAsync
      *
      * Get all Authentication Type Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsPublicAsync(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'][0])
+    public function getAllAuthenticationTypeValidationsPublicAsync(string $contentType = self::contentTypes['getAllAuthenticationTypeValidationsPublic'][0])
     {
-        return $this->oBPv400GetAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo($contentType)
+        return $this->getAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1058,19 +1058,19 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo
+     * Operation getAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo
      *
      * Get all Authentication Type Validations - public
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'][0])
+    public function getAllAuthenticationTypeValidationsPublicAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllAuthenticationTypeValidationsPublic'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200Response';
-        $request = $this->oBPv400GetAllAuthenticationTypeValidationsPublicRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200Response';
+        $request = $this->getAllAuthenticationTypeValidationsPublicRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1109,14 +1109,14 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAllAuthenticationTypeValidationsPublic'
+     * Create request for operation 'getAllAuthenticationTypeValidationsPublic'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAuthenticationTypeValidationsPublic'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAllAuthenticationTypeValidationsPublicRequest(string $contentType = self::contentTypes['oBPv400GetAllAuthenticationTypeValidationsPublic'][0])
+    public function getAllAuthenticationTypeValidationsPublicRequest(string $contentType = self::contentTypes['getAllAuthenticationTypeValidationsPublic'][0])
     {
 
 
@@ -1185,38 +1185,38 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAuthenticationTypeValidation
+     * Operation getAuthenticationTypeValidation
      *
      * Get an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @return \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    public function oBPv400GetAuthenticationTypeValidation($operationid, string $contentType = self::contentTypes['oBPv400GetAuthenticationTypeValidation'][0])
+    public function getAuthenticationTypeValidation($operationid, string $contentType = self::contentTypes['getAuthenticationTypeValidation'][0])
     {
-        list($response) = $this->oBPv400GetAuthenticationTypeValidationWithHttpInfo($operationid, $contentType);
+        list($response) = $this->getAuthenticationTypeValidationWithHttpInfo($operationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetAuthenticationTypeValidationWithHttpInfo
+     * Operation getAuthenticationTypeValidationWithHttpInfo
      *
      * Get an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetAuthenticationTypeValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400GetAuthenticationTypeValidation'][0])
+    public function getAuthenticationTypeValidationWithHttpInfo($operationid, string $contentType = self::contentTypes['getAuthenticationTypeValidation'][0])
     {
-        $request = $this->oBPv400GetAuthenticationTypeValidationRequest($operationid, $contentType);
+        $request = $this->getAuthenticationTypeValidationRequest($operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1244,7 +1244,7 @@ class AuthenticationTypeValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $request,
                         $response,
                     );
@@ -1266,7 +1266,7 @@ class AuthenticationTypeValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                 $request,
                 $response,
             );
@@ -1275,7 +1275,7 @@ class AuthenticationTypeValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1288,19 +1288,19 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAuthenticationTypeValidationAsync
+     * Operation getAuthenticationTypeValidationAsync
      *
      * Get an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAuthenticationTypeValidationAsync($operationid, string $contentType = self::contentTypes['oBPv400GetAuthenticationTypeValidation'][0])
+    public function getAuthenticationTypeValidationAsync($operationid, string $contentType = self::contentTypes['getAuthenticationTypeValidation'][0])
     {
-        return $this->oBPv400GetAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $contentType)
+        return $this->getAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1309,20 +1309,20 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400GetAuthenticationTypeValidationAsyncWithHttpInfo
+     * Operation getAuthenticationTypeValidationAsyncWithHttpInfo
      *
      * Get an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetAuthenticationTypeValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['oBPv400GetAuthenticationTypeValidation'][0])
+    public function getAuthenticationTypeValidationAsyncWithHttpInfo($operationid, string $contentType = self::contentTypes['getAuthenticationTypeValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems';
-        $request = $this->oBPv400GetAuthenticationTypeValidationRequest($operationid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner';
+        $request = $this->getAuthenticationTypeValidationRequest($operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1361,21 +1361,21 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetAuthenticationTypeValidation'
+     * Create request for operation 'getAuthenticationTypeValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetAuthenticationTypeValidationRequest($operationid, string $contentType = self::contentTypes['oBPv400GetAuthenticationTypeValidation'][0])
+    public function getAuthenticationTypeValidationRequest($operationid, string $contentType = self::contentTypes['getAuthenticationTypeValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400GetAuthenticationTypeValidation'
+                'Missing the required parameter $operationid when calling getAuthenticationTypeValidation'
             );
         }
 
@@ -1440,9 +1440,9 @@ class AuthenticationTypeValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1467,40 +1467,40 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateAuthenticationTypeValidation
+     * Operation updateAuthenticationTypeValidation
      *
      * Update an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems
+     * @return \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner
      */
-    public function oBPv400UpdateAuthenticationTypeValidation($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'][0])
+    public function updateAuthenticationTypeValidation($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['updateAuthenticationTypeValidation'][0])
     {
-        list($response) = $this->oBPv400UpdateAuthenticationTypeValidationWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        list($response) = $this->updateAuthenticationTypeValidationWithHttpInfo($operationid, $update_authentication_type_validation_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateAuthenticationTypeValidationWithHttpInfo
+     * Operation updateAuthenticationTypeValidationWithHttpInfo
      *
      * Update an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateAuthenticationTypeValidationWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'][0])
+    public function updateAuthenticationTypeValidationWithHttpInfo($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['updateAuthenticationTypeValidation'][0])
     {
-        $request = $this->oBPv400UpdateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        $request = $this->updateAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1528,7 +1528,7 @@ class AuthenticationTypeValidationApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $request,
                         $response,
                     );
@@ -1550,7 +1550,7 @@ class AuthenticationTypeValidationApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                 $request,
                 $response,
             );
@@ -1559,7 +1559,7 @@ class AuthenticationTypeValidationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems',
+                        '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1572,20 +1572,20 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateAuthenticationTypeValidationAsync
+     * Operation updateAuthenticationTypeValidationAsync
      *
      * Update an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAuthenticationTypeValidationAsync($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'][0])
+    public function updateAuthenticationTypeValidationAsync($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['updateAuthenticationTypeValidation'][0])
     {
-        return $this->oBPv400UpdateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, $contentType)
+        return $this->updateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $update_authentication_type_validation_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1594,21 +1594,21 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Operation oBPv400UpdateAuthenticationTypeValidationAsyncWithHttpInfo
+     * Operation updateAuthenticationTypeValidationAsyncWithHttpInfo
      *
      * Update an Authentication Type Validation
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'][0])
+    public function updateAuthenticationTypeValidationAsyncWithHttpInfo($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['updateAuthenticationTypeValidation'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems';
-        $request = $this->oBPv400UpdateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner';
+        $request = $this->updateAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1647,29 +1647,29 @@ class AuthenticationTypeValidationApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateAuthenticationTypeValidation'
+     * Create request for operation 'updateAuthenticationTypeValidation'
      *
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400UpdateAuthenticationTypeValidationRequest $obpv400_update_authentication_type_validation_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateAuthenticationTypeValidationRequest $update_authentication_type_validation_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAuthenticationTypeValidation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateAuthenticationTypeValidationRequest($operationid, $obpv400_update_authentication_type_validation_request, string $contentType = self::contentTypes['oBPv400UpdateAuthenticationTypeValidation'][0])
+    public function updateAuthenticationTypeValidationRequest($operationid, $update_authentication_type_validation_request, string $contentType = self::contentTypes['updateAuthenticationTypeValidation'][0])
     {
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400UpdateAuthenticationTypeValidation'
+                'Missing the required parameter $operationid when calling updateAuthenticationTypeValidation'
             );
         }
 
-        // verify the required parameter 'obpv400_update_authentication_type_validation_request' is set
-        if ($obpv400_update_authentication_type_validation_request === null || (is_array($obpv400_update_authentication_type_validation_request) && count($obpv400_update_authentication_type_validation_request) === 0)) {
+        // verify the required parameter 'update_authentication_type_validation_request' is set
+        if ($update_authentication_type_validation_request === null || (is_array($update_authentication_type_validation_request) && count($update_authentication_type_validation_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_update_authentication_type_validation_request when calling oBPv400UpdateAuthenticationTypeValidation'
+                'Missing the required parameter $update_authentication_type_validation_request when calling updateAuthenticationTypeValidation'
             );
         }
 
@@ -1700,12 +1700,12 @@ class AuthenticationTypeValidationApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_update_authentication_type_validation_request)) {
+        if (isset($update_authentication_type_validation_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_update_authentication_type_validation_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_authentication_type_validation_request));
             } else {
-                $httpBody = $obpv400_update_authentication_type_validation_request;
+                $httpBody = $update_authentication_type_validation_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1741,9 +1741,9 @@ class AuthenticationTypeValidationApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,11 +23,11 @@ module OpenBankProject
     # <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv510_create_bank_account_balance_request [OBPv510CreateBankAccountBalanceRequest] Request body
+    # @param create_bank_account_balance_request [CreateBankAccountBalanceRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]
-    def o_bpv5_1_0_create_bank_account_balance(bankid, accountid, obpv510_create_bank_account_balance_request, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_create_bank_account_balance_with_http_info(bankid, accountid, obpv510_create_bank_account_balance_request, opts)
+    # @return [GetAllBankAccountBalances200ResponseBalancesInner]
+    def create_bank_account_balance(bankid, accountid, create_bank_account_balance_request, opts = {})
+      data, _status_code, _headers = create_bank_account_balance_with_http_info(bankid, accountid, create_bank_account_balance_request, opts)
       data
     end
 
@@ -35,24 +35,24 @@ module OpenBankProject
     # &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
-    # @param obpv510_create_bank_account_balance_request [OBPv510CreateBankAccountBalanceRequest] Request body
+    # @param create_bank_account_balance_request [CreateBankAccountBalanceRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Integer, Hash)>] OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems data, response status code and response headers
-    def o_bpv5_1_0_create_bank_account_balance_with_http_info(bankid, accountid, obpv510_create_bank_account_balance_request, opts = {})
+    # @return [Array<(GetAllBankAccountBalances200ResponseBalancesInner, Integer, Hash)>] GetAllBankAccountBalances200ResponseBalancesInner data, response status code and response headers
+    def create_bank_account_balance_with_http_info(bankid, accountid, create_bank_account_balance_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BalanceApi.o_bpv5_1_0_create_bank_account_balance ...'
+        @api_client.config.logger.debug 'Calling API: BalanceApi.create_bank_account_balance ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.o_bpv5_1_0_create_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.create_bank_account_balance"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.o_bpv5_1_0_create_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.create_bank_account_balance"
       end
-      # verify the required parameter 'obpv510_create_bank_account_balance_request' is set
-      if @api_client.config.client_side_validation && obpv510_create_bank_account_balance_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_create_bank_account_balance_request' when calling BalanceApi.o_bpv5_1_0_create_bank_account_balance"
+      # verify the required parameter 'create_bank_account_balance_request' is set
+      if @api_client.config.client_side_validation && create_bank_account_balance_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_bank_account_balance_request' when calling BalanceApi.create_bank_account_balance"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
@@ -74,16 +74,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_create_bank_account_balance_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_bank_account_balance_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems'
+      return_type = opts[:debug_return_type] || 'GetAllBankAccountBalances200ResponseBalancesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"BalanceApi.o_bpv5_1_0_create_bank_account_balance",
+        :operation => :"BalanceApi.create_bank_account_balance",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -94,7 +94,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BalanceApi#o_bpv5_1_0_create_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BalanceApi#create_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -106,8 +106,8 @@ module OpenBankProject
     # @param balanceid [String] The BALANCEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_delete_bank_account_balance(bankid, accountid, balanceid, opts = {})
-      o_bpv5_1_0_delete_bank_account_balance_with_http_info(bankid, accountid, balanceid, opts)
+    def delete_bank_account_balance(bankid, accountid, balanceid, opts = {})
+      delete_bank_account_balance_with_http_info(bankid, accountid, balanceid, opts)
       nil
     end
 
@@ -118,21 +118,21 @@ module OpenBankProject
     # @param balanceid [String] The BALANCEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_delete_bank_account_balance_with_http_info(bankid, accountid, balanceid, opts = {})
+    def delete_bank_account_balance_with_http_info(bankid, accountid, balanceid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BalanceApi.o_bpv5_1_0_delete_bank_account_balance ...'
+        @api_client.config.logger.debug 'Calling API: BalanceApi.delete_bank_account_balance ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.o_bpv5_1_0_delete_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.delete_bank_account_balance"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.o_bpv5_1_0_delete_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.delete_bank_account_balance"
       end
       # verify the required parameter 'balanceid' is set
       if @api_client.config.client_side_validation && balanceid.nil?
-        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.o_bpv5_1_0_delete_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.delete_bank_account_balance"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'balanceid' + '}', CGI.escape(balanceid.to_s))
@@ -156,7 +156,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"BalanceApi.o_bpv5_1_0_delete_bank_account_balance",
+        :operation => :"BalanceApi.delete_bank_account_balance",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -167,7 +167,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BalanceApi#o_bpv5_1_0_delete_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BalanceApi#delete_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -177,9 +177,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAllBankAccountBalances200Response]
-    def o_bpv5_1_0_get_all_bank_account_balances(bankid, accountid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_all_bank_account_balances_with_http_info(bankid, accountid, opts)
+    # @return [GetAllBankAccountBalances200Response]
+    def get_all_bank_account_balances(bankid, accountid, opts = {})
+      data, _status_code, _headers = get_all_bank_account_balances_with_http_info(bankid, accountid, opts)
       data
     end
 
@@ -188,18 +188,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAllBankAccountBalances200Response, Integer, Hash)>] OBPv510GetAllBankAccountBalances200Response data, response status code and response headers
-    def o_bpv5_1_0_get_all_bank_account_balances_with_http_info(bankid, accountid, opts = {})
+    # @return [Array<(GetAllBankAccountBalances200Response, Integer, Hash)>] GetAllBankAccountBalances200Response data, response status code and response headers
+    def get_all_bank_account_balances_with_http_info(bankid, accountid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BalanceApi.o_bpv5_1_0_get_all_bank_account_balances ...'
+        @api_client.config.logger.debug 'Calling API: BalanceApi.get_all_bank_account_balances ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.o_bpv5_1_0_get_all_bank_account_balances"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.get_all_bank_account_balances"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.o_bpv5_1_0_get_all_bank_account_balances"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.get_all_bank_account_balances"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s))
@@ -219,13 +219,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAllBankAccountBalances200Response'
+      return_type = opts[:debug_return_type] || 'GetAllBankAccountBalances200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"BalanceApi.o_bpv5_1_0_get_all_bank_account_balances",
+        :operation => :"BalanceApi.get_all_bank_account_balances",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -236,7 +236,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BalanceApi#o_bpv5_1_0_get_all_bank_account_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BalanceApi#get_all_bank_account_balances\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -247,9 +247,9 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param balanceid [String] The BALANCEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]
-    def o_bpv5_1_0_get_bank_account_balance_by_id(bankid, accountid, balanceid, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid, opts)
+    # @return [GetAllBankAccountBalances200ResponseBalancesInner]
+    def get_bank_account_balance_by_id(bankid, accountid, balanceid, opts = {})
+      data, _status_code, _headers = get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid, opts)
       data
     end
 
@@ -259,22 +259,22 @@ module OpenBankProject
     # @param accountid [String] The ACCOUNTID identifier
     # @param balanceid [String] The BALANCEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Integer, Hash)>] OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems data, response status code and response headers
-    def o_bpv5_1_0_get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid, opts = {})
+    # @return [Array<(GetAllBankAccountBalances200ResponseBalancesInner, Integer, Hash)>] GetAllBankAccountBalances200ResponseBalancesInner data, response status code and response headers
+    def get_bank_account_balance_by_id_with_http_info(bankid, accountid, balanceid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BalanceApi.o_bpv5_1_0_get_bank_account_balance_by_id ...'
+        @api_client.config.logger.debug 'Calling API: BalanceApi.get_bank_account_balance_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.o_bpv5_1_0_get_bank_account_balance_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.get_bank_account_balance_by_id"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.o_bpv5_1_0_get_bank_account_balance_by_id"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.get_bank_account_balance_by_id"
       end
       # verify the required parameter 'balanceid' is set
       if @api_client.config.client_side_validation && balanceid.nil?
-        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.o_bpv5_1_0_get_bank_account_balance_by_id"
+        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.get_bank_account_balance_by_id"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'balanceid' + '}', CGI.escape(balanceid.to_s))
@@ -294,13 +294,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems'
+      return_type = opts[:debug_return_type] || 'GetAllBankAccountBalances200ResponseBalancesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"BalanceApi.o_bpv5_1_0_get_bank_account_balance_by_id",
+        :operation => :"BalanceApi.get_bank_account_balance_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -311,7 +311,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BalanceApi#o_bpv5_1_0_get_bank_account_balance_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BalanceApi#get_bank_account_balance_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -321,11 +321,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param balanceid [String] The BALANCEID identifier
-    # @param obpv510_create_bank_account_balance_request [OBPv510CreateBankAccountBalanceRequest] Request body
+    # @param create_bank_account_balance_request [CreateBankAccountBalanceRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems]
-    def o_bpv5_1_0_update_bank_account_balance(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request, opts = {})
-      data, _status_code, _headers = o_bpv5_1_0_update_bank_account_balance_with_http_info(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request, opts)
+    # @return [GetAllBankAccountBalances200ResponseBalancesInner]
+    def update_bank_account_balance(bankid, accountid, balanceid, create_bank_account_balance_request, opts = {})
+      data, _status_code, _headers = update_bank_account_balance_with_http_info(bankid, accountid, balanceid, create_bank_account_balance_request, opts)
       data
     end
 
@@ -334,28 +334,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param accountid [String] The ACCOUNTID identifier
     # @param balanceid [String] The BALANCEID identifier
-    # @param obpv510_create_bank_account_balance_request [OBPv510CreateBankAccountBalanceRequest] Request body
+    # @param create_bank_account_balance_request [CreateBankAccountBalanceRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Integer, Hash)>] OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems data, response status code and response headers
-    def o_bpv5_1_0_update_bank_account_balance_with_http_info(bankid, accountid, balanceid, obpv510_create_bank_account_balance_request, opts = {})
+    # @return [Array<(GetAllBankAccountBalances200ResponseBalancesInner, Integer, Hash)>] GetAllBankAccountBalances200ResponseBalancesInner data, response status code and response headers
+    def update_bank_account_balance_with_http_info(bankid, accountid, balanceid, create_bank_account_balance_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: BalanceApi.o_bpv5_1_0_update_bank_account_balance ...'
+        @api_client.config.logger.debug 'Calling API: BalanceApi.update_bank_account_balance ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.o_bpv5_1_0_update_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling BalanceApi.update_bank_account_balance"
       end
       # verify the required parameter 'accountid' is set
       if @api_client.config.client_side_validation && accountid.nil?
-        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.o_bpv5_1_0_update_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'accountid' when calling BalanceApi.update_bank_account_balance"
       end
       # verify the required parameter 'balanceid' is set
       if @api_client.config.client_side_validation && balanceid.nil?
-        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.o_bpv5_1_0_update_bank_account_balance"
+        fail ArgumentError, "Missing the required parameter 'balanceid' when calling BalanceApi.update_bank_account_balance"
       end
-      # verify the required parameter 'obpv510_create_bank_account_balance_request' is set
-      if @api_client.config.client_side_validation && obpv510_create_bank_account_balance_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv510_create_bank_account_balance_request' when calling BalanceApi.o_bpv5_1_0_update_bank_account_balance"
+      # verify the required parameter 'create_bank_account_balance_request' is set
+      if @api_client.config.client_side_validation && create_bank_account_balance_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_bank_account_balance_request' when calling BalanceApi.update_bank_account_balance"
       end
       # resource path
       local_var_path = '/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'accountid' + '}', CGI.escape(accountid.to_s)).sub('{' + 'balanceid' + '}', CGI.escape(balanceid.to_s))
@@ -377,16 +377,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv510_create_bank_account_balance_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_bank_account_balance_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems'
+      return_type = opts[:debug_return_type] || 'GetAllBankAccountBalances200ResponseBalancesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"BalanceApi.o_bpv5_1_0_update_bank_account_balance",
+        :operation => :"BalanceApi.update_bank_account_balance",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -397,7 +397,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BalanceApi#o_bpv5_1_0_update_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BalanceApi#update_bank_account_balance\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

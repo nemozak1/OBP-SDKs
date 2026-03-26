@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv5_1_0_create_counterparty_limit**](CounterpartyLimitsApi.md#o_bpv5_1_0_create_counterparty_limit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
-[**o_bpv5_1_0_delete_counterparty_limit**](CounterpartyLimitsApi.md#o_bpv5_1_0_delete_counterparty_limit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
-[**o_bpv5_1_0_get_counterparty_limit**](CounterpartyLimitsApi.md#o_bpv5_1_0_get_counterparty_limit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
-[**o_bpv5_1_0_get_counterparty_limit_status**](CounterpartyLimitsApi.md#o_bpv5_1_0_get_counterparty_limit_status) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
-[**o_bpv5_1_0_update_counterparty_limit**](CounterpartyLimitsApi.md#o_bpv5_1_0_update_counterparty_limit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
+[**create_counterparty_limit**](CounterpartyLimitsApi.md#create_counterparty_limit) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Create Counterparty Limit
+[**delete_counterparty_limit**](CounterpartyLimitsApi.md#delete_counterparty_limit) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Delete Counterparty Limit
+[**get_counterparty_limit**](CounterpartyLimitsApi.md#get_counterparty_limit) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Get Counterparty Limit
+[**get_counterparty_limit_status**](CounterpartyLimitsApi.md#get_counterparty_limit_status) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limit-status | Get Counterparty Limit Status
+[**update_counterparty_limit**](CounterpartyLimitsApi.md#update_counterparty_limit) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/counterparties/{counterpartyid}/limits | Update Counterparty Limit
 
 
-# **o_bpv5_1_0_create_counterparty_limit**
-> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
+# **create_counterparty_limit**
+> GetCounterpartyLimit200Response create_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit)
 
 Create Counterparty Limit
 
@@ -60,8 +60,8 @@ Create Counterparty Limit
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request_request_to_account_limit import OBPv510CreateVRPConsentRequestRequestToAccountLimit
-from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
+from obp_python.models.create_vrp_consent_request_request_to_account_limit import CreateVRPConsentRequestRequestToAccountLimit
+from obp_python.models.get_counterparty_limit200_response import GetCounterpartyLimit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -98,15 +98,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
-    obpv510_create_vrp_consent_request_request_to_account_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}} # OBPv510CreateVRPConsentRequestRequestToAccountLimit | Request body
+    create_vrp_consent_request_request_to_account_limit = {type=object, properties={max_total_amount={type=string}, currency={type=string}, max_number_of_yearly_transactions={type=integer}, max_monthly_amount={type=string}, max_single_amount={type=string}, max_number_of_monthly_transactions={type=integer}, max_yearly_amount={type=string}, max_number_of_transactions={type=integer}}} # CreateVRPConsentRequestRequestToAccountLimit | Request body
 
     try:
         # Create Counterparty Limit
-        api_response = api_instance.o_bpv5_1_0_create_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
-        print("The response of CounterpartyLimitsApi->o_bpv5_1_0_create_counterparty_limit:\n")
+        api_response = api_instance.create_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit)
+        print("The response of CounterpartyLimitsApi->create_counterparty_limit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyLimitsApi->o_bpv5_1_0_create_counterparty_limit: %s\n" % e)
+        print("Exception when calling CounterpartyLimitsApi->create_counterparty_limit: %s\n" % e)
 ```
 
 
@@ -120,11 +120,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
- **obpv510_create_vrp_consent_request_request_to_account_limit** | [**OBPv510CreateVRPConsentRequestRequestToAccountLimit**](OBPv510CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
+ **create_vrp_consent_request_request_to_account_limit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -145,8 +145,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_delete_counterparty_limit**
-> o_bpv5_1_0_delete_counterparty_limit(bankid, accountid, viewid, counterpartyid)
+# **delete_counterparty_limit**
+> delete_counterparty_limit(bankid, accountid, viewid, counterpartyid)
 
 Delete Counterparty Limit
 
@@ -207,9 +207,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Limit
-        api_instance.o_bpv5_1_0_delete_counterparty_limit(bankid, accountid, viewid, counterpartyid)
+        api_instance.delete_counterparty_limit(bankid, accountid, viewid, counterpartyid)
     except Exception as e:
-        print("Exception when calling CounterpartyLimitsApi->o_bpv5_1_0_delete_counterparty_limit: %s\n" % e)
+        print("Exception when calling CounterpartyLimitsApi->delete_counterparty_limit: %s\n" % e)
 ```
 
 
@@ -247,8 +247,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_counterparty_limit**
-> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_get_counterparty_limit(bankid, accountid, viewid, counterpartyid)
+# **get_counterparty_limit**
+> GetCounterpartyLimit200Response get_counterparty_limit(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty Limit
 
@@ -283,7 +283,7 @@ Get Counterparty Limit
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
+from obp_python.models.get_counterparty_limit200_response import GetCounterpartyLimit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -323,11 +323,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Counterparty Limit
-        api_response = api_instance.o_bpv5_1_0_get_counterparty_limit(bankid, accountid, viewid, counterpartyid)
-        print("The response of CounterpartyLimitsApi->o_bpv5_1_0_get_counterparty_limit:\n")
+        api_response = api_instance.get_counterparty_limit(bankid, accountid, viewid, counterpartyid)
+        print("The response of CounterpartyLimitsApi->get_counterparty_limit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyLimitsApi->o_bpv5_1_0_get_counterparty_limit: %s\n" % e)
+        print("Exception when calling CounterpartyLimitsApi->get_counterparty_limit: %s\n" % e)
 ```
 
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 
@@ -365,8 +365,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_get_counterparty_limit_status**
-> OBPv510GetCounterpartyLimitStatus200Response o_bpv5_1_0_get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid)
+# **get_counterparty_limit_status**
+> GetCounterpartyLimitStatus200Response get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty Limit Status
 
@@ -409,7 +409,7 @@ Get Counterparty Limit Status
 
 ```python
 import obp_python
-from obp_python.models.obpv510_get_counterparty_limit_status200_response import OBPv510GetCounterpartyLimitStatus200Response
+from obp_python.models.get_counterparty_limit_status200_response import GetCounterpartyLimitStatus200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -449,11 +449,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Counterparty Limit Status
-        api_response = api_instance.o_bpv5_1_0_get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid)
-        print("The response of CounterpartyLimitsApi->o_bpv5_1_0_get_counterparty_limit_status:\n")
+        api_response = api_instance.get_counterparty_limit_status(bankid, accountid, viewid, counterpartyid)
+        print("The response of CounterpartyLimitsApi->get_counterparty_limit_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyLimitsApi->o_bpv5_1_0_get_counterparty_limit_status: %s\n" % e)
+        print("Exception when calling CounterpartyLimitsApi->get_counterparty_limit_status: %s\n" % e)
 ```
 
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimitStatus200Response**](OBPv510GetCounterpartyLimitStatus200Response.md)
+[**GetCounterpartyLimitStatus200Response**](GetCounterpartyLimitStatus200Response.md)
 
 ### Authorization
 
@@ -491,8 +491,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv5_1_0_update_counterparty_limit**
-> OBPv510GetCounterpartyLimit200Response o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
+# **update_counterparty_limit**
+> GetCounterpartyLimit200Response update_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit)
 
 Update Counterparty Limit
 
@@ -527,8 +527,8 @@ Update Counterparty Limit
 
 ```python
 import obp_python
-from obp_python.models.obpv510_create_vrp_consent_request_request_to_account_limit import OBPv510CreateVRPConsentRequestRequestToAccountLimit
-from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
+from obp_python.models.create_vrp_consent_request_request_to_account_limit import CreateVRPConsentRequestRequestToAccountLimit
+from obp_python.models.get_counterparty_limit200_response import GetCounterpartyLimit200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -565,15 +565,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     counterpartyid = 'counterpartyid_example' # str | The COUNTERPARTYID identifier
-    obpv510_create_vrp_consent_request_request_to_account_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}} # OBPv510CreateVRPConsentRequestRequestToAccountLimit | Request body
+    create_vrp_consent_request_request_to_account_limit = {"type":"object","properties":{"max_total_amount":{"type":"string"},"currency":{"type":"string"},"max_number_of_yearly_transactions":{"type":"integer"},"max_monthly_amount":{"type":"string"},"max_single_amount":{"type":"string"},"max_number_of_monthly_transactions":{"type":"integer"},"max_yearly_amount":{"type":"string"},"max_number_of_transactions":{"type":"integer"}}} # CreateVRPConsentRequestRequestToAccountLimit | Request body
 
     try:
         # Update Counterparty Limit
-        api_response = api_instance.o_bpv5_1_0_update_counterparty_limit(bankid, accountid, viewid, counterpartyid, obpv510_create_vrp_consent_request_request_to_account_limit)
-        print("The response of CounterpartyLimitsApi->o_bpv5_1_0_update_counterparty_limit:\n")
+        api_response = api_instance.update_counterparty_limit(bankid, accountid, viewid, counterpartyid, create_vrp_consent_request_request_to_account_limit)
+        print("The response of CounterpartyLimitsApi->update_counterparty_limit:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyLimitsApi->o_bpv5_1_0_update_counterparty_limit: %s\n" % e)
+        print("Exception when calling CounterpartyLimitsApi->update_counterparty_limit: %s\n" % e)
 ```
 
 
@@ -587,11 +587,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **counterpartyid** | **str**| The COUNTERPARTYID identifier | 
- **obpv510_create_vrp_consent_request_request_to_account_limit** | [**OBPv510CreateVRPConsentRequestRequestToAccountLimit**](OBPv510CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
+ **create_vrp_consent_request_request_to_account_limit** | [**CreateVRPConsentRequestRequestToAccountLimit**](CreateVRPConsentRequestRequestToAccountLimit.md)| Request body | 
 
 ### Return type
 
-[**OBPv510GetCounterpartyLimit200Response**](OBPv510GetCounterpartyLimit200Response.md)
+[**GetCounterpartyLimit200Response**](GetCounterpartyLimit200Response.md)
 
 ### Authorization
 

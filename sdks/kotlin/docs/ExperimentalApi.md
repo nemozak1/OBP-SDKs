@@ -1,17 +1,17 @@
 # ExperimentalApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CreateMeeting**](ExperimentalApi.md#oBPv310CreateMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**oBPv310GetMeeting**](ExperimentalApi.md#oBPv310GetMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**oBPv310GetMeetings**](ExperimentalApi.md#oBPv310GetMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**createMeeting**](ExperimentalApi.md#createMeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**getMeeting**](ExperimentalApi.md#getMeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**getMeetings**](ExperimentalApi.md#getMeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
 
-<a id="oBPv310CreateMeeting"></a>
-# **oBPv310CreateMeeting**
-> OBPv310GetMeeting200Response oBPv310CreateMeeting(bankid, obPv310CreateMeetingRequest)
+<a id="createMeeting"></a>
+# **createMeeting**
+> GetMeeting200Response createMeeting(bankid, createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -25,15 +25,15 @@ Create Meeting (video conference/call)
 
 val apiInstance = ExperimentalApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
-val obPv310CreateMeetingRequest : OBPv310CreateMeetingRequest = {"type":"object","properties":{"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}},"date":{"type":"string","format":"date-time"}}} // OBPv310CreateMeetingRequest | Request body
+val createMeetingRequest : CreateMeetingRequest = {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}} // CreateMeetingRequest | Request body
 try {
-    val result : OBPv310GetMeeting200Response = apiInstance.oBPv310CreateMeeting(bankid, obPv310CreateMeetingRequest)
+    val result : GetMeeting200Response = apiInstance.createMeeting(bankid, createMeetingRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ExperimentalApi#oBPv310CreateMeeting")
+    println("4xx response calling ExperimentalApi#createMeeting")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ExperimentalApi#oBPv310CreateMeeting")
+    println("5xx response calling ExperimentalApi#createMeeting")
     e.printStackTrace()
 }
 ```
@@ -42,11 +42,11 @@ try {
 | **bankid** | **kotlin.String**| The BANKID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md)| Request body | |
+| **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -57,17 +57,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv310GetMeeting"></a>
-# **oBPv310GetMeeting**
-> OBPv310GetMeeting200Response oBPv310GetMeeting(bankid, meetingid)
+<a id="getMeeting"></a>
+# **getMeeting**
+> GetMeeting200Response getMeeting(bankid, meetingid)
 
 Get Meeting
 
@@ -83,13 +83,13 @@ val apiInstance = ExperimentalApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val meetingid : kotlin.String = meetingid_example // kotlin.String | The MEETINGID identifier
 try {
-    val result : OBPv310GetMeeting200Response = apiInstance.oBPv310GetMeeting(bankid, meetingid)
+    val result : GetMeeting200Response = apiInstance.getMeeting(bankid, meetingid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ExperimentalApi#oBPv310GetMeeting")
+    println("4xx response calling ExperimentalApi#getMeeting")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ExperimentalApi#oBPv310GetMeeting")
+    println("5xx response calling ExperimentalApi#getMeeting")
     e.printStackTrace()
 }
 ```
@@ -102,7 +102,7 @@ try {
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -113,17 +113,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv310GetMeetings"></a>
-# **oBPv310GetMeetings**
-> OBPv310GetMeetings200Response oBPv310GetMeetings(bankid)
+<a id="getMeetings"></a>
+# **getMeetings**
+> GetMeetings200Response getMeetings(bankid)
 
 Get Meetings
 
@@ -138,13 +138,13 @@ Get Meetings
 val apiInstance = ExperimentalApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 try {
-    val result : OBPv310GetMeetings200Response = apiInstance.oBPv310GetMeetings(bankid)
+    val result : GetMeetings200Response = apiInstance.getMeetings(bankid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ExperimentalApi#oBPv310GetMeetings")
+    println("4xx response calling ExperimentalApi#getMeetings")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ExperimentalApi#oBPv310GetMeetings")
+    println("5xx response calling ExperimentalApi#getMeetings")
     e.printStackTrace()
 }
 ```
@@ -156,7 +156,7 @@ try {
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 
@@ -167,8 +167,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

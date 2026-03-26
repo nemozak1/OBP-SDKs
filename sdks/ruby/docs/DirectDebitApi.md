@@ -1,16 +1,16 @@
 # OpenBankProject::DirectDebitApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_direct_debit**](DirectDebitApi.md#o_bpv4_0_0_create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**o_bpv4_0_0_create_direct_debit_management**](DirectDebitApi.md#o_bpv4_0_0_create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**create_direct_debit**](DirectDebitApi.md#create_direct_debit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**create_direct_debit_management**](DirectDebitApi.md#create_direct_debit_management) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
 
-## o_bpv4_0_0_create_direct_debit
+## create_direct_debit
 
-> <OBPv400CreateDirectDebit200Response> o_bpv4_0_0_create_direct_debit(bankid, accountid, viewid, obpv400_create_direct_debit_request)
+> <CreateDirectDebit200Response> create_direct_debit(bankid, accountid, viewid, create_direct_debit_request)
 
 Create Direct Debit
 
@@ -32,41 +32,41 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DirectDebitApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
 viewid = 'viewid_example' # String | The VIEWID identifier
-obpv400_create_direct_debit_request = OpenBankProject::OBPv400CreateDirectDebitRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateDirectDebitRequestProperties.new({date_starts: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_signed: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), user_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_expires: , counterparty_id: })}) # OBPv400CreateDirectDebitRequest | Request body
+create_direct_debit_request = OpenBankProject::CreateDirectDebitRequest.new # CreateDirectDebitRequest | Request body
 
 begin
   # Create Direct Debit
-  result = api_instance.o_bpv4_0_0_create_direct_debit(bankid, accountid, viewid, obpv400_create_direct_debit_request)
+  result = api_instance.create_direct_debit(bankid, accountid, viewid, create_direct_debit_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit: #{e}"
+  puts "Error when calling DirectDebitApi->create_direct_debit: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_direct_debit_with_http_info variant
+#### Using the create_direct_debit_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateDirectDebit200Response>, Integer, Hash)> o_bpv4_0_0_create_direct_debit_with_http_info(bankid, accountid, viewid, obpv400_create_direct_debit_request)
+> <Array(<CreateDirectDebit200Response>, Integer, Hash)> create_direct_debit_with_http_info(bankid, accountid, viewid, create_direct_debit_request)
 
 ```ruby
 begin
   # Create Direct Debit
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_direct_debit_with_http_info(bankid, accountid, viewid, obpv400_create_direct_debit_request)
+  data, status_code, headers = api_instance.create_direct_debit_with_http_info(bankid, accountid, viewid, create_direct_debit_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateDirectDebit200Response>
+  p data # => <CreateDirectDebit200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit_with_http_info: #{e}"
+  puts "Error when calling DirectDebitApi->create_direct_debit_with_http_info: #{e}"
 end
 ```
 
@@ -77,11 +77,11 @@ end
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
 | **viewid** | **String** | The VIEWID identifier |  |
-| **obpv400_create_direct_debit_request** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body |  |
+| **create_direct_debit_request** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -93,9 +93,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_direct_debit_management
+## create_direct_debit_management
 
-> <OBPv400CreateDirectDebit200Response> o_bpv4_0_0_create_direct_debit_management(bankid, accountid, obpv400_create_direct_debit_request)
+> <CreateDirectDebit200Response> create_direct_debit_management(bankid, accountid, create_direct_debit_request)
 
 Create Direct Debit (management)
 
@@ -117,40 +117,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::DirectDebitApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 accountid = 'accountid_example' # String | The ACCOUNTID identifier
-obpv400_create_direct_debit_request = OpenBankProject::OBPv400CreateDirectDebitRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateDirectDebitRequestProperties.new({date_starts: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), customer_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_signed: OpenBankProject::OBPv600UpdateRateLimitsRequestPropertiesFromDate.new({type: 'type_example', format: 'format_example'}), user_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), date_expires: , counterparty_id: })}) # OBPv400CreateDirectDebitRequest | Request body
+create_direct_debit_request = OpenBankProject::CreateDirectDebitRequest.new # CreateDirectDebitRequest | Request body
 
 begin
   # Create Direct Debit (management)
-  result = api_instance.o_bpv4_0_0_create_direct_debit_management(bankid, accountid, obpv400_create_direct_debit_request)
+  result = api_instance.create_direct_debit_management(bankid, accountid, create_direct_debit_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit_management: #{e}"
+  puts "Error when calling DirectDebitApi->create_direct_debit_management: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_direct_debit_management_with_http_info variant
+#### Using the create_direct_debit_management_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400CreateDirectDebit200Response>, Integer, Hash)> o_bpv4_0_0_create_direct_debit_management_with_http_info(bankid, accountid, obpv400_create_direct_debit_request)
+> <Array(<CreateDirectDebit200Response>, Integer, Hash)> create_direct_debit_management_with_http_info(bankid, accountid, create_direct_debit_request)
 
 ```ruby
 begin
   # Create Direct Debit (management)
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_direct_debit_management_with_http_info(bankid, accountid, obpv400_create_direct_debit_request)
+  data, status_code, headers = api_instance.create_direct_debit_management_with_http_info(bankid, accountid, create_direct_debit_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400CreateDirectDebit200Response>
+  p data # => <CreateDirectDebit200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling DirectDebitApi->o_bpv4_0_0_create_direct_debit_management_with_http_info: #{e}"
+  puts "Error when calling DirectDebitApi->create_direct_debit_management_with_http_info: #{e}"
 end
 ```
 
@@ -160,11 +160,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **accountid** | **String** | The ACCOUNTID identifier |  |
-| **obpv400_create_direct_debit_request** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md) | Request body |  |
+| **create_direct_debit_request** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

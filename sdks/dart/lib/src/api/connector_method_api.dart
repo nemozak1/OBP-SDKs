@@ -9,11 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_connector_method_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_connector_methods200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_connector_methods200_response_properties_connectors_methods_items.dart';
-import 'package:obp_dart/src/model/obpv400_update_connector_method_request.dart';
-import 'package:obp_dart/src/model/obpv600_get_connector_method_names200_response.dart';
+import 'package:obp_dart/src/model/create_connector_method_request.dart';
+import 'package:obp_dart/src/model/get_all_connector_methods200_response.dart';
+import 'package:obp_dart/src/model/get_all_connector_methods200_response_connectors_methods_inner.dart';
+import 'package:obp_dart/src/model/get_connector_method_names200_response.dart';
+import 'package:obp_dart/src/model/update_connector_method_request.dart';
 
 class ConnectorMethodApi {
 
@@ -27,7 +27,7 @@ class ConnectorMethodApi {
   /// &lt;p&gt;Create an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
   ///
   /// Parameters:
-  /// * [oBPv400CreateConnectorMethodRequest] - Request body
+  /// * [createConnectorMethodRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,10 +35,10 @@ class ConnectorMethodApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllConnectorMethods200ResponseConnectorsMethodsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> oBPv400CreateConnectorMethod({ 
-    required OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest,
+  Future<Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> createConnectorMethod({ 
+    required CreateConnectorMethodRequest createConnectorMethodRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class ConnectorMethodApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class ConnectorMethodApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateConnectorMethodRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateConnectorMethodRequest, specifiedType: _type);
+      const _type = FullType(CreateConnectorMethodRequest);
+      _bodyData = _serializers.serialize(createConnectorMethodRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class ConnectorMethodApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? _responseData;
+    GetAllConnectorMethods200ResponseConnectorsMethodsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems),
-      ) as OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems;
+        specifiedType: const FullType(GetAllConnectorMethods200ResponseConnectorsMethodsInner),
+      ) as GetAllConnectorMethods200ResponseConnectorsMethodsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class ConnectorMethodApi {
       );
     }
 
-    return Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+    return Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -144,9 +144,9 @@ class ConnectorMethodApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllConnectorMethods200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllConnectorMethods200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllConnectorMethods200Response>> oBPv400GetAllConnectorMethods({ 
+  Future<Response<GetAllConnectorMethods200Response>> getAllConnectorMethods({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -173,7 +173,7 @@ class ConnectorMethodApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -190,14 +190,14 @@ class ConnectorMethodApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllConnectorMethods200Response? _responseData;
+    GetAllConnectorMethods200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllConnectorMethods200Response),
-      ) as OBPv400GetAllConnectorMethods200Response;
+        specifiedType: const FullType(GetAllConnectorMethods200Response),
+      ) as GetAllConnectorMethods200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -209,7 +209,7 @@ class ConnectorMethodApi {
       );
     }
 
-    return Response<OBPv400GetAllConnectorMethods200Response>(
+    return Response<GetAllConnectorMethods200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -233,9 +233,9 @@ class ConnectorMethodApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllConnectorMethods200ResponseConnectorsMethodsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> oBPv400GetConnectorMethod({ 
+  Future<Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> getConnectorMethod({ 
     required String connectormethodid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -263,7 +263,7 @@ class ConnectorMethodApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -280,14 +280,14 @@ class ConnectorMethodApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? _responseData;
+    GetAllConnectorMethods200ResponseConnectorsMethodsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems),
-      ) as OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems;
+        specifiedType: const FullType(GetAllConnectorMethods200ResponseConnectorsMethodsInner),
+      ) as GetAllConnectorMethods200ResponseConnectorsMethodsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -299,119 +299,7 @@ class ConnectorMethodApi {
       );
     }
 
-    return Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Update Connector Method
-  /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-  ///
-  /// Parameters:
-  /// * [connectormethodid] - The CONNECTORMETHODID identifier
-  /// * [oBPv400UpdateConnectorMethodRequest] - Request body
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>> oBPv400UpdateConnectorMethod({ 
-    required String connectormethodid,
-    required OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/obp/v4.0.0/management/connector-methods/{connectormethodid}'.replaceAll('{' r'connectormethodid' '}', encodeQueryParameter(_serializers, connectormethodid, const FullType(String)).toString());
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },{
-            'type': 'apiKey',
-            'name': 'GatewayLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },{
-            'type': 'apiKey',
-            'name': 'DirectLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(OBPv400UpdateConnectorMethodRequest);
-      _bodyData = _serializers.serialize(oBPv400UpdateConnectorMethodRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems),
-      ) as OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems>(
+    return Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -434,9 +322,9 @@ class ConnectorMethodApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetConnectorMethodNames200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetConnectorMethodNames200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetConnectorMethodNames200Response>> oBPv600GetConnectorMethodNames({ 
+  Future<Response<GetConnectorMethodNames200Response>> getConnectorMethodNames({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -463,7 +351,7 @@ class ConnectorMethodApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -480,14 +368,14 @@ class ConnectorMethodApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetConnectorMethodNames200Response? _responseData;
+    GetConnectorMethodNames200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetConnectorMethodNames200Response),
-      ) as OBPv600GetConnectorMethodNames200Response;
+        specifiedType: const FullType(GetConnectorMethodNames200Response),
+      ) as GetConnectorMethodNames200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -499,7 +387,119 @@ class ConnectorMethodApi {
       );
     }
 
-    return Response<OBPv600GetConnectorMethodNames200Response>(
+    return Response<GetConnectorMethodNames200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update Connector Method
+  /// &lt;p&gt;Update an internal connector.&lt;/p&gt; &lt;p&gt;The method_body is URL-encoded format String&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CONNECTOR_METHOD_ID&lt;/a&gt;: ace0352a-9a0f-4bfa-b30b-9003aa467f51&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+  ///
+  /// Parameters:
+  /// * [connectormethodid] - The CONNECTORMETHODID identifier
+  /// * [updateConnectorMethodRequest] - Request body
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [GetAllConnectorMethods200ResponseConnectorsMethodsInner] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>> updateConnectorMethod({ 
+    required String connectormethodid,
+    required UpdateConnectorMethodRequest updateConnectorMethodRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/obp/v4.0.0/management/connector-methods/{connectormethodid}'.replaceAll('{' r'connectormethodid' '}', encodeQueryParameter(_serializers, connectormethodid, const FullType(String)).toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'OAuth2',
+          },{
+            'type': 'apiKey',
+            'name': 'GatewayLogin',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },{
+            'type': 'apiKey',
+            'name': 'DirectLogin',
+            'keyName': 'DirectLogin',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UpdateConnectorMethodRequest);
+      _bodyData = _serializers.serialize(updateConnectorMethodRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    GetAllConnectorMethods200ResponseConnectorsMethodsInner? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(GetAllConnectorMethods200ResponseConnectorsMethodsInner),
+      ) as GetAllConnectorMethods200ResponseConnectorsMethodsInner;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<GetAllConnectorMethods200ResponseConnectorsMethodsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

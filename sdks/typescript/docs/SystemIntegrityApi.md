@@ -1,20 +1,20 @@
 # SystemIntegrityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510AccountAccessUniqueIndexCheck**](SystemIntegrityApi.md#obpv510accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
-| [**oBPv510AccountCurrencyCheck**](SystemIntegrityApi.md#obpv510accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
-| [**oBPv510CustomViewNamesCheck**](SystemIntegrityApi.md#obpv510customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
-| [**oBPv510OrphanedAccountCheck**](SystemIntegrityApi.md#obpv510orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
-| [**oBPv510SystemViewNamesCheck**](SystemIntegrityApi.md#obpv510systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
+| [**accountAccessUniqueIndexCheck**](SystemIntegrityApi.md#accountaccessuniqueindexcheck) | **GET** /obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check | Check Unique Index at Account Access |
+| [**accountCurrencyCheck**](SystemIntegrityApi.md#accountcurrencycheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/account-currency-check | Check for Sensible Currencies |
+| [**customViewNamesCheck**](SystemIntegrityApi.md#customviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/custom-view-names-check | Check Custom View Names |
+| [**orphanedAccountCheck**](SystemIntegrityApi.md#orphanedaccountcheck) | **GET** /obp/v5.1.0/management/system/integrity/banks/{bankid}/orphaned-account-check | Check for Orphaned Accounts |
+| [**systemViewNamesCheck**](SystemIntegrityApi.md#systemviewnamescheck) | **GET** /obp/v5.1.0/management/system/integrity/system-view-names-check | Check System View Names |
 
 
 
-## oBPv510AccountAccessUniqueIndexCheck
+## accountAccessUniqueIndexCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountAccessUniqueIndexCheck()
+> AccountAccessUniqueIndexCheck200Response accountAccessUniqueIndexCheck()
 
 Check Unique Index at Account Access
 
@@ -27,7 +27,7 @@ import {
   Configuration,
   SystemIntegrityApi,
 } from 'obp-typescript';
-import type { OBPv510AccountAccessUniqueIndexCheckRequest } from 'obp-typescript';
+import type { AccountAccessUniqueIndexCheckRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -42,7 +42,7 @@ async function example() {
   const api = new SystemIntegrityApi(config);
 
   try {
-    const data = await api.oBPv510AccountAccessUniqueIndexCheck();
+    const data = await api.accountAccessUniqueIndexCheck();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -80,9 +80,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510AccountCurrencyCheck
+## accountCurrencyCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510AccountCurrencyCheck(bankid)
+> AccountAccessUniqueIndexCheck200Response accountCurrencyCheck(bankid)
 
 Check for Sensible Currencies
 
@@ -95,7 +95,7 @@ import {
   Configuration,
   SystemIntegrityApi,
 } from 'obp-typescript';
-import type { OBPv510AccountCurrencyCheckRequest } from 'obp-typescript';
+import type { AccountCurrencyCheckRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -112,10 +112,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv510AccountCurrencyCheckRequest;
+  } satisfies AccountCurrencyCheckRequest;
 
   try {
-    const data = await api.oBPv510AccountCurrencyCheck(body);
+    const data = await api.accountCurrencyCheck(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -135,7 +135,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -156,9 +156,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510CustomViewNamesCheck
+## customViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510CustomViewNamesCheck()
+> AccountAccessUniqueIndexCheck200Response customViewNamesCheck()
 
 Check Custom View Names
 
@@ -171,7 +171,7 @@ import {
   Configuration,
   SystemIntegrityApi,
 } from 'obp-typescript';
-import type { OBPv510CustomViewNamesCheckRequest } from 'obp-typescript';
+import type { CustomViewNamesCheckRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -186,7 +186,7 @@ async function example() {
   const api = new SystemIntegrityApi(config);
 
   try {
-    const data = await api.oBPv510CustomViewNamesCheck();
+    const data = await api.customViewNamesCheck();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -203,7 +203,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -224,9 +224,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510OrphanedAccountCheck
+## orphanedAccountCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510OrphanedAccountCheck(bankid)
+> AccountAccessUniqueIndexCheck200Response orphanedAccountCheck(bankid)
 
 Check for Orphaned Accounts
 
@@ -239,7 +239,7 @@ import {
   Configuration,
   SystemIntegrityApi,
 } from 'obp-typescript';
-import type { OBPv510OrphanedAccountCheckRequest } from 'obp-typescript';
+import type { OrphanedAccountCheckRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -256,10 +256,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv510OrphanedAccountCheckRequest;
+  } satisfies OrphanedAccountCheckRequest;
 
   try {
-    const data = await api.oBPv510OrphanedAccountCheck(body);
+    const data = await api.orphanedAccountCheck(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -279,7 +279,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 
@@ -300,9 +300,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv510SystemViewNamesCheck
+## systemViewNamesCheck
 
-> OBPv121UpdateTransactionNarrative200Response oBPv510SystemViewNamesCheck()
+> AccountAccessUniqueIndexCheck200Response systemViewNamesCheck()
 
 Check System View Names
 
@@ -315,7 +315,7 @@ import {
   Configuration,
   SystemIntegrityApi,
 } from 'obp-typescript';
-import type { OBPv510SystemViewNamesCheckRequest } from 'obp-typescript';
+import type { SystemViewNamesCheckRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -330,7 +330,7 @@ async function example() {
   const api = new SystemIntegrityApi(config);
 
   try {
-    const data = await api.oBPv510SystemViewNamesCheck();
+    const data = await api.systemViewNamesCheck();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -347,7 +347,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**AccountAccessUniqueIndexCheck200Response**](AccountAccessUniqueIndexCheck200Response.md)
 
 ### Authorization
 

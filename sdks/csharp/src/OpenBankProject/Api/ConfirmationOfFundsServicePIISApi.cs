@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -49,8 +49,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CheckFundsAvailableApiResponse"/>&gt;</returns>
-        Task<IOBPv310CheckFundsAvailableApiResponse> OBPv310CheckFundsAvailableAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICheckFundsAvailableApiResponse"/>&gt;</returns>
+        Task<ICheckFundsAvailableApiResponse> CheckFundsAvailableAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Check Available Funds
@@ -62,8 +62,8 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CheckFundsAvailableApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CheckFundsAvailableApiResponse?> OBPv310CheckFundsAvailableOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICheckFundsAvailableApiResponse"/>?&gt;</returns>
+        Task<ICheckFundsAvailableApiResponse?> CheckFundsAvailableOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -74,21 +74,21 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CheckFundsAvailable;
+        public event EventHandler<ApiResponseEventArgs>? OnCheckFundsAvailable;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CheckFundsAvailable;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCheckFundsAvailable;
 
-        internal void ExecuteOnOBPv310CheckFundsAvailable(AccountApi.OBPv310CheckFundsAvailableApiResponse apiResponse)
+        internal void ExecuteOnCheckFundsAvailable(AccountApi.CheckFundsAvailableApiResponse apiResponse)
         {
-            OnOBPv310CheckFundsAvailable?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCheckFundsAvailable?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CheckFundsAvailable(Exception exception)
+        internal void ExecuteOnErrorCheckFundsAvailable(Exception exception)
         {
-            OnErrorOBPv310CheckFundsAvailable?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCheckFundsAvailable?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -146,7 +146,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310CheckFundsAvailable(ref string bankid, ref string accountid, ref string viewid);
+        partial void FormatCheckFundsAvailable(ref string bankid, ref string accountid, ref string viewid);
 
         /// <summary>
         /// Validates the request parameters
@@ -155,7 +155,7 @@ namespace OpenBankProject.Api
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
         /// <returns></returns>
-        private void ValidateOBPv310CheckFundsAvailable(string bankid, string accountid, string viewid)
+        private void ValidateCheckFundsAvailable(string bankid, string accountid, string viewid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -174,10 +174,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        private void AfterOBPv310CheckFundsAvailableDefaultImplementation(IOBPv310CheckFundsAvailableApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid)
+        private void AfterCheckFundsAvailableDefaultImplementation(ICheckFundsAvailableApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310CheckFundsAvailable(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid);
+            AfterCheckFundsAvailable(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -190,7 +190,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        partial void AfterOBPv310CheckFundsAvailable(ref bool suppressDefaultLog, IOBPv310CheckFundsAvailableApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid);
+        partial void AfterCheckFundsAvailable(ref bool suppressDefaultLog, ICheckFundsAvailableApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -201,10 +201,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        private void OnErrorOBPv310CheckFundsAvailableDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid)
+        private void OnErrorCheckFundsAvailableDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CheckFundsAvailable(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid);
+            OnErrorCheckFundsAvailable(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -219,7 +219,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        partial void OnErrorOBPv310CheckFundsAvailable(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid);
+        partial void OnErrorCheckFundsAvailable(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid);
 
         /// <summary>
         /// Check Available Funds &lt;p&gt;Check Available Funds&lt;br /&gt; Mandatory URL parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;amount&#x3D;NUMBER&lt;/li&gt; &lt;li&gt;currency&#x3D;STRING&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#answer\&quot;&gt;&lt;strong&gt;answer&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#available_funds_request_id\&quot;&gt;&lt;strong&gt;available_funds_request_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
@@ -228,12 +228,12 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CheckFundsAvailableApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CheckFundsAvailableApiResponse?> OBPv310CheckFundsAvailableOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICheckFundsAvailableApiResponse"/>&gt;</returns>
+        public async Task<ICheckFundsAvailableApiResponse?> CheckFundsAvailableOrDefaultAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310CheckFundsAvailableAsync(bankid, accountid, viewid, cancellationToken).ConfigureAwait(false);
+                return await CheckFundsAvailableAsync(bankid, accountid, viewid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -249,16 +249,16 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CheckFundsAvailableApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CheckFundsAvailableApiResponse> OBPv310CheckFundsAvailableAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICheckFundsAvailableApiResponse"/>&gt;</returns>
+        public async Task<ICheckFundsAvailableApiResponse> CheckFundsAvailableAsync(string bankid, string accountid, string viewid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310CheckFundsAvailable(bankid, accountid, viewid);
+                ValidateCheckFundsAvailable(bankid, accountid, viewid);
 
-                FormatOBPv310CheckFundsAvailable(ref bankid, ref accountid, ref viewid);
+                FormatCheckFundsAvailable(ref bankid, ref accountid, ref viewid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -277,7 +277,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -304,8 +304,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv310CheckFundsAvailableApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv310CheckFundsAvailableApiResponse>();
-                        AccountApi.OBPv310CheckFundsAvailableApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CheckFundsAvailableApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CheckFundsAvailableApiResponse>();
+                        AccountApi.CheckFundsAvailableApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -316,9 +316,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310CheckFundsAvailableDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid);
+                        AfterCheckFundsAvailableDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid);
 
-                        Events.ExecuteOnOBPv310CheckFundsAvailable(apiResponseLocalVar);
+                        Events.ExecuteOnCheckFundsAvailable(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -330,8 +330,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310CheckFundsAvailableDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available", uriBuilderLocalVar.Path, bankid, accountid, viewid);
-                Events.ExecuteOnErrorOBPv310CheckFundsAvailable(e);
+                OnErrorCheckFundsAvailableDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available", uriBuilderLocalVar.Path, bankid, accountid, viewid);
+                Events.ExecuteOnErrorCheckFundsAvailable(e);
                 throw;
             }
         }

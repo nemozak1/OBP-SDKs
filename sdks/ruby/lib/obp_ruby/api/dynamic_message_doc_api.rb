@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create Bank Level Dynamic Message Doc
     # <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_create_bank_level_dynamic_message_doc(bankid, obpv400_update_dynamic_message_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info(bankid, obpv400_update_dynamic_message_doc_request, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def create_bank_level_dynamic_message_doc(bankid, update_dynamic_message_doc_request, opts = {})
+      data, _status_code, _headers = create_bank_level_dynamic_message_doc_with_http_info(bankid, update_dynamic_message_doc_request, opts)
       data
     end
 
     # Create Bank Level Dynamic Message Doc
     # &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_create_bank_level_dynamic_message_doc_with_http_info(bankid, obpv400_update_dynamic_message_doc_request, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def create_bank_level_dynamic_message_doc_with_http_info(bankid, update_dynamic_message_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_create_bank_level_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.create_bank_level_dynamic_message_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.o_bpv4_0_0_create_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.create_bank_level_dynamic_message_doc"
       end
-      # verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_dynamic_message_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_dynamic_message_doc_request' when calling DynamicMessageDocApi.o_bpv4_0_0_create_bank_level_dynamic_message_doc"
+      # verify the required parameter 'update_dynamic_message_doc_request' is set
+      if @api_client.config.client_side_validation && update_dynamic_message_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_dynamic_message_doc_request' when calling DynamicMessageDocApi.create_bank_level_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_dynamic_message_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_dynamic_message_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_create_bank_level_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.create_bank_level_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,33 +88,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_create_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#create_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create Dynamic Message Doc
     # <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_create_dynamic_message_doc(obpv400_update_dynamic_message_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_dynamic_message_doc_with_http_info(obpv400_update_dynamic_message_doc_request, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def create_dynamic_message_doc(update_dynamic_message_doc_request, opts = {})
+      data, _status_code, _headers = create_dynamic_message_doc_with_http_info(update_dynamic_message_doc_request, opts)
       data
     end
 
     # Create Dynamic Message Doc
     # &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_create_dynamic_message_doc_with_http_info(obpv400_update_dynamic_message_doc_request, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def create_dynamic_message_doc_with_http_info(update_dynamic_message_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_create_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.create_dynamic_message_doc ...'
       end
-      # verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_dynamic_message_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_dynamic_message_doc_request' when calling DynamicMessageDocApi.o_bpv4_0_0_create_dynamic_message_doc"
+      # verify the required parameter 'update_dynamic_message_doc_request' is set
+      if @api_client.config.client_side_validation && update_dynamic_message_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_dynamic_message_doc_request' when calling DynamicMessageDocApi.create_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-message-docs'
@@ -136,16 +136,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_dynamic_message_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_dynamic_message_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_create_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.create_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -156,7 +156,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_create_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#create_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -167,8 +167,8 @@ module OpenBankProject
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, opts = {})
-      o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts)
+    def delete_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, opts = {})
+      delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts)
       nil
     end
 
@@ -178,17 +178,17 @@ module OpenBankProject
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts = {})
+    def delete_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_delete_bank_level_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.delete_bank_level_dynamic_message_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.o_bpv4_0_0_delete_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.delete_bank_level_dynamic_message_doc"
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_delete_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.delete_bank_level_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -212,7 +212,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_delete_bank_level_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.delete_bank_level_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -223,7 +223,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_delete_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#delete_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -233,8 +233,8 @@ module OpenBankProject
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_dynamic_message_doc(dynamicmessagedocid, opts = {})
-      o_bpv4_0_0_delete_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts)
+    def delete_dynamic_message_doc(dynamicmessagedocid, opts = {})
+      delete_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts)
       nil
     end
 
@@ -243,13 +243,13 @@ module OpenBankProject
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts = {})
+    def delete_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_delete_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.delete_dynamic_message_doc ...'
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_delete_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.delete_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -273,7 +273,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_delete_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.delete_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -284,7 +284,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_delete_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#delete_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -293,9 +293,9 @@ module OpenBankProject
     # <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllBankLevelDynamicMessageDocs200Response]
-    def o_bpv4_0_0_get_all_bank_level_dynamic_message_docs(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info(bankid, opts)
+    # @return [GetAllBankLevelDynamicMessageDocs200Response]
+    def get_all_bank_level_dynamic_message_docs(bankid, opts = {})
+      data, _status_code, _headers = get_all_bank_level_dynamic_message_docs_with_http_info(bankid, opts)
       data
     end
 
@@ -303,14 +303,14 @@ module OpenBankProject
     # &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllBankLevelDynamicMessageDocs200Response, Integer, Hash)>] OBPv400GetAllBankLevelDynamicMessageDocs200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_bank_level_dynamic_message_docs_with_http_info(bankid, opts = {})
+    # @return [Array<(GetAllBankLevelDynamicMessageDocs200Response, Integer, Hash)>] GetAllBankLevelDynamicMessageDocs200Response data, response status code and response headers
+    def get_all_bank_level_dynamic_message_docs_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.get_all_bank_level_dynamic_message_docs ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.get_all_bank_level_dynamic_message_docs"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -330,13 +330,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllBankLevelDynamicMessageDocs200Response'
+      return_type = opts[:debug_return_type] || 'GetAllBankLevelDynamicMessageDocs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_get_all_bank_level_dynamic_message_docs",
+        :operation => :"DynamicMessageDocApi.get_all_bank_level_dynamic_message_docs",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -347,7 +347,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_get_all_bank_level_dynamic_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#get_all_bank_level_dynamic_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -355,19 +355,19 @@ module OpenBankProject
     # Get all Dynamic Message Docs
     # <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllBankLevelDynamicMessageDocs200Response]
-    def o_bpv4_0_0_get_all_dynamic_message_docs(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info(opts)
+    # @return [GetAllBankLevelDynamicMessageDocs200Response]
+    def get_all_dynamic_message_docs(opts = {})
+      data, _status_code, _headers = get_all_dynamic_message_docs_with_http_info(opts)
       data
     end
 
     # Get all Dynamic Message Docs
     # &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllBankLevelDynamicMessageDocs200Response, Integer, Hash)>] OBPv400GetAllBankLevelDynamicMessageDocs200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_dynamic_message_docs_with_http_info(opts = {})
+    # @return [Array<(GetAllBankLevelDynamicMessageDocs200Response, Integer, Hash)>] GetAllBankLevelDynamicMessageDocs200Response data, response status code and response headers
+    def get_all_dynamic_message_docs_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_get_all_dynamic_message_docs ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.get_all_dynamic_message_docs ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-message-docs'
@@ -387,13 +387,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllBankLevelDynamicMessageDocs200Response'
+      return_type = opts[:debug_return_type] || 'GetAllBankLevelDynamicMessageDocs200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_get_all_dynamic_message_docs",
+        :operation => :"DynamicMessageDocApi.get_all_dynamic_message_docs",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -404,7 +404,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_get_all_dynamic_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#get_all_dynamic_message_docs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -414,9 +414,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def get_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, opts = {})
+      data, _status_code, _headers = get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts)
       data
     end
 
@@ -425,18 +425,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def get_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_get_bank_level_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.get_bank_level_dynamic_message_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.o_bpv4_0_0_get_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.get_bank_level_dynamic_message_doc"
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_get_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.get_bank_level_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -456,13 +456,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_get_bank_level_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.get_bank_level_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -473,7 +473,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_get_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#get_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -482,9 +482,9 @@ module OpenBankProject
     # <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_get_dynamic_message_doc(dynamicmessagedocid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def get_dynamic_message_doc(dynamicmessagedocid, opts = {})
+      data, _status_code, _headers = get_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts)
       data
     end
 
@@ -492,14 +492,14 @@ module OpenBankProject
     # &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_get_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def get_dynamic_message_doc_with_http_info(dynamicmessagedocid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_get_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.get_dynamic_message_doc ...'
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_get_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.get_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -519,13 +519,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_get_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.get_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -536,7 +536,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_get_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#get_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -545,11 +545,11 @@ module OpenBankProject
     # <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param bankid [String] The BANKID identifier
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def update_bank_level_dynamic_message_doc(bankid, dynamicmessagedocid, update_dynamic_message_doc_request, opts = {})
+      data, _status_code, _headers = update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, update_dynamic_message_doc_request, opts)
       data
     end
 
@@ -557,24 +557,24 @@ module OpenBankProject
     # &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def update_bank_level_dynamic_message_doc_with_http_info(bankid, dynamicmessagedocid, update_dynamic_message_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_update_bank_level_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.update_bank_level_dynamic_message_doc ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.o_bpv4_0_0_update_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling DynamicMessageDocApi.update_bank_level_dynamic_message_doc"
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_update_bank_level_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.update_bank_level_dynamic_message_doc"
       end
-      # verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_dynamic_message_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_dynamic_message_doc_request' when calling DynamicMessageDocApi.o_bpv4_0_0_update_bank_level_dynamic_message_doc"
+      # verify the required parameter 'update_dynamic_message_doc_request' is set
+      if @api_client.config.client_side_validation && update_dynamic_message_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_dynamic_message_doc_request' when calling DynamicMessageDocApi.update_bank_level_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -596,16 +596,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_dynamic_message_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_dynamic_message_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_update_bank_level_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.update_bank_level_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -616,7 +616,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_update_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#update_bank_level_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -624,31 +624,31 @@ module OpenBankProject
     # Update Dynamic Message Doc
     # <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetDynamicMessageDoc200Response]
-    def o_bpv4_0_0_update_dynamic_message_doc(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_dynamic_message_doc_with_http_info(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts)
+    # @return [GetDynamicMessageDoc200Response]
+    def update_dynamic_message_doc(dynamicmessagedocid, update_dynamic_message_doc_request, opts = {})
+      data, _status_code, _headers = update_dynamic_message_doc_with_http_info(dynamicmessagedocid, update_dynamic_message_doc_request, opts)
       data
     end
 
     # Update Dynamic Message Doc
     # &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
     # @param dynamicmessagedocid [String] The DYNAMICMESSAGEDOCID identifier
-    # @param obpv400_update_dynamic_message_doc_request [OBPv400UpdateDynamicMessageDocRequest] Request body
+    # @param update_dynamic_message_doc_request [UpdateDynamicMessageDocRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetDynamicMessageDoc200Response, Integer, Hash)>] OBPv400GetDynamicMessageDoc200Response data, response status code and response headers
-    def o_bpv4_0_0_update_dynamic_message_doc_with_http_info(dynamicmessagedocid, obpv400_update_dynamic_message_doc_request, opts = {})
+    # @return [Array<(GetDynamicMessageDoc200Response, Integer, Hash)>] GetDynamicMessageDoc200Response data, response status code and response headers
+    def update_dynamic_message_doc_with_http_info(dynamicmessagedocid, update_dynamic_message_doc_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.o_bpv4_0_0_update_dynamic_message_doc ...'
+        @api_client.config.logger.debug 'Calling API: DynamicMessageDocApi.update_dynamic_message_doc ...'
       end
       # verify the required parameter 'dynamicmessagedocid' is set
       if @api_client.config.client_side_validation && dynamicmessagedocid.nil?
-        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.o_bpv4_0_0_update_dynamic_message_doc"
+        fail ArgumentError, "Missing the required parameter 'dynamicmessagedocid' when calling DynamicMessageDocApi.update_dynamic_message_doc"
       end
-      # verify the required parameter 'obpv400_update_dynamic_message_doc_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_dynamic_message_doc_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_dynamic_message_doc_request' when calling DynamicMessageDocApi.o_bpv4_0_0_update_dynamic_message_doc"
+      # verify the required parameter 'update_dynamic_message_doc_request' is set
+      if @api_client.config.client_side_validation && update_dynamic_message_doc_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_dynamic_message_doc_request' when calling DynamicMessageDocApi.update_dynamic_message_doc"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/dynamic-message-docs/{dynamicmessagedocid}'.sub('{' + 'dynamicmessagedocid' + '}', CGI.escape(dynamicmessagedocid.to_s))
@@ -670,16 +670,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_dynamic_message_doc_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_dynamic_message_doc_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetDynamicMessageDoc200Response'
+      return_type = opts[:debug_return_type] || 'GetDynamicMessageDoc200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"DynamicMessageDocApi.o_bpv4_0_0_update_dynamic_message_doc",
+        :operation => :"DynamicMessageDocApi.update_dynamic_message_doc",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -690,7 +690,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DynamicMessageDocApi#o_bpv4_0_0_update_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DynamicMessageDocApi#update_dynamic_message_doc\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

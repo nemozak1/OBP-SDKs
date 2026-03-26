@@ -13,12 +13,12 @@ open class JSONSchemaValidationAPI {
      Create a JSON Schema Validation
      
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: (body) Request body 
+     - parameter getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     - returns: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    open class func oBPv400CreateJsonSchemaValidation(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems {
-        return try await oBPv400CreateJsonSchemaValidationWithRequestBuilder(operationid: operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: apiConfiguration).execute().body
+    open class func createJsonSchemaValidation(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner {
+        return try await createJsonSchemaValidationWithRequestBuilder(operationid: operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class JSONSchemaValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: (body) Request body 
+     - parameter getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> 
+     - returns: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> 
      */
-    open class func oBPv400CreateJsonSchemaValidationWithRequestBuilder(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
+    open class func createJsonSchemaValidationWithRequestBuilder(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/json-schema-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class JSONSchemaValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -67,8 +67,8 @@ open class JSONSchemaValidationAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteJsonSchemaValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteJsonSchemaValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteJsonSchemaValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteJsonSchemaValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -82,13 +82,13 @@ open class JSONSchemaValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteJsonSchemaValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteJsonSchemaValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/management/json-schema-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -113,10 +113,10 @@ open class JSONSchemaValidationAPI {
      Get all JSON Schema Validations
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllJsonSchemaValidationsPublic200Response
+     - returns: GetAllJsonSchemaValidationsPublic200Response
      */
-    open class func oBPv400GetAllJsonSchemaValidations(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllJsonSchemaValidationsPublic200Response {
-        return try await oBPv400GetAllJsonSchemaValidationsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllJsonSchemaValidations(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllJsonSchemaValidationsPublic200Response {
+        return try await getAllJsonSchemaValidationsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -130,12 +130,12 @@ open class JSONSchemaValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response> 
+     - returns: RequestBuilder<GetAllJsonSchemaValidationsPublic200Response> 
      */
-    open class func oBPv400GetAllJsonSchemaValidationsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response> {
+    open class func getAllJsonSchemaValidationsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllJsonSchemaValidationsPublic200Response> {
         let localVariablePath = "/obp/v4.0.0/management/json-schema-validations"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -148,7 +148,7 @@ open class JSONSchemaValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllJsonSchemaValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -157,10 +157,10 @@ open class JSONSchemaValidationAPI {
      Get all JSON Schema Validations - public
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllJsonSchemaValidationsPublic200Response
+     - returns: GetAllJsonSchemaValidationsPublic200Response
      */
-    open class func oBPv400GetAllJsonSchemaValidationsPublic(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllJsonSchemaValidationsPublic200Response {
-        return try await oBPv400GetAllJsonSchemaValidationsPublicWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getAllJsonSchemaValidationsPublic(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllJsonSchemaValidationsPublic200Response {
+        return try await getAllJsonSchemaValidationsPublicWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -168,9 +168,9 @@ open class JSONSchemaValidationAPI {
      - GET /obp/v4.0.0/endpoints/json-schema-validations
      - <p>Get all JSON Schema Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response> 
+     - returns: RequestBuilder<GetAllJsonSchemaValidationsPublic200Response> 
      */
-    open class func oBPv400GetAllJsonSchemaValidationsPublicWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response> {
+    open class func getAllJsonSchemaValidationsPublicWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllJsonSchemaValidationsPublic200Response> {
         let localVariablePath = "/obp/v4.0.0/endpoints/json-schema-validations"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -183,7 +183,7 @@ open class JSONSchemaValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllJsonSchemaValidationsPublic200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -193,10 +193,10 @@ open class JSONSchemaValidationAPI {
      
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     - returns: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    open class func oBPv400GetJsonSchemaValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems {
-        return try await oBPv400GetJsonSchemaValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    open class func getJsonSchemaValidation(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner {
+        return try await getJsonSchemaValidationWithRequestBuilder(operationid: operationid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -210,13 +210,13 @@ open class JSONSchemaValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> 
+     - returns: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> 
      */
-    open class func oBPv400GetJsonSchemaValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
+    open class func getJsonSchemaValidationWithRequestBuilder(operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/json-schema-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -232,7 +232,7 @@ open class JSONSchemaValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -241,12 +241,12 @@ open class JSONSchemaValidationAPI {
      Update a JSON Schema Validation
      
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: (body) Request body 
+     - parameter getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+     - returns: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
      */
-    open class func oBPv400UpdateJsonSchemaValidation(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems {
-        return try await oBPv400UpdateJsonSchemaValidationWithRequestBuilder(operationid: operationid, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: apiConfiguration).execute().body
+    open class func updateJsonSchemaValidation(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner {
+        return try await updateJsonSchemaValidationWithRequestBuilder(operationid: operationid, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -260,20 +260,20 @@ open class JSONSchemaValidationAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: (body) Request body 
+     - parameter getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> 
+     - returns: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> 
      */
-    open class func oBPv400UpdateJsonSchemaValidationWithRequestBuilder(operationid: String, oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
+    open class func updateJsonSchemaValidationWithRequestBuilder(operationid: String, getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
         var localVariablePath = "/obp/v4.0.0/management/json-schema-validations/{operationid}"
         let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
         let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -283,7 +283,7 @@ open class JSONSchemaValidationAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

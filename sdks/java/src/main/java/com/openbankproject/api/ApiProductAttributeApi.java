@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,8 +18,8 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv510UpdateAtmAttributeRequest;
-import com.openbankproject.model.OBPv600CreateApiProductAttribute200Response;
+import com.openbankproject.model.CreateApiProductAttribute200Response;
+import com.openbankproject.model.UpdateAtmAttributeRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,7 +46,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class ApiProductAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,12 +168,12 @@ public class ApiProductAttributeApi {
    * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv600CreateApiProductAttribute(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest, null);
+  public CreateApiProductAttribute200Response createApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return createApiProductAttribute(bankid, apiproductcode, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -181,13 +181,13 @@ public class ApiProductAttributeApi {
    * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600CreateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600CreateApiProductAttribute200Response> localVarResponse = oBPv600CreateApiProductAttributeWithHttpInfo(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest, headers);
+  public CreateApiProductAttribute200Response createApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateApiProductAttribute200Response> localVarResponse = createApiProductAttributeWithHttpInfo(bankid, apiproductcode, updateAtmAttributeRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -196,12 +196,12 @@ public class ApiProductAttributeApi {
    * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600CreateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv600CreateApiProductAttributeWithHttpInfo(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest, null);
+  public ApiResponse<CreateApiProductAttribute200Response> createApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return createApiProductAttributeWithHttpInfo(bankid, apiproductcode, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -209,13 +209,13 @@ public class ApiProductAttributeApi {
    * &lt;p&gt;Create an Api Product Attribute.&lt;/p&gt; &lt;p&gt;Authentication is Required.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;API_PRODUCT_CODE&lt;/a&gt;: API_PRODUCT_CODE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_attribute_id&lt;/strong&gt;&lt;/a&gt;: api_product_attribute_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;api_product_code&lt;/strong&gt;&lt;/a&gt;: api_product_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600CreateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateApiProductAttributeRequestBuilder(bankid, apiproductcode, obPv510UpdateAtmAttributeRequest, headers);
+  public ApiResponse<CreateApiProductAttribute200Response> createApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createApiProductAttributeRequestBuilder(bankid, apiproductcode, updateAtmAttributeRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -226,11 +226,11 @@ public class ApiProductAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateApiProductAttribute", localVarResponse);
+          throw getApiException("createApiProductAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+          return new ApiResponse<CreateApiProductAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -240,10 +240,10 @@ public class ApiProductAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600CreateApiProductAttribute200Response>() {});
+        CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateApiProductAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+        return new ApiResponse<CreateApiProductAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -262,18 +262,18 @@ public class ApiProductAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600CreateApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600CreateApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createApiProductAttribute");
     }
     // verify the required parameter 'apiproductcode' is set
     if (apiproductcode == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling oBPv600CreateApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling createApiProductAttribute");
     }
-    // verify the required parameter 'obPv510UpdateAtmAttributeRequest' is set
-    if (obPv510UpdateAtmAttributeRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510UpdateAtmAttributeRequest' when calling oBPv600CreateApiProductAttribute");
+    // verify the required parameter 'updateAtmAttributeRequest' is set
+    if (updateAtmAttributeRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAtmAttributeRequest' when calling createApiProductAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -288,7 +288,7 @@ public class ApiProductAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510UpdateAtmAttributeRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAtmAttributeRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -312,8 +312,8 @@ public class ApiProductAttributeApi {
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
-    oBPv600DeleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid, null);
+  public void deleteApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
+    deleteApiProductAttribute(bankid, apiproductcode, apiproductattributeid, null);
   }
 
   /**
@@ -325,8 +325,8 @@ public class ApiProductAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv600DeleteApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, headers);
+  public void deleteApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+    deleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, headers);
   }
 
   /**
@@ -338,8 +338,8 @@ public class ApiProductAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
-    return oBPv600DeleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, null);
+  public ApiResponse<Void> deleteApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
+    return deleteApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, null);
   }
 
   /**
@@ -352,8 +352,8 @@ public class ApiProductAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv600DeleteApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, headers);
+  public ApiResponse<Void> deleteApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -364,7 +364,7 @@ public class ApiProductAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteApiProductAttribute", localVarResponse);
+          throw getApiException("deleteApiProductAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -389,18 +389,18 @@ public class ApiProductAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600DeleteApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600DeleteApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteApiProductAttribute");
     }
     // verify the required parameter 'apiproductcode' is set
     if (apiproductcode == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling oBPv600DeleteApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling deleteApiProductAttribute");
     }
     // verify the required parameter 'apiproductattributeid' is set
     if (apiproductattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling oBPv600DeleteApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling deleteApiProductAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -432,11 +432,11 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
-    return oBPv600GetApiProductAttribute(bankid, apiproductcode, apiproductattributeid, null);
+  public CreateApiProductAttribute200Response getApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
+    return getApiProductAttribute(bankid, apiproductcode, apiproductattributeid, null);
   }
 
   /**
@@ -446,11 +446,11 @@ public class ApiProductAttributeApi {
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600GetApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600CreateApiProductAttribute200Response> localVarResponse = oBPv600GetApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, headers);
+  public CreateApiProductAttribute200Response getApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateApiProductAttribute200Response> localVarResponse = getApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -460,11 +460,11 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600GetApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
-    return oBPv600GetApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, null);
+  public ApiResponse<CreateApiProductAttribute200Response> getApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid) throws ApiException {
+    return getApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, null);
   }
 
   /**
@@ -474,11 +474,11 @@ public class ApiProductAttributeApi {
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600GetApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, headers);
+  public ApiResponse<CreateApiProductAttribute200Response> getApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -489,11 +489,11 @@ public class ApiProductAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetApiProductAttribute", localVarResponse);
+          throw getApiException("getApiProductAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+          return new ApiResponse<CreateApiProductAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -503,10 +503,10 @@ public class ApiProductAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600CreateApiProductAttribute200Response>() {});
+        CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateApiProductAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+        return new ApiResponse<CreateApiProductAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -525,18 +525,18 @@ public class ApiProductAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600GetApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getApiProductAttribute");
     }
     // verify the required parameter 'apiproductcode' is set
     if (apiproductcode == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling oBPv600GetApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling getApiProductAttribute");
     }
     // verify the required parameter 'apiproductattributeid' is set
     if (apiproductattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling oBPv600GetApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling getApiProductAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -568,12 +568,12 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv600UpdateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest, null);
+  public CreateApiProductAttribute200Response updateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return updateApiProductAttribute(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -582,13 +582,13 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600CreateApiProductAttribute200Response
+   * @return CreateApiProductAttribute200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600CreateApiProductAttribute200Response oBPv600UpdateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600CreateApiProductAttribute200Response> localVarResponse = oBPv600UpdateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest, headers);
+  public CreateApiProductAttribute200Response updateApiProductAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateApiProductAttribute200Response> localVarResponse = updateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -598,12 +598,12 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @param updateAtmAttributeRequest Request body (required)
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600UpdateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest) throws ApiException {
-    return oBPv600UpdateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest, null);
+  public ApiResponse<CreateApiProductAttribute200Response> updateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest) throws ApiException {
+    return updateApiProductAttributeWithHttpInfo(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest, null);
   }
 
   /**
@@ -612,13 +612,13 @@ public class ApiProductAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param apiproductcode The APIPRODUCTCODE identifier (required)
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier (required)
-   * @param obPv510UpdateAtmAttributeRequest Request body (required)
+   * @param updateAtmAttributeRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600CreateApiProductAttribute200Response&gt;
+   * @return ApiResponse&lt;CreateApiProductAttribute200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600CreateApiProductAttribute200Response> oBPv600UpdateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600UpdateApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, obPv510UpdateAtmAttributeRequest, headers);
+  public ApiResponse<CreateApiProductAttribute200Response> updateApiProductAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateApiProductAttributeRequestBuilder(bankid, apiproductcode, apiproductattributeid, updateAtmAttributeRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -629,11 +629,11 @@ public class ApiProductAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600UpdateApiProductAttribute", localVarResponse);
+          throw getApiException("updateApiProductAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+          return new ApiResponse<CreateApiProductAttribute200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -643,10 +643,10 @@ public class ApiProductAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600CreateApiProductAttribute200Response>() {});
+        CreateApiProductAttribute200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateApiProductAttribute200Response>() {});
         
 
-        return new ApiResponse<OBPv600CreateApiProductAttribute200Response>(
+        return new ApiResponse<CreateApiProductAttribute200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -665,22 +665,22 @@ public class ApiProductAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600UpdateApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull OBPv510UpdateAtmAttributeRequest obPv510UpdateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateApiProductAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String apiproductcode, @javax.annotation.Nonnull String apiproductattributeid, @javax.annotation.Nonnull UpdateAtmAttributeRequest updateAtmAttributeRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv600UpdateApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateApiProductAttribute");
     }
     // verify the required parameter 'apiproductcode' is set
     if (apiproductcode == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling oBPv600UpdateApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductcode' when calling updateApiProductAttribute");
     }
     // verify the required parameter 'apiproductattributeid' is set
     if (apiproductattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling oBPv600UpdateApiProductAttribute");
+      throw new ApiException(400, "Missing the required parameter 'apiproductattributeid' when calling updateApiProductAttribute");
     }
-    // verify the required parameter 'obPv510UpdateAtmAttributeRequest' is set
-    if (obPv510UpdateAtmAttributeRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510UpdateAtmAttributeRequest' when calling oBPv600UpdateApiProductAttribute");
+    // verify the required parameter 'updateAtmAttributeRequest' is set
+    if (updateAtmAttributeRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateAtmAttributeRequest' when calling updateApiProductAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -696,7 +696,7 @@ public class ApiProductAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510UpdateAtmAttributeRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateAtmAttributeRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

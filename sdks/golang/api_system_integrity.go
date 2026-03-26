@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,17 +24,17 @@ import (
 // SystemIntegrityAPIService SystemIntegrityAPI service
 type SystemIntegrityAPIService service
 
-type ApiOBPv510AccountAccessUniqueIndexCheckRequest struct {
+type ApiAccountAccessUniqueIndexCheckRequest struct {
 	ctx context.Context
 	ApiService *SystemIntegrityAPIService
 }
 
-func (r ApiOBPv510AccountAccessUniqueIndexCheckRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv510AccountAccessUniqueIndexCheckExecute(r)
+func (r ApiAccountAccessUniqueIndexCheckRequest) Execute() (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
+	return r.ApiService.AccountAccessUniqueIndexCheckExecute(r)
 }
 
 /*
-OBPv510AccountAccessUniqueIndexCheck Check Unique Index at Account Access
+AccountAccessUniqueIndexCheck Check Unique Index at Account Access
 
 <p>Check unique index at account access table.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -44,26 +44,26 @@ OBPv510AccountAccessUniqueIndexCheck Check Unique Index at Account Access
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510AccountAccessUniqueIndexCheckRequest
+ @return ApiAccountAccessUniqueIndexCheckRequest
 */
-func (a *SystemIntegrityAPIService) OBPv510AccountAccessUniqueIndexCheck(ctx context.Context) ApiOBPv510AccountAccessUniqueIndexCheckRequest {
-	return ApiOBPv510AccountAccessUniqueIndexCheckRequest{
+func (a *SystemIntegrityAPIService) AccountAccessUniqueIndexCheck(ctx context.Context) ApiAccountAccessUniqueIndexCheckRequest {
+	return ApiAccountAccessUniqueIndexCheckRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SystemIntegrityAPIService) OBPv510AccountAccessUniqueIndexCheckExecute(r ApiOBPv510AccountAccessUniqueIndexCheckRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return AccountAccessUniqueIndexCheck200Response
+func (a *SystemIntegrityAPIService) AccountAccessUniqueIndexCheckExecute(r ApiAccountAccessUniqueIndexCheckRequest) (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *AccountAccessUniqueIndexCheck200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OBPv510AccountAccessUniqueIndexCheck")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.AccountAccessUniqueIndexCheck")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -115,7 +115,7 @@ func (a *SystemIntegrityAPIService) OBPv510AccountAccessUniqueIndexCheckExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -156,18 +156,18 @@ func (a *SystemIntegrityAPIService) OBPv510AccountAccessUniqueIndexCheckExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510AccountCurrencyCheckRequest struct {
+type ApiAccountCurrencyCheckRequest struct {
 	ctx context.Context
 	ApiService *SystemIntegrityAPIService
 	bankid string
 }
 
-func (r ApiOBPv510AccountCurrencyCheckRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv510AccountCurrencyCheckExecute(r)
+func (r ApiAccountCurrencyCheckRequest) Execute() (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
+	return r.ApiService.AccountCurrencyCheckExecute(r)
 }
 
 /*
-OBPv510AccountCurrencyCheck Check for Sensible Currencies
+AccountCurrencyCheck Check for Sensible Currencies
 
 <p>Check for sensible currencies at Bank Account model</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -180,10 +180,10 @@ OBPv510AccountCurrencyCheck Check for Sensible Currencies
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510AccountCurrencyCheckRequest
+ @return ApiAccountCurrencyCheckRequest
 */
-func (a *SystemIntegrityAPIService) OBPv510AccountCurrencyCheck(ctx context.Context, bankid string) ApiOBPv510AccountCurrencyCheckRequest {
-	return ApiOBPv510AccountCurrencyCheckRequest{
+func (a *SystemIntegrityAPIService) AccountCurrencyCheck(ctx context.Context, bankid string) ApiAccountCurrencyCheckRequest {
+	return ApiAccountCurrencyCheckRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -191,16 +191,16 @@ func (a *SystemIntegrityAPIService) OBPv510AccountCurrencyCheck(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SystemIntegrityAPIService) OBPv510AccountCurrencyCheckExecute(r ApiOBPv510AccountCurrencyCheckRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return AccountAccessUniqueIndexCheck200Response
+func (a *SystemIntegrityAPIService) AccountCurrencyCheckExecute(r ApiAccountCurrencyCheckRequest) (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *AccountAccessUniqueIndexCheck200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OBPv510AccountCurrencyCheck")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.AccountCurrencyCheck")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -253,7 +253,7 @@ func (a *SystemIntegrityAPIService) OBPv510AccountCurrencyCheckExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -294,17 +294,17 @@ func (a *SystemIntegrityAPIService) OBPv510AccountCurrencyCheckExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510CustomViewNamesCheckRequest struct {
+type ApiCustomViewNamesCheckRequest struct {
 	ctx context.Context
 	ApiService *SystemIntegrityAPIService
 }
 
-func (r ApiOBPv510CustomViewNamesCheckRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CustomViewNamesCheckExecute(r)
+func (r ApiCustomViewNamesCheckRequest) Execute() (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
+	return r.ApiService.CustomViewNamesCheckExecute(r)
 }
 
 /*
-OBPv510CustomViewNamesCheck Check Custom View Names
+CustomViewNamesCheck Check Custom View Names
 
 <p>Check custom view names.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -314,26 +314,26 @@ OBPv510CustomViewNamesCheck Check Custom View Names
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CustomViewNamesCheckRequest
+ @return ApiCustomViewNamesCheckRequest
 */
-func (a *SystemIntegrityAPIService) OBPv510CustomViewNamesCheck(ctx context.Context) ApiOBPv510CustomViewNamesCheckRequest {
-	return ApiOBPv510CustomViewNamesCheckRequest{
+func (a *SystemIntegrityAPIService) CustomViewNamesCheck(ctx context.Context) ApiCustomViewNamesCheckRequest {
+	return ApiCustomViewNamesCheckRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SystemIntegrityAPIService) OBPv510CustomViewNamesCheckExecute(r ApiOBPv510CustomViewNamesCheckRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return AccountAccessUniqueIndexCheck200Response
+func (a *SystemIntegrityAPIService) CustomViewNamesCheckExecute(r ApiCustomViewNamesCheckRequest) (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *AccountAccessUniqueIndexCheck200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OBPv510CustomViewNamesCheck")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.CustomViewNamesCheck")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -385,7 +385,7 @@ func (a *SystemIntegrityAPIService) OBPv510CustomViewNamesCheckExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -426,18 +426,18 @@ func (a *SystemIntegrityAPIService) OBPv510CustomViewNamesCheckExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510OrphanedAccountCheckRequest struct {
+type ApiOrphanedAccountCheckRequest struct {
 	ctx context.Context
 	ApiService *SystemIntegrityAPIService
 	bankid string
 }
 
-func (r ApiOBPv510OrphanedAccountCheckRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv510OrphanedAccountCheckExecute(r)
+func (r ApiOrphanedAccountCheckRequest) Execute() (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
+	return r.ApiService.OrphanedAccountCheckExecute(r)
 }
 
 /*
-OBPv510OrphanedAccountCheck Check for Orphaned Accounts
+OrphanedAccountCheck Check for Orphaned Accounts
 
 <p>Check for orphaned accounts at Bank Account model</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -450,10 +450,10 @@ OBPv510OrphanedAccountCheck Check for Orphaned Accounts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv510OrphanedAccountCheckRequest
+ @return ApiOrphanedAccountCheckRequest
 */
-func (a *SystemIntegrityAPIService) OBPv510OrphanedAccountCheck(ctx context.Context, bankid string) ApiOBPv510OrphanedAccountCheckRequest {
-	return ApiOBPv510OrphanedAccountCheckRequest{
+func (a *SystemIntegrityAPIService) OrphanedAccountCheck(ctx context.Context, bankid string) ApiOrphanedAccountCheckRequest {
+	return ApiOrphanedAccountCheckRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -461,16 +461,16 @@ func (a *SystemIntegrityAPIService) OBPv510OrphanedAccountCheck(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SystemIntegrityAPIService) OBPv510OrphanedAccountCheckExecute(r ApiOBPv510OrphanedAccountCheckRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return AccountAccessUniqueIndexCheck200Response
+func (a *SystemIntegrityAPIService) OrphanedAccountCheckExecute(r ApiOrphanedAccountCheckRequest) (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *AccountAccessUniqueIndexCheck200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OBPv510OrphanedAccountCheck")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OrphanedAccountCheck")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -523,7 +523,7 @@ func (a *SystemIntegrityAPIService) OBPv510OrphanedAccountCheckExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -564,17 +564,17 @@ func (a *SystemIntegrityAPIService) OBPv510OrphanedAccountCheckExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv510SystemViewNamesCheckRequest struct {
+type ApiSystemViewNamesCheckRequest struct {
 	ctx context.Context
 	ApiService *SystemIntegrityAPIService
 }
 
-func (r ApiOBPv510SystemViewNamesCheckRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv510SystemViewNamesCheckExecute(r)
+func (r ApiSystemViewNamesCheckRequest) Execute() (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
+	return r.ApiService.SystemViewNamesCheckExecute(r)
 }
 
 /*
-OBPv510SystemViewNamesCheck Check System View Names
+SystemViewNamesCheck Check System View Names
 
 <p>Check system view names.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -584,26 +584,26 @@ OBPv510SystemViewNamesCheck Check System View Names
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510SystemViewNamesCheckRequest
+ @return ApiSystemViewNamesCheckRequest
 */
-func (a *SystemIntegrityAPIService) OBPv510SystemViewNamesCheck(ctx context.Context) ApiOBPv510SystemViewNamesCheckRequest {
-	return ApiOBPv510SystemViewNamesCheckRequest{
+func (a *SystemIntegrityAPIService) SystemViewNamesCheck(ctx context.Context) ApiSystemViewNamesCheckRequest {
+	return ApiSystemViewNamesCheckRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *SystemIntegrityAPIService) OBPv510SystemViewNamesCheckExecute(r ApiOBPv510SystemViewNamesCheckRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return AccountAccessUniqueIndexCheck200Response
+func (a *SystemIntegrityAPIService) SystemViewNamesCheckExecute(r ApiSystemViewNamesCheckRequest) (*AccountAccessUniqueIndexCheck200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *AccountAccessUniqueIndexCheck200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.OBPv510SystemViewNamesCheck")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemIntegrityAPIService.SystemViewNamesCheck")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -655,7 +655,7 @@ func (a *SystemIntegrityAPIService) OBPv510SystemViewNamesCheckExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

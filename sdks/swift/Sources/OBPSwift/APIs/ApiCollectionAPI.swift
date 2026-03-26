@@ -10,917 +10,14 @@ import Foundation
 open class ApiCollectionAPI {
 
     /**
-     Create My Api Collection
-     
-     - parameter oBPv400CreateMyApiCollectionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     */
-    open class func oBPv400CreateMyApiCollection(oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        return try await oBPv400CreateMyApiCollectionWithRequestBuilder(oBPv400CreateMyApiCollectionRequest: oBPv400CreateMyApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create My Api Collection
-     - POST /obp/v4.0.0/my/api-collections
-     - <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter oBPv400CreateMyApiCollectionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> 
-     */
-    open class func oBPv400CreateMyApiCollectionWithRequestBuilder(oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        let localVariablePath = "/obp/v4.0.0/my/api-collections"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateMyApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Create My Api Collection Endpoint
-     
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter oBPv400CreateMyApiCollectionEndpointRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     */
-    open class func oBPv400CreateMyApiCollectionEndpoint(apicollectionname: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        return try await oBPv400CreateMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, oBPv400CreateMyApiCollectionEndpointRequest: oBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create My Api Collection Endpoint
-     - POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     - <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter oBPv400CreateMyApiCollectionEndpointRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> 
-     */
-    open class func oBPv400CreateMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints"
-        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
-        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateMyApiCollectionEndpointRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Create My Api Collection Endpoint By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv400CreateMyApiCollectionEndpointRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     */
-    open class func oBPv400CreateMyApiCollectionEndpointById(apicollectionid: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        return try await oBPv400CreateMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: apicollectionid, oBPv400CreateMyApiCollectionEndpointRequest: oBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Create My Api Collection Endpoint By Id
-     - POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     - <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv400CreateMyApiCollectionEndpointRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> 
-     */
-    open class func oBPv400CreateMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateMyApiCollectionEndpointRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Delete My Api Collection
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400DeleteSystemLevelEndpointTag200Response
-     */
-    open class func oBPv400DeleteMyApiCollection(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400DeleteSystemLevelEndpointTag200Response {
-        return try await oBPv400DeleteMyApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Delete My Api Collection
-     - DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
-     - <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> 
-     */
-    open class func oBPv400DeleteMyApiCollectionWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Delete My Api Collection Endpoint
-     
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400DeleteSystemLevelEndpointTag200Response
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpoint(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400DeleteSystemLevelEndpointTag200Response {
-        return try await oBPv400DeleteMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Delete My Api Collection Endpoint
-     - DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     - <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> 
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}"
-        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
-        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
-        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
-        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Delete My Api Collection Endpoint By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apicollectionendpointid: (path) The APICOLLECTIONENDPOINTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400DeleteSystemLevelEndpointTag200Response
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpointById(apicollectionid: String, apicollectionendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400DeleteSystemLevelEndpointTag200Response {
-        return try await oBPv400DeleteMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: apicollectionid, apicollectionendpointid: apicollectionendpointid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Delete My Api Collection Endpoint By Id
-     - DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
-     - <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apicollectionendpointid: (path) The APICOLLECTIONENDPOINTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> 
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: String, apicollectionendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let apicollectionendpointidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionendpointid))"
-        let apicollectionendpointidPostEscape = apicollectionendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionendpointid}", with: apicollectionendpointidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Delete My Api Collection Endpoint By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400DeleteSystemLevelEndpointTag200Response
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpointByOperationId(apicollectionid: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400DeleteSystemLevelEndpointTag200Response {
-        return try await oBPv400DeleteMyApiCollectionEndpointByOperationIdWithRequestBuilder(apicollectionid: apicollectionid, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Delete My Api Collection Endpoint By Id
-     - DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
-     - <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> 
-     */
-    open class func oBPv400DeleteMyApiCollectionEndpointByOperationIdWithRequestBuilder(apicollectionid: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
-        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Api Collection Endpoints
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200Response
-     */
-    open class func oBPv400GetApiCollectionEndpoints(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200Response {
-        return try await oBPv400GetApiCollectionEndpointsWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Api Collection Endpoints
-     - GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
-     - <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> 
-     */
-    open class func oBPv400GetApiCollectionEndpointsWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> {
-        var localVariablePath = "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Api Collections for User
-     
-     - parameter userid: (path) The USERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200Response
-     */
-    open class func oBPv400GetApiCollectionsForUser(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200Response {
-        return try await oBPv400GetApiCollectionsForUserWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Api Collections for User
-     - GET /obp/v4.0.0/users/{userid}/api-collections
-     - <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter userid: (path) The USERID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200Response> 
-     */
-    open class func oBPv400GetApiCollectionsForUserWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200Response> {
-        var localVariablePath = "/obp/v4.0.0/users/{userid}/api-collections"
-        let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
-        let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{userid}", with: useridPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Featured Api Collections
-     
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200Response
-     */
-    open class func oBPv400GetFeaturedApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200Response {
-        return try await oBPv400GetFeaturedApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Featured Api Collections
-     - GET /obp/v4.0.0/api-collections/featured
-     - <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200Response> 
-     */
-    open class func oBPv400GetFeaturedApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200Response> {
-        let localVariablePath = "/obp/v4.0.0/api-collections/featured"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collection By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     */
-    open class func oBPv400GetMyApiCollectionById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        return try await oBPv400GetMyApiCollectionByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collection By Id
-     - GET /obp/v4.0.0/my/api-collections/{apicollectionid}
-     - <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> 
-     */
-    open class func oBPv400GetMyApiCollectionByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collection By Name
-     
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     */
-    open class func oBPv400GetMyApiCollectionByName(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        return try await oBPv400GetMyApiCollectionByNameWithRequestBuilder(apicollectionname: apicollectionname, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collection By Name
-     - GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
-     - <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> 
-     */
-    open class func oBPv400GetMyApiCollectionByNameWithRequestBuilder(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/name/{apicollectionname}"
-        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
-        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collection Endpoint
-     
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-     */
-    open class func oBPv400GetMyApiCollectionEndpoint(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems {
-        return try await oBPv400GetMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collection Endpoint
-     - GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
-     - <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter operationid: (path) The OPERATIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> 
-     */
-    open class func oBPv400GetMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}"
-        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
-        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
-        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
-        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collection Endpoints
-     
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200Response
-     */
-    open class func oBPv400GetMyApiCollectionEndpoints(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200Response {
-        return try await oBPv400GetMyApiCollectionEndpointsWithRequestBuilder(apicollectionname: apicollectionname, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collection Endpoints
-     - GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
-     - <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> 
-     */
-    open class func oBPv400GetMyApiCollectionEndpointsWithRequestBuilder(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints"
-        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
-        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collection Endpoints By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetMyApiCollectionEndpoints200Response
-     */
-    open class func oBPv400GetMyApiCollectionEndpointsById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetMyApiCollectionEndpoints200Response {
-        return try await oBPv400GetMyApiCollectionEndpointsByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collection Endpoints By Id
-     - GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
-     - <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> 
-     */
-    open class func oBPv400GetMyApiCollectionEndpointsByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response> {
-        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get My Api Collections
-     
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200Response
-     */
-    open class func oBPv400GetMyApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200Response {
-        return try await oBPv400GetMyApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get My Api Collections
-     - GET /obp/v4.0.0/my/api-collections
-     - <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200Response> 
-     */
-    open class func oBPv400GetMyApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200Response> {
-        let localVariablePath = "/obp/v4.0.0/my/api-collections"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Sharable Api Collection By Id
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     */
-    open class func oBPv400GetSharableApiCollectionById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        return try await oBPv400GetSharableApiCollectionByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Sharable Api Collection By Id
-     - GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
-     - <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> 
-     */
-    open class func oBPv400GetSharableApiCollectionByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        var localVariablePath = "/obp/v4.0.0/api-collections/sharable/{apicollectionid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get All API Collections
-     
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200Response
-     */
-    open class func oBPv510GetAllApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200Response {
-        return try await oBPv510GetAllApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get All API Collections
-     - GET /obp/v5.1.0/management/api-collections
-     - <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200Response> 
-     */
-    open class func oBPv510GetAllApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200Response> {
-        let localVariablePath = "/obp/v5.1.0/management/api-collections"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update My Api Collection By API_COLLECTION_ID
-     
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv400CreateMyApiCollectionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-     */
-    open class func oBPv510UpdateMyApiCollection(apicollectionid: String, oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems {
-        return try await oBPv510UpdateMyApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, oBPv400CreateMyApiCollectionRequest: oBPv400CreateMyApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update My Api Collection By API_COLLECTION_ID
-     - PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
-     - <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv400CreateMyApiCollectionRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> 
-     */
-    open class func oBPv510UpdateMyApiCollectionWithRequestBuilder(apicollectionid: String, oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        var localVariablePath = "/obp/v5.1.0/my/api-collections/{apicollectionid}"
-        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
-        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateMyApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Create Featured Api Collection
      
-     - parameter oBPv600CreateFeaturedApiCollectionRequest: (body) Request body 
+     - parameter createFeaturedApiCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+     - returns: GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
      */
-    open class func oBPv600CreateFeaturedApiCollection(oBPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems {
-        return try await oBPv600CreateFeaturedApiCollectionWithRequestBuilder(oBPv600CreateFeaturedApiCollectionRequest: oBPv600CreateFeaturedApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createFeaturedApiCollection(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner {
+        return try await createFeaturedApiCollectionWithRequestBuilder(createFeaturedApiCollectionRequest: createFeaturedApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -934,16 +31,16 @@ open class ApiCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
-     - parameter oBPv600CreateFeaturedApiCollectionRequest: (body) Request body 
+     - parameter createFeaturedApiCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> 
+     - returns: RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> 
      */
-    open class func oBPv600CreateFeaturedApiCollectionWithRequestBuilder(oBPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> {
+    open class func createFeaturedApiCollectionWithRequestBuilder(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> {
         let localVariablePath = "/obp/v6.0.0/management/api-collections/featured"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreateFeaturedApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createFeaturedApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -953,7 +50,155 @@ open class ApiCollectionAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create My Api Collection
+     
+     - parameter createMyApiCollectionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    open class func createMyApiCollection(createMyApiCollectionRequest: CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        return try await createMyApiCollectionWithRequestBuilder(createMyApiCollectionRequest: createMyApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create My Api Collection
+     - POST /obp/v4.0.0/my/api-collections
+     - <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter createMyApiCollectionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> 
+     */
+    open class func createMyApiCollectionWithRequestBuilder(createMyApiCollectionRequest: CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        let localVariablePath = "/obp/v4.0.0/my/api-collections"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createMyApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create My Api Collection Endpoint
+     
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter createMyApiCollectionEndpointRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     */
+    open class func createMyApiCollectionEndpoint(apicollectionname: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        return try await createMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, createMyApiCollectionEndpointRequest: createMyApiCollectionEndpointRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create My Api Collection Endpoint
+     - POST /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     - <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter createMyApiCollectionEndpointRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> 
+     */
+    open class func createMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints"
+        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
+        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createMyApiCollectionEndpointRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Create My Api Collection Endpoint By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter createMyApiCollectionEndpointRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     */
+    open class func createMyApiCollectionEndpointById(apicollectionid: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        return try await createMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: apicollectionid, createMyApiCollectionEndpointRequest: createMyApiCollectionEndpointRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Create My Api Collection Endpoint By Id
+     - POST /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     - <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter createMyApiCollectionEndpointRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> 
+     */
+    open class func createMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createMyApiCollectionEndpointRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -965,8 +210,8 @@ open class ApiCollectionAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv600DeleteFeaturedApiCollection(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv600DeleteFeaturedApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteFeaturedApiCollection(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteFeaturedApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -980,13 +225,13 @@ open class ApiCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv600DeleteFeaturedApiCollectionWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteFeaturedApiCollectionWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
         let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
         let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1008,13 +253,392 @@ open class ApiCollectionAPI {
     }
 
     /**
+     Delete My Api Collection
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: DeleteSystemLevelEndpointTag200Response
+     */
+    open class func deleteMyApiCollection(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> DeleteSystemLevelEndpointTag200Response {
+        return try await deleteMyApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Delete My Api Collection
+     - DELETE /obp/v4.0.0/my/api-collections/{apicollectionid}
+     - <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<DeleteSystemLevelEndpointTag200Response> 
+     */
+    open class func deleteMyApiCollectionWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<DeleteSystemLevelEndpointTag200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Delete My Api Collection Endpoint
+     
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: DeleteSystemLevelEndpointTag200Response
+     */
+    open class func deleteMyApiCollectionEndpoint(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> DeleteSystemLevelEndpointTag200Response {
+        return try await deleteMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Delete My Api Collection Endpoint
+     - DELETE /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     - <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<DeleteSystemLevelEndpointTag200Response> 
+     */
+    open class func deleteMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<DeleteSystemLevelEndpointTag200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}"
+        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
+        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
+        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
+        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Delete My Api Collection Endpoint By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apicollectionendpointid: (path) The APICOLLECTIONENDPOINTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: DeleteSystemLevelEndpointTag200Response
+     */
+    open class func deleteMyApiCollectionEndpointById(apicollectionid: String, apicollectionendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> DeleteSystemLevelEndpointTag200Response {
+        return try await deleteMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: apicollectionid, apicollectionendpointid: apicollectionendpointid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Delete My Api Collection Endpoint By Id
+     - DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}
+     - <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apicollectionendpointid: (path) The APICOLLECTIONENDPOINTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<DeleteSystemLevelEndpointTag200Response> 
+     */
+    open class func deleteMyApiCollectionEndpointByIdWithRequestBuilder(apicollectionid: String, apicollectionendpointid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<DeleteSystemLevelEndpointTag200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoint-ids/{apicollectionendpointid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let apicollectionendpointidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionendpointid))"
+        let apicollectionendpointidPostEscape = apicollectionendpointidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionendpointid}", with: apicollectionendpointidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Delete My Api Collection Endpoint By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: DeleteSystemLevelEndpointTag200Response
+     */
+    open class func deleteMyApiCollectionEndpointByOperationId(apicollectionid: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> DeleteSystemLevelEndpointTag200Response {
+        return try await deleteMyApiCollectionEndpointByOperationIdWithRequestBuilder(apicollectionid: apicollectionid, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Delete My Api Collection Endpoint By Id
+     - DELETE /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}
+     - <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<DeleteSystemLevelEndpointTag200Response> 
+     */
+    open class func deleteMyApiCollectionEndpointByOperationIdWithRequestBuilder(apicollectionid: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<DeleteSystemLevelEndpointTag200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints/{operationid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
+        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<DeleteSystemLevelEndpointTag200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get All API Collections
+     
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200Response
+     */
+    open class func getAllApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200Response {
+        return try await getAllApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get All API Collections
+     - GET /obp/v5.1.0/management/api-collections
+     - <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200Response> 
+     */
+    open class func getAllApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200Response> {
+        let localVariablePath = "/obp/v5.1.0/management/api-collections"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Api Collection Endpoints
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200Response
+     */
+    open class func getApiCollectionEndpoints(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200Response {
+        return try await getApiCollectionEndpointsWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Api Collection Endpoints
+     - GET /obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints
+     - <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200Response> 
+     */
+    open class func getApiCollectionEndpointsWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200Response> {
+        var localVariablePath = "/obp/v4.0.0/api-collections/{apicollectionid}/api-collection-endpoints"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Api Collections for User
+     
+     - parameter userid: (path) The USERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200Response
+     */
+    open class func getApiCollectionsForUser(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200Response {
+        return try await getApiCollectionsForUserWithRequestBuilder(userid: userid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Api Collections for User
+     - GET /obp/v4.0.0/users/{userid}/api-collections
+     - <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter userid: (path) The USERID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200Response> 
+     */
+    open class func getApiCollectionsForUserWithRequestBuilder(userid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200Response> {
+        var localVariablePath = "/obp/v4.0.0/users/{userid}/api-collections"
+        let useridPreEscape = "\(APIHelper.mapValueToPathItem(userid))"
+        let useridPostEscape = useridPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{userid}", with: useridPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Featured Api Collections
+     
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200Response
+     */
+    open class func getFeaturedApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200Response {
+        return try await getFeaturedApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Featured Api Collections
+     - GET /obp/v4.0.0/api-collections/featured
+     - <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200Response> 
+     */
+    open class func getFeaturedApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200Response> {
+        let localVariablePath = "/obp/v4.0.0/api-collections/featured"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
      Get Featured Api Collections (Admin)
      
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetFeaturedApiCollectionsAdmin200Response
+     - returns: GetFeaturedApiCollectionsAdmin200Response
      */
-    open class func oBPv600GetFeaturedApiCollectionsAdmin(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetFeaturedApiCollectionsAdmin200Response {
-        return try await oBPv600GetFeaturedApiCollectionsAdminWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    open class func getFeaturedApiCollectionsAdmin(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetFeaturedApiCollectionsAdmin200Response {
+        return try await getFeaturedApiCollectionsAdminWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -1028,12 +652,12 @@ open class ApiCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200Response> 
+     - returns: RequestBuilder<GetFeaturedApiCollectionsAdmin200Response> 
      */
-    open class func oBPv600GetFeaturedApiCollectionsAdminWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200Response> {
+    open class func getFeaturedApiCollectionsAdminWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetFeaturedApiCollectionsAdmin200Response> {
         let localVariablePath = "/obp/v6.0.0/management/api-collections/featured"
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
         let localVariableParameters: [String: any Sendable]? = nil
@@ -1046,21 +670,346 @@ open class ApiCollectionAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetFeaturedApiCollectionsAdmin200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collection By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    open class func getMyApiCollectionById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        return try await getMyApiCollectionByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collection By Id
+     - GET /obp/v4.0.0/my/api-collections/{apicollectionid}
+     - <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> 
+     */
+    open class func getMyApiCollectionByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collection By Name
+     
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    open class func getMyApiCollectionByName(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        return try await getMyApiCollectionByNameWithRequestBuilder(apicollectionname: apicollectionname, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collection By Name
+     - GET /obp/v4.0.0/my/api-collections/name/{apicollectionname}
+     - <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> 
+     */
+    open class func getMyApiCollectionByNameWithRequestBuilder(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/name/{apicollectionname}"
+        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
+        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collection Endpoint
+     
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     */
+    open class func getMyApiCollectionEndpoint(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner {
+        return try await getMyApiCollectionEndpointWithRequestBuilder(apicollectionname: apicollectionname, operationid: operationid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collection Endpoint
+     - GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}
+     - <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter operationid: (path) The OPERATIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> 
+     */
+    open class func getMyApiCollectionEndpointWithRequestBuilder(apicollectionname: String, operationid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints/{operationid}"
+        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
+        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
+        let operationidPreEscape = "\(APIHelper.mapValueToPathItem(operationid))"
+        let operationidPostEscape = operationidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{operationid}", with: operationidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collection Endpoints
+     
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200Response
+     */
+    open class func getMyApiCollectionEndpoints(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200Response {
+        return try await getMyApiCollectionEndpointsWithRequestBuilder(apicollectionname: apicollectionname, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collection Endpoints
+     - GET /obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints
+     - <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionname: (path) The APICOLLECTIONNAME identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200Response> 
+     */
+    open class func getMyApiCollectionEndpointsWithRequestBuilder(apicollectionname: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collections/{apicollectionname}/api-collection-endpoints"
+        let apicollectionnamePreEscape = "\(APIHelper.mapValueToPathItem(apicollectionname))"
+        let apicollectionnamePostEscape = apicollectionnamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionname}", with: apicollectionnamePostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collection Endpoints By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetMyApiCollectionEndpoints200Response
+     */
+    open class func getMyApiCollectionEndpointsById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMyApiCollectionEndpoints200Response {
+        return try await getMyApiCollectionEndpointsByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collection Endpoints By Id
+     - GET /obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints
+     - <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetMyApiCollectionEndpoints200Response> 
+     */
+    open class func getMyApiCollectionEndpointsByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMyApiCollectionEndpoints200Response> {
+        var localVariablePath = "/obp/v4.0.0/my/api-collection-ids/{apicollectionid}/api-collection-endpoints"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetMyApiCollectionEndpoints200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get My Api Collections
+     
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200Response
+     */
+    open class func getMyApiCollections(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200Response {
+        return try await getMyApiCollectionsWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get My Api Collections
+     - GET /obp/v4.0.0/my/api-collections
+     - <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200Response> 
+     */
+    open class func getMyApiCollectionsWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200Response> {
+        let localVariablePath = "/obp/v4.0.0/my/api-collections"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Sharable Api Collection By Id
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    open class func getSharableApiCollectionById(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        return try await getSharableApiCollectionByIdWithRequestBuilder(apicollectionid: apicollectionid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Sharable Api Collection By Id
+     - GET /obp/v4.0.0/api-collections/sharable/{apicollectionid}
+     - <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> 
+     */
+    open class func getSharableApiCollectionByIdWithRequestBuilder(apicollectionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        var localVariablePath = "/obp/v4.0.0/api-collections/sharable/{apicollectionid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
 
     /**
      Update Featured Api Collection
      
      - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv600UpdateFeaturedApiCollectionRequest: (body) Request body 
+     - parameter updateFeaturedApiCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+     - returns: GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
      */
-    open class func oBPv600UpdateFeaturedApiCollection(apicollectionid: String, oBPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems {
-        return try await oBPv600UpdateFeaturedApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, oBPv600UpdateFeaturedApiCollectionRequest: oBPv600UpdateFeaturedApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateFeaturedApiCollection(apicollectionid: String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner {
+        return try await updateFeaturedApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, updateFeaturedApiCollectionRequest: updateFeaturedApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -1074,20 +1023,20 @@ open class ApiCollectionAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
-     - parameter oBPv600UpdateFeaturedApiCollectionRequest: (body) Request body 
+     - parameter updateFeaturedApiCollectionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> 
+     - returns: RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> 
      */
-    open class func oBPv600UpdateFeaturedApiCollectionWithRequestBuilder(apicollectionid: String, oBPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> {
+    open class func updateFeaturedApiCollectionWithRequestBuilder(apicollectionid: String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> {
         var localVariablePath = "/obp/v6.0.0/management/api-collections/featured/{apicollectionid}"
         let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
         let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600UpdateFeaturedApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateFeaturedApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -1097,7 +1046,58 @@ open class ApiCollectionAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update My Api Collection By API_COLLECTION_ID
+     
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter createMyApiCollectionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    open class func updateMyApiCollection(apicollectionid: String, createMyApiCollectionRequest: CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetApiCollectionsForUser200ResponseApiCollectionsInner {
+        return try await updateMyApiCollectionWithRequestBuilder(apicollectionid: apicollectionid, createMyApiCollectionRequest: createMyApiCollectionRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update My Api Collection By API_COLLECTION_ID
+     - PUT /obp/v5.1.0/my/api-collections/{apicollectionid}
+     - <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter apicollectionid: (path) The APICOLLECTIONID identifier 
+     - parameter createMyApiCollectionRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> 
+     */
+    open class func updateMyApiCollectionWithRequestBuilder(apicollectionid: String, createMyApiCollectionRequest: CreateMyApiCollectionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        var localVariablePath = "/obp/v5.1.0/my/api-collections/{apicollectionid}"
+        let apicollectionidPreEscape = "\(APIHelper.mapValueToPathItem(apicollectionid))"
+        let apicollectionidPostEscape = apicollectionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{apicollectionid}", with: apicollectionidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createMyApiCollectionRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetApiCollectionsForUser200ResponseApiCollectionsInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

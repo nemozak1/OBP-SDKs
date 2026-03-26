@@ -5,317 +5,29 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv510LogCacheAllEndpoint**](SystemApi.md#obpv510logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
-[**oBPv510LogCacheDebugEndpoint**](SystemApi.md#obpv510logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
-[**oBPv510LogCacheErrorEndpoint**](SystemApi.md#obpv510logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
-[**oBPv510LogCacheInfoEndpoint**](SystemApi.md#obpv510logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
-[**oBPv510LogCacheTraceEndpoint**](SystemApi.md#obpv510logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
-[**oBPv510LogCacheWarningEndpoint**](SystemApi.md#obpv510logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
-[**oBPv600GetCacheConfig**](SystemApi.md#obpv600getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
-[**oBPv600GetCacheInfo**](SystemApi.md#obpv600getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
-[**oBPv600GetCacheNamespaces**](SystemApi.md#obpv600getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
-[**oBPv600GetConnectorMethodNames**](SystemApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
-[**oBPv600GetConnectors**](SystemApi.md#obpv600getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
-[**oBPv600GetDatabasePoolInfo**](SystemApi.md#obpv600getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
-[**oBPv600GetMigrations**](SystemApi.md#obpv600getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
-[**oBPv600GetStoredProcedureConnectorHealth**](SystemApi.md#obpv600getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
-[**oBPv600InvalidateCacheNamespace**](SystemApi.md#obpv600invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
-
-
-# **oBPv510LogCacheAllEndpoint**
-> oBPv510LogCacheAllEndpoint()
-
-Get All Level Log Cache
-
-<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheAllEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheAllEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheDebugEndpoint**
-> oBPv510LogCacheDebugEndpoint()
-
-Get Debug Level Log Cache
-
-<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheDebugEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheDebugEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheErrorEndpoint**
-> oBPv510LogCacheErrorEndpoint()
-
-Get Error Level Log Cache
-
-<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheErrorEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheErrorEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheInfoEndpoint**
-> oBPv510LogCacheInfoEndpoint()
-
-Get Info Level Log Cache
-
-<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheInfoEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheInfoEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheTraceEndpoint**
-> oBPv510LogCacheTraceEndpoint()
-
-Get Trace Level Log Cache
-
-<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheTraceEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheTraceEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510LogCacheWarningEndpoint**
-> oBPv510LogCacheWarningEndpoint()
-
-Get Warning Level Log Cache
-
-<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getSystemApi();
-
-try {
-    api.oBPv510LogCacheWarningEndpoint();
-} on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv510LogCacheWarningEndpoint: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetCacheConfig**
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+[**getCacheConfig**](SystemApi.md#getcacheconfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration
+[**getCacheInfo**](SystemApi.md#getcacheinfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information
+[**getCacheNamespaces**](SystemApi.md#getcachenamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces
+[**getConnectorMethodNames**](SystemApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**getConnectors**](SystemApi.md#getconnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors
+[**getDatabasePoolInfo**](SystemApi.md#getdatabasepoolinfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information
+[**getMigrations**](SystemApi.md#getmigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations
+[**getStoredProcedureConnectorHealth**](SystemApi.md#getstoredprocedureconnectorhealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health
+[**invalidateCacheNamespace**](SystemApi.md#invalidatecachenamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace
+[**logCacheAllEndpoint**](SystemApi.md#logcacheallendpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache
+[**logCacheDebugEndpoint**](SystemApi.md#logcachedebugendpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache
+[**logCacheErrorEndpoint**](SystemApi.md#logcacheerrorendpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache
+[**logCacheInfoEndpoint**](SystemApi.md#logcacheinfoendpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache
+[**logCacheTraceEndpoint**](SystemApi.md#logcachetraceendpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache
+[**logCacheWarningEndpoint**](SystemApi.md#logcachewarningendpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache
+
+
+# **getCacheConfig**
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -338,10 +50,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetCacheConfig();
+    final response = api.getCacheConfig();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetCacheConfig: $e\n');
+    print('Exception when calling SystemApi->getCacheConfig: $e\n');
 }
 ```
 
@@ -350,7 +62,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -363,8 +75,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheInfo**
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+# **getCacheInfo**
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -387,10 +99,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetCacheInfo();
+    final response = api.getCacheInfo();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetCacheInfo: $e\n');
+    print('Exception when calling SystemApi->getCacheInfo: $e\n');
 }
 ```
 
@@ -399,7 +111,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -412,8 +124,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetCacheNamespaces**
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+# **getCacheNamespaces**
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -436,10 +148,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetCacheNamespaces();
+    final response = api.getCacheNamespaces();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetCacheNamespaces: $e\n');
+    print('Exception when calling SystemApi->getCacheNamespaces: $e\n');
 }
 ```
 
@@ -448,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -461,8 +173,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetConnectorMethodNames**
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+# **getConnectorMethodNames**
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -485,10 +197,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetConnectorMethodNames();
+    final response = api.getConnectorMethodNames();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetConnectorMethodNames: $e\n');
+    print('Exception when calling SystemApi->getConnectorMethodNames: $e\n');
 }
 ```
 
@@ -497,7 +209,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -510,34 +222,24 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetConnectors**
-> OBPv600GetConnectors200Response oBPv600GetConnectors()
+# **getConnectors**
+> GetConnectors200Response getConnectors()
 
 Get Connectors
 
-<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetConnectorNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
+<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>Authentication is Optional.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
 
 ### Example
 ```dart
 import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetConnectors();
+    final response = api.getConnectors();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetConnectors: $e\n');
+    print('Exception when calling SystemApi->getConnectors: $e\n');
 }
 ```
 
@@ -546,11 +248,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -559,8 +261,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetDatabasePoolInfo**
-> OBPv600GetDatabasePoolInfo200Response oBPv600GetDatabasePoolInfo()
+# **getDatabasePoolInfo**
+> GetDatabasePoolInfo200Response getDatabasePoolInfo()
 
 Get Database Pool Information
 
@@ -583,10 +285,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetDatabasePoolInfo();
+    final response = api.getDatabasePoolInfo();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetDatabasePoolInfo: $e\n');
+    print('Exception when calling SystemApi->getDatabasePoolInfo: $e\n');
 }
 ```
 
@@ -595,7 +297,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -608,8 +310,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetMigrations**
-> OBPv600GetMigrations200Response oBPv600GetMigrations()
+# **getMigrations**
+> GetMigrations200Response getMigrations()
 
 Get Database Migrations
 
@@ -632,10 +334,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetMigrations();
+    final response = api.getMigrations();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetMigrations: $e\n');
+    print('Exception when calling SystemApi->getMigrations: $e\n');
 }
 ```
 
@@ -644,7 +346,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -657,8 +359,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetStoredProcedureConnectorHealth**
-> OBPv600GetStoredProcedureConnectorHealth200Response oBPv600GetStoredProcedureConnectorHealth()
+# **getStoredProcedureConnectorHealth**
+> GetStoredProcedureConnectorHealth200Response getStoredProcedureConnectorHealth()
 
 Get Stored Procedure Connector Health
 
@@ -681,10 +383,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getSystemApi();
 
 try {
-    final response = api.oBPv600GetStoredProcedureConnectorHealth();
+    final response = api.getStoredProcedureConnectorHealth();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600GetStoredProcedureConnectorHealth: $e\n');
+    print('Exception when calling SystemApi->getStoredProcedureConnectorHealth: $e\n');
 }
 ```
 
@@ -693,7 +395,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -706,8 +408,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600InvalidateCacheNamespace**
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest)
+# **invalidateCacheNamespace**
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -728,13 +430,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getSystemApi();
-final OBPv600InvalidateCacheNamespaceRequest oBPv600InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // OBPv600InvalidateCacheNamespaceRequest | Request body
+final InvalidateCacheNamespaceRequest invalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}}; // InvalidateCacheNamespaceRequest | Request body
 
 try {
-    final response = api.oBPv600InvalidateCacheNamespace(oBPv600InvalidateCacheNamespaceRequest);
+    final response = api.invalidateCacheNamespace(invalidateCacheNamespaceRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling SystemApi->oBPv600InvalidateCacheNamespace: $e\n');
+    print('Exception when calling SystemApi->invalidateCacheNamespace: $e\n');
 }
 ```
 
@@ -742,11 +444,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | 
+ **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -756,6 +458,294 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheAllEndpoint**
+> logCacheAllEndpoint()
+
+Get All Level Log Cache
+
+<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheAllEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheAllEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheDebugEndpoint**
+> logCacheDebugEndpoint()
+
+Get Debug Level Log Cache
+
+<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheDebugEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheDebugEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheErrorEndpoint**
+> logCacheErrorEndpoint()
+
+Get Error Level Log Cache
+
+<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheErrorEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheErrorEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheInfoEndpoint**
+> logCacheInfoEndpoint()
+
+Get Info Level Log Cache
+
+<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheInfoEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheInfoEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheTraceEndpoint**
+> logCacheTraceEndpoint()
+
+Get Trace Level Log Cache
+
+<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheTraceEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheTraceEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logCacheWarningEndpoint**
+> logCacheWarningEndpoint()
+
+Get Warning Level Log Cache
+
+<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getSystemApi();
+
+try {
+    api.logCacheWarningEndpoint();
+} on DioException catch (e) {
+    print('Exception when calling SystemApi->logCacheWarningEndpoint: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

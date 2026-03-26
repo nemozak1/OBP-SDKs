@@ -5,24 +5,24 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreatePersonalDataField**](UserAttributeApi.md#obpv600createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
-[**oBPv600CreateUserAttribute**](UserAttributeApi.md#obpv600createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
-[**oBPv600DeletePersonalDataField**](UserAttributeApi.md#obpv600deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
-[**oBPv600DeleteUserAttribute**](UserAttributeApi.md#obpv600deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
-[**oBPv600GetPersonalDataFieldById**](UserAttributeApi.md#obpv600getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
-[**oBPv600GetPersonalDataFields**](UserAttributeApi.md#obpv600getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
-[**oBPv600GetUserAttributeById**](UserAttributeApi.md#obpv600getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
-[**oBPv600GetUserAttributes**](UserAttributeApi.md#obpv600getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
-[**oBPv600UpdatePersonalDataField**](UserAttributeApi.md#obpv600updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
-[**oBPv600UpdateUserAttribute**](UserAttributeApi.md#obpv600updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
+[**createPersonalDataField**](UserAttributeApi.md#createpersonaldatafield) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field
+[**createUserAttribute**](UserAttributeApi.md#createuserattribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute
+[**deletePersonalDataField**](UserAttributeApi.md#deletepersonaldatafield) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field
+[**deleteUserAttribute**](UserAttributeApi.md#deleteuserattribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute
+[**getPersonalDataFieldById**](UserAttributeApi.md#getpersonaldatafieldbyid) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id
+[**getPersonalDataFields**](UserAttributeApi.md#getpersonaldatafields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields
+[**getUserAttributeById**](UserAttributeApi.md#getuserattributebyid) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id
+[**getUserAttributes**](UserAttributeApi.md#getuserattributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes
+[**updatePersonalDataField**](UserAttributeApi.md#updatepersonaldatafield) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field
+[**updateUserAttribute**](UserAttributeApi.md#updateuserattribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute
 
 
-# **oBPv600CreatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest)
+# **createPersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -43,13 +43,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getUserAttributeApi();
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv600CreatePersonalDataField(oBPv600CreatePersonalDataFieldRequest);
+    final response = api.createPersonalDataField(createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600CreatePersonalDataField: $e\n');
+    print('Exception when calling UserAttributeApi->createPersonalDataField: $e\n');
 }
 ```
 
@@ -57,11 +57,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -74,8 +74,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600CreateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(userid, oBPv600CreatePersonalDataFieldRequest)
+# **createUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(userid, createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -97,13 +97,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getUserAttributeApi();
 final String userid = userid_example; // String | The USERID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv600CreateUserAttribute(userid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.createUserAttribute(userid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600CreateUserAttribute: $e\n');
+    print('Exception when calling UserAttributeApi->createUserAttribute: $e\n');
 }
 ```
 
@@ -112,11 +112,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **String**| The USERID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -129,8 +129,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeletePersonalDataField**
-> oBPv600DeletePersonalDataField(userattributeid)
+# **deletePersonalDataField**
+> deletePersonalDataField(userattributeid)
 
 Delete Personal Data Field
 
@@ -154,9 +154,9 @@ final api = ObpDart().getUserAttributeApi();
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
 
 try {
-    api.oBPv600DeletePersonalDataField(userattributeid);
+    api.deletePersonalDataField(userattributeid);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600DeletePersonalDataField: $e\n');
+    print('Exception when calling UserAttributeApi->deletePersonalDataField: $e\n');
 }
 ```
 
@@ -181,8 +181,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteUserAttribute**
-> oBPv600DeleteUserAttribute(userid, userattributeid)
+# **deleteUserAttribute**
+> deleteUserAttribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -207,9 +207,9 @@ final String userid = userid_example; // String | The USERID identifier
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
 
 try {
-    api.oBPv600DeleteUserAttribute(userid, userattributeid);
+    api.deleteUserAttribute(userid, userattributeid);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600DeleteUserAttribute: $e\n');
+    print('Exception when calling UserAttributeApi->deleteUserAttribute: $e\n');
 }
 ```
 
@@ -235,8 +235,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetPersonalDataFieldById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(userattributeid)
+# **getPersonalDataFieldById**
+> GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -260,10 +260,10 @@ final api = ObpDart().getUserAttributeApi();
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv600GetPersonalDataFieldById(userattributeid);
+    final response = api.getPersonalDataFieldById(userattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600GetPersonalDataFieldById: $e\n');
+    print('Exception when calling UserAttributeApi->getPersonalDataFieldById: $e\n');
 }
 ```
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetPersonalDataFields**
-> OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields()
+# **getPersonalDataFields**
+> GetPersonalDataFields200Response getPersonalDataFields()
 
 Get Personal Data Fields
 
@@ -312,10 +312,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getUserAttributeApi();
 
 try {
-    final response = api.oBPv600GetPersonalDataFields();
+    final response = api.getPersonalDataFields();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600GetPersonalDataFields: $e\n');
+    print('Exception when calling UserAttributeApi->getPersonalDataFields: $e\n');
 }
 ```
 
@@ -324,7 +324,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -337,8 +337,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetUserAttributeById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(userid, userattributeid)
+# **getUserAttributeById**
+> GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -363,10 +363,10 @@ final String userid = userid_example; // String | The USERID identifier
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
 
 try {
-    final response = api.oBPv600GetUserAttributeById(userid, userattributeid);
+    final response = api.getUserAttributeById(userid, userattributeid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600GetUserAttributeById: $e\n');
+    print('Exception when calling UserAttributeApi->getUserAttributeById: $e\n');
 }
 ```
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -392,8 +392,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetUserAttributes**
-> OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(userid)
+# **getUserAttributes**
+> GetPersonalDataFields200Response getUserAttributes(userid)
 
 Get User Attributes
 
@@ -417,10 +417,10 @@ final api = ObpDart().getUserAttributeApi();
 final String userid = userid_example; // String | The USERID identifier
 
 try {
-    final response = api.oBPv600GetUserAttributes(userid);
+    final response = api.getUserAttributes(userid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600GetUserAttributes: $e\n');
+    print('Exception when calling UserAttributeApi->getUserAttributes: $e\n');
 }
 ```
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -445,8 +445,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(userattributeid, oBPv600CreatePersonalDataFieldRequest)
+# **updatePersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(userattributeid, createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -468,13 +468,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getUserAttributeApi();
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv600UpdatePersonalDataField(userattributeid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.updatePersonalDataField(userattributeid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600UpdatePersonalDataField: $e\n');
+    print('Exception when calling UserAttributeApi->updatePersonalDataField: $e\n');
 }
 ```
 
@@ -483,11 +483,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userattributeid** | **String**| The USERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -500,8 +500,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(userid, userattributeid, oBPv600CreatePersonalDataFieldRequest)
+# **updateUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -524,13 +524,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getUserAttributeApi();
 final String userid = userid_example; // String | The USERID identifier
 final String userattributeid = userattributeid_example; // String | The USERATTRIBUTEID identifier
-final OBPv600CreatePersonalDataFieldRequest oBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // OBPv600CreatePersonalDataFieldRequest | Request body
+final CreatePersonalDataFieldRequest createPersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}}; // CreatePersonalDataFieldRequest | Request body
 
 try {
-    final response = api.oBPv600UpdateUserAttribute(userid, userattributeid, oBPv600CreatePersonalDataFieldRequest);
+    final response = api.updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling UserAttributeApi->oBPv600UpdateUserAttribute: $e\n');
+    print('Exception when calling UserAttributeApi->updateUserAttribute: $e\n');
 }
 ```
 
@@ -540,11 +540,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userid** | **String**| The USERID identifier | 
  **userattributeid** | **String**| The USERATTRIBUTEID identifier | 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 

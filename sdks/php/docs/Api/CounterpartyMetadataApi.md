@@ -2,44 +2,44 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv121AddCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyCorporateLocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty |
-| [**oBPv121AddCounterpartyImageUrl()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyImageUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account |
-| [**oBPv121AddCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyMoreInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info |
-| [**oBPv121AddCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyOpenCorporatesUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty |
-| [**oBPv121AddCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyPhysicalLocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account |
-| [**oBPv121AddCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyPublicAlias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account |
-| [**oBPv121AddCounterpartyUrl()**](CounterpartyMetadataApi.md#oBPv121AddCounterpartyUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account |
-| [**oBPv121AddOtherAccountPrivateAlias()**](CounterpartyMetadataApi.md#oBPv121AddOtherAccountPrivateAlias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias |
-| [**oBPv121DeleteCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyCorporateLocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location |
-| [**oBPv121DeleteCounterpartyImageUrl()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyImageUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL |
-| [**oBPv121DeleteCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyMoreInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account |
-| [**oBPv121DeleteCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyOpenCorporatesUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL |
-| [**oBPv121DeleteCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyPhysicalLocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location |
-| [**oBPv121DeleteCounterpartyPrivateAlias()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyPrivateAlias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias |
-| [**oBPv121DeleteCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyPublicAlias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias |
-| [**oBPv121DeleteCounterpartyUrl()**](CounterpartyMetadataApi.md#oBPv121DeleteCounterpartyUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account |
-| [**oBPv121GetCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#oBPv121GetCounterpartyPublicAlias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account |
-| [**oBPv121GetOtherAccountMetadata()**](CounterpartyMetadataApi.md#oBPv121GetOtherAccountMetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata |
-| [**oBPv121GetOtherAccountPrivateAlias()**](CounterpartyMetadataApi.md#oBPv121GetOtherAccountPrivateAlias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias |
-| [**oBPv121UpdateCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyCorporateLocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location |
-| [**oBPv121UpdateCounterpartyImageUrl()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyImageUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url |
-| [**oBPv121UpdateCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyMoreInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info |
-| [**oBPv121UpdateCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyOpenCorporatesUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty |
-| [**oBPv121UpdateCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyPhysicalLocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location |
-| [**oBPv121UpdateCounterpartyPrivateAlias()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyPrivateAlias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias |
-| [**oBPv121UpdateCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyPublicAlias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account |
-| [**oBPv121UpdateCounterpartyUrl()**](CounterpartyMetadataApi.md#oBPv121UpdateCounterpartyUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account |
-| [**oBPv400GetExplicitCounterpartyById()**](CounterpartyMetadataApi.md#oBPv400GetExplicitCounterpartyById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**addCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#addCounterpartyCorporateLocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty |
+| [**addCounterpartyImageUrl()**](CounterpartyMetadataApi.md#addCounterpartyImageUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account |
+| [**addCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#addCounterpartyMoreInfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info |
+| [**addCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#addCounterpartyOpenCorporatesUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty |
+| [**addCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#addCounterpartyPhysicalLocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account |
+| [**addCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#addCounterpartyPublicAlias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account |
+| [**addCounterpartyUrl()**](CounterpartyMetadataApi.md#addCounterpartyUrl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account |
+| [**addOtherAccountPrivateAlias()**](CounterpartyMetadataApi.md#addOtherAccountPrivateAlias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias |
+| [**deleteCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#deleteCounterpartyCorporateLocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location |
+| [**deleteCounterpartyImageUrl()**](CounterpartyMetadataApi.md#deleteCounterpartyImageUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL |
+| [**deleteCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#deleteCounterpartyMoreInfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account |
+| [**deleteCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#deleteCounterpartyOpenCorporatesUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL |
+| [**deleteCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#deleteCounterpartyPhysicalLocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location |
+| [**deleteCounterpartyPrivateAlias()**](CounterpartyMetadataApi.md#deleteCounterpartyPrivateAlias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias |
+| [**deleteCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#deleteCounterpartyPublicAlias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias |
+| [**deleteCounterpartyUrl()**](CounterpartyMetadataApi.md#deleteCounterpartyUrl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account |
+| [**getCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#getCounterpartyPublicAlias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account |
+| [**getExplicitCounterpartyById()**](CounterpartyMetadataApi.md#getExplicitCounterpartyById) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit) |
+| [**getOtherAccountMetadata()**](CounterpartyMetadataApi.md#getOtherAccountMetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata |
+| [**getOtherAccountPrivateAlias()**](CounterpartyMetadataApi.md#getOtherAccountPrivateAlias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias |
+| [**updateCounterpartyCorporateLocation()**](CounterpartyMetadataApi.md#updateCounterpartyCorporateLocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location |
+| [**updateCounterpartyImageUrl()**](CounterpartyMetadataApi.md#updateCounterpartyImageUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url |
+| [**updateCounterpartyMoreInfo()**](CounterpartyMetadataApi.md#updateCounterpartyMoreInfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info |
+| [**updateCounterpartyOpenCorporatesUrl()**](CounterpartyMetadataApi.md#updateCounterpartyOpenCorporatesUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty |
+| [**updateCounterpartyPhysicalLocation()**](CounterpartyMetadataApi.md#updateCounterpartyPhysicalLocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location |
+| [**updateCounterpartyPrivateAlias()**](CounterpartyMetadataApi.md#updateCounterpartyPrivateAlias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias |
+| [**updateCounterpartyPublicAlias()**](CounterpartyMetadataApi.md#updateCounterpartyPublicAlias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account |
+| [**updateCounterpartyUrl()**](CounterpartyMetadataApi.md#updateCounterpartyUrl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account |
 
 
-## `oBPv121AddCounterpartyCorporateLocation()`
+## `addCounterpartyCorporateLocation()`
 
 ```php
-oBPv121AddCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add Corporate Location to Counterparty
@@ -62,9 +62,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -77,13 +77,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_corporate_location_request = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
+$update_counterparty_corporate_location_request = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request);
+    $result = $apiInstance->addCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -95,11 +95,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_corporate_location_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest**](../Model/OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | |
+| **update_counterparty_corporate_location_request** | [**\OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest**](../Model/UpdateCounterpartyCorporateLocationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -114,10 +114,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyImageUrl()`
+## `addCounterpartyImageUrl()`
 
 ```php
-oBPv121AddCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add image url to other bank account
@@ -140,9 +140,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -155,13 +155,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_image_url_request = {type=object, properties={image_URL={type=string}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest | Request body
+$update_counterparty_image_url_request = {type=object, properties={image_URL={type=string}}}; // \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request);
+    $result = $apiInstance->addCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -173,11 +173,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_image_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest**](../Model/OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | |
+| **update_counterparty_image_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyImageUrlRequest**](../Model/UpdateCounterpartyImageUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -192,10 +192,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyMoreInfo()`
+## `addCounterpartyMoreInfo()`
 
 ```php
-oBPv121AddCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add Counterparty More Info
@@ -218,9 +218,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -233,13 +233,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_more_info_request = {type=object, properties={more_info={type=string}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest | Request body
+$update_counterparty_more_info_request = {type=object, properties={more_info={type=string}}}; // \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request);
+    $result = $apiInstance->addCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -251,11 +251,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_more_info_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest**](../Model/OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | |
+| **update_counterparty_more_info_request** | [**\OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest**](../Model/UpdateCounterpartyMoreInfoRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -270,10 +270,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyOpenCorporatesUrl()`
+## `addCounterpartyOpenCorporatesUrl()`
 
 ```php
-oBPv121AddCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add Open Corporates URL to Counterparty
@@ -297,13 +297,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_open_corporates_url_request = {type=object, properties={open_corporates_URL={type=string}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+$update_counterparty_open_corporates_url_request = {type=object, properties={open_corporates_URL={type=string}}}; // \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request);
+    $result = $apiInstance->addCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -315,11 +315,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_open_corporates_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](../Model/OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | |
+| **update_counterparty_open_corporates_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest**](../Model/UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -334,10 +334,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyPhysicalLocation()`
+## `addCounterpartyPhysicalLocation()`
 
 ```php
-oBPv121AddCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add physical location to other bank account
@@ -360,9 +360,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -375,13 +375,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_physical_location_request = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
+$update_counterparty_physical_location_request = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}}; // \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request);
+    $result = $apiInstance->addCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -393,11 +393,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_physical_location_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest**](../Model/OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | |
+| **update_counterparty_physical_location_request** | [**\OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest**](../Model/UpdateCounterpartyPhysicalLocationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -412,10 +412,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyPublicAlias()`
+## `addCounterpartyPublicAlias()`
 
 ```php
-oBPv121AddCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add public alias to other bank account
@@ -438,9 +438,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -453,13 +453,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response | Request body
+$get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response);
+    $result = $apiInstance->addCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -471,11 +471,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | |
+| **get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -490,10 +490,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddCounterpartyUrl()`
+## `addCounterpartyUrl()`
 
 ```php
-oBPv121AddCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Add url to other bank account
@@ -516,9 +516,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -531,13 +531,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_url_request = {type=object, properties={URL={type=string}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest | Request body
+$update_counterparty_url_request = {type=object, properties={URL={type=string}}}; // \OpenBankProject\Model\UpdateCounterpartyUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request);
+    $result = $apiInstance->addCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -549,11 +549,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest**](../Model/OBPv121UpdateCounterpartyUrlRequest.md)| Request body | |
+| **update_counterparty_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyUrlRequest**](../Model/UpdateCounterpartyUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -568,10 +568,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121AddOtherAccountPrivateAlias()`
+## `addOtherAccountPrivateAlias()`
 
 ```php
-oBPv121AddOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+addOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Create Other Account Private Alias
@@ -594,9 +594,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -609,13 +609,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response | Request body
+$get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121AddOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response);
+    $result = $apiInstance->addOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121AddOtherAccountPrivateAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->addOtherAccountPrivateAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -627,11 +627,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | |
+| **get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -646,10 +646,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyCorporateLocation()`
+## `deleteCounterpartyCorporateLocation()`
 
 ```php
-oBPv121DeleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Corporate Location
@@ -672,9 +672,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -689,9 +689,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -721,10 +721,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyImageUrl()`
+## `deleteCounterpartyImageUrl()`
 
 ```php
-oBPv121DeleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Image URL
@@ -750,9 +750,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -782,10 +782,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyMoreInfo()`
+## `deleteCounterpartyMoreInfo()`
 
 ```php
-oBPv121DeleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete more info of other bank account
@@ -808,9 +808,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -825,9 +825,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -857,10 +857,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyOpenCorporatesUrl()`
+## `deleteCounterpartyOpenCorporatesUrl()`
 
 ```php
-oBPv121DeleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Open Corporates URL
@@ -883,9 +883,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -900,9 +900,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -932,10 +932,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyPhysicalLocation()`
+## `deleteCounterpartyPhysicalLocation()`
 
 ```php
-oBPv121DeleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Physical Location
@@ -958,9 +958,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -975,9 +975,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1007,10 +1007,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyPrivateAlias()`
+## `deleteCounterpartyPrivateAlias()`
 
 ```php
-oBPv121DeleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Private Alias
@@ -1033,9 +1033,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1050,9 +1050,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyPrivateAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyPrivateAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1082,10 +1082,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyPublicAlias()`
+## `deleteCounterpartyPublicAlias()`
 
 ```php
-oBPv121DeleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete Counterparty Public Alias
@@ -1108,9 +1108,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1125,9 +1125,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1157,10 +1157,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121DeleteCounterpartyUrl()`
+## `deleteCounterpartyUrl()`
 
 ```php
-oBPv121DeleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid)
+deleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid)
 ```
 
 Delete url of other bank account
@@ -1183,9 +1183,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1200,9 +1200,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $apiInstance->oBPv121DeleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid);
+    $apiInstance->deleteCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121DeleteCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->deleteCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1232,10 +1232,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetCounterpartyPublicAlias()`
+## `getCounterpartyPublicAlias()`
 
 ```php
-oBPv121GetCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response
+getCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\GetCounterpartyPublicAlias200Response
 ```
 
 Get public alias of other bank account
@@ -1258,9 +1258,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1275,10 +1275,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid);
+    $result = $apiInstance->getCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121GetCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->getCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1293,7 +1293,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -1308,10 +1308,86 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetOtherAccountMetadata()`
+## `getExplicitCounterpartyById()`
 
 ```php
-oBPv121GetOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response
+getExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\GetExplicitCounterpartyById200Response
+```
+
+Get Counterparty by Id (Explicit)
+
+<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure API key authorization: GatewayLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure API key authorization: DirectLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
+
+
+$apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bankid = 'bankid_example'; // string | The BANKID identifier
+$accountid = 'accountid_example'; // string | The ACCOUNTID identifier
+$viewid = 'viewid_example'; // string | The VIEWID identifier
+$counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
+
+try {
+    $result = $apiInstance->getExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CounterpartyMetadataApi->getExplicitCounterpartyById: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **string**| The BANKID identifier | |
+| **accountid** | **string**| The ACCOUNTID identifier | |
+| **viewid** | **string**| The VIEWID identifier | |
+| **counterpartyid** | **string**| The COUNTERPARTYID identifier | |
+
+### Return type
+
+[**\OpenBankProject\Model\GetExplicitCounterpartyById200Response**](../Model/GetExplicitCounterpartyById200Response.md)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getOtherAccountMetadata()`
+
+```php
+getOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\GetOtherAccountMetadata200Response
 ```
 
 Get Other Account Metadata
@@ -1334,9 +1410,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1351,10 +1427,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid);
+    $result = $apiInstance->getOtherAccountMetadata($bankid, $accountid, $viewid, $otheraccountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121GetOtherAccountMetadata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->getOtherAccountMetadata: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1369,7 +1445,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetOtherAccountMetadata200Response**](../Model/OBPv121GetOtherAccountMetadata200Response.md)
+[**\OpenBankProject\Model\GetOtherAccountMetadata200Response**](../Model/GetOtherAccountMetadata200Response.md)
 
 ### Authorization
 
@@ -1384,10 +1460,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121GetOtherAccountPrivateAlias()`
+## `getOtherAccountPrivateAlias()`
 
 ```php
-oBPv121GetOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response
+getOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid): \OpenBankProject\Model\GetCounterpartyPublicAlias200Response
 ```
 
 Get Other Account Private Alias
@@ -1410,9 +1486,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1427,10 +1503,10 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
 
 try {
-    $result = $apiInstance->oBPv121GetOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid);
+    $result = $apiInstance->getOtherAccountPrivateAlias($bankid, $accountid, $viewid, $otheraccountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121GetOtherAccountPrivateAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->getOtherAccountPrivateAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1445,7 +1521,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)
+[**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -1460,10 +1536,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyCorporateLocation()`
+## `updateCounterpartyCorporateLocation()`
 
 ```php
-oBPv121UpdateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Counterparty Corporate Location
@@ -1486,9 +1562,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1501,13 +1577,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_corporate_location_request = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
+$update_counterparty_corporate_location_request = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_corporate_location_request);
+    $result = $apiInstance->updateCounterpartyCorporateLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_corporate_location_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyCorporateLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1519,11 +1595,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_corporate_location_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyCorporateLocationRequest**](../Model/OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | |
+| **update_counterparty_corporate_location_request** | [**\OpenBankProject\Model\UpdateCounterpartyCorporateLocationRequest**](../Model/UpdateCounterpartyCorporateLocationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1538,10 +1614,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyImageUrl()`
+## `updateCounterpartyImageUrl()`
 
 ```php
-oBPv121UpdateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Counterparty Image Url
@@ -1565,13 +1641,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_image_url_request = {"type":"object","properties":{"image_URL":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest | Request body
+$update_counterparty_image_url_request = {"type":"object","properties":{"image_URL":{"type":"string"}}}; // \OpenBankProject\Model\UpdateCounterpartyImageUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_image_url_request);
+    $result = $apiInstance->updateCounterpartyImageUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_image_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyImageUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1583,11 +1659,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_image_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyImageUrlRequest**](../Model/OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | |
+| **update_counterparty_image_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyImageUrlRequest**](../Model/UpdateCounterpartyImageUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1602,10 +1678,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyMoreInfo()`
+## `updateCounterpartyMoreInfo()`
 
 ```php
-oBPv121UpdateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Counterparty More Info
@@ -1628,9 +1704,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1643,13 +1719,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_more_info_request = {"type":"object","properties":{"more_info":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest | Request body
+$update_counterparty_more_info_request = {"type":"object","properties":{"more_info":{"type":"string"}}}; // \OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_more_info_request);
+    $result = $apiInstance->updateCounterpartyMoreInfo($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_more_info_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyMoreInfo: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1661,11 +1737,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_more_info_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyMoreInfoRequest**](../Model/OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | |
+| **update_counterparty_more_info_request** | [**\OpenBankProject\Model\UpdateCounterpartyMoreInfoRequest**](../Model/UpdateCounterpartyMoreInfoRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1680,10 +1756,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyOpenCorporatesUrl()`
+## `updateCounterpartyOpenCorporatesUrl()`
 
 ```php
-oBPv121UpdateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Open Corporates Url of Counterparty
@@ -1706,9 +1782,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1721,13 +1797,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_open_corporates_url_request = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+$update_counterparty_open_corporates_url_request = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}}; // \OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_open_corporates_url_request);
+    $result = $apiInstance->updateCounterpartyOpenCorporatesUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_open_corporates_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyOpenCorporatesUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1739,11 +1815,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_open_corporates_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](../Model/OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | |
+| **update_counterparty_open_corporates_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyOpenCorporatesUrlRequest**](../Model/UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1758,10 +1834,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyPhysicalLocation()`
+## `updateCounterpartyPhysicalLocation()`
 
 ```php
-oBPv121UpdateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Counterparty Physical Location
@@ -1784,9 +1860,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1799,13 +1875,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_physical_location_request = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
+$update_counterparty_physical_location_request = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}}; // \OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_physical_location_request);
+    $result = $apiInstance->updateCounterpartyPhysicalLocation($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_physical_location_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyPhysicalLocation: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1817,11 +1893,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_physical_location_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyPhysicalLocationRequest**](../Model/OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | |
+| **update_counterparty_physical_location_request** | [**\OpenBankProject\Model\UpdateCounterpartyPhysicalLocationRequest**](../Model/UpdateCounterpartyPhysicalLocationRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1836,10 +1912,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyPrivateAlias()`
+## `updateCounterpartyPrivateAlias()`
 
 ```php
-oBPv121UpdateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update Counterparty Private Alias
@@ -1862,9 +1938,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1877,13 +1953,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response | Request body
+$get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}}; // \OpenBankProject\Model\GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response);
+    $result = $apiInstance->updateCounterpartyPrivateAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyPrivateAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyPrivateAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1895,11 +1971,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | |
+| **get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1914,10 +1990,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyPublicAlias()`
+## `updateCounterpartyPublicAlias()`
 
 ```php
-oBPv121UpdateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update public alias of other bank account
@@ -1940,9 +2016,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -1955,13 +2031,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_get_counterparty_public_alias200_response = {"type":"object","properties":{"alias":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response | Request body
+$get_counterparty_public_alias200_response = {"type":"object","properties":{"alias":{"type":"string"}}}; // \OpenBankProject\Model\GetCounterpartyPublicAlias200Response | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $obpv121_get_counterparty_public_alias200_response);
+    $result = $apiInstance->updateCounterpartyPublicAlias($bankid, $accountid, $viewid, $otheraccountid, $get_counterparty_public_alias200_response);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyPublicAlias: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1973,11 +2049,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\OBPv121GetCounterpartyPublicAlias200Response**](../Model/OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | |
+| **get_counterparty_public_alias200_response** | [**\OpenBankProject\Model\GetCounterpartyPublicAlias200Response**](../Model/GetCounterpartyPublicAlias200Response.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1992,10 +2068,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv121UpdateCounterpartyUrl()`
+## `updateCounterpartyUrl()`
 
 ```php
-oBPv121UpdateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request): \OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response
+updateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request): \OpenBankProject\Model\UpdateTransactionNarrative200Response
 ```
 
 Update url of other bank account
@@ -2018,9 +2094,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
@@ -2033,13 +2109,13 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 $otheraccountid = 'otheraccountid_example'; // string | The OTHERACCOUNTID identifier
-$obpv121_update_counterparty_url_request = {"type":"object","properties":{"URL":{"type":"string"}}}; // \OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest | Request body
+$update_counterparty_url_request = {"type":"object","properties":{"URL":{"type":"string"}}}; // \OpenBankProject\Model\UpdateCounterpartyUrlRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv121UpdateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $obpv121_update_counterparty_url_request);
+    $result = $apiInstance->updateCounterpartyUrl($bankid, $accountid, $viewid, $otheraccountid, $update_counterparty_url_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv121UpdateCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CounterpartyMetadataApi->updateCounterpartyUrl: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -2051,11 +2127,11 @@ try {
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
 | **otheraccountid** | **string**| The OTHERACCOUNTID identifier | |
-| **obpv121_update_counterparty_url_request** | [**\OpenBankProject\Model\OBPv121UpdateCounterpartyUrlRequest**](../Model/OBPv121UpdateCounterpartyUrlRequest.md)| Request body | |
+| **update_counterparty_url_request** | [**\OpenBankProject\Model\UpdateCounterpartyUrlRequest**](../Model/UpdateCounterpartyUrlRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv121UpdateTransactionNarrative200Response**](../Model/OBPv121UpdateTransactionNarrative200Response.md)
+[**\OpenBankProject\Model\UpdateTransactionNarrative200Response**](../Model/UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -2064,82 +2140,6 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv400GetExplicitCounterpartyById()`
-
-```php
-oBPv400GetExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid): \OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response
-```
-
-Get Counterparty by Id (Explicit)
-
-<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p> <p>For a general introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#bespoke\"><strong>bespoke</strong></a>:</p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#created_by_user_id\"><strong>created_by_user_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_url</strong></a>:</p> <p><a href=\"/glossary#\"><strong>is_beneficiary</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>key</strong></a>: CustomerNumber</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#metadata\"><strong>metadata</strong></a>:</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_url</strong></a>:</p> <p><a href=\"/glossary#other_account_routing_address\"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p> <p><a href=\"/glossary#other_account_routing_scheme\"><strong>other_account_routing_scheme</strong></a>: IBAN</p> <p><a href=\"/glossary#other_account_secondary_routing_address\"><strong>other_account_secondary_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_account_secondary_routing_scheme\"><strong>other_account_secondary_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_address\"><strong>other_bank_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_bank_routing_scheme\"><strong>other_bank_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_address\"><strong>other_branch_routing_address</strong></a>:</p> <p><a href=\"/glossary#other_branch_routing_scheme\"><strong>other_branch_routing_scheme</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#this_account_id\"><strong>this_account_id</strong></a>:</p> <p><a href=\"/glossary#this_bank_id\"><strong>this_bank_id</strong></a>:</p> <p><a href=\"/glossary#this_view_id\"><strong>this_view_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>username</strong></a>: felixsmith</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure API key authorization: GatewayLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new OpenBankProject\Api\CounterpartyMetadataApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$bankid = 'bankid_example'; // string | The BANKID identifier
-$accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$viewid = 'viewid_example'; // string | The VIEWID identifier
-$counterpartyid = 'counterpartyid_example'; // string | The COUNTERPARTYID identifier
-
-try {
-    $result = $apiInstance->oBPv400GetExplicitCounterpartyById($bankid, $accountid, $viewid, $counterpartyid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CounterpartyMetadataApi->oBPv400GetExplicitCounterpartyById: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **string**| The BANKID identifier | |
-| **accountid** | **string**| The ACCOUNTID identifier | |
-| **viewid** | **string**| The VIEWID identifier | |
-| **counterpartyid** | **string**| The COUNTERPARTYID identifier | |
-
-### Return type
-
-[**\OpenBankProject\Model\OBPv400GetExplicitCounterpartyById200Response**](../Model/OBPv400GetExplicitCounterpartyById200Response.md)
-
-### Authorization
-
-[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

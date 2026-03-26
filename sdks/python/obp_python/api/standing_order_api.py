@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv400_create_standing_order200_response import OBPv400CreateStandingOrder200Response
-from obp_python.models.obpv400_create_standing_order_request import OBPv400CreateStandingOrderRequest
+from obp_python.models.create_standing_order200_response import CreateStandingOrder200Response
+from obp_python.models.create_standing_order_request import CreateStandingOrderRequest
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -40,12 +40,12 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order(
+    def create_standing_order(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,7 +58,7 @@ class StandingOrderApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400CreateStandingOrder200Response:
+    ) -> CreateStandingOrder200Response:
         """Create Standing Order
 
         <p>Create standing order for an account.</p> <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br /> when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#standing_order_id\"><strong>standing_order_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -69,8 +69,8 @@ class StandingOrderApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,11 +93,11 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_serialize(
+        _param = self._create_standing_order_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -105,7 +105,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -121,12 +121,12 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order_with_http_info(
+    def create_standing_order_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,7 +139,7 @@ class StandingOrderApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400CreateStandingOrder200Response]:
+    ) -> ApiResponse[CreateStandingOrder200Response]:
         """Create Standing Order
 
         <p>Create standing order for an account.</p> <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br /> when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#standing_order_id\"><strong>standing_order_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -150,8 +150,8 @@ class StandingOrderApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -174,11 +174,11 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_serialize(
+        _param = self._create_standing_order_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -186,7 +186,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -202,12 +202,12 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order_without_preload_content(
+    def create_standing_order_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -231,8 +231,8 @@ class StandingOrderApi:
         :type accountid: str
         :param viewid: The VIEWID identifier (required)
         :type viewid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -255,11 +255,11 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_serialize(
+        _param = self._create_standing_order_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -267,7 +267,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -278,12 +278,12 @@ class StandingOrderApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_standing_order_serialize(
+    def _create_standing_order_serialize(
         self,
         bankid,
         accountid,
         viewid,
-        obpv400_create_standing_order_request,
+        create_standing_order_request,
         _request_auth,
         _content_type,
         _headers,
@@ -315,8 +315,8 @@ class StandingOrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_standing_order_request is not None:
-            _body_params = obpv400_create_standing_order_request
+        if create_standing_order_request is not None:
+            _body_params = create_standing_order_request
 
 
         # set the HTTP header `Accept`
@@ -367,11 +367,11 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order_management(
+    def create_standing_order_management(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -384,7 +384,7 @@ class StandingOrderApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400CreateStandingOrder200Response:
+    ) -> CreateStandingOrder200Response:
         """Create Standing Order (management)
 
         <p>Create standing order for an account.</p> <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br /> when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#standing_order_id\"><strong>standing_order_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -393,8 +393,8 @@ class StandingOrderApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -417,10 +417,10 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_management_serialize(
+        _param = self._create_standing_order_management_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -428,7 +428,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -444,11 +444,11 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order_management_with_http_info(
+    def create_standing_order_management_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -461,7 +461,7 @@ class StandingOrderApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400CreateStandingOrder200Response]:
+    ) -> ApiResponse[CreateStandingOrder200Response]:
         """Create Standing Order (management)
 
         <p>Create standing order for an account.</p> <p>when -&gt; frequency = {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}<br /> when -&gt; detail = { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\">date_expires</a>: 2021-01-27</p> <p><a href=\"/glossary#\">date_signed</a>: 2020-01-27</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#active\"><strong>active</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>date_cancelled</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_expires</strong></a>: 2021-01-27</p> <p><a href=\"/glossary#\"><strong>date_signed</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_starts</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#detail\"><strong>detail</strong></a>:</p> <p><a href=\"/glossary#frequency\"><strong>frequency</strong></a>: DAILY</p> <p><a href=\"/glossary#standing_order_id\"><strong>standing_order_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#when\"><strong>when</strong></a>: 2020-01-27</p> 
@@ -470,8 +470,8 @@ class StandingOrderApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -494,10 +494,10 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_management_serialize(
+        _param = self._create_standing_order_management_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -505,7 +505,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -521,11 +521,11 @@ class StandingOrderApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_standing_order_management_without_preload_content(
+    def create_standing_order_management_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
-        obpv400_create_standing_order_request: Annotated[OBPv400CreateStandingOrderRequest, Field(description="Request body")],
+        create_standing_order_request: Annotated[CreateStandingOrderRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -547,8 +547,8 @@ class StandingOrderApi:
         :type bankid: str
         :param accountid: The ACCOUNTID identifier (required)
         :type accountid: str
-        :param obpv400_create_standing_order_request: Request body (required)
-        :type obpv400_create_standing_order_request: OBPv400CreateStandingOrderRequest
+        :param create_standing_order_request: Request body (required)
+        :type create_standing_order_request: CreateStandingOrderRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -571,10 +571,10 @@ class StandingOrderApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_standing_order_management_serialize(
+        _param = self._create_standing_order_management_serialize(
             bankid=bankid,
             accountid=accountid,
-            obpv400_create_standing_order_request=obpv400_create_standing_order_request,
+            create_standing_order_request=create_standing_order_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -582,7 +582,7 @@ class StandingOrderApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400CreateStandingOrder200Response",
+            '200': "CreateStandingOrder200Response",
             '404': None,
             '500': None,
         }
@@ -593,11 +593,11 @@ class StandingOrderApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_standing_order_management_serialize(
+    def _create_standing_order_management_serialize(
         self,
         bankid,
         accountid,
-        obpv400_create_standing_order_request,
+        create_standing_order_request,
         _request_auth,
         _content_type,
         _headers,
@@ -627,8 +627,8 @@ class StandingOrderApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_standing_order_request is not None:
-            _body_params = obpv400_create_standing_order_request
+        if create_standing_order_request is not None:
+            _body_params = create_standing_order_request
 
 
         # set the HTTP header `Accept`

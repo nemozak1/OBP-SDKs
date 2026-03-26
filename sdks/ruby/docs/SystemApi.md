@@ -1,479 +1,29 @@
 # OpenBankProject::SystemApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv5_1_0_log_cache_all_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**o_bpv5_1_0_log_cache_debug_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**o_bpv5_1_0_log_cache_error_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**o_bpv5_1_0_log_cache_info_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**o_bpv5_1_0_log_cache_trace_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**o_bpv5_1_0_log_cache_warning_endpoint**](SystemApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
-| [**o_bpv6_0_0_get_cache_config**](SystemApi.md#o_bpv6_0_0_get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**o_bpv6_0_0_get_cache_info**](SystemApi.md#o_bpv6_0_0_get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**o_bpv6_0_0_get_cache_namespaces**](SystemApi.md#o_bpv6_0_0_get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**o_bpv6_0_0_get_connector_method_names**](SystemApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
-| [**o_bpv6_0_0_get_connectors**](SystemApi.md#o_bpv6_0_0_get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
-| [**o_bpv6_0_0_get_database_pool_info**](SystemApi.md#o_bpv6_0_0_get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
-| [**o_bpv6_0_0_get_migrations**](SystemApi.md#o_bpv6_0_0_get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
-| [**o_bpv6_0_0_get_stored_procedure_connector_health**](SystemApi.md#o_bpv6_0_0_get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
-| [**o_bpv6_0_0_invalidate_cache_namespace**](SystemApi.md#o_bpv6_0_0_invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
-
-
-## o_bpv5_1_0_log_cache_all_endpoint
-
-> o_bpv5_1_0_log_cache_all_endpoint
-
-Get All Level Log Cache
-
-<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get All Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_all_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_all_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_all_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_all_endpoint_with_http_info
-
-```ruby
-begin
-  # Get All Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_all_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_all_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv5_1_0_log_cache_debug_endpoint
-
-> o_bpv5_1_0_log_cache_debug_endpoint
-
-Get Debug Level Log Cache
-
-<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get Debug Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_debug_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_debug_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_debug_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_debug_endpoint_with_http_info
-
-```ruby
-begin
-  # Get Debug Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_debug_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_debug_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv5_1_0_log_cache_error_endpoint
-
-> o_bpv5_1_0_log_cache_error_endpoint
-
-Get Error Level Log Cache
-
-<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get Error Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_error_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_error_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_error_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_error_endpoint_with_http_info
-
-```ruby
-begin
-  # Get Error Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_error_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_error_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv5_1_0_log_cache_info_endpoint
-
-> o_bpv5_1_0_log_cache_info_endpoint
-
-Get Info Level Log Cache
-
-<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get Info Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_info_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_info_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_info_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_info_endpoint_with_http_info
-
-```ruby
-begin
-  # Get Info Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_info_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_info_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv5_1_0_log_cache_trace_endpoint
-
-> o_bpv5_1_0_log_cache_trace_endpoint
-
-Get Trace Level Log Cache
-
-<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get Trace Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_trace_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_trace_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_trace_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_trace_endpoint_with_http_info
-
-```ruby
-begin
-  # Get Trace Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_trace_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_trace_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv5_1_0_log_cache_warning_endpoint
-
-> o_bpv5_1_0_log_cache_warning_endpoint
-
-Get Warning Level Log Cache
-
-<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Examples
-
-```ruby
-require 'time'
-require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
-
-api_instance = OpenBankProject::SystemApi.new
-
-begin
-  # Get Warning Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_warning_endpoint
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_warning_endpoint: #{e}"
-end
-```
-
-#### Using the o_bpv5_1_0_log_cache_warning_endpoint_with_http_info variant
-
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
-
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_warning_endpoint_with_http_info
-
-```ruby
-begin
-  # Get Warning Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_warning_endpoint_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => nil
-rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv5_1_0_log_cache_warning_endpoint_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## o_bpv6_0_0_get_cache_config
-
-> <OBPv600GetCacheConfig200Response> o_bpv6_0_0_get_cache_config
+| [**get_cache_config**](SystemApi.md#get_cache_config) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**get_cache_info**](SystemApi.md#get_cache_info) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**get_cache_namespaces**](SystemApi.md#get_cache_namespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**get_connector_method_names**](SystemApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**get_connectors**](SystemApi.md#get_connectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
+| [**get_database_pool_info**](SystemApi.md#get_database_pool_info) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
+| [**get_migrations**](SystemApi.md#get_migrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
+| [**get_stored_procedure_connector_health**](SystemApi.md#get_stored_procedure_connector_health) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
+| [**invalidate_cache_namespace**](SystemApi.md#invalidate_cache_namespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**log_cache_all_endpoint**](SystemApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**log_cache_debug_endpoint**](SystemApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**log_cache_error_endpoint**](SystemApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**log_cache_info_endpoint**](SystemApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**log_cache_trace_endpoint**](SystemApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**log_cache_warning_endpoint**](SystemApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+
+
+## get_cache_config
+
+> <GetCacheConfig200Response> get_cache_config
 
 Get Cache Configuration
 
@@ -495,37 +45,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Cache Configuration
-  result = api_instance.o_bpv6_0_0_get_cache_config
+  result = api_instance.get_cache_config
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_config: #{e}"
+  puts "Error when calling SystemApi->get_cache_config: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_config_with_http_info variant
+#### Using the get_cache_config_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheConfig200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_config_with_http_info
+> <Array(<GetCacheConfig200Response>, Integer, Hash)> get_cache_config_with_http_info
 
 ```ruby
 begin
   # Get Cache Configuration
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_config_with_http_info
+  data, status_code, headers = api_instance.get_cache_config_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheConfig200Response>
+  p data # => <GetCacheConfig200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_config_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_cache_config_with_http_info: #{e}"
 end
 ```
 
@@ -535,7 +85,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -547,9 +97,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_cache_info
+## get_cache_info
 
-> <OBPv600GetCacheInfo200Response> o_bpv6_0_0_get_cache_info
+> <GetCacheInfo200Response> get_cache_info
 
 Get Cache Information
 
@@ -571,37 +121,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Cache Information
-  result = api_instance.o_bpv6_0_0_get_cache_info
+  result = api_instance.get_cache_info
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_info: #{e}"
+  puts "Error when calling SystemApi->get_cache_info: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_info_with_http_info variant
+#### Using the get_cache_info_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheInfo200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_info_with_http_info
+> <Array(<GetCacheInfo200Response>, Integer, Hash)> get_cache_info_with_http_info
 
 ```ruby
 begin
   # Get Cache Information
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_info_with_http_info
+  data, status_code, headers = api_instance.get_cache_info_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheInfo200Response>
+  p data # => <GetCacheInfo200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_info_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_cache_info_with_http_info: #{e}"
 end
 ```
 
@@ -611,7 +161,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -623,9 +173,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_cache_namespaces
+## get_cache_namespaces
 
-> <OBPv600GetCacheNamespaces200Response> o_bpv6_0_0_get_cache_namespaces
+> <GetCacheNamespaces200Response> get_cache_namespaces
 
 Get Cache Namespaces
 
@@ -647,37 +197,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Cache Namespaces
-  result = api_instance.o_bpv6_0_0_get_cache_namespaces
+  result = api_instance.get_cache_namespaces
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_namespaces: #{e}"
+  puts "Error when calling SystemApi->get_cache_namespaces: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_cache_namespaces_with_http_info variant
+#### Using the get_cache_namespaces_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetCacheNamespaces200Response>, Integer, Hash)> o_bpv6_0_0_get_cache_namespaces_with_http_info
+> <Array(<GetCacheNamespaces200Response>, Integer, Hash)> get_cache_namespaces_with_http_info
 
 ```ruby
 begin
   # Get Cache Namespaces
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_cache_namespaces_with_http_info
+  data, status_code, headers = api_instance.get_cache_namespaces_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetCacheNamespaces200Response>
+  p data # => <GetCacheNamespaces200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_cache_namespaces_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_cache_namespaces_with_http_info: #{e}"
 end
 ```
 
@@ -687,7 +237,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -699,9 +249,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_connector_method_names
+## get_connector_method_names
 
-> <OBPv600GetConnectorMethodNames200Response> o_bpv6_0_0_get_connector_method_names
+> <GetConnectorMethodNames200Response> get_connector_method_names
 
 Get Connector Method Names
 
@@ -723,37 +273,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Connector Method Names
-  result = api_instance.o_bpv6_0_0_get_connector_method_names
+  result = api_instance.get_connector_method_names
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_connector_method_names: #{e}"
+  puts "Error when calling SystemApi->get_connector_method_names: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_connector_method_names_with_http_info variant
+#### Using the get_connector_method_names_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetConnectorMethodNames200Response>, Integer, Hash)> o_bpv6_0_0_get_connector_method_names_with_http_info
+> <Array(<GetConnectorMethodNames200Response>, Integer, Hash)> get_connector_method_names_with_http_info
 
 ```ruby
 begin
   # Get Connector Method Names
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_connector_method_names_with_http_info
+  data, status_code, headers = api_instance.get_connector_method_names_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetConnectorMethodNames200Response>
+  p data # => <GetConnectorMethodNames200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_connector_method_names_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_connector_method_names_with_http_info: #{e}"
 end
 ```
 
@@ -763,7 +313,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -775,61 +325,46 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_connectors
+## get_connectors
 
-> <OBPv600GetConnectors200Response> o_bpv6_0_0_get_connectors
+> <GetConnectors200Response> get_connectors
 
 Get Connectors
 
-<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>CanGetConnectorNames entitlement is required.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
+<p>Get the list of connectors and their availability for method routing.</p> <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p> <h2><a href=\"#response-fields\" id=\"response-fields\">Response Fields</a></h2> <ul> <li><strong>connector_name</strong> - The name of the connector</li> <li><strong>is_available_in_method_routing</strong> - Whether this connector can be used in Method Routing configuration.<br /> This depends on the <code>connector</code> and <code>starConnector_supported_types</code> props settings.</li> </ul> <h2><a href=\"#available-connectors\" id=\"available-connectors\">Available Connectors</a></h2> <p>The OBP-API supports multiple connectors for accessing banking data:</p> <ul> <li><strong>mapped</strong> - Local database connector using Lift Mapper ORM</li> <li><strong>akka_vDec2018</strong> - Akka-based connector for remote banking systems</li> <li><strong>rest_vMar2019</strong> - REST connector for external APIs</li> <li><strong>stored_procedure_vDec2019</strong> - Stored procedure connector for database-native operations</li> <li><strong>rabbitmq_vOct2024</strong> - RabbitMQ message queue connector</li> <li><strong>cardano_vJun2025</strong> - Cardano blockchain connector</li> <li><strong>ethereum_vSept2025</strong> - Ethereum blockchain connector</li> <li><strong>star</strong> - Star connector (special routing connector)</li> <li><strong>proxy</strong> - Proxy connector (for testing)</li> <li><strong>internal</strong> - Internal dynamic connector</li> </ul> <h2><a href=\"#use-case\" id=\"use-case\">Use Case</a></h2> <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br /> A connector is available for method routing if it matches the <code>connector</code> prop setting,<br /> or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p> <p>Authentication is Optional.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#connector_name\"><strong>connector_name</strong></a>:</p> <p><a href=\"/glossary#\"><strong>connectors</strong></a>: connectors</p> <p><a href=\"/glossary#\"><strong>is_available_in_method_routing</strong></a>: is_available_in_method_routing</p> 
 
 ### Examples
 
 ```ruby
 require 'time'
 require 'obp_ruby'
-# setup authorization
-OpenBankProject.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-
-  # Configure API key authorization: GatewayLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Connectors
-  result = api_instance.o_bpv6_0_0_get_connectors
+  result = api_instance.get_connectors
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_connectors: #{e}"
+  puts "Error when calling SystemApi->get_connectors: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_connectors_with_http_info variant
+#### Using the get_connectors_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetConnectors200Response>, Integer, Hash)> o_bpv6_0_0_get_connectors_with_http_info
+> <Array(<GetConnectors200Response>, Integer, Hash)> get_connectors_with_http_info
 
 ```ruby
 begin
   # Get Connectors
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_connectors_with_http_info
+  data, status_code, headers = api_instance.get_connectors_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetConnectors200Response>
+  p data # => <GetConnectors200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_connectors_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_connectors_with_http_info: #{e}"
 end
 ```
 
@@ -839,11 +374,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -851,9 +386,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_database_pool_info
+## get_database_pool_info
 
-> <OBPv600GetDatabasePoolInfo200Response> o_bpv6_0_0_get_database_pool_info
+> <GetDatabasePoolInfo200Response> get_database_pool_info
 
 Get Database Pool Information
 
@@ -875,37 +410,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Database Pool Information
-  result = api_instance.o_bpv6_0_0_get_database_pool_info
+  result = api_instance.get_database_pool_info
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_database_pool_info: #{e}"
+  puts "Error when calling SystemApi->get_database_pool_info: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_database_pool_info_with_http_info variant
+#### Using the get_database_pool_info_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetDatabasePoolInfo200Response>, Integer, Hash)> o_bpv6_0_0_get_database_pool_info_with_http_info
+> <Array(<GetDatabasePoolInfo200Response>, Integer, Hash)> get_database_pool_info_with_http_info
 
 ```ruby
 begin
   # Get Database Pool Information
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_database_pool_info_with_http_info
+  data, status_code, headers = api_instance.get_database_pool_info_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetDatabasePoolInfo200Response>
+  p data # => <GetDatabasePoolInfo200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_database_pool_info_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_database_pool_info_with_http_info: #{e}"
 end
 ```
 
@@ -915,7 +450,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -927,9 +462,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_migrations
+## get_migrations
 
-> <OBPv600GetMigrations200Response> o_bpv6_0_0_get_migrations
+> <GetMigrations200Response> get_migrations
 
 Get Database Migrations
 
@@ -951,37 +486,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Database Migrations
-  result = api_instance.o_bpv6_0_0_get_migrations
+  result = api_instance.get_migrations
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_migrations: #{e}"
+  puts "Error when calling SystemApi->get_migrations: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_migrations_with_http_info variant
+#### Using the get_migrations_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetMigrations200Response>, Integer, Hash)> o_bpv6_0_0_get_migrations_with_http_info
+> <Array(<GetMigrations200Response>, Integer, Hash)> get_migrations_with_http_info
 
 ```ruby
 begin
   # Get Database Migrations
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_migrations_with_http_info
+  data, status_code, headers = api_instance.get_migrations_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetMigrations200Response>
+  p data # => <GetMigrations200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_migrations_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_migrations_with_http_info: #{e}"
 end
 ```
 
@@ -991,7 +526,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -1003,9 +538,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_get_stored_procedure_connector_health
+## get_stored_procedure_connector_health
 
-> <OBPv600GetStoredProcedureConnectorHealth200Response> o_bpv6_0_0_get_stored_procedure_connector_health
+> <GetStoredProcedureConnectorHealth200Response> get_stored_procedure_connector_health
 
 Get Stored Procedure Connector Health
 
@@ -1027,37 +562,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
 
 begin
   # Get Stored Procedure Connector Health
-  result = api_instance.o_bpv6_0_0_get_stored_procedure_connector_health
+  result = api_instance.get_stored_procedure_connector_health
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_stored_procedure_connector_health: #{e}"
+  puts "Error when calling SystemApi->get_stored_procedure_connector_health: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_get_stored_procedure_connector_health_with_http_info variant
+#### Using the get_stored_procedure_connector_health_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600GetStoredProcedureConnectorHealth200Response>, Integer, Hash)> o_bpv6_0_0_get_stored_procedure_connector_health_with_http_info
+> <Array(<GetStoredProcedureConnectorHealth200Response>, Integer, Hash)> get_stored_procedure_connector_health_with_http_info
 
 ```ruby
 begin
   # Get Stored Procedure Connector Health
-  data, status_code, headers = api_instance.o_bpv6_0_0_get_stored_procedure_connector_health_with_http_info
+  data, status_code, headers = api_instance.get_stored_procedure_connector_health_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600GetStoredProcedureConnectorHealth200Response>
+  p data # => <GetStoredProcedureConnectorHealth200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_get_stored_procedure_connector_health_with_http_info: #{e}"
+  puts "Error when calling SystemApi->get_stored_procedure_connector_health_with_http_info: #{e}"
 end
 ```
 
@@ -1067,7 +602,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -1079,9 +614,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv6_0_0_invalidate_cache_namespace
+## invalidate_cache_namespace
 
-> <OBPv600InvalidateCacheNamespace200Response> o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
+> <InvalidateCacheNamespace200Response> invalidate_cache_namespace(invalidate_cache_namespace_request)
 
 Invalidate Cache Namespace
 
@@ -1103,38 +638,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::SystemApi.new
-obpv600_invalidate_cache_namespace_request = OpenBankProject::OBPv600InvalidateCacheNamespaceRequest.new({type: 'type_example', properties: OpenBankProject::OBPv600InvalidateCacheNamespaceRequestProperties.new({namespace_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'})})}) # OBPv600InvalidateCacheNamespaceRequest | Request body
+invalidate_cache_namespace_request = OpenBankProject::InvalidateCacheNamespaceRequest.new # InvalidateCacheNamespaceRequest | Request body
 
 begin
   # Invalidate Cache Namespace
-  result = api_instance.o_bpv6_0_0_invalidate_cache_namespace(obpv600_invalidate_cache_namespace_request)
+  result = api_instance.invalidate_cache_namespace(invalidate_cache_namespace_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_invalidate_cache_namespace: #{e}"
+  puts "Error when calling SystemApi->invalidate_cache_namespace: #{e}"
 end
 ```
 
-#### Using the o_bpv6_0_0_invalidate_cache_namespace_with_http_info variant
+#### Using the invalidate_cache_namespace_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv600InvalidateCacheNamespace200Response>, Integer, Hash)> o_bpv6_0_0_invalidate_cache_namespace_with_http_info(obpv600_invalidate_cache_namespace_request)
+> <Array(<InvalidateCacheNamespace200Response>, Integer, Hash)> invalidate_cache_namespace_with_http_info(invalidate_cache_namespace_request)
 
 ```ruby
 begin
   # Invalidate Cache Namespace
-  data, status_code, headers = api_instance.o_bpv6_0_0_invalidate_cache_namespace_with_http_info(obpv600_invalidate_cache_namespace_request)
+  data, status_code, headers = api_instance.invalidate_cache_namespace_with_http_info(invalidate_cache_namespace_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv600InvalidateCacheNamespace200Response>
+  p data # => <InvalidateCacheNamespace200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling SystemApi->o_bpv6_0_0_invalidate_cache_namespace_with_http_info: #{e}"
+  puts "Error when calling SystemApi->invalidate_cache_namespace_with_http_info: #{e}"
 end
 ```
 
@@ -1142,11 +677,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv600_invalidate_cache_namespace_request** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md) | Request body |  |
+| **invalidate_cache_namespace_request** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -1156,4 +691,454 @@ end
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+
+## log_cache_all_endpoint
+
+> log_cache_all_endpoint
+
+Get All Level Log Cache
+
+<p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get All Level Log Cache
+  api_instance.log_cache_all_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_all_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_all_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_all_endpoint_with_http_info
+
+```ruby
+begin
+  # Get All Level Log Cache
+  data, status_code, headers = api_instance.log_cache_all_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_all_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## log_cache_debug_endpoint
+
+> log_cache_debug_endpoint
+
+Get Debug Level Log Cache
+
+<p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get Debug Level Log Cache
+  api_instance.log_cache_debug_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_debug_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_debug_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_debug_endpoint_with_http_info
+
+```ruby
+begin
+  # Get Debug Level Log Cache
+  data, status_code, headers = api_instance.log_cache_debug_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_debug_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## log_cache_error_endpoint
+
+> log_cache_error_endpoint
+
+Get Error Level Log Cache
+
+<p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get Error Level Log Cache
+  api_instance.log_cache_error_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_error_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_error_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_error_endpoint_with_http_info
+
+```ruby
+begin
+  # Get Error Level Log Cache
+  data, status_code, headers = api_instance.log_cache_error_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_error_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## log_cache_info_endpoint
+
+> log_cache_info_endpoint
+
+Get Info Level Log Cache
+
+<p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get Info Level Log Cache
+  api_instance.log_cache_info_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_info_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_info_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_info_endpoint_with_http_info
+
+```ruby
+begin
+  # Get Info Level Log Cache
+  data, status_code, headers = api_instance.log_cache_info_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_info_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## log_cache_trace_endpoint
+
+> log_cache_trace_endpoint
+
+Get Trace Level Log Cache
+
+<p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get Trace Level Log Cache
+  api_instance.log_cache_trace_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_trace_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_trace_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_trace_endpoint_with_http_info
+
+```ruby
+begin
+  # Get Trace Level Log Cache
+  data, status_code, headers = api_instance.log_cache_trace_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_trace_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## log_cache_warning_endpoint
+
+> log_cache_warning_endpoint
+
+Get Warning Level Log Cache
+
+<p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Examples
+
+```ruby
+require 'time'
+require 'obp_ruby'
+# setup authorization
+OpenBankProject.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+
+  # Configure API key authorization: GatewayLogin
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure API key authorization: DirectLogin
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
+end
+
+api_instance = OpenBankProject::SystemApi.new
+
+begin
+  # Get Warning Level Log Cache
+  api_instance.log_cache_warning_endpoint
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_warning_endpoint: #{e}"
+end
+```
+
+#### Using the log_cache_warning_endpoint_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> log_cache_warning_endpoint_with_http_info
+
+```ruby
+begin
+  # Get Warning Level Log Cache
+  data, status_code, headers = api_instance.log_cache_warning_endpoint_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue OpenBankProject::ApiError => e
+  puts "Error when calling SystemApi->log_cache_warning_endpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

@@ -13,12 +13,12 @@ open class CustomerMeetingAPI {
      Create Meeting (video conference/call)
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv310CreateMeetingRequest: (body) Request body 
+     - parameter createMeetingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetMeeting200Response
+     - returns: GetMeeting200Response
      */
-    open class func oBPv310CreateMeeting(bankid: String, oBPv310CreateMeetingRequest: OBPv310CreateMeetingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetMeeting200Response {
-        return try await oBPv310CreateMeetingWithRequestBuilder(bankid: bankid, oBPv310CreateMeetingRequest: oBPv310CreateMeetingRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createMeeting(bankid: String, createMeetingRequest: CreateMeetingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMeeting200Response {
+        return try await createMeetingWithRequestBuilder(bankid: bankid, createMeetingRequest: createMeetingRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class CustomerMeetingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv310CreateMeetingRequest: (body) Request body 
+     - parameter createMeetingRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetMeeting200Response> 
+     - returns: RequestBuilder<GetMeeting200Response> 
      */
-    open class func oBPv310CreateMeetingWithRequestBuilder(bankid: String, oBPv310CreateMeetingRequest: OBPv310CreateMeetingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetMeeting200Response> {
+    open class func createMeetingWithRequestBuilder(bankid: String, createMeetingRequest: CreateMeetingRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMeeting200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/meetings"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv310CreateMeetingRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createMeetingRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class CustomerMeetingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetMeeting200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetMeeting200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -66,10 +66,10 @@ open class CustomerMeetingAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter meetingid: (path) The MEETINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetMeeting200Response
+     - returns: GetMeeting200Response
      */
-    open class func oBPv310GetMeeting(bankid: String, meetingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetMeeting200Response {
-        return try await oBPv310GetMeetingWithRequestBuilder(bankid: bankid, meetingid: meetingid, apiConfiguration: apiConfiguration).execute().body
+    open class func getMeeting(bankid: String, meetingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMeeting200Response {
+        return try await getMeetingWithRequestBuilder(bankid: bankid, meetingid: meetingid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -83,14 +83,14 @@ open class CustomerMeetingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter meetingid: (path) The MEETINGID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetMeeting200Response> 
+     - returns: RequestBuilder<GetMeeting200Response> 
      */
-    open class func oBPv310GetMeetingWithRequestBuilder(bankid: String, meetingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetMeeting200Response> {
+    open class func getMeetingWithRequestBuilder(bankid: String, meetingid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMeeting200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/meetings/{meetingid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -109,7 +109,7 @@ open class CustomerMeetingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetMeeting200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetMeeting200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -119,10 +119,10 @@ open class CustomerMeetingAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv310GetMeetings200Response
+     - returns: GetMeetings200Response
      */
-    open class func oBPv310GetMeetings(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv310GetMeetings200Response {
-        return try await oBPv310GetMeetingsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getMeetings(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetMeetings200Response {
+        return try await getMeetingsWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -136,13 +136,13 @@ open class CustomerMeetingAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv310GetMeetings200Response> 
+     - returns: RequestBuilder<GetMeetings200Response> 
      */
-    open class func oBPv310GetMeetingsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv310GetMeetings200Response> {
+    open class func getMeetingsWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetMeetings200Response> {
         var localVariablePath = "/obp/v3.1.0/banks/{bankid}/meetings"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -158,7 +158,7 @@ open class CustomerMeetingAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv310GetMeetings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetMeetings200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

@@ -1,21 +1,21 @@
 # TransactionRequestAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#obpv400createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-[**oBPv400CreateTransactionRequestAttribute**](TransactionRequestAttributeAPI.md#obpv400createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-[**oBPv400DeleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#obpv400deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-[**oBPv400GetTransactionRequestAttributeById**](TransactionRequestAttributeAPI.md#obpv400gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-[**oBPv400GetTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#obpv400gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-[**oBPv400GetTransactionRequestAttributes**](TransactionRequestAttributeAPI.md#obpv400gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-[**oBPv400UpdateTransactionRequestAttribute**](TransactionRequestAttributeAPI.md#obpv400updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+[**createOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#createorupdatetransactionrequestattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+[**createTransactionRequestAttribute**](TransactionRequestAttributeAPI.md#createtransactionrequestattribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+[**deleteTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#deletetransactionrequestattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+[**getTransactionRequestAttributeById**](TransactionRequestAttributeAPI.md#gettransactionrequestattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+[**getTransactionRequestAttributeDefinition**](TransactionRequestAttributeAPI.md#gettransactionrequestattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+[**getTransactionRequestAttributes**](TransactionRequestAttributeAPI.md#gettransactionrequestattributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+[**updateTransactionRequestAttribute**](TransactionRequestAttributeAPI.md#updatetransactionrequestattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
 
 
-# **oBPv400CreateOrUpdateTransactionRequestAttributeDefinition**
+# **createOrUpdateTransactionRequestAttributeDefinition**
 ```swift
-    open class func oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?, _ error: Error?) -> Void)
+    open class func createOrUpdateTransactionRequestAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200ResponseAttributesInner?, _ error: Error?) -> Void)
 ```
 
 Create or Update Transaction Request Attribute Definition
@@ -28,10 +28,10 @@ Create or Update Transaction Request Attribute Definition
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request(type: "type_example", properties: OBPv4_0_0_createOrUpdateTransactionRequestAttributeDefinition_request_properties(name: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), isActive: nil, description: nil, alias: nil, canBeSeenOnViews: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil), category: nil, type: nil)) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+let createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinition_request(name: "name_example", isActive: false, description: "description_example", alias: "alias_example", canBeSeenOnViews: ["canBeSeenOnViews_example"], category: "category_example", type: "type_example") // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 // Create or Update Transaction Request Attribute Definition
-TransactionRequestAttributeAPI.oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
+TransactionRequestAttributeAPI.createOrUpdateTransactionRequestAttributeDefinition(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -48,11 +48,11 @@ TransactionRequestAttributeAPI.oBPv400CreateOrUpdateTransactionRequestAttributeD
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -65,9 +65,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateTransactionRequestAttribute**
+# **createTransactionRequestAttribute**
 ```swift
-    open class func oBPv400CreateTransactionRequestAttribute(bankid: String, accountid: String, transactionrequestid: String, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
+    open class func createTransactionRequestAttribute(bankid: String, accountid: String, transactionrequestid: String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner, completion: @escaping (_ data: GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Create Transaction Request Attribute
@@ -82,10 +82,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionrequestid = "transactionrequestid_example" // String | The TRANSACTIONREQUESTID identifier
-let oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = OBPv4_0_0_createTransactionRequestCounterparty_request_properties_attributes_items(type: "type_example", properties: OBPv4_0_0_createTransactionRequestCounterparty_request_properties_attributes_items_properties(attributeType: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), name: nil, value: nil)) // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+let createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterparty_request_attributes_inner(attributeType: "attributeType_example", name: "name_example", value: "value_example") // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
 // Create Transaction Request Attribute
-TransactionRequestAttributeAPI.oBPv400CreateTransactionRequestAttribute(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) { (response, error) in
+TransactionRequestAttributeAPI.createTransactionRequestAttribute(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner: createTransactionRequestCounterpartyRequestAttributesInner) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -104,11 +104,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **transactionrequestid** | **String** | The TRANSACTIONREQUESTID identifier | 
- **oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md) | Request body | 
+ **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -121,9 +121,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400DeleteTransactionRequestAttributeDefinition**
+# **deleteTransactionRequestAttributeDefinition**
 ```swift
-    open class func oBPv400DeleteTransactionRequestAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: OBPv400DeleteSystemLevelEndpointTag200Response?, _ error: Error?) -> Void)
+    open class func deleteTransactionRequestAttributeDefinition(bankid: String, attributedefinitionid: String, completion: @escaping (_ data: DeleteSystemLevelEndpointTag200Response?, _ error: Error?) -> Void)
 ```
 
 Delete Transaction Request Attribute Definition
@@ -139,7 +139,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let attributedefinitionid = "attributedefinitionid_example" // String | The ATTRIBUTEDEFINITIONID identifier
 
 // Delete Transaction Request Attribute Definition
-TransactionRequestAttributeAPI.oBPv400DeleteTransactionRequestAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
+TransactionRequestAttributeAPI.deleteTransactionRequestAttributeDefinition(bankid: bankid, attributedefinitionid: attributedefinitionid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
 
 ### Authorization
 
@@ -173,9 +173,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionRequestAttributeById**
+# **getTransactionRequestAttributeById**
 ```swift
-    open class func oBPv400GetTransactionRequestAttributeById(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
+    open class func getTransactionRequestAttributeById(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, completion: @escaping (_ data: GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Request Attribute By Id
@@ -193,7 +193,7 @@ let transactionrequestid = "transactionrequestid_example" // String | The TRANSA
 let attributeid = "attributeid_example" // String | The ATTRIBUTEID identifier
 
 // Get Transaction Request Attribute By Id
-TransactionRequestAttributeAPI.oBPv400GetTransactionRequestAttributeById(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, attributeid: attributeid) { (response, error) in
+TransactionRequestAttributeAPI.getTransactionRequestAttributeById(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, attributeid: attributeid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -229,9 +229,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionRequestAttributeDefinition**
+# **getTransactionRequestAttributeDefinition**
 ```swift
-    open class func oBPv400GetTransactionRequestAttributeDefinition(bankid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
+    open class func getTransactionRequestAttributeDefinition(bankid: String, completion: @escaping (_ data: GetTransactionRequestAttributeDefinition200Response?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Request Attribute Definition
@@ -246,7 +246,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Transaction Request Attribute Definition
-TransactionRequestAttributeAPI.oBPv400GetTransactionRequestAttributeDefinition(bankid: bankid) { (response, error) in
+TransactionRequestAttributeAPI.getTransactionRequestAttributeDefinition(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -279,9 +279,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetTransactionRequestAttributes**
+# **getTransactionRequestAttributes**
 ```swift
-    open class func oBPv400GetTransactionRequestAttributes(bankid: String, accountid: String, transactionrequestid: String, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributes200Response?, _ error: Error?) -> Void)
+    open class func getTransactionRequestAttributes(bankid: String, accountid: String, transactionrequestid: String, completion: @escaping (_ data: GetTransactionRequestAttributes200Response?, _ error: Error?) -> Void)
 ```
 
 Get Transaction Request Attributes
@@ -298,7 +298,7 @@ let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionrequestid = "transactionrequestid_example" // String | The TRANSACTIONREQUESTID identifier
 
 // Get Transaction Request Attributes
-TransactionRequestAttributeAPI.oBPv400GetTransactionRequestAttributes(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid) { (response, error) in
+TransactionRequestAttributeAPI.getTransactionRequestAttributes(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
 
 ### Authorization
 
@@ -333,9 +333,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateTransactionRequestAttribute**
+# **updateTransactionRequestAttribute**
 ```swift
-    open class func oBPv400UpdateTransactionRequestAttribute(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, completion: @escaping (_ data: OBPv400GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
+    open class func updateTransactionRequestAttribute(bankid: String, accountid: String, transactionrequestid: String, attributeid: String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner, completion: @escaping (_ data: GetTransactionRequestAttributeById200Response?, _ error: Error?) -> Void)
 ```
 
 Update Transaction Request Attribute
@@ -351,10 +351,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let transactionrequestid = "transactionrequestid_example" // String | The TRANSACTIONREQUESTID identifier
 let attributeid = "attributeid_example" // String | The ATTRIBUTEID identifier
-let oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = OBPv4_0_0_createTransactionRequestCounterparty_request_properties_attributes_items(type: "type_example", properties: OBPv4_0_0_createTransactionRequestCounterparty_request_properties_attributes_items_properties(attributeType: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), name: nil, value: nil)) // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+let createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterparty_request_attributes_inner(attributeType: "attributeType_example", name: "name_example", value: "value_example") // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
 // Update Transaction Request Attribute
-TransactionRequestAttributeAPI.oBPv400UpdateTransactionRequestAttribute(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, attributeid: attributeid, oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) { (response, error) in
+TransactionRequestAttributeAPI.updateTransactionRequestAttribute(bankid: bankid, accountid: accountid, transactionrequestid: transactionrequestid, attributeid: attributeid, createTransactionRequestCounterpartyRequestAttributesInner: createTransactionRequestCounterpartyRequestAttributesInner) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -374,11 +374,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **transactionrequestid** | **String** | The TRANSACTIONREQUESTID identifier | 
  **attributeid** | **String** | The ATTRIBUTEID identifier | 
- **oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md) | Request body | 
+ **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 

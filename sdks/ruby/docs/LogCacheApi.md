@@ -1,20 +1,20 @@
 # OpenBankProject::LogCacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv5_1_0_log_cache_all_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**o_bpv5_1_0_log_cache_debug_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**o_bpv5_1_0_log_cache_error_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**o_bpv5_1_0_log_cache_info_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**o_bpv5_1_0_log_cache_trace_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**o_bpv5_1_0_log_cache_warning_endpoint**](LogCacheApi.md#o_bpv5_1_0_log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**log_cache_all_endpoint**](LogCacheApi.md#log_cache_all_endpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**log_cache_debug_endpoint**](LogCacheApi.md#log_cache_debug_endpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**log_cache_error_endpoint**](LogCacheApi.md#log_cache_error_endpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**log_cache_info_endpoint**](LogCacheApi.md#log_cache_info_endpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**log_cache_trace_endpoint**](LogCacheApi.md#log_cache_trace_endpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**log_cache_warning_endpoint**](LogCacheApi.md#log_cache_warning_endpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
 
-## o_bpv5_1_0_log_cache_all_endpoint
+## log_cache_all_endpoint
 
-> o_bpv5_1_0_log_cache_all_endpoint
+> log_cache_all_endpoint
 
 Get All Level Log Cache
 
@@ -36,36 +36,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get All Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_all_endpoint
+  api_instance.log_cache_all_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_all_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_all_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_all_endpoint_with_http_info variant
+#### Using the log_cache_all_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_all_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_all_endpoint_with_http_info
 
 ```ruby
 begin
   # Get All Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_all_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_all_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_all_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_all_endpoint_with_http_info: #{e}"
 end
 ```
 
@@ -87,9 +87,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_log_cache_debug_endpoint
+## log_cache_debug_endpoint
 
-> o_bpv5_1_0_log_cache_debug_endpoint
+> log_cache_debug_endpoint
 
 Get Debug Level Log Cache
 
@@ -111,36 +111,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get Debug Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_debug_endpoint
+  api_instance.log_cache_debug_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_debug_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_debug_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_debug_endpoint_with_http_info variant
+#### Using the log_cache_debug_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_debug_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_debug_endpoint_with_http_info
 
 ```ruby
 begin
   # Get Debug Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_debug_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_debug_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_debug_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_debug_endpoint_with_http_info: #{e}"
 end
 ```
 
@@ -162,9 +162,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_log_cache_error_endpoint
+## log_cache_error_endpoint
 
-> o_bpv5_1_0_log_cache_error_endpoint
+> log_cache_error_endpoint
 
 Get Error Level Log Cache
 
@@ -186,36 +186,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get Error Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_error_endpoint
+  api_instance.log_cache_error_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_error_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_error_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_error_endpoint_with_http_info variant
+#### Using the log_cache_error_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_error_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_error_endpoint_with_http_info
 
 ```ruby
 begin
   # Get Error Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_error_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_error_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_error_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_error_endpoint_with_http_info: #{e}"
 end
 ```
 
@@ -237,9 +237,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_log_cache_info_endpoint
+## log_cache_info_endpoint
 
-> o_bpv5_1_0_log_cache_info_endpoint
+> log_cache_info_endpoint
 
 Get Info Level Log Cache
 
@@ -261,36 +261,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get Info Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_info_endpoint
+  api_instance.log_cache_info_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_info_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_info_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_info_endpoint_with_http_info variant
+#### Using the log_cache_info_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_info_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_info_endpoint_with_http_info
 
 ```ruby
 begin
   # Get Info Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_info_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_info_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_info_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_info_endpoint_with_http_info: #{e}"
 end
 ```
 
@@ -312,9 +312,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_log_cache_trace_endpoint
+## log_cache_trace_endpoint
 
-> o_bpv5_1_0_log_cache_trace_endpoint
+> log_cache_trace_endpoint
 
 Get Trace Level Log Cache
 
@@ -336,36 +336,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get Trace Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_trace_endpoint
+  api_instance.log_cache_trace_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_trace_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_trace_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_trace_endpoint_with_http_info variant
+#### Using the log_cache_trace_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_trace_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_trace_endpoint_with_http_info
 
 ```ruby
 begin
   # Get Trace Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_trace_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_trace_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_trace_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_trace_endpoint_with_http_info: #{e}"
 end
 ```
 
@@ -387,9 +387,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv5_1_0_log_cache_warning_endpoint
+## log_cache_warning_endpoint
 
-> o_bpv5_1_0_log_cache_warning_endpoint
+> log_cache_warning_endpoint
 
 Get Warning Level Log Cache
 
@@ -411,36 +411,36 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::LogCacheApi.new
 
 begin
   # Get Warning Level Log Cache
-  api_instance.o_bpv5_1_0_log_cache_warning_endpoint
+  api_instance.log_cache_warning_endpoint
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_warning_endpoint: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_warning_endpoint: #{e}"
 end
 ```
 
-#### Using the o_bpv5_1_0_log_cache_warning_endpoint_with_http_info variant
+#### Using the log_cache_warning_endpoint_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv5_1_0_log_cache_warning_endpoint_with_http_info
+> <Array(nil, Integer, Hash)> log_cache_warning_endpoint_with_http_info
 
 ```ruby
 begin
   # Get Warning Level Log Cache
-  data, status_code, headers = api_instance.o_bpv5_1_0_log_cache_warning_endpoint_with_http_info
+  data, status_code, headers = api_instance.log_cache_warning_endpoint_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling LogCacheApi->o_bpv5_1_0_log_cache_warning_endpoint_with_http_info: #{e}"
+  puts "Error when calling LogCacheApi->log_cache_warning_endpoint_with_http_info: #{e}"
 end
 ```
 

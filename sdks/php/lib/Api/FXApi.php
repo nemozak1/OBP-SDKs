@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class FXApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv220CreateFx' => [
+        'createFx' => [
             'application/json',
         ],
-        'oBPv220GetCurrentFxRate' => [
+        'getCurrenciesAtBank' => [
             'application/json',
         ],
-        'oBPv510GetCurrenciesAtBank' => [
+        'getCurrentFxRate' => [
             'application/json',
         ],
     ];
@@ -133,40 +133,40 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220CreateFx
+     * Operation createFx
      *
      * Create Fx
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv220CreateFxRequest $obpv220_create_fx_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220CreateFx'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFxRequest $create_fx_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFx'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv220CreateFxRequest
+     * @return \OpenBankProject\Model\CreateFxRequest
      */
-    public function oBPv220CreateFx($bankid, $obpv220_create_fx_request, string $contentType = self::contentTypes['oBPv220CreateFx'][0])
+    public function createFx($bankid, $create_fx_request, string $contentType = self::contentTypes['createFx'][0])
     {
-        list($response) = $this->oBPv220CreateFxWithHttpInfo($bankid, $obpv220_create_fx_request, $contentType);
+        list($response) = $this->createFxWithHttpInfo($bankid, $create_fx_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv220CreateFxWithHttpInfo
+     * Operation createFxWithHttpInfo
      *
      * Create Fx
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv220CreateFxRequest $obpv220_create_fx_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220CreateFx'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFxRequest $create_fx_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFx'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv220CreateFxRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateFxRequest, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv220CreateFxWithHttpInfo($bankid, $obpv220_create_fx_request, string $contentType = self::contentTypes['oBPv220CreateFx'][0])
+    public function createFxWithHttpInfo($bankid, $create_fx_request, string $contentType = self::contentTypes['createFx'][0])
     {
-        $request = $this->oBPv220CreateFxRequest($bankid, $obpv220_create_fx_request, $contentType);
+        $request = $this->createFxRequest($bankid, $create_fx_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -194,7 +194,7 @@ class FXApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                        '\OpenBankProject\Model\CreateFxRequest',
                         $request,
                         $response,
                     );
@@ -216,7 +216,7 @@ class FXApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                '\OpenBankProject\Model\CreateFxRequest',
                 $request,
                 $response,
             );
@@ -225,7 +225,7 @@ class FXApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                        '\OpenBankProject\Model\CreateFxRequest',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -238,20 +238,20 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220CreateFxAsync
+     * Operation createFxAsync
      *
      * Create Fx
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv220CreateFxRequest $obpv220_create_fx_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220CreateFx'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFxRequest $create_fx_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFx'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220CreateFxAsync($bankid, $obpv220_create_fx_request, string $contentType = self::contentTypes['oBPv220CreateFx'][0])
+    public function createFxAsync($bankid, $create_fx_request, string $contentType = self::contentTypes['createFx'][0])
     {
-        return $this->oBPv220CreateFxAsyncWithHttpInfo($bankid, $obpv220_create_fx_request, $contentType)
+        return $this->createFxAsyncWithHttpInfo($bankid, $create_fx_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -260,21 +260,21 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220CreateFxAsyncWithHttpInfo
+     * Operation createFxAsyncWithHttpInfo
      *
      * Create Fx
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv220CreateFxRequest $obpv220_create_fx_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220CreateFx'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFxRequest $create_fx_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFx'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220CreateFxAsyncWithHttpInfo($bankid, $obpv220_create_fx_request, string $contentType = self::contentTypes['oBPv220CreateFx'][0])
+    public function createFxAsyncWithHttpInfo($bankid, $create_fx_request, string $contentType = self::contentTypes['createFx'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv220CreateFxRequest';
-        $request = $this->oBPv220CreateFxRequest($bankid, $obpv220_create_fx_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateFxRequest';
+        $request = $this->createFxRequest($bankid, $create_fx_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -313,29 +313,29 @@ class FXApi
     }
 
     /**
-     * Create request for operation 'oBPv220CreateFx'
+     * Create request for operation 'createFx'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv220CreateFxRequest $obpv220_create_fx_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220CreateFx'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFxRequest $create_fx_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFx'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv220CreateFxRequest($bankid, $obpv220_create_fx_request, string $contentType = self::contentTypes['oBPv220CreateFx'][0])
+    public function createFxRequest($bankid, $create_fx_request, string $contentType = self::contentTypes['createFx'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv220CreateFx'
+                'Missing the required parameter $bankid when calling createFx'
             );
         }
 
-        // verify the required parameter 'obpv220_create_fx_request' is set
-        if ($obpv220_create_fx_request === null || (is_array($obpv220_create_fx_request) && count($obpv220_create_fx_request) === 0)) {
+        // verify the required parameter 'create_fx_request' is set
+        if ($create_fx_request === null || (is_array($create_fx_request) && count($create_fx_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv220_create_fx_request when calling oBPv220CreateFx'
+                'Missing the required parameter $create_fx_request when calling createFx'
             );
         }
 
@@ -366,12 +366,12 @@ class FXApi
         );
 
         // for model (json/xml)
-        if (isset($obpv220_create_fx_request)) {
+        if (isset($create_fx_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv220_create_fx_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_fx_request));
             } else {
-                $httpBody = $obpv220_create_fx_request;
+                $httpBody = $create_fx_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -407,9 +407,9 @@ class FXApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -434,42 +434,38 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220GetCurrentFxRate
+     * Operation getCurrenciesAtBank
      *
-     * Get Current FxRate
+     * Get Currencies at a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
-     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetCurrentFxRate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrenciesAtBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv220CreateFxRequest
+     * @return \OpenBankProject\Model\GetCurrenciesAtBank200Response
      */
-    public function oBPv220GetCurrentFxRate($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['oBPv220GetCurrentFxRate'][0])
+    public function getCurrenciesAtBank($bankid, string $contentType = self::contentTypes['getCurrenciesAtBank'][0])
     {
-        list($response) = $this->oBPv220GetCurrentFxRateWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+        list($response) = $this->getCurrenciesAtBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv220GetCurrentFxRateWithHttpInfo
+     * Operation getCurrenciesAtBankWithHttpInfo
      *
-     * Get Current FxRate
+     * Get Currencies at a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
-     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetCurrentFxRate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrenciesAtBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv220CreateFxRequest, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCurrenciesAtBank200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv220GetCurrentFxRateWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['oBPv220GetCurrentFxRate'][0])
+    public function getCurrenciesAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getCurrenciesAtBank'][0])
     {
-        $request = $this->oBPv220GetCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+        $request = $this->getCurrenciesAtBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -497,7 +493,7 @@ class FXApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                        '\OpenBankProject\Model\GetCurrenciesAtBank200Response',
                         $request,
                         $response,
                     );
@@ -519,7 +515,7 @@ class FXApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                '\OpenBankProject\Model\GetCurrenciesAtBank200Response',
                 $request,
                 $response,
             );
@@ -528,7 +524,7 @@ class FXApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv220CreateFxRequest',
+                        '\OpenBankProject\Model\GetCurrenciesAtBank200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -541,21 +537,19 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220GetCurrentFxRateAsync
+     * Operation getCurrenciesAtBankAsync
      *
-     * Get Current FxRate
+     * Get Currencies at a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
-     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetCurrentFxRate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrenciesAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetCurrentFxRateAsync($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['oBPv220GetCurrentFxRate'][0])
+    public function getCurrenciesAtBankAsync($bankid, string $contentType = self::contentTypes['getCurrenciesAtBank'][0])
     {
-        return $this->oBPv220GetCurrentFxRateAsyncWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, $contentType)
+        return $this->getCurrenciesAtBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -564,22 +558,20 @@ class FXApi
     }
 
     /**
-     * Operation oBPv220GetCurrentFxRateAsyncWithHttpInfo
+     * Operation getCurrenciesAtBankAsyncWithHttpInfo
      *
-     * Get Current FxRate
+     * Get Currencies at a Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
-     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetCurrentFxRate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrenciesAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv220GetCurrentFxRateAsyncWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['oBPv220GetCurrentFxRate'][0])
+    public function getCurrenciesAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getCurrenciesAtBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv220CreateFxRequest';
-        $request = $this->oBPv220GetCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCurrenciesAtBank200Response';
+        $request = $this->getCurrenciesAtBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -618,37 +610,327 @@ class FXApi
     }
 
     /**
-     * Create request for operation 'oBPv220GetCurrentFxRate'
+     * Create request for operation 'getCurrenciesAtBank'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
-     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv220GetCurrentFxRate'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrenciesAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv220GetCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['oBPv220GetCurrentFxRate'][0])
+    public function getCurrenciesAtBankRequest($bankid, string $contentType = self::contentTypes['getCurrenciesAtBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv220GetCurrentFxRate'
+                'Missing the required parameter $bankid when calling getCurrenciesAtBank'
+            );
+        }
+
+
+        $resourcePath = '/obp/v5.1.0/banks/{bankid}/currencies';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getCurrentFxRate
+     *
+     * Get Current FxRate
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
+     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentFxRate'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\CreateFxRequest
+     */
+    public function getCurrentFxRate($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['getCurrentFxRate'][0])
+    {
+        list($response) = $this->getCurrentFxRateWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getCurrentFxRateWithHttpInfo
+     *
+     * Get Current FxRate
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
+     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentFxRate'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\CreateFxRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCurrentFxRateWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['getCurrentFxRate'][0])
+    {
+        $request = $this->getCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\CreateFxRequest',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\CreateFxRequest',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\CreateFxRequest',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCurrentFxRateAsync
+     *
+     * Get Current FxRate
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
+     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentFxRate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCurrentFxRateAsync($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['getCurrentFxRate'][0])
+    {
+        return $this->getCurrentFxRateAsyncWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCurrentFxRateAsyncWithHttpInfo
+     *
+     * Get Current FxRate
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
+     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentFxRate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCurrentFxRateAsyncWithHttpInfo($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['getCurrentFxRate'][0])
+    {
+        $returnType = '\OpenBankProject\Model\CreateFxRequest';
+        $request = $this->getCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCurrentFxRate'
+     *
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $fromcurrencycode The FROMCURRENCYCODE identifier (required)
+     * @param  string $tocurrencycode The TOCURRENCYCODE identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCurrentFxRate'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getCurrentFxRateRequest($bankid, $fromcurrencycode, $tocurrencycode, string $contentType = self::contentTypes['getCurrentFxRate'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getCurrentFxRate'
             );
         }
 
         // verify the required parameter 'fromcurrencycode' is set
         if ($fromcurrencycode === null || (is_array($fromcurrencycode) && count($fromcurrencycode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $fromcurrencycode when calling oBPv220GetCurrentFxRate'
+                'Missing the required parameter $fromcurrencycode when calling getCurrentFxRate'
             );
         }
 
         // verify the required parameter 'tocurrencycode' is set
         if ($tocurrencycode === null || (is_array($tocurrencycode) && count($tocurrencycode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $tocurrencycode when calling oBPv220GetCurrentFxRate'
+                'Missing the required parameter $tocurrencycode when calling getCurrentFxRate'
             );
         }
 
@@ -729,291 +1011,9 @@ class FXApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv510GetCurrenciesAtBank
-     *
-     * Get Currencies at a Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCurrenciesAtBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response
-     */
-    public function oBPv510GetCurrenciesAtBank($bankid, string $contentType = self::contentTypes['oBPv510GetCurrenciesAtBank'][0])
-    {
-        list($response) = $this->oBPv510GetCurrenciesAtBankWithHttpInfo($bankid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv510GetCurrenciesAtBankWithHttpInfo
-     *
-     * Get Currencies at a Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCurrenciesAtBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv510GetCurrenciesAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510GetCurrenciesAtBank'][0])
-    {
-        $request = $this->oBPv510GetCurrenciesAtBankRequest($bankid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv510GetCurrenciesAtBankAsync
-     *
-     * Get Currencies at a Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCurrenciesAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetCurrenciesAtBankAsync($bankid, string $contentType = self::contentTypes['oBPv510GetCurrenciesAtBank'][0])
-    {
-        return $this->oBPv510GetCurrenciesAtBankAsyncWithHttpInfo($bankid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv510GetCurrenciesAtBankAsyncWithHttpInfo
-     *
-     * Get Currencies at a Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCurrenciesAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv510GetCurrenciesAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv510GetCurrenciesAtBank'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv510GetCurrenciesAtBank200Response';
-        $request = $this->oBPv510GetCurrenciesAtBankRequest($bankid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv510GetCurrenciesAtBank'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetCurrenciesAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv510GetCurrenciesAtBankRequest($bankid, string $contentType = self::contentTypes['oBPv510GetCurrenciesAtBank'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetCurrenciesAtBank'
-            );
-        }
-
-
-        $resourcePath = '/obp/v5.1.0/banks/{bankid}/currencies';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

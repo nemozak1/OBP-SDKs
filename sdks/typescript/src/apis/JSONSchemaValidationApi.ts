@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,35 +15,35 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400GetAllJsonSchemaValidationsPublic200Response,
-  OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems,
-  OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema,
+  GetAllJsonSchemaValidationsPublic200Response,
+  GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner,
+  GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema,
 } from '../models/index';
 import {
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponseFromJSON,
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponseToJSON,
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsFromJSON,
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsToJSON,
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaFromJSON,
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaToJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseFromJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseToJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerFromJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerToJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaFromJSON,
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateJsonSchemaValidationRequest {
+export interface CreateJsonSchemaValidationRequest {
     operationid: string;
-    oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema;
+    getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema;
 }
 
-export interface OBPv400DeleteJsonSchemaValidationRequest {
-    operationid: string;
-}
-
-export interface OBPv400GetJsonSchemaValidationRequest {
+export interface DeleteJsonSchemaValidationRequest {
     operationid: string;
 }
 
-export interface OBPv400UpdateJsonSchemaValidationRequest {
+export interface GetJsonSchemaValidationRequest {
     operationid: string;
-    oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema;
+}
+
+export interface UpdateJsonSchemaValidationRequest {
+    operationid: string;
+    getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema;
 }
 
 /**
@@ -52,20 +52,20 @@ export interface OBPv400UpdateJsonSchemaValidationRequest {
 export class JSONSchemaValidationApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateJsonSchemaValidation without sending the request
+     * Creates request options for createJsonSchemaValidation without sending the request
      */
-    async oBPv400CreateJsonSchemaValidationRequestOpts(requestParameters: OBPv400CreateJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
+    async createJsonSchemaValidationRequestOpts(requestParameters: CreateJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400CreateJsonSchemaValidation().'
+                'Required parameter "operationid" was null or undefined when calling createJsonSchemaValidation().'
             );
         }
 
-        if (requestParameters['oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema'] == null) {
+        if (requestParameters['getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema',
-                'Required parameter "oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema" was null or undefined when calling oBPv400CreateJsonSchemaValidation().'
+                'getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema',
+                'Required parameter "getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema" was null or undefined when calling createJsonSchemaValidation().'
             );
         }
 
@@ -85,7 +85,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -97,7 +97,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaToJSON(requestParameters['oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema']),
+            body: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaToJSON(requestParameters['getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema']),
         };
     }
 
@@ -105,30 +105,30 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Create a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don\'t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint\'s request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>Note: It might take a few minutes for the newly created JSON Schema to take effect!</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Create a JSON Schema Validation
      */
-    async oBPv400CreateJsonSchemaValidationRaw(requestParameters: OBPv400CreateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> {
-        const requestOptions = await this.oBPv400CreateJsonSchemaValidationRequestOpts(requestParameters);
+    async createJsonSchemaValidationRaw(requestParameters: CreateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> {
+        const requestOptions = await this.createJsonSchemaValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don\'t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint\'s request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>Note: It might take a few minutes for the newly created JSON Schema to take effect!</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Create a JSON Schema Validation
      */
-    async oBPv400CreateJsonSchemaValidation(requestParameters: OBPv400CreateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
-        const response = await this.oBPv400CreateJsonSchemaValidationRaw(requestParameters, initOverrides);
+    async createJsonSchemaValidation(requestParameters: CreateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
+        const response = await this.createJsonSchemaValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteJsonSchemaValidation without sending the request
+     * Creates request options for deleteJsonSchemaValidation without sending the request
      */
-    async oBPv400DeleteJsonSchemaValidationRequestOpts(requestParameters: OBPv400DeleteJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
+    async deleteJsonSchemaValidationRequestOpts(requestParameters: DeleteJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400DeleteJsonSchemaValidation().'
+                'Required parameter "operationid" was null or undefined when calling deleteJsonSchemaValidation().'
             );
         }
 
@@ -146,7 +146,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -165,8 +165,8 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Delete a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a JSON Schema Validation
      */
-    async oBPv400DeleteJsonSchemaValidationRaw(requestParameters: OBPv400DeleteJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteJsonSchemaValidationRequestOpts(requestParameters);
+    async deleteJsonSchemaValidationRaw(requestParameters: DeleteJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteJsonSchemaValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -176,14 +176,14 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Delete a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a JSON Schema Validation
      */
-    async oBPv400DeleteJsonSchemaValidation(requestParameters: OBPv400DeleteJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteJsonSchemaValidationRaw(requestParameters, initOverrides);
+    async deleteJsonSchemaValidation(requestParameters: DeleteJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteJsonSchemaValidationRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetAllJsonSchemaValidations without sending the request
+     * Creates request options for getAllJsonSchemaValidations without sending the request
      */
-    async oBPv400GetAllJsonSchemaValidationsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllJsonSchemaValidationsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -198,7 +198,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -216,26 +216,26 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Get all JSON Schema Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get all JSON Schema Validations
      */
-    async oBPv400GetAllJsonSchemaValidationsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response>> {
-        const requestOptions = await this.oBPv400GetAllJsonSchemaValidationsRequestOpts();
+    async getAllJsonSchemaValidationsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllJsonSchemaValidationsPublic200Response>> {
+        const requestOptions = await this.getAllJsonSchemaValidationsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllJsonSchemaValidationsPublic200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllJsonSchemaValidationsPublic200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all JSON Schema Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get all JSON Schema Validations
      */
-    async oBPv400GetAllJsonSchemaValidations(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllJsonSchemaValidationsPublic200Response> {
-        const response = await this.oBPv400GetAllJsonSchemaValidationsRaw(initOverrides);
+    async getAllJsonSchemaValidations(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllJsonSchemaValidationsPublic200Response> {
+        const response = await this.getAllJsonSchemaValidationsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetAllJsonSchemaValidationsPublic without sending the request
+     * Creates request options for getAllJsonSchemaValidationsPublic without sending the request
      */
-    async oBPv400GetAllJsonSchemaValidationsPublicRequestOpts(): Promise<runtime.RequestOpts> {
+    async getAllJsonSchemaValidationsPublicRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -255,30 +255,30 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Get all JSON Schema Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get all JSON Schema Validations - public
      */
-    async oBPv400GetAllJsonSchemaValidationsPublicRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200Response>> {
-        const requestOptions = await this.oBPv400GetAllJsonSchemaValidationsPublicRequestOpts();
+    async getAllJsonSchemaValidationsPublicRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllJsonSchemaValidationsPublic200Response>> {
+        const requestOptions = await this.getAllJsonSchemaValidationsPublicRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllJsonSchemaValidationsPublic200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllJsonSchemaValidationsPublic200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all JSON Schema Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get all JSON Schema Validations - public
      */
-    async oBPv400GetAllJsonSchemaValidationsPublic(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllJsonSchemaValidationsPublic200Response> {
-        const response = await this.oBPv400GetAllJsonSchemaValidationsPublicRaw(initOverrides);
+    async getAllJsonSchemaValidationsPublic(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllJsonSchemaValidationsPublic200Response> {
+        const response = await this.getAllJsonSchemaValidationsPublicRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetJsonSchemaValidation without sending the request
+     * Creates request options for getJsonSchemaValidation without sending the request
      */
-    async oBPv400GetJsonSchemaValidationRequestOpts(requestParameters: OBPv400GetJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
+    async getJsonSchemaValidationRequestOpts(requestParameters: GetJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400GetJsonSchemaValidation().'
+                'Required parameter "operationid" was null or undefined when calling getJsonSchemaValidation().'
             );
         }
 
@@ -296,7 +296,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -315,37 +315,37 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Get a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get a JSON Schema Validation
      */
-    async oBPv400GetJsonSchemaValidationRaw(requestParameters: OBPv400GetJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> {
-        const requestOptions = await this.oBPv400GetJsonSchemaValidationRequestOpts(requestParameters);
+    async getJsonSchemaValidationRaw(requestParameters: GetJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> {
+        const requestOptions = await this.getJsonSchemaValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a JSON Schema Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Get a JSON Schema Validation
      */
-    async oBPv400GetJsonSchemaValidation(requestParameters: OBPv400GetJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
-        const response = await this.oBPv400GetJsonSchemaValidationRaw(requestParameters, initOverrides);
+    async getJsonSchemaValidation(requestParameters: GetJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
+        const response = await this.getJsonSchemaValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateJsonSchemaValidation without sending the request
+     * Creates request options for updateJsonSchemaValidation without sending the request
      */
-    async oBPv400UpdateJsonSchemaValidationRequestOpts(requestParameters: OBPv400UpdateJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
+    async updateJsonSchemaValidationRequestOpts(requestParameters: UpdateJsonSchemaValidationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400UpdateJsonSchemaValidation().'
+                'Required parameter "operationid" was null or undefined when calling updateJsonSchemaValidation().'
             );
         }
 
-        if (requestParameters['oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema'] == null) {
+        if (requestParameters['getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema',
-                'Required parameter "oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema" was null or undefined when calling oBPv400UpdateJsonSchemaValidation().'
+                'getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema',
+                'Required parameter "getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema" was null or undefined when calling updateJsonSchemaValidation().'
             );
         }
 
@@ -365,7 +365,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -377,7 +377,7 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchemaToJSON(requestParameters['oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema']),
+            body: GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchemaToJSON(requestParameters['getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema']),
         };
     }
 
@@ -385,19 +385,19 @@ export class JSONSchemaValidationApi extends runtime.BaseAPI {
      * <p>Update a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don\'t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint\'s request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Update a JSON Schema Validation
      */
-    async oBPv400UpdateJsonSchemaValidationRaw(requestParameters: OBPv400UpdateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> {
-        const requestOptions = await this.oBPv400UpdateJsonSchemaValidationRequestOpts(requestParameters);
+    async updateJsonSchemaValidationRaw(requestParameters: UpdateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> {
+        const requestOptions = await this.updateJsonSchemaValidationRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update a JSON Schema Validation.</p> <p>Introduction:</p>   <p>JSON Schema is &quot;a vocabulary that allows you to annotate and validate JSON documents&quot;.</p> <p>By applying JSON Schema Validation to your OBP endpoints you can constrain POST and PUT request bodies. For example, you can set minimum / maximum lengths of fields and constrain values to certain lists or regular expressions.</p> <p>See <a href=\"https://json-schema.org/\">JSONSchema.org</a> for more information about the JSON Schema standard.</p> <p>To create a JSON Schema from an any JSON Request body you can use <a href=\"https://jsonschema.net/app/schemas/0\">JSON Schema Net</a></p> <p>(The video link below shows how to use that)</p> <p>Note: OBP Dynamic Entities also use JSON Schema Validation so you don\'t need to additionally wrap the resulting endpoints with extra JSON Schema Validation but you could do.</p> <p>You can apply JSON schema validations to any OBP endpoint\'s request body using the POST and PUT endpoints listed in the link below.</p> <p>PLEASE SEE the following video explanation: <a href=\"https://vimeo.com/485287014\">JSON schema validation of request for Static and Dynamic Endpoints and Entities</a></p> <p>To use this endpoint, please supply a valid json-schema in the request body.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>$schema</strong></a>: $schema</p> <p><a href=\"/glossary#\"><strong>additionalProperties</strong></a>: additionalProperties</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>examples</strong></a>: examples</p> <p><a href=\"/glossary#\"><strong>json_schema</strong></a>: json_schema</p> <p><a href=\"/glossary#\"><strong>maxLength</strong></a>: maxLength</p> <p><a href=\"/glossary#\"><strong>minLength</strong></a>: minLength</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><a href=\"/glossary#\"><strong>properties</strong></a>: properties</p> <p><a href=\"/glossary#\"><strong>required</strong></a>: required</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>xxx_id</strong></a>: xxx_id</p> 
      * Update a JSON Schema Validation
      */
-    async oBPv400UpdateJsonSchemaValidation(requestParameters: OBPv400UpdateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems> {
-        const response = await this.oBPv400UpdateJsonSchemaValidationRaw(requestParameters, initOverrides);
+    async updateJsonSchemaValidation(requestParameters: UpdateJsonSchemaValidationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner> {
+        const response = await this.updateJsonSchemaValidationRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

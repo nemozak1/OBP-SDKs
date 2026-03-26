@@ -19,13 +19,13 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-import com.openbankproject.models.OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
-import com.openbankproject.models.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributeById200Response
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributeDefinition200Response
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-import com.openbankproject.models.OBPv400GetTransactionRequestAttributes200Response
+import com.openbankproject.models.CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+import com.openbankproject.models.CreateTransactionRequestCounterpartyRequestAttributesInner
+import com.openbankproject.models.DeleteSystemLevelEndpointTag200Response
+import com.openbankproject.models.GetTransactionRequestAttributeById200Response
+import com.openbankproject.models.GetTransactionRequestAttributeDefinition200Response
+import com.openbankproject.models.GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+import com.openbankproject.models.GetTransactionRequestAttributes200Response
 
 import com.squareup.moshi.Json
 
@@ -47,7 +47,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -56,8 +56,8 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * Create or Update Transaction Request Attribute Definition
      * &lt;p&gt;Create or Update Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be TransactionRequest&lt;/p&gt; &lt;p&gt;The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
-     * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -66,11 +66,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateOrUpdateTransactionRequestAttributeDefinition(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems {
-        val localVarResponse = oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+    fun createOrUpdateTransactionRequestAttributeDefinition(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : GetTransactionRequestAttributeDefinition200ResponseAttributesInner {
+        val localVarResponse = createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeDefinition200ResponseAttributesInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -89,30 +89,30 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * Create or Update Transaction Request Attribute Definition
      * &lt;p&gt;Create or Update Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be TransactionRequest&lt;/p&gt; &lt;p&gt;The type field must be one of: DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?>
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @return ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems?> {
-        val localVariableConfig = oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+    fun createOrUpdateTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner?> {
+        val localVariableConfig = createOrUpdateTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest = createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
-        return request<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+        return request<CreateOrUpdateTransactionRequestAttributeDefinitionRequest, GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateOrUpdateTransactionRequestAttributeDefinition
+     * To obtain the request config of the operation createOrUpdateTransactionRequestAttributeDefinition
      *
      * @param bankid The BANKID identifier
-     * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body
+     * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : RequestConfig<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
-        val localVariableBody = obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+    fun createOrUpdateTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest) : RequestConfig<CreateOrUpdateTransactionRequestAttributeDefinitionRequest> {
+        val localVariableBody = createOrUpdateTransactionRequestAttributeDefinitionRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -135,8 +135,8 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
-     * @return OBPv400GetTransactionRequestAttributeById200Response
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
+     * @return GetTransactionRequestAttributeById200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -145,11 +145,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateTransactionRequestAttribute(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : OBPv400GetTransactionRequestAttributeById200Response {
-        val localVarResponse = oBPv400CreateTransactionRequestAttributeWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    fun createTransactionRequestAttribute(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : GetTransactionRequestAttributeById200Response {
+        val localVarResponse = createTransactionRequestAttributeWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterpartyRequestAttributesInner)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeById200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeById200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -170,32 +170,32 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?>
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
+     * @return ApiResponse<GetTransactionRequestAttributeById200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateTransactionRequestAttributeWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?> {
-        val localVariableConfig = oBPv400CreateTransactionRequestAttributeRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    fun createTransactionRequestAttributeWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : ApiResponse<GetTransactionRequestAttributeById200Response?> {
+        val localVariableConfig = createTransactionRequestAttributeRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterpartyRequestAttributesInner)
 
-        return request<OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, OBPv400GetTransactionRequestAttributeById200Response>(
+        return request<CreateTransactionRequestCounterpartyRequestAttributesInner, GetTransactionRequestAttributeById200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateTransactionRequestAttribute
+     * To obtain the request config of the operation createTransactionRequestAttribute
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateTransactionRequestAttributeRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : RequestConfig<OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems> {
-        val localVariableBody = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+    fun createTransactionRequestAttributeRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : RequestConfig<CreateTransactionRequestCounterpartyRequestAttributesInner> {
+        val localVariableBody = createTransactionRequestCounterpartyRequestAttributesInner
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -217,7 +217,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * &lt;p&gt;Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
-     * @return OBPv400DeleteSystemLevelEndpointTag200Response
+     * @return DeleteSystemLevelEndpointTag200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -226,11 +226,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteTransactionRequestAttributeDefinition(bankid: kotlin.String, attributedefinitionid: kotlin.String) : OBPv400DeleteSystemLevelEndpointTag200Response {
-        val localVarResponse = oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid, attributedefinitionid = attributedefinitionid)
+    fun deleteTransactionRequestAttributeDefinition(bankid: kotlin.String, attributedefinitionid: kotlin.String) : DeleteSystemLevelEndpointTag200Response {
+        val localVarResponse = deleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid, attributedefinitionid = attributedefinitionid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400DeleteSystemLevelEndpointTag200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DeleteSystemLevelEndpointTag200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -250,28 +250,28 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * &lt;p&gt;Delete Transaction Request Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
-     * @return ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?>
+     * @return ApiResponse<DeleteSystemLevelEndpointTag200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String, attributedefinitionid: kotlin.String) : ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response?> {
-        val localVariableConfig = oBPv400DeleteTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid, attributedefinitionid = attributedefinitionid)
+    fun deleteTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String, attributedefinitionid: kotlin.String) : ApiResponse<DeleteSystemLevelEndpointTag200Response?> {
+        val localVariableConfig = deleteTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid, attributedefinitionid = attributedefinitionid)
 
-        return request<Unit, OBPv400DeleteSystemLevelEndpointTag200Response>(
+        return request<Unit, DeleteSystemLevelEndpointTag200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteTransactionRequestAttributeDefinition
+     * To obtain the request config of the operation deleteTransactionRequestAttributeDefinition
      *
      * @param bankid The BANKID identifier
      * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String, attributedefinitionid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String, attributedefinitionid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -295,7 +295,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @param attributeid The ATTRIBUTEID identifier
-     * @return OBPv400GetTransactionRequestAttributeById200Response
+     * @return GetTransactionRequestAttributeById200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -304,11 +304,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetTransactionRequestAttributeById(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : OBPv400GetTransactionRequestAttributeById200Response {
-        val localVarResponse = oBPv400GetTransactionRequestAttributeByIdWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid)
+    fun getTransactionRequestAttributeById(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : GetTransactionRequestAttributeById200Response {
+        val localVarResponse = getTransactionRequestAttributeByIdWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeById200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeById200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -330,22 +330,22 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @param attributeid The ATTRIBUTEID identifier
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?>
+     * @return ApiResponse<GetTransactionRequestAttributeById200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetTransactionRequestAttributeByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?> {
-        val localVariableConfig = oBPv400GetTransactionRequestAttributeByIdRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid)
+    fun getTransactionRequestAttributeByIdWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : ApiResponse<GetTransactionRequestAttributeById200Response?> {
+        val localVariableConfig = getTransactionRequestAttributeByIdRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid)
 
-        return request<Unit, OBPv400GetTransactionRequestAttributeById200Response>(
+        return request<Unit, GetTransactionRequestAttributeById200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetTransactionRequestAttributeById
+     * To obtain the request config of the operation getTransactionRequestAttributeById
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
@@ -353,7 +353,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param attributeid The ATTRIBUTEID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetTransactionRequestAttributeByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : RequestConfig<Unit> {
+    fun getTransactionRequestAttributeByIdRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -374,7 +374,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * Get Transaction Request Attribute Definition
      * &lt;p&gt;Get Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+     * @return GetTransactionRequestAttributeDefinition200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -383,11 +383,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetTransactionRequestAttributeDefinition(bankid: kotlin.String) : OBPv400GetTransactionRequestAttributeDefinition200Response {
-        val localVarResponse = oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid)
+    fun getTransactionRequestAttributeDefinition(bankid: kotlin.String) : GetTransactionRequestAttributeDefinition200Response {
+        val localVarResponse = getTransactionRequestAttributeDefinitionWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeDefinition200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeDefinition200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -406,27 +406,27 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * Get Transaction Request Attribute Definition
      * &lt;p&gt;Get Transaction Request Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response?>
+     * @return ApiResponse<GetTransactionRequestAttributeDefinition200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response?> {
-        val localVariableConfig = oBPv400GetTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid)
+    fun getTransactionRequestAttributeDefinitionWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetTransactionRequestAttributeDefinition200Response?> {
+        val localVariableConfig = getTransactionRequestAttributeDefinitionRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetTransactionRequestAttributeDefinition200Response>(
+        return request<Unit, GetTransactionRequestAttributeDefinition200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetTransactionRequestAttributeDefinition
+     * To obtain the request config of the operation getTransactionRequestAttributeDefinition
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getTransactionRequestAttributeDefinitionRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -449,7 +449,7 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-     * @return OBPv400GetTransactionRequestAttributes200Response
+     * @return GetTransactionRequestAttributes200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -458,11 +458,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetTransactionRequestAttributes(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : OBPv400GetTransactionRequestAttributes200Response {
-        val localVarResponse = oBPv400GetTransactionRequestAttributesWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid)
+    fun getTransactionRequestAttributes(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : GetTransactionRequestAttributes200Response {
+        val localVarResponse = getTransactionRequestAttributesWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributes200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributes200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -483,29 +483,29 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributes200Response?>
+     * @return ApiResponse<GetTransactionRequestAttributes200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetTransactionRequestAttributesWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : ApiResponse<OBPv400GetTransactionRequestAttributes200Response?> {
-        val localVariableConfig = oBPv400GetTransactionRequestAttributesRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid)
+    fun getTransactionRequestAttributesWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : ApiResponse<GetTransactionRequestAttributes200Response?> {
+        val localVariableConfig = getTransactionRequestAttributesRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid)
 
-        return request<Unit, OBPv400GetTransactionRequestAttributes200Response>(
+        return request<Unit, GetTransactionRequestAttributes200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetTransactionRequestAttributes
+     * To obtain the request config of the operation getTransactionRequestAttributes
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetTransactionRequestAttributesRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : RequestConfig<Unit> {
+    fun getTransactionRequestAttributesRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -529,8 +529,8 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @param attributeid The ATTRIBUTEID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
-     * @return OBPv400GetTransactionRequestAttributeById200Response
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
+     * @return GetTransactionRequestAttributeById200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -539,11 +539,11 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateTransactionRequestAttribute(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : OBPv400GetTransactionRequestAttributeById200Response {
-        val localVarResponse = oBPv400UpdateTransactionRequestAttributeWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    fun updateTransactionRequestAttribute(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : GetTransactionRequestAttributeById200Response {
+        val localVarResponse = updateTransactionRequestAttributeWithHttpInfo(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid, createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterpartyRequestAttributesInner)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetTransactionRequestAttributeById200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetTransactionRequestAttributeById200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -565,33 +565,33 @@ open class TransactionRequestAttributeApi(basePath: kotlin.String = defaultBaseP
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @param attributeid The ATTRIBUTEID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
-     * @return ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?>
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
+     * @return ApiResponse<GetTransactionRequestAttributeById200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateTransactionRequestAttributeWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : ApiResponse<OBPv400GetTransactionRequestAttributeById200Response?> {
-        val localVariableConfig = oBPv400UpdateTransactionRequestAttributeRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems)
+    fun updateTransactionRequestAttributeWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : ApiResponse<GetTransactionRequestAttributeById200Response?> {
+        val localVariableConfig = updateTransactionRequestAttributeRequestConfig(bankid = bankid, accountid = accountid, transactionrequestid = transactionrequestid, attributeid = attributeid, createTransactionRequestCounterpartyRequestAttributesInner = createTransactionRequestCounterpartyRequestAttributesInner)
 
-        return request<OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems, OBPv400GetTransactionRequestAttributeById200Response>(
+        return request<CreateTransactionRequestCounterpartyRequestAttributesInner, GetTransactionRequestAttributeById200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateTransactionRequestAttribute
+     * To obtain the request config of the operation updateTransactionRequestAttribute
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param transactionrequestid The TRANSACTIONREQUESTID identifier
      * @param attributeid The ATTRIBUTEID identifier
-     * @param obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems Request body
+     * @param createTransactionRequestCounterpartyRequestAttributesInner Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateTransactionRequestAttributeRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems: OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems) : RequestConfig<OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems> {
-        val localVariableBody = obPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems
+    fun updateTransactionRequestAttributeRequestConfig(bankid: kotlin.String, accountid: kotlin.String, transactionrequestid: kotlin.String, attributeid: kotlin.String, createTransactionRequestCounterpartyRequestAttributesInner: CreateTransactionRequestCounterpartyRequestAttributesInner) : RequestConfig<CreateTransactionRequestCounterpartyRequestAttributesInner> {
+        val localVariableBody = createTransactionRequestCounterpartyRequestAttributesInner
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

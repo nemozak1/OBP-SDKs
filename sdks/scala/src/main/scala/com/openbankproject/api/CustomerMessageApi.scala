@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,17 +11,17 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response
-import com.openbankproject.model.OBPv140AddCustomerMessageRequest
-import com.openbankproject.model.OBPv140GetCustomersMessages200Response
-import com.openbankproject.model.OBPv400CreateCustomerMessageRequest
-import com.openbankproject.model.OBPv400GetCustomerMessages200Response
+import com.openbankproject.model.AddCustomerMessageRequest
+import com.openbankproject.model.CreateCustomerMessageRequest
+import com.openbankproject.model.GetCustomerMessages200Response
+import com.openbankproject.model.GetCustomersMessages200Response
+import com.openbankproject.model.UpdateTransactionNarrative200Response
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object CustomerMessageApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new CustomerMessageApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new CustomerMessageApi(baseUrl)
 }
 
 class CustomerMessageApi(baseUrl: String) {
@@ -30,7 +30,7 @@ class CustomerMessageApi(baseUrl: String) {
    * <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -39,43 +39,22 @@ class CustomerMessageApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv140AddCustomerMessageRequest Request body
+   * @param addCustomerMessageRequest Request body
    */
-  def oBPv140AddCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv140AddCustomerMessageRequest: OBPv140AddCustomerMessageRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def addCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, addCustomerMessageRequest: AddCustomerMessageRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/${customerid}/messages")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv140AddCustomerMessageRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
-
-  /**
-   * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv140GetCustomersMessages200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param bankid The BANKID identifier
-   */
-  def oBPv140GetCustomersMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv140GetCustomersMessages200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/messages")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv140GetCustomersMessages200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(addCustomerMessageRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv121UpdateTransactionNarrative200Response (Successful operation)
+   *   code 200 : UpdateTransactionNarrative200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -85,22 +64,22 @@ class CustomerMessageApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
-   * @param oBPv400CreateCustomerMessageRequest Request body
+   * @param createCustomerMessageRequest Request body
    */
-  def oBPv400CreateCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, oBPv400CreateCustomerMessageRequest: OBPv400CreateCustomerMessageRequest): Request[Either[ResponseException[String, Exception], OBPv121UpdateTransactionNarrative200Response]] =
+  def createCustomerMessage(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String, createCustomerMessageRequest: CreateCustomerMessageRequest): Request[Either[ResponseException[String, Exception], UpdateTransactionNarrative200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/messages")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateCustomerMessageRequest)
-      .response(asJson[OBPv121UpdateTransactionNarrative200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createCustomerMessageRequest)
+      .response(asJson[UpdateTransactionNarrative200Response])
 
   /**
    * <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetCustomerMessages200Response (Successful operation)
+   *   code 200 : GetCustomerMessages200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -111,12 +90,33 @@ class CustomerMessageApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param customerid The CUSTOMERID identifier
    */
-  def oBPv400GetCustomerMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], OBPv400GetCustomerMessages200Response]] =
+  def getCustomerMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, customerid: String): Request[Either[ResponseException[String, Exception], GetCustomerMessages200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/customers/${customerid}/messages")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomerMessages200Response])
+
+  /**
+   * <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetCustomersMessages200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param bankid The BANKID identifier
+   */
+  def getCustomersMessages(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetCustomersMessages200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v1.4.0/banks/${bankid}/customer/messages")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetCustomerMessages200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetCustomersMessages200Response])
 
 }

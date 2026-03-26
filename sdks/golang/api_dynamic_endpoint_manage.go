@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // DynamicEndpointManageAPIService DynamicEndpointManageAPI service
 type DynamicEndpointManageAPIService service
 
-type ApiOBPv400CreateBankLevelDynamicEndpointRequest struct {
+type ApiCreateBankLevelDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	bankid string
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString *GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 }
 
 // Request body
-func (r ApiOBPv400CreateBankLevelDynamicEndpointRequest) OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) ApiOBPv400CreateBankLevelDynamicEndpointRequest {
-	r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = &oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+func (r ApiCreateBankLevelDynamicEndpointRequest) GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) ApiCreateBankLevelDynamicEndpointRequest {
+	r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = &getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 	return r
 }
 
-func (r ApiOBPv400CreateBankLevelDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelDynamicEndpointExecute(r)
+func (r ApiCreateBankLevelDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400CreateBankLevelDynamicEndpoint Create Bank Level Dynamic Endpoint
+CreateBankLevelDynamicEndpoint Create Bank Level Dynamic Endpoint
 
 <p>Create dynamic endpoints.</p>
 <p>Create dynamic endpoints with one json format swagger content.</p>
@@ -55,10 +55,10 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankLevelDynamicEndpointRequest
+ @return ApiCreateBankLevelDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpoint(ctx context.Context, bankid string) ApiOBPv400CreateBankLevelDynamicEndpointRequest {
-	return ApiOBPv400CreateBankLevelDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) CreateBankLevelDynamicEndpoint(ctx context.Context, bankid string) ApiCreateBankLevelDynamicEndpointRequest {
+	return ApiCreateBankLevelDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -66,16 +66,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpoint(
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpointExecute(r ApiOBPv400CreateBankLevelDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *DynamicEndpointManageAPIService) CreateBankLevelDynamicEndpointExecute(r ApiCreateBankLevelDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400CreateBankLevelDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.CreateBankLevelDynamicEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -86,8 +86,8 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpointE
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString is required and must be specified")
+	if r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == nil {
+		return localVarReturnValue, nil, reportError("getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -108,7 +108,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpointE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+	localVarPostBody = r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -133,7 +133,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpointE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -174,24 +174,24 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateBankLevelDynamicEndpointE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateDynamicEndpointRequest struct {
+type ApiCreateDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString *GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 }
 
 // Request body
-func (r ApiOBPv400CreateDynamicEndpointRequest) OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) ApiOBPv400CreateDynamicEndpointRequest {
-	r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = &oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+func (r ApiCreateDynamicEndpointRequest) GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) ApiCreateDynamicEndpointRequest {
+	r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = &getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 	return r
 }
 
-func (r ApiOBPv400CreateDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDynamicEndpointExecute(r)
+func (r ApiCreateDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400CreateDynamicEndpoint Create Dynamic Endpoint
+CreateDynamicEndpoint Create Dynamic Endpoint
 
 <p>Create dynamic endpoints.</p>
 <p>Create dynamic endpoints with one json format swagger content.</p>
@@ -203,26 +203,26 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateDynamicEndpointRequest
+ @return ApiCreateDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpoint(ctx context.Context) ApiOBPv400CreateDynamicEndpointRequest {
-	return ApiOBPv400CreateDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) CreateDynamicEndpoint(ctx context.Context) ApiCreateDynamicEndpointRequest {
+	return ApiCreateDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpointExecute(r ApiOBPv400CreateDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *DynamicEndpointManageAPIService) CreateDynamicEndpointExecute(r ApiCreateDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400CreateDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.CreateDynamicEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -232,8 +232,8 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpointExecute(r 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString is required and must be specified")
+	if r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == nil {
+		return localVarReturnValue, nil, reportError("getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -254,7 +254,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpointExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+	localVarPostBody = r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -279,7 +279,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpointExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -320,19 +320,19 @@ func (a *DynamicEndpointManageAPIService) OBPv400CreateDynamicEndpointExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteBankLevelDynamicEndpointRequest struct {
+type ApiDeleteBankLevelDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	bankid string
 	dynamicendpointid string
 }
 
-func (r ApiOBPv400DeleteBankLevelDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicEndpointExecute(r)
+func (r ApiDeleteBankLevelDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelDynamicEndpoint  Delete Bank Level Dynamic Endpoint
+DeleteBankLevelDynamicEndpoint  Delete Bank Level Dynamic Endpoint
 
 <p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -341,10 +341,10 @@ OBPv400DeleteBankLevelDynamicEndpoint  Delete Bank Level Dynamic Endpoint
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteBankLevelDynamicEndpointRequest
+ @return ApiDeleteBankLevelDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400DeleteBankLevelDynamicEndpointRequest {
-	return ApiOBPv400DeleteBankLevelDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) DeleteBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiDeleteBankLevelDynamicEndpointRequest {
+	return ApiDeleteBankLevelDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -353,14 +353,14 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteBankLevelDynamicEndpoint(
 }
 
 // Execute executes the request
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteBankLevelDynamicEndpointExecute(r ApiOBPv400DeleteBankLevelDynamicEndpointRequest) (*http.Response, error) {
+func (a *DynamicEndpointManageAPIService) DeleteBankLevelDynamicEndpointExecute(r ApiDeleteBankLevelDynamicEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400DeleteBankLevelDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.DeleteBankLevelDynamicEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -414,7 +414,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteBankLevelDynamicEndpointE
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -446,18 +446,18 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteBankLevelDynamicEndpointE
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteDynamicEndpointRequest struct {
+type ApiDeleteDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	dynamicendpointid string
 }
 
-func (r ApiOBPv400DeleteDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteDynamicEndpointExecute(r)
+func (r ApiDeleteDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400DeleteDynamicEndpoint  Delete Dynamic Endpoint
+DeleteDynamicEndpoint  Delete Dynamic Endpoint
 
 <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -465,10 +465,10 @@ OBPv400DeleteDynamicEndpoint  Delete Dynamic Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteDynamicEndpointRequest
+ @return ApiDeleteDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400DeleteDynamicEndpointRequest {
-	return ApiOBPv400DeleteDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) DeleteDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiDeleteDynamicEndpointRequest {
+	return ApiDeleteDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicendpointid: dynamicendpointid,
@@ -476,14 +476,14 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteDynamicEndpoint(ctx conte
 }
 
 // Execute executes the request
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteDynamicEndpointExecute(r ApiOBPv400DeleteDynamicEndpointRequest) (*http.Response, error) {
+func (a *DynamicEndpointManageAPIService) DeleteDynamicEndpointExecute(r ApiDeleteDynamicEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400DeleteDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.DeleteDynamicEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -536,7 +536,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteDynamicEndpointExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -568,18 +568,18 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteDynamicEndpointExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteMyDynamicEndpointRequest struct {
+type ApiDeleteMyDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	dynamicendpointid string
 }
 
-func (r ApiOBPv400DeleteMyDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyDynamicEndpointExecute(r)
+func (r ApiDeleteMyDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMyDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400DeleteMyDynamicEndpoint Delete My Dynamic Endpoint
+DeleteMyDynamicEndpoint Delete My Dynamic Endpoint
 
 <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -587,10 +587,10 @@ OBPv400DeleteMyDynamicEndpoint Delete My Dynamic Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteMyDynamicEndpointRequest
+ @return ApiDeleteMyDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteMyDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400DeleteMyDynamicEndpointRequest {
-	return ApiOBPv400DeleteMyDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) DeleteMyDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiDeleteMyDynamicEndpointRequest {
+	return ApiDeleteMyDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicendpointid: dynamicendpointid,
@@ -598,14 +598,14 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteMyDynamicEndpoint(ctx con
 }
 
 // Execute executes the request
-func (a *DynamicEndpointManageAPIService) OBPv400DeleteMyDynamicEndpointExecute(r ApiOBPv400DeleteMyDynamicEndpointRequest) (*http.Response, error) {
+func (a *DynamicEndpointManageAPIService) DeleteMyDynamicEndpointExecute(r ApiDeleteMyDynamicEndpointRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400DeleteMyDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.DeleteMyDynamicEndpoint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -658,7 +658,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteMyDynamicEndpointExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -690,19 +690,19 @@ func (a *DynamicEndpointManageAPIService) OBPv400DeleteMyDynamicEndpointExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankLevelDynamicEndpointRequest struct {
+type ApiGetBankLevelDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	bankid string
 	dynamicendpointid string
 }
 
-func (r ApiOBPv400GetBankLevelDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicEndpointExecute(r)
+func (r ApiGetBankLevelDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400GetBankLevelDynamicEndpoint  Get Bank Level Dynamic Endpoint
+GetBankLevelDynamicEndpoint  Get Bank Level Dynamic Endpoint
 
 <p>Get a Bank Level Dynamic Endpoint.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -711,10 +711,10 @@ OBPv400GetBankLevelDynamicEndpoint  Get Bank Level Dynamic Endpoint
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400GetBankLevelDynamicEndpointRequest
+ @return ApiGetBankLevelDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400GetBankLevelDynamicEndpointRequest {
-	return ApiOBPv400GetBankLevelDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) GetBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiGetBankLevelDynamicEndpointRequest {
+	return ApiGetBankLevelDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -723,16 +723,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpoint(ctx
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointExecute(r ApiOBPv400GetBankLevelDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *DynamicEndpointManageAPIService) GetBankLevelDynamicEndpointExecute(r ApiGetBankLevelDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400GetBankLevelDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.GetBankLevelDynamicEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -786,7 +786,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointExec
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -827,18 +827,18 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetBankLevelDynamicEndpointsRequest struct {
+type ApiGetBankLevelDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	bankid string
 }
 
-func (r ApiOBPv400GetBankLevelDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicEndpointsExecute(r)
+func (r ApiGetBankLevelDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv400GetBankLevelDynamicEndpoints Get Bank Level Dynamic Endpoints
+GetBankLevelDynamicEndpoints Get Bank Level Dynamic Endpoints
 
 <p>Get Bank Level Dynamic Endpoints.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -846,10 +846,10 @@ OBPv400GetBankLevelDynamicEndpoints Get Bank Level Dynamic Endpoints
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv400GetBankLevelDynamicEndpointsRequest
+ @return ApiGetBankLevelDynamicEndpointsRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpoints(ctx context.Context, bankid string) ApiOBPv400GetBankLevelDynamicEndpointsRequest {
-	return ApiOBPv400GetBankLevelDynamicEndpointsRequest{
+func (a *DynamicEndpointManageAPIService) GetBankLevelDynamicEndpoints(ctx context.Context, bankid string) ApiGetBankLevelDynamicEndpointsRequest {
+	return ApiGetBankLevelDynamicEndpointsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -857,16 +857,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpoints(ct
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointsExecute(r ApiOBPv400GetBankLevelDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
+//  @return GetDynamicEndpoints200Response
+func (a *DynamicEndpointManageAPIService) GetBankLevelDynamicEndpointsExecute(r ApiGetBankLevelDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
+		localVarReturnValue  *GetDynamicEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400GetBankLevelDynamicEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.GetBankLevelDynamicEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -919,7 +919,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointsExe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -960,18 +960,18 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetBankLevelDynamicEndpointsExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetDynamicEndpointRequest struct {
+type ApiGetDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	dynamicendpointid string
 }
 
-func (r ApiOBPv400GetDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicEndpointExecute(r)
+func (r ApiGetDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.GetDynamicEndpointExecute(r)
 }
 
 /*
-OBPv400GetDynamicEndpoint Get Dynamic Endpoint
+GetDynamicEndpoint Get Dynamic Endpoint
 
 <p>Get a Dynamic Endpoint.</p>
 <p>Get one DynamicEndpoint,</p>
@@ -980,10 +980,10 @@ OBPv400GetDynamicEndpoint Get Dynamic Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400GetDynamicEndpointRequest
+ @return ApiGetDynamicEndpointRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400GetDynamicEndpointRequest {
-	return ApiOBPv400GetDynamicEndpointRequest{
+func (a *DynamicEndpointManageAPIService) GetDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiGetDynamicEndpointRequest {
+	return ApiGetDynamicEndpointRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicendpointid: dynamicendpointid,
@@ -991,16 +991,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpoint(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointExecute(r ApiOBPv400GetDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *DynamicEndpointManageAPIService) GetDynamicEndpointExecute(r ApiGetDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400GetDynamicEndpoint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.GetDynamicEndpoint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1053,7 +1053,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1094,43 +1094,43 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetDynamicEndpointsRequest struct {
+type ApiGetDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 }
 
-func (r ApiOBPv400GetDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicEndpointsExecute(r)
+func (r ApiGetDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv400GetDynamicEndpoints  Get Dynamic Endpoints
+GetDynamicEndpoints  Get Dynamic Endpoints
 
 <p>Get Dynamic Endpoints.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetDynamicEndpointsRequest
+ @return ApiGetDynamicEndpointsRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpoints(ctx context.Context) ApiOBPv400GetDynamicEndpointsRequest {
-	return ApiOBPv400GetDynamicEndpointsRequest{
+func (a *DynamicEndpointManageAPIService) GetDynamicEndpoints(ctx context.Context) ApiGetDynamicEndpointsRequest {
+	return ApiGetDynamicEndpointsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointsExecute(r ApiOBPv400GetDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
+//  @return GetDynamicEndpoints200Response
+func (a *DynamicEndpointManageAPIService) GetDynamicEndpointsExecute(r ApiGetDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
+		localVarReturnValue  *GetDynamicEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400GetDynamicEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.GetDynamicEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1182,7 +1182,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointsExecute(r Ap
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1223,43 +1223,43 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetDynamicEndpointsExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetMyDynamicEndpointsRequest struct {
+type ApiGetMyDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 }
 
-func (r ApiOBPv400GetMyDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyDynamicEndpointsExecute(r)
+func (r ApiGetMyDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetMyDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv400GetMyDynamicEndpoints Get My Dynamic Endpoints
+GetMyDynamicEndpoints Get My Dynamic Endpoints
 
 <p>Get My Dynamic Endpoints.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetMyDynamicEndpointsRequest
+ @return ApiGetMyDynamicEndpointsRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400GetMyDynamicEndpoints(ctx context.Context) ApiOBPv400GetMyDynamicEndpointsRequest {
-	return ApiOBPv400GetMyDynamicEndpointsRequest{
+func (a *DynamicEndpointManageAPIService) GetMyDynamicEndpoints(ctx context.Context) ApiGetMyDynamicEndpointsRequest {
+	return ApiGetMyDynamicEndpointsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *DynamicEndpointManageAPIService) OBPv400GetMyDynamicEndpointsExecute(r ApiOBPv400GetMyDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
+//  @return GetDynamicEndpoints200Response
+func (a *DynamicEndpointManageAPIService) GetMyDynamicEndpointsExecute(r ApiGetMyDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
+		localVarReturnValue  *GetDynamicEndpoints200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400GetMyDynamicEndpoints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.GetMyDynamicEndpoints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1311,7 +1311,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetMyDynamicEndpointsExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1352,26 +1352,26 @@ func (a *DynamicEndpointManageAPIService) OBPv400GetMyDynamicEndpointsExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest struct {
+type ApiUpdateBankLevelDynamicEndpointHostRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	bankid string
 	dynamicendpointid string
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest *OBPv400UpdateBankLevelDynamicEndpointHostRequest
+	updateBankLevelDynamicEndpointHostRequest *UpdateBankLevelDynamicEndpointHostRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHostRequest) ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest {
-	r.oBPv400UpdateBankLevelDynamicEndpointHostRequest = &oBPv400UpdateBankLevelDynamicEndpointHostRequest
+func (r ApiUpdateBankLevelDynamicEndpointHostRequest) UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHostRequest) ApiUpdateBankLevelDynamicEndpointHostRequest {
+	r.updateBankLevelDynamicEndpointHostRequest = &updateBankLevelDynamicEndpointHostRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) Execute() (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelDynamicEndpointHostExecute(r)
+func (r ApiUpdateBankLevelDynamicEndpointHostRequest) Execute() (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicEndpointHostExecute(r)
 }
 
 /*
-OBPv400UpdateBankLevelDynamicEndpointHost  Update Bank Level Dynamic Endpoint Host
+UpdateBankLevelDynamicEndpointHost  Update Bank Level Dynamic Endpoint Host
 
 <p>Update Bank Level  dynamic endpoint Host.<br />
 The value can be obp_mock, dynamic_entity, or some service url.</p>
@@ -1381,10 +1381,10 @@ The value can be obp_mock, dynamic_entity, or some service url.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest
+ @return ApiUpdateBankLevelDynamicEndpointHostRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointHost(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest {
-	return ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest{
+func (a *DynamicEndpointManageAPIService) UpdateBankLevelDynamicEndpointHost(ctx context.Context, bankid string, dynamicendpointid string) ApiUpdateBankLevelDynamicEndpointHostRequest {
+	return ApiUpdateBankLevelDynamicEndpointHostRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1393,16 +1393,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointH
 }
 
 // Execute executes the request
-//  @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
-func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointHostExecute(r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+//  @return UpdateBankLevelDynamicEndpointHostRequest
+func (a *DynamicEndpointManageAPIService) UpdateBankLevelDynamicEndpointHostExecute(r ApiUpdateBankLevelDynamicEndpointHostRequest) (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateBankLevelDynamicEndpointHostRequest
+		localVarReturnValue  *UpdateBankLevelDynamicEndpointHostRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400UpdateBankLevelDynamicEndpointHost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.UpdateBankLevelDynamicEndpointHost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1414,8 +1414,8 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointH
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicEndpointHostRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicEndpointHostRequest is required and must be specified")
+	if r.updateBankLevelDynamicEndpointHostRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicEndpointHostRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1436,7 +1436,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointH
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicEndpointHostRequest
+	localVarPostBody = r.updateBankLevelDynamicEndpointHostRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1461,7 +1461,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointH
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1502,25 +1502,25 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateBankLevelDynamicEndpointH
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateDynamicEndpointHostRequest struct {
+type ApiUpdateDynamicEndpointHostRequest struct {
 	ctx context.Context
 	ApiService *DynamicEndpointManageAPIService
 	dynamicendpointid string
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest *OBPv400UpdateBankLevelDynamicEndpointHostRequest
+	updateBankLevelDynamicEndpointHostRequest *UpdateBankLevelDynamicEndpointHostRequest
 }
 
 // Request body
-func (r ApiOBPv400UpdateDynamicEndpointHostRequest) OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHostRequest) ApiOBPv400UpdateDynamicEndpointHostRequest {
-	r.oBPv400UpdateBankLevelDynamicEndpointHostRequest = &oBPv400UpdateBankLevelDynamicEndpointHostRequest
+func (r ApiUpdateDynamicEndpointHostRequest) UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHostRequest) ApiUpdateDynamicEndpointHostRequest {
+	r.updateBankLevelDynamicEndpointHostRequest = &updateBankLevelDynamicEndpointHostRequest
 	return r
 }
 
-func (r ApiOBPv400UpdateDynamicEndpointHostRequest) Execute() (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateDynamicEndpointHostExecute(r)
+func (r ApiUpdateDynamicEndpointHostRequest) Execute() (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	return r.ApiService.UpdateDynamicEndpointHostExecute(r)
 }
 
 /*
-OBPv400UpdateDynamicEndpointHost  Update Dynamic Endpoint Host
+UpdateDynamicEndpointHost  Update Dynamic Endpoint Host
 
 <p>Update dynamic endpoint Host.<br />
 The value can be obp_mock, dynamic_entity, or some service url.</p>
@@ -1529,10 +1529,10 @@ The value can be obp_mock, dynamic_entity, or some service url.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400UpdateDynamicEndpointHostRequest
+ @return ApiUpdateDynamicEndpointHostRequest
 */
-func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHost(ctx context.Context, dynamicendpointid string) ApiOBPv400UpdateDynamicEndpointHostRequest {
-	return ApiOBPv400UpdateDynamicEndpointHostRequest{
+func (a *DynamicEndpointManageAPIService) UpdateDynamicEndpointHost(ctx context.Context, dynamicendpointid string) ApiUpdateDynamicEndpointHostRequest {
+	return ApiUpdateDynamicEndpointHostRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicendpointid: dynamicendpointid,
@@ -1540,16 +1540,16 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHost(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
-func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHostExecute(r ApiOBPv400UpdateDynamicEndpointHostRequest) (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+//  @return UpdateBankLevelDynamicEndpointHostRequest
+func (a *DynamicEndpointManageAPIService) UpdateDynamicEndpointHostExecute(r ApiUpdateDynamicEndpointHostRequest) (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateBankLevelDynamicEndpointHostRequest
+		localVarReturnValue  *UpdateBankLevelDynamicEndpointHostRequest
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.OBPv400UpdateDynamicEndpointHost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DynamicEndpointManageAPIService.UpdateDynamicEndpointHost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1560,8 +1560,8 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHostExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicEndpointHostRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicEndpointHostRequest is required and must be specified")
+	if r.updateBankLevelDynamicEndpointHostRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicEndpointHostRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1582,7 +1582,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHostExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicEndpointHostRequest
+	localVarPostBody = r.updateBankLevelDynamicEndpointHostRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1607,7 +1607,7 @@ func (a *DynamicEndpointManageAPIService) OBPv400UpdateDynamicEndpointHostExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

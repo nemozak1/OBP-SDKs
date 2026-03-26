@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,8 +23,8 @@ module OpenBankProject
     # <p>Returns logs of all levels from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_all_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_all_endpoint_with_http_info(opts)
+    def log_cache_all_endpoint(opts = {})
+      log_cache_all_endpoint_with_http_info(opts)
       nil
     end
 
@@ -32,9 +32,9 @@ module OpenBankProject
     # &lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_all_endpoint_with_http_info(opts = {})
+    def log_cache_all_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_all_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_all_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/all'
@@ -58,7 +58,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_all_endpoint",
+        :operation => :"LogCacheApi.log_cache_all_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -69,7 +69,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_all_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_all_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -78,8 +78,8 @@ module OpenBankProject
     # <p>Returns DEBUG level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_debug_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_debug_endpoint_with_http_info(opts)
+    def log_cache_debug_endpoint(opts = {})
+      log_cache_debug_endpoint_with_http_info(opts)
       nil
     end
 
@@ -87,9 +87,9 @@ module OpenBankProject
     # &lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_debug_endpoint_with_http_info(opts = {})
+    def log_cache_debug_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_debug_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_debug_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/debug'
@@ -113,7 +113,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_debug_endpoint",
+        :operation => :"LogCacheApi.log_cache_debug_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -124,7 +124,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_debug_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_debug_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -133,8 +133,8 @@ module OpenBankProject
     # <p>Returns ERROR level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_error_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_error_endpoint_with_http_info(opts)
+    def log_cache_error_endpoint(opts = {})
+      log_cache_error_endpoint_with_http_info(opts)
       nil
     end
 
@@ -142,9 +142,9 @@ module OpenBankProject
     # &lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_error_endpoint_with_http_info(opts = {})
+    def log_cache_error_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_error_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_error_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/error'
@@ -168,7 +168,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_error_endpoint",
+        :operation => :"LogCacheApi.log_cache_error_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -179,7 +179,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_error_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_error_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -188,8 +188,8 @@ module OpenBankProject
     # <p>Returns INFO level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_info_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_info_endpoint_with_http_info(opts)
+    def log_cache_info_endpoint(opts = {})
+      log_cache_info_endpoint_with_http_info(opts)
       nil
     end
 
@@ -197,9 +197,9 @@ module OpenBankProject
     # &lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_info_endpoint_with_http_info(opts = {})
+    def log_cache_info_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_info_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_info_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/info'
@@ -223,7 +223,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_info_endpoint",
+        :operation => :"LogCacheApi.log_cache_info_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -234,7 +234,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_info_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_info_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -243,8 +243,8 @@ module OpenBankProject
     # <p>Returns TRACE level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_trace_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_trace_endpoint_with_http_info(opts)
+    def log_cache_trace_endpoint(opts = {})
+      log_cache_trace_endpoint_with_http_info(opts)
       nil
     end
 
@@ -252,9 +252,9 @@ module OpenBankProject
     # &lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_trace_endpoint_with_http_info(opts = {})
+    def log_cache_trace_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_trace_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_trace_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/trace'
@@ -278,7 +278,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_trace_endpoint",
+        :operation => :"LogCacheApi.log_cache_trace_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -289,7 +289,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_trace_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_trace_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -298,8 +298,8 @@ module OpenBankProject
     # <p>Returns WARNING level logs from the system log cache.</p> <p>This endpoint supports pagination via the following optional query parameters:<br /> * limit - Maximum number of log entries to return<br /> * offset - Number of log entries to skip (for pagination)</p> <p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv5_1_0_log_cache_warning_endpoint(opts = {})
-      o_bpv5_1_0_log_cache_warning_endpoint_with_http_info(opts)
+    def log_cache_warning_endpoint(opts = {})
+      log_cache_warning_endpoint_with_http_info(opts)
       nil
     end
 
@@ -307,9 +307,9 @@ module OpenBankProject
     # &lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv5_1_0_log_cache_warning_endpoint_with_http_info(opts = {})
+    def log_cache_warning_endpoint_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: LogCacheApi.o_bpv5_1_0_log_cache_warning_endpoint ...'
+        @api_client.config.logger.debug 'Calling API: LogCacheApi.log_cache_warning_endpoint ...'
       end
       # resource path
       local_var_path = '/obp/v5.1.0/system/log-cache/warning'
@@ -333,7 +333,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"LogCacheApi.o_bpv5_1_0_log_cache_warning_endpoint",
+        :operation => :"LogCacheApi.log_cache_warning_endpoint",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -344,7 +344,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LogCacheApi#o_bpv5_1_0_log_cache_warning_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: LogCacheApi#log_cache_warning_endpoint\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

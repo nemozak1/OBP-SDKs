@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,15 +11,15 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.model.OBPv400GetTagsForViewOnAccount200Response
-import com.openbankproject.model.OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+import com.openbankproject.model.GetTagsForViewOnAccount200Response
+import com.openbankproject.model.GetTagsForViewOnAccount200ResponseTagsInner
+import com.openbankproject.model.GetTransactionTypes200ResponseTransactionTypesInnerId
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object AccountMetadataApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new AccountMetadataApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new AccountMetadataApi(baseUrl)
 }
 
 class AccountMetadataApi(baseUrl: String) {
@@ -28,7 +28,7 @@ class AccountMetadataApi(baseUrl: String) {
    * <p>Posts a tag about an account ACCOUNT_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems (Successful operation)
+   *   code 200 : GetTagsForViewOnAccount200ResponseTagsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -39,16 +39,16 @@ class AccountMetadataApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
-   * @param oBPv400DeleteSystemLevelEndpointTag200Response Request body
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body
    */
-  def oBPv400AddTagForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response): Request[Either[ResponseException[String, Exception], OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems]] =
+  def addTagForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId): Request[Either[ResponseException[String, Exception], GetTagsForViewOnAccount200ResponseTagsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/metadata/tags")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400DeleteSystemLevelEndpointTag200Response)
-      .response(asJson[OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(getTransactionTypes200ResponseTransactionTypesInnerId)
+      .response(asJson[GetTagsForViewOnAccount200ResponseTagsInner])
 
   /**
    * <p>Deletes the tag TAG_ID about the account ACCOUNT_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
@@ -67,19 +67,19 @@ class AccountMetadataApi(baseUrl: String) {
    * @param viewid The VIEWID identifier
    * @param tagid The TAGID identifier
    */
-  def oBPv400DeleteTagForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, tagid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteTagForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String, tagid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/metadata/tags/${tagid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Returns the account ACCOUNT_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetTagsForViewOnAccount200Response (Successful operation)
+   *   code 200 : GetTagsForViewOnAccount200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -91,12 +91,12 @@ class AccountMetadataApi(baseUrl: String) {
    * @param accountid The ACCOUNTID identifier
    * @param viewid The VIEWID identifier
    */
-  def oBPv400GetTagsForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], OBPv400GetTagsForViewOnAccount200Response]] =
+  def getTagsForViewOnAccount(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, accountid: String, viewid: String): Request[Either[ResponseException[String, Exception], GetTagsForViewOnAccount200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/banks/${bankid}/accounts/${accountid}/${viewid}/metadata/tags")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetTagsForViewOnAccount200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetTagsForViewOnAccount200Response])
 
 }

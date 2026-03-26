@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,53 +15,53 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv5_1_0_create_bank_account_balance`]
+/// struct for typed errors of method [`create_bank_account_balance`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510CreateBankAccountBalanceError {
+pub enum CreateBankAccountBalanceError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_delete_bank_account_balance`]
+/// struct for typed errors of method [`delete_bank_account_balance`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510DeleteBankAccountBalanceError {
+pub enum DeleteBankAccountBalanceError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_get_all_bank_account_balances`]
+/// struct for typed errors of method [`get_all_bank_account_balances`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510GetAllBankAccountBalancesError {
+pub enum GetAllBankAccountBalancesError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_get_bank_account_balance_by_id`]
+/// struct for typed errors of method [`get_bank_account_balance_by_id`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510GetBankAccountBalanceByIdError {
+pub enum GetBankAccountBalanceByIdError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_update_bank_account_balance`]
+/// struct for typed errors of method [`update_bank_account_balance`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510UpdateBankAccountBalanceError {
+pub enum UpdateBankAccountBalanceError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Create a new Balance for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
-pub async fn o_bpv5_1_0_create_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, obpv510_create_bank_account_balance_request: models::Obpv510CreateBankAccountBalanceRequest) -> Result<models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Error<OBpv510CreateBankAccountBalanceError>> {
+pub async fn create_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, create_bank_account_balance_request: models::CreateBankAccountBalanceRequest) -> Result<models::GetAllBankAccountBalances200ResponseBalancesInner, Error<CreateBankAccountBalanceError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
-    let p_body_obpv510_create_bank_account_balance_request = obpv510_create_bank_account_balance_request;
+    let p_body_create_bank_account_balance_request = create_bank_account_balance_request;
 
     let uri_str = format!("{}/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -86,9 +86,9 @@ pub async fn o_bpv5_1_0_create_bank_account_balance(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv510_create_bank_account_balance_request);
+    req_builder = req_builder.json(&p_body_create_bank_account_balance_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -105,18 +105,18 @@ pub async fn o_bpv5_1_0_create_bank_account_balance(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510CreateBankAccountBalanceError> = serde_json::from_str(&content).ok();
+        let entity: Option<CreateBankAccountBalanceError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Delete a Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv5_1_0_delete_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str) -> Result<(), Error<OBpv510DeleteBankAccountBalanceError>> {
+pub async fn delete_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str) -> Result<(), Error<DeleteBankAccountBalanceError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -145,7 +145,7 @@ pub async fn o_bpv5_1_0_delete_bank_account_balance(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -157,13 +157,13 @@ pub async fn o_bpv5_1_0_delete_bank_account_balance(configuration: &configuratio
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510DeleteBankAccountBalanceError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteBankAccountBalanceError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get all Balances for a Bank Account.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>balances</strong></a>: balances</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
-pub async fn o_bpv5_1_0_get_all_bank_account_balances(configuration: &configuration::Configuration, bankid: &str, accountid: &str) -> Result<models::Obpv510GetAllBankAccountBalances200Response, Error<OBpv510GetAllBankAccountBalancesError>> {
+pub async fn get_all_bank_account_balances(configuration: &configuration::Configuration, bankid: &str, accountid: &str) -> Result<models::GetAllBankAccountBalances200Response, Error<GetAllBankAccountBalancesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -191,7 +191,7 @@ pub async fn o_bpv5_1_0_get_all_bank_account_balances(configuration: &configurat
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -209,18 +209,18 @@ pub async fn o_bpv5_1_0_get_all_bank_account_balances(configuration: &configurat
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankAccountBalances200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankAccountBalances200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510GetAllBankAccountBalancesError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetAllBankAccountBalancesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Get a specific Bank Account Balance by its BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
-pub async fn o_bpv5_1_0_get_bank_account_balance_by_id(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str) -> Result<models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Error<OBpv510GetBankAccountBalanceByIdError>> {
+pub async fn get_bank_account_balance_by_id(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str) -> Result<models::GetAllBankAccountBalances200ResponseBalancesInner, Error<GetBankAccountBalanceByIdError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -249,7 +249,7 @@ pub async fn o_bpv5_1_0_get_bank_account_balance_by_id(configuration: &configura
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -267,23 +267,23 @@ pub async fn o_bpv5_1_0_get_bank_account_balance_by_id(configuration: &configura
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510GetBankAccountBalanceByIdError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetBankAccountBalanceByIdError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Update an existing Bank Account Balance specified by BALANCE_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#balance_id\">BALANCE_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>balance_amount</strong></a>: 50.89</p> <p><a href=\"/glossary#balance_id\"><strong>balance_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#balance_type\"><strong>balance_type</strong></a>: openingBooked</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> 
-pub async fn o_bpv5_1_0_update_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str, obpv510_create_bank_account_balance_request: models::Obpv510CreateBankAccountBalanceRequest) -> Result<models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, Error<OBpv510UpdateBankAccountBalanceError>> {
+pub async fn update_bank_account_balance(configuration: &configuration::Configuration, bankid: &str, accountid: &str, balanceid: &str, create_bank_account_balance_request: models::CreateBankAccountBalanceRequest) -> Result<models::GetAllBankAccountBalances200ResponseBalancesInner, Error<UpdateBankAccountBalanceError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_balanceid = balanceid;
-    let p_body_obpv510_create_bank_account_balance_request = obpv510_create_bank_account_balance_request;
+    let p_body_create_bank_account_balance_request = create_bank_account_balance_request;
 
     let uri_str = format!("{}/obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid}", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), balanceid=crate::apis::urlencode(p_path_balanceid));
     let mut req_builder = configuration.client.request(reqwest::Method::PUT, &uri_str);
@@ -308,9 +308,9 @@ pub async fn o_bpv5_1_0_update_bank_account_balance(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv510_create_bank_account_balance_request);
+    req_builder = req_builder.json(&p_body_create_bank_account_balance_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -327,12 +327,12 @@ pub async fn o_bpv5_1_0_update_bank_account_balance(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAllBankAccountBalances200ResponseBalancesInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510UpdateBankAccountBalanceError> = serde_json::from_str(&content).ok();
+        let entity: Option<UpdateBankAccountBalanceError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

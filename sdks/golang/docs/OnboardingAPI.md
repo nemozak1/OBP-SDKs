@@ -1,17 +1,17 @@
 # \OnboardingAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv500CreateAccount**](OnboardingAPI.md#OBPv500CreateAccount) | **Put** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
-[**OBPv600CreateUser**](OnboardingAPI.md#OBPv600CreateUser) | **Post** /obp/v6.0.0/users | Create User (v6.0.0)
+[**CreateAccount**](OnboardingAPI.md#CreateAccount) | **Put** /obp/v5.0.0/banks/{bankid}/accounts/{accountid} | Create Account (PUT)
+[**CreateUser**](OnboardingAPI.md#CreateUser) | **Post** /obp/v6.0.0/users | Create User (v6.0.0)
 
 
 
-## OBPv500CreateAccount
+## CreateAccount
 
-> OBPv400AddAccount200Response OBPv500CreateAccount(ctx, bankid, accountid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
+> AddAccount200Response CreateAccount(ctx, bankid, accountid).AddAccountRequest(addAccountRequest).Execute()
 
 Create Account (PUT)
 
@@ -32,17 +32,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400AddAccountRequest := *openapiclient.NewOBPv400AddAccountRequest("Type_example", *openapiclient.NewOBPv400AddAccountRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutings("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), ))), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), , )) // OBPv400AddAccountRequest | Request body
+	addAccountRequest := *openapiclient.NewAddAccountRequest() // AddAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OnboardingAPI.OBPv500CreateAccount(context.Background(), bankid, accountid).OBPv400AddAccountRequest(oBPv400AddAccountRequest).Execute()
+	resp, r, err := apiClient.OnboardingAPI.CreateAccount(context.Background(), bankid, accountid).AddAccountRequest(addAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OnboardingAPI.OBPv500CreateAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OnboardingAPI.CreateAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv500CreateAccount`: OBPv400AddAccount200Response
-	fmt.Fprintf(os.Stdout, "Response from `OnboardingAPI.OBPv500CreateAccount`: %v\n", resp)
+	// response from `CreateAccount`: AddAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `OnboardingAPI.CreateAccount`: %v\n", resp)
 }
 ```
 
@@ -57,18 +57,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv500CreateAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400AddAccountRequest** | [**OBPv400AddAccountRequest**](OBPv400AddAccountRequest.md) | Request body | 
+ **addAccountRequest** | [**AddAccountRequest**](AddAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400AddAccount200Response**](OBPv400AddAccount200Response.md)
+[**AddAccount200Response**](AddAccount200Response.md)
 
 ### Authorization
 
@@ -84,9 +84,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv600CreateUser
+## CreateUser
 
-> OBPv600VerifyUserCredentials200Response OBPv600CreateUser(ctx).OBPv600CreateUserRequest(oBPv600CreateUserRequest).Execute()
+> VerifyUserCredentials200Response CreateUser(ctx).CreateUserRequest(createUserRequest).Execute()
 
 Create User (v6.0.0)
 
@@ -105,17 +105,17 @@ import (
 )
 
 func main() {
-	oBPv600CreateUserRequest := *openapiclient.NewOBPv600CreateUserRequest("Type_example", *openapiclient.NewOBPv600CreateUserRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateUserRequest | Request body
+	createUserRequest := *openapiclient.NewCreateUserRequest() // CreateUserRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OnboardingAPI.OBPv600CreateUser(context.Background()).OBPv600CreateUserRequest(oBPv600CreateUserRequest).Execute()
+	resp, r, err := apiClient.OnboardingAPI.CreateUser(context.Background()).CreateUserRequest(createUserRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OnboardingAPI.OBPv600CreateUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OnboardingAPI.CreateUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv600CreateUser`: OBPv600VerifyUserCredentials200Response
-	fmt.Fprintf(os.Stdout, "Response from `OnboardingAPI.OBPv600CreateUser`: %v\n", resp)
+	// response from `CreateUser`: VerifyUserCredentials200Response
+	fmt.Fprintf(os.Stdout, "Response from `OnboardingAPI.CreateUser`: %v\n", resp)
 }
 ```
 
@@ -125,16 +125,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv600CreateUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600CreateUserRequest** | [**OBPv600CreateUserRequest**](OBPv600CreateUserRequest.md) | Request body | 
+ **createUserRequest** | [**CreateUserRequest**](CreateUserRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600VerifyUserCredentials200Response**](OBPv600VerifyUserCredentials200Response.md)
+[**VerifyUserCredentials200Response**](VerifyUserCredentials200Response.md)
 
 ### Authorization
 

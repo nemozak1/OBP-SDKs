@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv510_create_vrp_consent_request_request_to_account_limit import OBPv510CreateVRPConsentRequestRequestToAccountLimit
-from obp_python.models.obpv510_get_counterparty_limit200_response import OBPv510GetCounterpartyLimit200Response
-from obp_python.models.obpv510_get_counterparty_limit_status200_response import OBPv510GetCounterpartyLimitStatus200Response
+from obp_python.models.create_vrp_consent_request_request_to_account_limit import CreateVRPConsentRequestRequestToAccountLimit
+from obp_python.models.get_counterparty_limit200_response import GetCounterpartyLimit200Response
+from obp_python.models.get_counterparty_limit_status200_response import GetCounterpartyLimitStatus200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -41,13 +41,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_counterparty_limit(
+    def create_counterparty_limit(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -60,7 +60,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetCounterpartyLimit200Response:
+    ) -> GetCounterpartyLimit200Response:
         """Create Counterparty Limit
 
         <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -73,8 +73,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -97,12 +97,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_counterparty_limit_serialize(
+        _param = self._create_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -110,7 +110,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -126,13 +126,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_counterparty_limit_with_http_info(
+    def create_counterparty_limit_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -145,7 +145,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetCounterpartyLimit200Response]:
+    ) -> ApiResponse[GetCounterpartyLimit200Response]:
         """Create Counterparty Limit
 
         <p>Create limits (for single or recurring payments) for a counterparty specified by the COUNTERPARTY_ID.</p> <p>Using this endpoint, we can attach a limit record to a Counterparty referenced by its counterparty_id (a UUID).</p> <p>For more information on Counterparty Limits, see <a href=\"/glossary#Counterparty-Limits\">here</a></p> <p>For an introduction to Counterparties in OBP, see <a href=\"/glossary#Counterparties\">here</a></p> <p>You can automate the process of creating counterparty limits and consents for VRP with this <a href=\"http://localhost:5174/operationid/OBPv5.1.0-createVRPConsentRequest\">endpoint</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -158,8 +158,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -182,12 +182,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_counterparty_limit_serialize(
+        _param = self._create_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -195,7 +195,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -211,13 +211,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_create_counterparty_limit_without_preload_content(
+    def create_counterparty_limit_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -243,8 +243,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -267,12 +267,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_create_counterparty_limit_serialize(
+        _param = self._create_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -280,7 +280,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -291,13 +291,13 @@ class CounterpartyLimitsApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_create_counterparty_limit_serialize(
+    def _create_counterparty_limit_serialize(
         self,
         bankid,
         accountid,
         viewid,
         counterpartyid,
-        obpv510_create_vrp_consent_request_request_to_account_limit,
+        create_vrp_consent_request_request_to_account_limit,
         _request_auth,
         _content_type,
         _headers,
@@ -331,8 +331,8 @@ class CounterpartyLimitsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_create_vrp_consent_request_request_to_account_limit is not None:
-            _body_params = obpv510_create_vrp_consent_request_request_to_account_limit
+        if create_vrp_consent_request_request_to_account_limit is not None:
+            _body_params = create_vrp_consent_request_request_to_account_limit
 
 
         # set the HTTP header `Accept`
@@ -383,7 +383,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_counterparty_limit(
+    def delete_counterparty_limit(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -436,7 +436,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_counterparty_limit_serialize(
+        _param = self._delete_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -464,7 +464,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_counterparty_limit_with_http_info(
+    def delete_counterparty_limit_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -517,7 +517,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_counterparty_limit_serialize(
+        _param = self._delete_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -545,7 +545,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_delete_counterparty_limit_without_preload_content(
+    def delete_counterparty_limit_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -598,7 +598,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_delete_counterparty_limit_serialize(
+        _param = self._delete_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -621,7 +621,7 @@ class CounterpartyLimitsApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_delete_counterparty_limit_serialize(
+    def _delete_counterparty_limit_serialize(
         self,
         bankid,
         accountid,
@@ -690,7 +690,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit(
+    def get_counterparty_limit(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -708,7 +708,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetCounterpartyLimit200Response:
+    ) -> GetCounterpartyLimit200Response:
         """Get Counterparty Limit
 
         <p>Get Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -743,7 +743,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_serialize(
+        _param = self._get_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -755,7 +755,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -771,7 +771,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit_with_http_info(
+    def get_counterparty_limit_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -789,7 +789,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetCounterpartyLimit200Response]:
+    ) -> ApiResponse[GetCounterpartyLimit200Response]:
         """Get Counterparty Limit
 
         <p>Get Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -824,7 +824,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_serialize(
+        _param = self._get_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -836,7 +836,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -852,7 +852,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit_without_preload_content(
+    def get_counterparty_limit_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -905,7 +905,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_serialize(
+        _param = self._get_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -917,7 +917,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -928,7 +928,7 @@ class CounterpartyLimitsApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_counterparty_limit_serialize(
+    def _get_counterparty_limit_serialize(
         self,
         bankid,
         accountid,
@@ -1004,7 +1004,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit_status(
+    def get_counterparty_limit_status(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1022,7 +1022,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetCounterpartyLimitStatus200Response:
+    ) -> GetCounterpartyLimitStatus200Response:
         """Get Counterparty Limit Status
 
         <p>Get Counterparty Limit Status.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>currency_status</strong></a>: currency_status</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#\"><strong>max_monthly_amount_status</strong></a>: max_monthly_amount_status</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>max_number_of_monthly_transactions_status</strong></a>: max_number_of_monthly_transactions_status</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_transactions_status</strong></a>: max_number_of_transactions_status</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_yearly_transactions_status</strong></a>: max_number_of_yearly_transactions_status</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#\"><strong>max_total_amount_status</strong></a>: max_total_amount_status</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>max_yearly_amount_status</strong></a>: max_yearly_amount_status</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1057,7 +1057,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_status_serialize(
+        _param = self._get_counterparty_limit_status_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -1069,7 +1069,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimitStatus200Response",
+            '200': "GetCounterpartyLimitStatus200Response",
             '404': None,
             '500': None,
         }
@@ -1085,7 +1085,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit_status_with_http_info(
+    def get_counterparty_limit_status_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1103,7 +1103,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetCounterpartyLimitStatus200Response]:
+    ) -> ApiResponse[GetCounterpartyLimitStatus200Response]:
         """Get Counterparty Limit Status
 
         <p>Get Counterparty Limit Status.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>currency_status</strong></a>: currency_status</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#\"><strong>max_monthly_amount_status</strong></a>: max_monthly_amount_status</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>max_number_of_monthly_transactions_status</strong></a>: max_number_of_monthly_transactions_status</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_transactions_status</strong></a>: max_number_of_transactions_status</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#\"><strong>max_number_of_yearly_transactions_status</strong></a>: max_number_of_yearly_transactions_status</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#\"><strong>max_total_amount_status</strong></a>: max_total_amount_status</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>max_yearly_amount_status</strong></a>: max_yearly_amount_status</p> <p><a href=\"/glossary#status\"><strong>status</strong></a>:</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1138,7 +1138,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_status_serialize(
+        _param = self._get_counterparty_limit_status_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -1150,7 +1150,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimitStatus200Response",
+            '200': "GetCounterpartyLimitStatus200Response",
             '404': None,
             '500': None,
         }
@@ -1166,7 +1166,7 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_get_counterparty_limit_status_without_preload_content(
+    def get_counterparty_limit_status_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
@@ -1219,7 +1219,7 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_get_counterparty_limit_status_serialize(
+        _param = self._get_counterparty_limit_status_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
@@ -1231,7 +1231,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimitStatus200Response",
+            '200': "GetCounterpartyLimitStatus200Response",
             '404': None,
             '500': None,
         }
@@ -1242,7 +1242,7 @@ class CounterpartyLimitsApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_get_counterparty_limit_status_serialize(
+    def _get_counterparty_limit_status_serialize(
         self,
         bankid,
         accountid,
@@ -1318,13 +1318,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_counterparty_limit(
+    def update_counterparty_limit(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1337,7 +1337,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv510GetCounterpartyLimit200Response:
+    ) -> GetCounterpartyLimit200Response:
         """Update Counterparty Limit
 
         <p>Update Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1350,8 +1350,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1374,12 +1374,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_counterparty_limit_serialize(
+        _param = self._update_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1387,7 +1387,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -1403,13 +1403,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_counterparty_limit_with_http_info(
+    def update_counterparty_limit_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1422,7 +1422,7 @@ class CounterpartyLimitsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv510GetCounterpartyLimit200Response]:
+    ) -> ApiResponse[GetCounterpartyLimit200Response]:
         """Update Counterparty Limit
 
         <p>Update Counterparty Limit.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#counterparty_limit_id\"><strong>counterparty_limit_id</strong></a>: abc9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#max_monthly_amount\"><strong>max_monthly_amount</strong></a>: 10000.11</p> <p><a href=\"/glossary#max_number_of_monthly_transactions\"><strong>max_number_of_monthly_transactions</strong></a>: 10</p> <p><a href=\"/glossary#max_number_of_transactions\"><strong>max_number_of_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_number_of_yearly_transactions\"><strong>max_number_of_yearly_transactions</strong></a>: 100</p> <p><a href=\"/glossary#max_single_amount\"><strong>max_single_amount</strong></a>: 1000.11</p> <p><a href=\"/glossary#max_total_amount\"><strong>max_total_amount</strong></a>: 10000.12</p> <p><a href=\"/glossary#max_yearly_amount\"><strong>max_yearly_amount</strong></a>: 12000.11</p> <p><a href=\"/glossary#\"><strong>view_id</strong></a>: owner</p> 
@@ -1435,8 +1435,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1459,12 +1459,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_counterparty_limit_serialize(
+        _param = self._update_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1472,7 +1472,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -1488,13 +1488,13 @@ class CounterpartyLimitsApi:
 
 
     @validate_call
-    def o_bpv5_1_0_update_counterparty_limit_without_preload_content(
+    def update_counterparty_limit_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         accountid: Annotated[StrictStr, Field(description="The ACCOUNTID identifier")],
         viewid: Annotated[StrictStr, Field(description="The VIEWID identifier")],
         counterpartyid: Annotated[StrictStr, Field(description="The COUNTERPARTYID identifier")],
-        obpv510_create_vrp_consent_request_request_to_account_limit: Annotated[OBPv510CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
+        create_vrp_consent_request_request_to_account_limit: Annotated[CreateVRPConsentRequestRequestToAccountLimit, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1520,8 +1520,8 @@ class CounterpartyLimitsApi:
         :type viewid: str
         :param counterpartyid: The COUNTERPARTYID identifier (required)
         :type counterpartyid: str
-        :param obpv510_create_vrp_consent_request_request_to_account_limit: Request body (required)
-        :type obpv510_create_vrp_consent_request_request_to_account_limit: OBPv510CreateVRPConsentRequestRequestToAccountLimit
+        :param create_vrp_consent_request_request_to_account_limit: Request body (required)
+        :type create_vrp_consent_request_request_to_account_limit: CreateVRPConsentRequestRequestToAccountLimit
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1544,12 +1544,12 @@ class CounterpartyLimitsApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv5_1_0_update_counterparty_limit_serialize(
+        _param = self._update_counterparty_limit_serialize(
             bankid=bankid,
             accountid=accountid,
             viewid=viewid,
             counterpartyid=counterpartyid,
-            obpv510_create_vrp_consent_request_request_to_account_limit=obpv510_create_vrp_consent_request_request_to_account_limit,
+            create_vrp_consent_request_request_to_account_limit=create_vrp_consent_request_request_to_account_limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1557,7 +1557,7 @@ class CounterpartyLimitsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv510GetCounterpartyLimit200Response",
+            '200': "GetCounterpartyLimit200Response",
             '404': None,
             '500': None,
         }
@@ -1568,13 +1568,13 @@ class CounterpartyLimitsApi:
         return response_data.response
 
 
-    def _o_bpv5_1_0_update_counterparty_limit_serialize(
+    def _update_counterparty_limit_serialize(
         self,
         bankid,
         accountid,
         viewid,
         counterpartyid,
-        obpv510_create_vrp_consent_request_request_to_account_limit,
+        create_vrp_consent_request_request_to_account_limit,
         _request_auth,
         _content_type,
         _headers,
@@ -1608,8 +1608,8 @@ class CounterpartyLimitsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv510_create_vrp_consent_request_request_to_account_limit is not None:
-            _body_params = obpv510_create_vrp_consent_request_request_to_account_limit
+        if create_vrp_consent_request_request_to_account_limit is not None:
+            _body_params = create_vrp_consent_request_request_to_account_limit
 
 
         # set the HTTP header `Accept`

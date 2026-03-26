@@ -1,23 +1,23 @@
 # CustomerAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateCustomerAttribute**](CustomerAttributeApi.md#obpv400createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
-| [**oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#obpv400createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
-| [**oBPv400DeleteCustomerAttribute**](CustomerAttributeApi.md#obpv400deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
-| [**oBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributeById**](CustomerAttributeApi.md#obpv400getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
-| [**oBPv400GetCustomerAttributeDefinition**](CustomerAttributeApi.md#obpv400getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
-| [**oBPv400GetCustomerAttributes**](CustomerAttributeApi.md#obpv400getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
-| [**oBPv400UpdateCustomerAttribute**](CustomerAttributeApi.md#obpv400updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
+| [**createCustomerAttribute**](CustomerAttributeApi.md#createcustomerattribute) | **POST** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute |
+| [**createOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeApi.md#createorupdatecustomerattributeattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition |
+| [**deleteCustomerAttribute**](CustomerAttributeApi.md#deletecustomerattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute |
+| [**deleteCustomerAttributeDefinition**](CustomerAttributeApi.md#deletecustomerattributedefinition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition |
+| [**getCustomerAttributeById**](CustomerAttributeApi.md#getcustomerattributebyid) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id |
+| [**getCustomerAttributeDefinition**](CustomerAttributeApi.md#getcustomerattributedefinition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition |
+| [**getCustomerAttributes**](CustomerAttributeApi.md#getcustomerattributes) | **GET** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes |
+| [**updateCustomerAttribute**](CustomerAttributeApi.md#updatecustomerattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute |
 
 
 
-## oBPv400CreateCustomerAttribute
+## createCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400CreateCustomerAttribute(bankid, customerid, oBPv600CreatePersonalDataFieldRequest)
+> GetCustomerAttributes200ResponseCustomerAttributesInner createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest)
 
 Create Customer Attribute
 
@@ -30,7 +30,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateCustomerAttributeRequest } from 'obp-typescript';
+import type { CreateCustomerAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -49,12 +49,12 @@ async function example() {
     bankid: bankid_example,
     // string | The CUSTOMERID identifier
     customerid: customerid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv400CreateCustomerAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies CreateCustomerAttributeRequest;
 
   try {
-    const data = await api.oBPv400CreateCustomerAttribute(body);
+    const data = await api.createCustomerAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -72,11 +72,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **customerid** | `string` | The CUSTOMERID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -98,9 +98,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition
+## createOrUpdateCustomerAttributeAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Customer Attribute Definition
 
@@ -113,7 +113,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest } from 'obp-typescript';
+import type { CreateOrUpdateCustomerAttributeAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -130,12 +130,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
-  } satisfies OBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest;
+    // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
+  } satisfies CreateOrUpdateCustomerAttributeAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(body);
+    const data = await api.createOrUpdateCustomerAttributeAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -152,11 +152,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [CreateOrUpdateTransactionRequestAttributeDefinitionRequest](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -178,9 +178,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteCustomerAttribute
+## deleteCustomerAttribute
 
-> oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid)
+> deleteCustomerAttribute(bankid, customerid, customerattributeid)
 
 Delete Customer Attribute
 
@@ -193,7 +193,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteCustomerAttributeRequest } from 'obp-typescript';
+import type { DeleteCustomerAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -214,10 +214,10 @@ async function example() {
     customerid: customerid_example,
     // string | The CUSTOMERATTRIBUTEID identifier
     customerattributeid: customerattributeid_example,
-  } satisfies OBPv400DeleteCustomerAttributeRequest;
+  } satisfies DeleteCustomerAttributeRequest;
 
   try {
-    const data = await api.oBPv400DeleteCustomerAttribute(body);
+    const data = await api.deleteCustomerAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -261,9 +261,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteCustomerAttributeDefinition
+## deleteCustomerAttributeDefinition
 
-> oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid)
+> deleteCustomerAttributeDefinition(bankid, attributedefinitionid)
 
 Delete Customer Attribute Definition
 
@@ -276,7 +276,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteCustomerAttributeDefinitionRequest } from 'obp-typescript';
+import type { DeleteCustomerAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -295,10 +295,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ATTRIBUTEDEFINITIONID identifier
     attributedefinitionid: attributedefinitionid_example,
-  } satisfies OBPv400DeleteCustomerAttributeDefinitionRequest;
+  } satisfies DeleteCustomerAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400DeleteCustomerAttributeDefinition(body);
+    const data = await api.deleteCustomerAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -341,9 +341,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetCustomerAttributeById
+## getCustomerAttributeById
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400GetCustomerAttributeById(bankid, customerid, attributeid)
+> GetCustomerAttributes200ResponseCustomerAttributesInner getCustomerAttributeById(bankid, customerid, attributeid)
 
 Get Customer Attribute By Id
 
@@ -356,7 +356,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetCustomerAttributeByIdRequest } from 'obp-typescript';
+import type { GetCustomerAttributeByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -377,10 +377,10 @@ async function example() {
     customerid: customerid_example,
     // string | The ATTRIBUTEID identifier
     attributeid: attributeid_example,
-  } satisfies OBPv400GetCustomerAttributeByIdRequest;
+  } satisfies GetCustomerAttributeByIdRequest;
 
   try {
-    const data = await api.oBPv400GetCustomerAttributeById(body);
+    const data = await api.getCustomerAttributeById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -402,7 +402,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -424,9 +424,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetCustomerAttributeDefinition
+## getCustomerAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCustomerAttributeDefinition(bankid)
+> GetTransactionRequestAttributeDefinition200Response getCustomerAttributeDefinition(bankid)
 
 Get Customer Attribute Definition
 
@@ -439,7 +439,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetCustomerAttributeDefinitionRequest } from 'obp-typescript';
+import type { GetCustomerAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -456,10 +456,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetCustomerAttributeDefinitionRequest;
+  } satisfies GetCustomerAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400GetCustomerAttributeDefinition(body);
+    const data = await api.getCustomerAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -479,7 +479,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -501,9 +501,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetCustomerAttributes
+## getCustomerAttributes
 
-> OBPv400GetCustomerAttributes200Response oBPv400GetCustomerAttributes(bankid, customerid)
+> GetCustomerAttributes200Response getCustomerAttributes(bankid, customerid)
 
 Get Customer Attributes
 
@@ -516,7 +516,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetCustomerAttributesRequest } from 'obp-typescript';
+import type { GetCustomerAttributesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -535,10 +535,10 @@ async function example() {
     bankid: bankid_example,
     // string | The CUSTOMERID identifier
     customerid: customerid_example,
-  } satisfies OBPv400GetCustomerAttributesRequest;
+  } satisfies GetCustomerAttributesRequest;
 
   try {
-    const data = await api.oBPv400GetCustomerAttributes(body);
+    const data = await api.getCustomerAttributes(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -559,7 +559,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -581,9 +581,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateCustomerAttribute
+## updateCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, oBPv600CreatePersonalDataFieldRequest)
+> GetCustomerAttributes200ResponseCustomerAttributesInner updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest)
 
 Update Customer Attribute
 
@@ -596,7 +596,7 @@ import {
   Configuration,
   CustomerAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateCustomerAttributeRequest } from 'obp-typescript';
+import type { UpdateCustomerAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -617,12 +617,12 @@ async function example() {
     customerid: customerid_example,
     // string | The CUSTOMERATTRIBUTEID identifier
     customerattributeid: customerattributeid_example,
-    // OBPv600CreatePersonalDataFieldRequest | Request body
-    oBPv600CreatePersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
-  } satisfies OBPv400UpdateCustomerAttributeRequest;
+    // CreatePersonalDataFieldRequest | Request body
+    createPersonalDataFieldRequest: {type=object, properties={name={type=string}, type={type=string}, value={type=string}}},
+  } satisfies UpdateCustomerAttributeRequest;
 
   try {
-    const data = await api.oBPv400UpdateCustomerAttribute(body);
+    const data = await api.updateCustomerAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -641,11 +641,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **customerid** | `string` | The CUSTOMERID identifier | [Defaults to `undefined`] |
 | **customerattributeid** | `string` | The CUSTOMERATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv600CreatePersonalDataFieldRequest** | [OBPv600CreatePersonalDataFieldRequest](OBPv600CreatePersonalDataFieldRequest.md) | Request body | |
+| **createPersonalDataFieldRequest** | [CreatePersonalDataFieldRequest](CreatePersonalDataFieldRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateBankLevelDynamicEndpointApiResponse> OBPv400CreateBankLevelDynamicEndpointAsync(string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<ICreateBankLevelDynamicEndpointApiResponse> CreateBankLevelDynamicEndpointAsync(string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Bank Level Dynamic Endpoint
@@ -58,10 +58,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateBankLevelDynamicEndpointApiResponse?> OBPv400CreateBankLevelDynamicEndpointOrDefaultAsync(string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<ICreateBankLevelDynamicEndpointApiResponse?> CreateBankLevelDynamicEndpointOrDefaultAsync(string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Dynamic Endpoint
@@ -70,10 +70,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateDynamicEndpointApiResponse> OBPv400CreateDynamicEndpointAsync(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<ICreateDynamicEndpointApiResponse> CreateDynamicEndpointAsync(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Dynamic Endpoint
@@ -81,10 +81,10 @@ namespace OpenBankProject.Api
         /// <remarks>
         /// &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateDynamicEndpointApiResponse?> OBPv400CreateDynamicEndpointOrDefaultAsync(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<ICreateDynamicEndpointApiResponse?> CreateDynamicEndpointOrDefaultAsync(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Delete Bank Level Dynamic Endpoint
@@ -96,8 +96,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteBankLevelDynamicEndpointApiResponse> OBPv400DeleteBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<IDeleteBankLevelDynamicEndpointApiResponse> DeleteBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Delete Bank Level Dynamic Endpoint
@@ -108,8 +108,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteBankLevelDynamicEndpointApiResponse?> OBPv400DeleteBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<IDeleteBankLevelDynamicEndpointApiResponse?> DeleteBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Delete Dynamic Endpoint
@@ -120,8 +120,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteDynamicEndpointApiResponse> OBPv400DeleteDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<IDeleteDynamicEndpointApiResponse> DeleteDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Delete Dynamic Endpoint
@@ -131,8 +131,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteDynamicEndpointApiResponse?> OBPv400DeleteDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<IDeleteDynamicEndpointApiResponse?> DeleteDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Dynamic Endpoint
@@ -143,8 +143,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteMyDynamicEndpointApiResponse> OBPv400DeleteMyDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<IDeleteMyDynamicEndpointApiResponse> DeleteMyDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete My Dynamic Endpoint
@@ -154,8 +154,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteMyDynamicEndpointApiResponse?> OBPv400DeleteMyDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<IDeleteMyDynamicEndpointApiResponse?> DeleteMyDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Get Bank Level Dynamic Endpoint
@@ -167,8 +167,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicEndpointApiResponse> OBPv400GetBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<IGetBankLevelDynamicEndpointApiResponse> GetBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Get Bank Level Dynamic Endpoint
@@ -179,8 +179,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicEndpointApiResponse?> OBPv400GetBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<IGetBankLevelDynamicEndpointApiResponse?> GetBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Dynamic Endpoints
@@ -191,8 +191,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicEndpointsApiResponse> OBPv400GetBankLevelDynamicEndpointsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
+        Task<IGetBankLevelDynamicEndpointsApiResponse> GetBankLevelDynamicEndpointsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Level Dynamic Endpoints
@@ -202,8 +202,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetBankLevelDynamicEndpointsApiResponse?> OBPv400GetBankLevelDynamicEndpointsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointsApiResponse"/>?&gt;</returns>
+        Task<IGetBankLevelDynamicEndpointsApiResponse?> GetBankLevelDynamicEndpointsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Endpoint
@@ -214,8 +214,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetDynamicEndpointApiResponse> OBPv400GetDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointApiResponse"/>&gt;</returns>
+        Task<IGetDynamicEndpointApiResponse> GetDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Dynamic Endpoint
@@ -225,8 +225,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetDynamicEndpointApiResponse?> OBPv400GetDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointApiResponse"/>?&gt;</returns>
+        Task<IGetDynamicEndpointApiResponse?> GetDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Get Dynamic Endpoints
@@ -236,8 +236,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetDynamicEndpointsApiResponse> OBPv400GetDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointsApiResponse"/>&gt;</returns>
+        Task<IGetDynamicEndpointsApiResponse> GetDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Get Dynamic Endpoints
@@ -246,8 +246,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetDynamicEndpointsApiResponse?> OBPv400GetDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointsApiResponse"/>?&gt;</returns>
+        Task<IGetDynamicEndpointsApiResponse?> GetDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Dynamic Endpoints
@@ -257,8 +257,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyDynamicEndpointsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetMyDynamicEndpointsApiResponse> OBPv400GetMyDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyDynamicEndpointsApiResponse"/>&gt;</returns>
+        Task<IGetMyDynamicEndpointsApiResponse> GetMyDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get My Dynamic Endpoints
@@ -267,8 +267,8 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyDynamicEndpointsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetMyDynamicEndpointsApiResponse?> OBPv400GetMyDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyDynamicEndpointsApiResponse"/>?&gt;</returns>
+        Task<IGetMyDynamicEndpointsApiResponse?> GetMyDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Update Bank Level Dynamic Endpoint Host
@@ -279,10 +279,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse> OBPv400UpdateBankLevelDynamicEndpointHostAsync(string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
+        Task<IUpdateBankLevelDynamicEndpointHostApiResponse> UpdateBankLevelDynamicEndpointHostAsync(string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Update Bank Level Dynamic Endpoint Host
@@ -292,10 +292,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse?> OBPv400UpdateBankLevelDynamicEndpointHostOrDefaultAsync(string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicEndpointHostApiResponse"/>?&gt;</returns>
+        Task<IUpdateBankLevelDynamicEndpointHostApiResponse?> UpdateBankLevelDynamicEndpointHostOrDefaultAsync(string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Update Dynamic Endpoint Host
@@ -305,10 +305,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateDynamicEndpointHostApiResponse> OBPv400UpdateDynamicEndpointHostAsync(string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
+        Task<IUpdateDynamicEndpointHostApiResponse> UpdateDynamicEndpointHostAsync(string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         ///  Update Dynamic Endpoint Host
@@ -317,10 +317,10 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </remarks>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicEndpointHostApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateDynamicEndpointHostApiResponse?> OBPv400UpdateDynamicEndpointHostOrDefaultAsync(string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicEndpointHostApiResponse"/>?&gt;</returns>
+        Task<IUpdateDynamicEndpointHostApiResponse?> UpdateDynamicEndpointHostOrDefaultAsync(string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -331,241 +331,241 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateBankLevelDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateBankLevelDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateBankLevelDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateBankLevelDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400CreateBankLevelDynamicEndpoint(APIApi.OBPv400CreateBankLevelDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnCreateBankLevelDynamicEndpoint(APIApi.CreateBankLevelDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400CreateBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateBankLevelDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorCreateBankLevelDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400CreateBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400CreateDynamicEndpoint(APIApi.OBPv400CreateDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnCreateDynamicEndpoint(APIApi.CreateDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400CreateDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorCreateDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400CreateDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteBankLevelDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteBankLevelDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteBankLevelDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteBankLevelDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400DeleteBankLevelDynamicEndpoint(APIApi.OBPv400DeleteBankLevelDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnDeleteBankLevelDynamicEndpoint(APIApi.DeleteBankLevelDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400DeleteBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteBankLevelDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorDeleteBankLevelDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400DeleteBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400DeleteDynamicEndpoint(APIApi.OBPv400DeleteDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnDeleteDynamicEndpoint(APIApi.DeleteDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400DeleteDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorDeleteDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400DeleteDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteMyDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteMyDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteMyDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteMyDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400DeleteMyDynamicEndpoint(APIApi.OBPv400DeleteMyDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnDeleteMyDynamicEndpoint(APIApi.DeleteMyDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400DeleteMyDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteMyDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteMyDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorDeleteMyDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400DeleteMyDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteMyDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankLevelDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankLevelDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankLevelDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankLevelDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400GetBankLevelDynamicEndpoint(APIApi.OBPv400GetBankLevelDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnGetBankLevelDynamicEndpoint(APIApi.GetBankLevelDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400GetBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankLevelDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankLevelDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorGetBankLevelDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400GetBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankLevelDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetBankLevelDynamicEndpoints;
+        public event EventHandler<ApiResponseEventArgs>? OnGetBankLevelDynamicEndpoints;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetBankLevelDynamicEndpoints;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetBankLevelDynamicEndpoints;
 
-        internal void ExecuteOnOBPv400GetBankLevelDynamicEndpoints(APIApi.OBPv400GetBankLevelDynamicEndpointsApiResponse apiResponse)
+        internal void ExecuteOnGetBankLevelDynamicEndpoints(APIApi.GetBankLevelDynamicEndpointsApiResponse apiResponse)
         {
-            OnOBPv400GetBankLevelDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetBankLevelDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetBankLevelDynamicEndpoints(Exception exception)
+        internal void ExecuteOnErrorGetBankLevelDynamicEndpoints(Exception exception)
         {
-            OnErrorOBPv400GetBankLevelDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetBankLevelDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetDynamicEndpoint;
+        public event EventHandler<ApiResponseEventArgs>? OnGetDynamicEndpoint;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetDynamicEndpoint;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetDynamicEndpoint;
 
-        internal void ExecuteOnOBPv400GetDynamicEndpoint(APIApi.OBPv400GetDynamicEndpointApiResponse apiResponse)
+        internal void ExecuteOnGetDynamicEndpoint(APIApi.GetDynamicEndpointApiResponse apiResponse)
         {
-            OnOBPv400GetDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetDynamicEndpoint?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetDynamicEndpoint(Exception exception)
+        internal void ExecuteOnErrorGetDynamicEndpoint(Exception exception)
         {
-            OnErrorOBPv400GetDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetDynamicEndpoint?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetDynamicEndpoints;
+        public event EventHandler<ApiResponseEventArgs>? OnGetDynamicEndpoints;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetDynamicEndpoints;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetDynamicEndpoints;
 
-        internal void ExecuteOnOBPv400GetDynamicEndpoints(APIApi.OBPv400GetDynamicEndpointsApiResponse apiResponse)
+        internal void ExecuteOnGetDynamicEndpoints(APIApi.GetDynamicEndpointsApiResponse apiResponse)
         {
-            OnOBPv400GetDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetDynamicEndpoints(Exception exception)
+        internal void ExecuteOnErrorGetDynamicEndpoints(Exception exception)
         {
-            OnErrorOBPv400GetDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetMyDynamicEndpoints;
+        public event EventHandler<ApiResponseEventArgs>? OnGetMyDynamicEndpoints;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetMyDynamicEndpoints;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetMyDynamicEndpoints;
 
-        internal void ExecuteOnOBPv400GetMyDynamicEndpoints(APIApi.OBPv400GetMyDynamicEndpointsApiResponse apiResponse)
+        internal void ExecuteOnGetMyDynamicEndpoints(APIApi.GetMyDynamicEndpointsApiResponse apiResponse)
         {
-            OnOBPv400GetMyDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetMyDynamicEndpoints?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetMyDynamicEndpoints(Exception exception)
+        internal void ExecuteOnErrorGetMyDynamicEndpoints(Exception exception)
         {
-            OnErrorOBPv400GetMyDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetMyDynamicEndpoints?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateBankLevelDynamicEndpointHost;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateBankLevelDynamicEndpointHost;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateBankLevelDynamicEndpointHost;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateBankLevelDynamicEndpointHost;
 
-        internal void ExecuteOnOBPv400UpdateBankLevelDynamicEndpointHost(APIApi.OBPv400UpdateBankLevelDynamicEndpointHostApiResponse apiResponse)
+        internal void ExecuteOnUpdateBankLevelDynamicEndpointHost(APIApi.UpdateBankLevelDynamicEndpointHostApiResponse apiResponse)
         {
-            OnOBPv400UpdateBankLevelDynamicEndpointHost?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateBankLevelDynamicEndpointHost?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateBankLevelDynamicEndpointHost(Exception exception)
+        internal void ExecuteOnErrorUpdateBankLevelDynamicEndpointHost(Exception exception)
         {
-            OnErrorOBPv400UpdateBankLevelDynamicEndpointHost?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateBankLevelDynamicEndpointHost?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateDynamicEndpointHost;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateDynamicEndpointHost;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateDynamicEndpointHost;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateDynamicEndpointHost;
 
-        internal void ExecuteOnOBPv400UpdateDynamicEndpointHost(APIApi.OBPv400UpdateDynamicEndpointHostApiResponse apiResponse)
+        internal void ExecuteOnUpdateDynamicEndpointHost(APIApi.UpdateDynamicEndpointHostApiResponse apiResponse)
         {
-            OnOBPv400UpdateDynamicEndpointHost?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateDynamicEndpointHost?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateDynamicEndpointHost(Exception exception)
+        internal void ExecuteOnErrorUpdateDynamicEndpointHost(Exception exception)
         {
-            OnErrorOBPv400UpdateDynamicEndpointHost?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateDynamicEndpointHost?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -623,21 +623,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateBankLevelDynamicEndpoint(ref string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        partial void FormatCreateBankLevelDynamicEndpoint(ref string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateBankLevelDynamicEndpoint(string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        private void ValidateCreateBankLevelDynamicEndpoint(string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == null)
-                throw new ArgumentNullException(nameof(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString));
+            if (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == null)
+                throw new ArgumentNullException(nameof(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString));
         }
 
         /// <summary>
@@ -645,11 +645,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        private void AfterOBPv400CreateBankLevelDynamicEndpointDefaultImplementation(IOBPv400CreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        private void AfterCreateBankLevelDynamicEndpointDefaultImplementation(ICreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            AfterCreateBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -660,8 +660,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        partial void AfterOBPv400CreateBankLevelDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400CreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        partial void AfterCreateBankLevelDynamicEndpoint(ref bool suppressDefaultLog, ICreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -670,11 +670,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        private void OnErrorOBPv400CreateBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        private void OnErrorCreateBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            OnErrorCreateBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -687,21 +687,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        partial void OnErrorOBPv400CreateBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        partial void OnErrorCreateBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Create Bank Level Dynamic Endpoint &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelDynamicEndpointApiResponse?> OBPv400CreateBankLevelDynamicEndpointOrDefaultAsync(string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelDynamicEndpointApiResponse?> CreateBankLevelDynamicEndpointOrDefaultAsync(string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateBankLevelDynamicEndpointAsync(bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, cancellationToken).ConfigureAwait(false);
+                return await CreateBankLevelDynamicEndpointAsync(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -714,18 +714,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateBankLevelDynamicEndpointApiResponse> OBPv400CreateBankLevelDynamicEndpointAsync(string bankid, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateBankLevelDynamicEndpointApiResponse> CreateBankLevelDynamicEndpointAsync(string bankid, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateBankLevelDynamicEndpoint(bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                ValidateCreateBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
-                FormatOBPv400CreateBankLevelDynamicEndpoint(ref bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                FormatCreateBankLevelDynamicEndpoint(ref bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -737,16 +737,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -782,8 +782,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400CreateBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400CreateBankLevelDynamicEndpointApiResponse>();
-                        APIApi.OBPv400CreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CreateBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CreateBankLevelDynamicEndpointApiResponse>();
+                        APIApi.CreateBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -794,9 +794,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                        AfterCreateBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
-                        Events.ExecuteOnOBPv400CreateBankLevelDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnCreateBankLevelDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -808,34 +808,34 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints", uriBuilderLocalVar.Path, bankid, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
-                Events.ExecuteOnErrorOBPv400CreateBankLevelDynamicEndpoint(e);
+                OnErrorCreateBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints", uriBuilderLocalVar.Path, bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
+                Events.ExecuteOnErrorCreateBankLevelDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateDynamicEndpoint(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        partial void FormatCreateDynamicEndpoint(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateDynamicEndpoint(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        private void ValidateCreateDynamicEndpoint(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
-            if (oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == null)
-                throw new ArgumentNullException(nameof(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString));
+            if (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == null)
+                throw new ArgumentNullException(nameof(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString));
         }
 
         /// <summary>
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        private void AfterOBPv400CreateDynamicEndpointDefaultImplementation(IOBPv400CreateDynamicEndpointApiResponse apiResponseLocalVar, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        private void AfterCreateDynamicEndpointDefaultImplementation(ICreateDynamicEndpointApiResponse apiResponseLocalVar, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            AfterCreateDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -845,8 +845,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        partial void AfterOBPv400CreateDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400CreateDynamicEndpointApiResponse apiResponseLocalVar, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        partial void AfterCreateDynamicEndpoint(ref bool suppressDefaultLog, ICreateDynamicEndpointApiResponse apiResponseLocalVar, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -854,11 +854,11 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        private void OnErrorOBPv400CreateDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        private void OnErrorCreateDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+            OnErrorCreateDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -870,20 +870,20 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString"></param>
-        partial void OnErrorOBPv400CreateDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString"></param>
+        partial void OnErrorCreateDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
         /// <summary>
         /// Create Dynamic Endpoint &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDynamicEndpointApiResponse?> OBPv400CreateDynamicEndpointOrDefaultAsync(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateDynamicEndpointApiResponse?> CreateDynamicEndpointOrDefaultAsync(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateDynamicEndpointAsync(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, cancellationToken).ConfigureAwait(false);
+                return await CreateDynamicEndpointAsync(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -895,18 +895,18 @@ namespace OpenBankProject.Api
         /// Create Dynamic Endpoint &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString">Request body</param>
+        /// <param name="getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateDynamicEndpointApiResponse> OBPv400CreateDynamicEndpointAsync(OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<ICreateDynamicEndpointApiResponse> CreateDynamicEndpointAsync(GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                ValidateCreateDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
-                FormatOBPv400CreateDynamicEndpoint(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                FormatCreateDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -917,16 +917,16 @@ namespace OpenBankProject.Api
                         ? "/obp/v4.0.0/management/dynamic-endpoints"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/dynamic-endpoints");
 
-                    httpRequestMessageLocalVar.Content = (oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -962,8 +962,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400CreateDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400CreateDynamicEndpointApiResponse>();
-                        APIApi.OBPv400CreateDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.CreateDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.CreateDynamicEndpointApiResponse>();
+                        APIApi.CreateDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -974,9 +974,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateDynamicEndpointDefaultImplementation(apiResponseLocalVar, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+                        AfterCreateDynamicEndpointDefaultImplementation(apiResponseLocalVar, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
 
-                        Events.ExecuteOnOBPv400CreateDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnCreateDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -988,13 +988,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints", uriBuilderLocalVar.Path, oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
-                Events.ExecuteOnErrorOBPv400CreateDynamicEndpoint(e);
+                OnErrorCreateDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints", uriBuilderLocalVar.Path, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
+                Events.ExecuteOnErrorCreateDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteBankLevelDynamicEndpoint(ref string bankid, ref string dynamicendpointid);
+        partial void FormatDeleteBankLevelDynamicEndpoint(ref string bankid, ref string dynamicendpointid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1002,7 +1002,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteBankLevelDynamicEndpoint(string bankid, string dynamicendpointid)
+        private void ValidateDeleteBankLevelDynamicEndpoint(string bankid, string dynamicendpointid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1017,10 +1017,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        private void AfterOBPv400DeleteBankLevelDynamicEndpointDefaultImplementation(IOBPv400DeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid)
+        private void AfterDeleteBankLevelDynamicEndpointDefaultImplementation(IDeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid);
+            AfterDeleteBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1032,7 +1032,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void AfterOBPv400DeleteBankLevelDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400DeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid);
+        partial void AfterDeleteBankLevelDynamicEndpoint(ref bool suppressDefaultLog, IDeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1042,10 +1042,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        private void OnErrorOBPv400DeleteBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid)
+        private void OnErrorDeleteBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid);
+            OnErrorDeleteBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1059,7 +1059,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void OnErrorOBPv400DeleteBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid);
+        partial void OnErrorDeleteBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid);
 
         /// <summary>
         ///  Delete Bank Level Dynamic Endpoint &lt;p&gt;Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
@@ -1067,12 +1067,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelDynamicEndpointApiResponse?> OBPv400DeleteBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelDynamicEndpointApiResponse?> DeleteBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteBankLevelDynamicEndpointAsync(bankid, dynamicendpointid, cancellationToken).ConfigureAwait(false);
+                return await DeleteBankLevelDynamicEndpointAsync(bankid, dynamicendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1087,16 +1087,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteBankLevelDynamicEndpointApiResponse> OBPv400DeleteBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteBankLevelDynamicEndpointApiResponse> DeleteBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid);
+                ValidateDeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid);
 
-                FormatOBPv400DeleteBankLevelDynamicEndpoint(ref bankid, ref dynamicendpointid);
+                FormatDeleteBankLevelDynamicEndpoint(ref bankid, ref dynamicendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1114,7 +1114,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1132,8 +1132,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400DeleteBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400DeleteBankLevelDynamicEndpointApiResponse>();
-                        APIApi.OBPv400DeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.DeleteBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.DeleteBankLevelDynamicEndpointApiResponse>();
+                        APIApi.DeleteBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1144,9 +1144,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid);
+                        AfterDeleteBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid);
 
-                        Events.ExecuteOnOBPv400DeleteBankLevelDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteBankLevelDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1158,20 +1158,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, bankid, dynamicendpointid);
-                Events.ExecuteOnErrorOBPv400DeleteBankLevelDynamicEndpoint(e);
+                OnErrorDeleteBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, bankid, dynamicendpointid);
+                Events.ExecuteOnErrorDeleteBankLevelDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteDynamicEndpoint(ref string dynamicendpointid);
+        partial void FormatDeleteDynamicEndpoint(ref string dynamicendpointid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="dynamicendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteDynamicEndpoint(string dynamicendpointid)
+        private void ValidateDeleteDynamicEndpoint(string dynamicendpointid)
         {
             if (dynamicendpointid == null)
                 throw new ArgumentNullException(nameof(dynamicendpointid));
@@ -1182,10 +1182,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void AfterOBPv400DeleteDynamicEndpointDefaultImplementation(IOBPv400DeleteDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
+        private void AfterDeleteDynamicEndpointDefaultImplementation(IDeleteDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
+            AfterDeleteDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1196,7 +1196,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void AfterOBPv400DeleteDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400DeleteDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
+        partial void AfterDeleteDynamicEndpoint(ref bool suppressDefaultLog, IDeleteDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1205,10 +1205,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void OnErrorOBPv400DeleteDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
+        private void OnErrorDeleteDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
+            OnErrorDeleteDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1221,19 +1221,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void OnErrorOBPv400DeleteDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
+        partial void OnErrorDeleteDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
 
         /// <summary>
         ///  Delete Dynamic Endpoint &lt;p&gt;Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteDynamicEndpointApiResponse?> OBPv400DeleteDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteDynamicEndpointApiResponse?> DeleteDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
+                return await DeleteDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1247,16 +1247,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteDynamicEndpointApiResponse> OBPv400DeleteDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteDynamicEndpointApiResponse> DeleteDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteDynamicEndpoint(dynamicendpointid);
+                ValidateDeleteDynamicEndpoint(dynamicendpointid);
 
-                FormatOBPv400DeleteDynamicEndpoint(ref dynamicendpointid);
+                FormatDeleteDynamicEndpoint(ref dynamicendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1273,7 +1273,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1291,8 +1291,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400DeleteDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400DeleteDynamicEndpointApiResponse>();
-                        APIApi.OBPv400DeleteDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.DeleteDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.DeleteDynamicEndpointApiResponse>();
+                        APIApi.DeleteDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1303,9 +1303,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
+                        AfterDeleteDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
 
-                        Events.ExecuteOnOBPv400DeleteDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1317,20 +1317,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
-                Events.ExecuteOnErrorOBPv400DeleteDynamicEndpoint(e);
+                OnErrorDeleteDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
+                Events.ExecuteOnErrorDeleteDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteMyDynamicEndpoint(ref string dynamicendpointid);
+        partial void FormatDeleteMyDynamicEndpoint(ref string dynamicendpointid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="dynamicendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteMyDynamicEndpoint(string dynamicendpointid)
+        private void ValidateDeleteMyDynamicEndpoint(string dynamicendpointid)
         {
             if (dynamicendpointid == null)
                 throw new ArgumentNullException(nameof(dynamicendpointid));
@@ -1341,10 +1341,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void AfterOBPv400DeleteMyDynamicEndpointDefaultImplementation(IOBPv400DeleteMyDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
+        private void AfterDeleteMyDynamicEndpointDefaultImplementation(IDeleteMyDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteMyDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
+            AfterDeleteMyDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1355,7 +1355,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void AfterOBPv400DeleteMyDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400DeleteMyDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
+        partial void AfterDeleteMyDynamicEndpoint(ref bool suppressDefaultLog, IDeleteMyDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1364,10 +1364,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void OnErrorOBPv400DeleteMyDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
+        private void OnErrorDeleteMyDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteMyDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
+            OnErrorDeleteMyDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1380,19 +1380,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void OnErrorOBPv400DeleteMyDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
+        partial void OnErrorDeleteMyDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
 
         /// <summary>
         /// Delete My Dynamic Endpoint &lt;p&gt;Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyDynamicEndpointApiResponse?> OBPv400DeleteMyDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyDynamicEndpointApiResponse?> DeleteMyDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteMyDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
+                return await DeleteMyDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1406,16 +1406,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteMyDynamicEndpointApiResponse> OBPv400DeleteMyDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteMyDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IDeleteMyDynamicEndpointApiResponse> DeleteMyDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteMyDynamicEndpoint(dynamicendpointid);
+                ValidateDeleteMyDynamicEndpoint(dynamicendpointid);
 
-                FormatOBPv400DeleteMyDynamicEndpoint(ref dynamicendpointid);
+                FormatDeleteMyDynamicEndpoint(ref dynamicendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1432,7 +1432,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1450,8 +1450,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400DeleteMyDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400DeleteMyDynamicEndpointApiResponse>();
-                        APIApi.OBPv400DeleteMyDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.DeleteMyDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.DeleteMyDynamicEndpointApiResponse>();
+                        APIApi.DeleteMyDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1462,9 +1462,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteMyDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
+                        AfterDeleteMyDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
 
-                        Events.ExecuteOnOBPv400DeleteMyDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteMyDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1476,13 +1476,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteMyDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
-                Events.ExecuteOnErrorOBPv400DeleteMyDynamicEndpoint(e);
+                OnErrorDeleteMyDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
+                Events.ExecuteOnErrorDeleteMyDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetBankLevelDynamicEndpoint(ref string bankid, ref string dynamicendpointid);
+        partial void FormatGetBankLevelDynamicEndpoint(ref string bankid, ref string dynamicendpointid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1490,7 +1490,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetBankLevelDynamicEndpoint(string bankid, string dynamicendpointid)
+        private void ValidateGetBankLevelDynamicEndpoint(string bankid, string dynamicendpointid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1505,10 +1505,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        private void AfterOBPv400GetBankLevelDynamicEndpointDefaultImplementation(IOBPv400GetBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid)
+        private void AfterGetBankLevelDynamicEndpointDefaultImplementation(IGetBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid);
+            AfterGetBankLevelDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1520,7 +1520,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void AfterOBPv400GetBankLevelDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400GetBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid);
+        partial void AfterGetBankLevelDynamicEndpoint(ref bool suppressDefaultLog, IGetBankLevelDynamicEndpointApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1530,10 +1530,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        private void OnErrorOBPv400GetBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid)
+        private void OnErrorGetBankLevelDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid);
+            OnErrorGetBankLevelDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1547,7 +1547,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void OnErrorOBPv400GetBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid);
+        partial void OnErrorGetBankLevelDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid);
 
         /// <summary>
         ///  Get Bank Level Dynamic Endpoint &lt;p&gt;Get a Bank Level Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
@@ -1555,12 +1555,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicEndpointApiResponse?> OBPv400GetBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicEndpointApiResponse?> GetBankLevelDynamicEndpointOrDefaultAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetBankLevelDynamicEndpointAsync(bankid, dynamicendpointid, cancellationToken).ConfigureAwait(false);
+                return await GetBankLevelDynamicEndpointAsync(bankid, dynamicendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1575,16 +1575,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicEndpointApiResponse> OBPv400GetBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicEndpointApiResponse> GetBankLevelDynamicEndpointAsync(string bankid, string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid);
+                ValidateGetBankLevelDynamicEndpoint(bankid, dynamicendpointid);
 
-                FormatOBPv400GetBankLevelDynamicEndpoint(ref bankid, ref dynamicendpointid);
+                FormatGetBankLevelDynamicEndpoint(ref bankid, ref dynamicendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1602,7 +1602,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1629,8 +1629,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400GetBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400GetBankLevelDynamicEndpointApiResponse>();
-                        APIApi.OBPv400GetBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetBankLevelDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetBankLevelDynamicEndpointApiResponse>();
+                        APIApi.GetBankLevelDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1641,9 +1641,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid);
+                        AfterGetBankLevelDynamicEndpointDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid);
 
-                        Events.ExecuteOnOBPv400GetBankLevelDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnGetBankLevelDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1655,20 +1655,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, bankid, dynamicendpointid);
-                Events.ExecuteOnErrorOBPv400GetBankLevelDynamicEndpoint(e);
+                OnErrorGetBankLevelDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, bankid, dynamicendpointid);
+                Events.ExecuteOnErrorGetBankLevelDynamicEndpoint(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetBankLevelDynamicEndpoints(ref string bankid);
+        partial void FormatGetBankLevelDynamicEndpoints(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetBankLevelDynamicEndpoints(string bankid)
+        private void ValidateGetBankLevelDynamicEndpoints(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1679,10 +1679,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetBankLevelDynamicEndpointsDefaultImplementation(IOBPv400GetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetBankLevelDynamicEndpointsDefaultImplementation(IGetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetBankLevelDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetBankLevelDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1693,7 +1693,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetBankLevelDynamicEndpoints(ref bool suppressDefaultLog, IOBPv400GetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetBankLevelDynamicEndpoints(ref bool suppressDefaultLog, IGetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1702,10 +1702,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetBankLevelDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetBankLevelDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetBankLevelDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetBankLevelDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1718,19 +1718,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetBankLevelDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetBankLevelDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Bank Level Dynamic Endpoints &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicEndpointsApiResponse?> OBPv400GetBankLevelDynamicEndpointsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicEndpointsApiResponse?> GetBankLevelDynamicEndpointsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetBankLevelDynamicEndpointsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetBankLevelDynamicEndpointsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1744,16 +1744,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetBankLevelDynamicEndpointsApiResponse> OBPv400GetBankLevelDynamicEndpointsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetBankLevelDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetBankLevelDynamicEndpointsApiResponse> GetBankLevelDynamicEndpointsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetBankLevelDynamicEndpoints(bankid);
+                ValidateGetBankLevelDynamicEndpoints(bankid);
 
-                FormatOBPv400GetBankLevelDynamicEndpoints(ref bankid);
+                FormatGetBankLevelDynamicEndpoints(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1770,7 +1770,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1797,8 +1797,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400GetBankLevelDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400GetBankLevelDynamicEndpointsApiResponse>();
-                        APIApi.OBPv400GetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetBankLevelDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetBankLevelDynamicEndpointsApiResponse>();
+                        APIApi.GetBankLevelDynamicEndpointsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1809,9 +1809,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetBankLevelDynamicEndpointsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetBankLevelDynamicEndpointsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetBankLevelDynamicEndpoints(apiResponseLocalVar);
+                        Events.ExecuteOnGetBankLevelDynamicEndpoints(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1823,20 +1823,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetBankLevelDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetBankLevelDynamicEndpoints(e);
+                OnErrorGetBankLevelDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetBankLevelDynamicEndpoints(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetDynamicEndpoint(ref string dynamicendpointid);
+        partial void FormatGetDynamicEndpoint(ref string dynamicendpointid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="dynamicendpointid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetDynamicEndpoint(string dynamicendpointid)
+        private void ValidateGetDynamicEndpoint(string dynamicendpointid)
         {
             if (dynamicendpointid == null)
                 throw new ArgumentNullException(nameof(dynamicendpointid));
@@ -1847,10 +1847,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void AfterOBPv400GetDynamicEndpointDefaultImplementation(IOBPv400GetDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
+        private void AfterGetDynamicEndpointDefaultImplementation(IGetDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
+            AfterGetDynamicEndpoint(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1861,7 +1861,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void AfterOBPv400GetDynamicEndpoint(ref bool suppressDefaultLog, IOBPv400GetDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
+        partial void AfterGetDynamicEndpoint(ref bool suppressDefaultLog, IGetDynamicEndpointApiResponse apiResponseLocalVar, string dynamicendpointid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1870,10 +1870,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        private void OnErrorOBPv400GetDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
+        private void OnErrorGetDynamicEndpointDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
+            OnErrorGetDynamicEndpoint(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1886,19 +1886,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        partial void OnErrorOBPv400GetDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
+        partial void OnErrorGetDynamicEndpoint(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid);
 
         /// <summary>
         /// Get Dynamic Endpoint &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicEndpointApiResponse?> OBPv400GetDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEndpointApiResponse?> GetDynamicEndpointOrDefaultAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
+                return await GetDynamicEndpointAsync(dynamicendpointid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1912,16 +1912,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicEndpointApiResponse> OBPv400GetDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEndpointApiResponse> GetDynamicEndpointAsync(string dynamicendpointid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetDynamicEndpoint(dynamicendpointid);
+                ValidateGetDynamicEndpoint(dynamicendpointid);
 
-                FormatOBPv400GetDynamicEndpoint(ref dynamicendpointid);
+                FormatGetDynamicEndpoint(ref dynamicendpointid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1938,7 +1938,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1965,8 +1965,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400GetDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400GetDynamicEndpointApiResponse>();
-                        APIApi.OBPv400GetDynamicEndpointApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetDynamicEndpointApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetDynamicEndpointApiResponse>();
+                        APIApi.GetDynamicEndpointApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1977,9 +1977,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
+                        AfterGetDynamicEndpointDefaultImplementation(apiResponseLocalVar, dynamicendpointid);
 
-                        Events.ExecuteOnOBPv400GetDynamicEndpoint(apiResponseLocalVar);
+                        Events.ExecuteOnGetDynamicEndpoint(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1991,8 +1991,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
-                Events.ExecuteOnErrorOBPv400GetDynamicEndpoint(e);
+                OnErrorGetDynamicEndpointDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}", uriBuilderLocalVar.Path, dynamicendpointid);
+                Events.ExecuteOnErrorGetDynamicEndpoint(e);
                 throw;
             }
         }
@@ -2001,10 +2001,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetDynamicEndpointsDefaultImplementation(IOBPv400GetDynamicEndpointsApiResponse apiResponseLocalVar)
+        private void AfterGetDynamicEndpointsDefaultImplementation(IGetDynamicEndpointsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2014,7 +2014,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetDynamicEndpoints(ref bool suppressDefaultLog, IOBPv400GetDynamicEndpointsApiResponse apiResponseLocalVar);
+        partial void AfterGetDynamicEndpoints(ref bool suppressDefaultLog, IGetDynamicEndpointsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2022,10 +2022,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2037,18 +2037,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         ///  Get Dynamic Endpoints &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicEndpointsApiResponse?> OBPv400GetDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEndpointsApiResponse?> GetDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetDynamicEndpointsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetDynamicEndpointsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2061,8 +2061,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetDynamicEndpointsApiResponse> OBPv400GetDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetDynamicEndpointsApiResponse> GetDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2082,7 +2082,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2109,8 +2109,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400GetDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400GetDynamicEndpointsApiResponse>();
-                        APIApi.OBPv400GetDynamicEndpointsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetDynamicEndpointsApiResponse>();
+                        APIApi.GetDynamicEndpointsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2121,9 +2121,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetDynamicEndpointsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetDynamicEndpointsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetDynamicEndpoints(apiResponseLocalVar);
+                        Events.ExecuteOnGetDynamicEndpoints(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2135,8 +2135,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetDynamicEndpoints(e);
+                OnErrorGetDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetDynamicEndpoints(e);
                 throw;
             }
         }
@@ -2145,10 +2145,10 @@ namespace OpenBankProject.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterOBPv400GetMyDynamicEndpointsDefaultImplementation(IOBPv400GetMyDynamicEndpointsApiResponse apiResponseLocalVar)
+        private void AfterGetMyDynamicEndpointsDefaultImplementation(IGetMyDynamicEndpointsApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetMyDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterGetMyDynamicEndpoints(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2158,7 +2158,7 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterOBPv400GetMyDynamicEndpoints(ref bool suppressDefaultLog, IOBPv400GetMyDynamicEndpointsApiResponse apiResponseLocalVar);
+        partial void AfterGetMyDynamicEndpoints(ref bool suppressDefaultLog, IGetMyDynamicEndpointsApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2166,10 +2166,10 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorOBPv400GetMyDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorGetMyDynamicEndpointsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetMyDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorGetMyDynamicEndpoints(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2181,18 +2181,18 @@ namespace OpenBankProject.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorOBPv400GetMyDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorGetMyDynamicEndpoints(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Get My Dynamic Endpoints &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyDynamicEndpointsApiResponse?> OBPv400GetMyDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyDynamicEndpointsApiResponse?> GetMyDynamicEndpointsOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetMyDynamicEndpointsAsync(cancellationToken).ConfigureAwait(false);
+                return await GetMyDynamicEndpointsAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2205,8 +2205,8 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetMyDynamicEndpointsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetMyDynamicEndpointsApiResponse> OBPv400GetMyDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetMyDynamicEndpointsApiResponse"/>&gt;</returns>
+        public async Task<IGetMyDynamicEndpointsApiResponse> GetMyDynamicEndpointsAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2226,7 +2226,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2253,8 +2253,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400GetMyDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400GetMyDynamicEndpointsApiResponse>();
-                        APIApi.OBPv400GetMyDynamicEndpointsApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.GetMyDynamicEndpointsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.GetMyDynamicEndpointsApiResponse>();
+                        APIApi.GetMyDynamicEndpointsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2265,9 +2265,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetMyDynamicEndpointsDefaultImplementation(apiResponseLocalVar);
+                        AfterGetMyDynamicEndpointsDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnOBPv400GetMyDynamicEndpoints(apiResponseLocalVar);
+                        Events.ExecuteOnGetMyDynamicEndpoints(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2279,22 +2279,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetMyDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/my/dynamic-endpoints", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorOBPv400GetMyDynamicEndpoints(e);
+                OnErrorGetMyDynamicEndpointsDefaultImplementation(e, "/obp/v4.0.0/my/dynamic-endpoints", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorGetMyDynamicEndpoints(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateBankLevelDynamicEndpointHost(ref string bankid, ref string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        partial void FormatUpdateBankLevelDynamicEndpointHost(ref string bankid, ref string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateBankLevelDynamicEndpointHost(string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        private void ValidateUpdateBankLevelDynamicEndpointHost(string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -2302,8 +2302,8 @@ namespace OpenBankProject.Api
             if (dynamicendpointid == null)
                 throw new ArgumentNullException(nameof(dynamicendpointid));
 
-            if (oBPv400UpdateBankLevelDynamicEndpointHostRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicEndpointHostRequest));
+            if (updateBankLevelDynamicEndpointHostRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicEndpointHostRequest));
         }
 
         /// <summary>
@@ -2312,11 +2312,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        private void AfterOBPv400UpdateBankLevelDynamicEndpointHostDefaultImplementation(IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        private void AfterUpdateBankLevelDynamicEndpointHostDefaultImplementation(IUpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateBankLevelDynamicEndpointHost(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+            AfterUpdateBankLevelDynamicEndpointHost(ref suppressDefaultLog, apiResponseLocalVar, bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2328,8 +2328,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        partial void AfterOBPv400UpdateBankLevelDynamicEndpointHost(ref bool suppressDefaultLog, IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        partial void AfterUpdateBankLevelDynamicEndpointHost(ref bool suppressDefaultLog, IUpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar, string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2339,11 +2339,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        private void OnErrorOBPv400UpdateBankLevelDynamicEndpointHostDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        private void OnErrorUpdateBankLevelDynamicEndpointHostDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateBankLevelDynamicEndpointHost(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+            OnErrorUpdateBankLevelDynamicEndpointHost(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2357,22 +2357,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        partial void OnErrorOBPv400UpdateBankLevelDynamicEndpointHost(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        partial void OnErrorUpdateBankLevelDynamicEndpointHost(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         ///  Update Bank Level Dynamic Endpoint Host &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse?> OBPv400UpdateBankLevelDynamicEndpointHostOrDefaultAsync(string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelDynamicEndpointHostApiResponse?> UpdateBankLevelDynamicEndpointHostOrDefaultAsync(string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateBankLevelDynamicEndpointHostAsync(bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateBankLevelDynamicEndpointHostAsync(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2386,18 +2386,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateBankLevelDynamicEndpointHostApiResponse> OBPv400UpdateBankLevelDynamicEndpointHostAsync(string bankid, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateBankLevelDynamicEndpointHostApiResponse"/>&gt;</returns>
+        public async Task<IUpdateBankLevelDynamicEndpointHostApiResponse> UpdateBankLevelDynamicEndpointHostAsync(string bankid, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                ValidateUpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
-                FormatOBPv400UpdateBankLevelDynamicEndpointHost(ref bankid, ref dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                FormatUpdateBankLevelDynamicEndpointHost(ref bankid, ref dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2410,16 +2410,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bdynamicendpointid%7D", Uri.EscapeDataString(dynamicendpointid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicEndpointHostRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicEndpointHostRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicEndpointHostRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicEndpointHostRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2455,8 +2455,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400UpdateBankLevelDynamicEndpointHostApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400UpdateBankLevelDynamicEndpointHostApiResponse>();
-                        APIApi.OBPv400UpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.UpdateBankLevelDynamicEndpointHostApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.UpdateBankLevelDynamicEndpointHostApiResponse>();
+                        APIApi.UpdateBankLevelDynamicEndpointHostApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2467,9 +2467,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateBankLevelDynamicEndpointHostDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                        AfterUpdateBankLevelDynamicEndpointHostDefaultImplementation(apiResponseLocalVar, bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
-                        Events.ExecuteOnOBPv400UpdateBankLevelDynamicEndpointHost(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateBankLevelDynamicEndpointHost(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2481,27 +2481,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateBankLevelDynamicEndpointHostDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host", uriBuilderLocalVar.Path, bankid, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
-                Events.ExecuteOnErrorOBPv400UpdateBankLevelDynamicEndpointHost(e);
+                OnErrorUpdateBankLevelDynamicEndpointHostDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host", uriBuilderLocalVar.Path, bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
+                Events.ExecuteOnErrorUpdateBankLevelDynamicEndpointHost(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateDynamicEndpointHost(ref string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        partial void FormatUpdateDynamicEndpointHost(ref string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateDynamicEndpointHost(string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        private void ValidateUpdateDynamicEndpointHost(string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             if (dynamicendpointid == null)
                 throw new ArgumentNullException(nameof(dynamicendpointid));
 
-            if (oBPv400UpdateBankLevelDynamicEndpointHostRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateBankLevelDynamicEndpointHostRequest));
+            if (updateBankLevelDynamicEndpointHostRequest == null)
+                throw new ArgumentNullException(nameof(updateBankLevelDynamicEndpointHostRequest));
         }
 
         /// <summary>
@@ -2509,11 +2509,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        private void AfterOBPv400UpdateDynamicEndpointHostDefaultImplementation(IOBPv400UpdateDynamicEndpointHostApiResponse apiResponseLocalVar, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        private void AfterUpdateDynamicEndpointHostDefaultImplementation(IUpdateDynamicEndpointHostApiResponse apiResponseLocalVar, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateDynamicEndpointHost(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+            AfterUpdateDynamicEndpointHost(ref suppressDefaultLog, apiResponseLocalVar, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2524,8 +2524,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        partial void AfterOBPv400UpdateDynamicEndpointHost(ref bool suppressDefaultLog, IOBPv400UpdateDynamicEndpointHostApiResponse apiResponseLocalVar, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        partial void AfterUpdateDynamicEndpointHost(ref bool suppressDefaultLog, IUpdateDynamicEndpointHostApiResponse apiResponseLocalVar, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2534,11 +2534,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        private void OnErrorOBPv400UpdateDynamicEndpointHostDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest)
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        private void OnErrorUpdateDynamicEndpointHostDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateDynamicEndpointHost(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+            OnErrorUpdateDynamicEndpointHost(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2551,21 +2551,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="dynamicendpointid"></param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest"></param>
-        partial void OnErrorOBPv400UpdateDynamicEndpointHost(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+        /// <param name="updateBankLevelDynamicEndpointHostRequest"></param>
+        partial void OnErrorUpdateDynamicEndpointHost(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest);
 
         /// <summary>
         ///  Update Dynamic Endpoint Host &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
         /// </summary>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateDynamicEndpointHostApiResponse?> OBPv400UpdateDynamicEndpointHostOrDefaultAsync(string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
+        public async Task<IUpdateDynamicEndpointHostApiResponse?> UpdateDynamicEndpointHostOrDefaultAsync(string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateDynamicEndpointHostAsync(dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateDynamicEndpointHostAsync(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2578,18 +2578,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="dynamicendpointid">The DYNAMICENDPOINTID identifier</param>
-        /// <param name="oBPv400UpdateBankLevelDynamicEndpointHostRequest">Request body</param>
+        /// <param name="updateBankLevelDynamicEndpointHostRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateDynamicEndpointHostApiResponse> OBPv400UpdateDynamicEndpointHostAsync(string dynamicendpointid, OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateDynamicEndpointHostApiResponse"/>&gt;</returns>
+        public async Task<IUpdateDynamicEndpointHostApiResponse> UpdateDynamicEndpointHostAsync(string dynamicendpointid, UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateDynamicEndpointHost(dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                ValidateUpdateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
-                FormatOBPv400UpdateDynamicEndpointHost(ref dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                FormatUpdateDynamicEndpointHost(ref dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2601,16 +2601,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bdynamicendpointid%7D", Uri.EscapeDataString(dynamicendpointid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateBankLevelDynamicEndpointHostRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateBankLevelDynamicEndpointHostRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateBankLevelDynamicEndpointHostRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateBankLevelDynamicEndpointHostRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -2646,8 +2646,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<APIApi.OBPv400UpdateDynamicEndpointHostApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.OBPv400UpdateDynamicEndpointHostApiResponse>();
-                        APIApi.OBPv400UpdateDynamicEndpointHostApiResponse apiResponseLocalVar;
+                        ILogger<APIApi.UpdateDynamicEndpointHostApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<APIApi.UpdateDynamicEndpointHostApiResponse>();
+                        APIApi.UpdateDynamicEndpointHostApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2658,9 +2658,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateDynamicEndpointHostDefaultImplementation(apiResponseLocalVar, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
+                        AfterUpdateDynamicEndpointHostDefaultImplementation(apiResponseLocalVar, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
 
-                        Events.ExecuteOnOBPv400UpdateDynamicEndpointHost(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateDynamicEndpointHost(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2672,8 +2672,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateDynamicEndpointHostDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host", uriBuilderLocalVar.Path, dynamicendpointid, oBPv400UpdateBankLevelDynamicEndpointHostRequest);
-                Events.ExecuteOnErrorOBPv400UpdateDynamicEndpointHost(e);
+                OnErrorUpdateDynamicEndpointHostDefaultImplementation(e, "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host", uriBuilderLocalVar.Path, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest);
+                Events.ExecuteOnErrorUpdateDynamicEndpointHost(e);
                 throw;
             }
         }

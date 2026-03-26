@@ -1,17 +1,17 @@
 # DirectDebitApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateDirectDebit**](DirectDebitApi.md#obpv400createdirectdebitoperation) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**oBPv400CreateDirectDebitManagement**](DirectDebitApi.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**createDirectDebit**](DirectDebitApi.md#createdirectdebitoperation) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**createDirectDebitManagement**](DirectDebitApi.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
 
 
-## oBPv400CreateDirectDebit
+## createDirectDebit
 
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(bankid, accountid, viewid, oBPv400CreateDirectDebitRequest)
+> CreateDirectDebit200Response createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -24,7 +24,7 @@ import {
   Configuration,
   DirectDebitApi,
 } from 'obp-typescript';
-import type { OBPv400CreateDirectDebitOperationRequest } from 'obp-typescript';
+import type { CreateDirectDebitOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
     accountid: accountid_example,
     // string | The VIEWID identifier
     viewid: viewid_example,
-    // OBPv400CreateDirectDebitRequest | Request body
-    oBPv400CreateDirectDebitRequest: {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}},
-  } satisfies OBPv400CreateDirectDebitOperationRequest;
+    // CreateDirectDebitRequest | Request body
+    createDirectDebitRequest: {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}},
+  } satisfies CreateDirectDebitOperationRequest;
 
   try {
-    const data = await api.oBPv400CreateDirectDebit(body);
+    const data = await api.createDirectDebit(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -69,11 +69,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **viewid** | `string` | The VIEWID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateDirectDebitRequest** | [OBPv400CreateDirectDebitRequest](OBPv400CreateDirectDebitRequest.md) | Request body | |
+| **createDirectDebitRequest** | [CreateDirectDebitRequest](CreateDirectDebitRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -95,9 +95,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateDirectDebitManagement
+## createDirectDebitManagement
 
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(bankid, accountid, oBPv400CreateDirectDebitRequest)
+> CreateDirectDebit200Response createDirectDebitManagement(bankid, accountid, createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -110,7 +110,7 @@ import {
   Configuration,
   DirectDebitApi,
 } from 'obp-typescript';
-import type { OBPv400CreateDirectDebitManagementRequest } from 'obp-typescript';
+import type { CreateDirectDebitManagementRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -129,12 +129,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-    // OBPv400CreateDirectDebitRequest | Request body
-    oBPv400CreateDirectDebitRequest: {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, date_signed={type=string, format=date-time}, user_id={type=string}}},
-  } satisfies OBPv400CreateDirectDebitManagementRequest;
+    // CreateDirectDebitRequest | Request body
+    createDirectDebitRequest: {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}},
+  } satisfies CreateDirectDebitManagementRequest;
 
   try {
-    const data = await api.oBPv400CreateDirectDebitManagement(body);
+    const data = await api.createDirectDebitManagement(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -152,11 +152,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateDirectDebitRequest** | [OBPv400CreateDirectDebitRequest](OBPv400CreateDirectDebitRequest.md) | Request body | |
+| **createDirectDebitRequest** | [CreateDirectDebitRequest](CreateDirectDebitRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

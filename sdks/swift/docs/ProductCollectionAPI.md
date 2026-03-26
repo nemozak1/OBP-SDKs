@@ -1,16 +1,16 @@
 # ProductCollectionAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CreateProductCollection**](ProductCollectionAPI.md#obpv310createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
-[**oBPv310GetProductCollection**](ProductCollectionAPI.md#obpv310getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
+[**createProductCollection**](ProductCollectionAPI.md#createproductcollection) | **PUT** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Create Product Collection
+[**getProductCollection**](ProductCollectionAPI.md#getproductcollection) | **GET** /obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode} | Get Product Collection
 
 
-# **oBPv310CreateProductCollection**
+# **createProductCollection**
 ```swift
-    open class func oBPv310CreateProductCollection(bankid: String, collectioncode: String, oBPv310CreateProductCollectionRequest: OBPv310CreateProductCollectionRequest, completion: @escaping (_ data: OBPv310CreateProductCollection200Response?, _ error: Error?) -> Void)
+    open class func createProductCollection(bankid: String, collectioncode: String, createProductCollectionRequest: CreateProductCollectionRequest, completion: @escaping (_ data: CreateProductCollection200Response?, _ error: Error?) -> Void)
 ```
 
 Create Product Collection
@@ -24,10 +24,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let collectioncode = "collectioncode_example" // String | The COLLECTIONCODE identifier
-let oBPv310CreateProductCollectionRequest = OBPv3_1_0_createProductCollection_request(type: "type_example", properties: OBPv3_1_0_createProductCollection_request_properties(parentProductCode: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), childrenProductCodes: OBPv6_0_0_getActiveRateLimitsAtDate_200_response_properties_considered_rate_limit_ids(type: "type_example", items: nil))) // OBPv310CreateProductCollectionRequest | Request body
+let createProductCollectionRequest = createProductCollection_request(parentProductCode: "parentProductCode_example", childrenProductCodes: ["childrenProductCodes_example"]) // CreateProductCollectionRequest | Request body
 
 // Create Product Collection
-ProductCollectionAPI.oBPv310CreateProductCollection(bankid: bankid, collectioncode: collectioncode, oBPv310CreateProductCollectionRequest: oBPv310CreateProductCollectionRequest) { (response, error) in
+ProductCollectionAPI.createProductCollection(bankid: bankid, collectioncode: collectioncode, createProductCollectionRequest: createProductCollectionRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -45,11 +45,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **collectioncode** | **String** | The COLLECTIONCODE identifier | 
- **oBPv310CreateProductCollectionRequest** | [**OBPv310CreateProductCollectionRequest**](OBPv310CreateProductCollectionRequest.md) | Request body | 
+ **createProductCollectionRequest** | [**CreateProductCollectionRequest**](CreateProductCollectionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310CreateProductCollection200Response**](OBPv310CreateProductCollection200Response.md)
+[**CreateProductCollection200Response**](CreateProductCollection200Response.md)
 
 ### Authorization
 
@@ -62,9 +62,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetProductCollection**
+# **getProductCollection**
 ```swift
-    open class func oBPv310GetProductCollection(bankid: String, collectioncode: String, completion: @escaping (_ data: OBPv310GetProductCollection200Response?, _ error: Error?) -> Void)
+    open class func getProductCollection(bankid: String, collectioncode: String, completion: @escaping (_ data: GetProductCollection200Response?, _ error: Error?) -> Void)
 ```
 
 Get Product Collection
@@ -80,7 +80,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let collectioncode = "collectioncode_example" // String | The COLLECTIONCODE identifier
 
 // Get Product Collection
-ProductCollectionAPI.oBPv310GetProductCollection(bankid: bankid, collectioncode: collectioncode) { (response, error) in
+ProductCollectionAPI.getProductCollection(bankid: bankid, collectioncode: collectioncode) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetProductCollection200Response**](OBPv310GetProductCollection200Response.md)
+[**GetProductCollection200Response**](GetProductCollection200Response.md)
 
 ### Authorization
 

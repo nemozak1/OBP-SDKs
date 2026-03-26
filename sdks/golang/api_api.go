@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,8862 +24,19 @@ import (
 // APIAPIService APIAPI service
 type APIAPIService service
 
-type ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	apiversion string
-}
-
-func (r ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetBankLevelDynamicResourceDocsObpExecute(r)
-}
-
-/*
-OBPv140GetBankLevelDynamicResourceDocsObp Get Bank Level Dynamic Resource Docs
-
-<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
-<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
-<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
-<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
-<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
-<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
-<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
-<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
-<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
-if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
-<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
-<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
-Static Resource Docs are cached, TTL is 3600 seconds</p>
-<p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
-<ul>
-<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
-<li> version references the version that the API call is defined in.</li>
-<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
-<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
-<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
-<li> summary is a short description inline with the swagger terminology. </li>
-<li> description may contain html markup (generated from markdown on the server).</li>
-</ul>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest
-*/
-func (a *APIAPIService) OBPv140GetBankLevelDynamicResourceDocsObp(ctx context.Context, bankid string, apiversion string) ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest {
-	return ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv140GetBankLevelDynamicResourceDocsObpExecute(r ApiOBPv140GetBankLevelDynamicResourceDocsObpRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv140GetBankLevelDynamicResourceDocsObp")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv140GetResourceDocsObpRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsObpRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsObpExecute(r)
-}
-
-/*
-OBPv140GetResourceDocsObp Get Resource Docs
-
-<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
-<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
-<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
-<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
-<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
-<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
-<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
-<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
-<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
-if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
-<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
-<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
-Static Resource Docs are cached, TTL is 3600 seconds</p>
-<p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
-<ul>
-<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
-<li> version references the version that the API call is defined in.</li>
-<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
-<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
-<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
-<li> summary is a short description inline with the swagger terminology. </li>
-<li> description may contain html markup (generated from markdown on the server).</li>
-</ul>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsObpRequest
-*/
-func (a *APIAPIService) OBPv140GetResourceDocsObp(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsObpRequest {
-	return ApiOBPv140GetResourceDocsObpRequest{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv140GetResourceDocsObpExecute(r ApiOBPv140GetResourceDocsObpRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv140GetResourceDocsObp")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/obp"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv140GetResourceDocsOpenAPI31Request struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsOpenAPI31Request) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsOpenAPI31Execute(r)
-}
-
-/*
-OBPv140GetResourceDocsOpenAPI31 Get OpenAPI 3.1 documentation
-
-<p>Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.</p>
-<p>API_VERSION is the version you want documentation about e.g. v6.0.0</p>
-<h2><a href="#query-parameters" id="query-parameters">Query Parameters</a></h2>
-<p>You may filter this endpoint using the following optional query parameters:</p>
-<p><strong>tags</strong> - Filter by endpoint tags (comma-separated list)<br />
-• Example: ?tags=Account,Bank or ?tags=Account-Firehose<br />
-• All endpoints are given one or more tags which are used for grouping<br />
-• Empty values will return error OBP-10053</p>
-<p><strong>functions</strong> - Filter by function names (comma-separated list)<br />
-• Example: ?functions=getBanks,bankById<br />
-• Each endpoint is implemented in the OBP Scala code by a 'function'<br />
-• Empty values will return error OBP-10054</p>
-<p><strong>content</strong> - Filter by endpoint type<br />
-• Values: static, dynamic, all (case-insensitive)<br />
-• static: Only show static/core API endpoints<br />
-• dynamic: Only show dynamic/custom endpoints<br />
-• all: Show both static and dynamic endpoints (default)<br />
-• Invalid values will return error OBP-10052</p>
-<p><strong>locale</strong> - Language for localized documentation<br />
-• Example: ?locale=en_GB or ?locale=es_ES<br />
-• Supported locales: en_GB, es_ES, ro_RO<br />
-• Invalid locales will return error OBP-10041</p>
-<p><strong>api-collection-id</strong> - Filter by API collection UUID<br />
-• Example: ?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221<br />
-• Returns only endpoints belonging to the specified collection<br />
-• Empty values will return error OBP-10055</p>
-<p>This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.</p>
-<p>For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<h2><a href="#examples" id="examples">Examples</a></h2>
-<p>Basic usage:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
-<p>Filter by tags:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
-<p>Filter by content type:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
-<p>Filter by functions:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
-<p>Combine multiple parameters:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
-<p>Filter by API collection:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">https://apisandbox.openbankproject.com/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsOpenAPI31Request
-*/
-func (a *APIAPIService) OBPv140GetResourceDocsOpenAPI31(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsOpenAPI31Request {
-	return ApiOBPv140GetResourceDocsOpenAPI31Request{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv140GetResourceDocsOpenAPI31Execute(r ApiOBPv140GetResourceDocsOpenAPI31Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv140GetResourceDocsOpenAPI31")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/openapi"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv140GetResourceDocsSwaggerRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	apiversion string
-}
-
-func (r ApiOBPv140GetResourceDocsSwaggerRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv140GetResourceDocsSwaggerExecute(r)
-}
-
-/*
-OBPv140GetResourceDocsSwagger Get Swagger documentation
-
-<p>Returns documentation about the RESTful resources on this server in Swagger format.</p>
-<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
-<p>You may filter this endpoint using the 'tags' url parameter e.g. ?tags=Account,Bank</p>
-<p>(All endpoints are given one or more tags which for used in grouping)</p>
-<p>You may filter this endpoint using the 'functions' url parameter e.g. ?functions=getBanks,bankById</p>
-<p>(Each endpoint is implemented in the OBP Scala code by a 'function')</p>
-<p>See the Resource Doc endpoint for more information.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>Following are more examples:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">https://apisandbox.openbankproject.com/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#api_version">API_VERSION</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param apiversion The APIVERSION identifier
- @return ApiOBPv140GetResourceDocsSwaggerRequest
-*/
-func (a *APIAPIService) OBPv140GetResourceDocsSwagger(ctx context.Context, apiversion string) ApiOBPv140GetResourceDocsSwaggerRequest {
-	return ApiOBPv140GetResourceDocsSwaggerRequest{
-		ApiService: a,
-		ctx: ctx,
-		apiversion: apiversion,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv140GetResourceDocsSwaggerExecute(r ApiOBPv140GetResourceDocsSwaggerRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv140GetResourceDocsSwagger")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/swagger"
-	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv200ElasticSearchMetricsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv200ElasticSearchMetricsRequest) Execute() (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
-	return r.ApiService.OBPv200ElasticSearchMetricsExecute(r)
-}
-
-/*
-OBPv200ElasticSearchMetrics Search API Metrics via Elasticsearch
-
-<p>Search the API calls made to this API instance via Elastic Search.</p>
-<p>Login is required.</p>
-<p>CanSearchMetrics entitlement is required to search metrics data.</p>
-<p>parameters:</p>
-<p>esType  - elasticsearch type</p>
-<p>simple query:</p>
-<p>q       - plain_text_query</p>
-<p>df      - default field to search</p>
-<p>sort    - field to sort on</p>
-<p>size    - number of hits returned, default 10</p>
-<p>from    - show hits starting from</p>
-<p>json query:</p>
-<p>source  - JSON_query_(URL-escaped)</p>
-<p>example usage:</p>
-<p>/search/metrics/q=findThis</p>
-<p>or:</p>
-<p>/search/metrics/source={&quot;query&quot;:{&quot;query_string&quot;:{&quot;query&quot;:&quot;findThis&quot;}}}</p>
-<p>Note!!</p>
-<p>The whole JSON query string MUST be URL-encoded:</p>
-<ul>
-<li>For {  use %7B</li>
-<li>For }  use %7D</li>
-<li>For : use %3A</li>
-<li>For &quot; use %22</li>
-</ul>
-<p>etc..</p>
-<p>Only q, source and esType are passed to Elastic</p>
-<p>Elastic simple query: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html</a></p>
-<p>Elastic JSON query: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#none">none</a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv200ElasticSearchMetricsRequest
-*/
-func (a *APIAPIService) OBPv200ElasticSearchMetrics(ctx context.Context) ApiOBPv200ElasticSearchMetricsRequest {
-	return ApiOBPv200ElasticSearchMetricsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-func (a *APIAPIService) OBPv200ElasticSearchMetricsExecute(r ApiOBPv200ElasticSearchMetricsRequest) (*OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv200ElasticSearchMetrics")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v2.0.0/search/metrics"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv220GetConnectorMetricsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv220GetConnectorMetricsRequest) Execute() (*OBPv220GetConnectorMetrics200Response, *http.Response, error) {
-	return r.ApiService.OBPv220GetConnectorMetricsExecute(r)
-}
-
-/*
-OBPv220GetConnectorMetrics Get Connector Metrics
-
-<p>Get the all metrics</p>
-<p>require CanGetConnectorMetrics role</p>
-<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/connector/metrics</p>
-<p>Should be able to filter on the following metrics fields</p>
-<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
-<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
-<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
-<p>3 limit (for pagination: defaults to 1000)  eg:limit=2000</p>
-<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
-<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=100&amp;offset=300</p>
-<p>Other filters:</p>
-<p>5 connector_name  (if null ignore)</p>
-<p>6 function_name (if null ignore)</p>
-<p>7 correlation_id (if null ignore)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
-<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
-<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv220GetConnectorMetricsRequest
-*/
-func (a *APIAPIService) OBPv220GetConnectorMetrics(ctx context.Context) ApiOBPv220GetConnectorMetricsRequest {
-	return ApiOBPv220GetConnectorMetricsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv220GetConnectorMetrics200Response
-func (a *APIAPIService) OBPv220GetConnectorMetricsExecute(r ApiOBPv220GetConnectorMetricsRequest) (*OBPv220GetConnectorMetrics200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv220GetConnectorMetrics200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv220GetConnectorMetrics")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v2.2.0/management/connector/metrics"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv220GetMessageDocsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	connector string
-}
-
-func (r ApiOBPv220GetMessageDocsRequest) Execute() (*OBPv220GetMessageDocs200Response, *http.Response, error) {
-	return r.ApiService.OBPv220GetMessageDocsExecute(r)
-}
-
-/*
-OBPv220GetMessageDocs Get Message Docs
-
-<p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
-Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
-<p>Note: API Explorer provides a Message Docs page where these messages are displayed.</p>
-<p><code>CONNECTOR</code>: rest_vMar2019, stored_procedure_vDec2019 ...</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#adapter_implementation"><strong>adapter_implementation</strong></a>:</p>
-<p><a href="/glossary#dependent_endpoints"><strong>dependent_endpoints</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#example_inbound_message"><strong>example_inbound_message</strong></a>: {}</p>
-<p><a href="/glossary#example_outbound_message"><strong>example_outbound_message</strong></a>: {}</p>
-<p><a href="/glossary#group"><strong>group</strong></a>:</p>
-<p><a href="/glossary#message_docs"><strong>message_docs</strong></a>:</p>
-<p><a href="/glossary#message_format"><strong>message_format</strong></a>:</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#process"><strong>process</strong></a>: obp.getBank</p>
-<p><a href="/glossary#suggested_order"><strong>suggested_order</strong></a>:</p>
-<p><a href="/glossary#version"><strong>version</strong></a>:</p>
-<p><a href="/glossary#inboundavroschema">inboundAvroSchema</a>:</p>
-<p><a href="/glossary#inbound_topic">inbound_topic</a>:</p>
-<p><a href="/glossary#outboundavroschema">outboundAvroSchema</a>:</p>
-<p><a href="/glossary#outbound_topic">outbound_topic</a>:</p>
-<p><a href="/glossary#requiredfieldinfo">requiredFieldInfo</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connector The CONNECTOR identifier
- @return ApiOBPv220GetMessageDocsRequest
-*/
-func (a *APIAPIService) OBPv220GetMessageDocs(ctx context.Context, connector string) ApiOBPv220GetMessageDocsRequest {
-	return ApiOBPv220GetMessageDocsRequest{
-		ApiService: a,
-		ctx: ctx,
-		connector: connector,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv220GetMessageDocs200Response
-func (a *APIAPIService) OBPv220GetMessageDocsExecute(r ApiOBPv220GetMessageDocsRequest) (*OBPv220GetMessageDocs200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv220GetMessageDocs200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv220GetMessageDocs")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v2.2.0/message-docs/{connector}"
-	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300GetAdapterInfoForBankRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-}
-
-func (r ApiOBPv300GetAdapterInfoForBankRequest) Execute() (*OBPv400GetMapperDatabaseInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetAdapterInfoForBankExecute(r)
-}
-
-/*
-OBPv300GetAdapterInfoForBank Get Adapter Info for a bank
-
-<p>Get basic information about the Adapter listening on behalf of this bank.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#version"><strong>version</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv300GetAdapterInfoForBankRequest
-*/
-func (a *APIAPIService) OBPv300GetAdapterInfoForBank(ctx context.Context, bankid string) ApiOBPv300GetAdapterInfoForBankRequest {
-	return ApiOBPv300GetAdapterInfoForBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetMapperDatabaseInfo200Response
-func (a *APIAPIService) OBPv300GetAdapterInfoForBankExecute(r ApiOBPv300GetAdapterInfoForBankRequest) (*OBPv400GetMapperDatabaseInfo200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMapperDatabaseInfo200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv300GetAdapterInfoForBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/adapter"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310ConfigRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310ConfigRequest) Execute() (*OBPv310Config200Response, *http.Response, error) {
-	return r.ApiService.OBPv310ConfigExecute(r)
-}
-
-/*
-OBPv310Config Get API Configuration
-
-<p>Returns information about:</p>
-<ul>
-<li>The default bank_id</li>
-<li>Akka configuration</li>
-<li>Elastic Search configuration</li>
-<li>Cached functions</li>
-</ul>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#akka"><strong>akka</strong></a>:</p>
-<p><a href="/glossary#cache"><strong>cache</strong></a>:</p>
-<p><a href="/glossary#elastic_search"><strong>elastic_search</strong></a>:</p>
-<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
-<p><a href="/glossary#log_level"><strong>log_level</strong></a>:</p>
-<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
-<p><a href="/glossary#ports"><strong>ports</strong></a>:</p>
-<p><a href="/glossary#property"><strong>property</strong></a>:</p>
-<p><a href="/glossary#require_scopes_for_all_roles"><strong>require_scopes_for_all_roles</strong></a>:</p>
-<p><a href="/glossary#require_scopes_for_listed_roles"><strong>require_scopes_for_listed_roles</strong></a>: false</p>
-<p><a href="/glossary#scopes"><strong>scopes</strong></a>:</p>
-<p><a href="/glossary#ttl_in_seconds"><strong>ttl_in_seconds</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#warehouse"><strong>warehouse</strong></a>:</p>
-<p><a href="/glossary#">remote_data_secret_matched</a>: remote_data_secret_matched</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310ConfigRequest
-*/
-func (a *APIAPIService) OBPv310Config(ctx context.Context) ApiOBPv310ConfigRequest {
-	return ApiOBPv310ConfigRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310Config200Response
-func (a *APIAPIService) OBPv310ConfigExecute(r ApiOBPv310ConfigRequest) (*OBPv310Config200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310Config200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310Config")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/config"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310CreateMethodRoutingRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	oBPv310CreateMethodRoutingRequest *OBPv310CreateMethodRoutingRequest
-}
-
-// Request body
-func (r ApiOBPv310CreateMethodRoutingRequest) OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest OBPv310CreateMethodRoutingRequest) ApiOBPv310CreateMethodRoutingRequest {
-	r.oBPv310CreateMethodRoutingRequest = &oBPv310CreateMethodRoutingRequest
-	return r
-}
-
-func (r ApiOBPv310CreateMethodRoutingRequest) Execute() (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	return r.ApiService.OBPv310CreateMethodRoutingExecute(r)
-}
-
-/*
-OBPv310CreateMethodRouting Create MethodRouting
-
-<p>Create a MethodRouting.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Explanation of Fields:</p>
-<ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
-<li>connector_name is required String value</li>
-<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
-<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
-<li>parameters is optional array of key value pairs. You can set some parameters for this method</li>
-</ul>
-<p>note and CAVEAT!:</p>
-<ul>
-<li>bank_id_pattern has to be empty for methods that do not take bank_id as a function parameter, otherwise might get empty result</li>
-<li>methods that aggregate bank objects (e.g. getBankAccountsForUser) have to take any  existing method routings for these objects into consideration</li>
-<li>so if you create e.g. a bank specific method routing for getting an account, make sure that it is also served by endpoints getting ALL accounts for ALL banks</li>
-<li>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</li>
-</ul>
-<p>If the connector name starts with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, convert OutBound and InBound json structure.<br />
-for example:<br />
-outBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
-Build OutBound json value rules:<br />
-1 set cId value with: outboundAdapterCallContext.correlationId value<br />
-2 set bankId value with: concat bankId.value value with  string helloworld<br />
-3 set originalJson value with: whole source json, note: the field value expression is $root</p>
-<p>inBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
-Build InBound json value rules:<br />
-1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
-3 set fullName value with: concat string full: with result.name value<br />
-4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310CreateMethodRoutingRequest
-*/
-func (a *APIAPIService) OBPv310CreateMethodRouting(ctx context.Context) ApiOBPv310CreateMethodRoutingRequest {
-	return ApiOBPv310CreateMethodRoutingRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-func (a *APIAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310CreateMethodRoutingRequest) (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310CreateMethodRouting")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310CreateMethodRoutingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateMethodRoutingRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310CreateMethodRoutingRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310DeleteMethodRoutingRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	methodroutingid string
-}
-
-func (r ApiOBPv310DeleteMethodRoutingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310DeleteMethodRoutingExecute(r)
-}
-
-/*
-OBPv310DeleteMethodRouting Delete MethodRouting
-
-<p>Delete a MethodRouting specified by METHOD_ROUTING_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodroutingid The METHODROUTINGID identifier
- @return ApiOBPv310DeleteMethodRoutingRequest
-*/
-func (a *APIAPIService) OBPv310DeleteMethodRouting(ctx context.Context, methodroutingid string) ApiOBPv310DeleteMethodRoutingRequest {
-	return ApiOBPv310DeleteMethodRoutingRequest{
-		ApiService: a,
-		ctx: ctx,
-		methodroutingid: methodroutingid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv310DeleteMethodRoutingExecute(r ApiOBPv310DeleteMethodRoutingRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310DeleteMethodRouting")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetMessageDocsSwaggerRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	connector string
-}
-
-func (r ApiOBPv310GetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310GetMessageDocsSwaggerExecute(r)
-}
-
-/*
-OBPv310GetMessageDocsSwagger Get Message Docs Swagger
-
-<p>This endpoint provides example message docs in swagger format.<br />
-It is only relavent for REST Connectors.</p>
-<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
-That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
-<p>i.e.:</p>
-<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connector The CONNECTOR identifier
- @return ApiOBPv310GetMessageDocsSwaggerRequest
-*/
-func (a *APIAPIService) OBPv310GetMessageDocsSwagger(ctx context.Context, connector string) ApiOBPv310GetMessageDocsSwaggerRequest {
-	return ApiOBPv310GetMessageDocsSwaggerRequest{
-		ApiService: a,
-		ctx: ctx,
-		connector: connector,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv310GetMessageDocsSwaggerExecute(r ApiOBPv310GetMessageDocsSwaggerRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetMessageDocsSwagger")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
-	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetMethodRoutingsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310GetMethodRoutingsRequest) Execute() (*OBPv310GetMethodRoutings200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetMethodRoutingsExecute(r)
-}
-
-/*
-OBPv310GetMethodRoutings Get MethodRoutings
-
-<p>Get the all MethodRoutings.</p>
-<p>Query url parameters:</p>
-<ul>
-<li>method_name: filter with method_name</li>
-<li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
-</ul>
-<p>eg:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetMethodRoutingsRequest
-*/
-func (a *APIAPIService) OBPv310GetMethodRoutings(ctx context.Context) ApiOBPv310GetMethodRoutingsRequest {
-	return ApiOBPv310GetMethodRoutingsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetMethodRoutings200Response
-func (a *APIAPIService) OBPv310GetMethodRoutingsExecute(r ApiOBPv310GetMethodRoutingsRequest) (*OBPv310GetMethodRoutings200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetMethodRoutings")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetOAuth2ServerJWKsURIsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310GetOAuth2ServerJWKsURIsRequest) Execute() (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetOAuth2ServerJWKsURIsExecute(r)
-}
-
-/*
-OBPv310GetOAuth2ServerJWKsURIs Get JSON Web Key (JWK) URIs
-
-<p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br />
-It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#jwks_uri"><strong>jwks_uri</strong></a>:</p>
-<p><a href="/glossary#jwks_uris"><strong>jwks_uris</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetOAuth2ServerJWKsURIsRequest
-*/
-func (a *APIAPIService) OBPv310GetOAuth2ServerJWKsURIs(ctx context.Context) ApiOBPv310GetOAuth2ServerJWKsURIsRequest {
-	return ApiOBPv310GetOAuth2ServerJWKsURIsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetOAuth2ServerJWKsURIs200Response
-func (a *APIAPIService) OBPv310GetOAuth2ServerJWKsURIsExecute(r ApiOBPv310GetOAuth2ServerJWKsURIsRequest) (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetOAuth2ServerJWKsURIs200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetOAuth2ServerJWKsURIs")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/jwks-uris"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetObpConnectorLoopbackRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310GetObpConnectorLoopbackRequest) Execute() (*OBPv310GetObpConnectorLoopback200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetObpConnectorLoopbackExecute(r)
-}
-
-/*
-OBPv310GetObpConnectorLoopback Get Connector Status (Loopback)
-
-<p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#connector_version"><strong>connector_version</strong></a>:</p>
-<p><a href="/glossary#duration_time"><strong>duration_time</strong></a>: 60</p>
-<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetObpConnectorLoopbackRequest
-*/
-func (a *APIAPIService) OBPv310GetObpConnectorLoopback(ctx context.Context) ApiOBPv310GetObpConnectorLoopbackRequest {
-	return ApiOBPv310GetObpConnectorLoopbackRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetObpConnectorLoopback200Response
-func (a *APIAPIService) OBPv310GetObpConnectorLoopbackExecute(r ApiOBPv310GetObpConnectorLoopbackRequest) (*OBPv310GetObpConnectorLoopback200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetObpConnectorLoopback200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetObpConnectorLoopback")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/connector/loopback"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetRateLimitingInfoRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310GetRateLimitingInfoRequest) Execute() (*OBPv310GetRateLimitingInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetRateLimitingInfoExecute(r)
-}
-
-/*
-OBPv310GetRateLimitingInfo Get Rate Limiting Info
-
-<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p>
-<p>Is rate limiting enabled and active?<br />
-What backend is used to keep track of the API calls (e.g. REDIS).</p>
-<p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p>
-<p>See the consumer rate limits / call limits endpoints.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#service_available"><strong>service_available</strong></a>:</p>
-<p><a href="/glossary#technology"><strong>technology</strong></a>: technology1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetRateLimitingInfoRequest
-*/
-func (a *APIAPIService) OBPv310GetRateLimitingInfo(ctx context.Context) ApiOBPv310GetRateLimitingInfoRequest {
-	return ApiOBPv310GetRateLimitingInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetRateLimitingInfo200Response
-func (a *APIAPIService) OBPv310GetRateLimitingInfoExecute(r ApiOBPv310GetRateLimitingInfoRequest) (*OBPv310GetRateLimitingInfo200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetRateLimitingInfo200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetRateLimitingInfo")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/rate-limiting"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310GetServerJWKRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv310GetServerJWKRequest) Execute() (*OBPv310GetServerJWK200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetServerJWKExecute(r)
-}
-
-/*
-OBPv310GetServerJWK Get JSON Web Key (JWK)
-
-<p>Get the server's public JSON Web Key (JWK) set and certificate chain.<br />
-It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#e"><strong>e</strong></a>:</p>
-<p><a href="/glossary#kid"><strong>kid</strong></a>:</p>
-<p><a href="/glossary#kty"><strong>kty</strong></a>:</p>
-<p><a href="/glossary#n"><strong>n</strong></a>:</p>
-<p><a href="/glossary#use"><strong>use</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetServerJWKRequest
-*/
-func (a *APIAPIService) OBPv310GetServerJWK(ctx context.Context) ApiOBPv310GetServerJWKRequest {
-	return ApiOBPv310GetServerJWKRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetServerJWK200Response
-func (a *APIAPIService) OBPv310GetServerJWKExecute(r ApiOBPv310GetServerJWKRequest) (*OBPv310GetServerJWK200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetServerJWK200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310GetServerJWK")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/certs"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310UpdateMethodRoutingRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	methodroutingid string
-	oBPv310CreateMethodRoutingRequest *OBPv310CreateMethodRoutingRequest
-}
-
-// Request body
-func (r ApiOBPv310UpdateMethodRoutingRequest) OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest OBPv310CreateMethodRoutingRequest) ApiOBPv310UpdateMethodRoutingRequest {
-	r.oBPv310CreateMethodRoutingRequest = &oBPv310CreateMethodRoutingRequest
-	return r
-}
-
-func (r ApiOBPv310UpdateMethodRoutingRequest) Execute() (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	return r.ApiService.OBPv310UpdateMethodRoutingExecute(r)
-}
-
-/*
-OBPv310UpdateMethodRouting Update MethodRouting
-
-<p>Update a MethodRouting.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Explaination of Fields:</p>
-<ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
-<li>connector_name is required String value</li>
-<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
-<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
-<li>parameters is optional array of key value pairs. You can set some paremeters for this method<br />
-note:</li>
-<li>
-<p>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</p>
-</li>
-</ul>
-<p>If connector name start with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, to convert OutBound and InBound json structure.<br />
-for example:<br />
-outBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
-Build OutBound json value rules:<br />
-1 set cId value with: outboundAdapterCallContext.correlationId value<br />
-2 set bankId value with: concat bankId.value value with  string helloworld<br />
-3 set originalJson value with: whole source json, note: the field value expression is $root</p>
-<p>inBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
-Build InBound json value rules:<br />
-1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
-3 set fullName value with: concat string full: with result.name value<br />
-4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodroutingid The METHODROUTINGID identifier
- @return ApiOBPv310UpdateMethodRoutingRequest
-*/
-func (a *APIAPIService) OBPv310UpdateMethodRouting(ctx context.Context, methodroutingid string) ApiOBPv310UpdateMethodRoutingRequest {
-	return ApiOBPv310UpdateMethodRoutingRequest{
-		ApiService: a,
-		ctx: ctx,
-		methodroutingid: methodroutingid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-func (a *APIAPIService) OBPv310UpdateMethodRoutingExecute(r ApiOBPv310UpdateMethodRoutingRequest) (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv310UpdateMethodRouting")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310CreateMethodRoutingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateMethodRoutingRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310CreateMethodRoutingRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateBankLevelDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-}
-
-// Request body
-func (r ApiOBPv400CreateBankLevelDynamicEndpointRequest) OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) ApiOBPv400CreateBankLevelDynamicEndpointRequest {
-	r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = &oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-	return r
-}
-
-func (r ApiOBPv400CreateBankLevelDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400CreateBankLevelDynamicEndpoint Create Bank Level Dynamic Endpoint
-
-<p>Create dynamic endpoints.</p>
-<p>Create dynamic endpoints with one json format swagger content.</p>
-<p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br />
-please check <code>Endpoint Mapping</code> endpoints.</p>
-<p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p>
-<p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400CreateBankLevelDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400CreateBankLevelDynamicEndpoint(ctx context.Context, bankid string) ApiOBPv400CreateBankLevelDynamicEndpointRequest {
-	return ApiOBPv400CreateBankLevelDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *APIAPIService) OBPv400CreateBankLevelDynamicEndpointExecute(r ApiOBPv400CreateBankLevelDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400CreateBankLevelDynamicEndpoint")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateBankLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	operationid string
-	oBPv400UpdateSystemLevelEndpointTagRequest *OBPv400UpdateSystemLevelEndpointTagRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateBankLevelEndpointTagRequest) OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest OBPv400UpdateSystemLevelEndpointTagRequest) ApiOBPv400CreateBankLevelEndpointTagRequest {
-	r.oBPv400UpdateSystemLevelEndpointTagRequest = &oBPv400UpdateSystemLevelEndpointTagRequest
-	return r
-}
-
-func (r ApiOBPv400CreateBankLevelEndpointTagRequest) Execute() (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateBankLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400CreateBankLevelEndpointTag Create Bank Level Endpoint Tag
-
-<p>Create Bank Level Endpoint Tag</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param operationid The OPERATIONID identifier
- @return ApiOBPv400CreateBankLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400CreateBankLevelEndpointTag(ctx context.Context, bankid string, operationid string) ApiOBPv400CreateBankLevelEndpointTagRequest {
-	return ApiOBPv400CreateBankLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		operationid: operationid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400CreateBankLevelEndpointTagExecute(r ApiOBPv400CreateBankLevelEndpointTagRequest) (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400CreateBankLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateSystemLevelEndpointTagRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateSystemLevelEndpointTagRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateSystemLevelEndpointTagRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-}
-
-// Request body
-func (r ApiOBPv400CreateDynamicEndpointRequest) OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString(oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) ApiOBPv400CreateDynamicEndpointRequest {
-	r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = &oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-	return r
-}
-
-func (r ApiOBPv400CreateDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400CreateDynamicEndpoint Create Dynamic Endpoint
-
-<p>Create dynamic endpoints.</p>
-<p>Create dynamic endpoints with one json format swagger content.</p>
-<p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br />
-please check <code>Endpoint Mapping</code> endpoints.</p>
-<p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p>
-<p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400CreateDynamicEndpoint(ctx context.Context) ApiOBPv400CreateDynamicEndpointRequest {
-	return ApiOBPv400CreateDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *APIAPIService) OBPv400CreateDynamicEndpointExecute(r ApiOBPv400CreateDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400CreateDynamicEndpoint")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400CreateSystemLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	operationid string
-	oBPv400UpdateSystemLevelEndpointTagRequest *OBPv400UpdateSystemLevelEndpointTagRequest
-}
-
-// Request body
-func (r ApiOBPv400CreateSystemLevelEndpointTagRequest) OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest OBPv400UpdateSystemLevelEndpointTagRequest) ApiOBPv400CreateSystemLevelEndpointTagRequest {
-	r.oBPv400UpdateSystemLevelEndpointTagRequest = &oBPv400UpdateSystemLevelEndpointTagRequest
-	return r
-}
-
-func (r ApiOBPv400CreateSystemLevelEndpointTagRequest) Execute() (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateSystemLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400CreateSystemLevelEndpointTag Create System Level Endpoint Tag
-
-<p>Create System Level Endpoint Tag</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param operationid The OPERATIONID identifier
- @return ApiOBPv400CreateSystemLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400CreateSystemLevelEndpointTag(ctx context.Context, operationid string) ApiOBPv400CreateSystemLevelEndpointTagRequest {
-	return ApiOBPv400CreateSystemLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		operationid: operationid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400CreateSystemLevelEndpointTagExecute(r ApiOBPv400CreateSystemLevelEndpointTagRequest) (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400CreateSystemLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags"
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateSystemLevelEndpointTagRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateSystemLevelEndpointTagRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateSystemLevelEndpointTagRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteBankLevelDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	dynamicendpointid string
-}
-
-func (r ApiOBPv400DeleteBankLevelDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400DeleteBankLevelDynamicEndpoint  Delete Bank Level Dynamic Endpoint
-
-<p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteBankLevelDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400DeleteBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400DeleteBankLevelDynamicEndpointRequest {
-	return ApiOBPv400DeleteBankLevelDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteBankLevelDynamicEndpointExecute(r ApiOBPv400DeleteBankLevelDynamicEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteBankLevelDynamicEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteBankLevelDynamicEntityRequest struct {
+type ApiBackupBankLevelDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	dynamicentityid string
 }
 
-func (r ApiOBPv400DeleteBankLevelDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelDynamicEntityExecute(r)
+func (r ApiBackupBankLevelDynamicEntityRequest) Execute() (*BackupBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.BackupBankLevelDynamicEntityExecute(r)
 }
 
 /*
-OBPv400DeleteBankLevelDynamicEntity Delete Bank Level Dynamic Entity
-
-<p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteBankLevelDynamicEntityRequest
-*/
-func (a *APIAPIService) OBPv400DeleteBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv400DeleteBankLevelDynamicEntityRequest {
-	return ApiOBPv400DeleteBankLevelDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteBankLevelDynamicEntityExecute(r ApiOBPv400DeleteBankLevelDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteBankLevelDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteBankLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	operationid string
-	endpointtagid string
-}
-
-func (r ApiOBPv400DeleteBankLevelEndpointTagRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteBankLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400DeleteBankLevelEndpointTag Delete Bank Level Endpoint Tag
-
-<p>Delete Bank Level Endpoint Tag.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param operationid The OPERATIONID identifier
- @param endpointtagid The ENDPOINTTAGID identifier
- @return ApiOBPv400DeleteBankLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400DeleteBankLevelEndpointTag(ctx context.Context, bankid string, operationid string, endpointtagid string) ApiOBPv400DeleteBankLevelEndpointTagRequest {
-	return ApiOBPv400DeleteBankLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		operationid: operationid,
-		endpointtagid: endpointtagid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400DeleteBankLevelEndpointTagExecute(r ApiOBPv400DeleteBankLevelEndpointTagRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteBankLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicendpointid string
-}
-
-func (r ApiOBPv400DeleteDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400DeleteDynamicEndpoint  Delete Dynamic Endpoint
-
-<p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400DeleteDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400DeleteDynamicEndpointRequest {
-	return ApiOBPv400DeleteDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteDynamicEndpointExecute(r ApiOBPv400DeleteDynamicEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteDynamicEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteMyDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicendpointid string
-}
-
-func (r ApiOBPv400DeleteMyDynamicEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400DeleteMyDynamicEndpoint Delete My Dynamic Endpoint
-
-<p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400DeleteMyDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400DeleteMyDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400DeleteMyDynamicEndpointRequest {
-	return ApiOBPv400DeleteMyDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteMyDynamicEndpointExecute(r ApiOBPv400DeleteMyDynamicEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteMyDynamicEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteMyDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicentityid string
-}
-
-func (r ApiOBPv400DeleteMyDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteMyDynamicEntityExecute(r)
-}
-
-/*
-OBPv400DeleteMyDynamicEntity Delete My Dynamic Entity
-
-<p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#My-Dynamic-Entities">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteMyDynamicEntityRequest
-*/
-func (a *APIAPIService) OBPv400DeleteMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv400DeleteMyDynamicEntityRequest {
-	return ApiOBPv400DeleteMyDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteMyDynamicEntityExecute(r ApiOBPv400DeleteMyDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteMyDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteSystemDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicentityid string
-}
-
-func (r ApiOBPv400DeleteSystemDynamicEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteSystemDynamicEntityExecute(r)
-}
-
-/*
-OBPv400DeleteSystemDynamicEntity Delete System Level Dynamic Entity
-
-<p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
-<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv400DeleteSystemDynamicEntityRequest
-*/
-func (a *APIAPIService) OBPv400DeleteSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv400DeleteSystemDynamicEntityRequest {
-	return ApiOBPv400DeleteSystemDynamicEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicentityid: dynamicentityid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400DeleteSystemDynamicEntityExecute(r ApiOBPv400DeleteSystemDynamicEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteSystemDynamicEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteSystemLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	operationid string
-	endpointtagid string
-}
-
-func (r ApiOBPv400DeleteSystemLevelEndpointTagRequest) Execute() (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400DeleteSystemLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400DeleteSystemLevelEndpointTag Delete System Level Endpoint Tag
-
-<p>Delete System Level Endpoint Tag.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param operationid The OPERATIONID identifier
- @param endpointtagid The ENDPOINTTAGID identifier
- @return ApiOBPv400DeleteSystemLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400DeleteSystemLevelEndpointTag(ctx context.Context, operationid string, endpointtagid string) ApiOBPv400DeleteSystemLevelEndpointTagRequest {
-	return ApiOBPv400DeleteSystemLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		operationid: operationid,
-		endpointtagid: endpointtagid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400DeleteSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400DeleteSystemLevelEndpointTagExecute(r ApiOBPv400DeleteSystemLevelEndpointTagRequest) (*OBPv400DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400DeleteSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400DeleteSystemLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetBankLevelDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	dynamicendpointid string
-}
-
-func (r ApiOBPv400GetBankLevelDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400GetBankLevelDynamicEndpoint  Get Bank Level Dynamic Endpoint
-
-<p>Get a Bank Level Dynamic Endpoint.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400GetBankLevelDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400GetBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400GetBankLevelDynamicEndpointRequest {
-	return ApiOBPv400GetBankLevelDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *APIAPIService) OBPv400GetBankLevelDynamicEndpointExecute(r ApiOBPv400GetBankLevelDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetBankLevelDynamicEndpoint")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetBankLevelDynamicEndpointsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-}
-
-func (r ApiOBPv400GetBankLevelDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelDynamicEndpointsExecute(r)
-}
-
-/*
-OBPv400GetBankLevelDynamicEndpoints Get Bank Level Dynamic Endpoints
-
-<p>Get Bank Level Dynamic Endpoints.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv400GetBankLevelDynamicEndpointsRequest
-*/
-func (a *APIAPIService) OBPv400GetBankLevelDynamicEndpoints(ctx context.Context, bankid string) ApiOBPv400GetBankLevelDynamicEndpointsRequest {
-	return ApiOBPv400GetBankLevelDynamicEndpointsRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *APIAPIService) OBPv400GetBankLevelDynamicEndpointsExecute(r ApiOBPv400GetBankLevelDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetBankLevelDynamicEndpoints")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetBankLevelEndpointTagsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	operationid string
-}
-
-func (r ApiOBPv400GetBankLevelEndpointTagsRequest) Execute() (*OBPv400GetBankLevelEndpointTags200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetBankLevelEndpointTagsExecute(r)
-}
-
-/*
-OBPv400GetBankLevelEndpointTags Get Bank Level Endpoint Tags
-
-<p>Get Bank Level Endpoint Tags.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param operationid The OPERATIONID identifier
- @return ApiOBPv400GetBankLevelEndpointTagsRequest
-*/
-func (a *APIAPIService) OBPv400GetBankLevelEndpointTags(ctx context.Context, bankid string, operationid string) ApiOBPv400GetBankLevelEndpointTagsRequest {
-	return ApiOBPv400GetBankLevelEndpointTagsRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		operationid: operationid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetBankLevelEndpointTags200Response
-func (a *APIAPIService) OBPv400GetBankLevelEndpointTagsExecute(r ApiOBPv400GetBankLevelEndpointTagsRequest) (*OBPv400GetBankLevelEndpointTags200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelEndpointTags200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetBankLevelEndpointTags")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetCallContextRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv400GetCallContextRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400GetCallContextExecute(r)
-}
-
-/*
-OBPv400GetCallContext Get the Call Context of a current call
-
-<p>Get the Call Context of the current call.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetCallContextRequest
-*/
-func (a *APIAPIService) OBPv400GetCallContext(ctx context.Context) ApiOBPv400GetCallContextRequest {
-	return ApiOBPv400GetCallContextRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400GetCallContextExecute(r ApiOBPv400GetCallContextRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetCallContext")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/development/call_context"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetDynamicEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicendpointid string
-}
-
-func (r ApiOBPv400GetDynamicEndpointRequest) Execute() (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicEndpointExecute(r)
-}
-
-/*
-OBPv400GetDynamicEndpoint Get Dynamic Endpoint
-
-<p>Get a Dynamic Endpoint.</p>
-<p>Get one DynamicEndpoint,</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400GetDynamicEndpointRequest
-*/
-func (a *APIAPIService) OBPv400GetDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiOBPv400GetDynamicEndpointRequest {
-	return ApiOBPv400GetDynamicEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-func (a *APIAPIService) OBPv400GetDynamicEndpointExecute(r ApiOBPv400GetDynamicEndpointRequest) (*OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetDynamicEndpoint")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetDynamicEndpointsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv400GetDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetDynamicEndpointsExecute(r)
-}
-
-/*
-OBPv400GetDynamicEndpoints  Get Dynamic Endpoints
-
-<p>Get Dynamic Endpoints.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetDynamicEndpointsRequest
-*/
-func (a *APIAPIService) OBPv400GetDynamicEndpoints(ctx context.Context) ApiOBPv400GetDynamicEndpointsRequest {
-	return ApiOBPv400GetDynamicEndpointsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *APIAPIService) OBPv400GetDynamicEndpointsExecute(r ApiOBPv400GetDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetDynamicEndpoints")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetMapperDatabaseInfoRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv400GetMapperDatabaseInfoRequest) Execute() (*OBPv400GetMapperDatabaseInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMapperDatabaseInfoExecute(r)
-}
-
-/*
-OBPv400GetMapperDatabaseInfo Get Mapper Database Info
-
-<p>Get basic information about the Mapper Database.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#version"><strong>version</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetMapperDatabaseInfoRequest
-*/
-func (a *APIAPIService) OBPv400GetMapperDatabaseInfo(ctx context.Context) ApiOBPv400GetMapperDatabaseInfoRequest {
-	return ApiOBPv400GetMapperDatabaseInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetMapperDatabaseInfo200Response
-func (a *APIAPIService) OBPv400GetMapperDatabaseInfoExecute(r ApiOBPv400GetMapperDatabaseInfoRequest) (*OBPv400GetMapperDatabaseInfo200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetMapperDatabaseInfo200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetMapperDatabaseInfo")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/database/info"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetMyDynamicEndpointsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv400GetMyDynamicEndpointsRequest) Execute() (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetMyDynamicEndpointsExecute(r)
-}
-
-/*
-OBPv400GetMyDynamicEndpoints Get My Dynamic Endpoints
-
-<p>Get My Dynamic Endpoints.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetMyDynamicEndpointsRequest
-*/
-func (a *APIAPIService) OBPv400GetMyDynamicEndpoints(ctx context.Context) ApiOBPv400GetMyDynamicEndpointsRequest {
-	return ApiOBPv400GetMyDynamicEndpointsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetDynamicEndpoints200Response
-func (a *APIAPIService) OBPv400GetMyDynamicEndpointsExecute(r ApiOBPv400GetMyDynamicEndpointsRequest) (*OBPv400GetDynamicEndpoints200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetDynamicEndpoints200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetMyDynamicEndpoints")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-endpoints"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetSystemLevelEndpointTagsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	operationid string
-}
-
-func (r ApiOBPv400GetSystemLevelEndpointTagsRequest) Execute() (*OBPv400GetBankLevelEndpointTags200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetSystemLevelEndpointTagsExecute(r)
-}
-
-/*
-OBPv400GetSystemLevelEndpointTags Get System Level Endpoint Tags
-
-<p>Get System Level Endpoint Tags.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param operationid The OPERATIONID identifier
- @return ApiOBPv400GetSystemLevelEndpointTagsRequest
-*/
-func (a *APIAPIService) OBPv400GetSystemLevelEndpointTags(ctx context.Context, operationid string) ApiOBPv400GetSystemLevelEndpointTagsRequest {
-	return ApiOBPv400GetSystemLevelEndpointTagsRequest{
-		ApiService: a,
-		ctx: ctx,
-		operationid: operationid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetBankLevelEndpointTags200Response
-func (a *APIAPIService) OBPv400GetSystemLevelEndpointTagsExecute(r ApiOBPv400GetSystemLevelEndpointTagsRequest) (*OBPv400GetBankLevelEndpointTags200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetBankLevelEndpointTags200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400GetSystemLevelEndpointTags")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags"
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	dynamicendpointid string
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest *OBPv400UpdateBankLevelDynamicEndpointHostRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHostRequest) ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest {
-	r.oBPv400UpdateBankLevelDynamicEndpointHostRequest = &oBPv400UpdateBankLevelDynamicEndpointHostRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) Execute() (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelDynamicEndpointHostExecute(r)
-}
-
-/*
-OBPv400UpdateBankLevelDynamicEndpointHost  Update Bank Level Dynamic Endpoint Host
-
-<p>Update Bank Level  dynamic endpoint Host.<br />
-The value can be obp_mock, dynamic_entity, or some service url.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest
-*/
-func (a *APIAPIService) OBPv400UpdateBankLevelDynamicEndpointHost(ctx context.Context, bankid string, dynamicendpointid string) ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest {
-	return ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
-func (a *APIAPIService) OBPv400UpdateBankLevelDynamicEndpointHostExecute(r ApiOBPv400UpdateBankLevelDynamicEndpointHostRequest) (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400UpdateBankLevelDynamicEndpointHost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicEndpointHostRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicEndpointHostRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicEndpointHostRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateBankLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	operationid string
-	endpointtagid string
-	oBPv400UpdateSystemLevelEndpointTagRequest *OBPv400UpdateSystemLevelEndpointTagRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateBankLevelEndpointTagRequest) OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest OBPv400UpdateSystemLevelEndpointTagRequest) ApiOBPv400UpdateBankLevelEndpointTagRequest {
-	r.oBPv400UpdateSystemLevelEndpointTagRequest = &oBPv400UpdateSystemLevelEndpointTagRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateBankLevelEndpointTagRequest) Execute() (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateBankLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400UpdateBankLevelEndpointTag Update Bank Level Endpoint Tag
-
-<p>Update Endpoint Tag, you can only update the tag_name here, operation_id can not be updated.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param operationid The OPERATIONID identifier
- @param endpointtagid The ENDPOINTTAGID identifier
- @return ApiOBPv400UpdateBankLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400UpdateBankLevelEndpointTag(ctx context.Context, bankid string, operationid string, endpointtagid string) ApiOBPv400UpdateBankLevelEndpointTagRequest {
-	return ApiOBPv400UpdateBankLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		operationid: operationid,
-		endpointtagid: endpointtagid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400UpdateBankLevelEndpointTagExecute(r ApiOBPv400UpdateBankLevelEndpointTagRequest) (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400UpdateBankLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateSystemLevelEndpointTagRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateSystemLevelEndpointTagRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateSystemLevelEndpointTagRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateDynamicEndpointHostRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	dynamicendpointid string
-	oBPv400UpdateBankLevelDynamicEndpointHostRequest *OBPv400UpdateBankLevelDynamicEndpointHostRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateDynamicEndpointHostRequest) OBPv400UpdateBankLevelDynamicEndpointHostRequest(oBPv400UpdateBankLevelDynamicEndpointHostRequest OBPv400UpdateBankLevelDynamicEndpointHostRequest) ApiOBPv400UpdateDynamicEndpointHostRequest {
-	r.oBPv400UpdateBankLevelDynamicEndpointHostRequest = &oBPv400UpdateBankLevelDynamicEndpointHostRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateDynamicEndpointHostRequest) Execute() (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateDynamicEndpointHostExecute(r)
-}
-
-/*
-OBPv400UpdateDynamicEndpointHost  Update Dynamic Endpoint Host
-
-<p>Update dynamic endpoint Host.<br />
-The value can be obp_mock, dynamic_entity, or some service url.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param dynamicendpointid The DYNAMICENDPOINTID identifier
- @return ApiOBPv400UpdateDynamicEndpointHostRequest
-*/
-func (a *APIAPIService) OBPv400UpdateDynamicEndpointHost(ctx context.Context, dynamicendpointid string) ApiOBPv400UpdateDynamicEndpointHostRequest {
-	return ApiOBPv400UpdateDynamicEndpointHostRequest{
-		ApiService: a,
-		ctx: ctx,
-		dynamicendpointid: dynamicendpointid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
-func (a *APIAPIService) OBPv400UpdateDynamicEndpointHostExecute(r ApiOBPv400UpdateDynamicEndpointHostRequest) (*OBPv400UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateBankLevelDynamicEndpointHostRequest
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400UpdateDynamicEndpointHost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host"
-	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateBankLevelDynamicEndpointHostRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateBankLevelDynamicEndpointHostRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateBankLevelDynamicEndpointHostRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400UpdateSystemLevelEndpointTagRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	operationid string
-	endpointtagid string
-	oBPv400UpdateSystemLevelEndpointTagRequest *OBPv400UpdateSystemLevelEndpointTagRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateSystemLevelEndpointTagRequest) OBPv400UpdateSystemLevelEndpointTagRequest(oBPv400UpdateSystemLevelEndpointTagRequest OBPv400UpdateSystemLevelEndpointTagRequest) ApiOBPv400UpdateSystemLevelEndpointTagRequest {
-	r.oBPv400UpdateSystemLevelEndpointTagRequest = &oBPv400UpdateSystemLevelEndpointTagRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateSystemLevelEndpointTagRequest) Execute() (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateSystemLevelEndpointTagExecute(r)
-}
-
-/*
-OBPv400UpdateSystemLevelEndpointTag Update System Level Endpoint Tag
-
-<p>Update System Level Endpoint Tag, you can only update the tag_name here, operation_id can not be updated.</p>
-<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
-<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param operationid The OPERATIONID identifier
- @param endpointtagid The ENDPOINTTAGID identifier
- @return ApiOBPv400UpdateSystemLevelEndpointTagRequest
-*/
-func (a *APIAPIService) OBPv400UpdateSystemLevelEndpointTag(ctx context.Context, operationid string, endpointtagid string) ApiOBPv400UpdateSystemLevelEndpointTagRequest {
-	return ApiOBPv400UpdateSystemLevelEndpointTagRequest{
-		ApiService: a,
-		ctx: ctx,
-		operationid: operationid,
-		endpointtagid: endpointtagid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400UpdateSystemLevelEndpointTag200Response
-func (a *APIAPIService) OBPv400UpdateSystemLevelEndpointTagExecute(r ApiOBPv400UpdateSystemLevelEndpointTagRequest) (*OBPv400UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400UpdateSystemLevelEndpointTag200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400UpdateSystemLevelEndpointTag")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateSystemLevelEndpointTagRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateSystemLevelEndpointTagRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateSystemLevelEndpointTagRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv400VerifyRequestSignResponseRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv400VerifyRequestSignResponseRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400VerifyRequestSignResponseExecute(r)
-}
-
-/*
-OBPv400VerifyRequestSignResponse Verify Request and Sign Response of a current call
-
-<p>Verify Request and Sign Response of a current call.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400VerifyRequestSignResponseRequest
-*/
-func (a *APIAPIService) OBPv400VerifyRequestSignResponse(ctx context.Context) ApiOBPv400VerifyRequestSignResponseRequest {
-	return ApiOBPv400VerifyRequestSignResponseRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv400VerifyRequestSignResponseExecute(r ApiOBPv400VerifyRequestSignResponseRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv400VerifyRequestSignResponse")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv500GetAdapterInfoRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv500GetAdapterInfoRequest) Execute() (*OBPv500GetAdapterInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetAdapterInfoExecute(r)
-}
-
-/*
-OBPv500GetAdapterInfo Get Adapter Info
-
-<p>Get basic information about the Adapter.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>backend_messages</strong></a>: backend_messages</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#errorCode"><strong>errorCode</strong></a>: errorCode</p>
-<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>source</strong></a>:</p>
-<p><a href="/glossary#status"><strong>status</strong></a>:</p>
-<p><a href="/glossary#text"><strong>text</strong></a>:</p>
-<p><a href="/glossary#"><strong>total_duration</strong></a>: total_duration</p>
-<p><a href="/glossary#version"><strong>version</strong></a>:</p>
-<p><a href="/glossary#duration">duration</a>: 5.123</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv500GetAdapterInfoRequest
-*/
-func (a *APIAPIService) OBPv500GetAdapterInfo(ctx context.Context) ApiOBPv500GetAdapterInfoRequest {
-	return ApiOBPv500GetAdapterInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500GetAdapterInfo200Response
-func (a *APIAPIService) OBPv500GetAdapterInfoExecute(r ApiOBPv500GetAdapterInfoRequest) (*OBPv500GetAdapterInfo200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetAdapterInfo200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv500GetAdapterInfo")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/adapter"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv500GetMetricsAtBankRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-}
-
-func (r ApiOBPv500GetMetricsAtBankRequest) Execute() (*OBPv500GetMetricsAtBank200Response, *http.Response, error) {
-	return r.ApiService.OBPv500GetMetricsAtBankExecute(r)
-}
-
-/*
-OBPv500GetMetricsAtBank Get Metrics at Bank
-
-<p>Get the all metrics at the Bank specified by BANK_ID</p>
-<p>require CanReadMetrics role</p>
-<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/metrics</p>
-<p>Should be able to filter on the following metrics fields</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
-<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
-<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
-<p>3 limit (for pagination: defaults to 50)  eg:limit=200</p>
-<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
-<p>5 sort_by (defaults to date field) eg: sort_by=date<br />
-possible values:<br />
-&quot;url&quot;,<br />
-&quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
-&quot;app_name&quot;,<br />
-&quot;developer_email&quot;,<br />
-&quot;implemented_by_partial_function&quot;,<br />
-&quot;implemented_in_version&quot;,<br />
-&quot;consumer_id&quot;,<br />
-&quot;verb&quot;</p>
-<p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;&#x61;&#x69;&#x6c;&#x74;o&#58;&#x30;&#49;&#x2e;&#x30;&#x30;&#x30;Z&#x26;&#x6c;i&#109;i&#x74;&#x3d;1&#x30;&#48;&#x30;&#48;&amp;&#x6f;&#x66;&#102;&#115;&#x65;t&#61;&#x30;&#x26;&#x61;&#110;&#111;&#110;&#x3d;&#102;&#x61;&#x6c;s&#x65;&#38;&#97;pp_&#x6e;&#x61;&#x6d;&#x65;&#x3d;&#84;&#101;&#x61;t&#65;p&#112;&#38;&#105;&#x6d;&#x70;&#x6c;e&#x6d;e&#x6e;&#x74;&#101;d&#95;&#105;&#110;_ver&#x73;i&#x6f;&#110;&#61;v2.&#49;&#46;&#x30;&#38;&#x76;e&#x72;&#98;&#61;&#x50;&#x4f;S&#x54;&#x26;&#117;&#115;&#101;&#114;&#95;&#105;d&#x3d;&#x63;&#x37;&#x62;&#54;&#99;&#98;&#x34;&#x37;-&#x63;b&#x39;&#54;&#45;&#52;&#x34;&#x34;&#x31;-&#56;&#x38;0&#x31;&#x2d;&#x33;&#53;&#x62;5&#x37;&#x34;&#53;&#54;&#x37;&#x35;&#x33;a&#x26;&#x75;&#x73;&#101;r&#95;&#x6e;&#97;&#109;e=&#115;&#117;&#115;a&#110;&#46;&#117;&#107;&#x2e;&#x32;9&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;m">0&#x31;&#46;0&#48;&#x30;&#x5a;&amp;&#108;i&#109;&#105;&#116;&#x3d;&#x31;&#48;&#x30;&#x30;&#x30;&#38;&#111;&#102;&#x66;&#115;&#101;&#116;&#x3d;&#x30;&#x26;&#97;&#x6e;&#111;&#110;&#61;&#x66;&#97;l&#x73;&#x65;&amp;&#97;p&#x70;&#x5f;n&#x61;&#109;&#101;&#61;&#x54;&#x65;a&#x74;&#x41;&#112;&#x70;&#x26;&#105;&#109;&#112;&#x6c;&#x65;&#x6d;en&#x74;&#101;d&#x5f;&#x69;&#110;&#x5f;&#x76;&#101;&#114;&#115;&#x69;&#x6f;&#x6e;&#61;&#x76;2&#46;&#49;&#46;&#x30;&amp;&#x76;&#x65;&#x72;&#98;&#x3d;P&#79;&#83;&#84;&#x26;&#x75;&#115;e&#114;&#95;i&#x64;&#x3d;c&#x37;&#x62;6&#99;&#98;&#52;&#55;&#45;&#x63;&#x62;&#x39;&#x36;-444&#x31;&#x2d;88&#48;&#x31;-&#51;&#x35;b&#x35;745&#54;&#55;&#x35;&#x33;&#x61;&amp;&#x75;&#x73;e&#114;&#95;&#x6e;a&#x6d;&#x65;=&#115;&#x75;&#x73;&#x61;&#110;&#x2e;&#x75;&#x6b;&#x2e;&#x32;9&#x40;e&#120;&#x61;&#109;&#112;&#x6c;e.&#99;o&#x6d;</a>&amp;consumer_id=78</p>
-<p>Other filters:</p>
-<p>7 consumer_id  (if null ignore)</p>
-<p>8 user_id (if null ignore)</p>
-<p>9 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
-<p>10 url (if null ignore), note: can not contain '&amp;'.</p>
-<p>11 app_name (if null ignore)</p>
-<p>12 implemented_by_partial_function (if null ignore),</p>
-<p>13 implemented_in_version (if null ignore)</p>
-<p>14 verb (if null ignore)</p>
-<p>15 correlation_id (if null ignore)</p>
-<p>16 duration (if null ignore) non digit chars will be silently omitted</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
-<p><a href="/glossary#implemented_by_partial_function"><strong>implemented_by_partial_function</strong></a>:</p>
-<p><a href="/glossary#implemented_in_version"><strong>implemented_in_version</strong></a>:</p>
-<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
-<p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @return ApiOBPv500GetMetricsAtBankRequest
-*/
-func (a *APIAPIService) OBPv500GetMetricsAtBank(ctx context.Context, bankid string) ApiOBPv500GetMetricsAtBankRequest {
-	return ApiOBPv500GetMetricsAtBankRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv500GetMetricsAtBank200Response
-func (a *APIAPIService) OBPv500GetMetricsAtBankExecute(r ApiOBPv500GetMetricsAtBankRequest) (*OBPv500GetMetricsAtBank200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv500GetMetricsAtBank200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv500GetMetricsAtBank")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.0.0/management/metrics/banks/{bankid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateRegulatedEntityRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	oBPv510CreateRegulatedEntityRequest *OBPv510CreateRegulatedEntityRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateRegulatedEntityRequest) OBPv510CreateRegulatedEntityRequest(oBPv510CreateRegulatedEntityRequest OBPv510CreateRegulatedEntityRequest) ApiOBPv510CreateRegulatedEntityRequest {
-	r.oBPv510CreateRegulatedEntityRequest = &oBPv510CreateRegulatedEntityRequest
-	return r
-}
-
-func (r ApiOBPv510CreateRegulatedEntityRequest) Execute() (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateRegulatedEntityExecute(r)
-}
-
-/*
-OBPv510CreateRegulatedEntity Create Regulated Entity
-
-<p>Create Regulated Entity</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
-<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
-<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
-<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
-<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
-<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
-<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
-<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
-<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
-<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
-<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
-<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
-<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
-<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
-<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
-<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
-<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
-<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
-<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
-<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
-<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
-<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510CreateRegulatedEntityRequest
-*/
-func (a *APIAPIService) OBPv510CreateRegulatedEntity(ctx context.Context) ApiOBPv510CreateRegulatedEntityRequest {
-	return ApiOBPv510CreateRegulatedEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetRegulatedEntityById200Response
-func (a *APIAPIService) OBPv510CreateRegulatedEntityExecute(r ApiOBPv510CreateRegulatedEntityRequest) (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510CreateRegulatedEntity")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510CreateRegulatedEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510CreateRegulatedEntityRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510CreateRegulatedEntityRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510CreateRegulatedEntityAttributeRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-	oBPv510UpdateRegulatedEntityAttributeRequest *OBPv510UpdateRegulatedEntityAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv510CreateRegulatedEntityAttributeRequest) OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest OBPv510UpdateRegulatedEntityAttributeRequest) ApiOBPv510CreateRegulatedEntityAttributeRequest {
-	r.oBPv510UpdateRegulatedEntityAttributeRequest = &oBPv510UpdateRegulatedEntityAttributeRequest
-	return r
-}
-
-func (r ApiOBPv510CreateRegulatedEntityAttributeRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510CreateRegulatedEntityAttributeExecute(r)
-}
-
-/*
-OBPv510CreateRegulatedEntityAttribute Create Regulated Entity Attribute
-
-<p>Create a new Regulated Entity Attribute for a given REGULATED_ENTITY_ID.</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br />
-User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510CreateRegulatedEntityAttributeRequest
-*/
-func (a *APIAPIService) OBPv510CreateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string) ApiOBPv510CreateRegulatedEntityAttributeRequest {
-	return ApiOBPv510CreateRegulatedEntityAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *APIAPIService) OBPv510CreateRegulatedEntityAttributeExecute(r ApiOBPv510CreateRegulatedEntityAttributeRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510CreateRegulatedEntityAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateRegulatedEntityAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateRegulatedEntityAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateRegulatedEntityAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510DeleteRegulatedEntityRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-}
-
-func (r ApiOBPv510DeleteRegulatedEntityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteRegulatedEntityExecute(r)
-}
-
-/*
-OBPv510DeleteRegulatedEntity Delete Regulated Entity
-
-<p>Delete Regulated Entity specified by REGULATED_ENTITY_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510DeleteRegulatedEntityRequest
-*/
-func (a *APIAPIService) OBPv510DeleteRegulatedEntity(ctx context.Context, regulatedentityid string) ApiOBPv510DeleteRegulatedEntityRequest {
-	return ApiOBPv510DeleteRegulatedEntityRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510DeleteRegulatedEntityExecute(r ApiOBPv510DeleteRegulatedEntityRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510DeleteRegulatedEntity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510DeleteRegulatedEntityAttributeRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-	regulatedentityattributeid string
-}
-
-func (r ApiOBPv510DeleteRegulatedEntityAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510DeleteRegulatedEntityAttributeExecute(r)
-}
-
-/*
-OBPv510DeleteRegulatedEntityAttribute Delete Regulated Entity Attribute
-
-<p>Delete a Regulated Entity Attribute specified by REGULATED_ENTITY_ATTRIBUTE_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510DeleteRegulatedEntityAttributeRequest
-*/
-func (a *APIAPIService) OBPv510DeleteRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510DeleteRegulatedEntityAttributeRequest {
-	return ApiOBPv510DeleteRegulatedEntityAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-		regulatedentityattributeid: regulatedentityattributeid,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510DeleteRegulatedEntityAttributeExecute(r ApiOBPv510DeleteRegulatedEntityAttributeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510DeleteRegulatedEntityAttribute")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetAllRegulatedEntityAttributesRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-}
-
-func (r ApiOBPv510GetAllRegulatedEntityAttributesRequest) Execute() (*OBPv510GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetAllRegulatedEntityAttributesExecute(r)
-}
-
-/*
-OBPv510GetAllRegulatedEntityAttributes Get All Regulated Entity Attributes
-
-<p>Get all attributes for the specified Regulated Entity.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510GetAllRegulatedEntityAttributesRequest
-*/
-func (a *APIAPIService) OBPv510GetAllRegulatedEntityAttributes(ctx context.Context, regulatedentityid string) ApiOBPv510GetAllRegulatedEntityAttributesRequest {
-	return ApiOBPv510GetAllRegulatedEntityAttributesRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetAllRegulatedEntityAttributes200Response
-func (a *APIAPIService) OBPv510GetAllRegulatedEntityAttributesExecute(r ApiOBPv510GetAllRegulatedEntityAttributesRequest) (*OBPv510GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetAllRegulatedEntityAttributes200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510GetAllRegulatedEntityAttributes")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetApiTagsRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510GetApiTagsRequest) Execute() (*OBPv510GetApiTags200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetApiTagsExecute(r)
-}
-
-/*
-OBPv510GetApiTags Get API Tags
-
-<p>Get API TagsGet API Tags</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510GetApiTagsRequest
-*/
-func (a *APIAPIService) OBPv510GetApiTags(ctx context.Context) ApiOBPv510GetApiTagsRequest {
-	return ApiOBPv510GetApiTagsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetApiTags200Response
-func (a *APIAPIService) OBPv510GetApiTagsExecute(r ApiOBPv510GetApiTagsRequest) (*OBPv510GetApiTags200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetApiTags200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510GetApiTags")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/tags"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetOAuth2ServerWellKnownRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510GetOAuth2ServerWellKnownRequest) Execute() (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetOAuth2ServerWellKnownExecute(r)
-}
-
-/*
-OBPv510GetOAuth2ServerWellKnown Get Well Known URIs
-
-<p>Get the OAuth2 server's public Well Known URIs.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#jwks_uri"><strong>jwks_uri</strong></a>:</p>
-<p><a href="/glossary#jwks_uris"><strong>jwks_uris</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510GetOAuth2ServerWellKnownRequest
-*/
-func (a *APIAPIService) OBPv510GetOAuth2ServerWellKnown(ctx context.Context) ApiOBPv510GetOAuth2ServerWellKnownRequest {
-	return ApiOBPv510GetOAuth2ServerWellKnownRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetOAuth2ServerJWKsURIs200Response
-func (a *APIAPIService) OBPv510GetOAuth2ServerWellKnownExecute(r ApiOBPv510GetOAuth2ServerWellKnownRequest) (*OBPv310GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetOAuth2ServerJWKsURIs200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510GetOAuth2ServerWellKnown")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/well-known"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetRegulatedEntityAttributeByIdRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-	regulatedentityattributeid string
-}
-
-func (r ApiOBPv510GetRegulatedEntityAttributeByIdRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetRegulatedEntityAttributeByIdExecute(r)
-}
-
-/*
-OBPv510GetRegulatedEntityAttributeById Get Regulated Entity Attribute By ID
-
-<p>Get a specific Regulated Entity Attribute by its REGULATED_ENTITY_ATTRIBUTE_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510GetRegulatedEntityAttributeByIdRequest
-*/
-func (a *APIAPIService) OBPv510GetRegulatedEntityAttributeById(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510GetRegulatedEntityAttributeByIdRequest {
-	return ApiOBPv510GetRegulatedEntityAttributeByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-		regulatedentityattributeid: regulatedentityattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *APIAPIService) OBPv510GetRegulatedEntityAttributeByIdExecute(r ApiOBPv510GetRegulatedEntityAttributeByIdRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510GetRegulatedEntityAttributeById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510GetRegulatedEntityByIdRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-}
-
-func (r ApiOBPv510GetRegulatedEntityByIdRequest) Execute() (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510GetRegulatedEntityByIdExecute(r)
-}
-
-/*
-OBPv510GetRegulatedEntityById Get Regulated Entity
-
-<p>Get Regulated Entity By REGULATED_ENTITY_ID</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
-<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
-<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
-<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
-<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
-<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
-<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
-<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
-<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
-<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
-<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
-<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @return ApiOBPv510GetRegulatedEntityByIdRequest
-*/
-func (a *APIAPIService) OBPv510GetRegulatedEntityById(ctx context.Context, regulatedentityid string) ApiOBPv510GetRegulatedEntityByIdRequest {
-	return ApiOBPv510GetRegulatedEntityByIdRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetRegulatedEntityById200Response
-func (a *APIAPIService) OBPv510GetRegulatedEntityByIdExecute(r ApiOBPv510GetRegulatedEntityByIdRequest) (*OBPv510GetRegulatedEntityById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510GetRegulatedEntityById")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheAllEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheAllEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheAllEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheAllEndpoint Get All Level Log Cache
-
-<p>Returns logs of all levels from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheAllEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheAllEndpoint(ctx context.Context) ApiOBPv510LogCacheAllEndpointRequest {
-	return ApiOBPv510LogCacheAllEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheAllEndpointExecute(r ApiOBPv510LogCacheAllEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheAllEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/all"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheDebugEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheDebugEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheDebugEndpoint Get Debug Level Log Cache
-
-<p>Returns DEBUG level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheDebugEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheDebugEndpoint(ctx context.Context) ApiOBPv510LogCacheDebugEndpointRequest {
-	return ApiOBPv510LogCacheDebugEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheDebugEndpointExecute(r ApiOBPv510LogCacheDebugEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheDebugEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/debug"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheErrorEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheErrorEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheErrorEndpoint Get Error Level Log Cache
-
-<p>Returns ERROR level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheErrorEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheErrorEndpoint(ctx context.Context) ApiOBPv510LogCacheErrorEndpointRequest {
-	return ApiOBPv510LogCacheErrorEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheErrorEndpointExecute(r ApiOBPv510LogCacheErrorEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheErrorEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/error"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheInfoEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheInfoEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheInfoEndpoint Get Info Level Log Cache
-
-<p>Returns INFO level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheInfoEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheInfoEndpoint(ctx context.Context) ApiOBPv510LogCacheInfoEndpointRequest {
-	return ApiOBPv510LogCacheInfoEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheInfoEndpointExecute(r ApiOBPv510LogCacheInfoEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheInfoEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/info"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheTraceEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheTraceEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheTraceEndpoint Get Trace Level Log Cache
-
-<p>Returns TRACE level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheTraceEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheTraceEndpoint(ctx context.Context) ApiOBPv510LogCacheTraceEndpointRequest {
-	return ApiOBPv510LogCacheTraceEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheTraceEndpointExecute(r ApiOBPv510LogCacheTraceEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheTraceEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/trace"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510LogCacheWarningEndpointRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510LogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv510LogCacheWarningEndpointExecute(r)
-}
-
-/*
-OBPv510LogCacheWarningEndpoint Get Warning Level Log Cache
-
-<p>Returns WARNING level logs from the system log cache.</p>
-<p>This endpoint supports pagination via the following optional query parameters:<br />
-* limit - Maximum number of log entries to return<br />
-* offset - Number of log entries to skip (for pagination)</p>
-<p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510LogCacheWarningEndpointRequest
-*/
-func (a *APIAPIService) OBPv510LogCacheWarningEndpoint(ctx context.Context) ApiOBPv510LogCacheWarningEndpointRequest {
-	return ApiOBPv510LogCacheWarningEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *APIAPIService) OBPv510LogCacheWarningEndpointExecute(r ApiOBPv510LogCacheWarningEndpointRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510LogCacheWarningEndpoint")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/warning"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv510RegulatedEntitiesRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510RegulatedEntitiesRequest) Execute() (*OBPv510RegulatedEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv510RegulatedEntitiesExecute(r)
-}
-
-/*
-OBPv510RegulatedEntities Get Regulated Entities
-
-<p>Returns information about:</p>
-<ul>
-<li>Regulated Entities</li>
-</ul>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
-<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
-<p><a href="/glossary#"><strong>entities</strong></a>: entities</p>
-<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
-<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
-<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
-<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
-<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
-<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
-<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
-<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
-<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
-<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510RegulatedEntitiesRequest
-*/
-func (a *APIAPIService) OBPv510RegulatedEntities(ctx context.Context) ApiOBPv510RegulatedEntitiesRequest {
-	return ApiOBPv510RegulatedEntitiesRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510RegulatedEntities200Response
-func (a *APIAPIService) OBPv510RegulatedEntitiesExecute(r ApiOBPv510RegulatedEntitiesRequest) (*OBPv510RegulatedEntities200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510RegulatedEntities200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510RegulatedEntities")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510SuggestedSessionTimeoutRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510SuggestedSessionTimeoutRequest) Execute() (*OBPv510SuggestedSessionTimeout200Response, *http.Response, error) {
-	return r.ApiService.OBPv510SuggestedSessionTimeoutExecute(r)
-}
-
-/*
-OBPv510SuggestedSessionTimeout Get Suggested Session Timeout
-
-<p>Returns information about:</p>
-<ul>
-<li>Suggested session timeout in case of a user inactivity</li>
-</ul>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>timeout_in_seconds</strong></a>: timeout_in_seconds</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510SuggestedSessionTimeoutRequest
-*/
-func (a *APIAPIService) OBPv510SuggestedSessionTimeout(ctx context.Context) ApiOBPv510SuggestedSessionTimeoutRequest {
-	return ApiOBPv510SuggestedSessionTimeoutRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510SuggestedSessionTimeout200Response
-func (a *APIAPIService) OBPv510SuggestedSessionTimeoutExecute(r ApiOBPv510SuggestedSessionTimeoutRequest) (*OBPv510SuggestedSessionTimeout200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510SuggestedSessionTimeout200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510SuggestedSessionTimeout")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/ui/suggested-session-timeout"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510UpdateRegulatedEntityAttributeRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	regulatedentityid string
-	regulatedentityattributeid string
-	oBPv510UpdateRegulatedEntityAttributeRequest *OBPv510UpdateRegulatedEntityAttributeRequest
-}
-
-// Request body
-func (r ApiOBPv510UpdateRegulatedEntityAttributeRequest) OBPv510UpdateRegulatedEntityAttributeRequest(oBPv510UpdateRegulatedEntityAttributeRequest OBPv510UpdateRegulatedEntityAttributeRequest) ApiOBPv510UpdateRegulatedEntityAttributeRequest {
-	r.oBPv510UpdateRegulatedEntityAttributeRequest = &oBPv510UpdateRegulatedEntityAttributeRequest
-	return r
-}
-
-func (r ApiOBPv510UpdateRegulatedEntityAttributeRequest) Execute() (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	return r.ApiService.OBPv510UpdateRegulatedEntityAttributeExecute(r)
-}
-
-/*
-OBPv510UpdateRegulatedEntityAttribute Update Regulated Entity Attribute
-
-<p>Update an existing Regulated Entity Attribute specified by ATTRIBUTE_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><a href="/glossary#is_active">is_active</a>: false</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param regulatedentityid The REGULATEDENTITYID identifier
- @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
- @return ApiOBPv510UpdateRegulatedEntityAttributeRequest
-*/
-func (a *APIAPIService) OBPv510UpdateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiOBPv510UpdateRegulatedEntityAttributeRequest {
-	return ApiOBPv510UpdateRegulatedEntityAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
-		regulatedentityid: regulatedentityid,
-		regulatedentityattributeid: regulatedentityattributeid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510GetRegulatedEntityAttributeById200Response
-func (a *APIAPIService) OBPv510UpdateRegulatedEntityAttributeExecute(r ApiOBPv510UpdateRegulatedEntityAttributeRequest) (*OBPv510GetRegulatedEntityAttributeById200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510GetRegulatedEntityAttributeById200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510UpdateRegulatedEntityAttribute")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateRegulatedEntityAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateRegulatedEntityAttributeRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv510UpdateRegulatedEntityAttributeRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv510WaitingForGodotRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-}
-
-func (r ApiOBPv510WaitingForGodotRequest) Execute() (*OBPv510WaitingForGodot200Response, *http.Response, error) {
-	return r.ApiService.OBPv510WaitingForGodotExecute(r)
-}
-
-/*
-OBPv510WaitingForGodot Waiting For Godot
-
-<p>Waiting For Godot</p>
-<p>Uses query parameter &quot;sleep&quot; in milliseconds.<br />
-For instance: .../waiting-for-godot?sleep=50 means postpone response in 50 milliseconds.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>sleep_in_milliseconds</strong></a>: sleep_in_milliseconds</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv510WaitingForGodotRequest
-*/
-func (a *APIAPIService) OBPv510WaitingForGodot(ctx context.Context) ApiOBPv510WaitingForGodotRequest {
-	return ApiOBPv510WaitingForGodotRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv510WaitingForGodot200Response
-func (a *APIAPIService) OBPv510WaitingForGodotExecute(r ApiOBPv510WaitingForGodotRequest) (*OBPv510WaitingForGodot200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv510WaitingForGodot200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv510WaitingForGodot")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v5.1.0/waiting-for-godot"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600BackupBankLevelDynamicEntityRequest struct {
-	ctx context.Context
-	ApiService *APIAPIService
-	bankid string
-	dynamicentityid string
-}
-
-func (r ApiOBPv600BackupBankLevelDynamicEntityRequest) Execute() (*OBPv600BackupBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600BackupBankLevelDynamicEntityExecute(r)
-}
-
-/*
-OBPv600BackupBankLevelDynamicEntity Backup Bank Level Dynamic Entity
+BackupBankLevelDynamicEntity Backup Bank Level Dynamic Entity
 
 <p>Create a backup copy of a bank level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
 <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br />
@@ -8894,10 +51,10 @@ If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p>
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600BackupBankLevelDynamicEntityRequest
+ @return ApiBackupBankLevelDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600BackupBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv600BackupBankLevelDynamicEntityRequest {
-	return ApiOBPv600BackupBankLevelDynamicEntityRequest{
+func (a *APIAPIService) BackupBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiBackupBankLevelDynamicEntityRequest {
+	return ApiBackupBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -8906,16 +63,16 @@ func (a *APIAPIService) OBPv600BackupBankLevelDynamicEntity(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv600BackupBankLevelDynamicEntity200Response
-func (a *APIAPIService) OBPv600BackupBankLevelDynamicEntityExecute(r ApiOBPv600BackupBankLevelDynamicEntityRequest) (*OBPv600BackupBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return BackupBankLevelDynamicEntity200Response
+func (a *APIAPIService) BackupBankLevelDynamicEntityExecute(r ApiBackupBankLevelDynamicEntityRequest) (*BackupBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600BackupBankLevelDynamicEntity200Response
+		localVarReturnValue  *BackupBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600BackupBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.BackupBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8969,7 +126,7 @@ func (a *APIAPIService) OBPv600BackupBankLevelDynamicEntityExecute(r ApiOBPv600B
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9010,18 +167,18 @@ func (a *APIAPIService) OBPv600BackupBankLevelDynamicEntityExecute(r ApiOBPv600B
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600BackupSystemDynamicEntityRequest struct {
+type ApiBackupSystemDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	dynamicentityid string
 }
 
-func (r ApiOBPv600BackupSystemDynamicEntityRequest) Execute() (*OBPv600BackupSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600BackupSystemDynamicEntityExecute(r)
+func (r ApiBackupSystemDynamicEntityRequest) Execute() (*BackupSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.BackupSystemDynamicEntityExecute(r)
 }
 
 /*
-OBPv600BackupSystemDynamicEntity Backup System Level Dynamic Entity
+BackupSystemDynamicEntity Backup System Level Dynamic Entity
 
 <p>Create a backup copy of a system level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
 <p>This endpoint creates a backup of the dynamic entity definition and all its data records.<br />
@@ -9035,10 +192,10 @@ If a backup with that name already exists, _BAK2, _BAK3 etc. will be used.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600BackupSystemDynamicEntityRequest
+ @return ApiBackupSystemDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600BackupSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600BackupSystemDynamicEntityRequest {
-	return ApiOBPv600BackupSystemDynamicEntityRequest{
+func (a *APIAPIService) BackupSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiBackupSystemDynamicEntityRequest {
+	return ApiBackupSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -9046,16 +203,16 @@ func (a *APIAPIService) OBPv600BackupSystemDynamicEntity(ctx context.Context, dy
 }
 
 // Execute executes the request
-//  @return OBPv600BackupSystemDynamicEntity200Response
-func (a *APIAPIService) OBPv600BackupSystemDynamicEntityExecute(r ApiOBPv600BackupSystemDynamicEntityRequest) (*OBPv600BackupSystemDynamicEntity200Response, *http.Response, error) {
+//  @return BackupSystemDynamicEntity200Response
+func (a *APIAPIService) BackupSystemDynamicEntityExecute(r ApiBackupSystemDynamicEntityRequest) (*BackupSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600BackupSystemDynamicEntity200Response
+		localVarReturnValue  *BackupSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600BackupSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.BackupSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9108,7 +265,7 @@ func (a *APIAPIService) OBPv600BackupSystemDynamicEntityExecute(r ApiOBPv600Back
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9149,17 +306,17 @@ func (a *APIAPIService) OBPv600BackupSystemDynamicEntityExecute(r ApiOBPv600Back
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest struct {
+type ApiCleanupOrphanedDynamicEntityRecordsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest) Execute() (*OBPv600CleanupOrphanedDynamicEntityRecords200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CleanupOrphanedDynamicEntityRecordsExecute(r)
+func (r ApiCleanupOrphanedDynamicEntityRecordsRequest) Execute() (*CleanupOrphanedDynamicEntityRecords200Response, *http.Response, error) {
+	return r.ApiService.CleanupOrphanedDynamicEntityRecordsExecute(r)
 }
 
 /*
-OBPv600CleanupOrphanedDynamicEntityRecords Cleanup Orphaned Dynamic Entity Records
+CleanupOrphanedDynamicEntityRecords Cleanup Orphaned Dynamic Entity Records
 
 <p>Delete orphaned dynamic entity data records.</p>
 <p>Orphaned records are rows in the DynamicData table whose entityName/bankId combination<br />
@@ -9179,26 +336,26 @@ GET /management/diagnostics/dynamic-entities), then deletes them.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest
+ @return ApiCleanupOrphanedDynamicEntityRecordsRequest
 */
-func (a *APIAPIService) OBPv600CleanupOrphanedDynamicEntityRecords(ctx context.Context) ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest {
-	return ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest{
+func (a *APIAPIService) CleanupOrphanedDynamicEntityRecords(ctx context.Context) ApiCleanupOrphanedDynamicEntityRecordsRequest {
+	return ApiCleanupOrphanedDynamicEntityRecordsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600CleanupOrphanedDynamicEntityRecords200Response
-func (a *APIAPIService) OBPv600CleanupOrphanedDynamicEntityRecordsExecute(r ApiOBPv600CleanupOrphanedDynamicEntityRecordsRequest) (*OBPv600CleanupOrphanedDynamicEntityRecords200Response, *http.Response, error) {
+//  @return CleanupOrphanedDynamicEntityRecords200Response
+func (a *APIAPIService) CleanupOrphanedDynamicEntityRecordsExecute(r ApiCleanupOrphanedDynamicEntityRecordsRequest) (*CleanupOrphanedDynamicEntityRecords200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CleanupOrphanedDynamicEntityRecords200Response
+		localVarReturnValue  *CleanupOrphanedDynamicEntityRecords200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CleanupOrphanedDynamicEntityRecords")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CleanupOrphanedDynamicEntityRecords")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9250,7 +407,7 @@ func (a *APIAPIService) OBPv600CleanupOrphanedDynamicEntityRecordsExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9291,26 +448,177 @@ func (a *APIAPIService) OBPv600CleanupOrphanedDynamicEntityRecordsExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateApiProductRequest struct {
+type ApiConfigRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiConfigRequest) Execute() (*Config200Response, *http.Response, error) {
+	return r.ApiService.ConfigExecute(r)
+}
+
+/*
+Config Get API Configuration
+
+<p>Returns information about:</p>
+<ul>
+<li>The default bank_id</li>
+<li>Akka configuration</li>
+<li>Elastic Search configuration</li>
+<li>Cached functions</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#akka"><strong>akka</strong></a>:</p>
+<p><a href="/glossary#cache"><strong>cache</strong></a>:</p>
+<p><a href="/glossary#elastic_search"><strong>elastic_search</strong></a>:</p>
+<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
+<p><a href="/glossary#log_level"><strong>log_level</strong></a>:</p>
+<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
+<p><a href="/glossary#ports"><strong>ports</strong></a>:</p>
+<p><a href="/glossary#property"><strong>property</strong></a>:</p>
+<p><a href="/glossary#require_scopes_for_all_roles"><strong>require_scopes_for_all_roles</strong></a>:</p>
+<p><a href="/glossary#require_scopes_for_listed_roles"><strong>require_scopes_for_listed_roles</strong></a>: false</p>
+<p><a href="/glossary#scopes"><strong>scopes</strong></a>:</p>
+<p><a href="/glossary#ttl_in_seconds"><strong>ttl_in_seconds</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#warehouse"><strong>warehouse</strong></a>:</p>
+<p><a href="/glossary#">remote_data_secret_matched</a>: remote_data_secret_matched</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiConfigRequest
+*/
+func (a *APIAPIService) Config(ctx context.Context) ApiConfigRequest {
+	return ApiConfigRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return Config200Response
+func (a *APIAPIService) ConfigExecute(r ApiConfigRequest) (*Config200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *Config200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.Config")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/config"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateApiProductRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
-	oBPv600CreateOrUpdateApiProductRequest *OBPv600CreateOrUpdateApiProductRequest
+	createOrUpdateApiProductRequest *CreateOrUpdateApiProductRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateApiProductRequest) OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest OBPv600CreateOrUpdateApiProductRequest) ApiOBPv600CreateApiProductRequest {
-	r.oBPv600CreateOrUpdateApiProductRequest = &oBPv600CreateOrUpdateApiProductRequest
+func (r ApiCreateApiProductRequest) CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest CreateOrUpdateApiProductRequest) ApiCreateApiProductRequest {
+	r.createOrUpdateApiProductRequest = &createOrUpdateApiProductRequest
 	return r
 }
 
-func (r ApiOBPv600CreateApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateApiProductExecute(r)
+func (r ApiCreateApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.CreateApiProductExecute(r)
 }
 
 /*
-OBPv600CreateApiProduct Create Api Product
+CreateApiProduct Create Api Product
 
 <p>Create an Api Product for the Bank.</p>
 <p>Authentication is Required.</p>
@@ -9363,10 +671,10 @@ OBPv600CreateApiProduct Create Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600CreateApiProductRequest
+ @return ApiCreateApiProductRequest
 */
-func (a *APIAPIService) OBPv600CreateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600CreateApiProductRequest {
-	return ApiOBPv600CreateApiProductRequest{
+func (a *APIAPIService) CreateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiCreateApiProductRequest {
+	return ApiCreateApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -9375,16 +683,16 @@ func (a *APIAPIService) OBPv600CreateApiProduct(ctx context.Context, bankid stri
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *APIAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *APIAPIService) CreateApiProductExecute(r ApiCreateApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9396,8 +704,8 @@ func (a *APIAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateOrUpdateApiProductRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateOrUpdateApiProductRequest is required and must be specified")
+	if r.createOrUpdateApiProductRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateApiProductRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9418,7 +726,7 @@ func (a *APIAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateOrUpdateApiProductRequest
+	localVarPostBody = r.createOrUpdateApiProductRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9443,7 +751,7 @@ func (a *APIAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProd
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9484,26 +792,26 @@ func (a *APIAPIService) OBPv600CreateApiProductExecute(r ApiOBPv600CreateApiProd
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateApiProductAttributeRequest struct {
+type ApiCreateApiProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateApiProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv600CreateApiProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiCreateApiProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiCreateApiProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv600CreateApiProductAttributeRequest) Execute() (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateApiProductAttributeExecute(r)
+func (r ApiCreateApiProductAttributeRequest) Execute() (*CreateApiProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.CreateApiProductAttributeExecute(r)
 }
 
 /*
-OBPv600CreateApiProductAttribute Create Api Product Attribute
+CreateApiProductAttribute Create Api Product Attribute
 
 <p>Create an Api Product Attribute.</p>
 <p>Authentication is Required.</p>
@@ -9529,10 +837,10 @@ OBPv600CreateApiProductAttribute Create Api Product Attribute
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600CreateApiProductAttributeRequest
+ @return ApiCreateApiProductAttributeRequest
 */
-func (a *APIAPIService) OBPv600CreateApiProductAttribute(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600CreateApiProductAttributeRequest {
-	return ApiOBPv600CreateApiProductAttributeRequest{
+func (a *APIAPIService) CreateApiProductAttribute(ctx context.Context, bankid string, apiproductcode string) ApiCreateApiProductAttributeRequest {
+	return ApiCreateApiProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -9541,16 +849,16 @@ func (a *APIAPIService) OBPv600CreateApiProductAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv600CreateApiProductAttribute200Response
-func (a *APIAPIService) OBPv600CreateApiProductAttributeExecute(r ApiOBPv600CreateApiProductAttributeRequest) (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
+//  @return CreateApiProductAttribute200Response
+func (a *APIAPIService) CreateApiProductAttributeExecute(r ApiCreateApiProductAttributeRequest) (*CreateApiProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateApiProductAttribute200Response
+		localVarReturnValue  *CreateApiProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateApiProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateApiProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9562,8 +870,8 @@ func (a *APIAPIService) OBPv600CreateApiProductAttributeExecute(r ApiOBPv600Crea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9584,7 +892,7 @@ func (a *APIAPIService) OBPv600CreateApiProductAttributeExecute(r ApiOBPv600Crea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9609,7 +917,7 @@ func (a *APIAPIService) OBPv600CreateApiProductAttributeExecute(r ApiOBPv600Crea
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9650,25 +958,175 @@ func (a *APIAPIService) OBPv600CreateApiProductAttributeExecute(r ApiOBPv600Crea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateBankLevelDynamicEntityRequest struct {
+type ApiCreateBankLevelDynamicEndpointRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
-	oBPv600CreateSystemDynamicEntityRequest *OBPv600CreateSystemDynamicEntityRequest
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString *GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 }
 
 // Request body
-func (r ApiOBPv600CreateBankLevelDynamicEntityRequest) OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest OBPv600CreateSystemDynamicEntityRequest) ApiOBPv600CreateBankLevelDynamicEntityRequest {
-	r.oBPv600CreateSystemDynamicEntityRequest = &oBPv600CreateSystemDynamicEntityRequest
+func (r ApiCreateBankLevelDynamicEndpointRequest) GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) ApiCreateBankLevelDynamicEndpointRequest {
+	r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = &getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 	return r
 }
 
-func (r ApiOBPv600CreateBankLevelDynamicEntityRequest) Execute() (*OBPv600CreateBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateBankLevelDynamicEntityExecute(r)
+func (r ApiCreateBankLevelDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicEndpointExecute(r)
 }
 
 /*
-OBPv600CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
+CreateBankLevelDynamicEndpoint Create Bank Level Dynamic Endpoint
+
+<p>Create dynamic endpoints.</p>
+<p>Create dynamic endpoints with one json format swagger content.</p>
+<p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br />
+please check <code>Endpoint Mapping</code> endpoints.</p>
+<p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p>
+<p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiCreateBankLevelDynamicEndpointRequest
+*/
+func (a *APIAPIService) CreateBankLevelDynamicEndpoint(ctx context.Context, bankid string) ApiCreateBankLevelDynamicEndpointRequest {
+	return ApiCreateBankLevelDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *APIAPIService) CreateBankLevelDynamicEndpointExecute(r ApiCreateBankLevelDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateBankLevelDynamicEndpoint")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == nil {
+		return localVarReturnValue, nil, reportError("getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateBankLevelDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	createSystemDynamicEntityRequest *CreateSystemDynamicEntityRequest
+}
+
+// Request body
+func (r ApiCreateBankLevelDynamicEntityRequest) CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest CreateSystemDynamicEntityRequest) ApiCreateBankLevelDynamicEntityRequest {
+	r.createSystemDynamicEntityRequest = &createSystemDynamicEntityRequest
+	return r
+}
+
+func (r ApiCreateBankLevelDynamicEntityRequest) Execute() (*CreateBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.CreateBankLevelDynamicEntityExecute(r)
+}
+
+/*
+CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
 
 <p>Create a bank level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -9702,10 +1160,10 @@ OBPv600CreateBankLevelDynamicEntity Create Bank Level Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600CreateBankLevelDynamicEntityRequest
+ @return ApiCreateBankLevelDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntity(ctx context.Context, bankid string) ApiOBPv600CreateBankLevelDynamicEntityRequest {
-	return ApiOBPv600CreateBankLevelDynamicEntityRequest{
+func (a *APIAPIService) CreateBankLevelDynamicEntity(ctx context.Context, bankid string) ApiCreateBankLevelDynamicEntityRequest {
+	return ApiCreateBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -9713,16 +1171,16 @@ func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntity(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv600CreateBankLevelDynamicEntity200Response
-func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600CreateBankLevelDynamicEntityRequest) (*OBPv600CreateBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return CreateBankLevelDynamicEntity200Response
+func (a *APIAPIService) CreateBankLevelDynamicEntityExecute(r ApiCreateBankLevelDynamicEntityRequest) (*CreateBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateBankLevelDynamicEntity200Response
+		localVarReturnValue  *CreateBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9733,8 +1191,8 @@ func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600C
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateSystemDynamicEntityRequest is required and must be specified")
+	if r.createSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9755,7 +1213,7 @@ func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600C
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateSystemDynamicEntityRequest
+	localVarPostBody = r.createSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9780,7 +1238,7 @@ func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600C
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9821,24 +1279,501 @@ func (a *APIAPIService) OBPv600CreateBankLevelDynamicEntityExecute(r ApiOBPv600C
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateFeaturedApiCollectionRequest struct {
+type ApiCreateBankLevelEndpointTagRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	oBPv600CreateFeaturedApiCollectionRequest *OBPv600CreateFeaturedApiCollectionRequest
+	bankid string
+	operationid string
+	updateSystemLevelEndpointTagRequest *UpdateSystemLevelEndpointTagRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateFeaturedApiCollectionRequest) OBPv600CreateFeaturedApiCollectionRequest(oBPv600CreateFeaturedApiCollectionRequest OBPv600CreateFeaturedApiCollectionRequest) ApiOBPv600CreateFeaturedApiCollectionRequest {
-	r.oBPv600CreateFeaturedApiCollectionRequest = &oBPv600CreateFeaturedApiCollectionRequest
+func (r ApiCreateBankLevelEndpointTagRequest) UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest UpdateSystemLevelEndpointTagRequest) ApiCreateBankLevelEndpointTagRequest {
+	r.updateSystemLevelEndpointTagRequest = &updateSystemLevelEndpointTagRequest
 	return r
 }
 
-func (r ApiOBPv600CreateFeaturedApiCollectionRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateFeaturedApiCollectionExecute(r)
+func (r ApiCreateBankLevelEndpointTagRequest) Execute() (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.CreateBankLevelEndpointTagExecute(r)
 }
 
 /*
-OBPv600CreateFeaturedApiCollection Create Featured Api Collection
+CreateBankLevelEndpointTag Create Bank Level Endpoint Tag
+
+<p>Create Bank Level Endpoint Tag</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param operationid The OPERATIONID identifier
+ @return ApiCreateBankLevelEndpointTagRequest
+*/
+func (a *APIAPIService) CreateBankLevelEndpointTag(ctx context.Context, bankid string, operationid string) ApiCreateBankLevelEndpointTagRequest {
+	return ApiCreateBankLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		operationid: operationid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateSystemLevelEndpointTag200Response
+func (a *APIAPIService) CreateBankLevelEndpointTagExecute(r ApiCreateBankLevelEndpointTagRequest) (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateBankLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSystemLevelEndpointTagRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemLevelEndpointTagRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSystemLevelEndpointTagRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateCounterpartyAttributeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	accountid string
+	counterpartyid string
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
+}
+
+// Request body
+func (r ApiCreateCounterpartyAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiCreateCounterpartyAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
+	return r
+}
+
+func (r ApiCreateCounterpartyAttributeRequest) Execute() (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.CreateCounterpartyAttributeExecute(r)
+}
+
+/*
+CreateCounterpartyAttribute Create Counterparty Attribute
+
+<p>Create a new Counterparty Attribute for a given COUNTERPARTY_ID.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br />
+Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiCreateCounterpartyAttributeRequest
+*/
+func (a *APIAPIService) CreateCounterpartyAttribute(ctx context.Context, bankid string, accountid string, counterpartyid string) ApiCreateCounterpartyAttributeRequest {
+	return ApiCreateCounterpartyAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllCounterpartyAttributes200ResponseAttributesInner
+func (a *APIAPIService) CreateCounterpartyAttributeExecute(r ApiCreateCounterpartyAttributeRequest) (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllCounterpartyAttributes200ResponseAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateCounterpartyAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString *GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+}
+
+// Request body
+func (r ApiCreateDynamicEndpointRequest) GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) ApiCreateDynamicEndpointRequest {
+	r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = &getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+	return r
+}
+
+func (r ApiCreateDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.CreateDynamicEndpointExecute(r)
+}
+
+/*
+CreateDynamicEndpoint Create Dynamic Endpoint
+
+<p>Create dynamic endpoints.</p>
+<p>Create dynamic endpoints with one json format swagger content.</p>
+<p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br />
+please check <code>Endpoint Mapping</code> endpoints.</p>
+<p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p>
+<p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateDynamicEndpointRequest
+*/
+func (a *APIAPIService) CreateDynamicEndpoint(ctx context.Context) ApiCreateDynamicEndpointRequest {
+	return ApiCreateDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *APIAPIService) CreateDynamicEndpointExecute(r ApiCreateDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateDynamicEndpoint")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == nil {
+		return localVarReturnValue, nil, reportError("getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateFeaturedApiCollectionRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	createFeaturedApiCollectionRequest *CreateFeaturedApiCollectionRequest
+}
+
+// Request body
+func (r ApiCreateFeaturedApiCollectionRequest) CreateFeaturedApiCollectionRequest(createFeaturedApiCollectionRequest CreateFeaturedApiCollectionRequest) ApiCreateFeaturedApiCollectionRequest {
+	r.createFeaturedApiCollectionRequest = &createFeaturedApiCollectionRequest
+	return r
+}
+
+func (r ApiCreateFeaturedApiCollectionRequest) Execute() (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.CreateFeaturedApiCollectionExecute(r)
+}
+
+/*
+CreateFeaturedApiCollection Create Featured Api Collection
 
 <p>Add an API Collection to the featured list.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -9852,26 +1787,26 @@ OBPv600CreateFeaturedApiCollection Create Featured Api Collection
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateFeaturedApiCollectionRequest
+ @return ApiCreateFeaturedApiCollectionRequest
 */
-func (a *APIAPIService) OBPv600CreateFeaturedApiCollection(ctx context.Context) ApiOBPv600CreateFeaturedApiCollectionRequest {
-	return ApiOBPv600CreateFeaturedApiCollectionRequest{
+func (a *APIAPIService) CreateFeaturedApiCollection(ctx context.Context) ApiCreateFeaturedApiCollectionRequest {
+	return ApiCreateFeaturedApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-func (a *APIAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600CreateFeaturedApiCollectionRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
+//  @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+func (a *APIAPIService) CreateFeaturedApiCollectionExecute(r ApiCreateFeaturedApiCollectionRequest) (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateFeaturedApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateFeaturedApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9881,8 +1816,8 @@ func (a *APIAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600Cr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateFeaturedApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateFeaturedApiCollectionRequest is required and must be specified")
+	if r.createFeaturedApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("createFeaturedApiCollectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -9903,7 +1838,7 @@ func (a *APIAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600Cr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateFeaturedApiCollectionRequest
+	localVarPostBody = r.createFeaturedApiCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -9928,7 +1863,7 @@ func (a *APIAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600Cr
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -9969,26 +1904,204 @@ func (a *APIAPIService) OBPv600CreateFeaturedApiCollectionExecute(r ApiOBPv600Cr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateOrUpdateApiProductRequest struct {
+type ApiCreateMethodRoutingRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	createMethodRoutingRequest *CreateMethodRoutingRequest
+}
+
+// Request body
+func (r ApiCreateMethodRoutingRequest) CreateMethodRoutingRequest(createMethodRoutingRequest CreateMethodRoutingRequest) ApiCreateMethodRoutingRequest {
+	r.createMethodRoutingRequest = &createMethodRoutingRequest
+	return r
+}
+
+func (r ApiCreateMethodRoutingRequest) Execute() (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	return r.ApiService.CreateMethodRoutingExecute(r)
+}
+
+/*
+CreateMethodRouting Create MethodRouting
+
+<p>Create a MethodRouting.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Explanation of Fields:</p>
+<ul>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
+<li>connector_name is required String value</li>
+<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
+<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
+<li>parameters is optional array of key value pairs. You can set some parameters for this method</li>
+</ul>
+<p>note and CAVEAT!:</p>
+<ul>
+<li>bank_id_pattern has to be empty for methods that do not take bank_id as a function parameter, otherwise might get empty result</li>
+<li>methods that aggregate bank objects (e.g. getBankAccountsForUser) have to take any  existing method routings for these objects into consideration</li>
+<li>so if you create e.g. a bank specific method routing for getting an account, make sure that it is also served by endpoints getting ALL accounts for ALL banks</li>
+<li>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</li>
+</ul>
+<p>If the connector name starts with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, convert OutBound and InBound json structure.<br />
+for example:<br />
+outBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
+Build OutBound json value rules:<br />
+1 set cId value with: outboundAdapterCallContext.correlationId value<br />
+2 set bankId value with: concat bankId.value value with  string helloworld<br />
+3 set originalJson value with: whole source json, note: the field value expression is $root</p>
+<p>inBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
+Build InBound json value rules:<br />
+1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
+3 set fullName value with: concat string full: with result.name value<br />
+4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateMethodRoutingRequest
+*/
+func (a *APIAPIService) CreateMethodRouting(ctx context.Context) ApiCreateMethodRoutingRequest {
+	return ApiCreateMethodRoutingRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetMethodRoutings200ResponseMethodRoutingsInner
+func (a *APIAPIService) CreateMethodRoutingExecute(r ApiCreateMethodRoutingRequest) (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMethodRoutings200ResponseMethodRoutingsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateMethodRouting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createMethodRoutingRequest == nil {
+		return localVarReturnValue, nil, reportError("createMethodRoutingRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createMethodRoutingRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateOrUpdateApiProductRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
-	oBPv600CreateOrUpdateApiProductRequest *OBPv600CreateOrUpdateApiProductRequest
+	createOrUpdateApiProductRequest *CreateOrUpdateApiProductRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateOrUpdateApiProductRequest) OBPv600CreateOrUpdateApiProductRequest(oBPv600CreateOrUpdateApiProductRequest OBPv600CreateOrUpdateApiProductRequest) ApiOBPv600CreateOrUpdateApiProductRequest {
-	r.oBPv600CreateOrUpdateApiProductRequest = &oBPv600CreateOrUpdateApiProductRequest
+func (r ApiCreateOrUpdateApiProductRequest) CreateOrUpdateApiProductRequest(createOrUpdateApiProductRequest CreateOrUpdateApiProductRequest) ApiCreateOrUpdateApiProductRequest {
+	r.createOrUpdateApiProductRequest = &createOrUpdateApiProductRequest
 	return r
 }
 
-func (r ApiOBPv600CreateOrUpdateApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600CreateOrUpdateApiProductExecute(r)
+func (r ApiCreateOrUpdateApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.CreateOrUpdateApiProductExecute(r)
 }
 
 /*
-OBPv600CreateOrUpdateApiProduct Create or Update Api Product
+CreateOrUpdateApiProduct Create or Update Api Product
 
 <p>Create or Update an Api Product for the Bank.</p>
 <p>Authentication is Required.</p>
@@ -10025,10 +2138,10 @@ OBPv600CreateOrUpdateApiProduct Create or Update Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600CreateOrUpdateApiProductRequest
+ @return ApiCreateOrUpdateApiProductRequest
 */
-func (a *APIAPIService) OBPv600CreateOrUpdateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600CreateOrUpdateApiProductRequest {
-	return ApiOBPv600CreateOrUpdateApiProductRequest{
+func (a *APIAPIService) CreateOrUpdateApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiCreateOrUpdateApiProductRequest {
+	return ApiCreateOrUpdateApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -10037,16 +2150,16 @@ func (a *APIAPIService) OBPv600CreateOrUpdateApiProduct(ctx context.Context, ban
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *APIAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600CreateOrUpdateApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *APIAPIService) CreateOrUpdateApiProductExecute(r ApiCreateOrUpdateApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateOrUpdateApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateOrUpdateApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10058,8 +2171,8 @@ func (a *APIAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600Creat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateOrUpdateApiProductRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateOrUpdateApiProductRequest is required and must be specified")
+	if r.createOrUpdateApiProductRequest == nil {
+		return localVarReturnValue, nil, reportError("createOrUpdateApiProductRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -10080,7 +2193,7 @@ func (a *APIAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600Creat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateOrUpdateApiProductRequest
+	localVarPostBody = r.createOrUpdateApiProductRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -10105,7 +2218,7 @@ func (a *APIAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600Creat
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10146,24 +2259,358 @@ func (a *APIAPIService) OBPv600CreateOrUpdateApiProductExecute(r ApiOBPv600Creat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600CreateSystemDynamicEntityRequest struct {
+type ApiCreateRegulatedEntityRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	oBPv600CreateSystemDynamicEntityRequest *OBPv600CreateSystemDynamicEntityRequest
+	createRegulatedEntityRequest *CreateRegulatedEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateSystemDynamicEntityRequest) OBPv600CreateSystemDynamicEntityRequest(oBPv600CreateSystemDynamicEntityRequest OBPv600CreateSystemDynamicEntityRequest) ApiOBPv600CreateSystemDynamicEntityRequest {
-	r.oBPv600CreateSystemDynamicEntityRequest = &oBPv600CreateSystemDynamicEntityRequest
+func (r ApiCreateRegulatedEntityRequest) CreateRegulatedEntityRequest(createRegulatedEntityRequest CreateRegulatedEntityRequest) ApiCreateRegulatedEntityRequest {
+	r.createRegulatedEntityRequest = &createRegulatedEntityRequest
 	return r
 }
 
-func (r ApiOBPv600CreateSystemDynamicEntityRequest) Execute() (*OBPv600CreateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateSystemDynamicEntityExecute(r)
+func (r ApiCreateRegulatedEntityRequest) Execute() (*GetRegulatedEntityById200Response, *http.Response, error) {
+	return r.ApiService.CreateRegulatedEntityExecute(r)
 }
 
 /*
-OBPv600CreateSystemDynamicEntity Create System Level Dynamic Entity
+CreateRegulatedEntity Create Regulated Entity
+
+<p>Create Regulated Entity</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
+<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
+<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
+<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
+<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
+<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
+<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
+<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
+<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
+<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
+<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
+<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
+<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
+<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
+<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
+<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
+<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
+<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
+<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
+<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
+<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
+<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateRegulatedEntityRequest
+*/
+func (a *APIAPIService) CreateRegulatedEntity(ctx context.Context) ApiCreateRegulatedEntityRequest {
+	return ApiCreateRegulatedEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetRegulatedEntityById200Response
+func (a *APIAPIService) CreateRegulatedEntityExecute(r ApiCreateRegulatedEntityRequest) (*GetRegulatedEntityById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRegulatedEntityById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateRegulatedEntity")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createRegulatedEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createRegulatedEntityRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createRegulatedEntityRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateRegulatedEntityAttributeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
+}
+
+// Request body
+func (r ApiCreateRegulatedEntityAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiCreateRegulatedEntityAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
+	return r
+}
+
+func (r ApiCreateRegulatedEntityAttributeRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.CreateRegulatedEntityAttributeExecute(r)
+}
+
+/*
+CreateRegulatedEntityAttribute Create Regulated Entity Attribute
+
+<p>Create a new Regulated Entity Attribute for a given REGULATED_ENTITY_ID.</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or &quot;DATE_WITH_DAY&quot;.<br />
+User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @return ApiCreateRegulatedEntityAttributeRequest
+*/
+func (a *APIAPIService) CreateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string) ApiCreateRegulatedEntityAttributeRequest {
+	return ApiCreateRegulatedEntityAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+	}
+}
+
+// Execute executes the request
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *APIAPIService) CreateRegulatedEntityAttributeExecute(r ApiCreateRegulatedEntityAttributeRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateRegulatedEntityAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateSystemDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	createSystemDynamicEntityRequest *CreateSystemDynamicEntityRequest
+}
+
+// Request body
+func (r ApiCreateSystemDynamicEntityRequest) CreateSystemDynamicEntityRequest(createSystemDynamicEntityRequest CreateSystemDynamicEntityRequest) ApiCreateSystemDynamicEntityRequest {
+	r.createSystemDynamicEntityRequest = &createSystemDynamicEntityRequest
+	return r
+}
+
+func (r ApiCreateSystemDynamicEntityRequest) Execute() (*CreateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.CreateSystemDynamicEntityExecute(r)
+}
+
+/*
+CreateSystemDynamicEntity Create System Level Dynamic Entity
 
 <p>Create a system level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -10193,29 +2640,35 @@ OBPv600CreateSystemDynamicEntity Create System Level Dynamic Entity
 * Set <code>personal_requires_role</code> to <code>true</code> to require the corresponding role (e.g. CanCreateDynamicEntity_, CanGetDynamicEntity_) for <code>/my/</code> personal entity endpoints. Default is <code>false</code> (any authenticated user can use <code>/my/</code> endpoints).</p>
 <p>For more information see <a href="/glossary#Dynamic-Entities">here</a></p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
+<p>This endpoint supports <strong>User OR Application</strong> authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).<br />
+See [here](/glossary#API.Endpoint Auth Modes) for more information.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateSystemDynamicEntityRequest
+ @return ApiCreateSystemDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600CreateSystemDynamicEntity(ctx context.Context) ApiOBPv600CreateSystemDynamicEntityRequest {
-	return ApiOBPv600CreateSystemDynamicEntityRequest{
+func (a *APIAPIService) CreateSystemDynamicEntity(ctx context.Context) ApiCreateSystemDynamicEntityRequest {
+	return ApiCreateSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600CreateSystemDynamicEntity200Response
-func (a *APIAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600CreateSystemDynamicEntityRequest) (*OBPv600CreateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return CreateSystemDynamicEntity200Response
+func (a *APIAPIService) CreateSystemDynamicEntityExecute(r ApiCreateSystemDynamicEntityRequest) (*CreateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateSystemDynamicEntity200Response
+		localVarReturnValue  *CreateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600CreateSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10225,8 +2678,8 @@ func (a *APIAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600Crea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600CreateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600CreateSystemDynamicEntityRequest is required and must be specified")
+	if r.createSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("createSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -10247,7 +2700,7 @@ func (a *APIAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600Crea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600CreateSystemDynamicEntityRequest
+	localVarPostBody = r.createSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -10272,7 +2725,7 @@ func (a *APIAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600Crea
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10313,19 +2766,174 @@ func (a *APIAPIService) OBPv600CreateSystemDynamicEntityExecute(r ApiOBPv600Crea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteApiProductRequest struct {
+type ApiCreateSystemLevelEndpointTagRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	operationid string
+	updateSystemLevelEndpointTagRequest *UpdateSystemLevelEndpointTagRequest
+}
+
+// Request body
+func (r ApiCreateSystemLevelEndpointTagRequest) UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest UpdateSystemLevelEndpointTagRequest) ApiCreateSystemLevelEndpointTagRequest {
+	r.updateSystemLevelEndpointTagRequest = &updateSystemLevelEndpointTagRequest
+	return r
+}
+
+func (r ApiCreateSystemLevelEndpointTagRequest) Execute() (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.CreateSystemLevelEndpointTagExecute(r)
+}
+
+/*
+CreateSystemLevelEndpointTag Create System Level Endpoint Tag
+
+<p>Create System Level Endpoint Tag</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param operationid The OPERATIONID identifier
+ @return ApiCreateSystemLevelEndpointTagRequest
+*/
+func (a *APIAPIService) CreateSystemLevelEndpointTag(ctx context.Context, operationid string) ApiCreateSystemLevelEndpointTagRequest {
+	return ApiCreateSystemLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		operationid: operationid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateSystemLevelEndpointTag200Response
+func (a *APIAPIService) CreateSystemLevelEndpointTagExecute(r ApiCreateSystemLevelEndpointTagRequest) (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.CreateSystemLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSystemLevelEndpointTagRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemLevelEndpointTagRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSystemLevelEndpointTagRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteApiProductRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
 }
 
-func (r ApiOBPv600DeleteApiProductRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteApiProductExecute(r)
+func (r ApiDeleteApiProductRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiProductExecute(r)
 }
 
 /*
-OBPv600DeleteApiProduct Delete Api Product
+DeleteApiProduct Delete Api Product
 
 <p>Delete an Api Product by BANK_ID and API_PRODUCT_CODE.</p>
 <p>Authentication is Required.</p>
@@ -10339,10 +2947,10 @@ OBPv600DeleteApiProduct Delete Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600DeleteApiProductRequest
+ @return ApiDeleteApiProductRequest
 */
-func (a *APIAPIService) OBPv600DeleteApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600DeleteApiProductRequest {
-	return ApiOBPv600DeleteApiProductRequest{
+func (a *APIAPIService) DeleteApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiDeleteApiProductRequest {
+	return ApiDeleteApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -10351,14 +2959,14 @@ func (a *APIAPIService) OBPv600DeleteApiProduct(ctx context.Context, bankid stri
 }
 
 // Execute executes the request
-func (a *APIAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600DeleteApiProductRequest) (*http.Response, error) {
+func (a *APIAPIService) DeleteApiProductExecute(r ApiDeleteApiProductRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600DeleteApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteApiProduct")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10412,7 +3020,7 @@ func (a *APIAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600DeleteApiProd
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10444,7 +3052,7 @@ func (a *APIAPIService) OBPv600DeleteApiProductExecute(r ApiOBPv600DeleteApiProd
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteApiProductAttributeRequest struct {
+type ApiDeleteApiProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
@@ -10452,12 +3060,12 @@ type ApiOBPv600DeleteApiProductAttributeRequest struct {
 	apiproductattributeid string
 }
 
-func (r ApiOBPv600DeleteApiProductAttributeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteApiProductAttributeExecute(r)
+func (r ApiDeleteApiProductAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteApiProductAttributeExecute(r)
 }
 
 /*
-OBPv600DeleteApiProductAttribute Delete Api Product Attribute
+DeleteApiProductAttribute Delete Api Product Attribute
 
 <p>Delete an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p>
 <p>Authentication is Required.</p>
@@ -10473,10 +3081,10 @@ OBPv600DeleteApiProductAttribute Delete Api Product Attribute
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
  @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
- @return ApiOBPv600DeleteApiProductAttributeRequest
+ @return ApiDeleteApiProductAttributeRequest
 */
-func (a *APIAPIService) OBPv600DeleteApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiOBPv600DeleteApiProductAttributeRequest {
-	return ApiOBPv600DeleteApiProductAttributeRequest{
+func (a *APIAPIService) DeleteApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiDeleteApiProductAttributeRequest {
+	return ApiDeleteApiProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -10486,14 +3094,14 @@ func (a *APIAPIService) OBPv600DeleteApiProductAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-func (a *APIAPIService) OBPv600DeleteApiProductAttributeExecute(r ApiOBPv600DeleteApiProductAttributeRequest) (*http.Response, error) {
+func (a *APIAPIService) DeleteApiProductAttributeExecute(r ApiDeleteApiProductAttributeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600DeleteApiProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteApiProductAttribute")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10548,7 +3156,7 @@ func (a *APIAPIService) OBPv600DeleteApiProductAttributeExecute(r ApiOBPv600Dele
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10580,18 +3188,680 @@ func (a *APIAPIService) OBPv600DeleteApiProductAttributeExecute(r ApiOBPv600Dele
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteFeaturedApiCollectionRequest struct {
+type ApiDeleteBankLevelDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	dynamicendpointid string
+}
+
+func (r ApiDeleteBankLevelDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicEndpointExecute(r)
+}
+
+/*
+DeleteBankLevelDynamicEndpoint  Delete Bank Level Dynamic Endpoint
+
+<p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiDeleteBankLevelDynamicEndpointRequest
+*/
+func (a *APIAPIService) DeleteBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiDeleteBankLevelDynamicEndpointRequest {
+	return ApiDeleteBankLevelDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteBankLevelDynamicEndpointExecute(r ApiDeleteBankLevelDynamicEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteBankLevelDynamicEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteBankLevelDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	dynamicentityid string
+}
+
+func (r ApiDeleteBankLevelDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBankLevelDynamicEntityExecute(r)
+}
+
+/*
+DeleteBankLevelDynamicEntity Delete Bank Level Dynamic Entity
+
+<p>Delete a Bank Level DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteBankLevelDynamicEntityRequest
+*/
+func (a *APIAPIService) DeleteBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiDeleteBankLevelDynamicEntityRequest {
+	return ApiDeleteBankLevelDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteBankLevelDynamicEntityExecute(r ApiDeleteBankLevelDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteBankLevelDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteBankLevelEndpointTagRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	operationid string
+	endpointtagid string
+}
+
+func (r ApiDeleteBankLevelEndpointTagRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteBankLevelEndpointTagExecute(r)
+}
+
+/*
+DeleteBankLevelEndpointTag Delete Bank Level Endpoint Tag
+
+<p>Delete Bank Level Endpoint Tag.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param operationid The OPERATIONID identifier
+ @param endpointtagid The ENDPOINTTAGID identifier
+ @return ApiDeleteBankLevelEndpointTagRequest
+*/
+func (a *APIAPIService) DeleteBankLevelEndpointTag(ctx context.Context, bankid string, operationid string, endpointtagid string) ApiDeleteBankLevelEndpointTagRequest {
+	return ApiDeleteBankLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		operationid: operationid,
+		endpointtagid: endpointtagid,
+	}
+}
+
+// Execute executes the request
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *APIAPIService) DeleteBankLevelEndpointTagExecute(r ApiDeleteBankLevelEndpointTagRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteBankLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteCounterpartyAttributeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	accountid string
+	counterpartyid string
+	counterpartyattributeid string
+}
+
+func (r ApiDeleteCounterpartyAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyAttributeExecute(r)
+}
+
+/*
+DeleteCounterpartyAttribute Delete Counterparty Attribute
+
+<p>Delete a Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @param counterpartyattributeid The COUNTERPARTYATTRIBUTEID identifier
+ @return ApiDeleteCounterpartyAttributeRequest
+*/
+func (a *APIAPIService) DeleteCounterpartyAttribute(ctx context.Context, bankid string, accountid string, counterpartyid string, counterpartyattributeid string) ApiDeleteCounterpartyAttributeRequest {
+	return ApiDeleteCounterpartyAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		counterpartyid: counterpartyid,
+		counterpartyattributeid: counterpartyattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteCounterpartyAttributeExecute(r ApiDeleteCounterpartyAttributeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteCounterpartyAttribute")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyattributeid"+"}", url.PathEscape(parameterValueToString(r.counterpartyattributeid, "counterpartyattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicendpointid string
+}
+
+func (r ApiDeleteDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteDynamicEndpointExecute(r)
+}
+
+/*
+DeleteDynamicEndpoint  Delete Dynamic Endpoint
+
+<p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiDeleteDynamicEndpointRequest
+*/
+func (a *APIAPIService) DeleteDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiDeleteDynamicEndpointRequest {
+	return ApiDeleteDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteDynamicEndpointExecute(r ApiDeleteDynamicEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteDynamicEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteFeaturedApiCollectionRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	apicollectionid string
 }
 
-func (r ApiOBPv600DeleteFeaturedApiCollectionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteFeaturedApiCollectionExecute(r)
+func (r ApiDeleteFeaturedApiCollectionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteFeaturedApiCollectionExecute(r)
 }
 
 /*
-OBPv600DeleteFeaturedApiCollection Delete Featured Api Collection
+DeleteFeaturedApiCollection Delete Featured Api Collection
 
 <p>Remove an API Collection from the featured list.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -10602,10 +3872,10 @@ OBPv600DeleteFeaturedApiCollection Delete Featured Api Collection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv600DeleteFeaturedApiCollectionRequest
+ @return ApiDeleteFeaturedApiCollectionRequest
 */
-func (a *APIAPIService) OBPv600DeleteFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiOBPv600DeleteFeaturedApiCollectionRequest {
-	return ApiOBPv600DeleteFeaturedApiCollectionRequest{
+func (a *APIAPIService) DeleteFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiDeleteFeaturedApiCollectionRequest {
+	return ApiDeleteFeaturedApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -10613,14 +3883,14 @@ func (a *APIAPIService) OBPv600DeleteFeaturedApiCollection(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *APIAPIService) OBPv600DeleteFeaturedApiCollectionExecute(r ApiOBPv600DeleteFeaturedApiCollectionRequest) (*http.Response, error) {
+func (a *APIAPIService) DeleteFeaturedApiCollectionExecute(r ApiDeleteFeaturedApiCollectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600DeleteFeaturedApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteFeaturedApiCollection")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10673,7 +3943,7 @@ func (a *APIAPIService) OBPv600DeleteFeaturedApiCollectionExecute(r ApiOBPv600De
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10705,18 +3975,766 @@ func (a *APIAPIService) OBPv600DeleteFeaturedApiCollectionExecute(r ApiOBPv600De
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteSystemDynamicEntityCascadeRequest struct {
+type ApiDeleteMethodRoutingRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	methodroutingid string
+}
+
+func (r ApiDeleteMethodRoutingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMethodRoutingExecute(r)
+}
+
+/*
+DeleteMethodRouting Delete MethodRouting
+
+<p>Delete a MethodRouting specified by METHOD_ROUTING_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param methodroutingid The METHODROUTINGID identifier
+ @return ApiDeleteMethodRoutingRequest
+*/
+func (a *APIAPIService) DeleteMethodRouting(ctx context.Context, methodroutingid string) ApiDeleteMethodRoutingRequest {
+	return ApiDeleteMethodRoutingRequest{
+		ApiService: a,
+		ctx: ctx,
+		methodroutingid: methodroutingid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteMethodRoutingExecute(r ApiDeleteMethodRoutingRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteMethodRouting")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteMyDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicendpointid string
+}
+
+func (r ApiDeleteMyDynamicEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMyDynamicEndpointExecute(r)
+}
+
+/*
+DeleteMyDynamicEndpoint Delete My Dynamic Endpoint
+
+<p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiDeleteMyDynamicEndpointRequest
+*/
+func (a *APIAPIService) DeleteMyDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiDeleteMyDynamicEndpointRequest {
+	return ApiDeleteMyDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteMyDynamicEndpointExecute(r ApiDeleteMyDynamicEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteMyDynamicEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteMyDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	dynamicentityid string
 }
 
-func (r ApiOBPv600DeleteSystemDynamicEntityCascadeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteSystemDynamicEntityCascadeExecute(r)
+func (r ApiDeleteMyDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMyDynamicEntityExecute(r)
 }
 
 /*
-OBPv600DeleteSystemDynamicEntityCascade Delete System Level Dynamic Entity Cascade
+DeleteMyDynamicEntity Delete My Dynamic Entity
+
+<p>Delete my DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#My-Dynamic-Entities">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteMyDynamicEntityRequest
+*/
+func (a *APIAPIService) DeleteMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiDeleteMyDynamicEntityRequest {
+	return ApiDeleteMyDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteMyDynamicEntityExecute(r ApiDeleteMyDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteMyDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteRegulatedEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+}
+
+func (r ApiDeleteRegulatedEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRegulatedEntityExecute(r)
+}
+
+/*
+DeleteRegulatedEntity Delete Regulated Entity
+
+<p>Delete Regulated Entity specified by REGULATED_ENTITY_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @return ApiDeleteRegulatedEntityRequest
+*/
+func (a *APIAPIService) DeleteRegulatedEntity(ctx context.Context, regulatedentityid string) ApiDeleteRegulatedEntityRequest {
+	return ApiDeleteRegulatedEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteRegulatedEntityExecute(r ApiDeleteRegulatedEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteRegulatedEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteRegulatedEntityAttributeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+	regulatedentityattributeid string
+}
+
+func (r ApiDeleteRegulatedEntityAttributeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteRegulatedEntityAttributeExecute(r)
+}
+
+/*
+DeleteRegulatedEntityAttribute Delete Regulated Entity Attribute
+
+<p>Delete a Regulated Entity Attribute specified by REGULATED_ENTITY_ATTRIBUTE_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
+ @return ApiDeleteRegulatedEntityAttributeRequest
+*/
+func (a *APIAPIService) DeleteRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiDeleteRegulatedEntityAttributeRequest {
+	return ApiDeleteRegulatedEntityAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+		regulatedentityattributeid: regulatedentityattributeid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteRegulatedEntityAttributeExecute(r ApiDeleteRegulatedEntityAttributeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteRegulatedEntityAttribute")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteSystemDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicentityid string
+}
+
+func (r ApiDeleteSystemDynamicEntityRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemDynamicEntityExecute(r)
+}
+
+/*
+DeleteSystemDynamicEntity Delete System Level Dynamic Entity
+
+<p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID.</p>
+<p>For more information see <a href="/glossary#Dynamic-Entities">here</a>/</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicentityid The DYNAMICENTITYID identifier
+ @return ApiDeleteSystemDynamicEntityRequest
+*/
+func (a *APIAPIService) DeleteSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiDeleteSystemDynamicEntityRequest {
+	return ApiDeleteSystemDynamicEntityRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicentityid: dynamicentityid,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) DeleteSystemDynamicEntityExecute(r ApiDeleteSystemDynamicEntityRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteSystemDynamicEntity")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicentityid"+"}", url.PathEscape(parameterValueToString(r.dynamicentityid, "dynamicentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteSystemDynamicEntityCascadeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicentityid string
+}
+
+func (r ApiDeleteSystemDynamicEntityCascadeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteSystemDynamicEntityCascadeExecute(r)
+}
+
+/*
+DeleteSystemDynamicEntityCascade Delete System Level Dynamic Entity Cascade
 
 <p>Delete a DynamicEntity specified by DYNAMIC_ENTITY_ID and all its data records.</p>
 <p>This endpoint performs a cascade delete:<br />
@@ -10732,10 +4750,10 @@ For personal entities (hasPersonalEntity=true), you must delete the records and 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600DeleteSystemDynamicEntityCascadeRequest
+ @return ApiDeleteSystemDynamicEntityCascadeRequest
 */
-func (a *APIAPIService) OBPv600DeleteSystemDynamicEntityCascade(ctx context.Context, dynamicentityid string) ApiOBPv600DeleteSystemDynamicEntityCascadeRequest {
-	return ApiOBPv600DeleteSystemDynamicEntityCascadeRequest{
+func (a *APIAPIService) DeleteSystemDynamicEntityCascade(ctx context.Context, dynamicentityid string) ApiDeleteSystemDynamicEntityCascadeRequest {
+	return ApiDeleteSystemDynamicEntityCascadeRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -10743,14 +4761,14 @@ func (a *APIAPIService) OBPv600DeleteSystemDynamicEntityCascade(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *APIAPIService) OBPv600DeleteSystemDynamicEntityCascadeExecute(r ApiOBPv600DeleteSystemDynamicEntityCascadeRequest) (*http.Response, error) {
+func (a *APIAPIService) DeleteSystemDynamicEntityCascadeExecute(r ApiDeleteSystemDynamicEntityCascadeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600DeleteSystemDynamicEntityCascade")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteSystemDynamicEntityCascade")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10803,7 +4821,7 @@ func (a *APIAPIService) OBPv600DeleteSystemDynamicEntityCascadeExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -10835,19 +4853,897 @@ func (a *APIAPIService) OBPv600DeleteSystemDynamicEntityCascadeExecute(r ApiOBPv
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetApiProductRequest struct {
+type ApiDeleteSystemLevelEndpointTagRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	operationid string
+	endpointtagid string
+}
+
+func (r ApiDeleteSystemLevelEndpointTagRequest) Execute() (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.DeleteSystemLevelEndpointTagExecute(r)
+}
+
+/*
+DeleteSystemLevelEndpointTag Delete System Level Endpoint Tag
+
+<p>Delete System Level Endpoint Tag.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param operationid The OPERATIONID identifier
+ @param endpointtagid The ENDPOINTTAGID identifier
+ @return ApiDeleteSystemLevelEndpointTagRequest
+*/
+func (a *APIAPIService) DeleteSystemLevelEndpointTag(ctx context.Context, operationid string, endpointtagid string) ApiDeleteSystemLevelEndpointTagRequest {
+	return ApiDeleteSystemLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		operationid: operationid,
+		endpointtagid: endpointtagid,
+	}
+}
+
+// Execute executes the request
+//  @return DeleteSystemLevelEndpointTag200Response
+func (a *APIAPIService) DeleteSystemLevelEndpointTagExecute(r ApiDeleteSystemLevelEndpointTagRequest) (*DeleteSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *DeleteSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.DeleteSystemLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiElasticSearchMetricsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiElasticSearchMetricsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ElasticSearchMetricsExecute(r)
+}
+
+/*
+ElasticSearchMetrics Search API Metrics via Elasticsearch
+
+<p>Search the API calls made to this API instance via Elastic Search.</p>
+<p>Login is required.</p>
+<p>CanSearchMetrics entitlement is required to search metrics data.</p>
+<p>parameters:</p>
+<p>esType  - elasticsearch type</p>
+<p>simple query:</p>
+<p>q       - plain_text_query</p>
+<p>df      - default field to search</p>
+<p>sort    - field to sort on</p>
+<p>size    - number of hits returned, default 10</p>
+<p>from    - show hits starting from</p>
+<p>json query:</p>
+<p>source  - JSON_query_(URL-escaped)</p>
+<p>example usage:</p>
+<p>/search/metrics/q=findThis</p>
+<p>or:</p>
+<p>/search/metrics/source={&quot;query&quot;:{&quot;query_string&quot;:{&quot;query&quot;:&quot;findThis&quot;}}}</p>
+<p>Note!!</p>
+<p>The whole JSON query string MUST be URL-encoded:</p>
+<ul>
+<li>For {  use %7B</li>
+<li>For }  use %7D</li>
+<li>For : use %3A</li>
+<li>For &quot; use %22</li>
+</ul>
+<p>etc..</p>
+<p>Only q, source and esType are passed to Elastic</p>
+<p>Elastic simple query: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html</a></p>
+<p>Elastic JSON query: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-filter-context.html</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#none">none</a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiElasticSearchMetricsRequest
+*/
+func (a *APIAPIService) ElasticSearchMetrics(ctx context.Context) ApiElasticSearchMetricsRequest {
+	return ApiElasticSearchMetricsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *APIAPIService) ElasticSearchMetricsExecute(r ApiElasticSearchMetricsRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.ElasticSearchMetrics")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v2.0.0/search/metrics"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAdapterInfoRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetAdapterInfoRequest) Execute() (*GetAdapterInfo200Response, *http.Response, error) {
+	return r.ApiService.GetAdapterInfoExecute(r)
+}
+
+/*
+GetAdapterInfo Get Adapter Info
+
+<p>Get basic information about the Adapter.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>backend_messages</strong></a>: backend_messages</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#errorCode"><strong>errorCode</strong></a>: errorCode</p>
+<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>source</strong></a>:</p>
+<p><a href="/glossary#status"><strong>status</strong></a>:</p>
+<p><a href="/glossary#text"><strong>text</strong></a>:</p>
+<p><a href="/glossary#"><strong>total_duration</strong></a>: total_duration</p>
+<p><a href="/glossary#version"><strong>version</strong></a>:</p>
+<p><a href="/glossary#duration">duration</a>: 5.123</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetAdapterInfoRequest
+*/
+func (a *APIAPIService) GetAdapterInfo(ctx context.Context) ApiGetAdapterInfoRequest {
+	return ApiGetAdapterInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetAdapterInfo200Response
+func (a *APIAPIService) GetAdapterInfoExecute(r ApiGetAdapterInfoRequest) (*GetAdapterInfo200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAdapterInfo200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAdapterInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/adapter"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAdapterInfoForBankRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+}
+
+func (r ApiGetAdapterInfoForBankRequest) Execute() (*GetMapperDatabaseInfo200Response, *http.Response, error) {
+	return r.ApiService.GetAdapterInfoForBankExecute(r)
+}
+
+/*
+GetAdapterInfoForBank Get Adapter Info for a bank
+
+<p>Get basic information about the Adapter listening on behalf of this bank.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#version"><strong>version</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetAdapterInfoForBankRequest
+*/
+func (a *APIAPIService) GetAdapterInfoForBank(ctx context.Context, bankid string) ApiGetAdapterInfoForBankRequest {
+	return ApiGetAdapterInfoForBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetMapperDatabaseInfo200Response
+func (a *APIAPIService) GetAdapterInfoForBankExecute(r ApiGetAdapterInfoForBankRequest) (*GetMapperDatabaseInfo200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMapperDatabaseInfo200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAdapterInfoForBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/adapter"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAllCounterpartyAttributesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	accountid string
+	counterpartyid string
+}
+
+func (r ApiGetAllCounterpartyAttributesRequest) Execute() (*GetAllCounterpartyAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAllCounterpartyAttributesExecute(r)
+}
+
+/*
+GetAllCounterpartyAttributes Get All Counterparty Attributes
+
+<p>Get all attributes for the specified Counterparty.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiGetAllCounterpartyAttributesRequest
+*/
+func (a *APIAPIService) GetAllCounterpartyAttributes(ctx context.Context, bankid string, accountid string, counterpartyid string) ApiGetAllCounterpartyAttributesRequest {
+	return ApiGetAllCounterpartyAttributesRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllCounterpartyAttributes200Response
+func (a *APIAPIService) GetAllCounterpartyAttributesExecute(r ApiGetAllCounterpartyAttributesRequest) (*GetAllCounterpartyAttributes200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllCounterpartyAttributes200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAllCounterpartyAttributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAllRegulatedEntityAttributesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+}
+
+func (r ApiGetAllRegulatedEntityAttributesRequest) Execute() (*GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
+	return r.ApiService.GetAllRegulatedEntityAttributesExecute(r)
+}
+
+/*
+GetAllRegulatedEntityAttributes Get All Regulated Entity Attributes
+
+<p>Get all attributes for the specified Regulated Entity.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @return ApiGetAllRegulatedEntityAttributesRequest
+*/
+func (a *APIAPIService) GetAllRegulatedEntityAttributes(ctx context.Context, regulatedentityid string) ApiGetAllRegulatedEntityAttributesRequest {
+	return ApiGetAllRegulatedEntityAttributesRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllRegulatedEntityAttributes200Response
+func (a *APIAPIService) GetAllRegulatedEntityAttributesExecute(r ApiGetAllRegulatedEntityAttributesRequest) (*GetAllRegulatedEntityAttributes200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllRegulatedEntityAttributes200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAllRegulatedEntityAttributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetApiProductRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
 }
 
-func (r ApiOBPv600GetApiProductRequest) Execute() (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
-	return r.ApiService.OBPv600GetApiProductExecute(r)
+func (r ApiGetApiProductRequest) Execute() (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
+	return r.ApiService.GetApiProductExecute(r)
 }
 
 /*
-OBPv600GetApiProduct Get Api Product
+GetApiProduct Get Api Product
 
 <p>Get an Api Product by BANK_ID and API_PRODUCT_CODE.</p>
 <p>Returns the Api Product with its attributes.</p>
@@ -10884,10 +5780,10 @@ OBPv600GetApiProduct Get Api Product
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
- @return ApiOBPv600GetApiProductRequest
+ @return ApiGetApiProductRequest
 */
-func (a *APIAPIService) OBPv600GetApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiOBPv600GetApiProductRequest {
-	return ApiOBPv600GetApiProductRequest{
+func (a *APIAPIService) GetApiProduct(ctx context.Context, bankid string, apiproductcode string) ApiGetApiProductRequest {
+	return ApiGetApiProductRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -10896,16 +5792,16 @@ func (a *APIAPIService) OBPv600GetApiProduct(ctx context.Context, bankid string,
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
-func (a *APIAPIService) OBPv600GetApiProductExecute(r ApiOBPv600GetApiProductRequest) (*OBPv600GetApiProducts200ResponsePropertiesApiProductsItems, *http.Response, error) {
+//  @return GetApiProducts200ResponseApiProductsInner
+func (a *APIAPIService) GetApiProductExecute(r ApiGetApiProductRequest) (*GetApiProducts200ResponseApiProductsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200ResponsePropertiesApiProductsItems
+		localVarReturnValue  *GetApiProducts200ResponseApiProductsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetApiProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetApiProduct")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10972,7 +5868,7 @@ func (a *APIAPIService) OBPv600GetApiProductExecute(r ApiOBPv600GetApiProductReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetApiProductAttributeRequest struct {
+type ApiGetApiProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
@@ -10980,12 +5876,12 @@ type ApiOBPv600GetApiProductAttributeRequest struct {
 	apiproductattributeid string
 }
 
-func (r ApiOBPv600GetApiProductAttributeRequest) Execute() (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetApiProductAttributeExecute(r)
+func (r ApiGetApiProductAttributeRequest) Execute() (*CreateApiProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.GetApiProductAttributeExecute(r)
 }
 
 /*
-OBPv600GetApiProductAttribute Get Api Product Attribute
+GetApiProductAttribute Get Api Product Attribute
 
 <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -11007,10 +5903,10 @@ OBPv600GetApiProductAttribute Get Api Product Attribute
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
  @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
- @return ApiOBPv600GetApiProductAttributeRequest
+ @return ApiGetApiProductAttributeRequest
 */
-func (a *APIAPIService) OBPv600GetApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiOBPv600GetApiProductAttributeRequest {
-	return ApiOBPv600GetApiProductAttributeRequest{
+func (a *APIAPIService) GetApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiGetApiProductAttributeRequest {
+	return ApiGetApiProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -11020,16 +5916,16 @@ func (a *APIAPIService) OBPv600GetApiProductAttribute(ctx context.Context, banki
 }
 
 // Execute executes the request
-//  @return OBPv600CreateApiProductAttribute200Response
-func (a *APIAPIService) OBPv600GetApiProductAttributeExecute(r ApiOBPv600GetApiProductAttributeRequest) (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
+//  @return CreateApiProductAttribute200Response
+func (a *APIAPIService) GetApiProductAttributeExecute(r ApiGetApiProductAttributeRequest) (*CreateApiProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateApiProductAttribute200Response
+		localVarReturnValue  *CreateApiProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetApiProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetApiProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11097,18 +5993,18 @@ func (a *APIAPIService) OBPv600GetApiProductAttributeExecute(r ApiOBPv600GetApiP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetApiProductsRequest struct {
+type ApiGetApiProductsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetApiProductsRequest) Execute() (*OBPv600GetApiProducts200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetApiProductsExecute(r)
+func (r ApiGetApiProductsRequest) Execute() (*GetApiProducts200Response, *http.Response, error) {
+	return r.ApiService.GetApiProductsExecute(r)
 }
 
 /*
-OBPv600GetApiProducts Get Api Products
+GetApiProducts Get Api Products
 
 <p>Get Api Products for the Bank.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -11143,10 +6039,10 @@ OBPv600GetApiProducts Get Api Products
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetApiProductsRequest
+ @return ApiGetApiProductsRequest
 */
-func (a *APIAPIService) OBPv600GetApiProducts(ctx context.Context, bankid string) ApiOBPv600GetApiProductsRequest {
-	return ApiOBPv600GetApiProductsRequest{
+func (a *APIAPIService) GetApiProducts(ctx context.Context, bankid string) ApiGetApiProductsRequest {
+	return ApiGetApiProductsRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -11154,16 +6050,16 @@ func (a *APIAPIService) OBPv600GetApiProducts(ctx context.Context, bankid string
 }
 
 // Execute executes the request
-//  @return OBPv600GetApiProducts200Response
-func (a *APIAPIService) OBPv600GetApiProductsExecute(r ApiOBPv600GetApiProductsRequest) (*OBPv600GetApiProducts200Response, *http.Response, error) {
+//  @return GetApiProducts200Response
+func (a *APIAPIService) GetApiProductsExecute(r ApiGetApiProductsRequest) (*GetApiProducts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetApiProducts200Response
+		localVarReturnValue  *GetApiProducts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetApiProducts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetApiProducts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11229,17 +6125,263 @@ func (a *APIAPIService) OBPv600GetApiProductsExecute(r ApiOBPv600GetApiProductsR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest struct {
+type ApiGetApiTagsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest) Execute() (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAvailablePersonalDynamicEntitiesExecute(r)
+func (r ApiGetApiTagsRequest) Execute() (*GetApiTags200Response, *http.Response, error) {
+	return r.ApiService.GetApiTagsExecute(r)
 }
 
 /*
-OBPv600GetAvailablePersonalDynamicEntities Get Available Personal Dynamic Entities
+GetApiTags Get API Tags
+
+<p>Get API TagsGet API Tags</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#accounts"><strong>accounts</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>view_id</strong></a>: owner</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetApiTagsRequest
+*/
+func (a *APIAPIService) GetApiTags(ctx context.Context) ApiGetApiTagsRequest {
+	return ApiGetApiTagsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetApiTags200Response
+func (a *APIAPIService) GetApiTagsExecute(r ApiGetApiTagsRequest) (*GetApiTags200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetApiTags200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetApiTags")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/tags"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAppDirectoryRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetAppDirectoryRequest) Execute() (*GetAppDirectory200Response, *http.Response, error) {
+	return r.ApiService.GetAppDirectoryExecute(r)
+}
+
+/*
+GetAppDirectory Get App Directory
+
+<p>Get connectivity information for apps in the OBP ecosystem.</p>
+<p>Returns configuration properties that apps (Portal, API Explorer, API Manager,<br />
+Sandbox Populator, OIDC, Keycloak, Hola, MCP, Opey) and agents can use to discover<br />
+endpoints in the OBP ecosystem.</p>
+<p>Any props starting with public_ and ending with _url are included automatically.</p>
+<p>Known public app URL props:<br />
+public_keycloak_url, public_obp_api_explorer_url, public_obp_api_manager_url, public_obp_api_url, public_obp_hola_url, public_obp_mcp_url, public_obp_oidc_url, public_obp_opey_url, public_obp_portal_url, public_obp_sandbox_populator_url, public_rabbit_cats_adapter_url</p>
+<p>Empty (unconfigured) values are excluded from the response.</p>
+<p>Authentication is NOT Required.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetAppDirectoryRequest
+*/
+func (a *APIAPIService) GetAppDirectory(ctx context.Context) ApiGetAppDirectoryRequest {
+	return ApiGetAppDirectoryRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetAppDirectory200Response
+func (a *APIAPIService) GetAppDirectoryExecute(r ApiGetAppDirectoryRequest) (*GetAppDirectory200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAppDirectory200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAppDirectory")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/app-directory"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetAvailablePersonalDynamicEntitiesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetAvailablePersonalDynamicEntitiesRequest) Execute() (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetAvailablePersonalDynamicEntitiesExecute(r)
+}
+
+/*
+GetAvailablePersonalDynamicEntities Get Available Personal Dynamic Entities
 
 <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p>
 <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br />
@@ -11252,26 +6394,26 @@ without needing admin access to view all dynamic entity definitions.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest
+ @return ApiGetAvailablePersonalDynamicEntitiesRequest
 */
-func (a *APIAPIService) OBPv600GetAvailablePersonalDynamicEntities(ctx context.Context) ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest {
-	return ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest{
+func (a *APIAPIService) GetAvailablePersonalDynamicEntities(ctx context.Context) ApiGetAvailablePersonalDynamicEntitiesRequest {
+	return ApiGetAvailablePersonalDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAvailablePersonalDynamicEntities200Response
-func (a *APIAPIService) OBPv600GetAvailablePersonalDynamicEntitiesExecute(r ApiOBPv600GetAvailablePersonalDynamicEntitiesRequest) (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+//  @return GetAvailablePersonalDynamicEntities200Response
+func (a *APIAPIService) GetAvailablePersonalDynamicEntitiesExecute(r ApiGetAvailablePersonalDynamicEntitiesRequest) (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAvailablePersonalDynamicEntities200Response
+		localVarReturnValue  *GetAvailablePersonalDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetAvailablePersonalDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetAvailablePersonalDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11323,7 +6465,7 @@ func (a *APIAPIService) OBPv600GetAvailablePersonalDynamicEntitiesExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -11364,18 +6506,288 @@ func (a *APIAPIService) OBPv600GetAvailablePersonalDynamicEntitiesExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetBankLevelDynamicEntitiesRequest struct {
+type ApiGetBankLevelDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	dynamicendpointid string
+}
+
+func (r ApiGetBankLevelDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEndpointExecute(r)
+}
+
+/*
+GetBankLevelDynamicEndpoint  Get Bank Level Dynamic Endpoint
+
+<p>Get a Bank Level Dynamic Endpoint.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiGetBankLevelDynamicEndpointRequest
+*/
+func (a *APIAPIService) GetBankLevelDynamicEndpoint(ctx context.Context, bankid string, dynamicendpointid string) ApiGetBankLevelDynamicEndpointRequest {
+	return ApiGetBankLevelDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *APIAPIService) GetBankLevelDynamicEndpointExecute(r ApiGetBankLevelDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetBankLevelDynamicEndpoint")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetBankLevelDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 }
 
-func (r ApiOBPv600GetBankLevelDynamicEntitiesRequest) Execute() (*OBPv600GetBankLevelDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetBankLevelDynamicEntitiesExecute(r)
+func (r ApiGetBankLevelDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv600GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
+GetBankLevelDynamicEndpoints Get Bank Level Dynamic Endpoints
+
+<p>Get Bank Level Dynamic Endpoints.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetBankLevelDynamicEndpointsRequest
+*/
+func (a *APIAPIService) GetBankLevelDynamicEndpoints(ctx context.Context, bankid string) ApiGetBankLevelDynamicEndpointsRequest {
+	return ApiGetBankLevelDynamicEndpointsRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200Response
+func (a *APIAPIService) GetBankLevelDynamicEndpointsExecute(r ApiGetBankLevelDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetBankLevelDynamicEndpoints")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetBankLevelDynamicEntitiesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+}
+
+func (r ApiGetBankLevelDynamicEntitiesRequest) Execute() (*GetBankLevelDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicEntitiesExecute(r)
+}
+
+/*
+GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
 
 <p>Get all Bank Level Dynamic Entities for one bank with record counts.</p>
 <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p>
@@ -11386,10 +6798,10 @@ OBPv600GetBankLevelDynamicEntities Get Bank Level Dynamic Entities
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
- @return ApiOBPv600GetBankLevelDynamicEntitiesRequest
+ @return ApiGetBankLevelDynamicEntitiesRequest
 */
-func (a *APIAPIService) OBPv600GetBankLevelDynamicEntities(ctx context.Context, bankid string) ApiOBPv600GetBankLevelDynamicEntitiesRequest {
-	return ApiOBPv600GetBankLevelDynamicEntitiesRequest{
+func (a *APIAPIService) GetBankLevelDynamicEntities(ctx context.Context, bankid string) ApiGetBankLevelDynamicEntitiesRequest {
+	return ApiGetBankLevelDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -11397,16 +6809,16 @@ func (a *APIAPIService) OBPv600GetBankLevelDynamicEntities(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv600GetBankLevelDynamicEntities200Response
-func (a *APIAPIService) OBPv600GetBankLevelDynamicEntitiesExecute(r ApiOBPv600GetBankLevelDynamicEntitiesRequest) (*OBPv600GetBankLevelDynamicEntities200Response, *http.Response, error) {
+//  @return GetBankLevelDynamicEntities200Response
+func (a *APIAPIService) GetBankLevelDynamicEntitiesExecute(r ApiGetBankLevelDynamicEntitiesRequest) (*GetBankLevelDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetBankLevelDynamicEntities200Response
+		localVarReturnValue  *GetBankLevelDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetBankLevelDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetBankLevelDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11459,7 +6871,7 @@ func (a *APIAPIService) OBPv600GetBankLevelDynamicEntitiesExecute(r ApiOBPv600Ge
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -11500,17 +6912,322 @@ func (a *APIAPIService) OBPv600GetBankLevelDynamicEntitiesExecute(r ApiOBPv600Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheConfigRequest struct {
+type ApiGetBankLevelDynamicResourceDocsObpRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	apiversion string
+}
+
+func (r ApiGetBankLevelDynamicResourceDocsObpRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetBankLevelDynamicResourceDocsObpExecute(r)
+}
+
+/*
+GetBankLevelDynamicResourceDocsObp Get Bank Level Dynamic Resource Docs
+
+<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
+<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
+<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
+<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
+<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
+<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
+<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
+<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
+<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
+if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
+<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
+<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
+Static Resource Docs are cached, TTL is 3600 seconds</p>
+<p>Following are more examples:<br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/banks/BANK_ID/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<ul>
+<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
+<li> version references the version that the API call is defined in.</li>
+<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
+<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
+<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
+<li> summary is a short description inline with the swagger terminology. </li>
+<li> description may contain html markup (generated from markdown on the server).</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param apiversion The APIVERSION identifier
+ @return ApiGetBankLevelDynamicResourceDocsObpRequest
+*/
+func (a *APIAPIService) GetBankLevelDynamicResourceDocsObp(ctx context.Context, bankid string, apiversion string) ApiGetBankLevelDynamicResourceDocsObpRequest {
+	return ApiGetBankLevelDynamicResourceDocsObpRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetBankLevelDynamicResourceDocsObpExecute(r ApiGetBankLevelDynamicResourceDocsObpRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetBankLevelDynamicResourceDocsObp")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/banks/{bankid}/resource-docs/{apiversion}/obp"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetBankLevelEndpointTagsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	operationid string
+}
+
+func (r ApiGetBankLevelEndpointTagsRequest) Execute() (*GetBankLevelEndpointTags200Response, *http.Response, error) {
+	return r.ApiService.GetBankLevelEndpointTagsExecute(r)
+}
+
+/*
+GetBankLevelEndpointTags Get Bank Level Endpoint Tags
+
+<p>Get Bank Level Endpoint Tags.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param operationid The OPERATIONID identifier
+ @return ApiGetBankLevelEndpointTagsRequest
+*/
+func (a *APIAPIService) GetBankLevelEndpointTags(ctx context.Context, bankid string, operationid string) ApiGetBankLevelEndpointTagsRequest {
+	return ApiGetBankLevelEndpointTagsRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		operationid: operationid,
+	}
+}
+
+// Execute executes the request
+//  @return GetBankLevelEndpointTags200Response
+func (a *APIAPIService) GetBankLevelEndpointTagsExecute(r ApiGetBankLevelEndpointTagsRequest) (*GetBankLevelEndpointTags200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetBankLevelEndpointTags200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetBankLevelEndpointTags")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCacheConfigRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetCacheConfigRequest) Execute() (*OBPv600GetCacheConfig200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheConfigExecute(r)
+func (r ApiGetCacheConfigRequest) Execute() (*GetCacheConfig200Response, *http.Response, error) {
+	return r.ApiService.GetCacheConfigExecute(r)
 }
 
 /*
-OBPv600GetCacheConfig Get Cache Configuration
+GetCacheConfig Get Cache Configuration
 
 <p>Returns cache configuration information including:</p>
 <ul>
@@ -11536,26 +7253,26 @@ OBPv600GetCacheConfig Get Cache Configuration
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheConfigRequest
+ @return ApiGetCacheConfigRequest
 */
-func (a *APIAPIService) OBPv600GetCacheConfig(ctx context.Context) ApiOBPv600GetCacheConfigRequest {
-	return ApiOBPv600GetCacheConfigRequest{
+func (a *APIAPIService) GetCacheConfig(ctx context.Context) ApiGetCacheConfigRequest {
+	return ApiGetCacheConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheConfig200Response
-func (a *APIAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfigRequest) (*OBPv600GetCacheConfig200Response, *http.Response, error) {
+//  @return GetCacheConfig200Response
+func (a *APIAPIService) GetCacheConfigExecute(r ApiGetCacheConfigRequest) (*GetCacheConfig200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheConfig200Response
+		localVarReturnValue  *GetCacheConfig200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetCacheConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCacheConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11607,7 +7324,7 @@ func (a *APIAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfigR
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -11648,17 +7365,17 @@ func (a *APIAPIService) OBPv600GetCacheConfigExecute(r ApiOBPv600GetCacheConfigR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheInfoRequest struct {
+type ApiGetCacheInfoRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetCacheInfoRequest) Execute() (*OBPv600GetCacheInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheInfoExecute(r)
+func (r ApiGetCacheInfoRequest) Execute() (*GetCacheInfo200Response, *http.Response, error) {
+	return r.ApiService.GetCacheInfoExecute(r)
 }
 
 /*
-OBPv600GetCacheInfo Get Cache Information
+GetCacheInfo Get Cache Information
 
 <p>Returns detailed cache information for all namespaces:</p>
 <ul>
@@ -11695,26 +7412,26 @@ OBPv600GetCacheInfo Get Cache Information
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheInfoRequest
+ @return ApiGetCacheInfoRequest
 */
-func (a *APIAPIService) OBPv600GetCacheInfo(ctx context.Context) ApiOBPv600GetCacheInfoRequest {
-	return ApiOBPv600GetCacheInfoRequest{
+func (a *APIAPIService) GetCacheInfo(ctx context.Context) ApiGetCacheInfoRequest {
+	return ApiGetCacheInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheInfo200Response
-func (a *APIAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoRequest) (*OBPv600GetCacheInfo200Response, *http.Response, error) {
+//  @return GetCacheInfo200Response
+func (a *APIAPIService) GetCacheInfoExecute(r ApiGetCacheInfoRequest) (*GetCacheInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheInfo200Response
+		localVarReturnValue  *GetCacheInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetCacheInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCacheInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11766,7 +7483,7 @@ func (a *APIAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoReque
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -11807,17 +7524,17 @@ func (a *APIAPIService) OBPv600GetCacheInfoExecute(r ApiOBPv600GetCacheInfoReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCacheNamespacesRequest struct {
+type ApiGetCacheNamespacesRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetCacheNamespacesRequest) Execute() (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCacheNamespacesExecute(r)
+func (r ApiGetCacheNamespacesRequest) Execute() (*GetCacheNamespaces200Response, *http.Response, error) {
+	return r.ApiService.GetCacheNamespacesExecute(r)
 }
 
 /*
-OBPv600GetCacheNamespaces Get Cache Namespaces
+GetCacheNamespaces Get Cache Namespaces
 
 <p>Returns information about all cache namespaces in the system.</p>
 <p>This endpoint provides visibility into:<br />
@@ -11842,26 +7559,26 @@ OBPv600GetCacheNamespaces Get Cache Namespaces
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCacheNamespacesRequest
+ @return ApiGetCacheNamespacesRequest
 */
-func (a *APIAPIService) OBPv600GetCacheNamespaces(ctx context.Context) ApiOBPv600GetCacheNamespacesRequest {
-	return ApiOBPv600GetCacheNamespacesRequest{
+func (a *APIAPIService) GetCacheNamespaces(ctx context.Context) ApiGetCacheNamespacesRequest {
+	return ApiGetCacheNamespacesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCacheNamespaces200Response
-func (a *APIAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheNamespacesRequest) (*OBPv600GetCacheNamespaces200Response, *http.Response, error) {
+//  @return GetCacheNamespaces200Response
+func (a *APIAPIService) GetCacheNamespacesExecute(r ApiGetCacheNamespacesRequest) (*GetCacheNamespaces200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCacheNamespaces200Response
+		localVarReturnValue  *GetCacheNamespaces200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetCacheNamespaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCacheNamespaces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11913,7 +7630,7 @@ func (a *APIAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheNam
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -11954,23 +7671,148 @@ func (a *APIAPIService) OBPv600GetCacheNamespacesExecute(r ApiOBPv600GetCacheNam
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConfigPropsRequest struct {
+type ApiGetCallContextRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetConfigPropsRequest) Execute() (*OBPv600GetConfigProps200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConfigPropsExecute(r)
+func (r ApiGetCallContextRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetCallContextExecute(r)
 }
 
 /*
-OBPv600GetConfigProps Get Config Props
+GetCallContext Get the Call Context of a current call
 
-<p>Get the configuration properties (non-WebUI) and their runtime values.</p>
-<p>This endpoint reads all property keys from the sample.props.template file<br />
-(excluding webui_ properties) and returns their current runtime values.</p>
-<p>Sensitive properties (containing password, secret, passphrase, credential, token_secret)<br />
-will have their values masked as ****.</p>
+<p>Get the Call Context of the current call.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetCallContextRequest
+*/
+func (a *APIAPIService) GetCallContext(ctx context.Context) ApiGetCallContextRequest {
+	return ApiGetCallContextRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetCallContextExecute(r ApiGetCallContextRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCallContext")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/development/call_context"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetConfigPropsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetConfigPropsRequest) Execute() (*GetConfigProps200Response, *http.Response, error) {
+	return r.ApiService.GetConfigPropsExecute(r)
+}
+
+/*
+GetConfigProps Get Config Props
+
+<p>Get the active configuration properties and their runtime values.</p>
+<p>This endpoint uses a self-registration mechanism: each time the code calls<br />
+getPropsValue, getPropsAsBoolValue, getPropsAsIntValue, or getPropsAsLongValue<br />
+with a default value, that property key is registered.</p>
+<p>Only registered properties are returned. The list grows as more code paths are<br />
+exercised. Most properties are registered at startup.</p>
+<p>For each property, the value shown is the actual runtime value. If the property<br />
+is not explicitly set, the code-defined default is shown.</p>
+<p>The response includes both regular and webui_ properties, sorted alphabetically by key.</p>
+<p>Properties with sensitive keys or values (containing password, secret, passphrase, credential, token, key, authorization, jdbc)<br />
+are excluded from the response entirely.</p>
 <p>Authentication is Required.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>JSON response body fields:</strong></p>
@@ -11979,26 +7821,26 @@ will have their values masked as ****.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConfigPropsRequest
+ @return ApiGetConfigPropsRequest
 */
-func (a *APIAPIService) OBPv600GetConfigProps(ctx context.Context) ApiOBPv600GetConfigPropsRequest {
-	return ApiOBPv600GetConfigPropsRequest{
+func (a *APIAPIService) GetConfigProps(ctx context.Context) ApiGetConfigPropsRequest {
+	return ApiGetConfigPropsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConfigProps200Response
-func (a *APIAPIService) OBPv600GetConfigPropsExecute(r ApiOBPv600GetConfigPropsRequest) (*OBPv600GetConfigProps200Response, *http.Response, error) {
+//  @return GetConfigProps200Response
+func (a *APIAPIService) GetConfigPropsExecute(r ApiGetConfigPropsRequest) (*GetConfigProps200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConfigProps200Response
+		localVarReturnValue  *GetConfigProps200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetConfigProps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConfigProps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12050,7 +7892,7 @@ func (a *APIAPIService) OBPv600GetConfigPropsExecute(r ApiOBPv600GetConfigPropsR
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12091,17 +7933,17 @@ func (a *APIAPIService) OBPv600GetConfigPropsExecute(r ApiOBPv600GetConfigPropsR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorCallCountsRequest struct {
+type ApiGetConnectorCallCountsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetConnectorCallCountsRequest) Execute() (*OBPv600GetConnectorCallCounts200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorCallCountsExecute(r)
+func (r ApiGetConnectorCallCountsRequest) Execute() (*GetConnectorCallCounts200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorCallCountsExecute(r)
 }
 
 /*
-OBPv600GetConnectorCallCounts Get Connector Call Counts
+GetConnectorCallCounts Get Connector Call Counts
 
 <p>Returns per-hour Redis counters for connector outbound and inbound messages.</p>
 <p>This provides real-time visibility into which connector methods are being called<br />
@@ -12130,26 +7972,26 @@ The ttl_seconds field shows when the current hour window resets.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorCallCountsRequest
+ @return ApiGetConnectorCallCountsRequest
 */
-func (a *APIAPIService) OBPv600GetConnectorCallCounts(ctx context.Context) ApiOBPv600GetConnectorCallCountsRequest {
-	return ApiOBPv600GetConnectorCallCountsRequest{
+func (a *APIAPIService) GetConnectorCallCounts(ctx context.Context) ApiGetConnectorCallCountsRequest {
+	return ApiGetConnectorCallCountsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorCallCounts200Response
-func (a *APIAPIService) OBPv600GetConnectorCallCountsExecute(r ApiOBPv600GetConnectorCallCountsRequest) (*OBPv600GetConnectorCallCounts200Response, *http.Response, error) {
+//  @return GetConnectorCallCounts200Response
+func (a *APIAPIService) GetConnectorCallCountsExecute(r ApiGetConnectorCallCountsRequest) (*GetConnectorCallCounts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorCallCounts200Response
+		localVarReturnValue  *GetConnectorCallCounts200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetConnectorCallCounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConnectorCallCounts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12201,7 +8043,7 @@ func (a *APIAPIService) OBPv600GetConnectorCallCountsExecute(r ApiOBPv600GetConn
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12242,17 +8084,17 @@ func (a *APIAPIService) OBPv600GetConnectorCallCountsExecute(r ApiOBPv600GetConn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorMethodNamesRequest struct {
+type ApiGetConnectorMethodNamesRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetConnectorMethodNamesRequest) Execute() (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorMethodNamesExecute(r)
+func (r ApiGetConnectorMethodNamesRequest) Execute() (*GetConnectorMethodNames200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorMethodNamesExecute(r)
 }
 
 /*
-OBPv600GetConnectorMethodNames Get Connector Method Names
+GetConnectorMethodNames Get Connector Method Names
 
 <p>Get the list of all available connector method names.</p>
 <p>These are the method names that can be used in Method Routing configuration.</p>
@@ -12287,26 +8129,26 @@ These method names are different from API endpoint operation IDs (which you get 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorMethodNamesRequest
+ @return ApiGetConnectorMethodNamesRequest
 */
-func (a *APIAPIService) OBPv600GetConnectorMethodNames(ctx context.Context) ApiOBPv600GetConnectorMethodNamesRequest {
-	return ApiOBPv600GetConnectorMethodNamesRequest{
+func (a *APIAPIService) GetConnectorMethodNames(ctx context.Context) ApiGetConnectorMethodNamesRequest {
+	return ApiGetConnectorMethodNamesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorMethodNames200Response
-func (a *APIAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetConnectorMethodNamesRequest) (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
+//  @return GetConnectorMethodNames200Response
+func (a *APIAPIService) GetConnectorMethodNamesExecute(r ApiGetConnectorMethodNamesRequest) (*GetConnectorMethodNames200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorMethodNames200Response
+		localVarReturnValue  *GetConnectorMethodNames200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetConnectorMethodNames")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConnectorMethodNames")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12358,7 +8200,7 @@ func (a *APIAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetCon
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12399,17 +8241,166 @@ func (a *APIAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetCon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorTracesRequest struct {
+type ApiGetConnectorMetricsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetConnectorTracesRequest) Execute() (*OBPv600GetConnectorTraces200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorTracesExecute(r)
+func (r ApiGetConnectorMetricsRequest) Execute() (*GetConnectorMetrics200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorMetricsExecute(r)
 }
 
 /*
-OBPv600GetConnectorTraces Get Connector Traces
+GetConnectorMetrics Get Connector Metrics
+
+<p>Get the all metrics</p>
+<p>require CanGetConnectorMetrics role</p>
+<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/connector/metrics</p>
+<p>Should be able to filter on the following metrics fields</p>
+<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
+<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
+<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
+<p>3 limit (for pagination: defaults to 1000)  eg:limit=2000</p>
+<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=100&amp;offset=300</p>
+<p>Other filters:</p>
+<p>5 connector_name  (if null ignore)</p>
+<p>6 function_name (if null ignore)</p>
+<p>7 correlation_id (if null ignore)</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
+<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
+<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetConnectorMetricsRequest
+*/
+func (a *APIAPIService) GetConnectorMetrics(ctx context.Context) ApiGetConnectorMetricsRequest {
+	return ApiGetConnectorMetricsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetConnectorMetrics200Response
+func (a *APIAPIService) GetConnectorMetricsExecute(r ApiGetConnectorMetricsRequest) (*GetConnectorMetrics200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetConnectorMetrics200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConnectorMetrics")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v2.2.0/management/connector/metrics"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetConnectorTracesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetConnectorTracesRequest) Execute() (*GetConnectorTraces200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorTracesExecute(r)
+}
+
+/*
+GetConnectorTraces Get Connector Traces
 
 <p>Get connector traces which capture the full outbound/inbound messages for each connector call.</p>
 <p>Connector tracing must be enabled via the write_connector_trace=true property.</p>
@@ -12445,26 +8436,26 @@ OBPv600GetConnectorTraces Get Connector Traces
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorTracesRequest
+ @return ApiGetConnectorTracesRequest
 */
-func (a *APIAPIService) OBPv600GetConnectorTraces(ctx context.Context) ApiOBPv600GetConnectorTracesRequest {
-	return ApiOBPv600GetConnectorTracesRequest{
+func (a *APIAPIService) GetConnectorTraces(ctx context.Context) ApiGetConnectorTracesRequest {
+	return ApiGetConnectorTracesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorTraces200Response
-func (a *APIAPIService) OBPv600GetConnectorTracesExecute(r ApiOBPv600GetConnectorTracesRequest) (*OBPv600GetConnectorTraces200Response, *http.Response, error) {
+//  @return GetConnectorTraces200Response
+func (a *APIAPIService) GetConnectorTracesExecute(r ApiGetConnectorTracesRequest) (*GetConnectorTraces200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorTraces200Response
+		localVarReturnValue  *GetConnectorTraces200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetConnectorTraces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConnectorTraces")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12516,7 +8507,7 @@ func (a *APIAPIService) OBPv600GetConnectorTracesExecute(r ApiOBPv600GetConnecto
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12557,17 +8548,17 @@ func (a *APIAPIService) OBPv600GetConnectorTracesExecute(r ApiOBPv600GetConnecto
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetConnectorsRequest struct {
+type ApiGetConnectorsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetConnectorsRequest) Execute() (*OBPv600GetConnectors200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorsExecute(r)
+func (r ApiGetConnectorsRequest) Execute() (*GetConnectors200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorsExecute(r)
 }
 
 /*
-OBPv600GetConnectors Get Connectors
+GetConnectors Get Connectors
 
 <p>Get the list of connectors and their availability for method routing.</p>
 <p>Returns a sorted list of all connectors with their availability status for use in Method Routing.</p>
@@ -12595,8 +8586,8 @@ This depends on the <code>connector</code> and <code>starConnector_supported_typ
 <p>Use this endpoint to discover which connectors are available when configuring Method Routing.<br />
 A connector is available for method routing if it matches the <code>connector</code> prop setting,<br />
 or if <code>connector=star</code> and the connector is listed in <code>starConnector_supported_types</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetConnectorNames entitlement is required.</p>
+<p>Authentication is Optional.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
 <p><a href="/glossary#"><strong>connectors</strong></a>: connectors</p>
@@ -12604,31 +8595,161 @@ or if <code>connector=star</code> and the connector is listed in <code>starConne
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorsRequest
+ @return ApiGetConnectorsRequest
 */
-func (a *APIAPIService) OBPv600GetConnectors(ctx context.Context) ApiOBPv600GetConnectorsRequest {
-	return ApiOBPv600GetConnectorsRequest{
+func (a *APIAPIService) GetConnectors(ctx context.Context) ApiGetConnectorsRequest {
+	return ApiGetConnectorsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectors200Response
-func (a *APIAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectorsRequest) (*OBPv600GetConnectors200Response, *http.Response, error) {
+//  @return GetConnectors200Response
+func (a *APIAPIService) GetConnectorsExecute(r ApiGetConnectorsRequest) (*GetConnectors200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectors200Response
+		localVarReturnValue  *GetConnectors200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetConnectors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetConnectors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/obp/v6.0.0/system/connectors"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCounterpartyAttributeByIdRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	accountid string
+	counterpartyid string
+	counterpartyattributeid string
+}
+
+func (r ApiGetCounterpartyAttributeByIdRequest) Execute() (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.GetCounterpartyAttributeByIdExecute(r)
+}
+
+/*
+GetCounterpartyAttributeById Get Counterparty Attribute By ID
+
+<p>Get a specific Counterparty Attribute by its COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @param counterpartyattributeid The COUNTERPARTYATTRIBUTEID identifier
+ @return ApiGetCounterpartyAttributeByIdRequest
+*/
+func (a *APIAPIService) GetCounterpartyAttributeById(ctx context.Context, bankid string, accountid string, counterpartyid string, counterpartyattributeid string) ApiGetCounterpartyAttributeByIdRequest {
+	return ApiGetCounterpartyAttributeByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		counterpartyid: counterpartyid,
+		counterpartyattributeid: counterpartyattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllCounterpartyAttributes200ResponseAttributesInner
+func (a *APIAPIService) GetCounterpartyAttributeByIdExecute(r ApiGetCounterpartyAttributeByIdRequest) (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllCounterpartyAttributes200ResponseAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCounterpartyAttributeById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyattributeid"+"}", url.PathEscape(parameterValueToString(r.counterpartyattributeid, "counterpartyattributeid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12675,7 +8796,7 @@ func (a *APIAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectorsReq
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12716,17 +8837,17 @@ func (a *APIAPIService) OBPv600GetConnectorsExecute(r ApiOBPv600GetConnectorsReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetCurrentConsumerRequest struct {
+type ApiGetCurrentConsumerRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetCurrentConsumerRequest) Execute() (*OBPv600GetCurrentConsumer200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetCurrentConsumerExecute(r)
+func (r ApiGetCurrentConsumerRequest) Execute() (*GetCurrentConsumer200Response, *http.Response, error) {
+	return r.ApiService.GetCurrentConsumerExecute(r)
 }
 
 /*
-OBPv600GetCurrentConsumer Get Current Consumer
+GetCurrentConsumer Get Current Consumer
 
 <p>Returns the consumer_id of the current authenticated consumer.</p>
 <p>This endpoint requires authentication via:<br />
@@ -12760,26 +8881,26 @@ OBPv600GetCurrentConsumer Get Current Consumer
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetCurrentConsumerRequest
+ @return ApiGetCurrentConsumerRequest
 */
-func (a *APIAPIService) OBPv600GetCurrentConsumer(ctx context.Context) ApiOBPv600GetCurrentConsumerRequest {
-	return ApiOBPv600GetCurrentConsumerRequest{
+func (a *APIAPIService) GetCurrentConsumer(ctx context.Context) ApiGetCurrentConsumerRequest {
+	return ApiGetCurrentConsumerRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetCurrentConsumer200Response
-func (a *APIAPIService) OBPv600GetCurrentConsumerExecute(r ApiOBPv600GetCurrentConsumerRequest) (*OBPv600GetCurrentConsumer200Response, *http.Response, error) {
+//  @return GetCurrentConsumer200Response
+func (a *APIAPIService) GetCurrentConsumerExecute(r ApiGetCurrentConsumerRequest) (*GetCurrentConsumer200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetCurrentConsumer200Response
+		localVarReturnValue  *GetCurrentConsumer200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetCurrentConsumer")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetCurrentConsumer")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12831,7 +8952,7 @@ func (a *APIAPIService) OBPv600GetCurrentConsumerExecute(r ApiOBPv600GetCurrentC
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -12872,17 +8993,17 @@ func (a *APIAPIService) OBPv600GetCurrentConsumerExecute(r ApiOBPv600GetCurrentC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetDatabasePoolInfoRequest struct {
+type ApiGetDatabasePoolInfoRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetDatabasePoolInfoRequest) Execute() (*OBPv600GetDatabasePoolInfo200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetDatabasePoolInfoExecute(r)
+func (r ApiGetDatabasePoolInfoRequest) Execute() (*GetDatabasePoolInfo200Response, *http.Response, error) {
+	return r.ApiService.GetDatabasePoolInfoExecute(r)
 }
 
 /*
-OBPv600GetDatabasePoolInfo Get Database Pool Information
+GetDatabasePoolInfo Get Database Pool Information
 
 <p>Returns HikariCP connection pool information including:</p>
 <ul>
@@ -12911,26 +9032,26 @@ OBPv600GetDatabasePoolInfo Get Database Pool Information
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetDatabasePoolInfoRequest
+ @return ApiGetDatabasePoolInfoRequest
 */
-func (a *APIAPIService) OBPv600GetDatabasePoolInfo(ctx context.Context) ApiOBPv600GetDatabasePoolInfoRequest {
-	return ApiOBPv600GetDatabasePoolInfoRequest{
+func (a *APIAPIService) GetDatabasePoolInfo(ctx context.Context) ApiGetDatabasePoolInfoRequest {
+	return ApiGetDatabasePoolInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetDatabasePoolInfo200Response
-func (a *APIAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetDatabasePoolInfoRequest) (*OBPv600GetDatabasePoolInfo200Response, *http.Response, error) {
+//  @return GetDatabasePoolInfo200Response
+func (a *APIAPIService) GetDatabasePoolInfoExecute(r ApiGetDatabasePoolInfoRequest) (*GetDatabasePoolInfo200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetDatabasePoolInfo200Response
+		localVarReturnValue  *GetDatabasePoolInfo200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetDatabasePoolInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetDatabasePoolInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12982,7 +9103,7 @@ func (a *APIAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetDatabas
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13023,17 +9144,280 @@ func (a *APIAPIService) OBPv600GetDatabasePoolInfoExecute(r ApiOBPv600GetDatabas
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetDynamicEntityDiagnosticsRequest struct {
+type ApiGetDynamicEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicendpointid string
+}
+
+func (r ApiGetDynamicEndpointRequest) Execute() (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	return r.ApiService.GetDynamicEndpointExecute(r)
+}
+
+/*
+GetDynamicEndpoint Get Dynamic Endpoint
+
+<p>Get a Dynamic Endpoint.</p>
+<p>Get one DynamicEndpoint,</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiGetDynamicEndpointRequest
+*/
+func (a *APIAPIService) GetDynamicEndpoint(ctx context.Context, dynamicendpointid string) ApiGetDynamicEndpointRequest {
+	return ApiGetDynamicEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
+func (a *APIAPIService) GetDynamicEndpointExecute(r ApiGetDynamicEndpointRequest) (*GetDynamicEndpoints200ResponseDynamicEndpointsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200ResponseDynamicEndpointsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetDynamicEndpoint")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetDynamicEntityDiagnosticsRequest) Execute() (*OBPv600GetDynamicEntityDiagnostics200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetDynamicEntityDiagnosticsExecute(r)
+func (r ApiGetDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv600GetDynamicEntityDiagnostics Get Dynamic Entity Diagnostics
+GetDynamicEndpoints  Get Dynamic Endpoints
+
+<p>Get Dynamic Endpoints.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetDynamicEndpointsRequest
+*/
+func (a *APIAPIService) GetDynamicEndpoints(ctx context.Context) ApiGetDynamicEndpointsRequest {
+	return ApiGetDynamicEndpointsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200Response
+func (a *APIAPIService) GetDynamicEndpointsExecute(r ApiGetDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetDynamicEndpoints")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetDynamicEntityDiagnosticsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetDynamicEntityDiagnosticsRequest) Execute() (*GetDynamicEntityDiagnostics200Response, *http.Response, error) {
+	return r.ApiService.GetDynamicEntityDiagnosticsExecute(r)
+}
+
+/*
+GetDynamicEntityDiagnostics Get Dynamic Entity Diagnostics
 
 <p>Get diagnostic information about Dynamic Entities to help troubleshoot Swagger generation issues.</p>
 <p><strong>Use Case:</strong><br />
@@ -13078,26 +9462,26 @@ The response contains:<br />
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetDynamicEntityDiagnosticsRequest
+ @return ApiGetDynamicEntityDiagnosticsRequest
 */
-func (a *APIAPIService) OBPv600GetDynamicEntityDiagnostics(ctx context.Context) ApiOBPv600GetDynamicEntityDiagnosticsRequest {
-	return ApiOBPv600GetDynamicEntityDiagnosticsRequest{
+func (a *APIAPIService) GetDynamicEntityDiagnostics(ctx context.Context) ApiGetDynamicEntityDiagnosticsRequest {
+	return ApiGetDynamicEntityDiagnosticsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetDynamicEntityDiagnostics200Response
-func (a *APIAPIService) OBPv600GetDynamicEntityDiagnosticsExecute(r ApiOBPv600GetDynamicEntityDiagnosticsRequest) (*OBPv600GetDynamicEntityDiagnostics200Response, *http.Response, error) {
+//  @return GetDynamicEntityDiagnostics200Response
+func (a *APIAPIService) GetDynamicEntityDiagnosticsExecute(r ApiGetDynamicEntityDiagnosticsRequest) (*GetDynamicEntityDiagnostics200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetDynamicEntityDiagnostics200Response
+		localVarReturnValue  *GetDynamicEntityDiagnostics200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetDynamicEntityDiagnostics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetDynamicEntityDiagnostics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13149,7 +9533,7 @@ func (a *APIAPIService) OBPv600GetDynamicEntityDiagnosticsExecute(r ApiOBPv600Ge
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13190,17 +9574,17 @@ func (a *APIAPIService) OBPv600GetDynamicEntityDiagnosticsExecute(r ApiOBPv600Ge
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetFeaturedApiCollectionsAdminRequest struct {
+type ApiGetFeaturedApiCollectionsAdminRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetFeaturedApiCollectionsAdminRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetFeaturedApiCollectionsAdminExecute(r)
+func (r ApiGetFeaturedApiCollectionsAdminRequest) Execute() (*GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
+	return r.ApiService.GetFeaturedApiCollectionsAdminExecute(r)
 }
 
 /*
-OBPv600GetFeaturedApiCollectionsAdmin Get Featured Api Collections (Admin)
+GetFeaturedApiCollectionsAdmin Get Featured Api Collections (Admin)
 
 <p>Get all featured API collections with their sort order (admin view).</p>
 <p>This endpoint returns the featured collections stored in the database with their sort order.<br />
@@ -13214,26 +9598,26 @@ It is intended for administrators to manage the featured list.</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetFeaturedApiCollectionsAdminRequest
+ @return ApiGetFeaturedApiCollectionsAdminRequest
 */
-func (a *APIAPIService) OBPv600GetFeaturedApiCollectionsAdmin(ctx context.Context) ApiOBPv600GetFeaturedApiCollectionsAdminRequest {
-	return ApiOBPv600GetFeaturedApiCollectionsAdminRequest{
+func (a *APIAPIService) GetFeaturedApiCollectionsAdmin(ctx context.Context) ApiGetFeaturedApiCollectionsAdminRequest {
+	return ApiGetFeaturedApiCollectionsAdminRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200Response
-func (a *APIAPIService) OBPv600GetFeaturedApiCollectionsAdminExecute(r ApiOBPv600GetFeaturedApiCollectionsAdminRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
+//  @return GetFeaturedApiCollectionsAdmin200Response
+func (a *APIAPIService) GetFeaturedApiCollectionsAdminExecute(r ApiGetFeaturedApiCollectionsAdminRequest) (*GetFeaturedApiCollectionsAdmin200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200Response
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetFeaturedApiCollectionsAdmin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetFeaturedApiCollectionsAdmin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13285,7 +9669,7 @@ func (a *APIAPIService) OBPv600GetFeaturedApiCollectionsAdminExecute(r ApiOBPv60
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13326,18 +9710,423 @@ func (a *APIAPIService) OBPv600GetFeaturedApiCollectionsAdminExecute(r ApiOBPv60
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMessageDocsJsonSchemaRequest struct {
+type ApiGetFeaturesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetFeaturesRequest) Execute() (*GetFeatures200Response, *http.Response, error) {
+	return r.ApiService.GetFeaturesExecute(r)
+}
+
+/*
+GetFeatures Get Features
+
+<p>Returns information about the features enabled on this OBP instance.</p>
+<p>No Authentication is Required.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>allow_abac_account_access</strong></a>: allow_abac_account_access</p>
+<p><a href="/glossary#"><strong>allow_account_deletion</strong></a>: allow_account_deletion</p>
+<p><a href="/glossary#"><strong>allow_account_firehose</strong></a>: allow_account_firehose</p>
+<p><a href="/glossary#"><strong>allow_customer_firehose</strong></a>: allow_customer_firehose</p>
+<p><a href="/glossary#"><strong>allow_dauth</strong></a>: allow_dauth</p>
+<p><a href="/glossary#"><strong>allow_direct_login</strong></a>: allow_direct_login</p>
+<p><a href="/glossary#"><strong>allow_gateway_login</strong></a>: allow_gateway_login</p>
+<p><a href="/glossary#"><strong>allow_just_in_time_entitlements</strong></a>: allow_just_in_time_entitlements</p>
+<p><a href="/glossary#"><strong>allow_oauth2_login</strong></a>: allow_oauth2_login</p>
+<p><a href="/glossary#"><strong>allow_public_views</strong></a>: allow_public_views</p>
+<p><a href="/glossary#"><strong>allow_sandbox_account_creation</strong></a>: allow_sandbox_account_creation</p>
+<p><a href="/glossary#"><strong>allow_sandbox_data_import</strong></a>: allow_sandbox_data_import</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetFeaturesRequest
+*/
+func (a *APIAPIService) GetFeatures(ctx context.Context) ApiGetFeaturesRequest {
+	return ApiGetFeaturesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetFeatures200Response
+func (a *APIAPIService) GetFeaturesExecute(r ApiGetFeaturesRequest) (*GetFeatures200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetFeatures200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetFeatures")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/features"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMapperDatabaseInfoRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetMapperDatabaseInfoRequest) Execute() (*GetMapperDatabaseInfo200Response, *http.Response, error) {
+	return r.ApiService.GetMapperDatabaseInfoExecute(r)
+}
+
+/*
+GetMapperDatabaseInfo Get Mapper Database Info
+
+<p>Get basic information about the Mapper Database.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#version"><strong>version</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetMapperDatabaseInfoRequest
+*/
+func (a *APIAPIService) GetMapperDatabaseInfo(ctx context.Context) ApiGetMapperDatabaseInfoRequest {
+	return ApiGetMapperDatabaseInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetMapperDatabaseInfo200Response
+func (a *APIAPIService) GetMapperDatabaseInfoExecute(r ApiGetMapperDatabaseInfoRequest) (*GetMapperDatabaseInfo200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMapperDatabaseInfo200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMapperDatabaseInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/database/info"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMessageDocsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	connector string
 }
 
-func (r ApiOBPv600GetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600GetMessageDocsJsonSchemaExecute(r)
+func (r ApiGetMessageDocsRequest) Execute() (*GetMessageDocs200Response, *http.Response, error) {
+	return r.ApiService.GetMessageDocsExecute(r)
 }
 
 /*
-OBPv600GetMessageDocsJsonSchema Get Message Docs as JSON Schema
+GetMessageDocs Get Message Docs
+
+<p>These message docs provide example messages sent by OBP to the (RabbitMq) message queue for processing by the Core Banking / Payment system Adapter - together with an example expected response and possible error codes.<br />
+Integrators can use these messages to build Adapters that provide core banking services to OBP.</p>
+<p>Note: API Explorer provides a Message Docs page where these messages are displayed.</p>
+<p><code>CONNECTOR</code>: rest_vMar2019, stored_procedure_vDec2019 ...</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#adapter_implementation"><strong>adapter_implementation</strong></a>:</p>
+<p><a href="/glossary#dependent_endpoints"><strong>dependent_endpoints</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#example_inbound_message"><strong>example_inbound_message</strong></a>: {}</p>
+<p><a href="/glossary#example_outbound_message"><strong>example_outbound_message</strong></a>: {}</p>
+<p><a href="/glossary#group"><strong>group</strong></a>:</p>
+<p><a href="/glossary#message_docs"><strong>message_docs</strong></a>:</p>
+<p><a href="/glossary#message_format"><strong>message_format</strong></a>:</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#process"><strong>process</strong></a>: obp.getBank</p>
+<p><a href="/glossary#suggested_order"><strong>suggested_order</strong></a>:</p>
+<p><a href="/glossary#version"><strong>version</strong></a>:</p>
+<p><a href="/glossary#inboundavroschema">inboundAvroSchema</a>:</p>
+<p><a href="/glossary#inbound_topic">inbound_topic</a>:</p>
+<p><a href="/glossary#outboundavroschema">outboundAvroSchema</a>:</p>
+<p><a href="/glossary#outbound_topic">outbound_topic</a>:</p>
+<p><a href="/glossary#requiredfieldinfo">requiredFieldInfo</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param connector The CONNECTOR identifier
+ @return ApiGetMessageDocsRequest
+*/
+func (a *APIAPIService) GetMessageDocs(ctx context.Context, connector string) ApiGetMessageDocsRequest {
+	return ApiGetMessageDocsRequest{
+		ApiService: a,
+		ctx: ctx,
+		connector: connector,
+	}
+}
+
+// Execute executes the request
+//  @return GetMessageDocs200Response
+func (a *APIAPIService) GetMessageDocsExecute(r ApiGetMessageDocsRequest) (*GetMessageDocs200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMessageDocs200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMessageDocs")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v2.2.0/message-docs/{connector}"
+	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMessageDocsJsonSchemaRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	connector string
+}
+
+func (r ApiGetMessageDocsJsonSchemaRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsJsonSchemaExecute(r)
+}
+
+/*
+GetMessageDocsJsonSchema Get Message Docs as JSON Schema
 
 <p>Returns message documentation as JSON Schema format for code generation in any language.</p>
 <p>This endpoint provides machine-readable schemas instead of just examples, making it ideal for:<br />
@@ -13377,10 +10166,10 @@ This endpoint is publicly accessible (no authentication required) to facilitate 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connector The CONNECTOR identifier
- @return ApiOBPv600GetMessageDocsJsonSchemaRequest
+ @return ApiGetMessageDocsJsonSchemaRequest
 */
-func (a *APIAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiOBPv600GetMessageDocsJsonSchemaRequest {
-	return ApiOBPv600GetMessageDocsJsonSchemaRequest{
+func (a *APIAPIService) GetMessageDocsJsonSchema(ctx context.Context, connector string) ApiGetMessageDocsJsonSchemaRequest {
+	return ApiGetMessageDocsJsonSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 		connector: connector,
@@ -13388,14 +10177,14 @@ func (a *APIAPIService) OBPv600GetMessageDocsJsonSchema(ctx context.Context, con
 }
 
 // Execute executes the request
-func (a *APIAPIService) OBPv600GetMessageDocsJsonSchemaExecute(r ApiOBPv600GetMessageDocsJsonSchemaRequest) (*http.Response, error) {
+func (a *APIAPIService) GetMessageDocsJsonSchemaExecute(r ApiGetMessageDocsJsonSchemaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetMessageDocsJsonSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMessageDocsJsonSchema")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13452,17 +10241,260 @@ func (a *APIAPIService) OBPv600GetMessageDocsJsonSchemaExecute(r ApiOBPv600GetMe
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMetricsRequest struct {
+type ApiGetMessageDocsSwaggerRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	connector string
+}
+
+func (r ApiGetMessageDocsSwaggerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMessageDocsSwaggerExecute(r)
+}
+
+/*
+GetMessageDocsSwagger Get Message Docs Swagger
+
+<p>This endpoint provides example message docs in swagger format.<br />
+It is only relavent for REST Connectors.</p>
+<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
+That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
+<p>i.e.:</p>
+<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param connector The CONNECTOR identifier
+ @return ApiGetMessageDocsSwaggerRequest
+*/
+func (a *APIAPIService) GetMessageDocsSwagger(ctx context.Context, connector string) ApiGetMessageDocsSwaggerRequest {
+	return ApiGetMessageDocsSwaggerRequest{
+		ApiService: a,
+		ctx: ctx,
+		connector: connector,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetMessageDocsSwaggerExecute(r ApiGetMessageDocsSwaggerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMessageDocsSwagger")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/message-docs/{connector}/swagger2.0"
+	localVarPath = strings.Replace(localVarPath, "{"+"connector"+"}", url.PathEscape(parameterValueToString(r.connector, "connector")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetMethodRoutingsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetMetricsRequest) Execute() (*OBPv600GetMetrics200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMetricsExecute(r)
+func (r ApiGetMethodRoutingsRequest) Execute() (*GetMethodRoutings200Response, *http.Response, error) {
+	return r.ApiService.GetMethodRoutingsExecute(r)
 }
 
 /*
-OBPv600GetMetrics Get Metrics
+GetMethodRoutings Get MethodRoutings
+
+<p>Get the all MethodRoutings.</p>
+<p>Query url parameters:</p>
+<ul>
+<li>method_name: filter with method_name</li>
+<li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
+</ul>
+<p>eg:<br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetMethodRoutingsRequest
+*/
+func (a *APIAPIService) GetMethodRoutings(ctx context.Context) ApiGetMethodRoutingsRequest {
+	return ApiGetMethodRoutingsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetMethodRoutings200Response
+func (a *APIAPIService) GetMethodRoutingsExecute(r ApiGetMethodRoutingsRequest) (*GetMethodRoutings200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMethodRoutings200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMethodRoutings")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMetricsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetMetricsRequest) Execute() (*GetMetrics200Response, *http.Response, error) {
+	return r.ApiService.GetMetricsExecute(r)
+}
+
+/*
+GetMetrics Get Metrics
 
 <p>Get API metrics rows. These are records of each REST API call.</p>
 <p>require CanReadMetrics role</p>
@@ -13502,7 +10534,7 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 possible values:<br />
 &quot;url&quot;,<br />
 &quot;date&quot;,<br />
-&quot;user_name&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
 &quot;app_name&quot;,<br />
 &quot;developer_email&quot;,<br />
 &quot;implemented_by_partial_function&quot;,<br />
@@ -13510,7 +10542,7 @@ possible values:<br />
 &quot;consumer_id&quot;,<br />
 &quot;verb&quot;</p>
 <p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;t&#111;&#58;&#x30;&#x31;.0&#48;&#x30;&#x5a;&#38;&#x6c;&#105;&#109;&#x69;t&#61;&#49;000&#x30;&#38;&#x6f;&#x66;&#102;s&#101;&#116;&#61;&#x30;&#x26;a&#x6e;o&#x6e;&#61;&#x66;&#x61;&#108;&#115;&#101;&amp;&#97;&#112;&#x70;_&#110;&#x61;&#x6d;&#x65;&#x3d;T&#101;&#97;&#x74;&#x41;&#x70;p&#x26;&#105;&#109;&#x70;&#108;&#101;&#x6d;&#101;&#110;t&#x65;&#x64;&#x5f;&#105;&#110;&#x5f;&#x76;e&#x72;&#115;&#x69;&#x6f;&#x6e;&#x3d;&#118;2&#46;&#49;&#x2e;&#48;&#38;&#x76;&#x65;&#x72;&#x62;=&#x50;O&#x53;&#84;&#38;&#117;&#x73;&#101;&#114;&#x5f;i&#x64;&#x3d;&#x63;&#x37;&#x62;&#x36;&#99;&#98;&#x34;7&#x2d;&#x63;&#x62;&#57;&#x36;&#45;&#x34;&#52;&#x34;1&#x2d;8&#x38;0&#49;&#45;&#x33;5&#98;5&#55;&#x34;&#53;&#x36;&#x37;&#x35;&#x33;&#97;&#38;&#117;&#x73;e&#114;&#95;&#110;&#97;me=s&#117;&#115;a&#110;&#x2e;u&#107;&#x2e;&#x32;&#x39;&#64;e&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;o&#109;">&#x30;&#49;&#46;0&#48;&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#x69;&#116;&#61;&#x31;&#x30;&#x30;&#48;&#48;&#38;o&#x66;f&#115;&#101;&#x74;=&#48;&#x26;&#97;&#110;&#x6f;&#x6e;=&#x66;&#x61;&#x6c;&#115;&#x65;&#38;&#97;p&#112;&#x5f;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;eat&#65;p&#112;&#x26;&#x69;&#109;&#112;l&#101;&#x6d;&#x65;n&#x74;&#x65;&#x64;&#95;&#105;&#110;&#95;&#118;e&#x72;&#x73;&#105;&#x6f;n&#x3d;&#x76;&#50;&#x2e;1.0&#38;&#118;&#x65;&#x72;b&#x3d;&#x50;&#79;S&#84;&#38;u&#x73;e&#114;&#x5f;&#105;d&#61;c7&#98;&#x36;&#x63;&#98;&#52;&#x37;&#45;&#99;&#x62;&#x39;&#x36;-&#x34;&#52;&#x34;&#49;&#x2d;&#56;&#x38;0&#x31;&#45;&#x33;&#53;&#x62;&#x35;&#x37;4&#53;&#x36;7&#x35;&#x33;&#97;&#38;&#117;&#x73;&#x65;&#114;&#95;&#110;&#97;&#x6d;&#x65;&#61;&#x73;&#117;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#x2e;&#x32;&#x39;&#x40;&#101;&#x78;a&#x6d;&#112;&#108;&#101;&#46;c&#111;&#x6d;</a>&amp;consumer_id=78</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="m&#x61;i&#108;&#116;o&#58;&#48;&#x31;&#46;&#x30;&#48;&#48;&#90;&#x26;l&#x69;&#x6d;&#105;&#x74;&#x3d;&#49;&#x30;&#48;&#48;&#x30;&#x26;&#x6f;&#x66;f&#x73;&#101;&#x74;=&#x30;&#x26;an&#111;&#110;=&#x66;&#97;&#108;se&#x26;&#97;&#112;&#112;&#x5f;&#110;&#97;&#109;&#x65;&#x3d;&#x54;&#101;&#97;&#116;&#x41;&#112;&#112;&#x26;i&#x6d;&#x70;&#x6c;&#x65;&#x6d;&#x65;&#110;t&#101;&#100;_&#105;&#x6e;&#x5f;&#118;e&#x72;&#x73;&#x69;o&#x6e;&#x3d;v&#50;&#x2e;&#x31;&#46;&#48;&amp;v&#101;&#114;&#98;=&#80;OS&#x54;&#x26;us&#101;&#x72;&#x5f;&#105;&#x64;&#61;&#99;&#x37;&#x62;&#x36;&#x63;&#98;47&#45;&#99;&#98;&#57;&#54;&#x2d;&#x34;&#x34;&#x34;&#x31;-8&#x38;0&#49;&#45;&#51;&#53;&#x62;&#x35;&#x37;4&#x35;&#54;&#55;53&#x61;&amp;u&#115;&#101;&#114;&#x6e;&#97;m&#101;&#61;&#115;&#x75;&#115;&#97;&#x6e;&#x2e;&#117;&#x6b;&#46;&#50;&#x39;&#64;e&#120;a&#x6d;p&#x6c;e.&#x63;&#111;&#109;">&#x30;&#49;&#46;&#48;&#48;&#48;&#90;&#x26;li&#109;&#x69;&#116;&#x3d;&#x31;00&#48;&#48;&#x26;&#x6f;&#102;f&#x73;&#x65;&#x74;&#61;&#x30;&#38;&#x61;&#x6e;&#111;&#110;&#61;&#x66;&#x61;&#x6c;s&#101;&#x26;&#97;&#x70;&#x70;&#95;&#x6e;&#97;&#x6d;&#x65;&#x3d;&#84;ea&#x74;&#x41;&#x70;&#112;&#x26;&#105;m&#112;&#x6c;&#101;&#109;&#101;&#110;t&#x65;&#100;&#x5f;&#x69;&#110;&#95;&#x76;&#101;&#114;&#x73;&#x69;&#111;n=&#118;&#x32;&#46;&#x31;&#46;&#x30;&amp;&#x76;&#x65;r&#x62;&#61;&#x50;&#x4f;&#83;&#84;&amp;u&#x73;er&#95;i&#x64;&#61;&#99;7&#x62;&#x36;cb&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#x34;&#x34;4&#x31;&#45;&#56;&#x38;&#48;1&#x2d;&#51;&#x35;&#x62;5&#55;&#52;&#53;&#54;&#x37;&#x35;&#51;&#97;&#x26;&#117;&#115;&#101;&#114;&#110;&#97;&#109;&#x65;&#61;&#x73;&#117;&#x73;&#x61;&#110;&#46;&#117;&#x6b;&#46;&#x32;&#57;@&#x65;&#x78;&#x61;&#109;&#112;le&#x2e;&#x63;&#111;&#x6d;</a>&amp;consumer_id=78</p>
 <p>Other filters:</p>
 <p>7 consumer_id  (if null ignore)</p>
 <p>8 user_id (if null ignore)</p>
@@ -13539,31 +10571,31 @@ possible values:<br />
 <p><a href="/glossary#"><strong>target_ip</strong></a>: target_ip</p>
 <p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
 <p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
 <p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMetricsRequest
+ @return ApiGetMetricsRequest
 */
-func (a *APIAPIService) OBPv600GetMetrics(ctx context.Context) ApiOBPv600GetMetricsRequest {
-	return ApiOBPv600GetMetricsRequest{
+func (a *APIAPIService) GetMetrics(ctx context.Context) ApiGetMetricsRequest {
+	return ApiGetMetricsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetMetrics200Response
-func (a *APIAPIService) OBPv600GetMetricsExecute(r ApiOBPv600GetMetricsRequest) (*OBPv600GetMetrics200Response, *http.Response, error) {
+//  @return GetMetrics200Response
+func (a *APIAPIService) GetMetricsExecute(r ApiGetMetricsRequest) (*GetMetrics200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetMetrics200Response
+		localVarReturnValue  *GetMetrics200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetMetrics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMetrics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13615,7 +10647,7 @@ func (a *APIAPIService) OBPv600GetMetricsExecute(r ApiOBPv600GetMetricsRequest) 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13656,17 +10688,198 @@ func (a *APIAPIService) OBPv600GetMetricsExecute(r ApiOBPv600GetMetricsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMigrationsRequest struct {
+type ApiGetMetricsAtBankRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+}
+
+func (r ApiGetMetricsAtBankRequest) Execute() (*GetMetricsAtBank200Response, *http.Response, error) {
+	return r.ApiService.GetMetricsAtBankExecute(r)
+}
+
+/*
+GetMetricsAtBank Get Metrics at Bank
+
+<p>Get the all metrics at the Bank specified by BANK_ID</p>
+<p>require CanReadMetrics role</p>
+<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/metrics</p>
+<p>Should be able to filter on the following metrics fields</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
+<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
+<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
+<p>3 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>5 sort_by (defaults to date field) eg: sort_by=date<br />
+possible values:<br />
+&quot;url&quot;,<br />
+&quot;date&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
+&quot;app_name&quot;,<br />
+&quot;developer_email&quot;,<br />
+&quot;implemented_by_partial_function&quot;,<br />
+&quot;implemented_in_version&quot;,<br />
+&quot;consumer_id&quot;,<br />
+&quot;verb&quot;</p>
+<p>6 direction (defaults to date desc) eg: direction=desc</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;&#116;o&#x3a;&#48;&#x31;&#x2e;&#48;&#x30;&#48;&#90;&amp;li&#x6d;i&#x74;&#61;10&#48;&#48;&#48;&amp;&#111;&#x66;&#x66;&#x73;&#101;&#116;&#x3d;&#x30;&#38;&#x61;n&#111;&#x6e;=&#x66;&#x61;&#108;&#115;&#101;&#x26;&#97;&#x70;&#x70;&#x5f;&#110;&#97;&#x6d;&#101;=&#84;&#101;&#x61;&#116;&#x41;&#x70;&#112;&amp;&#105;&#109;ple&#x6d;&#x65;&#x6e;&#116;&#101;&#x64;&#95;&#x69;&#110;&#x5f;&#118;e&#x72;&#x73;&#x69;&#111;&#110;&#x3d;&#118;&#x32;&#x2e;&#49;&#x2e;&#x30;&#38;&#x76;&#x65;&#x72;&#98;&#x3d;&#80;&#79;&#83;&#x54;&#x26;&#117;&#115;&#x65;&#114;&#95;i&#x64;=&#x63;7&#x62;&#x36;c&#98;&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#52;4&#x34;&#x31;&#45;&#56;&#x38;&#48;&#x31;&#45;3&#x35;b&#x35;&#x37;45&#x36;7&#53;3&#97;&#38;&#117;&#x73;&#x65;&#x72;&#110;&#97;m&#101;=&#x73;&#x75;&#x73;a&#110;&#x2e;uk&#46;&#x32;&#57;&#x40;&#101;x&#97;&#109;&#112;&#x6c;&#x65;.&#x63;o&#109;">0&#x31;&#46;&#x30;0&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#105;&#x74;=&#x31;&#48;0&#48;&#48;&#x26;&#x6f;&#102;&#102;s&#x65;&#x74;=&#48;&amp;&#x61;&#110;o&#110;&#61;&#102;&#x61;&#108;&#115;&#x65;&#x26;&#97;p&#112;&#x5f;&#110;a&#x6d;&#101;&#x3d;&#84;&#101;&#x61;&#116;&#x41;pp&#x26;&#x69;&#109;&#112;&#x6c;e&#109;e&#110;&#116;&#x65;&#100;_&#x69;&#x6e;&#95;v&#101;&#114;si&#111;&#x6e;&#x3d;&#118;2.&#x31;.&#48;&#38;v&#101;&#114;&#x62;=&#x50;&#x4f;&#x53;&#x54;&#x26;&#x75;se&#x72;_&#105;&#100;&#61;&#x63;&#55;&#x62;&#54;c&#98;&#x34;&#x37;-&#99;&#x62;&#57;6&#x2d;&#x34;4&#52;&#x31;-&#x38;&#x38;&#48;1&#45;35b&#x35;&#x37;&#52;&#x35;&#54;&#55;5&#x33;&#97;&#x26;us&#101;&#114;n&#x61;m&#101;&#x3d;&#115;&#x75;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#46;&#x32;&#x39;&#64;e&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#109;</a>&amp;consumer_id=78</p>
+<p>Other filters:</p>
+<p>7 consumer_id  (if null ignore)</p>
+<p>8 user_id (if null ignore)</p>
+<p>9 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
+<p>10 url (if null ignore), note: can not contain '&amp;'.</p>
+<p>11 app_name (if null ignore)</p>
+<p>12 implemented_by_partial_function (if null ignore),</p>
+<p>13 implemented_in_version (if null ignore)</p>
+<p>14 verb (if null ignore)</p>
+<p>15 correlation_id (if null ignore)</p>
+<p>16 duration (if null ignore) non digit chars will be silently omitted</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
+<p><a href="/glossary#implemented_by_partial_function"><strong>implemented_by_partial_function</strong></a>:</p>
+<p><a href="/glossary#implemented_in_version"><strong>implemented_in_version</strong></a>:</p>
+<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @return ApiGetMetricsAtBankRequest
+*/
+func (a *APIAPIService) GetMetricsAtBank(ctx context.Context, bankid string) ApiGetMetricsAtBankRequest {
+	return ApiGetMetricsAtBankRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+	}
+}
+
+// Execute executes the request
+//  @return GetMetricsAtBank200Response
+func (a *APIAPIService) GetMetricsAtBankExecute(r ApiGetMetricsAtBankRequest) (*GetMetricsAtBank200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMetricsAtBank200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMetricsAtBank")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.0.0/management/metrics/banks/{bankid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMigrationsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetMigrationsRequest) Execute() (*OBPv600GetMigrations200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMigrationsExecute(r)
+func (r ApiGetMigrationsRequest) Execute() (*GetMigrations200Response, *http.Response, error) {
+	return r.ApiService.GetMigrationsExecute(r)
 }
 
 /*
-OBPv600GetMigrations Get Database Migrations
+GetMigrations Get Database Migrations
 
 <p>Get all database migration script logs.</p>
 <p>This endpoint returns information about all migration scripts that have been executed or attempted.</p>
@@ -13687,26 +10900,26 @@ OBPv600GetMigrations Get Database Migrations
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMigrationsRequest
+ @return ApiGetMigrationsRequest
 */
-func (a *APIAPIService) OBPv600GetMigrations(ctx context.Context) ApiOBPv600GetMigrationsRequest {
-	return ApiOBPv600GetMigrationsRequest{
+func (a *APIAPIService) GetMigrations(ctx context.Context) ApiGetMigrationsRequest {
+	return ApiGetMigrationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetMigrations200Response
-func (a *APIAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrationsRequest) (*OBPv600GetMigrations200Response, *http.Response, error) {
+//  @return GetMigrations200Response
+func (a *APIAPIService) GetMigrationsExecute(r ApiGetMigrationsRequest) (*GetMigrations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetMigrations200Response
+		localVarReturnValue  *GetMigrations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetMigrations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMigrations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13758,7 +10971,7 @@ func (a *APIAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrationsReq
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13799,17 +11012,146 @@ func (a *APIAPIService) OBPv600GetMigrationsExecute(r ApiOBPv600GetMigrationsReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetMyDynamicEntitiesRequest struct {
+type ApiGetMyDynamicEndpointsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetMyDynamicEntitiesRequest) Execute() (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetMyDynamicEntitiesExecute(r)
+func (r ApiGetMyDynamicEndpointsRequest) Execute() (*GetDynamicEndpoints200Response, *http.Response, error) {
+	return r.ApiService.GetMyDynamicEndpointsExecute(r)
 }
 
 /*
-OBPv600GetMyDynamicEntities Get My Dynamic Entities
+GetMyDynamicEndpoints Get My Dynamic Endpoints
+
+<p>Get My Dynamic Endpoints.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetMyDynamicEndpointsRequest
+*/
+func (a *APIAPIService) GetMyDynamicEndpoints(ctx context.Context) ApiGetMyDynamicEndpointsRequest {
+	return ApiGetMyDynamicEndpointsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetDynamicEndpoints200Response
+func (a *APIAPIService) GetMyDynamicEndpointsExecute(r ApiGetMyDynamicEndpointsRequest) (*GetDynamicEndpoints200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetDynamicEndpoints200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMyDynamicEndpoints")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/my/dynamic-endpoints"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMyDynamicEntitiesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetMyDynamicEntitiesRequest) Execute() (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetMyDynamicEntitiesExecute(r)
+}
+
+/*
+GetMyDynamicEntities Get My Dynamic Entities
 
 <p>Get all Dynamic Entity definitions I created.</p>
 <p>This v6.0.0 endpoint returns a cleaner response format with:<br />
@@ -13821,26 +11163,26 @@ OBPv600GetMyDynamicEntities Get My Dynamic Entities
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetMyDynamicEntitiesRequest
+ @return ApiGetMyDynamicEntitiesRequest
 */
-func (a *APIAPIService) OBPv600GetMyDynamicEntities(ctx context.Context) ApiOBPv600GetMyDynamicEntitiesRequest {
-	return ApiOBPv600GetMyDynamicEntitiesRequest{
+func (a *APIAPIService) GetMyDynamicEntities(ctx context.Context) ApiGetMyDynamicEntitiesRequest {
+	return ApiGetMyDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAvailablePersonalDynamicEntities200Response
-func (a *APIAPIService) OBPv600GetMyDynamicEntitiesExecute(r ApiOBPv600GetMyDynamicEntitiesRequest) (*OBPv600GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
+//  @return GetAvailablePersonalDynamicEntities200Response
+func (a *APIAPIService) GetMyDynamicEntitiesExecute(r ApiGetMyDynamicEntitiesRequest) (*GetAvailablePersonalDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAvailablePersonalDynamicEntities200Response
+		localVarReturnValue  *GetAvailablePersonalDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetMyDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetMyDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13892,7 +11234,7 @@ func (a *APIAPIService) OBPv600GetMyDynamicEntitiesExecute(r ApiOBPv600GetMyDyna
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -13933,17 +11275,359 @@ func (a *APIAPIService) OBPv600GetMyDynamicEntitiesExecute(r ApiOBPv600GetMyDyna
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetPopularApisRequest struct {
+type ApiGetOAuth2ServerJWKsURIsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetPopularApisRequest) Execute() (*OBPv600GetPopularApis200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetPopularApisExecute(r)
+func (r ApiGetOAuth2ServerJWKsURIsRequest) Execute() (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+	return r.ApiService.GetOAuth2ServerJWKsURIsExecute(r)
 }
 
 /*
-OBPv600GetPopularApis Get Popular Endpoints
+GetOAuth2ServerJWKsURIs Get JSON Web Key (JWK) URIs
+
+<p>Get the OAuth2 server's public JSON Web Key (JWK) URIs.<br />
+It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#jwks_uri"><strong>jwks_uri</strong></a>:</p>
+<p><a href="/glossary#jwks_uris"><strong>jwks_uris</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetOAuth2ServerJWKsURIsRequest
+*/
+func (a *APIAPIService) GetOAuth2ServerJWKsURIs(ctx context.Context) ApiGetOAuth2ServerJWKsURIsRequest {
+	return ApiGetOAuth2ServerJWKsURIsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetOAuth2ServerJWKsURIs200Response
+func (a *APIAPIService) GetOAuth2ServerJWKsURIsExecute(r ApiGetOAuth2ServerJWKsURIsRequest) (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetOAuth2ServerJWKsURIs200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetOAuth2ServerJWKsURIs")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/jwks-uris"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetOAuth2ServerWellKnownRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetOAuth2ServerWellKnownRequest) Execute() (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+	return r.ApiService.GetOAuth2ServerWellKnownExecute(r)
+}
+
+/*
+GetOAuth2ServerWellKnown Get Well Known URIs
+
+<p>Get the OAuth2 server's public Well Known URIs.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#jwks_uri"><strong>jwks_uri</strong></a>:</p>
+<p><a href="/glossary#jwks_uris"><strong>jwks_uris</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetOAuth2ServerWellKnownRequest
+*/
+func (a *APIAPIService) GetOAuth2ServerWellKnown(ctx context.Context) ApiGetOAuth2ServerWellKnownRequest {
+	return ApiGetOAuth2ServerWellKnownRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetOAuth2ServerJWKsURIs200Response
+func (a *APIAPIService) GetOAuth2ServerWellKnownExecute(r ApiGetOAuth2ServerWellKnownRequest) (*GetOAuth2ServerJWKsURIs200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetOAuth2ServerJWKsURIs200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetOAuth2ServerWellKnown")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/well-known"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetObpConnectorLoopbackRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetObpConnectorLoopbackRequest) Execute() (*GetObpConnectorLoopback200Response, *http.Response, error) {
+	return r.ApiService.GetObpConnectorLoopbackExecute(r)
+}
+
+/*
+GetObpConnectorLoopback Get Connector Status (Loopback)
+
+<p>This endpoint makes a call to the Connector to check the backend transport is reachable. (Deprecated)</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#connector_version"><strong>connector_version</strong></a>:</p>
+<p><a href="/glossary#duration_time"><strong>duration_time</strong></a>: 60</p>
+<p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetObpConnectorLoopbackRequest
+*/
+func (a *APIAPIService) GetObpConnectorLoopback(ctx context.Context) ApiGetObpConnectorLoopbackRequest {
+	return ApiGetObpConnectorLoopbackRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetObpConnectorLoopback200Response
+func (a *APIAPIService) GetObpConnectorLoopbackExecute(r ApiGetObpConnectorLoopbackRequest) (*GetObpConnectorLoopback200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetObpConnectorLoopback200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetObpConnectorLoopback")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/connector/loopback"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetPopularApisRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetPopularApisRequest) Execute() (*GetPopularApis200Response, *http.Response, error) {
+	return r.ApiService.GetPopularApisExecute(r)
+}
+
+/*
+GetPopularApis Get Popular Endpoints
 
 <p>Returns the operation IDs of the 50 most popular endpoints based on usage metrics.</p>
 <p>This endpoint is public and does not require authentication.</p>
@@ -13959,26 +11643,26 @@ OBPv600GetPopularApis Get Popular Endpoints
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetPopularApisRequest
+ @return ApiGetPopularApisRequest
 */
-func (a *APIAPIService) OBPv600GetPopularApis(ctx context.Context) ApiOBPv600GetPopularApisRequest {
-	return ApiOBPv600GetPopularApisRequest{
+func (a *APIAPIService) GetPopularApis(ctx context.Context) ApiGetPopularApisRequest {
+	return ApiGetPopularApisRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetPopularApis200Response
-func (a *APIAPIService) OBPv600GetPopularApisExecute(r ApiOBPv600GetPopularApisRequest) (*OBPv600GetPopularApis200Response, *http.Response, error) {
+//  @return GetPopularApis200Response
+func (a *APIAPIService) GetPopularApisExecute(r ApiGetPopularApisRequest) (*GetPopularApis200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetPopularApis200Response
+		localVarReturnValue  *GetPopularApis200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetPopularApis")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetPopularApis")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14043,17 +11727,155 @@ func (a *APIAPIService) OBPv600GetPopularApisExecute(r ApiOBPv600GetPopularApisR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetReferenceTypesRequest struct {
+type ApiGetRateLimitingInfoRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetReferenceTypesRequest) Execute() (*OBPv600GetReferenceTypes200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetReferenceTypesExecute(r)
+func (r ApiGetRateLimitingInfoRequest) Execute() (*GetRateLimitingInfo200Response, *http.Response, error) {
+	return r.ApiService.GetRateLimitingInfoExecute(r)
 }
 
 /*
-OBPv600GetReferenceTypes Get Reference Types for Dynamic Entities
+GetRateLimitingInfo Get Rate Limiting Info
+
+<p>Get information about the Rate Limiting setup on this OBP Instance such as:</p>
+<p>Is rate limiting enabled and active?<br />
+What backend is used to keep track of the API calls (e.g. REDIS).</p>
+<p>Note: Rate limiting can be set at the Consumer level and also for anonymous calls.</p>
+<p>See the consumer rate limits / call limits endpoints.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#enabled"><strong>enabled</strong></a>: false</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#service_available"><strong>service_available</strong></a>:</p>
+<p><a href="/glossary#technology"><strong>technology</strong></a>: technology1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetRateLimitingInfoRequest
+*/
+func (a *APIAPIService) GetRateLimitingInfo(ctx context.Context) ApiGetRateLimitingInfoRequest {
+	return ApiGetRateLimitingInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetRateLimitingInfo200Response
+func (a *APIAPIService) GetRateLimitingInfoExecute(r ApiGetRateLimitingInfoRequest) (*GetRateLimitingInfo200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRateLimitingInfo200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetRateLimitingInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/rate-limiting"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetReferenceTypesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetReferenceTypesRequest) Execute() (*GetReferenceTypes200Response, *http.Response, error) {
+	return r.ApiService.GetReferenceTypesExecute(r)
+}
+
+/*
+GetReferenceTypes Get Reference Types for Dynamic Entities
 
 <p>Get a list of all available reference types that can be used in Dynamic Entity field definitions.</p>
 <p>Reference types allow Dynamic Entity fields to reference other entities (similar to foreign keys).<br />
@@ -14086,26 +11908,26 @@ If you want to create a Dynamic Entity with a field that references a Customer, 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetReferenceTypesRequest
+ @return ApiGetReferenceTypesRequest
 */
-func (a *APIAPIService) OBPv600GetReferenceTypes(ctx context.Context) ApiOBPv600GetReferenceTypesRequest {
-	return ApiOBPv600GetReferenceTypesRequest{
+func (a *APIAPIService) GetReferenceTypes(ctx context.Context) ApiGetReferenceTypesRequest {
+	return ApiGetReferenceTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetReferenceTypes200Response
-func (a *APIAPIService) OBPv600GetReferenceTypesExecute(r ApiOBPv600GetReferenceTypesRequest) (*OBPv600GetReferenceTypes200Response, *http.Response, error) {
+//  @return GetReferenceTypes200Response
+func (a *APIAPIService) GetReferenceTypesExecute(r ApiGetReferenceTypesRequest) (*GetReferenceTypes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetReferenceTypes200Response
+		localVarReturnValue  *GetReferenceTypes200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetReferenceTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetReferenceTypes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14157,7 +11979,7 @@ func (a *APIAPIService) OBPv600GetReferenceTypesExecute(r ApiOBPv600GetReference
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14198,17 +12020,695 @@ func (a *APIAPIService) OBPv600GetReferenceTypesExecute(r ApiOBPv600GetReference
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetScannedApiVersionsRequest struct {
+type ApiGetRegulatedEntityAttributeByIdRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+	regulatedentityattributeid string
+}
+
+func (r ApiGetRegulatedEntityAttributeByIdRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.GetRegulatedEntityAttributeByIdExecute(r)
+}
+
+/*
+GetRegulatedEntityAttributeById Get Regulated Entity Attribute By ID
+
+<p>Get a specific Regulated Entity Attribute by its REGULATED_ENTITY_ATTRIBUTE_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
+ @return ApiGetRegulatedEntityAttributeByIdRequest
+*/
+func (a *APIAPIService) GetRegulatedEntityAttributeById(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiGetRegulatedEntityAttributeByIdRequest {
+	return ApiGetRegulatedEntityAttributeByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+		regulatedentityattributeid: regulatedentityattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *APIAPIService) GetRegulatedEntityAttributeByIdExecute(r ApiGetRegulatedEntityAttributeByIdRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetRegulatedEntityAttributeById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetRegulatedEntityByIdRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	regulatedentityid string
+}
+
+func (r ApiGetRegulatedEntityByIdRequest) Execute() (*GetRegulatedEntityById200Response, *http.Response, error) {
+	return r.ApiService.GetRegulatedEntityByIdExecute(r)
+}
+
+/*
+GetRegulatedEntityById Get Regulated Entity
+
+<p>Get Regulated Entity By REGULATED_ENTITY_ID</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
+<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
+<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
+<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
+<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
+<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
+<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
+<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
+<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
+<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
+<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
+<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @return ApiGetRegulatedEntityByIdRequest
+*/
+func (a *APIAPIService) GetRegulatedEntityById(ctx context.Context, regulatedentityid string) ApiGetRegulatedEntityByIdRequest {
+	return ApiGetRegulatedEntityByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+	}
+}
+
+// Execute executes the request
+//  @return GetRegulatedEntityById200Response
+func (a *APIAPIService) GetRegulatedEntityByIdExecute(r ApiGetRegulatedEntityByIdRequest) (*GetRegulatedEntityById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRegulatedEntityById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetRegulatedEntityById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsObpRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsObpRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsObpExecute(r)
+}
+
+/*
+GetResourceDocsObp Get Resource Docs
+
+<p>Get documentation about the RESTful resources on this server including example bodies for POST and PUT requests.</p>
+<p>This is the native data format used to document OBP endpoints. Each endpoint has a Resource Doc (a Scala case class) defined in the source code.</p>
+<p>This endpoint is used by OBP API Explorer to display and work with the API documentation.</p>
+<p>Most (but not all) fields are also available in swagger format. (The Swagger endpoint is built from Resource Docs.)</p>
+<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
+<p>You may filter this endpoint with tags parameter e.g. ?tags=Account,Bank</p>
+<p>You may filter this endpoint with functions parameter e.g. ?functions=enableDisableConsumers,getConnectorMetrics</p>
+<p>For possible function values, see implemented_by.function in the JSON returned by this endpoint or the OBP source code or the footer of the API Explorer which produces a comma separated list of functions that reflect the server or filtering by API Explorer based on tags etc.</p>
+<p>You may filter this endpoint using the 'content' url parameter, e.g. ?content=dynamic<br />
+if set content=dynamic, only show dynamic endpoints, if content=static, only show the static endpoints. if omit this parameter, we will show all the endpoints.</p>
+<p>You may need some other language resource docs, now we support en_GB and es_ES at the moment.</p>
+<p>You can filter with api-collection-id, but api-collection-id can not be used with others together. If api-collection-id is used in URL, it will ignore all other parameters.</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Dynamic Resource Docs are cached, TTL is 3600 seconds<br />
+Static Resource Docs are cached, TTL is 3600 seconds</p>
+<p>Following are more examples:<br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?locale=es_ES</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?content=static,dynamic,all</a><br />
+<a href="http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v4.0.0/resource-docs/v4.0.0/obp?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<ul>
+<li> operation_id is concatenation of "v", version and function and should be unique (used for DOM element IDs etc. maybe used to link to source code) </li>
+<li> version references the version that the API call is defined in.</li>
+<li> function is the (scala) partial function that implements this endpoint. It is unique per version of the API.</li>
+<li> request_url is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the implemented version (the version where this endpoint was defined) e.g. /obp/v1.2.0/resource</li>
+<li> specified_url (recommended to use) is empty for the root call, else the path. It contains the standard prefix (e.g. /obp) and the version specified in the call e.g. /obp/v3.1.0/resource. In OBP, endpoints are first made available at the request_url, but the same resource (function call) is often made available under later versions (specified_url). To access the latest version of all endpoints use the latest version available on your OBP instance e.g. /obp/v3.1.0 - To get the original version use the request_url. We recommend to use the specified_url since non semantic improvements are more likely to be applied to later implementations of the call.</li>
+<li> summary is a short description inline with the swagger terminology. </li>
+<li> description may contain html markup (generated from markdown on the server).</li>
+</ul>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsObpRequest
+*/
+func (a *APIAPIService) GetResourceDocsObp(ctx context.Context, apiversion string) ApiGetResourceDocsObpRequest {
+	return ApiGetResourceDocsObpRequest{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetResourceDocsObpExecute(r ApiGetResourceDocsObpRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetResourceDocsObp")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/obp"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsOpenAPI31Request struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsOpenAPI31Request) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsOpenAPI31Execute(r)
+}
+
+/*
+GetResourceDocsOpenAPI31 Get OpenAPI 3.1 documentation
+
+<p>Returns documentation about the RESTful resources on this server in OpenAPI 3.1 format.</p>
+<p>API_VERSION is the version you want documentation about e.g. v6.0.0</p>
+<h2><a href="#query-parameters" id="query-parameters">Query Parameters</a></h2>
+<p>You may filter this endpoint using the following optional query parameters:</p>
+<p><strong>tags</strong> - Filter by endpoint tags (comma-separated list)<br />
+• Example: ?tags=Account,Bank or ?tags=Account-Firehose<br />
+• All endpoints are given one or more tags which are used for grouping<br />
+• Empty values will return error OBP-10053</p>
+<p><strong>functions</strong> - Filter by function names (comma-separated list)<br />
+• Example: ?functions=getBanks,bankById<br />
+• Each endpoint is implemented in the OBP Scala code by a 'function'<br />
+• Empty values will return error OBP-10054</p>
+<p><strong>content</strong> - Filter by endpoint type<br />
+• Values: static, dynamic, all (case-insensitive)<br />
+• static: Only show static/core API endpoints<br />
+• dynamic: Only show dynamic/custom endpoints<br />
+• all: Show both static and dynamic endpoints (default)<br />
+• Invalid values will return error OBP-10052</p>
+<p><strong>locale</strong> - Language for localized documentation<br />
+• Example: ?locale=en_GB or ?locale=es_ES<br />
+• Supported locales: en_GB, es_ES, ro_RO<br />
+• Invalid locales will return error OBP-10041</p>
+<p><strong>api-collection-id</strong> - Filter by API collection UUID<br />
+• Example: ?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221<br />
+• Returns only endpoints belonging to the specified collection<br />
+• Empty values will return error OBP-10055</p>
+<p>This endpoint generates OpenAPI 3.1 compliant documentation with modern JSON Schema support.</p>
+<p>For YAML format, use the corresponding endpoint: /resource-docs/API_VERSION/openapi.yaml</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<h2><a href="#examples" id="examples">Examples</a></h2>
+<p>Basic usage:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi</a></p>
+<p>Filter by tags:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account-Firehose</a></p>
+<p>Filter by content type:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=dynamic</a></p>
+<p>Filter by functions:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?functions=getBanks,bankById</a></p>
+<p>Combine multiple parameters:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;tags=Account-Firehose</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?content=static&amp;locale=en_GB&amp;tags=Account</a></p>
+<p>Filter by API collection:<br />
+<a href="http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221">http://127.0.0.1:8080/obp/v6.0.0/resource-docs/v6.0.0/openapi?api-collection-id=4e866c86-60c3-4268-a221-cb0bbf1ad221</a></p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsOpenAPI31Request
+*/
+func (a *APIAPIService) GetResourceDocsOpenAPI31(ctx context.Context, apiversion string) ApiGetResourceDocsOpenAPI31Request {
+	return ApiGetResourceDocsOpenAPI31Request{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetResourceDocsOpenAPI31Execute(r ApiGetResourceDocsOpenAPI31Request) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetResourceDocsOpenAPI31")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/openapi"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetResourceDocsSwaggerRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	apiversion string
+}
+
+func (r ApiGetResourceDocsSwaggerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetResourceDocsSwaggerExecute(r)
+}
+
+/*
+GetResourceDocsSwagger Get Swagger documentation
+
+<p>Returns documentation about the RESTful resources on this server in Swagger format.</p>
+<p>API_VERSION is the version you want documentation about e.g. v3.0.0</p>
+<p>You may filter this endpoint using the 'tags' url parameter e.g. ?tags=Account,Bank</p>
+<p>(All endpoints are given one or more tags which for used in grouping)</p>
+<p>You may filter this endpoint using the 'functions' url parameter e.g. ?functions=getBanks,bankById</p>
+<p>(Each endpoint is implemented in the OBP Scala code by a 'function')</p>
+<p>See the Resource Doc endpoint for more information.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>Following are more examples:<br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?functions=getBanks,bankById</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById">http://127.0.0.1:8080/obp/v3.1.0/resource-docs/v3.1.0/swagger?tags=Account,Bank,PSD2&amp;functions=getBanks,bankById</a></p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#api_version">API_VERSION</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param apiversion The APIVERSION identifier
+ @return ApiGetResourceDocsSwaggerRequest
+*/
+func (a *APIAPIService) GetResourceDocsSwagger(ctx context.Context, apiversion string) ApiGetResourceDocsSwaggerRequest {
+	return ApiGetResourceDocsSwaggerRequest{
+		ApiService: a,
+		ctx: ctx,
+		apiversion: apiversion,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) GetResourceDocsSwaggerExecute(r ApiGetResourceDocsSwaggerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetResourceDocsSwagger")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.4.0/resource-docs/{apiversion}/swagger"
+	localVarPath = strings.Replace(localVarPath, "{"+"apiversion"+"}", url.PathEscape(parameterValueToString(r.apiversion, "apiversion")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetScannedApiVersionsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetScannedApiVersionsRequest) Execute() (*OBPv600GetScannedApiVersions200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetScannedApiVersionsExecute(r)
+func (r ApiGetScannedApiVersionsRequest) Execute() (*GetScannedApiVersions200Response, *http.Response, error) {
+	return r.ApiService.GetScannedApiVersionsExecute(r)
 }
 
 /*
-OBPv600GetScannedApiVersions Get Scanned API Versions
+GetScannedApiVersions Get Scanned API Versions
 
 <p>Get all scanned API versions available in this codebase.</p>
 <p>This endpoint returns all API versions that have been discovered/scanned, along with their active status.</p>
@@ -14243,26 +12743,26 @@ OBPv600GetScannedApiVersions Get Scanned API Versions
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetScannedApiVersionsRequest
+ @return ApiGetScannedApiVersionsRequest
 */
-func (a *APIAPIService) OBPv600GetScannedApiVersions(ctx context.Context) ApiOBPv600GetScannedApiVersionsRequest {
-	return ApiOBPv600GetScannedApiVersionsRequest{
+func (a *APIAPIService) GetScannedApiVersions(ctx context.Context) ApiGetScannedApiVersionsRequest {
+	return ApiGetScannedApiVersionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetScannedApiVersions200Response
-func (a *APIAPIService) OBPv600GetScannedApiVersionsExecute(r ApiOBPv600GetScannedApiVersionsRequest) (*OBPv600GetScannedApiVersions200Response, *http.Response, error) {
+//  @return GetScannedApiVersions200Response
+func (a *APIAPIService) GetScannedApiVersionsExecute(r ApiGetScannedApiVersionsRequest) (*GetScannedApiVersions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetScannedApiVersions200Response
+		localVarReturnValue  *GetScannedApiVersions200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetScannedApiVersions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetScannedApiVersions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14314,7 +12814,7 @@ func (a *APIAPIService) OBPv600GetScannedApiVersionsExecute(r ApiOBPv600GetScann
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14355,17 +12855,125 @@ func (a *APIAPIService) OBPv600GetScannedApiVersionsExecute(r ApiOBPv600GetScann
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetStoredProcedureConnectorHealthRequest struct {
+type ApiGetServerJWKRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetStoredProcedureConnectorHealthRequest) Execute() (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetStoredProcedureConnectorHealthExecute(r)
+func (r ApiGetServerJWKRequest) Execute() (*GetServerJWK200Response, *http.Response, error) {
+	return r.ApiService.GetServerJWKExecute(r)
 }
 
 /*
-OBPv600GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
+GetServerJWK Get JSON Web Key (JWK)
+
+<p>Get the server's public JSON Web Key (JWK) set and certificate chain.<br />
+It is required by client applications to validate ID tokens, self-contained access tokens and other issued objects.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#e"><strong>e</strong></a>:</p>
+<p><a href="/glossary#kid"><strong>kid</strong></a>:</p>
+<p><a href="/glossary#kty"><strong>kty</strong></a>:</p>
+<p><a href="/glossary#n"><strong>n</strong></a>:</p>
+<p><a href="/glossary#use"><strong>use</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetServerJWKRequest
+*/
+func (a *APIAPIService) GetServerJWK(ctx context.Context) ApiGetServerJWKRequest {
+	return ApiGetServerJWKRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetServerJWK200Response
+func (a *APIAPIService) GetServerJWKExecute(r ApiGetServerJWKRequest) (*GetServerJWK200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetServerJWK200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetServerJWK")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/certs"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetStoredProcedureConnectorHealthRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiGetStoredProcedureConnectorHealthRequest) Execute() (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+	return r.ApiService.GetStoredProcedureConnectorHealthExecute(r)
+}
+
+/*
+GetStoredProcedureConnectorHealth Get Stored Procedure Connector Health
 
 <p>Returns health status of the stored procedure connector including:</p>
 <ul>
@@ -14393,26 +13001,26 @@ The response time depends on the connection pool timeout and JDBC driver setting
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetStoredProcedureConnectorHealthRequest
+ @return ApiGetStoredProcedureConnectorHealthRequest
 */
-func (a *APIAPIService) OBPv600GetStoredProcedureConnectorHealth(ctx context.Context) ApiOBPv600GetStoredProcedureConnectorHealthRequest {
-	return ApiOBPv600GetStoredProcedureConnectorHealthRequest{
+func (a *APIAPIService) GetStoredProcedureConnectorHealth(ctx context.Context) ApiGetStoredProcedureConnectorHealthRequest {
+	return ApiGetStoredProcedureConnectorHealthRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetStoredProcedureConnectorHealth200Response
-func (a *APIAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r ApiOBPv600GetStoredProcedureConnectorHealthRequest) (*OBPv600GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
+//  @return GetStoredProcedureConnectorHealth200Response
+func (a *APIAPIService) GetStoredProcedureConnectorHealthExecute(r ApiGetStoredProcedureConnectorHealthRequest) (*GetStoredProcedureConnectorHealth200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetStoredProcedureConnectorHealth200Response
+		localVarReturnValue  *GetStoredProcedureConnectorHealth200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetStoredProcedureConnectorHealth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetStoredProcedureConnectorHealth")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14464,7 +13072,7 @@ func (a *APIAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14505,17 +13113,17 @@ func (a *APIAPIService) OBPv600GetStoredProcedureConnectorHealthExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetSystemDynamicEntitiesRequest struct {
+type ApiGetSystemDynamicEntitiesRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetSystemDynamicEntitiesRequest) Execute() (*OBPv600GetSystemDynamicEntities200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetSystemDynamicEntitiesExecute(r)
+func (r ApiGetSystemDynamicEntitiesRequest) Execute() (*GetSystemDynamicEntities200Response, *http.Response, error) {
+	return r.ApiService.GetSystemDynamicEntitiesExecute(r)
 }
 
 /*
-OBPv600GetSystemDynamicEntities Get System Dynamic Entities
+GetSystemDynamicEntities Get System Dynamic Entities
 
 <p>Get all System Dynamic Entities with record counts.</p>
 <p>Each dynamic entity in the response includes a <code>record_count</code> field showing how many data records exist for that entity.</p>
@@ -14525,26 +13133,26 @@ OBPv600GetSystemDynamicEntities Get System Dynamic Entities
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetSystemDynamicEntitiesRequest
+ @return ApiGetSystemDynamicEntitiesRequest
 */
-func (a *APIAPIService) OBPv600GetSystemDynamicEntities(ctx context.Context) ApiOBPv600GetSystemDynamicEntitiesRequest {
-	return ApiOBPv600GetSystemDynamicEntitiesRequest{
+func (a *APIAPIService) GetSystemDynamicEntities(ctx context.Context) ApiGetSystemDynamicEntitiesRequest {
+	return ApiGetSystemDynamicEntitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetSystemDynamicEntities200Response
-func (a *APIAPIService) OBPv600GetSystemDynamicEntitiesExecute(r ApiOBPv600GetSystemDynamicEntitiesRequest) (*OBPv600GetSystemDynamicEntities200Response, *http.Response, error) {
+//  @return GetSystemDynamicEntities200Response
+func (a *APIAPIService) GetSystemDynamicEntitiesExecute(r ApiGetSystemDynamicEntitiesRequest) (*GetSystemDynamicEntities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetSystemDynamicEntities200Response
+		localVarReturnValue  *GetSystemDynamicEntities200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetSystemDynamicEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetSystemDynamicEntities")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14596,7 +13204,7 @@ func (a *APIAPIService) OBPv600GetSystemDynamicEntitiesExecute(r ApiOBPv600GetSy
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14637,29 +13245,169 @@ func (a *APIAPIService) OBPv600GetSystemDynamicEntitiesExecute(r ApiOBPv600GetSy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetTopAPIsRequest struct {
+type ApiGetSystemLevelEndpointTagsRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	operationid string
+}
+
+func (r ApiGetSystemLevelEndpointTagsRequest) Execute() (*GetBankLevelEndpointTags200Response, *http.Response, error) {
+	return r.ApiService.GetSystemLevelEndpointTagsExecute(r)
+}
+
+/*
+GetSystemLevelEndpointTags Get System Level Endpoint Tags
+
+<p>Get System Level Endpoint Tags.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param operationid The OPERATIONID identifier
+ @return ApiGetSystemLevelEndpointTagsRequest
+*/
+func (a *APIAPIService) GetSystemLevelEndpointTags(ctx context.Context, operationid string) ApiGetSystemLevelEndpointTagsRequest {
+	return ApiGetSystemLevelEndpointTagsRequest{
+		ApiService: a,
+		ctx: ctx,
+		operationid: operationid,
+	}
+}
+
+// Execute executes the request
+//  @return GetBankLevelEndpointTags200Response
+func (a *APIAPIService) GetSystemLevelEndpointTagsExecute(r ApiGetSystemLevelEndpointTagsRequest) (*GetBankLevelEndpointTags200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetBankLevelEndpointTags200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetSystemLevelEndpointTags")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetTopAPIsRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600GetTopAPIsRequest) Execute() (*OBPv600GetTopAPIs200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetTopAPIsExecute(r)
+func (r ApiGetTopAPIsRequest) Execute() (*GetTopAPIs200Response, *http.Response, error) {
+	return r.ApiService.GetTopAPIsExecute(r)
 }
 
 /*
-OBPv600GetTopAPIs Get Top APIs
+GetTopAPIs Get Top APIs
 
 <p>Get metrics about the most popular APIs. e.g.: total count, response time (in ms), etc.</p>
 <p>This v6.0.0 version includes the <strong>operation_id</strong> field which uniquely identifies each API endpoint<br />
 across different API standards (OBP, Berlin Group, UK Open Banking, etc.).</p>
 <p>Should be able to filter on the following fields:</p>
-<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-16T19:25:59.789Z&amp;consumer_id=5<br />
+<p>eg: /management/metrics/top-apis?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:25.492Z&amp;consumer_id=5<br />
 &amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
 &amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
 &amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
 &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null</p>
 <p>1 from_date (defaults to one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
-<p>2 to_date (defaults to the current date) eg:to_date=2026-03-16T19:25:59.789Z</p>
+<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:25.492Z</p>
 <p>3 consumer_id (if null ignore)</p>
 <p>4 user_id (if null ignore)</p>
 <p>5 anon (if null ignore) only support two values: true (return where user_id is null) or false (return where user_id is not null)</p>
@@ -14684,26 +13432,26 @@ across different API standards (OBP, Berlin Group, UK Open Banking, etc.).</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetTopAPIsRequest
+ @return ApiGetTopAPIsRequest
 */
-func (a *APIAPIService) OBPv600GetTopAPIs(ctx context.Context) ApiOBPv600GetTopAPIsRequest {
-	return ApiOBPv600GetTopAPIsRequest{
+func (a *APIAPIService) GetTopAPIs(ctx context.Context) ApiGetTopAPIsRequest {
+	return ApiGetTopAPIsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetTopAPIs200Response
-func (a *APIAPIService) OBPv600GetTopAPIsExecute(r ApiOBPv600GetTopAPIsRequest) (*OBPv600GetTopAPIs200Response, *http.Response, error) {
+//  @return GetTopAPIs200Response
+func (a *APIAPIService) GetTopAPIsExecute(r ApiGetTopAPIsRequest) (*GetTopAPIs200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetTopAPIs200Response
+		localVarReturnValue  *GetTopAPIs200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600GetTopAPIs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.GetTopAPIs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14755,7 +13503,7 @@ func (a *APIAPIService) OBPv600GetTopAPIsExecute(r ApiOBPv600GetTopAPIsRequest) 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14796,24 +13544,24 @@ func (a *APIAPIService) OBPv600GetTopAPIsExecute(r ApiOBPv600GetTopAPIsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600InvalidateCacheNamespaceRequest struct {
+type ApiInvalidateCacheNamespaceRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	oBPv600InvalidateCacheNamespaceRequest *OBPv600InvalidateCacheNamespaceRequest
+	invalidateCacheNamespaceRequest *InvalidateCacheNamespaceRequest
 }
 
 // Request body
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) OBPv600InvalidateCacheNamespaceRequest(oBPv600InvalidateCacheNamespaceRequest OBPv600InvalidateCacheNamespaceRequest) ApiOBPv600InvalidateCacheNamespaceRequest {
-	r.oBPv600InvalidateCacheNamespaceRequest = &oBPv600InvalidateCacheNamespaceRequest
+func (r ApiInvalidateCacheNamespaceRequest) InvalidateCacheNamespaceRequest(invalidateCacheNamespaceRequest InvalidateCacheNamespaceRequest) ApiInvalidateCacheNamespaceRequest {
+	r.invalidateCacheNamespaceRequest = &invalidateCacheNamespaceRequest
 	return r
 }
 
-func (r ApiOBPv600InvalidateCacheNamespaceRequest) Execute() (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
-	return r.ApiService.OBPv600InvalidateCacheNamespaceExecute(r)
+func (r ApiInvalidateCacheNamespaceRequest) Execute() (*InvalidateCacheNamespace200Response, *http.Response, error) {
+	return r.ApiService.InvalidateCacheNamespaceExecute(r)
 }
 
 /*
-OBPv600InvalidateCacheNamespace Invalidate Cache Namespace
+InvalidateCacheNamespace Invalidate Cache Namespace
 
 <p>Invalidates a cache namespace by incrementing its version counter.</p>
 <p>This provides instant cache invalidation without deleting individual keys.<br />
@@ -14833,26 +13581,26 @@ rd_static, rd_all, swagger_static, connector, metrics_stable, metrics_recent, ab
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600InvalidateCacheNamespaceRequest
+ @return ApiInvalidateCacheNamespaceRequest
 */
-func (a *APIAPIService) OBPv600InvalidateCacheNamespace(ctx context.Context) ApiOBPv600InvalidateCacheNamespaceRequest {
-	return ApiOBPv600InvalidateCacheNamespaceRequest{
+func (a *APIAPIService) InvalidateCacheNamespace(ctx context.Context) ApiInvalidateCacheNamespaceRequest {
+	return ApiInvalidateCacheNamespaceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600InvalidateCacheNamespace200Response
-func (a *APIAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600InvalidateCacheNamespaceRequest) (*OBPv600InvalidateCacheNamespace200Response, *http.Response, error) {
+//  @return InvalidateCacheNamespace200Response
+func (a *APIAPIService) InvalidateCacheNamespaceExecute(r ApiInvalidateCacheNamespaceRequest) (*InvalidateCacheNamespace200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600InvalidateCacheNamespace200Response
+		localVarReturnValue  *InvalidateCacheNamespace200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600InvalidateCacheNamespace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.InvalidateCacheNamespace")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14862,8 +13610,8 @@ func (a *APIAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inval
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600InvalidateCacheNamespaceRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600InvalidateCacheNamespaceRequest is required and must be specified")
+	if r.invalidateCacheNamespaceRequest == nil {
+		return localVarReturnValue, nil, reportError("invalidateCacheNamespaceRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -14884,7 +13632,7 @@ func (a *APIAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inval
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600InvalidateCacheNamespaceRequest
+	localVarPostBody = r.invalidateCacheNamespaceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -14909,7 +13657,7 @@ func (a *APIAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inval
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -14950,17 +13698,877 @@ func (a *APIAPIService) OBPv600InvalidateCacheNamespaceExecute(r ApiOBPv600Inval
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600RootRequest struct {
+type ApiLogCacheAllEndpointRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 }
 
-func (r ApiOBPv600RootRequest) Execute() (*OBPv600Root200Response, *http.Response, error) {
-	return r.ApiService.OBPv600RootExecute(r)
+func (r ApiLogCacheAllEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheAllEndpointExecute(r)
 }
 
 /*
-OBPv600Root Get API Info (root)
+LogCacheAllEndpoint Get All Level Log Cache
+
+<p>Returns logs of all levels from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/all?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheAllEndpointRequest
+*/
+func (a *APIAPIService) LogCacheAllEndpoint(ctx context.Context) ApiLogCacheAllEndpointRequest {
+	return ApiLogCacheAllEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheAllEndpointExecute(r ApiLogCacheAllEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheAllEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/all"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheDebugEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiLogCacheDebugEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheDebugEndpointExecute(r)
+}
+
+/*
+LogCacheDebugEndpoint Get Debug Level Log Cache
+
+<p>Returns DEBUG level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/debug?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheDebugEndpointRequest
+*/
+func (a *APIAPIService) LogCacheDebugEndpoint(ctx context.Context) ApiLogCacheDebugEndpointRequest {
+	return ApiLogCacheDebugEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheDebugEndpointExecute(r ApiLogCacheDebugEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheDebugEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/debug"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheErrorEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiLogCacheErrorEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheErrorEndpointExecute(r)
+}
+
+/*
+LogCacheErrorEndpoint Get Error Level Log Cache
+
+<p>Returns ERROR level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/error?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheErrorEndpointRequest
+*/
+func (a *APIAPIService) LogCacheErrorEndpoint(ctx context.Context) ApiLogCacheErrorEndpointRequest {
+	return ApiLogCacheErrorEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheErrorEndpointExecute(r ApiLogCacheErrorEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheErrorEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/error"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheInfoEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiLogCacheInfoEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheInfoEndpointExecute(r)
+}
+
+/*
+LogCacheInfoEndpoint Get Info Level Log Cache
+
+<p>Returns INFO level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/info?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheInfoEndpointRequest
+*/
+func (a *APIAPIService) LogCacheInfoEndpoint(ctx context.Context) ApiLogCacheInfoEndpointRequest {
+	return ApiLogCacheInfoEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheInfoEndpointExecute(r ApiLogCacheInfoEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheInfoEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/info"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheTraceEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiLogCacheTraceEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheTraceEndpointExecute(r)
+}
+
+/*
+LogCacheTraceEndpoint Get Trace Level Log Cache
+
+<p>Returns TRACE level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/trace?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheTraceEndpointRequest
+*/
+func (a *APIAPIService) LogCacheTraceEndpoint(ctx context.Context) ApiLogCacheTraceEndpointRequest {
+	return ApiLogCacheTraceEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheTraceEndpointExecute(r ApiLogCacheTraceEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheTraceEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/trace"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiLogCacheWarningEndpointRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiLogCacheWarningEndpointRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LogCacheWarningEndpointExecute(r)
+}
+
+/*
+LogCacheWarningEndpoint Get Warning Level Log Cache
+
+<p>Returns WARNING level logs from the system log cache.</p>
+<p>This endpoint supports pagination via the following optional query parameters:<br />
+* limit - Maximum number of log entries to return<br />
+* offset - Number of log entries to skip (for pagination)</p>
+<p>Example: GET /system/log-cache/warning?limit=50&amp;offset=100</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiLogCacheWarningEndpointRequest
+*/
+func (a *APIAPIService) LogCacheWarningEndpoint(ctx context.Context) ApiLogCacheWarningEndpointRequest {
+	return ApiLogCacheWarningEndpointRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) LogCacheWarningEndpointExecute(r ApiLogCacheWarningEndpointRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.LogCacheWarningEndpoint")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/system/log-cache/warning"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiRegulatedEntitiesRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiRegulatedEntitiesRequest) Execute() (*RegulatedEntities200Response, *http.Response, error) {
+	return r.ApiService.RegulatedEntitiesExecute(r)
+}
+
+/*
+RegulatedEntities Get Regulated Entities
+
+<p>Returns information about:</p>
+<ul>
+<li>Regulated Entities</li>
+</ul>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attributeType</strong></a>: attributeType</p>
+<p><a href="/glossary#certificate_authority_ca_owner_id"><strong>certificate_authority_ca_owner_id</strong></a>: CY_CBC</p>
+<p><a href="/glossary#"><strong>entities</strong></a>: entities</p>
+<p><a href="/glossary#entity_address"><strong>entity_address</strong></a>: EXAMPLE COMPANY LTD, 5 SOME STREET</p>
+<p><a href="/glossary#entity_certificate_public_key"><strong>entity_certificate_public_key</strong></a>: MIICsjCCAZqgAwIBAgIGAYwQ62R0MA0GCSqGSIb3DQEBCwUAMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTAeFw0yMzExMjcxMzE1MTFaFw0yNTExMjYxMzE1MTFaMBoxGDAWBgNVBAMMD2FwcC5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK9WIodZHWzKyCcf9YfWEhPURbfO6zKuMqzHN27GdqHsVVEGxP4F/J4mso+0ENcRr6ur4u81iREaVdCc40rHDHVJNEtniD8Icbz7tcsqAewIVhc/q6WXGqImJpCq7hA0m247dDsaZT0lb/MVBiMoJxDEmAE/GYYnWTEn84R35WhJsMvuQ7QmLvNg6RkChY6POCT/YKe9NKwa1NqI1U+oA5RFzAaFtytvZCE3jtp+aR0brL7qaGfgxm6B7dEpGyhg0NcVCV7xMQNq2JxZTVdAr6lcsRGaAFulakmW3aNnmK+L35Wu8uW+OxNxwUuC6f3b4FVBa276FMuUTRfu7gc+k6kCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAAU5CjEyAoyTn7PgFpQD48ZNPuUsEQ19gzYgJvHMzFIoZ7jKBodjO5mCzWBcR7A4mpeAsdyiNBl2sTiZscSnNqxk61jVzP5Ba1D7XtOjjr7+3iqowrThj6BY40QqhYh/6BSY9fDzVZQiHnvlo6ZUM5kUK6OavZOovKlp5DIl5sGqoP0qAJnpQ4nhB2WVVsKfPlOXc+2KSsbJ23g9l8zaTMr+X0umlvfEKqyEl1Fa2L1dO0y/KFQ+ILmxcZLpRdq1hRAjd0quq9qGC8ucXhRWDg4hslVpau0da68g0aItWNez3mc5lB82b3dcZpFMzO41bgw7gvw10AvvTfQDqEYIuQ==</p>
+<p><a href="/glossary#entity_code"><strong>entity_code</strong></a>: PSD_PICY_CBC!12345</p>
+<p><a href="/glossary#entity_country"><strong>entity_country</strong></a>: CY</p>
+<p><a href="/glossary#entity_id"><strong>entity_id</strong></a>: 0af807d7-3c39-43ef-9712-82bcfde1b9ca</p>
+<p><a href="/glossary#entity_name"><strong>entity_name</strong></a>: EXAMPLE COMPANY LTD</p>
+<p><a href="/glossary#entity_post_code"><strong>entity_post_code</strong></a>: 1060</p>
+<p><a href="/glossary#entity_town_city"><strong>entity_town_city</strong></a>: SOME CITY</p>
+<p><a href="/glossary#entity_type"><strong>entity_type</strong></a>: PSD_PI</p>
+<p><a href="/glossary#entity_web_site"><strong>entity_web_site</strong></a>: <a href="http://www.example.com">www.example.com</a></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#services"><strong>services</strong></a>: [{&quot;CY&quot;:[&quot;PS_010&quot;,&quot;PS_020&quot;,&quot;PS_03C&quot;,&quot;PS_04C&quot;]}]</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#attributes">attributes</a>: attribute value in form of (name, value)</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiRegulatedEntitiesRequest
+*/
+func (a *APIAPIService) RegulatedEntities(ctx context.Context) ApiRegulatedEntitiesRequest {
+	return ApiRegulatedEntitiesRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return RegulatedEntities200Response
+func (a *APIAPIService) RegulatedEntitiesExecute(r ApiRegulatedEntitiesRequest) (*RegulatedEntities200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RegulatedEntities200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.RegulatedEntities")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiRootRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiRootRequest) Execute() (*Root200Response, *http.Response, error) {
+	return r.ApiService.RootExecute(r)
+}
+
+/*
+Root Get API Info (root)
 
 <p>Returns information about:</p>
 <ul>
@@ -14973,7 +14581,7 @@ OBPv600Root Get API Info (root)
 <p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>JSON response body fields:</strong></p>
 <p><a href="/glossary#Connector"><strong>connector</strong></a>: connector</p>
-<p><a href="/glossary#"><strong>email</strong></a>: <a href="ma&#x69;&#108;&#116;o&#x3a;&#102;&#x65;li&#120;&#x73;m&#x69;&#116;h&#64;&#x65;x&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#111;&#109;">&#102;&#x65;&#108;&#105;&#120;s&#x6d;&#105;&#116;&#x68;&#64;e&#120;&#x61;&#109;&#112;&#x6c;&#101;.c&#x6f;&#x6d;</a></p>
+<p><a href="/glossary#"><strong>email</strong></a>: <a href="&#x6d;&#x61;&#x69;l&#116;&#111;&#x3a;fe&#x6c;&#105;&#120;s&#109;&#105;&#116;&#104;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;e&#x2e;&#x63;&#x6f;&#109;">&#102;e&#108;i&#x78;s&#109;it&#x68;&#x40;&#x65;x&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 <p><a href="/glossary#energy_source"><strong>energy_source</strong></a>:</p>
 <p><a href="/glossary#"><strong>git_commit</strong></a>: 59623811dd8a41f6ffe67be46954eee11913dc28</p>
 <p><a href="/glossary#hosted_at"><strong>hosted_at</strong></a>:</p>
@@ -14989,26 +14597,26 @@ OBPv600Root Get API Info (root)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600RootRequest
+ @return ApiRootRequest
 */
-func (a *APIAPIService) OBPv600Root(ctx context.Context) ApiOBPv600RootRequest {
-	return ApiOBPv600RootRequest{
+func (a *APIAPIService) Root(ctx context.Context) ApiRootRequest {
+	return ApiRootRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600Root200Response
-func (a *APIAPIService) OBPv600RootExecute(r ApiOBPv600RootRequest) (*OBPv600Root200Response, *http.Response, error) {
+//  @return Root200Response
+func (a *APIAPIService) RootExecute(r ApiRootRequest) (*Root200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600Root200Response
+		localVarReturnValue  *Root200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600Root")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.Root")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15073,27 +14681,133 @@ func (a *APIAPIService) OBPv600RootExecute(r ApiOBPv600RootRequest) (*OBPv600Roo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateApiProductAttributeRequest struct {
+type ApiSuggestedSessionTimeoutRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiSuggestedSessionTimeoutRequest) Execute() (*SuggestedSessionTimeout200Response, *http.Response, error) {
+	return r.ApiService.SuggestedSessionTimeoutExecute(r)
+}
+
+/*
+SuggestedSessionTimeout Get Suggested Session Timeout
+
+<p>Returns information about:</p>
+<ul>
+<li>Suggested session timeout in case of a user inactivity</li>
+</ul>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>timeout_in_seconds</strong></a>: timeout_in_seconds</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiSuggestedSessionTimeoutRequest
+*/
+func (a *APIAPIService) SuggestedSessionTimeout(ctx context.Context) ApiSuggestedSessionTimeoutRequest {
+	return ApiSuggestedSessionTimeoutRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return SuggestedSessionTimeout200Response
+func (a *APIAPIService) SuggestedSessionTimeoutExecute(r ApiSuggestedSessionTimeoutRequest) (*SuggestedSessionTimeout200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *SuggestedSessionTimeout200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.SuggestedSessionTimeout")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/ui/suggested-session-timeout"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateApiProductAttributeRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	apiproductcode string
 	apiproductattributeid string
-	oBPv510UpdateAtmAttributeRequest *OBPv510UpdateAtmAttributeRequest
+	updateAtmAttributeRequest *UpdateAtmAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateApiProductAttributeRequest) OBPv510UpdateAtmAttributeRequest(oBPv510UpdateAtmAttributeRequest OBPv510UpdateAtmAttributeRequest) ApiOBPv600UpdateApiProductAttributeRequest {
-	r.oBPv510UpdateAtmAttributeRequest = &oBPv510UpdateAtmAttributeRequest
+func (r ApiUpdateApiProductAttributeRequest) UpdateAtmAttributeRequest(updateAtmAttributeRequest UpdateAtmAttributeRequest) ApiUpdateApiProductAttributeRequest {
+	r.updateAtmAttributeRequest = &updateAtmAttributeRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateApiProductAttributeRequest) Execute() (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateApiProductAttributeExecute(r)
+func (r ApiUpdateApiProductAttributeRequest) Execute() (*CreateApiProductAttribute200Response, *http.Response, error) {
+	return r.ApiService.UpdateApiProductAttributeExecute(r)
 }
 
 /*
-OBPv600UpdateApiProductAttribute Update Api Product Attribute
+UpdateApiProductAttribute Update Api Product Attribute
 
 <p>Update an Api Product Attribute.</p>
 <p>Authentication is Required.</p>
@@ -15116,10 +14830,10 @@ OBPv600UpdateApiProductAttribute Update Api Product Attribute
  @param bankid The BANKID identifier
  @param apiproductcode The APIPRODUCTCODE identifier
  @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
- @return ApiOBPv600UpdateApiProductAttributeRequest
+ @return ApiUpdateApiProductAttributeRequest
 */
-func (a *APIAPIService) OBPv600UpdateApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiOBPv600UpdateApiProductAttributeRequest {
-	return ApiOBPv600UpdateApiProductAttributeRequest{
+func (a *APIAPIService) UpdateApiProductAttribute(ctx context.Context, bankid string, apiproductcode string, apiproductattributeid string) ApiUpdateApiProductAttributeRequest {
+	return ApiUpdateApiProductAttributeRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -15129,16 +14843,16 @@ func (a *APIAPIService) OBPv600UpdateApiProductAttribute(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv600CreateApiProductAttribute200Response
-func (a *APIAPIService) OBPv600UpdateApiProductAttributeExecute(r ApiOBPv600UpdateApiProductAttributeRequest) (*OBPv600CreateApiProductAttribute200Response, *http.Response, error) {
+//  @return CreateApiProductAttribute200Response
+func (a *APIAPIService) UpdateApiProductAttributeExecute(r ApiUpdateApiProductAttributeRequest) (*CreateApiProductAttribute200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600CreateApiProductAttribute200Response
+		localVarReturnValue  *CreateApiProductAttribute200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600UpdateApiProductAttribute")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateApiProductAttribute")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15151,8 +14865,8 @@ func (a *APIAPIService) OBPv600UpdateApiProductAttributeExecute(r ApiOBPv600Upda
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv510UpdateAtmAttributeRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv510UpdateAtmAttributeRequest is required and must be specified")
+	if r.updateAtmAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAtmAttributeRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -15173,7 +14887,7 @@ func (a *APIAPIService) OBPv600UpdateApiProductAttributeExecute(r ApiOBPv600Upda
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv510UpdateAtmAttributeRequest
+	localVarPostBody = r.updateAtmAttributeRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -15198,7 +14912,7 @@ func (a *APIAPIService) OBPv600UpdateApiProductAttributeExecute(r ApiOBPv600Upda
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -15239,26 +14953,176 @@ func (a *APIAPIService) OBPv600UpdateApiProductAttributeExecute(r ApiOBPv600Upda
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateBankLevelDynamicEntityRequest struct {
+type ApiUpdateBankLevelDynamicEndpointHostRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	dynamicendpointid string
+	updateBankLevelDynamicEndpointHostRequest *UpdateBankLevelDynamicEndpointHostRequest
+}
+
+// Request body
+func (r ApiUpdateBankLevelDynamicEndpointHostRequest) UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHostRequest) ApiUpdateBankLevelDynamicEndpointHostRequest {
+	r.updateBankLevelDynamicEndpointHostRequest = &updateBankLevelDynamicEndpointHostRequest
+	return r
+}
+
+func (r ApiUpdateBankLevelDynamicEndpointHostRequest) Execute() (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicEndpointHostExecute(r)
+}
+
+/*
+UpdateBankLevelDynamicEndpointHost  Update Bank Level Dynamic Endpoint Host
+
+<p>Update Bank Level  dynamic endpoint Host.<br />
+The value can be obp_mock, dynamic_entity, or some service url.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiUpdateBankLevelDynamicEndpointHostRequest
+*/
+func (a *APIAPIService) UpdateBankLevelDynamicEndpointHost(ctx context.Context, bankid string, dynamicendpointid string) ApiUpdateBankLevelDynamicEndpointHostRequest {
+	return ApiUpdateBankLevelDynamicEndpointHostRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateBankLevelDynamicEndpointHostRequest
+func (a *APIAPIService) UpdateBankLevelDynamicEndpointHostExecute(r ApiUpdateBankLevelDynamicEndpointHostRequest) (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateBankLevelDynamicEndpointHostRequest
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateBankLevelDynamicEndpointHost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateBankLevelDynamicEndpointHostRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicEndpointHostRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateBankLevelDynamicEndpointHostRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateBankLevelDynamicEntityRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
 	bankid string
 	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateBankLevelDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateBankLevelDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateBankLevelDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateBankLevelDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateBankLevelDynamicEntityRequest) Execute() (*OBPv600UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateBankLevelDynamicEntityExecute(r)
+func (r ApiUpdateBankLevelDynamicEntityRequest) Execute() (*UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelDynamicEntityExecute(r)
 }
 
 /*
-OBPv600UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
+UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
 
 <p>Update a bank level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -15293,10 +15157,10 @@ OBPv600UpdateBankLevelDynamicEntity Update Bank Level Dynamic Entity
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateBankLevelDynamicEntityRequest
+ @return ApiUpdateBankLevelDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiOBPv600UpdateBankLevelDynamicEntityRequest {
-	return ApiOBPv600UpdateBankLevelDynamicEntityRequest{
+func (a *APIAPIService) UpdateBankLevelDynamicEntity(ctx context.Context, bankid string, dynamicentityid string) ApiUpdateBankLevelDynamicEntityRequest {
+	return ApiUpdateBankLevelDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -15305,16 +15169,16 @@ func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntity(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateBankLevelDynamicEntity200Response
-func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600UpdateBankLevelDynamicEntityRequest) (*OBPv600UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateBankLevelDynamicEntity200Response
+func (a *APIAPIService) UpdateBankLevelDynamicEntityExecute(r ApiUpdateBankLevelDynamicEntityRequest) (*UpdateBankLevelDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateBankLevelDynamicEntity200Response
+		localVarReturnValue  *UpdateBankLevelDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600UpdateBankLevelDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateBankLevelDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15326,8 +15190,8 @@ func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600U
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -15348,7 +15212,7 @@ func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600U
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -15373,7 +15237,7 @@ func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600U
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -15414,25 +15278,504 @@ func (a *APIAPIService) OBPv600UpdateBankLevelDynamicEntityExecute(r ApiOBPv600U
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateFeaturedApiCollectionRequest struct {
+type ApiUpdateBankLevelEndpointTagRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	apicollectionid string
-	oBPv600UpdateFeaturedApiCollectionRequest *OBPv600UpdateFeaturedApiCollectionRequest
+	bankid string
+	operationid string
+	endpointtagid string
+	updateSystemLevelEndpointTagRequest *UpdateSystemLevelEndpointTagRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateFeaturedApiCollectionRequest) OBPv600UpdateFeaturedApiCollectionRequest(oBPv600UpdateFeaturedApiCollectionRequest OBPv600UpdateFeaturedApiCollectionRequest) ApiOBPv600UpdateFeaturedApiCollectionRequest {
-	r.oBPv600UpdateFeaturedApiCollectionRequest = &oBPv600UpdateFeaturedApiCollectionRequest
+func (r ApiUpdateBankLevelEndpointTagRequest) UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest UpdateSystemLevelEndpointTagRequest) ApiUpdateBankLevelEndpointTagRequest {
+	r.updateSystemLevelEndpointTagRequest = &updateSystemLevelEndpointTagRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateFeaturedApiCollectionRequest) Execute() (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateFeaturedApiCollectionExecute(r)
+func (r ApiUpdateBankLevelEndpointTagRequest) Execute() (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.UpdateBankLevelEndpointTagExecute(r)
 }
 
 /*
-OBPv600UpdateFeaturedApiCollection Update Featured Api Collection
+UpdateBankLevelEndpointTag Update Bank Level Endpoint Tag
+
+<p>Update Endpoint Tag, you can only update the tag_name here, operation_id can not be updated.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param operationid The OPERATIONID identifier
+ @param endpointtagid The ENDPOINTTAGID identifier
+ @return ApiUpdateBankLevelEndpointTagRequest
+*/
+func (a *APIAPIService) UpdateBankLevelEndpointTag(ctx context.Context, bankid string, operationid string, endpointtagid string) ApiUpdateBankLevelEndpointTagRequest {
+	return ApiUpdateBankLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		operationid: operationid,
+		endpointtagid: endpointtagid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateSystemLevelEndpointTag200Response
+func (a *APIAPIService) UpdateBankLevelEndpointTagExecute(r ApiUpdateBankLevelEndpointTagRequest) (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateBankLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/endpoints/{operationid}/tags/{endpointtagid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSystemLevelEndpointTagRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemLevelEndpointTagRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSystemLevelEndpointTagRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateCounterpartyAttributeRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	bankid string
+	accountid string
+	counterpartyid string
+	counterpartyattributeid string
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
+}
+
+// Request body
+func (r ApiUpdateCounterpartyAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiUpdateCounterpartyAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
+	return r
+}
+
+func (r ApiUpdateCounterpartyAttributeRequest) Execute() (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyAttributeExecute(r)
+}
+
+/*
+UpdateCounterpartyAttribute Update Counterparty Attribute
+
+<p>Update an existing Counterparty Attribute specified by COUNTERPARTY_ATTRIBUTE_ID.</p>
+<p>Authentication is Required</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ATTRIBUTE_ID</a>: COUNTERPARTY_ATTRIBUTE_ID</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#"><strong>counterparty_attribute_id</strong></a>: counterparty_attribute_id</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @param counterpartyattributeid The COUNTERPARTYATTRIBUTEID identifier
+ @return ApiUpdateCounterpartyAttributeRequest
+*/
+func (a *APIAPIService) UpdateCounterpartyAttribute(ctx context.Context, bankid string, accountid string, counterpartyid string, counterpartyattributeid string) ApiUpdateCounterpartyAttributeRequest {
+	return ApiUpdateCounterpartyAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		counterpartyid: counterpartyid,
+		counterpartyattributeid: counterpartyattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllCounterpartyAttributes200ResponseAttributesInner
+func (a *APIAPIService) UpdateCounterpartyAttributeExecute(r ApiUpdateCounterpartyAttributeRequest) (*GetAllCounterpartyAttributes200ResponseAttributesInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllCounterpartyAttributes200ResponseAttributesInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateCounterpartyAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v6.0.0/banks/{bankid}/accounts/{accountid}/counterparties/{counterpartyid}/attributes/{counterpartyattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyattributeid"+"}", url.PathEscape(parameterValueToString(r.counterpartyattributeid, "counterpartyattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateDynamicEndpointHostRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicendpointid string
+	updateBankLevelDynamicEndpointHostRequest *UpdateBankLevelDynamicEndpointHostRequest
+}
+
+// Request body
+func (r ApiUpdateDynamicEndpointHostRequest) UpdateBankLevelDynamicEndpointHostRequest(updateBankLevelDynamicEndpointHostRequest UpdateBankLevelDynamicEndpointHostRequest) ApiUpdateDynamicEndpointHostRequest {
+	r.updateBankLevelDynamicEndpointHostRequest = &updateBankLevelDynamicEndpointHostRequest
+	return r
+}
+
+func (r ApiUpdateDynamicEndpointHostRequest) Execute() (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	return r.ApiService.UpdateDynamicEndpointHostExecute(r)
+}
+
+/*
+UpdateDynamicEndpointHost  Update Dynamic Endpoint Host
+
+<p>Update dynamic endpoint Host.<br />
+The value can be obp_mock, dynamic_entity, or some service url.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param dynamicendpointid The DYNAMICENDPOINTID identifier
+ @return ApiUpdateDynamicEndpointHostRequest
+*/
+func (a *APIAPIService) UpdateDynamicEndpointHost(ctx context.Context, dynamicendpointid string) ApiUpdateDynamicEndpointHostRequest {
+	return ApiUpdateDynamicEndpointHostRequest{
+		ApiService: a,
+		ctx: ctx,
+		dynamicendpointid: dynamicendpointid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateBankLevelDynamicEndpointHostRequest
+func (a *APIAPIService) UpdateDynamicEndpointHostExecute(r ApiUpdateDynamicEndpointHostRequest) (*UpdateBankLevelDynamicEndpointHostRequest, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateBankLevelDynamicEndpointHostRequest
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateDynamicEndpointHost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host"
+	localVarPath = strings.Replace(localVarPath, "{"+"dynamicendpointid"+"}", url.PathEscape(parameterValueToString(r.dynamicendpointid, "dynamicendpointid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateBankLevelDynamicEndpointHostRequest == nil {
+		return localVarReturnValue, nil, reportError("updateBankLevelDynamicEndpointHostRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateBankLevelDynamicEndpointHostRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateFeaturedApiCollectionRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	apicollectionid string
+	updateFeaturedApiCollectionRequest *UpdateFeaturedApiCollectionRequest
+}
+
+// Request body
+func (r ApiUpdateFeaturedApiCollectionRequest) UpdateFeaturedApiCollectionRequest(updateFeaturedApiCollectionRequest UpdateFeaturedApiCollectionRequest) ApiUpdateFeaturedApiCollectionRequest {
+	r.updateFeaturedApiCollectionRequest = &updateFeaturedApiCollectionRequest
+	return r
+}
+
+func (r ApiUpdateFeaturedApiCollectionRequest) Execute() (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
+	return r.ApiService.UpdateFeaturedApiCollectionExecute(r)
+}
+
+/*
+UpdateFeaturedApiCollection Update Featured Api Collection
 
 <p>Update the sort order of a featured API collection.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -15446,10 +15789,10 @@ OBPv600UpdateFeaturedApiCollection Update Featured Api Collection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param apicollectionid The APICOLLECTIONID identifier
- @return ApiOBPv600UpdateFeaturedApiCollectionRequest
+ @return ApiUpdateFeaturedApiCollectionRequest
 */
-func (a *APIAPIService) OBPv600UpdateFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiOBPv600UpdateFeaturedApiCollectionRequest {
-	return ApiOBPv600UpdateFeaturedApiCollectionRequest{
+func (a *APIAPIService) UpdateFeaturedApiCollection(ctx context.Context, apicollectionid string) ApiUpdateFeaturedApiCollectionRequest {
+	return ApiUpdateFeaturedApiCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		apicollectionid: apicollectionid,
@@ -15457,16 +15800,16 @@ func (a *APIAPIService) OBPv600UpdateFeaturedApiCollection(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-func (a *APIAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600UpdateFeaturedApiCollectionRequest) (*OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, *http.Response, error) {
+//  @return GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+func (a *APIAPIService) UpdateFeaturedApiCollectionExecute(r ApiUpdateFeaturedApiCollectionRequest) (*GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
+		localVarReturnValue  *GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600UpdateFeaturedApiCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateFeaturedApiCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15477,8 +15820,8 @@ func (a *APIAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600Up
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateFeaturedApiCollectionRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateFeaturedApiCollectionRequest is required and must be specified")
+	if r.updateFeaturedApiCollectionRequest == nil {
+		return localVarReturnValue, nil, reportError("updateFeaturedApiCollectionRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -15499,7 +15842,7 @@ func (a *APIAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600Up
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateFeaturedApiCollectionRequest
+	localVarPostBody = r.updateFeaturedApiCollectionRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -15524,7 +15867,7 @@ func (a *APIAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600Up
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -15565,25 +15908,202 @@ func (a *APIAPIService) OBPv600UpdateFeaturedApiCollectionExecute(r ApiOBPv600Up
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateMyDynamicEntityRequest struct {
+type ApiUpdateMethodRoutingRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	methodroutingid string
+	createMethodRoutingRequest *CreateMethodRoutingRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateMyDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateMyDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateMethodRoutingRequest) CreateMethodRoutingRequest(createMethodRoutingRequest CreateMethodRoutingRequest) ApiUpdateMethodRoutingRequest {
+	r.createMethodRoutingRequest = &createMethodRoutingRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateMyDynamicEntityRequest) Execute() (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateMyDynamicEntityExecute(r)
+func (r ApiUpdateMethodRoutingRequest) Execute() (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	return r.ApiService.UpdateMethodRoutingExecute(r)
 }
 
 /*
-OBPv600UpdateMyDynamicEntity Update My Dynamic Entity
+UpdateMethodRouting Update MethodRouting
+
+<p>Update a MethodRouting.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Explaination of Fields:</p>
+<ul>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
+<li>connector_name is required String value</li>
+<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
+<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
+<li>parameters is optional array of key value pairs. You can set some paremeters for this method<br />
+note:</li>
+<li>
+<p>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</p>
+</li>
+</ul>
+<p>If connector name start with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, to convert OutBound and InBound json structure.<br />
+for example:<br />
+outBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
+Build OutBound json value rules:<br />
+1 set cId value with: outboundAdapterCallContext.correlationId value<br />
+2 set bankId value with: concat bankId.value value with  string helloworld<br />
+3 set originalJson value with: whole source json, note: the field value expression is $root</p>
+<p>inBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
+Build InBound json value rules:<br />
+1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
+3 set fullName value with: concat string full: with result.name value<br />
+4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param methodroutingid The METHODROUTINGID identifier
+ @return ApiUpdateMethodRoutingRequest
+*/
+func (a *APIAPIService) UpdateMethodRouting(ctx context.Context, methodroutingid string) ApiUpdateMethodRoutingRequest {
+	return ApiUpdateMethodRoutingRequest{
+		ApiService: a,
+		ctx: ctx,
+		methodroutingid: methodroutingid,
+	}
+}
+
+// Execute executes the request
+//  @return GetMethodRoutings200ResponseMethodRoutingsInner
+func (a *APIAPIService) UpdateMethodRoutingExecute(r ApiUpdateMethodRoutingRequest) (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMethodRoutings200ResponseMethodRoutingsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateMethodRouting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createMethodRoutingRequest == nil {
+		return localVarReturnValue, nil, reportError("createMethodRoutingRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createMethodRoutingRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateMyDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicentityid string
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
+}
+
+// Request body
+func (r ApiUpdateMyDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateMyDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
+	return r
+}
+
+func (r ApiUpdateMyDynamicEntityRequest) Execute() (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateMyDynamicEntityExecute(r)
+}
+
+/*
+UpdateMyDynamicEntity Update My Dynamic Entity
 
 <p>Update a Dynamic Entity that I created.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -15617,10 +16137,10 @@ OBPv600UpdateMyDynamicEntity Update My Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateMyDynamicEntityRequest
+ @return ApiUpdateMyDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600UpdateMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600UpdateMyDynamicEntityRequest {
-	return ApiOBPv600UpdateMyDynamicEntityRequest{
+func (a *APIAPIService) UpdateMyDynamicEntity(ctx context.Context, dynamicentityid string) ApiUpdateMyDynamicEntityRequest {
+	return ApiUpdateMyDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -15628,16 +16148,16 @@ func (a *APIAPIService) OBPv600UpdateMyDynamicEntity(ctx context.Context, dynami
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateSystemDynamicEntity200Response
-func (a *APIAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMyDynamicEntityRequest) (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateSystemDynamicEntity200Response
+func (a *APIAPIService) UpdateMyDynamicEntityExecute(r ApiUpdateMyDynamicEntityRequest) (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateSystemDynamicEntity200Response
+		localVarReturnValue  *UpdateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600UpdateMyDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateMyDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15648,8 +16168,8 @@ func (a *APIAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMy
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -15670,7 +16190,7 @@ func (a *APIAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMy
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -15695,7 +16215,7 @@ func (a *APIAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMy
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -15736,25 +16256,184 @@ func (a *APIAPIService) OBPv600UpdateMyDynamicEntityExecute(r ApiOBPv600UpdateMy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateSystemDynamicEntityRequest struct {
+type ApiUpdateRegulatedEntityAttributeRequest struct {
 	ctx context.Context
 	ApiService *APIAPIService
-	dynamicentityid string
-	oBPv600UpdateSystemDynamicEntityRequest *OBPv600UpdateSystemDynamicEntityRequest
+	regulatedentityid string
+	regulatedentityattributeid string
+	createCounterpartyAttributeRequest *CreateCounterpartyAttributeRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateSystemDynamicEntityRequest) OBPv600UpdateSystemDynamicEntityRequest(oBPv600UpdateSystemDynamicEntityRequest OBPv600UpdateSystemDynamicEntityRequest) ApiOBPv600UpdateSystemDynamicEntityRequest {
-	r.oBPv600UpdateSystemDynamicEntityRequest = &oBPv600UpdateSystemDynamicEntityRequest
+func (r ApiUpdateRegulatedEntityAttributeRequest) CreateCounterpartyAttributeRequest(createCounterpartyAttributeRequest CreateCounterpartyAttributeRequest) ApiUpdateRegulatedEntityAttributeRequest {
+	r.createCounterpartyAttributeRequest = &createCounterpartyAttributeRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateSystemDynamicEntityRequest) Execute() (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateSystemDynamicEntityExecute(r)
+func (r ApiUpdateRegulatedEntityAttributeRequest) Execute() (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	return r.ApiService.UpdateRegulatedEntityAttributeExecute(r)
 }
 
 /*
-OBPv600UpdateSystemDynamicEntity Update System Level Dynamic Entity
+UpdateRegulatedEntityAttribute Update Regulated Entity Attribute
+
+<p>Update an existing Regulated Entity Attribute specified by ATTRIBUTE_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">REGULATED_ENTITY_ATTRIBUTE_ID</a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#">REGULATED_ENTITY_ID</a>: REGULATED_ENTITY_ID</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>attribute_type</strong></a>: STRING</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>regulated_entity_attribute_id</strong></a>: attrafa-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><a href="/glossary#"><strong>regulated_entity_id</strong></a>: regulated_entity_id</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#is_active">is_active</a>: false</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param regulatedentityid The REGULATEDENTITYID identifier
+ @param regulatedentityattributeid The REGULATEDENTITYATTRIBUTEID identifier
+ @return ApiUpdateRegulatedEntityAttributeRequest
+*/
+func (a *APIAPIService) UpdateRegulatedEntityAttribute(ctx context.Context, regulatedentityid string, regulatedentityattributeid string) ApiUpdateRegulatedEntityAttributeRequest {
+	return ApiUpdateRegulatedEntityAttributeRequest{
+		ApiService: a,
+		ctx: ctx,
+		regulatedentityid: regulatedentityid,
+		regulatedentityattributeid: regulatedentityattributeid,
+	}
+}
+
+// Execute executes the request
+//  @return GetRegulatedEntityAttributeById200Response
+func (a *APIAPIService) UpdateRegulatedEntityAttributeExecute(r ApiUpdateRegulatedEntityAttributeRequest) (*GetRegulatedEntityAttributeById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetRegulatedEntityAttributeById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateRegulatedEntityAttribute")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/regulated-entities/{regulatedentityid}/attributes/{regulatedentityattributeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityid, "regulatedentityid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"regulatedentityattributeid"+"}", url.PathEscape(parameterValueToString(r.regulatedentityattributeid, "regulatedentityattributeid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyAttributeRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyAttributeRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyAttributeRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateSystemDynamicEntityRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	dynamicentityid string
+	updateSystemDynamicEntityRequest *UpdateSystemDynamicEntityRequest
+}
+
+// Request body
+func (r ApiUpdateSystemDynamicEntityRequest) UpdateSystemDynamicEntityRequest(updateSystemDynamicEntityRequest UpdateSystemDynamicEntityRequest) ApiUpdateSystemDynamicEntityRequest {
+	r.updateSystemDynamicEntityRequest = &updateSystemDynamicEntityRequest
+	return r
+}
+
+func (r ApiUpdateSystemDynamicEntityRequest) Execute() (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
+	return r.ApiService.UpdateSystemDynamicEntityExecute(r)
+}
+
+/*
+UpdateSystemDynamicEntity Update System Level Dynamic Entity
 
 <p>Update a system level Dynamic Entity.</p>
 <p>This v6.0.0 endpoint accepts and returns snake_case field names with an explicit <code>entity_name</code> field.</p>
@@ -15788,10 +16467,10 @@ OBPv600UpdateSystemDynamicEntity Update System Level Dynamic Entity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param dynamicentityid The DYNAMICENTITYID identifier
- @return ApiOBPv600UpdateSystemDynamicEntityRequest
+ @return ApiUpdateSystemDynamicEntityRequest
 */
-func (a *APIAPIService) OBPv600UpdateSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiOBPv600UpdateSystemDynamicEntityRequest {
-	return ApiOBPv600UpdateSystemDynamicEntityRequest{
+func (a *APIAPIService) UpdateSystemDynamicEntity(ctx context.Context, dynamicentityid string) ApiUpdateSystemDynamicEntityRequest {
+	return ApiUpdateSystemDynamicEntityRequest{
 		ApiService: a,
 		ctx: ctx,
 		dynamicentityid: dynamicentityid,
@@ -15799,16 +16478,16 @@ func (a *APIAPIService) OBPv600UpdateSystemDynamicEntity(ctx context.Context, dy
 }
 
 // Execute executes the request
-//  @return OBPv600UpdateSystemDynamicEntity200Response
-func (a *APIAPIService) OBPv600UpdateSystemDynamicEntityExecute(r ApiOBPv600UpdateSystemDynamicEntityRequest) (*OBPv600UpdateSystemDynamicEntity200Response, *http.Response, error) {
+//  @return UpdateSystemDynamicEntity200Response
+func (a *APIAPIService) UpdateSystemDynamicEntityExecute(r ApiUpdateSystemDynamicEntityRequest) (*UpdateSystemDynamicEntity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600UpdateSystemDynamicEntity200Response
+		localVarReturnValue  *UpdateSystemDynamicEntity200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.OBPv600UpdateSystemDynamicEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateSystemDynamicEntity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -15819,8 +16498,8 @@ func (a *APIAPIService) OBPv600UpdateSystemDynamicEntityExecute(r ApiOBPv600Upda
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateSystemDynamicEntityRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateSystemDynamicEntityRequest is required and must be specified")
+	if r.updateSystemDynamicEntityRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemDynamicEntityRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -15841,7 +16520,7 @@ func (a *APIAPIService) OBPv600UpdateSystemDynamicEntityExecute(r ApiOBPv600Upda
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateSystemDynamicEntityRequest
+	localVarPostBody = r.updateSystemDynamicEntityRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -15866,9 +16545,391 @@ func (a *APIAPIService) OBPv600UpdateSystemDynamicEntityExecute(r ApiOBPv600Upda
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateSystemLevelEndpointTagRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+	operationid string
+	endpointtagid string
+	updateSystemLevelEndpointTagRequest *UpdateSystemLevelEndpointTagRequest
+}
+
+// Request body
+func (r ApiUpdateSystemLevelEndpointTagRequest) UpdateSystemLevelEndpointTagRequest(updateSystemLevelEndpointTagRequest UpdateSystemLevelEndpointTagRequest) ApiUpdateSystemLevelEndpointTagRequest {
+	r.updateSystemLevelEndpointTagRequest = &updateSystemLevelEndpointTagRequest
+	return r
+}
+
+func (r ApiUpdateSystemLevelEndpointTagRequest) Execute() (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	return r.ApiService.UpdateSystemLevelEndpointTagExecute(r)
+}
+
+/*
+UpdateSystemLevelEndpointTag Update System Level Endpoint Tag
+
+<p>Update System Level Endpoint Tag, you can only update the tag_name here, operation_id can not be updated.</p>
+<p>Note: Resource Docs are cached, TTL is 3600 seconds</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">ENDPOINT_TAG_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#">OPERATION_ID</a>: OBPv6.0.0-getBanks</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>endpoint_tag_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p>
+<p><a href="/glossary#"><strong>tag_name</strong></a>: BankAccountTag1</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param operationid The OPERATIONID identifier
+ @param endpointtagid The ENDPOINTTAGID identifier
+ @return ApiUpdateSystemLevelEndpointTagRequest
+*/
+func (a *APIAPIService) UpdateSystemLevelEndpointTag(ctx context.Context, operationid string, endpointtagid string) ApiUpdateSystemLevelEndpointTagRequest {
+	return ApiUpdateSystemLevelEndpointTagRequest{
+		ApiService: a,
+		ctx: ctx,
+		operationid: operationid,
+		endpointtagid: endpointtagid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateSystemLevelEndpointTag200Response
+func (a *APIAPIService) UpdateSystemLevelEndpointTagExecute(r ApiUpdateSystemLevelEndpointTagRequest) (*UpdateSystemLevelEndpointTag200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateSystemLevelEndpointTag200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.UpdateSystemLevelEndpointTag")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/endpoints/{operationid}/tags/{endpointtagid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"operationid"+"}", url.PathEscape(parameterValueToString(r.operationid, "operationid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"endpointtagid"+"}", url.PathEscape(parameterValueToString(r.endpointtagid, "endpointtagid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateSystemLevelEndpointTagRequest == nil {
+		return localVarReturnValue, nil, reportError("updateSystemLevelEndpointTagRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateSystemLevelEndpointTagRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
 			}
 		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiVerifyRequestSignResponseRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiVerifyRequestSignResponseRequest) Execute() (*http.Response, error) {
+	return r.ApiService.VerifyRequestSignResponseExecute(r)
+}
+
+/*
+VerifyRequestSignResponse Verify Request and Sign Response of a current call
+
+<p>Verify Request and Sign Response of a current call.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiVerifyRequestSignResponseRequest
+*/
+func (a *APIAPIService) VerifyRequestSignResponse(ctx context.Context) ApiVerifyRequestSignResponseRequest {
+	return ApiVerifyRequestSignResponseRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *APIAPIService) VerifyRequestSignResponseExecute(r ApiVerifyRequestSignResponseRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.VerifyRequestSignResponse")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/development/echo/jws-verified-request-jws-signed-response"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiWaitingForGodotRequest struct {
+	ctx context.Context
+	ApiService *APIAPIService
+}
+
+func (r ApiWaitingForGodotRequest) Execute() (*WaitingForGodot200Response, *http.Response, error) {
+	return r.ApiService.WaitingForGodotExecute(r)
+}
+
+/*
+WaitingForGodot Waiting For Godot
+
+<p>Waiting For Godot</p>
+<p>Uses query parameter &quot;sleep&quot; in milliseconds.<br />
+For instance: .../waiting-for-godot?sleep=50 means postpone response in 50 milliseconds.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>sleep_in_milliseconds</strong></a>: sleep_in_milliseconds</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiWaitingForGodotRequest
+*/
+func (a *APIAPIService) WaitingForGodot(ctx context.Context) ApiWaitingForGodotRequest {
+	return ApiWaitingForGodotRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return WaitingForGodot200Response
+func (a *APIAPIService) WaitingForGodotExecute(r ApiWaitingForGodotRequest) (*WaitingForGodot200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *WaitingForGodot200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "APIAPIService.WaitingForGodot")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v5.1.0/waiting-for-godot"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

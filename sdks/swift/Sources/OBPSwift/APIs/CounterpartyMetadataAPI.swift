@@ -16,12 +16,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyCorporateLocationRequest: (body) Request body 
+     - parameter updateCounterpartyCorporateLocationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest: oBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyCorporateLocationRequest: updateCounterpartyCorporateLocationRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -35,17 +35,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyCorporateLocationRequest: (body) Request body 
+     - parameter updateCounterpartyCorporateLocationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -60,7 +60,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyCorporateLocationRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyCorporateLocationRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -70,7 +70,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -82,12 +82,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyImageUrlRequest: (body) Request body 
+     - parameter updateCounterpartyImageUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest: oBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyImageUrlRequest: updateCounterpartyImageUrlRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -101,17 +101,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyImageUrlRequest: (body) Request body 
+     - parameter updateCounterpartyImageUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -126,7 +126,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyImageUrlRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyImageUrlRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -136,7 +136,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -148,12 +148,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyMoreInfoRequest: (body) Request body 
+     - parameter updateCounterpartyMoreInfoRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest: oBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyMoreInfoRequest: updateCounterpartyMoreInfoRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -167,17 +167,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyMoreInfoRequest: (body) Request body 
+     - parameter updateCounterpartyMoreInfoRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -192,7 +192,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyMoreInfoRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyMoreInfoRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -202,7 +202,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -214,12 +214,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
+     - parameter updateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyOpenCorporatesUrlRequest: updateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -230,11 +230,11 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
+     - parameter updateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -249,7 +249,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyOpenCorporatesUrlRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -259,7 +259,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }
@@ -271,12 +271,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyPhysicalLocationRequest: (body) Request body 
+     - parameter updateCounterpartyPhysicalLocationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest: oBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyPhysicalLocationRequest: updateCounterpartyPhysicalLocationRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -290,17 +290,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyPhysicalLocationRequest: (body) Request body 
+     - parameter updateCounterpartyPhysicalLocationRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -315,7 +315,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyPhysicalLocationRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyPhysicalLocationRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -325,7 +325,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -337,12 +337,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -356,17 +356,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -381,7 +381,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -391,7 +391,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -403,12 +403,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyUrlRequest: (body) Request body 
+     - parameter updateCounterpartyUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyUrlRequest: oBPv121UpdateCounterpartyUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func addCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyUrlRequest: updateCounterpartyUrlRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -422,17 +422,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyUrlRequest: (body) Request body 
+     - parameter updateCounterpartyUrlRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -447,7 +447,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyUrlRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyUrlRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -457,7 +457,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -469,12 +469,12 @@ open class CounterpartyMetadataAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
+     - returns: UpdateTransactionNarrative200Response
      */
-    open class func oBPv121AddOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121AddOtherAccountPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
+    open class func addOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await addOtherAccountPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -488,17 +488,17 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
      */
-    open class func oBPv121AddOtherAccountPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
+    open class func addOtherAccountPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -513,7 +513,7 @@ open class CounterpartyMetadataAPI {
         let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -523,7 +523,7 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -538,8 +538,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -553,7 +553,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -562,7 +562,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -602,8 +602,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -617,7 +617,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -657,8 +657,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -672,7 +672,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -681,7 +681,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -721,8 +721,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -736,7 +736,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -745,7 +745,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -785,8 +785,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -800,7 +800,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -809,7 +809,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -849,8 +849,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -864,7 +864,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -873,7 +873,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -913,8 +913,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -928,7 +928,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -937,7 +937,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -977,8 +977,8 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv121DeleteCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv121DeleteCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -992,7 +992,7 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
@@ -1001,7 +1001,7 @@ open class CounterpartyMetadataAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv121DeleteCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1039,10 +1039,10 @@ open class CounterpartyMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetCounterpartyPublicAlias200Response
+     - returns: GetCounterpartyPublicAlias200Response
      */
-    open class func oBPv121GetCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetCounterpartyPublicAlias200Response {
-        return try await oBPv121GetCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    open class func getCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyPublicAlias200Response {
+        return try await getCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -1056,16 +1056,16 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response> 
+     - returns: RequestBuilder<GetCounterpartyPublicAlias200Response> 
      */
-    open class func oBPv121GetCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response> {
+    open class func getCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyPublicAlias200Response> {
         var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1090,656 +1090,9 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyPublicAlias200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Other Account Metadata
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetOtherAccountMetadata200Response
-     */
-    open class func oBPv121GetOtherAccountMetadata(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetOtherAccountMetadata200Response {
-        return try await oBPv121GetOtherAccountMetadataWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Other Account Metadata
-     - GET /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata
-     - <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetOtherAccountMetadata200Response> 
-     */
-    open class func oBPv121GetOtherAccountMetadataWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetOtherAccountMetadata200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetOtherAccountMetadata200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Other Account Private Alias
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121GetCounterpartyPublicAlias200Response
-     */
-    open class func oBPv121GetOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121GetCounterpartyPublicAlias200Response {
-        return try await oBPv121GetOtherAccountPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Other Account Private Alias
-     - GET /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias
-     - <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response> 
-     */
-    open class func oBPv121GetOtherAccountPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121GetCounterpartyPublicAlias200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Counterparty Corporate Location
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyCorporateLocationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest: oBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Counterparty Corporate Location
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location
-     - <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyCorporateLocationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyCorporateLocationRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Counterparty Image Url
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyImageUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest: oBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Counterparty Image Url
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url
-     - <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyImageUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyImageUrlRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Counterparty More Info
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyMoreInfoRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest: oBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Counterparty More Info
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info
-     - <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyMoreInfoRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyMoreInfoRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Open Corporates Url of Counterparty
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Open Corporates Url of Counterparty
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url
-     - <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Counterparty Physical Location
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyPhysicalLocationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest: oBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Counterparty Physical Location
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location
-     - <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyPhysicalLocationRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyPhysicalLocationRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update Counterparty Private Alias
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update Counterparty Private Alias
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias
-     - <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update public alias of other bank account
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update public alias of other bank account
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias
-     - <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121GetCounterpartyPublicAlias200Response: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121GetCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Update url of other bank account
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv121UpdateTransactionNarrative200Response
-     */
-    open class func oBPv121UpdateCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv121UpdateTransactionNarrative200Response {
-        return try await oBPv121UpdateCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyUrlRequest: oBPv121UpdateCounterpartyUrlRequest, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Update url of other bank account
-     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url
-     - <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-     - OAuth:
-       - type: oauth2
-       - name: OAuth2
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: GatewayLogin
-     - API Key:
-       - type: apiKey Authorization (HEADER)
-       - name: DirectLogin
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter accountid: (path) The ACCOUNTID identifier 
-     - parameter viewid: (path) The VIEWID identifier 
-     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
-     - parameter oBPv121UpdateCounterpartyUrlRequest: (body) Request body 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv121UpdateTransactionNarrative200Response> 
-     */
-    open class func oBPv121UpdateCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv121UpdateTransactionNarrative200Response> {
-        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
-        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
-        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
-        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
-        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
-        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv121UpdateCounterpartyUrlRequest, codableHelper: apiConfiguration.codableHelper)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            "Content-Type": "application/json",
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv121UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 
     /**
@@ -1750,10 +1103,10 @@ open class CounterpartyMetadataAPI {
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetExplicitCounterpartyById200Response
+     - returns: GetExplicitCounterpartyById200Response
      */
-    open class func oBPv400GetExplicitCounterpartyById(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetExplicitCounterpartyById200Response {
-        return try await oBPv400GetExplicitCounterpartyByIdWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
+    open class func getExplicitCounterpartyById(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetExplicitCounterpartyById200Response {
+        return try await getExplicitCounterpartyByIdWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -1767,16 +1120,16 @@ open class CounterpartyMetadataAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter counterpartyid: (path) The COUNTERPARTYID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetExplicitCounterpartyById200Response> 
+     - returns: RequestBuilder<GetExplicitCounterpartyById200Response> 
      */
-    open class func oBPv400GetExplicitCounterpartyByIdWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetExplicitCounterpartyById200Response> {
+    open class func getExplicitCounterpartyByIdWithRequestBuilder(bankid: String, accountid: String, viewid: String, counterpartyid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetExplicitCounterpartyById200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1801,8 +1154,655 @@ open class CounterpartyMetadataAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetExplicitCounterpartyById200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetExplicitCounterpartyById200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Other Account Metadata
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetOtherAccountMetadata200Response
+     */
+    open class func getOtherAccountMetadata(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetOtherAccountMetadata200Response {
+        return try await getOtherAccountMetadataWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Other Account Metadata
+     - GET /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata
+     - <p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetOtherAccountMetadata200Response> 
+     */
+    open class func getOtherAccountMetadataWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetOtherAccountMetadata200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetOtherAccountMetadata200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Other Account Private Alias
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: GetCounterpartyPublicAlias200Response
+     */
+    open class func getOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCounterpartyPublicAlias200Response {
+        return try await getOtherAccountPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Other Account Private Alias
+     - GET /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias
+     - <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<GetCounterpartyPublicAlias200Response> 
+     */
+    open class func getOtherAccountPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCounterpartyPublicAlias200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetCounterpartyPublicAlias200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Counterparty Corporate Location
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyCorporateLocationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyCorporateLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyCorporateLocationRequest: updateCounterpartyCorporateLocationRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Counterparty Corporate Location
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location
+     - <p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyCorporateLocationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyCorporateLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyCorporateLocationRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Counterparty Image Url
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyImageUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyImageUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyImageUrlRequest: updateCounterpartyImageUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Counterparty Image Url
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url
+     - <p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyImageUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyImageUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyImageUrlRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Counterparty More Info
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyMoreInfoRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyMoreInfoWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyMoreInfoRequest: updateCounterpartyMoreInfoRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Counterparty More Info
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info
+     - <p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyMoreInfoRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyMoreInfoWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyMoreInfoRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Open Corporates Url of Counterparty
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyOpenCorporatesUrlRequest: updateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Open Corporates Url of Counterparty
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url
+     - <p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyOpenCorporatesUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyOpenCorporatesUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyOpenCorporatesUrlRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Counterparty Physical Location
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyPhysicalLocationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyPhysicalLocationWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyPhysicalLocationRequest: updateCounterpartyPhysicalLocationRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Counterparty Physical Location
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location
+     - <p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyPhysicalLocationRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyPhysicalLocationWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyPhysicalLocationRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update Counterparty Private Alias
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyPrivateAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update Counterparty Private Alias
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias
+     - <p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyPrivateAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update public alias of other bank account
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyPublicAliasWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update public alias of other bank account
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias
+     - <p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter getCounterpartyPublicAlias200Response: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyPublicAliasWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: getCounterpartyPublicAlias200Response, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Update url of other bank account
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: UpdateTransactionNarrative200Response
+     */
+    open class func updateCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> UpdateTransactionNarrative200Response {
+        return try await updateCounterpartyUrlWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyUrlRequest: updateCounterpartyUrlRequest, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Update url of other bank account
+     - PUT /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url
+     - <p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+     - OAuth:
+       - type: oauth2
+       - name: OAuth2
+     - API Key:
+       - type: apiKey Authorization (HEADER)
+       - name: GatewayLogin
+     - API Key:
+       - type: apiKey DirectLogin (HEADER)
+       - name: DirectLogin
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter accountid: (path) The ACCOUNTID identifier 
+     - parameter viewid: (path) The VIEWID identifier 
+     - parameter otheraccountid: (path) The OTHERACCOUNTID identifier 
+     - parameter updateCounterpartyUrlRequest: (body) Request body 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<UpdateTransactionNarrative200Response> 
+     */
+    open class func updateCounterpartyUrlWithRequestBuilder(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<UpdateTransactionNarrative200Response> {
+        var localVariablePath = "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let accountidPreEscape = "\(APIHelper.mapValueToPathItem(accountid))"
+        let accountidPostEscape = accountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{accountid}", with: accountidPostEscape, options: .literal, range: nil)
+        let viewidPreEscape = "\(APIHelper.mapValueToPathItem(viewid))"
+        let viewidPostEscape = viewidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{viewid}", with: viewidPostEscape, options: .literal, range: nil)
+        let otheraccountidPreEscape = "\(APIHelper.mapValueToPathItem(otheraccountid))"
+        let otheraccountidPostEscape = otheraccountidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{otheraccountid}", with: otheraccountidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateCounterpartyUrlRequest, codableHelper: apiConfiguration.codableHelper)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<UpdateTransactionNarrative200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
 }

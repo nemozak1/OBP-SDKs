@@ -5,15 +5,15 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600GetAggregateMetrics**](AggregateMetricsApi.md#obpv600getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+[**getAggregateMetrics**](AggregateMetricsApi.md#getaggregatemetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
 
 
-# **oBPv600GetAggregateMetrics**
-> OBPv600GetAggregateMetrics200Response oBPv600GetAggregateMetrics()
+# **getAggregateMetrics**
+> GetAggregateMetrics200Response getAggregateMetrics()
 
 Get Aggregate Metrics
 
@@ -36,10 +36,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getAggregateMetricsApi();
 
 try {
-    final response = api.oBPv600GetAggregateMetrics();
+    final response = api.getAggregateMetrics();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling AggregateMetricsApi->oBPv600GetAggregateMetrics: $e\n');
+    print('Exception when calling AggregateMetricsApi->getAggregateMetrics: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 

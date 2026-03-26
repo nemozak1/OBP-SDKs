@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,13 +75,13 @@ class PublicDataApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv200PublicAccountsAllBanks' => [
+        'getAccountsAtBank' => [
             'application/json',
         ],
-        'oBPv200PublicAccountsAtOneBank' => [
+        'publicAccountsAllBanks' => [
             'application/json',
         ],
-        'oBPv600GetAccountsAtBank' => [
+        'publicAccountsAtOneBank' => [
             'application/json',
         ],
     ];
@@ -133,36 +133,38 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAllBanks
+     * Operation getAccountsAtBank
      *
-     * Get Public Accounts at all Banks
+     * Get Accounts at Bank
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountsAtBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response
+     * @return \OpenBankProject\Model\GetAccountsAtBank200Response
      */
-    public function oBPv200PublicAccountsAllBanks(string $contentType = self::contentTypes['oBPv200PublicAccountsAllBanks'][0])
+    public function getAccountsAtBank($bankid, string $contentType = self::contentTypes['getAccountsAtBank'][0])
     {
-        list($response) = $this->oBPv200PublicAccountsAllBanksWithHttpInfo($contentType);
+        list($response) = $this->getAccountsAtBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200PublicAccountsAllBanksWithHttpInfo
+     * Operation getAccountsAtBankWithHttpInfo
      *
-     * Get Public Accounts at all Banks
+     * Get Accounts at Bank
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountsAtBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAccountsAtBank200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200PublicAccountsAllBanksWithHttpInfo(string $contentType = self::contentTypes['oBPv200PublicAccountsAllBanks'][0])
+    public function getAccountsAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountsAtBank'][0])
     {
-        $request = $this->oBPv200PublicAccountsAllBanksRequest($contentType);
+        $request = $this->getAccountsAtBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,7 +192,7 @@ class PublicDataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                        '\OpenBankProject\Model\GetAccountsAtBank200Response',
                         $request,
                         $response,
                     );
@@ -212,7 +214,7 @@ class PublicDataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                '\OpenBankProject\Model\GetAccountsAtBank200Response',
                 $request,
                 $response,
             );
@@ -221,7 +223,7 @@ class PublicDataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                        '\OpenBankProject\Model\GetAccountsAtBank200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -234,18 +236,19 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAllBanksAsync
+     * Operation getAccountsAtBankAsync
      *
-     * Get Public Accounts at all Banks
+     * Get Accounts at Bank
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountsAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200PublicAccountsAllBanksAsync(string $contentType = self::contentTypes['oBPv200PublicAccountsAllBanks'][0])
+    public function getAccountsAtBankAsync($bankid, string $contentType = self::contentTypes['getAccountsAtBank'][0])
     {
-        return $this->oBPv200PublicAccountsAllBanksAsyncWithHttpInfo($contentType)
+        return $this->getAccountsAtBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -254,19 +257,20 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAllBanksAsyncWithHttpInfo
+     * Operation getAccountsAtBankAsyncWithHttpInfo
      *
-     * Get Public Accounts at all Banks
+     * Get Accounts at Bank
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountsAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200PublicAccountsAllBanksAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv200PublicAccountsAllBanks'][0])
+    public function getAccountsAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getAccountsAtBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response';
-        $request = $this->oBPv200PublicAccountsAllBanksRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAccountsAtBank200Response';
+        $request = $this->getAccountsAtBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -305,14 +309,292 @@ class PublicDataApi
     }
 
     /**
-     * Create request for operation 'oBPv200PublicAccountsAllBanks'
+     * Create request for operation 'getAccountsAtBank'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAllBanks'] to see the possible values for this operation
+     * @param  string $bankid The BANKID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccountsAtBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200PublicAccountsAllBanksRequest(string $contentType = self::contentTypes['oBPv200PublicAccountsAllBanks'][0])
+    public function getAccountsAtBankRequest($bankid, string $contentType = self::contentTypes['getAccountsAtBank'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling getAccountsAtBank'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/banks/{bankid}/accounts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation publicAccountsAllBanks
+     *
+     * Get Public Accounts at all Banks
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAllBanks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\PublicAccountsAllBanks200Response
+     */
+    public function publicAccountsAllBanks(string $contentType = self::contentTypes['publicAccountsAllBanks'][0])
+    {
+        list($response) = $this->publicAccountsAllBanksWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation publicAccountsAllBanksWithHttpInfo
+     *
+     * Get Public Accounts at all Banks
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAllBanks'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\PublicAccountsAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function publicAccountsAllBanksWithHttpInfo(string $contentType = self::contentTypes['publicAccountsAllBanks'][0])
+    {
+        $request = $this->publicAccountsAllBanksRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation publicAccountsAllBanksAsync
+     *
+     * Get Public Accounts at all Banks
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function publicAccountsAllBanksAsync(string $contentType = self::contentTypes['publicAccountsAllBanks'][0])
+    {
+        return $this->publicAccountsAllBanksAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation publicAccountsAllBanksAsyncWithHttpInfo
+     *
+     * Get Public Accounts at all Banks
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function publicAccountsAllBanksAsyncWithHttpInfo(string $contentType = self::contentTypes['publicAccountsAllBanks'][0])
+    {
+        $returnType = '\OpenBankProject\Model\PublicAccountsAllBanks200Response';
+        $request = $this->publicAccountsAllBanksRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'publicAccountsAllBanks'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAllBanks'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function publicAccountsAllBanksRequest(string $contentType = self::contentTypes['publicAccountsAllBanks'][0])
     {
 
 
@@ -381,38 +663,38 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAtOneBank
+     * Operation publicAccountsAtOneBank
      *
      * Get Public Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response
+     * @return \OpenBankProject\Model\PublicAccountsAllBanks200Response
      */
-    public function oBPv200PublicAccountsAtOneBank($bankid, string $contentType = self::contentTypes['oBPv200PublicAccountsAtOneBank'][0])
+    public function publicAccountsAtOneBank($bankid, string $contentType = self::contentTypes['publicAccountsAtOneBank'][0])
     {
-        list($response) = $this->oBPv200PublicAccountsAtOneBankWithHttpInfo($bankid, $contentType);
+        list($response) = $this->publicAccountsAtOneBankWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200PublicAccountsAtOneBankWithHttpInfo
+     * Operation publicAccountsAtOneBankWithHttpInfo
      *
      * Get Public Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\PublicAccountsAllBanks200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200PublicAccountsAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv200PublicAccountsAtOneBank'][0])
+    public function publicAccountsAtOneBankWithHttpInfo($bankid, string $contentType = self::contentTypes['publicAccountsAtOneBank'][0])
     {
-        $request = $this->oBPv200PublicAccountsAtOneBankRequest($bankid, $contentType);
+        $request = $this->publicAccountsAtOneBankRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,7 +722,7 @@ class PublicDataApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                        '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
                         $request,
                         $response,
                     );
@@ -462,7 +744,7 @@ class PublicDataApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
                 $request,
                 $response,
             );
@@ -471,7 +753,7 @@ class PublicDataApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response',
+                        '\OpenBankProject\Model\PublicAccountsAllBanks200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -484,19 +766,19 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAtOneBankAsync
+     * Operation publicAccountsAtOneBankAsync
      *
      * Get Public Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200PublicAccountsAtOneBankAsync($bankid, string $contentType = self::contentTypes['oBPv200PublicAccountsAtOneBank'][0])
+    public function publicAccountsAtOneBankAsync($bankid, string $contentType = self::contentTypes['publicAccountsAtOneBank'][0])
     {
-        return $this->oBPv200PublicAccountsAtOneBankAsyncWithHttpInfo($bankid, $contentType)
+        return $this->publicAccountsAtOneBankAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -505,20 +787,20 @@ class PublicDataApi
     }
 
     /**
-     * Operation oBPv200PublicAccountsAtOneBankAsyncWithHttpInfo
+     * Operation publicAccountsAtOneBankAsyncWithHttpInfo
      *
      * Get Public Accounts at Bank
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200PublicAccountsAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv200PublicAccountsAtOneBank'][0])
+    public function publicAccountsAtOneBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['publicAccountsAtOneBank'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv200PublicAccountsAllBanks200Response';
-        $request = $this->oBPv200PublicAccountsAtOneBankRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\PublicAccountsAllBanks200Response';
+        $request = $this->publicAccountsAtOneBankRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -557,21 +839,21 @@ class PublicDataApi
     }
 
     /**
-     * Create request for operation 'oBPv200PublicAccountsAtOneBank'
+     * Create request for operation 'publicAccountsAtOneBank'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200PublicAccountsAtOneBank'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['publicAccountsAtOneBank'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200PublicAccountsAtOneBankRequest($bankid, string $contentType = self::contentTypes['oBPv200PublicAccountsAtOneBank'][0])
+    public function publicAccountsAtOneBankRequest($bankid, string $contentType = self::contentTypes['publicAccountsAtOneBank'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv200PublicAccountsAtOneBank'
+                'Missing the required parameter $bankid when calling publicAccountsAtOneBank'
             );
         }
 
@@ -626,288 +908,6 @@ class PublicDataApi
             }
         }
 
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetAccountsAtBank
-     *
-     * Get Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountsAtBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAccountsAtBank200Response
-     */
-    public function oBPv600GetAccountsAtBank($bankid, string $contentType = self::contentTypes['oBPv600GetAccountsAtBank'][0])
-    {
-        list($response) = $this->oBPv600GetAccountsAtBankWithHttpInfo($bankid, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetAccountsAtBankWithHttpInfo
-     *
-     * Get Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountsAtBank'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAccountsAtBank200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetAccountsAtBankWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetAccountsAtBank'][0])
-    {
-        $request = $this->oBPv600GetAccountsAtBankRequest($bankid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAccountsAtBank200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAccountsAtBank200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAccountsAtBank200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetAccountsAtBankAsync
-     *
-     * Get Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountsAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetAccountsAtBankAsync($bankid, string $contentType = self::contentTypes['oBPv600GetAccountsAtBank'][0])
-    {
-        return $this->oBPv600GetAccountsAtBankAsyncWithHttpInfo($bankid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetAccountsAtBankAsyncWithHttpInfo
-     *
-     * Get Accounts at Bank
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountsAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetAccountsAtBankAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetAccountsAtBank'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAccountsAtBank200Response';
-        $request = $this->oBPv600GetAccountsAtBankRequest($bankid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetAccountsAtBank'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetAccountsAtBank'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetAccountsAtBankRequest($bankid, string $contentType = self::contentTypes['oBPv600GetAccountsAtBank'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetAccountsAtBank'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/banks/{bankid}/accounts';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -1,19 +1,19 @@
 # StandingOrderApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateStandingOrder**](StandingOrderApi.md#oBPv400CreateStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**oBPv400CreateStandingOrderWithHttpInfo**](StandingOrderApi.md#oBPv400CreateStandingOrderWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**oBPv400CreateStandingOrderManagement**](StandingOrderApi.md#oBPv400CreateStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
-| [**oBPv400CreateStandingOrderManagementWithHttpInfo**](StandingOrderApi.md#oBPv400CreateStandingOrderManagementWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**createStandingOrder**](StandingOrderApi.md#createStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**createStandingOrderWithHttpInfo**](StandingOrderApi.md#createStandingOrderWithHttpInfo) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**createStandingOrderManagement**](StandingOrderApi.md#createStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**createStandingOrderManagementWithHttpInfo**](StandingOrderApi.md#createStandingOrderManagementWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
 
 
-## oBPv400CreateStandingOrder
+## createStandingOrder
 
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrder(bankid, accountid, viewid, obPv400CreateStandingOrderRequest)
+> CreateStandingOrder200Response createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest)
 
 Create Standing Order
 
@@ -33,7 +33,7 @@ import com.openbankproject.api.StandingOrderApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -55,12 +55,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400CreateStandingOrderRequest obPv400CreateStandingOrderRequest = new OBPv400CreateStandingOrderRequest(); // OBPv400CreateStandingOrderRequest | Request body
+        CreateStandingOrderRequest createStandingOrderRequest = new CreateStandingOrderRequest(); // CreateStandingOrderRequest | Request body
         try {
-            OBPv400CreateStandingOrder200Response result = apiInstance.oBPv400CreateStandingOrder(bankid, accountid, viewid, obPv400CreateStandingOrderRequest);
+            CreateStandingOrder200Response result = apiInstance.createStandingOrder(bankid, accountid, viewid, createStandingOrderRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling StandingOrderApi#oBPv400CreateStandingOrder");
+            System.err.println("Exception when calling StandingOrderApi#createStandingOrder");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -78,11 +78,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 
 ### Authorization
@@ -101,9 +101,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateStandingOrderWithHttpInfo
+## createStandingOrderWithHttpInfo
 
-> ApiResponse<OBPv400CreateStandingOrder200Response> oBPv400CreateStandingOrder oBPv400CreateStandingOrderWithHttpInfo(bankid, accountid, viewid, obPv400CreateStandingOrderRequest)
+> ApiResponse<CreateStandingOrder200Response> createStandingOrder createStandingOrderWithHttpInfo(bankid, accountid, viewid, createStandingOrderRequest)
 
 Create Standing Order
 
@@ -124,7 +124,7 @@ import com.openbankproject.api.StandingOrderApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -146,14 +146,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String viewid = "viewid_example"; // String | The VIEWID identifier
-        OBPv400CreateStandingOrderRequest obPv400CreateStandingOrderRequest = new OBPv400CreateStandingOrderRequest(); // OBPv400CreateStandingOrderRequest | Request body
+        CreateStandingOrderRequest createStandingOrderRequest = new CreateStandingOrderRequest(); // CreateStandingOrderRequest | Request body
         try {
-            ApiResponse<OBPv400CreateStandingOrder200Response> response = apiInstance.oBPv400CreateStandingOrderWithHttpInfo(bankid, accountid, viewid, obPv400CreateStandingOrderRequest);
+            ApiResponse<CreateStandingOrder200Response> response = apiInstance.createStandingOrderWithHttpInfo(bankid, accountid, viewid, createStandingOrderRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling StandingOrderApi#oBPv400CreateStandingOrder");
+            System.err.println("Exception when calling StandingOrderApi#createStandingOrder");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -171,11 +171,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **viewid** | **String**| The VIEWID identifier | |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)>
+ApiResponse<[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)>
 
 
 ### Authorization
@@ -195,9 +195,9 @@ ApiResponse<[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrd
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateStandingOrderManagement
+## createStandingOrderManagement
 
-> OBPv400CreateStandingOrder200Response oBPv400CreateStandingOrderManagement(bankid, accountid, obPv400CreateStandingOrderRequest)
+> CreateStandingOrder200Response createStandingOrderManagement(bankid, accountid, createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -217,7 +217,7 @@ import com.openbankproject.api.StandingOrderApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -238,12 +238,12 @@ public class Example {
         StandingOrderApi apiInstance = new StandingOrderApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv400CreateStandingOrderRequest obPv400CreateStandingOrderRequest = new OBPv400CreateStandingOrderRequest(); // OBPv400CreateStandingOrderRequest | Request body
+        CreateStandingOrderRequest createStandingOrderRequest = new CreateStandingOrderRequest(); // CreateStandingOrderRequest | Request body
         try {
-            OBPv400CreateStandingOrder200Response result = apiInstance.oBPv400CreateStandingOrderManagement(bankid, accountid, obPv400CreateStandingOrderRequest);
+            CreateStandingOrder200Response result = apiInstance.createStandingOrderManagement(bankid, accountid, createStandingOrderRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling StandingOrderApi#oBPv400CreateStandingOrderManagement");
+            System.err.println("Exception when calling StandingOrderApi#createStandingOrderManagement");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -260,11 +260,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 
 ### Authorization
@@ -283,9 +283,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateStandingOrderManagementWithHttpInfo
+## createStandingOrderManagementWithHttpInfo
 
-> ApiResponse<OBPv400CreateStandingOrder200Response> oBPv400CreateStandingOrderManagement oBPv400CreateStandingOrderManagementWithHttpInfo(bankid, accountid, obPv400CreateStandingOrderRequest)
+> ApiResponse<CreateStandingOrder200Response> createStandingOrderManagement createStandingOrderManagementWithHttpInfo(bankid, accountid, createStandingOrderRequest)
 
 Create Standing Order (management)
 
@@ -306,7 +306,7 @@ import com.openbankproject.api.StandingOrderApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -327,14 +327,14 @@ public class Example {
         StandingOrderApi apiInstance = new StandingOrderApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv400CreateStandingOrderRequest obPv400CreateStandingOrderRequest = new OBPv400CreateStandingOrderRequest(); // OBPv400CreateStandingOrderRequest | Request body
+        CreateStandingOrderRequest createStandingOrderRequest = new CreateStandingOrderRequest(); // CreateStandingOrderRequest | Request body
         try {
-            ApiResponse<OBPv400CreateStandingOrder200Response> response = apiInstance.oBPv400CreateStandingOrderManagementWithHttpInfo(bankid, accountid, obPv400CreateStandingOrderRequest);
+            ApiResponse<CreateStandingOrder200Response> response = apiInstance.createStandingOrderManagementWithHttpInfo(bankid, accountid, createStandingOrderRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling StandingOrderApi#oBPv400CreateStandingOrderManagement");
+            System.err.println("Exception when calling StandingOrderApi#createStandingOrderManagement");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -351,11 +351,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)>
+ApiResponse<[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)>
 
 
 ### Authorization

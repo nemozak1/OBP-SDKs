@@ -1,24 +1,24 @@
 # OpenBankProject::EndpointMappingApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv4_0_0_create_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
-| [**o_bpv4_0_0_create_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
-| [**o_bpv4_0_0_delete_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
-| [**o_bpv4_0_0_delete_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
-| [**o_bpv4_0_0_get_all_bank_level_endpoint_mappings**](EndpointMappingApi.md#o_bpv4_0_0_get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
-| [**o_bpv4_0_0_get_all_endpoint_mappings**](EndpointMappingApi.md#o_bpv4_0_0_get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
-| [**o_bpv4_0_0_get_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
-| [**o_bpv4_0_0_get_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
-| [**o_bpv4_0_0_update_bank_level_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
-| [**o_bpv4_0_0_update_endpoint_mapping**](EndpointMappingApi.md#o_bpv4_0_0_update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
+| [**create_bank_level_endpoint_mapping**](EndpointMappingApi.md#create_bank_level_endpoint_mapping) | **POST** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Create Bank Level Endpoint Mapping |
+| [**create_endpoint_mapping**](EndpointMappingApi.md#create_endpoint_mapping) | **POST** /obp/v4.0.0/management/endpoint-mappings | Create Endpoint Mapping |
+| [**delete_bank_level_endpoint_mapping**](EndpointMappingApi.md#delete_bank_level_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Delete Bank Level Endpoint Mapping |
+| [**delete_endpoint_mapping**](EndpointMappingApi.md#delete_endpoint_mapping) | **DELETE** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Delete Endpoint Mapping |
+| [**get_all_bank_level_endpoint_mappings**](EndpointMappingApi.md#get_all_bank_level_endpoint_mappings) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings | Get all Bank Level Endpoint Mappings |
+| [**get_all_endpoint_mappings**](EndpointMappingApi.md#get_all_endpoint_mappings) | **GET** /obp/v4.0.0/management/endpoint-mappings | Get all Endpoint Mappings |
+| [**get_bank_level_endpoint_mapping**](EndpointMappingApi.md#get_bank_level_endpoint_mapping) | **GET** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Get Bank Level Endpoint Mapping |
+| [**get_endpoint_mapping**](EndpointMappingApi.md#get_endpoint_mapping) | **GET** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Get Endpoint Mapping by Id |
+| [**update_bank_level_endpoint_mapping**](EndpointMappingApi.md#update_bank_level_endpoint_mapping) | **PUT** /obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid} | Update Bank Level Endpoint Mapping |
+| [**update_endpoint_mapping**](EndpointMappingApi.md#update_endpoint_mapping) | **PUT** /obp/v4.0.0/management/endpoint-mappings/{endpointmappingid} | Update Endpoint Mapping |
 
 
-## o_bpv4_0_0_create_bank_level_endpoint_mapping
+## create_bank_level_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> create_bank_level_endpoint_mapping(bankid, create_endpoint_mapping_request)
 
 Create Bank Level Endpoint Mapping
 
@@ -40,39 +40,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
-obpv400_create_endpoint_mapping_request = OpenBankProject::OBPv400CreateEndpointMappingRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateEndpointMappingRequestProperties.new({operation_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_mapping: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), response_mapping: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.new({name: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), field: , query: })}), balance: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: , field: , query: })})})})})}) # OBPv400CreateEndpointMappingRequest | Request body
+create_endpoint_mapping_request = OpenBankProject::CreateEndpointMappingRequest.new # CreateEndpointMappingRequest | Request body
 
 begin
   # Create Bank Level Endpoint Mapping
-  result = api_instance.o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request)
+  result = api_instance.create_bank_level_endpoint_mapping(bankid, create_endpoint_mapping_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_create_bank_level_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->create_bank_level_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info variant
+#### Using the create_bank_level_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info(bankid, obpv400_create_endpoint_mapping_request)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> create_bank_level_endpoint_mapping_with_http_info(bankid, create_endpoint_mapping_request)
 
 ```ruby
 begin
   # Create Bank Level Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info(bankid, obpv400_create_endpoint_mapping_request)
+  data, status_code, headers = api_instance.create_bank_level_endpoint_mapping_with_http_info(bankid, create_endpoint_mapping_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->create_bank_level_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -81,11 +81,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
-| **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -97,9 +97,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_create_endpoint_mapping
+## create_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> create_endpoint_mapping(create_endpoint_mapping_request)
 
 Create Endpoint Mapping
 
@@ -121,38 +121,38 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
-obpv400_create_endpoint_mapping_request = OpenBankProject::OBPv400CreateEndpointMappingRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateEndpointMappingRequestProperties.new({operation_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_mapping: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), response_mapping: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.new({name: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), field: , query: })}), balance: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: , field: , query: })})})})})}) # OBPv400CreateEndpointMappingRequest | Request body
+create_endpoint_mapping_request = OpenBankProject::CreateEndpointMappingRequest.new # CreateEndpointMappingRequest | Request body
 
 begin
   # Create Endpoint Mapping
-  result = api_instance.o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request)
+  result = api_instance.create_endpoint_mapping(create_endpoint_mapping_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_create_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->create_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_create_endpoint_mapping_with_http_info variant
+#### Using the create_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_create_endpoint_mapping_with_http_info(obpv400_create_endpoint_mapping_request)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> create_endpoint_mapping_with_http_info(create_endpoint_mapping_request)
 
 ```ruby
 begin
   # Create Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_create_endpoint_mapping_with_http_info(obpv400_create_endpoint_mapping_request)
+  data, status_code, headers = api_instance.create_endpoint_mapping_with_http_info(create_endpoint_mapping_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_create_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->create_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -160,11 +160,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -176,9 +176,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_delete_bank_level_endpoint_mapping
+## delete_bank_level_endpoint_mapping
 
-> o_bpv4_0_0_delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
+> delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
 
 Delete Bank Level Endpoint Mapping
 
@@ -200,9 +200,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
@@ -211,27 +211,27 @@ endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID
 
 begin
   # Delete Bank Level Endpoint Mapping
-  api_instance.o_bpv4_0_0_delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
+  api_instance.delete_bank_level_endpoint_mapping(bankid, endpointmappingid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_delete_bank_level_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->delete_bank_level_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info variant
+#### Using the delete_bank_level_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
+> <Array(nil, Integer, Hash)> delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
 
 ```ruby
 begin
   # Delete Bank Level Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
+  data, status_code, headers = api_instance.delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->delete_bank_level_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -256,9 +256,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_delete_endpoint_mapping
+## delete_endpoint_mapping
 
-> o_bpv4_0_0_delete_endpoint_mapping(endpointmappingid)
+> delete_endpoint_mapping(endpointmappingid)
 
 Delete Endpoint Mapping
 
@@ -280,9 +280,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
@@ -290,27 +290,27 @@ endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID
 
 begin
   # Delete Endpoint Mapping
-  api_instance.o_bpv4_0_0_delete_endpoint_mapping(endpointmappingid)
+  api_instance.delete_endpoint_mapping(endpointmappingid)
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_delete_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->delete_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_delete_endpoint_mapping_with_http_info variant
+#### Using the delete_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> o_bpv4_0_0_delete_endpoint_mapping_with_http_info(endpointmappingid)
+> <Array(nil, Integer, Hash)> delete_endpoint_mapping_with_http_info(endpointmappingid)
 
 ```ruby
 begin
   # Delete Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_delete_endpoint_mapping_with_http_info(endpointmappingid)
+  data, status_code, headers = api_instance.delete_endpoint_mapping_with_http_info(endpointmappingid)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_delete_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->delete_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -334,9 +334,9 @@ nil (empty response body)
 - **Accept**: Not defined
 
 
-## o_bpv4_0_0_get_all_bank_level_endpoint_mappings
+## get_all_bank_level_endpoint_mappings
 
-> <OBPv400GetAllEndpointMappings200Response> o_bpv4_0_0_get_all_bank_level_endpoint_mappings(bankid)
+> <GetAllEndpointMappings200Response> get_all_bank_level_endpoint_mappings(bankid)
 
 Get all Bank Level Endpoint Mappings
 
@@ -358,9 +358,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
@@ -368,28 +368,28 @@ bankid = 'bankid_example' # String | The BANKID identifier
 
 begin
   # Get all Bank Level Endpoint Mappings
-  result = api_instance.o_bpv4_0_0_get_all_bank_level_endpoint_mappings(bankid)
+  result = api_instance.get_all_bank_level_endpoint_mappings(bankid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_all_bank_level_endpoint_mappings: #{e}"
+  puts "Error when calling EndpointMappingApi->get_all_bank_level_endpoint_mappings: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info variant
+#### Using the get_all_bank_level_endpoint_mappings_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200Response>, Integer, Hash)> o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info(bankid)
+> <Array(<GetAllEndpointMappings200Response>, Integer, Hash)> get_all_bank_level_endpoint_mappings_with_http_info(bankid)
 
 ```ruby
 begin
   # Get all Bank Level Endpoint Mappings
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info(bankid)
+  data, status_code, headers = api_instance.get_all_bank_level_endpoint_mappings_with_http_info(bankid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200Response>
+  p data # => <GetAllEndpointMappings200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->get_all_bank_level_endpoint_mappings_with_http_info: #{e}"
 end
 ```
 
@@ -401,7 +401,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -413,9 +413,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_all_endpoint_mappings
+## get_all_endpoint_mappings
 
-> <OBPv400GetAllEndpointMappings200Response> o_bpv4_0_0_get_all_endpoint_mappings
+> <GetAllEndpointMappings200Response> get_all_endpoint_mappings
 
 Get all Endpoint Mappings
 
@@ -437,37 +437,37 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
 
 begin
   # Get all Endpoint Mappings
-  result = api_instance.o_bpv4_0_0_get_all_endpoint_mappings
+  result = api_instance.get_all_endpoint_mappings
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_all_endpoint_mappings: #{e}"
+  puts "Error when calling EndpointMappingApi->get_all_endpoint_mappings: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_all_endpoint_mappings_with_http_info variant
+#### Using the get_all_endpoint_mappings_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200Response>, Integer, Hash)> o_bpv4_0_0_get_all_endpoint_mappings_with_http_info
+> <Array(<GetAllEndpointMappings200Response>, Integer, Hash)> get_all_endpoint_mappings_with_http_info
 
 ```ruby
 begin
   # Get all Endpoint Mappings
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_all_endpoint_mappings_with_http_info
+  data, status_code, headers = api_instance.get_all_endpoint_mappings_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200Response>
+  p data # => <GetAllEndpointMappings200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_all_endpoint_mappings_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->get_all_endpoint_mappings_with_http_info: #{e}"
 end
 ```
 
@@ -477,7 +477,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200Response**](OBPv400GetAllEndpointMappings200Response.md)
+[**GetAllEndpointMappings200Response**](GetAllEndpointMappings200Response.md)
 
 ### Authorization
 
@@ -489,9 +489,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_bank_level_endpoint_mapping
+## get_bank_level_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> get_bank_level_endpoint_mapping(bankid, endpointmappingid)
 
 Get Bank Level Endpoint Mapping
 
@@ -513,9 +513,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
@@ -524,28 +524,28 @@ endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID
 
 begin
   # Get Bank Level Endpoint Mapping
-  result = api_instance.o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid)
+  result = api_instance.get_bank_level_endpoint_mapping(bankid, endpointmappingid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_bank_level_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->get_bank_level_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info variant
+#### Using the get_bank_level_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
 
 ```ruby
 begin
   # Get Bank Level Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
+  data, status_code, headers = api_instance.get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->get_bank_level_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -558,7 +558,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -570,9 +570,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_get_endpoint_mapping
+## get_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> get_endpoint_mapping(endpointmappingid)
 
 Get Endpoint Mapping by Id
 
@@ -594,9 +594,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
@@ -604,28 +604,28 @@ endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID
 
 begin
   # Get Endpoint Mapping by Id
-  result = api_instance.o_bpv4_0_0_get_endpoint_mapping(endpointmappingid)
+  result = api_instance.get_endpoint_mapping(endpointmappingid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->get_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_get_endpoint_mapping_with_http_info variant
+#### Using the get_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_get_endpoint_mapping_with_http_info(endpointmappingid)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> get_endpoint_mapping_with_http_info(endpointmappingid)
 
 ```ruby
 begin
   # Get Endpoint Mapping by Id
-  data, status_code, headers = api_instance.o_bpv4_0_0_get_endpoint_mapping_with_http_info(endpointmappingid)
+  data, status_code, headers = api_instance.get_endpoint_mapping_with_http_info(endpointmappingid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_get_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->get_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -637,7 +637,7 @@ end
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -649,9 +649,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_bank_level_endpoint_mapping
+## update_bank_level_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> update_bank_level_endpoint_mapping(bankid, endpointmappingid, create_endpoint_mapping_request)
 
 Update Bank Level Endpoint Mapping
 
@@ -673,40 +673,40 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
 bankid = 'bankid_example' # String | The BANKID identifier
 endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID identifier
-obpv400_create_endpoint_mapping_request = OpenBankProject::OBPv400CreateEndpointMappingRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateEndpointMappingRequestProperties.new({operation_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_mapping: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), response_mapping: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.new({name: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), field: , query: })}), balance: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: , field: , query: })})})})})}) # OBPv400CreateEndpointMappingRequest | Request body
+create_endpoint_mapping_request = OpenBankProject::CreateEndpointMappingRequest.new # CreateEndpointMappingRequest | Request body
 
 begin
   # Update Bank Level Endpoint Mapping
-  result = api_instance.o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+  result = api_instance.update_bank_level_endpoint_mapping(bankid, endpointmappingid, create_endpoint_mapping_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_update_bank_level_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->update_bank_level_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info variant
+#### Using the update_bank_level_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, create_endpoint_mapping_request)
 
 ```ruby
 begin
   # Update Bank Level Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request)
+  data, status_code, headers = api_instance.update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, create_endpoint_mapping_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->update_bank_level_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -716,11 +716,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **bankid** | **String** | The BANKID identifier |  |
 | **endpointmappingid** | **String** | The ENDPOINTMAPPINGID identifier |  |
-| **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 
@@ -732,9 +732,9 @@ end
 - **Accept**: application/json
 
 
-## o_bpv4_0_0_update_endpoint_mapping
+## update_endpoint_mapping
 
-> <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems> o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
+> <GetAllEndpointMappings200ResponseEndpointMappingsInner> update_endpoint_mapping(endpointmappingid, create_endpoint_mapping_request)
 
 Update Endpoint Mapping
 
@@ -756,39 +756,39 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::EndpointMappingApi.new
 endpointmappingid = 'endpointmappingid_example' # String | The ENDPOINTMAPPINGID identifier
-obpv400_create_endpoint_mapping_request = OpenBankProject::OBPv400CreateEndpointMappingRequest.new({type: 'type_example', properties: OpenBankProject::OBPv400CreateEndpointMappingRequestProperties.new({operation_id: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), request_mapping: OpenBankProject::OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.new({type: 'type_example', properties: 3.56}), response_mapping: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMapping.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingProperties.new({name: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: OpenBankProject::OBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName.new({type: 'type_example'}), field: , query: })}), balance: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesName.new({type: 'type_example', properties: OpenBankProject::OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItemsPropertiesResponseMappingPropertiesNameProperties.new({entity: , field: , query: })})})})})}) # OBPv400CreateEndpointMappingRequest | Request body
+create_endpoint_mapping_request = OpenBankProject::CreateEndpointMappingRequest.new # CreateEndpointMappingRequest | Request body
 
 begin
   # Update Endpoint Mapping
-  result = api_instance.o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request)
+  result = api_instance.update_endpoint_mapping(endpointmappingid, create_endpoint_mapping_request)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_update_endpoint_mapping: #{e}"
+  puts "Error when calling EndpointMappingApi->update_endpoint_mapping: #{e}"
 end
 ```
 
-#### Using the o_bpv4_0_0_update_endpoint_mapping_with_http_info variant
+#### Using the update_endpoint_mapping_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>, Integer, Hash)> o_bpv4_0_0_update_endpoint_mapping_with_http_info(endpointmappingid, obpv400_create_endpoint_mapping_request)
+> <Array(<GetAllEndpointMappings200ResponseEndpointMappingsInner>, Integer, Hash)> update_endpoint_mapping_with_http_info(endpointmappingid, create_endpoint_mapping_request)
 
 ```ruby
 begin
   # Update Endpoint Mapping
-  data, status_code, headers = api_instance.o_bpv4_0_0_update_endpoint_mapping_with_http_info(endpointmappingid, obpv400_create_endpoint_mapping_request)
+  data, status_code, headers = api_instance.update_endpoint_mapping_with_http_info(endpointmappingid, create_endpoint_mapping_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems>
+  p data # => <GetAllEndpointMappings200ResponseEndpointMappingsInner>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling EndpointMappingApi->o_bpv4_0_0_update_endpoint_mapping_with_http_info: #{e}"
+  puts "Error when calling EndpointMappingApi->update_endpoint_mapping_with_http_info: #{e}"
 end
 ```
 
@@ -797,11 +797,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **endpointmappingid** | **String** | The ENDPOINTMAPPINGID identifier |  |
-| **obpv400_create_endpoint_mapping_request** | [**OBPv400CreateEndpointMappingRequest**](OBPv400CreateEndpointMappingRequest.md) | Request body |  |
+| **create_endpoint_mapping_request** | [**CreateEndpointMappingRequest**](CreateEndpointMappingRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems**](OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems.md)
+[**GetAllEndpointMappings200ResponseEndpointMappingsInner**](GetAllEndpointMappings200ResponseEndpointMappingsInner.md)
 
 ### Authorization
 

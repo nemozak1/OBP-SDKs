@@ -4,13 +4,13 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_2_0_get_message_docs**](MessageDocApi.md#o_bpv2_2_0_get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
-[**o_bpv3_1_0_get_message_docs_swagger**](MessageDocApi.md#o_bpv3_1_0_get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
-[**o_bpv6_0_0_get_message_docs_json_schema**](MessageDocApi.md#o_bpv6_0_0_get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**get_message_docs**](MessageDocApi.md#get_message_docs) | **GET** /obp/v2.2.0/message-docs/{connector} | Get Message Docs
+[**get_message_docs_json_schema**](MessageDocApi.md#get_message_docs_json_schema) | **GET** /obp/v6.0.0/message-docs/{connector}/json-schema | Get Message Docs as JSON Schema
+[**get_message_docs_swagger**](MessageDocApi.md#get_message_docs_swagger) | **GET** /obp/v3.1.0/message-docs/{connector}/swagger2.0 | Get Message Docs Swagger
 
 
-# **o_bpv2_2_0_get_message_docs**
-> OBPv220GetMessageDocs200Response o_bpv2_2_0_get_message_docs(connector)
+# **get_message_docs**
+> GetMessageDocs200Response get_message_docs(connector)
 
 Get Message Docs
 
@@ -46,7 +46,7 @@ Integrators can use these messages to build Adapters that provide core banking s
 
 ```python
 import obp_python
-from obp_python.models.obpv220_get_message_docs200_response import OBPv220GetMessageDocs200Response
+from obp_python.models.get_message_docs200_response import GetMessageDocs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -65,11 +65,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Message Docs
-        api_response = api_instance.o_bpv2_2_0_get_message_docs(connector)
-        print("The response of MessageDocApi->o_bpv2_2_0_get_message_docs:\n")
+        api_response = api_instance.get_message_docs(connector)
+        print("The response of MessageDocApi->get_message_docs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MessageDocApi->o_bpv2_2_0_get_message_docs: %s\n" % e)
+        print("Exception when calling MessageDocApi->get_message_docs: %s\n" % e)
 ```
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220GetMessageDocs200Response**](OBPv220GetMessageDocs200Response.md)
+[**GetMessageDocs200Response**](GetMessageDocs200Response.md)
 
 ### Authorization
 
@@ -103,84 +103,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_message_docs_swagger**
-> o_bpv3_1_0_get_message_docs_swagger(connector)
-
-Get Message Docs Swagger
-
-<p>This endpoint provides example message docs in swagger format.<br />
-It is only relavent for REST Connectors.</p>
-<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
-That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
-<p>i.e.:</p>
-<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.MessageDocApi(api_client)
-    connector = 'connector_example' # str | The CONNECTOR identifier
-
-    try:
-        # Get Message Docs Swagger
-        api_instance.o_bpv3_1_0_get_message_docs_swagger(connector)
-    except Exception as e:
-        print("Exception when calling MessageDocApi->o_bpv3_1_0_get_message_docs_swagger: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connector** | **str**| The CONNECTOR identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_message_docs_json_schema**
-> o_bpv6_0_0_get_message_docs_json_schema(connector)
+# **get_message_docs_json_schema**
+> get_message_docs_json_schema(connector)
 
 Get Message Docs as JSON Schema
 
@@ -243,9 +167,85 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Message Docs as JSON Schema
-        api_instance.o_bpv6_0_0_get_message_docs_json_schema(connector)
+        api_instance.get_message_docs_json_schema(connector)
     except Exception as e:
-        print("Exception when calling MessageDocApi->o_bpv6_0_0_get_message_docs_json_schema: %s\n" % e)
+        print("Exception when calling MessageDocApi->get_message_docs_json_schema: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connector** | **str**| The CONNECTOR identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_message_docs_swagger**
+> get_message_docs_swagger(connector)
+
+Get Message Docs Swagger
+
+<p>This endpoint provides example message docs in swagger format.<br />
+It is only relavent for REST Connectors.</p>
+<p>This endpoint can be used by the developer building a REST Adapter that connects to the Core Banking System (CBS).<br />
+That is, the Adapter developer can use the Swagger surfaced here to build the REST APIs that the OBP REST connector will call to consume CBS services.</p>
+<p>i.e.:</p>
+<p>OBP API (Core OBP API code) -&gt; OBP REST Connector (OBP REST Connector code) -&gt; OBP REST Adapter (Adapter developer code) -&gt; CBS (Main Frame)</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Connector">CONNECTOR</a>: CONNECTOR</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.MessageDocApi(api_client)
+    connector = 'connector_example' # str | The CONNECTOR identifier
+
+    try:
+        # Get Message Docs Swagger
+        api_instance.get_message_docs_swagger(connector)
+    except Exception as e:
+        print("Exception when calling MessageDocApi->get_message_docs_swagger: %s\n" % e)
 ```
 
 

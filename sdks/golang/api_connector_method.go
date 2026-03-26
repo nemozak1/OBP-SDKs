@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,24 @@ import (
 // ConnectorMethodAPIService ConnectorMethodAPI service
 type ConnectorMethodAPIService service
 
-type ApiOBPv400CreateConnectorMethodRequest struct {
+type ApiCreateConnectorMethodRequest struct {
 	ctx context.Context
 	ApiService *ConnectorMethodAPIService
-	oBPv400CreateConnectorMethodRequest *OBPv400CreateConnectorMethodRequest
+	createConnectorMethodRequest *CreateConnectorMethodRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateConnectorMethodRequest) OBPv400CreateConnectorMethodRequest(oBPv400CreateConnectorMethodRequest OBPv400CreateConnectorMethodRequest) ApiOBPv400CreateConnectorMethodRequest {
-	r.oBPv400CreateConnectorMethodRequest = &oBPv400CreateConnectorMethodRequest
+func (r ApiCreateConnectorMethodRequest) CreateConnectorMethodRequest(createConnectorMethodRequest CreateConnectorMethodRequest) ApiCreateConnectorMethodRequest {
+	r.createConnectorMethodRequest = &createConnectorMethodRequest
 	return r
 }
 
-func (r ApiOBPv400CreateConnectorMethodRequest) Execute() (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateConnectorMethodExecute(r)
+func (r ApiCreateConnectorMethodRequest) Execute() (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
+	return r.ApiService.CreateConnectorMethodExecute(r)
 }
 
 /*
-OBPv400CreateConnectorMethod Create Connector Method
+CreateConnectorMethod Create Connector Method
 
 <p>Create an internal connector.</p>
 <p>The method_body is URL-encoded format String</p>
@@ -51,26 +51,26 @@ OBPv400CreateConnectorMethod Create Connector Method
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400CreateConnectorMethodRequest
+ @return ApiCreateConnectorMethodRequest
 */
-func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethod(ctx context.Context) ApiOBPv400CreateConnectorMethodRequest {
-	return ApiOBPv400CreateConnectorMethodRequest{
+func (a *ConnectorMethodAPIService) CreateConnectorMethod(ctx context.Context) ApiCreateConnectorMethodRequest {
+	return ApiCreateConnectorMethodRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethodExecute(r ApiOBPv400CreateConnectorMethodRequest) (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
+//  @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
+func (a *ConnectorMethodAPIService) CreateConnectorMethodExecute(r ApiCreateConnectorMethodRequest) (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+		localVarReturnValue  *GetAllConnectorMethods200ResponseConnectorsMethodsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.OBPv400CreateConnectorMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.CreateConnectorMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -80,8 +80,8 @@ func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethodExecute(r ApiOBP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateConnectorMethodRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateConnectorMethodRequest is required and must be specified")
+	if r.createConnectorMethodRequest == nil {
+		return localVarReturnValue, nil, reportError("createConnectorMethodRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -102,7 +102,7 @@ func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethodExecute(r ApiOBP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateConnectorMethodRequest
+	localVarPostBody = r.createConnectorMethodRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -127,7 +127,7 @@ func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethodExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -168,17 +168,17 @@ func (a *ConnectorMethodAPIService) OBPv400CreateConnectorMethodExecute(r ApiOBP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllConnectorMethodsRequest struct {
+type ApiGetAllConnectorMethodsRequest struct {
 	ctx context.Context
 	ApiService *ConnectorMethodAPIService
 }
 
-func (r ApiOBPv400GetAllConnectorMethodsRequest) Execute() (*OBPv400GetAllConnectorMethods200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllConnectorMethodsExecute(r)
+func (r ApiGetAllConnectorMethodsRequest) Execute() (*GetAllConnectorMethods200Response, *http.Response, error) {
+	return r.ApiService.GetAllConnectorMethodsExecute(r)
 }
 
 /*
-OBPv400GetAllConnectorMethods Get all Connector Methods
+GetAllConnectorMethods Get all Connector Methods
 
 <p>Get all Connector Methods.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -186,26 +186,26 @@ OBPv400GetAllConnectorMethods Get all Connector Methods
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllConnectorMethodsRequest
+ @return ApiGetAllConnectorMethodsRequest
 */
-func (a *ConnectorMethodAPIService) OBPv400GetAllConnectorMethods(ctx context.Context) ApiOBPv400GetAllConnectorMethodsRequest {
-	return ApiOBPv400GetAllConnectorMethodsRequest{
+func (a *ConnectorMethodAPIService) GetAllConnectorMethods(ctx context.Context) ApiGetAllConnectorMethodsRequest {
+	return ApiGetAllConnectorMethodsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllConnectorMethods200Response
-func (a *ConnectorMethodAPIService) OBPv400GetAllConnectorMethodsExecute(r ApiOBPv400GetAllConnectorMethodsRequest) (*OBPv400GetAllConnectorMethods200Response, *http.Response, error) {
+//  @return GetAllConnectorMethods200Response
+func (a *ConnectorMethodAPIService) GetAllConnectorMethodsExecute(r ApiGetAllConnectorMethodsRequest) (*GetAllConnectorMethods200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllConnectorMethods200Response
+		localVarReturnValue  *GetAllConnectorMethods200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.OBPv400GetAllConnectorMethods")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.GetAllConnectorMethods")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -257,7 +257,7 @@ func (a *ConnectorMethodAPIService) OBPv400GetAllConnectorMethodsExecute(r ApiOB
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -298,18 +298,18 @@ func (a *ConnectorMethodAPIService) OBPv400GetAllConnectorMethodsExecute(r ApiOB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetConnectorMethodRequest struct {
+type ApiGetConnectorMethodRequest struct {
 	ctx context.Context
 	ApiService *ConnectorMethodAPIService
 	connectormethodid string
 }
 
-func (r ApiOBPv400GetConnectorMethodRequest) Execute() (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetConnectorMethodExecute(r)
+func (r ApiGetConnectorMethodRequest) Execute() (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
+	return r.ApiService.GetConnectorMethodExecute(r)
 }
 
 /*
-OBPv400GetConnectorMethod Get Connector Method by Id
+GetConnectorMethod Get Connector Method by Id
 
 <p>Get an internal connector by CONNECTOR_METHOD_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -320,10 +320,10 @@ OBPv400GetConnectorMethod Get Connector Method by Id
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param connectormethodid The CONNECTORMETHODID identifier
- @return ApiOBPv400GetConnectorMethodRequest
+ @return ApiGetConnectorMethodRequest
 */
-func (a *ConnectorMethodAPIService) OBPv400GetConnectorMethod(ctx context.Context, connectormethodid string) ApiOBPv400GetConnectorMethodRequest {
-	return ApiOBPv400GetConnectorMethodRequest{
+func (a *ConnectorMethodAPIService) GetConnectorMethod(ctx context.Context, connectormethodid string) ApiGetConnectorMethodRequest {
+	return ApiGetConnectorMethodRequest{
 		ApiService: a,
 		ctx: ctx,
 		connectormethodid: connectormethodid,
@@ -331,16 +331,16 @@ func (a *ConnectorMethodAPIService) OBPv400GetConnectorMethod(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-func (a *ConnectorMethodAPIService) OBPv400GetConnectorMethodExecute(r ApiOBPv400GetConnectorMethodRequest) (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
+//  @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
+func (a *ConnectorMethodAPIService) GetConnectorMethodExecute(r ApiGetConnectorMethodRequest) (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
+		localVarReturnValue  *GetAllConnectorMethods200ResponseConnectorsMethodsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.OBPv400GetConnectorMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.GetConnectorMethod")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -393,7 +393,7 @@ func (a *ConnectorMethodAPIService) OBPv400GetConnectorMethodExecute(r ApiOBPv40
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -434,166 +434,17 @@ func (a *ConnectorMethodAPIService) OBPv400GetConnectorMethodExecute(r ApiOBPv40
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateConnectorMethodRequest struct {
-	ctx context.Context
-	ApiService *ConnectorMethodAPIService
-	connectormethodid string
-	oBPv400UpdateConnectorMethodRequest *OBPv400UpdateConnectorMethodRequest
-}
-
-// Request body
-func (r ApiOBPv400UpdateConnectorMethodRequest) OBPv400UpdateConnectorMethodRequest(oBPv400UpdateConnectorMethodRequest OBPv400UpdateConnectorMethodRequest) ApiOBPv400UpdateConnectorMethodRequest {
-	r.oBPv400UpdateConnectorMethodRequest = &oBPv400UpdateConnectorMethodRequest
-	return r
-}
-
-func (r ApiOBPv400UpdateConnectorMethodRequest) Execute() (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateConnectorMethodExecute(r)
-}
-
-/*
-OBPv400UpdateConnectorMethod Update Connector Method
-
-<p>Update an internal connector.</p>
-<p>The method_body is URL-encoded format String</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectormethodid The CONNECTORMETHODID identifier
- @return ApiOBPv400UpdateConnectorMethodRequest
-*/
-func (a *ConnectorMethodAPIService) OBPv400UpdateConnectorMethod(ctx context.Context, connectormethodid string) ApiOBPv400UpdateConnectorMethodRequest {
-	return ApiOBPv400UpdateConnectorMethodRequest{
-		ApiService: a,
-		ctx: ctx,
-		connectormethodid: connectormethodid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-func (a *ConnectorMethodAPIService) OBPv400UpdateConnectorMethodExecute(r ApiOBPv400UpdateConnectorMethodRequest) (*OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.OBPv400UpdateConnectorMethod")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/connector-methods/{connectormethodid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"connectormethodid"+"}", url.PathEscape(parameterValueToString(r.connectormethodid, "connectormethodid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv400UpdateConnectorMethodRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400UpdateConnectorMethodRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv400UpdateConnectorMethodRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetConnectorMethodNamesRequest struct {
+type ApiGetConnectorMethodNamesRequest struct {
 	ctx context.Context
 	ApiService *ConnectorMethodAPIService
 }
 
-func (r ApiOBPv600GetConnectorMethodNamesRequest) Execute() (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorMethodNamesExecute(r)
+func (r ApiGetConnectorMethodNamesRequest) Execute() (*GetConnectorMethodNames200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorMethodNamesExecute(r)
 }
 
 /*
-OBPv600GetConnectorMethodNames Get Connector Method Names
+GetConnectorMethodNames Get Connector Method Names
 
 <p>Get the list of all available connector method names.</p>
 <p>These are the method names that can be used in Method Routing configuration.</p>
@@ -628,26 +479,26 @@ These method names are different from API endpoint operation IDs (which you get 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorMethodNamesRequest
+ @return ApiGetConnectorMethodNamesRequest
 */
-func (a *ConnectorMethodAPIService) OBPv600GetConnectorMethodNames(ctx context.Context) ApiOBPv600GetConnectorMethodNamesRequest {
-	return ApiOBPv600GetConnectorMethodNamesRequest{
+func (a *ConnectorMethodAPIService) GetConnectorMethodNames(ctx context.Context) ApiGetConnectorMethodNamesRequest {
+	return ApiGetConnectorMethodNamesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorMethodNames200Response
-func (a *ConnectorMethodAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetConnectorMethodNamesRequest) (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
+//  @return GetConnectorMethodNames200Response
+func (a *ConnectorMethodAPIService) GetConnectorMethodNamesExecute(r ApiGetConnectorMethodNamesRequest) (*GetConnectorMethodNames200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorMethodNames200Response
+		localVarReturnValue  *GetConnectorMethodNames200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.OBPv600GetConnectorMethodNames")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.GetConnectorMethodNames")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -699,7 +550,156 @@ func (a *ConnectorMethodAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateConnectorMethodRequest struct {
+	ctx context.Context
+	ApiService *ConnectorMethodAPIService
+	connectormethodid string
+	updateConnectorMethodRequest *UpdateConnectorMethodRequest
+}
+
+// Request body
+func (r ApiUpdateConnectorMethodRequest) UpdateConnectorMethodRequest(updateConnectorMethodRequest UpdateConnectorMethodRequest) ApiUpdateConnectorMethodRequest {
+	r.updateConnectorMethodRequest = &updateConnectorMethodRequest
+	return r
+}
+
+func (r ApiUpdateConnectorMethodRequest) Execute() (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
+	return r.ApiService.UpdateConnectorMethodExecute(r)
+}
+
+/*
+UpdateConnectorMethod Update Connector Method
+
+<p>Update an internal connector.</p>
+<p>The method_body is URL-encoded format String</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param connectormethodid The CONNECTORMETHODID identifier
+ @return ApiUpdateConnectorMethodRequest
+*/
+func (a *ConnectorMethodAPIService) UpdateConnectorMethod(ctx context.Context, connectormethodid string) ApiUpdateConnectorMethodRequest {
+	return ApiUpdateConnectorMethodRequest{
+		ApiService: a,
+		ctx: ctx,
+		connectormethodid: connectormethodid,
+	}
+}
+
+// Execute executes the request
+//  @return GetAllConnectorMethods200ResponseConnectorsMethodsInner
+func (a *ConnectorMethodAPIService) UpdateConnectorMethodExecute(r ApiUpdateConnectorMethodRequest) (*GetAllConnectorMethods200ResponseConnectorsMethodsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetAllConnectorMethods200ResponseConnectorsMethodsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectorMethodAPIService.UpdateConnectorMethod")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/connector-methods/{connectormethodid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"connectormethodid"+"}", url.PathEscape(parameterValueToString(r.connectormethodid, "connectormethodid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateConnectorMethodRequest == nil {
+		return localVarReturnValue, nil, reportError("updateConnectorMethodRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateConnectorMethodRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

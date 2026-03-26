@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv310_create_meeting_request.dart';
-import 'package:obp_dart/src/model/obpv310_get_meeting200_response.dart';
-import 'package:obp_dart/src/model/obpv310_get_meetings200_response.dart';
+import 'package:obp_dart/src/model/create_meeting_request.dart';
+import 'package:obp_dart/src/model/get_meeting200_response.dart';
+import 'package:obp_dart/src/model/get_meetings200_response.dart';
 
 class ExperimentalApi {
 
@@ -26,7 +26,7 @@ class ExperimentalApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv310CreateMeetingRequest] - Request body
+  /// * [createMeetingRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,11 +34,11 @@ class ExperimentalApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetMeeting200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetMeeting200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetMeeting200Response>> oBPv310CreateMeeting({ 
+  Future<Response<GetMeeting200Response>> createMeeting({ 
     required String bankid,
-    required OBPv310CreateMeetingRequest oBPv310CreateMeetingRequest,
+    required CreateMeetingRequest createMeetingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class ExperimentalApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class ExperimentalApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv310CreateMeetingRequest);
-      _bodyData = _serializers.serialize(oBPv310CreateMeetingRequest, specifiedType: _type);
+      const _type = FullType(CreateMeetingRequest);
+      _bodyData = _serializers.serialize(createMeetingRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class ExperimentalApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetMeeting200Response? _responseData;
+    GetMeeting200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetMeeting200Response),
-      ) as OBPv310GetMeeting200Response;
+        specifiedType: const FullType(GetMeeting200Response),
+      ) as GetMeeting200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class ExperimentalApi {
       );
     }
 
-    return Response<OBPv310GetMeeting200Response>(
+    return Response<GetMeeting200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -146,9 +146,9 @@ class ExperimentalApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetMeeting200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetMeeting200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetMeeting200Response>> oBPv310GetMeeting({ 
+  Future<Response<GetMeeting200Response>> getMeeting({ 
     required String bankid,
     required String meetingid,
     CancelToken? cancelToken,
@@ -177,7 +177,7 @@ class ExperimentalApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -194,14 +194,14 @@ class ExperimentalApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetMeeting200Response? _responseData;
+    GetMeeting200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetMeeting200Response),
-      ) as OBPv310GetMeeting200Response;
+        specifiedType: const FullType(GetMeeting200Response),
+      ) as GetMeeting200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -213,7 +213,7 @@ class ExperimentalApi {
       );
     }
 
-    return Response<OBPv310GetMeeting200Response>(
+    return Response<GetMeeting200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -237,9 +237,9 @@ class ExperimentalApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310GetMeetings200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetMeetings200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310GetMeetings200Response>> oBPv310GetMeetings({ 
+  Future<Response<GetMeetings200Response>> getMeetings({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -267,7 +267,7 @@ class ExperimentalApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -284,14 +284,14 @@ class ExperimentalApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310GetMeetings200Response? _responseData;
+    GetMeetings200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310GetMeetings200Response),
-      ) as OBPv310GetMeetings200Response;
+        specifiedType: const FullType(GetMeetings200Response),
+      ) as GetMeetings200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -303,7 +303,7 @@ class ExperimentalApi {
       );
     }
 
-    return Response<OBPv310GetMeetings200Response>(
+    return Response<GetMeetings200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

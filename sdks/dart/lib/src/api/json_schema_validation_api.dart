@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_json_schema_validations_public200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_all_json_schema_validations_public200_response_properties_json_schema_validations_items_properties_json_schema.dart';
+import 'package:obp_dart/src/model/get_all_json_schema_validations_public200_response.dart';
+import 'package:obp_dart/src/model/get_all_json_schema_validations_public200_response_json_schema_validations_inner.dart';
+import 'package:obp_dart/src/model/get_all_json_schema_validations_public200_response_json_schema_validations_inner_json_schema.dart';
 
 class JSONSchemaValidationApi {
 
@@ -26,7 +26,7 @@ class JSONSchemaValidationApi {
   ///
   /// Parameters:
   /// * [operationid] - The OPERATIONID identifier
-  /// * [oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema] - Request body
+  /// * [getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,11 +34,11 @@ class JSONSchemaValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> oBPv400CreateJsonSchemaValidation({ 
+  Future<Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> createJsonSchemaValidation({ 
     required String operationid,
-    required OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema,
+    required GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class JSONSchemaValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,8 +78,8 @@ class JSONSchemaValidationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
-      _bodyData = _serializers.serialize(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, specifiedType: _type);
+      const _type = FullType(GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
+      _bodyData = _serializers.serialize(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -102,14 +102,14 @@ class JSONSchemaValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? _responseData;
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems),
-      ) as OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems;
+        specifiedType: const FullType(GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner),
+      ) as GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -121,7 +121,7 @@ class JSONSchemaValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(
+    return Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -147,7 +147,7 @@ class JSONSchemaValidationApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteJsonSchemaValidation({ 
+  Future<Response<void>> deleteJsonSchemaValidation({ 
     required String operationid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -175,7 +175,7 @@ class JSONSchemaValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -206,9 +206,9 @@ class JSONSchemaValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllJsonSchemaValidationsPublic200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllJsonSchemaValidationsPublic200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllJsonSchemaValidationsPublic200Response>> oBPv400GetAllJsonSchemaValidations({ 
+  Future<Response<GetAllJsonSchemaValidationsPublic200Response>> getAllJsonSchemaValidations({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -235,7 +235,7 @@ class JSONSchemaValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -252,14 +252,14 @@ class JSONSchemaValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllJsonSchemaValidationsPublic200Response? _responseData;
+    GetAllJsonSchemaValidationsPublic200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllJsonSchemaValidationsPublic200Response),
-      ) as OBPv400GetAllJsonSchemaValidationsPublic200Response;
+        specifiedType: const FullType(GetAllJsonSchemaValidationsPublic200Response),
+      ) as GetAllJsonSchemaValidationsPublic200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -271,7 +271,7 @@ class JSONSchemaValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllJsonSchemaValidationsPublic200Response>(
+    return Response<GetAllJsonSchemaValidationsPublic200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -294,9 +294,9 @@ class JSONSchemaValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllJsonSchemaValidationsPublic200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllJsonSchemaValidationsPublic200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllJsonSchemaValidationsPublic200Response>> oBPv400GetAllJsonSchemaValidationsPublic({ 
+  Future<Response<GetAllJsonSchemaValidationsPublic200Response>> getAllJsonSchemaValidationsPublic({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -325,14 +325,14 @@ class JSONSchemaValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllJsonSchemaValidationsPublic200Response? _responseData;
+    GetAllJsonSchemaValidationsPublic200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllJsonSchemaValidationsPublic200Response),
-      ) as OBPv400GetAllJsonSchemaValidationsPublic200Response;
+        specifiedType: const FullType(GetAllJsonSchemaValidationsPublic200Response),
+      ) as GetAllJsonSchemaValidationsPublic200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -344,7 +344,7 @@ class JSONSchemaValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllJsonSchemaValidationsPublic200Response>(
+    return Response<GetAllJsonSchemaValidationsPublic200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -368,9 +368,9 @@ class JSONSchemaValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> oBPv400GetJsonSchemaValidation({ 
+  Future<Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> getJsonSchemaValidation({ 
     required String operationid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -398,7 +398,7 @@ class JSONSchemaValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -415,14 +415,14 @@ class JSONSchemaValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? _responseData;
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems),
-      ) as OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems;
+        specifiedType: const FullType(GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner),
+      ) as GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -434,7 +434,7 @@ class JSONSchemaValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(
+    return Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -451,7 +451,7 @@ class JSONSchemaValidationApi {
   ///
   /// Parameters:
   /// * [operationid] - The OPERATIONID identifier
-  /// * [oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema] - Request body
+  /// * [getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -459,11 +459,11 @@ class JSONSchemaValidationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>> oBPv400UpdateJsonSchemaValidation({ 
+  Future<Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>> updateJsonSchemaValidation({ 
     required String operationid,
-    required OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema,
+    required GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -490,7 +490,7 @@ class JSONSchemaValidationApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -503,8 +503,8 @@ class JSONSchemaValidationApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema);
-      _bodyData = _serializers.serialize(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema, specifiedType: _type);
+      const _type = FullType(GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema);
+      _bodyData = _serializers.serialize(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -527,14 +527,14 @@ class JSONSchemaValidationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems? _responseData;
+    GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems),
-      ) as OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems;
+        specifiedType: const FullType(GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner),
+      ) as GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -546,7 +546,7 @@ class JSONSchemaValidationApi {
       );
     }
 
-    return Response<OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems>(
+    return Response<GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

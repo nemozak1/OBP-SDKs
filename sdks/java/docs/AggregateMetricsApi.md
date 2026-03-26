@@ -1,17 +1,17 @@
 # AggregateMetricsApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600GetAggregateMetrics**](AggregateMetricsApi.md#oBPv600GetAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
-| [**oBPv600GetAggregateMetricsWithHttpInfo**](AggregateMetricsApi.md#oBPv600GetAggregateMetricsWithHttpInfo) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**getAggregateMetrics**](AggregateMetricsApi.md#getAggregateMetrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
+| [**getAggregateMetricsWithHttpInfo**](AggregateMetricsApi.md#getAggregateMetricsWithHttpInfo) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics |
 
 
 
-## oBPv600GetAggregateMetrics
+## getAggregateMetrics
 
-> OBPv600GetAggregateMetrics200Response oBPv600GetAggregateMetrics()
+> GetAggregateMetrics200Response getAggregateMetrics()
 
 Get Aggregate Metrics
 
@@ -31,7 +31,7 @@ import com.openbankproject.api.AggregateMetricsApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -51,10 +51,10 @@ public class Example {
 
         AggregateMetricsApi apiInstance = new AggregateMetricsApi(defaultClient);
         try {
-            OBPv600GetAggregateMetrics200Response result = apiInstance.oBPv600GetAggregateMetrics();
+            GetAggregateMetrics200Response result = apiInstance.getAggregateMetrics();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AggregateMetricsApi#oBPv600GetAggregateMetrics");
+            System.err.println("Exception when calling AggregateMetricsApi#getAggregateMetrics");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -70,7 +70,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 
 ### Authorization
@@ -88,9 +88,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAggregateMetricsWithHttpInfo
+## getAggregateMetricsWithHttpInfo
 
-> ApiResponse<OBPv600GetAggregateMetrics200Response> oBPv600GetAggregateMetrics oBPv600GetAggregateMetricsWithHttpInfo()
+> ApiResponse<GetAggregateMetrics200Response> getAggregateMetrics getAggregateMetricsWithHttpInfo()
 
 Get Aggregate Metrics
 
@@ -111,7 +111,7 @@ import com.openbankproject.api.AggregateMetricsApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -131,12 +131,12 @@ public class Example {
 
         AggregateMetricsApi apiInstance = new AggregateMetricsApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAggregateMetrics200Response> response = apiInstance.oBPv600GetAggregateMetricsWithHttpInfo();
+            ApiResponse<GetAggregateMetrics200Response> response = apiInstance.getAggregateMetricsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AggregateMetricsApi#oBPv600GetAggregateMetrics");
+            System.err.println("Exception when calling AggregateMetricsApi#getAggregateMetrics");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)>
+ApiResponse<[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)>
 
 
 ### Authorization

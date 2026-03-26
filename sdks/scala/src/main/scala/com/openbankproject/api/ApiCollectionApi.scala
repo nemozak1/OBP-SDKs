@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,424 +11,32 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400CreateMyApiCollectionEndpointRequest
-import com.openbankproject.model.OBPv400CreateMyApiCollectionRequest
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response
-import com.openbankproject.model.OBPv400GetApiCollectionsForUser200Response
-import com.openbankproject.model.OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
-import com.openbankproject.model.OBPv400GetMyApiCollectionEndpoints200Response
-import com.openbankproject.model.OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
-import com.openbankproject.model.OBPv600CreateFeaturedApiCollectionRequest
-import com.openbankproject.model.OBPv600GetFeaturedApiCollectionsAdmin200Response
-import com.openbankproject.model.OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-import com.openbankproject.model.OBPv600UpdateFeaturedApiCollectionRequest
+import com.openbankproject.model.CreateFeaturedApiCollectionRequest
+import com.openbankproject.model.CreateMyApiCollectionEndpointRequest
+import com.openbankproject.model.CreateMyApiCollectionRequest
+import com.openbankproject.model.DeleteSystemLevelEndpointTag200Response
+import com.openbankproject.model.GetApiCollectionsForUser200Response
+import com.openbankproject.model.GetApiCollectionsForUser200ResponseApiCollectionsInner
+import com.openbankproject.model.GetFeaturedApiCollectionsAdmin200Response
+import com.openbankproject.model.GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
+import com.openbankproject.model.GetMyApiCollectionEndpoints200Response
+import com.openbankproject.model.GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+import com.openbankproject.model.UpdateFeaturedApiCollectionRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object ApiCollectionApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new ApiCollectionApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new ApiCollectionApi(baseUrl)
 }
 
 class ApiCollectionApi(baseUrl: String) {
 
   /**
-   * <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param oBPv400CreateMyApiCollectionRequest Request body
-   */
-  def oBPv400CreateMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collections")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateMyApiCollectionRequest)
-      .response(asJson[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems])
-
-  /**
-   * <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionname The APICOLLECTIONNAME identifier
-   * @param oBPv400CreateMyApiCollectionEndpointRequest Request body
-   */
-  def oBPv400CreateMyApiCollectionEndpoint(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateMyApiCollectionEndpointRequest)
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems])
-
-  /**
-   * <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   * @param oBPv400CreateMyApiCollectionEndpointRequest Request body
-   */
-  def oBPv400CreateMyApiCollectionEndpointById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]] =
-    basicRequest
-      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateMyApiCollectionEndpointRequest)
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems])
-
-  /**
-   * <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400DeleteSystemLevelEndpointTag200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   */
-  def oBPv400DeleteMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], OBPv400DeleteSystemLevelEndpointTag200Response]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400DeleteSystemLevelEndpointTag200Response])
-
-  /**
-   * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400DeleteSystemLevelEndpointTag200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionname The APICOLLECTIONNAME identifier
-   * @param operationid The OPERATIONID identifier
-   */
-  def oBPv400DeleteMyApiCollectionEndpoint(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String, operationid: String): Request[Either[ResponseException[String, Exception], OBPv400DeleteSystemLevelEndpointTag200Response]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints/${operationid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400DeleteSystemLevelEndpointTag200Response])
-
-  /**
-   * <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400DeleteSystemLevelEndpointTag200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
-   */
-  def oBPv400DeleteMyApiCollectionEndpointById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, apicollectionendpointid: String): Request[Either[ResponseException[String, Exception], OBPv400DeleteSystemLevelEndpointTag200Response]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoint-ids/${apicollectionendpointid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400DeleteSystemLevelEndpointTag200Response])
-
-  /**
-   * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400DeleteSystemLevelEndpointTag200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   * @param operationid The OPERATIONID identifier
-   */
-  def oBPv400DeleteMyApiCollectionEndpointByOperationId(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, operationid: String): Request[Either[ResponseException[String, Exception], OBPv400DeleteSystemLevelEndpointTag200Response]] =
-    basicRequest
-      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints/${operationid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400DeleteSystemLevelEndpointTag200Response])
-
-  /**
-   * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   */
-  def oBPv400GetApiCollectionEndpoints(apicollectionid: String): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/${apicollectionid}/api-collection-endpoints")
-      .contentType("application/json")
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200Response])
-
-  /**
-   * <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param userid The USERID identifier
-   */
-  def oBPv400GetApiCollectionsForUser(apiKeyHeader: String, apiKeyHeader: String)(userid: String): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/users/${userid}/api-collections")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetApiCollectionsForUser200Response])
-
-  /**
-   * <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   */
-  def oBPv400GetFeaturedApiCollections(): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/featured")
-      .contentType("application/json")
-      .response(asJson[OBPv400GetApiCollectionsForUser200Response])
-
-  /**
-   * <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   */
-  def oBPv400GetMyApiCollectionById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems])
-
-  /**
-   * <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionname The APICOLLECTIONNAME identifier
-   */
-  def oBPv400GetMyApiCollectionByName(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/name/${apicollectionname}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems])
-
-  /**
-   * <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * @param apicollectionname The APICOLLECTIONNAME identifier
-   * @param operationid The OPERATIONID identifier
-   */
-  def oBPv400GetMyApiCollectionEndpoint(apicollectionname: String, operationid: String): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints/${operationid}")
-      .contentType("application/json")
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems])
-
-  /**
-   * <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionname The APICOLLECTIONNAME identifier
-   */
-  def oBPv400GetMyApiCollectionEndpoints(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200Response])
-
-  /**
-   * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetMyApiCollectionEndpoints200Response (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   */
-  def oBPv400GetMyApiCollectionEndpointsById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], OBPv400GetMyApiCollectionEndpoints200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetMyApiCollectionEndpoints200Response])
-
-  /**
-   * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   */
-  def oBPv400GetMyApiCollections(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetApiCollectionsForUser200Response])
-
-  /**
-   * <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   */
-  def oBPv400GetSharableApiCollectionById(apicollectionid: String): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/sharable/${apicollectionid}")
-      .contentType("application/json")
-      .response(asJson[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems])
-
-  /**
-   * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200Response (Successful operation)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   */
-  def oBPv510GetAllApiCollections(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200Response]] =
-    basicRequest
-      .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/api-collections")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetApiCollectionsForUser200Response])
-
-  /**
-   * <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-   * 
-   * Expected answers:
-   *   code 200 : OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems (Successful operation)
-   *   code 404 :  (Not Found)
-   *   code 500 :  (Internal Server Error)
-   * 
-   * Available security schemes:
-   *   GatewayLogin (apiKey)
-   *   DirectLogin (apiKey)
-   * 
-   * @param apicollectionid The APICOLLECTIONID identifier
-   * @param oBPv400CreateMyApiCollectionRequest Request body
-   */
-  def oBPv510UpdateMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest): Request[Either[ResponseException[String, Exception], OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems]] =
-    basicRequest
-      .method(Method.PUT, uri"$baseUrl/obp/v5.1.0/my/api-collections/${apicollectionid}")
-      .contentType("application/json")
-      .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400CreateMyApiCollectionRequest)
-      .response(asJson[OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems])
-
-  /**
    * <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems (Successful operation)
+   *   code 200 : GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    *   code 401 :  (Unauthorized)
@@ -437,16 +45,85 @@ class ApiCollectionApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv600CreateFeaturedApiCollectionRequest Request body
+   * @param createFeaturedApiCollectionRequest Request body
    */
-  def oBPv600CreateFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(oBPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest): Request[Either[ResponseException[String, Exception], OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems]] =
+  def createFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest): Request[Either[ResponseException[String, Exception], GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v6.0.0/management/api-collections/featured")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createFeaturedApiCollectionRequest)
+      .response(asJson[GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner])
+
+  /**
+   * <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200ResponseApiCollectionsInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param createMyApiCollectionRequest Request body
+   */
+  def createMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(createMyApiCollectionRequest: CreateMyApiCollectionRequest): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200ResponseApiCollectionsInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collections")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .body(oBPv600CreateFeaturedApiCollectionRequest)
-      .response(asJson[OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createMyApiCollectionRequest)
+      .response(asJson[GetApiCollectionsForUser200ResponseApiCollectionsInner])
+
+  /**
+   * <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionname The APICOLLECTIONNAME identifier
+   * @param createMyApiCollectionEndpointRequest Request body
+   */
+  def createMyApiCollectionEndpoint(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createMyApiCollectionEndpointRequest)
+      .response(asJson[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner])
+
+  /**
+   * <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   * @param createMyApiCollectionEndpointRequest Request body
+   */
+  def createMyApiCollectionEndpointById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]] =
+    basicRequest
+      .method(Method.POST, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(createMyApiCollectionEndpointRequest)
+      .response(asJson[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner])
 
   /**
    * <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
@@ -464,38 +141,337 @@ class ApiCollectionApi(baseUrl: String) {
    * 
    * @param apicollectionid The APICOLLECTIONID identifier
    */
-  def oBPv600DeleteFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v6.0.0/management/api-collections/featured/${apicollectionid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
-   * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+   * <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetFeaturedApiCollectionsAdmin200Response (Successful operation)
+   *   code 200 : DeleteSystemLevelEndpointTag200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   */
+  def deleteMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], DeleteSystemLevelEndpointTag200Response]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[DeleteSystemLevelEndpointTag200Response])
+
+  /**
+   * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 : DeleteSystemLevelEndpointTag200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionname The APICOLLECTIONNAME identifier
+   * @param operationid The OPERATIONID identifier
+   */
+  def deleteMyApiCollectionEndpoint(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String, operationid: String): Request[Either[ResponseException[String, Exception], DeleteSystemLevelEndpointTag200Response]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints/${operationid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[DeleteSystemLevelEndpointTag200Response])
+
+  /**
+   * <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 : DeleteSystemLevelEndpointTag200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   * @param apicollectionendpointid The APICOLLECTIONENDPOINTID identifier
+   */
+  def deleteMyApiCollectionEndpointById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, apicollectionendpointid: String): Request[Either[ResponseException[String, Exception], DeleteSystemLevelEndpointTag200Response]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoint-ids/${apicollectionendpointid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[DeleteSystemLevelEndpointTag200Response])
+
+  /**
+   * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
+   * 
+   * Expected answers:
+   *   code 200 : DeleteSystemLevelEndpointTag200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   * @param operationid The OPERATIONID identifier
+   */
+  def deleteMyApiCollectionEndpointByOperationId(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, operationid: String): Request[Either[ResponseException[String, Exception], DeleteSystemLevelEndpointTag200Response]] =
+    basicRequest
+      .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints/${operationid}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[DeleteSystemLevelEndpointTag200Response])
+
+  /**
+   * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv600GetFeaturedApiCollectionsAdmin(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv600GetFeaturedApiCollectionsAdmin200Response]] =
+  def getAllApiCollections(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v5.1.0/management/api-collections")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetApiCollectionsForUser200Response])
+
+  /**
+   * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   */
+  def getApiCollectionEndpoints(apicollectionid: String): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/${apicollectionid}/api-collection-endpoints")
+      .contentType("application/json")
+      .response(asJson[GetMyApiCollectionEndpoints200Response])
+
+  /**
+   * <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param userid The USERID identifier
+   */
+  def getApiCollectionsForUser(apiKeyHeader: String, apiKeyHeader: String)(userid: String): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/users/${userid}/api-collections")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetApiCollectionsForUser200Response])
+
+  /**
+   * <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   */
+  def getFeaturedApiCollections(): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/featured")
+      .contentType("application/json")
+      .response(asJson[GetApiCollectionsForUser200Response])
+
+  /**
+   * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetFeaturedApiCollectionsAdmin200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getFeaturedApiCollectionsAdmin(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetFeaturedApiCollectionsAdmin200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/management/api-collections/featured")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetFeaturedApiCollectionsAdmin200Response])
+
+  /**
+   * <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200ResponseApiCollectionsInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   */
+  def getMyApiCollectionById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200ResponseApiCollectionsInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv600GetFeaturedApiCollectionsAdmin200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetApiCollectionsForUser200ResponseApiCollectionsInner])
+
+  /**
+   * <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200ResponseApiCollectionsInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionname The APICOLLECTIONNAME identifier
+   */
+  def getMyApiCollectionByName(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200ResponseApiCollectionsInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/name/${apicollectionname}")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetApiCollectionsForUser200ResponseApiCollectionsInner])
+
+  /**
+   * <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * @param apicollectionname The APICOLLECTIONNAME identifier
+   * @param operationid The OPERATIONID identifier
+   */
+  def getMyApiCollectionEndpoint(apicollectionname: String, operationid: String): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints/${operationid}")
+      .contentType("application/json")
+      .response(asJson[GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner])
+
+  /**
+   * <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionname The APICOLLECTIONNAME identifier
+   */
+  def getMyApiCollectionEndpoints(apiKeyHeader: String, apiKeyHeader: String)(apicollectionname: String): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections/${apicollectionname}/api-collection-endpoints")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyApiCollectionEndpoints200Response])
+
+  /**
+   * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetMyApiCollectionEndpoints200Response (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   */
+  def getMyApiCollectionEndpointsById(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String): Request[Either[ResponseException[String, Exception], GetMyApiCollectionEndpoints200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collection-ids/${apicollectionid}/api-collection-endpoints")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetMyApiCollectionEndpoints200Response])
+
+  /**
+   * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200Response (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   */
+  def getMyApiCollections(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200Response]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/my/api-collections")
+      .contentType("application/json")
+      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetApiCollectionsForUser200Response])
+
+  /**
+   * <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200ResponseApiCollectionsInner (Successful operation)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   */
+  def getSharableApiCollectionById(apicollectionid: String): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200ResponseApiCollectionsInner]] =
+    basicRequest
+      .method(Method.GET, uri"$baseUrl/obp/v4.0.0/api-collections/sharable/${apicollectionid}")
+      .contentType("application/json")
+      .response(asJson[GetApiCollectionsForUser200ResponseApiCollectionsInner])
 
   /**
    * <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems (Successful operation)
+   *   code 200 : GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner (Successful operation)
    *   code 400 :  (Bad Request)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
@@ -505,15 +481,39 @@ class ApiCollectionApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param apicollectionid The APICOLLECTIONID identifier
-   * @param oBPv600UpdateFeaturedApiCollectionRequest Request body
+   * @param updateFeaturedApiCollectionRequest Request body
    */
-  def oBPv600UpdateFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, oBPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest): Request[Either[ResponseException[String, Exception], OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems]] =
+  def updateFeaturedApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest): Request[Either[ResponseException[String, Exception], GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v6.0.0/management/api-collections/featured/${apicollectionid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateFeaturedApiCollectionRequest)
+      .response(asJson[GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner])
+
+  /**
+   * <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+   * 
+   * Expected answers:
+   *   code 200 : GetApiCollectionsForUser200ResponseApiCollectionsInner (Successful operation)
+   *   code 404 :  (Not Found)
+   *   code 500 :  (Internal Server Error)
+   * 
+   * Available security schemes:
+   *   GatewayLogin (apiKey)
+   *   DirectLogin (apiKey)
+   * 
+   * @param apicollectionid The APICOLLECTIONID identifier
+   * @param createMyApiCollectionRequest Request body
+   */
+  def updateMyApiCollection(apiKeyHeader: String, apiKeyHeader: String)(apicollectionid: String, createMyApiCollectionRequest: CreateMyApiCollectionRequest): Request[Either[ResponseException[String, Exception], GetApiCollectionsForUser200ResponseApiCollectionsInner]] =
+    basicRequest
+      .method(Method.PUT, uri"$baseUrl/obp/v5.1.0/my/api-collections/${apicollectionid}")
+      .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .body(oBPv600UpdateFeaturedApiCollectionRequest)
-      .response(asJson[OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems])
+      .header("DirectLogin", apiKeyHeader)
+      .body(createMyApiCollectionRequest)
+      .response(asJson[GetApiCollectionsForUser200ResponseApiCollectionsInner])
 
 }

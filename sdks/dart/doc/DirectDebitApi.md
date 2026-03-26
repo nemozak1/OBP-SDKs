@@ -5,16 +5,16 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateDirectDebit**](DirectDebitApi.md#obpv400createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
-[**oBPv400CreateDirectDebitManagement**](DirectDebitApi.md#obpv400createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
+[**createDirectDebit**](DirectDebitApi.md#createdirectdebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit
+[**createDirectDebitManagement**](DirectDebitApi.md#createdirectdebitmanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management)
 
 
-# **oBPv400CreateDirectDebit**
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(bankid, accountid, viewid, oBPv400CreateDirectDebitRequest)
+# **createDirectDebit**
+> CreateDirectDebit200Response createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -38,13 +38,13 @@ final api = ObpDart().getDirectDebitApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
 final String viewid = viewid_example; // String | The VIEWID identifier
-final OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}}; // OBPv400CreateDirectDebitRequest | Request body
+final CreateDirectDebitRequest createDirectDebitRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}}; // CreateDirectDebitRequest | Request body
 
 try {
-    final response = api.oBPv400CreateDirectDebit(bankid, accountid, viewid, oBPv400CreateDirectDebitRequest);
+    final response = api.createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectDebitApi->oBPv400CreateDirectDebit: $e\n');
+    print('Exception when calling DirectDebitApi->createDirectDebit: $e\n');
 }
 ```
 
@@ -55,11 +55,11 @@ Name | Type | Description  | Notes
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
  **viewid** | **String**| The VIEWID identifier | 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateDirectDebitManagement**
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(bankid, accountid, oBPv400CreateDirectDebitRequest)
+# **createDirectDebitManagement**
+> CreateDirectDebit200Response createDirectDebitManagement(bankid, accountid, createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -96,13 +96,13 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getDirectDebitApi();
 final String bankid = bankid_example; // String | The BANKID identifier
 final String accountid = accountid_example; // String | The ACCOUNTID identifier
-final OBPv400CreateDirectDebitRequest oBPv400CreateDirectDebitRequest = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, date_signed={type=string, format=date-time}, user_id={type=string}}}; // OBPv400CreateDirectDebitRequest | Request body
+final CreateDirectDebitRequest createDirectDebitRequest = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}}; // CreateDirectDebitRequest | Request body
 
 try {
-    final response = api.oBPv400CreateDirectDebitManagement(bankid, accountid, oBPv400CreateDirectDebitRequest);
+    final response = api.createDirectDebitManagement(bankid, accountid, createDirectDebitRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling DirectDebitApi->oBPv400CreateDirectDebitManagement: $e\n');
+    print('Exception when calling DirectDebitApi->createDirectDebitManagement: $e\n');
 }
 ```
 
@@ -112,11 +112,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
  **accountid** | **String**| The ACCOUNTID identifier | 
- **oBPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | 
+ **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 

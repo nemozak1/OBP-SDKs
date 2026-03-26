@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,66 +15,66 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400GetDynamicEndpoints200Response,
-  OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems,
-  OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString,
-  OBPv400UpdateBankLevelDynamicEndpointHostRequest,
+  GetDynamicEndpoints200Response,
+  GetDynamicEndpoints200ResponseDynamicEndpointsInner,
+  GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString,
+  UpdateBankLevelDynamicEndpointHostRequest,
 } from '../models/index';
 import {
-    OBPv400GetDynamicEndpoints200ResponseFromJSON,
-    OBPv400GetDynamicEndpoints200ResponseToJSON,
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsFromJSON,
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsToJSON,
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringFromJSON,
-    OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringToJSON,
-    OBPv400UpdateBankLevelDynamicEndpointHostRequestFromJSON,
-    OBPv400UpdateBankLevelDynamicEndpointHostRequestToJSON,
+    GetDynamicEndpoints200ResponseFromJSON,
+    GetDynamicEndpoints200ResponseToJSON,
+    GetDynamicEndpoints200ResponseDynamicEndpointsInnerFromJSON,
+    GetDynamicEndpoints200ResponseDynamicEndpointsInnerToJSON,
+    GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringFromJSON,
+    GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringToJSON,
+    UpdateBankLevelDynamicEndpointHostRequestFromJSON,
+    UpdateBankLevelDynamicEndpointHostRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateBankLevelDynamicEndpointRequest {
+export interface CreateBankLevelDynamicEndpointRequest {
     bankid: string;
-    oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString;
+    getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString;
 }
 
-export interface OBPv400CreateDynamicEndpointRequest {
-    oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString;
+export interface CreateDynamicEndpointRequest {
+    getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString;
 }
 
-export interface OBPv400DeleteBankLevelDynamicEndpointRequest {
-    bankid: string;
-    dynamicendpointid: string;
-}
-
-export interface OBPv400DeleteDynamicEndpointRequest {
-    dynamicendpointid: string;
-}
-
-export interface OBPv400DeleteMyDynamicEndpointRequest {
-    dynamicendpointid: string;
-}
-
-export interface OBPv400GetBankLevelDynamicEndpointRequest {
+export interface DeleteBankLevelDynamicEndpointRequest {
     bankid: string;
     dynamicendpointid: string;
 }
 
-export interface OBPv400GetBankLevelDynamicEndpointsRequest {
+export interface DeleteDynamicEndpointRequest {
+    dynamicendpointid: string;
+}
+
+export interface DeleteMyDynamicEndpointRequest {
+    dynamicendpointid: string;
+}
+
+export interface GetBankLevelDynamicEndpointRequest {
+    bankid: string;
+    dynamicendpointid: string;
+}
+
+export interface GetBankLevelDynamicEndpointsRequest {
     bankid: string;
 }
 
-export interface OBPv400GetDynamicEndpointRequest {
+export interface GetDynamicEndpointRequest {
     dynamicendpointid: string;
 }
 
-export interface OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest {
+export interface UpdateBankLevelDynamicEndpointHostOperationRequest {
     bankid: string;
     dynamicendpointid: string;
-    oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest;
+    updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest;
 }
 
-export interface OBPv400UpdateDynamicEndpointHostRequest {
+export interface UpdateDynamicEndpointHostRequest {
     dynamicendpointid: string;
-    oBPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest;
+    updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest;
 }
 
 /**
@@ -83,20 +83,20 @@ export interface OBPv400UpdateDynamicEndpointHostRequest {
 export class DynamicEndpointManageApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateBankLevelDynamicEndpoint without sending the request
+     * Creates request options for createBankLevelDynamicEndpoint without sending the request
      */
-    async oBPv400CreateBankLevelDynamicEndpointRequestOpts(requestParameters: OBPv400CreateBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async createBankLevelDynamicEndpointRequestOpts(requestParameters: CreateBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400CreateBankLevelDynamicEndpoint().'
+                'Required parameter "bankid" was null or undefined when calling createBankLevelDynamicEndpoint().'
             );
         }
 
-        if (requestParameters['oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString'] == null) {
+        if (requestParameters['getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString',
-                'Required parameter "oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString" was null or undefined when calling oBPv400CreateBankLevelDynamicEndpoint().'
+                'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString',
+                'Required parameter "getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString" was null or undefined when calling createBankLevelDynamicEndpoint().'
             );
         }
 
@@ -116,7 +116,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -128,7 +128,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringToJSON(requestParameters['oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString']),
+            body: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringToJSON(requestParameters['getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString']),
         };
     }
 
@@ -136,30 +136,30 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Bank Level Dynamic Endpoint
      */
-    async oBPv400CreateBankLevelDynamicEndpointRaw(requestParameters: OBPv400CreateBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> {
-        const requestOptions = await this.oBPv400CreateBankLevelDynamicEndpointRequestOpts(requestParameters);
+    async createBankLevelDynamicEndpointRaw(requestParameters: CreateBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> {
+        const requestOptions = await this.createBankLevelDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseDynamicEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Bank Level Dynamic Endpoint
      */
-    async oBPv400CreateBankLevelDynamicEndpoint(requestParameters: OBPv400CreateBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
-        const response = await this.oBPv400CreateBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
+    async createBankLevelDynamicEndpoint(requestParameters: CreateBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
+        const response = await this.createBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateDynamicEndpoint without sending the request
+     * Creates request options for createDynamicEndpoint without sending the request
      */
-    async oBPv400CreateDynamicEndpointRequestOpts(requestParameters: OBPv400CreateDynamicEndpointRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString'] == null) {
+    async createDynamicEndpointRequestOpts(requestParameters: CreateDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString',
-                'Required parameter "oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString" was null or undefined when calling oBPv400CreateDynamicEndpoint().'
+                'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString',
+                'Required parameter "getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString" was null or undefined when calling createDynamicEndpoint().'
             );
         }
 
@@ -179,7 +179,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -190,7 +190,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerStringToJSON(requestParameters['oBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString']),
+            body: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerStringToJSON(requestParameters['getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString']),
         };
     }
 
@@ -198,37 +198,37 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Dynamic Endpoint
      */
-    async oBPv400CreateDynamicEndpointRaw(requestParameters: OBPv400CreateDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> {
-        const requestOptions = await this.oBPv400CreateDynamicEndpointRequestOpts(requestParameters);
+    async createDynamicEndpointRaw(requestParameters: CreateDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> {
+        const requestOptions = await this.createDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseDynamicEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create dynamic endpoints.</p> <p>Create dynamic endpoints with one json format swagger content.</p> <p>If the host of swagger is <code>dynamic_entity</code>, then you need link the swagger fields to the dynamic entity fields,<br /> please check <code>Endpoint Mapping</code> endpoints.</p> <p>If the host of swagger is <code>obp_mock</code>, every dynamic endpoint will return example response of swagger,</p> <p>when create MethodRouting for given dynamic endpoint, it will be routed to given url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Create Dynamic Endpoint
      */
-    async oBPv400CreateDynamicEndpoint(requestParameters: OBPv400CreateDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
-        const response = await this.oBPv400CreateDynamicEndpointRaw(requestParameters, initOverrides);
+    async createDynamicEndpoint(requestParameters: CreateDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
+        const response = await this.createDynamicEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteBankLevelDynamicEndpoint without sending the request
+     * Creates request options for deleteBankLevelDynamicEndpoint without sending the request
      */
-    async oBPv400DeleteBankLevelDynamicEndpointRequestOpts(requestParameters: OBPv400DeleteBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async deleteBankLevelDynamicEndpointRequestOpts(requestParameters: DeleteBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteBankLevelDynamicEndpoint().'
+                'Required parameter "bankid" was null or undefined when calling deleteBankLevelDynamicEndpoint().'
             );
         }
 
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400DeleteBankLevelDynamicEndpoint().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling deleteBankLevelDynamicEndpoint().'
             );
         }
 
@@ -246,7 +246,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -266,8 +266,8 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Delete Bank Level Dynamic Endpoint
      */
-    async oBPv400DeleteBankLevelDynamicEndpointRaw(requestParameters: OBPv400DeleteBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteBankLevelDynamicEndpointRequestOpts(requestParameters);
+    async deleteBankLevelDynamicEndpointRaw(requestParameters: DeleteBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteBankLevelDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -277,18 +277,18 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a Bank Level DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Delete Bank Level Dynamic Endpoint
      */
-    async oBPv400DeleteBankLevelDynamicEndpoint(requestParameters: OBPv400DeleteBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
+    async deleteBankLevelDynamicEndpoint(requestParameters: DeleteBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400DeleteDynamicEndpoint without sending the request
+     * Creates request options for deleteDynamicEndpoint without sending the request
      */
-    async oBPv400DeleteDynamicEndpointRequestOpts(requestParameters: OBPv400DeleteDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async deleteDynamicEndpointRequestOpts(requestParameters: DeleteDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400DeleteDynamicEndpoint().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling deleteDynamicEndpoint().'
             );
         }
 
@@ -306,7 +306,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -325,8 +325,8 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Delete Dynamic Endpoint
      */
-    async oBPv400DeleteDynamicEndpointRaw(requestParameters: OBPv400DeleteDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteDynamicEndpointRequestOpts(requestParameters);
+    async deleteDynamicEndpointRaw(requestParameters: DeleteDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -336,18 +336,18 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Delete Dynamic Endpoint
      */
-    async oBPv400DeleteDynamicEndpoint(requestParameters: OBPv400DeleteDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteDynamicEndpointRaw(requestParameters, initOverrides);
+    async deleteDynamicEndpoint(requestParameters: DeleteDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteDynamicEndpointRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400DeleteMyDynamicEndpoint without sending the request
+     * Creates request options for deleteMyDynamicEndpoint without sending the request
      */
-    async oBPv400DeleteMyDynamicEndpointRequestOpts(requestParameters: OBPv400DeleteMyDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async deleteMyDynamicEndpointRequestOpts(requestParameters: DeleteMyDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400DeleteMyDynamicEndpoint().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling deleteMyDynamicEndpoint().'
             );
         }
 
@@ -365,7 +365,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -384,8 +384,8 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Delete My Dynamic Endpoint
      */
-    async oBPv400DeleteMyDynamicEndpointRaw(requestParameters: OBPv400DeleteMyDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteMyDynamicEndpointRequestOpts(requestParameters);
+    async deleteMyDynamicEndpointRaw(requestParameters: DeleteMyDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteMyDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -395,25 +395,25 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Delete a DynamicEndpoint specified by DYNAMIC_ENDPOINT_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Delete My Dynamic Endpoint
      */
-    async oBPv400DeleteMyDynamicEndpoint(requestParameters: OBPv400DeleteMyDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteMyDynamicEndpointRaw(requestParameters, initOverrides);
+    async deleteMyDynamicEndpoint(requestParameters: DeleteMyDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteMyDynamicEndpointRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetBankLevelDynamicEndpoint without sending the request
+     * Creates request options for getBankLevelDynamicEndpoint without sending the request
      */
-    async oBPv400GetBankLevelDynamicEndpointRequestOpts(requestParameters: OBPv400GetBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelDynamicEndpointRequestOpts(requestParameters: GetBankLevelDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankLevelDynamicEndpoint().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelDynamicEndpoint().'
             );
         }
 
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400GetBankLevelDynamicEndpoint().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling getBankLevelDynamicEndpoint().'
             );
         }
 
@@ -431,7 +431,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -451,30 +451,30 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Get Bank Level Dynamic Endpoint
      */
-    async oBPv400GetBankLevelDynamicEndpointRaw(requestParameters: OBPv400GetBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> {
-        const requestOptions = await this.oBPv400GetBankLevelDynamicEndpointRequestOpts(requestParameters);
+    async getBankLevelDynamicEndpointRaw(requestParameters: GetBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> {
+        const requestOptions = await this.getBankLevelDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseDynamicEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Bank Level Dynamic Endpoint.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Get Bank Level Dynamic Endpoint
      */
-    async oBPv400GetBankLevelDynamicEndpoint(requestParameters: OBPv400GetBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
-        const response = await this.oBPv400GetBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
+    async getBankLevelDynamicEndpoint(requestParameters: GetBankLevelDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
+        const response = await this.getBankLevelDynamicEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetBankLevelDynamicEndpoints without sending the request
+     * Creates request options for getBankLevelDynamicEndpoints without sending the request
      */
-    async oBPv400GetBankLevelDynamicEndpointsRequestOpts(requestParameters: OBPv400GetBankLevelDynamicEndpointsRequest): Promise<runtime.RequestOpts> {
+    async getBankLevelDynamicEndpointsRequestOpts(requestParameters: GetBankLevelDynamicEndpointsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetBankLevelDynamicEndpoints().'
+                'Required parameter "bankid" was null or undefined when calling getBankLevelDynamicEndpoints().'
             );
         }
 
@@ -492,7 +492,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -511,30 +511,30 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Get Bank Level Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Bank Level Dynamic Endpoints
      */
-    async oBPv400GetBankLevelDynamicEndpointsRaw(requestParameters: OBPv400GetBankLevelDynamicEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetBankLevelDynamicEndpointsRequestOpts(requestParameters);
+    async getBankLevelDynamicEndpointsRaw(requestParameters: GetBankLevelDynamicEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200Response>> {
+        const requestOptions = await this.getBankLevelDynamicEndpointsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Bank Level Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Bank Level Dynamic Endpoints
      */
-    async oBPv400GetBankLevelDynamicEndpoints(requestParameters: OBPv400GetBankLevelDynamicEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200Response> {
-        const response = await this.oBPv400GetBankLevelDynamicEndpointsRaw(requestParameters, initOverrides);
+    async getBankLevelDynamicEndpoints(requestParameters: GetBankLevelDynamicEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200Response> {
+        const response = await this.getBankLevelDynamicEndpointsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetDynamicEndpoint without sending the request
+     * Creates request options for getDynamicEndpoint without sending the request
      */
-    async oBPv400GetDynamicEndpointRequestOpts(requestParameters: OBPv400GetDynamicEndpointRequest): Promise<runtime.RequestOpts> {
+    async getDynamicEndpointRequestOpts(requestParameters: GetDynamicEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400GetDynamicEndpoint().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling getDynamicEndpoint().'
             );
         }
 
@@ -552,7 +552,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -571,26 +571,26 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Dynamic Endpoint
      */
-    async oBPv400GetDynamicEndpointRaw(requestParameters: OBPv400GetDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>> {
-        const requestOptions = await this.oBPv400GetDynamicEndpointRequestOpts(requestParameters);
+    async getDynamicEndpointRaw(requestParameters: GetDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>> {
+        const requestOptions = await this.getDynamicEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseDynamicEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get a Dynamic Endpoint.</p> <p>Get one DynamicEndpoint,</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get Dynamic Endpoint
      */
-    async oBPv400GetDynamicEndpoint(requestParameters: OBPv400GetDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> {
-        const response = await this.oBPv400GetDynamicEndpointRaw(requestParameters, initOverrides);
+    async getDynamicEndpoint(requestParameters: GetDynamicEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200ResponseDynamicEndpointsInner> {
+        const response = await this.getDynamicEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetDynamicEndpoints without sending the request
+     * Creates request options for getDynamicEndpoints without sending the request
      */
-    async oBPv400GetDynamicEndpointsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getDynamicEndpointsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -605,7 +605,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -623,26 +623,26 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Get Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Get Dynamic Endpoints
      */
-    async oBPv400GetDynamicEndpointsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetDynamicEndpointsRequestOpts();
+    async getDynamicEndpointsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200Response>> {
+        const requestOptions = await this.getDynamicEndpointsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Get Dynamic Endpoints
      */
-    async oBPv400GetDynamicEndpoints(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200Response> {
-        const response = await this.oBPv400GetDynamicEndpointsRaw(initOverrides);
+    async getDynamicEndpoints(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200Response> {
+        const response = await this.getDynamicEndpointsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyDynamicEndpoints without sending the request
+     * Creates request options for getMyDynamicEndpoints without sending the request
      */
-    async oBPv400GetMyDynamicEndpointsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getMyDynamicEndpointsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -657,7 +657,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -675,44 +675,44 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Get My Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get My Dynamic Endpoints
      */
-    async oBPv400GetMyDynamicEndpointsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetDynamicEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetMyDynamicEndpointsRequestOpts();
+    async getMyDynamicEndpointsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDynamicEndpoints200Response>> {
+        const requestOptions = await this.getMyDynamicEndpointsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetDynamicEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDynamicEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get My Dynamic Endpoints.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      * Get My Dynamic Endpoints
      */
-    async oBPv400GetMyDynamicEndpoints(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetDynamicEndpoints200Response> {
-        const response = await this.oBPv400GetMyDynamicEndpointsRaw(initOverrides);
+    async getMyDynamicEndpoints(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDynamicEndpoints200Response> {
+        const response = await this.getMyDynamicEndpointsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateBankLevelDynamicEndpointHost without sending the request
+     * Creates request options for updateBankLevelDynamicEndpointHost without sending the request
      */
-    async oBPv400UpdateBankLevelDynamicEndpointHostRequestOpts(requestParameters: OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest): Promise<runtime.RequestOpts> {
+    async updateBankLevelDynamicEndpointHostRequestOpts(requestParameters: UpdateBankLevelDynamicEndpointHostOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400UpdateBankLevelDynamicEndpointHost().'
+                'Required parameter "bankid" was null or undefined when calling updateBankLevelDynamicEndpointHost().'
             );
         }
 
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400UpdateBankLevelDynamicEndpointHost().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling updateBankLevelDynamicEndpointHost().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateBankLevelDynamicEndpointHostRequest'] == null) {
+        if (requestParameters['updateBankLevelDynamicEndpointHostRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicEndpointHostRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicEndpointHostRequest" was null or undefined when calling oBPv400UpdateBankLevelDynamicEndpointHost().'
+                'updateBankLevelDynamicEndpointHostRequest',
+                'Required parameter "updateBankLevelDynamicEndpointHostRequest" was null or undefined when calling updateBankLevelDynamicEndpointHost().'
             );
         }
 
@@ -732,7 +732,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -745,7 +745,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicEndpointHostRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicEndpointHostRequest']),
+            body: UpdateBankLevelDynamicEndpointHostRequestToJSON(requestParameters['updateBankLevelDynamicEndpointHostRequest']),
         };
     }
 
@@ -753,37 +753,37 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Update Bank Level  dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Update Bank Level Dynamic Endpoint Host
      */
-    async oBPv400UpdateBankLevelDynamicEndpointHostRaw(requestParameters: OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>> {
-        const requestOptions = await this.oBPv400UpdateBankLevelDynamicEndpointHostRequestOpts(requestParameters);
+    async updateBankLevelDynamicEndpointHostRaw(requestParameters: UpdateBankLevelDynamicEndpointHostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>> {
+        const requestOptions = await this.updateBankLevelDynamicEndpointHostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400UpdateBankLevelDynamicEndpointHostRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateBankLevelDynamicEndpointHostRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Bank Level  dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Update Bank Level Dynamic Endpoint Host
      */
-    async oBPv400UpdateBankLevelDynamicEndpointHost(requestParameters: OBPv400UpdateBankLevelDynamicEndpointHostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
-        const response = await this.oBPv400UpdateBankLevelDynamicEndpointHostRaw(requestParameters, initOverrides);
+    async updateBankLevelDynamicEndpointHost(requestParameters: UpdateBankLevelDynamicEndpointHostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateBankLevelDynamicEndpointHostRequest> {
+        const response = await this.updateBankLevelDynamicEndpointHostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400UpdateDynamicEndpointHost without sending the request
+     * Creates request options for updateDynamicEndpointHost without sending the request
      */
-    async oBPv400UpdateDynamicEndpointHostRequestOpts(requestParameters: OBPv400UpdateDynamicEndpointHostRequest): Promise<runtime.RequestOpts> {
+    async updateDynamicEndpointHostRequestOpts(requestParameters: UpdateDynamicEndpointHostRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dynamicendpointid'] == null) {
             throw new runtime.RequiredError(
                 'dynamicendpointid',
-                'Required parameter "dynamicendpointid" was null or undefined when calling oBPv400UpdateDynamicEndpointHost().'
+                'Required parameter "dynamicendpointid" was null or undefined when calling updateDynamicEndpointHost().'
             );
         }
 
-        if (requestParameters['oBPv400UpdateBankLevelDynamicEndpointHostRequest'] == null) {
+        if (requestParameters['updateBankLevelDynamicEndpointHostRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400UpdateBankLevelDynamicEndpointHostRequest',
-                'Required parameter "oBPv400UpdateBankLevelDynamicEndpointHostRequest" was null or undefined when calling oBPv400UpdateDynamicEndpointHost().'
+                'updateBankLevelDynamicEndpointHostRequest',
+                'Required parameter "updateBankLevelDynamicEndpointHostRequest" was null or undefined when calling updateDynamicEndpointHost().'
             );
         }
 
@@ -803,7 +803,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -815,7 +815,7 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400UpdateBankLevelDynamicEndpointHostRequestToJSON(requestParameters['oBPv400UpdateBankLevelDynamicEndpointHostRequest']),
+            body: UpdateBankLevelDynamicEndpointHostRequestToJSON(requestParameters['updateBankLevelDynamicEndpointHostRequest']),
         };
     }
 
@@ -823,19 +823,19 @@ export class DynamicEndpointManageApi extends runtime.BaseAPI {
      * <p>Update dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Update Dynamic Endpoint Host
      */
-    async oBPv400UpdateDynamicEndpointHostRaw(requestParameters: OBPv400UpdateDynamicEndpointHostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>> {
-        const requestOptions = await this.oBPv400UpdateDynamicEndpointHostRequestOpts(requestParameters);
+    async updateDynamicEndpointHostRaw(requestParameters: UpdateDynamicEndpointHostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>> {
+        const requestOptions = await this.updateDynamicEndpointHostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400UpdateBankLevelDynamicEndpointHostRequestFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateBankLevelDynamicEndpointHostRequestFromJSON(jsonValue));
     }
 
     /**
      * <p>Update dynamic endpoint Host.<br /> The value can be obp_mock, dynamic_entity, or some service url.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
      *  Update Dynamic Endpoint Host
      */
-    async oBPv400UpdateDynamicEndpointHost(requestParameters: OBPv400UpdateDynamicEndpointHostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
-        const response = await this.oBPv400UpdateDynamicEndpointHostRaw(requestParameters, initOverrides);
+    async updateDynamicEndpointHost(requestParameters: UpdateDynamicEndpointHostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateBankLevelDynamicEndpointHostRequest> {
+        const response = await this.updateDynamicEndpointHostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

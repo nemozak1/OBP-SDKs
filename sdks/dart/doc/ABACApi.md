@@ -5,25 +5,25 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600CreateAbacRule**](ABACApi.md#obpv600createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
-[**oBPv600DeleteAbacRule**](ABACApi.md#obpv600deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
-[**oBPv600ExecuteAbacPolicy**](ABACApi.md#obpv600executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
-[**oBPv600ExecuteAbacRule**](ABACApi.md#obpv600executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
-[**oBPv600GetAbacPolicies**](ABACApi.md#obpv600getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
-[**oBPv600GetAbacRule**](ABACApi.md#obpv600getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
-[**oBPv600GetAbacRuleSchema**](ABACApi.md#obpv600getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
-[**oBPv600GetAbacRules**](ABACApi.md#obpv600getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
-[**oBPv600GetAbacRulesByPolicy**](ABACApi.md#obpv600getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
-[**oBPv600UpdateAbacRule**](ABACApi.md#obpv600updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
-[**oBPv600ValidateAbacRule**](ABACApi.md#obpv600validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
+[**createAbacRule**](ABACApi.md#createabacrule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule
+[**deleteAbacRule**](ABACApi.md#deleteabacrule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule
+[**executeAbacPolicy**](ABACApi.md#executeabacpolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy
+[**executeAbacRule**](ABACApi.md#executeabacrule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule
+[**getAbacPolicies**](ABACApi.md#getabacpolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies
+[**getAbacRule**](ABACApi.md#getabacrule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule
+[**getAbacRuleSchema**](ABACApi.md#getabacruleschema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema
+[**getAbacRules**](ABACApi.md#getabacrules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules
+[**getAbacRulesByPolicy**](ABACApi.md#getabacrulesbypolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy
+[**updateAbacRule**](ABACApi.md#updateabacrule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule
+[**validateAbacRule**](ABACApi.md#validateabacrule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule
 
 
-# **oBPv600CreateAbacRule**
-> OBPv600GetAbacRule200Response oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest)
+# **createAbacRule**
+> GetAbacRule200Response createAbacRule(updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -44,13 +44,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getABACApi();
-final OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // OBPv600UpdateAbacRuleRequest | Request body
+final UpdateAbacRuleRequest updateAbacRuleRequest = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}}; // UpdateAbacRuleRequest | Request body
 
 try {
-    final response = api.oBPv600CreateAbacRule(oBPv600UpdateAbacRuleRequest);
+    final response = api.createAbacRule(updateAbacRuleRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600CreateAbacRule: $e\n');
+    print('Exception when calling ABACApi->createAbacRule: $e\n');
 }
 ```
 
@@ -58,11 +58,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600DeleteAbacRule**
-> oBPv600DeleteAbacRule(abacruleid)
+# **deleteAbacRule**
+> deleteAbacRule(abacruleid)
 
 Delete ABAC Rule
 
@@ -100,9 +100,9 @@ final api = ObpDart().getABACApi();
 final String abacruleid = abacruleid_example; // String | The ABACRULEID identifier
 
 try {
-    api.oBPv600DeleteAbacRule(abacruleid);
+    api.deleteAbacRule(abacruleid);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600DeleteAbacRule: $e\n');
+    print('Exception when calling ABACApi->deleteAbacRule: $e\n');
 }
 ```
 
@@ -127,8 +127,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ExecuteAbacPolicy**
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacPolicy(policy, oBPv600ExecuteAbacPolicyRequest)
+# **executeAbacPolicy**
+> ExecuteAbacPolicy200Response executeAbacPolicy(policy, executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -150,13 +150,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getABACApi();
 final String policy = policy_example; // String | The POLICY identifier
-final OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}}; // OBPv600ExecuteAbacPolicyRequest | Request body
+final ExecuteAbacPolicyRequest executeAbacPolicyRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}}; // ExecuteAbacPolicyRequest | Request body
 
 try {
-    final response = api.oBPv600ExecuteAbacPolicy(policy, oBPv600ExecuteAbacPolicyRequest);
+    final response = api.executeAbacPolicy(policy, executeAbacPolicyRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600ExecuteAbacPolicy: $e\n');
+    print('Exception when calling ABACApi->executeAbacPolicy: $e\n');
 }
 ```
 
@@ -165,11 +165,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy** | **String**| The POLICY identifier | 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -182,8 +182,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ExecuteAbacRule**
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacRule(abacruleid, oBPv600ExecuteAbacPolicyRequest)
+# **executeAbacRule**
+> ExecuteAbacPolicy200Response executeAbacRule(abacruleid, executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -205,13 +205,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getABACApi();
 final String abacruleid = abacruleid_example; // String | The ABACRULEID identifier
-final OBPv600ExecuteAbacPolicyRequest oBPv600ExecuteAbacPolicyRequest = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}}; // OBPv600ExecuteAbacPolicyRequest | Request body
+final ExecuteAbacPolicyRequest executeAbacPolicyRequest = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}}; // ExecuteAbacPolicyRequest | Request body
 
 try {
-    final response = api.oBPv600ExecuteAbacRule(abacruleid, oBPv600ExecuteAbacPolicyRequest);
+    final response = api.executeAbacRule(abacruleid, executeAbacPolicyRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600ExecuteAbacRule: $e\n');
+    print('Exception when calling ABACApi->executeAbacRule: $e\n');
 }
 ```
 
@@ -220,11 +220,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **String**| The ABACRULEID identifier | 
- **oBPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | 
+ **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -237,8 +237,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacPolicies**
-> OBPv600GetAbacPolicies200Response oBPv600GetAbacPolicies()
+# **getAbacPolicies**
+> GetAbacPolicies200Response getAbacPolicies()
 
 Get ABAC Policies
 
@@ -261,10 +261,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getABACApi();
 
 try {
-    final response = api.oBPv600GetAbacPolicies();
+    final response = api.getAbacPolicies();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600GetAbacPolicies: $e\n');
+    print('Exception when calling ABACApi->getAbacPolicies: $e\n');
 }
 ```
 
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -286,8 +286,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRule**
-> OBPv600GetAbacRule200Response oBPv600GetAbacRule(abacruleid)
+# **getAbacRule**
+> GetAbacRule200Response getAbacRule(abacruleid)
 
 Get ABAC Rule
 
@@ -311,10 +311,10 @@ final api = ObpDart().getABACApi();
 final String abacruleid = abacruleid_example; // String | The ABACRULEID identifier
 
 try {
-    final response = api.oBPv600GetAbacRule(abacruleid);
+    final response = api.getAbacRule(abacruleid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600GetAbacRule: $e\n');
+    print('Exception when calling ABACApi->getAbacRule: $e\n');
 }
 ```
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -339,8 +339,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRuleSchema**
-> OBPv600GetAbacRuleSchema200Response oBPv600GetAbacRuleSchema()
+# **getAbacRuleSchema**
+> GetAbacRuleSchema200Response getAbacRuleSchema()
 
 Get ABAC Rule Schema
 
@@ -363,10 +363,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getABACApi();
 
 try {
-    final response = api.oBPv600GetAbacRuleSchema();
+    final response = api.getAbacRuleSchema();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600GetAbacRuleSchema: $e\n');
+    print('Exception when calling ABACApi->getAbacRuleSchema: $e\n');
 }
 ```
 
@@ -375,7 +375,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -388,8 +388,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRules**
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRules()
+# **getAbacRules**
+> GetAbacRulesByPolicy200Response getAbacRules()
 
 Get ABAC Rules
 
@@ -412,10 +412,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getABACApi();
 
 try {
-    final response = api.oBPv600GetAbacRules();
+    final response = api.getAbacRules();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600GetAbacRules: $e\n');
+    print('Exception when calling ABACApi->getAbacRules: $e\n');
 }
 ```
 
@@ -424,7 +424,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -437,8 +437,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetAbacRulesByPolicy**
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRulesByPolicy(policy)
+# **getAbacRulesByPolicy**
+> GetAbacRulesByPolicy200Response getAbacRulesByPolicy(policy)
 
 Get ABAC Rules by Policy
 
@@ -462,10 +462,10 @@ final api = ObpDart().getABACApi();
 final String policy = policy_example; // String | The POLICY identifier
 
 try {
-    final response = api.oBPv600GetAbacRulesByPolicy(policy);
+    final response = api.getAbacRulesByPolicy(policy);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600GetAbacRulesByPolicy: $e\n');
+    print('Exception when calling ABACApi->getAbacRulesByPolicy: $e\n');
 }
 ```
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -490,8 +490,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600UpdateAbacRule**
-> OBPv600GetAbacRule200Response oBPv600UpdateAbacRule(abacruleid, oBPv600UpdateAbacRuleRequest)
+# **updateAbacRule**
+> GetAbacRule200Response updateAbacRule(abacruleid, updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -513,13 +513,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getABACApi();
 final String abacruleid = abacruleid_example; // String | The ABACRULEID identifier
-final OBPv600UpdateAbacRuleRequest oBPv600UpdateAbacRuleRequest = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}}; // OBPv600UpdateAbacRuleRequest | Request body
+final UpdateAbacRuleRequest updateAbacRuleRequest = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}}; // UpdateAbacRuleRequest | Request body
 
 try {
-    final response = api.oBPv600UpdateAbacRule(abacruleid, oBPv600UpdateAbacRuleRequest);
+    final response = api.updateAbacRule(abacruleid, updateAbacRuleRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600UpdateAbacRule: $e\n');
+    print('Exception when calling ABACApi->updateAbacRule: $e\n');
 }
 ```
 
@@ -528,11 +528,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **abacruleid** | **String**| The ABACRULEID identifier | 
- **oBPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | 
+ **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -545,8 +545,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600ValidateAbacRule**
-> OBPv600ValidateAbacRule200Response oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest)
+# **validateAbacRule**
+> ValidateAbacRule200Response validateAbacRule(validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -567,13 +567,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getABACApi();
-final OBPv600ValidateAbacRuleRequest oBPv600ValidateAbacRuleRequest = {"type":"object","properties":{"rule_code":{"type":"string"}}}; // OBPv600ValidateAbacRuleRequest | Request body
+final ValidateAbacRuleRequest validateAbacRuleRequest = {"type":"object","properties":{"rule_code":{"type":"string"}}}; // ValidateAbacRuleRequest | Request body
 
 try {
-    final response = api.oBPv600ValidateAbacRule(oBPv600ValidateAbacRuleRequest);
+    final response = api.validateAbacRule(validateAbacRuleRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ABACApi->oBPv600ValidateAbacRule: $e\n');
+    print('Exception when calling ABACApi->validateAbacRule: $e\n');
 }
 ```
 
@@ -581,11 +581,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md)| Request body | 
+ **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 

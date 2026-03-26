@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,46 +15,46 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv600DeleteSignalChannel200Response,
-  OBPv600GetSignalChannelInfo200Response,
-  OBPv600GetSignalChannels200Response,
-  OBPv600GetSignalMessages200Response,
-  OBPv600GetSignalStats200Response,
-  OBPv600PublishSignalMessage200Response,
-  OBPv600PublishSignalMessageRequest,
+  DeleteSignalChannel200Response,
+  GetSignalChannelInfo200Response,
+  GetSignalChannels200Response,
+  GetSignalMessages200Response,
+  GetSignalStats200Response,
+  PublishSignalMessage200Response,
+  PublishSignalMessageRequest,
 } from '../models/index';
 import {
-    OBPv600DeleteSignalChannel200ResponseFromJSON,
-    OBPv600DeleteSignalChannel200ResponseToJSON,
-    OBPv600GetSignalChannelInfo200ResponseFromJSON,
-    OBPv600GetSignalChannelInfo200ResponseToJSON,
-    OBPv600GetSignalChannels200ResponseFromJSON,
-    OBPv600GetSignalChannels200ResponseToJSON,
-    OBPv600GetSignalMessages200ResponseFromJSON,
-    OBPv600GetSignalMessages200ResponseToJSON,
-    OBPv600GetSignalStats200ResponseFromJSON,
-    OBPv600GetSignalStats200ResponseToJSON,
-    OBPv600PublishSignalMessage200ResponseFromJSON,
-    OBPv600PublishSignalMessage200ResponseToJSON,
-    OBPv600PublishSignalMessageRequestFromJSON,
-    OBPv600PublishSignalMessageRequestToJSON,
+    DeleteSignalChannel200ResponseFromJSON,
+    DeleteSignalChannel200ResponseToJSON,
+    GetSignalChannelInfo200ResponseFromJSON,
+    GetSignalChannelInfo200ResponseToJSON,
+    GetSignalChannels200ResponseFromJSON,
+    GetSignalChannels200ResponseToJSON,
+    GetSignalMessages200ResponseFromJSON,
+    GetSignalMessages200ResponseToJSON,
+    GetSignalStats200ResponseFromJSON,
+    GetSignalStats200ResponseToJSON,
+    PublishSignalMessage200ResponseFromJSON,
+    PublishSignalMessage200ResponseToJSON,
+    PublishSignalMessageRequestFromJSON,
+    PublishSignalMessageRequestToJSON,
 } from '../models/index';
 
-export interface OBPv600DeleteSignalChannelRequest {
+export interface DeleteSignalChannelRequest {
     channelname: string;
 }
 
-export interface OBPv600GetSignalChannelInfoRequest {
+export interface GetSignalChannelInfoRequest {
     channelname: string;
 }
 
-export interface OBPv600GetSignalMessagesRequest {
+export interface GetSignalMessagesRequest {
     channelname: string;
 }
 
-export interface OBPv600PublishSignalMessageOperationRequest {
+export interface PublishSignalMessageOperationRequest {
     channelname: string;
-    oBPv600PublishSignalMessageRequest: OBPv600PublishSignalMessageRequest;
+    publishSignalMessageRequest: PublishSignalMessageRequest;
 }
 
 /**
@@ -63,13 +63,13 @@ export interface OBPv600PublishSignalMessageOperationRequest {
 export class SignalApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv600DeleteSignalChannel without sending the request
+     * Creates request options for deleteSignalChannel without sending the request
      */
-    async oBPv600DeleteSignalChannelRequestOpts(requestParameters: OBPv600DeleteSignalChannelRequest): Promise<runtime.RequestOpts> {
+    async deleteSignalChannelRequestOpts(requestParameters: DeleteSignalChannelRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['channelname'] == null) {
             throw new runtime.RequiredError(
                 'channelname',
-                'Required parameter "channelname" was null or undefined when calling oBPv600DeleteSignalChannel().'
+                'Required parameter "channelname" was null or undefined when calling deleteSignalChannel().'
             );
         }
 
@@ -87,7 +87,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -106,30 +106,30 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint deletes a signal channel and all its messages immediately.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>deleted</strong></a>: deleted</p> 
      * Delete Signal Channel
      */
-    async oBPv600DeleteSignalChannelRaw(requestParameters: OBPv600DeleteSignalChannelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600DeleteSignalChannel200Response>> {
-        const requestOptions = await this.oBPv600DeleteSignalChannelRequestOpts(requestParameters);
+    async deleteSignalChannelRaw(requestParameters: DeleteSignalChannelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteSignalChannel200Response>> {
+        const requestOptions = await this.deleteSignalChannelRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600DeleteSignalChannel200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSignalChannel200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint deletes a signal channel and all its messages immediately.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>deleted</strong></a>: deleted</p> 
      * Delete Signal Channel
      */
-    async oBPv600DeleteSignalChannel(requestParameters: OBPv600DeleteSignalChannelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600DeleteSignalChannel200Response> {
-        const response = await this.oBPv600DeleteSignalChannelRaw(requestParameters, initOverrides);
+    async deleteSignalChannel(requestParameters: DeleteSignalChannelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteSignalChannel200Response> {
+        const response = await this.deleteSignalChannelRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetSignalChannelInfo without sending the request
+     * Creates request options for getSignalChannelInfo without sending the request
      */
-    async oBPv600GetSignalChannelInfoRequestOpts(requestParameters: OBPv600GetSignalChannelInfoRequest): Promise<runtime.RequestOpts> {
+    async getSignalChannelInfoRequestOpts(requestParameters: GetSignalChannelInfoRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['channelname'] == null) {
             throw new runtime.RequiredError(
                 'channelname',
-                'Required parameter "channelname" was null or undefined when calling oBPv600GetSignalChannelInfo().'
+                'Required parameter "channelname" was null or undefined when calling getSignalChannelInfo().'
             );
         }
 
@@ -147,7 +147,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -166,26 +166,26 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Signal Channel Info
      */
-    async oBPv600GetSignalChannelInfoRaw(requestParameters: OBPv600GetSignalChannelInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetSignalChannelInfo200Response>> {
-        const requestOptions = await this.oBPv600GetSignalChannelInfoRequestOpts(requestParameters);
+    async getSignalChannelInfoRaw(requestParameters: GetSignalChannelInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetSignalChannelInfo200Response>> {
+        const requestOptions = await this.getSignalChannelInfoRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetSignalChannelInfo200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetSignalChannelInfo200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint returns metadata about a signal channel including the current message count and remaining TTL in seconds.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Signal Channel Info
      */
-    async oBPv600GetSignalChannelInfo(requestParameters: OBPv600GetSignalChannelInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetSignalChannelInfo200Response> {
-        const response = await this.oBPv600GetSignalChannelInfoRaw(requestParameters, initOverrides);
+    async getSignalChannelInfo(requestParameters: GetSignalChannelInfoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetSignalChannelInfo200Response> {
+        const response = await this.getSignalChannelInfoRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetSignalChannels without sending the request
+     * Creates request options for getSignalChannels without sending the request
      */
-    async oBPv600GetSignalChannelsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getSignalChannelsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -200,7 +200,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -218,30 +218,30 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint lists active signal channels.<br /> Only channels that contain at least one broadcast message (no to_user_id) are listed.<br /> Private-only channels are not shown.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * List Signal Channels
      */
-    async oBPv600GetSignalChannelsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetSignalChannels200Response>> {
-        const requestOptions = await this.oBPv600GetSignalChannelsRequestOpts();
+    async getSignalChannelsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetSignalChannels200Response>> {
+        const requestOptions = await this.getSignalChannelsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetSignalChannels200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetSignalChannels200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery and coordination, but usable by any authenticated OBP consumer.<br /> Messages are ephemeral and will expire after the configured TTL (default 1 hour).</p> <p>This endpoint lists active signal channels.<br /> Only channels that contain at least one broadcast message (no to_user_id) are listed.<br /> Private-only channels are not shown.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * List Signal Channels
      */
-    async oBPv600GetSignalChannels(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetSignalChannels200Response> {
-        const response = await this.oBPv600GetSignalChannelsRaw(initOverrides);
+    async getSignalChannels(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetSignalChannels200Response> {
+        const response = await this.getSignalChannelsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetSignalMessages without sending the request
+     * Creates request options for getSignalMessages without sending the request
      */
-    async oBPv600GetSignalMessagesRequestOpts(requestParameters: OBPv600GetSignalMessagesRequest): Promise<runtime.RequestOpts> {
+    async getSignalMessagesRequestOpts(requestParameters: GetSignalMessagesRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['channelname'] == null) {
             throw new runtime.RequiredError(
                 'channelname',
-                'Required parameter "channelname" was null or undefined when calling oBPv600GetSignalMessages().'
+                'Required parameter "channelname" was null or undefined when calling getSignalMessages().'
             );
         }
 
@@ -259,7 +259,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -278,26 +278,26 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Fetch messages from a signal channel with offset/limit pagination.</p> <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery<br /> and coordination, but usable by any authenticated OBP consumer.</p> <p>Messages are returned oldest-first.</p> <p>Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)<br /> and private messages addressed to you (to_user_id matches your user ID) or sent by you.</p> <p>Use the offset parameter to poll for new messages by tracking your position.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>has_more</strong></a>: has_more</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>message_type</strong></a>: message_type</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\"><strong>sender_consumer_id</strong></a>: sender_consumer_id</p> <p><a href=\"/glossary#\"><strong>sender_user_id</strong></a>: sender_user_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> <p><a href=\"/glossary#\"><strong>total_count</strong></a>: total_count</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> 
      * Get Signal Messages
      */
-    async oBPv600GetSignalMessagesRaw(requestParameters: OBPv600GetSignalMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetSignalMessages200Response>> {
-        const requestOptions = await this.oBPv600GetSignalMessagesRequestOpts(requestParameters);
+    async getSignalMessagesRaw(requestParameters: GetSignalMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetSignalMessages200Response>> {
+        const requestOptions = await this.getSignalMessagesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetSignalMessages200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetSignalMessages200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Fetch messages from a signal channel with offset/limit pagination.</p> <p>Signal channels provide short-lived, Redis-backed messaging designed for AI agent discovery<br /> and coordination, but usable by any authenticated OBP consumer.</p> <p>Messages are returned oldest-first.</p> <p>Privacy filtering is applied server-side: you will only see broadcast messages (no to_user_id)<br /> and private messages addressed to you (to_user_id matches your user ID) or sent by you.</p> <p>Use the offset parameter to poll for new messages by tracking your position.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>has_more</strong></a>: has_more</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>message_type</strong></a>: message_type</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\"><strong>sender_consumer_id</strong></a>: sender_consumer_id</p> <p><a href=\"/glossary#\"><strong>sender_user_id</strong></a>: sender_user_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> <p><a href=\"/glossary#\"><strong>total_count</strong></a>: total_count</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> 
      * Get Signal Messages
      */
-    async oBPv600GetSignalMessages(requestParameters: OBPv600GetSignalMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetSignalMessages200Response> {
-        const response = await this.oBPv600GetSignalMessagesRaw(requestParameters, initOverrides);
+    async getSignalMessages(requestParameters: GetSignalMessagesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetSignalMessages200Response> {
+        const response = await this.getSignalMessagesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600GetSignalStats without sending the request
+     * Creates request options for getSignalStats without sending the request
      */
-    async oBPv600GetSignalStatsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getSignalStatsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -312,7 +312,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -330,37 +330,37 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Returns statistics for all signal channels, including private-only channels.</p> <p>Unlike the List Signal Channels endpoint, this does not filter out private-only channels.<br /> It provides a complete view of all active channels with message counts and TTL info.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>total_channels</strong></a>: total_channels</p> <p><a href=\"/glossary#\"><strong>total_messages</strong></a>: total_messages</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Signal Channel Stats
      */
-    async oBPv600GetSignalStatsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetSignalStats200Response>> {
-        const requestOptions = await this.oBPv600GetSignalStatsRequestOpts();
+    async getSignalStatsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetSignalStats200Response>> {
+        const requestOptions = await this.getSignalStatsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetSignalStats200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetSignalStats200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns statistics for all signal channels, including private-only channels.</p> <p>Unlike the List Signal Channels endpoint, this does not filter out private-only channels.<br /> It provides a complete view of all active channels with message counts and TTL info.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>channels</strong></a>: channels</p> <p><a href=\"/glossary#\"><strong>message_count</strong></a>: message_count</p> <p><a href=\"/glossary#\"><strong>total_channels</strong></a>: total_channels</p> <p><a href=\"/glossary#\"><strong>total_messages</strong></a>: total_messages</p> <p><a href=\"/glossary#\"><strong>ttl_seconds</strong></a>: ttl_seconds</p> 
      * Get Signal Channel Stats
      */
-    async oBPv600GetSignalStats(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetSignalStats200Response> {
-        const response = await this.oBPv600GetSignalStatsRaw(initOverrides);
+    async getSignalStats(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetSignalStats200Response> {
+        const response = await this.getSignalStatsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv600PublishSignalMessage without sending the request
+     * Creates request options for publishSignalMessage without sending the request
      */
-    async oBPv600PublishSignalMessageRequestOpts(requestParameters: OBPv600PublishSignalMessageOperationRequest): Promise<runtime.RequestOpts> {
+    async publishSignalMessageRequestOpts(requestParameters: PublishSignalMessageOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['channelname'] == null) {
             throw new runtime.RequiredError(
                 'channelname',
-                'Required parameter "channelname" was null or undefined when calling oBPv600PublishSignalMessage().'
+                'Required parameter "channelname" was null or undefined when calling publishSignalMessage().'
             );
         }
 
-        if (requestParameters['oBPv600PublishSignalMessageRequest'] == null) {
+        if (requestParameters['publishSignalMessageRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv600PublishSignalMessageRequest',
-                'Required parameter "oBPv600PublishSignalMessageRequest" was null or undefined when calling oBPv600PublishSignalMessage().'
+                'publishSignalMessageRequest',
+                'Required parameter "publishSignalMessageRequest" was null or undefined when calling publishSignalMessage().'
             );
         }
 
@@ -380,7 +380,7 @@ export class SignalApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -392,7 +392,7 @@ export class SignalApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv600PublishSignalMessageRequestToJSON(requestParameters['oBPv600PublishSignalMessageRequest']),
+            body: PublishSignalMessageRequestToJSON(requestParameters['publishSignalMessageRequest']),
         };
     }
 
@@ -400,19 +400,19 @@ export class SignalApi extends runtime.BaseAPI {
      * <p>Publish a message to a signal channel.</p> <p>Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between<br /> AI agents and other OBP consumers. Messages are not persisted to a database.</p> <p>Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).<br /> Messages are capped at a configurable maximum per channel (default 1000).</p> <p>The payload field accepts any valid JSON content.</p> <p>Set to_user_id to send a private message visible only to the sender and recipient.<br /> Leave to_user_id empty for a broadcast message visible to all channel readers.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\">message_type</a>: message_type</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_message_count</strong></a>: channel_message_count</p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> 
      * Publish Signal Message
      */
-    async oBPv600PublishSignalMessageRaw(requestParameters: OBPv600PublishSignalMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600PublishSignalMessage200Response>> {
-        const requestOptions = await this.oBPv600PublishSignalMessageRequestOpts(requestParameters);
+    async publishSignalMessageRaw(requestParameters: PublishSignalMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PublishSignalMessage200Response>> {
+        const requestOptions = await this.publishSignalMessageRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600PublishSignalMessage200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => PublishSignalMessage200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Publish a message to a signal channel.</p> <p>Signal channels provide short-lived, Redis-backed messaging for lightweight coordination between<br /> AI agents and other OBP consumers. Messages are not persisted to a database.</p> <p>Channels are auto-created on first publish and expire after a configurable TTL (default 1 hour).<br /> Messages are capped at a configurable maximum per channel (default 1000).</p> <p>The payload field accepts any valid JSON content.</p> <p>Set to_user_id to send a private message visible only to the sender and recipient.<br /> Leave to_user_id empty for a broadcast message visible to all channel readers.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CHANNEL_NAME</a>: CHANNEL_NAME</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#payload\"><strong>payload</strong></a>: payload</p> <p><a href=\"/glossary#\">message_type</a>: message_type</p> <p><a href=\"/glossary#\">to_user_id</a>: to_user_id</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>channel_message_count</strong></a>: channel_message_count</p> <p><a href=\"/glossary#\"><strong>channel_name</strong></a>: channel_name</p> <p><a href=\"/glossary#\"><strong>message_id</strong></a>: message_id</p> <p><a href=\"/glossary#\"><strong>timestamp</strong></a>: timestamp</p> 
      * Publish Signal Message
      */
-    async oBPv600PublishSignalMessage(requestParameters: OBPv600PublishSignalMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600PublishSignalMessage200Response> {
-        const response = await this.oBPv600PublishSignalMessageRaw(requestParameters, initOverrides);
+    async publishSignalMessage(requestParameters: PublishSignalMessageOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PublishSignalMessage200Response> {
+        const response = await this.publishSignalMessageRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

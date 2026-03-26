@@ -1,21 +1,21 @@
 # BankAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateBankAttribute**](BankAttributeApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
-| [**oBPv400CreateOrUpdateBankAttributeDefinition**](BankAttributeApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
-| [**oBPv400DeleteBankAttribute**](BankAttributeApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
-| [**oBPv400GetBankAttribute**](BankAttributeApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
-| [**oBPv400GetBankAttributes**](BankAttributeApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
-| [**oBPv400UpdateBankAttribute**](BankAttributeApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
+| [**createBankAttribute**](BankAttributeApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
+| [**createOrUpdateBankAttributeDefinition**](BankAttributeApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
+| [**deleteBankAttribute**](BankAttributeApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
+| [**getBankAttribute**](BankAttributeApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
+| [**getBankAttributes**](BankAttributeApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
+| [**updateBankAttribute**](BankAttributeApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
 
 
 
-## oBPv400CreateBankAttribute
+## createBankAttribute
 
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400CreateBankAttribute(bankid, oBPv510UpdateAtmAttributeRequest)
+> GetBankAttributes200ResponseBankAttributesInner createBankAttribute(bankid, updateAtmAttributeRequest)
 
 Create Bank Attribute
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateBankAttributeRequest } from 'obp-typescript';
+import type { CreateBankAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -45,12 +45,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
-  } satisfies OBPv400CreateBankAttributeRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
+  } satisfies CreateBankAttributeRequest;
 
   try {
-    const data = await api.oBPv400CreateBankAttribute(body);
+    const data = await api.createBankAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -67,11 +67,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400CreateOrUpdateBankAttributeDefinition
+## createOrUpdateBankAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateBankAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateBankAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Bank Attribute Definition
 
@@ -107,7 +107,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400CreateOrUpdateBankAttributeDefinitionRequest } from 'obp-typescript';
+import type { CreateOrUpdateBankAttributeDefinitionRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -124,12 +124,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-    oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
-  } satisfies OBPv400CreateOrUpdateBankAttributeDefinitionRequest;
+    // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+    createOrUpdateTransactionRequestAttributeDefinitionRequest: {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}},
+  } satisfies CreateOrUpdateBankAttributeDefinitionRequest;
 
   try {
-    const data = await api.oBPv400CreateOrUpdateBankAttributeDefinition(body);
+    const data = await api.createOrUpdateBankAttributeDefinition(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -146,11 +146,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [CreateOrUpdateTransactionRequestAttributeDefinitionRequest](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -172,9 +172,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400DeleteBankAttribute
+## deleteBankAttribute
 
-> oBPv400DeleteBankAttribute(bankid, bankattributeid)
+> deleteBankAttribute(bankid, bankattributeid)
 
 Delete Bank Attribute
 
@@ -187,7 +187,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400DeleteBankAttributeRequest } from 'obp-typescript';
+import type { DeleteBankAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -206,10 +206,10 @@ async function example() {
     bankid: bankid_example,
     // string | The BANKATTRIBUTEID identifier
     bankattributeid: bankattributeid_example,
-  } satisfies OBPv400DeleteBankAttributeRequest;
+  } satisfies DeleteBankAttributeRequest;
 
   try {
-    const data = await api.oBPv400DeleteBankAttribute(body);
+    const data = await api.deleteBankAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -252,9 +252,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankAttribute
+## getBankAttribute
 
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems oBPv400GetBankAttribute(bankid, bankattributeid)
+> GetBankAttributes200ResponseBankAttributesInner getBankAttribute(bankid, bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -267,7 +267,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankAttributeRequest } from 'obp-typescript';
+import type { GetBankAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -286,10 +286,10 @@ async function example() {
     bankid: bankid_example,
     // string | The BANKATTRIBUTEID identifier
     bankattributeid: bankattributeid_example,
-  } satisfies OBPv400GetBankAttributeRequest;
+  } satisfies GetBankAttributeRequest;
 
   try {
-    const data = await api.oBPv400GetBankAttribute(body);
+    const data = await api.getBankAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -310,7 +310,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -332,9 +332,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400GetBankAttributes
+## getBankAttributes
 
-> OBPv400GetBankAttributes200Response oBPv400GetBankAttributes(bankid)
+> GetBankAttributes200Response getBankAttributes(bankid)
 
 Get Bank Attributes
 
@@ -347,7 +347,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400GetBankAttributesRequest } from 'obp-typescript';
+import type { GetBankAttributesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -364,10 +364,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv400GetBankAttributesRequest;
+  } satisfies GetBankAttributesRequest;
 
   try {
-    const data = await api.oBPv400GetBankAttributes(body);
+    const data = await api.getBankAttributes(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -387,7 +387,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -409,9 +409,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv400UpdateBankAttribute
+## updateBankAttribute
 
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400UpdateBankAttribute(bankid, bankattributeid, oBPv510UpdateAtmAttributeRequest)
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest updateBankAttribute(bankid, bankattributeid, updateAtmAttributeRequest)
 
 Update Bank Attribute
 
@@ -424,7 +424,7 @@ import {
   Configuration,
   BankAttributeApi,
 } from 'obp-typescript';
-import type { OBPv400UpdateBankAttributeRequest } from 'obp-typescript';
+import type { UpdateBankAttributeRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -443,12 +443,12 @@ async function example() {
     bankid: bankid_example,
     // string | The BANKATTRIBUTEID identifier
     bankattributeid: bankattributeid_example,
-    // OBPv510UpdateAtmAttributeRequest | Request body
-    oBPv510UpdateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
-  } satisfies OBPv400UpdateBankAttributeRequest;
+    // UpdateAtmAttributeRequest | Request body
+    updateAtmAttributeRequest: {type=object, properties={name={type=string}, value={type=string}, is_active={type=boolean}, type={type=string}}},
+  } satisfies UpdateBankAttributeRequest;
 
   try {
-    const data = await api.oBPv400UpdateBankAttribute(body);
+    const data = await api.updateBankAttribute(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -466,11 +466,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **bankattributeid** | `string` | The BANKATTRIBUTEID identifier | [Defaults to `undefined`] |
-| **oBPv510UpdateAtmAttributeRequest** | [OBPv510UpdateAtmAttributeRequest](OBPv510UpdateAtmAttributeRequest.md) | Request body | |
+| **updateAtmAttributeRequest** | [UpdateAtmAttributeRequest](UpdateAtmAttributeRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 

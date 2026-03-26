@@ -9,8 +9,8 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv300_get_branches200_response.dart';
-import 'package:obp_dart/src/model/obpv300_get_branches200_response_properties_branches_items.dart';
+import 'package:obp_dart/src/model/get_branches200_response.dart';
+import 'package:obp_dart/src/model/get_branches200_response_branches_inner.dart';
 
 class BranchApi {
 
@@ -25,7 +25,7 @@ class BranchApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv300GetBranches200ResponsePropertiesBranchesItems] - Request body
+  /// * [getBranches200ResponseBranchesInner] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,11 +33,11 @@ class BranchApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv300GetBranches200ResponsePropertiesBranchesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetBranches200ResponseBranchesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv300GetBranches200ResponsePropertiesBranchesItems>> oBPv300CreateBranch({ 
+  Future<Response<GetBranches200ResponseBranchesInner>> createBranch({ 
     required String bankid,
-    required OBPv300GetBranches200ResponsePropertiesBranchesItems oBPv300GetBranches200ResponsePropertiesBranchesItems,
+    required GetBranches200ResponseBranchesInner getBranches200ResponseBranchesInner,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class BranchApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -77,8 +77,8 @@ class BranchApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv300GetBranches200ResponsePropertiesBranchesItems);
-      _bodyData = _serializers.serialize(oBPv300GetBranches200ResponsePropertiesBranchesItems, specifiedType: _type);
+      const _type = FullType(GetBranches200ResponseBranchesInner);
+      _bodyData = _serializers.serialize(getBranches200ResponseBranchesInner, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -101,14 +101,14 @@ class BranchApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv300GetBranches200ResponsePropertiesBranchesItems? _responseData;
+    GetBranches200ResponseBranchesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv300GetBranches200ResponsePropertiesBranchesItems),
-      ) as OBPv300GetBranches200ResponsePropertiesBranchesItems;
+        specifiedType: const FullType(GetBranches200ResponseBranchesInner),
+      ) as GetBranches200ResponseBranchesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -120,7 +120,7 @@ class BranchApi {
       );
     }
 
-    return Response<OBPv300GetBranches200ResponsePropertiesBranchesItems>(
+    return Response<GetBranches200ResponseBranchesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -130,6 +130,70 @@ class BranchApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// Delete Branch
+  /// &lt;p&gt;Delete Branch from given Bank.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+  ///
+  /// Parameters:
+  /// * [bankid] - The BANKID identifier
+  /// * [branchid] - The BRANCHID identifier
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> deleteBranch({ 
+    required String bankid,
+    required String branchid,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/obp/v3.1.0/banks/{bankid}/branches/{branchid}'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString()).replaceAll('{' r'branchid' '}', encodeQueryParameter(_serializers, branchid, const FullType(String)).toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'OAuth2',
+          },{
+            'type': 'apiKey',
+            'name': 'GatewayLogin',
+            'keyName': 'Authorization',
+            'where': 'header',
+          },{
+            'type': 'apiKey',
+            'name': 'DirectLogin',
+            'keyName': 'DirectLogin',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// Get Branch
@@ -145,9 +209,9 @@ class BranchApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv300GetBranches200ResponsePropertiesBranchesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetBranches200ResponseBranchesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv300GetBranches200ResponsePropertiesBranchesItems>> oBPv300GetBranch({ 
+  Future<Response<GetBranches200ResponseBranchesInner>> getBranch({ 
     required String bankid,
     required String branchid,
     CancelToken? cancelToken,
@@ -178,14 +242,14 @@ class BranchApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv300GetBranches200ResponsePropertiesBranchesItems? _responseData;
+    GetBranches200ResponseBranchesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv300GetBranches200ResponsePropertiesBranchesItems),
-      ) as OBPv300GetBranches200ResponsePropertiesBranchesItems;
+        specifiedType: const FullType(GetBranches200ResponseBranchesInner),
+      ) as GetBranches200ResponseBranchesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -197,7 +261,7 @@ class BranchApi {
       );
     }
 
-    return Response<OBPv300GetBranches200ResponsePropertiesBranchesItems>(
+    return Response<GetBranches200ResponseBranchesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -221,9 +285,9 @@ class BranchApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv300GetBranches200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBranches200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv300GetBranches200Response>> oBPv300GetBranches({ 
+  Future<Response<GetBranches200Response>> getBranches({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -253,14 +317,14 @@ class BranchApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv300GetBranches200Response? _responseData;
+    GetBranches200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv300GetBranches200Response),
-      ) as OBPv300GetBranches200Response;
+        specifiedType: const FullType(GetBranches200Response),
+      ) as GetBranches200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -272,7 +336,7 @@ class BranchApi {
       );
     }
 
-    return Response<OBPv300GetBranches200Response>(
+    return Response<GetBranches200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -282,70 +346,6 @@ class BranchApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
-  }
-
-  /// Delete Branch
-  /// &lt;p&gt;Delete Branch from given Bank.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;BRANCH_ID&lt;/a&gt;: DERBY6&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-  ///
-  /// Parameters:
-  /// * [bankid] - The BANKID identifier
-  /// * [branchid] - The BRANCHID identifier
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv310DeleteBranch({ 
-    required String bankid,
-    required String branchid,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/obp/v3.1.0/banks/{bankid}/branches/{branchid}'.replaceAll('{' r'bankid' '}', encodeQueryParameter(_serializers, bankid, const FullType(String)).toString()).replaceAll('{' r'branchid' '}', encodeQueryParameter(_serializers, branchid, const FullType(String)).toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'OAuth2',
-          },{
-            'type': 'apiKey',
-            'name': 'GatewayLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },{
-            'type': 'apiKey',
-            'name': 'DirectLogin',
-            'keyName': 'Authorization',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
   }
 
 }

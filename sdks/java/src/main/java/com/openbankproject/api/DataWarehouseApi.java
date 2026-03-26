@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,8 +18,7 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv300DataWarehouseSearchRequest;
-import com.openbankproject.model.OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage;
+import com.openbankproject.model.DataWarehouseSearchRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,7 +45,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DataWarehouseApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -167,25 +166,25 @@ public class DataWarehouseApi {
    * Data Warehouse Search
    * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+   * @param dataWarehouseSearchRequest Request body (required)
+   * @return Object
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest) throws ApiException {
-    return oBPv300DataWarehouseSearch(index, obPv300DataWarehouseSearchRequest, null);
+  public Object dataWarehouseSearch(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest) throws ApiException {
+    return dataWarehouseSearch(index, dataWarehouseSearchRequest, null);
   }
 
   /**
    * Data Warehouse Search
    * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
+   * @param dataWarehouseSearchRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+   * @return Object
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseSearch(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> localVarResponse = oBPv300DataWarehouseSearchWithHttpInfo(index, obPv300DataWarehouseSearchRequest, headers);
+  public Object dataWarehouseSearch(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<Object> localVarResponse = dataWarehouseSearchWithHttpInfo(index, dataWarehouseSearchRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -193,25 +192,25 @@ public class DataWarehouseApi {
    * Data Warehouse Search
    * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage&gt;
+   * @param dataWarehouseSearchRequest Request body (required)
+   * @return ApiResponse&lt;Object&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseSearchWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest) throws ApiException {
-    return oBPv300DataWarehouseSearchWithHttpInfo(index, obPv300DataWarehouseSearchRequest, null);
+  public ApiResponse<Object> dataWarehouseSearchWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest) throws ApiException {
+    return dataWarehouseSearchWithHttpInfo(index, dataWarehouseSearchRequest, null);
   }
 
   /**
    * Data Warehouse Search
    * &lt;p&gt;Search the data warehouse and get row level results.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouse entitlement is required. You can request the Role below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/THE_INDEX_YOU_WANT_TO_USE&lt;/p&gt; &lt;p&gt;POST /search/warehouse/INDEX1,INDEX2&lt;/p&gt; &lt;p&gt;POST /search/warehouse/ALL&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
+   * @param dataWarehouseSearchRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage&gt;
+   * @return ApiResponse&lt;Object&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseSearchWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv300DataWarehouseSearchRequestBuilder(index, obPv300DataWarehouseSearchRequest, headers);
+  public ApiResponse<Object> dataWarehouseSearchWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = dataWarehouseSearchRequestBuilder(index, dataWarehouseSearchRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -222,11 +221,11 @@ public class DataWarehouseApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv300DataWarehouseSearch", localVarResponse);
+          throw getApiException("dataWarehouseSearch", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+          return new ApiResponse<Object>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -236,10 +235,10 @@ public class DataWarehouseApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>() {});
+        Object responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<Object>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+        return new ApiResponse<Object>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -258,14 +257,14 @@ public class DataWarehouseApi {
     }
   }
 
-  private HttpRequest.Builder oBPv300DataWarehouseSearchRequestBuilder(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder dataWarehouseSearchRequestBuilder(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'index' is set
     if (index == null) {
-      throw new ApiException(400, "Missing the required parameter 'index' when calling oBPv300DataWarehouseSearch");
+      throw new ApiException(400, "Missing the required parameter 'index' when calling dataWarehouseSearch");
     }
-    // verify the required parameter 'obPv300DataWarehouseSearchRequest' is set
-    if (obPv300DataWarehouseSearchRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv300DataWarehouseSearchRequest' when calling oBPv300DataWarehouseSearch");
+    // verify the required parameter 'dataWarehouseSearchRequest' is set
+    if (dataWarehouseSearchRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'dataWarehouseSearchRequest' when calling dataWarehouseSearch");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -279,7 +278,7 @@ public class DataWarehouseApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv300DataWarehouseSearchRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(dataWarehouseSearchRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -300,12 +299,12 @@ public class DataWarehouseApi {
    * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
    * @param field The FIELD identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+   * @param dataWarehouseSearchRequest Request body (required)
+   * @return Object
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest) throws ApiException {
-    return oBPv300DataWarehouseStatistics(index, field, obPv300DataWarehouseSearchRequest, null);
+  public Object dataWarehouseStatistics(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest) throws ApiException {
+    return dataWarehouseStatistics(index, field, dataWarehouseSearchRequest, null);
   }
 
   /**
@@ -313,13 +312,13 @@ public class DataWarehouseApi {
    * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
    * @param field The FIELD identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
+   * @param dataWarehouseSearchRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+   * @return Object
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage oBPv300DataWarehouseStatistics(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> localVarResponse = oBPv300DataWarehouseStatisticsWithHttpInfo(index, field, obPv300DataWarehouseSearchRequest, headers);
+  public Object dataWarehouseStatistics(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<Object> localVarResponse = dataWarehouseStatisticsWithHttpInfo(index, field, dataWarehouseSearchRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -328,12 +327,12 @@ public class DataWarehouseApi {
    * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
    * @param field The FIELD identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage&gt;
+   * @param dataWarehouseSearchRequest Request body (required)
+   * @return ApiResponse&lt;Object&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseStatisticsWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest) throws ApiException {
-    return oBPv300DataWarehouseStatisticsWithHttpInfo(index, field, obPv300DataWarehouseSearchRequest, null);
+  public ApiResponse<Object> dataWarehouseStatisticsWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest) throws ApiException {
+    return dataWarehouseStatisticsWithHttpInfo(index, field, dataWarehouseSearchRequest, null);
   }
 
   /**
@@ -341,13 +340,13 @@ public class DataWarehouseApi {
    * &lt;p&gt;Search the data warehouse and get statistical aggregations over a warehouse field&lt;/p&gt; &lt;p&gt;Does a stats aggregation over some numeric field:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html\&quot;&gt;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-stats-aggregation.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanSearchWarehouseStats Role is required. You can request this below.&lt;/p&gt; &lt;p&gt;Elastic (search) is used in the background. See links below for syntax.&lt;/p&gt; &lt;p&gt;Examples of usage:&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/INDEX/FIELD&lt;/p&gt; &lt;p&gt;POST /search/warehouse/statistics/ALL/FIELD&lt;/p&gt; &lt;p&gt;{ Any valid elasticsearch query DSL in the body }&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html\&quot;&gt;Elasticsearch query DSL&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-request-body.html\&quot;&gt;Elastic simple query&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;https://www.elastic.co/guide/en/elasticsearch/reference/6.2/search-aggregations.html\&quot;&gt;Elastic aggregations&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#field\&quot;&gt;FIELD&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#index\&quot;&gt;INDEX&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#match_all\&quot;&gt;&lt;strong&gt;match_all&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#query\&quot;&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#none\&quot;&gt;none&lt;/a&gt;:&lt;/p&gt; 
    * @param index The INDEX identifier (required)
    * @param field The FIELD identifier (required)
-   * @param obPv300DataWarehouseSearchRequest Request body (required)
+   * @param dataWarehouseSearchRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage&gt;
+   * @return ApiResponse&lt;Object&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage> oBPv300DataWarehouseStatisticsWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv300DataWarehouseStatisticsRequestBuilder(index, field, obPv300DataWarehouseSearchRequest, headers);
+  public ApiResponse<Object> dataWarehouseStatisticsWithHttpInfo(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = dataWarehouseStatisticsRequestBuilder(index, field, dataWarehouseSearchRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -358,11 +357,11 @@ public class DataWarehouseApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv300DataWarehouseStatistics", localVarResponse);
+          throw getApiException("dataWarehouseStatistics", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+          return new ApiResponse<Object>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -372,10 +371,10 @@ public class DataWarehouseApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>() {});
+        Object responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<Object>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+        return new ApiResponse<Object>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -394,18 +393,18 @@ public class DataWarehouseApi {
     }
   }
 
-  private HttpRequest.Builder oBPv300DataWarehouseStatisticsRequestBuilder(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull OBPv300DataWarehouseSearchRequest obPv300DataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder dataWarehouseStatisticsRequestBuilder(@javax.annotation.Nonnull String index, @javax.annotation.Nonnull String field, @javax.annotation.Nonnull DataWarehouseSearchRequest dataWarehouseSearchRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'index' is set
     if (index == null) {
-      throw new ApiException(400, "Missing the required parameter 'index' when calling oBPv300DataWarehouseStatistics");
+      throw new ApiException(400, "Missing the required parameter 'index' when calling dataWarehouseStatistics");
     }
     // verify the required parameter 'field' is set
     if (field == null) {
-      throw new ApiException(400, "Missing the required parameter 'field' when calling oBPv300DataWarehouseStatistics");
+      throw new ApiException(400, "Missing the required parameter 'field' when calling dataWarehouseStatistics");
     }
-    // verify the required parameter 'obPv300DataWarehouseSearchRequest' is set
-    if (obPv300DataWarehouseSearchRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv300DataWarehouseSearchRequest' when calling oBPv300DataWarehouseStatistics");
+    // verify the required parameter 'dataWarehouseSearchRequest' is set
+    if (dataWarehouseSearchRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'dataWarehouseSearchRequest' when calling dataWarehouseStatistics");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -420,7 +419,7 @@ public class DataWarehouseApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv300DataWarehouseSearchRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(dataWarehouseSearchRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

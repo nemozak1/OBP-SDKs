@@ -1,25 +1,25 @@
 # ABACApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreateAbacRule**](ABACApi.md#oBPv600CreateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
-| [**oBPv600DeleteAbacRule**](ABACApi.md#oBPv600DeleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
-| [**oBPv600ExecuteAbacPolicy**](ABACApi.md#oBPv600ExecuteAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
-| [**oBPv600ExecuteAbacRule**](ABACApi.md#oBPv600ExecuteAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
-| [**oBPv600GetAbacPolicies**](ABACApi.md#oBPv600GetAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
-| [**oBPv600GetAbacRule**](ABACApi.md#oBPv600GetAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
-| [**oBPv600GetAbacRuleSchema**](ABACApi.md#oBPv600GetAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
-| [**oBPv600GetAbacRules**](ABACApi.md#oBPv600GetAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
-| [**oBPv600GetAbacRulesByPolicy**](ABACApi.md#oBPv600GetAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
-| [**oBPv600UpdateAbacRule**](ABACApi.md#oBPv600UpdateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
-| [**oBPv600ValidateAbacRule**](ABACApi.md#oBPv600ValidateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
+| [**createAbacRule**](ABACApi.md#createAbacRule) | **POST** /obp/v6.0.0/management/abac-rules | Create ABAC Rule |
+| [**deleteAbacRule**](ABACApi.md#deleteAbacRule) | **DELETE** /obp/v6.0.0/management/abac-rules/{abacruleid} | Delete ABAC Rule |
+| [**executeAbacPolicy**](ABACApi.md#executeAbacPolicy) | **POST** /obp/v6.0.0/management/abac-policies/{policy}/execute | Execute ABAC Policy |
+| [**executeAbacRule**](ABACApi.md#executeAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/{abacruleid}/execute | Execute ABAC Rule |
+| [**getAbacPolicies**](ABACApi.md#getAbacPolicies) | **GET** /obp/v6.0.0/management/abac-policies | Get ABAC Policies |
+| [**getAbacRule**](ABACApi.md#getAbacRule) | **GET** /obp/v6.0.0/management/abac-rules/{abacruleid} | Get ABAC Rule |
+| [**getAbacRuleSchema**](ABACApi.md#getAbacRuleSchema) | **GET** /obp/v6.0.0/management/abac-rules-schema | Get ABAC Rule Schema |
+| [**getAbacRules**](ABACApi.md#getAbacRules) | **GET** /obp/v6.0.0/management/abac-rules | Get ABAC Rules |
+| [**getAbacRulesByPolicy**](ABACApi.md#getAbacRulesByPolicy) | **GET** /obp/v6.0.0/management/abac-rules/policy/{policy} | Get ABAC Rules by Policy |
+| [**updateAbacRule**](ABACApi.md#updateAbacRule) | **PUT** /obp/v6.0.0/management/abac-rules/{abacruleid} | Update ABAC Rule |
+| [**validateAbacRule**](ABACApi.md#validateAbacRule) | **POST** /obp/v6.0.0/management/abac-rules/validate | Validate ABAC Rule |
 
 
-<a id="oBPv600CreateAbacRule"></a>
-# **oBPv600CreateAbacRule**
-> OBPv600GetAbacRule200Response oBPv600CreateAbacRule(obPv600UpdateAbacRuleRequest)
+<a id="createAbacRule"></a>
+# **createAbacRule**
+> GetAbacRule200Response createAbacRule(updateAbacRuleRequest)
 
 Create ABAC Rule
 
@@ -32,15 +32,15 @@ Create ABAC Rule
 //import com.openbankproject.models.*
 
 val apiInstance = ABACApi()
-val obPv600UpdateAbacRuleRequest : OBPv600UpdateAbacRuleRequest = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}} // OBPv600UpdateAbacRuleRequest | Request body
+val updateAbacRuleRequest : UpdateAbacRuleRequest = {type=object, properties={rule_name={type=string}, is_active={type=boolean}, description={type=string}, rule_code={type=string}, policy={type=string}}} // UpdateAbacRuleRequest | Request body
 try {
-    val result : OBPv600GetAbacRule200Response = apiInstance.oBPv600CreateAbacRule(obPv600UpdateAbacRuleRequest)
+    val result : GetAbacRule200Response = apiInstance.createAbacRule(updateAbacRuleRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600CreateAbacRule")
+    println("4xx response calling ABACApi#createAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600CreateAbacRule")
+    println("5xx response calling ABACApi#createAbacRule")
     e.printStackTrace()
 }
 ```
@@ -48,11 +48,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -63,17 +63,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeleteAbacRule"></a>
-# **oBPv600DeleteAbacRule**
-> oBPv600DeleteAbacRule(abacruleid)
+<a id="deleteAbacRule"></a>
+# **deleteAbacRule**
+> deleteAbacRule(abacruleid)
 
 Delete ABAC Rule
 
@@ -88,12 +88,12 @@ Delete ABAC Rule
 val apiInstance = ABACApi()
 val abacruleid : kotlin.String = abacruleid_example // kotlin.String | The ABACRULEID identifier
 try {
-    apiInstance.oBPv600DeleteAbacRule(abacruleid)
+    apiInstance.deleteAbacRule(abacruleid)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600DeleteAbacRule")
+    println("4xx response calling ABACApi#deleteAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600DeleteAbacRule")
+    println("5xx response calling ABACApi#deleteAbacRule")
     e.printStackTrace()
 }
 ```
@@ -116,17 +116,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600ExecuteAbacPolicy"></a>
-# **oBPv600ExecuteAbacPolicy**
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacPolicy(policy, obPv600ExecuteAbacPolicyRequest)
+<a id="executeAbacPolicy"></a>
+# **executeAbacPolicy**
+> ExecuteAbacPolicy200Response executeAbacPolicy(policy, executeAbacPolicyRequest)
 
 Execute ABAC Policy
 
@@ -140,15 +140,15 @@ Execute ABAC Policy
 
 val apiInstance = ABACApi()
 val policy : kotlin.String = policy_example // kotlin.String | The POLICY identifier
-val obPv600ExecuteAbacPolicyRequest : OBPv600ExecuteAbacPolicyRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}} // OBPv600ExecuteAbacPolicyRequest | Request body
+val executeAbacPolicyRequest : ExecuteAbacPolicyRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"bank_id":{"type":"string"},"authenticated_user_id":{"type":"string"},"transaction_id":{"type":"string"},"view_id":{"type":"string"},"on_behalf_of_user_id":{"type":"string"},"user_id":{"type":"string"},"account_id":{"type":"string"},"transaction_request_id":{"type":"string"}}} // ExecuteAbacPolicyRequest | Request body
 try {
-    val result : OBPv600ExecuteAbacPolicy200Response = apiInstance.oBPv600ExecuteAbacPolicy(policy, obPv600ExecuteAbacPolicyRequest)
+    val result : ExecuteAbacPolicy200Response = apiInstance.executeAbacPolicy(policy, executeAbacPolicyRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600ExecuteAbacPolicy")
+    println("4xx response calling ABACApi#executeAbacPolicy")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600ExecuteAbacPolicy")
+    println("5xx response calling ABACApi#executeAbacPolicy")
     e.printStackTrace()
 }
 ```
@@ -157,11 +157,11 @@ try {
 | **policy** | **kotlin.String**| The POLICY identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -172,17 +172,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600ExecuteAbacRule"></a>
-# **oBPv600ExecuteAbacRule**
-> OBPv600ExecuteAbacPolicy200Response oBPv600ExecuteAbacRule(abacruleid, obPv600ExecuteAbacPolicyRequest)
+<a id="executeAbacRule"></a>
+# **executeAbacRule**
+> ExecuteAbacPolicy200Response executeAbacRule(abacruleid, executeAbacPolicyRequest)
 
 Execute ABAC Rule
 
@@ -196,15 +196,15 @@ Execute ABAC Rule
 
 val apiInstance = ABACApi()
 val abacruleid : kotlin.String = abacruleid_example // kotlin.String | The ABACRULEID identifier
-val obPv600ExecuteAbacPolicyRequest : OBPv600ExecuteAbacPolicyRequest = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}} // OBPv600ExecuteAbacPolicyRequest | Request body
+val executeAbacPolicyRequest : ExecuteAbacPolicyRequest = {type=object, properties={customer_id={type=string}, bank_id={type=string}, authenticated_user_id={type=string}, transaction_id={type=string}, view_id={type=string}, on_behalf_of_user_id={type=string}, user_id={type=string}, account_id={type=string}, transaction_request_id={type=string}}} // ExecuteAbacPolicyRequest | Request body
 try {
-    val result : OBPv600ExecuteAbacPolicy200Response = apiInstance.oBPv600ExecuteAbacRule(abacruleid, obPv600ExecuteAbacPolicyRequest)
+    val result : ExecuteAbacPolicy200Response = apiInstance.executeAbacRule(abacruleid, executeAbacPolicyRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600ExecuteAbacRule")
+    println("4xx response calling ABACApi#executeAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600ExecuteAbacRule")
+    println("5xx response calling ABACApi#executeAbacRule")
     e.printStackTrace()
 }
 ```
@@ -213,11 +213,11 @@ try {
 | **abacruleid** | **kotlin.String**| The ABACRULEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600ExecuteAbacPolicyRequest** | [**OBPv600ExecuteAbacPolicyRequest**](OBPv600ExecuteAbacPolicyRequest.md)| Request body | |
+| **executeAbacPolicyRequest** | [**ExecuteAbacPolicyRequest**](ExecuteAbacPolicyRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ExecuteAbacPolicy200Response**](OBPv600ExecuteAbacPolicy200Response.md)
+[**ExecuteAbacPolicy200Response**](ExecuteAbacPolicy200Response.md)
 
 ### Authorization
 
@@ -228,17 +228,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600GetAbacPolicies"></a>
-# **oBPv600GetAbacPolicies**
-> OBPv600GetAbacPolicies200Response oBPv600GetAbacPolicies()
+<a id="getAbacPolicies"></a>
+# **getAbacPolicies**
+> GetAbacPolicies200Response getAbacPolicies()
 
 Get ABAC Policies
 
@@ -252,13 +252,13 @@ Get ABAC Policies
 
 val apiInstance = ABACApi()
 try {
-    val result : OBPv600GetAbacPolicies200Response = apiInstance.oBPv600GetAbacPolicies()
+    val result : GetAbacPolicies200Response = apiInstance.getAbacPolicies()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600GetAbacPolicies")
+    println("4xx response calling ABACApi#getAbacPolicies")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600GetAbacPolicies")
+    println("5xx response calling ABACApi#getAbacPolicies")
     e.printStackTrace()
 }
 ```
@@ -268,7 +268,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacPolicies200Response**](OBPv600GetAbacPolicies200Response.md)
+[**GetAbacPolicies200Response**](GetAbacPolicies200Response.md)
 
 ### Authorization
 
@@ -279,17 +279,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAbacRule"></a>
-# **oBPv600GetAbacRule**
-> OBPv600GetAbacRule200Response oBPv600GetAbacRule(abacruleid)
+<a id="getAbacRule"></a>
+# **getAbacRule**
+> GetAbacRule200Response getAbacRule(abacruleid)
 
 Get ABAC Rule
 
@@ -304,13 +304,13 @@ Get ABAC Rule
 val apiInstance = ABACApi()
 val abacruleid : kotlin.String = abacruleid_example // kotlin.String | The ABACRULEID identifier
 try {
-    val result : OBPv600GetAbacRule200Response = apiInstance.oBPv600GetAbacRule(abacruleid)
+    val result : GetAbacRule200Response = apiInstance.getAbacRule(abacruleid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600GetAbacRule")
+    println("4xx response calling ABACApi#getAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600GetAbacRule")
+    println("5xx response calling ABACApi#getAbacRule")
     e.printStackTrace()
 }
 ```
@@ -322,7 +322,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -333,17 +333,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAbacRuleSchema"></a>
-# **oBPv600GetAbacRuleSchema**
-> OBPv600GetAbacRuleSchema200Response oBPv600GetAbacRuleSchema()
+<a id="getAbacRuleSchema"></a>
+# **getAbacRuleSchema**
+> GetAbacRuleSchema200Response getAbacRuleSchema()
 
 Get ABAC Rule Schema
 
@@ -357,13 +357,13 @@ Get ABAC Rule Schema
 
 val apiInstance = ABACApi()
 try {
-    val result : OBPv600GetAbacRuleSchema200Response = apiInstance.oBPv600GetAbacRuleSchema()
+    val result : GetAbacRuleSchema200Response = apiInstance.getAbacRuleSchema()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600GetAbacRuleSchema")
+    println("4xx response calling ABACApi#getAbacRuleSchema")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600GetAbacRuleSchema")
+    println("5xx response calling ABACApi#getAbacRuleSchema")
     e.printStackTrace()
 }
 ```
@@ -373,7 +373,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRuleSchema200Response**](OBPv600GetAbacRuleSchema200Response.md)
+[**GetAbacRuleSchema200Response**](GetAbacRuleSchema200Response.md)
 
 ### Authorization
 
@@ -384,17 +384,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAbacRules"></a>
-# **oBPv600GetAbacRules**
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRules()
+<a id="getAbacRules"></a>
+# **getAbacRules**
+> GetAbacRulesByPolicy200Response getAbacRules()
 
 Get ABAC Rules
 
@@ -408,13 +408,13 @@ Get ABAC Rules
 
 val apiInstance = ABACApi()
 try {
-    val result : OBPv600GetAbacRulesByPolicy200Response = apiInstance.oBPv600GetAbacRules()
+    val result : GetAbacRulesByPolicy200Response = apiInstance.getAbacRules()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600GetAbacRules")
+    println("4xx response calling ABACApi#getAbacRules")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600GetAbacRules")
+    println("5xx response calling ABACApi#getAbacRules")
     e.printStackTrace()
 }
 ```
@@ -424,7 +424,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -435,17 +435,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetAbacRulesByPolicy"></a>
-# **oBPv600GetAbacRulesByPolicy**
-> OBPv600GetAbacRulesByPolicy200Response oBPv600GetAbacRulesByPolicy(policy)
+<a id="getAbacRulesByPolicy"></a>
+# **getAbacRulesByPolicy**
+> GetAbacRulesByPolicy200Response getAbacRulesByPolicy(policy)
 
 Get ABAC Rules by Policy
 
@@ -460,13 +460,13 @@ Get ABAC Rules by Policy
 val apiInstance = ABACApi()
 val policy : kotlin.String = policy_example // kotlin.String | The POLICY identifier
 try {
-    val result : OBPv600GetAbacRulesByPolicy200Response = apiInstance.oBPv600GetAbacRulesByPolicy(policy)
+    val result : GetAbacRulesByPolicy200Response = apiInstance.getAbacRulesByPolicy(policy)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600GetAbacRulesByPolicy")
+    println("4xx response calling ABACApi#getAbacRulesByPolicy")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600GetAbacRulesByPolicy")
+    println("5xx response calling ABACApi#getAbacRulesByPolicy")
     e.printStackTrace()
 }
 ```
@@ -478,7 +478,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetAbacRulesByPolicy200Response**](OBPv600GetAbacRulesByPolicy200Response.md)
+[**GetAbacRulesByPolicy200Response**](GetAbacRulesByPolicy200Response.md)
 
 ### Authorization
 
@@ -489,17 +489,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600UpdateAbacRule"></a>
-# **oBPv600UpdateAbacRule**
-> OBPv600GetAbacRule200Response oBPv600UpdateAbacRule(abacruleid, obPv600UpdateAbacRuleRequest)
+<a id="updateAbacRule"></a>
+# **updateAbacRule**
+> GetAbacRule200Response updateAbacRule(abacruleid, updateAbacRuleRequest)
 
 Update ABAC Rule
 
@@ -513,15 +513,15 @@ Update ABAC Rule
 
 val apiInstance = ABACApi()
 val abacruleid : kotlin.String = abacruleid_example // kotlin.String | The ABACRULEID identifier
-val obPv600UpdateAbacRuleRequest : OBPv600UpdateAbacRuleRequest = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}} // OBPv600UpdateAbacRuleRequest | Request body
+val updateAbacRuleRequest : UpdateAbacRuleRequest = {"type":"object","properties":{"rule_name":{"type":"string"},"is_active":{"type":"boolean"},"description":{"type":"string"},"rule_code":{"type":"string"},"policy":{"type":"string"}}} // UpdateAbacRuleRequest | Request body
 try {
-    val result : OBPv600GetAbacRule200Response = apiInstance.oBPv600UpdateAbacRule(abacruleid, obPv600UpdateAbacRuleRequest)
+    val result : GetAbacRule200Response = apiInstance.updateAbacRule(abacruleid, updateAbacRuleRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600UpdateAbacRule")
+    println("4xx response calling ABACApi#updateAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600UpdateAbacRule")
+    println("5xx response calling ABACApi#updateAbacRule")
     e.printStackTrace()
 }
 ```
@@ -530,11 +530,11 @@ try {
 | **abacruleid** | **kotlin.String**| The ABACRULEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600UpdateAbacRuleRequest** | [**OBPv600UpdateAbacRuleRequest**](OBPv600UpdateAbacRuleRequest.md)| Request body | |
+| **updateAbacRuleRequest** | [**UpdateAbacRuleRequest**](UpdateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetAbacRule200Response**](OBPv600GetAbacRule200Response.md)
+[**GetAbacRule200Response**](GetAbacRule200Response.md)
 
 ### Authorization
 
@@ -545,17 +545,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600ValidateAbacRule"></a>
-# **oBPv600ValidateAbacRule**
-> OBPv600ValidateAbacRule200Response oBPv600ValidateAbacRule(obPv600ValidateAbacRuleRequest)
+<a id="validateAbacRule"></a>
+# **validateAbacRule**
+> ValidateAbacRule200Response validateAbacRule(validateAbacRuleRequest)
 
 Validate ABAC Rule
 
@@ -568,15 +568,15 @@ Validate ABAC Rule
 //import com.openbankproject.models.*
 
 val apiInstance = ABACApi()
-val obPv600ValidateAbacRuleRequest : OBPv600ValidateAbacRuleRequest = {"type":"object","properties":{"rule_code":{"type":"string"}}} // OBPv600ValidateAbacRuleRequest | Request body
+val validateAbacRuleRequest : ValidateAbacRuleRequest = {"type":"object","properties":{"rule_code":{"type":"string"}}} // ValidateAbacRuleRequest | Request body
 try {
-    val result : OBPv600ValidateAbacRule200Response = apiInstance.oBPv600ValidateAbacRule(obPv600ValidateAbacRuleRequest)
+    val result : ValidateAbacRule200Response = apiInstance.validateAbacRule(validateAbacRuleRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ABACApi#oBPv600ValidateAbacRule")
+    println("4xx response calling ABACApi#validateAbacRule")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ABACApi#oBPv600ValidateAbacRule")
+    println("5xx response calling ABACApi#validateAbacRule")
     e.printStackTrace()
 }
 ```
@@ -584,11 +584,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600ValidateAbacRuleRequest** | [**OBPv600ValidateAbacRuleRequest**](OBPv600ValidateAbacRuleRequest.md)| Request body | |
+| **validateAbacRuleRequest** | [**ValidateAbacRuleRequest**](ValidateAbacRuleRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600ValidateAbacRule200Response**](OBPv600ValidateAbacRule200Response.md)
+[**ValidateAbacRule200Response**](ValidateAbacRule200Response.md)
 
 ### Authorization
 
@@ -599,8 +599,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

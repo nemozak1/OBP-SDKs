@@ -2,21 +2,21 @@
 
 Operations related to Balance
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510CreateBankAccountBalance()**](BalanceApi.md#oBPv510CreateBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
-| [**oBPv510DeleteBankAccountBalance()**](BalanceApi.md#oBPv510DeleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
-| [**oBPv510GetAllBankAccountBalances()**](BalanceApi.md#oBPv510GetAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
-| [**oBPv510GetBankAccountBalanceById()**](BalanceApi.md#oBPv510GetBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
-| [**oBPv510UpdateBankAccountBalance()**](BalanceApi.md#oBPv510UpdateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
+| [**createBankAccountBalance()**](BalanceApi.md#createBankAccountBalance) | **POST** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Create Bank Account Balance |
+| [**deleteBankAccountBalance()**](BalanceApi.md#deleteBankAccountBalance) | **DELETE** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Delete Bank Account Balance |
+| [**getAllBankAccountBalances()**](BalanceApi.md#getAllBankAccountBalances) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances | Get All Bank Account Balances |
+| [**getBankAccountBalanceById()**](BalanceApi.md#getBankAccountBalanceById) | **GET** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Get Bank Account Balance By ID |
+| [**updateBankAccountBalance()**](BalanceApi.md#updateBankAccountBalance) | **PUT** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/balances/{balanceid} | Update Bank Account Balance |
 
 
-## `oBPv510CreateBankAccountBalance()`
+## `createBankAccountBalance()`
 
 ```php
-oBPv510CreateBankAccountBalance($bankid, $accountid, $obpv510_create_bank_account_balance_request): \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+createBankAccountBalance($bankid, $accountid, $create_bank_account_balance_request): \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
 ```
 
 Create Bank Account Balance
@@ -39,9 +39,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BalanceApi(
@@ -52,13 +52,13 @@ $apiInstance = new OpenBankProject\Api\BalanceApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$obpv510_create_bank_account_balance_request = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}}; // \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest | Request body
+$create_bank_account_balance_request = {"type":"object","properties":{"balance_amount":{"type":"string"},"balance_type":{"type":"string"}}}; // \OpenBankProject\Model\CreateBankAccountBalanceRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv510CreateBankAccountBalance($bankid, $accountid, $obpv510_create_bank_account_balance_request);
+    $result = $apiInstance->createBankAccountBalance($bankid, $accountid, $create_bank_account_balance_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BalanceApi->oBPv510CreateBankAccountBalance: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BalanceApi->createBankAccountBalance: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,11 +68,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
-| **obpv510_create_bank_account_balance_request** | [**\OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest**](../Model/OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **create_bank_account_balance_request** | [**\OpenBankProject\Model\CreateBankAccountBalanceRequest**](../Model/CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](../Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner**](../Model/GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -87,10 +87,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510DeleteBankAccountBalance()`
+## `deleteBankAccountBalance()`
 
 ```php
-oBPv510DeleteBankAccountBalance($bankid, $accountid, $balanceid)
+deleteBankAccountBalance($bankid, $accountid, $balanceid)
 ```
 
 Delete Bank Account Balance
@@ -113,9 +113,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BalanceApi(
@@ -129,9 +129,9 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $balanceid = 'balanceid_example'; // string | The BALANCEID identifier
 
 try {
-    $apiInstance->oBPv510DeleteBankAccountBalance($bankid, $accountid, $balanceid);
+    $apiInstance->deleteBankAccountBalance($bankid, $accountid, $balanceid);
 } catch (Exception $e) {
-    echo 'Exception when calling BalanceApi->oBPv510DeleteBankAccountBalance: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BalanceApi->deleteBankAccountBalance: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -160,10 +160,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetAllBankAccountBalances()`
+## `getAllBankAccountBalances()`
 
 ```php
-oBPv510GetAllBankAccountBalances($bankid, $accountid): \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response
+getAllBankAccountBalances($bankid, $accountid): \OpenBankProject\Model\GetAllBankAccountBalances200Response
 ```
 
 Get All Bank Account Balances
@@ -186,9 +186,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BalanceApi(
@@ -201,10 +201,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetAllBankAccountBalances($bankid, $accountid);
+    $result = $apiInstance->getAllBankAccountBalances($bankid, $accountid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BalanceApi->oBPv510GetAllBankAccountBalances: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BalanceApi->getAllBankAccountBalances: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -217,7 +217,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response**](../Model/OBPv510GetAllBankAccountBalances200Response.md)
+[**\OpenBankProject\Model\GetAllBankAccountBalances200Response**](../Model/GetAllBankAccountBalances200Response.md)
 
 ### Authorization
 
@@ -232,10 +232,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510GetBankAccountBalanceById()`
+## `getBankAccountBalanceById()`
 
 ```php
-oBPv510GetBankAccountBalanceById($bankid, $accountid, $balanceid): \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+getBankAccountBalanceById($bankid, $accountid, $balanceid): \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
 ```
 
 Get Bank Account Balance By ID
@@ -258,9 +258,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BalanceApi(
@@ -274,10 +274,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $balanceid = 'balanceid_example'; // string | The BALANCEID identifier
 
 try {
-    $result = $apiInstance->oBPv510GetBankAccountBalanceById($bankid, $accountid, $balanceid);
+    $result = $apiInstance->getBankAccountBalanceById($bankid, $accountid, $balanceid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BalanceApi->oBPv510GetBankAccountBalanceById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BalanceApi->getBankAccountBalanceById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -291,7 +291,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](../Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner**](../Model/GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 
@@ -306,10 +306,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv510UpdateBankAccountBalance()`
+## `updateBankAccountBalance()`
 
 ```php
-oBPv510UpdateBankAccountBalance($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request): \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+updateBankAccountBalance($bankid, $accountid, $balanceid, $create_bank_account_balance_request): \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
 ```
 
 Update Bank Account Balance
@@ -332,9 +332,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BalanceApi(
@@ -346,13 +346,13 @@ $apiInstance = new OpenBankProject\Api\BalanceApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $balanceid = 'balanceid_example'; // string | The BALANCEID identifier
-$obpv510_create_bank_account_balance_request = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}}; // \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest | Request body
+$create_bank_account_balance_request = {type=object, properties={balance_amount={type=string}, balance_type={type=string}}}; // \OpenBankProject\Model\CreateBankAccountBalanceRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv510UpdateBankAccountBalance($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request);
+    $result = $apiInstance->updateBankAccountBalance($bankid, $accountid, $balanceid, $create_bank_account_balance_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BalanceApi->oBPv510UpdateBankAccountBalance: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BalanceApi->updateBankAccountBalance: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -363,11 +363,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **balanceid** | **string**| The BALANCEID identifier | |
-| **obpv510_create_bank_account_balance_request** | [**\OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest**](../Model/OBPv510CreateBankAccountBalanceRequest.md)| Request body | |
+| **create_bank_account_balance_request** | [**\OpenBankProject\Model\CreateBankAccountBalanceRequest**](../Model/CreateBankAccountBalanceRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems**](../Model/OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems.md)
+[**\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner**](../Model/GetAllBankAccountBalances200ResponseBalancesInner.md)
 
 ### Authorization
 

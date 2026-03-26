@@ -4,14 +4,14 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_create_branch**](BranchApi.md#o_bpv3_0_0_create_branch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
-[**o_bpv3_0_0_get_branch**](BranchApi.md#o_bpv3_0_0_get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-[**o_bpv3_0_0_get_branches**](BranchApi.md#o_bpv3_0_0_get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-[**o_bpv3_1_0_delete_branch**](BranchApi.md#o_bpv3_1_0_delete_branch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+[**create_branch**](BranchApi.md#create_branch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
+[**delete_branch**](BranchApi.md#delete_branch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+[**get_branch**](BranchApi.md#get_branch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+[**get_branches**](BranchApi.md#get_branches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
 
 
-# **o_bpv3_0_0_create_branch**
-> OBPv300GetBranches200ResponseBranchesInner o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_branches_inner)
+# **create_branch**
+> GetBranches200ResponseBranchesInner create_branch(bankid, get_branches200_response_branches_inner)
 
 Create Branch
 
@@ -101,7 +101,7 @@ Create Branch
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_branches200_response_branches_inner import OBPv300GetBranches200ResponseBranchesInner
+from obp_python.models.get_branches200_response_branches_inner import GetBranches200ResponseBranchesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -135,15 +135,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.BranchApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv300_get_branches200_response_branches_inner = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}} # OBPv300GetBranches200ResponseBranchesInner | Request body
+    get_branches200_response_branches_inner = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}} # GetBranches200ResponseBranchesInner | Request body
 
     try:
         # Create Branch
-        api_response = api_instance.o_bpv3_0_0_create_branch(bankid, obpv300_get_branches200_response_branches_inner)
-        print("The response of BranchApi->o_bpv3_0_0_create_branch:\n")
+        api_response = api_instance.create_branch(bankid, get_branches200_response_branches_inner)
+        print("The response of BranchApi->create_branch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BranchApi->o_bpv3_0_0_create_branch: %s\n" % e)
+        print("Exception when calling BranchApi->create_branch: %s\n" % e)
 ```
 
 
@@ -154,11 +154,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv300_get_branches200_response_branches_inner** | [**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)| Request body | 
+ **get_branches200_response_branches_inner** | [**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)| Request body | 
 
 ### Return type
 
-[**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)
+[**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -179,8 +179,104 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_get_branch**
-> OBPv300GetBranches200ResponseBranchesInner o_bpv3_0_0_get_branch(bankid, branchid)
+# **delete_branch**
+> delete_branch(bankid, branchid)
+
+Delete Branch
+
+<p>Delete Branch from given Bank.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">BRANCH_ID</a>: DERBY6</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.BranchApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    branchid = 'branchid_example' # str | The BRANCHID identifier
+
+    try:
+        # Delete Branch
+        api_instance.delete_branch(bankid, branchid)
+    except Exception as e:
+        print("Exception when calling BranchApi->delete_branch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **branchid** | **str**| The BRANCHID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_branch**
+> GetBranches200ResponseBranchesInner get_branch(bankid, branchid)
 
 Get Branch
 
@@ -238,7 +334,7 @@ Get Branch
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_branches200_response_branches_inner import OBPv300GetBranches200ResponseBranchesInner
+from obp_python.models.get_branches200_response_branches_inner import GetBranches200ResponseBranchesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -258,11 +354,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Branch
-        api_response = api_instance.o_bpv3_0_0_get_branch(bankid, branchid)
-        print("The response of BranchApi->o_bpv3_0_0_get_branch:\n")
+        api_response = api_instance.get_branch(bankid, branchid)
+        print("The response of BranchApi->get_branch:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BranchApi->o_bpv3_0_0_get_branch: %s\n" % e)
+        print("Exception when calling BranchApi->get_branch: %s\n" % e)
 ```
 
 
@@ -277,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetBranches200ResponseBranchesInner**](OBPv300GetBranches200ResponseBranchesInner.md)
+[**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -298,8 +394,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_get_branches**
-> OBPv300GetBranches200Response o_bpv3_0_0_get_branches(bankid)
+# **get_branches**
+> GetBranches200Response get_branches(bankid)
 
 Get Branches for a Bank
 
@@ -376,7 +472,7 @@ You can also use the follow url query parameters:</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_branches200_response import OBPv300GetBranches200Response
+from obp_python.models.get_branches200_response import GetBranches200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -395,11 +491,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Branches for a Bank
-        api_response = api_instance.o_bpv3_0_0_get_branches(bankid)
-        print("The response of BranchApi->o_bpv3_0_0_get_branches:\n")
+        api_response = api_instance.get_branches(bankid)
+        print("The response of BranchApi->get_branches:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling BranchApi->o_bpv3_0_0_get_branches: %s\n" % e)
+        print("Exception when calling BranchApi->get_branches: %s\n" % e)
 ```
 
 
@@ -413,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetBranches200Response**](OBPv300GetBranches200Response.md)
+[**GetBranches200Response**](GetBranches200Response.md)
 
 ### Authorization
 
@@ -423,102 +519,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_delete_branch**
-> o_bpv3_1_0_delete_branch(bankid, branchid)
-
-Delete Branch
-
-<p>Delete Branch from given Bank.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">BRANCH_ID</a>: DERBY6</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.BranchApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    branchid = 'branchid_example' # str | The BRANCHID identifier
-
-    try:
-        # Delete Branch
-        api_instance.o_bpv3_1_0_delete_branch(bankid, branchid)
-    except Exception as e:
-        print("Exception when calling BranchApi->o_bpv3_1_0_delete_branch: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **branchid** | **str**| The BRANCHID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 ### HTTP response details
 

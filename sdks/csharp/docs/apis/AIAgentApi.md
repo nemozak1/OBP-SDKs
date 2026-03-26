@@ -1,19 +1,19 @@
 # OpenBankProject.Api.AIAgentApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv600DeleteSignalChannel**](AIAgentApi.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**OBPv600GetSignalChannelInfo**](AIAgentApi.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**OBPv600GetSignalChannels**](AIAgentApi.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**OBPv600GetSignalMessages**](AIAgentApi.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**OBPv600GetSignalStats**](AIAgentApi.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**OBPv600PublishSignalMessage**](AIAgentApi.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**DeleteSignalChannel**](AIAgentApi.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**GetSignalChannelInfo**](AIAgentApi.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**GetSignalChannels**](AIAgentApi.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**GetSignalMessages**](AIAgentApi.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**GetSignalStats**](AIAgentApi.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**PublishSignalMessage**](AIAgentApi.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
-<a id="obpv600deletesignalchannel"></a>
-# **OBPv600DeleteSignalChannel**
-> OBPv600DeleteSignalChannel200Response OBPv600DeleteSignalChannel (string channelname)
+<a id="deletesignalchannel"></a>
+# **DeleteSignalChannel**
+> DeleteSignalChannel200Response DeleteSignalChannel (string channelname)
 
 Delete Signal Channel
 
@@ -28,7 +28,7 @@ Delete Signal Channel
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -48,9 +48,9 @@ Delete Signal Channel
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getsignalchannelinfo"></a>
-# **OBPv600GetSignalChannelInfo**
-> OBPv600GetSignalChannelInfo200Response OBPv600GetSignalChannelInfo (string channelname)
+<a id="getsignalchannelinfo"></a>
+# **GetSignalChannelInfo**
+> GetSignalChannelInfo200Response GetSignalChannelInfo (string channelname)
 
 Get Signal Channel Info
 
@@ -65,7 +65,7 @@ Get Signal Channel Info
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -85,9 +85,9 @@ Get Signal Channel Info
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getsignalchannels"></a>
-# **OBPv600GetSignalChannels**
-> OBPv600GetSignalChannels200Response OBPv600GetSignalChannels ()
+<a id="getsignalchannels"></a>
+# **GetSignalChannels**
+> GetSignalChannels200Response GetSignalChannels ()
 
 List Signal Channels
 
@@ -98,7 +98,7 @@ List Signal Channels
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -118,9 +118,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getsignalmessages"></a>
-# **OBPv600GetSignalMessages**
-> OBPv600GetSignalMessages200Response OBPv600GetSignalMessages (string channelname)
+<a id="getsignalmessages"></a>
+# **GetSignalMessages**
+> GetSignalMessages200Response GetSignalMessages (string channelname)
 
 Get Signal Messages
 
@@ -135,7 +135,7 @@ Get Signal Messages
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -155,9 +155,9 @@ Get Signal Messages
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600getsignalstats"></a>
-# **OBPv600GetSignalStats**
-> OBPv600GetSignalStats200Response OBPv600GetSignalStats ()
+<a id="getsignalstats"></a>
+# **GetSignalStats**
+> GetSignalStats200Response GetSignalStats ()
 
 Get Signal Channel Stats
 
@@ -168,7 +168,7 @@ Get Signal Channel Stats
 This endpoint does not need any parameter.
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -188,9 +188,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv600publishsignalmessage"></a>
-# **OBPv600PublishSignalMessage**
-> OBPv600PublishSignalMessage200Response OBPv600PublishSignalMessage (string channelname, OBPv600PublishSignalMessageRequest oBPv600PublishSignalMessageRequest)
+<a id="publishsignalmessage"></a>
+# **PublishSignalMessage**
+> PublishSignalMessage200Response PublishSignalMessage (string channelname, PublishSignalMessageRequest publishSignalMessageRequest)
 
 Publish Signal Message
 
@@ -202,11 +202,11 @@ Publish Signal Message
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **channelname** | **string** | The CHANNELNAME identifier |  |
-| **oBPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md) | Request body |  |
+| **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

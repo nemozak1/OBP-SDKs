@@ -2,18 +2,18 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateStandingOrder()**](StandingOrderApi.md#oBPv400CreateStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
-| [**oBPv400CreateStandingOrderManagement()**](StandingOrderApi.md#oBPv400CreateStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
+| [**createStandingOrder()**](StandingOrderApi.md#createStandingOrder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order |
+| [**createStandingOrderManagement()**](StandingOrderApi.md#createStandingOrderManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management) |
 
 
-## `oBPv400CreateStandingOrder()`
+## `createStandingOrder()`
 
 ```php
-oBPv400CreateStandingOrder($bankid, $accountid, $viewid, $obpv400_create_standing_order_request): \OpenBankProject\Model\OBPv400CreateStandingOrder200Response
+createStandingOrder($bankid, $accountid, $viewid, $create_standing_order_request): \OpenBankProject\Model\CreateStandingOrder200Response
 ```
 
 Create Standing Order
@@ -36,9 +36,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\StandingOrderApi(
@@ -50,13 +50,13 @@ $apiInstance = new OpenBankProject\Api\StandingOrderApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
-$obpv400_create_standing_order_request = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_signed":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400CreateStandingOrderRequest | Request body
+$create_standing_order_request = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"when":{"type":"object","properties":{"frequency":{"type":"string"},"detail":{"type":"string"}}},"date_starts":{"type":"string","format":"date-time"},"amount":{"type":"object","properties":{"currency":{"type":"string"},"amount":{"type":"string"}}},"user_id":{"type":"string"}}}; // \OpenBankProject\Model\CreateStandingOrderRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateStandingOrder($bankid, $accountid, $viewid, $obpv400_create_standing_order_request);
+    $result = $apiInstance->createStandingOrder($bankid, $accountid, $viewid, $create_standing_order_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StandingOrderApi->oBPv400CreateStandingOrder: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StandingOrderApi->createStandingOrder: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -67,11 +67,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
-| **obpv400_create_standing_order_request** | [**\OpenBankProject\Model\OBPv400CreateStandingOrderRequest**](../Model/OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **create_standing_order_request** | [**\OpenBankProject\Model\CreateStandingOrderRequest**](../Model/CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400CreateStandingOrder200Response**](../Model/OBPv400CreateStandingOrder200Response.md)
+[**\OpenBankProject\Model\CreateStandingOrder200Response**](../Model/CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400CreateStandingOrderManagement()`
+## `createStandingOrderManagement()`
 
 ```php
-oBPv400CreateStandingOrderManagement($bankid, $accountid, $obpv400_create_standing_order_request): \OpenBankProject\Model\OBPv400CreateStandingOrder200Response
+createStandingOrderManagement($bankid, $accountid, $create_standing_order_request): \OpenBankProject\Model\CreateStandingOrder200Response
 ```
 
 Create Standing Order (management)
@@ -112,9 +112,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\StandingOrderApi(
@@ -125,13 +125,13 @@ $apiInstance = new OpenBankProject\Api\StandingOrderApi(
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
-$obpv400_create_standing_order_request = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_signed={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}}; // \OpenBankProject\Model\OBPv400CreateStandingOrderRequest | Request body
+$create_standing_order_request = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, when={type=object, properties={frequency={type=string}, detail={type=string}}}, date_starts={type=string, format=date-time}, amount={type=object, properties={currency={type=string}, amount={type=string}}}, user_id={type=string}}}; // \OpenBankProject\Model\CreateStandingOrderRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv400CreateStandingOrderManagement($bankid, $accountid, $obpv400_create_standing_order_request);
+    $result = $apiInstance->createStandingOrderManagement($bankid, $accountid, $create_standing_order_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StandingOrderApi->oBPv400CreateStandingOrderManagement: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StandingOrderApi->createStandingOrderManagement: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -141,11 +141,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
-| **obpv400_create_standing_order_request** | [**\OpenBankProject\Model\OBPv400CreateStandingOrderRequest**](../Model/OBPv400CreateStandingOrderRequest.md)| Request body | |
+| **create_standing_order_request** | [**\OpenBankProject\Model\CreateStandingOrderRequest**](../Model/CreateStandingOrderRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400CreateStandingOrder200Response**](../Model/OBPv400CreateStandingOrder200Response.md)
+[**\OpenBankProject\Model\CreateStandingOrder200Response**](../Model/CreateStandingOrder200Response.md)
 
 ### Authorization
 

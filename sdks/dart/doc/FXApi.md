@@ -5,17 +5,17 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv220CreateFx**](FXApi.md#obpv220createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-[**oBPv220GetCurrentFxRate**](FXApi.md#obpv220getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-[**oBPv510GetCurrenciesAtBank**](FXApi.md#obpv510getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**createFx**](FXApi.md#createfx) | **PUT** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+[**getCurrenciesAtBank**](FXApi.md#getcurrenciesatbank) | **GET** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**getCurrentFxRate**](FXApi.md#getcurrentfxrate) | **GET** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
 
 
-# **oBPv220CreateFx**
-> OBPv220CreateFxRequest oBPv220CreateFx(bankid, oBPv220CreateFxRequest)
+# **createFx**
+> CreateFxRequest createFx(bankid, createFxRequest)
 
 Create Fx
 
@@ -37,13 +37,13 @@ import 'package:obp_dart/api.dart';
 
 final api = ObpDart().getFXApi();
 final String bankid = bankid_example; // String | The BANKID identifier
-final OBPv220CreateFxRequest oBPv220CreateFxRequest = {"type":"object","properties":{"effective_date":{"type":"string","format":"date-time"},"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"}}}; // OBPv220CreateFxRequest | Request body
+final CreateFxRequest createFxRequest = {"type":"object","properties":{"conversion_value":{"type":"number"},"from_currency_code":{"type":"string"},"bank_id":{"type":"string"},"inverse_conversion_value":{"type":"number"},"to_currency_code":{"type":"string"},"effective_date":{"type":"string","format":"date-time"}}}; // CreateFxRequest | Request body
 
 try {
-    final response = api.oBPv220CreateFx(bankid, oBPv220CreateFxRequest);
+    final response = api.createFx(bankid, createFxRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling FXApi->oBPv220CreateFx: $e\n');
+    print('Exception when calling FXApi->createFx: $e\n');
 }
 ```
 
@@ -52,11 +52,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String**| The BANKID identifier | 
- **oBPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)| Request body | 
+ **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -69,8 +69,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv220GetCurrentFxRate**
-> OBPv220CreateFxRequest oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
+# **getCurrenciesAtBank**
+> GetCurrenciesAtBank200Response getCurrenciesAtBank(bankid)
+
+Get Currencies at a Bank
+
+<p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getFXApi();
+final String bankid = bankid_example; // String | The BANKID identifier
+
+try {
+    final response = api.getCurrenciesAtBank(bankid);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling FXApi->getCurrenciesAtBank: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String**| The BANKID identifier | 
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCurrentFxRate**
+> CreateFxRequest getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode)
 
 Get Current FxRate
 
@@ -96,10 +149,10 @@ final String fromcurrencycode = fromcurrencycode_example; // String | The FROMCU
 final String tocurrencycode = tocurrencycode_example; // String | The TOCURRENCYCODE identifier
 
 try {
-    final response = api.oBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
+    final response = api.getCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling FXApi->oBPv220GetCurrentFxRate: $e\n');
+    print('Exception when calling FXApi->getCurrentFxRate: $e\n');
 }
 ```
 
@@ -113,60 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv510GetCurrenciesAtBank**
-> OBPv510GetCurrenciesAtBank200Response oBPv510GetCurrenciesAtBank(bankid)
-
-Get Currencies at a Bank
-
-<p>Get Currencies specified by BANK_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>alphanumeric_code</strong></a>: alphanumeric_code</p> <p><a href=\"/glossary#\"><strong>currencies</strong></a>: currencies</p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getFXApi();
-final String bankid = bankid_example; // String | The BANKID identifier
-
-try {
-    final response = api.oBPv510GetCurrenciesAtBank(bankid);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling FXApi->oBPv510GetCurrenciesAtBank: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 

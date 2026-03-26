@@ -1,18 +1,18 @@
 # \FXAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv220CreateFx**](FXAPI.md#OBPv220CreateFx) | **Put** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
-[**OBPv220GetCurrentFxRate**](FXAPI.md#OBPv220GetCurrentFxRate) | **Get** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
-[**OBPv510GetCurrenciesAtBank**](FXAPI.md#OBPv510GetCurrenciesAtBank) | **Get** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**CreateFx**](FXAPI.md#CreateFx) | **Put** /obp/v2.2.0/banks/{bankid}/fx | Create Fx
+[**GetCurrenciesAtBank**](FXAPI.md#GetCurrenciesAtBank) | **Get** /obp/v5.1.0/banks/{bankid}/currencies | Get Currencies at a Bank
+[**GetCurrentFxRate**](FXAPI.md#GetCurrentFxRate) | **Get** /obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode} | Get Current FxRate
 
 
 
-## OBPv220CreateFx
+## CreateFx
 
-> OBPv220CreateFxRequest OBPv220CreateFx(ctx, bankid).OBPv220CreateFxRequest(oBPv220CreateFxRequest).Execute()
+> CreateFxRequest CreateFx(ctx, bankid).CreateFxRequest(createFxRequest).Execute()
 
 Create Fx
 
@@ -32,17 +32,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv220CreateFxRequest := *openapiclient.NewOBPv220CreateFxRequest("Type_example", *openapiclient.NewOBPv220CreateFxRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv220CreateFxRequest | Request body
+	createFxRequest := *openapiclient.NewCreateFxRequest() // CreateFxRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FXAPI.OBPv220CreateFx(context.Background(), bankid).OBPv220CreateFxRequest(oBPv220CreateFxRequest).Execute()
+	resp, r, err := apiClient.FXAPI.CreateFx(context.Background(), bankid).CreateFxRequest(createFxRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.OBPv220CreateFx``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.CreateFx``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv220CreateFx`: OBPv220CreateFxRequest
-	fmt.Fprintf(os.Stdout, "Response from `FXAPI.OBPv220CreateFx`: %v\n", resp)
+	// response from `CreateFx`: CreateFxRequest
+	fmt.Fprintf(os.Stdout, "Response from `FXAPI.CreateFx`: %v\n", resp)
 }
 ```
 
@@ -56,17 +56,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv220CreateFxRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateFxRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv220CreateFxRequest** | [**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md) | Request body | 
+ **createFxRequest** | [**CreateFxRequest**](CreateFxRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 
@@ -82,9 +82,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv220GetCurrentFxRate
+## GetCurrenciesAtBank
 
-> OBPv220CreateFxRequest OBPv220GetCurrentFxRate(ctx, bankid, fromcurrencycode, tocurrencycode).Execute()
+> GetCurrenciesAtBank200Response GetCurrenciesAtBank(ctx, bankid).Execute()
+
+Get Currencies at a Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FXAPI.GetCurrenciesAtBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.GetCurrenciesAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCurrenciesAtBank`: GetCurrenciesAtBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `FXAPI.GetCurrenciesAtBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCurrenciesAtBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetCurrenciesAtBank200Response**](GetCurrenciesAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCurrentFxRate
+
+> CreateFxRequest GetCurrentFxRate(ctx, bankid, fromcurrencycode, tocurrencycode).Execute()
 
 Get Current FxRate
 
@@ -109,13 +179,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FXAPI.OBPv220GetCurrentFxRate(context.Background(), bankid, fromcurrencycode, tocurrencycode).Execute()
+	resp, r, err := apiClient.FXAPI.GetCurrentFxRate(context.Background(), bankid, fromcurrencycode, tocurrencycode).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.OBPv220GetCurrentFxRate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.GetCurrentFxRate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv220GetCurrentFxRate`: OBPv220CreateFxRequest
-	fmt.Fprintf(os.Stdout, "Response from `FXAPI.OBPv220GetCurrentFxRate`: %v\n", resp)
+	// response from `GetCurrentFxRate`: CreateFxRequest
+	fmt.Fprintf(os.Stdout, "Response from `FXAPI.GetCurrentFxRate`: %v\n", resp)
 }
 ```
 
@@ -131,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv220GetCurrentFxRateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCurrentFxRateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,77 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv220CreateFxRequest**](OBPv220CreateFxRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetCurrenciesAtBank
-
-> OBPv510GetCurrenciesAtBank200Response OBPv510GetCurrenciesAtBank(ctx, bankid).Execute()
-
-Get Currencies at a Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.FXAPI.OBPv510GetCurrenciesAtBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FXAPI.OBPv510GetCurrenciesAtBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510GetCurrenciesAtBank`: OBPv510GetCurrenciesAtBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `FXAPI.OBPv510GetCurrenciesAtBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510GetCurrenciesAtBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv510GetCurrenciesAtBank200Response**](OBPv510GetCurrenciesAtBank200Response.md)
+[**CreateFxRequest**](CreateFxRequest.md)
 
 ### Authorization
 

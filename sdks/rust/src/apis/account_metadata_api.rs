@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,28 +15,28 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv4_0_0_add_tag_for_view_on_account`]
+/// struct for typed errors of method [`add_tag_for_view_on_account`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400AddTagForViewOnAccountError {
+pub enum AddTagForViewOnAccountError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_delete_tag_for_view_on_account`]
+/// struct for typed errors of method [`delete_tag_for_view_on_account`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400DeleteTagForViewOnAccountError {
+pub enum DeleteTagForViewOnAccountError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv4_0_0_get_tags_for_view_on_account`]
+/// struct for typed errors of method [`get_tags_for_view_on_account`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv400GetTagsForViewOnAccountError {
+pub enum GetTagsForViewOnAccountError {
     Status404(),
     Status500(),
     UnknownValue(serde_json::Value),
@@ -44,12 +44,12 @@ pub enum OBpv400GetTagsForViewOnAccountError {
 
 
 /// <p>Posts a tag about an account ACCOUNT_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_add_tag_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, obpv400_delete_system_level_endpoint_tag200_response: models::Obpv400DeleteSystemLevelEndpointTag200Response) -> Result<models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems, Error<OBpv400AddTagForViewOnAccountError>> {
+pub async fn add_tag_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, get_transaction_types200_response_transaction_types_inner_id: models::GetTransactionTypes200ResponseTransactionTypesInnerId) -> Result<models::GetTagsForViewOnAccount200ResponseTagsInner, Error<AddTagForViewOnAccountError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
     let p_path_viewid = viewid;
-    let p_body_obpv400_delete_system_level_endpoint_tag200_response = obpv400_delete_system_level_endpoint_tag200_response;
+    let p_body_get_transaction_types200_response_transaction_types_inner_id = get_transaction_types200_response_transaction_types_inner_id;
 
     let uri_str = format!("{}/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags", configuration.base_path, bankid=crate::apis::urlencode(p_path_bankid), accountid=crate::apis::urlencode(p_path_accountid), viewid=crate::apis::urlencode(p_path_viewid));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -74,9 +74,9 @@ pub async fn o_bpv4_0_0_add_tag_for_view_on_account(configuration: &configuratio
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
-    req_builder = req_builder.json(&p_body_obpv400_delete_system_level_endpoint_tag200_response);
+    req_builder = req_builder.json(&p_body_get_transaction_types200_response_transaction_types_inner_id);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -93,18 +93,18 @@ pub async fn o_bpv4_0_0_add_tag_for_view_on_account(configuration: &configuratio
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTagsForViewOnAccount200ResponseTagsInner`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400AddTagForViewOnAccountError> = serde_json::from_str(&content).ok();
+        let entity: Option<AddTagForViewOnAccountError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Deletes the tag TAG_ID about the account ACCOUNT_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
-pub async fn o_bpv4_0_0_delete_tag_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, tagid: &str) -> Result<(), Error<OBpv400DeleteTagForViewOnAccountError>> {
+pub async fn delete_tag_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str, tagid: &str) -> Result<(), Error<DeleteTagForViewOnAccountError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -134,7 +134,7 @@ pub async fn o_bpv4_0_0_delete_tag_for_view_on_account(configuration: &configura
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -146,13 +146,13 @@ pub async fn o_bpv4_0_0_delete_tag_for_view_on_account(configuration: &configura
         Ok(())
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400DeleteTagForViewOnAccountError> = serde_json::from_str(&content).ok();
+        let entity: Option<DeleteTagForViewOnAccountError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Returns the account ACCOUNT_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
-pub async fn o_bpv4_0_0_get_tags_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str) -> Result<models::Obpv400GetTagsForViewOnAccount200Response, Error<OBpv400GetTagsForViewOnAccountError>> {
+pub async fn get_tags_for_view_on_account(configuration: &configuration::Configuration, bankid: &str, accountid: &str, viewid: &str) -> Result<models::GetTagsForViewOnAccount200Response, Error<GetTagsForViewOnAccountError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
     let p_path_accountid = accountid;
@@ -181,7 +181,7 @@ pub async fn o_bpv4_0_0_get_tags_for_view_on_account(configuration: &configurati
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -199,12 +199,12 @@ pub async fn o_bpv4_0_0_get_tags_for_view_on_account(configuration: &configurati
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv400GetTagsForViewOnAccount200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetTagsForViewOnAccount200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetTagsForViewOnAccount200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv400GetTagsForViewOnAccountError> = serde_json::from_str(&content).ok();
+        let entity: Option<GetTagsForViewOnAccountError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

@@ -1,19 +1,19 @@
 # \BranchAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv300CreateBranch**](BranchAPI.md#OBPv300CreateBranch) | **Post** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
-[**OBPv300GetBranch**](BranchAPI.md#OBPv300GetBranch) | **Get** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
-[**OBPv300GetBranches**](BranchAPI.md#OBPv300GetBranches) | **Get** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
-[**OBPv310DeleteBranch**](BranchAPI.md#OBPv310DeleteBranch) | **Delete** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+[**CreateBranch**](BranchAPI.md#CreateBranch) | **Post** /obp/v3.0.0/banks/{bankid}/branches | Create Branch
+[**DeleteBranch**](BranchAPI.md#DeleteBranch) | **Delete** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch
+[**GetBranch**](BranchAPI.md#GetBranch) | **Get** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch
+[**GetBranches**](BranchAPI.md#GetBranches) | **Get** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank
 
 
 
-## OBPv300CreateBranch
+## CreateBranch
 
-> OBPv300GetBranches200ResponsePropertiesBranchesItems OBPv300CreateBranch(ctx, bankid).OBPv300GetBranches200ResponsePropertiesBranchesItems(oBPv300GetBranches200ResponsePropertiesBranchesItems).Execute()
+> GetBranches200ResponseBranchesInner CreateBranch(ctx, bankid).GetBranches200ResponseBranchesInner(getBranches200ResponseBranchesInner).Execute()
 
 Create Branch
 
@@ -33,17 +33,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv300GetBranches200ResponsePropertiesBranchesItems := *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItems("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocation("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLocationProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), , *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUp("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, )))), , , , *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMeta("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaProperties(*openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicense("Type_example", *openapiclient.NewOBPv310GetProductTree200ResponsePropertiesParentProductPropertiesParentProductPropertiesMetaPropertiesLicenseProperties(, )))), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobby("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyProperties(*openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSunday("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesDriveUpPropertiesSundayProperties(, ))), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ), *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesLobbyPropertiesSunday("Type_example", ))), , *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddress("Type_example", *openapiclient.NewOBPv300GetBranches200ResponsePropertiesBranchesItemsPropertiesAddressProperties(, , , , , , , )), )) // OBPv300GetBranches200ResponsePropertiesBranchesItems | Request body
+	getBranches200ResponseBranchesInner := *openapiclient.NewGetBranches200ResponseBranchesInner() // GetBranches200ResponseBranchesInner | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BranchAPI.OBPv300CreateBranch(context.Background(), bankid).OBPv300GetBranches200ResponsePropertiesBranchesItems(oBPv300GetBranches200ResponsePropertiesBranchesItems).Execute()
+	resp, r, err := apiClient.BranchAPI.CreateBranch(context.Background(), bankid).GetBranches200ResponseBranchesInner(getBranches200ResponseBranchesInner).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.OBPv300CreateBranch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.CreateBranch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv300CreateBranch`: OBPv300GetBranches200ResponsePropertiesBranchesItems
-	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.OBPv300CreateBranch`: %v\n", resp)
+	// response from `CreateBranch`: GetBranches200ResponseBranchesInner
+	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.CreateBranch`: %v\n", resp)
 }
 ```
 
@@ -57,17 +57,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv300CreateBranchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateBranchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv300GetBranches200ResponsePropertiesBranchesItems** | [**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md) | Request body | 
+ **getBranches200ResponseBranchesInner** | [**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md) | Request body | 
 
 ### Return type
 
-[**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
+[**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -83,152 +83,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv300GetBranch
+## DeleteBranch
 
-> OBPv300GetBranches200ResponsePropertiesBranchesItems OBPv300GetBranch(ctx, bankid, branchid).Execute()
-
-Get Branch
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	branchid := "branchid_example" // string | The BRANCHID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BranchAPI.OBPv300GetBranch(context.Background(), bankid, branchid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.OBPv300GetBranch``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetBranch`: OBPv300GetBranches200ResponsePropertiesBranchesItems
-	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.OBPv300GetBranch`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**branchid** | **string** | The BRANCHID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetBranchRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**OBPv300GetBranches200ResponsePropertiesBranchesItems**](OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv300GetBranches
-
-> OBPv300GetBranches200Response OBPv300GetBranches(ctx, bankid).Execute()
-
-Get Branches for a Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BranchAPI.OBPv300GetBranches(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.OBPv300GetBranches``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv300GetBranches`: OBPv300GetBranches200Response
-	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.OBPv300GetBranches`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv300GetBranchesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv300GetBranches200Response**](OBPv300GetBranches200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310DeleteBranch
-
-> OBPv310DeleteBranch(ctx, bankid, branchid).Execute()
+> DeleteBranch(ctx, bankid, branchid).Execute()
 
 Delete Branch
 
@@ -252,9 +109,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BranchAPI.OBPv310DeleteBranch(context.Background(), bankid, branchid).Execute()
+	r, err := apiClient.BranchAPI.DeleteBranch(context.Background(), bankid, branchid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.OBPv310DeleteBranch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.DeleteBranch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -271,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv310DeleteBranchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBranchRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -291,6 +148,149 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBranch
+
+> GetBranches200ResponseBranchesInner GetBranch(ctx, bankid, branchid).Execute()
+
+Get Branch
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	branchid := "branchid_example" // string | The BRANCHID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BranchAPI.GetBranch(context.Background(), bankid, branchid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.GetBranch``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBranch`: GetBranches200ResponseBranchesInner
+	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.GetBranch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**branchid** | **string** | The BRANCHID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBranchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**GetBranches200ResponseBranchesInner**](GetBranches200ResponseBranchesInner.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetBranches
+
+> GetBranches200Response GetBranches(ctx, bankid).Execute()
+
+Get Branches for a Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.BranchAPI.GetBranches(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BranchAPI.GetBranches``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBranches`: GetBranches200Response
+	fmt.Fprintf(os.Stdout, "Response from `BranchAPI.GetBranches`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBranchesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetBranches200Response**](GetBranches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

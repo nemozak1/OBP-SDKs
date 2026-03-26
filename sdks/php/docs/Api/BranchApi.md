@@ -2,20 +2,20 @@
 
 Operations related to Branch
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv300CreateBranch()**](BranchApi.md#oBPv300CreateBranch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch |
-| [**oBPv300GetBranch()**](BranchApi.md#oBPv300GetBranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch |
-| [**oBPv300GetBranches()**](BranchApi.md#oBPv300GetBranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank |
-| [**oBPv310DeleteBranch()**](BranchApi.md#oBPv310DeleteBranch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch |
+| [**createBranch()**](BranchApi.md#createBranch) | **POST** /obp/v3.0.0/banks/{bankid}/branches | Create Branch |
+| [**deleteBranch()**](BranchApi.md#deleteBranch) | **DELETE** /obp/v3.1.0/banks/{bankid}/branches/{branchid} | Delete Branch |
+| [**getBranch()**](BranchApi.md#getBranch) | **GET** /obp/v3.0.0/banks/{bankid}/branches/{branchid} | Get Branch |
+| [**getBranches()**](BranchApi.md#getBranches) | **GET** /obp/v3.0.0/banks/{bankid}/branches | Get Branches for a Bank |
 
 
-## `oBPv300CreateBranch()`
+## `createBranch()`
 
 ```php
-oBPv300CreateBranch($bankid, $obpv300_get_branches200_response_properties_branches_items): \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems
+createBranch($bankid, $get_branches200_response_branches_inner): \OpenBankProject\Model\GetBranches200ResponseBranchesInner
 ```
 
 Create Branch
@@ -38,9 +38,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\BranchApi(
@@ -50,13 +50,13 @@ $apiInstance = new OpenBankProject\Api\BranchApi(
     $config
 );
 $bankid = 'bankid_example'; // string | The BANKID identifier
-$obpv300_get_branches200_response_properties_branches_items = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}}; // \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems | Request body
+$get_branches200_response_branches_inner = {"type":"object","properties":{"accessibleFeatures":{"type":"string"},"more_info":{"type":"string"},"branch_type":{"type":"string"},"name":{"type":"string"},"bank_id":{"type":"string"},"location":{"type":"object","properties":{"latitude":{"type":"number"},"longitude":{"type":"number"}}},"id":{"type":"string"},"is_accessible":{"type":"string"},"address":{"type":"object","properties":{"city":{"type":"string"},"county":{"type":"string"},"postcode":{"type":"string"},"line_1":{"type":"string"},"line_2":{"type":"string"},"line_3":{"type":"string"},"state":{"type":"string"},"country_code":{"type":"string"}}},"drive_up":{"type":"object","properties":{"friday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"monday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"saturday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"thursday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"tuesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"wednesday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}},"sunday":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}},"branch_routing":{"type":"object","properties":{"address":{"type":"string"},"scheme":{"type":"string"}}},"meta":{"type":"object","properties":{"license":{"type":"object","properties":{"name":{"type":"string"},"id":{"type":"string"}}}}},"phone_number":{"type":"string"},"lobby":{"type":"object","properties":{"saturday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"tuesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"monday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"friday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"sunday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"wednesday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}},"thursday":{"type":"array","items":{"type":"object","properties":{"closing_time":{"type":"string"},"opening_time":{"type":"string"}}}}}}}}; // \OpenBankProject\Model\GetBranches200ResponseBranchesInner | Request body
 
 try {
-    $result = $apiInstance->oBPv300CreateBranch($bankid, $obpv300_get_branches200_response_properties_branches_items);
+    $result = $apiInstance->createBranch($bankid, $get_branches200_response_branches_inner);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BranchApi->oBPv300CreateBranch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BranchApi->createBranch: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -65,11 +65,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **bankid** | **string**| The BANKID identifier | |
-| **obpv300_get_branches200_response_properties_branches_items** | [**\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems**](../Model/OBPv300GetBranches200ResponsePropertiesBranchesItems.md)| Request body | |
+| **get_branches200_response_branches_inner** | [**\OpenBankProject\Model\GetBranches200ResponseBranchesInner**](../Model/GetBranches200ResponseBranchesInner.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems**](../Model/OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
+[**\OpenBankProject\Model\GetBranches200ResponseBranchesInner**](../Model/GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -84,10 +84,81 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv300GetBranch()`
+## `deleteBranch()`
 
 ```php
-oBPv300GetBranch($bankid, $branchid): \OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems
+deleteBranch($bankid, $branchid)
+```
+
+Delete Branch
+
+<p>Delete Branch from given Bank.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+// Configure API key authorization: GatewayLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure API key authorization: DirectLogin
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
+
+
+$apiInstance = new OpenBankProject\Api\BranchApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bankid = 'bankid_example'; // string | The BANKID identifier
+$branchid = 'branchid_example'; // string | The BRANCHID identifier
+
+try {
+    $apiInstance->deleteBranch($bankid, $branchid);
+} catch (Exception $e) {
+    echo 'Exception when calling BranchApi->deleteBranch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **bankid** | **string**| The BANKID identifier | |
+| **branchid** | **string**| The BRANCHID identifier | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getBranch()`
+
+```php
+getBranch($bankid, $branchid): \OpenBankProject\Model\GetBranches200ResponseBranchesInner
 ```
 
 Get Branch
@@ -111,10 +182,10 @@ $bankid = 'bankid_example'; // string | The BANKID identifier
 $branchid = 'branchid_example'; // string | The BRANCHID identifier
 
 try {
-    $result = $apiInstance->oBPv300GetBranch($bankid, $branchid);
+    $result = $apiInstance->getBranch($bankid, $branchid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BranchApi->oBPv300GetBranch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BranchApi->getBranch: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -127,7 +198,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv300GetBranches200ResponsePropertiesBranchesItems**](../Model/OBPv300GetBranches200ResponsePropertiesBranchesItems.md)
+[**\OpenBankProject\Model\GetBranches200ResponseBranchesInner**](../Model/GetBranches200ResponseBranchesInner.md)
 
 ### Authorization
 
@@ -142,10 +213,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv300GetBranches()`
+## `getBranches()`
 
 ```php
-oBPv300GetBranches($bankid): \OpenBankProject\Model\OBPv300GetBranches200Response
+getBranches($bankid): \OpenBankProject\Model\GetBranches200Response
 ```
 
 Get Branches for a Bank
@@ -168,10 +239,10 @@ $apiInstance = new OpenBankProject\Api\BranchApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 
 try {
-    $result = $apiInstance->oBPv300GetBranches($bankid);
+    $result = $apiInstance->getBranches($bankid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BranchApi->oBPv300GetBranches: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BranchApi->getBranches: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -183,7 +254,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv300GetBranches200Response**](../Model/OBPv300GetBranches200Response.md)
+[**\OpenBankProject\Model\GetBranches200Response**](../Model/GetBranches200Response.md)
 
 ### Authorization
 
@@ -193,77 +264,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `oBPv310DeleteBranch()`
-
-```php
-oBPv310DeleteBranch($bankid, $branchid)
-```
-
-Delete Branch
-
-<p>Delete Branch from given Bank.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">BRANCH_ID</a>: DERBY6</p> <p><strong>JSON response body fields:</strong></p>
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-// Configure API key authorization: GatewayLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-
-$apiInstance = new OpenBankProject\Api\BranchApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$bankid = 'bankid_example'; // string | The BANKID identifier
-$branchid = 'branchid_example'; // string | The BRANCHID identifier
-
-try {
-    $apiInstance->oBPv310DeleteBranch($bankid, $branchid);
-} catch (Exception $e) {
-    echo 'Exception when calling BranchApi->oBPv310DeleteBranch: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **bankid** | **string**| The BANKID identifier | |
-| **branchid** | **string**| The BRANCHID identifier | |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../../README.md#OAuth2), [GatewayLogin](../../README.md#GatewayLogin), [DirectLogin](../../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -18,10 +18,10 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv600_create_retail_customer_request import OBPv600CreateRetailCustomerRequest
-from obp_python.models.obpv600_get_customer_by_customer_number200_response import OBPv600GetCustomerByCustomerNumber200Response
-from obp_python.models.obpv600_get_customer_children200_response import OBPv600GetCustomerChildren200Response
-from obp_python.models.obpv600_get_customer_children200_response_customers_inner import OBPv600GetCustomerChildren200ResponseCustomersInner
+from obp_python.models.create_retail_customer_request import CreateRetailCustomerRequest
+from obp_python.models.get_customer_by_customer_number200_response import GetCustomerByCustomerNumber200Response
+from obp_python.models.get_customer_children200_response import GetCustomerChildren200Response
+from obp_python.models.get_customer_children200_response_customers_inner import GetCustomerChildren200ResponseCustomersInner
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -42,10 +42,10 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_retail_customer(
+    def create_retail_customer(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_retail_customer_request: Annotated[OBPv600CreateRetailCustomerRequest, Field(description="Request body")],
+        create_retail_customer_request: Annotated[CreateRetailCustomerRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -58,15 +58,15 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetCustomerChildren200ResponseCustomersInner:
+    ) -> GetCustomerChildren200ResponseCustomersInner:
         """Create Retail Customer
 
         <p>Create a retail (individual) customer.</p> <p>This endpoint is specifically for creating individual/retail customers.<br /> The customer_type will be automatically set to INDIVIDUAL.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, face_image, date_of_birth, relationship_status, dependants, dob_of_dependants<br /> - credit_rating, credit_limit, highest_education_attained, employment_status<br /> - kyc_status, last_ok_date, title, branch_id, name_suffix</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#97;i&#x6c;t&#x6f;:&#x66;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;a&#109;p&#108;&#x65;&#46;&#99;&#111;&#109;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#x68;@&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#104;@e&#x78;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;\">&#102;&#x65;&#108;i&#x78;&#x73;m&#105;&#x74;h&#64;&#101;&#120;a&#109;&#x70;&#x6c;&#101;.&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_retail_customer_request: Request body (required)
-        :type obpv600_create_retail_customer_request: OBPv600CreateRetailCustomerRequest
+        :param create_retail_customer_request: Request body (required)
+        :type create_retail_customer_request: CreateRetailCustomerRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -89,9 +89,9 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_retail_customer_serialize(
+        _param = self._create_retail_customer_serialize(
             bankid=bankid,
-            obpv600_create_retail_customer_request=obpv600_create_retail_customer_request,
+            create_retail_customer_request=create_retail_customer_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -99,7 +99,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200ResponseCustomersInner",
+            '200': "GetCustomerChildren200ResponseCustomersInner",
             '404': None,
             '500': None,
         }
@@ -115,10 +115,10 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_retail_customer_with_http_info(
+    def create_retail_customer_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_retail_customer_request: Annotated[OBPv600CreateRetailCustomerRequest, Field(description="Request body")],
+        create_retail_customer_request: Annotated[CreateRetailCustomerRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -131,15 +131,15 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetCustomerChildren200ResponseCustomersInner]:
+    ) -> ApiResponse[GetCustomerChildren200ResponseCustomersInner]:
         """Create Retail Customer
 
         <p>Create a retail (individual) customer.</p> <p>This endpoint is specifically for creating individual/retail customers.<br /> The customer_type will be automatically set to INDIVIDUAL.</p> <p><strong>Required Fields:</strong><br /> - legal_name: The customer's full legal name<br /> - mobile_phone_number: The customer's mobile phone number</p> <p><strong>Optional Fields:</strong><br /> - customer_number: If not provided, a random number will be generated<br /> - email, face_image, date_of_birth, relationship_status, dependants, dob_of_dependants<br /> - credit_rating, credit_limit, highest_education_attained, employment_status<br /> - kyc_status, last_ok_date, title, branch_id, name_suffix</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants must be in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Validations:</strong><br /> - customer_number cannot contain <code>::::</code> characters<br /> - customer_number must be unique for the bank<br /> - The number of dependants must equal the length of the dob_of_dependants array</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\">branch_id</a>: DERBY6</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> <p><a href=\"/glossary#\">customer_number</a>: 5987953</p> <p><a href=\"/glossary#\">date_of_birth</a>: 2018-03-09</p> <p><a href=\"/glossary#\">dependants</a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\">dob_of_dependants</a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\">email</a>: <a href=\"&#109;&#97;i&#x6c;t&#x6f;:&#x66;&#101;&#x6c;&#105;&#120;&#115;&#x6d;&#x69;&#116;&#104;&#64;&#x65;&#120;a&#109;p&#108;&#x65;&#46;&#99;&#111;&#109;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#x74;&#x68;@&#x65;&#120;a&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;o&#x6d;</a></p> <p><a href=\"/glossary#\">employment_status</a>: worker</p> <p><a href=\"/glossary#face_image\">face_image</a>:</p> <p><a href=\"/glossary#\">highest_education_attained</a>: Master</p> <p><a href=\"/glossary#\">kyc_status</a>: false</p> <p><a href=\"/glossary#last_ok_date\">last_ok_date</a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\">name_suffix</a>: Sr</p> <p><a href=\"/glossary#\">relationship_status</a>: single</p> <p><a href=\"/glossary#\">title</a>: Dr.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;a&#105;&#108;&#x74;&#111;&#x3a;&#x66;&#101;&#x6c;&#x69;&#x78;&#115;&#x6d;&#x69;&#116;&#104;@e&#x78;&#x61;&#109;&#x70;&#x6c;e&#x2e;&#99;&#x6f;&#109;\">&#102;&#x65;&#108;i&#x78;&#x73;m&#105;&#x74;h&#64;&#101;&#120;a&#109;&#x70;&#x6c;&#101;.&#x63;&#111;m</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_retail_customer_request: Request body (required)
-        :type obpv600_create_retail_customer_request: OBPv600CreateRetailCustomerRequest
+        :param create_retail_customer_request: Request body (required)
+        :type create_retail_customer_request: CreateRetailCustomerRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -162,9 +162,9 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_retail_customer_serialize(
+        _param = self._create_retail_customer_serialize(
             bankid=bankid,
-            obpv600_create_retail_customer_request=obpv600_create_retail_customer_request,
+            create_retail_customer_request=create_retail_customer_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -172,7 +172,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200ResponseCustomersInner",
+            '200': "GetCustomerChildren200ResponseCustomersInner",
             '404': None,
             '500': None,
         }
@@ -188,10 +188,10 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_create_retail_customer_without_preload_content(
+    def create_retail_customer_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        obpv600_create_retail_customer_request: Annotated[OBPv600CreateRetailCustomerRequest, Field(description="Request body")],
+        create_retail_customer_request: Annotated[CreateRetailCustomerRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -211,8 +211,8 @@ class RetailCustomerApi:
 
         :param bankid: The BANKID identifier (required)
         :type bankid: str
-        :param obpv600_create_retail_customer_request: Request body (required)
-        :type obpv600_create_retail_customer_request: OBPv600CreateRetailCustomerRequest
+        :param create_retail_customer_request: Request body (required)
+        :type create_retail_customer_request: CreateRetailCustomerRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -235,9 +235,9 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_create_retail_customer_serialize(
+        _param = self._create_retail_customer_serialize(
             bankid=bankid,
-            obpv600_create_retail_customer_request=obpv600_create_retail_customer_request,
+            create_retail_customer_request=create_retail_customer_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -245,7 +245,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200ResponseCustomersInner",
+            '200': "GetCustomerChildren200ResponseCustomersInner",
             '404': None,
             '500': None,
         }
@@ -256,10 +256,10 @@ class RetailCustomerApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_create_retail_customer_serialize(
+    def _create_retail_customer_serialize(
         self,
         bankid,
-        obpv600_create_retail_customer_request,
+        create_retail_customer_request,
         _request_auth,
         _content_type,
         _headers,
@@ -287,8 +287,8 @@ class RetailCustomerApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv600_create_retail_customer_request is not None:
-            _body_params = obpv600_create_retail_customer_request
+        if create_retail_customer_request is not None:
+            _body_params = create_retail_customer_request
 
 
         # set the HTTP header `Accept`
@@ -339,7 +339,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customer_by_customer_id(
+    def get_retail_customer_by_customer_id(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -355,7 +355,7 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetCustomerByCustomerNumber200Response:
+    ) -> GetCustomerByCustomerNumber200Response:
         """Get Retail Customer by CUSTOMER_ID
 
         <p>Gets the Retail Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type INDIVIDUAL.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;t&#111;&#x3a;&#102;&#101;l&#x69;&#x78;&#115;&#109;&#x69;&#116;&#104;&#64;&#101;xa&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;xam&#x70;&#x6c;&#x65;&#x2e;c&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
@@ -386,7 +386,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customer_by_customer_id_serialize(
+        _param = self._get_retail_customer_by_customer_id_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -396,7 +396,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerByCustomerNumber200Response",
+            '200': "GetCustomerByCustomerNumber200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -411,7 +411,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customer_by_customer_id_with_http_info(
+    def get_retail_customer_by_customer_id_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -427,7 +427,7 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetCustomerByCustomerNumber200Response]:
+    ) -> ApiResponse[GetCustomerByCustomerNumber200Response]:
         """Get Retail Customer by CUSTOMER_ID
 
         <p>Gets the Retail Customer specified by CUSTOMER_ID.</p> <p>Returns 404 if the customer exists but is not of type INDIVIDUAL.<br /> Use the generic /customers/CUSTOMER_ID endpoint for any customer type.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#customer_attributes\"><strong>customer_attributes</strong></a>:</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#109;&#x61;&#105;&#108;t&#111;&#x3a;&#102;&#101;l&#x69;&#x78;&#115;&#109;&#x69;&#116;&#104;&#64;&#101;xa&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;\">&#102;&#x65;&#x6c;&#x69;&#x78;&#x73;&#109;&#x69;&#116;&#104;&#64;&#x65;xam&#x70;&#x6c;&#x65;&#x2e;c&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
@@ -458,7 +458,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customer_by_customer_id_serialize(
+        _param = self._get_retail_customer_by_customer_id_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -468,7 +468,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerByCustomerNumber200Response",
+            '200': "GetCustomerByCustomerNumber200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -483,7 +483,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customer_by_customer_id_without_preload_content(
+    def get_retail_customer_by_customer_id_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -530,7 +530,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customer_by_customer_id_serialize(
+        _param = self._get_retail_customer_by_customer_id_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -540,7 +540,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerByCustomerNumber200Response",
+            '200': "GetCustomerByCustomerNumber200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -550,7 +550,7 @@ class RetailCustomerApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_retail_customer_by_customer_id_serialize(
+    def _get_retail_customer_by_customer_id_serialize(
         self,
         bankid,
         customerid,
@@ -620,7 +620,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customers_at_one_bank(
+    def get_retail_customers_at_one_bank(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -635,7 +635,7 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetCustomerChildren200Response:
+    ) -> GetCustomerChildren200Response:
         """Get Retail Customers at Bank
 
         <p>Get Retail (Individual) Customers at Bank.</p> <p>Returns a list of customers with customer_type INDIVIDUAL at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;ix&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;m\">&#x66;&#x65;l&#x69;x&#x73;&#x6d;it&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
@@ -664,7 +664,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customers_at_one_bank_serialize(
+        _param = self._get_retail_customers_at_one_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -673,7 +673,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200Response",
+            '200': "GetCustomerChildren200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -688,7 +688,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customers_at_one_bank_with_http_info(
+    def get_retail_customers_at_one_bank_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -703,7 +703,7 @@ class RetailCustomerApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetCustomerChildren200Response]:
+    ) -> ApiResponse[GetCustomerChildren200Response]:
         """Get Retail Customers at Bank
 
         <p>Get Retail (Individual) Customers at Bank.</p> <p>Returns a list of customers with customer_type INDIVIDUAL at the specified bank.</p> <p><strong>Date Format:</strong><br /> date_of_birth and dob_of_dependants are returned in ISO 8601 date format: <strong>YYYY-MM-DD</strong></p> <p><strong>Query Parameters:</strong><br /> - limit: Maximum number of customers to return (optional)<br /> - offset: Number of customers to skip for pagination (optional)<br /> - sort_direction: Sort direction - ASC or DESC (optional)</p> <p>Authentication is Required</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>amount</strong></a>: 10.12</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#\"><strong>branch_id</strong></a>: DERBY6</p> <p><a href=\"/glossary#\"><strong>currency</strong></a>: EUR</p> <p><a href=\"/glossary#\"><strong>customer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>customer_number</strong></a>: 5987953</p> <p><a href=\"/glossary#\"><strong>customer_type</strong></a>: INDIVIDUAL</p> <p><a href=\"/glossary#customers\"><strong>customers</strong></a>:</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#\"><strong>date_of_birth</strong></a>: 2018-03-09</p> <p><a href=\"/glossary#\"><strong>dependants</strong></a>: 1</p> <p><a href=\"/glossary#dob_of_dependants\"><strong>dob_of_dependants</strong></a>: [2019-09-08, 2017-07-12]</p> <p><a href=\"/glossary#\"><strong>email</strong></a>: <a href=\"&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x66;&#101;&#108;ix&#x73;&#109;&#x69;&#116;&#x68;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;m\">&#x66;&#x65;l&#x69;x&#x73;&#x6d;it&#104;&#x40;e&#x78;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p> <p><a href=\"/glossary#\"><strong>employment_status</strong></a>: worker</p> <p><a href=\"/glossary#face_image\"><strong>face_image</strong></a>:</p> <p><a href=\"/glossary#\"><strong>highest_education_attained</strong></a>: Master</p> <p><a href=\"/glossary#\"><strong>kyc_status</strong></a>: false</p> <p><a href=\"/glossary#last_ok_date\"><strong>last_ok_date</strong></a>: 2025-03-25T12:16:23.885Z</p> <p><a href=\"/glossary#\"><strong>legal_name</strong></a>: Eveline Tripman</p> <p><a href=\"/glossary#mobile_phone_number\"><strong>mobile_phone_number</strong></a>: +49 30 901820</p> <p><a href=\"/glossary#\"><strong>name_suffix</strong></a>: Sr</p> <p><a href=\"/glossary#\"><strong>parent_customer_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>rating</strong></a>:</p> <p><a href=\"/glossary#\"><strong>relationship_status</strong></a>: single</p> <p><a href=\"/glossary#\"><strong>source</strong></a>:</p> <p><a href=\"/glossary#\"><strong>title</strong></a>: Dr.</p> <p><a href=\"/glossary#\"><strong>url</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#credit_limit\">credit_limit</a>:</p> <p><a href=\"/glossary#credit_rating\">credit_rating</a>:</p> 
@@ -732,7 +732,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customers_at_one_bank_serialize(
+        _param = self._get_retail_customers_at_one_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -741,7 +741,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200Response",
+            '200': "GetCustomerChildren200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -756,7 +756,7 @@ class RetailCustomerApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_retail_customers_at_one_bank_without_preload_content(
+    def get_retail_customers_at_one_bank_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         _request_timeout: Union[
@@ -800,7 +800,7 @@ class RetailCustomerApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_retail_customers_at_one_bank_serialize(
+        _param = self._get_retail_customers_at_one_bank_serialize(
             bankid=bankid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -809,7 +809,7 @@ class RetailCustomerApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetCustomerChildren200Response",
+            '200': "GetCustomerChildren200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -819,7 +819,7 @@ class RetailCustomerApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_retail_customers_at_one_bank_serialize(
+    def _get_retail_customers_at_one_bank_serialize(
         self,
         bankid,
         _request_auth,

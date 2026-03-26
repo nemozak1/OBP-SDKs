@@ -1,23 +1,23 @@
 # \CustomerAttributeAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateCustomerAttribute**](CustomerAttributeAPI.md#OBPv400CreateCustomerAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
-[**OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeAPI.md#OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
-[**OBPv400DeleteCustomerAttribute**](CustomerAttributeAPI.md#OBPv400DeleteCustomerAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
-[**OBPv400DeleteCustomerAttributeDefinition**](CustomerAttributeAPI.md#OBPv400DeleteCustomerAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
-[**OBPv400GetCustomerAttributeById**](CustomerAttributeAPI.md#OBPv400GetCustomerAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
-[**OBPv400GetCustomerAttributeDefinition**](CustomerAttributeAPI.md#OBPv400GetCustomerAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
-[**OBPv400GetCustomerAttributes**](CustomerAttributeAPI.md#OBPv400GetCustomerAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
-[**OBPv400UpdateCustomerAttribute**](CustomerAttributeAPI.md#OBPv400UpdateCustomerAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
+[**CreateCustomerAttribute**](CustomerAttributeAPI.md#CreateCustomerAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute | Create Customer Attribute
+[**CreateOrUpdateCustomerAttributeAttributeDefinition**](CustomerAttributeAPI.md#CreateOrUpdateCustomerAttributeAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Create or Update Customer Attribute Definition
+[**DeleteCustomerAttribute**](CustomerAttributeAPI.md#DeleteCustomerAttribute) | **Delete** /obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid} | Delete Customer Attribute
+[**DeleteCustomerAttributeDefinition**](CustomerAttributeAPI.md#DeleteCustomerAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer | Delete Customer Attribute Definition
+[**GetCustomerAttributeById**](CustomerAttributeAPI.md#GetCustomerAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid} | Get Customer Attribute By Id
+[**GetCustomerAttributeDefinition**](CustomerAttributeAPI.md#GetCustomerAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/customer | Get Customer Attribute Definition
+[**GetCustomerAttributes**](CustomerAttributeAPI.md#GetCustomerAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes | Get Customer Attributes
+[**UpdateCustomerAttribute**](CustomerAttributeAPI.md#UpdateCustomerAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid} | Update Customer Attribute
 
 
 
-## OBPv400CreateCustomerAttribute
+## CreateCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400CreateCustomerAttribute(ctx, bankid, customerid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetCustomerAttributes200ResponseCustomerAttributesInner CreateCustomerAttribute(ctx, bankid, customerid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Create Customer Attribute
 
@@ -38,17 +38,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400CreateCustomerAttribute(context.Background(), bankid, customerid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.CreateCustomerAttribute(context.Background(), bankid, customerid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400CreateCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.CreateCustomerAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateCustomerAttribute`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400CreateCustomerAttribute`: %v\n", resp)
+	// response from `CreateCustomerAttribute`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.CreateCustomerAttribute`: %v\n", resp)
 }
 ```
 
@@ -63,18 +63,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateCustomerAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCustomerAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -90,9 +90,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition
+## CreateOrUpdateCustomerAttributeAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(ctx, bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateCustomerAttributeAttributeDefinition(ctx, bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 
 Create or Update Customer Attribute Definition
 
@@ -112,17 +112,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest("Type_example", *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , )) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+	createOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewCreateOrUpdateTransactionRequestAttributeDefinitionRequest() // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(context.Background(), bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.CreateOrUpdateCustomerAttributeAttributeDefinition(context.Background(), bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.CreateOrUpdateCustomerAttributeAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400CreateOrUpdateCustomerAttributeAttributeDefinition`: %v\n", resp)
+	// response from `CreateOrUpdateCustomerAttributeAttributeDefinition`: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.CreateOrUpdateCustomerAttributeAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -136,17 +136,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateOrUpdateCustomerAttributeAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -162,9 +162,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteCustomerAttribute
+## DeleteCustomerAttribute
 
-> OBPv400DeleteCustomerAttribute(ctx, bankid, customerid, customerattributeid).Execute()
+> DeleteCustomerAttribute(ctx, bankid, customerid, customerattributeid).Execute()
 
 Delete Customer Attribute
 
@@ -189,9 +189,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAttributeAPI.OBPv400DeleteCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).Execute()
+	r, err := apiClient.CustomerAttributeAPI.DeleteCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400DeleteCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.DeleteCustomerAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCustomerAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -236,9 +236,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteCustomerAttributeDefinition
+## DeleteCustomerAttributeDefinition
 
-> OBPv400DeleteCustomerAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
+> DeleteCustomerAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
 
 Delete Customer Attribute Definition
 
@@ -262,9 +262,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomerAttributeAPI.OBPv400DeleteCustomerAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
+	r, err := apiClient.CustomerAttributeAPI.DeleteCustomerAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400DeleteCustomerAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.DeleteCustomerAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteCustomerAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomerAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -307,9 +307,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributeById
+## GetCustomerAttributeById
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400GetCustomerAttributeById(ctx, bankid, customerid, attributeid).Execute()
+> GetCustomerAttributes200ResponseCustomerAttributesInner GetCustomerAttributeById(ctx, bankid, customerid, attributeid).Execute()
 
 Get Customer Attribute By Id
 
@@ -334,13 +334,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400GetCustomerAttributeById(context.Background(), bankid, customerid, attributeid).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.GetCustomerAttributeById(context.Background(), bankid, customerid, attributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400GetCustomerAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.GetCustomerAttributeById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributeById`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400GetCustomerAttributeById`: %v\n", resp)
+	// response from `GetCustomerAttributeById`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.GetCustomerAttributeById`: %v\n", resp)
 }
 ```
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributeByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 
@@ -383,9 +383,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributeDefinition
+## GetCustomerAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetCustomerAttributeDefinition(ctx, bankid).Execute()
+> GetTransactionRequestAttributeDefinition200Response GetCustomerAttributeDefinition(ctx, bankid).Execute()
 
 Get Customer Attribute Definition
 
@@ -408,13 +408,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400GetCustomerAttributeDefinition(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.GetCustomerAttributeDefinition(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400GetCustomerAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.GetCustomerAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400GetCustomerAttributeDefinition`: %v\n", resp)
+	// response from `GetCustomerAttributeDefinition`: GetTransactionRequestAttributeDefinition200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.GetCustomerAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -453,9 +453,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetCustomerAttributes
+## GetCustomerAttributes
 
-> OBPv400GetCustomerAttributes200Response OBPv400GetCustomerAttributes(ctx, bankid, customerid).Execute()
+> GetCustomerAttributes200Response GetCustomerAttributes(ctx, bankid, customerid).Execute()
 
 Get Customer Attributes
 
@@ -479,13 +479,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400GetCustomerAttributes(context.Background(), bankid, customerid).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.GetCustomerAttributes(context.Background(), bankid, customerid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400GetCustomerAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.GetCustomerAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetCustomerAttributes`: OBPv400GetCustomerAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400GetCustomerAttributes`: %v\n", resp)
+	// response from `GetCustomerAttributes`: GetCustomerAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.GetCustomerAttributes`: %v\n", resp)
 }
 ```
 
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetCustomerAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomerAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200Response**](OBPv400GetCustomerAttributes200Response.md)
+[**GetCustomerAttributes200Response**](GetCustomerAttributes200Response.md)
 
 ### Authorization
 
@@ -526,9 +526,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateCustomerAttribute
+## UpdateCustomerAttribute
 
-> OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems OBPv400UpdateCustomerAttribute(ctx, bankid, customerid, customerattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+> GetCustomerAttributes200ResponseCustomerAttributesInner UpdateCustomerAttribute(ctx, bankid, customerid, customerattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 
 Update Customer Attribute
 
@@ -550,17 +550,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	customerid := "customerid_example" // string | The CUSTOMERID identifier
 	customerattributeid := "customerattributeid_example" // string | The CUSTOMERATTRIBUTEID identifier
-	oBPv600CreatePersonalDataFieldRequest := *openapiclient.NewOBPv600CreatePersonalDataFieldRequest("Type_example", *openapiclient.NewOBPv600CreatePersonalDataFieldRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreatePersonalDataFieldRequest | Request body
+	createPersonalDataFieldRequest := *openapiclient.NewCreatePersonalDataFieldRequest() // CreatePersonalDataFieldRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomerAttributeAPI.OBPv400UpdateCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).OBPv600CreatePersonalDataFieldRequest(oBPv600CreatePersonalDataFieldRequest).Execute()
+	resp, r, err := apiClient.CustomerAttributeAPI.UpdateCustomerAttribute(context.Background(), bankid, customerid, customerattributeid).CreatePersonalDataFieldRequest(createPersonalDataFieldRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.OBPv400UpdateCustomerAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomerAttributeAPI.UpdateCustomerAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400UpdateCustomerAttribute`: OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.OBPv400UpdateCustomerAttribute`: %v\n", resp)
+	// response from `UpdateCustomerAttribute`: GetCustomerAttributes200ResponseCustomerAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `CustomerAttributeAPI.UpdateCustomerAttribute`: %v\n", resp)
 }
 ```
 
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400UpdateCustomerAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCustomerAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -584,11 +584,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md) | Request body | 
+ **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems**](OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems.md)
+[**GetCustomerAttributes200ResponseCustomerAttributesInner**](GetCustomerAttributes200ResponseCustomerAttributesInner.md)
 
 ### Authorization
 

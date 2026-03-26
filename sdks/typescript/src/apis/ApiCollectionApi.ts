@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,125 +15,125 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400CreateMyApiCollectionEndpointRequest,
-  OBPv400CreateMyApiCollectionRequest,
-  OBPv400DeleteSystemLevelEndpointTag200Response,
-  OBPv400GetApiCollectionsForUser200Response,
-  OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems,
-  OBPv400GetMyApiCollectionEndpoints200Response,
-  OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems,
-  OBPv600CreateFeaturedApiCollectionRequest,
-  OBPv600GetFeaturedApiCollectionsAdmin200Response,
-  OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems,
-  OBPv600UpdateFeaturedApiCollectionRequest,
+  CreateFeaturedApiCollectionRequest,
+  CreateMyApiCollectionEndpointRequest,
+  CreateMyApiCollectionRequest,
+  DeleteSystemLevelEndpointTag200Response,
+  GetApiCollectionsForUser200Response,
+  GetApiCollectionsForUser200ResponseApiCollectionsInner,
+  GetFeaturedApiCollectionsAdmin200Response,
+  GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner,
+  GetMyApiCollectionEndpoints200Response,
+  GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner,
+  UpdateFeaturedApiCollectionRequest,
 } from '../models/index';
 import {
-    OBPv400CreateMyApiCollectionEndpointRequestFromJSON,
-    OBPv400CreateMyApiCollectionEndpointRequestToJSON,
-    OBPv400CreateMyApiCollectionRequestFromJSON,
-    OBPv400CreateMyApiCollectionRequestToJSON,
-    OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON,
-    OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON,
-    OBPv400GetApiCollectionsForUser200ResponseFromJSON,
-    OBPv400GetApiCollectionsForUser200ResponseToJSON,
-    OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON,
-    OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsToJSON,
-    OBPv400GetMyApiCollectionEndpoints200ResponseFromJSON,
-    OBPv400GetMyApiCollectionEndpoints200ResponseToJSON,
-    OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsFromJSON,
-    OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsToJSON,
-    OBPv600CreateFeaturedApiCollectionRequestFromJSON,
-    OBPv600CreateFeaturedApiCollectionRequestToJSON,
-    OBPv600GetFeaturedApiCollectionsAdmin200ResponseFromJSON,
-    OBPv600GetFeaturedApiCollectionsAdmin200ResponseToJSON,
-    OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsFromJSON,
-    OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsToJSON,
-    OBPv600UpdateFeaturedApiCollectionRequestFromJSON,
-    OBPv600UpdateFeaturedApiCollectionRequestToJSON,
+    CreateFeaturedApiCollectionRequestFromJSON,
+    CreateFeaturedApiCollectionRequestToJSON,
+    CreateMyApiCollectionEndpointRequestFromJSON,
+    CreateMyApiCollectionEndpointRequestToJSON,
+    CreateMyApiCollectionRequestFromJSON,
+    CreateMyApiCollectionRequestToJSON,
+    DeleteSystemLevelEndpointTag200ResponseFromJSON,
+    DeleteSystemLevelEndpointTag200ResponseToJSON,
+    GetApiCollectionsForUser200ResponseFromJSON,
+    GetApiCollectionsForUser200ResponseToJSON,
+    GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON,
+    GetApiCollectionsForUser200ResponseApiCollectionsInnerToJSON,
+    GetFeaturedApiCollectionsAdmin200ResponseFromJSON,
+    GetFeaturedApiCollectionsAdmin200ResponseToJSON,
+    GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInnerFromJSON,
+    GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInnerToJSON,
+    GetMyApiCollectionEndpoints200ResponseFromJSON,
+    GetMyApiCollectionEndpoints200ResponseToJSON,
+    GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInnerFromJSON,
+    GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInnerToJSON,
+    UpdateFeaturedApiCollectionRequestFromJSON,
+    UpdateFeaturedApiCollectionRequestToJSON,
 } from '../models/index';
 
-export interface OBPv400CreateMyApiCollectionOperationRequest {
-    oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest;
+export interface CreateFeaturedApiCollectionOperationRequest {
+    createFeaturedApiCollectionRequest: CreateFeaturedApiCollectionRequest;
 }
 
-export interface OBPv400CreateMyApiCollectionEndpointOperationRequest {
+export interface CreateMyApiCollectionOperationRequest {
+    createMyApiCollectionRequest: CreateMyApiCollectionRequest;
+}
+
+export interface CreateMyApiCollectionEndpointOperationRequest {
     apicollectionname: string;
-    oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest;
+    createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest;
 }
 
-export interface OBPv400CreateMyApiCollectionEndpointByIdRequest {
+export interface CreateMyApiCollectionEndpointByIdRequest {
     apicollectionid: string;
-    oBPv400CreateMyApiCollectionEndpointRequest: OBPv400CreateMyApiCollectionEndpointRequest;
+    createMyApiCollectionEndpointRequest: CreateMyApiCollectionEndpointRequest;
 }
 
-export interface OBPv400DeleteMyApiCollectionRequest {
+export interface DeleteFeaturedApiCollectionRequest {
     apicollectionid: string;
 }
 
-export interface OBPv400DeleteMyApiCollectionEndpointRequest {
+export interface DeleteMyApiCollectionRequest {
+    apicollectionid: string;
+}
+
+export interface DeleteMyApiCollectionEndpointRequest {
     apicollectionname: string;
     operationid: string;
 }
 
-export interface OBPv400DeleteMyApiCollectionEndpointByIdRequest {
+export interface DeleteMyApiCollectionEndpointByIdRequest {
     apicollectionid: string;
     apicollectionendpointid: string;
 }
 
-export interface OBPv400DeleteMyApiCollectionEndpointByOperationIdRequest {
+export interface DeleteMyApiCollectionEndpointByOperationIdRequest {
     apicollectionid: string;
     operationid: string;
 }
 
-export interface OBPv400GetApiCollectionEndpointsRequest {
+export interface GetApiCollectionEndpointsRequest {
     apicollectionid: string;
 }
 
-export interface OBPv400GetApiCollectionsForUserRequest {
+export interface GetApiCollectionsForUserRequest {
     userid: string;
 }
 
-export interface OBPv400GetMyApiCollectionByIdRequest {
+export interface GetMyApiCollectionByIdRequest {
     apicollectionid: string;
 }
 
-export interface OBPv400GetMyApiCollectionByNameRequest {
+export interface GetMyApiCollectionByNameRequest {
     apicollectionname: string;
 }
 
-export interface OBPv400GetMyApiCollectionEndpointRequest {
+export interface GetMyApiCollectionEndpointRequest {
     apicollectionname: string;
     operationid: string;
 }
 
-export interface OBPv400GetMyApiCollectionEndpointsRequest {
+export interface GetMyApiCollectionEndpointsRequest {
     apicollectionname: string;
 }
 
-export interface OBPv400GetMyApiCollectionEndpointsByIdRequest {
+export interface GetMyApiCollectionEndpointsByIdRequest {
     apicollectionid: string;
 }
 
-export interface OBPv400GetSharableApiCollectionByIdRequest {
+export interface GetSharableApiCollectionByIdRequest {
     apicollectionid: string;
 }
 
-export interface OBPv510UpdateMyApiCollectionRequest {
+export interface UpdateFeaturedApiCollectionOperationRequest {
     apicollectionid: string;
-    oBPv400CreateMyApiCollectionRequest: OBPv400CreateMyApiCollectionRequest;
+    updateFeaturedApiCollectionRequest: UpdateFeaturedApiCollectionRequest;
 }
 
-export interface OBPv600CreateFeaturedApiCollectionOperationRequest {
-    oBPv600CreateFeaturedApiCollectionRequest: OBPv600CreateFeaturedApiCollectionRequest;
-}
-
-export interface OBPv600DeleteFeaturedApiCollectionRequest {
+export interface UpdateMyApiCollectionRequest {
     apicollectionid: string;
-}
-
-export interface OBPv600UpdateFeaturedApiCollectionOperationRequest {
-    apicollectionid: string;
-    oBPv600UpdateFeaturedApiCollectionRequest: OBPv600UpdateFeaturedApiCollectionRequest;
+    createMyApiCollectionRequest: CreateMyApiCollectionRequest;
 }
 
 /**
@@ -142,13 +142,13 @@ export interface OBPv600UpdateFeaturedApiCollectionOperationRequest {
 export class ApiCollectionApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400CreateMyApiCollection without sending the request
+     * Creates request options for createFeaturedApiCollection without sending the request
      */
-    async oBPv400CreateMyApiCollectionRequestOpts(requestParameters: OBPv400CreateMyApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv400CreateMyApiCollectionRequest'] == null) {
+    async createFeaturedApiCollectionRequestOpts(requestParameters: CreateFeaturedApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createFeaturedApiCollectionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateMyApiCollectionRequest',
-                'Required parameter "oBPv400CreateMyApiCollectionRequest" was null or undefined when calling oBPv400CreateMyApiCollection().'
+                'createFeaturedApiCollectionRequest',
+                'Required parameter "createFeaturedApiCollectionRequest" was null or undefined when calling createFeaturedApiCollection().'
             );
         }
 
@@ -168,7 +168,69 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v6.0.0/management/api-collections/featured`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateFeaturedApiCollectionRequestToJSON(requestParameters['createFeaturedApiCollectionRequest']),
+        };
+    }
+
+    /**
+     * <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Create Featured Api Collection
+     */
+    async createFeaturedApiCollectionRaw(requestParameters: CreateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>> {
+        const requestOptions = await this.createFeaturedApiCollectionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInnerFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Create Featured Api Collection
+     */
+    async createFeaturedApiCollection(requestParameters: CreateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> {
+        const response = await this.createFeaturedApiCollectionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for createMyApiCollection without sending the request
+     */
+    async createMyApiCollectionRequestOpts(requestParameters: CreateMyApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['createMyApiCollectionRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createMyApiCollectionRequest',
+                'Required parameter "createMyApiCollectionRequest" was null or undefined when calling createMyApiCollection().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -179,7 +241,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateMyApiCollectionRequestToJSON(requestParameters['oBPv400CreateMyApiCollectionRequest']),
+            body: CreateMyApiCollectionRequestToJSON(requestParameters['createMyApiCollectionRequest']),
         };
     }
 
@@ -187,37 +249,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create My Api Collection
      */
-    async oBPv400CreateMyApiCollectionRaw(requestParameters: OBPv400CreateMyApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>> {
-        const requestOptions = await this.oBPv400CreateMyApiCollectionRequestOpts(requestParameters);
+    async createMyApiCollectionRaw(requestParameters: CreateMyApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>> {
+        const requestOptions = await this.createMyApiCollectionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#description\">description</a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Create My Api Collection
      */
-    async oBPv400CreateMyApiCollection(requestParameters: OBPv400CreateMyApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        const response = await this.oBPv400CreateMyApiCollectionRaw(requestParameters, initOverrides);
+    async createMyApiCollection(requestParameters: CreateMyApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        const response = await this.createMyApiCollectionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateMyApiCollectionEndpoint without sending the request
+     * Creates request options for createMyApiCollectionEndpoint without sending the request
      */
-    async oBPv400CreateMyApiCollectionEndpointRequestOpts(requestParameters: OBPv400CreateMyApiCollectionEndpointOperationRequest): Promise<runtime.RequestOpts> {
+    async createMyApiCollectionEndpointRequestOpts(requestParameters: CreateMyApiCollectionEndpointOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionname'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionname',
-                'Required parameter "apicollectionname" was null or undefined when calling oBPv400CreateMyApiCollectionEndpoint().'
+                'Required parameter "apicollectionname" was null or undefined when calling createMyApiCollectionEndpoint().'
             );
         }
 
-        if (requestParameters['oBPv400CreateMyApiCollectionEndpointRequest'] == null) {
+        if (requestParameters['createMyApiCollectionEndpointRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateMyApiCollectionEndpointRequest',
-                'Required parameter "oBPv400CreateMyApiCollectionEndpointRequest" was null or undefined when calling oBPv400CreateMyApiCollectionEndpoint().'
+                'createMyApiCollectionEndpointRequest',
+                'Required parameter "createMyApiCollectionEndpointRequest" was null or undefined when calling createMyApiCollectionEndpoint().'
             );
         }
 
@@ -237,7 +299,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -249,7 +311,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateMyApiCollectionEndpointRequestToJSON(requestParameters['oBPv400CreateMyApiCollectionEndpointRequest']),
+            body: CreateMyApiCollectionEndpointRequestToJSON(requestParameters['createMyApiCollectionEndpointRequest']),
         };
     }
 
@@ -257,37 +319,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Create My Api Collection Endpoint
      */
-    async oBPv400CreateMyApiCollectionEndpointRaw(requestParameters: OBPv400CreateMyApiCollectionEndpointOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>> {
-        const requestOptions = await this.oBPv400CreateMyApiCollectionEndpointRequestOpts(requestParameters);
+    async createMyApiCollectionEndpointRaw(requestParameters: CreateMyApiCollectionEndpointOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>> {
+        const requestOptions = await this.createMyApiCollectionEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Api Collection Endpoint.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Create My Api Collection Endpoint
      */
-    async oBPv400CreateMyApiCollectionEndpoint(requestParameters: OBPv400CreateMyApiCollectionEndpointOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        const response = await this.oBPv400CreateMyApiCollectionEndpointRaw(requestParameters, initOverrides);
+    async createMyApiCollectionEndpoint(requestParameters: CreateMyApiCollectionEndpointOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        const response = await this.createMyApiCollectionEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400CreateMyApiCollectionEndpointById without sending the request
+     * Creates request options for createMyApiCollectionEndpointById without sending the request
      */
-    async oBPv400CreateMyApiCollectionEndpointByIdRequestOpts(requestParameters: OBPv400CreateMyApiCollectionEndpointByIdRequest): Promise<runtime.RequestOpts> {
+    async createMyApiCollectionEndpointByIdRequestOpts(requestParameters: CreateMyApiCollectionEndpointByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400CreateMyApiCollectionEndpointById().'
+                'Required parameter "apicollectionid" was null or undefined when calling createMyApiCollectionEndpointById().'
             );
         }
 
-        if (requestParameters['oBPv400CreateMyApiCollectionEndpointRequest'] == null) {
+        if (requestParameters['createMyApiCollectionEndpointRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateMyApiCollectionEndpointRequest',
-                'Required parameter "oBPv400CreateMyApiCollectionEndpointRequest" was null or undefined when calling oBPv400CreateMyApiCollectionEndpointById().'
+                'createMyApiCollectionEndpointRequest',
+                'Required parameter "createMyApiCollectionEndpointRequest" was null or undefined when calling createMyApiCollectionEndpointById().'
             );
         }
 
@@ -307,7 +369,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -319,7 +381,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateMyApiCollectionEndpointRequestToJSON(requestParameters['oBPv400CreateMyApiCollectionEndpointRequest']),
+            body: CreateMyApiCollectionEndpointRequestToJSON(requestParameters['createMyApiCollectionEndpointRequest']),
         };
     }
 
@@ -327,30 +389,30 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Create My Api Collection Endpoint By Id
      */
-    async oBPv400CreateMyApiCollectionEndpointByIdRaw(requestParameters: OBPv400CreateMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>> {
-        const requestOptions = await this.oBPv400CreateMyApiCollectionEndpointByIdRequestOpts(requestParameters);
+    async createMyApiCollectionEndpointByIdRaw(requestParameters: CreateMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>> {
+        const requestOptions = await this.createMyApiCollectionEndpointByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Api Collection Endpoint By Id.</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Create My Api Collection Endpoint By Id
      */
-    async oBPv400CreateMyApiCollectionEndpointById(requestParameters: OBPv400CreateMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        const response = await this.oBPv400CreateMyApiCollectionEndpointByIdRaw(requestParameters, initOverrides);
+    async createMyApiCollectionEndpointById(requestParameters: CreateMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        const response = await this.createMyApiCollectionEndpointByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteMyApiCollection without sending the request
+     * Creates request options for deleteFeaturedApiCollection without sending the request
      */
-    async oBPv400DeleteMyApiCollectionRequestOpts(requestParameters: OBPv400DeleteMyApiCollectionRequest): Promise<runtime.RequestOpts> {
+    async deleteFeaturedApiCollectionRequestOpts(requestParameters: DeleteFeaturedApiCollectionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400DeleteMyApiCollection().'
+                'Required parameter "apicollectionid" was null or undefined when calling deleteFeaturedApiCollection().'
             );
         }
 
@@ -368,7 +430,66 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v6.0.0/management/api-collections/featured/{apicollectionid}`;
+        urlPath = urlPath.replace(`{${"apicollectionid"}}`, encodeURIComponent(String(requestParameters['apicollectionid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Featured Api Collection
+     */
+    async deleteFeaturedApiCollectionRaw(requestParameters: DeleteFeaturedApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteFeaturedApiCollectionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Featured Api Collection
+     */
+    async deleteFeaturedApiCollection(requestParameters: DeleteFeaturedApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteFeaturedApiCollectionRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for deleteMyApiCollection without sending the request
+     */
+    async deleteMyApiCollectionRequestOpts(requestParameters: DeleteMyApiCollectionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['apicollectionid'] == null) {
+            throw new runtime.RequiredError(
+                'apicollectionid',
+                'Required parameter "apicollectionid" was null or undefined when calling deleteMyApiCollection().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -387,37 +508,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection
      */
-    async oBPv400DeleteMyApiCollectionRaw(requestParameters: OBPv400DeleteMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>> {
-        const requestOptions = await this.oBPv400DeleteMyApiCollectionRequestOpts(requestParameters);
+    async deleteMyApiCollectionRaw(requestParameters: DeleteMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteSystemLevelEndpointTag200Response>> {
+        const requestOptions = await this.deleteMyApiCollectionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Delete Api Collection By API_COLLECTION_ID</p> <p>glossary-item-not-found</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection
      */
-    async oBPv400DeleteMyApiCollection(requestParameters: OBPv400DeleteMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        const response = await this.oBPv400DeleteMyApiCollectionRaw(requestParameters, initOverrides);
+    async deleteMyApiCollection(requestParameters: DeleteMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteSystemLevelEndpointTag200Response> {
+        const response = await this.deleteMyApiCollectionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteMyApiCollectionEndpoint without sending the request
+     * Creates request options for deleteMyApiCollectionEndpoint without sending the request
      */
-    async oBPv400DeleteMyApiCollectionEndpointRequestOpts(requestParameters: OBPv400DeleteMyApiCollectionEndpointRequest): Promise<runtime.RequestOpts> {
+    async deleteMyApiCollectionEndpointRequestOpts(requestParameters: DeleteMyApiCollectionEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionname'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionname',
-                'Required parameter "apicollectionname" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpoint().'
+                'Required parameter "apicollectionname" was null or undefined when calling deleteMyApiCollectionEndpoint().'
             );
         }
 
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpoint().'
+                'Required parameter "operationid" was null or undefined when calling deleteMyApiCollectionEndpoint().'
             );
         }
 
@@ -435,7 +556,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -455,37 +576,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint
      */
-    async oBPv400DeleteMyApiCollectionEndpointRaw(requestParameters: OBPv400DeleteMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>> {
-        const requestOptions = await this.oBPv400DeleteMyApiCollectionEndpointRequestOpts(requestParameters);
+    async deleteMyApiCollectionEndpointRaw(requestParameters: DeleteMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteSystemLevelEndpointTag200Response>> {
+        const requestOptions = await this.deleteMyApiCollectionEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint
      */
-    async oBPv400DeleteMyApiCollectionEndpoint(requestParameters: OBPv400DeleteMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        const response = await this.oBPv400DeleteMyApiCollectionEndpointRaw(requestParameters, initOverrides);
+    async deleteMyApiCollectionEndpoint(requestParameters: DeleteMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteSystemLevelEndpointTag200Response> {
+        const response = await this.deleteMyApiCollectionEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteMyApiCollectionEndpointById without sending the request
+     * Creates request options for deleteMyApiCollectionEndpointById without sending the request
      */
-    async oBPv400DeleteMyApiCollectionEndpointByIdRequestOpts(requestParameters: OBPv400DeleteMyApiCollectionEndpointByIdRequest): Promise<runtime.RequestOpts> {
+    async deleteMyApiCollectionEndpointByIdRequestOpts(requestParameters: DeleteMyApiCollectionEndpointByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpointById().'
+                'Required parameter "apicollectionid" was null or undefined when calling deleteMyApiCollectionEndpointById().'
             );
         }
 
         if (requestParameters['apicollectionendpointid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionendpointid',
-                'Required parameter "apicollectionendpointid" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpointById().'
+                'Required parameter "apicollectionendpointid" was null or undefined when calling deleteMyApiCollectionEndpointById().'
             );
         }
 
@@ -503,7 +624,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -523,37 +644,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint By Id
      */
-    async oBPv400DeleteMyApiCollectionEndpointByIdRaw(requestParameters: OBPv400DeleteMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>> {
-        const requestOptions = await this.oBPv400DeleteMyApiCollectionEndpointByIdRequestOpts(requestParameters);
+    async deleteMyApiCollectionEndpointByIdRaw(requestParameters: DeleteMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteSystemLevelEndpointTag200Response>> {
+        const requestOptions = await this.deleteMyApiCollectionEndpointByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>glossary-item-not-found<br /> Delete Api Collection Endpoint<br /> Delete Api Collection Endpoint By Id</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ENDPOINT_ID</a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint By Id
      */
-    async oBPv400DeleteMyApiCollectionEndpointById(requestParameters: OBPv400DeleteMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        const response = await this.oBPv400DeleteMyApiCollectionEndpointByIdRaw(requestParameters, initOverrides);
+    async deleteMyApiCollectionEndpointById(requestParameters: DeleteMyApiCollectionEndpointByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteSystemLevelEndpointTag200Response> {
+        const response = await this.deleteMyApiCollectionEndpointByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteMyApiCollectionEndpointByOperationId without sending the request
+     * Creates request options for deleteMyApiCollectionEndpointByOperationId without sending the request
      */
-    async oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestOpts(requestParameters: OBPv400DeleteMyApiCollectionEndpointByOperationIdRequest): Promise<runtime.RequestOpts> {
+    async deleteMyApiCollectionEndpointByOperationIdRequestOpts(requestParameters: DeleteMyApiCollectionEndpointByOperationIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpointByOperationId().'
+                'Required parameter "apicollectionid" was null or undefined when calling deleteMyApiCollectionEndpointByOperationId().'
             );
         }
 
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400DeleteMyApiCollectionEndpointByOperationId().'
+                'Required parameter "operationid" was null or undefined when calling deleteMyApiCollectionEndpointByOperationId().'
             );
         }
 
@@ -571,7 +692,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -591,30 +712,82 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint By Id
      */
-    async oBPv400DeleteMyApiCollectionEndpointByOperationIdRaw(requestParameters: OBPv400DeleteMyApiCollectionEndpointByOperationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400DeleteSystemLevelEndpointTag200Response>> {
-        const requestOptions = await this.oBPv400DeleteMyApiCollectionEndpointByOperationIdRequestOpts(requestParameters);
+    async deleteMyApiCollectionEndpointByOperationIdRaw(requestParameters: DeleteMyApiCollectionEndpointByOperationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteSystemLevelEndpointTag200Response>> {
+        const requestOptions = await this.deleteMyApiCollectionEndpointByOperationIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteSystemLevelEndpointTag200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>glossary-item-not-found</p> <p>Delete Api Collection Endpoint By OPERATION_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete My Api Collection Endpoint By Id
      */
-    async oBPv400DeleteMyApiCollectionEndpointByOperationId(requestParameters: OBPv400DeleteMyApiCollectionEndpointByOperationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400DeleteSystemLevelEndpointTag200Response> {
-        const response = await this.oBPv400DeleteMyApiCollectionEndpointByOperationIdRaw(requestParameters, initOverrides);
+    async deleteMyApiCollectionEndpointByOperationId(requestParameters: DeleteMyApiCollectionEndpointByOperationIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteSystemLevelEndpointTag200Response> {
+        const response = await this.deleteMyApiCollectionEndpointByOperationIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetApiCollectionEndpoints without sending the request
+     * Creates request options for getAllApiCollections without sending the request
      */
-    async oBPv400GetApiCollectionEndpointsRequestOpts(requestParameters: OBPv400GetApiCollectionEndpointsRequest): Promise<runtime.RequestOpts> {
+    async getAllApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v5.1.0/management/api-collections`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     * Get All API Collections
+     */
+    async getAllApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200Response>> {
+        const requestOptions = await this.getAllApiCollectionsRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     * Get All API Collections
+     */
+    async getAllApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200Response> {
+        const response = await this.getAllApiCollectionsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getApiCollectionEndpoints without sending the request
+     */
+    async getApiCollectionEndpointsRequestOpts(requestParameters: GetApiCollectionEndpointsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400GetApiCollectionEndpoints().'
+                'Required parameter "apicollectionid" was null or undefined when calling getApiCollectionEndpoints().'
             );
         }
 
@@ -638,30 +811,30 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get Api Collection Endpoints
      */
-    async oBPv400GetApiCollectionEndpointsRaw(requestParameters: OBPv400GetApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetApiCollectionEndpointsRequestOpts(requestParameters);
+    async getApiCollectionEndpointsRaw(requestParameters: GetApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200Response>> {
+        const requestOptions = await this.getApiCollectionEndpointsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get Api Collection Endpoints
      */
-    async oBPv400GetApiCollectionEndpoints(requestParameters: OBPv400GetApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200Response> {
-        const response = await this.oBPv400GetApiCollectionEndpointsRaw(requestParameters, initOverrides);
+    async getApiCollectionEndpoints(requestParameters: GetApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200Response> {
+        const response = await this.getApiCollectionEndpointsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetApiCollectionsForUser without sending the request
+     * Creates request options for getApiCollectionsForUser without sending the request
      */
-    async oBPv400GetApiCollectionsForUserRequestOpts(requestParameters: OBPv400GetApiCollectionsForUserRequest): Promise<runtime.RequestOpts> {
+    async getApiCollectionsForUserRequestOpts(requestParameters: GetApiCollectionsForUserRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['userid'] == null) {
             throw new runtime.RequiredError(
                 'userid',
-                'Required parameter "userid" was null or undefined when calling oBPv400GetApiCollectionsForUser().'
+                'Required parameter "userid" was null or undefined when calling getApiCollectionsForUser().'
             );
         }
 
@@ -679,7 +852,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -698,26 +871,26 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Api Collections for User
      */
-    async oBPv400GetApiCollectionsForUserRaw(requestParameters: OBPv400GetApiCollectionsForUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200Response>> {
-        const requestOptions = await this.oBPv400GetApiCollectionsForUserRequestOpts(requestParameters);
+    async getApiCollectionsForUserRaw(requestParameters: GetApiCollectionsForUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200Response>> {
+        const requestOptions = await this.getApiCollectionsForUserRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collections for User.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#User.user_id\">USER_ID</a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Api Collections for User
      */
-    async oBPv400GetApiCollectionsForUser(requestParameters: OBPv400GetApiCollectionsForUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200Response> {
-        const response = await this.oBPv400GetApiCollectionsForUserRaw(requestParameters, initOverrides);
+    async getApiCollectionsForUser(requestParameters: GetApiCollectionsForUserRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200Response> {
+        const response = await this.getApiCollectionsForUserRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetFeaturedApiCollections without sending the request
+     * Creates request options for getFeaturedApiCollections without sending the request
      */
-    async oBPv400GetFeaturedApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getFeaturedApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -737,30 +910,82 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Featured Api Collections
      */
-    async oBPv400GetFeaturedApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200Response>> {
-        const requestOptions = await this.oBPv400GetFeaturedApiCollectionsRequestOpts();
+    async getFeaturedApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200Response>> {
+        const requestOptions = await this.getFeaturedApiCollectionsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Featured Api Collections.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Featured Api Collections
      */
-    async oBPv400GetFeaturedApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200Response> {
-        const response = await this.oBPv400GetFeaturedApiCollectionsRaw(initOverrides);
+    async getFeaturedApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200Response> {
+        const response = await this.getFeaturedApiCollectionsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollectionById without sending the request
+     * Creates request options for getFeaturedApiCollectionsAdmin without sending the request
      */
-    async oBPv400GetMyApiCollectionByIdRequestOpts(requestParameters: OBPv400GetMyApiCollectionByIdRequest): Promise<runtime.RequestOpts> {
+    async getFeaturedApiCollectionsAdminRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v6.0.0/management/api-collections/featured`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Get Featured Api Collections (Admin)
+     */
+    async getFeaturedApiCollectionsAdminRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetFeaturedApiCollectionsAdmin200Response>> {
+        const requestOptions = await this.getFeaturedApiCollectionsAdminRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetFeaturedApiCollectionsAdmin200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Get Featured Api Collections (Admin)
+     */
+    async getFeaturedApiCollectionsAdmin(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetFeaturedApiCollectionsAdmin200Response> {
+        const response = await this.getFeaturedApiCollectionsAdminRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for getMyApiCollectionById without sending the request
+     */
+    async getMyApiCollectionByIdRequestOpts(requestParameters: GetMyApiCollectionByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400GetMyApiCollectionById().'
+                'Required parameter "apicollectionid" was null or undefined when calling getMyApiCollectionById().'
             );
         }
 
@@ -778,7 +1003,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -797,30 +1022,30 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collection By Id
      */
-    async oBPv400GetMyApiCollectionByIdRaw(requestParameters: OBPv400GetMyApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionByIdRequestOpts(requestParameters);
+    async getMyApiCollectionByIdRaw(requestParameters: GetMyApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>> {
+        const requestOptions = await this.getMyApiCollectionByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collection By Id
      */
-    async oBPv400GetMyApiCollectionById(requestParameters: OBPv400GetMyApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        const response = await this.oBPv400GetMyApiCollectionByIdRaw(requestParameters, initOverrides);
+    async getMyApiCollectionById(requestParameters: GetMyApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        const response = await this.getMyApiCollectionByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollectionByName without sending the request
+     * Creates request options for getMyApiCollectionByName without sending the request
      */
-    async oBPv400GetMyApiCollectionByNameRequestOpts(requestParameters: OBPv400GetMyApiCollectionByNameRequest): Promise<runtime.RequestOpts> {
+    async getMyApiCollectionByNameRequestOpts(requestParameters: GetMyApiCollectionByNameRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionname'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionname',
-                'Required parameter "apicollectionname" was null or undefined when calling oBPv400GetMyApiCollectionByName().'
+                'Required parameter "apicollectionname" was null or undefined when calling getMyApiCollectionByName().'
             );
         }
 
@@ -838,7 +1063,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -857,37 +1082,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collection By Name
      */
-    async oBPv400GetMyApiCollectionByNameRaw(requestParameters: OBPv400GetMyApiCollectionByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionByNameRequestOpts(requestParameters);
+    async getMyApiCollectionByNameRaw(requestParameters: GetMyApiCollectionByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>> {
+        const requestOptions = await this.getMyApiCollectionByNameRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collection By Name
      */
-    async oBPv400GetMyApiCollectionByName(requestParameters: OBPv400GetMyApiCollectionByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        const response = await this.oBPv400GetMyApiCollectionByNameRaw(requestParameters, initOverrides);
+    async getMyApiCollectionByName(requestParameters: GetMyApiCollectionByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        const response = await this.getMyApiCollectionByNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollectionEndpoint without sending the request
+     * Creates request options for getMyApiCollectionEndpoint without sending the request
      */
-    async oBPv400GetMyApiCollectionEndpointRequestOpts(requestParameters: OBPv400GetMyApiCollectionEndpointRequest): Promise<runtime.RequestOpts> {
+    async getMyApiCollectionEndpointRequestOpts(requestParameters: GetMyApiCollectionEndpointRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionname'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionname',
-                'Required parameter "apicollectionname" was null or undefined when calling oBPv400GetMyApiCollectionEndpoint().'
+                'Required parameter "apicollectionname" was null or undefined when calling getMyApiCollectionEndpoint().'
             );
         }
 
         if (requestParameters['operationid'] == null) {
             throw new runtime.RequiredError(
                 'operationid',
-                'Required parameter "operationid" was null or undefined when calling oBPv400GetMyApiCollectionEndpoint().'
+                'Required parameter "operationid" was null or undefined when calling getMyApiCollectionEndpoint().'
             );
         }
 
@@ -912,30 +1137,30 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoint
      */
-    async oBPv400GetMyApiCollectionEndpointRaw(requestParameters: OBPv400GetMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionEndpointRequestOpts(requestParameters);
+    async getMyApiCollectionEndpointRaw(requestParameters: GetMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner>> {
+        const requestOptions = await this.getMyApiCollectionEndpointRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection Endpoint By API_COLLECTION_NAME and OPERATION_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoint
      */
-    async oBPv400GetMyApiCollectionEndpoint(requestParameters: OBPv400GetMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems> {
-        const response = await this.oBPv400GetMyApiCollectionEndpointRaw(requestParameters, initOverrides);
+    async getMyApiCollectionEndpoint(requestParameters: GetMyApiCollectionEndpointRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner> {
+        const response = await this.getMyApiCollectionEndpointRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollectionEndpoints without sending the request
+     * Creates request options for getMyApiCollectionEndpoints without sending the request
      */
-    async oBPv400GetMyApiCollectionEndpointsRequestOpts(requestParameters: OBPv400GetMyApiCollectionEndpointsRequest): Promise<runtime.RequestOpts> {
+    async getMyApiCollectionEndpointsRequestOpts(requestParameters: GetMyApiCollectionEndpointsRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionname'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionname',
-                'Required parameter "apicollectionname" was null or undefined when calling oBPv400GetMyApiCollectionEndpoints().'
+                'Required parameter "apicollectionname" was null or undefined when calling getMyApiCollectionEndpoints().'
             );
         }
 
@@ -953,7 +1178,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -972,30 +1197,30 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoints
      */
-    async oBPv400GetMyApiCollectionEndpointsRaw(requestParameters: OBPv400GetMyApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionEndpointsRequestOpts(requestParameters);
+    async getMyApiCollectionEndpointsRaw(requestParameters: GetMyApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200Response>> {
+        const requestOptions = await this.getMyApiCollectionEndpointsRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection Endpoints By API_COLLECTION_NAME.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_NAME</a>: Favourites</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoints
      */
-    async oBPv400GetMyApiCollectionEndpoints(requestParameters: OBPv400GetMyApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200Response> {
-        const response = await this.oBPv400GetMyApiCollectionEndpointsRaw(requestParameters, initOverrides);
+    async getMyApiCollectionEndpoints(requestParameters: GetMyApiCollectionEndpointsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200Response> {
+        const response = await this.getMyApiCollectionEndpointsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollectionEndpointsById without sending the request
+     * Creates request options for getMyApiCollectionEndpointsById without sending the request
      */
-    async oBPv400GetMyApiCollectionEndpointsByIdRequestOpts(requestParameters: OBPv400GetMyApiCollectionEndpointsByIdRequest): Promise<runtime.RequestOpts> {
+    async getMyApiCollectionEndpointsByIdRequestOpts(requestParameters: GetMyApiCollectionEndpointsByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400GetMyApiCollectionEndpointsById().'
+                'Required parameter "apicollectionid" was null or undefined when calling getMyApiCollectionEndpointsById().'
             );
         }
 
@@ -1013,7 +1238,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1032,26 +1257,26 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoints By Id
      */
-    async oBPv400GetMyApiCollectionEndpointsByIdRaw(requestParameters: OBPv400GetMyApiCollectionEndpointsByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetMyApiCollectionEndpoints200Response>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionEndpointsByIdRequestOpts(requestParameters);
+    async getMyApiCollectionEndpointsByIdRaw(requestParameters: GetMyApiCollectionEndpointsByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetMyApiCollectionEndpoints200Response>> {
+        const requestOptions = await this.getMyApiCollectionEndpointsByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetMyApiCollectionEndpoints200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Api Collection Endpoints By API_COLLECTION_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_endpoint_id</strong></a>: 8uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_endpoints</strong></a>: api_collection_endpoints</p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>operation_id</strong></a>: OBPv6.0.0-getBanks</p> 
      * Get My Api Collection Endpoints By Id
      */
-    async oBPv400GetMyApiCollectionEndpointsById(requestParameters: OBPv400GetMyApiCollectionEndpointsByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetMyApiCollectionEndpoints200Response> {
-        const response = await this.oBPv400GetMyApiCollectionEndpointsByIdRaw(requestParameters, initOverrides);
+    async getMyApiCollectionEndpointsById(requestParameters: GetMyApiCollectionEndpointsByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetMyApiCollectionEndpoints200Response> {
+        const response = await this.getMyApiCollectionEndpointsByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetMyApiCollections without sending the request
+     * Creates request options for getMyApiCollections without sending the request
      */
-    async oBPv400GetMyApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
+    async getMyApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -1066,7 +1291,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1081,33 +1306,33 @@ export class ApiCollectionApi extends runtime.BaseAPI {
     }
 
     /**
-     * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collections
      */
-    async oBPv400GetMyApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200Response>> {
-        const requestOptions = await this.oBPv400GetMyApiCollectionsRequestOpts();
+    async getMyApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200Response>> {
+        const requestOptions = await this.getMyApiCollectionsRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
     }
 
     /**
-     * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
+     * <p>Get all the apiCollections for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>1 limit (for pagination: defaults to 50)  eg:limit=200</p> <p>2 offset (for pagination: zero index, defaults to 0) eg: offset=10</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get My Api Collections
      */
-    async oBPv400GetMyApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200Response> {
-        const response = await this.oBPv400GetMyApiCollectionsRaw(initOverrides);
+    async getMyApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200Response> {
+        const response = await this.getMyApiCollectionsRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetSharableApiCollectionById without sending the request
+     * Creates request options for getSharableApiCollectionById without sending the request
      */
-    async oBPv400GetSharableApiCollectionByIdRequestOpts(requestParameters: OBPv400GetSharableApiCollectionByIdRequest): Promise<runtime.RequestOpts> {
+    async getSharableApiCollectionByIdRequestOpts(requestParameters: GetSharableApiCollectionByIdRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv400GetSharableApiCollectionById().'
+                'Required parameter "apicollectionid" was null or undefined when calling getSharableApiCollectionById().'
             );
         }
 
@@ -1131,89 +1356,37 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Sharable Api Collection By Id
      */
-    async oBPv400GetSharableApiCollectionByIdRaw(requestParameters: OBPv400GetSharableApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>> {
-        const requestOptions = await this.oBPv400GetSharableApiCollectionByIdRequestOpts(requestParameters);
+    async getSharableApiCollectionByIdRaw(requestParameters: GetSharableApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>> {
+        const requestOptions = await this.getSharableApiCollectionByIdRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Get Sharable Api Collection By Id.<br /> User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Get Sharable Api Collection By Id
      */
-    async oBPv400GetSharableApiCollectionById(requestParameters: OBPv400GetSharableApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        const response = await this.oBPv400GetSharableApiCollectionByIdRaw(requestParameters, initOverrides);
+    async getSharableApiCollectionById(requestParameters: GetSharableApiCollectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        const response = await this.getSharableApiCollectionByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510GetAllApiCollections without sending the request
+     * Creates request options for updateFeaturedApiCollection without sending the request
      */
-    async oBPv510GetAllApiCollectionsRequestOpts(): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v5.1.0/management/api-collections`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     * Get All API Collections
-     */
-    async oBPv510GetAllApiCollectionsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200Response>> {
-        const requestOptions = await this.oBPv510GetAllApiCollectionsRequestOpts();
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get All API Collections.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#\"><strong>api_collections</strong></a>: api_collections</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
-     * Get All API Collections
-     */
-    async oBPv510GetAllApiCollections(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200Response> {
-        const response = await this.oBPv510GetAllApiCollectionsRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv510UpdateMyApiCollection without sending the request
-     */
-    async oBPv510UpdateMyApiCollectionRequestOpts(requestParameters: OBPv510UpdateMyApiCollectionRequest): Promise<runtime.RequestOpts> {
+    async updateFeaturedApiCollectionRequestOpts(requestParameters: UpdateFeaturedApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['apicollectionid'] == null) {
             throw new runtime.RequiredError(
                 'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv510UpdateMyApiCollection().'
+                'Required parameter "apicollectionid" was null or undefined when calling updateFeaturedApiCollection().'
             );
         }
 
-        if (requestParameters['oBPv400CreateMyApiCollectionRequest'] == null) {
+        if (requestParameters['updateFeaturedApiCollectionRequest'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400CreateMyApiCollectionRequest',
-                'Required parameter "oBPv400CreateMyApiCollectionRequest" was null or undefined when calling oBPv510UpdateMyApiCollection().'
+                'updateFeaturedApiCollectionRequest',
+                'Required parameter "updateFeaturedApiCollectionRequest" was null or undefined when calling updateFeaturedApiCollection().'
             );
         }
 
@@ -1233,7 +1406,77 @@ export class ApiCollectionApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v6.0.0/management/api-collections/featured/{apicollectionid}`;
+        urlPath = urlPath.replace(`{${"apicollectionid"}}`, encodeURIComponent(String(requestParameters['apicollectionid'])));
+
+        return {
+            path: urlPath,
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateFeaturedApiCollectionRequestToJSON(requestParameters['updateFeaturedApiCollectionRequest']),
+        };
+    }
+
+    /**
+     * <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Update Featured Api Collection
+     */
+    async updateFeaturedApiCollectionRaw(requestParameters: UpdateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner>> {
+        const requestOptions = await this.updateFeaturedApiCollectionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInnerFromJSON(jsonValue));
+    }
+
+    /**
+     * <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
+     * Update Featured Api Collection
+     */
+    async updateFeaturedApiCollection(requestParameters: UpdateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner> {
+        const response = await this.updateFeaturedApiCollectionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for updateMyApiCollection without sending the request
+     */
+    async updateMyApiCollectionRequestOpts(requestParameters: UpdateMyApiCollectionRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['apicollectionid'] == null) {
+            throw new runtime.RequiredError(
+                'apicollectionid',
+                'Required parameter "apicollectionid" was null or undefined when calling updateMyApiCollection().'
+            );
+        }
+
+        if (requestParameters['createMyApiCollectionRequest'] == null) {
+            throw new runtime.RequiredError(
+                'createMyApiCollectionRequest',
+                'Required parameter "createMyApiCollectionRequest" was null or undefined when calling updateMyApiCollection().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -1245,7 +1488,7 @@ export class ApiCollectionApi extends runtime.BaseAPI {
             method: 'PUT',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400CreateMyApiCollectionRequestToJSON(requestParameters['oBPv400CreateMyApiCollectionRequest']),
+            body: CreateMyApiCollectionRequestToJSON(requestParameters['createMyApiCollectionRequest']),
         };
     }
 
@@ -1253,262 +1496,19 @@ export class ApiCollectionApi extends runtime.BaseAPI {
      * <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Update My Api Collection By API_COLLECTION_ID
      */
-    async oBPv510UpdateMyApiCollectionRaw(requestParameters: OBPv510UpdateMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems>> {
-        const requestOptions = await this.oBPv510UpdateMyApiCollectionRequestOpts(requestParameters);
+    async updateMyApiCollectionRaw(requestParameters: UpdateMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetApiCollectionsForUser200ResponseApiCollectionsInner>> {
+        const requestOptions = await this.updateMyApiCollectionRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetApiCollectionsForUser200ResponseApiCollectionsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Update Api Collection for logged in user.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>api_collection_name</strong></a>: Favourites</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#\"><strong>is_sharable</strong></a>: is_sharable</p> <p><a href=\"/glossary#\"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p> 
      * Update My Api Collection By API_COLLECTION_ID
      */
-    async oBPv510UpdateMyApiCollection(requestParameters: OBPv510UpdateMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems> {
-        const response = await this.oBPv510UpdateMyApiCollectionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv600CreateFeaturedApiCollection without sending the request
-     */
-    async oBPv600CreateFeaturedApiCollectionRequestOpts(requestParameters: OBPv600CreateFeaturedApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['oBPv600CreateFeaturedApiCollectionRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv600CreateFeaturedApiCollectionRequest',
-                'Required parameter "oBPv600CreateFeaturedApiCollectionRequest" was null or undefined when calling oBPv600CreateFeaturedApiCollection().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v6.0.0/management/api-collections/featured`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv600CreateFeaturedApiCollectionRequestToJSON(requestParameters['oBPv600CreateFeaturedApiCollectionRequest']),
-        };
-    }
-
-    /**
-     * <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Create Featured Api Collection
-     */
-    async oBPv600CreateFeaturedApiCollectionRaw(requestParameters: OBPv600CreateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>> {
-        const requestOptions = await this.oBPv600CreateFeaturedApiCollectionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Add an API Collection to the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Create Featured Api Collection
-     */
-    async oBPv600CreateFeaturedApiCollection(requestParameters: OBPv600CreateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> {
-        const response = await this.oBPv600CreateFeaturedApiCollectionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv600DeleteFeaturedApiCollection without sending the request
-     */
-    async oBPv600DeleteFeaturedApiCollectionRequestOpts(requestParameters: OBPv600DeleteFeaturedApiCollectionRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['apicollectionid'] == null) {
-            throw new runtime.RequiredError(
-                'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv600DeleteFeaturedApiCollection().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v6.0.0/management/api-collections/featured/{apicollectionid}`;
-        urlPath = urlPath.replace(`{${"apicollectionid"}}`, encodeURIComponent(String(requestParameters['apicollectionid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Featured Api Collection
-     */
-    async oBPv600DeleteFeaturedApiCollectionRaw(requestParameters: OBPv600DeleteFeaturedApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv600DeleteFeaturedApiCollectionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Remove an API Collection from the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Featured Api Collection
-     */
-    async oBPv600DeleteFeaturedApiCollection(requestParameters: OBPv600DeleteFeaturedApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv600DeleteFeaturedApiCollectionRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv600GetFeaturedApiCollectionsAdmin without sending the request
-     */
-    async oBPv600GetFeaturedApiCollectionsAdminRequestOpts(): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v6.0.0/management/api-collections/featured`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Get Featured Api Collections (Admin)
-     */
-    async oBPv600GetFeaturedApiCollectionsAdminRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200Response>> {
-        const requestOptions = await this.oBPv600GetFeaturedApiCollectionsAdminRequestOpts();
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetFeaturedApiCollectionsAdmin200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Get all featured API collections with their sort order (admin view).</p> <p>This endpoint returns the featured collections stored in the database with their sort order.<br /> It is intended for administrators to manage the featured list.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collections</strong></a>: featured_api_collections</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Get Featured Api Collections (Admin)
-     */
-    async oBPv600GetFeaturedApiCollectionsAdmin(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetFeaturedApiCollectionsAdmin200Response> {
-        const response = await this.oBPv600GetFeaturedApiCollectionsAdminRaw(initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for oBPv600UpdateFeaturedApiCollection without sending the request
-     */
-    async oBPv600UpdateFeaturedApiCollectionRequestOpts(requestParameters: OBPv600UpdateFeaturedApiCollectionOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['apicollectionid'] == null) {
-            throw new runtime.RequiredError(
-                'apicollectionid',
-                'Required parameter "apicollectionid" was null or undefined when calling oBPv600UpdateFeaturedApiCollection().'
-            );
-        }
-
-        if (requestParameters['oBPv600UpdateFeaturedApiCollectionRequest'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv600UpdateFeaturedApiCollectionRequest',
-                'Required parameter "oBPv600UpdateFeaturedApiCollectionRequest" was null or undefined when calling oBPv600UpdateFeaturedApiCollection().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v6.0.0/management/api-collections/featured/{apicollectionid}`;
-        urlPath = urlPath.replace(`{${"apicollectionid"}}`, encodeURIComponent(String(requestParameters['apicollectionid'])));
-
-        return {
-            path: urlPath,
-            method: 'PUT',
-            headers: headerParameters,
-            query: queryParameters,
-            body: OBPv600UpdateFeaturedApiCollectionRequestToJSON(requestParameters['oBPv600UpdateFeaturedApiCollectionRequest']),
-        };
-    }
-
-    /**
-     * <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Update Featured Api Collection
-     */
-    async oBPv600UpdateFeaturedApiCollectionRaw(requestParameters: OBPv600UpdateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems>> {
-        const requestOptions = await this.oBPv600UpdateFeaturedApiCollectionRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItemsFromJSON(jsonValue));
-    }
-
-    /**
-     * <p>Update the sort order of a featured API collection.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_COLLECTION_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_collection_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>featured_api_collection_id</strong></a>: 9uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#\"><strong>sort_order</strong></a>: 1</p> 
-     * Update Featured Api Collection
-     */
-    async oBPv600UpdateFeaturedApiCollection(requestParameters: OBPv600UpdateFeaturedApiCollectionOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems> {
-        const response = await this.oBPv600UpdateFeaturedApiCollectionRaw(requestParameters, initOverrides);
+    async updateMyApiCollection(requestParameters: UpdateMyApiCollectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetApiCollectionsForUser200ResponseApiCollectionsInner> {
+        const response = await this.updateMyApiCollectionRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

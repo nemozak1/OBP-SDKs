@@ -1,17 +1,17 @@
 # CustomerMeetingAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv310CreateMeeting**](CustomerMeetingAPI.md#obpv310createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
-[**oBPv310GetMeeting**](CustomerMeetingAPI.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
-[**oBPv310GetMeetings**](CustomerMeetingAPI.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
+[**createMeeting**](CustomerMeetingAPI.md#createmeeting) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call)
+[**getMeeting**](CustomerMeetingAPI.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting
+[**getMeetings**](CustomerMeetingAPI.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings
 
 
-# **oBPv310CreateMeeting**
+# **createMeeting**
 ```swift
-    open class func oBPv310CreateMeeting(bankid: String, oBPv310CreateMeetingRequest: OBPv310CreateMeetingRequest, completion: @escaping (_ data: OBPv310GetMeeting200Response?, _ error: Error?) -> Void)
+    open class func createMeeting(bankid: String, createMeetingRequest: CreateMeetingRequest, completion: @escaping (_ data: GetMeeting200Response?, _ error: Error?) -> Void)
 ```
 
 Create Meeting (video conference/call)
@@ -24,10 +24,10 @@ Create Meeting (video conference/call)
 import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
-let oBPv310CreateMeetingRequest = OBPv3_1_0_createMeeting_request(type: "type_example", properties: OBPv3_1_0_createMeeting_request_properties(providerId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), creator: OBPv3_1_0_getMeeting_200_response_properties_creator(type: "type_example", properties: OBPv3_1_0_getMeeting_200_response_properties_creator_properties(name: nil, mobilePhone: nil, emailAddress: nil)), invitees: OBPv3_1_0_getMeeting_200_response_properties_invitees(type: "type_example", items: OBPv3_1_0_getMeeting_200_response_properties_invitees_items(type: "type_example", properties: OBPv3_1_0_getMeeting_200_response_properties_invitees_items_properties(status: nil, contactDetails: nil))), date: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), purposeId: nil)) // OBPv310CreateMeetingRequest | Request body
+let createMeetingRequest = createMeeting_request(providerId: "providerId_example", creator: getMeeting_200_response_creator(name: "name_example", mobilePhone: "mobilePhone_example", emailAddress: "emailAddress_example"), invitees: [getMeeting_200_response_invitees_inner(status: "status_example", contactDetails: nil)], date: Date(), purposeId: "purposeId_example") // CreateMeetingRequest | Request body
 
 // Create Meeting (video conference/call)
-CustomerMeetingAPI.oBPv310CreateMeeting(bankid: bankid, oBPv310CreateMeetingRequest: oBPv310CreateMeetingRequest) { (response, error) in
+CustomerMeetingAPI.createMeeting(bankid: bankid, createMeetingRequest: createMeetingRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -44,11 +44,11 @@ CustomerMeetingAPI.oBPv310CreateMeeting(bankid: bankid, oBPv310CreateMeetingRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
- **oBPv310CreateMeetingRequest** | [**OBPv310CreateMeetingRequest**](OBPv310CreateMeetingRequest.md) | Request body | 
+ **createMeetingRequest** | [**CreateMeetingRequest**](CreateMeetingRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetMeeting**
+# **getMeeting**
 ```swift
-    open class func oBPv310GetMeeting(bankid: String, meetingid: String, completion: @escaping (_ data: OBPv310GetMeeting200Response?, _ error: Error?) -> Void)
+    open class func getMeeting(bankid: String, meetingid: String, completion: @escaping (_ data: GetMeeting200Response?, _ error: Error?) -> Void)
 ```
 
 Get Meeting
@@ -79,7 +79,7 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let meetingid = "meetingid_example" // String | The MEETINGID identifier
 
 // Get Meeting
-CustomerMeetingAPI.oBPv310GetMeeting(bankid: bankid, meetingid: meetingid) { (response, error) in
+CustomerMeetingAPI.getMeeting(bankid: bankid, meetingid: meetingid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -113,9 +113,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv310GetMeetings**
+# **getMeetings**
 ```swift
-    open class func oBPv310GetMeetings(bankid: String, completion: @escaping (_ data: OBPv310GetMeetings200Response?, _ error: Error?) -> Void)
+    open class func getMeetings(bankid: String, completion: @escaping (_ data: GetMeetings200Response?, _ error: Error?) -> Void)
 ```
 
 Get Meetings
@@ -130,7 +130,7 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 
 // Get Meetings
-CustomerMeetingAPI.oBPv310GetMeetings(bankid: bankid) { (response, error) in
+CustomerMeetingAPI.getMeetings(bankid: bankid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

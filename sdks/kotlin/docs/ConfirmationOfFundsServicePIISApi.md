@@ -1,15 +1,15 @@
 # ConfirmationOfFundsServicePIISApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CheckFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#oBPv310CheckFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**checkFundsAvailable**](ConfirmationOfFundsServicePIISApi.md#checkFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
 
-<a id="oBPv310CheckFundsAvailable"></a>
-# **oBPv310CheckFundsAvailable**
-> OBPv310CheckFundsAvailable200Response oBPv310CheckFundsAvailable(bankid, accountid, viewid)
+<a id="checkFundsAvailable"></a>
+# **checkFundsAvailable**
+> CheckFundsAvailable200Response checkFundsAvailable(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -26,13 +26,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 try {
-    val result : OBPv310CheckFundsAvailable200Response = apiInstance.oBPv310CheckFundsAvailable(bankid, accountid, viewid)
+    val result : CheckFundsAvailable200Response = apiInstance.checkFundsAvailable(bankid, accountid, viewid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ConfirmationOfFundsServicePIISApi#oBPv310CheckFundsAvailable")
+    println("4xx response calling ConfirmationOfFundsServicePIISApi#checkFundsAvailable")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ConfirmationOfFundsServicePIISApi#oBPv310CheckFundsAvailable")
+    println("5xx response calling ConfirmationOfFundsServicePIISApi#checkFundsAvailable")
     e.printStackTrace()
 }
 ```
@@ -46,7 +46,7 @@ try {
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 
@@ -57,8 +57,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

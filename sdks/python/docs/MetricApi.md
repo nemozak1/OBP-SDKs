@@ -4,20 +4,20 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv2_0_0_elastic_search_metrics**](MetricApi.md#o_bpv2_0_0_elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
-[**o_bpv2_2_0_get_connector_metrics**](MetricApi.md#o_bpv2_2_0_get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
-[**o_bpv3_1_0_get_metrics_top_consumers**](MetricApi.md#o_bpv3_1_0_get_metrics_top_consumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
-[**o_bpv5_0_0_get_metrics_at_bank**](MetricApi.md#o_bpv5_0_0_get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
-[**o_bpv6_0_0_get_aggregate_metrics**](MetricApi.md#o_bpv6_0_0_get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
-[**o_bpv6_0_0_get_connector_call_counts**](MetricApi.md#o_bpv6_0_0_get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
-[**o_bpv6_0_0_get_connector_traces**](MetricApi.md#o_bpv6_0_0_get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
-[**o_bpv6_0_0_get_metrics**](MetricApi.md#o_bpv6_0_0_get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
-[**o_bpv6_0_0_get_popular_apis**](MetricApi.md#o_bpv6_0_0_get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
-[**o_bpv6_0_0_get_top_apis**](MetricApi.md#o_bpv6_0_0_get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
+[**elastic_search_metrics**](MetricApi.md#elastic_search_metrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**get_aggregate_metrics**](MetricApi.md#get_aggregate_metrics) | **GET** /obp/v6.0.0/management/aggregate-metrics | Get Aggregate Metrics
+[**get_connector_call_counts**](MetricApi.md#get_connector_call_counts) | **GET** /obp/v6.0.0/management/connector/metrics/counts | Get Connector Call Counts
+[**get_connector_metrics**](MetricApi.md#get_connector_metrics) | **GET** /obp/v2.2.0/management/connector/metrics | Get Connector Metrics
+[**get_connector_traces**](MetricApi.md#get_connector_traces) | **GET** /obp/v6.0.0/management/connector/traces | Get Connector Traces
+[**get_metrics**](MetricApi.md#get_metrics) | **GET** /obp/v6.0.0/management/metrics | Get Metrics
+[**get_metrics_at_bank**](MetricApi.md#get_metrics_at_bank) | **GET** /obp/v5.0.0/management/metrics/banks/{bankid} | Get Metrics at Bank
+[**get_metrics_top_consumers**](MetricApi.md#get_metrics_top_consumers) | **GET** /obp/v3.1.0/management/metrics/top-consumers | Get Top Consumers
+[**get_popular_apis**](MetricApi.md#get_popular_apis) | **GET** /obp/v6.0.0/api/popular-endpoints | Get Popular Endpoints
+[**get_top_apis**](MetricApi.md#get_top_apis) | **GET** /obp/v6.0.0/management/metrics/top-apis | Get Top APIs
 
 
-# **o_bpv2_0_0_elastic_search_metrics**
-> object o_bpv2_0_0_elastic_search_metrics()
+# **elastic_search_metrics**
+> object elastic_search_metrics()
 
 Search API Metrics via Elasticsearch
 
@@ -98,11 +98,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Search API Metrics via Elasticsearch
-        api_response = api_instance.o_bpv2_0_0_elastic_search_metrics()
-        print("The response of MetricApi->o_bpv2_0_0_elastic_search_metrics:\n")
+        api_response = api_instance.elastic_search_metrics()
+        print("The response of MetricApi->elastic_search_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv2_0_0_elastic_search_metrics: %s\n" % e)
+        print("Exception when calling MetricApi->elastic_search_metrics: %s\n" % e)
 ```
 
 
@@ -133,373 +133,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv2_2_0_get_connector_metrics**
-> OBPv220GetConnectorMetrics200Response o_bpv2_2_0_get_connector_metrics()
-
-Get Connector Metrics
-
-<p>Get the all metrics</p>
-<p>require CanGetConnectorMetrics role</p>
-<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/connector/metrics</p>
-<p>Should be able to filter on the following metrics fields</p>
-<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
-<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
-<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
-<p>3 limit (for pagination: defaults to 1000)  eg:limit=2000</p>
-<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
-<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=100&amp;offset=300</p>
-<p>Other filters:</p>
-<p>5 connector_name  (if null ignore)</p>
-<p>6 function_name (if null ignore)</p>
-<p>7 correlation_id (if null ignore)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
-<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
-<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
-<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv220_get_connector_metrics200_response import OBPv220GetConnectorMetrics200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.MetricApi(api_client)
-
-    try:
-        # Get Connector Metrics
-        api_response = api_instance.o_bpv2_2_0_get_connector_metrics()
-        print("The response of MetricApi->o_bpv2_2_0_get_connector_metrics:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MetricApi->o_bpv2_2_0_get_connector_metrics: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv220GetConnectorMetrics200Response**](OBPv220GetConnectorMetrics200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_1_0_get_metrics_top_consumers**
-> OBPv310GetMetricsTopConsumers200Response o_bpv3_1_0_get_metrics_top_consumers()
-
-Get Top Consumers
-
-<p>Get metrics about the top consumers of the API usage e.g. total count, consumer_id and app_name.</p>
-<p>Should be able to filter on the following fields</p>
-<p>e.g.: /management/metrics/top-consumers?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:24.498Z&amp;consumer_id=5<br />
-&amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
-&amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
-&amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
-&amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null<br />
-&amp;limit=100</p>
-<p>1 from_date (defaults to the one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
-<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:24.498Z</p>
-<p>3 consumer_id  (if null ignore)</p>
-<p>4 user_id (if null ignore)</p>
-<p>5 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
-<p>6 url (if null ignore), note: can not contain '&amp;'.</p>
-<p>7 app_name (if null ignore)</p>
-<p>8 implemented_by_partial_function (if null ignore),</p>
-<p>9 implemented_in_version (if null ignore)</p>
-<p>10 verb (if null ignore)</p>
-<p>11 correlation_id (if null ignore)</p>
-<p>12 duration (if null ignore) non digit chars will be silently omitted</p>
-<p>13 exclude_app_names (if null ignore).eg: &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null</p>
-<p>14 exclude_url_patterns (if null ignore).you can design you own SQL NOT LIKE pattern. eg: &amp;exclude_url_patterns=%management/metrics%,%management/aggregate-metrics%</p>
-<p>15 exclude_implemented_by_partial_functions (if null ignore).eg: &amp;exclude_implemented_by_partial_functions=getMetrics,getConnectorMetrics,getAggregateMetrics</p>
-<p>16 limit (for pagination: defaults to 50)  eg:limit=200</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#count"><strong>count</strong></a>:</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#top_consumers"><strong>top_consumers</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv310_get_metrics_top_consumers200_response import OBPv310GetMetricsTopConsumers200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.MetricApi(api_client)
-
-    try:
-        # Get Top Consumers
-        api_response = api_instance.o_bpv3_1_0_get_metrics_top_consumers()
-        print("The response of MetricApi->o_bpv3_1_0_get_metrics_top_consumers:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MetricApi->o_bpv3_1_0_get_metrics_top_consumers: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv310GetMetricsTopConsumers200Response**](OBPv310GetMetricsTopConsumers200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv5_0_0_get_metrics_at_bank**
-> OBPv500GetMetricsAtBank200Response o_bpv5_0_0_get_metrics_at_bank(bankid)
-
-Get Metrics at Bank
-
-<p>Get the all metrics at the Bank specified by BANK_ID</p>
-<p>require CanReadMetrics role</p>
-<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/metrics</p>
-<p>Should be able to filter on the following metrics fields</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
-<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
-<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
-<p>3 limit (for pagination: defaults to 50)  eg:limit=200</p>
-<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
-<p>5 sort_by (defaults to date field) eg: sort_by=date<br />
-possible values:<br />
-&quot;url&quot;,<br />
-&quot;date&quot;,<br />
-&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
-&quot;app_name&quot;,<br />
-&quot;developer_email&quot;,<br />
-&quot;implemented_by_partial_function&quot;,<br />
-&quot;implemented_in_version&quot;,<br />
-&quot;consumer_id&quot;,<br />
-&quot;verb&quot;</p>
-<p>6 direction (defaults to date desc) eg: direction=desc</p>
-<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;&#116;o&#x3a;&#48;&#x31;&#x2e;&#48;&#x30;&#48;&#90;&amp;li&#x6d;i&#x74;&#61;10&#48;&#48;&#48;&amp;&#111;&#x66;&#x66;&#x73;&#101;&#116;&#x3d;&#x30;&#38;&#x61;n&#111;&#x6e;=&#x66;&#x61;&#108;&#115;&#101;&#x26;&#97;&#x70;&#x70;&#x5f;&#110;&#97;&#x6d;&#101;=&#84;&#101;&#x61;&#116;&#x41;&#x70;&#112;&amp;&#105;&#109;ple&#x6d;&#x65;&#x6e;&#116;&#101;&#x64;&#95;&#x69;&#110;&#x5f;&#118;e&#x72;&#x73;&#x69;&#111;&#110;&#x3d;&#118;&#x32;&#x2e;&#49;&#x2e;&#x30;&#38;&#x76;&#x65;&#x72;&#98;&#x3d;&#80;&#79;&#83;&#x54;&#x26;&#117;&#115;&#x65;&#114;&#95;i&#x64;=&#x63;7&#x62;&#x36;c&#98;&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#52;4&#x34;&#x31;&#45;&#56;&#x38;&#48;&#x31;&#45;3&#x35;b&#x35;&#x37;45&#x36;7&#53;3&#97;&#38;&#117;&#x73;&#x65;&#x72;&#110;&#97;m&#101;=&#x73;&#x75;&#x73;a&#110;&#x2e;uk&#46;&#x32;&#57;&#x40;&#101;x&#97;&#109;&#112;&#x6c;&#x65;.&#x63;o&#109;">0&#x31;&#46;&#x30;0&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#105;&#x74;=&#x31;&#48;0&#48;&#48;&#x26;&#x6f;&#102;&#102;s&#x65;&#x74;=&#48;&amp;&#x61;&#110;o&#110;&#61;&#102;&#x61;&#108;&#115;&#x65;&#x26;&#97;p&#112;&#x5f;&#110;a&#x6d;&#101;&#x3d;&#84;&#101;&#x61;&#116;&#x41;pp&#x26;&#x69;&#109;&#112;&#x6c;e&#109;e&#110;&#116;&#x65;&#100;_&#x69;&#x6e;&#95;v&#101;&#114;si&#111;&#x6e;&#x3d;&#118;2.&#x31;.&#48;&#38;v&#101;&#114;&#x62;=&#x50;&#x4f;&#x53;&#x54;&#x26;&#x75;se&#x72;_&#105;&#100;&#61;&#x63;&#55;&#x62;&#54;c&#98;&#x34;&#x37;-&#99;&#x62;&#57;6&#x2d;&#x34;4&#52;&#x31;-&#x38;&#x38;&#48;1&#45;35b&#x35;&#x37;&#52;&#x35;&#54;&#55;5&#x33;&#97;&#x26;us&#101;&#114;n&#x61;m&#101;&#x3d;&#115;&#x75;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#46;&#x32;&#x39;&#64;e&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#109;</a>&amp;consumer_id=78</p>
-<p>Other filters:</p>
-<p>7 consumer_id  (if null ignore)</p>
-<p>8 user_id (if null ignore)</p>
-<p>9 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
-<p>10 url (if null ignore), note: can not contain '&amp;'.</p>
-<p>11 app_name (if null ignore)</p>
-<p>12 implemented_by_partial_function (if null ignore),</p>
-<p>13 implemented_in_version (if null ignore)</p>
-<p>14 verb (if null ignore)</p>
-<p>15 correlation_id (if null ignore)</p>
-<p>16 duration (if null ignore) non digit chars will be silently omitted</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
-<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
-<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
-<p><a href="/glossary#implemented_by_partial_function"><strong>implemented_by_partial_function</strong></a>:</p>
-<p><a href="/glossary#implemented_in_version"><strong>implemented_in_version</strong></a>:</p>
-<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
-<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
-<p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv500_get_metrics_at_bank200_response import OBPv500GetMetricsAtBank200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.MetricApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Metrics at Bank
-        api_response = api_instance.o_bpv5_0_0_get_metrics_at_bank(bankid)
-        print("The response of MetricApi->o_bpv5_0_0_get_metrics_at_bank:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MetricApi->o_bpv5_0_0_get_metrics_at_bank: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv500GetMetricsAtBank200Response**](OBPv500GetMetricsAtBank200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_aggregate_metrics**
-> OBPv600GetAggregateMetrics200Response o_bpv6_0_0_get_aggregate_metrics()
+# **get_aggregate_metrics**
+> GetAggregateMetrics200Response get_aggregate_metrics()
 
 Get Aggregate Metrics
 
@@ -570,7 +205,7 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_aggregate_metrics200_response import OBPv600GetAggregateMetrics200Response
+from obp_python.models.get_aggregate_metrics200_response import GetAggregateMetrics200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -606,11 +241,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Aggregate Metrics
-        api_response = api_instance.o_bpv6_0_0_get_aggregate_metrics()
-        print("The response of MetricApi->o_bpv6_0_0_get_aggregate_metrics:\n")
+        api_response = api_instance.get_aggregate_metrics()
+        print("The response of MetricApi->get_aggregate_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_aggregate_metrics: %s\n" % e)
+        print("Exception when calling MetricApi->get_aggregate_metrics: %s\n" % e)
 ```
 
 
@@ -621,7 +256,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAggregateMetrics200Response**](OBPv600GetAggregateMetrics200Response.md)
+[**GetAggregateMetrics200Response**](GetAggregateMetrics200Response.md)
 
 ### Authorization
 
@@ -641,8 +276,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_connector_call_counts**
-> OBPv600GetConnectorCallCounts200Response o_bpv6_0_0_get_connector_call_counts()
+# **get_connector_call_counts**
+> GetConnectorCallCounts200Response get_connector_call_counts()
 
 Get Connector Call Counts
 
@@ -680,7 +315,7 @@ The ttl_seconds field shows when the current hour window resets.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_connector_call_counts200_response import OBPv600GetConnectorCallCounts200Response
+from obp_python.models.get_connector_call_counts200_response import GetConnectorCallCounts200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -716,11 +351,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Connector Call Counts
-        api_response = api_instance.o_bpv6_0_0_get_connector_call_counts()
-        print("The response of MetricApi->o_bpv6_0_0_get_connector_call_counts:\n")
+        api_response = api_instance.get_connector_call_counts()
+        print("The response of MetricApi->get_connector_call_counts:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_connector_call_counts: %s\n" % e)
+        print("Exception when calling MetricApi->get_connector_call_counts: %s\n" % e)
 ```
 
 
@@ -731,7 +366,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorCallCounts200Response**](OBPv600GetConnectorCallCounts200Response.md)
+[**GetConnectorCallCounts200Response**](GetConnectorCallCounts200Response.md)
 
 ### Authorization
 
@@ -751,8 +386,116 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_connector_traces**
-> OBPv600GetConnectorTraces200Response o_bpv6_0_0_get_connector_traces()
+# **get_connector_metrics**
+> GetConnectorMetrics200Response get_connector_metrics()
+
+Get Connector Metrics
+
+<p>Get the all metrics</p>
+<p>require CanGetConnectorMetrics role</p>
+<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/connector/metrics</p>
+<p>Should be able to filter on the following metrics fields</p>
+<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
+<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
+<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
+<p>3 limit (for pagination: defaults to 1000)  eg:limit=2000</p>
+<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>eg: /management/connector/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=100&amp;offset=300</p>
+<p>Other filters:</p>
+<p>5 connector_name  (if null ignore)</p>
+<p>6 function_name (if null ignore)</p>
+<p>7 correlation_id (if null ignore)</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#connector_name"><strong>connector_name</strong></a>:</p>
+<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
+<p><a href="/glossary#function_name"><strong>function_name</strong></a>:</p>
+<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_connector_metrics200_response import GetConnectorMetrics200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.MetricApi(api_client)
+
+    try:
+        # Get Connector Metrics
+        api_response = api_instance.get_connector_metrics()
+        print("The response of MetricApi->get_connector_metrics:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricApi->get_connector_metrics: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetConnectorMetrics200Response**](GetConnectorMetrics200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_connector_traces**
+> GetConnectorTraces200Response get_connector_traces()
 
 Get Connector Traces
 
@@ -797,7 +540,7 @@ Get Connector Traces
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_connector_traces200_response import OBPv600GetConnectorTraces200Response
+from obp_python.models.get_connector_traces200_response import GetConnectorTraces200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -833,11 +576,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Connector Traces
-        api_response = api_instance.o_bpv6_0_0_get_connector_traces()
-        print("The response of MetricApi->o_bpv6_0_0_get_connector_traces:\n")
+        api_response = api_instance.get_connector_traces()
+        print("The response of MetricApi->get_connector_traces:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_connector_traces: %s\n" % e)
+        print("Exception when calling MetricApi->get_connector_traces: %s\n" % e)
 ```
 
 
@@ -848,7 +591,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorTraces200Response**](OBPv600GetConnectorTraces200Response.md)
+[**GetConnectorTraces200Response**](GetConnectorTraces200Response.md)
 
 ### Authorization
 
@@ -868,8 +611,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_metrics**
-> OBPv600GetMetrics200Response o_bpv6_0_0_get_metrics()
+# **get_metrics**
+> GetMetrics200Response get_metrics()
 
 Get Metrics
 
@@ -960,7 +703,7 @@ possible values:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_metrics200_response import OBPv600GetMetrics200Response
+from obp_python.models.get_metrics200_response import GetMetrics200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -996,11 +739,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Metrics
-        api_response = api_instance.o_bpv6_0_0_get_metrics()
-        print("The response of MetricApi->o_bpv6_0_0_get_metrics:\n")
+        api_response = api_instance.get_metrics()
+        print("The response of MetricApi->get_metrics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_metrics: %s\n" % e)
+        print("Exception when calling MetricApi->get_metrics: %s\n" % e)
 ```
 
 
@@ -1011,7 +754,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMetrics200Response**](OBPv600GetMetrics200Response.md)
+[**GetMetrics200Response**](GetMetrics200Response.md)
 
 ### Authorization
 
@@ -1031,8 +774,265 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_popular_apis**
-> OBPv600GetPopularApis200Response o_bpv6_0_0_get_popular_apis()
+# **get_metrics_at_bank**
+> GetMetricsAtBank200Response get_metrics_at_bank(bankid)
+
+Get Metrics at Bank
+
+<p>Get the all metrics at the Bank specified by BANK_ID</p>
+<p>require CanReadMetrics role</p>
+<p>Filters Part 1.<em>filtering</em> (no wilde cards etc.) parameters to GET /management/metrics</p>
+<p>Should be able to filter on the following metrics fields</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:01.000Z&amp;limit=50&amp;offset=2</p>
+<p>1 from_date (defaults to one week before current date): eg:from_date=1100-01-01T01:01:01.000Z</p>
+<p>2 to_date (defaults to current date) eg:to_date=1100-01-01T01:01:01.000Z</p>
+<p>3 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>4 offset (for pagination: zero index, defaults to 0) eg: offset=10</p>
+<p>5 sort_by (defaults to date field) eg: sort_by=date<br />
+possible values:<br />
+&quot;url&quot;,<br />
+&quot;date&quot;,<br />
+&quot;username&quot; (or &quot;user_name&quot; for backward compatibility),<br />
+&quot;app_name&quot;,<br />
+&quot;developer_email&quot;,<br />
+&quot;implemented_by_partial_function&quot;,<br />
+&quot;implemented_in_version&quot;,<br />
+&quot;consumer_id&quot;,<br />
+&quot;verb&quot;</p>
+<p>6 direction (defaults to date desc) eg: direction=desc</p>
+<p>eg: /management/metrics?from_date=1100-01-01T01:01:01.000Z&amp;to_date=1100-01-01T01:01:<a href="&#109;a&#105;&#x6c;&#116;o&#x3a;&#48;&#x31;&#x2e;&#48;&#x30;&#48;&#90;&amp;li&#x6d;i&#x74;&#61;10&#48;&#48;&#48;&amp;&#111;&#x66;&#x66;&#x73;&#101;&#116;&#x3d;&#x30;&#38;&#x61;n&#111;&#x6e;=&#x66;&#x61;&#108;&#115;&#101;&#x26;&#97;&#x70;&#x70;&#x5f;&#110;&#97;&#x6d;&#101;=&#84;&#101;&#x61;&#116;&#x41;&#x70;&#112;&amp;&#105;&#109;ple&#x6d;&#x65;&#x6e;&#116;&#101;&#x64;&#95;&#x69;&#110;&#x5f;&#118;e&#x72;&#x73;&#x69;&#111;&#110;&#x3d;&#118;&#x32;&#x2e;&#49;&#x2e;&#x30;&#38;&#x76;&#x65;&#x72;&#98;&#x3d;&#80;&#79;&#83;&#x54;&#x26;&#117;&#115;&#x65;&#114;&#95;i&#x64;=&#x63;7&#x62;&#x36;c&#98;&#x34;&#55;-&#x63;&#98;&#x39;&#x36;&#45;&#52;4&#x34;&#x31;&#45;&#56;&#x38;&#48;&#x31;&#45;3&#x35;b&#x35;&#x37;45&#x36;7&#53;3&#97;&#38;&#117;&#x73;&#x65;&#x72;&#110;&#97;m&#101;=&#x73;&#x75;&#x73;a&#110;&#x2e;uk&#46;&#x32;&#57;&#x40;&#101;x&#97;&#109;&#112;&#x6c;&#x65;.&#x63;o&#109;">0&#x31;&#46;&#x30;0&#x30;&#x5a;&#38;&#108;&#x69;&#109;&#105;&#x74;=&#x31;&#48;0&#48;&#48;&#x26;&#x6f;&#102;&#102;s&#x65;&#x74;=&#48;&amp;&#x61;&#110;o&#110;&#61;&#102;&#x61;&#108;&#115;&#x65;&#x26;&#97;p&#112;&#x5f;&#110;a&#x6d;&#101;&#x3d;&#84;&#101;&#x61;&#116;&#x41;pp&#x26;&#x69;&#109;&#112;&#x6c;e&#109;e&#110;&#116;&#x65;&#100;_&#x69;&#x6e;&#95;v&#101;&#114;si&#111;&#x6e;&#x3d;&#118;2.&#x31;.&#48;&#38;v&#101;&#114;&#x62;=&#x50;&#x4f;&#x53;&#x54;&#x26;&#x75;se&#x72;_&#105;&#100;&#61;&#x63;&#55;&#x62;&#54;c&#98;&#x34;&#x37;-&#99;&#x62;&#57;6&#x2d;&#x34;4&#52;&#x31;-&#x38;&#x38;&#48;1&#45;35b&#x35;&#x37;&#52;&#x35;&#54;&#55;5&#x33;&#97;&#x26;us&#101;&#114;n&#x61;m&#101;&#x3d;&#115;&#x75;&#115;&#x61;&#110;&#x2e;&#117;&#107;&#46;&#x32;&#x39;&#64;e&#x78;&#x61;m&#x70;&#108;e&#46;&#x63;&#111;&#109;</a>&amp;consumer_id=78</p>
+<p>Other filters:</p>
+<p>7 consumer_id  (if null ignore)</p>
+<p>8 user_id (if null ignore)</p>
+<p>9 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
+<p>10 url (if null ignore), note: can not contain '&amp;'.</p>
+<p>11 app_name (if null ignore)</p>
+<p>12 implemented_by_partial_function (if null ignore),</p>
+<p>13 implemented_in_version (if null ignore)</p>
+<p>14 verb (if null ignore)</p>
+<p>15 correlation_id (if null ignore)</p>
+<p>16 duration (if null ignore) non digit chars will be silently omitted</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#"><strong>correlation_id</strong></a>: 1flssoftxq0cr1nssr68u0mioj</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#duration"><strong>duration</strong></a>: 5.123</p>
+<p><a href="/glossary#implemented_by_partial_function"><strong>implemented_by_partial_function</strong></a>:</p>
+<p><a href="/glossary#implemented_in_version"><strong>implemented_in_version</strong></a>:</p>
+<p><a href="/glossary#metrics"><strong>metrics</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#"><strong>user_id</strong></a>: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1</p>
+<p><a href="/glossary#"><strong>user_name</strong></a>: felixsmith</p>
+<p><a href="/glossary#verb"><strong>verb</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_metrics_at_bank200_response import GetMetricsAtBank200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.MetricApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Metrics at Bank
+        api_response = api_instance.get_metrics_at_bank(bankid)
+        print("The response of MetricApi->get_metrics_at_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricApi->get_metrics_at_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetMetricsAtBank200Response**](GetMetricsAtBank200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_metrics_top_consumers**
+> GetMetricsTopConsumers200Response get_metrics_top_consumers()
+
+Get Top Consumers
+
+<p>Get metrics about the top consumers of the API usage e.g. total count, consumer_id and app_name.</p>
+<p>Should be able to filter on the following fields</p>
+<p>e.g.: /management/metrics/top-consumers?from_date=1970-01-01T00:00:00.000Z&amp;to_date=2026-03-25T12:16:24.498Z&amp;consumer_id=5<br />
+&amp;user_id=66214b8e-259e-44ad-8868-3eb47be70646&amp;implemented_by_partial_function=getTransactionsForBankAccount<br />
+&amp;implemented_in_version=v3.0.0&amp;url=/obp/v3.0.0/banks/gh.29.uk/accounts/8ca8a7e4-6d02-48e3-a029-0b2bf89de9f0/owner/transactions<br />
+&amp;verb=GET&amp;anon=false&amp;app_name=MapperPostman<br />
+&amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null<br />
+&amp;limit=100</p>
+<p>1 from_date (defaults to the one year ago): eg:from_date=1970-01-01T00:00:00.000Z</p>
+<p>2 to_date (defaults to the current date) eg:to_date=2026-03-25T12:16:24.498Z</p>
+<p>3 consumer_id  (if null ignore)</p>
+<p>4 user_id (if null ignore)</p>
+<p>5 anon (if null ignore) only support two value : true (return where user_id is null.) or false (return where user_id is not null.)</p>
+<p>6 url (if null ignore), note: can not contain '&amp;'.</p>
+<p>7 app_name (if null ignore)</p>
+<p>8 implemented_by_partial_function (if null ignore),</p>
+<p>9 implemented_in_version (if null ignore)</p>
+<p>10 verb (if null ignore)</p>
+<p>11 correlation_id (if null ignore)</p>
+<p>12 duration (if null ignore) non digit chars will be silently omitted</p>
+<p>13 exclude_app_names (if null ignore).eg: &amp;exclude_app_names=API-EXPLORER,API-Manager,SOFI,null</p>
+<p>14 exclude_url_patterns (if null ignore).you can design you own SQL NOT LIKE pattern. eg: &amp;exclude_url_patterns=%management/metrics%,%management/aggregate-metrics%</p>
+<p>15 exclude_implemented_by_partial_functions (if null ignore).eg: &amp;exclude_implemented_by_partial_functions=getMetrics,getConnectorMetrics,getAggregateMetrics</p>
+<p>16 limit (for pagination: defaults to 50)  eg:limit=200</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#app_name"><strong>app_name</strong></a>: appNameBank</p>
+<p><a href="/glossary#"><strong>consumer_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#count"><strong>count</strong></a>:</p>
+<p><a href="/glossary#developer_email"><strong>developer_email</strong></a>:</p>
+<p><a href="/glossary#top_consumers"><strong>top_consumers</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_metrics_top_consumers200_response import GetMetricsTopConsumers200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.MetricApi(api_client)
+
+    try:
+        # Get Top Consumers
+        api_response = api_instance.get_metrics_top_consumers()
+        print("The response of MetricApi->get_metrics_top_consumers:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricApi->get_metrics_top_consumers: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetMetricsTopConsumers200Response**](GetMetricsTopConsumers200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_popular_apis**
+> GetPopularApis200Response get_popular_apis()
 
 Get Popular Endpoints
 
@@ -1054,7 +1054,7 @@ Get Popular Endpoints
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_popular_apis200_response import OBPv600GetPopularApis200Response
+from obp_python.models.get_popular_apis200_response import GetPopularApis200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1072,11 +1072,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Popular Endpoints
-        api_response = api_instance.o_bpv6_0_0_get_popular_apis()
-        print("The response of MetricApi->o_bpv6_0_0_get_popular_apis:\n")
+        api_response = api_instance.get_popular_apis()
+        print("The response of MetricApi->get_popular_apis:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_popular_apis: %s\n" % e)
+        print("Exception when calling MetricApi->get_popular_apis: %s\n" % e)
 ```
 
 
@@ -1087,7 +1087,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPopularApis200Response**](OBPv600GetPopularApis200Response.md)
+[**GetPopularApis200Response**](GetPopularApis200Response.md)
 
 ### Authorization
 
@@ -1107,8 +1107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv6_0_0_get_top_apis**
-> OBPv600GetTopAPIs200Response o_bpv6_0_0_get_top_apis()
+# **get_top_apis**
+> GetTopAPIs200Response get_top_apis()
 
 Get Top APIs
 
@@ -1154,7 +1154,7 @@ across different API standards (OBP, Berlin Group, UK Open Banking, etc.).</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_top_apis200_response import OBPv600GetTopAPIs200Response
+from obp_python.models.get_top_apis200_response import GetTopAPIs200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1190,11 +1190,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Top APIs
-        api_response = api_instance.o_bpv6_0_0_get_top_apis()
-        print("The response of MetricApi->o_bpv6_0_0_get_top_apis:\n")
+        api_response = api_instance.get_top_apis()
+        print("The response of MetricApi->get_top_apis:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricApi->o_bpv6_0_0_get_top_apis: %s\n" % e)
+        print("Exception when calling MetricApi->get_top_apis: %s\n" % e)
 ```
 
 
@@ -1205,7 +1205,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetTopAPIs200Response**](OBPv600GetTopAPIs200Response.md)
+[**GetTopAPIs200Response**](GetTopAPIs200Response.md)
 
 ### Authorization
 

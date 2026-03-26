@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create Bank Level Endpoint Mapping
     # <p>Create an Bank Level Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_create_bank_level_endpoint_mapping(bankid, obpv400_create_endpoint_mapping_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info(bankid, obpv400_create_endpoint_mapping_request, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def create_bank_level_endpoint_mapping(bankid, create_endpoint_mapping_request, opts = {})
+      data, _status_code, _headers = create_bank_level_endpoint_mapping_with_http_info(bankid, create_endpoint_mapping_request, opts)
       data
     end
 
     # Create Bank Level Endpoint Mapping
     # &lt;p&gt;Create an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_create_bank_level_endpoint_mapping_with_http_info(bankid, obpv400_create_endpoint_mapping_request, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def create_bank_level_endpoint_mapping_with_http_info(bankid, create_endpoint_mapping_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_create_bank_level_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.create_bank_level_endpoint_mapping ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.o_bpv4_0_0_create_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.create_bank_level_endpoint_mapping"
       end
-      # verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_endpoint_mapping_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_endpoint_mapping_request' when calling EndpointMappingApi.o_bpv4_0_0_create_bank_level_endpoint_mapping"
+      # verify the required parameter 'create_endpoint_mapping_request' is set
+      if @api_client.config.client_side_validation && create_endpoint_mapping_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_endpoint_mapping_request' when calling EndpointMappingApi.create_bank_level_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_endpoint_mapping_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_endpoint_mapping_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_create_bank_level_endpoint_mapping",
+        :operation => :"EndpointMappingApi.create_bank_level_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,33 +88,33 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_create_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#create_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Create Endpoint Mapping
     # <p>Create an Endpoint Mapping.</p> <p>Note: at moment only support the dynamic endpoints</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_create_endpoint_mapping(obpv400_create_endpoint_mapping_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_endpoint_mapping_with_http_info(obpv400_create_endpoint_mapping_request, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def create_endpoint_mapping(create_endpoint_mapping_request, opts = {})
+      data, _status_code, _headers = create_endpoint_mapping_with_http_info(create_endpoint_mapping_request, opts)
       data
     end
 
     # Create Endpoint Mapping
     # &lt;p&gt;Create an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;Note: at moment only support the dynamic endpoints&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_create_endpoint_mapping_with_http_info(obpv400_create_endpoint_mapping_request, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def create_endpoint_mapping_with_http_info(create_endpoint_mapping_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_create_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.create_endpoint_mapping ...'
       end
-      # verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_endpoint_mapping_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_endpoint_mapping_request' when calling EndpointMappingApi.o_bpv4_0_0_create_endpoint_mapping"
+      # verify the required parameter 'create_endpoint_mapping_request' is set
+      if @api_client.config.client_side_validation && create_endpoint_mapping_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_endpoint_mapping_request' when calling EndpointMappingApi.create_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/endpoint-mappings'
@@ -136,16 +136,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_endpoint_mapping_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_endpoint_mapping_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_create_endpoint_mapping",
+        :operation => :"EndpointMappingApi.create_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -156,7 +156,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_create_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#create_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -167,8 +167,8 @@ module OpenBankProject
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_bank_level_endpoint_mapping(bankid, endpointmappingid, opts = {})
-      o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts)
+    def delete_bank_level_endpoint_mapping(bankid, endpointmappingid, opts = {})
+      delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts)
       nil
     end
 
@@ -178,17 +178,17 @@ module OpenBankProject
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts = {})
+    def delete_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_delete_bank_level_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.delete_bank_level_endpoint_mapping ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.o_bpv4_0_0_delete_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.delete_bank_level_endpoint_mapping"
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_delete_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.delete_bank_level_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -212,7 +212,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_delete_bank_level_endpoint_mapping",
+        :operation => :"EndpointMappingApi.delete_bank_level_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -223,7 +223,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_delete_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#delete_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -233,8 +233,8 @@ module OpenBankProject
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_endpoint_mapping(endpointmappingid, opts = {})
-      o_bpv4_0_0_delete_endpoint_mapping_with_http_info(endpointmappingid, opts)
+    def delete_endpoint_mapping(endpointmappingid, opts = {})
+      delete_endpoint_mapping_with_http_info(endpointmappingid, opts)
       nil
     end
 
@@ -243,13 +243,13 @@ module OpenBankProject
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_endpoint_mapping_with_http_info(endpointmappingid, opts = {})
+    def delete_endpoint_mapping_with_http_info(endpointmappingid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_delete_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.delete_endpoint_mapping ...'
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_delete_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.delete_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}'.sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -273,7 +273,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_delete_endpoint_mapping",
+        :operation => :"EndpointMappingApi.delete_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -284,7 +284,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_delete_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#delete_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -293,9 +293,9 @@ module OpenBankProject
     # <p>Get all Bank Level Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200Response]
-    def o_bpv4_0_0_get_all_bank_level_endpoint_mappings(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info(bankid, opts)
+    # @return [GetAllEndpointMappings200Response]
+    def get_all_bank_level_endpoint_mappings(bankid, opts = {})
+      data, _status_code, _headers = get_all_bank_level_endpoint_mappings_with_http_info(bankid, opts)
       data
     end
 
@@ -303,14 +303,14 @@ module OpenBankProject
     # &lt;p&gt;Get all Bank Level Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200Response, Integer, Hash)>] OBPv400GetAllEndpointMappings200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_bank_level_endpoint_mappings_with_http_info(bankid, opts = {})
+    # @return [Array<(GetAllEndpointMappings200Response, Integer, Hash)>] GetAllEndpointMappings200Response data, response status code and response headers
+    def get_all_bank_level_endpoint_mappings_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_get_all_bank_level_endpoint_mappings ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.get_all_bank_level_endpoint_mappings ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.o_bpv4_0_0_get_all_bank_level_endpoint_mappings"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.get_all_bank_level_endpoint_mappings"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -330,13 +330,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200Response'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_get_all_bank_level_endpoint_mappings",
+        :operation => :"EndpointMappingApi.get_all_bank_level_endpoint_mappings",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -347,7 +347,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_get_all_bank_level_endpoint_mappings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#get_all_bank_level_endpoint_mappings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -355,19 +355,19 @@ module OpenBankProject
     # Get all Endpoint Mappings
     # <p>Get all Endpoint Mappings.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200Response]
-    def o_bpv4_0_0_get_all_endpoint_mappings(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_endpoint_mappings_with_http_info(opts)
+    # @return [GetAllEndpointMappings200Response]
+    def get_all_endpoint_mappings(opts = {})
+      data, _status_code, _headers = get_all_endpoint_mappings_with_http_info(opts)
       data
     end
 
     # Get all Endpoint Mappings
     # &lt;p&gt;Get all Endpoint Mappings.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200Response, Integer, Hash)>] OBPv400GetAllEndpointMappings200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_endpoint_mappings_with_http_info(opts = {})
+    # @return [Array<(GetAllEndpointMappings200Response, Integer, Hash)>] GetAllEndpointMappings200Response data, response status code and response headers
+    def get_all_endpoint_mappings_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_get_all_endpoint_mappings ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.get_all_endpoint_mappings ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/endpoint-mappings'
@@ -387,13 +387,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200Response'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_get_all_endpoint_mappings",
+        :operation => :"EndpointMappingApi.get_all_endpoint_mappings",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -404,7 +404,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_get_all_endpoint_mappings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#get_all_endpoint_mappings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -414,9 +414,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_get_bank_level_endpoint_mapping(bankid, endpointmappingid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def get_bank_level_endpoint_mapping(bankid, endpointmappingid, opts = {})
+      data, _status_code, _headers = get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts)
       data
     end
 
@@ -425,18 +425,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def get_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_get_bank_level_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.get_bank_level_endpoint_mapping ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.o_bpv4_0_0_get_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.get_bank_level_endpoint_mapping"
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_get_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.get_bank_level_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -456,13 +456,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_get_bank_level_endpoint_mapping",
+        :operation => :"EndpointMappingApi.get_bank_level_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -473,7 +473,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_get_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#get_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -482,9 +482,9 @@ module OpenBankProject
     # <p>Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_get_endpoint_mapping(endpointmappingid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_endpoint_mapping_with_http_info(endpointmappingid, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def get_endpoint_mapping(endpointmappingid, opts = {})
+      data, _status_code, _headers = get_endpoint_mapping_with_http_info(endpointmappingid, opts)
       data
     end
 
@@ -492,14 +492,14 @@ module OpenBankProject
     # &lt;p&gt;Get an Endpoint Mapping by ENDPOINT_MAPPING_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_get_endpoint_mapping_with_http_info(endpointmappingid, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def get_endpoint_mapping_with_http_info(endpointmappingid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_get_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.get_endpoint_mapping ...'
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_get_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.get_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}'.sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -519,13 +519,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_get_endpoint_mapping",
+        :operation => :"EndpointMappingApi.get_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -536,7 +536,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_get_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#get_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -545,11 +545,11 @@ module OpenBankProject
     # <p>Update an Bank Level Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param bankid [String] The BANKID identifier
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_update_bank_level_endpoint_mapping(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def update_bank_level_endpoint_mapping(bankid, endpointmappingid, create_endpoint_mapping_request, opts = {})
+      data, _status_code, _headers = update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, create_endpoint_mapping_request, opts)
       data
     end
 
@@ -557,24 +557,24 @@ module OpenBankProject
     # &lt;p&gt;Update an Bank Level Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, obpv400_create_endpoint_mapping_request, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def update_bank_level_endpoint_mapping_with_http_info(bankid, endpointmappingid, create_endpoint_mapping_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_update_bank_level_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.update_bank_level_endpoint_mapping ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.o_bpv4_0_0_update_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling EndpointMappingApi.update_bank_level_endpoint_mapping"
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_update_bank_level_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.update_bank_level_endpoint_mapping"
       end
-      # verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_endpoint_mapping_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_endpoint_mapping_request' when calling EndpointMappingApi.o_bpv4_0_0_update_bank_level_endpoint_mapping"
+      # verify the required parameter 'create_endpoint_mapping_request' is set
+      if @api_client.config.client_side_validation && create_endpoint_mapping_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_endpoint_mapping_request' when calling EndpointMappingApi.update_bank_level_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/banks/{bankid}/endpoint-mappings/{endpointmappingid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -596,16 +596,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_endpoint_mapping_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_endpoint_mapping_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_update_bank_level_endpoint_mapping",
+        :operation => :"EndpointMappingApi.update_bank_level_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -616,7 +616,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_update_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#update_bank_level_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -624,31 +624,31 @@ module OpenBankProject
     # Update Endpoint Mapping
     # <p>Update an Endpoint Mapping.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ENDPOINT_MAPPING_ID</a>: ENDPOINT_MAPPING_ID</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> 
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems]
-    def o_bpv4_0_0_update_endpoint_mapping(endpointmappingid, obpv400_create_endpoint_mapping_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_endpoint_mapping_with_http_info(endpointmappingid, obpv400_create_endpoint_mapping_request, opts)
+    # @return [GetAllEndpointMappings200ResponseEndpointMappingsInner]
+    def update_endpoint_mapping(endpointmappingid, create_endpoint_mapping_request, opts = {})
+      data, _status_code, _headers = update_endpoint_mapping_with_http_info(endpointmappingid, create_endpoint_mapping_request, opts)
       data
     end
 
     # Update Endpoint Mapping
     # &lt;p&gt;Update an Endpoint Mapping.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;ENDPOINT_MAPPING_ID&lt;/a&gt;: ENDPOINT_MAPPING_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; 
     # @param endpointmappingid [String] The ENDPOINTMAPPINGID identifier
-    # @param obpv400_create_endpoint_mapping_request [OBPv400CreateEndpointMappingRequest] Request body
+    # @param create_endpoint_mapping_request [CreateEndpointMappingRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems, Integer, Hash)>] OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems data, response status code and response headers
-    def o_bpv4_0_0_update_endpoint_mapping_with_http_info(endpointmappingid, obpv400_create_endpoint_mapping_request, opts = {})
+    # @return [Array<(GetAllEndpointMappings200ResponseEndpointMappingsInner, Integer, Hash)>] GetAllEndpointMappings200ResponseEndpointMappingsInner data, response status code and response headers
+    def update_endpoint_mapping_with_http_info(endpointmappingid, create_endpoint_mapping_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.o_bpv4_0_0_update_endpoint_mapping ...'
+        @api_client.config.logger.debug 'Calling API: EndpointMappingApi.update_endpoint_mapping ...'
       end
       # verify the required parameter 'endpointmappingid' is set
       if @api_client.config.client_side_validation && endpointmappingid.nil?
-        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.o_bpv4_0_0_update_endpoint_mapping"
+        fail ArgumentError, "Missing the required parameter 'endpointmappingid' when calling EndpointMappingApi.update_endpoint_mapping"
       end
-      # verify the required parameter 'obpv400_create_endpoint_mapping_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_endpoint_mapping_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_endpoint_mapping_request' when calling EndpointMappingApi.o_bpv4_0_0_update_endpoint_mapping"
+      # verify the required parameter 'create_endpoint_mapping_request' is set
+      if @api_client.config.client_side_validation && create_endpoint_mapping_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_endpoint_mapping_request' when calling EndpointMappingApi.update_endpoint_mapping"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/endpoint-mappings/{endpointmappingid}'.sub('{' + 'endpointmappingid' + '}', CGI.escape(endpointmappingid.to_s))
@@ -670,16 +670,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_endpoint_mapping_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_endpoint_mapping_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllEndpointMappings200ResponsePropertiesEndpointMappingsItems'
+      return_type = opts[:debug_return_type] || 'GetAllEndpointMappings200ResponseEndpointMappingsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"EndpointMappingApi.o_bpv4_0_0_update_endpoint_mapping",
+        :operation => :"EndpointMappingApi.update_endpoint_mapping",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -690,7 +690,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: EndpointMappingApi#o_bpv4_0_0_update_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: EndpointMappingApi#update_endpoint_mapping\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -4,22 +4,22 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv4_0_0_create_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
-[**o_bpv4_0_0_create_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
-[**o_bpv4_0_0_delete_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
-[**o_bpv4_0_0_delete_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
-[**o_bpv4_0_0_delete_my_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
-[**o_bpv4_0_0_get_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
-[**o_bpv4_0_0_get_bank_level_dynamic_endpoints**](DynamicEndpointManageApi.md#o_bpv4_0_0_get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
-[**o_bpv4_0_0_get_dynamic_endpoint**](DynamicEndpointManageApi.md#o_bpv4_0_0_get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
-[**o_bpv4_0_0_get_dynamic_endpoints**](DynamicEndpointManageApi.md#o_bpv4_0_0_get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
-[**o_bpv4_0_0_get_my_dynamic_endpoints**](DynamicEndpointManageApi.md#o_bpv4_0_0_get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
-[**o_bpv4_0_0_update_bank_level_dynamic_endpoint_host**](DynamicEndpointManageApi.md#o_bpv4_0_0_update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
-[**o_bpv4_0_0_update_dynamic_endpoint_host**](DynamicEndpointManageApi.md#o_bpv4_0_0_update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
+[**create_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#create_bank_level_dynamic_endpoint) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Create Bank Level Dynamic Endpoint
+[**create_dynamic_endpoint**](DynamicEndpointManageApi.md#create_dynamic_endpoint) | **POST** /obp/v4.0.0/management/dynamic-endpoints | Create Dynamic Endpoint
+[**delete_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#delete_bank_level_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Delete Bank Level Dynamic Endpoint
+[**delete_dynamic_endpoint**](DynamicEndpointManageApi.md#delete_dynamic_endpoint) | **DELETE** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} |  Delete Dynamic Endpoint
+[**delete_my_dynamic_endpoint**](DynamicEndpointManageApi.md#delete_my_dynamic_endpoint) | **DELETE** /obp/v4.0.0/my/dynamic-endpoints/{dynamicendpointid} | Delete My Dynamic Endpoint
+[**get_bank_level_dynamic_endpoint**](DynamicEndpointManageApi.md#get_bank_level_dynamic_endpoint) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid} |  Get Bank Level Dynamic Endpoint
+[**get_bank_level_dynamic_endpoints**](DynamicEndpointManageApi.md#get_bank_level_dynamic_endpoints) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints | Get Bank Level Dynamic Endpoints
+[**get_dynamic_endpoint**](DynamicEndpointManageApi.md#get_dynamic_endpoint) | **GET** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid} | Get Dynamic Endpoint
+[**get_dynamic_endpoints**](DynamicEndpointManageApi.md#get_dynamic_endpoints) | **GET** /obp/v4.0.0/management/dynamic-endpoints |  Get Dynamic Endpoints
+[**get_my_dynamic_endpoints**](DynamicEndpointManageApi.md#get_my_dynamic_endpoints) | **GET** /obp/v4.0.0/my/dynamic-endpoints | Get My Dynamic Endpoints
+[**update_bank_level_dynamic_endpoint_host**](DynamicEndpointManageApi.md#update_bank_level_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-endpoints/{dynamicendpointid}/host |  Update Bank Level Dynamic Endpoint Host
+[**update_dynamic_endpoint_host**](DynamicEndpointManageApi.md#update_dynamic_endpoint_host) | **PUT** /obp/v4.0.0/management/dynamic-endpoints/{dynamicendpointid}/host |  Update Dynamic Endpoint Host
 
 
-# **o_bpv4_0_0_create_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
+# **create_bank_level_dynamic_endpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner create_bank_level_dynamic_endpoint(bankid, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Bank Level Dynamic Endpoint
 
@@ -40,8 +40,8 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner import GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -75,15 +75,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+    get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {type=object, properties={swagger={type=string}, paths={type=object, properties={/accounts={type=object, properties={post={type=object, properties={responses={type=object, properties={201={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, summary={type=string}, description={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}, /accounts/{account_id}={type=object, properties={get={type=object, properties={description={type=string}, consumes={type=array, items={type=object, properties={s={type=string}}}}, operationId={type=string}, responses={type=object, properties={200={type=object, properties={description={type=string}, schema={type=object, properties={$ref={type=string}}}}}}}, summary={type=string}, produces={type=array, items={type=object, properties={s={type=string}}}}}}}}}}, info={type=object, properties={title={type=string}, version={type=string}}}, definitions={type=object, properties={AccountName={type=object, properties={type={type=string}, properties={type=object, properties={name={type=object, properties={type={type=string}, example={type=string}}}, balance={type=object, properties={type={type=string}, format={type=string}, example={type=number}}}}}}}}}, schemes={type=array, items={type=object, properties={s={type=string}}}}, host={type=string}}} # GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Bank Level Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_bank_level_dynamic_endpoint(bankid, obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_create_bank_level_dynamic_endpoint:\n")
+        api_response = api_instance.create_bank_level_dynamic_endpoint(bankid, get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
+        print("The response of DynamicEndpointManageApi->create_bank_level_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_create_bank_level_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->create_bank_level_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -94,11 +94,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
- **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
+ **get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -119,8 +119,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
+# **create_dynamic_endpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner create_dynamic_endpoint(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
 
 Create Dynamic Endpoint
 
@@ -141,8 +141,8 @@ please check <code>Endpoint Mapping</code> endpoints.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner import GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string import GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -175,15 +175,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
-    obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
+    get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string = {"type":"object","properties":{"swagger":{"type":"string"},"paths":{"type":"object","properties":{"/accounts":{"type":"object","properties":{"post":{"type":"object","properties":{"responses":{"type":"object","properties":{"201":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"summary":{"type":"string"},"description":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}},"/accounts/{account_id}":{"type":"object","properties":{"get":{"type":"object","properties":{"description":{"type":"string"},"consumes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"operationId":{"type":"string"},"responses":{"type":"object","properties":{"200":{"type":"object","properties":{"description":{"type":"string"},"schema":{"type":"object","properties":{"$ref":{"type":"string"}}}}}}},"summary":{"type":"string"},"produces":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}}},"info":{"type":"object","properties":{"title":{"type":"string"},"version":{"type":"string"}}},"definitions":{"type":"object","properties":{"AccountName":{"type":"object","properties":{"type":{"type":"string"},"properties":{"type":"object","properties":{"name":{"type":"object","properties":{"type":{"type":"string"},"example":{"type":"string"}}},"balance":{"type":"object","properties":{"type":{"type":"string"},"format":{"type":"string"},"example":{"type":"number"}}}}}}}}},"schemes":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}},"host":{"type":"string"}}} # GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString | Request body
 
     try:
         # Create Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_create_dynamic_endpoint(obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_create_dynamic_endpoint:\n")
+        api_response = api_instance.create_dynamic_endpoint(get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string)
+        print("The response of DynamicEndpointManageApi->create_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_create_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->create_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -193,11 +193,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
+ **get_dynamic_endpoints200_response_dynamic_endpoints_inner_swagger_string** | [**GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString**](GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -217,8 +217,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_bank_level_dynamic_endpoint**
-> o_bpv4_0_0_delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+# **delete_bank_level_dynamic_endpoint**
+> delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
 
  Delete Bank Level Dynamic Endpoint
 
@@ -271,9 +271,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         #  Delete Bank Level Dynamic Endpoint
-        api_instance.o_bpv4_0_0_delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+        api_instance.delete_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_delete_bank_level_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->delete_bank_level_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -309,8 +309,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_dynamic_endpoint**
-> o_bpv4_0_0_delete_dynamic_endpoint(dynamicendpointid)
+# **delete_dynamic_endpoint**
+> delete_dynamic_endpoint(dynamicendpointid)
 
  Delete Dynamic Endpoint
 
@@ -362,9 +362,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         #  Delete Dynamic Endpoint
-        api_instance.o_bpv4_0_0_delete_dynamic_endpoint(dynamicendpointid)
+        api_instance.delete_dynamic_endpoint(dynamicendpointid)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_delete_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->delete_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -399,8 +399,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_delete_my_dynamic_endpoint**
-> o_bpv4_0_0_delete_my_dynamic_endpoint(dynamicendpointid)
+# **delete_my_dynamic_endpoint**
+> delete_my_dynamic_endpoint(dynamicendpointid)
 
 Delete My Dynamic Endpoint
 
@@ -452,9 +452,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete My Dynamic Endpoint
-        api_instance.o_bpv4_0_0_delete_my_dynamic_endpoint(dynamicendpointid)
+        api_instance.delete_my_dynamic_endpoint(dynamicendpointid)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_delete_my_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->delete_my_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -489,8 +489,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_level_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+# **get_bank_level_dynamic_endpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
 
  Get Bank Level Dynamic Endpoint
 
@@ -506,7 +506,7 @@ void (empty response body)
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner import GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -544,11 +544,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         #  Get Bank Level Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_get_bank_level_dynamic_endpoint:\n")
+        api_response = api_instance.get_bank_level_dynamic_endpoint(bankid, dynamicendpointid)
+        print("The response of DynamicEndpointManageApi->get_bank_level_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_get_bank_level_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->get_bank_level_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -584,8 +584,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_bank_level_dynamic_endpoints**
-> OBPv400GetDynamicEndpoints200Response o_bpv4_0_0_get_bank_level_dynamic_endpoints(bankid)
+# **get_bank_level_dynamic_endpoints**
+> GetDynamicEndpoints200Response get_bank_level_dynamic_endpoints(bankid)
 
 Get Bank Level Dynamic Endpoints
 
@@ -601,7 +601,7 @@ Get Bank Level Dynamic Endpoints
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400GetDynamicEndpoints200Response
+from obp_python.models.get_dynamic_endpoints200_response import GetDynamicEndpoints200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -638,11 +638,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Bank Level Dynamic Endpoints
-        api_response = api_instance.o_bpv4_0_0_get_bank_level_dynamic_endpoints(bankid)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_get_bank_level_dynamic_endpoints:\n")
+        api_response = api_instance.get_bank_level_dynamic_endpoints(bankid)
+        print("The response of DynamicEndpointManageApi->get_bank_level_dynamic_endpoints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_get_bank_level_dynamic_endpoints: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->get_bank_level_dynamic_endpoints: %s\n" % e)
 ```
 
 
@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -677,8 +677,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_dynamic_endpoint**
-> OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
+# **get_dynamic_endpoint**
+> GetDynamicEndpoints200ResponseDynamicEndpointsInner get_dynamic_endpoint(dynamicendpointid)
 
 Get Dynamic Endpoint
 
@@ -695,7 +695,7 @@ Get Dynamic Endpoint
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response_dynamic_endpoints_inner import OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner
+from obp_python.models.get_dynamic_endpoints200_response_dynamic_endpoints_inner import GetDynamicEndpoints200ResponseDynamicEndpointsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -732,11 +732,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Dynamic Endpoint
-        api_response = api_instance.o_bpv4_0_0_get_dynamic_endpoint(dynamicendpointid)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_get_dynamic_endpoint:\n")
+        api_response = api_instance.get_dynamic_endpoint(dynamicendpointid)
+        print("The response of DynamicEndpointManageApi->get_dynamic_endpoint:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_get_dynamic_endpoint: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->get_dynamic_endpoint: %s\n" % e)
 ```
 
 
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner**](OBPv400GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
+[**GetDynamicEndpoints200ResponseDynamicEndpointsInner**](GetDynamicEndpoints200ResponseDynamicEndpointsInner.md)
 
 ### Authorization
 
@@ -771,8 +771,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_dynamic_endpoints**
-> OBPv400GetDynamicEndpoints200Response o_bpv4_0_0_get_dynamic_endpoints()
+# **get_dynamic_endpoints**
+> GetDynamicEndpoints200Response get_dynamic_endpoints()
 
  Get Dynamic Endpoints
 
@@ -788,7 +788,7 @@ Name | Type | Description  | Notes
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400GetDynamicEndpoints200Response
+from obp_python.models.get_dynamic_endpoints200_response import GetDynamicEndpoints200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -824,11 +824,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         #  Get Dynamic Endpoints
-        api_response = api_instance.o_bpv4_0_0_get_dynamic_endpoints()
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_get_dynamic_endpoints:\n")
+        api_response = api_instance.get_dynamic_endpoints()
+        print("The response of DynamicEndpointManageApi->get_dynamic_endpoints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_get_dynamic_endpoints: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->get_dynamic_endpoints: %s\n" % e)
 ```
 
 
@@ -839,7 +839,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -859,8 +859,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_my_dynamic_endpoints**
-> OBPv400GetDynamicEndpoints200Response o_bpv4_0_0_get_my_dynamic_endpoints()
+# **get_my_dynamic_endpoints**
+> GetDynamicEndpoints200Response get_my_dynamic_endpoints()
 
 Get My Dynamic Endpoints
 
@@ -876,7 +876,7 @@ Get My Dynamic Endpoints
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_dynamic_endpoints200_response import OBPv400GetDynamicEndpoints200Response
+from obp_python.models.get_dynamic_endpoints200_response import GetDynamicEndpoints200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -912,11 +912,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get My Dynamic Endpoints
-        api_response = api_instance.o_bpv4_0_0_get_my_dynamic_endpoints()
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_get_my_dynamic_endpoints:\n")
+        api_response = api_instance.get_my_dynamic_endpoints()
+        print("The response of DynamicEndpointManageApi->get_my_dynamic_endpoints:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_get_my_dynamic_endpoints: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->get_my_dynamic_endpoints: %s\n" % e)
 ```
 
 
@@ -927,7 +927,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicEndpoints200Response**](OBPv400GetDynamicEndpoints200Response.md)
+[**GetDynamicEndpoints200Response**](GetDynamicEndpoints200Response.md)
 
 ### Authorization
 
@@ -947,8 +947,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_bank_level_dynamic_endpoint_host**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request)
+# **update_bank_level_dynamic_endpoint_host**
+> UpdateBankLevelDynamicEndpointHostRequest update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, update_bank_level_dynamic_endpoint_host_request)
 
  Update Bank Level Dynamic Endpoint Host
 
@@ -965,7 +965,7 @@ The value can be obp_mock, dynamic_entity, or some service url.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request import OBPv400UpdateBankLevelDynamicEndpointHostRequest
+from obp_python.models.update_bank_level_dynamic_endpoint_host_request import UpdateBankLevelDynamicEndpointHostRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1000,15 +1000,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
     bankid = 'bankid_example' # str | The BANKID identifier
     dynamicendpointid = 'dynamicendpointid_example' # str | The DYNAMICENDPOINTID identifier
-    obpv400_update_bank_level_dynamic_endpoint_host_request = {"type":"object","properties":{"host":{"type":"string"}}} # OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+    update_bank_level_dynamic_endpoint_host_request = {"type":"object","properties":{"host":{"type":"string"}}} # UpdateBankLevelDynamicEndpointHostRequest | Request body
 
     try:
         #  Update Bank Level Dynamic Endpoint Host
-        api_response = api_instance.o_bpv4_0_0_update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_update_bank_level_dynamic_endpoint_host:\n")
+        api_response = api_instance.update_bank_level_dynamic_endpoint_host(bankid, dynamicendpointid, update_bank_level_dynamic_endpoint_host_request)
+        print("The response of DynamicEndpointManageApi->update_bank_level_dynamic_endpoint_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_update_bank_level_dynamic_endpoint_host: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->update_bank_level_dynamic_endpoint_host: %s\n" % e)
 ```
 
 
@@ -1020,11 +1020,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **str**| The BANKID identifier | 
  **dynamicendpointid** | **str**| The DYNAMICENDPOINTID identifier | 
- **obpv400_update_bank_level_dynamic_endpoint_host_request** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | 
+ **update_bank_level_dynamic_endpoint_host_request** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 
@@ -1045,8 +1045,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_update_dynamic_endpoint_host**
-> OBPv400UpdateBankLevelDynamicEndpointHostRequest o_bpv4_0_0_update_dynamic_endpoint_host(dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request)
+# **update_dynamic_endpoint_host**
+> UpdateBankLevelDynamicEndpointHostRequest update_dynamic_endpoint_host(dynamicendpointid, update_bank_level_dynamic_endpoint_host_request)
 
  Update Dynamic Endpoint Host
 
@@ -1063,7 +1063,7 @@ The value can be obp_mock, dynamic_entity, or some service url.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_update_bank_level_dynamic_endpoint_host_request import OBPv400UpdateBankLevelDynamicEndpointHostRequest
+from obp_python.models.update_bank_level_dynamic_endpoint_host_request import UpdateBankLevelDynamicEndpointHostRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1097,15 +1097,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DynamicEndpointManageApi(api_client)
     dynamicendpointid = 'dynamicendpointid_example' # str | The DYNAMICENDPOINTID identifier
-    obpv400_update_bank_level_dynamic_endpoint_host_request = {type=object, properties={host={type=string}}} # OBPv400UpdateBankLevelDynamicEndpointHostRequest | Request body
+    update_bank_level_dynamic_endpoint_host_request = {type=object, properties={host={type=string}}} # UpdateBankLevelDynamicEndpointHostRequest | Request body
 
     try:
         #  Update Dynamic Endpoint Host
-        api_response = api_instance.o_bpv4_0_0_update_dynamic_endpoint_host(dynamicendpointid, obpv400_update_bank_level_dynamic_endpoint_host_request)
-        print("The response of DynamicEndpointManageApi->o_bpv4_0_0_update_dynamic_endpoint_host:\n")
+        api_response = api_instance.update_dynamic_endpoint_host(dynamicendpointid, update_bank_level_dynamic_endpoint_host_request)
+        print("The response of DynamicEndpointManageApi->update_dynamic_endpoint_host:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DynamicEndpointManageApi->o_bpv4_0_0_update_dynamic_endpoint_host: %s\n" % e)
+        print("Exception when calling DynamicEndpointManageApi->update_dynamic_endpoint_host: %s\n" % e)
 ```
 
 
@@ -1116,11 +1116,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dynamicendpointid** | **str**| The DYNAMICENDPOINTID identifier | 
- **obpv400_update_bank_level_dynamic_endpoint_host_request** | [**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | 
+ **update_bank_level_dynamic_endpoint_host_request** | [**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400UpdateBankLevelDynamicEndpointHostRequest**](OBPv400UpdateBankLevelDynamicEndpointHostRequest.md)
+[**UpdateBankLevelDynamicEndpointHostRequest**](UpdateBankLevelDynamicEndpointHostRequest.md)
 
 ### Authorization
 

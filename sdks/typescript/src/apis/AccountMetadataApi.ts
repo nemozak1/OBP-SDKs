@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,34 +15,34 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400DeleteSystemLevelEndpointTag200Response,
-  OBPv400GetTagsForViewOnAccount200Response,
-  OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems,
+  GetTagsForViewOnAccount200Response,
+  GetTagsForViewOnAccount200ResponseTagsInner,
+  GetTransactionTypes200ResponseTransactionTypesInnerId,
 } from '../models/index';
 import {
-    OBPv400DeleteSystemLevelEndpointTag200ResponseFromJSON,
-    OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON,
-    OBPv400GetTagsForViewOnAccount200ResponseFromJSON,
-    OBPv400GetTagsForViewOnAccount200ResponseToJSON,
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON,
-    OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsToJSON,
+    GetTagsForViewOnAccount200ResponseFromJSON,
+    GetTagsForViewOnAccount200ResponseToJSON,
+    GetTagsForViewOnAccount200ResponseTagsInnerFromJSON,
+    GetTagsForViewOnAccount200ResponseTagsInnerToJSON,
+    GetTransactionTypes200ResponseTransactionTypesInnerIdFromJSON,
+    GetTransactionTypes200ResponseTransactionTypesInnerIdToJSON,
 } from '../models/index';
 
-export interface OBPv400AddTagForViewOnAccountRequest {
+export interface AddTagForViewOnAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
-    oBPv400DeleteSystemLevelEndpointTag200Response: OBPv400DeleteSystemLevelEndpointTag200Response;
+    getTransactionTypes200ResponseTransactionTypesInnerId: GetTransactionTypes200ResponseTransactionTypesInnerId;
 }
 
-export interface OBPv400DeleteTagForViewOnAccountRequest {
+export interface DeleteTagForViewOnAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
     tagid: string;
 }
 
-export interface OBPv400GetTagsForViewOnAccountRequest {
+export interface GetTagsForViewOnAccountRequest {
     bankid: string;
     accountid: string;
     viewid: string;
@@ -54,34 +54,34 @@ export interface OBPv400GetTagsForViewOnAccountRequest {
 export class AccountMetadataApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv400AddTagForViewOnAccount without sending the request
+     * Creates request options for addTagForViewOnAccount without sending the request
      */
-    async oBPv400AddTagForViewOnAccountRequestOpts(requestParameters: OBPv400AddTagForViewOnAccountRequest): Promise<runtime.RequestOpts> {
+    async addTagForViewOnAccountRequestOpts(requestParameters: AddTagForViewOnAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400AddTagForViewOnAccount().'
+                'Required parameter "bankid" was null or undefined when calling addTagForViewOnAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400AddTagForViewOnAccount().'
+                'Required parameter "accountid" was null or undefined when calling addTagForViewOnAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400AddTagForViewOnAccount().'
+                'Required parameter "viewid" was null or undefined when calling addTagForViewOnAccount().'
             );
         }
 
-        if (requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response'] == null) {
+        if (requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId'] == null) {
             throw new runtime.RequiredError(
-                'oBPv400DeleteSystemLevelEndpointTag200Response',
-                'Required parameter "oBPv400DeleteSystemLevelEndpointTag200Response" was null or undefined when calling oBPv400AddTagForViewOnAccount().'
+                'getTransactionTypes200ResponseTransactionTypesInnerId',
+                'Required parameter "getTransactionTypes200ResponseTransactionTypesInnerId" was null or undefined when calling addTagForViewOnAccount().'
             );
         }
 
@@ -101,7 +101,7 @@ export class AccountMetadataApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -115,7 +115,7 @@ export class AccountMetadataApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv400DeleteSystemLevelEndpointTag200ResponseToJSON(requestParameters['oBPv400DeleteSystemLevelEndpointTag200Response']),
+            body: GetTransactionTypes200ResponseTransactionTypesInnerIdToJSON(requestParameters['getTransactionTypes200ResponseTransactionTypesInnerId']),
         };
     }
 
@@ -123,51 +123,51 @@ export class AccountMetadataApi extends runtime.BaseAPI {
      * <p>Posts a tag about an account ACCOUNT_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create a tag on account
      */
-    async oBPv400AddTagForViewOnAccountRaw(requestParameters: OBPv400AddTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems>> {
-        const requestOptions = await this.oBPv400AddTagForViewOnAccountRequestOpts(requestParameters);
+    async addTagForViewOnAccountRaw(requestParameters: AddTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTagsForViewOnAccount200ResponseTagsInner>> {
+        const requestOptions = await this.addTagForViewOnAccountRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTagsForViewOnAccount200ResponseTagsInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Posts a tag about an account ACCOUNT_ID on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> VIEW_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Create a tag on account
      */
-    async oBPv400AddTagForViewOnAccount(requestParameters: OBPv400AddTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems> {
-        const response = await this.oBPv400AddTagForViewOnAccountRaw(requestParameters, initOverrides);
+    async addTagForViewOnAccount(requestParameters: AddTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTagsForViewOnAccount200ResponseTagsInner> {
+        const response = await this.addTagForViewOnAccountRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400DeleteTagForViewOnAccount without sending the request
+     * Creates request options for deleteTagForViewOnAccount without sending the request
      */
-    async oBPv400DeleteTagForViewOnAccountRequestOpts(requestParameters: OBPv400DeleteTagForViewOnAccountRequest): Promise<runtime.RequestOpts> {
+    async deleteTagForViewOnAccountRequestOpts(requestParameters: DeleteTagForViewOnAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400DeleteTagForViewOnAccount().'
+                'Required parameter "bankid" was null or undefined when calling deleteTagForViewOnAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400DeleteTagForViewOnAccount().'
+                'Required parameter "accountid" was null or undefined when calling deleteTagForViewOnAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400DeleteTagForViewOnAccount().'
+                'Required parameter "viewid" was null or undefined when calling deleteTagForViewOnAccount().'
             );
         }
 
         if (requestParameters['tagid'] == null) {
             throw new runtime.RequiredError(
                 'tagid',
-                'Required parameter "tagid" was null or undefined when calling oBPv400DeleteTagForViewOnAccount().'
+                'Required parameter "tagid" was null or undefined when calling deleteTagForViewOnAccount().'
             );
         }
 
@@ -185,7 +185,7 @@ export class AccountMetadataApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -207,8 +207,8 @@ export class AccountMetadataApi extends runtime.BaseAPI {
      * <p>Deletes the tag TAG_ID about the account ACCOUNT_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a tag on account
      */
-    async oBPv400DeleteTagForViewOnAccountRaw(requestParameters: OBPv400DeleteTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv400DeleteTagForViewOnAccountRequestOpts(requestParameters);
+    async deleteTagForViewOnAccountRaw(requestParameters: DeleteTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteTagForViewOnAccountRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -218,32 +218,32 @@ export class AccountMetadataApi extends runtime.BaseAPI {
      * <p>Deletes the tag TAG_ID about the account ACCOUNT_ID made on <a href=\"#1_2_1-getViewsForBankAccount\">view</a>.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#tag_id\">TAG_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> 
      * Delete a tag on account
      */
-    async oBPv400DeleteTagForViewOnAccount(requestParameters: OBPv400DeleteTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv400DeleteTagForViewOnAccountRaw(requestParameters, initOverrides);
+    async deleteTagForViewOnAccount(requestParameters: DeleteTagForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTagForViewOnAccountRaw(requestParameters, initOverrides);
     }
 
     /**
-     * Creates request options for oBPv400GetTagsForViewOnAccount without sending the request
+     * Creates request options for getTagsForViewOnAccount without sending the request
      */
-    async oBPv400GetTagsForViewOnAccountRequestOpts(requestParameters: OBPv400GetTagsForViewOnAccountRequest): Promise<runtime.RequestOpts> {
+    async getTagsForViewOnAccountRequestOpts(requestParameters: GetTagsForViewOnAccountRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv400GetTagsForViewOnAccount().'
+                'Required parameter "bankid" was null or undefined when calling getTagsForViewOnAccount().'
             );
         }
 
         if (requestParameters['accountid'] == null) {
             throw new runtime.RequiredError(
                 'accountid',
-                'Required parameter "accountid" was null or undefined when calling oBPv400GetTagsForViewOnAccount().'
+                'Required parameter "accountid" was null or undefined when calling getTagsForViewOnAccount().'
             );
         }
 
         if (requestParameters['viewid'] == null) {
             throw new runtime.RequiredError(
                 'viewid',
-                'Required parameter "viewid" was null or undefined when calling oBPv400GetTagsForViewOnAccount().'
+                'Required parameter "viewid" was null or undefined when calling getTagsForViewOnAccount().'
             );
         }
 
@@ -261,7 +261,7 @@ export class AccountMetadataApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -282,19 +282,19 @@ export class AccountMetadataApi extends runtime.BaseAPI {
      * <p>Returns the account ACCOUNT_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get tags on account
      */
-    async oBPv400GetTagsForViewOnAccountRaw(requestParameters: OBPv400GetTagsForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetTagsForViewOnAccount200Response>> {
-        const requestOptions = await this.oBPv400GetTagsForViewOnAccountRequestOpts(requestParameters);
+    async getTagsForViewOnAccountRaw(requestParameters: GetTagsForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetTagsForViewOnAccount200Response>> {
+        const requestOptions = await this.getTagsForViewOnAccountRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetTagsForViewOnAccount200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetTagsForViewOnAccount200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Returns the account ACCOUNT_ID tags made on a <a href=\"#1_2_1-getViewsForBankAccount\">view</a> (VIEW_ID).<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p>Authentication is required as the tag is linked with the user.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
      * Get tags on account
      */
-    async oBPv400GetTagsForViewOnAccount(requestParameters: OBPv400GetTagsForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetTagsForViewOnAccount200Response> {
-        const response = await this.oBPv400GetTagsForViewOnAccountRaw(requestParameters, initOverrides);
+    async getTagsForViewOnAccount(requestParameters: GetTagsForViewOnAccountRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetTagsForViewOnAccount200Response> {
+        const response = await this.getTagsForViewOnAccountRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -4,42 +4,42 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_2_1_add_comment_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-[**o_bpv1_2_1_add_image_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-[**o_bpv1_2_1_add_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-[**o_bpv1_2_1_add_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-[**o_bpv1_2_1_add_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-[**o_bpv1_2_1_delete_comment_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-[**o_bpv1_2_1_delete_image_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-[**o_bpv1_2_1_delete_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-[**o_bpv1_2_1_delete_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-[**o_bpv1_2_1_delete_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-[**o_bpv1_2_1_get_comments_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-[**o_bpv1_2_1_get_images_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-[**o_bpv1_2_1_get_other_account_for_transaction**](TransactionApi.md#o_bpv1_2_1_get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
-[**o_bpv1_2_1_get_tags_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-[**o_bpv1_2_1_get_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-[**o_bpv1_2_1_get_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-[**o_bpv1_2_1_update_transaction_narrative**](TransactionApi.md#o_bpv1_2_1_update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-[**o_bpv1_2_1_update_where_tag_for_view_on_transaction**](TransactionApi.md#o_bpv1_2_1_update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
-[**o_bpv3_0_0_get_core_transactions_for_bank_account**](TransactionApi.md#o_bpv3_0_0_get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
-[**o_bpv3_0_0_get_firehose_transactions_for_bank_account**](TransactionApi.md#o_bpv3_0_0_get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
-[**o_bpv3_1_0_get_transaction_by_id_for_bank_account**](TransactionApi.md#o_bpv3_1_0_get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
-[**o_bpv4_0_0_create_or_update_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
-[**o_bpv4_0_0_create_transaction_attribute**](TransactionApi.md#o_bpv4_0_0_create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
-[**o_bpv4_0_0_delete_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
-[**o_bpv4_0_0_delete_transaction_cascade**](TransactionApi.md#o_bpv4_0_0_delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
-[**o_bpv4_0_0_get_balancing_transaction**](TransactionApi.md#o_bpv4_0_0_get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
-[**o_bpv4_0_0_get_double_entry_transaction**](TransactionApi.md#o_bpv4_0_0_get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
-[**o_bpv4_0_0_get_transaction_attribute_by_id**](TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
-[**o_bpv4_0_0_get_transaction_attribute_definition**](TransactionApi.md#o_bpv4_0_0_get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
-[**o_bpv4_0_0_get_transaction_attributes**](TransactionApi.md#o_bpv4_0_0_get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
-[**o_bpv4_0_0_update_transaction_attribute**](TransactionApi.md#o_bpv4_0_0_update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
-[**o_bpv6_0_0_get_transactions_for_bank_account**](TransactionApi.md#o_bpv6_0_0_get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+[**add_comment_for_view_on_transaction**](TransactionApi.md#add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+[**add_image_for_view_on_transaction**](TransactionApi.md#add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+[**add_tag_for_view_on_transaction**](TransactionApi.md#add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+[**add_transaction_narrative**](TransactionApi.md#add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+[**add_where_tag_for_view_on_transaction**](TransactionApi.md#add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+[**create_or_update_transaction_attribute_definition**](TransactionApi.md#create_or_update_transaction_attribute_definition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Create or Update Transaction Attribute Definition
+[**create_transaction_attribute**](TransactionApi.md#create_transaction_attribute) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute | Create Transaction Attribute
+[**delete_comment_for_view_on_transaction**](TransactionApi.md#delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+[**delete_image_for_view_on_transaction**](TransactionApi.md#delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+[**delete_tag_for_view_on_transaction**](TransactionApi.md#delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+[**delete_transaction_attribute_definition**](TransactionApi.md#delete_transaction_attribute_definition) | **DELETE** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction | Delete Transaction Attribute Definition
+[**delete_transaction_cascade**](TransactionApi.md#delete_transaction_cascade) | **DELETE** /obp/v4.0.0/management/cascading/banks/{bankid}/accounts/{accountid}/transactions/{transactionid} | Delete Transaction Cascade
+[**delete_transaction_narrative**](TransactionApi.md#delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+[**delete_where_tag_for_view_on_transaction**](TransactionApi.md#delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+[**get_balancing_transaction**](TransactionApi.md#get_balancing_transaction) | **GET** /obp/v4.0.0/transactions/{transactionid}/balancing-transaction | Get Balancing Transaction
+[**get_comments_for_view_on_transaction**](TransactionApi.md#get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+[**get_core_transactions_for_bank_account**](TransactionApi.md#get_core_transactions_for_bank_account) | **GET** /obp/v3.0.0/my/banks/{bankid}/accounts/{accountid}/transactions | Get Transactions for Account (Core)
+[**get_double_entry_transaction**](TransactionApi.md#get_double_entry_transaction) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/double-entry-transaction | Get Double Entry Transaction
+[**get_firehose_transactions_for_bank_account**](TransactionApi.md#get_firehose_transactions_for_bank_account) | **GET** /obp/v3.0.0/banks/{bankid}/firehose/accounts/{accountid}/views/{viewid}/transactions | Get Firehose Transactions for Account
+[**get_images_for_view_on_transaction**](TransactionApi.md#get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+[**get_other_account_for_transaction**](TransactionApi.md#get_other_account_for_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/other_account | Get Other Account of Transaction
+[**get_tags_for_view_on_transaction**](TransactionApi.md#get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+[**get_transaction_attribute_by_id**](TransactionApi.md#get_transaction_attribute_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid} | Get Transaction Attribute By Id
+[**get_transaction_attribute_definition**](TransactionApi.md#get_transaction_attribute_definition) | **GET** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction | Get Transaction Attribute Definition
+[**get_transaction_attributes**](TransactionApi.md#get_transaction_attributes) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes | Get Transaction Attributes
+[**get_transaction_by_id_for_bank_account**](TransactionApi.md#get_transaction_by_id_for_bank_account) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/transaction | Get Transaction by Id
+[**get_transaction_narrative**](TransactionApi.md#get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+[**get_transactions_for_bank_account**](TransactionApi.md#get_transactions_for_bank_account) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transactions | Get Transactions for Account (Full)
+[**get_where_tag_for_view_on_transaction**](TransactionApi.md#get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+[**update_transaction_attribute**](TransactionApi.md#update_transaction_attribute) | **PUT** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid} | Update Transaction Attribute
+[**update_transaction_narrative**](TransactionApi.md#update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+[**update_where_tag_for_view_on_transaction**](TransactionApi.md#update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
 
 
-# **o_bpv1_2_1_add_comment_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+# **add_comment_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Comment
 
@@ -71,8 +71,8 @@ Add a Transaction Comment
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -109,15 +109,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Comment
-        api_response = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of TransactionApi->o_bpv1_2_1_add_comment_for_view_on_transaction:\n")
+        api_response = api_instance.add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of TransactionApi->add_comment_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_add_comment_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->add_comment_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -131,11 +131,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -156,8 +156,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_image_for_view_on_transaction**
-> OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+# **add_image_for_view_on_transaction**
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
 
 Add a Transaction Image
 
@@ -190,8 +190,8 @@ Add a Transaction Image
 
 ```python
 import obp_python
-from obp_python.models.obpv121_add_image_for_view_on_transaction_request import OBPv121AddImageForViewOnTransactionRequest
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata_images_inner import OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+from obp_python.models.add_image_for_view_on_transaction_request import AddImageForViewOnTransactionRequest
+from obp_python.models.get_transaction_by_id_for_bank_account200_response_metadata_images_inner import GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -228,15 +228,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} # OBPv121AddImageForViewOnTransactionRequest | Request body
+    add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} # AddImageForViewOnTransactionRequest | Request body
 
     try:
         # Add a Transaction Image
-        api_response = api_instance.o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
-        print("The response of TransactionApi->o_bpv1_2_1_add_image_for_view_on_transaction:\n")
+        api_response = api_instance.add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
+        print("The response of TransactionApi->add_image_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_add_image_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->add_image_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -250,11 +250,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_add_image_for_view_on_transaction_request** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md)| Request body | 
+ **add_image_for_view_on_transaction_request** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -275,8 +275,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_tag_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+# **add_tag_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Tag
 
@@ -307,8 +307,8 @@ Add a Transaction Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -345,15 +345,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Tag
-        api_response = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of TransactionApi->o_bpv1_2_1_add_tag_for_view_on_transaction:\n")
+        api_response = api_instance.add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of TransactionApi->add_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_add_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->add_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -367,11 +367,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -392,8 +392,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_transaction_narrative**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+# **add_transaction_narrative**
+> UpdateTransactionNarrative200Response add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
 Add a Transaction Narrative
 
@@ -421,8 +421,8 @@ Authentication is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -459,15 +459,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}} # OBPv121GetTransactionNarrative200Response | Request body
+    get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}} # GetTransactionNarrative200Response | Request body
 
     try:
         # Add a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-        print("The response of TransactionApi->o_bpv1_2_1_add_transaction_narrative:\n")
+        api_response = api_instance.add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+        print("The response of TransactionApi->add_transaction_narrative:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_add_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionApi->add_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -481,11 +481,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | 
+ **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -506,8 +506,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_where_tag_for_view_on_transaction**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+# **add_where_tag_for_view_on_transaction**
+> UpdateTransactionNarrative200Response add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 Add a Transaction where Tag
 
@@ -535,8 +535,8 @@ Add a Transaction where Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.models.update_where_tag_for_view_on_transaction_request import UpdateWhereTagForViewOnTransactionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -573,15 +573,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+    update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # UpdateWhereTagForViewOnTransactionRequest | Request body
 
     try:
         # Add a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-        print("The response of TransactionApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction:\n")
+        api_response = api_instance.add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+        print("The response of TransactionApi->add_where_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->add_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -595,11 +595,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
+ **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -620,8 +620,232 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_comment_for_view_on_transaction**
-> o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+# **create_or_update_transaction_attribute_definition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+
+Create or Update Transaction Attribute Definition
+
+<p>Create or Update Transaction Attribute Definition</p>
+<p>The category field must be Transaction</p>
+<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_or_update_transaction_request_attribute_definition_request import CreateOrUpdateTransactionRequestAttributeDefinitionRequest
+from obp_python.models.get_transaction_request_attribute_definition200_response_attributes_inner import GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+
+    try:
+        # Create or Update Transaction Attribute Definition
+        api_response = api_instance.create_or_update_transaction_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request)
+        print("The response of TransactionApi->create_or_update_transaction_attribute_definition:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->create_or_update_transaction_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **create_or_update_transaction_request_attribute_definition_request** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_transaction_attribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
+
+Create Transaction Attribute
+
+<p>Create Transaction Attribute</p>
+<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
+
+    try:
+        # Create Transaction Attribute
+        api_response = api_instance.create_transaction_attribute(bankid, accountid, transactionid, create_personal_data_field_request)
+        print("The response of TransactionApi->create_transaction_attribute:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->create_transaction_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_comment_for_view_on_transaction**
+> delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -685,9 +909,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Comment
-        api_instance.o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+        api_instance.delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_delete_comment_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->delete_comment_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -726,8 +950,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_image_for_view_on_transaction**
-> o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+# **delete_image_for_view_on_transaction**
+> delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -791,9 +1015,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Image
-        api_instance.o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+        api_instance.delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_delete_image_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->delete_image_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -832,8 +1056,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_tag_for_view_on_transaction**
-> o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+# **delete_tag_for_view_on_transaction**
+> delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -877,9 +1101,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Tag
-        api_instance.o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+        api_instance.delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_delete_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->delete_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -918,8 +1142,203 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_transaction_narrative**
-> o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+# **delete_transaction_attribute_definition**
+> delete_transaction_attribute_definition(bankid, attributedefinitionid)
+
+Delete Transaction Attribute Definition
+
+<p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    attributedefinitionid = 'attributedefinitionid_example' # str | The ATTRIBUTEDEFINITIONID identifier
+
+    try:
+        # Delete Transaction Attribute Definition
+        api_instance.delete_transaction_attribute_definition(bankid, attributedefinitionid)
+    except Exception as e:
+        print("Exception when calling TransactionApi->delete_transaction_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **attributedefinitionid** | **str**| The ATTRIBUTEDEFINITIONID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_transaction_cascade**
+> delete_transaction_cascade(bankid, accountid, transactionid)
+
+Delete Transaction Cascade
+
+<p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Delete Transaction Cascade
+        api_instance.delete_transaction_cascade(bankid, accountid, transactionid)
+    except Exception as e:
+        print("Exception when calling TransactionApi->delete_transaction_cascade: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_transaction_narrative**
+> delete_transaction_narrative(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -981,9 +1400,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Narrative
-        api_instance.o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+        api_instance.delete_transaction_narrative(bankid, accountid, viewid, transactionid)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_delete_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionApi->delete_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -1021,8 +1440,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_where_tag_for_view_on_transaction**
-> o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **delete_where_tag_for_view_on_transaction**
+> delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -1084,9 +1503,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Tag
-        api_instance.o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        api_instance.delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_delete_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->delete_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1124,8 +1543,110 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_comments_for_view_on_transaction**
-> OBPv121GetCommentsForViewOnTransaction200Response o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **get_balancing_transaction**
+> GetDoubleEntryTransaction200Response get_balancing_transaction(transactionid)
+
+Get Balancing Transaction
+
+<p>Get Balancing Transaction</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
+<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
+<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_double_entry_transaction200_response import GetDoubleEntryTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Balancing Transaction
+        api_response = api_instance.get_balancing_transaction(transactionid)
+        print("The response of TransactionApi->get_balancing_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_balancing_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetDoubleEntryTransaction200Response**](GetDoubleEntryTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_comments_for_view_on_transaction**
+> GetCommentsForViewOnTransaction200Response get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -1155,7 +1676,7 @@ Get Transaction Comments
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_comments_for_view_on_transaction200_response import OBPv121GetCommentsForViewOnTransaction200Response
+from obp_python.models.get_comments_for_view_on_transaction200_response import GetCommentsForViewOnTransaction200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1195,11 +1716,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Comments
-        api_response = api_instance.o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_comments_for_view_on_transaction:\n")
+        api_response = api_instance.get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_comments_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_comments_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->get_comments_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1216,7 +1737,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1237,703 +1758,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_images_for_view_on_transaction**
-> OBPv121GetImagesForViewOnTransaction200Response o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get Transaction Images
-
-<p>Returns the transaction TRANSACTION_ID images made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
-Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#images"><strong>images</strong></a>:</p>
-<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_images_for_view_on_transaction200_response import OBPv121GetImagesForViewOnTransaction200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get Transaction Images
-        api_response = api_instance.o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_images_for_view_on_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_images_for_view_on_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_get_other_account_for_transaction**
-> OBPv121GetOtherAccountForTransaction200Response o_bpv1_2_1_get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
-
-Get Other Account of Transaction
-
-<p>Get other account of a transaction.<br />
-Returns details of the other party involved in the transaction, moderated by the <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
-Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p>
-<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#Bank"><strong>bank</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
-<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
-<p><a href="/glossary#kind"><strong>kind</strong></a>:</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#national_identifier"><strong>national_identifier</strong></a>:</p>
-<p><a href="/glossary#number"><strong>number</strong></a>:</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#swift_bic"><strong>swift_bic</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_other_account_for_transaction200_response import OBPv121GetOtherAccountForTransaction200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get Other Account of Transaction
-        api_response = api_instance.o_bpv1_2_1_get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_other_account_for_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_other_account_for_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv121GetOtherAccountForTransaction200Response**](OBPv121GetOtherAccountForTransaction200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_get_tags_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get Transaction Tags
-
-<p>Returns the transaction TRANSACTION_ID tags made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
-Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get Transaction Tags
-        api_response = api_instance.o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_tags_for_view_on_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_tags_for_view_on_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_get_transaction_narrative**
-> OBPv121GetTransactionNarrative200Response o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
-
-Get a Transaction Narrative
-
-<p>Returns the account owner description of the transaction <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_transaction_narrative:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_transaction_narrative: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_get_where_tag_for_view_on_transaction**
-> OBPv121GetWhereTagForViewOnTransaction200Response o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-
-Get a Transaction where Tag
-
-<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
-It represents the location where the transaction has been initiated.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#where"><strong>where</strong></a>:</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_where_tag_for_view_on_transaction200_response import OBPv121GetWhereTagForViewOnTransaction200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_transaction_narrative**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-
-Update a Transaction Narrative
-
-<p>Updates the description of the transaction TRANSACTION_ID.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}} # OBPv121GetTransactionNarrative200Response | Request body
-
-    try:
-        # Update a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-        print("The response of TransactionApi->o_bpv1_2_1_update_transaction_narrative:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_update_transaction_narrative: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_where_tag_for_view_on_transaction**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-
-Update a Transaction where Tag
-
-<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>The geo tag is linked with the user.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
-
-    try:
-        # Update a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-        print("The response of TransactionApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv3_0_0_get_core_transactions_for_bank_account**
-> OBPv300GetCoreTransactionsForBankAccount200Response o_bpv3_0_0_get_core_transactions_for_bank_account(bankid, accountid)
+# **get_core_transactions_for_bank_account**
+> GetCoreTransactionsForBankAccount200Response get_core_transactions_for_bank_account(bankid, accountid)
 
 Get Transactions for Account (Core)
 
@@ -1992,7 +1818,7 @@ Get Transactions for Account (Core)
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response import OBPv300GetCoreTransactionsForBankAccount200Response
+from obp_python.models.get_core_transactions_for_bank_account200_response import GetCoreTransactionsForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2030,11 +1856,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transactions for Account (Core)
-        api_response = api_instance.o_bpv3_0_0_get_core_transactions_for_bank_account(bankid, accountid)
-        print("The response of TransactionApi->o_bpv3_0_0_get_core_transactions_for_bank_account:\n")
+        api_response = api_instance.get_core_transactions_for_bank_account(bankid, accountid)
+        print("The response of TransactionApi->get_core_transactions_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv3_0_0_get_core_transactions_for_bank_account: %s\n" % e)
+        print("Exception when calling TransactionApi->get_core_transactions_for_bank_account: %s\n" % e)
 ```
 
 
@@ -2049,7 +1875,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetCoreTransactionsForBankAccount200Response**](OBPv300GetCoreTransactionsForBankAccount200Response.md)
+[**GetCoreTransactionsForBankAccount200Response**](GetCoreTransactionsForBankAccount200Response.md)
 
 ### Authorization
 
@@ -2070,8 +1896,125 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_get_firehose_transactions_for_bank_account**
-> OBPv300GetFirehoseTransactionsForBankAccount200Response o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+# **get_double_entry_transaction**
+> GetDoubleEntryTransaction200Response get_double_entry_transaction(bankid, accountid, viewid, transactionid)
+
+Get Double Entry Transaction
+
+<p>Get Double Entry Transaction</p>
+<p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br />
+for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p>
+<p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br />
+<code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br />
+transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
+<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
+<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
+<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_double_entry_transaction200_response import GetDoubleEntryTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Double Entry Transaction
+        api_response = api_instance.get_double_entry_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_double_entry_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_double_entry_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetDoubleEntryTransaction200Response**](GetDoubleEntryTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_firehose_transactions_for_bank_account**
+> GetFirehoseTransactionsForBankAccount200Response get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
 
 Get Firehose Transactions for Account
 
@@ -2156,7 +2099,7 @@ User must have the CanUseFirehoseAtAnyBank Role</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv300_get_firehose_transactions_for_bank_account200_response import OBPv300GetFirehoseTransactionsForBankAccount200Response
+from obp_python.models.get_firehose_transactions_for_bank_account200_response import GetFirehoseTransactionsForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2195,11 +2138,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Firehose Transactions for Account
-        api_response = api_instance.o_bpv3_0_0_get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
-        print("The response of TransactionApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account:\n")
+        api_response = api_instance.get_firehose_transactions_for_bank_account(bankid, accountid, viewid)
+        print("The response of TransactionApi->get_firehose_transactions_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv3_0_0_get_firehose_transactions_for_bank_account: %s\n" % e)
+        print("Exception when calling TransactionApi->get_firehose_transactions_for_bank_account: %s\n" % e)
 ```
 
 
@@ -2215,7 +2158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv300GetFirehoseTransactionsForBankAccount200Response**](OBPv300GetFirehoseTransactionsForBankAccount200Response.md)
+[**GetFirehoseTransactionsForBankAccount200Response**](GetFirehoseTransactionsForBankAccount200Response.md)
 
 ### Authorization
 
@@ -2235,8 +2178,646 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_transaction_by_id_for_bank_account**
-> OBPv310GetTransactionByIdForBankAccount200Response o_bpv3_1_0_get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
+# **get_images_for_view_on_transaction**
+> GetImagesForViewOnTransaction200Response get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get Transaction Images
+
+<p>Returns the transaction TRANSACTION_ID images made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
+Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#images"><strong>images</strong></a>:</p>
+<p><a href="/glossary#"><strong>label</strong></a>: My Account</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_images_for_view_on_transaction200_response import GetImagesForViewOnTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Transaction Images
+        api_response = api_instance.get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_images_for_view_on_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_images_for_view_on_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_other_account_for_transaction**
+> GetOtherAccountForTransaction200Response get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
+
+Get Other Account of Transaction
+
+<p>Get other account of a transaction.<br />
+Returns details of the other party involved in the transaction, moderated by the <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
+Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>IBAN</strong></a>: DE91 1000 0000 0123 4567 89</p>
+<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#Bank"><strong>bank</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
+<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
+<p><a href="/glossary#kind"><strong>kind</strong></a>:</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#national_identifier"><strong>national_identifier</strong></a>:</p>
+<p><a href="/glossary#number"><strong>number</strong></a>:</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#swift_bic"><strong>swift_bic</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_other_account_for_transaction200_response import GetOtherAccountForTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Other Account of Transaction
+        api_response = api_instance.get_other_account_for_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_other_account_for_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_other_account_for_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetOtherAccountForTransaction200Response**](GetOtherAccountForTransaction200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tags_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get Transaction Tags
+
+<p>Returns the transaction TRANSACTION_ID tags made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
+Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Transaction Tags
+        api_response = api_instance.get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_tags_for_view_on_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_tags_for_view_on_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_attribute_by_id**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+
+Get Transaction Attribute By Id
+
+<p>Get Transaction Attribute By Id</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+    attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
+
+    try:
+        # Get Transaction Attribute By Id
+        api_response = api_instance.get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
+        print("The response of TransactionApi->get_transaction_attribute_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_transaction_attribute_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+ **attributeid** | **str**| The ATTRIBUTEID identifier | 
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_attribute_definition**
+> GetTransactionRequestAttributeDefinition200Response get_transaction_attribute_definition(bankid)
+
+Get Transaction Attribute Definition
+
+<p>Get Transaction Attribute Definition</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
+<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
+<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
+<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
+<p><a href="/glossary#category"><strong>category</strong></a>:</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_request_attribute_definition200_response import GetTransactionRequestAttributeDefinition200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+
+    try:
+        # Get Transaction Attribute Definition
+        api_response = api_instance.get_transaction_attribute_definition(bankid)
+        print("The response of TransactionApi->get_transaction_attribute_definition:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_transaction_attribute_definition: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+
+### Return type
+
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_attributes**
+> GetTransactionAttributes200Response get_transaction_attributes(bankid, accountid, transactionid)
+
+Get Transaction Attributes
+
+<p>Get Transaction Attributes</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_transaction_attributes200_response import GetTransactionAttributes200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get Transaction Attributes
+        api_response = api_instance.get_transaction_attributes(bankid, accountid, transactionid)
+        print("The response of TransactionApi->get_transaction_attributes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_transaction_attributes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetTransactionAttributes200Response**](GetTransactionAttributes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_by_id_for_bank_account**
+> GetTransactionByIdForBankAccount200Response get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
 
 Get Transaction by Id
 
@@ -2302,7 +2883,7 @@ Authentication is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response import OBPv310GetTransactionByIdForBankAccount200Response
+from obp_python.models.get_transaction_by_id_for_bank_account200_response import GetTransactionByIdForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2342,11 +2923,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction by Id
-        api_response = api_instance.o_bpv3_1_0_get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv3_1_0_get_transaction_by_id_for_bank_account:\n")
+        api_response = api_instance.get_transaction_by_id_for_bank_account(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_transaction_by_id_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv3_1_0_get_transaction_by_id_for_bank_account: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transaction_by_id_for_bank_account: %s\n" % e)
 ```
 
 
@@ -2363,7 +2944,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200Response**](OBPv310GetTransactionByIdForBankAccount200Response.md)
+[**GetTransactionByIdForBankAccount200Response**](GetTransactionByIdForBankAccount200Response.md)
 
 ### Authorization
 
@@ -2384,563 +2965,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_create_or_update_transaction_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
+# **get_transaction_narrative**
+> GetTransactionNarrative200Response get_transaction_narrative(bankid, accountid, viewid, transactionid)
 
-Create or Update Transaction Attribute Definition
+Get a Transaction Narrative
 
-<p>Create or Update Transaction Attribute Definition</p>
-<p>The category field must be Transaction</p>
-<p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_create_or_update_transaction_request_attribute_definition_request import OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response_attributes_inner import OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    obpv400_create_or_update_transaction_request_attribute_definition_request = {type=object, properties={can_be_seen_on_views={type=array, items={type=string}}, description={type=string}, is_active={type=boolean}, name={type=string}, type={type=string}, category={type=string}, alias={type=string}}} # OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
-
-    try:
-        # Create or Update Transaction Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_create_or_update_transaction_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request)
-        print("The response of TransactionApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_create_or_update_transaction_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **obpv400_create_or_update_transaction_request_attribute_definition_request** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](OBPv400GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_create_transaction_attribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-
-Create Transaction Attribute
-
-<p>Create Transaction Attribute</p>
-<p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
-
-    try:
-        # Create Transaction Attribute
-        api_response = api_instance.o_bpv4_0_0_create_transaction_attribute(bankid, accountid, transactionid, obpv600_create_personal_data_field_request)
-        print("The response of TransactionApi->o_bpv4_0_0_create_transaction_attribute:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_create_transaction_attribute: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_delete_transaction_attribute_definition**
-> o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
-
-Delete Transaction Attribute Definition
-
-<p>Delete Transaction Attribute Definition by ATTRIBUTE_DEFINITION_ID</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#attribute_definition_id">ATTRIBUTE_DEFINITION_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    attributedefinitionid = 'attributedefinitionid_example' # str | The ATTRIBUTEDEFINITIONID identifier
-
-    try:
-        # Delete Transaction Attribute Definition
-        api_instance.o_bpv4_0_0_delete_transaction_attribute_definition(bankid, attributedefinitionid)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_delete_transaction_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **attributedefinitionid** | **str**| The ATTRIBUTEDEFINITIONID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_delete_transaction_cascade**
-> o_bpv4_0_0_delete_transaction_cascade(bankid, accountid, transactionid)
-
-Delete Transaction Cascade
-
-<p>Delete a Transaction Cascade specified by TRANSACTION_ID.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Delete Transaction Cascade
-        api_instance.o_bpv4_0_0_delete_transaction_cascade(bankid, accountid, transactionid)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_delete_transaction_cascade: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_balancing_transaction**
-> OBPv400GetDoubleEntryTransaction200Response o_bpv4_0_0_get_balancing_transaction(transactionid)
-
-Get Balancing Transaction
-
-<p>Get Balancing Transaction</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
-<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
-<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_double_entry_transaction200_response import OBPv400GetDoubleEntryTransaction200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get Balancing Transaction
-        api_response = api_instance.o_bpv4_0_0_get_balancing_transaction(transactionid)
-        print("The response of TransactionApi->o_bpv4_0_0_get_balancing_transaction:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_get_balancing_transaction: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv400GetDoubleEntryTransaction200Response**](OBPv400GetDoubleEntryTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_double_entry_transaction**
-> OBPv400GetDoubleEntryTransaction200Response o_bpv4_0_0_get_double_entry_transaction(bankid, accountid, viewid, transactionid)
-
-Get Double Entry Transaction
-
-<p>Get Double Entry Transaction</p>
-<p>This endpoint can be used to see the double entry transactions. It returns the <code>bank_id</code>, <code>account_id</code> and <code>transaction_id</code><br />
-for the debit end the credit transaction. The other side account can be a settlement account or an OBP account.</p>
-<p>The endpoint also provide the <code>transaction_request</code> object which contains the <code>bank_id</code>, <code>account_id</code> and<br />
-<code>transaction_request_id</code> of the transaction request at the origin of the transaction. Please note that if none<br />
-transaction request is at the origin of the transaction, the <code>transaction_request</code> object will be <code>null</code>.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Returns the account owner description of the transaction <a href="#1_2_1-getViewsForBankAccount">moderated</a> by the view.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
 <p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>account_id</strong></a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#"><strong>credit_transaction</strong></a>: credit_transaction</p>
-<p><a href="/glossary#"><strong>debit_transaction</strong></a>: debit_transaction</p>
-<p><a href="/glossary#"><strong>transaction_id</strong></a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><a href="/glossary#"><strong>transaction_request</strong></a>: transaction_request</p>
-<p><a href="/glossary#"><strong>transaction_request_id</strong></a>: 8138a7e4-6d02-40e3-a129-0b2bf89de9f1</p>
+<p><a href="/glossary#narrative"><strong>narrative</strong></a>:</p>
 
 
 ### Example
 
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_double_entry_transaction200_response import OBPv400GetDoubleEntryTransaction200Response
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2950,24 +2997,6 @@ configuration = obp_python.Configuration(
     host = "http://127.0.0.1:8080"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with obp_python.ApiClient(configuration) as api_client:
@@ -2979,12 +3008,12 @@ with obp_python.ApiClient(configuration) as api_client:
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
 
     try:
-        # Get Double Entry Transaction
-        api_response = api_instance.o_bpv4_0_0_get_double_entry_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionApi->o_bpv4_0_0_get_double_entry_transaction:\n")
+        # Get a Transaction Narrative
+        api_response = api_instance.get_transaction_narrative(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_transaction_narrative:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_get_double_entry_transaction: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -3001,11 +3030,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetDoubleEntryTransaction200Response**](OBPv400GetDoubleEntryTransaction200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+No authorization required
 
 ### HTTP request headers
 
@@ -3022,442 +3051,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv4_0_0_get_transaction_attribute_by_id**
-> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
-
-Get Transaction Attribute By Id
-
-<p>Get Transaction Attribute By Id</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Adapter.card_attribute_id">ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    attributeid = 'attributeid_example' # str | The ATTRIBUTEID identifier
-
-    try:
-        # Get Transaction Attribute By Id
-        api_response = api_instance.o_bpv4_0_0_get_transaction_attribute_by_id(bankid, accountid, transactionid, attributeid)
-        print("The response of TransactionApi->o_bpv4_0_0_get_transaction_attribute_by_id:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_by_id: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
- **attributeid** | **str**| The ATTRIBUTEID identifier | 
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_attribute_definition**
-> OBPv400GetTransactionRequestAttributeDefinition200Response o_bpv4_0_0_get_transaction_attribute_definition(bankid)
-
-Get Transaction Attribute Definition
-
-<p>Get Transaction Attribute Definition</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-<p><a href="/glossary#attribute_definition_id"><strong>attribute_definition_id</strong></a>:</p>
-<p><a href="/glossary#attributes"><strong>attributes</strong></a>: attribute value in form of (name, value)</p>
-<p><a href="/glossary#"><strong>bank_id</strong></a>: gh.29.uk</p>
-<p><a href="/glossary#can_be_seen_on_views"><strong>can_be_seen_on_views</strong></a>: false</p>
-<p><a href="/glossary#category"><strong>category</strong></a>:</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#is_active"><strong>is_active</strong></a>: false</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_transaction_request_attribute_definition200_response import OBPv400GetTransactionRequestAttributeDefinition200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-
-    try:
-        # Get Transaction Attribute Definition
-        api_response = api_instance.o_bpv4_0_0_get_transaction_attribute_definition(bankid)
-        print("The response of TransactionApi->o_bpv4_0_0_get_transaction_attribute_definition:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_get_transaction_attribute_definition: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_transaction_attributes**
-> OBPv400GetTransactionAttributes200Response o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
-
-Get Transaction Attributes
-
-<p>Get Transaction Attributes</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#transaction_attributes"><strong>transaction_attributes</strong></a>:</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv400_get_transaction_attributes200_response import OBPv400GetTransactionAttributes200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-
-    try:
-        # Get Transaction Attributes
-        api_response = api_instance.o_bpv4_0_0_get_transaction_attributes(bankid, accountid, transactionid)
-        print("The response of TransactionApi->o_bpv4_0_0_get_transaction_attributes:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_get_transaction_attributes: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
-
-### Return type
-
-[**OBPv400GetTransactionAttributes200Response**](OBPv400GetTransactionAttributes200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_update_transaction_attribute**
-> OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
-
-Update Transaction Attribute
-
-<p>Update Transaction Attribute</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#type"><strong>type</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv300_get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
-from obp_python.models.obpv600_create_personal_data_field_request import OBPv600CreatePersonalDataFieldRequest
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.TransactionApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    accountattributeid = 'accountattributeid_example' # str | The ACCOUNTATTRIBUTEID identifier
-    obpv600_create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # OBPv600CreatePersonalDataFieldRequest | Request body
-
-    try:
-        # Update Transaction Attribute
-        api_response = api_instance.o_bpv4_0_0_update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, obpv600_create_personal_data_field_request)
-        print("The response of TransactionApi->o_bpv4_0_0_update_transaction_attribute:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv4_0_0_update_transaction_attribute: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **transactionid** | **str**| The TRANSACTIONID identifier | 
- **accountattributeid** | **str**| The ACCOUNTATTRIBUTEID identifier | 
- **obpv600_create_personal_data_field_request** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](OBPv300GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_transactions_for_bank_account**
-> OBPv600GetTransactionsForBankAccount200Response o_bpv6_0_0_get_transactions_for_bank_account(bankid, accountid, viewid)
+# **get_transactions_for_bank_account**
+> GetTransactionsForBankAccount200Response get_transactions_for_bank_account(bankid, accountid, viewid)
 
 Get Transactions for Account (Full)
 
@@ -3543,7 +3138,7 @@ making it easier to identify which bank each account belongs to without parsing 
 
 ```python
 import obp_python
-from obp_python.models.obpv600_get_transactions_for_bank_account200_response import OBPv600GetTransactionsForBankAccount200Response
+from obp_python.models.get_transactions_for_bank_account200_response import GetTransactionsForBankAccount200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -3582,11 +3177,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transactions for Account (Full)
-        api_response = api_instance.o_bpv6_0_0_get_transactions_for_bank_account(bankid, accountid, viewid)
-        print("The response of TransactionApi->o_bpv6_0_0_get_transactions_for_bank_account:\n")
+        api_response = api_instance.get_transactions_for_bank_account(bankid, accountid, viewid)
+        print("The response of TransactionApi->get_transactions_for_bank_account:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionApi->o_bpv6_0_0_get_transactions_for_bank_account: %s\n" % e)
+        print("Exception when calling TransactionApi->get_transactions_for_bank_account: %s\n" % e)
 ```
 
 
@@ -3602,7 +3197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetTransactionsForBankAccount200Response**](OBPv600GetTransactionsForBankAccount200Response.md)
+[**GetTransactionsForBankAccount200Response**](GetTransactionsForBankAccount200Response.md)
 
 ### Authorization
 
@@ -3611,6 +3206,411 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_where_tag_for_view_on_transaction**
+> GetWhereTagForViewOnTransaction200Response get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+
+Get a Transaction where Tag
+
+<p>Returns the &quot;where&quot; Geo tag added to the transaction TRANSACTION_ID made on a <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
+It represents the location where the transaction has been initiated.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#where"><strong>where</strong></a>:</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_where_tag_for_view_on_transaction200_response import GetWhereTagForViewOnTransaction200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+
+    try:
+        # Get a Transaction where Tag
+        api_response = api_instance.get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionApi->get_where_tag_for_view_on_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->get_where_tag_for_view_on_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+
+### Return type
+
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_transaction_attribute**
+> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
+
+Update Transaction Attribute
+
+<p>Update Transaction Attribute</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#account_attribute_id">ACCOUNT_ATTRIBUTE_ID</a>:</p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#"><strong>transaction_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#type"><strong>type</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.create_personal_data_field_request import CreatePersonalDataFieldRequest
+from obp_python.models.get_core_transactions_for_bank_account200_response_transactions_inner_transaction_attributes_inner import GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+    accountattributeid = 'accountattributeid_example' # str | The ACCOUNTATTRIBUTEID identifier
+    create_personal_data_field_request = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} # CreatePersonalDataFieldRequest | Request body
+
+    try:
+        # Update Transaction Attribute
+        api_response = api_instance.update_transaction_attribute(bankid, accountid, transactionid, accountattributeid, create_personal_data_field_request)
+        print("The response of TransactionApi->update_transaction_attribute:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->update_transaction_attribute: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+ **accountattributeid** | **str**| The ACCOUNTATTRIBUTEID identifier | 
+ **create_personal_data_field_request** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | 
+
+### Return type
+
+[**GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner**](GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_transaction_narrative**
+> UpdateTransactionNarrative200Response update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+
+Update a Transaction Narrative
+
+<p>Updates the description of the transaction TRANSACTION_ID.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+    get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}} # GetTransactionNarrative200Response | Request body
+
+    try:
+        # Update a Transaction Narrative
+        api_response = api_instance.update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+        print("The response of TransactionApi->update_transaction_narrative:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->update_transaction_narrative: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+ **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_where_tag_for_view_on_transaction**
+> UpdateTransactionNarrative200Response update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+
+Update a Transaction where Tag
+
+<p>Updates the &quot;where&quot; Geo tag on a transaction TRANSACTION_ID in a <a href="#1_2_1-getViewsForBankAccount">view</a>.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>The geo tag is linked with the user.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#transaction_ids">TRANSACTION_ID</a>: 2fg8a7e4-6d02-40e3-a129-0b2bf89de8ub</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.models.update_where_tag_for_view_on_transaction_request import UpdateWhereTagForViewOnTransactionRequest
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.TransactionApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
+    update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # UpdateWhereTagForViewOnTransactionRequest | Request body
+
+    try:
+        # Update a Transaction where Tag
+        api_response = api_instance.update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+        print("The response of TransactionApi->update_where_tag_for_view_on_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->update_where_tag_for_view_on_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **transactionid** | **str**| The TRANSACTIONID identifier | 
+ **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv510CreateBankAccountBalanceRequest;
-import com.openbankproject.model.OBPv510GetAllBankAccountBalances200Response;
-import com.openbankproject.model.OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems;
+import com.openbankproject.model.CreateBankAccountBalanceRequest;
+import com.openbankproject.model.GetAllBankAccountBalances200Response;
+import com.openbankproject.model.GetAllBankAccountBalances200ResponseBalancesInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class BalanceApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,12 +169,12 @@ public class BalanceApi {
    * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @param createBankAccountBalanceRequest Request body (required)
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest) throws ApiException {
-    return oBPv510CreateBankAccountBalance(bankid, accountid, obPv510CreateBankAccountBalanceRequest, null);
+  public GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest) throws ApiException {
+    return createBankAccountBalance(bankid, accountid, createBankAccountBalanceRequest, null);
   }
 
   /**
@@ -182,13 +182,13 @@ public class BalanceApi {
    * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
+   * @param createBankAccountBalanceRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510CreateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> localVarResponse = oBPv510CreateBankAccountBalanceWithHttpInfo(bankid, accountid, obPv510CreateBankAccountBalanceRequest, headers);
+  public GetAllBankAccountBalances200ResponseBalancesInner createBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> localVarResponse = createBankAccountBalanceWithHttpInfo(bankid, accountid, createBankAccountBalanceRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -197,12 +197,12 @@ public class BalanceApi {
    * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @param createBankAccountBalanceRequest Request body (required)
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510CreateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest) throws ApiException {
-    return oBPv510CreateBankAccountBalanceWithHttpInfo(bankid, accountid, obPv510CreateBankAccountBalanceRequest, null);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> createBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest) throws ApiException {
+    return createBankAccountBalanceWithHttpInfo(bankid, accountid, createBankAccountBalanceRequest, null);
   }
 
   /**
@@ -210,13 +210,13 @@ public class BalanceApi {
    * &lt;p&gt;Create a new Balance for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
+   * @param createBankAccountBalanceRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510CreateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510CreateBankAccountBalanceRequestBuilder(bankid, accountid, obPv510CreateBankAccountBalanceRequest, headers);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> createBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankAccountBalanceRequestBuilder(bankid, accountid, createBankAccountBalanceRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -227,11 +227,11 @@ public class BalanceApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510CreateBankAccountBalance", localVarResponse);
+          throw getApiException("createBankAccountBalance", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+          return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -241,10 +241,10 @@ public class BalanceApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>() {});
+        GetAllBankAccountBalances200ResponseBalancesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankAccountBalances200ResponseBalancesInner>() {});
         
 
-        return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -263,18 +263,18 @@ public class BalanceApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510CreateBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510CreateBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankAccountBalance");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510CreateBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling createBankAccountBalance");
     }
-    // verify the required parameter 'obPv510CreateBankAccountBalanceRequest' is set
-    if (obPv510CreateBankAccountBalanceRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510CreateBankAccountBalanceRequest' when calling oBPv510CreateBankAccountBalance");
+    // verify the required parameter 'createBankAccountBalanceRequest' is set
+    if (createBankAccountBalanceRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createBankAccountBalanceRequest' when calling createBankAccountBalance");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -289,7 +289,7 @@ public class BalanceApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510CreateBankAccountBalanceRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createBankAccountBalanceRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -313,8 +313,8 @@ public class BalanceApi {
    * @param balanceid The BALANCEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
-    oBPv510DeleteBankAccountBalance(bankid, accountid, balanceid, null);
+  public void deleteBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
+    deleteBankAccountBalance(bankid, accountid, balanceid, null);
   }
 
   /**
@@ -326,8 +326,8 @@ public class BalanceApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv510DeleteBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
-    oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, headers);
+  public void deleteBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+    deleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, headers);
   }
 
   /**
@@ -339,8 +339,8 @@ public class BalanceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
-    return oBPv510DeleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, null);
+  public ApiResponse<Void> deleteBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
+    return deleteBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, null);
   }
 
   /**
@@ -353,8 +353,8 @@ public class BalanceApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv510DeleteBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510DeleteBankAccountBalanceRequestBuilder(bankid, accountid, balanceid, headers);
+  public ApiResponse<Void> deleteBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankAccountBalanceRequestBuilder(bankid, accountid, balanceid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -365,7 +365,7 @@ public class BalanceApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510DeleteBankAccountBalance", localVarResponse);
+          throw getApiException("deleteBankAccountBalance", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -390,18 +390,18 @@ public class BalanceApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510DeleteBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510DeleteBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankAccountBalance");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510DeleteBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteBankAccountBalance");
     }
     // verify the required parameter 'balanceid' is set
     if (balanceid == null) {
-      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling oBPv510DeleteBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling deleteBankAccountBalance");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -432,11 +432,11 @@ public class BalanceApi {
    * &lt;p&gt;Get all Balances for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balances&lt;/strong&gt;&lt;/a&gt;: balances&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @return OBPv510GetAllBankAccountBalances200Response
+   * @return GetAllBankAccountBalances200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
-    return oBPv510GetAllBankAccountBalances(bankid, accountid, null);
+  public GetAllBankAccountBalances200Response getAllBankAccountBalances(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
+    return getAllBankAccountBalances(bankid, accountid, null);
   }
 
   /**
@@ -445,11 +445,11 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAllBankAccountBalances200Response
+   * @return GetAllBankAccountBalances200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200Response oBPv510GetAllBankAccountBalances(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAllBankAccountBalances200Response> localVarResponse = oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid, accountid, headers);
+  public GetAllBankAccountBalances200Response getAllBankAccountBalances(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankAccountBalances200Response> localVarResponse = getAllBankAccountBalancesWithHttpInfo(bankid, accountid, headers);
     return localVarResponse.getData();
   }
 
@@ -458,11 +458,11 @@ public class BalanceApi {
    * &lt;p&gt;Get all Balances for a Bank Account.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balance_amount&lt;/strong&gt;&lt;/a&gt;: 50.89&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_id\&quot;&gt;&lt;strong&gt;balance_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#balance_type\&quot;&gt;&lt;strong&gt;balance_type&lt;/strong&gt;&lt;/a&gt;: openingBooked&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;balances&lt;/strong&gt;&lt;/a&gt;: balances&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200Response&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200Response> oBPv510GetAllBankAccountBalancesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
-    return oBPv510GetAllBankAccountBalancesWithHttpInfo(bankid, accountid, null);
+  public ApiResponse<GetAllBankAccountBalances200Response> getAllBankAccountBalancesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid) throws ApiException {
+    return getAllBankAccountBalancesWithHttpInfo(bankid, accountid, null);
   }
 
   /**
@@ -471,11 +471,11 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200Response&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200Response> oBPv510GetAllBankAccountBalancesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetAllBankAccountBalancesRequestBuilder(bankid, accountid, headers);
+  public ApiResponse<GetAllBankAccountBalances200Response> getAllBankAccountBalancesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllBankAccountBalancesRequestBuilder(bankid, accountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -486,11 +486,11 @@ public class BalanceApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetAllBankAccountBalances", localVarResponse);
+          throw getApiException("getAllBankAccountBalances", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAllBankAccountBalances200Response>(
+          return new ApiResponse<GetAllBankAccountBalances200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -500,10 +500,10 @@ public class BalanceApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAllBankAccountBalances200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAllBankAccountBalances200Response>() {});
+        GetAllBankAccountBalances200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankAccountBalances200Response>() {});
         
 
-        return new ApiResponse<OBPv510GetAllBankAccountBalances200Response>(
+        return new ApiResponse<GetAllBankAccountBalances200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -522,14 +522,14 @@ public class BalanceApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetAllBankAccountBalancesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllBankAccountBalancesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetAllBankAccountBalances");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAllBankAccountBalances");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510GetAllBankAccountBalances");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getAllBankAccountBalances");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -560,11 +560,11 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
-    return oBPv510GetBankAccountBalanceById(bankid, accountid, balanceid, null);
+  public GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
+    return getBankAccountBalanceById(bankid, accountid, balanceid, null);
   }
 
   /**
@@ -574,11 +574,11 @@ public class BalanceApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510GetBankAccountBalanceById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> localVarResponse = oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid, headers);
+  public GetAllBankAccountBalances200ResponseBalancesInner getBankAccountBalanceById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> localVarResponse = getBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid, headers);
     return localVarResponse.getData();
   }
 
@@ -588,11 +588,11 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510GetBankAccountBalanceByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
-    return oBPv510GetBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid, null);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> getBankAccountBalanceByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid) throws ApiException {
+    return getBankAccountBalanceByIdWithHttpInfo(bankid, accountid, balanceid, null);
   }
 
   /**
@@ -602,11 +602,11 @@ public class BalanceApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510GetBankAccountBalanceByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510GetBankAccountBalanceByIdRequestBuilder(bankid, accountid, balanceid, headers);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> getBankAccountBalanceByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankAccountBalanceByIdRequestBuilder(bankid, accountid, balanceid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -617,11 +617,11 @@ public class BalanceApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510GetBankAccountBalanceById", localVarResponse);
+          throw getApiException("getBankAccountBalanceById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+          return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -631,10 +631,10 @@ public class BalanceApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>() {});
+        GetAllBankAccountBalances200ResponseBalancesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankAccountBalances200ResponseBalancesInner>() {});
         
 
-        return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -653,18 +653,18 @@ public class BalanceApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510GetBankAccountBalanceByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankAccountBalanceByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510GetBankAccountBalanceById");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankAccountBalanceById");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510GetBankAccountBalanceById");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getBankAccountBalanceById");
     }
     // verify the required parameter 'balanceid' is set
     if (balanceid == null) {
-      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling oBPv510GetBankAccountBalanceById");
+      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling getBankAccountBalanceById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -696,12 +696,12 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @param createBankAccountBalanceRequest Request body (required)
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest) throws ApiException {
-    return oBPv510UpdateBankAccountBalance(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest, null);
+  public GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest) throws ApiException {
+    return updateBankAccountBalance(bankid, accountid, balanceid, createBankAccountBalanceRequest, null);
   }
 
   /**
@@ -710,13 +710,13 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
+   * @param createBankAccountBalanceRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+   * @return GetAllBankAccountBalances200ResponseBalancesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems oBPv510UpdateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> localVarResponse = oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest, headers);
+  public GetAllBankAccountBalances200ResponseBalancesInner updateBankAccountBalance(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> localVarResponse = updateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, createBankAccountBalanceRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -726,12 +726,12 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @param createBankAccountBalanceRequest Request body (required)
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510UpdateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest) throws ApiException {
-    return oBPv510UpdateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest, null);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> updateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest) throws ApiException {
+    return updateBankAccountBalanceWithHttpInfo(bankid, accountid, balanceid, createBankAccountBalanceRequest, null);
   }
 
   /**
@@ -740,13 +740,13 @@ public class BalanceApi {
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param balanceid The BALANCEID identifier (required)
-   * @param obPv510CreateBankAccountBalanceRequest Request body (required)
+   * @param createBankAccountBalanceRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems&gt;
+   * @return ApiResponse&lt;GetAllBankAccountBalances200ResponseBalancesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems> oBPv510UpdateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv510UpdateBankAccountBalanceRequestBuilder(bankid, accountid, balanceid, obPv510CreateBankAccountBalanceRequest, headers);
+  public ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner> updateBankAccountBalanceWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankAccountBalanceRequestBuilder(bankid, accountid, balanceid, createBankAccountBalanceRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -757,11 +757,11 @@ public class BalanceApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv510UpdateBankAccountBalance", localVarResponse);
+          throw getApiException("updateBankAccountBalance", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+          return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -771,10 +771,10 @@ public class BalanceApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>() {});
+        GetAllBankAccountBalances200ResponseBalancesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankAccountBalances200ResponseBalancesInner>() {});
         
 
-        return new ApiResponse<OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems>(
+        return new ApiResponse<GetAllBankAccountBalances200ResponseBalancesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -793,22 +793,22 @@ public class BalanceApi {
     }
   }
 
-  private HttpRequest.Builder oBPv510UpdateBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull OBPv510CreateBankAccountBalanceRequest obPv510CreateBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankAccountBalanceRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String balanceid, @javax.annotation.Nonnull CreateBankAccountBalanceRequest createBankAccountBalanceRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv510UpdateBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankAccountBalance");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv510UpdateBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateBankAccountBalance");
     }
     // verify the required parameter 'balanceid' is set
     if (balanceid == null) {
-      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling oBPv510UpdateBankAccountBalance");
+      throw new ApiException(400, "Missing the required parameter 'balanceid' when calling updateBankAccountBalance");
     }
-    // verify the required parameter 'obPv510CreateBankAccountBalanceRequest' is set
-    if (obPv510CreateBankAccountBalanceRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv510CreateBankAccountBalanceRequest' when calling oBPv510UpdateBankAccountBalance");
+    // verify the required parameter 'createBankAccountBalanceRequest' is set
+    if (createBankAccountBalanceRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createBankAccountBalanceRequest' when calling updateBankAccountBalance");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -824,7 +824,7 @@ public class BalanceApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv510CreateBankAccountBalanceRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createBankAccountBalanceRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

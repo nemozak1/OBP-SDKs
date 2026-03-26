@@ -5,15 +5,15 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600GetAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
+[**getAvailablePersonalDynamicEntities**](PersonalDynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities
 
 
-# **oBPv600GetAvailablePersonalDynamicEntities**
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+# **getAvailablePersonalDynamicEntities**
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -36,10 +36,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getPersonalDynamicEntityApi();
 
 try {
-    final response = api.oBPv600GetAvailablePersonalDynamicEntities();
+    final response = api.getAvailablePersonalDynamicEntities();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling PersonalDynamicEntityApi->oBPv600GetAvailablePersonalDynamicEntities: $e\n');
+    print('Exception when calling PersonalDynamicEntityApi->getAvailablePersonalDynamicEntities: $e\n');
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 

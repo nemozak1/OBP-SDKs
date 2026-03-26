@@ -4,12 +4,12 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_0_0_data_warehouse_search**](DataWarehouseApi.md#o_bpv3_0_0_data_warehouse_search) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
-[**o_bpv3_0_0_data_warehouse_statistics**](DataWarehouseApi.md#o_bpv3_0_0_data_warehouse_statistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
+[**data_warehouse_search**](DataWarehouseApi.md#data_warehouse_search) | **POST** /obp/v3.0.0/search/warehouse/{index} | Data Warehouse Search
+[**data_warehouse_statistics**](DataWarehouseApi.md#data_warehouse_statistics) | **POST** /obp/v3.0.0/search/warehouse/statistics/{index}/{field} | Data Warehouse Statistics
 
 
-# **o_bpv3_0_0_data_warehouse_search**
-> object o_bpv3_0_0_data_warehouse_search(index, obpv300_data_warehouse_search_request)
+# **data_warehouse_search**
+> object data_warehouse_search(index, data_warehouse_search_request)
 
 Data Warehouse Search
 
@@ -43,7 +43,7 @@ Data Warehouse Search
 
 ```python
 import obp_python
-from obp_python.models.obpv300_data_warehouse_search_request import OBPv300DataWarehouseSearchRequest
+from obp_python.models.data_warehouse_search_request import DataWarehouseSearchRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -77,15 +77,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.DataWarehouseApi(api_client)
     index = 'index_example' # str | The INDEX identifier
-    obpv300_data_warehouse_search_request = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}} # OBPv300DataWarehouseSearchRequest | Request body
+    data_warehouse_search_request = {"type":"object","properties":{"query":{"type":"object","properties":{"match_all":{"type":"object","properties":{}}}}}} # DataWarehouseSearchRequest | Request body
 
     try:
         # Data Warehouse Search
-        api_response = api_instance.o_bpv3_0_0_data_warehouse_search(index, obpv300_data_warehouse_search_request)
-        print("The response of DataWarehouseApi->o_bpv3_0_0_data_warehouse_search:\n")
+        api_response = api_instance.data_warehouse_search(index, data_warehouse_search_request)
+        print("The response of DataWarehouseApi->data_warehouse_search:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DataWarehouseApi->o_bpv3_0_0_data_warehouse_search: %s\n" % e)
+        print("Exception when calling DataWarehouseApi->data_warehouse_search: %s\n" % e)
 ```
 
 
@@ -96,7 +96,7 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **str**| The INDEX identifier | 
- **obpv300_data_warehouse_search_request** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | 
+ **data_warehouse_search_request** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | 
 
 ### Return type
 
@@ -120,8 +120,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_0_0_data_warehouse_statistics**
-> object o_bpv3_0_0_data_warehouse_statistics(index, var_field, obpv300_data_warehouse_search_request)
+# **data_warehouse_statistics**
+> object data_warehouse_statistics(index, var_field, data_warehouse_search_request)
 
 Data Warehouse Statistics
 
@@ -157,7 +157,7 @@ Data Warehouse Statistics
 
 ```python
 import obp_python
-from obp_python.models.obpv300_data_warehouse_search_request import OBPv300DataWarehouseSearchRequest
+from obp_python.models.data_warehouse_search_request import DataWarehouseSearchRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -192,15 +192,15 @@ with obp_python.ApiClient(configuration) as api_client:
     api_instance = obp_python.DataWarehouseApi(api_client)
     index = 'index_example' # str | The INDEX identifier
     var_field = 'var_field_example' # str | The FIELD identifier
-    obpv300_data_warehouse_search_request = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}} # OBPv300DataWarehouseSearchRequest | Request body
+    data_warehouse_search_request = {type=object, properties={query={type=object, properties={match_all={type=object, properties={}}}}}} # DataWarehouseSearchRequest | Request body
 
     try:
         # Data Warehouse Statistics
-        api_response = api_instance.o_bpv3_0_0_data_warehouse_statistics(index, var_field, obpv300_data_warehouse_search_request)
-        print("The response of DataWarehouseApi->o_bpv3_0_0_data_warehouse_statistics:\n")
+        api_response = api_instance.data_warehouse_statistics(index, var_field, data_warehouse_search_request)
+        print("The response of DataWarehouseApi->data_warehouse_statistics:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DataWarehouseApi->o_bpv3_0_0_data_warehouse_statistics: %s\n" % e)
+        print("Exception when calling DataWarehouseApi->data_warehouse_statistics: %s\n" % e)
 ```
 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **index** | **str**| The INDEX identifier | 
  **var_field** | **str**| The FIELD identifier | 
- **obpv300_data_warehouse_search_request** | [**OBPv300DataWarehouseSearchRequest**](OBPv300DataWarehouseSearchRequest.md)| Request body | 
+ **data_warehouse_search_request** | [**DataWarehouseSearchRequest**](DataWarehouseSearchRequest.md)| Request body | 
 
 ### Return type
 

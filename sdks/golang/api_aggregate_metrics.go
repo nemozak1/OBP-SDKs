@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -23,17 +23,17 @@ import (
 // AggregateMetricsAPIService AggregateMetricsAPI service
 type AggregateMetricsAPIService service
 
-type ApiOBPv600GetAggregateMetricsRequest struct {
+type ApiGetAggregateMetricsRequest struct {
 	ctx context.Context
 	ApiService *AggregateMetricsAPIService
 }
 
-func (r ApiOBPv600GetAggregateMetricsRequest) Execute() (*OBPv600GetAggregateMetrics200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAggregateMetricsExecute(r)
+func (r ApiGetAggregateMetricsRequest) Execute() (*GetAggregateMetrics200Response, *http.Response, error) {
+	return r.ApiService.GetAggregateMetricsExecute(r)
 }
 
 /*
-OBPv600GetAggregateMetrics Get Aggregate Metrics
+GetAggregateMetrics Get Aggregate Metrics
 
 <p>Returns aggregate metrics on api usage eg. total count, response time (in ms), etc.</p>
 <p>require CanReadAggregateMetrics role</p>
@@ -95,26 +95,26 @@ For historical/reporting queries, always explicitly specify your desired <code>f
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAggregateMetricsRequest
+ @return ApiGetAggregateMetricsRequest
 */
-func (a *AggregateMetricsAPIService) OBPv600GetAggregateMetrics(ctx context.Context) ApiOBPv600GetAggregateMetricsRequest {
-	return ApiOBPv600GetAggregateMetricsRequest{
+func (a *AggregateMetricsAPIService) GetAggregateMetrics(ctx context.Context) ApiGetAggregateMetricsRequest {
+	return ApiGetAggregateMetricsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAggregateMetrics200Response
-func (a *AggregateMetricsAPIService) OBPv600GetAggregateMetricsExecute(r ApiOBPv600GetAggregateMetricsRequest) (*OBPv600GetAggregateMetrics200Response, *http.Response, error) {
+//  @return GetAggregateMetrics200Response
+func (a *AggregateMetricsAPIService) GetAggregateMetricsExecute(r ApiGetAggregateMetricsRequest) (*GetAggregateMetrics200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAggregateMetrics200Response
+		localVarReturnValue  *GetAggregateMetrics200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AggregateMetricsAPIService.OBPv600GetAggregateMetrics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AggregateMetricsAPIService.GetAggregateMetrics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -166,7 +166,7 @@ func (a *AggregateMetricsAPIService) OBPv600GetAggregateMetricsExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

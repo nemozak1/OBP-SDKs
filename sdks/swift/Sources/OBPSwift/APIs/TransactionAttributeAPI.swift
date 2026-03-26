@@ -13,12 +13,12 @@ open class TransactionAttributeAPI {
      Create or Update Transaction Attribute Definition
      
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+     - returns: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      */
-    open class func oBPv400CreateOrUpdateTransactionAttributeDefinition(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems {
-        return try await oBPv400CreateOrUpdateTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createOrUpdateTransactionAttributeDefinition(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionRequestAttributeDefinition200ResponseAttributesInner {
+        return try await createOrUpdateTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest: createOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -32,20 +32,20 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
-     - parameter oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
+     - parameter createOrUpdateTransactionRequestAttributeDefinitionRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> 
+     - returns: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> 
      */
-    open class func oBPv400CreateOrUpdateTransactionAttributeDefinitionWithRequestBuilder(bankid: String, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest: OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> {
+    open class func createOrUpdateTransactionAttributeDefinitionWithRequestBuilder(bankid: String, createOrUpdateTransactionRequestAttributeDefinitionRequest: CreateOrUpdateTransactionRequestAttributeDefinitionRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createOrUpdateTransactionRequestAttributeDefinitionRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -55,7 +55,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -66,12 +66,12 @@ open class TransactionAttributeAPI {
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     - returns: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    open class func oBPv400CreateTransactionAttribute(bankid: String, accountid: String, transactionid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems {
-        return try await oBPv400CreateTransactionAttributeWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func createTransactionAttribute(bankid: String, accountid: String, transactionid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner {
+        return try await createTransactionAttributeWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -85,16 +85,16 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> 
+     - returns: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> 
      */
-    open class func oBPv400CreateTransactionAttributeWithRequestBuilder(bankid: String, accountid: String, transactionid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
+    open class func createTransactionAttributeWithRequestBuilder(bankid: String, accountid: String, transactionid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attribute"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -106,7 +106,7 @@ open class TransactionAttributeAPI {
         let transactionidPostEscape = transactionidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{transactionid}", with: transactionidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -116,7 +116,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -129,8 +129,8 @@ open class TransactionAttributeAPI {
      - parameter apiConfiguration: The configuration for the http request.
      - returns: Void
      */
-    open class func oBPv400DeleteTransactionAttributeDefinition(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
-        return try await oBPv400DeleteTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, attributedefinitionid: attributedefinitionid, apiConfiguration: apiConfiguration).execute().body
+    open class func deleteTransactionAttributeDefinition(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) {
+        return try await deleteTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, attributedefinitionid: attributedefinitionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -144,14 +144,14 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter attributedefinitionid: (path) The ATTRIBUTEDEFINITIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
      - returns: RequestBuilder<Void> 
      */
-    open class func oBPv400DeleteTransactionAttributeDefinitionWithRequestBuilder(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
+    open class func deleteTransactionAttributeDefinitionWithRequestBuilder(bankid: String, attributedefinitionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<Void> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -183,10 +183,10 @@ open class TransactionAttributeAPI {
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter attributeid: (path) The ATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     - returns: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    open class func oBPv400GetTransactionAttributeById(bankid: String, accountid: String, transactionid: String, attributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems {
-        return try await oBPv400GetTransactionAttributeByIdWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, attributeid: attributeid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTransactionAttributeById(bankid: String, accountid: String, transactionid: String, attributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner {
+        return try await getTransactionAttributeByIdWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, attributeid: attributeid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -200,16 +200,16 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter attributeid: (path) The ATTRIBUTEID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> 
+     - returns: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> 
      */
-    open class func oBPv400GetTransactionAttributeByIdWithRequestBuilder(bankid: String, accountid: String, transactionid: String, attributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
+    open class func getTransactionAttributeByIdWithRequestBuilder(bankid: String, accountid: String, transactionid: String, attributeid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{attributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -234,7 +234,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -244,10 +244,10 @@ open class TransactionAttributeAPI {
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionRequestAttributeDefinition200Response
+     - returns: GetTransactionRequestAttributeDefinition200Response
      */
-    open class func oBPv400GetTransactionAttributeDefinition(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionRequestAttributeDefinition200Response {
-        return try await oBPv400GetTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTransactionAttributeDefinition(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionRequestAttributeDefinition200Response {
+        return try await getTransactionAttributeDefinitionWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -261,13 +261,13 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response> 
+     - returns: RequestBuilder<GetTransactionRequestAttributeDefinition200Response> 
      */
-    open class func oBPv400GetTransactionAttributeDefinitionWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response> {
+    open class func getTransactionAttributeDefinitionWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionRequestAttributeDefinition200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -283,7 +283,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionRequestAttributeDefinition200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionRequestAttributeDefinition200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -295,10 +295,10 @@ open class TransactionAttributeAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv400GetTransactionAttributes200Response
+     - returns: GetTransactionAttributes200Response
      */
-    open class func oBPv400GetTransactionAttributes(bankid: String, accountid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv400GetTransactionAttributes200Response {
-        return try await oBPv400GetTransactionAttributesWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
+    open class func getTransactionAttributes(bankid: String, accountid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetTransactionAttributes200Response {
+        return try await getTransactionAttributesWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -312,15 +312,15 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv400GetTransactionAttributes200Response> 
+     - returns: RequestBuilder<GetTransactionAttributes200Response> 
      */
-    open class func oBPv400GetTransactionAttributesWithRequestBuilder(bankid: String, accountid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv400GetTransactionAttributes200Response> {
+    open class func getTransactionAttributesWithRequestBuilder(bankid: String, accountid: String, transactionid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetTransactionAttributes200Response> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -342,7 +342,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv400GetTransactionAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetTransactionAttributes200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }
@@ -354,12 +354,12 @@ open class TransactionAttributeAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter accountattributeid: (path) The ACCOUNTATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     - returns: GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    open class func oBPv400UpdateTransactionAttribute(bankid: String, accountid: String, transactionid: String, accountattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems {
-        return try await oBPv400UpdateTransactionAttributeWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, accountattributeid: accountattributeid, oBPv600CreatePersonalDataFieldRequest: oBPv600CreatePersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
+    open class func updateTransactionAttribute(bankid: String, accountid: String, transactionid: String, accountattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner {
+        return try await updateTransactionAttributeWithRequestBuilder(bankid: bankid, accountid: accountid, transactionid: transactionid, accountattributeid: accountattributeid, createPersonalDataFieldRequest: createPersonalDataFieldRequest, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -373,17 +373,17 @@ open class TransactionAttributeAPI {
        - type: apiKey Authorization (HEADER)
        - name: GatewayLogin
      - API Key:
-       - type: apiKey Authorization (HEADER)
+       - type: apiKey DirectLogin (HEADER)
        - name: DirectLogin
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter transactionid: (path) The TRANSACTIONID identifier 
      - parameter accountattributeid: (path) The ACCOUNTATTRIBUTEID identifier 
-     - parameter oBPv600CreatePersonalDataFieldRequest: (body) Request body 
+     - parameter createPersonalDataFieldRequest: (body) Request body 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> 
+     - returns: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> 
      */
-    open class func oBPv400UpdateTransactionAttributeWithRequestBuilder(bankid: String, accountid: String, transactionid: String, accountattributeid: String, oBPv600CreatePersonalDataFieldRequest: OBPv600CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems> {
+    open class func updateTransactionAttributeWithRequestBuilder(bankid: String, accountid: String, transactionid: String, accountattributeid: String, createPersonalDataFieldRequest: CreatePersonalDataFieldRequest, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner> {
         var localVariablePath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transactions/{transactionid}/attributes/{accountattributeid}"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -398,7 +398,7 @@ open class TransactionAttributeAPI {
         let accountattributeidPostEscape = accountattributeidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         localVariablePath = localVariablePath.replacingOccurrences(of: "{accountattributeid}", with: accountattributeidPostEscape, options: .literal, range: nil)
         let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oBPv600CreatePersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createPersonalDataFieldRequest, codableHelper: apiConfiguration.codableHelper)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -408,7 +408,7 @@ open class TransactionAttributeAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true, apiConfiguration: apiConfiguration)
     }

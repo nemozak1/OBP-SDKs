@@ -1,329 +1,29 @@
 # SystemApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv510LogCacheAllEndpoint**](SystemApi.md#oBPv510LogCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint**](SystemApi.md#oBPv510LogCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint**](SystemApi.md#oBPv510LogCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint**](SystemApi.md#oBPv510LogCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint**](SystemApi.md#oBPv510LogCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint**](SystemApi.md#oBPv510LogCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
-| [**oBPv600GetCacheConfig**](SystemApi.md#oBPv600GetCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
-| [**oBPv600GetCacheInfo**](SystemApi.md#oBPv600GetCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
-| [**oBPv600GetCacheNamespaces**](SystemApi.md#oBPv600GetCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
-| [**oBPv600GetConnectorMethodNames**](SystemApi.md#oBPv600GetConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
-| [**oBPv600GetConnectors**](SystemApi.md#oBPv600GetConnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
-| [**oBPv600GetDatabasePoolInfo**](SystemApi.md#oBPv600GetDatabasePoolInfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
-| [**oBPv600GetMigrations**](SystemApi.md#oBPv600GetMigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
-| [**oBPv600GetStoredProcedureConnectorHealth**](SystemApi.md#oBPv600GetStoredProcedureConnectorHealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
-| [**oBPv600InvalidateCacheNamespace**](SystemApi.md#oBPv600InvalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
-
-
-<a id="oBPv510LogCacheAllEndpoint"></a>
-# **oBPv510LogCacheAllEndpoint**
-> oBPv510LogCacheAllEndpoint()
-
-Get All Level Log Cache
-
-&lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheAllEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheAllEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheAllEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv510LogCacheDebugEndpoint"></a>
-# **oBPv510LogCacheDebugEndpoint**
-> oBPv510LogCacheDebugEndpoint()
-
-Get Debug Level Log Cache
-
-&lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheDebugEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheDebugEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheDebugEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv510LogCacheErrorEndpoint"></a>
-# **oBPv510LogCacheErrorEndpoint**
-> oBPv510LogCacheErrorEndpoint()
-
-Get Error Level Log Cache
-
-&lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheErrorEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheErrorEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheErrorEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv510LogCacheInfoEndpoint"></a>
-# **oBPv510LogCacheInfoEndpoint**
-> oBPv510LogCacheInfoEndpoint()
-
-Get Info Level Log Cache
-
-&lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheInfoEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheInfoEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheInfoEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv510LogCacheTraceEndpoint"></a>
-# **oBPv510LogCacheTraceEndpoint**
-> oBPv510LogCacheTraceEndpoint()
-
-Get Trace Level Log Cache
-
-&lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheTraceEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheTraceEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheTraceEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv510LogCacheWarningEndpoint"></a>
-# **oBPv510LogCacheWarningEndpoint**
-> oBPv510LogCacheWarningEndpoint()
-
-Get Warning Level Log Cache
-
-&lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-
-### Example
-```kotlin
-// Import classes:
-//import com.openbankproject.infrastructure.*
-//import com.openbankproject.models.*
-
-val apiInstance = SystemApi()
-try {
-    apiInstance.oBPv510LogCacheWarningEndpoint()
-} catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv510LogCacheWarningEndpoint")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv510LogCacheWarningEndpoint")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a id="oBPv600GetCacheConfig"></a>
-# **oBPv600GetCacheConfig**
-> OBPv600GetCacheConfig200Response oBPv600GetCacheConfig()
+| [**getCacheConfig**](SystemApi.md#getCacheConfig) | **GET** /obp/v6.0.0/system/cache/config | Get Cache Configuration |
+| [**getCacheInfo**](SystemApi.md#getCacheInfo) | **GET** /obp/v6.0.0/system/cache/info | Get Cache Information |
+| [**getCacheNamespaces**](SystemApi.md#getCacheNamespaces) | **GET** /obp/v6.0.0/system/cache/namespaces | Get Cache Namespaces |
+| [**getConnectorMethodNames**](SystemApi.md#getConnectorMethodNames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names |
+| [**getConnectors**](SystemApi.md#getConnectors) | **GET** /obp/v6.0.0/system/connectors | Get Connectors |
+| [**getDatabasePoolInfo**](SystemApi.md#getDatabasePoolInfo) | **GET** /obp/v6.0.0/system/database/pool | Get Database Pool Information |
+| [**getMigrations**](SystemApi.md#getMigrations) | **GET** /obp/v6.0.0/system/migrations | Get Database Migrations |
+| [**getStoredProcedureConnectorHealth**](SystemApi.md#getStoredProcedureConnectorHealth) | **GET** /obp/v6.0.0/system/connectors/stored_procedure_vDec2019/health | Get Stored Procedure Connector Health |
+| [**invalidateCacheNamespace**](SystemApi.md#invalidateCacheNamespace) | **POST** /obp/v6.0.0/management/cache/namespaces/invalidate | Invalidate Cache Namespace |
+| [**logCacheAllEndpoint**](SystemApi.md#logCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint**](SystemApi.md#logCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint**](SystemApi.md#logCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint**](SystemApi.md#logCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint**](SystemApi.md#logCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint**](SystemApi.md#logCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+
+
+<a id="getCacheConfig"></a>
+# **getCacheConfig**
+> GetCacheConfig200Response getCacheConfig()
 
 Get Cache Configuration
 
@@ -337,13 +37,13 @@ Get Cache Configuration
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetCacheConfig200Response = apiInstance.oBPv600GetCacheConfig()
+    val result : GetCacheConfig200Response = apiInstance.getCacheConfig()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetCacheConfig")
+    println("4xx response calling SystemApi#getCacheConfig")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetCacheConfig")
+    println("5xx response calling SystemApi#getCacheConfig")
     e.printStackTrace()
 }
 ```
@@ -353,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheConfig200Response**](OBPv600GetCacheConfig200Response.md)
+[**GetCacheConfig200Response**](GetCacheConfig200Response.md)
 
 ### Authorization
 
@@ -364,17 +64,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetCacheInfo"></a>
-# **oBPv600GetCacheInfo**
-> OBPv600GetCacheInfo200Response oBPv600GetCacheInfo()
+<a id="getCacheInfo"></a>
+# **getCacheInfo**
+> GetCacheInfo200Response getCacheInfo()
 
 Get Cache Information
 
@@ -388,13 +88,13 @@ Get Cache Information
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetCacheInfo200Response = apiInstance.oBPv600GetCacheInfo()
+    val result : GetCacheInfo200Response = apiInstance.getCacheInfo()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetCacheInfo")
+    println("4xx response calling SystemApi#getCacheInfo")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetCacheInfo")
+    println("5xx response calling SystemApi#getCacheInfo")
     e.printStackTrace()
 }
 ```
@@ -404,7 +104,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheInfo200Response**](OBPv600GetCacheInfo200Response.md)
+[**GetCacheInfo200Response**](GetCacheInfo200Response.md)
 
 ### Authorization
 
@@ -415,17 +115,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetCacheNamespaces"></a>
-# **oBPv600GetCacheNamespaces**
-> OBPv600GetCacheNamespaces200Response oBPv600GetCacheNamespaces()
+<a id="getCacheNamespaces"></a>
+# **getCacheNamespaces**
+> GetCacheNamespaces200Response getCacheNamespaces()
 
 Get Cache Namespaces
 
@@ -439,13 +139,13 @@ Get Cache Namespaces
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetCacheNamespaces200Response = apiInstance.oBPv600GetCacheNamespaces()
+    val result : GetCacheNamespaces200Response = apiInstance.getCacheNamespaces()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetCacheNamespaces")
+    println("4xx response calling SystemApi#getCacheNamespaces")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetCacheNamespaces")
+    println("5xx response calling SystemApi#getCacheNamespaces")
     e.printStackTrace()
 }
 ```
@@ -455,7 +155,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetCacheNamespaces200Response**](OBPv600GetCacheNamespaces200Response.md)
+[**GetCacheNamespaces200Response**](GetCacheNamespaces200Response.md)
 
 ### Authorization
 
@@ -466,17 +166,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetConnectorMethodNames"></a>
-# **oBPv600GetConnectorMethodNames**
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+<a id="getConnectorMethodNames"></a>
+# **getConnectorMethodNames**
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -490,13 +190,13 @@ Get Connector Method Names
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetConnectorMethodNames200Response = apiInstance.oBPv600GetConnectorMethodNames()
+    val result : GetConnectorMethodNames200Response = apiInstance.getConnectorMethodNames()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetConnectorMethodNames")
+    println("4xx response calling SystemApi#getConnectorMethodNames")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetConnectorMethodNames")
+    println("5xx response calling SystemApi#getConnectorMethodNames")
     e.printStackTrace()
 }
 ```
@@ -506,7 +206,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -517,21 +217,21 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetConnectors"></a>
-# **oBPv600GetConnectors**
-> OBPv600GetConnectors200Response oBPv600GetConnectors()
+<a id="getConnectors"></a>
+# **getConnectors**
+> GetConnectors200Response getConnectors()
 
 Get Connectors
 
-&lt;p&gt;Get the list of connectors and their availability for method routing.&lt;/p&gt; &lt;p&gt;Returns a sorted list of all connectors with their availability status for use in Method Routing.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#response-fields\&quot; id&#x3D;\&quot;response-fields\&quot;&gt;Response Fields&lt;/a&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;connector_name&lt;/strong&gt; - The name of the connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt; - Whether this connector can be used in Method Routing configuration.&lt;br /&gt; This depends on the &lt;code&gt;connector&lt;/code&gt; and &lt;code&gt;starConnector_supported_types&lt;/code&gt; props settings.&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#available-connectors\&quot; id&#x3D;\&quot;available-connectors\&quot;&gt;Available Connectors&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The OBP-API supports multiple connectors for accessing banking data:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;mapped&lt;/strong&gt; - Local database connector using Lift Mapper ORM&lt;/li&gt; &lt;li&gt;&lt;strong&gt;akka_vDec2018&lt;/strong&gt; - Akka-based connector for remote banking systems&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rest_vMar2019&lt;/strong&gt; - REST connector for external APIs&lt;/li&gt; &lt;li&gt;&lt;strong&gt;stored_procedure_vDec2019&lt;/strong&gt; - Stored procedure connector for database-native operations&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rabbitmq_vOct2024&lt;/strong&gt; - RabbitMQ message queue connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;cardano_vJun2025&lt;/strong&gt; - Cardano blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;ethereum_vSept2025&lt;/strong&gt; - Ethereum blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;star&lt;/strong&gt; - Star connector (special routing connector)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;proxy&lt;/strong&gt; - Proxy connector (for testing)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;internal&lt;/strong&gt; - Internal dynamic connector&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connectors are available when configuring Method Routing.&lt;br /&gt; A connector is available for method routing if it matches the &lt;code&gt;connector&lt;/code&gt; prop setting,&lt;br /&gt; or if &lt;code&gt;connector&#x3D;star&lt;/code&gt; and the connector is listed in &lt;code&gt;starConnector_supported_types&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;CanGetConnectorNames entitlement is required.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#connector_name\&quot;&gt;&lt;strong&gt;connector_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connectors&lt;/strong&gt;&lt;/a&gt;: connectors&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt;&lt;/a&gt;: is_available_in_method_routing&lt;/p&gt; 
+&lt;p&gt;Get the list of connectors and their availability for method routing.&lt;/p&gt; &lt;p&gt;Returns a sorted list of all connectors with their availability status for use in Method Routing.&lt;/p&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#response-fields\&quot; id&#x3D;\&quot;response-fields\&quot;&gt;Response Fields&lt;/a&gt;&lt;/h2&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;connector_name&lt;/strong&gt; - The name of the connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt; - Whether this connector can be used in Method Routing configuration.&lt;br /&gt; This depends on the &lt;code&gt;connector&lt;/code&gt; and &lt;code&gt;starConnector_supported_types&lt;/code&gt; props settings.&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#available-connectors\&quot; id&#x3D;\&quot;available-connectors\&quot;&gt;Available Connectors&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;The OBP-API supports multiple connectors for accessing banking data:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;mapped&lt;/strong&gt; - Local database connector using Lift Mapper ORM&lt;/li&gt; &lt;li&gt;&lt;strong&gt;akka_vDec2018&lt;/strong&gt; - Akka-based connector for remote banking systems&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rest_vMar2019&lt;/strong&gt; - REST connector for external APIs&lt;/li&gt; &lt;li&gt;&lt;strong&gt;stored_procedure_vDec2019&lt;/strong&gt; - Stored procedure connector for database-native operations&lt;/li&gt; &lt;li&gt;&lt;strong&gt;rabbitmq_vOct2024&lt;/strong&gt; - RabbitMQ message queue connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;cardano_vJun2025&lt;/strong&gt; - Cardano blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;ethereum_vSept2025&lt;/strong&gt; - Ethereum blockchain connector&lt;/li&gt; &lt;li&gt;&lt;strong&gt;star&lt;/strong&gt; - Star connector (special routing connector)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;proxy&lt;/strong&gt; - Proxy connector (for testing)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;internal&lt;/strong&gt; - Internal dynamic connector&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;&lt;a href&#x3D;\&quot;#use-case\&quot; id&#x3D;\&quot;use-case\&quot;&gt;Use Case&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Use this endpoint to discover which connectors are available when configuring Method Routing.&lt;br /&gt; A connector is available for method routing if it matches the &lt;code&gt;connector&lt;/code&gt; prop setting,&lt;br /&gt; or if &lt;code&gt;connector&#x3D;star&lt;/code&gt; and the connector is listed in &lt;code&gt;starConnector_supported_types&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Authentication is Optional.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#connector_name\&quot;&gt;&lt;strong&gt;connector_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;connectors&lt;/strong&gt;&lt;/a&gt;: connectors&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_available_in_method_routing&lt;/strong&gt;&lt;/a&gt;: is_available_in_method_routing&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -541,13 +241,13 @@ Get Connectors
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetConnectors200Response = apiInstance.oBPv600GetConnectors()
+    val result : GetConnectors200Response = apiInstance.getConnectors()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetConnectors")
+    println("4xx response calling SystemApi#getConnectors")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetConnectors")
+    println("5xx response calling SystemApi#getConnectors")
     e.printStackTrace()
 }
 ```
@@ -557,28 +257,20 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectors200Response**](OBPv600GetConnectors200Response.md)
+[**GetConnectors200Response**](GetConnectors200Response.md)
 
 ### Authorization
 
-
-Configure OAuth2:
-    ApiClient.accessToken = ""
-Configure GatewayLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetDatabasePoolInfo"></a>
-# **oBPv600GetDatabasePoolInfo**
-> OBPv600GetDatabasePoolInfo200Response oBPv600GetDatabasePoolInfo()
+<a id="getDatabasePoolInfo"></a>
+# **getDatabasePoolInfo**
+> GetDatabasePoolInfo200Response getDatabasePoolInfo()
 
 Get Database Pool Information
 
@@ -592,13 +284,13 @@ Get Database Pool Information
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetDatabasePoolInfo200Response = apiInstance.oBPv600GetDatabasePoolInfo()
+    val result : GetDatabasePoolInfo200Response = apiInstance.getDatabasePoolInfo()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetDatabasePoolInfo")
+    println("4xx response calling SystemApi#getDatabasePoolInfo")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetDatabasePoolInfo")
+    println("5xx response calling SystemApi#getDatabasePoolInfo")
     e.printStackTrace()
 }
 ```
@@ -608,7 +300,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDatabasePoolInfo200Response**](OBPv600GetDatabasePoolInfo200Response.md)
+[**GetDatabasePoolInfo200Response**](GetDatabasePoolInfo200Response.md)
 
 ### Authorization
 
@@ -619,17 +311,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetMigrations"></a>
-# **oBPv600GetMigrations**
-> OBPv600GetMigrations200Response oBPv600GetMigrations()
+<a id="getMigrations"></a>
+# **getMigrations**
+> GetMigrations200Response getMigrations()
 
 Get Database Migrations
 
@@ -643,13 +335,13 @@ Get Database Migrations
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetMigrations200Response = apiInstance.oBPv600GetMigrations()
+    val result : GetMigrations200Response = apiInstance.getMigrations()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetMigrations")
+    println("4xx response calling SystemApi#getMigrations")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetMigrations")
+    println("5xx response calling SystemApi#getMigrations")
     e.printStackTrace()
 }
 ```
@@ -659,7 +351,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetMigrations200Response**](OBPv600GetMigrations200Response.md)
+[**GetMigrations200Response**](GetMigrations200Response.md)
 
 ### Authorization
 
@@ -670,17 +362,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetStoredProcedureConnectorHealth"></a>
-# **oBPv600GetStoredProcedureConnectorHealth**
-> OBPv600GetStoredProcedureConnectorHealth200Response oBPv600GetStoredProcedureConnectorHealth()
+<a id="getStoredProcedureConnectorHealth"></a>
+# **getStoredProcedureConnectorHealth**
+> GetStoredProcedureConnectorHealth200Response getStoredProcedureConnectorHealth()
 
 Get Stored Procedure Connector Health
 
@@ -694,13 +386,13 @@ Get Stored Procedure Connector Health
 
 val apiInstance = SystemApi()
 try {
-    val result : OBPv600GetStoredProcedureConnectorHealth200Response = apiInstance.oBPv600GetStoredProcedureConnectorHealth()
+    val result : GetStoredProcedureConnectorHealth200Response = apiInstance.getStoredProcedureConnectorHealth()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600GetStoredProcedureConnectorHealth")
+    println("4xx response calling SystemApi#getStoredProcedureConnectorHealth")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600GetStoredProcedureConnectorHealth")
+    println("5xx response calling SystemApi#getStoredProcedureConnectorHealth")
     e.printStackTrace()
 }
 ```
@@ -710,7 +402,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetStoredProcedureConnectorHealth200Response**](OBPv600GetStoredProcedureConnectorHealth200Response.md)
+[**GetStoredProcedureConnectorHealth200Response**](GetStoredProcedureConnectorHealth200Response.md)
 
 ### Authorization
 
@@ -721,17 +413,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600InvalidateCacheNamespace"></a>
-# **oBPv600InvalidateCacheNamespace**
-> OBPv600InvalidateCacheNamespace200Response oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest)
+<a id="invalidateCacheNamespace"></a>
+# **invalidateCacheNamespace**
+> InvalidateCacheNamespace200Response invalidateCacheNamespace(invalidateCacheNamespaceRequest)
 
 Invalidate Cache Namespace
 
@@ -744,15 +436,15 @@ Invalidate Cache Namespace
 //import com.openbankproject.models.*
 
 val apiInstance = SystemApi()
-val obPv600InvalidateCacheNamespaceRequest : OBPv600InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}} // OBPv600InvalidateCacheNamespaceRequest | Request body
+val invalidateCacheNamespaceRequest : InvalidateCacheNamespaceRequest = {"type":"object","properties":{"namespace_id":{"type":"string"}}} // InvalidateCacheNamespaceRequest | Request body
 try {
-    val result : OBPv600InvalidateCacheNamespace200Response = apiInstance.oBPv600InvalidateCacheNamespace(obPv600InvalidateCacheNamespaceRequest)
+    val result : InvalidateCacheNamespace200Response = apiInstance.invalidateCacheNamespace(invalidateCacheNamespaceRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling SystemApi#oBPv600InvalidateCacheNamespace")
+    println("4xx response calling SystemApi#invalidateCacheNamespace")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling SystemApi#oBPv600InvalidateCacheNamespace")
+    println("5xx response calling SystemApi#invalidateCacheNamespace")
     e.printStackTrace()
 }
 ```
@@ -760,11 +452,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600InvalidateCacheNamespaceRequest** | [**OBPv600InvalidateCacheNamespaceRequest**](OBPv600InvalidateCacheNamespaceRequest.md)| Request body | |
+| **invalidateCacheNamespaceRequest** | [**InvalidateCacheNamespaceRequest**](InvalidateCacheNamespaceRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600InvalidateCacheNamespace200Response**](OBPv600InvalidateCacheNamespace200Response.md)
+[**InvalidateCacheNamespace200Response**](InvalidateCacheNamespace200Response.md)
 
 ### Authorization
 
@@ -775,11 +467,311 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+<a id="logCacheAllEndpoint"></a>
+# **logCacheAllEndpoint**
+> logCacheAllEndpoint()
+
+Get All Level Log Cache
+
+&lt;p&gt;Returns logs of all levels from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/all?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheAllEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheAllEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheAllEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="logCacheDebugEndpoint"></a>
+# **logCacheDebugEndpoint**
+> logCacheDebugEndpoint()
+
+Get Debug Level Log Cache
+
+&lt;p&gt;Returns DEBUG level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/debug?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheDebugEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheDebugEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheDebugEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="logCacheErrorEndpoint"></a>
+# **logCacheErrorEndpoint**
+> logCacheErrorEndpoint()
+
+Get Error Level Log Cache
+
+&lt;p&gt;Returns ERROR level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/error?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheErrorEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheErrorEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheErrorEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="logCacheInfoEndpoint"></a>
+# **logCacheInfoEndpoint**
+> logCacheInfoEndpoint()
+
+Get Info Level Log Cache
+
+&lt;p&gt;Returns INFO level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/info?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheInfoEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheInfoEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheInfoEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="logCacheTraceEndpoint"></a>
+# **logCacheTraceEndpoint**
+> logCacheTraceEndpoint()
+
+Get Trace Level Log Cache
+
+&lt;p&gt;Returns TRACE level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/trace?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheTraceEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheTraceEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheTraceEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a id="logCacheWarningEndpoint"></a>
+# **logCacheWarningEndpoint**
+> logCacheWarningEndpoint()
+
+Get Warning Level Log Cache
+
+&lt;p&gt;Returns WARNING level logs from the system log cache.&lt;/p&gt; &lt;p&gt;This endpoint supports pagination via the following optional query parameters:&lt;br /&gt; * limit - Maximum number of log entries to return&lt;br /&gt; * offset - Number of log entries to skip (for pagination)&lt;/p&gt; &lt;p&gt;Example: GET /system/log-cache/warning?limit&#x3D;50&amp;amp;offset&#x3D;100&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+
+### Example
+```kotlin
+// Import classes:
+//import com.openbankproject.infrastructure.*
+//import com.openbankproject.models.*
+
+val apiInstance = SystemApi()
+try {
+    apiInstance.logCacheWarningEndpoint()
+} catch (e: ClientException) {
+    println("4xx response calling SystemApi#logCacheWarningEndpoint")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling SystemApi#logCacheWarningEndpoint")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure OAuth2:
+    ApiClient.accessToken = ""
+Configure GatewayLogin:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure DirectLogin:
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 

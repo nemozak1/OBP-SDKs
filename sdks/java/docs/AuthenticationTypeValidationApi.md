@@ -1,27 +1,27 @@
 # AuthenticationTypeValidationApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400CreateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400CreateAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**oBPv400CreateAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400CreateAuthenticationTypeValidationWithHttpInfo) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
-| [**oBPv400DeleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400DeleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**oBPv400DeleteAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400DeleteAuthenticationTypeValidationWithHttpInfo) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
-| [**oBPv400GetAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
-| [**oBPv400GetAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
-| [**oBPv400GetAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400GetAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**oBPv400GetAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400GetAuthenticationTypeValidationWithHttpInfo) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
-| [**oBPv400UpdateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#oBPv400UpdateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
-| [**oBPv400UpdateAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#oBPv400UpdateAuthenticationTypeValidationWithHttpInfo) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**createAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#createAuthenticationTypeValidation) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**createAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#createAuthenticationTypeValidationWithHttpInfo) | **POST** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Create an Authentication Type Validation |
+| [**deleteAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#deleteAuthenticationTypeValidation) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**deleteAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#deleteAuthenticationTypeValidationWithHttpInfo) | **DELETE** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Delete an Authentication Type Validation |
+| [**getAllAuthenticationTypeValidations**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidations) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**getAllAuthenticationTypeValidationsWithHttpInfo**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidationsWithHttpInfo) | **GET** /obp/v4.0.0/management/authentication-type-validations | Get all Authentication Type Validations |
+| [**getAllAuthenticationTypeValidationsPublic**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidationsPublic) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**getAllAuthenticationTypeValidationsPublicWithHttpInfo**](AuthenticationTypeValidationApi.md#getAllAuthenticationTypeValidationsPublicWithHttpInfo) | **GET** /obp/v4.0.0/endpoints/authentication-type-validations | Get all Authentication Type Validations - public |
+| [**getAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#getAuthenticationTypeValidation) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**getAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#getAuthenticationTypeValidationWithHttpInfo) | **GET** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Get an Authentication Type Validation |
+| [**updateAuthenticationTypeValidation**](AuthenticationTypeValidationApi.md#updateAuthenticationTypeValidation) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
+| [**updateAuthenticationTypeValidationWithHttpInfo**](AuthenticationTypeValidationApi.md#updateAuthenticationTypeValidationWithHttpInfo) | **PUT** /obp/v4.0.0/management/authentication-type-validations/{operationid} | Update an Authentication Type Validation |
 
 
 
-## oBPv400CreateAuthenticationTypeValidation
+## createAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400CreateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -41,7 +41,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -61,12 +61,12 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest = new OBPv400UpdateAuthenticationTypeValidationRequest(); // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+        UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = new UpdateAuthenticationTypeValidationRequest(); // UpdateAuthenticationTypeValidationRequest | Request body
         try {
-            OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems result = apiInstance.oBPv400CreateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest);
+            GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner result = apiInstance.createAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400CreateAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#createAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -82,11 +82,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 
 ### Authorization
@@ -104,9 +104,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateAuthenticationTypeValidationWithHttpInfo
+## createAuthenticationTypeValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400CreateAuthenticationTypeValidation oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+> ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> createAuthenticationTypeValidation createAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest)
 
 Create an Authentication Type Validation
 
@@ -127,7 +127,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -147,14 +147,14 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest = new OBPv400UpdateAuthenticationTypeValidationRequest(); // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+        UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = new UpdateAuthenticationTypeValidationRequest(); // UpdateAuthenticationTypeValidationRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> response = apiInstance.oBPv400CreateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest);
+            ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> response = apiInstance.createAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400CreateAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#createAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -170,11 +170,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)>
+ApiResponse<[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)>
 
 
 ### Authorization
@@ -193,9 +193,9 @@ ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProper
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteAuthenticationTypeValidation
+## deleteAuthenticationTypeValidation
 
-> void oBPv400DeleteAuthenticationTypeValidation(operationid)
+> void deleteAuthenticationTypeValidation(operationid)
 
 Delete an Authentication Type Validation
 
@@ -215,7 +215,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -236,9 +236,9 @@ public class Example {
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            apiInstance.oBPv400DeleteAuthenticationTypeValidation(operationid);
+            apiInstance.deleteAuthenticationTypeValidation(operationid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400DeleteAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#deleteAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -275,9 +275,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteAuthenticationTypeValidationWithHttpInfo
+## deleteAuthenticationTypeValidationWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteAuthenticationTypeValidation oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid)
+> ApiResponse<Void> deleteAuthenticationTypeValidation deleteAuthenticationTypeValidationWithHttpInfo(operationid)
 
 Delete an Authentication Type Validation
 
@@ -298,7 +298,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -319,11 +319,11 @@ public class Example {
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteAuthenticationTypeValidationWithHttpInfo(operationid);
+            ApiResponse<Void> response = apiInstance.deleteAuthenticationTypeValidationWithHttpInfo(operationid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400DeleteAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#deleteAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -361,9 +361,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllAuthenticationTypeValidations
+## getAllAuthenticationTypeValidations
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidations()
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidations()
 
 Get all Authentication Type Validations
 
@@ -383,7 +383,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -403,10 +403,10 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         try {
-            OBPv400GetAllAuthenticationTypeValidationsPublic200Response result = apiInstance.oBPv400GetAllAuthenticationTypeValidations();
+            GetAllAuthenticationTypeValidationsPublic200Response result = apiInstance.getAllAuthenticationTypeValidations();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidations");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidations");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -422,7 +422,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 
 ### Authorization
@@ -440,9 +440,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo
+## getAllAuthenticationTypeValidationsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidations oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo()
+> ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidations getAllAuthenticationTypeValidationsWithHttpInfo()
 
 Get all Authentication Type Validations
 
@@ -463,7 +463,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -483,12 +483,12 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> response = apiInstance.oBPv400GetAllAuthenticationTypeValidationsWithHttpInfo();
+            ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> response = apiInstance.getAllAuthenticationTypeValidationsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidations");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidations");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)>
+ApiResponse<[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)>
 
 
 ### Authorization
@@ -523,9 +523,9 @@ ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OB
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllAuthenticationTypeValidationsPublic
+## getAllAuthenticationTypeValidationsPublic
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200Response oBPv400GetAllAuthenticationTypeValidationsPublic()
+> GetAllAuthenticationTypeValidationsPublic200Response getAllAuthenticationTypeValidationsPublic()
 
 Get all Authentication Type Validations - public
 
@@ -544,14 +544,14 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         try {
-            OBPv400GetAllAuthenticationTypeValidationsPublic200Response result = apiInstance.oBPv400GetAllAuthenticationTypeValidationsPublic();
+            GetAllAuthenticationTypeValidationsPublic200Response result = apiInstance.getAllAuthenticationTypeValidationsPublic();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidationsPublic");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidationsPublic");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -567,7 +567,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)
+[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)
 
 
 ### Authorization
@@ -585,9 +585,9 @@ No authorization required
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo
+## getAllAuthenticationTypeValidationsPublicWithHttpInfo
 
-> ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> oBPv400GetAllAuthenticationTypeValidationsPublic oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo()
+> ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> getAllAuthenticationTypeValidationsPublic getAllAuthenticationTypeValidationsPublicWithHttpInfo()
 
 Get all Authentication Type Validations - public
 
@@ -607,16 +607,16 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200Response> response = apiInstance.oBPv400GetAllAuthenticationTypeValidationsPublicWithHttpInfo();
+            ApiResponse<GetAllAuthenticationTypeValidationsPublic200Response> response = apiInstance.getAllAuthenticationTypeValidationsPublicWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAllAuthenticationTypeValidationsPublic");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAllAuthenticationTypeValidationsPublic");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -632,7 +632,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200Response**](OBPv400GetAllAuthenticationTypeValidationsPublic200Response.md)>
+ApiResponse<[**GetAllAuthenticationTypeValidationsPublic200Response**](GetAllAuthenticationTypeValidationsPublic200Response.md)>
 
 
 ### Authorization
@@ -651,9 +651,9 @@ No authorization required
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAuthenticationTypeValidation
+## getAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400GetAuthenticationTypeValidation(operationid)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner getAuthenticationTypeValidation(operationid)
 
 Get an Authentication Type Validation
 
@@ -673,7 +673,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -694,10 +694,10 @@ public class Example {
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems result = apiInstance.oBPv400GetAuthenticationTypeValidation(operationid);
+            GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner result = apiInstance.getAuthenticationTypeValidation(operationid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -716,7 +716,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 
 ### Authorization
@@ -734,9 +734,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAuthenticationTypeValidationWithHttpInfo
+## getAuthenticationTypeValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400GetAuthenticationTypeValidation oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid)
+> ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> getAuthenticationTypeValidation getAuthenticationTypeValidationWithHttpInfo(operationid)
 
 Get an Authentication Type Validation
 
@@ -757,7 +757,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -778,12 +778,12 @@ public class Example {
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
         try {
-            ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> response = apiInstance.oBPv400GetAuthenticationTypeValidationWithHttpInfo(operationid);
+            ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> response = apiInstance.getAuthenticationTypeValidationWithHttpInfo(operationid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400GetAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#getAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -802,7 +802,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)>
+ApiResponse<[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)>
 
 
 ### Authorization
@@ -821,9 +821,9 @@ ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponseProper
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateAuthenticationTypeValidation
+## updateAuthenticationTypeValidation
 
-> OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems oBPv400UpdateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+> GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -843,7 +843,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -863,12 +863,12 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest = new OBPv400UpdateAuthenticationTypeValidationRequest(); // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+        UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = new UpdateAuthenticationTypeValidationRequest(); // UpdateAuthenticationTypeValidationRequest | Request body
         try {
-            OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems result = apiInstance.oBPv400UpdateAuthenticationTypeValidation(operationid, obPv400UpdateAuthenticationTypeValidationRequest);
+            GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner result = apiInstance.updateAuthenticationTypeValidation(operationid, updateAuthenticationTypeValidationRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400UpdateAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#updateAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -884,11 +884,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)
+[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)
 
 
 ### Authorization
@@ -906,9 +906,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateAuthenticationTypeValidationWithHttpInfo
+## updateAuthenticationTypeValidationWithHttpInfo
 
-> ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> oBPv400UpdateAuthenticationTypeValidation oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest)
+> ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> updateAuthenticationTypeValidation updateAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest)
 
 Update an Authentication Type Validation
 
@@ -929,7 +929,7 @@ import com.openbankproject.api.AuthenticationTypeValidationApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -949,14 +949,14 @@ public class Example {
 
         AuthenticationTypeValidationApi apiInstance = new AuthenticationTypeValidationApi(defaultClient);
         String operationid = "operationid_example"; // String | The OPERATIONID identifier
-        OBPv400UpdateAuthenticationTypeValidationRequest obPv400UpdateAuthenticationTypeValidationRequest = new OBPv400UpdateAuthenticationTypeValidationRequest(); // OBPv400UpdateAuthenticationTypeValidationRequest | Request body
+        UpdateAuthenticationTypeValidationRequest updateAuthenticationTypeValidationRequest = new UpdateAuthenticationTypeValidationRequest(); // UpdateAuthenticationTypeValidationRequest | Request body
         try {
-            ApiResponse<OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems> response = apiInstance.oBPv400UpdateAuthenticationTypeValidationWithHttpInfo(operationid, obPv400UpdateAuthenticationTypeValidationRequest);
+            ApiResponse<GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner> response = apiInstance.updateAuthenticationTypeValidationWithHttpInfo(operationid, updateAuthenticationTypeValidationRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationTypeValidationApi#oBPv400UpdateAuthenticationTypeValidation");
+            System.err.println("Exception when calling AuthenticationTypeValidationApi#updateAuthenticationTypeValidation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -972,11 +972,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **operationid** | **String**| The OPERATIONID identifier | |
-| **obPv400UpdateAuthenticationTypeValidationRequest** | [**OBPv400UpdateAuthenticationTypeValidationRequest**](OBPv400UpdateAuthenticationTypeValidationRequest.md)| Request body | |
+| **updateAuthenticationTypeValidationRequest** | [**UpdateAuthenticationTypeValidationRequest**](UpdateAuthenticationTypeValidationRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems**](OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems.md)>
+ApiResponse<[**GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner**](GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner.md)>
 
 
 ### Authorization

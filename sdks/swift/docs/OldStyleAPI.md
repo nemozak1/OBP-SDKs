@@ -1,15 +1,15 @@
 # OldStyleAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv200ElasticSearchMetrics**](OldStyleAPI.md#obpv200elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
+[**elasticSearchMetrics**](OldStyleAPI.md#elasticsearchmetrics) | **GET** /obp/v2.0.0/search/metrics | Search API Metrics via Elasticsearch
 
 
-# **oBPv200ElasticSearchMetrics**
+# **elasticSearchMetrics**
 ```swift
-    open class func oBPv200ElasticSearchMetrics(completion: @escaping (_ data: OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage?, _ error: Error?) -> Void)
+    open class func elasticSearchMetrics(completion: @escaping (_ data: JSONValue?, _ error: Error?) -> Void)
 ```
 
 Search API Metrics via Elasticsearch
@@ -23,7 +23,7 @@ import OBPSwift
 
 
 // Search API Metrics via Elasticsearch
-OldStyleAPI.oBPv200ElasticSearchMetrics() { (response, error) in
+OldStyleAPI.elasticSearchMetrics() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage**](OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage.md)
+**JSONValue**
 
 ### Authorization
 

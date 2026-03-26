@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from obp_python.models.obpv600_get_available_personal_dynamic_entities200_response import OBPv600GetAvailablePersonalDynamicEntities200Response
+from obp_python.models.get_available_personal_dynamic_entities200_response import GetAvailablePersonalDynamicEntities200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -37,7 +37,7 @@ class PersonalDynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities(
+    def get_available_personal_dynamic_entities(
         self,
         _request_timeout: Union[
             None,
@@ -51,7 +51,7 @@ class PersonalDynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv600GetAvailablePersonalDynamicEntities200Response:
+    ) -> GetAvailablePersonalDynamicEntities200Response:
         """Get Available Personal Dynamic Entities
 
         <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -78,7 +78,7 @@ class PersonalDynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -86,7 +86,7 @@ class PersonalDynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -101,7 +101,7 @@ class PersonalDynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities_with_http_info(
+    def get_available_personal_dynamic_entities_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -115,7 +115,7 @@ class PersonalDynamicEntityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv600GetAvailablePersonalDynamicEntities200Response]:
+    ) -> ApiResponse[GetAvailablePersonalDynamicEntities200Response]:
         """Get Available Personal Dynamic Entities
 
         <p>Get all Dynamic Entities that support personal data storage (hasPersonalEntity == true).</p> <p>This endpoint allows regular users (without admin roles) to discover which dynamic entities<br /> they can interact with for storing personal data via the /my/ENTITY_NAME endpoints.</p> <p>Authentication: User must be logged in (no special roles required).</p> <p>Use case: Portals and apps can show users what personal data types are available<br /> without needing admin access to view all dynamic entity definitions.</p> <p>For more information see <a href=\"/glossary#My-Dynamic-Entities\">here</a></p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> 
@@ -142,7 +142,7 @@ class PersonalDynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -150,7 +150,7 @@ class PersonalDynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -165,7 +165,7 @@ class PersonalDynamicEntityApi:
 
 
     @validate_call
-    def o_bpv6_0_0_get_available_personal_dynamic_entities_without_preload_content(
+    def get_available_personal_dynamic_entities_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -206,7 +206,7 @@ class PersonalDynamicEntityApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+        _param = self._get_available_personal_dynamic_entities_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -214,7 +214,7 @@ class PersonalDynamicEntityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv600GetAvailablePersonalDynamicEntities200Response",
+            '200': "GetAvailablePersonalDynamicEntities200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -224,7 +224,7 @@ class PersonalDynamicEntityApi:
         return response_data.response
 
 
-    def _o_bpv6_0_0_get_available_personal_dynamic_entities_serialize(
+    def _get_available_personal_dynamic_entities_serialize(
         self,
         _request_auth,
         _content_type,

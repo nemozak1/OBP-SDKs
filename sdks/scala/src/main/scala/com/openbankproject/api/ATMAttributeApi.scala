@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,15 +11,15 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv510GetAtmAttribute200Response
-import com.openbankproject.model.OBPv510GetAtmAttributes200Response
-import com.openbankproject.model.OBPv510UpdateAtmAttributeRequest
+import com.openbankproject.model.GetAtmAttribute200Response
+import com.openbankproject.model.GetAtmAttributes200Response
+import com.openbankproject.model.UpdateAtmAttributeRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object ATMAttributeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new ATMAttributeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new ATMAttributeApi(baseUrl)
 }
 
 class ATMAttributeApi(baseUrl: String) {
@@ -28,7 +28,7 @@ class ATMAttributeApi(baseUrl: String) {
    * <p>Create ATM Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv510GetAtmAttribute200Response (Successful operation)
+   *   code 200 : GetAtmAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -38,16 +38,16 @@ class ATMAttributeApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param atmid The ATMID identifier
-   * @param oBPv510UpdateAtmAttributeRequest Request body
+   * @param updateAtmAttributeRequest Request body
    */
-  def oBPv510CreateAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], OBPv510GetAtmAttribute200Response]] =
+  def createAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], GetAtmAttribute200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/atms/${atmid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510UpdateAtmAttributeRequest)
-      .response(asJson[OBPv510GetAtmAttribute200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateAtmAttributeRequest)
+      .response(asJson[GetAtmAttribute200Response])
 
   /**
    * <p>Delete ATM Attribute</p> <p>Delete a Atm Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
@@ -65,19 +65,19 @@ class ATMAttributeApi(baseUrl: String) {
    * @param atmid The ATMID identifier
    * @param atmattributeid The ATMATTRIBUTEID identifier
    */
-  def oBPv510DeleteAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/atms/${atmid}/attributes/${atmattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get ATM Attribute By ATM_ATTRIBUTE_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv510GetAtmAttribute200Response (Successful operation)
+   *   code 200 : GetAtmAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -89,19 +89,19 @@ class ATMAttributeApi(baseUrl: String) {
    * @param atmid The ATMID identifier
    * @param atmattributeid The ATMATTRIBUTEID identifier
    */
-  def oBPv510GetAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String): Request[Either[ResponseException[String, Exception], OBPv510GetAtmAttribute200Response]] =
+  def getAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String): Request[Either[ResponseException[String, Exception], GetAtmAttribute200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/atms/${atmid}/attributes/${atmattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv510GetAtmAttribute200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAtmAttribute200Response])
 
   /**
    * <p>Get ATM Attributes</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>atm_attributes</strong></a>: atm_attributes</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv510GetAtmAttributes200Response (Successful operation)
+   *   code 200 : GetAtmAttributes200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -112,19 +112,19 @@ class ATMAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param atmid The ATMID identifier
    */
-  def oBPv510GetAtmAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String): Request[Either[ResponseException[String, Exception], OBPv510GetAtmAttributes200Response]] =
+  def getAtmAttributes(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String): Request[Either[ResponseException[String, Exception], GetAtmAttributes200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/atms/${atmid}/attributes")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv510GetAtmAttributes200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAtmAttributes200Response])
 
   /**
    * <p>Update ATM Attribute.</p> <p>Update an ATM Attribute by its id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">ATM_ATTRIBUTE_ID</a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\">ATM_ID</a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>atm_attribute_id</strong></a>: xxaf2a-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#atm_id\"><strong>atm_id</strong></a>: atme-9a0f-4bfa-b30b-9003aa467f51</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv510GetAtmAttribute200Response (Successful operation)
+   *   code 200 : GetAtmAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -135,15 +135,15 @@ class ATMAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param atmid The ATMID identifier
    * @param atmattributeid The ATMATTRIBUTEID identifier
-   * @param oBPv510UpdateAtmAttributeRequest Request body
+   * @param updateAtmAttributeRequest Request body
    */
-  def oBPv510UpdateAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], OBPv510GetAtmAttribute200Response]] =
+  def updateAtmAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, atmid: String, atmattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], GetAtmAttribute200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v5.1.0/banks/${bankid}/atms/${atmid}/attributes/${atmattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510UpdateAtmAttributeRequest)
-      .response(asJson[OBPv510GetAtmAttribute200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateAtmAttributeRequest)
+      .response(asJson[GetAtmAttribute200Response])
 
 }

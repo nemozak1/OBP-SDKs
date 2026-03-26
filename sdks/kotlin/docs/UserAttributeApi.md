@@ -1,24 +1,24 @@
 # UserAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600CreatePersonalDataField**](UserAttributeApi.md#oBPv600CreatePersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
-| [**oBPv600CreateUserAttribute**](UserAttributeApi.md#oBPv600CreateUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
-| [**oBPv600DeletePersonalDataField**](UserAttributeApi.md#oBPv600DeletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
-| [**oBPv600DeleteUserAttribute**](UserAttributeApi.md#oBPv600DeleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
-| [**oBPv600GetPersonalDataFieldById**](UserAttributeApi.md#oBPv600GetPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
-| [**oBPv600GetPersonalDataFields**](UserAttributeApi.md#oBPv600GetPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
-| [**oBPv600GetUserAttributeById**](UserAttributeApi.md#oBPv600GetUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
-| [**oBPv600GetUserAttributes**](UserAttributeApi.md#oBPv600GetUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
-| [**oBPv600UpdatePersonalDataField**](UserAttributeApi.md#oBPv600UpdatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
-| [**oBPv600UpdateUserAttribute**](UserAttributeApi.md#oBPv600UpdateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
+| [**createPersonalDataField**](UserAttributeApi.md#createPersonalDataField) | **POST** /obp/v6.0.0/my/personal-data-fields | Create Personal Data Field |
+| [**createUserAttribute**](UserAttributeApi.md#createUserAttribute) | **POST** /obp/v6.0.0/users/{userid}/attributes | Create User Attribute |
+| [**deletePersonalDataField**](UserAttributeApi.md#deletePersonalDataField) | **DELETE** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Delete Personal Data Field |
+| [**deleteUserAttribute**](UserAttributeApi.md#deleteUserAttribute) | **DELETE** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Delete User Attribute |
+| [**getPersonalDataFieldById**](UserAttributeApi.md#getPersonalDataFieldById) | **GET** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Get Personal Data Field By Id |
+| [**getPersonalDataFields**](UserAttributeApi.md#getPersonalDataFields) | **GET** /obp/v6.0.0/my/personal-data-fields | Get Personal Data Fields |
+| [**getUserAttributeById**](UserAttributeApi.md#getUserAttributeById) | **GET** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Get User Attribute By Id |
+| [**getUserAttributes**](UserAttributeApi.md#getUserAttributes) | **GET** /obp/v6.0.0/users/{userid}/attributes | Get User Attributes |
+| [**updatePersonalDataField**](UserAttributeApi.md#updatePersonalDataField) | **PUT** /obp/v6.0.0/my/personal-data-fields/{userattributeid} | Update Personal Data Field |
+| [**updateUserAttribute**](UserAttributeApi.md#updateUserAttribute) | **PUT** /obp/v6.0.0/users/{userid}/attributes/{userattributeid} | Update User Attribute |
 
 
-<a id="oBPv600CreatePersonalDataField"></a>
-# **oBPv600CreatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest)
+<a id="createPersonalDataField"></a>
+# **createPersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner createPersonalDataField(createPersonalDataFieldRequest)
 
 Create Personal Data Field
 
@@ -31,15 +31,15 @@ Create Personal Data Field
 //import com.openbankproject.models.*
 
 val apiInstance = UserAttributeApi()
-val obPv600CreatePersonalDataFieldRequest : OBPv600CreatePersonalDataFieldRequest = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}} // OBPv600CreatePersonalDataFieldRequest | Request body
+val createPersonalDataFieldRequest : CreatePersonalDataFieldRequest = {"type":"object","properties":{"name":{"type":"string"},"type":{"type":"string"},"value":{"type":"string"}}} // CreatePersonalDataFieldRequest | Request body
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600CreatePersonalDataField(obPv600CreatePersonalDataFieldRequest)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.createPersonalDataField(createPersonalDataFieldRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600CreatePersonalDataField")
+    println("4xx response calling UserAttributeApi#createPersonalDataField")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600CreatePersonalDataField")
+    println("5xx response calling UserAttributeApi#createPersonalDataField")
     e.printStackTrace()
 }
 ```
@@ -47,11 +47,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -62,17 +62,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600CreateUserAttribute"></a>
-# **oBPv600CreateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600CreateUserAttribute(userid, obPv600CreatePersonalDataFieldRequest)
+<a id="createUserAttribute"></a>
+# **createUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner createUserAttribute(userid, createPersonalDataFieldRequest)
 
 Create User Attribute
 
@@ -86,15 +86,15 @@ Create User Attribute
 
 val apiInstance = UserAttributeApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
-val obPv600CreatePersonalDataFieldRequest : OBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // OBPv600CreatePersonalDataFieldRequest | Request body
+val createPersonalDataFieldRequest : CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // CreatePersonalDataFieldRequest | Request body
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600CreateUserAttribute(userid, obPv600CreatePersonalDataFieldRequest)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.createUserAttribute(userid, createPersonalDataFieldRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600CreateUserAttribute")
+    println("4xx response calling UserAttributeApi#createUserAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600CreateUserAttribute")
+    println("5xx response calling UserAttributeApi#createUserAttribute")
     e.printStackTrace()
 }
 ```
@@ -103,11 +103,11 @@ try {
 | **userid** | **kotlin.String**| The USERID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -118,17 +118,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600DeletePersonalDataField"></a>
-# **oBPv600DeletePersonalDataField**
-> oBPv600DeletePersonalDataField(userattributeid)
+<a id="deletePersonalDataField"></a>
+# **deletePersonalDataField**
+> deletePersonalDataField(userattributeid)
 
 Delete Personal Data Field
 
@@ -143,12 +143,12 @@ Delete Personal Data Field
 val apiInstance = UserAttributeApi()
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
 try {
-    apiInstance.oBPv600DeletePersonalDataField(userattributeid)
+    apiInstance.deletePersonalDataField(userattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600DeletePersonalDataField")
+    println("4xx response calling UserAttributeApi#deletePersonalDataField")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600DeletePersonalDataField")
+    println("5xx response calling UserAttributeApi#deletePersonalDataField")
     e.printStackTrace()
 }
 ```
@@ -171,17 +171,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600DeleteUserAttribute"></a>
-# **oBPv600DeleteUserAttribute**
-> oBPv600DeleteUserAttribute(userid, userattributeid)
+<a id="deleteUserAttribute"></a>
+# **deleteUserAttribute**
+> deleteUserAttribute(userid, userattributeid)
 
 Delete User Attribute
 
@@ -197,12 +197,12 @@ val apiInstance = UserAttributeApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
 try {
-    apiInstance.oBPv600DeleteUserAttribute(userid, userattributeid)
+    apiInstance.deleteUserAttribute(userid, userattributeid)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600DeleteUserAttribute")
+    println("4xx response calling UserAttributeApi#deleteUserAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600DeleteUserAttribute")
+    println("5xx response calling UserAttributeApi#deleteUserAttribute")
     e.printStackTrace()
 }
 ```
@@ -226,17 +226,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv600GetPersonalDataFieldById"></a>
-# **oBPv600GetPersonalDataFieldById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetPersonalDataFieldById(userattributeid)
+<a id="getPersonalDataFieldById"></a>
+# **getPersonalDataFieldById**
+> GetPersonalDataFields200ResponseUserAttributesInner getPersonalDataFieldById(userattributeid)
 
 Get Personal Data Field By Id
 
@@ -251,13 +251,13 @@ Get Personal Data Field By Id
 val apiInstance = UserAttributeApi()
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600GetPersonalDataFieldById(userattributeid)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.getPersonalDataFieldById(userattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600GetPersonalDataFieldById")
+    println("4xx response calling UserAttributeApi#getPersonalDataFieldById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600GetPersonalDataFieldById")
+    println("5xx response calling UserAttributeApi#getPersonalDataFieldById")
     e.printStackTrace()
 }
 ```
@@ -269,7 +269,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -280,17 +280,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetPersonalDataFields"></a>
-# **oBPv600GetPersonalDataFields**
-> OBPv600GetPersonalDataFields200Response oBPv600GetPersonalDataFields()
+<a id="getPersonalDataFields"></a>
+# **getPersonalDataFields**
+> GetPersonalDataFields200Response getPersonalDataFields()
 
 Get Personal Data Fields
 
@@ -304,13 +304,13 @@ Get Personal Data Fields
 
 val apiInstance = UserAttributeApi()
 try {
-    val result : OBPv600GetPersonalDataFields200Response = apiInstance.oBPv600GetPersonalDataFields()
+    val result : GetPersonalDataFields200Response = apiInstance.getPersonalDataFields()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600GetPersonalDataFields")
+    println("4xx response calling UserAttributeApi#getPersonalDataFields")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600GetPersonalDataFields")
+    println("5xx response calling UserAttributeApi#getPersonalDataFields")
     e.printStackTrace()
 }
 ```
@@ -320,7 +320,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -331,17 +331,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetUserAttributeById"></a>
-# **oBPv600GetUserAttributeById**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600GetUserAttributeById(userid, userattributeid)
+<a id="getUserAttributeById"></a>
+# **getUserAttributeById**
+> GetPersonalDataFields200ResponseUserAttributesInner getUserAttributeById(userid, userattributeid)
 
 Get User Attribute By Id
 
@@ -357,13 +357,13 @@ val apiInstance = UserAttributeApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600GetUserAttributeById(userid, userattributeid)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.getUserAttributeById(userid, userattributeid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600GetUserAttributeById")
+    println("4xx response calling UserAttributeApi#getUserAttributeById")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600GetUserAttributeById")
+    println("5xx response calling UserAttributeApi#getUserAttributeById")
     e.printStackTrace()
 }
 ```
@@ -376,7 +376,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -387,17 +387,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetUserAttributes"></a>
-# **oBPv600GetUserAttributes**
-> OBPv600GetPersonalDataFields200Response oBPv600GetUserAttributes(userid)
+<a id="getUserAttributes"></a>
+# **getUserAttributes**
+> GetPersonalDataFields200Response getUserAttributes(userid)
 
 Get User Attributes
 
@@ -412,13 +412,13 @@ Get User Attributes
 val apiInstance = UserAttributeApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 try {
-    val result : OBPv600GetPersonalDataFields200Response = apiInstance.oBPv600GetUserAttributes(userid)
+    val result : GetPersonalDataFields200Response = apiInstance.getUserAttributes(userid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600GetUserAttributes")
+    println("4xx response calling UserAttributeApi#getUserAttributes")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600GetUserAttributes")
+    println("5xx response calling UserAttributeApi#getUserAttributes")
     e.printStackTrace()
 }
 ```
@@ -430,7 +430,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200Response**](OBPv600GetPersonalDataFields200Response.md)
+[**GetPersonalDataFields200Response**](GetPersonalDataFields200Response.md)
 
 ### Authorization
 
@@ -441,17 +441,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600UpdatePersonalDataField"></a>
-# **oBPv600UpdatePersonalDataField**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdatePersonalDataField(userattributeid, obPv600CreatePersonalDataFieldRequest)
+<a id="updatePersonalDataField"></a>
+# **updatePersonalDataField**
+> GetPersonalDataFields200ResponseUserAttributesInner updatePersonalDataField(userattributeid, createPersonalDataFieldRequest)
 
 Update Personal Data Field
 
@@ -465,15 +465,15 @@ Update Personal Data Field
 
 val apiInstance = UserAttributeApi()
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
-val obPv600CreatePersonalDataFieldRequest : OBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // OBPv600CreatePersonalDataFieldRequest | Request body
+val createPersonalDataFieldRequest : CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // CreatePersonalDataFieldRequest | Request body
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600UpdatePersonalDataField(userattributeid, obPv600CreatePersonalDataFieldRequest)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.updatePersonalDataField(userattributeid, createPersonalDataFieldRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600UpdatePersonalDataField")
+    println("4xx response calling UserAttributeApi#updatePersonalDataField")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600UpdatePersonalDataField")
+    println("5xx response calling UserAttributeApi#updatePersonalDataField")
     e.printStackTrace()
 }
 ```
@@ -482,11 +482,11 @@ try {
 | **userattributeid** | **kotlin.String**| The USERATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -497,17 +497,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv600UpdateUserAttribute"></a>
-# **oBPv600UpdateUserAttribute**
-> OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems oBPv600UpdateUserAttribute(userid, userattributeid, obPv600CreatePersonalDataFieldRequest)
+<a id="updateUserAttribute"></a>
+# **updateUserAttribute**
+> GetPersonalDataFields200ResponseUserAttributesInner updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest)
 
 Update User Attribute
 
@@ -522,15 +522,15 @@ Update User Attribute
 val apiInstance = UserAttributeApi()
 val userid : kotlin.String = userid_example // kotlin.String | The USERID identifier
 val userattributeid : kotlin.String = userattributeid_example // kotlin.String | The USERATTRIBUTEID identifier
-val obPv600CreatePersonalDataFieldRequest : OBPv600CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // OBPv600CreatePersonalDataFieldRequest | Request body
+val createPersonalDataFieldRequest : CreatePersonalDataFieldRequest = {type=object, properties={name={type=string}, type={type=string}, value={type=string}}} // CreatePersonalDataFieldRequest | Request body
 try {
-    val result : OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems = apiInstance.oBPv600UpdateUserAttribute(userid, userattributeid, obPv600CreatePersonalDataFieldRequest)
+    val result : GetPersonalDataFields200ResponseUserAttributesInner = apiInstance.updateUserAttribute(userid, userattributeid, createPersonalDataFieldRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UserAttributeApi#oBPv600UpdateUserAttribute")
+    println("4xx response calling UserAttributeApi#updateUserAttribute")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UserAttributeApi#oBPv600UpdateUserAttribute")
+    println("5xx response calling UserAttributeApi#updateUserAttribute")
     e.printStackTrace()
 }
 ```
@@ -540,11 +540,11 @@ try {
 | **userattributeid** | **kotlin.String**| The USERATTRIBUTEID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600CreatePersonalDataFieldRequest** | [**OBPv600CreatePersonalDataFieldRequest**](OBPv600CreatePersonalDataFieldRequest.md)| Request body | |
+| **createPersonalDataFieldRequest** | [**CreatePersonalDataFieldRequest**](CreatePersonalDataFieldRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems**](OBPv600GetPersonalDataFields200ResponsePropertiesUserAttributesItems.md)
+[**GetPersonalDataFields200ResponseUserAttributesInner**](GetPersonalDataFields200ResponseUserAttributesInner.md)
 
 ### Authorization
 
@@ -555,8 +555,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

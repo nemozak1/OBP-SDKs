@@ -1,17 +1,17 @@
 # \StandingOrderAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv400CreateStandingOrder**](StandingOrderAPI.md#OBPv400CreateStandingOrder) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-[**OBPv400CreateStandingOrderManagement**](StandingOrderAPI.md#OBPv400CreateStandingOrderManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+[**CreateStandingOrder**](StandingOrderAPI.md#CreateStandingOrder) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+[**CreateStandingOrderManagement**](StandingOrderAPI.md#CreateStandingOrderManagement) | **Post** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
 
 
 
-## OBPv400CreateStandingOrder
+## CreateStandingOrder
 
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrder(ctx, bankid, accountid, viewid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+> CreateStandingOrder200Response CreateStandingOrder(ctx, bankid, accountid, viewid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 
 Create Standing Order
 
@@ -33,17 +33,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv400CreateStandingOrderRequest := *openapiclient.NewOBPv400CreateStandingOrderRequest("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhen("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhenProperties(, )))) // OBPv400CreateStandingOrderRequest | Request body
+	createStandingOrderRequest := *openapiclient.NewCreateStandingOrderRequest() // CreateStandingOrderRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.StandingOrderAPI.OBPv400CreateStandingOrder(context.Background(), bankid, accountid, viewid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+	resp, r, err := apiClient.StandingOrderAPI.CreateStandingOrder(context.Background(), bankid, accountid, viewid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StandingOrderAPI.OBPv400CreateStandingOrder``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StandingOrderAPI.CreateStandingOrder``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateStandingOrder`: OBPv400CreateStandingOrder200Response
-	fmt.Fprintf(os.Stdout, "Response from `StandingOrderAPI.OBPv400CreateStandingOrder`: %v\n", resp)
+	// response from `CreateStandingOrder`: CreateStandingOrder200Response
+	fmt.Fprintf(os.Stdout, "Response from `StandingOrderAPI.CreateStandingOrder`: %v\n", resp)
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateStandingOrderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStandingOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -67,11 +67,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -87,9 +87,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateStandingOrderManagement
+## CreateStandingOrderManagement
 
-> OBPv400CreateStandingOrder200Response OBPv400CreateStandingOrderManagement(ctx, bankid, accountid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+> CreateStandingOrder200Response CreateStandingOrderManagement(ctx, bankid, accountid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 
 Create Standing Order (management)
 
@@ -110,17 +110,17 @@ import (
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	oBPv400CreateStandingOrderRequest := *openapiclient.NewOBPv400CreateStandingOrderRequest("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestProperties(*openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), , *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhen("Type_example", *openapiclient.NewOBPv400CreateStandingOrderRequestPropertiesWhenProperties(, )))) // OBPv400CreateStandingOrderRequest | Request body
+	createStandingOrderRequest := *openapiclient.NewCreateStandingOrderRequest() // CreateStandingOrderRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.StandingOrderAPI.OBPv400CreateStandingOrderManagement(context.Background(), bankid, accountid).OBPv400CreateStandingOrderRequest(oBPv400CreateStandingOrderRequest).Execute()
+	resp, r, err := apiClient.StandingOrderAPI.CreateStandingOrderManagement(context.Background(), bankid, accountid).CreateStandingOrderRequest(createStandingOrderRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StandingOrderAPI.OBPv400CreateStandingOrderManagement``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StandingOrderAPI.CreateStandingOrderManagement``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateStandingOrderManagement`: OBPv400CreateStandingOrder200Response
-	fmt.Fprintf(os.Stdout, "Response from `StandingOrderAPI.OBPv400CreateStandingOrderManagement`: %v\n", resp)
+	// response from `CreateStandingOrderManagement`: CreateStandingOrder200Response
+	fmt.Fprintf(os.Stdout, "Response from `StandingOrderAPI.CreateStandingOrderManagement`: %v\n", resp)
 }
 ```
 
@@ -135,18 +135,18 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateStandingOrderManagementRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStandingOrderManagementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

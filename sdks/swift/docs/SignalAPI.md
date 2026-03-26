@@ -1,20 +1,20 @@
 # SignalAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv600DeleteSignalChannel**](SignalAPI.md#obpv600deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
-[**oBPv600GetSignalChannelInfo**](SignalAPI.md#obpv600getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
-[**oBPv600GetSignalChannels**](SignalAPI.md#obpv600getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
-[**oBPv600GetSignalMessages**](SignalAPI.md#obpv600getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
-[**oBPv600GetSignalStats**](SignalAPI.md#obpv600getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
-[**oBPv600PublishSignalMessage**](SignalAPI.md#obpv600publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
+[**deleteSignalChannel**](SignalAPI.md#deletesignalchannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel
+[**getSignalChannelInfo**](SignalAPI.md#getsignalchannelinfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info
+[**getSignalChannels**](SignalAPI.md#getsignalchannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels
+[**getSignalMessages**](SignalAPI.md#getsignalmessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages
+[**getSignalStats**](SignalAPI.md#getsignalstats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats
+[**publishSignalMessage**](SignalAPI.md#publishsignalmessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message
 
 
-# **oBPv600DeleteSignalChannel**
+# **deleteSignalChannel**
 ```swift
-    open class func oBPv600DeleteSignalChannel(channelname: String, completion: @escaping (_ data: OBPv600DeleteSignalChannel200Response?, _ error: Error?) -> Void)
+    open class func deleteSignalChannel(channelname: String, completion: @escaping (_ data: DeleteSignalChannel200Response?, _ error: Error?) -> Void)
 ```
 
 Delete Signal Channel
@@ -29,7 +29,7 @@ import OBPSwift
 let channelname = "channelname_example" // String | The CHANNELNAME identifier
 
 // Delete Signal Channel
-SignalAPI.oBPv600DeleteSignalChannel(channelname: channelname) { (response, error) in
+SignalAPI.deleteSignalChannel(channelname: channelname) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600DeleteSignalChannel200Response**](OBPv600DeleteSignalChannel200Response.md)
+[**DeleteSignalChannel200Response**](DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -62,9 +62,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalChannelInfo**
+# **getSignalChannelInfo**
 ```swift
-    open class func oBPv600GetSignalChannelInfo(channelname: String, completion: @escaping (_ data: OBPv600GetSignalChannelInfo200Response?, _ error: Error?) -> Void)
+    open class func getSignalChannelInfo(channelname: String, completion: @escaping (_ data: GetSignalChannelInfo200Response?, _ error: Error?) -> Void)
 ```
 
 Get Signal Channel Info
@@ -79,7 +79,7 @@ import OBPSwift
 let channelname = "channelname_example" // String | The CHANNELNAME identifier
 
 // Get Signal Channel Info
-SignalAPI.oBPv600GetSignalChannelInfo(channelname: channelname) { (response, error) in
+SignalAPI.getSignalChannelInfo(channelname: channelname) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalChannelInfo200Response**](OBPv600GetSignalChannelInfo200Response.md)
+[**GetSignalChannelInfo200Response**](GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -112,9 +112,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalChannels**
+# **getSignalChannels**
 ```swift
-    open class func oBPv600GetSignalChannels(completion: @escaping (_ data: OBPv600GetSignalChannels200Response?, _ error: Error?) -> Void)
+    open class func getSignalChannels(completion: @escaping (_ data: GetSignalChannels200Response?, _ error: Error?) -> Void)
 ```
 
 List Signal Channels
@@ -128,7 +128,7 @@ import OBPSwift
 
 
 // List Signal Channels
-SignalAPI.oBPv600GetSignalChannels() { (response, error) in
+SignalAPI.getSignalChannels() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -145,7 +145,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalChannels200Response**](OBPv600GetSignalChannels200Response.md)
+[**GetSignalChannels200Response**](GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -158,9 +158,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalMessages**
+# **getSignalMessages**
 ```swift
-    open class func oBPv600GetSignalMessages(channelname: String, completion: @escaping (_ data: OBPv600GetSignalMessages200Response?, _ error: Error?) -> Void)
+    open class func getSignalMessages(channelname: String, completion: @escaping (_ data: GetSignalMessages200Response?, _ error: Error?) -> Void)
 ```
 
 Get Signal Messages
@@ -175,7 +175,7 @@ import OBPSwift
 let channelname = "channelname_example" // String | The CHANNELNAME identifier
 
 // Get Signal Messages
-SignalAPI.oBPv600GetSignalMessages(channelname: channelname) { (response, error) in
+SignalAPI.getSignalMessages(channelname: channelname) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv600GetSignalMessages200Response**](OBPv600GetSignalMessages200Response.md)
+[**GetSignalMessages200Response**](GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -208,9 +208,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600GetSignalStats**
+# **getSignalStats**
 ```swift
-    open class func oBPv600GetSignalStats(completion: @escaping (_ data: OBPv600GetSignalStats200Response?, _ error: Error?) -> Void)
+    open class func getSignalStats(completion: @escaping (_ data: GetSignalStats200Response?, _ error: Error?) -> Void)
 ```
 
 Get Signal Channel Stats
@@ -224,7 +224,7 @@ import OBPSwift
 
 
 // Get Signal Channel Stats
-SignalAPI.oBPv600GetSignalStats() { (response, error) in
+SignalAPI.getSignalStats() { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -241,7 +241,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetSignalStats200Response**](OBPv600GetSignalStats200Response.md)
+[**GetSignalStats200Response**](GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -254,9 +254,9 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv600PublishSignalMessage**
+# **publishSignalMessage**
 ```swift
-    open class func oBPv600PublishSignalMessage(channelname: String, oBPv600PublishSignalMessageRequest: OBPv600PublishSignalMessageRequest, completion: @escaping (_ data: OBPv600PublishSignalMessage200Response?, _ error: Error?) -> Void)
+    open class func publishSignalMessage(channelname: String, publishSignalMessageRequest: PublishSignalMessageRequest, completion: @escaping (_ data: PublishSignalMessage200Response?, _ error: Error?) -> Void)
 ```
 
 Publish Signal Message
@@ -269,10 +269,10 @@ Publish Signal Message
 import OBPSwift
 
 let channelname = "channelname_example" // String | The CHANNELNAME identifier
-let oBPv600PublishSignalMessageRequest = OBPv6_0_0_publishSignalMessage_request(type: "type_example", properties: OBPv6_0_0_publishSignalMessage_request_properties(messageType: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), payload: OBPv6_0_0_getSignalMessages_200_response_properties_messages_items_properties_payload(type: "type_example", properties: OBPv6_0_0_getSignalMessages_200_response_properties_messages_items_properties_payload_properties(agentName: nil, capabilities: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields_(type: "type_example", items: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items(type: "type_example", properties: OBPv4_0_0_getBankLevelDynamicResourceDoc_200_response_properties_success_response_body_properties__optional_fields__items_properties(s: nil))))))) // OBPv600PublishSignalMessageRequest | Request body
+let publishSignalMessageRequest = publishSignalMessage_request(messageType: "messageType_example", payload: getSignalMessages_200_response_messages_inner_payload(agentName: "agentName_example", capabilities: [getBankLevelDynamicResourceDoc_200_response_success_response_body__optional_fields__inner(s: "s_example")])) // PublishSignalMessageRequest | Request body
 
 // Publish Signal Message
-SignalAPI.oBPv600PublishSignalMessage(channelname: channelname, oBPv600PublishSignalMessageRequest: oBPv600PublishSignalMessageRequest) { (response, error) in
+SignalAPI.publishSignalMessage(channelname: channelname, publishSignalMessageRequest: publishSignalMessageRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -289,11 +289,11 @@ SignalAPI.oBPv600PublishSignalMessage(channelname: channelname, oBPv600PublishSi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **channelname** | **String** | The CHANNELNAME identifier | 
- **oBPv600PublishSignalMessageRequest** | [**OBPv600PublishSignalMessageRequest**](OBPv600PublishSignalMessageRequest.md) | Request body | 
+ **publishSignalMessageRequest** | [**PublishSignalMessageRequest**](PublishSignalMessageRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv600PublishSignalMessage200Response**](OBPv600PublishSignalMessage200Response.md)
+[**PublishSignalMessage200Response**](PublishSignalMessage200Response.md)
 
 ### Authorization
 

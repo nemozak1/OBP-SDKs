@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,46 +75,46 @@ class DynamicEntityManageApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400DeleteBankLevelDynamicEntity' => [
+        'backupBankLevelDynamicEntity' => [
             'application/json',
         ],
-        'oBPv400DeleteMyDynamicEntity' => [
+        'backupSystemDynamicEntity' => [
             'application/json',
         ],
-        'oBPv400DeleteSystemDynamicEntity' => [
+        'createBankLevelDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600BackupBankLevelDynamicEntity' => [
+        'createSystemDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600BackupSystemDynamicEntity' => [
+        'deleteBankLevelDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600CreateBankLevelDynamicEntity' => [
+        'deleteMyDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600CreateSystemDynamicEntity' => [
+        'deleteSystemDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600DeleteSystemDynamicEntityCascade' => [
+        'deleteSystemDynamicEntityCascade' => [
             'application/json',
         ],
-        'oBPv600GetBankLevelDynamicEntities' => [
+        'getBankLevelDynamicEntities' => [
             'application/json',
         ],
-        'oBPv600GetMyDynamicEntities' => [
+        'getMyDynamicEntities' => [
             'application/json',
         ],
-        'oBPv600GetSystemDynamicEntities' => [
+        'getSystemDynamicEntities' => [
             'application/json',
         ],
-        'oBPv600UpdateBankLevelDynamicEntity' => [
+        'updateBankLevelDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600UpdateMyDynamicEntity' => [
+        'updateMyDynamicEntity' => [
             'application/json',
         ],
-        'oBPv600UpdateSystemDynamicEntity' => [
+        'updateSystemDynamicEntity' => [
             'application/json',
         ],
     ];
@@ -166,756 +166,40 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv400DeleteBankLevelDynamicEntity
-     *
-     * Delete Bank Level Dynamic Entity
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv400DeleteBankLevelDynamicEntity($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'][0])
-    {
-        $this->oBPv400DeleteBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $contentType);
-    }
-
-    /**
-     * Operation oBPv400DeleteBankLevelDynamicEntityWithHttpInfo
-     *
-     * Delete Bank Level Dynamic Entity
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400DeleteBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'][0])
-    {
-        $request = $this->oBPv400DeleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400DeleteBankLevelDynamicEntityAsync
-     *
-     * Delete Bank Level Dynamic Entity
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteBankLevelDynamicEntityAsync($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'][0])
-    {
-        return $this->oBPv400DeleteBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400DeleteBankLevelDynamicEntityAsyncWithHttpInfo
-     *
-     * Delete Bank Level Dynamic Entity
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv400DeleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400DeleteBankLevelDynamicEntity'
-     *
-     * @param  string $bankid The BANKID identifier (required)
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400DeleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteBankLevelDynamicEntity'][0])
-    {
-
-        // verify the required parameter 'bankid' is set
-        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteBankLevelDynamicEntity'
-            );
-        }
-
-        // verify the required parameter 'dynamicentityid' is set
-        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv400DeleteBankLevelDynamicEntity'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($bankid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'bankid' . '}',
-                ObjectSerializer::toPathValue($bankid),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($dynamicentityid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'dynamicentityid' . '}',
-                ObjectSerializer::toPathValue($dynamicentityid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400DeleteMyDynamicEntity
-     *
-     * Delete My Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv400DeleteMyDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEntity'][0])
-    {
-        $this->oBPv400DeleteMyDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
-    }
-
-    /**
-     * Operation oBPv400DeleteMyDynamicEntityWithHttpInfo
-     *
-     * Delete My Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400DeleteMyDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEntity'][0])
-    {
-        $request = $this->oBPv400DeleteMyDynamicEntityRequest($dynamicentityid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400DeleteMyDynamicEntityAsync
-     *
-     * Delete My Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteMyDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEntity'][0])
-    {
-        return $this->oBPv400DeleteMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400DeleteMyDynamicEntityAsyncWithHttpInfo
-     *
-     * Delete My Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEntity'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv400DeleteMyDynamicEntityRequest($dynamicentityid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400DeleteMyDynamicEntity'
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400DeleteMyDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteMyDynamicEntity'][0])
-    {
-
-        // verify the required parameter 'dynamicentityid' is set
-        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv400DeleteMyDynamicEntity'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($dynamicentityid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'dynamicentityid' . '}',
-                ObjectSerializer::toPathValue($dynamicentityid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv400DeleteSystemDynamicEntity
-     *
-     * Delete System Level Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteSystemDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv400DeleteSystemDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteSystemDynamicEntity'][0])
-    {
-        $this->oBPv400DeleteSystemDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
-    }
-
-    /**
-     * Operation oBPv400DeleteSystemDynamicEntityWithHttpInfo
-     *
-     * Delete System Level Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteSystemDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv400DeleteSystemDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteSystemDynamicEntity'][0])
-    {
-        $request = $this->oBPv400DeleteSystemDynamicEntityRequest($dynamicentityid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv400DeleteSystemDynamicEntityAsync
-     *
-     * Delete System Level Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteSystemDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteSystemDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteSystemDynamicEntity'][0])
-    {
-        return $this->oBPv400DeleteSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv400DeleteSystemDynamicEntityAsyncWithHttpInfo
-     *
-     * Delete System Level Dynamic Entity
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteSystemDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv400DeleteSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteSystemDynamicEntity'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv400DeleteSystemDynamicEntityRequest($dynamicentityid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv400DeleteSystemDynamicEntity'
-     *
-     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteSystemDynamicEntity'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv400DeleteSystemDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['oBPv400DeleteSystemDynamicEntity'][0])
-    {
-
-        // verify the required parameter 'dynamicentityid' is set
-        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv400DeleteSystemDynamicEntity'
-            );
-        }
-
-
-        $resourcePath = '/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($dynamicentityid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'dynamicentityid' . '}',
-                ObjectSerializer::toPathValue($dynamicentityid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600BackupBankLevelDynamicEntity
+     * Operation backupBankLevelDynamicEntity
      *
      * Backup Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response
+     * @return \OpenBankProject\Model\BackupBankLevelDynamicEntity200Response
      */
-    public function oBPv600BackupBankLevelDynamicEntity($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupBankLevelDynamicEntity'][0])
+    public function backupBankLevelDynamicEntity($bankid, $dynamicentityid, string $contentType = self::contentTypes['backupBankLevelDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600BackupBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $contentType);
+        list($response) = $this->backupBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600BackupBankLevelDynamicEntityWithHttpInfo
+     * Operation backupBankLevelDynamicEntityWithHttpInfo
      *
      * Backup Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\BackupBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600BackupBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupBankLevelDynamicEntity'][0])
+    public function backupBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['backupBankLevelDynamicEntity'][0])
     {
-        $request = $this->oBPv600BackupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
+        $request = $this->backupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -943,7 +227,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\BackupBankLevelDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -965,7 +249,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response',
+                '\OpenBankProject\Model\BackupBankLevelDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -974,7 +258,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\BackupBankLevelDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -987,20 +271,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600BackupBankLevelDynamicEntityAsync
+     * Operation backupBankLevelDynamicEntityAsync
      *
      * Backup Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600BackupBankLevelDynamicEntityAsync($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupBankLevelDynamicEntity'][0])
+    public function backupBankLevelDynamicEntityAsync($bankid, $dynamicentityid, string $contentType = self::contentTypes['backupBankLevelDynamicEntity'][0])
     {
-        return $this->oBPv600BackupBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $contentType)
+        return $this->backupBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1009,21 +293,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600BackupBankLevelDynamicEntityAsyncWithHttpInfo
+     * Operation backupBankLevelDynamicEntityAsyncWithHttpInfo
      *
      * Backup Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600BackupBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupBankLevelDynamicEntity'][0])
+    public function backupBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['backupBankLevelDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600BackupBankLevelDynamicEntity200Response';
-        $request = $this->oBPv600BackupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
+        $returnType = '\OpenBankProject\Model\BackupBankLevelDynamicEntity200Response';
+        $request = $this->backupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1062,29 +346,29 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600BackupBankLevelDynamicEntity'
+     * Create request for operation 'backupBankLevelDynamicEntity'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600BackupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupBankLevelDynamicEntity'][0])
+    public function backupBankLevelDynamicEntityRequest($bankid, $dynamicentityid, string $contentType = self::contentTypes['backupBankLevelDynamicEntity'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600BackupBankLevelDynamicEntity'
+                'Missing the required parameter $bankid when calling backupBankLevelDynamicEntity'
             );
         }
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600BackupBankLevelDynamicEntity'
+                'Missing the required parameter $dynamicentityid when calling backupBankLevelDynamicEntity'
             );
         }
 
@@ -1157,9 +441,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1184,38 +468,38 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600BackupSystemDynamicEntity
+     * Operation backupSystemDynamicEntity
      *
      * Backup System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupSystemDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response
+     * @return \OpenBankProject\Model\BackupSystemDynamicEntity200Response
      */
-    public function oBPv600BackupSystemDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupSystemDynamicEntity'][0])
+    public function backupSystemDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['backupSystemDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600BackupSystemDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
+        list($response) = $this->backupSystemDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600BackupSystemDynamicEntityWithHttpInfo
+     * Operation backupSystemDynamicEntityWithHttpInfo
      *
      * Backup System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupSystemDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\BackupSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600BackupSystemDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupSystemDynamicEntity'][0])
+    public function backupSystemDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['backupSystemDynamicEntity'][0])
     {
-        $request = $this->oBPv600BackupSystemDynamicEntityRequest($dynamicentityid, $contentType);
+        $request = $this->backupSystemDynamicEntityRequest($dynamicentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1243,7 +527,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\BackupSystemDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -1265,7 +549,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response',
+                '\OpenBankProject\Model\BackupSystemDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -1274,7 +558,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\BackupSystemDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1287,19 +571,19 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600BackupSystemDynamicEntityAsync
+     * Operation backupSystemDynamicEntityAsync
      *
      * Backup System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupSystemDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600BackupSystemDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupSystemDynamicEntity'][0])
+    public function backupSystemDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['backupSystemDynamicEntity'][0])
     {
-        return $this->oBPv600BackupSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
+        return $this->backupSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1308,20 +592,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600BackupSystemDynamicEntityAsyncWithHttpInfo
+     * Operation backupSystemDynamicEntityAsyncWithHttpInfo
      *
      * Backup System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupSystemDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600BackupSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupSystemDynamicEntity'][0])
+    public function backupSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['backupSystemDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600BackupSystemDynamicEntity200Response';
-        $request = $this->oBPv600BackupSystemDynamicEntityRequest($dynamicentityid, $contentType);
+        $returnType = '\OpenBankProject\Model\BackupSystemDynamicEntity200Response';
+        $request = $this->backupSystemDynamicEntityRequest($dynamicentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1360,21 +644,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600BackupSystemDynamicEntity'
+     * Create request for operation 'backupSystemDynamicEntity'
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600BackupSystemDynamicEntity'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['backupSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600BackupSystemDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['oBPv600BackupSystemDynamicEntity'][0])
+    public function backupSystemDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['backupSystemDynamicEntity'][0])
     {
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600BackupSystemDynamicEntity'
+                'Missing the required parameter $dynamicentityid when calling backupSystemDynamicEntity'
             );
         }
 
@@ -1439,9 +723,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1466,40 +750,40 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateBankLevelDynamicEntity
+     * Operation createBankLevelDynamicEntity
      *
      * Create Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response
+     * @return \OpenBankProject\Model\CreateBankLevelDynamicEntity200Response
      */
-    public function oBPv600CreateBankLevelDynamicEntity($bankid, $obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateBankLevelDynamicEntity'][0])
+    public function createBankLevelDynamicEntity($bankid, $create_system_dynamic_entity_request, string $contentType = self::contentTypes['createBankLevelDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600CreateBankLevelDynamicEntityWithHttpInfo($bankid, $obpv600_create_system_dynamic_entity_request, $contentType);
+        list($response) = $this->createBankLevelDynamicEntityWithHttpInfo($bankid, $create_system_dynamic_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateBankLevelDynamicEntityWithHttpInfo
+     * Operation createBankLevelDynamicEntityWithHttpInfo
      *
      * Create Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateBankLevelDynamicEntityWithHttpInfo($bankid, $obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateBankLevelDynamicEntity'][0])
+    public function createBankLevelDynamicEntityWithHttpInfo($bankid, $create_system_dynamic_entity_request, string $contentType = self::contentTypes['createBankLevelDynamicEntity'][0])
     {
-        $request = $this->oBPv600CreateBankLevelDynamicEntityRequest($bankid, $obpv600_create_system_dynamic_entity_request, $contentType);
+        $request = $this->createBankLevelDynamicEntityRequest($bankid, $create_system_dynamic_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1527,7 +811,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\CreateBankLevelDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -1549,7 +833,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response',
+                '\OpenBankProject\Model\CreateBankLevelDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -1558,7 +842,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\CreateBankLevelDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1571,20 +855,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateBankLevelDynamicEntityAsync
+     * Operation createBankLevelDynamicEntityAsync
      *
      * Create Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateBankLevelDynamicEntityAsync($bankid, $obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateBankLevelDynamicEntity'][0])
+    public function createBankLevelDynamicEntityAsync($bankid, $create_system_dynamic_entity_request, string $contentType = self::contentTypes['createBankLevelDynamicEntity'][0])
     {
-        return $this->oBPv600CreateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $obpv600_create_system_dynamic_entity_request, $contentType)
+        return $this->createBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $create_system_dynamic_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1593,21 +877,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateBankLevelDynamicEntityAsyncWithHttpInfo
+     * Operation createBankLevelDynamicEntityAsyncWithHttpInfo
      *
      * Create Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateBankLevelDynamicEntity'][0])
+    public function createBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $create_system_dynamic_entity_request, string $contentType = self::contentTypes['createBankLevelDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateBankLevelDynamicEntity200Response';
-        $request = $this->oBPv600CreateBankLevelDynamicEntityRequest($bankid, $obpv600_create_system_dynamic_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateBankLevelDynamicEntity200Response';
+        $request = $this->createBankLevelDynamicEntityRequest($bankid, $create_system_dynamic_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1646,29 +930,29 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateBankLevelDynamicEntity'
+     * Create request for operation 'createBankLevelDynamicEntity'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateBankLevelDynamicEntityRequest($bankid, $obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateBankLevelDynamicEntity'][0])
+    public function createBankLevelDynamicEntityRequest($bankid, $create_system_dynamic_entity_request, string $contentType = self::contentTypes['createBankLevelDynamicEntity'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600CreateBankLevelDynamicEntity'
+                'Missing the required parameter $bankid when calling createBankLevelDynamicEntity'
             );
         }
 
-        // verify the required parameter 'obpv600_create_system_dynamic_entity_request' is set
-        if ($obpv600_create_system_dynamic_entity_request === null || (is_array($obpv600_create_system_dynamic_entity_request) && count($obpv600_create_system_dynamic_entity_request) === 0)) {
+        // verify the required parameter 'create_system_dynamic_entity_request' is set
+        if ($create_system_dynamic_entity_request === null || (is_array($create_system_dynamic_entity_request) && count($create_system_dynamic_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_system_dynamic_entity_request when calling oBPv600CreateBankLevelDynamicEntity'
+                'Missing the required parameter $create_system_dynamic_entity_request when calling createBankLevelDynamicEntity'
             );
         }
 
@@ -1699,12 +983,12 @@ class DynamicEntityManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_system_dynamic_entity_request)) {
+        if (isset($create_system_dynamic_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_system_dynamic_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_system_dynamic_entity_request));
             } else {
-                $httpBody = $obpv600_create_system_dynamic_entity_request;
+                $httpBody = $create_system_dynamic_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1740,9 +1024,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1767,38 +1051,38 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateSystemDynamicEntity
+     * Operation createSystemDynamicEntity
      *
      * Create System Level Dynamic Entity
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response
+     * @return \OpenBankProject\Model\CreateSystemDynamicEntity200Response
      */
-    public function oBPv600CreateSystemDynamicEntity($obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateSystemDynamicEntity'][0])
+    public function createSystemDynamicEntity($create_system_dynamic_entity_request, string $contentType = self::contentTypes['createSystemDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600CreateSystemDynamicEntityWithHttpInfo($obpv600_create_system_dynamic_entity_request, $contentType);
+        list($response) = $this->createSystemDynamicEntityWithHttpInfo($create_system_dynamic_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600CreateSystemDynamicEntityWithHttpInfo
+     * Operation createSystemDynamicEntityWithHttpInfo
      *
      * Create System Level Dynamic Entity
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\CreateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600CreateSystemDynamicEntityWithHttpInfo($obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateSystemDynamicEntity'][0])
+    public function createSystemDynamicEntityWithHttpInfo($create_system_dynamic_entity_request, string $contentType = self::contentTypes['createSystemDynamicEntity'][0])
     {
-        $request = $this->oBPv600CreateSystemDynamicEntityRequest($obpv600_create_system_dynamic_entity_request, $contentType);
+        $request = $this->createSystemDynamicEntityRequest($create_system_dynamic_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1826,7 +1110,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\CreateSystemDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -1848,7 +1132,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response',
+                '\OpenBankProject\Model\CreateSystemDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -1857,7 +1141,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\CreateSystemDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1870,19 +1154,19 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateSystemDynamicEntityAsync
+     * Operation createSystemDynamicEntityAsync
      *
      * Create System Level Dynamic Entity
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateSystemDynamicEntityAsync($obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateSystemDynamicEntity'][0])
+    public function createSystemDynamicEntityAsync($create_system_dynamic_entity_request, string $contentType = self::contentTypes['createSystemDynamicEntity'][0])
     {
-        return $this->oBPv600CreateSystemDynamicEntityAsyncWithHttpInfo($obpv600_create_system_dynamic_entity_request, $contentType)
+        return $this->createSystemDynamicEntityAsyncWithHttpInfo($create_system_dynamic_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1891,20 +1175,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600CreateSystemDynamicEntityAsyncWithHttpInfo
+     * Operation createSystemDynamicEntityAsyncWithHttpInfo
      *
      * Create System Level Dynamic Entity
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600CreateSystemDynamicEntityAsyncWithHttpInfo($obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateSystemDynamicEntity'][0])
+    public function createSystemDynamicEntityAsyncWithHttpInfo($create_system_dynamic_entity_request, string $contentType = self::contentTypes['createSystemDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600CreateSystemDynamicEntity200Response';
-        $request = $this->oBPv600CreateSystemDynamicEntityRequest($obpv600_create_system_dynamic_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\CreateSystemDynamicEntity200Response';
+        $request = $this->createSystemDynamicEntityRequest($create_system_dynamic_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1943,21 +1227,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600CreateSystemDynamicEntity'
+     * Create request for operation 'createSystemDynamicEntity'
      *
-     * @param  \OpenBankProject\Model\OBPv600CreateSystemDynamicEntityRequest $obpv600_create_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateSystemDynamicEntityRequest $create_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600CreateSystemDynamicEntityRequest($obpv600_create_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600CreateSystemDynamicEntity'][0])
+    public function createSystemDynamicEntityRequest($create_system_dynamic_entity_request, string $contentType = self::contentTypes['createSystemDynamicEntity'][0])
     {
 
-        // verify the required parameter 'obpv600_create_system_dynamic_entity_request' is set
-        if ($obpv600_create_system_dynamic_entity_request === null || (is_array($obpv600_create_system_dynamic_entity_request) && count($obpv600_create_system_dynamic_entity_request) === 0)) {
+        // verify the required parameter 'create_system_dynamic_entity_request' is set
+        if ($create_system_dynamic_entity_request === null || (is_array($create_system_dynamic_entity_request) && count($create_system_dynamic_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_system_dynamic_entity_request when calling oBPv600CreateSystemDynamicEntity'
+                'Missing the required parameter $create_system_dynamic_entity_request when calling createSystemDynamicEntity'
             );
         }
 
@@ -1980,12 +1264,12 @@ class DynamicEntityManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_system_dynamic_entity_request)) {
+        if (isset($create_system_dynamic_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_system_dynamic_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_system_dynamic_entity_request));
             } else {
-                $httpBody = $obpv600_create_system_dynamic_entity_request;
+                $httpBody = $create_system_dynamic_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2021,9 +1305,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2048,37 +1332,39 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600DeleteSystemDynamicEntityCascade
+     * Operation deleteBankLevelDynamicEntity
      *
-     * Delete System Level Dynamic Entity Cascade
+     * Delete Bank Level Dynamic Entity
      *
+     * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv600DeleteSystemDynamicEntityCascade($dynamicentityid, string $contentType = self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'][0])
+    public function deleteBankLevelDynamicEntity($bankid, $dynamicentityid, string $contentType = self::contentTypes['deleteBankLevelDynamicEntity'][0])
     {
-        $this->oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo($dynamicentityid, $contentType);
+        $this->deleteBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $contentType);
     }
 
     /**
-     * Operation oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo
+     * Operation deleteBankLevelDynamicEntityWithHttpInfo
      *
-     * Delete System Level Dynamic Entity Cascade
+     * Delete Bank Level Dynamic Entity
      *
+     * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600DeleteSystemDynamicEntityCascadeWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'][0])
+    public function deleteBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['deleteBankLevelDynamicEntity'][0])
     {
-        $request = $this->oBPv600DeleteSystemDynamicEntityCascadeRequest($dynamicentityid, $contentType);
+        $request = $this->deleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2114,19 +1400,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600DeleteSystemDynamicEntityCascadeAsync
+     * Operation deleteBankLevelDynamicEntityAsync
      *
-     * Delete System Level Dynamic Entity Cascade
+     * Delete Bank Level Dynamic Entity
      *
+     * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteSystemDynamicEntityCascadeAsync($dynamicentityid, string $contentType = self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'][0])
+    public function deleteBankLevelDynamicEntityAsync($bankid, $dynamicentityid, string $contentType = self::contentTypes['deleteBankLevelDynamicEntity'][0])
     {
-        return $this->oBPv600DeleteSystemDynamicEntityCascadeAsyncWithHttpInfo($dynamicentityid, $contentType)
+        return $this->deleteBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2135,20 +1422,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600DeleteSystemDynamicEntityCascadeAsyncWithHttpInfo
+     * Operation deleteBankLevelDynamicEntityAsyncWithHttpInfo
      *
-     * Delete System Level Dynamic Entity Cascade
+     * Delete Bank Level Dynamic Entity
      *
+     * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600DeleteSystemDynamicEntityCascadeAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'][0])
+    public function deleteBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, string $contentType = self::contentTypes['deleteBankLevelDynamicEntity'][0])
     {
         $returnType = '';
-        $request = $this->oBPv600DeleteSystemDynamicEntityCascadeRequest($dynamicentityid, $contentType);
+        $request = $this->deleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2174,21 +1462,733 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600DeleteSystemDynamicEntityCascade'
+     * Create request for operation 'deleteBankLevelDynamicEntity'
      *
+     * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600DeleteSystemDynamicEntityCascadeRequest($dynamicentityid, string $contentType = self::contentTypes['oBPv600DeleteSystemDynamicEntityCascade'][0])
+    public function deleteBankLevelDynamicEntityRequest($bankid, $dynamicentityid, string $contentType = self::contentTypes['deleteBankLevelDynamicEntity'][0])
+    {
+
+        // verify the required parameter 'bankid' is set
+        if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bankid when calling deleteBankLevelDynamicEntity'
+            );
+        }
+
+        // verify the required parameter 'dynamicentityid' is set
+        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $dynamicentityid when calling deleteBankLevelDynamicEntity'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/banks/{bankid}/dynamic-entities/{dynamicentityid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($bankid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'bankid' . '}',
+                ObjectSerializer::toPathValue($bankid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($dynamicentityid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'dynamicentityid' . '}',
+                ObjectSerializer::toPathValue($dynamicentityid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteMyDynamicEntity
+     *
+     * Delete My Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteMyDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['deleteMyDynamicEntity'][0])
+    {
+        $this->deleteMyDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
+    }
+
+    /**
+     * Operation deleteMyDynamicEntityWithHttpInfo
+     *
+     * Delete My Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteMyDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteMyDynamicEntity'][0])
+    {
+        $request = $this->deleteMyDynamicEntityRequest($dynamicentityid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteMyDynamicEntityAsync
+     *
+     * Delete My Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteMyDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['deleteMyDynamicEntity'][0])
+    {
+        return $this->deleteMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteMyDynamicEntityAsyncWithHttpInfo
+     *
+     * Delete My Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteMyDynamicEntity'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteMyDynamicEntityRequest($dynamicentityid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteMyDynamicEntity'
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteMyDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['deleteMyDynamicEntity'][0])
     {
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600DeleteSystemDynamicEntityCascade'
+                'Missing the required parameter $dynamicentityid when calling deleteMyDynamicEntity'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/my/dynamic-entities/{dynamicentityid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($dynamicentityid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'dynamicentityid' . '}',
+                ObjectSerializer::toPathValue($dynamicentityid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntity
+     *
+     * Delete System Level Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteSystemDynamicEntity($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntity'][0])
+    {
+        $this->deleteSystemDynamicEntityWithHttpInfo($dynamicentityid, $contentType);
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityWithHttpInfo
+     *
+     * Delete System Level Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteSystemDynamicEntityWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntity'][0])
+    {
+        $request = $this->deleteSystemDynamicEntityRequest($dynamicentityid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityAsync
+     *
+     * Delete System Level Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSystemDynamicEntityAsync($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntity'][0])
+    {
+        return $this->deleteSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityAsyncWithHttpInfo
+     *
+     * Delete System Level Dynamic Entity
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntity'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteSystemDynamicEntityRequest($dynamicentityid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteSystemDynamicEntity'
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntity'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteSystemDynamicEntityRequest($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntity'][0])
+    {
+
+        // verify the required parameter 'dynamicentityid' is set
+        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $dynamicentityid when calling deleteSystemDynamicEntity'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/management/system-dynamic-entities/{dynamicentityid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($dynamicentityid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'dynamicentityid' . '}',
+                ObjectSerializer::toPathValue($dynamicentityid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityCascade
+     *
+     * Delete System Level Dynamic Entity Cascade
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteSystemDynamicEntityCascade($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntityCascade'][0])
+    {
+        $this->deleteSystemDynamicEntityCascadeWithHttpInfo($dynamicentityid, $contentType);
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityCascadeWithHttpInfo
+     *
+     * Delete System Level Dynamic Entity Cascade
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteSystemDynamicEntityCascadeWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntityCascade'][0])
+    {
+        $request = $this->deleteSystemDynamicEntityCascadeRequest($dynamicentityid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityCascadeAsync
+     *
+     * Delete System Level Dynamic Entity Cascade
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSystemDynamicEntityCascadeAsync($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntityCascade'][0])
+    {
+        return $this->deleteSystemDynamicEntityCascadeAsyncWithHttpInfo($dynamicentityid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteSystemDynamicEntityCascadeAsyncWithHttpInfo
+     *
+     * Delete System Level Dynamic Entity Cascade
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteSystemDynamicEntityCascadeAsyncWithHttpInfo($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntityCascade'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteSystemDynamicEntityCascadeRequest($dynamicentityid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteSystemDynamicEntityCascade'
+     *
+     * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteSystemDynamicEntityCascade'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteSystemDynamicEntityCascadeRequest($dynamicentityid, string $contentType = self::contentTypes['deleteSystemDynamicEntityCascade'][0])
+    {
+
+        // verify the required parameter 'dynamicentityid' is set
+        if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $dynamicentityid when calling deleteSystemDynamicEntityCascade'
             );
         }
 
@@ -2253,9 +2253,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2280,38 +2280,38 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetBankLevelDynamicEntities
+     * Operation getBankLevelDynamicEntities
      *
      * Get Bank Level Dynamic Entities
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetBankLevelDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response
+     * @return \OpenBankProject\Model\GetBankLevelDynamicEntities200Response
      */
-    public function oBPv600GetBankLevelDynamicEntities($bankid, string $contentType = self::contentTypes['oBPv600GetBankLevelDynamicEntities'][0])
+    public function getBankLevelDynamicEntities($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEntities'][0])
     {
-        list($response) = $this->oBPv600GetBankLevelDynamicEntitiesWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getBankLevelDynamicEntitiesWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetBankLevelDynamicEntitiesWithHttpInfo
+     * Operation getBankLevelDynamicEntitiesWithHttpInfo
      *
      * Get Bank Level Dynamic Entities
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetBankLevelDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetBankLevelDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetBankLevelDynamicEntitiesWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetBankLevelDynamicEntities'][0])
+    public function getBankLevelDynamicEntitiesWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEntities'][0])
     {
-        $request = $this->oBPv600GetBankLevelDynamicEntitiesRequest($bankid, $contentType);
+        $request = $this->getBankLevelDynamicEntitiesRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2339,7 +2339,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicEntities200Response',
                         $request,
                         $response,
                     );
@@ -2361,7 +2361,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response',
+                '\OpenBankProject\Model\GetBankLevelDynamicEntities200Response',
                 $request,
                 $response,
             );
@@ -2370,7 +2370,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetBankLevelDynamicEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2383,19 +2383,19 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetBankLevelDynamicEntitiesAsync
+     * Operation getBankLevelDynamicEntitiesAsync
      *
      * Get Bank Level Dynamic Entities
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetBankLevelDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetBankLevelDynamicEntitiesAsync($bankid, string $contentType = self::contentTypes['oBPv600GetBankLevelDynamicEntities'][0])
+    public function getBankLevelDynamicEntitiesAsync($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEntities'][0])
     {
-        return $this->oBPv600GetBankLevelDynamicEntitiesAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getBankLevelDynamicEntitiesAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2404,20 +2404,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetBankLevelDynamicEntitiesAsyncWithHttpInfo
+     * Operation getBankLevelDynamicEntitiesAsyncWithHttpInfo
      *
      * Get Bank Level Dynamic Entities
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetBankLevelDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetBankLevelDynamicEntitiesAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv600GetBankLevelDynamicEntities'][0])
+    public function getBankLevelDynamicEntitiesAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEntities'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetBankLevelDynamicEntities200Response';
-        $request = $this->oBPv600GetBankLevelDynamicEntitiesRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetBankLevelDynamicEntities200Response';
+        $request = $this->getBankLevelDynamicEntitiesRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2456,21 +2456,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetBankLevelDynamicEntities'
+     * Create request for operation 'getBankLevelDynamicEntities'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetBankLevelDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankLevelDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetBankLevelDynamicEntitiesRequest($bankid, string $contentType = self::contentTypes['oBPv600GetBankLevelDynamicEntities'][0])
+    public function getBankLevelDynamicEntitiesRequest($bankid, string $contentType = self::contentTypes['getBankLevelDynamicEntities'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600GetBankLevelDynamicEntities'
+                'Missing the required parameter $bankid when calling getBankLevelDynamicEntities'
             );
         }
 
@@ -2535,9 +2535,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2562,36 +2562,36 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetMyDynamicEntities
+     * Operation getMyDynamicEntities
      *
      * Get My Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response
+     * @return \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response
      */
-    public function oBPv600GetMyDynamicEntities(string $contentType = self::contentTypes['oBPv600GetMyDynamicEntities'][0])
+    public function getMyDynamicEntities(string $contentType = self::contentTypes['getMyDynamicEntities'][0])
     {
-        list($response) = $this->oBPv600GetMyDynamicEntitiesWithHttpInfo($contentType);
+        list($response) = $this->getMyDynamicEntitiesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetMyDynamicEntitiesWithHttpInfo
+     * Operation getMyDynamicEntitiesWithHttpInfo
      *
      * Get My Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetMyDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMyDynamicEntities'][0])
+    public function getMyDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['getMyDynamicEntities'][0])
     {
-        $request = $this->oBPv600GetMyDynamicEntitiesRequest($contentType);
+        $request = $this->getMyDynamicEntitiesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2619,7 +2619,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                         $request,
                         $response,
                     );
@@ -2641,7 +2641,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                 $request,
                 $response,
             );
@@ -2650,7 +2650,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2663,18 +2663,18 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetMyDynamicEntitiesAsync
+     * Operation getMyDynamicEntitiesAsync
      *
      * Get My Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMyDynamicEntitiesAsync(string $contentType = self::contentTypes['oBPv600GetMyDynamicEntities'][0])
+    public function getMyDynamicEntitiesAsync(string $contentType = self::contentTypes['getMyDynamicEntities'][0])
     {
-        return $this->oBPv600GetMyDynamicEntitiesAsyncWithHttpInfo($contentType)
+        return $this->getMyDynamicEntitiesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2683,19 +2683,19 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetMyDynamicEntitiesAsyncWithHttpInfo
+     * Operation getMyDynamicEntitiesAsyncWithHttpInfo
      *
      * Get My Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetMyDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetMyDynamicEntities'][0])
+    public function getMyDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['getMyDynamicEntities'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetAvailablePersonalDynamicEntities200Response';
-        $request = $this->oBPv600GetMyDynamicEntitiesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetAvailablePersonalDynamicEntities200Response';
+        $request = $this->getMyDynamicEntitiesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2734,14 +2734,14 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetMyDynamicEntities'
+     * Create request for operation 'getMyDynamicEntities'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetMyDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetMyDynamicEntitiesRequest(string $contentType = self::contentTypes['oBPv600GetMyDynamicEntities'][0])
+    public function getMyDynamicEntitiesRequest(string $contentType = self::contentTypes['getMyDynamicEntities'][0])
     {
 
 
@@ -2797,9 +2797,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2824,36 +2824,36 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetSystemDynamicEntities
+     * Operation getSystemDynamicEntities
      *
      * Get System Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response
+     * @return \OpenBankProject\Model\GetSystemDynamicEntities200Response
      */
-    public function oBPv600GetSystemDynamicEntities(string $contentType = self::contentTypes['oBPv600GetSystemDynamicEntities'][0])
+    public function getSystemDynamicEntities(string $contentType = self::contentTypes['getSystemDynamicEntities'][0])
     {
-        list($response) = $this->oBPv600GetSystemDynamicEntitiesWithHttpInfo($contentType);
+        list($response) = $this->getSystemDynamicEntitiesWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600GetSystemDynamicEntitiesWithHttpInfo
+     * Operation getSystemDynamicEntitiesWithHttpInfo
      *
      * Get System Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemDynamicEntities'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetSystemDynamicEntities200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600GetSystemDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSystemDynamicEntities'][0])
+    public function getSystemDynamicEntitiesWithHttpInfo(string $contentType = self::contentTypes['getSystemDynamicEntities'][0])
     {
-        $request = $this->oBPv600GetSystemDynamicEntitiesRequest($contentType);
+        $request = $this->getSystemDynamicEntitiesRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2881,7 +2881,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetSystemDynamicEntities200Response',
                         $request,
                         $response,
                     );
@@ -2903,7 +2903,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response',
+                '\OpenBankProject\Model\GetSystemDynamicEntities200Response',
                 $request,
                 $response,
             );
@@ -2912,7 +2912,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response',
+                        '\OpenBankProject\Model\GetSystemDynamicEntities200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2925,18 +2925,18 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetSystemDynamicEntitiesAsync
+     * Operation getSystemDynamicEntitiesAsync
      *
      * Get System Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemDynamicEntitiesAsync(string $contentType = self::contentTypes['oBPv600GetSystemDynamicEntities'][0])
+    public function getSystemDynamicEntitiesAsync(string $contentType = self::contentTypes['getSystemDynamicEntities'][0])
     {
-        return $this->oBPv600GetSystemDynamicEntitiesAsyncWithHttpInfo($contentType)
+        return $this->getSystemDynamicEntitiesAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2945,19 +2945,19 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600GetSystemDynamicEntitiesAsyncWithHttpInfo
+     * Operation getSystemDynamicEntitiesAsyncWithHttpInfo
      *
      * Get System Dynamic Entities
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600GetSystemDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetSystemDynamicEntities'][0])
+    public function getSystemDynamicEntitiesAsyncWithHttpInfo(string $contentType = self::contentTypes['getSystemDynamicEntities'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600GetSystemDynamicEntities200Response';
-        $request = $this->oBPv600GetSystemDynamicEntitiesRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetSystemDynamicEntities200Response';
+        $request = $this->getSystemDynamicEntitiesRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2996,14 +2996,14 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600GetSystemDynamicEntities'
+     * Create request for operation 'getSystemDynamicEntities'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetSystemDynamicEntities'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSystemDynamicEntities'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600GetSystemDynamicEntitiesRequest(string $contentType = self::contentTypes['oBPv600GetSystemDynamicEntities'][0])
+    public function getSystemDynamicEntitiesRequest(string $contentType = self::contentTypes['getSystemDynamicEntities'][0])
     {
 
 
@@ -3059,9 +3059,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3086,42 +3086,42 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateBankLevelDynamicEntity
+     * Operation updateBankLevelDynamicEntity
      *
      * Update Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response
+     * @return \OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response
      */
-    public function oBPv600UpdateBankLevelDynamicEntity($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'][0])
+    public function updateBankLevelDynamicEntity($bankid, $dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateBankLevelDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600UpdateBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        list($response) = $this->updateBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $update_system_dynamic_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateBankLevelDynamicEntityWithHttpInfo
+     * Operation updateBankLevelDynamicEntityWithHttpInfo
      *
      * Update Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'][0])
+    public function updateBankLevelDynamicEntityWithHttpInfo($bankid, $dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateBankLevelDynamicEntity'][0])
     {
-        $request = $this->oBPv600UpdateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $request = $this->updateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3149,7 +3149,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -3171,7 +3171,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response',
+                '\OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -3180,7 +3180,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3193,21 +3193,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateBankLevelDynamicEntityAsync
+     * Operation updateBankLevelDynamicEntityAsync
      *
      * Update Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateBankLevelDynamicEntityAsync($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'][0])
+    public function updateBankLevelDynamicEntityAsync($bankid, $dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateBankLevelDynamicEntity'][0])
     {
-        return $this->oBPv600UpdateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType)
+        return $this->updateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $update_system_dynamic_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3216,22 +3216,22 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateBankLevelDynamicEntityAsyncWithHttpInfo
+     * Operation updateBankLevelDynamicEntityAsyncWithHttpInfo
      *
      * Update Bank Level Dynamic Entity
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'][0])
+    public function updateBankLevelDynamicEntityAsyncWithHttpInfo($bankid, $dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateBankLevelDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateBankLevelDynamicEntity200Response';
-        $request = $this->oBPv600UpdateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateBankLevelDynamicEntity200Response';
+        $request = $this->updateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3270,37 +3270,37 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateBankLevelDynamicEntity'
+     * Create request for operation 'updateBankLevelDynamicEntity'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankLevelDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateBankLevelDynamicEntity'][0])
+    public function updateBankLevelDynamicEntityRequest($bankid, $dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateBankLevelDynamicEntity'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv600UpdateBankLevelDynamicEntity'
+                'Missing the required parameter $bankid when calling updateBankLevelDynamicEntity'
             );
         }
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600UpdateBankLevelDynamicEntity'
+                'Missing the required parameter $dynamicentityid when calling updateBankLevelDynamicEntity'
             );
         }
 
-        // verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-        if ($obpv600_update_system_dynamic_entity_request === null || (is_array($obpv600_update_system_dynamic_entity_request) && count($obpv600_update_system_dynamic_entity_request) === 0)) {
+        // verify the required parameter 'update_system_dynamic_entity_request' is set
+        if ($update_system_dynamic_entity_request === null || (is_array($update_system_dynamic_entity_request) && count($update_system_dynamic_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_system_dynamic_entity_request when calling oBPv600UpdateBankLevelDynamicEntity'
+                'Missing the required parameter $update_system_dynamic_entity_request when calling updateBankLevelDynamicEntity'
             );
         }
 
@@ -3339,12 +3339,12 @@ class DynamicEntityManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_system_dynamic_entity_request)) {
+        if (isset($update_system_dynamic_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_system_dynamic_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_system_dynamic_entity_request));
             } else {
-                $httpBody = $obpv600_update_system_dynamic_entity_request;
+                $httpBody = $update_system_dynamic_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3380,9 +3380,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3407,40 +3407,40 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateMyDynamicEntity
+     * Operation updateMyDynamicEntity
      *
      * Update My Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateMyDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response
+     * @return \OpenBankProject\Model\UpdateSystemDynamicEntity200Response
      */
-    public function oBPv600UpdateMyDynamicEntity($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateMyDynamicEntity'][0])
+    public function updateMyDynamicEntity($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateMyDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600UpdateMyDynamicEntityWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        list($response) = $this->updateMyDynamicEntityWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateMyDynamicEntityWithHttpInfo
+     * Operation updateMyDynamicEntityWithHttpInfo
      *
      * Update My Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateMyDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateMyDynamicEntityWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateMyDynamicEntity'][0])
+    public function updateMyDynamicEntityWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateMyDynamicEntity'][0])
     {
-        $request = $this->oBPv600UpdateMyDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $request = $this->updateMyDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3468,7 +3468,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -3490,7 +3490,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -3499,7 +3499,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3512,20 +3512,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateMyDynamicEntityAsync
+     * Operation updateMyDynamicEntityAsync
      *
      * Update My Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateMyDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateMyDynamicEntityAsync($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateMyDynamicEntity'][0])
+    public function updateMyDynamicEntityAsync($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateMyDynamicEntity'][0])
     {
-        return $this->oBPv600UpdateMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType)
+        return $this->updateMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3534,21 +3534,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateMyDynamicEntityAsyncWithHttpInfo
+     * Operation updateMyDynamicEntityAsyncWithHttpInfo
      *
      * Update My Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateMyDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateMyDynamicEntity'][0])
+    public function updateMyDynamicEntityAsyncWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateMyDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response';
-        $request = $this->oBPv600UpdateMyDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response';
+        $request = $this->updateMyDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3587,29 +3587,29 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateMyDynamicEntity'
+     * Create request for operation 'updateMyDynamicEntity'
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateMyDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateMyDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateMyDynamicEntity'][0])
+    public function updateMyDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateMyDynamicEntity'][0])
     {
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600UpdateMyDynamicEntity'
+                'Missing the required parameter $dynamicentityid when calling updateMyDynamicEntity'
             );
         }
 
-        // verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-        if ($obpv600_update_system_dynamic_entity_request === null || (is_array($obpv600_update_system_dynamic_entity_request) && count($obpv600_update_system_dynamic_entity_request) === 0)) {
+        // verify the required parameter 'update_system_dynamic_entity_request' is set
+        if ($update_system_dynamic_entity_request === null || (is_array($update_system_dynamic_entity_request) && count($update_system_dynamic_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_system_dynamic_entity_request when calling oBPv600UpdateMyDynamicEntity'
+                'Missing the required parameter $update_system_dynamic_entity_request when calling updateMyDynamicEntity'
             );
         }
 
@@ -3640,12 +3640,12 @@ class DynamicEntityManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_system_dynamic_entity_request)) {
+        if (isset($update_system_dynamic_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_system_dynamic_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_system_dynamic_entity_request));
             } else {
-                $httpBody = $obpv600_update_system_dynamic_entity_request;
+                $httpBody = $update_system_dynamic_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3681,9 +3681,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3708,40 +3708,40 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemDynamicEntity
+     * Operation updateSystemDynamicEntity
      *
      * Update System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response
+     * @return \OpenBankProject\Model\UpdateSystemDynamicEntity200Response
      */
-    public function oBPv600UpdateSystemDynamicEntity($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateSystemDynamicEntity'][0])
+    public function updateSystemDynamicEntity($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateSystemDynamicEntity'][0])
     {
-        list($response) = $this->oBPv600UpdateSystemDynamicEntityWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        list($response) = $this->updateSystemDynamicEntityWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv600UpdateSystemDynamicEntityWithHttpInfo
+     * Operation updateSystemDynamicEntityWithHttpInfo
      *
      * Update System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\UpdateSystemDynamicEntity200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv600UpdateSystemDynamicEntityWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateSystemDynamicEntity'][0])
+    public function updateSystemDynamicEntityWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateSystemDynamicEntity'][0])
     {
-        $request = $this->oBPv600UpdateSystemDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $request = $this->updateSystemDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3769,7 +3769,7 @@ class DynamicEntityManageApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                         $request,
                         $response,
                     );
@@ -3791,7 +3791,7 @@ class DynamicEntityManageApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                 $request,
                 $response,
             );
@@ -3800,7 +3800,7 @@ class DynamicEntityManageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response',
+                        '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3813,20 +3813,20 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemDynamicEntityAsync
+     * Operation updateSystemDynamicEntityAsync
      *
      * Update System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateSystemDynamicEntityAsync($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateSystemDynamicEntity'][0])
+    public function updateSystemDynamicEntityAsync($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateSystemDynamicEntity'][0])
     {
-        return $this->oBPv600UpdateSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType)
+        return $this->updateSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3835,21 +3835,21 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Operation oBPv600UpdateSystemDynamicEntityAsyncWithHttpInfo
+     * Operation updateSystemDynamicEntityAsyncWithHttpInfo
      *
      * Update System Level Dynamic Entity
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv600UpdateSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateSystemDynamicEntity'][0])
+    public function updateSystemDynamicEntityAsyncWithHttpInfo($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateSystemDynamicEntity'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv600UpdateSystemDynamicEntity200Response';
-        $request = $this->oBPv600UpdateSystemDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, $contentType);
+        $returnType = '\OpenBankProject\Model\UpdateSystemDynamicEntity200Response';
+        $request = $this->updateSystemDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3888,29 +3888,29 @@ class DynamicEntityManageApi
     }
 
     /**
-     * Create request for operation 'oBPv600UpdateSystemDynamicEntity'
+     * Create request for operation 'updateSystemDynamicEntity'
      *
      * @param  string $dynamicentityid The DYNAMICENTITYID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateSystemDynamicEntityRequest $obpv600_update_system_dynamic_entity_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateSystemDynamicEntity'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\UpdateSystemDynamicEntityRequest $update_system_dynamic_entity_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateSystemDynamicEntity'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv600UpdateSystemDynamicEntityRequest($dynamicentityid, $obpv600_update_system_dynamic_entity_request, string $contentType = self::contentTypes['oBPv600UpdateSystemDynamicEntity'][0])
+    public function updateSystemDynamicEntityRequest($dynamicentityid, $update_system_dynamic_entity_request, string $contentType = self::contentTypes['updateSystemDynamicEntity'][0])
     {
 
         // verify the required parameter 'dynamicentityid' is set
         if ($dynamicentityid === null || (is_array($dynamicentityid) && count($dynamicentityid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $dynamicentityid when calling oBPv600UpdateSystemDynamicEntity'
+                'Missing the required parameter $dynamicentityid when calling updateSystemDynamicEntity'
             );
         }
 
-        // verify the required parameter 'obpv600_update_system_dynamic_entity_request' is set
-        if ($obpv600_update_system_dynamic_entity_request === null || (is_array($obpv600_update_system_dynamic_entity_request) && count($obpv600_update_system_dynamic_entity_request) === 0)) {
+        // verify the required parameter 'update_system_dynamic_entity_request' is set
+        if ($update_system_dynamic_entity_request === null || (is_array($update_system_dynamic_entity_request) && count($update_system_dynamic_entity_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_system_dynamic_entity_request when calling oBPv600UpdateSystemDynamicEntity'
+                'Missing the required parameter $update_system_dynamic_entity_request when calling updateSystemDynamicEntity'
             );
         }
 
@@ -3941,12 +3941,12 @@ class DynamicEntityManageApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_update_system_dynamic_entity_request)) {
+        if (isset($update_system_dynamic_entity_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_system_dynamic_entity_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_system_dynamic_entity_request));
             } else {
-                $httpBody = $obpv600_update_system_dynamic_entity_request;
+                $httpBody = $update_system_dynamic_entity_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -3982,9 +3982,9 @@ class DynamicEntityManageApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

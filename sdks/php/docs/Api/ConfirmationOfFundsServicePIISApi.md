@@ -2,17 +2,17 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310CheckFundsAvailable()**](ConfirmationOfFundsServicePIISApi.md#oBPv310CheckFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**checkFundsAvailable()**](ConfirmationOfFundsServicePIISApi.md#checkFundsAvailable) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
 
-## `oBPv310CheckFundsAvailable()`
+## `checkFundsAvailable()`
 
 ```php
-oBPv310CheckFundsAvailable($bankid, $accountid, $viewid): \OpenBankProject\Model\OBPv310CheckFundsAvailable200Response
+checkFundsAvailable($bankid, $accountid, $viewid): \OpenBankProject\Model\CheckFundsAvailable200Response
 ```
 
 Check Available Funds
@@ -35,9 +35,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\ConfirmationOfFundsServicePIISApi(
@@ -51,10 +51,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 
 try {
-    $result = $apiInstance->oBPv310CheckFundsAvailable($bankid, $accountid, $viewid);
+    $result = $apiInstance->checkFundsAvailable($bankid, $accountid, $viewid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConfirmationOfFundsServicePIISApi->oBPv310CheckFundsAvailable: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConfirmationOfFundsServicePIISApi->checkFundsAvailable: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,7 +68,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv310CheckFundsAvailable200Response**](../Model/OBPv310CheckFundsAvailable200Response.md)
+[**\OpenBankProject\Model\CheckFundsAvailable200Response**](../Model/CheckFundsAvailable200Response.md)
 
 ### Authorization
 

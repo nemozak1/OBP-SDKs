@@ -1,16 +1,16 @@
 # DirectDebitApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400CreateDirectDebit**](DirectDebitApi.md#oBPv400CreateDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
-| [**oBPv400CreateDirectDebitManagement**](DirectDebitApi.md#oBPv400CreateDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
+| [**createDirectDebit**](DirectDebitApi.md#createDirectDebit) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/direct-debit | Create Direct Debit |
+| [**createDirectDebitManagement**](DirectDebitApi.md#createDirectDebitManagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/direct-debit | Create Direct Debit (management) |
 
 
-<a id="oBPv400CreateDirectDebit"></a>
-# **oBPv400CreateDirectDebit**
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebit(bankid, accountid, viewid, obPv400CreateDirectDebitRequest)
+<a id="createDirectDebit"></a>
+# **createDirectDebit**
+> CreateDirectDebit200Response createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest)
 
 Create Direct Debit
 
@@ -26,15 +26,15 @@ val apiInstance = DirectDebitApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
-val obPv400CreateDirectDebitRequest : OBPv400CreateDirectDebitRequest = {"type":"object","properties":{"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"customer_id":{"type":"string"},"counterparty_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}} // OBPv400CreateDirectDebitRequest | Request body
+val createDirectDebitRequest : CreateDirectDebitRequest = {"type":"object","properties":{"customer_id":{"type":"string"},"date_signed":{"type":"string","format":"date-time"},"counterparty_id":{"type":"string"},"date_expires":{"type":"string","format":"date-time"},"date_starts":{"type":"string","format":"date-time"},"user_id":{"type":"string"}}} // CreateDirectDebitRequest | Request body
 try {
-    val result : OBPv400CreateDirectDebit200Response = apiInstance.oBPv400CreateDirectDebit(bankid, accountid, viewid, obPv400CreateDirectDebitRequest)
+    val result : CreateDirectDebit200Response = apiInstance.createDirectDebit(bankid, accountid, viewid, createDirectDebitRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DirectDebitApi#oBPv400CreateDirectDebit")
+    println("4xx response calling DirectDebitApi#createDirectDebit")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DirectDebitApi#oBPv400CreateDirectDebit")
+    println("5xx response calling DirectDebitApi#createDirectDebit")
     e.printStackTrace()
 }
 ```
@@ -45,11 +45,11 @@ try {
 | **viewid** | **kotlin.String**| The VIEWID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -60,17 +60,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400CreateDirectDebitManagement"></a>
-# **oBPv400CreateDirectDebitManagement**
-> OBPv400CreateDirectDebit200Response oBPv400CreateDirectDebitManagement(bankid, accountid, obPv400CreateDirectDebitRequest)
+<a id="createDirectDebitManagement"></a>
+# **createDirectDebitManagement**
+> CreateDirectDebit200Response createDirectDebitManagement(bankid, accountid, createDirectDebitRequest)
 
 Create Direct Debit (management)
 
@@ -85,15 +85,15 @@ Create Direct Debit (management)
 val apiInstance = DirectDebitApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
-val obPv400CreateDirectDebitRequest : OBPv400CreateDirectDebitRequest = {type=object, properties={date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, customer_id={type=string}, counterparty_id={type=string}, date_signed={type=string, format=date-time}, user_id={type=string}}} // OBPv400CreateDirectDebitRequest | Request body
+val createDirectDebitRequest : CreateDirectDebitRequest = {type=object, properties={customer_id={type=string}, date_signed={type=string, format=date-time}, counterparty_id={type=string}, date_expires={type=string, format=date-time}, date_starts={type=string, format=date-time}, user_id={type=string}}} // CreateDirectDebitRequest | Request body
 try {
-    val result : OBPv400CreateDirectDebit200Response = apiInstance.oBPv400CreateDirectDebitManagement(bankid, accountid, obPv400CreateDirectDebitRequest)
+    val result : CreateDirectDebit200Response = apiInstance.createDirectDebitManagement(bankid, accountid, createDirectDebitRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling DirectDebitApi#oBPv400CreateDirectDebitManagement")
+    println("4xx response calling DirectDebitApi#createDirectDebitManagement")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling DirectDebitApi#oBPv400CreateDirectDebitManagement")
+    println("5xx response calling DirectDebitApi#createDirectDebitManagement")
     e.printStackTrace()
 }
 ```
@@ -103,11 +103,11 @@ try {
 | **accountid** | **kotlin.String**| The ACCOUNTID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400CreateDirectDebitRequest** | [**OBPv400CreateDirectDebitRequest**](OBPv400CreateDirectDebitRequest.md)| Request body | |
+| **createDirectDebitRequest** | [**CreateDirectDebitRequest**](CreateDirectDebitRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400CreateDirectDebit200Response**](OBPv400CreateDirectDebit200Response.md)
+[**CreateDirectDebit200Response**](CreateDirectDebit200Response.md)
 
 ### Authorization
 
@@ -118,8 +118,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

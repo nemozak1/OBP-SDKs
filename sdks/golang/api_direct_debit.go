@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,27 +24,27 @@ import (
 // DirectDebitAPIService DirectDebitAPI service
 type DirectDebitAPIService service
 
-type ApiOBPv400CreateDirectDebitRequest struct {
+type ApiCreateDirectDebitRequest struct {
 	ctx context.Context
 	ApiService *DirectDebitAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv400CreateDirectDebitRequest *OBPv400CreateDirectDebitRequest
+	createDirectDebitRequest *CreateDirectDebitRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateDirectDebitRequest) OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest OBPv400CreateDirectDebitRequest) ApiOBPv400CreateDirectDebitRequest {
-	r.oBPv400CreateDirectDebitRequest = &oBPv400CreateDirectDebitRequest
+func (r ApiCreateDirectDebitRequest) CreateDirectDebitRequest(createDirectDebitRequest CreateDirectDebitRequest) ApiCreateDirectDebitRequest {
+	r.createDirectDebitRequest = &createDirectDebitRequest
 	return r
 }
 
-func (r ApiOBPv400CreateDirectDebitRequest) Execute() (*OBPv400CreateDirectDebit200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDirectDebitExecute(r)
+func (r ApiCreateDirectDebitRequest) Execute() (*CreateDirectDebit200Response, *http.Response, error) {
+	return r.ApiService.CreateDirectDebitExecute(r)
 }
 
 /*
-OBPv400CreateDirectDebit Create Direct Debit
+CreateDirectDebit Create Direct Debit
 
 <p>Create direct debit for an account.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -77,10 +77,10 @@ OBPv400CreateDirectDebit Create Direct Debit
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400CreateDirectDebitRequest
+ @return ApiCreateDirectDebitRequest
 */
-func (a *DirectDebitAPIService) OBPv400CreateDirectDebit(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400CreateDirectDebitRequest {
-	return ApiOBPv400CreateDirectDebitRequest{
+func (a *DirectDebitAPIService) CreateDirectDebit(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateDirectDebitRequest {
+	return ApiCreateDirectDebitRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -90,16 +90,16 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebit(ctx context.Context, ba
 }
 
 // Execute executes the request
-//  @return OBPv400CreateDirectDebit200Response
-func (a *DirectDebitAPIService) OBPv400CreateDirectDebitExecute(r ApiOBPv400CreateDirectDebitRequest) (*OBPv400CreateDirectDebit200Response, *http.Response, error) {
+//  @return CreateDirectDebit200Response
+func (a *DirectDebitAPIService) CreateDirectDebitExecute(r ApiCreateDirectDebitRequest) (*CreateDirectDebit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateDirectDebit200Response
+		localVarReturnValue  *CreateDirectDebit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectDebitAPIService.OBPv400CreateDirectDebit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectDebitAPIService.CreateDirectDebit")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -112,8 +112,8 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitExecute(r ApiOBPv400Crea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateDirectDebitRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateDirectDebitRequest is required and must be specified")
+	if r.createDirectDebitRequest == nil {
+		return localVarReturnValue, nil, reportError("createDirectDebitRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -134,7 +134,7 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitExecute(r ApiOBPv400Crea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateDirectDebitRequest
+	localVarPostBody = r.createDirectDebitRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -159,7 +159,7 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitExecute(r ApiOBPv400Crea
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -200,26 +200,26 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitExecute(r ApiOBPv400Crea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateDirectDebitManagementRequest struct {
+type ApiCreateDirectDebitManagementRequest struct {
 	ctx context.Context
 	ApiService *DirectDebitAPIService
 	bankid string
 	accountid string
-	oBPv400CreateDirectDebitRequest *OBPv400CreateDirectDebitRequest
+	createDirectDebitRequest *CreateDirectDebitRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateDirectDebitManagementRequest) OBPv400CreateDirectDebitRequest(oBPv400CreateDirectDebitRequest OBPv400CreateDirectDebitRequest) ApiOBPv400CreateDirectDebitManagementRequest {
-	r.oBPv400CreateDirectDebitRequest = &oBPv400CreateDirectDebitRequest
+func (r ApiCreateDirectDebitManagementRequest) CreateDirectDebitRequest(createDirectDebitRequest CreateDirectDebitRequest) ApiCreateDirectDebitManagementRequest {
+	r.createDirectDebitRequest = &createDirectDebitRequest
 	return r
 }
 
-func (r ApiOBPv400CreateDirectDebitManagementRequest) Execute() (*OBPv400CreateDirectDebit200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateDirectDebitManagementExecute(r)
+func (r ApiCreateDirectDebitManagementRequest) Execute() (*CreateDirectDebit200Response, *http.Response, error) {
+	return r.ApiService.CreateDirectDebitManagementExecute(r)
 }
 
 /*
-OBPv400CreateDirectDebitManagement Create Direct Debit (management)
+CreateDirectDebitManagement Create Direct Debit (management)
 
 <p>Create direct debit for an account.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -250,10 +250,10 @@ OBPv400CreateDirectDebitManagement Create Direct Debit (management)
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
- @return ApiOBPv400CreateDirectDebitManagementRequest
+ @return ApiCreateDirectDebitManagementRequest
 */
-func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagement(ctx context.Context, bankid string, accountid string) ApiOBPv400CreateDirectDebitManagementRequest {
-	return ApiOBPv400CreateDirectDebitManagementRequest{
+func (a *DirectDebitAPIService) CreateDirectDebitManagement(ctx context.Context, bankid string, accountid string) ApiCreateDirectDebitManagementRequest {
+	return ApiCreateDirectDebitManagementRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -262,16 +262,16 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagement(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv400CreateDirectDebit200Response
-func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagementExecute(r ApiOBPv400CreateDirectDebitManagementRequest) (*OBPv400CreateDirectDebit200Response, *http.Response, error) {
+//  @return CreateDirectDebit200Response
+func (a *DirectDebitAPIService) CreateDirectDebitManagementExecute(r ApiCreateDirectDebitManagementRequest) (*CreateDirectDebit200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400CreateDirectDebit200Response
+		localVarReturnValue  *CreateDirectDebit200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectDebitAPIService.OBPv400CreateDirectDebitManagement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectDebitAPIService.CreateDirectDebitManagement")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -283,8 +283,8 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagementExecute(r ApiO
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateDirectDebitRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateDirectDebitRequest is required and must be specified")
+	if r.createDirectDebitRequest == nil {
+		return localVarReturnValue, nil, reportError("createDirectDebitRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -305,7 +305,7 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagementExecute(r ApiO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateDirectDebitRequest
+	localVarPostBody = r.createDirectDebitRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -330,7 +330,7 @@ func (a *DirectDebitAPIService) OBPv400CreateDirectDebitManagementExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

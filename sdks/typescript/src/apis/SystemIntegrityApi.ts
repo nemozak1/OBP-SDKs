@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,18 +15,18 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv121UpdateTransactionNarrative200Response,
+  AccountAccessUniqueIndexCheck200Response,
 } from '../models/index';
 import {
-    OBPv121UpdateTransactionNarrative200ResponseFromJSON,
-    OBPv121UpdateTransactionNarrative200ResponseToJSON,
+    AccountAccessUniqueIndexCheck200ResponseFromJSON,
+    AccountAccessUniqueIndexCheck200ResponseToJSON,
 } from '../models/index';
 
-export interface OBPv510AccountCurrencyCheckRequest {
+export interface AccountCurrencyCheckRequest {
     bankid: string;
 }
 
-export interface OBPv510OrphanedAccountCheckRequest {
+export interface OrphanedAccountCheckRequest {
     bankid: string;
 }
 
@@ -36,9 +36,9 @@ export interface OBPv510OrphanedAccountCheckRequest {
 export class SystemIntegrityApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv510AccountAccessUniqueIndexCheck without sending the request
+     * Creates request options for accountAccessUniqueIndexCheck without sending the request
      */
-    async oBPv510AccountAccessUniqueIndexCheckRequestOpts(): Promise<runtime.RequestOpts> {
+    async accountAccessUniqueIndexCheckRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -53,7 +53,7 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -71,30 +71,30 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
      * <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check Unique Index at Account Access
      */
-    async oBPv510AccountAccessUniqueIndexCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv510AccountAccessUniqueIndexCheckRequestOpts();
+    async accountAccessUniqueIndexCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountAccessUniqueIndexCheck200Response>> {
+        const requestOptions = await this.accountAccessUniqueIndexCheckRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AccountAccessUniqueIndexCheck200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check Unique Index at Account Access
      */
-    async oBPv510AccountAccessUniqueIndexCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv510AccountAccessUniqueIndexCheckRaw(initOverrides);
+    async accountAccessUniqueIndexCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountAccessUniqueIndexCheck200Response> {
+        const response = await this.accountAccessUniqueIndexCheckRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510AccountCurrencyCheck without sending the request
+     * Creates request options for accountCurrencyCheck without sending the request
      */
-    async oBPv510AccountCurrencyCheckRequestOpts(requestParameters: OBPv510AccountCurrencyCheckRequest): Promise<runtime.RequestOpts> {
+    async accountCurrencyCheckRequestOpts(requestParameters: AccountCurrencyCheckRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510AccountCurrencyCheck().'
+                'Required parameter "bankid" was null or undefined when calling accountCurrencyCheck().'
             );
         }
 
@@ -112,7 +112,7 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -131,26 +131,26 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
      * <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check for Sensible Currencies
      */
-    async oBPv510AccountCurrencyCheckRaw(requestParameters: OBPv510AccountCurrencyCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv510AccountCurrencyCheckRequestOpts(requestParameters);
+    async accountCurrencyCheckRaw(requestParameters: AccountCurrencyCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountAccessUniqueIndexCheck200Response>> {
+        const requestOptions = await this.accountCurrencyCheckRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AccountAccessUniqueIndexCheck200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check for Sensible Currencies
      */
-    async oBPv510AccountCurrencyCheck(requestParameters: OBPv510AccountCurrencyCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv510AccountCurrencyCheckRaw(requestParameters, initOverrides);
+    async accountCurrencyCheck(requestParameters: AccountCurrencyCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountAccessUniqueIndexCheck200Response> {
+        const response = await this.accountCurrencyCheckRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510CustomViewNamesCheck without sending the request
+     * Creates request options for customViewNamesCheck without sending the request
      */
-    async oBPv510CustomViewNamesCheckRequestOpts(): Promise<runtime.RequestOpts> {
+    async customViewNamesCheckRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -165,7 +165,7 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -183,30 +183,30 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
      * <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check Custom View Names
      */
-    async oBPv510CustomViewNamesCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv510CustomViewNamesCheckRequestOpts();
+    async customViewNamesCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountAccessUniqueIndexCheck200Response>> {
+        const requestOptions = await this.customViewNamesCheckRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AccountAccessUniqueIndexCheck200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check Custom View Names
      */
-    async oBPv510CustomViewNamesCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv510CustomViewNamesCheckRaw(initOverrides);
+    async customViewNamesCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountAccessUniqueIndexCheck200Response> {
+        const response = await this.customViewNamesCheckRaw(initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510OrphanedAccountCheck without sending the request
+     * Creates request options for orphanedAccountCheck without sending the request
      */
-    async oBPv510OrphanedAccountCheckRequestOpts(requestParameters: OBPv510OrphanedAccountCheckRequest): Promise<runtime.RequestOpts> {
+    async orphanedAccountCheckRequestOpts(requestParameters: OrphanedAccountCheckRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['bankid'] == null) {
             throw new runtime.RequiredError(
                 'bankid',
-                'Required parameter "bankid" was null or undefined when calling oBPv510OrphanedAccountCheck().'
+                'Required parameter "bankid" was null or undefined when calling orphanedAccountCheck().'
             );
         }
 
@@ -224,7 +224,7 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -243,26 +243,26 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
      * <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check for Orphaned Accounts
      */
-    async oBPv510OrphanedAccountCheckRaw(requestParameters: OBPv510OrphanedAccountCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv510OrphanedAccountCheckRequestOpts(requestParameters);
+    async orphanedAccountCheckRaw(requestParameters: OrphanedAccountCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountAccessUniqueIndexCheck200Response>> {
+        const requestOptions = await this.orphanedAccountCheckRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AccountAccessUniqueIndexCheck200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check for Orphaned Accounts
      */
-    async oBPv510OrphanedAccountCheck(requestParameters: OBPv510OrphanedAccountCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv510OrphanedAccountCheckRaw(requestParameters, initOverrides);
+    async orphanedAccountCheck(requestParameters: OrphanedAccountCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountAccessUniqueIndexCheck200Response> {
+        const response = await this.orphanedAccountCheckRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv510SystemViewNamesCheck without sending the request
+     * Creates request options for systemViewNamesCheck without sending the request
      */
-    async oBPv510SystemViewNamesCheckRequestOpts(): Promise<runtime.RequestOpts> {
+    async systemViewNamesCheckRequestOpts(): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -277,7 +277,7 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -295,19 +295,19 @@ export class SystemIntegrityApi extends runtime.BaseAPI {
      * <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check System View Names
      */
-    async oBPv510SystemViewNamesCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv121UpdateTransactionNarrative200Response>> {
-        const requestOptions = await this.oBPv510SystemViewNamesCheckRequestOpts();
+    async systemViewNamesCheckRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AccountAccessUniqueIndexCheck200Response>> {
+        const requestOptions = await this.systemViewNamesCheckRequestOpts();
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv121UpdateTransactionNarrative200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AccountAccessUniqueIndexCheck200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
      * Check System View Names
      */
-    async oBPv510SystemViewNamesCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv121UpdateTransactionNarrative200Response> {
-        const response = await this.oBPv510SystemViewNamesCheckRaw(initOverrides);
+    async systemViewNamesCheck(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AccountAccessUniqueIndexCheck200Response> {
+        const response = await this.systemViewNamesCheckRaw(initOverrides);
         return await response.value();
     }
 

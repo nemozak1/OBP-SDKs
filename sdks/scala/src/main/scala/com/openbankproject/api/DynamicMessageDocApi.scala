@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,15 +11,15 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400GetAllBankLevelDynamicMessageDocs200Response
-import com.openbankproject.model.OBPv400GetDynamicMessageDoc200Response
-import com.openbankproject.model.OBPv400UpdateDynamicMessageDocRequest
+import com.openbankproject.model.GetAllBankLevelDynamicMessageDocs200Response
+import com.openbankproject.model.GetDynamicMessageDoc200Response
+import com.openbankproject.model.UpdateDynamicMessageDocRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object DynamicMessageDocApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new DynamicMessageDocApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new DynamicMessageDocApi(baseUrl)
 }
 
 class DynamicMessageDocApi(baseUrl: String) {
@@ -28,7 +28,7 @@ class DynamicMessageDocApi(baseUrl: String) {
    * <p>Create a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -37,38 +37,38 @@ class DynamicMessageDocApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400UpdateDynamicMessageDocRequest Request body
+   * @param updateDynamicMessageDocRequest Request body
    */
-  def oBPv400CreateBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def createBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-message-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateDynamicMessageDocRequest)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateDynamicMessageDocRequest)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
   /**
    * <p>Create a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400UpdateDynamicMessageDocRequest Request body
+   * @param updateDynamicMessageDocRequest Request body
    */
-  def oBPv400CreateDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def createDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/dynamic-message-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateDynamicMessageDocRequest)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateDynamicMessageDocRequest)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
   /**
    * <p>Delete a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
@@ -85,12 +85,12 @@ class DynamicMessageDocApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
    */
-  def oBPv400DeleteBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -106,19 +106,19 @@ class DynamicMessageDocApi(baseUrl: String) {
    * 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
    */
-  def oBPv400DeleteDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get all Bank Level Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllBankLevelDynamicMessageDocs200Response (Successful operation)
+   *   code 200 : GetAllBankLevelDynamicMessageDocs200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -128,38 +128,38 @@ class DynamicMessageDocApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetAllBankLevelDynamicMessageDocs(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllBankLevelDynamicMessageDocs200Response]] =
+  def getAllBankLevelDynamicMessageDocs(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetAllBankLevelDynamicMessageDocs200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-message-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllBankLevelDynamicMessageDocs200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllBankLevelDynamicMessageDocs200Response])
 
   /**
    * <p>Get all Dynamic Message Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllBankLevelDynamicMessageDocs200Response (Successful operation)
+   *   code 200 : GetAllBankLevelDynamicMessageDocs200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetAllDynamicMessageDocs(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetAllBankLevelDynamicMessageDocs200Response]] =
+  def getAllDynamicMessageDocs(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetAllBankLevelDynamicMessageDocs200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-message-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllBankLevelDynamicMessageDocs200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllBankLevelDynamicMessageDocs200Response])
 
   /**
    * <p>Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -170,19 +170,19 @@ class DynamicMessageDocApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
    */
-  def oBPv400GetBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def getBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
   /**
    * <p>Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -191,19 +191,19 @@ class DynamicMessageDocApi(baseUrl: String) {
    * 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
    */
-  def oBPv400GetDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def getDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
   /**
    * <p>Update a Bank Level Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -213,22 +213,22 @@ class DynamicMessageDocApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-   * @param oBPv400UpdateDynamicMessageDocRequest Request body
+   * @param updateDynamicMessageDocRequest Request body
    */
-  def oBPv400UpdateBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def updateBankLevelDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateDynamicMessageDocRequest)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateDynamicMessageDocRequest)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
   /**
    * <p>Update a Dynamic Message Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">DYNAMIC_MESSAGE_DOC_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#process\"><strong>process</strong></a>: obp.getBank</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetDynamicMessageDoc200Response (Successful operation)
+   *   code 200 : GetDynamicMessageDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
@@ -236,15 +236,15 @@ class DynamicMessageDocApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier
-   * @param oBPv400UpdateDynamicMessageDocRequest Request body
+   * @param updateDynamicMessageDocRequest Request body
    */
-  def oBPv400UpdateDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String, oBPv400UpdateDynamicMessageDocRequest: OBPv400UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetDynamicMessageDoc200Response]] =
+  def updateDynamicMessageDoc(apiKeyHeader: String, apiKeyHeader: String)(dynamicmessagedocid: String, updateDynamicMessageDocRequest: UpdateDynamicMessageDocRequest): Request[Either[ResponseException[String, Exception], GetDynamicMessageDoc200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/dynamic-message-docs/${dynamicmessagedocid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateDynamicMessageDocRequest)
-      .response(asJson[OBPv400GetDynamicMessageDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateDynamicMessageDocRequest)
+      .response(asJson[GetDynamicMessageDoc200Response])
 
 }

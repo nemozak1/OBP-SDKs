@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,9 +18,9 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400GetAllBankLevelDynamicMessageDocs200Response;
-import com.openbankproject.model.OBPv400GetDynamicMessageDoc200Response;
-import com.openbankproject.model.OBPv400UpdateDynamicMessageDocRequest;
+import com.openbankproject.model.GetAllBankLevelDynamicMessageDocs200Response;
+import com.openbankproject.model.GetDynamicMessageDoc200Response;
+import com.openbankproject.model.UpdateDynamicMessageDocRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -47,7 +47,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DynamicMessageDocApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,25 +168,25 @@ public class DynamicMessageDocApi {
    * Create Bank Level Dynamic Message Doc
    * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400CreateBankLevelDynamicMessageDoc(bankid, obPv400UpdateDynamicMessageDocRequest, null);
+  public GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return createBankLevelDynamicMessageDoc(bankid, updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Create Bank Level Dynamic Message Doc
    * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400CreateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public GetDynamicMessageDoc200Response createBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = createBankLevelDynamicMessageDocWithHttpInfo(bankid, updateDynamicMessageDocRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -194,25 +194,25 @@ public class DynamicMessageDocApi {
    * Create Bank Level Dynamic Message Doc
    * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(bankid, obPv400UpdateDynamicMessageDocRequest, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> createBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return createBankLevelDynamicMessageDocWithHttpInfo(bankid, updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Create Bank Level Dynamic Message Doc
    * &lt;p&gt;Create a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateBankLevelDynamicMessageDocRequestBuilder(bankid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> createBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankLevelDynamicMessageDocRequestBuilder(bankid, updateDynamicMessageDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -223,11 +223,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateBankLevelDynamicMessageDoc", localVarResponse);
+          throw getApiException("createBankLevelDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -237,10 +237,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -259,14 +259,14 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankLevelDynamicMessageDoc");
     }
-    // verify the required parameter 'obPv400UpdateDynamicMessageDocRequest' is set
-    if (obPv400UpdateDynamicMessageDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateDynamicMessageDocRequest' when calling oBPv400CreateBankLevelDynamicMessageDoc");
+    // verify the required parameter 'updateDynamicMessageDocRequest' is set
+    if (updateDynamicMessageDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateDynamicMessageDocRequest' when calling createBankLevelDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -280,7 +280,7 @@ public class DynamicMessageDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateDynamicMessageDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateDynamicMessageDocRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -299,48 +299,48 @@ public class DynamicMessageDocApi {
   /**
    * Create Dynamic Message Doc
    * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(@javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400CreateDynamicMessageDoc(obPv400UpdateDynamicMessageDocRequest, null);
+  public GetDynamicMessageDoc200Response createDynamicMessageDoc(@javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return createDynamicMessageDoc(updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Create Dynamic Message Doc
    * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400CreateDynamicMessageDoc(@javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest, headers);
+  public GetDynamicMessageDoc200Response createDynamicMessageDoc(@javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Dynamic Message Doc
    * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400CreateDynamicMessageDocWithHttpInfo(obPv400UpdateDynamicMessageDocRequest, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> createDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return createDynamicMessageDocWithHttpInfo(updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Create Dynamic Message Doc
    * &lt;p&gt;Create a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400CreateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateDynamicMessageDocRequestBuilder(obPv400UpdateDynamicMessageDocRequest, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> createDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDynamicMessageDocRequestBuilder(updateDynamicMessageDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -351,11 +351,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateDynamicMessageDoc", localVarResponse);
+          throw getApiException("createDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -365,10 +365,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -387,10 +387,10 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400UpdateDynamicMessageDocRequest' is set
-    if (obPv400UpdateDynamicMessageDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateDynamicMessageDocRequest' when calling oBPv400CreateDynamicMessageDoc");
+  private HttpRequest.Builder createDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'updateDynamicMessageDocRequest' is set
+    if (updateDynamicMessageDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateDynamicMessageDocRequest' when calling createDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -403,7 +403,7 @@ public class DynamicMessageDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateDynamicMessageDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateDynamicMessageDocRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -426,8 +426,8 @@ public class DynamicMessageDocApi {
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    oBPv400DeleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, null);
+  public void deleteBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    deleteBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, null);
   }
 
   /**
@@ -438,8 +438,8 @@ public class DynamicMessageDocApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, headers);
+  public void deleteBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    deleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, headers);
   }
 
   /**
@@ -450,8 +450,8 @@ public class DynamicMessageDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, null);
+  public ApiResponse<Void> deleteBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return deleteBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, null);
   }
 
   /**
@@ -463,8 +463,8 @@ public class DynamicMessageDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, headers);
+  public ApiResponse<Void> deleteBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -475,7 +475,7 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteBankLevelDynamicMessageDoc", localVarResponse);
+          throw getApiException("deleteBankLevelDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -500,14 +500,14 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankLevelDynamicMessageDoc");
     }
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400DeleteBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling deleteBankLevelDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -538,8 +538,8 @@ public class DynamicMessageDocApi {
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    oBPv400DeleteDynamicMessageDoc(dynamicmessagedocid, null);
+  public void deleteDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    deleteDynamicMessageDoc(dynamicmessagedocid, null);
   }
 
   /**
@@ -549,8 +549,8 @@ public class DynamicMessageDocApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid, headers);
+  public void deleteDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid, headers);
   }
 
   /**
@@ -560,8 +560,8 @@ public class DynamicMessageDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400DeleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid, null);
+  public ApiResponse<Void> deleteDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return deleteDynamicMessageDocWithHttpInfo(dynamicmessagedocid, null);
   }
 
   /**
@@ -572,8 +572,8 @@ public class DynamicMessageDocApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteDynamicMessageDocRequestBuilder(dynamicmessagedocid, headers);
+  public ApiResponse<Void> deleteDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteDynamicMessageDocRequestBuilder(dynamicmessagedocid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -584,7 +584,7 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteDynamicMessageDoc", localVarResponse);
+          throw getApiException("deleteDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -609,10 +609,10 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400DeleteDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling deleteDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -640,11 +640,11 @@ public class DynamicMessageDocApi {
    * Get all Bank Level Dynamic Message Docs
    * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+   * @return GetAllBankLevelDynamicMessageDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelDynamicMessageDocs(bankid, null);
+  public GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelDynamicMessageDocs(bankid, null);
   }
 
   /**
@@ -652,11 +652,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+   * @return GetAllBankLevelDynamicMessageDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllBankLevelDynamicMessageDocs(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> localVarResponse = oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid, headers);
+  public GetAllBankLevelDynamicMessageDocs200Response getAllBankLevelDynamicMessageDocs(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> localVarResponse = getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -664,11 +664,11 @@ public class DynamicMessageDocApi {
    * Get all Bank Level Dynamic Message Docs
    * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetAllBankLevelDynamicMessageDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllBankLevelDynamicMessageDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(bankid, null);
+  public ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllBankLevelDynamicMessageDocsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getAllBankLevelDynamicMessageDocsWithHttpInfo(bankid, null);
   }
 
   /**
@@ -676,11 +676,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get all Bank Level Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllBankLevelDynamicMessageDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllBankLevelDynamicMessageDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllBankLevelDynamicMessageDocsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllBankLevelDynamicMessageDocsRequestBuilder(bankid, headers);
+  public ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllBankLevelDynamicMessageDocsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllBankLevelDynamicMessageDocsRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -691,11 +691,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllBankLevelDynamicMessageDocs", localVarResponse);
+          throw getApiException("getAllBankLevelDynamicMessageDocs", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+          return new ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -705,10 +705,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllBankLevelDynamicMessageDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllBankLevelDynamicMessageDocs200Response>() {});
+        GetAllBankLevelDynamicMessageDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankLevelDynamicMessageDocs200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+        return new ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -727,10 +727,10 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllBankLevelDynamicMessageDocsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllBankLevelDynamicMessageDocsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetAllBankLevelDynamicMessageDocs");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getAllBankLevelDynamicMessageDocs");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -757,44 +757,44 @@ public class DynamicMessageDocApi {
   /**
    * Get all Dynamic Message Docs
    * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+   * @return GetAllBankLevelDynamicMessageDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs() throws ApiException {
-    return oBPv400GetAllDynamicMessageDocs(null);
+  public GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs() throws ApiException {
+    return getAllDynamicMessageDocs(null);
   }
 
   /**
    * Get all Dynamic Message Docs
    * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetAllBankLevelDynamicMessageDocs200Response
+   * @return GetAllBankLevelDynamicMessageDocs200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetAllBankLevelDynamicMessageDocs200Response oBPv400GetAllDynamicMessageDocs(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> localVarResponse = oBPv400GetAllDynamicMessageDocsWithHttpInfo(headers);
+  public GetAllBankLevelDynamicMessageDocs200Response getAllDynamicMessageDocs(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> localVarResponse = getAllDynamicMessageDocsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get all Dynamic Message Docs
    * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetAllBankLevelDynamicMessageDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllBankLevelDynamicMessageDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllDynamicMessageDocsWithHttpInfo() throws ApiException {
-    return oBPv400GetAllDynamicMessageDocsWithHttpInfo(null);
+  public ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllDynamicMessageDocsWithHttpInfo() throws ApiException {
+    return getAllDynamicMessageDocsWithHttpInfo(null);
   }
 
   /**
    * Get all Dynamic Message Docs
    * &lt;p&gt;Get all Dynamic Message Docs.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetAllBankLevelDynamicMessageDocs200Response&gt;
+   * @return ApiResponse&lt;GetAllBankLevelDynamicMessageDocs200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response> oBPv400GetAllDynamicMessageDocsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetAllDynamicMessageDocsRequestBuilder(headers);
+  public ApiResponse<GetAllBankLevelDynamicMessageDocs200Response> getAllDynamicMessageDocsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getAllDynamicMessageDocsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -805,11 +805,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetAllDynamicMessageDocs", localVarResponse);
+          throw getApiException("getAllDynamicMessageDocs", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+          return new ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -819,10 +819,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetAllBankLevelDynamicMessageDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetAllBankLevelDynamicMessageDocs200Response>() {});
+        GetAllBankLevelDynamicMessageDocs200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetAllBankLevelDynamicMessageDocs200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetAllBankLevelDynamicMessageDocs200Response>(
+        return new ApiResponse<GetAllBankLevelDynamicMessageDocs200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -841,7 +841,7 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetAllDynamicMessageDocsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getAllDynamicMessageDocsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -868,11 +868,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400GetBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, null);
+  public GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return getBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, null);
   }
 
   /**
@@ -881,11 +881,11 @@ public class DynamicMessageDocApi {
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400GetBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, headers);
+  public GetDynamicMessageDoc200Response getBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = getBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, headers);
     return localVarResponse.getData();
   }
 
@@ -894,11 +894,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get a Bank Level Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> getBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return getBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, null);
   }
 
   /**
@@ -907,11 +907,11 @@ public class DynamicMessageDocApi {
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> getBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -922,11 +922,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetBankLevelDynamicMessageDoc", localVarResponse);
+          throw getApiException("getBankLevelDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -936,10 +936,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -958,14 +958,14 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelDynamicMessageDoc");
     }
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400GetBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling getBankLevelDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -994,11 +994,11 @@ public class DynamicMessageDocApi {
    * Get Dynamic Message Doc
    * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400GetDynamicMessageDoc(dynamicmessagedocid, null);
+  public GetDynamicMessageDoc200Response getDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return getDynamicMessageDoc(dynamicmessagedocid, null);
   }
 
   /**
@@ -1006,11 +1006,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400GetDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid, headers);
+  public GetDynamicMessageDoc200Response getDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = getDynamicMessageDocWithHttpInfo(dynamicmessagedocid, headers);
     return localVarResponse.getData();
   }
 
@@ -1018,11 +1018,11 @@ public class DynamicMessageDocApi {
    * Get Dynamic Message Doc
    * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
-    return oBPv400GetDynamicMessageDocWithHttpInfo(dynamicmessagedocid, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> getDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid) throws ApiException {
+    return getDynamicMessageDocWithHttpInfo(dynamicmessagedocid, null);
   }
 
   /**
@@ -1030,11 +1030,11 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Get a Dynamic Message Doc by DYNAMIC_MESSAGE_DOC_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400GetDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetDynamicMessageDocRequestBuilder(dynamicmessagedocid, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> getDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getDynamicMessageDocRequestBuilder(dynamicmessagedocid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1045,11 +1045,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetDynamicMessageDoc", localVarResponse);
+          throw getApiException("getDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1059,10 +1059,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1081,10 +1081,10 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400GetDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling getDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1113,12 +1113,12 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, null);
+  public GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return updateBankLevelDynamicMessageDoc(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest, null);
   }
 
   /**
@@ -1126,13 +1126,13 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400UpdateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public GetDynamicMessageDoc200Response updateBankLevelDynamicMessageDoc(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = updateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1141,12 +1141,12 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> updateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return updateBankLevelDynamicMessageDocWithHttpInfo(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest, null);
   }
 
   /**
@@ -1154,13 +1154,13 @@ public class DynamicMessageDocApi {
    * &lt;p&gt;Update a Bank Level Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> updateBankLevelDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankLevelDynamicMessageDocRequestBuilder(bankid, dynamicmessagedocid, updateDynamicMessageDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1171,11 +1171,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateBankLevelDynamicMessageDoc", localVarResponse);
+          throw getApiException("updateBankLevelDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1185,10 +1185,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1207,18 +1207,18 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankLevelDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankLevelDynamicMessageDoc");
     }
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400UpdateBankLevelDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling updateBankLevelDynamicMessageDoc");
     }
-    // verify the required parameter 'obPv400UpdateDynamicMessageDocRequest' is set
-    if (obPv400UpdateDynamicMessageDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateDynamicMessageDocRequest' when calling oBPv400UpdateBankLevelDynamicMessageDoc");
+    // verify the required parameter 'updateDynamicMessageDocRequest' is set
+    if (updateDynamicMessageDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateDynamicMessageDocRequest' when calling updateBankLevelDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1233,7 +1233,7 @@ public class DynamicMessageDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateDynamicMessageDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateDynamicMessageDocRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1253,25 +1253,25 @@ public class DynamicMessageDocApi {
    * Update Dynamic Message Doc
    * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400UpdateDynamicMessageDoc(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, null);
+  public GetDynamicMessageDoc200Response updateDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return updateDynamicMessageDoc(dynamicmessagedocid, updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Update Dynamic Message Doc
    * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicMessageDoc200Response
+   * @return GetDynamicMessageDoc200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicMessageDoc200Response oBPv400UpdateDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicMessageDoc200Response> localVarResponse = oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public GetDynamicMessageDoc200Response updateDynamicMessageDoc(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicMessageDoc200Response> localVarResponse = updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, updateDynamicMessageDocRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1279,25 +1279,25 @@ public class DynamicMessageDocApi {
    * Update Dynamic Message Doc
    * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @param updateDynamicMessageDocRequest Request body (required)
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest) throws ApiException {
-    return oBPv400UpdateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, null);
+  public ApiResponse<GetDynamicMessageDoc200Response> updateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest) throws ApiException {
+    return updateDynamicMessageDocWithHttpInfo(dynamicmessagedocid, updateDynamicMessageDocRequest, null);
   }
 
   /**
    * Update Dynamic Message Doc
    * &lt;p&gt;Update a Dynamic Message Doc.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;DYNAMIC_MESSAGE_DOC_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#process\&quot;&gt;&lt;strong&gt;process&lt;/strong&gt;&lt;/a&gt;: obp.getBank&lt;/p&gt; 
    * @param dynamicmessagedocid The DYNAMICMESSAGEDOCID identifier (required)
-   * @param obPv400UpdateDynamicMessageDocRequest Request body (required)
+   * @param updateDynamicMessageDocRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicMessageDoc200Response&gt;
+   * @return ApiResponse&lt;GetDynamicMessageDoc200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicMessageDoc200Response> oBPv400UpdateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateDynamicMessageDocRequestBuilder(dynamicmessagedocid, obPv400UpdateDynamicMessageDocRequest, headers);
+  public ApiResponse<GetDynamicMessageDoc200Response> updateDynamicMessageDocWithHttpInfo(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateDynamicMessageDocRequestBuilder(dynamicmessagedocid, updateDynamicMessageDocRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1308,11 +1308,11 @@ public class DynamicMessageDocApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateDynamicMessageDoc", localVarResponse);
+          throw getApiException("updateDynamicMessageDoc", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+          return new ApiResponse<GetDynamicMessageDoc200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1322,10 +1322,10 @@ public class DynamicMessageDocApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicMessageDoc200Response>() {});
+        GetDynamicMessageDoc200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicMessageDoc200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicMessageDoc200Response>(
+        return new ApiResponse<GetDynamicMessageDoc200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1344,14 +1344,14 @@ public class DynamicMessageDocApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull OBPv400UpdateDynamicMessageDocRequest obPv400UpdateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateDynamicMessageDocRequestBuilder(@javax.annotation.Nonnull String dynamicmessagedocid, @javax.annotation.Nonnull UpdateDynamicMessageDocRequest updateDynamicMessageDocRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicmessagedocid' is set
     if (dynamicmessagedocid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling oBPv400UpdateDynamicMessageDoc");
+      throw new ApiException(400, "Missing the required parameter 'dynamicmessagedocid' when calling updateDynamicMessageDoc");
     }
-    // verify the required parameter 'obPv400UpdateDynamicMessageDocRequest' is set
-    if (obPv400UpdateDynamicMessageDocRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateDynamicMessageDocRequest' when calling oBPv400UpdateDynamicMessageDoc");
+    // verify the required parameter 'updateDynamicMessageDocRequest' is set
+    if (updateDynamicMessageDocRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateDynamicMessageDocRequest' when calling updateDynamicMessageDoc");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1365,7 +1365,7 @@ public class DynamicMessageDocApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateDynamicMessageDocRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateDynamicMessageDocRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

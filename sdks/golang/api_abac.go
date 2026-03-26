@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,24 +24,24 @@ import (
 // ABACAPIService ABACAPI service
 type ABACAPIService service
 
-type ApiOBPv600CreateAbacRuleRequest struct {
+type ApiCreateAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
-	oBPv600UpdateAbacRuleRequest *OBPv600UpdateAbacRuleRequest
+	updateAbacRuleRequest *UpdateAbacRuleRequest
 }
 
 // Request body
-func (r ApiOBPv600CreateAbacRuleRequest) OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest OBPv600UpdateAbacRuleRequest) ApiOBPv600CreateAbacRuleRequest {
-	r.oBPv600UpdateAbacRuleRequest = &oBPv600UpdateAbacRuleRequest
+func (r ApiCreateAbacRuleRequest) UpdateAbacRuleRequest(updateAbacRuleRequest UpdateAbacRuleRequest) ApiCreateAbacRuleRequest {
+	r.updateAbacRuleRequest = &updateAbacRuleRequest
 	return r
 }
 
-func (r ApiOBPv600CreateAbacRuleRequest) Execute() (*OBPv600GetAbacRule200Response, *http.Response, error) {
-	return r.ApiService.OBPv600CreateAbacRuleExecute(r)
+func (r ApiCreateAbacRuleRequest) Execute() (*GetAbacRule200Response, *http.Response, error) {
+	return r.ApiService.CreateAbacRuleExecute(r)
 }
 
 /*
-OBPv600CreateAbacRule Create ABAC Rule
+CreateAbacRule Create ABAC Rule
 
 <p>Create a new ABAC (Attribute-Based Access Control) rule.</p>
 <p>ABAC rules are Scala functions that return a Boolean value indicating whether access should be granted.</p>
@@ -77,26 +77,26 @@ accountOpt.exists(_.balance.toDouble &gt; 1000.0)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600CreateAbacRuleRequest
+ @return ApiCreateAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600CreateAbacRule(ctx context.Context) ApiOBPv600CreateAbacRuleRequest {
-	return ApiOBPv600CreateAbacRuleRequest{
+func (a *ABACAPIService) CreateAbacRule(ctx context.Context) ApiCreateAbacRuleRequest {
+	return ApiCreateAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRule200Response
-func (a *ABACAPIService) OBPv600CreateAbacRuleExecute(r ApiOBPv600CreateAbacRuleRequest) (*OBPv600GetAbacRule200Response, *http.Response, error) {
+//  @return GetAbacRule200Response
+func (a *ABACAPIService) CreateAbacRuleExecute(r ApiCreateAbacRuleRequest) (*GetAbacRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRule200Response
+		localVarReturnValue  *GetAbacRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600CreateAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.CreateAbacRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -106,8 +106,8 @@ func (a *ABACAPIService) OBPv600CreateAbacRuleExecute(r ApiOBPv600CreateAbacRule
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateAbacRuleRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateAbacRuleRequest is required and must be specified")
+	if r.updateAbacRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAbacRuleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -128,7 +128,7 @@ func (a *ABACAPIService) OBPv600CreateAbacRuleExecute(r ApiOBPv600CreateAbacRule
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateAbacRuleRequest
+	localVarPostBody = r.updateAbacRuleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -153,7 +153,7 @@ func (a *ABACAPIService) OBPv600CreateAbacRuleExecute(r ApiOBPv600CreateAbacRule
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -194,18 +194,18 @@ func (a *ABACAPIService) OBPv600CreateAbacRuleExecute(r ApiOBPv600CreateAbacRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600DeleteAbacRuleRequest struct {
+type ApiDeleteAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	abacruleid string
 }
 
-func (r ApiOBPv600DeleteAbacRuleRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv600DeleteAbacRuleExecute(r)
+func (r ApiDeleteAbacRuleRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteAbacRuleExecute(r)
 }
 
 /*
-OBPv600DeleteAbacRule Delete ABAC Rule
+DeleteAbacRule Delete ABAC Rule
 
 <p>Delete an ABAC rule by its ID.</p>
 <p><strong>Documentation:</strong><br />
@@ -219,10 +219,10 @@ OBPv600DeleteAbacRule Delete ABAC Rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param abacruleid The ABACRULEID identifier
- @return ApiOBPv600DeleteAbacRuleRequest
+ @return ApiDeleteAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600DeleteAbacRule(ctx context.Context, abacruleid string) ApiOBPv600DeleteAbacRuleRequest {
-	return ApiOBPv600DeleteAbacRuleRequest{
+func (a *ABACAPIService) DeleteAbacRule(ctx context.Context, abacruleid string) ApiDeleteAbacRuleRequest {
+	return ApiDeleteAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		abacruleid: abacruleid,
@@ -230,14 +230,14 @@ func (a *ABACAPIService) OBPv600DeleteAbacRule(ctx context.Context, abacruleid s
 }
 
 // Execute executes the request
-func (a *ABACAPIService) OBPv600DeleteAbacRuleExecute(r ApiOBPv600DeleteAbacRuleRequest) (*http.Response, error) {
+func (a *ABACAPIService) DeleteAbacRuleExecute(r ApiDeleteAbacRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600DeleteAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.DeleteAbacRule")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -290,7 +290,7 @@ func (a *ABACAPIService) OBPv600DeleteAbacRuleExecute(r ApiOBPv600DeleteAbacRule
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -322,25 +322,25 @@ func (a *ABACAPIService) OBPv600DeleteAbacRuleExecute(r ApiOBPv600DeleteAbacRule
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv600ExecuteAbacPolicyRequest struct {
+type ApiExecuteAbacPolicyRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	policy string
-	oBPv600ExecuteAbacPolicyRequest *OBPv600ExecuteAbacPolicyRequest
+	executeAbacPolicyRequest *ExecuteAbacPolicyRequest
 }
 
 // Request body
-func (r ApiOBPv600ExecuteAbacPolicyRequest) OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest OBPv600ExecuteAbacPolicyRequest) ApiOBPv600ExecuteAbacPolicyRequest {
-	r.oBPv600ExecuteAbacPolicyRequest = &oBPv600ExecuteAbacPolicyRequest
+func (r ApiExecuteAbacPolicyRequest) ExecuteAbacPolicyRequest(executeAbacPolicyRequest ExecuteAbacPolicyRequest) ApiExecuteAbacPolicyRequest {
+	r.executeAbacPolicyRequest = &executeAbacPolicyRequest
 	return r
 }
 
-func (r ApiOBPv600ExecuteAbacPolicyRequest) Execute() (*OBPv600ExecuteAbacPolicy200Response, *http.Response, error) {
-	return r.ApiService.OBPv600ExecuteAbacPolicyExecute(r)
+func (r ApiExecuteAbacPolicyRequest) Execute() (*ExecuteAbacPolicy200Response, *http.Response, error) {
+	return r.ApiService.ExecuteAbacPolicyExecute(r)
 }
 
 /*
-OBPv600ExecuteAbacPolicy Execute ABAC Policy
+ExecuteAbacPolicy Execute ABAC Policy
 
 <p>Execute all ABAC rules in a policy to test access control.</p>
 <p>This endpoint executes all active rules that belong to the specified policy.<br />
@@ -371,10 +371,10 @@ The policy uses OR logic - access is granted if at least one rule passes.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param policy The POLICY identifier
- @return ApiOBPv600ExecuteAbacPolicyRequest
+ @return ApiExecuteAbacPolicyRequest
 */
-func (a *ABACAPIService) OBPv600ExecuteAbacPolicy(ctx context.Context, policy string) ApiOBPv600ExecuteAbacPolicyRequest {
-	return ApiOBPv600ExecuteAbacPolicyRequest{
+func (a *ABACAPIService) ExecuteAbacPolicy(ctx context.Context, policy string) ApiExecuteAbacPolicyRequest {
+	return ApiExecuteAbacPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		policy: policy,
@@ -382,16 +382,16 @@ func (a *ABACAPIService) OBPv600ExecuteAbacPolicy(ctx context.Context, policy st
 }
 
 // Execute executes the request
-//  @return OBPv600ExecuteAbacPolicy200Response
-func (a *ABACAPIService) OBPv600ExecuteAbacPolicyExecute(r ApiOBPv600ExecuteAbacPolicyRequest) (*OBPv600ExecuteAbacPolicy200Response, *http.Response, error) {
+//  @return ExecuteAbacPolicy200Response
+func (a *ABACAPIService) ExecuteAbacPolicyExecute(r ApiExecuteAbacPolicyRequest) (*ExecuteAbacPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600ExecuteAbacPolicy200Response
+		localVarReturnValue  *ExecuteAbacPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600ExecuteAbacPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.ExecuteAbacPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -402,8 +402,8 @@ func (a *ABACAPIService) OBPv600ExecuteAbacPolicyExecute(r ApiOBPv600ExecuteAbac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600ExecuteAbacPolicyRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600ExecuteAbacPolicyRequest is required and must be specified")
+	if r.executeAbacPolicyRequest == nil {
+		return localVarReturnValue, nil, reportError("executeAbacPolicyRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -424,7 +424,7 @@ func (a *ABACAPIService) OBPv600ExecuteAbacPolicyExecute(r ApiOBPv600ExecuteAbac
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600ExecuteAbacPolicyRequest
+	localVarPostBody = r.executeAbacPolicyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -449,7 +449,7 @@ func (a *ABACAPIService) OBPv600ExecuteAbacPolicyExecute(r ApiOBPv600ExecuteAbac
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -490,25 +490,25 @@ func (a *ABACAPIService) OBPv600ExecuteAbacPolicyExecute(r ApiOBPv600ExecuteAbac
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600ExecuteAbacRuleRequest struct {
+type ApiExecuteAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	abacruleid string
-	oBPv600ExecuteAbacPolicyRequest *OBPv600ExecuteAbacPolicyRequest
+	executeAbacPolicyRequest *ExecuteAbacPolicyRequest
 }
 
 // Request body
-func (r ApiOBPv600ExecuteAbacRuleRequest) OBPv600ExecuteAbacPolicyRequest(oBPv600ExecuteAbacPolicyRequest OBPv600ExecuteAbacPolicyRequest) ApiOBPv600ExecuteAbacRuleRequest {
-	r.oBPv600ExecuteAbacPolicyRequest = &oBPv600ExecuteAbacPolicyRequest
+func (r ApiExecuteAbacRuleRequest) ExecuteAbacPolicyRequest(executeAbacPolicyRequest ExecuteAbacPolicyRequest) ApiExecuteAbacRuleRequest {
+	r.executeAbacPolicyRequest = &executeAbacPolicyRequest
 	return r
 }
 
-func (r ApiOBPv600ExecuteAbacRuleRequest) Execute() (*OBPv600ExecuteAbacPolicy200Response, *http.Response, error) {
-	return r.ApiService.OBPv600ExecuteAbacRuleExecute(r)
+func (r ApiExecuteAbacRuleRequest) Execute() (*ExecuteAbacPolicy200Response, *http.Response, error) {
+	return r.ApiService.ExecuteAbacRuleExecute(r)
 }
 
 /*
-OBPv600ExecuteAbacRule Execute ABAC Rule
+ExecuteAbacRule Execute ABAC Rule
 
 <p>Execute an ABAC rule to test access control.</p>
 <p>This endpoint allows you to test an ABAC rule with specific context (authenticated user, bank, account, transaction, customer, etc.).</p>
@@ -537,10 +537,10 @@ OBPv600ExecuteAbacRule Execute ABAC Rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param abacruleid The ABACRULEID identifier
- @return ApiOBPv600ExecuteAbacRuleRequest
+ @return ApiExecuteAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600ExecuteAbacRule(ctx context.Context, abacruleid string) ApiOBPv600ExecuteAbacRuleRequest {
-	return ApiOBPv600ExecuteAbacRuleRequest{
+func (a *ABACAPIService) ExecuteAbacRule(ctx context.Context, abacruleid string) ApiExecuteAbacRuleRequest {
+	return ApiExecuteAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		abacruleid: abacruleid,
@@ -548,16 +548,16 @@ func (a *ABACAPIService) OBPv600ExecuteAbacRule(ctx context.Context, abacruleid 
 }
 
 // Execute executes the request
-//  @return OBPv600ExecuteAbacPolicy200Response
-func (a *ABACAPIService) OBPv600ExecuteAbacRuleExecute(r ApiOBPv600ExecuteAbacRuleRequest) (*OBPv600ExecuteAbacPolicy200Response, *http.Response, error) {
+//  @return ExecuteAbacPolicy200Response
+func (a *ABACAPIService) ExecuteAbacRuleExecute(r ApiExecuteAbacRuleRequest) (*ExecuteAbacPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600ExecuteAbacPolicy200Response
+		localVarReturnValue  *ExecuteAbacPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600ExecuteAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.ExecuteAbacRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -568,8 +568,8 @@ func (a *ABACAPIService) OBPv600ExecuteAbacRuleExecute(r ApiOBPv600ExecuteAbacRu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600ExecuteAbacPolicyRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600ExecuteAbacPolicyRequest is required and must be specified")
+	if r.executeAbacPolicyRequest == nil {
+		return localVarReturnValue, nil, reportError("executeAbacPolicyRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -590,7 +590,7 @@ func (a *ABACAPIService) OBPv600ExecuteAbacRuleExecute(r ApiOBPv600ExecuteAbacRu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600ExecuteAbacPolicyRequest
+	localVarPostBody = r.executeAbacPolicyRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -615,7 +615,7 @@ func (a *ABACAPIService) OBPv600ExecuteAbacRuleExecute(r ApiOBPv600ExecuteAbacRu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -656,17 +656,17 @@ func (a *ABACAPIService) OBPv600ExecuteAbacRuleExecute(r ApiOBPv600ExecuteAbacRu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAbacPoliciesRequest struct {
+type ApiGetAbacPoliciesRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 }
 
-func (r ApiOBPv600GetAbacPoliciesRequest) Execute() (*OBPv600GetAbacPolicies200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAbacPoliciesExecute(r)
+func (r ApiGetAbacPoliciesRequest) Execute() (*GetAbacPolicies200Response, *http.Response, error) {
+	return r.ApiService.GetAbacPoliciesExecute(r)
 }
 
 /*
-OBPv600GetAbacPolicies Get ABAC Policies
+GetAbacPolicies Get ABAC Policies
 
 <p>Get the list of allowed ABAC policy names.</p>
 <p>ABAC rules are organized by policies. Each rule must have at least one policy assigned.<br />
@@ -680,26 +680,26 @@ standardized policy names that should be used when creating or updating rules.</
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAbacPoliciesRequest
+ @return ApiGetAbacPoliciesRequest
 */
-func (a *ABACAPIService) OBPv600GetAbacPolicies(ctx context.Context) ApiOBPv600GetAbacPoliciesRequest {
-	return ApiOBPv600GetAbacPoliciesRequest{
+func (a *ABACAPIService) GetAbacPolicies(ctx context.Context) ApiGetAbacPoliciesRequest {
+	return ApiGetAbacPoliciesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacPolicies200Response
-func (a *ABACAPIService) OBPv600GetAbacPoliciesExecute(r ApiOBPv600GetAbacPoliciesRequest) (*OBPv600GetAbacPolicies200Response, *http.Response, error) {
+//  @return GetAbacPolicies200Response
+func (a *ABACAPIService) GetAbacPoliciesExecute(r ApiGetAbacPoliciesRequest) (*GetAbacPolicies200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacPolicies200Response
+		localVarReturnValue  *GetAbacPolicies200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600GetAbacPolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.GetAbacPolicies")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -751,7 +751,7 @@ func (a *ABACAPIService) OBPv600GetAbacPoliciesExecute(r ApiOBPv600GetAbacPolici
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -792,18 +792,18 @@ func (a *ABACAPIService) OBPv600GetAbacPoliciesExecute(r ApiOBPv600GetAbacPolici
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAbacRuleRequest struct {
+type ApiGetAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	abacruleid string
 }
 
-func (r ApiOBPv600GetAbacRuleRequest) Execute() (*OBPv600GetAbacRule200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAbacRuleExecute(r)
+func (r ApiGetAbacRuleRequest) Execute() (*GetAbacRule200Response, *http.Response, error) {
+	return r.ApiService.GetAbacRuleExecute(r)
 }
 
 /*
-OBPv600GetAbacRule Get ABAC Rule
+GetAbacRule Get ABAC Rule
 
 <p>Get an ABAC rule by its ID.</p>
 <p><strong>Documentation:</strong><br />
@@ -826,10 +826,10 @@ OBPv600GetAbacRule Get ABAC Rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param abacruleid The ABACRULEID identifier
- @return ApiOBPv600GetAbacRuleRequest
+ @return ApiGetAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600GetAbacRule(ctx context.Context, abacruleid string) ApiOBPv600GetAbacRuleRequest {
-	return ApiOBPv600GetAbacRuleRequest{
+func (a *ABACAPIService) GetAbacRule(ctx context.Context, abacruleid string) ApiGetAbacRuleRequest {
+	return ApiGetAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		abacruleid: abacruleid,
@@ -837,16 +837,16 @@ func (a *ABACAPIService) OBPv600GetAbacRule(ctx context.Context, abacruleid stri
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRule200Response
-func (a *ABACAPIService) OBPv600GetAbacRuleExecute(r ApiOBPv600GetAbacRuleRequest) (*OBPv600GetAbacRule200Response, *http.Response, error) {
+//  @return GetAbacRule200Response
+func (a *ABACAPIService) GetAbacRuleExecute(r ApiGetAbacRuleRequest) (*GetAbacRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRule200Response
+		localVarReturnValue  *GetAbacRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600GetAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.GetAbacRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -899,7 +899,7 @@ func (a *ABACAPIService) OBPv600GetAbacRuleExecute(r ApiOBPv600GetAbacRuleReques
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -940,17 +940,17 @@ func (a *ABACAPIService) OBPv600GetAbacRuleExecute(r ApiOBPv600GetAbacRuleReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAbacRuleSchemaRequest struct {
+type ApiGetAbacRuleSchemaRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 }
 
-func (r ApiOBPv600GetAbacRuleSchemaRequest) Execute() (*OBPv600GetAbacRuleSchema200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAbacRuleSchemaExecute(r)
+func (r ApiGetAbacRuleSchemaRequest) Execute() (*GetAbacRuleSchema200Response, *http.Response, error) {
+	return r.ApiService.GetAbacRuleSchemaExecute(r)
 }
 
 /*
-OBPv600GetAbacRuleSchema Get ABAC Rule Schema
+GetAbacRuleSchema Get ABAC Rule Schema
 
 <p>Get schema information about ABAC rule structure for building rule code.</p>
 <p>This endpoint returns schema information including:<br />
@@ -983,26 +983,26 @@ OBPv600GetAbacRuleSchema Get ABAC Rule Schema
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAbacRuleSchemaRequest
+ @return ApiGetAbacRuleSchemaRequest
 */
-func (a *ABACAPIService) OBPv600GetAbacRuleSchema(ctx context.Context) ApiOBPv600GetAbacRuleSchemaRequest {
-	return ApiOBPv600GetAbacRuleSchemaRequest{
+func (a *ABACAPIService) GetAbacRuleSchema(ctx context.Context) ApiGetAbacRuleSchemaRequest {
+	return ApiGetAbacRuleSchemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRuleSchema200Response
-func (a *ABACAPIService) OBPv600GetAbacRuleSchemaExecute(r ApiOBPv600GetAbacRuleSchemaRequest) (*OBPv600GetAbacRuleSchema200Response, *http.Response, error) {
+//  @return GetAbacRuleSchema200Response
+func (a *ABACAPIService) GetAbacRuleSchemaExecute(r ApiGetAbacRuleSchemaRequest) (*GetAbacRuleSchema200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRuleSchema200Response
+		localVarReturnValue  *GetAbacRuleSchema200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600GetAbacRuleSchema")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.GetAbacRuleSchema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1054,7 +1054,7 @@ func (a *ABACAPIService) OBPv600GetAbacRuleSchemaExecute(r ApiOBPv600GetAbacRule
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1095,17 +1095,17 @@ func (a *ABACAPIService) OBPv600GetAbacRuleSchemaExecute(r ApiOBPv600GetAbacRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAbacRulesRequest struct {
+type ApiGetAbacRulesRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 }
 
-func (r ApiOBPv600GetAbacRulesRequest) Execute() (*OBPv600GetAbacRulesByPolicy200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAbacRulesExecute(r)
+func (r ApiGetAbacRulesRequest) Execute() (*GetAbacRulesByPolicy200Response, *http.Response, error) {
+	return r.ApiService.GetAbacRulesExecute(r)
 }
 
 /*
-OBPv600GetAbacRules Get ABAC Rules
+GetAbacRules Get ABAC Rules
 
 <p>Get all ABAC rules.</p>
 <p><strong>Documentation:</strong><br />
@@ -1126,26 +1126,26 @@ OBPv600GetAbacRules Get ABAC Rules
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetAbacRulesRequest
+ @return ApiGetAbacRulesRequest
 */
-func (a *ABACAPIService) OBPv600GetAbacRules(ctx context.Context) ApiOBPv600GetAbacRulesRequest {
-	return ApiOBPv600GetAbacRulesRequest{
+func (a *ABACAPIService) GetAbacRules(ctx context.Context) ApiGetAbacRulesRequest {
+	return ApiGetAbacRulesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRulesByPolicy200Response
-func (a *ABACAPIService) OBPv600GetAbacRulesExecute(r ApiOBPv600GetAbacRulesRequest) (*OBPv600GetAbacRulesByPolicy200Response, *http.Response, error) {
+//  @return GetAbacRulesByPolicy200Response
+func (a *ABACAPIService) GetAbacRulesExecute(r ApiGetAbacRulesRequest) (*GetAbacRulesByPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRulesByPolicy200Response
+		localVarReturnValue  *GetAbacRulesByPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600GetAbacRules")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.GetAbacRules")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1197,7 +1197,7 @@ func (a *ABACAPIService) OBPv600GetAbacRulesExecute(r ApiOBPv600GetAbacRulesRequ
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1238,18 +1238,18 @@ func (a *ABACAPIService) OBPv600GetAbacRulesExecute(r ApiOBPv600GetAbacRulesRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600GetAbacRulesByPolicyRequest struct {
+type ApiGetAbacRulesByPolicyRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	policy string
 }
 
-func (r ApiOBPv600GetAbacRulesByPolicyRequest) Execute() (*OBPv600GetAbacRulesByPolicy200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetAbacRulesByPolicyExecute(r)
+func (r ApiGetAbacRulesByPolicyRequest) Execute() (*GetAbacRulesByPolicy200Response, *http.Response, error) {
+	return r.ApiService.GetAbacRulesByPolicyExecute(r)
 }
 
 /*
-OBPv600GetAbacRulesByPolicy Get ABAC Rules by Policy
+GetAbacRulesByPolicy Get ABAC Rules by Policy
 
 <p>Get all ABAC rules that belong to a specific policy.</p>
 <p>Multiple rules can share the same policy. Rules with multiple policies (comma-separated)<br />
@@ -1275,10 +1275,10 @@ will be returned if any of their policies match the requested policy.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param policy The POLICY identifier
- @return ApiOBPv600GetAbacRulesByPolicyRequest
+ @return ApiGetAbacRulesByPolicyRequest
 */
-func (a *ABACAPIService) OBPv600GetAbacRulesByPolicy(ctx context.Context, policy string) ApiOBPv600GetAbacRulesByPolicyRequest {
-	return ApiOBPv600GetAbacRulesByPolicyRequest{
+func (a *ABACAPIService) GetAbacRulesByPolicy(ctx context.Context, policy string) ApiGetAbacRulesByPolicyRequest {
+	return ApiGetAbacRulesByPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		policy: policy,
@@ -1286,16 +1286,16 @@ func (a *ABACAPIService) OBPv600GetAbacRulesByPolicy(ctx context.Context, policy
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRulesByPolicy200Response
-func (a *ABACAPIService) OBPv600GetAbacRulesByPolicyExecute(r ApiOBPv600GetAbacRulesByPolicyRequest) (*OBPv600GetAbacRulesByPolicy200Response, *http.Response, error) {
+//  @return GetAbacRulesByPolicy200Response
+func (a *ABACAPIService) GetAbacRulesByPolicyExecute(r ApiGetAbacRulesByPolicyRequest) (*GetAbacRulesByPolicy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRulesByPolicy200Response
+		localVarReturnValue  *GetAbacRulesByPolicy200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600GetAbacRulesByPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.GetAbacRulesByPolicy")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1348,7 +1348,7 @@ func (a *ABACAPIService) OBPv600GetAbacRulesByPolicyExecute(r ApiOBPv600GetAbacR
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1389,25 +1389,25 @@ func (a *ABACAPIService) OBPv600GetAbacRulesByPolicyExecute(r ApiOBPv600GetAbacR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600UpdateAbacRuleRequest struct {
+type ApiUpdateAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
 	abacruleid string
-	oBPv600UpdateAbacRuleRequest *OBPv600UpdateAbacRuleRequest
+	updateAbacRuleRequest *UpdateAbacRuleRequest
 }
 
 // Request body
-func (r ApiOBPv600UpdateAbacRuleRequest) OBPv600UpdateAbacRuleRequest(oBPv600UpdateAbacRuleRequest OBPv600UpdateAbacRuleRequest) ApiOBPv600UpdateAbacRuleRequest {
-	r.oBPv600UpdateAbacRuleRequest = &oBPv600UpdateAbacRuleRequest
+func (r ApiUpdateAbacRuleRequest) UpdateAbacRuleRequest(updateAbacRuleRequest UpdateAbacRuleRequest) ApiUpdateAbacRuleRequest {
+	r.updateAbacRuleRequest = &updateAbacRuleRequest
 	return r
 }
 
-func (r ApiOBPv600UpdateAbacRuleRequest) Execute() (*OBPv600GetAbacRule200Response, *http.Response, error) {
-	return r.ApiService.OBPv600UpdateAbacRuleExecute(r)
+func (r ApiUpdateAbacRuleRequest) Execute() (*GetAbacRule200Response, *http.Response, error) {
+	return r.ApiService.UpdateAbacRuleExecute(r)
 }
 
 /*
-OBPv600UpdateAbacRule Update ABAC Rule
+UpdateAbacRule Update ABAC Rule
 
 <p>Update an existing ABAC rule.</p>
 <p><strong>Documentation:</strong><br />
@@ -1430,10 +1430,10 @@ OBPv600UpdateAbacRule Update ABAC Rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param abacruleid The ABACRULEID identifier
- @return ApiOBPv600UpdateAbacRuleRequest
+ @return ApiUpdateAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600UpdateAbacRule(ctx context.Context, abacruleid string) ApiOBPv600UpdateAbacRuleRequest {
-	return ApiOBPv600UpdateAbacRuleRequest{
+func (a *ABACAPIService) UpdateAbacRule(ctx context.Context, abacruleid string) ApiUpdateAbacRuleRequest {
+	return ApiUpdateAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 		abacruleid: abacruleid,
@@ -1441,16 +1441,16 @@ func (a *ABACAPIService) OBPv600UpdateAbacRule(ctx context.Context, abacruleid s
 }
 
 // Execute executes the request
-//  @return OBPv600GetAbacRule200Response
-func (a *ABACAPIService) OBPv600UpdateAbacRuleExecute(r ApiOBPv600UpdateAbacRuleRequest) (*OBPv600GetAbacRule200Response, *http.Response, error) {
+//  @return GetAbacRule200Response
+func (a *ABACAPIService) UpdateAbacRuleExecute(r ApiUpdateAbacRuleRequest) (*GetAbacRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetAbacRule200Response
+		localVarReturnValue  *GetAbacRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600UpdateAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.UpdateAbacRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1461,8 +1461,8 @@ func (a *ABACAPIService) OBPv600UpdateAbacRuleExecute(r ApiOBPv600UpdateAbacRule
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600UpdateAbacRuleRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600UpdateAbacRuleRequest is required and must be specified")
+	if r.updateAbacRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("updateAbacRuleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1483,7 +1483,7 @@ func (a *ABACAPIService) OBPv600UpdateAbacRuleExecute(r ApiOBPv600UpdateAbacRule
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600UpdateAbacRuleRequest
+	localVarPostBody = r.updateAbacRuleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1508,7 +1508,7 @@ func (a *ABACAPIService) OBPv600UpdateAbacRuleExecute(r ApiOBPv600UpdateAbacRule
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1549,24 +1549,24 @@ func (a *ABACAPIService) OBPv600UpdateAbacRuleExecute(r ApiOBPv600UpdateAbacRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv600ValidateAbacRuleRequest struct {
+type ApiValidateAbacRuleRequest struct {
 	ctx context.Context
 	ApiService *ABACAPIService
-	oBPv600ValidateAbacRuleRequest *OBPv600ValidateAbacRuleRequest
+	validateAbacRuleRequest *ValidateAbacRuleRequest
 }
 
 // Request body
-func (r ApiOBPv600ValidateAbacRuleRequest) OBPv600ValidateAbacRuleRequest(oBPv600ValidateAbacRuleRequest OBPv600ValidateAbacRuleRequest) ApiOBPv600ValidateAbacRuleRequest {
-	r.oBPv600ValidateAbacRuleRequest = &oBPv600ValidateAbacRuleRequest
+func (r ApiValidateAbacRuleRequest) ValidateAbacRuleRequest(validateAbacRuleRequest ValidateAbacRuleRequest) ApiValidateAbacRuleRequest {
+	r.validateAbacRuleRequest = &validateAbacRuleRequest
 	return r
 }
 
-func (r ApiOBPv600ValidateAbacRuleRequest) Execute() (*OBPv600ValidateAbacRule200Response, *http.Response, error) {
-	return r.ApiService.OBPv600ValidateAbacRuleExecute(r)
+func (r ApiValidateAbacRuleRequest) Execute() (*ValidateAbacRule200Response, *http.Response, error) {
+	return r.ApiService.ValidateAbacRuleExecute(r)
 }
 
 /*
-OBPv600ValidateAbacRule Validate ABAC Rule
+ValidateAbacRule Validate ABAC Rule
 
 <p>Validate ABAC rule code syntax and structure without creating or executing the rule.</p>
 <p>This endpoint performs the following validations:<br />
@@ -1594,26 +1594,26 @@ OBPv600ValidateAbacRule Validate ABAC Rule
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600ValidateAbacRuleRequest
+ @return ApiValidateAbacRuleRequest
 */
-func (a *ABACAPIService) OBPv600ValidateAbacRule(ctx context.Context) ApiOBPv600ValidateAbacRuleRequest {
-	return ApiOBPv600ValidateAbacRuleRequest{
+func (a *ABACAPIService) ValidateAbacRule(ctx context.Context) ApiValidateAbacRuleRequest {
+	return ApiValidateAbacRuleRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600ValidateAbacRule200Response
-func (a *ABACAPIService) OBPv600ValidateAbacRuleExecute(r ApiOBPv600ValidateAbacRuleRequest) (*OBPv600ValidateAbacRule200Response, *http.Response, error) {
+//  @return ValidateAbacRule200Response
+func (a *ABACAPIService) ValidateAbacRuleExecute(r ApiValidateAbacRuleRequest) (*ValidateAbacRule200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600ValidateAbacRule200Response
+		localVarReturnValue  *ValidateAbacRule200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.OBPv600ValidateAbacRule")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ABACAPIService.ValidateAbacRule")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1623,8 +1623,8 @@ func (a *ABACAPIService) OBPv600ValidateAbacRuleExecute(r ApiOBPv600ValidateAbac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv600ValidateAbacRuleRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv600ValidateAbacRuleRequest is required and must be specified")
+	if r.validateAbacRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("validateAbacRuleRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1645,7 +1645,7 @@ func (a *ABACAPIService) OBPv600ValidateAbacRuleExecute(r ApiOBPv600ValidateAbac
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv600ValidateAbacRuleRequest
+	localVarPostBody = r.validateAbacRuleRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1670,7 +1670,7 @@ func (a *ABACAPIService) OBPv600ValidateAbacRuleExecute(r ApiOBPv600ValidateAbac
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

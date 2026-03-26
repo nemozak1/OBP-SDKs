@@ -9,7 +9,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv310_check_funds_available200_response.dart';
+import 'package:obp_dart/src/model/check_funds_available200_response.dart';
 
 class ConfirmationOfFundsServicePIISApi {
 
@@ -33,9 +33,9 @@ class ConfirmationOfFundsServicePIISApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv310CheckFundsAvailable200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CheckFundsAvailable200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv310CheckFundsAvailable200Response>> oBPv310CheckFundsAvailable({ 
+  Future<Response<CheckFundsAvailable200Response>> checkFundsAvailable({ 
     required String bankid,
     required String accountid,
     required String viewid,
@@ -65,7 +65,7 @@ class ConfirmationOfFundsServicePIISApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -82,14 +82,14 @@ class ConfirmationOfFundsServicePIISApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv310CheckFundsAvailable200Response? _responseData;
+    CheckFundsAvailable200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv310CheckFundsAvailable200Response),
-      ) as OBPv310CheckFundsAvailable200Response;
+        specifiedType: const FullType(CheckFundsAvailable200Response),
+      ) as CheckFundsAvailable200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -101,7 +101,7 @@ class ConfirmationOfFundsServicePIISApi {
       );
     }
 
-    return Response<OBPv310CheckFundsAvailable200Response>(
+    return Response<CheckFundsAvailable200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

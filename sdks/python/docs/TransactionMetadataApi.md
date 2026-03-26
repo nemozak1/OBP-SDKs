@@ -4,27 +4,27 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_2_1_add_comment_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
-[**o_bpv1_2_1_add_image_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
-[**o_bpv1_2_1_add_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
-[**o_bpv1_2_1_add_transaction_narrative**](TransactionMetadataApi.md#o_bpv1_2_1_add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
-[**o_bpv1_2_1_add_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
-[**o_bpv1_2_1_delete_comment_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
-[**o_bpv1_2_1_delete_image_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
-[**o_bpv1_2_1_delete_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
-[**o_bpv1_2_1_delete_transaction_narrative**](TransactionMetadataApi.md#o_bpv1_2_1_delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
-[**o_bpv1_2_1_delete_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
-[**o_bpv1_2_1_get_comments_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
-[**o_bpv1_2_1_get_images_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
-[**o_bpv1_2_1_get_tags_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
-[**o_bpv1_2_1_get_transaction_narrative**](TransactionMetadataApi.md#o_bpv1_2_1_get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
-[**o_bpv1_2_1_get_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
-[**o_bpv1_2_1_update_transaction_narrative**](TransactionMetadataApi.md#o_bpv1_2_1_update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
-[**o_bpv1_2_1_update_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#o_bpv1_2_1_update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
+[**add_comment_for_view_on_transaction**](TransactionMetadataApi.md#add_comment_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Add a Transaction Comment
+[**add_image_for_view_on_transaction**](TransactionMetadataApi.md#add_image_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Add a Transaction Image
+[**add_tag_for_view_on_transaction**](TransactionMetadataApi.md#add_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Add a Transaction Tag
+[**add_transaction_narrative**](TransactionMetadataApi.md#add_transaction_narrative) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Add a Transaction Narrative
+[**add_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#add_where_tag_for_view_on_transaction) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Add a Transaction where Tag
+[**delete_comment_for_view_on_transaction**](TransactionMetadataApi.md#delete_comment_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments/{commentid} | Delete a Transaction Comment
+[**delete_image_for_view_on_transaction**](TransactionMetadataApi.md#delete_image_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images/{imageid} | Delete a Transaction Image
+[**delete_tag_for_view_on_transaction**](TransactionMetadataApi.md#delete_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags/{tagid} | Delete a Transaction Tag
+[**delete_transaction_narrative**](TransactionMetadataApi.md#delete_transaction_narrative) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Delete a Transaction Narrative
+[**delete_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#delete_where_tag_for_view_on_transaction) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Delete a Transaction Tag
+[**get_comments_for_view_on_transaction**](TransactionMetadataApi.md#get_comments_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/comments | Get Transaction Comments
+[**get_images_for_view_on_transaction**](TransactionMetadataApi.md#get_images_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/images | Get Transaction Images
+[**get_tags_for_view_on_transaction**](TransactionMetadataApi.md#get_tags_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/tags | Get Transaction Tags
+[**get_transaction_narrative**](TransactionMetadataApi.md#get_transaction_narrative) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Get a Transaction Narrative
+[**get_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#get_where_tag_for_view_on_transaction) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Get a Transaction where Tag
+[**update_transaction_narrative**](TransactionMetadataApi.md#update_transaction_narrative) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/narrative | Update a Transaction Narrative
+[**update_where_tag_for_view_on_transaction**](TransactionMetadataApi.md#update_where_tag_for_view_on_transaction) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/transactions/{transactionid}/metadata/where | Update a Transaction where Tag
 
 
-# **o_bpv1_2_1_add_comment_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+# **add_comment_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Comment
 
@@ -56,8 +56,8 @@ Add a Transaction Comment
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -94,15 +94,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Comment
-        api_response = api_instance.o_bpv1_2_1_add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_add_comment_for_view_on_transaction:\n")
+        api_response = api_instance.add_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of TransactionMetadataApi->add_comment_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_add_comment_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->add_comment_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -116,11 +116,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -141,8 +141,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_image_for_view_on_transaction**
-> OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
+# **add_image_for_view_on_transaction**
+> GetTransactionByIdForBankAccount200ResponseMetadataImagesInner add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
 
 Add a Transaction Image
 
@@ -175,8 +175,8 @@ Add a Transaction Image
 
 ```python
 import obp_python
-from obp_python.models.obpv121_add_image_for_view_on_transaction_request import OBPv121AddImageForViewOnTransactionRequest
-from obp_python.models.obpv310_get_transaction_by_id_for_bank_account200_response_metadata_images_inner import OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
+from obp_python.models.add_image_for_view_on_transaction_request import AddImageForViewOnTransactionRequest
+from obp_python.models.get_transaction_by_id_for_bank_account200_response_metadata_images_inner import GetTransactionByIdForBankAccount200ResponseMetadataImagesInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -213,15 +213,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} # OBPv121AddImageForViewOnTransactionRequest | Request body
+    add_image_for_view_on_transaction_request = {"type":"object","properties":{"URL":{"type":"string"},"label":{"type":"string"}}} # AddImageForViewOnTransactionRequest | Request body
 
     try:
         # Add a Transaction Image
-        api_response = api_instance.o_bpv1_2_1_add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_add_image_for_view_on_transaction_request)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_add_image_for_view_on_transaction:\n")
+        api_response = api_instance.add_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, add_image_for_view_on_transaction_request)
+        print("The response of TransactionMetadataApi->add_image_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_add_image_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->add_image_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -235,11 +235,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_add_image_for_view_on_transaction_request** | [**OBPv121AddImageForViewOnTransactionRequest**](OBPv121AddImageForViewOnTransactionRequest.md)| Request body | 
+ **add_image_for_view_on_transaction_request** | [**AddImageForViewOnTransactionRequest**](AddImageForViewOnTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](OBPv310GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
+[**GetTransactionByIdForBankAccount200ResponseMetadataImagesInner**](GetTransactionByIdForBankAccount200ResponseMetadataImagesInner.md)
 
 ### Authorization
 
@@ -260,8 +260,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_tag_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
+# **add_tag_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
 
 Add a Transaction Tag
 
@@ -292,8 +292,8 @@ Add a Transaction Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv200_get_transaction_types200_response_transaction_types_inner_id import OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_transaction_types200_response_transaction_types_inner_id import GetTransactionTypes200ResponseTransactionTypesInnerId
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -330,15 +330,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv200_get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
+    get_transaction_types200_response_transaction_types_inner_id = {type=object, properties={value={type=string}}} # GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
     try:
         # Add a Transaction Tag
-        api_response = api_instance.o_bpv1_2_1_add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv200_get_transaction_types200_response_transaction_types_inner_id)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_add_tag_for_view_on_transaction:\n")
+        api_response = api_instance.add_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, get_transaction_types200_response_transaction_types_inner_id)
+        print("The response of TransactionMetadataApi->add_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_add_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->add_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -352,11 +352,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv200_get_transaction_types200_response_transaction_types_inner_id** | [**OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId**](OBPv200GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
+ **get_transaction_types200_response_transaction_types_inner_id** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -377,8 +377,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_transaction_narrative**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+# **add_transaction_narrative**
+> UpdateTransactionNarrative200Response add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
 Add a Transaction Narrative
 
@@ -406,8 +406,8 @@ Authentication is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -444,15 +444,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}} # OBPv121GetTransactionNarrative200Response | Request body
+    get_transaction_narrative200_response = {type=object, properties={narrative={type=string}}} # GetTransactionNarrative200Response | Request body
 
     try:
         # Add a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_add_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_add_transaction_narrative:\n")
+        api_response = api_instance.add_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+        print("The response of TransactionMetadataApi->add_transaction_narrative:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_add_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->add_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -466,11 +466,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | 
+ **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -491,8 +491,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_where_tag_for_view_on_transaction**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+# **add_where_tag_for_view_on_transaction**
+> UpdateTransactionNarrative200Response add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 Add a Transaction where Tag
 
@@ -520,8 +520,8 @@ Add a Transaction where Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.models.update_where_tag_for_view_on_transaction_request import UpdateWhereTagForViewOnTransactionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -558,15 +558,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+    update_where_tag_for_view_on_transaction_request = {type=object, properties={where={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # UpdateWhereTagForViewOnTransactionRequest | Request body
 
     try:
         # Add a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction:\n")
+        api_response = api_instance.add_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+        print("The response of TransactionMetadataApi->add_where_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_add_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->add_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -580,11 +580,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
+ **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -605,8 +605,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_comment_for_view_on_transaction**
-> o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+# **delete_comment_for_view_on_transaction**
+> delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
 
 Delete a Transaction Comment
 
@@ -670,9 +670,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Comment
-        api_instance.o_bpv1_2_1_delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
+        api_instance.delete_comment_for_view_on_transaction(bankid, accountid, viewid, transactionid, commentid)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_delete_comment_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->delete_comment_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -711,8 +711,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_image_for_view_on_transaction**
-> o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+# **delete_image_for_view_on_transaction**
+> delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
 
 Delete a Transaction Image
 
@@ -776,9 +776,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Image
-        api_instance.o_bpv1_2_1_delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
+        api_instance.delete_image_for_view_on_transaction(bankid, accountid, viewid, transactionid, imageid)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_delete_image_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->delete_image_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -817,8 +817,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_tag_for_view_on_transaction**
-> o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+# **delete_tag_for_view_on_transaction**
+> delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
 
 Delete a Transaction Tag
 
@@ -862,9 +862,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Tag
-        api_instance.o_bpv1_2_1_delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
+        api_instance.delete_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, tagid)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_delete_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->delete_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -903,8 +903,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_transaction_narrative**
-> o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+# **delete_transaction_narrative**
+> delete_transaction_narrative(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Narrative
 
@@ -966,9 +966,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Narrative
-        api_instance.o_bpv1_2_1_delete_transaction_narrative(bankid, accountid, viewid, transactionid)
+        api_instance.delete_transaction_narrative(bankid, accountid, viewid, transactionid)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_delete_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->delete_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -1006,8 +1006,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_where_tag_for_view_on_transaction**
-> o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **delete_where_tag_for_view_on_transaction**
+> delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Delete a Transaction Tag
 
@@ -1069,9 +1069,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete a Transaction Tag
-        api_instance.o_bpv1_2_1_delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        api_instance.delete_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_delete_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->delete_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1109,8 +1109,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_comments_for_view_on_transaction**
-> OBPv121GetCommentsForViewOnTransaction200Response o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **get_comments_for_view_on_transaction**
+> GetCommentsForViewOnTransaction200Response get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Comments
 
@@ -1140,7 +1140,7 @@ Get Transaction Comments
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_comments_for_view_on_transaction200_response import OBPv121GetCommentsForViewOnTransaction200Response
+from obp_python.models.get_comments_for_view_on_transaction200_response import GetCommentsForViewOnTransaction200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1180,11 +1180,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Comments
-        api_response = api_instance.o_bpv1_2_1_get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_get_comments_for_view_on_transaction:\n")
+        api_response = api_instance.get_comments_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionMetadataApi->get_comments_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_get_comments_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->get_comments_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1201,7 +1201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetCommentsForViewOnTransaction200Response**](OBPv121GetCommentsForViewOnTransaction200Response.md)
+[**GetCommentsForViewOnTransaction200Response**](GetCommentsForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1222,8 +1222,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_images_for_view_on_transaction**
-> OBPv121GetImagesForViewOnTransaction200Response o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **get_images_for_view_on_transaction**
+> GetImagesForViewOnTransaction200Response get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Images
 
@@ -1254,7 +1254,7 @@ Authentication via OAuth is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_images_for_view_on_transaction200_response import OBPv121GetImagesForViewOnTransaction200Response
+from obp_python.models.get_images_for_view_on_transaction200_response import GetImagesForViewOnTransaction200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1294,11 +1294,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Images
-        api_response = api_instance.o_bpv1_2_1_get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_get_images_for_view_on_transaction:\n")
+        api_response = api_instance.get_images_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionMetadataApi->get_images_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_get_images_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->get_images_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1315,7 +1315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetImagesForViewOnTransaction200Response**](OBPv121GetImagesForViewOnTransaction200Response.md)
+[**GetImagesForViewOnTransaction200Response**](GetImagesForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1336,8 +1336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_tags_for_view_on_transaction**
-> OBPv400GetTagsForViewOnAccount200ResponseTagsInner o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **get_tags_for_view_on_transaction**
+> GetTagsForViewOnAccount200ResponseTagsInner get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get Transaction Tags
 
@@ -1363,7 +1363,7 @@ Authentication via OAuth is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_tags_for_view_on_account200_response_tags_inner import OBPv400GetTagsForViewOnAccount200ResponseTagsInner
+from obp_python.models.get_tags_for_view_on_account200_response_tags_inner import GetTagsForViewOnAccount200ResponseTagsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1385,11 +1385,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Transaction Tags
-        api_response = api_instance.o_bpv1_2_1_get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_get_tags_for_view_on_transaction:\n")
+        api_response = api_instance.get_tags_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionMetadataApi->get_tags_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_get_tags_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->get_tags_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1406,7 +1406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponseTagsInner**](OBPv400GetTagsForViewOnAccount200ResponseTagsInner.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -1427,8 +1427,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_transaction_narrative**
-> OBPv121GetTransactionNarrative200Response o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
+# **get_transaction_narrative**
+> GetTransactionNarrative200Response get_transaction_narrative(bankid, accountid, viewid, transactionid)
 
 Get a Transaction Narrative
 
@@ -1449,7 +1449,7 @@ Get a Transaction Narrative
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1471,11 +1471,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_get_transaction_narrative(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_get_transaction_narrative:\n")
+        api_response = api_instance.get_transaction_narrative(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionMetadataApi->get_transaction_narrative:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_get_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->get_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -1492,7 +1492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)
+[**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1513,8 +1513,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_where_tag_for_view_on_transaction**
-> OBPv121GetWhereTagForViewOnTransaction200Response o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+# **get_where_tag_for_view_on_transaction**
+> GetWhereTagForViewOnTransaction200Response get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
 
 Get a Transaction where Tag
 
@@ -1543,7 +1543,7 @@ It represents the location where the transaction has been initiated.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_where_tag_for_view_on_transaction200_response import OBPv121GetWhereTagForViewOnTransaction200Response
+from obp_python.models.get_where_tag_for_view_on_transaction200_response import GetWhereTagForViewOnTransaction200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1565,11 +1565,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction:\n")
+        api_response = api_instance.get_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid)
+        print("The response of TransactionMetadataApi->get_where_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_get_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->get_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1586,7 +1586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetWhereTagForViewOnTransaction200Response**](OBPv121GetWhereTagForViewOnTransaction200Response.md)
+[**GetWhereTagForViewOnTransaction200Response**](GetWhereTagForViewOnTransaction200Response.md)
 
 ### Authorization
 
@@ -1607,8 +1607,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_update_transaction_narrative**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
+# **update_transaction_narrative**
+> UpdateTransactionNarrative200Response update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
 
 Update a Transaction Narrative
 
@@ -1629,8 +1629,8 @@ Update a Transaction Narrative
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_transaction_narrative200_response import OBPv121GetTransactionNarrative200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.get_transaction_narrative200_response import GetTransactionNarrative200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1649,15 +1649,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}} # OBPv121GetTransactionNarrative200Response | Request body
+    get_transaction_narrative200_response = {"type":"object","properties":{"narrative":{"type":"string"}}} # GetTransactionNarrative200Response | Request body
 
     try:
         # Update a Transaction Narrative
-        api_response = api_instance.o_bpv1_2_1_update_transaction_narrative(bankid, accountid, viewid, transactionid, obpv121_get_transaction_narrative200_response)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_update_transaction_narrative:\n")
+        api_response = api_instance.update_transaction_narrative(bankid, accountid, viewid, transactionid, get_transaction_narrative200_response)
+        print("The response of TransactionMetadataApi->update_transaction_narrative:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_update_transaction_narrative: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->update_transaction_narrative: %s\n" % e)
 ```
 
 
@@ -1671,11 +1671,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_get_transaction_narrative200_response** | [**OBPv121GetTransactionNarrative200Response**](OBPv121GetTransactionNarrative200Response.md)| Request body | 
+ **get_transaction_narrative200_response** | [**GetTransactionNarrative200Response**](GetTransactionNarrative200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -1696,8 +1696,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_update_where_tag_for_view_on_transaction**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
+# **update_where_tag_for_view_on_transaction**
+> UpdateTransactionNarrative200Response update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
 
 Update a Transaction where Tag
 
@@ -1721,8 +1721,8 @@ Update a Transaction where Tag
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv121_update_where_tag_for_view_on_transaction_request import OBPv121UpdateWhereTagForViewOnTransactionRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.models.update_where_tag_for_view_on_transaction_request import UpdateWhereTagForViewOnTransactionRequest
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1759,15 +1759,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     transactionid = 'transactionid_example' # str | The TRANSACTIONID identifier
-    obpv121_update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # OBPv121UpdateWhereTagForViewOnTransactionRequest | Request body
+    update_where_tag_for_view_on_transaction_request = {"type":"object","properties":{"where":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # UpdateWhereTagForViewOnTransactionRequest | Request body
 
     try:
         # Update a Transaction where Tag
-        api_response = api_instance.o_bpv1_2_1_update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, obpv121_update_where_tag_for_view_on_transaction_request)
-        print("The response of TransactionMetadataApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction:\n")
+        api_response = api_instance.update_where_tag_for_view_on_transaction(bankid, accountid, viewid, transactionid, update_where_tag_for_view_on_transaction_request)
+        print("The response of TransactionMetadataApi->update_where_tag_for_view_on_transaction:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TransactionMetadataApi->o_bpv1_2_1_update_where_tag_for_view_on_transaction: %s\n" % e)
+        print("Exception when calling TransactionMetadataApi->update_where_tag_for_view_on_transaction: %s\n" % e)
 ```
 
 
@@ -1781,11 +1781,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **transactionid** | **str**| The TRANSACTIONID identifier | 
- **obpv121_update_where_tag_for_view_on_transaction_request** | [**OBPv121UpdateWhereTagForViewOnTransactionRequest**](OBPv121UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
+ **update_where_tag_for_view_on_transaction_request** | [**UpdateWhereTagForViewOnTransactionRequest**](UpdateWhereTagForViewOnTransactionRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 

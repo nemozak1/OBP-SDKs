@@ -5,19 +5,19 @@
 import 'package:obp_dart/api.dart';
 ```
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateConnectorMethod**](ConnectorMethodApi.md#obpv400createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
-[**oBPv400GetAllConnectorMethods**](ConnectorMethodApi.md#obpv400getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
-[**oBPv400GetConnectorMethod**](ConnectorMethodApi.md#obpv400getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
-[**oBPv400UpdateConnectorMethod**](ConnectorMethodApi.md#obpv400updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
-[**oBPv600GetConnectorMethodNames**](ConnectorMethodApi.md#obpv600getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**createConnectorMethod**](ConnectorMethodApi.md#createconnectormethod) | **POST** /obp/v4.0.0/management/connector-methods | Create Connector Method
+[**getAllConnectorMethods**](ConnectorMethodApi.md#getallconnectormethods) | **GET** /obp/v4.0.0/management/connector-methods | Get all Connector Methods
+[**getConnectorMethod**](ConnectorMethodApi.md#getconnectormethod) | **GET** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Get Connector Method by Id
+[**getConnectorMethodNames**](ConnectorMethodApi.md#getconnectormethodnames) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**updateConnectorMethod**](ConnectorMethodApi.md#updateconnectormethod) | **PUT** /obp/v4.0.0/management/connector-methods/{connectormethodid} | Update Connector Method
 
 
-# **oBPv400CreateConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest)
+# **createConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner createConnectorMethod(createConnectorMethodRequest)
 
 Create Connector Method
 
@@ -38,13 +38,13 @@ import 'package:obp_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
 
 final api = ObpDart().getConnectorMethodApi();
-final OBPv400CreateConnectorMethodRequest oBPv400CreateConnectorMethodRequest = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // OBPv400CreateConnectorMethodRequest | Request body
+final CreateConnectorMethodRequest createConnectorMethodRequest = {"type":"object","properties":{"method_name":{"type":"string"},"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // CreateConnectorMethodRequest | Request body
 
 try {
-    final response = api.oBPv400CreateConnectorMethod(oBPv400CreateConnectorMethodRequest);
+    final response = api.createConnectorMethod(createConnectorMethodRequest);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ConnectorMethodApi->oBPv400CreateConnectorMethod: $e\n');
+    print('Exception when calling ConnectorMethodApi->createConnectorMethod: $e\n');
 }
 ```
 
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **oBPv400CreateConnectorMethodRequest** | [**OBPv400CreateConnectorMethodRequest**](OBPv400CreateConnectorMethodRequest.md)| Request body | 
+ **createConnectorMethodRequest** | [**CreateConnectorMethodRequest**](CreateConnectorMethodRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetAllConnectorMethods**
-> OBPv400GetAllConnectorMethods200Response oBPv400GetAllConnectorMethods()
+# **getAllConnectorMethods**
+> GetAllConnectorMethods200Response getAllConnectorMethods()
 
 Get all Connector Methods
 
@@ -93,10 +93,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getConnectorMethodApi();
 
 try {
-    final response = api.oBPv400GetAllConnectorMethods();
+    final response = api.getAllConnectorMethods();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ConnectorMethodApi->oBPv400GetAllConnectorMethods: $e\n');
+    print('Exception when calling ConnectorMethodApi->getAllConnectorMethods: $e\n');
 }
 ```
 
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200Response**](OBPv400GetAllConnectorMethods200Response.md)
+[**GetAllConnectorMethods200Response**](GetAllConnectorMethods200Response.md)
 
 ### Authorization
 
@@ -118,8 +118,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400GetConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400GetConnectorMethod(connectormethodid)
+# **getConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner getConnectorMethod(connectormethodid)
 
 Get Connector Method by Id
 
@@ -143,10 +143,10 @@ final api = ObpDart().getConnectorMethodApi();
 final String connectormethodid = connectormethodid_example; // String | The CONNECTORMETHODID identifier
 
 try {
-    final response = api.oBPv400GetConnectorMethod(connectormethodid);
+    final response = api.getConnectorMethod(connectormethodid);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ConnectorMethodApi->oBPv400GetConnectorMethod: $e\n');
+    print('Exception when calling ConnectorMethodApi->getConnectorMethod: $e\n');
 }
 ```
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
 
 ### Authorization
 
@@ -171,63 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400UpdateConnectorMethod**
-> OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems oBPv400UpdateConnectorMethod(connectormethodid, oBPv400UpdateConnectorMethodRequest)
-
-Update Connector Method
-
-<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
-
-### Example
-```dart
-import 'package:obp_dart/api.dart';
-// TODO Configure OAuth2 access token for authorization: OAuth2
-//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
-// TODO Configure API key authorization: GatewayLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: DirectLogin
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
-
-final api = ObpDart().getConnectorMethodApi();
-final String connectormethodid = connectormethodid_example; // String | The CONNECTORMETHODID identifier
-final OBPv400UpdateConnectorMethodRequest oBPv400UpdateConnectorMethodRequest = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // OBPv400UpdateConnectorMethodRequest | Request body
-
-try {
-    final response = api.oBPv400UpdateConnectorMethod(connectormethodid, oBPv400UpdateConnectorMethodRequest);
-    print(response);
-} on DioException catch (e) {
-    print('Exception when calling ConnectorMethodApi->oBPv400UpdateConnectorMethod: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectormethodid** | **String**| The CONNECTORMETHODID identifier | 
- **oBPv400UpdateConnectorMethodRequest** | [**OBPv400UpdateConnectorMethodRequest**](OBPv400UpdateConnectorMethodRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems**](OBPv400GetAllConnectorMethods200ResponsePropertiesConnectorsMethodsItems.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv600GetConnectorMethodNames**
-> OBPv600GetConnectorMethodNames200Response oBPv600GetConnectorMethodNames()
+# **getConnectorMethodNames**
+> GetConnectorMethodNames200Response getConnectorMethodNames()
 
 Get Connector Method Names
 
@@ -250,10 +195,10 @@ import 'package:obp_dart/api.dart';
 final api = ObpDart().getConnectorMethodApi();
 
 try {
-    final response = api.oBPv600GetConnectorMethodNames();
+    final response = api.getConnectorMethodNames();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling ConnectorMethodApi->oBPv600GetConnectorMethodNames: $e\n');
+    print('Exception when calling ConnectorMethodApi->getConnectorMethodNames: $e\n');
 }
 ```
 
@@ -262,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
 
 ### Authorization
 
@@ -271,6 +216,61 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateConnectorMethod**
+> GetAllConnectorMethods200ResponseConnectorsMethodsInner updateConnectorMethod(connectormethodid, updateConnectorMethodRequest)
+
+Update Connector Method
+
+<p>Update an internal connector.</p> <p>The method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONNECTOR_METHOD_ID</a>: ace0352a-9a0f-4bfa-b30b-9003aa467f51</p> <p><strong>JSON response body fields:</strong></p> 
+
+### Example
+```dart
+import 'package:obp_dart/api.dart';
+// TODO Configure OAuth2 access token for authorization: OAuth2
+//defaultApiClient.getAuthentication<OAuth>('OAuth2').accessToken = 'YOUR_ACCESS_TOKEN';
+// TODO Configure API key authorization: GatewayLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('GatewayLogin').apiKeyPrefix = 'Bearer';
+// TODO Configure API key authorization: DirectLogin
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('DirectLogin').apiKeyPrefix = 'Bearer';
+
+final api = ObpDart().getConnectorMethodApi();
+final String connectormethodid = connectormethodid_example; // String | The CONNECTORMETHODID identifier
+final UpdateConnectorMethodRequest updateConnectorMethodRequest = {"type":"object","properties":{"programming_lang":{"type":"string"},"method_body":{"type":"string"}}}; // UpdateConnectorMethodRequest | Request body
+
+try {
+    final response = api.updateConnectorMethod(connectormethodid, updateConnectorMethodRequest);
+    print(response);
+} on DioException catch (e) {
+    print('Exception when calling ConnectorMethodApi->updateConnectorMethod: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectormethodid** | **String**| The CONNECTORMETHODID identifier | 
+ **updateConnectorMethodRequest** | [**UpdateConnectorMethodRequest**](UpdateConnectorMethodRequest.md)| Request body | 
+
+### Return type
+
+[**GetAllConnectorMethods200ResponseConnectorsMethodsInner**](GetAllConnectorMethods200ResponseConnectorsMethodsInner.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

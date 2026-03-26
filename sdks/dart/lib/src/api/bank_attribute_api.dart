@@ -9,11 +9,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv400_create_or_update_transaction_request_attribute_definition_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_bank_attributes200_response.dart';
-import 'package:obp_dart/src/model/obpv400_get_bank_attributes200_response_properties_bank_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv400_get_transaction_request_attribute_definition200_response_properties_attributes_items.dart';
-import 'package:obp_dart/src/model/obpv510_update_atm_attribute_request.dart';
+import 'package:obp_dart/src/model/create_or_update_transaction_request_attribute_definition_request.dart';
+import 'package:obp_dart/src/model/get_bank_attributes200_response.dart';
+import 'package:obp_dart/src/model/get_bank_attributes200_response_bank_attributes_inner.dart';
+import 'package:obp_dart/src/model/get_transaction_request_attribute_definition200_response_attributes_inner.dart';
+import 'package:obp_dart/src/model/update_atm_attribute_request.dart';
 
 class BankAttributeApi {
 
@@ -28,7 +28,7 @@ class BankAttributeApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,11 +36,11 @@ class BankAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankAttributes200ResponseBankAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>> oBPv400CreateBankAttribute({ 
+  Future<Response<GetBankAttributes200ResponseBankAttributesInner>> createBankAttribute({ 
     required String bankid,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -80,8 +80,8 @@ class BankAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -104,14 +104,14 @@ class BankAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems? _responseData;
+    GetBankAttributes200ResponseBankAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems),
-      ) as OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems;
+        specifiedType: const FullType(GetBankAttributes200ResponseBankAttributesInner),
+      ) as GetBankAttributes200ResponseBankAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -123,7 +123,7 @@ class BankAttributeApi {
       );
     }
 
-    return Response<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>(
+    return Response<GetBankAttributes200ResponseBankAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -140,7 +140,7 @@ class BankAttributeApi {
   ///
   /// Parameters:
   /// * [bankid] - The BANKID identifier
-  /// * [oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
+  /// * [createOrUpdateTransactionRequestAttributeDefinitionRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -148,11 +148,11 @@ class BankAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetTransactionRequestAttributeDefinition200ResponseAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>> oBPv400CreateOrUpdateBankAttributeDefinition({ 
+  Future<Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>> createOrUpdateBankAttributeDefinition({ 
     required String bankid,
-    required OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest,
+    required CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -179,7 +179,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -192,8 +192,8 @@ class BankAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-      _bodyData = _serializers.serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
+      const _type = FullType(CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      _bodyData = _serializers.serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -216,14 +216,14 @@ class BankAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems? _responseData;
+    GetTransactionRequestAttributeDefinition200ResponseAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems),
-      ) as OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
+        specifiedType: const FullType(GetTransactionRequestAttributeDefinition200ResponseAttributesInner),
+      ) as GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -235,7 +235,7 @@ class BankAttributeApi {
       );
     }
 
-    return Response<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+    return Response<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -262,7 +262,7 @@ class BankAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv400DeleteBankAttribute({ 
+  Future<Response<void>> deleteBankAttribute({ 
     required String bankid,
     required String bankattributeid,
     CancelToken? cancelToken,
@@ -291,7 +291,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -324,9 +324,9 @@ class BankAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankAttributes200ResponseBankAttributesInner] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>> oBPv400GetBankAttribute({ 
+  Future<Response<GetBankAttributes200ResponseBankAttributesInner>> getBankAttribute({ 
     required String bankid,
     required String bankattributeid,
     CancelToken? cancelToken,
@@ -355,7 +355,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -372,14 +372,14 @@ class BankAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems? _responseData;
+    GetBankAttributes200ResponseBankAttributesInner? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems),
-      ) as OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems;
+        specifiedType: const FullType(GetBankAttributes200ResponseBankAttributesInner),
+      ) as GetBankAttributes200ResponseBankAttributesInner;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -391,7 +391,7 @@ class BankAttributeApi {
       );
     }
 
-    return Response<OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems>(
+    return Response<GetBankAttributes200ResponseBankAttributesInner>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -415,9 +415,9 @@ class BankAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetBankAttributes200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetBankAttributes200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetBankAttributes200Response>> oBPv400GetBankAttributes({ 
+  Future<Response<GetBankAttributes200Response>> getBankAttributes({ 
     required String bankid,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -445,7 +445,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -462,14 +462,14 @@ class BankAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetBankAttributes200Response? _responseData;
+    GetBankAttributes200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetBankAttributes200Response),
-      ) as OBPv400GetBankAttributes200Response;
+        specifiedType: const FullType(GetBankAttributes200Response),
+      ) as GetBankAttributes200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -481,7 +481,7 @@ class BankAttributeApi {
       );
     }
 
-    return Response<OBPv400GetBankAttributes200Response>(
+    return Response<GetBankAttributes200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -499,7 +499,7 @@ class BankAttributeApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [bankattributeid] - The BANKATTRIBUTEID identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -507,12 +507,12 @@ class BankAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] as data
+  /// Returns a [Future] containing a [Response] with a [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>> oBPv400UpdateBankAttribute({ 
+  Future<Response<CreateOrUpdateTransactionRequestAttributeDefinitionRequest>> updateBankAttribute({ 
     required String bankid,
     required String bankattributeid,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -539,7 +539,7 @@ class BankAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -552,8 +552,8 @@ class BankAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -576,14 +576,14 @@ class BankAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest? _responseData;
+    CreateOrUpdateTransactionRequestAttributeDefinitionRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest),
-      ) as OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+        specifiedType: const FullType(CreateOrUpdateTransactionRequestAttributeDefinitionRequest),
+      ) as CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -595,7 +595,7 @@ class BankAttributeApi {
       );
     }
 
-    return Response<OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest>(
+    return Response<CreateOrUpdateTransactionRequestAttributeDefinitionRequest>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

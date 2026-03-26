@@ -1,15 +1,15 @@
 # OpenBankProject::ConfirmationOfFundsServicePIISApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**o_bpv3_1_0_check_funds_available**](ConfirmationOfFundsServicePIISApi.md#o_bpv3_1_0_check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
+| [**check_funds_available**](ConfirmationOfFundsServicePIISApi.md#check_funds_available) | **GET** /obp/v3.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/funds-available | Check Available Funds |
 
 
-## o_bpv3_1_0_check_funds_available
+## check_funds_available
 
-> <OBPv310CheckFundsAvailable200Response> o_bpv3_1_0_check_funds_available(bankid, accountid, viewid)
+> <CheckFundsAvailable200Response> check_funds_available(bankid, accountid, viewid)
 
 Check Available Funds
 
@@ -31,9 +31,9 @@ OpenBankProject.configure do |config|
   # config.api_key_prefix['Authorization'] = 'Bearer'
 
   # Configure API key authorization: DirectLogin
-  config.api_key['Authorization'] = 'YOUR API KEY'
+  config.api_key['DirectLogin'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
+  # config.api_key_prefix['DirectLogin'] = 'Bearer'
 end
 
 api_instance = OpenBankProject::ConfirmationOfFundsServicePIISApi.new
@@ -43,28 +43,28 @@ viewid = 'viewid_example' # String | The VIEWID identifier
 
 begin
   # Check Available Funds
-  result = api_instance.o_bpv3_1_0_check_funds_available(bankid, accountid, viewid)
+  result = api_instance.check_funds_available(bankid, accountid, viewid)
   p result
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConfirmationOfFundsServicePIISApi->o_bpv3_1_0_check_funds_available: #{e}"
+  puts "Error when calling ConfirmationOfFundsServicePIISApi->check_funds_available: #{e}"
 end
 ```
 
-#### Using the o_bpv3_1_0_check_funds_available_with_http_info variant
+#### Using the check_funds_available_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OBPv310CheckFundsAvailable200Response>, Integer, Hash)> o_bpv3_1_0_check_funds_available_with_http_info(bankid, accountid, viewid)
+> <Array(<CheckFundsAvailable200Response>, Integer, Hash)> check_funds_available_with_http_info(bankid, accountid, viewid)
 
 ```ruby
 begin
   # Check Available Funds
-  data, status_code, headers = api_instance.o_bpv3_1_0_check_funds_available_with_http_info(bankid, accountid, viewid)
+  data, status_code, headers = api_instance.check_funds_available_with_http_info(bankid, accountid, viewid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OBPv310CheckFundsAvailable200Response>
+  p data # => <CheckFundsAvailable200Response>
 rescue OpenBankProject::ApiError => e
-  puts "Error when calling ConfirmationOfFundsServicePIISApi->o_bpv3_1_0_check_funds_available_with_http_info: #{e}"
+  puts "Error when calling ConfirmationOfFundsServicePIISApi->check_funds_available_with_http_info: #{e}"
 end
 ```
 
@@ -78,7 +78,7 @@ end
 
 ### Return type
 
-[**OBPv310CheckFundsAvailable200Response**](OBPv310CheckFundsAvailable200Response.md)
+[**CheckFundsAvailable200Response**](CheckFundsAvailable200Response.md)
 
 ### Authorization
 

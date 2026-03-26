@@ -1,19 +1,19 @@
 # DynamicEntityApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600CleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#obpv600cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
-| [**oBPv600GetAvailablePersonalDynamicEntities**](DynamicEntityApi.md#obpv600getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
-| [**oBPv600GetDynamicEntityDiagnostics**](DynamicEntityApi.md#obpv600getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
-| [**oBPv600GetReferenceTypes**](DynamicEntityApi.md#obpv600getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
+| [**cleanupOrphanedDynamicEntityRecords**](DynamicEntityApi.md#cleanuporphaneddynamicentityrecords) | **DELETE** /obp/v6.0.0/management/diagnostics/dynamic-entities/orphaned-records | Cleanup Orphaned Dynamic Entity Records |
+| [**getAvailablePersonalDynamicEntities**](DynamicEntityApi.md#getavailablepersonaldynamicentities) | **GET** /obp/v6.0.0/personal-dynamic-entities/available | Get Available Personal Dynamic Entities |
+| [**getDynamicEntityDiagnostics**](DynamicEntityApi.md#getdynamicentitydiagnostics) | **GET** /obp/v6.0.0/management/diagnostics/dynamic-entities | Get Dynamic Entity Diagnostics |
+| [**getReferenceTypes**](DynamicEntityApi.md#getreferencetypes) | **GET** /obp/v6.0.0/management/dynamic-entities/reference-types | Get Reference Types for Dynamic Entities |
 
 
 
-## oBPv600CleanupOrphanedDynamicEntityRecords
+## cleanupOrphanedDynamicEntityRecords
 
-> OBPv600CleanupOrphanedDynamicEntityRecords200Response oBPv600CleanupOrphanedDynamicEntityRecords()
+> CleanupOrphanedDynamicEntityRecords200Response cleanupOrphanedDynamicEntityRecords()
 
 Cleanup Orphaned Dynamic Entity Records
 
@@ -26,7 +26,7 @@ import {
   Configuration,
   DynamicEntityApi,
 } from 'obp-typescript';
-import type { OBPv600CleanupOrphanedDynamicEntityRecordsRequest } from 'obp-typescript';
+import type { CleanupOrphanedDynamicEntityRecordsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -41,7 +41,7 @@ async function example() {
   const api = new DynamicEntityApi(config);
 
   try {
-    const data = await api.oBPv600CleanupOrphanedDynamicEntityRecords();
+    const data = await api.cleanupOrphanedDynamicEntityRecords();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600CleanupOrphanedDynamicEntityRecords200Response**](OBPv600CleanupOrphanedDynamicEntityRecords200Response.md)
+[**CleanupOrphanedDynamicEntityRecords200Response**](CleanupOrphanedDynamicEntityRecords200Response.md)
 
 ### Authorization
 
@@ -79,9 +79,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAvailablePersonalDynamicEntities
+## getAvailablePersonalDynamicEntities
 
-> OBPv600GetAvailablePersonalDynamicEntities200Response oBPv600GetAvailablePersonalDynamicEntities()
+> GetAvailablePersonalDynamicEntities200Response getAvailablePersonalDynamicEntities()
 
 Get Available Personal Dynamic Entities
 
@@ -94,7 +94,7 @@ import {
   Configuration,
   DynamicEntityApi,
 } from 'obp-typescript';
-import type { OBPv600GetAvailablePersonalDynamicEntitiesRequest } from 'obp-typescript';
+import type { GetAvailablePersonalDynamicEntitiesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -109,7 +109,7 @@ async function example() {
   const api = new DynamicEntityApi(config);
 
   try {
-    const data = await api.oBPv600GetAvailablePersonalDynamicEntities();
+    const data = await api.getAvailablePersonalDynamicEntities();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAvailablePersonalDynamicEntities200Response**](OBPv600GetAvailablePersonalDynamicEntities200Response.md)
+[**GetAvailablePersonalDynamicEntities200Response**](GetAvailablePersonalDynamicEntities200Response.md)
 
 ### Authorization
 
@@ -147,9 +147,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetDynamicEntityDiagnostics
+## getDynamicEntityDiagnostics
 
-> OBPv600GetDynamicEntityDiagnostics200Response oBPv600GetDynamicEntityDiagnostics()
+> GetDynamicEntityDiagnostics200Response getDynamicEntityDiagnostics()
 
 Get Dynamic Entity Diagnostics
 
@@ -162,7 +162,7 @@ import {
   Configuration,
   DynamicEntityApi,
 } from 'obp-typescript';
-import type { OBPv600GetDynamicEntityDiagnosticsRequest } from 'obp-typescript';
+import type { GetDynamicEntityDiagnosticsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -177,7 +177,7 @@ async function example() {
   const api = new DynamicEntityApi(config);
 
   try {
-    const data = await api.oBPv600GetDynamicEntityDiagnostics();
+    const data = await api.getDynamicEntityDiagnostics();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -194,7 +194,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetDynamicEntityDiagnostics200Response**](OBPv600GetDynamicEntityDiagnostics200Response.md)
+[**GetDynamicEntityDiagnostics200Response**](GetDynamicEntityDiagnostics200Response.md)
 
 ### Authorization
 
@@ -215,9 +215,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetReferenceTypes
+## getReferenceTypes
 
-> OBPv600GetReferenceTypes200Response oBPv600GetReferenceTypes()
+> GetReferenceTypes200Response getReferenceTypes()
 
 Get Reference Types for Dynamic Entities
 
@@ -230,7 +230,7 @@ import {
   Configuration,
   DynamicEntityApi,
 } from 'obp-typescript';
-import type { OBPv600GetReferenceTypesRequest } from 'obp-typescript';
+import type { GetReferenceTypesRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -245,7 +245,7 @@ async function example() {
   const api = new DynamicEntityApi(config);
 
   try {
-    const data = await api.oBPv600GetReferenceTypes();
+    const data = await api.getReferenceTypes();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -262,7 +262,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetReferenceTypes200Response**](OBPv600GetReferenceTypes200Response.md)
+[**GetReferenceTypes200Response**](GetReferenceTypes200Response.md)
 
 ### Authorization
 

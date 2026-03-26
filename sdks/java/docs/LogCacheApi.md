@@ -1,27 +1,27 @@
 # LogCacheApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv510LogCacheAllEndpoint**](LogCacheApi.md#oBPv510LogCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheAllEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheAllEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
-| [**oBPv510LogCacheDebugEndpoint**](LogCacheApi.md#oBPv510LogCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheDebugEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheDebugEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
-| [**oBPv510LogCacheErrorEndpoint**](LogCacheApi.md#oBPv510LogCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheErrorEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheErrorEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
-| [**oBPv510LogCacheInfoEndpoint**](LogCacheApi.md#oBPv510LogCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheInfoEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheInfoEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
-| [**oBPv510LogCacheTraceEndpoint**](LogCacheApi.md#oBPv510LogCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheTraceEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheTraceEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
-| [**oBPv510LogCacheWarningEndpoint**](LogCacheApi.md#oBPv510LogCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
-| [**oBPv510LogCacheWarningEndpointWithHttpInfo**](LogCacheApi.md#oBPv510LogCacheWarningEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**logCacheAllEndpoint**](LogCacheApi.md#logCacheAllEndpoint) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheAllEndpointWithHttpInfo**](LogCacheApi.md#logCacheAllEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/all | Get All Level Log Cache |
+| [**logCacheDebugEndpoint**](LogCacheApi.md#logCacheDebugEndpoint) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheDebugEndpointWithHttpInfo**](LogCacheApi.md#logCacheDebugEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/debug | Get Debug Level Log Cache |
+| [**logCacheErrorEndpoint**](LogCacheApi.md#logCacheErrorEndpoint) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheErrorEndpointWithHttpInfo**](LogCacheApi.md#logCacheErrorEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/error | Get Error Level Log Cache |
+| [**logCacheInfoEndpoint**](LogCacheApi.md#logCacheInfoEndpoint) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheInfoEndpointWithHttpInfo**](LogCacheApi.md#logCacheInfoEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/info | Get Info Level Log Cache |
+| [**logCacheTraceEndpoint**](LogCacheApi.md#logCacheTraceEndpoint) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheTraceEndpointWithHttpInfo**](LogCacheApi.md#logCacheTraceEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/trace | Get Trace Level Log Cache |
+| [**logCacheWarningEndpoint**](LogCacheApi.md#logCacheWarningEndpoint) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
+| [**logCacheWarningEndpointWithHttpInfo**](LogCacheApi.md#logCacheWarningEndpointWithHttpInfo) | **GET** /obp/v5.1.0/system/log-cache/warning | Get Warning Level Log Cache |
 
 
 
-## oBPv510LogCacheAllEndpoint
+## logCacheAllEndpoint
 
-> void oBPv510LogCacheAllEndpoint()
+> void logCacheAllEndpoint()
 
 Get All Level Log Cache
 
@@ -41,7 +41,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -61,9 +61,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheAllEndpoint();
+            apiInstance.logCacheAllEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheAllEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheAllEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -97,9 +97,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheAllEndpointWithHttpInfo
+## logCacheAllEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheAllEndpoint oBPv510LogCacheAllEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheAllEndpoint logCacheAllEndpointWithHttpInfo()
 
 Get All Level Log Cache
 
@@ -120,7 +120,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -140,11 +140,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheAllEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheAllEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheAllEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheAllEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -179,9 +179,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510LogCacheDebugEndpoint
+## logCacheDebugEndpoint
 
-> void oBPv510LogCacheDebugEndpoint()
+> void logCacheDebugEndpoint()
 
 Get Debug Level Log Cache
 
@@ -201,7 +201,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -221,9 +221,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheDebugEndpoint();
+            apiInstance.logCacheDebugEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheDebugEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheDebugEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -257,9 +257,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheDebugEndpointWithHttpInfo
+## logCacheDebugEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheDebugEndpoint oBPv510LogCacheDebugEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheDebugEndpoint logCacheDebugEndpointWithHttpInfo()
 
 Get Debug Level Log Cache
 
@@ -280,7 +280,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -300,11 +300,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheDebugEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheDebugEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheDebugEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheDebugEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -339,9 +339,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510LogCacheErrorEndpoint
+## logCacheErrorEndpoint
 
-> void oBPv510LogCacheErrorEndpoint()
+> void logCacheErrorEndpoint()
 
 Get Error Level Log Cache
 
@@ -361,7 +361,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -381,9 +381,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheErrorEndpoint();
+            apiInstance.logCacheErrorEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheErrorEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheErrorEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -417,9 +417,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheErrorEndpointWithHttpInfo
+## logCacheErrorEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheErrorEndpoint oBPv510LogCacheErrorEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheErrorEndpoint logCacheErrorEndpointWithHttpInfo()
 
 Get Error Level Log Cache
 
@@ -440,7 +440,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -460,11 +460,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheErrorEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheErrorEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheErrorEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheErrorEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -499,9 +499,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510LogCacheInfoEndpoint
+## logCacheInfoEndpoint
 
-> void oBPv510LogCacheInfoEndpoint()
+> void logCacheInfoEndpoint()
 
 Get Info Level Log Cache
 
@@ -521,7 +521,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -541,9 +541,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheInfoEndpoint();
+            apiInstance.logCacheInfoEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheInfoEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheInfoEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -577,9 +577,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheInfoEndpointWithHttpInfo
+## logCacheInfoEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheInfoEndpoint oBPv510LogCacheInfoEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheInfoEndpoint logCacheInfoEndpointWithHttpInfo()
 
 Get Info Level Log Cache
 
@@ -600,7 +600,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -620,11 +620,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheInfoEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheInfoEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheInfoEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheInfoEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -659,9 +659,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510LogCacheTraceEndpoint
+## logCacheTraceEndpoint
 
-> void oBPv510LogCacheTraceEndpoint()
+> void logCacheTraceEndpoint()
 
 Get Trace Level Log Cache
 
@@ -681,7 +681,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -701,9 +701,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheTraceEndpoint();
+            apiInstance.logCacheTraceEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheTraceEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheTraceEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -737,9 +737,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheTraceEndpointWithHttpInfo
+## logCacheTraceEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheTraceEndpoint oBPv510LogCacheTraceEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheTraceEndpoint logCacheTraceEndpointWithHttpInfo()
 
 Get Trace Level Log Cache
 
@@ -760,7 +760,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -780,11 +780,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheTraceEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheTraceEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheTraceEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheTraceEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -819,9 +819,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv510LogCacheWarningEndpoint
+## logCacheWarningEndpoint
 
-> void oBPv510LogCacheWarningEndpoint()
+> void logCacheWarningEndpoint()
 
 Get Warning Level Log Cache
 
@@ -841,7 +841,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -861,9 +861,9 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            apiInstance.oBPv510LogCacheWarningEndpoint();
+            apiInstance.logCacheWarningEndpoint();
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheWarningEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheWarningEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -897,9 +897,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv510LogCacheWarningEndpointWithHttpInfo
+## logCacheWarningEndpointWithHttpInfo
 
-> ApiResponse<Void> oBPv510LogCacheWarningEndpoint oBPv510LogCacheWarningEndpointWithHttpInfo()
+> ApiResponse<Void> logCacheWarningEndpoint logCacheWarningEndpointWithHttpInfo()
 
 Get Warning Level Log Cache
 
@@ -920,7 +920,7 @@ import com.openbankproject.api.LogCacheApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -940,11 +940,11 @@ public class Example {
 
         LogCacheApi apiInstance = new LogCacheApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv510LogCacheWarningEndpointWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.logCacheWarningEndpointWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling LogCacheApi#oBPv510LogCacheWarningEndpoint");
+            System.err.println("Exception when calling LogCacheApi#logCacheWarningEndpoint");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());

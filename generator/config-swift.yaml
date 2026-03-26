@@ -1,6 +1,6 @@
 generatorName: swift6
 outputDir: ../sdks/swift
-inputSpec: ../openapi-spec/obp-openapi.json
+inputSpec: ../openapi-spec/obp-openapi-simplified.json
 additionalProperties:
   projectName: OBPSwift
   podVersion: "1.0.0"

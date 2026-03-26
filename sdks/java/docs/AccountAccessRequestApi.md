@@ -1,27 +1,27 @@
 # AccountAccessRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600ApproveAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600ApproveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**oBPv600ApproveAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#oBPv600ApproveAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**oBPv600CreateAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600CreateAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**oBPv600CreateAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#oBPv600CreateAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**oBPv600GetAccountAccessRequestById**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**oBPv600GetAccountAccessRequestByIdWithHttpInfo**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestByIdWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**oBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**oBPv600GetAccountAccessRequestsForAccountWithHttpInfo**](AccountAccessRequestApi.md#oBPv600GetAccountAccessRequestsForAccountWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**oBPv600GetMyAccountAccessRequests**](AccountAccessRequestApi.md#oBPv600GetMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**oBPv600GetMyAccountAccessRequestsWithHttpInfo**](AccountAccessRequestApi.md#oBPv600GetMyAccountAccessRequestsWithHttpInfo) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**oBPv600RejectAccountAccessRequest**](AccountAccessRequestApi.md#oBPv600RejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
-| [**oBPv600RejectAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#oBPv600RejectAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**approveAccountAccessRequest**](AccountAccessRequestApi.md#approveAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**approveAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#approveAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**createAccountAccessRequest**](AccountAccessRequestApi.md#createAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**createAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#createAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**getAccountAccessRequestById**](AccountAccessRequestApi.md#getAccountAccessRequestById) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**getAccountAccessRequestByIdWithHttpInfo**](AccountAccessRequestApi.md#getAccountAccessRequestByIdWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**getAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#getAccountAccessRequestsForAccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**getAccountAccessRequestsForAccountWithHttpInfo**](AccountAccessRequestApi.md#getAccountAccessRequestsForAccountWithHttpInfo) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**getMyAccountAccessRequests**](AccountAccessRequestApi.md#getMyAccountAccessRequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**getMyAccountAccessRequestsWithHttpInfo**](AccountAccessRequestApi.md#getMyAccountAccessRequestsWithHttpInfo) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**rejectAccountAccessRequest**](AccountAccessRequestApi.md#rejectAccountAccessRequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**rejectAccountAccessRequestWithHttpInfo**](AccountAccessRequestApi.md#rejectAccountAccessRequestWithHttpInfo) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
 
 
-## oBPv600ApproveAccountAccessRequest
+## approveAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -41,7 +41,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -63,12 +63,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
-        OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest = new OBPv600RejectAccountAccessRequestRequest(); // OBPv600RejectAccountAccessRequestRequest | Request body
+        RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = new RejectAccountAccessRequestRequest(); // RejectAccountAccessRequestRequest | Request body
         try {
-            OBPv600RejectAccountAccessRequest200Response result = apiInstance.oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest);
+            RejectAccountAccessRequest200Response result = apiInstance.approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600ApproveAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#approveAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -86,11 +86,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 
 ### Authorization
@@ -109,9 +109,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600ApproveAccountAccessRequestWithHttpInfo
+## approveAccountAccessRequestWithHttpInfo
 
-> ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600ApproveAccountAccessRequest oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+> ApiResponse<RejectAccountAccessRequest200Response> approveAccountAccessRequest approveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -132,7 +132,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -154,14 +154,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
-        OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest = new OBPv600RejectAccountAccessRequestRequest(); // OBPv600RejectAccountAccessRequestRequest | Request body
+        RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = new RejectAccountAccessRequestRequest(); // RejectAccountAccessRequestRequest | Request body
         try {
-            ApiResponse<OBPv600RejectAccountAccessRequest200Response> response = apiInstance.oBPv600ApproveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest);
+            ApiResponse<RejectAccountAccessRequest200Response> response = apiInstance.approveAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600ApproveAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#approveAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -179,11 +179,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)>
+ApiResponse<[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)>
 
 
 ### Authorization
@@ -203,9 +203,9 @@ ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAcco
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600CreateAccountAccessRequest
+## createAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(bankid, accountid, obPv600CreateAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -225,7 +225,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -246,12 +246,12 @@ public class Example {
         AccountAccessRequestApi apiInstance = new AccountAccessRequestApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest = new OBPv600CreateAccountAccessRequestRequest(); // OBPv600CreateAccountAccessRequestRequest | Request body
+        CreateAccountAccessRequestRequest createAccountAccessRequestRequest = new CreateAccountAccessRequestRequest(); // CreateAccountAccessRequestRequest | Request body
         try {
-            OBPv600RejectAccountAccessRequest200Response result = apiInstance.oBPv600CreateAccountAccessRequest(bankid, accountid, obPv600CreateAccountAccessRequestRequest);
+            RejectAccountAccessRequest200Response result = apiInstance.createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600CreateAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#createAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -268,11 +268,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md)| Request body | |
+| **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 
 ### Authorization
@@ -291,9 +291,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600CreateAccountAccessRequestWithHttpInfo
+## createAccountAccessRequestWithHttpInfo
 
-> ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600CreateAccountAccessRequest oBPv600CreateAccountAccessRequestWithHttpInfo(bankid, accountid, obPv600CreateAccountAccessRequestRequest)
+> ApiResponse<RejectAccountAccessRequest200Response> createAccountAccessRequest createAccountAccessRequestWithHttpInfo(bankid, accountid, createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -314,7 +314,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -335,14 +335,14 @@ public class Example {
         AccountAccessRequestApi apiInstance = new AccountAccessRequestApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
-        OBPv600CreateAccountAccessRequestRequest obPv600CreateAccountAccessRequestRequest = new OBPv600CreateAccountAccessRequestRequest(); // OBPv600CreateAccountAccessRequestRequest | Request body
+        CreateAccountAccessRequestRequest createAccountAccessRequestRequest = new CreateAccountAccessRequestRequest(); // CreateAccountAccessRequestRequest | Request body
         try {
-            ApiResponse<OBPv600RejectAccountAccessRequest200Response> response = apiInstance.oBPv600CreateAccountAccessRequestWithHttpInfo(bankid, accountid, obPv600CreateAccountAccessRequestRequest);
+            ApiResponse<RejectAccountAccessRequest200Response> response = apiInstance.createAccountAccessRequestWithHttpInfo(bankid, accountid, createAccountAccessRequestRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600CreateAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#createAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -359,11 +359,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
-| **obPv600CreateAccountAccessRequestRequest** | [**OBPv600CreateAccountAccessRequestRequest**](OBPv600CreateAccountAccessRequestRequest.md)| Request body | |
+| **createAccountAccessRequestRequest** | [**CreateAccountAccessRequestRequest**](CreateAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)>
+ApiResponse<[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)>
 
 
 ### Authorization
@@ -383,9 +383,9 @@ ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAcco
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAccountAccessRequestById
+## getAccountAccessRequestById
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
+> RejectAccountAccessRequest200Response getAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -405,7 +405,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -428,10 +428,10 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
         try {
-            OBPv600RejectAccountAccessRequest200Response result = apiInstance.oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
+            RejectAccountAccessRequest200Response result = apiInstance.getAccountAccessRequestById(bankid, accountid, accountaccessrequestid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestById");
+            System.err.println("Exception when calling AccountAccessRequestApi#getAccountAccessRequestById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -452,7 +452,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 
 ### Authorization
@@ -471,9 +471,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAccountAccessRequestByIdWithHttpInfo
+## getAccountAccessRequestByIdWithHttpInfo
 
-> ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600GetAccountAccessRequestById oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid)
+> ApiResponse<RejectAccountAccessRequest200Response> getAccountAccessRequestById getAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -494,7 +494,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -517,12 +517,12 @@ public class Example {
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
         try {
-            ApiResponse<OBPv600RejectAccountAccessRequest200Response> response = apiInstance.oBPv600GetAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid);
+            ApiResponse<RejectAccountAccessRequest200Response> response = apiInstance.getAccountAccessRequestByIdWithHttpInfo(bankid, accountid, accountaccessrequestid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestById");
+            System.err.println("Exception when calling AccountAccessRequestApi#getAccountAccessRequestById");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -543,7 +543,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)>
+ApiResponse<[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)>
 
 
 ### Authorization
@@ -563,9 +563,9 @@ ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAcco
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetAccountAccessRequestsForAccount
+## getAccountAccessRequestsForAccount
 
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(bankid, accountid)
+> GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -585,7 +585,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -607,10 +607,10 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         try {
-            OBPv600GetAccountAccessRequestsForAccount200Response result = apiInstance.oBPv600GetAccountAccessRequestsForAccount(bankid, accountid);
+            GetAccountAccessRequestsForAccount200Response result = apiInstance.getAccountAccessRequestsForAccount(bankid, accountid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestsForAccount");
+            System.err.println("Exception when calling AccountAccessRequestApi#getAccountAccessRequestsForAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -630,7 +630,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 
 ### Authorization
@@ -649,9 +649,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetAccountAccessRequestsForAccountWithHttpInfo
+## getAccountAccessRequestsForAccountWithHttpInfo
 
-> ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetAccountAccessRequestsForAccount oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid)
+> ApiResponse<GetAccountAccessRequestsForAccount200Response> getAccountAccessRequestsForAccount getAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -672,7 +672,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -694,12 +694,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         try {
-            ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> response = apiInstance.oBPv600GetAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid);
+            ApiResponse<GetAccountAccessRequestsForAccount200Response> response = apiInstance.getAccountAccessRequestsForAccountWithHttpInfo(bankid, accountid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetAccountAccessRequestsForAccount");
+            System.err.println("Exception when calling AccountAccessRequestApi#getAccountAccessRequestsForAccount");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -719,7 +719,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)>
+ApiResponse<[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)>
 
 
 ### Authorization
@@ -739,9 +739,9 @@ ApiResponse<[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600Ge
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600GetMyAccountAccessRequests
+## getMyAccountAccessRequests
 
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests()
+> GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests()
 
 Get My Account Access Requests
 
@@ -761,7 +761,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -781,10 +781,10 @@ public class Example {
 
         AccountAccessRequestApi apiInstance = new AccountAccessRequestApi(defaultClient);
         try {
-            OBPv600GetAccountAccessRequestsForAccount200Response result = apiInstance.oBPv600GetMyAccountAccessRequests();
+            GetAccountAccessRequestsForAccount200Response result = apiInstance.getMyAccountAccessRequests();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetMyAccountAccessRequests");
+            System.err.println("Exception when calling AccountAccessRequestApi#getMyAccountAccessRequests");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -800,7 +800,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 
 ### Authorization
@@ -818,9 +818,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600GetMyAccountAccessRequestsWithHttpInfo
+## getMyAccountAccessRequestsWithHttpInfo
 
-> ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> oBPv600GetMyAccountAccessRequests oBPv600GetMyAccountAccessRequestsWithHttpInfo()
+> ApiResponse<GetAccountAccessRequestsForAccount200Response> getMyAccountAccessRequests getMyAccountAccessRequestsWithHttpInfo()
 
 Get My Account Access Requests
 
@@ -841,7 +841,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -861,12 +861,12 @@ public class Example {
 
         AccountAccessRequestApi apiInstance = new AccountAccessRequestApi(defaultClient);
         try {
-            ApiResponse<OBPv600GetAccountAccessRequestsForAccount200Response> response = apiInstance.oBPv600GetMyAccountAccessRequestsWithHttpInfo();
+            ApiResponse<GetAccountAccessRequestsForAccount200Response> response = apiInstance.getMyAccountAccessRequestsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600GetMyAccountAccessRequests");
+            System.err.println("Exception when calling AccountAccessRequestApi#getMyAccountAccessRequests");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -882,7 +882,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)>
+ApiResponse<[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)>
 
 
 ### Authorization
@@ -901,9 +901,9 @@ ApiResponse<[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600Ge
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv600RejectAccountAccessRequest
+## rejectAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -923,7 +923,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -945,12 +945,12 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
-        OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest = new OBPv600RejectAccountAccessRequestRequest(); // OBPv600RejectAccountAccessRequestRequest | Request body
+        RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = new RejectAccountAccessRequestRequest(); // RejectAccountAccessRequestRequest | Request body
         try {
-            OBPv600RejectAccountAccessRequest200Response result = apiInstance.oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest);
+            RejectAccountAccessRequest200Response result = apiInstance.rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600RejectAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#rejectAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -968,11 +968,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 
 ### Authorization
@@ -991,9 +991,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv600RejectAccountAccessRequestWithHttpInfo
+## rejectAccountAccessRequestWithHttpInfo
 
-> ApiResponse<OBPv600RejectAccountAccessRequest200Response> oBPv600RejectAccountAccessRequest oBPv600RejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest)
+> ApiResponse<RejectAccountAccessRequest200Response> rejectAccountAccessRequest rejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -1014,7 +1014,7 @@ import com.openbankproject.api.AccountAccessRequestApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1036,14 +1036,14 @@ public class Example {
         String bankid = "bankid_example"; // String | The BANKID identifier
         String accountid = "accountid_example"; // String | The ACCOUNTID identifier
         String accountaccessrequestid = "accountaccessrequestid_example"; // String | The ACCOUNTACCESSREQUESTID identifier
-        OBPv600RejectAccountAccessRequestRequest obPv600RejectAccountAccessRequestRequest = new OBPv600RejectAccountAccessRequestRequest(); // OBPv600RejectAccountAccessRequestRequest | Request body
+        RejectAccountAccessRequestRequest rejectAccountAccessRequestRequest = new RejectAccountAccessRequestRequest(); // RejectAccountAccessRequestRequest | Request body
         try {
-            ApiResponse<OBPv600RejectAccountAccessRequest200Response> response = apiInstance.oBPv600RejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, obPv600RejectAccountAccessRequestRequest);
+            ApiResponse<RejectAccountAccessRequest200Response> response = apiInstance.rejectAccountAccessRequestWithHttpInfo(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountAccessRequestApi#oBPv600RejectAccountAccessRequest");
+            System.err.println("Exception when calling AccountAccessRequestApi#rejectAccountAccessRequest");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1061,11 +1061,11 @@ public class Example {
 | **bankid** | **String**| The BANKID identifier | |
 | **accountid** | **String**| The ACCOUNTID identifier | |
 | **accountaccessrequestid** | **String**| The ACCOUNTACCESSREQUESTID identifier | |
-| **obPv600RejectAccountAccessRequestRequest** | [**OBPv600RejectAccountAccessRequestRequest**](OBPv600RejectAccountAccessRequestRequest.md)| Request body | |
+| **rejectAccountAccessRequestRequest** | [**RejectAccountAccessRequestRequest**](RejectAccountAccessRequestRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)>
+ApiResponse<[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)>
 
 
 ### Authorization

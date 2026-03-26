@@ -2,19 +2,19 @@
 
 
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400AddTagForViewOnAccount()**](AccountMetadataApi.md#oBPv400AddTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**oBPv400DeleteTagForViewOnAccount()**](AccountMetadataApi.md#oBPv400DeleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**oBPv400GetTagsForViewOnAccount()**](AccountMetadataApi.md#oBPv400GetTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**addTagForViewOnAccount()**](AccountMetadataApi.md#addTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**deleteTagForViewOnAccount()**](AccountMetadataApi.md#deleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**getTagsForViewOnAccount()**](AccountMetadataApi.md#getTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
 
-## `oBPv400AddTagForViewOnAccount()`
+## `addTagForViewOnAccount()`
 
 ```php
-oBPv400AddTagForViewOnAccount($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response): \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems
+addTagForViewOnAccount($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id): \OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner
 ```
 
 Create a tag on account
@@ -37,9 +37,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountMetadataApi(
@@ -51,13 +51,13 @@ $apiInstance = new OpenBankProject\Api\AccountMetadataApi(
 $bankid = 'bankid_example'; // string | The BANKID identifier
 $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
-$obpv400_delete_system_level_endpoint_tag200_response = {"type":"object","properties":{"value":{"type":"string"}}}; // \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+$get_transaction_types200_response_transaction_types_inner_id = {"type":"object","properties":{"value":{"type":"string"}}}; // \OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 
 try {
-    $result = $apiInstance->oBPv400AddTagForViewOnAccount($bankid, $accountid, $viewid, $obpv400_delete_system_level_endpoint_tag200_response);
+    $result = $apiInstance->addTagForViewOnAccount($bankid, $accountid, $viewid, $get_transaction_types200_response_transaction_types_inner_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountMetadataApi->oBPv400AddTagForViewOnAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountMetadataApi->addTagForViewOnAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -68,11 +68,11 @@ try {
 | **bankid** | **string**| The BANKID identifier | |
 | **accountid** | **string**| The ACCOUNTID identifier | |
 | **viewid** | **string**| The VIEWID identifier | |
-| **obpv400_delete_system_level_endpoint_tag200_response** | [**\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response**](../Model/OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **get_transaction_types200_response_transaction_types_inner_id** | [**\OpenBankProject\Model\GetTransactionTypes200ResponseTransactionTypesInnerId**](../Model/GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](../Model/OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**\OpenBankProject\Model\GetTagsForViewOnAccount200ResponseTagsInner**](../Model/GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -87,10 +87,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400DeleteTagForViewOnAccount()`
+## `deleteTagForViewOnAccount()`
 
 ```php
-oBPv400DeleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid)
+deleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid)
 ```
 
 Delete a tag on account
@@ -113,9 +113,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountMetadataApi(
@@ -130,9 +130,9 @@ $viewid = 'viewid_example'; // string | The VIEWID identifier
 $tagid = 'tagid_example'; // string | The TAGID identifier
 
 try {
-    $apiInstance->oBPv400DeleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid);
+    $apiInstance->deleteTagForViewOnAccount($bankid, $accountid, $viewid, $tagid);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountMetadataApi->oBPv400DeleteTagForViewOnAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountMetadataApi->deleteTagForViewOnAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -162,10 +162,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv400GetTagsForViewOnAccount()`
+## `getTagsForViewOnAccount()`
 
 ```php
-oBPv400GetTagsForViewOnAccount($bankid, $accountid, $viewid): \OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response
+getTagsForViewOnAccount($bankid, $accountid, $viewid): \OpenBankProject\Model\GetTagsForViewOnAccount200Response
 ```
 
 Get tags on account
@@ -188,9 +188,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\AccountMetadataApi(
@@ -204,10 +204,10 @@ $accountid = 'accountid_example'; // string | The ACCOUNTID identifier
 $viewid = 'viewid_example'; // string | The VIEWID identifier
 
 try {
-    $result = $apiInstance->oBPv400GetTagsForViewOnAccount($bankid, $accountid, $viewid);
+    $result = $apiInstance->getTagsForViewOnAccount($bankid, $accountid, $viewid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountMetadataApi->oBPv400GetTagsForViewOnAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountMetadataApi->getTagsForViewOnAccount: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -221,7 +221,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv400GetTagsForViewOnAccount200Response**](../Model/OBPv400GetTagsForViewOnAccount200Response.md)
+[**\OpenBankProject\Model\GetTagsForViewOnAccount200Response**](../Model/GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 

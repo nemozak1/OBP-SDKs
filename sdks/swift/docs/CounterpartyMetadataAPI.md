@@ -1,42 +1,42 @@
 # CounterpartyMetadataAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv121AddCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#obpv121addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-[**oBPv121AddCounterpartyImageUrl**](CounterpartyMetadataAPI.md#obpv121addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-[**oBPv121AddCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#obpv121addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-[**oBPv121AddCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#obpv121addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-[**oBPv121AddCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#obpv121addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-[**oBPv121AddCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#obpv121addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-[**oBPv121AddCounterpartyUrl**](CounterpartyMetadataAPI.md#obpv121addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-[**oBPv121AddOtherAccountPrivateAlias**](CounterpartyMetadataAPI.md#obpv121addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-[**oBPv121DeleteCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#obpv121deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-[**oBPv121DeleteCounterpartyImageUrl**](CounterpartyMetadataAPI.md#obpv121deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-[**oBPv121DeleteCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#obpv121deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-[**oBPv121DeleteCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#obpv121deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-[**oBPv121DeleteCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#obpv121deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-[**oBPv121DeleteCounterpartyPrivateAlias**](CounterpartyMetadataAPI.md#obpv121deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-[**oBPv121DeleteCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#obpv121deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-[**oBPv121DeleteCounterpartyUrl**](CounterpartyMetadataAPI.md#obpv121deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-[**oBPv121GetCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#obpv121getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-[**oBPv121GetOtherAccountMetadata**](CounterpartyMetadataAPI.md#obpv121getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-[**oBPv121GetOtherAccountPrivateAlias**](CounterpartyMetadataAPI.md#obpv121getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-[**oBPv121UpdateCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#obpv121updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-[**oBPv121UpdateCounterpartyImageUrl**](CounterpartyMetadataAPI.md#obpv121updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-[**oBPv121UpdateCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#obpv121updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-[**oBPv121UpdateCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#obpv121updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-[**oBPv121UpdateCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#obpv121updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-[**oBPv121UpdateCounterpartyPrivateAlias**](CounterpartyMetadataAPI.md#obpv121updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-[**oBPv121UpdateCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#obpv121updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-[**oBPv121UpdateCounterpartyUrl**](CounterpartyMetadataAPI.md#obpv121updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-[**oBPv400GetExplicitCounterpartyById**](CounterpartyMetadataAPI.md#obpv400getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**addCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#addcounterpartycorporatelocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+[**addCounterpartyImageUrl**](CounterpartyMetadataAPI.md#addcounterpartyimageurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+[**addCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#addcounterpartymoreinfo) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+[**addCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#addcounterpartyopencorporatesurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+[**addCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#addcounterpartyphysicallocation) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+[**addCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#addcounterpartypublicalias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+[**addCounterpartyUrl**](CounterpartyMetadataAPI.md#addcounterpartyurl) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+[**addOtherAccountPrivateAlias**](CounterpartyMetadataAPI.md#addotheraccountprivatealias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+[**deleteCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#deletecounterpartycorporatelocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+[**deleteCounterpartyImageUrl**](CounterpartyMetadataAPI.md#deletecounterpartyimageurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+[**deleteCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#deletecounterpartymoreinfo) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+[**deleteCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#deletecounterpartyopencorporatesurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+[**deleteCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#deletecounterpartyphysicallocation) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+[**deleteCounterpartyPrivateAlias**](CounterpartyMetadataAPI.md#deletecounterpartyprivatealias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+[**deleteCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#deletecounterpartypublicalias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+[**deleteCounterpartyUrl**](CounterpartyMetadataAPI.md#deletecounterpartyurl) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+[**getCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#getcounterpartypublicalias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+[**getExplicitCounterpartyById**](CounterpartyMetadataAPI.md#getexplicitcounterpartybyid) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**getOtherAccountMetadata**](CounterpartyMetadataAPI.md#getotheraccountmetadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+[**getOtherAccountPrivateAlias**](CounterpartyMetadataAPI.md#getotheraccountprivatealias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+[**updateCounterpartyCorporateLocation**](CounterpartyMetadataAPI.md#updatecounterpartycorporatelocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+[**updateCounterpartyImageUrl**](CounterpartyMetadataAPI.md#updatecounterpartyimageurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+[**updateCounterpartyMoreInfo**](CounterpartyMetadataAPI.md#updatecounterpartymoreinfo) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+[**updateCounterpartyOpenCorporatesUrl**](CounterpartyMetadataAPI.md#updatecounterpartyopencorporatesurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+[**updateCounterpartyPhysicalLocation**](CounterpartyMetadataAPI.md#updatecounterpartyphysicallocation) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+[**updateCounterpartyPrivateAlias**](CounterpartyMetadataAPI.md#updatecounterpartyprivatealias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+[**updateCounterpartyPublicAlias**](CounterpartyMetadataAPI.md#updatecounterpartypublicalias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+[**updateCounterpartyUrl**](CounterpartyMetadataAPI.md#updatecounterpartyurl) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
 
 
-# **oBPv121AddCounterpartyCorporateLocation**
+# **addCounterpartyCorporateLocation**
 ```swift
-    open class func oBPv121AddCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add Corporate Location to Counterparty
@@ -52,10 +52,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyCorporateLocationRequest = OBPv1_2_1_updateCounterpartyCorporateLocation_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyCorporateLocation_request_properties(corporateLocation: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location(type: "type_example", properties: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location_properties(latitude: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), longitude: nil)))) // OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
+let updateCounterpartyCorporateLocationRequest = updateCounterpartyCorporateLocation_request(corporateLocation: getBranches_200_response_branches_inner_location(latitude: 123, longitude: 123)) // UpdateCounterpartyCorporateLocationRequest | Request body
 
 // Add Corporate Location to Counterparty
-CounterpartyMetadataAPI.oBPv121AddCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest: oBPv121UpdateCounterpartyCorporateLocationRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyCorporateLocationRequest: updateCounterpartyCorporateLocationRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -75,11 +75,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md) | Request body | 
+ **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -92,9 +92,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyImageUrl**
+# **addCounterpartyImageUrl**
 ```swift
-    open class func oBPv121AddCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add image url to other bank account
@@ -110,10 +110,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyImageUrlRequest = OBPv1_2_1_updateCounterpartyImageUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyImageUrl_request_properties(imageURL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyImageUrlRequest | Request body
+let updateCounterpartyImageUrlRequest = updateCounterpartyImageUrl_request(imageURL: "imageURL_example") // UpdateCounterpartyImageUrlRequest | Request body
 
 // Add image url to other bank account
-CounterpartyMetadataAPI.oBPv121AddCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest: oBPv121UpdateCounterpartyImageUrlRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyImageUrlRequest: updateCounterpartyImageUrlRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -133,11 +133,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md) | Request body | 
+ **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -150,9 +150,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyMoreInfo**
+# **addCounterpartyMoreInfo**
 ```swift
-    open class func oBPv121AddCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add Counterparty More Info
@@ -168,10 +168,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyMoreInfoRequest = OBPv1_2_1_updateCounterpartyMoreInfo_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyMoreInfo_request_properties(moreInfo: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyMoreInfoRequest | Request body
+let updateCounterpartyMoreInfoRequest = updateCounterpartyMoreInfo_request(moreInfo: "moreInfo_example") // UpdateCounterpartyMoreInfoRequest | Request body
 
 // Add Counterparty More Info
-CounterpartyMetadataAPI.oBPv121AddCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest: oBPv121UpdateCounterpartyMoreInfoRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyMoreInfoRequest: updateCounterpartyMoreInfoRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -191,11 +191,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md) | Request body | 
+ **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -208,9 +208,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyOpenCorporatesUrl**
+# **addCounterpartyOpenCorporatesUrl**
 ```swift
-    open class func oBPv121AddCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add Open Corporates URL to Counterparty
@@ -226,10 +226,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = OBPv1_2_1_updateCounterpartyOpenCorporatesUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyOpenCorporatesUrl_request_properties(openCorporatesURL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+let updateCounterpartyOpenCorporatesUrlRequest = updateCounterpartyOpenCorporatesUrl_request(openCorporatesURL: "openCorporatesURL_example") // UpdateCounterpartyOpenCorporatesUrlRequest | Request body
 
 // Add Open Corporates URL to Counterparty
-CounterpartyMetadataAPI.oBPv121AddCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyOpenCorporatesUrlRequest: updateCounterpartyOpenCorporatesUrlRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -249,11 +249,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body | 
+ **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -266,9 +266,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyPhysicalLocation**
+# **addCounterpartyPhysicalLocation**
 ```swift
-    open class func oBPv121AddCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add physical location to other bank account
@@ -284,10 +284,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyPhysicalLocationRequest = OBPv1_2_1_updateCounterpartyPhysicalLocation_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyPhysicalLocation_request_properties(physicalLocation: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location(type: "type_example", properties: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location_properties(latitude: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), longitude: nil)))) // OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
+let updateCounterpartyPhysicalLocationRequest = updateCounterpartyPhysicalLocation_request(physicalLocation: getBranches_200_response_branches_inner_location(latitude: 123, longitude: 123)) // UpdateCounterpartyPhysicalLocationRequest | Request body
 
 // Add physical location to other bank account
-CounterpartyMetadataAPI.oBPv121AddCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest: oBPv121UpdateCounterpartyPhysicalLocationRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyPhysicalLocationRequest: updateCounterpartyPhysicalLocationRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -307,11 +307,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md) | Request body | 
+ **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -324,9 +324,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyPublicAlias**
+# **addCounterpartyPublicAlias**
 ```swift
-    open class func oBPv121AddCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add public alias to other bank account
@@ -342,10 +342,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121GetCounterpartyPublicAlias200Response = OBPv1_2_1_getCounterpartyPublicAlias_200_response(type: "type_example", properties: OBPv1_2_1_getCounterpartyPublicAlias_200_response_properties(alias: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121GetCounterpartyPublicAlias200Response | Request body
+let getCounterpartyPublicAlias200Response = getCounterpartyPublicAlias_200_response(alias: "alias_example") // GetCounterpartyPublicAlias200Response | Request body
 
 // Add public alias to other bank account
-CounterpartyMetadataAPI.oBPv121AddCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -365,11 +365,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -382,9 +382,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddCounterpartyUrl**
+# **addCounterpartyUrl**
 ```swift
-    open class func oBPv121AddCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Add url to other bank account
@@ -400,10 +400,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyUrlRequest = OBPv1_2_1_updateCounterpartyUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyUrl_request_properties(URL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyUrlRequest | Request body
+let updateCounterpartyUrlRequest = updateCounterpartyUrl_request(URL: "URL_example") // UpdateCounterpartyUrlRequest | Request body
 
 // Add url to other bank account
-CounterpartyMetadataAPI.oBPv121AddCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyUrlRequest: oBPv121UpdateCounterpartyUrlRequest) { (response, error) in
+CounterpartyMetadataAPI.addCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyUrlRequest: updateCounterpartyUrlRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -423,11 +423,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md) | Request body | 
+ **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -440,9 +440,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121AddOtherAccountPrivateAlias**
+# **addOtherAccountPrivateAlias**
 ```swift
-    open class func oBPv121AddOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+    open class func addOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
 ```
 
 Create Other Account Private Alias
@@ -458,10 +458,10 @@ let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121GetCounterpartyPublicAlias200Response = OBPv1_2_1_getCounterpartyPublicAlias_200_response(type: "type_example", properties: OBPv1_2_1_getCounterpartyPublicAlias_200_response_properties(alias: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121GetCounterpartyPublicAlias200Response | Request body
+let getCounterpartyPublicAlias200Response = getCounterpartyPublicAlias_200_response(alias: "alias_example") // GetCounterpartyPublicAlias200Response | Request body
 
 // Create Other Account Private Alias
-CounterpartyMetadataAPI.oBPv121AddOtherAccountPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response) { (response, error) in
+CounterpartyMetadataAPI.addOtherAccountPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -481,11 +481,11 @@ Name | Type | Description  | Notes
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
  **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -498,9 +498,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyCorporateLocation**
+# **deleteCounterpartyCorporateLocation**
 ```swift
-    open class func oBPv121DeleteCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Corporate Location
@@ -518,7 +518,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Corporate Location
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -554,9 +554,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyImageUrl**
+# **deleteCounterpartyImageUrl**
 ```swift
-    open class func oBPv121DeleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Image URL
@@ -574,7 +574,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Image URL
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -610,9 +610,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyMoreInfo**
+# **deleteCounterpartyMoreInfo**
 ```swift
-    open class func oBPv121DeleteCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete more info of other bank account
@@ -630,7 +630,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete more info of other bank account
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -666,9 +666,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyOpenCorporatesUrl**
+# **deleteCounterpartyOpenCorporatesUrl**
 ```swift
-    open class func oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Open Corporates URL
@@ -686,7 +686,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Open Corporates URL
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -722,9 +722,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyPhysicalLocation**
+# **deleteCounterpartyPhysicalLocation**
 ```swift
-    open class func oBPv121DeleteCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Physical Location
@@ -742,7 +742,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Physical Location
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -778,9 +778,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyPrivateAlias**
+# **deleteCounterpartyPrivateAlias**
 ```swift
-    open class func oBPv121DeleteCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Private Alias
@@ -798,7 +798,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Private Alias
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -834,9 +834,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyPublicAlias**
+# **deleteCounterpartyPublicAlias**
 ```swift
-    open class func oBPv121DeleteCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete Counterparty Public Alias
@@ -854,7 +854,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete Counterparty Public Alias
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -890,9 +890,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121DeleteCounterpartyUrl**
+# **deleteCounterpartyUrl**
 ```swift
-    open class func oBPv121DeleteCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func deleteCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 Delete url of other bank account
@@ -910,7 +910,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Delete url of other bank account
-CounterpartyMetadataAPI.oBPv121DeleteCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.deleteCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -946,9 +946,9 @@ Void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121GetCounterpartyPublicAlias**
+# **getCounterpartyPublicAlias**
 ```swift
-    open class func oBPv121GetCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: OBPv121GetCounterpartyPublicAlias200Response?, _ error: Error?) -> Void)
+    open class func getCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: GetCounterpartyPublicAlias200Response?, _ error: Error?) -> Void)
 ```
 
 Get public alias of other bank account
@@ -966,7 +966,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
 
 // Get public alias of other bank account
-CounterpartyMetadataAPI.oBPv121GetCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+CounterpartyMetadataAPI.getCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -989,7 +989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -1002,585 +1002,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv121GetOtherAccountMetadata**
+# **getExplicitCounterpartyById**
 ```swift
-    open class func oBPv121GetOtherAccountMetadata(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: OBPv121GetOtherAccountMetadata200Response?, _ error: Error?) -> Void)
-```
-
-Get Other Account Metadata
-
-<p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-
-// Get Other Account Metadata
-CounterpartyMetadataAPI.oBPv121GetOtherAccountMetadata(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetOtherAccountMetadata200Response**](OBPv121GetOtherAccountMetadata200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121GetOtherAccountPrivateAlias**
-```swift
-    open class func oBPv121GetOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: OBPv121GetCounterpartyPublicAlias200Response?, _ error: Error?) -> Void)
-```
-
-Get Other Account Private Alias
-
-<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-
-// Get Other Account Private Alias
-CounterpartyMetadataAPI.oBPv121GetOtherAccountPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyCorporateLocation**
-```swift
-    open class func oBPv121UpdateCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyCorporateLocationRequest: OBPv121UpdateCounterpartyCorporateLocationRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Counterparty Corporate Location
-
-<p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyCorporateLocationRequest = OBPv1_2_1_updateCounterpartyCorporateLocation_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyCorporateLocation_request_properties(corporateLocation: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location(type: "type_example", properties: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location_properties(latitude: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), longitude: nil)))) // OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
-
-// Update Counterparty Corporate Location
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyCorporateLocationRequest: oBPv121UpdateCounterpartyCorporateLocationRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyCorporateLocationRequest** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyImageUrl**
-```swift
-    open class func oBPv121UpdateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyImageUrlRequest: OBPv121UpdateCounterpartyImageUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Counterparty Image Url
-
-<p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyImageUrlRequest = OBPv1_2_1_updateCounterpartyImageUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyImageUrl_request_properties(imageURL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyImageUrlRequest | Request body
-
-// Update Counterparty Image Url
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyImageUrlRequest: oBPv121UpdateCounterpartyImageUrlRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyImageUrlRequest** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyMoreInfo**
-```swift
-    open class func oBPv121UpdateCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyMoreInfoRequest: OBPv121UpdateCounterpartyMoreInfoRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Counterparty More Info
-
-<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyMoreInfoRequest = OBPv1_2_1_updateCounterpartyMoreInfo_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyMoreInfo_request_properties(moreInfo: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyMoreInfoRequest | Request body
-
-// Update Counterparty More Info
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyMoreInfoRequest: oBPv121UpdateCounterpartyMoreInfoRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyMoreInfoRequest** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyOpenCorporatesUrl**
-```swift
-    open class func oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: OBPv121UpdateCounterpartyOpenCorporatesUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Open Corporates Url of Counterparty
-
-<p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = OBPv1_2_1_updateCounterpartyOpenCorporatesUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyOpenCorporatesUrl_request_properties(openCorporatesURL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
-
-// Update Open Corporates Url of Counterparty
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyOpenCorporatesUrlRequest: oBPv121UpdateCounterpartyOpenCorporatesUrlRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyOpenCorporatesUrlRequest** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPhysicalLocation**
-```swift
-    open class func oBPv121UpdateCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyPhysicalLocationRequest: OBPv121UpdateCounterpartyPhysicalLocationRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Counterparty Physical Location
-
-<p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyPhysicalLocationRequest = OBPv1_2_1_updateCounterpartyPhysicalLocation_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyPhysicalLocation_request_properties(physicalLocation: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location(type: "type_example", properties: OBPv3_0_0_getBranches_200_response_properties_branches_items_properties_location_properties(latitude: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), longitude: nil)))) // OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
-
-// Update Counterparty Physical Location
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyPhysicalLocationRequest: oBPv121UpdateCounterpartyPhysicalLocationRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyPhysicalLocationRequest** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPrivateAlias**
-```swift
-    open class func oBPv121UpdateCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update Counterparty Private Alias
-
-<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121GetCounterpartyPublicAlias200Response = OBPv1_2_1_getCounterpartyPublicAlias_200_response(type: "type_example", properties: OBPv1_2_1_getCounterpartyPublicAlias_200_response_properties(alias: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-// Update Counterparty Private Alias
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyPublicAlias**
-```swift
-    open class func oBPv121UpdateCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121GetCounterpartyPublicAlias200Response: OBPv121GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update public alias of other bank account
-
-<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121GetCounterpartyPublicAlias200Response = OBPv1_2_1_getCounterpartyPublicAlias_200_response(type: "type_example", properties: OBPv1_2_1_getCounterpartyPublicAlias_200_response_properties(alias: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-// Update public alias of other bank account
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121GetCounterpartyPublicAlias200Response: oBPv121GetCounterpartyPublicAlias200Response) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121GetCounterpartyPublicAlias200Response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv121UpdateCounterpartyUrl**
-```swift
-    open class func oBPv121UpdateCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, oBPv121UpdateCounterpartyUrlRequest: OBPv121UpdateCounterpartyUrlRequest, completion: @escaping (_ data: OBPv121UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
-```
-
-Update url of other bank account
-
-<p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OBPSwift
-
-let bankid = "bankid_example" // String | The BANKID identifier
-let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let viewid = "viewid_example" // String | The VIEWID identifier
-let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
-let oBPv121UpdateCounterpartyUrlRequest = OBPv1_2_1_updateCounterpartyUrl_request(type: "type_example", properties: OBPv1_2_1_updateCounterpartyUrl_request_properties(URL: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"))) // OBPv121UpdateCounterpartyUrlRequest | Request body
-
-// Update url of other bank account
-CounterpartyMetadataAPI.oBPv121UpdateCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, oBPv121UpdateCounterpartyUrlRequest: oBPv121UpdateCounterpartyUrlRequest) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **String** | The BANKID identifier | 
- **accountid** | **String** | The ACCOUNTID identifier | 
- **viewid** | **String** | The VIEWID identifier | 
- **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
- **oBPv121UpdateCounterpartyUrlRequest** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **oBPv400GetExplicitCounterpartyById**
-```swift
-    open class func oBPv400GetExplicitCounterpartyById(bankid: String, accountid: String, viewid: String, counterpartyid: String, completion: @escaping (_ data: OBPv400GetExplicitCounterpartyById200Response?, _ error: Error?) -> Void)
+    open class func getExplicitCounterpartyById(bankid: String, accountid: String, viewid: String, counterpartyid: String, completion: @escaping (_ data: GetExplicitCounterpartyById200Response?, _ error: Error?) -> Void)
 ```
 
 Get Counterparty by Id (Explicit)
@@ -1598,7 +1022,7 @@ let viewid = "viewid_example" // String | The VIEWID identifier
 let counterpartyid = "counterpartyid_example" // String | The COUNTERPARTYID identifier
 
 // Get Counterparty by Id (Explicit)
-CounterpartyMetadataAPI.oBPv400GetExplicitCounterpartyById(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid) { (response, error) in
+CounterpartyMetadataAPI.getExplicitCounterpartyById(bankid: bankid, accountid: accountid, viewid: viewid, counterpartyid: counterpartyid) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -1621,7 +1045,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -1630,6 +1054,582 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountMetadata**
+```swift
+    open class func getOtherAccountMetadata(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: GetOtherAccountMetadata200Response?, _ error: Error?) -> Void)
+```
+
+Get Other Account Metadata
+
+<p>Get metadata of one other account.<br /> Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p> <p>Authentication via OAuth is required if the view is not public.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>URL</strong></a>: <a href=\"http://www.example.com/id-docs/123/image.png\">http://www.example.com/id-docs/123/image.png</a></p> <p><a href=\"/glossary#corporate_location\"><strong>corporate_location</strong></a>: 10</p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#display_name\"><strong>display_name</strong></a>:</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#image_url\"><strong>image_URL</strong></a>:</p> <p><a href=\"/glossary#latitude\"><strong>latitude</strong></a>: 38.8951</p> <p><a href=\"/glossary#longitude\"><strong>longitude</strong></a>: -77.0364</p> <p><a href=\"/glossary#more_info\"><strong>more_info</strong></a>: More information about this fee</p> <p><a href=\"/glossary#open_corporates_url\"><strong>open_corporates_URL</strong></a>:</p> <p><a href=\"/glossary#physical_location\"><strong>physical_location</strong></a>:</p> <p><a href=\"/glossary#private_alias\"><strong>private_alias</strong></a>:</p> <p><a href=\"/glossary#provider\"><strong>provider</strong></a>: ETHEREUM</p> <p><a href=\"/glossary#public_alias\"><strong>public_alias</strong></a>:</p> <p><a href=\"/glossary#User\"><strong>user</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+
+// Get Other Account Metadata
+CounterpartyMetadataAPI.getOtherAccountMetadata(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetOtherAccountMetadata200Response**](GetOtherAccountMetadata200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOtherAccountPrivateAlias**
+```swift
+    open class func getOtherAccountPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, completion: @escaping (_ data: GetCounterpartyPublicAlias200Response?, _ error: Error?) -> Void)
+```
+
+Get Other Account Private Alias
+
+<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+
+// Get Other Account Private Alias
+CounterpartyMetadataAPI.getOtherAccountPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyCorporateLocation**
+```swift
+    open class func updateCounterpartyCorporateLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyCorporateLocationRequest: UpdateCounterpartyCorporateLocationRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Counterparty Corporate Location
+
+<p>Update the geolocation of the counterparty's registered address</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyCorporateLocationRequest = updateCounterpartyCorporateLocation_request(corporateLocation: getBranches_200_response_branches_inner_location(latitude: 123, longitude: 123)) // UpdateCounterpartyCorporateLocationRequest | Request body
+
+// Update Counterparty Corporate Location
+CounterpartyMetadataAPI.updateCounterpartyCorporateLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyCorporateLocationRequest: updateCounterpartyCorporateLocationRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyCorporateLocationRequest** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyImageUrl**
+```swift
+    open class func updateCounterpartyImageUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyImageUrlRequest: UpdateCounterpartyImageUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Counterparty Image Url
+
+<p>Update the url that points to the logo of the counterparty</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyImageUrlRequest = updateCounterpartyImageUrl_request(imageURL: "imageURL_example") // UpdateCounterpartyImageUrlRequest | Request body
+
+// Update Counterparty Image Url
+CounterpartyMetadataAPI.updateCounterpartyImageUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyImageUrlRequest: updateCounterpartyImageUrlRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyImageUrlRequest** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyMoreInfo**
+```swift
+    open class func updateCounterpartyMoreInfo(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyMoreInfoRequest: UpdateCounterpartyMoreInfoRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Counterparty More Info
+
+<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyMoreInfoRequest = updateCounterpartyMoreInfo_request(moreInfo: "moreInfo_example") // UpdateCounterpartyMoreInfoRequest | Request body
+
+// Update Counterparty More Info
+CounterpartyMetadataAPI.updateCounterpartyMoreInfo(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyMoreInfoRequest: updateCounterpartyMoreInfoRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyMoreInfoRequest** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyOpenCorporatesUrl**
+```swift
+    open class func updateCounterpartyOpenCorporatesUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyOpenCorporatesUrlRequest: UpdateCounterpartyOpenCorporatesUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Open Corporates Url of Counterparty
+
+<p>Update open corporate url of other bank account</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyOpenCorporatesUrlRequest = updateCounterpartyOpenCorporatesUrl_request(openCorporatesURL: "openCorporatesURL_example") // UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+
+// Update Open Corporates Url of Counterparty
+CounterpartyMetadataAPI.updateCounterpartyOpenCorporatesUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyOpenCorporatesUrlRequest: updateCounterpartyOpenCorporatesUrlRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyOpenCorporatesUrlRequest** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPhysicalLocation**
+```swift
+    open class func updateCounterpartyPhysicalLocation(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyPhysicalLocationRequest: UpdateCounterpartyPhysicalLocationRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Counterparty Physical Location
+
+<p>Update geocoordinates of the counterparty's main location</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyPhysicalLocationRequest = updateCounterpartyPhysicalLocation_request(physicalLocation: getBranches_200_response_branches_inner_location(latitude: 123, longitude: 123)) // UpdateCounterpartyPhysicalLocationRequest | Request body
+
+// Update Counterparty Physical Location
+CounterpartyMetadataAPI.updateCounterpartyPhysicalLocation(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyPhysicalLocationRequest: updateCounterpartyPhysicalLocationRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyPhysicalLocationRequest** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPrivateAlias**
+```swift
+    open class func updateCounterpartyPrivateAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update Counterparty Private Alias
+
+<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let getCounterpartyPublicAlias200Response = getCounterpartyPublicAlias_200_response(alias: "alias_example") // GetCounterpartyPublicAlias200Response | Request body
+
+// Update Counterparty Private Alias
+CounterpartyMetadataAPI.updateCounterpartyPrivateAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyPublicAlias**
+```swift
+    open class func updateCounterpartyPublicAlias(bankid: String, accountid: String, viewid: String, otheraccountid: String, getCounterpartyPublicAlias200Response: GetCounterpartyPublicAlias200Response, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update public alias of other bank account
+
+<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p> <p>User Authentication is Optional. The User need not be logged in.<br /> Authentication is required if the view is not public.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let getCounterpartyPublicAlias200Response = getCounterpartyPublicAlias_200_response(alias: "alias_example") // GetCounterpartyPublicAlias200Response | Request body
+
+// Update public alias of other bank account
+CounterpartyMetadataAPI.updateCounterpartyPublicAlias(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, getCounterpartyPublicAlias200Response: getCounterpartyPublicAlias200Response) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **getCounterpartyPublicAlias200Response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateCounterpartyUrl**
+```swift
+    open class func updateCounterpartyUrl(bankid: String, accountid: String, viewid: String, otheraccountid: String, updateCounterpartyUrlRequest: UpdateCounterpartyUrlRequest, completion: @escaping (_ data: UpdateTransactionNarrative200Response?, _ error: Error?) -> Void)
+```
+
+Update url of other bank account
+
+<p>A url which represents the counterparty (home page url etc.)</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Account.account_id\">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#other_account_id\">OTHER_ACCOUNT_ID</a>:</p> <p><a href=\"/glossary#this_view_id\">VIEW_ID</a>: owner</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OBPSwift
+
+let bankid = "bankid_example" // String | The BANKID identifier
+let accountid = "accountid_example" // String | The ACCOUNTID identifier
+let viewid = "viewid_example" // String | The VIEWID identifier
+let otheraccountid = "otheraccountid_example" // String | The OTHERACCOUNTID identifier
+let updateCounterpartyUrlRequest = updateCounterpartyUrl_request(URL: "URL_example") // UpdateCounterpartyUrlRequest | Request body
+
+// Update url of other bank account
+CounterpartyMetadataAPI.updateCounterpartyUrl(bankid: bankid, accountid: accountid, viewid: viewid, otheraccountid: otheraccountid, updateCounterpartyUrlRequest: updateCounterpartyUrlRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **String** | The BANKID identifier | 
+ **accountid** | **String** | The ACCOUNTID identifier | 
+ **viewid** | **String** | The VIEWID identifier | 
+ **otheraccountid** | **String** | The OTHERACCOUNTID identifier | 
+ **updateCounterpartyUrlRequest** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md) | Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

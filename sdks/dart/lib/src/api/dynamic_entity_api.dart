@@ -8,10 +8,10 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:obp_dart/src/model/obpv600_cleanup_orphaned_dynamic_entity_records200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_available_personal_dynamic_entities200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_dynamic_entity_diagnostics200_response.dart';
-import 'package:obp_dart/src/model/obpv600_get_reference_types200_response.dart';
+import 'package:obp_dart/src/model/cleanup_orphaned_dynamic_entity_records200_response.dart';
+import 'package:obp_dart/src/model/get_available_personal_dynamic_entities200_response.dart';
+import 'package:obp_dart/src/model/get_dynamic_entity_diagnostics200_response.dart';
+import 'package:obp_dart/src/model/get_reference_types200_response.dart';
 
 class DynamicEntityApi {
 
@@ -32,9 +32,9 @@ class DynamicEntityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600CleanupOrphanedDynamicEntityRecords200Response] as data
+  /// Returns a [Future] containing a [Response] with a [CleanupOrphanedDynamicEntityRecords200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600CleanupOrphanedDynamicEntityRecords200Response>> oBPv600CleanupOrphanedDynamicEntityRecords({ 
+  Future<Response<CleanupOrphanedDynamicEntityRecords200Response>> cleanupOrphanedDynamicEntityRecords({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -61,7 +61,7 @@ class DynamicEntityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -78,14 +78,14 @@ class DynamicEntityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600CleanupOrphanedDynamicEntityRecords200Response? _responseData;
+    CleanupOrphanedDynamicEntityRecords200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600CleanupOrphanedDynamicEntityRecords200Response),
-      ) as OBPv600CleanupOrphanedDynamicEntityRecords200Response;
+        specifiedType: const FullType(CleanupOrphanedDynamicEntityRecords200Response),
+      ) as CleanupOrphanedDynamicEntityRecords200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -97,7 +97,7 @@ class DynamicEntityApi {
       );
     }
 
-    return Response<OBPv600CleanupOrphanedDynamicEntityRecords200Response>(
+    return Response<CleanupOrphanedDynamicEntityRecords200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,9 +120,9 @@ class DynamicEntityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAvailablePersonalDynamicEntities200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAvailablePersonalDynamicEntities200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAvailablePersonalDynamicEntities200Response>> oBPv600GetAvailablePersonalDynamicEntities({ 
+  Future<Response<GetAvailablePersonalDynamicEntities200Response>> getAvailablePersonalDynamicEntities({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -149,7 +149,7 @@ class DynamicEntityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -166,14 +166,14 @@ class DynamicEntityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAvailablePersonalDynamicEntities200Response? _responseData;
+    GetAvailablePersonalDynamicEntities200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAvailablePersonalDynamicEntities200Response),
-      ) as OBPv600GetAvailablePersonalDynamicEntities200Response;
+        specifiedType: const FullType(GetAvailablePersonalDynamicEntities200Response),
+      ) as GetAvailablePersonalDynamicEntities200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -185,7 +185,7 @@ class DynamicEntityApi {
       );
     }
 
-    return Response<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+    return Response<GetAvailablePersonalDynamicEntities200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -208,9 +208,9 @@ class DynamicEntityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetDynamicEntityDiagnostics200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetDynamicEntityDiagnostics200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetDynamicEntityDiagnostics200Response>> oBPv600GetDynamicEntityDiagnostics({ 
+  Future<Response<GetDynamicEntityDiagnostics200Response>> getDynamicEntityDiagnostics({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -237,7 +237,7 @@ class DynamicEntityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -254,14 +254,14 @@ class DynamicEntityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetDynamicEntityDiagnostics200Response? _responseData;
+    GetDynamicEntityDiagnostics200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetDynamicEntityDiagnostics200Response),
-      ) as OBPv600GetDynamicEntityDiagnostics200Response;
+        specifiedType: const FullType(GetDynamicEntityDiagnostics200Response),
+      ) as GetDynamicEntityDiagnostics200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -273,7 +273,7 @@ class DynamicEntityApi {
       );
     }
 
-    return Response<OBPv600GetDynamicEntityDiagnostics200Response>(
+    return Response<GetDynamicEntityDiagnostics200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -296,9 +296,9 @@ class DynamicEntityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetReferenceTypes200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetReferenceTypes200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetReferenceTypes200Response>> oBPv600GetReferenceTypes({ 
+  Future<Response<GetReferenceTypes200Response>> getReferenceTypes({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -325,7 +325,7 @@ class DynamicEntityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -342,14 +342,14 @@ class DynamicEntityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetReferenceTypes200Response? _responseData;
+    GetReferenceTypes200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetReferenceTypes200Response),
-      ) as OBPv600GetReferenceTypes200Response;
+        specifiedType: const FullType(GetReferenceTypes200Response),
+      ) as GetReferenceTypes200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -361,7 +361,7 @@ class DynamicEntityApi {
       );
     }
 
-    return Response<OBPv600GetReferenceTypes200Response>(
+    return Response<GetReferenceTypes200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

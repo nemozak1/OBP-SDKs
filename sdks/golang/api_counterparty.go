@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,28 +24,28 @@ import (
 // CounterpartyAPIService CounterpartyAPI service
 type CounterpartyAPIService service
 
-type ApiOBPv121AddCounterpartyCorporateLocationRequest struct {
+type ApiAddCounterpartyCorporateLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyCorporateLocationRequest *OBPv121UpdateCounterpartyCorporateLocationRequest
+	updateCounterpartyCorporateLocationRequest *UpdateCounterpartyCorporateLocationRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyCorporateLocationRequest) OBPv121UpdateCounterpartyCorporateLocationRequest(oBPv121UpdateCounterpartyCorporateLocationRequest OBPv121UpdateCounterpartyCorporateLocationRequest) ApiOBPv121AddCounterpartyCorporateLocationRequest {
-	r.oBPv121UpdateCounterpartyCorporateLocationRequest = &oBPv121UpdateCounterpartyCorporateLocationRequest
+func (r ApiAddCounterpartyCorporateLocationRequest) UpdateCounterpartyCorporateLocationRequest(updateCounterpartyCorporateLocationRequest UpdateCounterpartyCorporateLocationRequest) ApiAddCounterpartyCorporateLocationRequest {
+	r.updateCounterpartyCorporateLocationRequest = &updateCounterpartyCorporateLocationRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyCorporateLocationRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyCorporateLocationExecute(r)
+func (r ApiAddCounterpartyCorporateLocationRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyCorporateLocationExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyCorporateLocation Add Corporate Location to Counterparty
+AddCounterpartyCorporateLocation Add Corporate Location to Counterparty
 
 <p>Add the geolocation of the counterparty's registered address</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -67,10 +67,10 @@ OBPv121AddCounterpartyCorporateLocation Add Corporate Location to Counterparty
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyCorporateLocationRequest
+ @return ApiAddCounterpartyCorporateLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyCorporateLocationRequest {
-	return ApiOBPv121AddCounterpartyCorporateLocationRequest{
+func (a *CounterpartyAPIService) AddCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyCorporateLocationRequest {
+	return ApiAddCounterpartyCorporateLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -81,16 +81,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocation(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocationExecute(r ApiOBPv121AddCounterpartyCorporateLocationRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyCorporateLocationExecute(r ApiAddCounterpartyCorporateLocationRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyCorporateLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyCorporateLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -104,8 +104,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocationExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyCorporateLocationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyCorporateLocationRequest is required and must be specified")
+	if r.updateCounterpartyCorporateLocationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyCorporateLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -126,7 +126,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocationExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyCorporateLocationRequest
+	localVarPostBody = r.updateCounterpartyCorporateLocationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -151,7 +151,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocationExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -192,28 +192,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyCorporateLocationExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyImageUrlRequest struct {
+type ApiAddCounterpartyImageUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyImageUrlRequest *OBPv121UpdateCounterpartyImageUrlRequest
+	updateCounterpartyImageUrlRequest *UpdateCounterpartyImageUrlRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyImageUrlRequest) OBPv121UpdateCounterpartyImageUrlRequest(oBPv121UpdateCounterpartyImageUrlRequest OBPv121UpdateCounterpartyImageUrlRequest) ApiOBPv121AddCounterpartyImageUrlRequest {
-	r.oBPv121UpdateCounterpartyImageUrlRequest = &oBPv121UpdateCounterpartyImageUrlRequest
+func (r ApiAddCounterpartyImageUrlRequest) UpdateCounterpartyImageUrlRequest(updateCounterpartyImageUrlRequest UpdateCounterpartyImageUrlRequest) ApiAddCounterpartyImageUrlRequest {
+	r.updateCounterpartyImageUrlRequest = &updateCounterpartyImageUrlRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyImageUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyImageUrlExecute(r)
+func (r ApiAddCounterpartyImageUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyImageUrlExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyImageUrl Add image url to other bank account
+AddCounterpartyImageUrl Add image url to other bank account
 
 <p>Add a url that points to the logo of the counterparty</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -233,10 +233,10 @@ OBPv121AddCounterpartyImageUrl Add image url to other bank account
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyImageUrlRequest
+ @return ApiAddCounterpartyImageUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyImageUrlRequest {
-	return ApiOBPv121AddCounterpartyImageUrlRequest{
+func (a *CounterpartyAPIService) AddCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyImageUrlRequest {
+	return ApiAddCounterpartyImageUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -247,16 +247,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrl(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrlExecute(r ApiOBPv121AddCounterpartyImageUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyImageUrlExecute(r ApiAddCounterpartyImageUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyImageUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyImageUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -270,8 +270,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrlExecute(r ApiOBPv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyImageUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyImageUrlRequest is required and must be specified")
+	if r.updateCounterpartyImageUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyImageUrlRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -292,7 +292,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrlExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyImageUrlRequest
+	localVarPostBody = r.updateCounterpartyImageUrlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -317,7 +317,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrlExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -358,28 +358,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyImageUrlExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyMoreInfoRequest struct {
+type ApiAddCounterpartyMoreInfoRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyMoreInfoRequest *OBPv121UpdateCounterpartyMoreInfoRequest
+	updateCounterpartyMoreInfoRequest *UpdateCounterpartyMoreInfoRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyMoreInfoRequest) OBPv121UpdateCounterpartyMoreInfoRequest(oBPv121UpdateCounterpartyMoreInfoRequest OBPv121UpdateCounterpartyMoreInfoRequest) ApiOBPv121AddCounterpartyMoreInfoRequest {
-	r.oBPv121UpdateCounterpartyMoreInfoRequest = &oBPv121UpdateCounterpartyMoreInfoRequest
+func (r ApiAddCounterpartyMoreInfoRequest) UpdateCounterpartyMoreInfoRequest(updateCounterpartyMoreInfoRequest UpdateCounterpartyMoreInfoRequest) ApiAddCounterpartyMoreInfoRequest {
+	r.updateCounterpartyMoreInfoRequest = &updateCounterpartyMoreInfoRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyMoreInfoRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyMoreInfoExecute(r)
+func (r ApiAddCounterpartyMoreInfoRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyMoreInfoExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyMoreInfo Add Counterparty More Info
+AddCounterpartyMoreInfo Add Counterparty More Info
 
 <p>Add a description of the counter party from the perpestive of the account e.g. My dentist</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -399,10 +399,10 @@ OBPv121AddCounterpartyMoreInfo Add Counterparty More Info
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyMoreInfoRequest
+ @return ApiAddCounterpartyMoreInfoRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyMoreInfoRequest {
-	return ApiOBPv121AddCounterpartyMoreInfoRequest{
+func (a *CounterpartyAPIService) AddCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyMoreInfoRequest {
+	return ApiAddCounterpartyMoreInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -413,16 +413,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfo(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfoExecute(r ApiOBPv121AddCounterpartyMoreInfoRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyMoreInfoExecute(r ApiAddCounterpartyMoreInfoRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyMoreInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyMoreInfo")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -436,8 +436,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfoExecute(r ApiOBPv
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyMoreInfoRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyMoreInfoRequest is required and must be specified")
+	if r.updateCounterpartyMoreInfoRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyMoreInfoRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -458,7 +458,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfoExecute(r ApiOBPv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyMoreInfoRequest
+	localVarPostBody = r.updateCounterpartyMoreInfoRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -483,7 +483,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfoExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -524,28 +524,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyMoreInfoExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest struct {
+type ApiAddCounterpartyOpenCorporatesUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyOpenCorporatesUrlRequest *OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+	updateCounterpartyOpenCorporatesUrlRequest *UpdateCounterpartyOpenCorporatesUrlRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest) OBPv121UpdateCounterpartyOpenCorporatesUrlRequest(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest OBPv121UpdateCounterpartyOpenCorporatesUrlRequest) ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest {
-	r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = &oBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+func (r ApiAddCounterpartyOpenCorporatesUrlRequest) UpdateCounterpartyOpenCorporatesUrlRequest(updateCounterpartyOpenCorporatesUrlRequest UpdateCounterpartyOpenCorporatesUrlRequest) ApiAddCounterpartyOpenCorporatesUrlRequest {
+	r.updateCounterpartyOpenCorporatesUrlRequest = &updateCounterpartyOpenCorporatesUrlRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyOpenCorporatesUrlExecute(r)
+func (r ApiAddCounterpartyOpenCorporatesUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyOpenCorporatesUrlExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyOpenCorporatesUrl Add Open Corporates URL to Counterparty
+AddCounterpartyOpenCorporatesUrl Add Open Corporates URL to Counterparty
 
 <p>Add open corporates url to other bank account</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -565,10 +565,10 @@ OBPv121AddCounterpartyOpenCorporatesUrl Add Open Corporates URL to Counterparty
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest
+ @return ApiAddCounterpartyOpenCorporatesUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest {
-	return ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest{
+func (a *CounterpartyAPIService) AddCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyOpenCorporatesUrlRequest {
+	return ApiAddCounterpartyOpenCorporatesUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -579,16 +579,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrl(ctx con
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrlExecute(r ApiOBPv121AddCounterpartyOpenCorporatesUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyOpenCorporatesUrlExecute(r ApiAddCounterpartyOpenCorporatesUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyOpenCorporatesUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyOpenCorporatesUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -602,8 +602,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrlExecute(
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyOpenCorporatesUrlRequest is required and must be specified")
+	if r.updateCounterpartyOpenCorporatesUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyOpenCorporatesUrlRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -624,7 +624,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrlExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest
+	localVarPostBody = r.updateCounterpartyOpenCorporatesUrlRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -662,28 +662,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyOpenCorporatesUrlExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyPhysicalLocationRequest struct {
+type ApiAddCounterpartyPhysicalLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyPhysicalLocationRequest *OBPv121UpdateCounterpartyPhysicalLocationRequest
+	updateCounterpartyPhysicalLocationRequest *UpdateCounterpartyPhysicalLocationRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyPhysicalLocationRequest) OBPv121UpdateCounterpartyPhysicalLocationRequest(oBPv121UpdateCounterpartyPhysicalLocationRequest OBPv121UpdateCounterpartyPhysicalLocationRequest) ApiOBPv121AddCounterpartyPhysicalLocationRequest {
-	r.oBPv121UpdateCounterpartyPhysicalLocationRequest = &oBPv121UpdateCounterpartyPhysicalLocationRequest
+func (r ApiAddCounterpartyPhysicalLocationRequest) UpdateCounterpartyPhysicalLocationRequest(updateCounterpartyPhysicalLocationRequest UpdateCounterpartyPhysicalLocationRequest) ApiAddCounterpartyPhysicalLocationRequest {
+	r.updateCounterpartyPhysicalLocationRequest = &updateCounterpartyPhysicalLocationRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyPhysicalLocationRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyPhysicalLocationExecute(r)
+func (r ApiAddCounterpartyPhysicalLocationRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyPhysicalLocationExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyPhysicalLocation Add physical location to other bank account
+AddCounterpartyPhysicalLocation Add physical location to other bank account
 
 <p>Add geocoordinates of the counterparty's main location</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -705,10 +705,10 @@ OBPv121AddCounterpartyPhysicalLocation Add physical location to other bank accou
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyPhysicalLocationRequest
+ @return ApiAddCounterpartyPhysicalLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyPhysicalLocationRequest {
-	return ApiOBPv121AddCounterpartyPhysicalLocationRequest{
+func (a *CounterpartyAPIService) AddCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyPhysicalLocationRequest {
+	return ApiAddCounterpartyPhysicalLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -719,16 +719,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocation(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocationExecute(r ApiOBPv121AddCounterpartyPhysicalLocationRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyPhysicalLocationExecute(r ApiAddCounterpartyPhysicalLocationRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyPhysicalLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyPhysicalLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -742,8 +742,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocationExecute(r
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyPhysicalLocationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyPhysicalLocationRequest is required and must be specified")
+	if r.updateCounterpartyPhysicalLocationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyPhysicalLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -764,7 +764,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocationExecute(r
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyPhysicalLocationRequest
+	localVarPostBody = r.updateCounterpartyPhysicalLocationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -789,7 +789,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocationExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -830,28 +830,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPhysicalLocationExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyPublicAliasRequest struct {
+type ApiAddCounterpartyPublicAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121GetCounterpartyPublicAlias200Response *OBPv121GetCounterpartyPublicAlias200Response
+	getCounterpartyPublicAlias200Response *GetCounterpartyPublicAlias200Response
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyPublicAliasRequest) OBPv121GetCounterpartyPublicAlias200Response(oBPv121GetCounterpartyPublicAlias200Response OBPv121GetCounterpartyPublicAlias200Response) ApiOBPv121AddCounterpartyPublicAliasRequest {
-	r.oBPv121GetCounterpartyPublicAlias200Response = &oBPv121GetCounterpartyPublicAlias200Response
+func (r ApiAddCounterpartyPublicAliasRequest) GetCounterpartyPublicAlias200Response(getCounterpartyPublicAlias200Response GetCounterpartyPublicAlias200Response) ApiAddCounterpartyPublicAliasRequest {
+	r.getCounterpartyPublicAlias200Response = &getCounterpartyPublicAlias200Response
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyPublicAliasRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyPublicAliasExecute(r)
+func (r ApiAddCounterpartyPublicAliasRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyPublicAliasExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyPublicAlias Add public alias to other bank account
+AddCounterpartyPublicAlias Add public alias to other bank account
 
 <p>Creates the public alias for the other account OTHER_ACCOUNT_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -875,10 +875,10 @@ the public alias was deleted.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyPublicAliasRequest
+ @return ApiAddCounterpartyPublicAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyPublicAliasRequest {
-	return ApiOBPv121AddCounterpartyPublicAliasRequest{
+func (a *CounterpartyAPIService) AddCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyPublicAliasRequest {
+	return ApiAddCounterpartyPublicAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -889,16 +889,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAlias(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAliasExecute(r ApiOBPv121AddCounterpartyPublicAliasRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyPublicAliasExecute(r ApiAddCounterpartyPublicAliasRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyPublicAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyPublicAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -912,8 +912,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAliasExecute(r ApiO
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121GetCounterpartyPublicAlias200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetCounterpartyPublicAlias200Response is required and must be specified")
+	if r.getCounterpartyPublicAlias200Response == nil {
+		return localVarReturnValue, nil, reportError("getCounterpartyPublicAlias200Response is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -934,7 +934,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAliasExecute(r ApiO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121GetCounterpartyPublicAlias200Response
+	localVarPostBody = r.getCounterpartyPublicAlias200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -959,7 +959,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAliasExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1000,28 +1000,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyPublicAliasExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddCounterpartyUrlRequest struct {
+type ApiAddCounterpartyUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121UpdateCounterpartyUrlRequest *OBPv121UpdateCounterpartyUrlRequest
+	updateCounterpartyUrlRequest *UpdateCounterpartyUrlRequest
 }
 
 // Request body
-func (r ApiOBPv121AddCounterpartyUrlRequest) OBPv121UpdateCounterpartyUrlRequest(oBPv121UpdateCounterpartyUrlRequest OBPv121UpdateCounterpartyUrlRequest) ApiOBPv121AddCounterpartyUrlRequest {
-	r.oBPv121UpdateCounterpartyUrlRequest = &oBPv121UpdateCounterpartyUrlRequest
+func (r ApiAddCounterpartyUrlRequest) UpdateCounterpartyUrlRequest(updateCounterpartyUrlRequest UpdateCounterpartyUrlRequest) ApiAddCounterpartyUrlRequest {
+	r.updateCounterpartyUrlRequest = &updateCounterpartyUrlRequest
 	return r
 }
 
-func (r ApiOBPv121AddCounterpartyUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddCounterpartyUrlExecute(r)
+func (r ApiAddCounterpartyUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddCounterpartyUrlExecute(r)
 }
 
 /*
-OBPv121AddCounterpartyUrl Add url to other bank account
+AddCounterpartyUrl Add url to other bank account
 
 <p>A url which represents the counterparty (home page url etc.)</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1041,10 +1041,10 @@ OBPv121AddCounterpartyUrl Add url to other bank account
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddCounterpartyUrlRequest
+ @return ApiAddCounterpartyUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddCounterpartyUrlRequest {
-	return ApiOBPv121AddCounterpartyUrlRequest{
+func (a *CounterpartyAPIService) AddCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddCounterpartyUrlRequest {
+	return ApiAddCounterpartyUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1055,16 +1055,16 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrl(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrlExecute(r ApiOBPv121AddCounterpartyUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddCounterpartyUrlExecute(r ApiAddCounterpartyUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddCounterpartyUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddCounterpartyUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1078,8 +1078,8 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrlExecute(r ApiOBPv121Ad
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyUrlRequest is required and must be specified")
+	if r.updateCounterpartyUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyUrlRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1100,7 +1100,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrlExecute(r ApiOBPv121Ad
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyUrlRequest
+	localVarPostBody = r.updateCounterpartyUrlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1125,7 +1125,7 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrlExecute(r ApiOBPv121Ad
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1166,28 +1166,28 @@ func (a *CounterpartyAPIService) OBPv121AddCounterpartyUrlExecute(r ApiOBPv121Ad
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121AddOtherAccountPrivateAliasRequest struct {
+type ApiAddOtherAccountPrivateAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
 	otheraccountid string
-	oBPv121GetCounterpartyPublicAlias200Response *OBPv121GetCounterpartyPublicAlias200Response
+	getCounterpartyPublicAlias200Response *GetCounterpartyPublicAlias200Response
 }
 
 // Request body
-func (r ApiOBPv121AddOtherAccountPrivateAliasRequest) OBPv121GetCounterpartyPublicAlias200Response(oBPv121GetCounterpartyPublicAlias200Response OBPv121GetCounterpartyPublicAlias200Response) ApiOBPv121AddOtherAccountPrivateAliasRequest {
-	r.oBPv121GetCounterpartyPublicAlias200Response = &oBPv121GetCounterpartyPublicAlias200Response
+func (r ApiAddOtherAccountPrivateAliasRequest) GetCounterpartyPublicAlias200Response(getCounterpartyPublicAlias200Response GetCounterpartyPublicAlias200Response) ApiAddOtherAccountPrivateAliasRequest {
+	r.getCounterpartyPublicAlias200Response = &getCounterpartyPublicAlias200Response
 	return r
 }
 
-func (r ApiOBPv121AddOtherAccountPrivateAliasRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121AddOtherAccountPrivateAliasExecute(r)
+func (r ApiAddOtherAccountPrivateAliasRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.AddOtherAccountPrivateAliasExecute(r)
 }
 
 /*
-OBPv121AddOtherAccountPrivateAlias Create Other Account Private Alias
+AddOtherAccountPrivateAlias Create Other Account Private Alias
 
 <p>Creates a private alias for the other account OTHER_ACCOUNT_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -1208,10 +1208,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121AddOtherAccountPrivateAliasRequest
+ @return ApiAddOtherAccountPrivateAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121AddOtherAccountPrivateAliasRequest {
-	return ApiOBPv121AddOtherAccountPrivateAliasRequest{
+func (a *CounterpartyAPIService) AddOtherAccountPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiAddOtherAccountPrivateAliasRequest {
+	return ApiAddOtherAccountPrivateAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1222,16 +1222,16 @@ func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAlias(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAliasExecute(r ApiOBPv121AddOtherAccountPrivateAliasRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) AddOtherAccountPrivateAliasExecute(r ApiAddOtherAccountPrivateAliasRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121AddOtherAccountPrivateAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.AddOtherAccountPrivateAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1245,8 +1245,8 @@ func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAliasExecute(r Api
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv121GetCounterpartyPublicAlias200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetCounterpartyPublicAlias200Response is required and must be specified")
+	if r.getCounterpartyPublicAlias200Response == nil {
+		return localVarReturnValue, nil, reportError("getCounterpartyPublicAlias200Response is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1267,7 +1267,7 @@ func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAliasExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv121GetCounterpartyPublicAlias200Response
+	localVarPostBody = r.getCounterpartyPublicAlias200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1292,7 +1292,7 @@ func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAliasExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1333,7 +1333,429 @@ func (a *CounterpartyAPIService) OBPv121AddOtherAccountPrivateAliasExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyCorporateLocationRequest struct {
+type ApiCreateCounterpartyRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	createCounterpartyForAnyAccountRequest *CreateCounterpartyForAnyAccountRequest
+}
+
+// Request body
+func (r ApiCreateCounterpartyRequest) CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest CreateCounterpartyForAnyAccountRequest) ApiCreateCounterpartyRequest {
+	r.createCounterpartyForAnyAccountRequest = &createCounterpartyForAnyAccountRequest
+	return r
+}
+
+func (r ApiCreateCounterpartyRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.CreateCounterpartyExecute(r)
+}
+
+/*
+CreateCounterparty Create Counterparty (Explicit)
+
+<p>This endpoint creates an (Explicit) Counterparty for an Account.</p>
+<p>For an introduction to Counterparties in OBP see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiCreateCounterpartyRequest
+*/
+func (a *CounterpartyAPIService) CreateCounterparty(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateCounterpartyRequest {
+	return ApiCreateCounterpartyRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetExplicitCounterpartyById200Response
+func (a *CounterpartyAPIService) CreateCounterpartyExecute(r ApiCreateCounterpartyRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.CreateCounterparty")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyForAnyAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyForAnyAccountRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyForAnyAccountRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateCounterpartyForAnyAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	createCounterpartyForAnyAccountRequest *CreateCounterpartyForAnyAccountRequest
+}
+
+// Request body
+func (r ApiCreateCounterpartyForAnyAccountRequest) CreateCounterpartyForAnyAccountRequest(createCounterpartyForAnyAccountRequest CreateCounterpartyForAnyAccountRequest) ApiCreateCounterpartyForAnyAccountRequest {
+	r.createCounterpartyForAnyAccountRequest = &createCounterpartyForAnyAccountRequest
+	return r
+}
+
+func (r ApiCreateCounterpartyForAnyAccountRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.CreateCounterpartyForAnyAccountExecute(r)
+}
+
+/*
+CreateCounterpartyForAnyAccount Create Counterparty for any account (Explicit)
+
+<p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p>
+<p>For an introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiCreateCounterpartyForAnyAccountRequest
+*/
+func (a *CounterpartyAPIService) CreateCounterpartyForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiCreateCounterpartyForAnyAccountRequest {
+	return ApiCreateCounterpartyForAnyAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetExplicitCounterpartyById200Response
+func (a *CounterpartyAPIService) CreateCounterpartyForAnyAccountExecute(r ApiCreateCounterpartyForAnyAccountRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.CreateCounterpartyForAnyAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createCounterpartyForAnyAccountRequest == nil {
+		return localVarReturnValue, nil, reportError("createCounterpartyForAnyAccountRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createCounterpartyForAnyAccountRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteCounterpartyCorporateLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -1342,12 +1764,12 @@ type ApiOBPv121DeleteCounterpartyCorporateLocationRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyCorporateLocationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyCorporateLocationExecute(r)
+func (r ApiDeleteCounterpartyCorporateLocationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyCorporateLocationExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyCorporateLocation Delete Counterparty Corporate Location
+DeleteCounterpartyCorporateLocation Delete Counterparty Corporate Location
 
 <p>Delete corporate location of other bank account. Delete the geolocation of the counterparty's registered address</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1364,10 +1786,10 @@ OBPv121DeleteCounterpartyCorporateLocation Delete Counterparty Corporate Locatio
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyCorporateLocationRequest
+ @return ApiDeleteCounterpartyCorporateLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyCorporateLocationRequest {
-	return ApiOBPv121DeleteCounterpartyCorporateLocationRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyCorporateLocationRequest {
+	return ApiDeleteCounterpartyCorporateLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1378,14 +1800,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyCorporateLocation(ctx 
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyCorporateLocationExecute(r ApiOBPv121DeleteCounterpartyCorporateLocationRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyCorporateLocationExecute(r ApiDeleteCounterpartyCorporateLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyCorporateLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyCorporateLocation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1441,7 +1863,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyCorporateLocationExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1473,7 +1895,148 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyCorporateLocationExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyImageUrlRequest struct {
+type ApiDeleteCounterpartyForAnyAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterpartyid string
+}
+
+func (r ApiDeleteCounterpartyForAnyAccountRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyForAnyAccountExecute(r)
+}
+
+/*
+DeleteCounterpartyForAnyAccount Delete Counterparty for any account (Explicit)
+
+<p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiDeleteCounterpartyForAnyAccountRequest
+*/
+func (a *CounterpartyAPIService) DeleteCounterpartyForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiDeleteCounterpartyForAnyAccountRequest {
+	return ApiDeleteCounterpartyForAnyAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+func (a *CounterpartyAPIService) DeleteCounterpartyForAnyAccountExecute(r ApiDeleteCounterpartyForAnyAccountRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyForAnyAccount")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiDeleteCounterpartyImageUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -1482,12 +2045,12 @@ type ApiOBPv121DeleteCounterpartyImageUrlRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyImageUrlRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyImageUrlExecute(r)
+func (r ApiDeleteCounterpartyImageUrlRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyImageUrlExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyImageUrl Delete Counterparty Image URL
+DeleteCounterpartyImageUrl Delete Counterparty Image URL
 
 <p>Delete image url of other bank account</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -1504,10 +2067,10 @@ OBPv121DeleteCounterpartyImageUrl Delete Counterparty Image URL
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyImageUrlRequest
+ @return ApiDeleteCounterpartyImageUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyImageUrlRequest {
-	return ApiOBPv121DeleteCounterpartyImageUrlRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyImageUrlRequest {
+	return ApiDeleteCounterpartyImageUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1518,14 +2081,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyImageUrl(ctx context.C
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyImageUrlExecute(r ApiOBPv121DeleteCounterpartyImageUrlRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyImageUrlExecute(r ApiDeleteCounterpartyImageUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyImageUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyImageUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1585,7 +2148,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyImageUrlExecute(r ApiO
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyMoreInfoRequest struct {
+type ApiDeleteCounterpartyMoreInfoRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -1594,12 +2157,12 @@ type ApiOBPv121DeleteCounterpartyMoreInfoRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyMoreInfoRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyMoreInfoExecute(r)
+func (r ApiDeleteCounterpartyMoreInfoRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyMoreInfoExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyMoreInfo Delete more info of other bank account
+DeleteCounterpartyMoreInfo Delete more info of other bank account
 
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
@@ -1615,10 +2178,10 @@ OBPv121DeleteCounterpartyMoreInfo Delete more info of other bank account
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyMoreInfoRequest
+ @return ApiDeleteCounterpartyMoreInfoRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyMoreInfoRequest {
-	return ApiOBPv121DeleteCounterpartyMoreInfoRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyMoreInfoRequest {
+	return ApiDeleteCounterpartyMoreInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1629,14 +2192,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyMoreInfo(ctx context.C
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyMoreInfoExecute(r ApiOBPv121DeleteCounterpartyMoreInfoRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyMoreInfoExecute(r ApiDeleteCounterpartyMoreInfoRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyMoreInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyMoreInfo")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1692,7 +2255,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyMoreInfoExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1724,7 +2287,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyMoreInfoExecute(r ApiO
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest struct {
+type ApiDeleteCounterpartyOpenCorporatesUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -1733,12 +2296,12 @@ type ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyOpenCorporatesUrlExecute(r)
+func (r ApiDeleteCounterpartyOpenCorporatesUrlRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyOpenCorporatesUrlExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyOpenCorporatesUrl Delete Counterparty Open Corporates URL
+DeleteCounterpartyOpenCorporatesUrl Delete Counterparty Open Corporates URL
 
 <p>Delete open corporate url of other bank account</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1755,10 +2318,10 @@ OBPv121DeleteCounterpartyOpenCorporatesUrl Delete Counterparty Open Corporates U
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest
+ @return ApiDeleteCounterpartyOpenCorporatesUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest {
-	return ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyOpenCorporatesUrlRequest {
+	return ApiDeleteCounterpartyOpenCorporatesUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1769,14 +2332,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyOpenCorporatesUrl(ctx 
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyOpenCorporatesUrlExecute(r ApiOBPv121DeleteCounterpartyOpenCorporatesUrlRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyOpenCorporatesUrlExecute(r ApiDeleteCounterpartyOpenCorporatesUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyOpenCorporatesUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyOpenCorporatesUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1832,7 +2395,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyOpenCorporatesUrlExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -1864,7 +2427,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyOpenCorporatesUrlExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyPhysicalLocationRequest struct {
+type ApiDeleteCounterpartyPhysicalLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -1873,12 +2436,12 @@ type ApiOBPv121DeleteCounterpartyPhysicalLocationRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyPhysicalLocationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyPhysicalLocationExecute(r)
+func (r ApiDeleteCounterpartyPhysicalLocationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyPhysicalLocationExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyPhysicalLocation Delete Counterparty Physical Location
+DeleteCounterpartyPhysicalLocation Delete Counterparty Physical Location
 
 <p>Delete physical location of other bank account</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -1895,10 +2458,10 @@ OBPv121DeleteCounterpartyPhysicalLocation Delete Counterparty Physical Location
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyPhysicalLocationRequest
+ @return ApiDeleteCounterpartyPhysicalLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyPhysicalLocationRequest {
-	return ApiOBPv121DeleteCounterpartyPhysicalLocationRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyPhysicalLocationRequest {
+	return ApiDeleteCounterpartyPhysicalLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -1909,14 +2472,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPhysicalLocation(ctx c
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPhysicalLocationExecute(r ApiOBPv121DeleteCounterpartyPhysicalLocationRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyPhysicalLocationExecute(r ApiDeleteCounterpartyPhysicalLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyPhysicalLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyPhysicalLocation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1972,7 +2535,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPhysicalLocationExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2004,7 +2567,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPhysicalLocationExecut
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyPrivateAliasRequest struct {
+type ApiDeleteCounterpartyPrivateAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2013,12 +2576,12 @@ type ApiOBPv121DeleteCounterpartyPrivateAliasRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyPrivateAliasRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyPrivateAliasExecute(r)
+func (r ApiDeleteCounterpartyPrivateAliasRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyPrivateAliasExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyPrivateAlias Delete Counterparty Private Alias
+DeleteCounterpartyPrivateAlias Delete Counterparty Private Alias
 
 <p>Deletes the private alias of the other account OTHER_ACCOUNT_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -2036,10 +2599,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyPrivateAliasRequest
+ @return ApiDeleteCounterpartyPrivateAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyPrivateAliasRequest {
-	return ApiOBPv121DeleteCounterpartyPrivateAliasRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyPrivateAliasRequest {
+	return ApiDeleteCounterpartyPrivateAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2050,14 +2613,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPrivateAlias(ctx conte
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPrivateAliasExecute(r ApiOBPv121DeleteCounterpartyPrivateAliasRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyPrivateAliasExecute(r ApiDeleteCounterpartyPrivateAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyPrivateAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyPrivateAlias")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2113,7 +2676,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPrivateAliasExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2145,7 +2708,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPrivateAliasExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyPublicAliasRequest struct {
+type ApiDeleteCounterpartyPublicAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2154,12 +2717,12 @@ type ApiOBPv121DeleteCounterpartyPublicAliasRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyPublicAliasRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyPublicAliasExecute(r)
+func (r ApiDeleteCounterpartyPublicAliasRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyPublicAliasExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyPublicAlias Delete Counterparty Public Alias
+DeleteCounterpartyPublicAlias Delete Counterparty Public Alias
 
 <p>Deletes the public alias of the other account OTHER_ACCOUNT_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -2177,10 +2740,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyPublicAliasRequest
+ @return ApiDeleteCounterpartyPublicAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyPublicAliasRequest {
-	return ApiOBPv121DeleteCounterpartyPublicAliasRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyPublicAliasRequest {
+	return ApiDeleteCounterpartyPublicAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2191,14 +2754,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPublicAlias(ctx contex
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPublicAliasExecute(r ApiOBPv121DeleteCounterpartyPublicAliasRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyPublicAliasExecute(r ApiDeleteCounterpartyPublicAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyPublicAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyPublicAlias")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2254,7 +2817,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPublicAliasExecute(r A
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2286,7 +2849,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyPublicAliasExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121DeleteCounterpartyUrlRequest struct {
+type ApiDeleteCounterpartyUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2295,12 +2858,12 @@ type ApiOBPv121DeleteCounterpartyUrlRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121DeleteCounterpartyUrlRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv121DeleteCounterpartyUrlExecute(r)
+func (r ApiDeleteCounterpartyUrlRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteCounterpartyUrlExecute(r)
 }
 
 /*
-OBPv121DeleteCounterpartyUrl Delete url of other bank account
+DeleteCounterpartyUrl Delete url of other bank account
 
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
@@ -2316,10 +2879,10 @@ OBPv121DeleteCounterpartyUrl Delete url of other bank account
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121DeleteCounterpartyUrlRequest
+ @return ApiDeleteCounterpartyUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121DeleteCounterpartyUrlRequest {
-	return ApiOBPv121DeleteCounterpartyUrlRequest{
+func (a *CounterpartyAPIService) DeleteCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiDeleteCounterpartyUrlRequest {
+	return ApiDeleteCounterpartyUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2330,14 +2893,14 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyUrl(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyUrlExecute(r ApiOBPv121DeleteCounterpartyUrlRequest) (*http.Response, error) {
+func (a *CounterpartyAPIService) DeleteCounterpartyUrlExecute(r ApiDeleteCounterpartyUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121DeleteCounterpartyUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteCounterpartyUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2393,7 +2956,7 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyUrlExecute(r ApiOBPv12
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2425,7 +2988,695 @@ func (a *CounterpartyAPIService) OBPv121DeleteCounterpartyUrlExecute(r ApiOBPv12
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetCounterpartyPublicAliasRequest struct {
+type ApiDeleteExplicitCounterpartyRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterpartyid string
+}
+
+func (r ApiDeleteExplicitCounterpartyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteExplicitCounterpartyExecute(r)
+}
+
+/*
+DeleteExplicitCounterparty Delete Counterparty (Explicit)
+
+<p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br />
+It also deletes any related Counterparty Metadata.</p>
+<p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p>
+<p>For a general introduction to Counterparties in OBP see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON request body fields:</strong></p>
+<p><strong>JSON response body fields:</strong></p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiDeleteExplicitCounterpartyRequest
+*/
+func (a *CounterpartyAPIService) DeleteExplicitCounterparty(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiDeleteExplicitCounterpartyRequest {
+	return ApiDeleteExplicitCounterpartyRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+func (a *CounterpartyAPIService) DeleteExplicitCounterpartyExecute(r ApiDeleteExplicitCounterpartyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.DeleteExplicitCounterparty")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiGetCounterpartiesForAnyAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetCounterpartiesForAnyAccountRequest) Execute() (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartiesForAnyAccountExecute(r)
+}
+
+/*
+GetCounterpartiesForAnyAccount Get Counterparties for any account (Explicit)
+
+<p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#Counterparties"><strong>counterparties</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetCounterpartiesForAnyAccountRequest
+*/
+func (a *CounterpartyAPIService) GetCounterpartiesForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetCounterpartiesForAnyAccountRequest {
+	return ApiGetCounterpartiesForAnyAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCounterpartiesForAnyAccount200Response
+func (a *CounterpartyAPIService) GetCounterpartiesForAnyAccountExecute(r ApiGetCounterpartiesForAnyAccountRequest) (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCounterpartiesForAnyAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetCounterpartiesForAnyAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCounterpartyByIdForAnyAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterpartyid string
+}
+
+func (r ApiGetCounterpartyByIdForAnyAccountRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartyByIdForAnyAccountExecute(r)
+}
+
+/*
+GetCounterpartyByIdForAnyAccount Get Counterparty by Id for any account (Explicit)
+
+<p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiGetCounterpartyByIdForAnyAccountRequest
+*/
+func (a *CounterpartyAPIService) GetCounterpartyByIdForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiGetCounterpartyByIdForAnyAccountRequest {
+	return ApiGetCounterpartyByIdForAnyAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+//  @return GetExplicitCounterpartyById200Response
+func (a *CounterpartyAPIService) GetCounterpartyByIdForAnyAccountExecute(r ApiGetCounterpartyByIdForAnyAccountRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetCounterpartyByIdForAnyAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCounterpartyByNameForAnyAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterpartyname string
+}
+
+func (r ApiGetCounterpartyByNameForAnyAccountRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartyByNameForAnyAccountExecute(r)
+}
+
+/*
+GetCounterpartyByNameForAnyAccount Get Counterparty by name for any account (Explicit) 
+
+<p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_NAME</a>: John Smith Ltd.</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterpartyname The COUNTERPARTYNAME identifier
+ @return ApiGetCounterpartyByNameForAnyAccountRequest
+*/
+func (a *CounterpartyAPIService) GetCounterpartyByNameForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyname string) ApiGetCounterpartyByNameForAnyAccountRequest {
+	return ApiGetCounterpartyByNameForAnyAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterpartyname: counterpartyname,
+	}
+}
+
+// Execute executes the request
+//  @return GetExplicitCounterpartyById200Response
+func (a *CounterpartyAPIService) GetCounterpartyByNameForAnyAccountExecute(r ApiGetCounterpartyByNameForAnyAccountRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetCounterpartyByNameForAnyAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyname"+"}", url.PathEscape(parameterValueToString(r.counterpartyname, "counterpartyname")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCounterpartyPublicAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2434,12 +3685,12 @@ type ApiOBPv121GetCounterpartyPublicAliasRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121GetCounterpartyPublicAliasRequest) Execute() (*OBPv121GetCounterpartyPublicAlias200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetCounterpartyPublicAliasExecute(r)
+func (r ApiGetCounterpartyPublicAliasRequest) Execute() (*GetCounterpartyPublicAlias200Response, *http.Response, error) {
+	return r.ApiService.GetCounterpartyPublicAliasExecute(r)
 }
 
 /*
-OBPv121GetCounterpartyPublicAlias Get public alias of other bank account
+GetCounterpartyPublicAlias Get public alias of other bank account
 
 <p>Returns the public alias of the other account OTHER_ACCOUNT_ID.<br />
 User Authentication is Optional. The User need not be logged in.<br />
@@ -2458,10 +3709,10 @@ User Authentication is Required. The User must be logged in. The Application mus
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121GetCounterpartyPublicAliasRequest
+ @return ApiGetCounterpartyPublicAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121GetCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121GetCounterpartyPublicAliasRequest {
-	return ApiOBPv121GetCounterpartyPublicAliasRequest{
+func (a *CounterpartyAPIService) GetCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiGetCounterpartyPublicAliasRequest {
+	return ApiGetCounterpartyPublicAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2472,16 +3723,16 @@ func (a *CounterpartyAPIService) OBPv121GetCounterpartyPublicAlias(ctx context.C
 }
 
 // Execute executes the request
-//  @return OBPv121GetCounterpartyPublicAlias200Response
-func (a *CounterpartyAPIService) OBPv121GetCounterpartyPublicAliasExecute(r ApiOBPv121GetCounterpartyPublicAliasRequest) (*OBPv121GetCounterpartyPublicAlias200Response, *http.Response, error) {
+//  @return GetCounterpartyPublicAlias200Response
+func (a *CounterpartyAPIService) GetCounterpartyPublicAliasExecute(r ApiGetCounterpartyPublicAliasRequest) (*GetCounterpartyPublicAlias200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetCounterpartyPublicAlias200Response
+		localVarReturnValue  *GetCounterpartyPublicAlias200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121GetCounterpartyPublicAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetCounterpartyPublicAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2537,7 +3788,7 @@ func (a *CounterpartyAPIService) OBPv121GetCounterpartyPublicAliasExecute(r ApiO
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2578,7 +3829,538 @@ func (a *CounterpartyAPIService) OBPv121GetCounterpartyPublicAliasExecute(r ApiO
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetOtherAccountForTransactionRequest struct {
+type ApiGetExplicitCounterpartiesForAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+}
+
+func (r ApiGetExplicitCounterpartiesForAccountRequest) Execute() (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	return r.ApiService.GetExplicitCounterpartiesForAccountExecute(r)
+}
+
+/*
+GetExplicitCounterpartiesForAccount Get Counterparties (Explicit)
+
+<p>Get the Counterparties that have been explicitly created on the specified Account / View.</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#Counterparties"><strong>counterparties</strong></a>:</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @return ApiGetExplicitCounterpartiesForAccountRequest
+*/
+func (a *CounterpartyAPIService) GetExplicitCounterpartiesForAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetExplicitCounterpartiesForAccountRequest {
+	return ApiGetExplicitCounterpartiesForAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+	}
+}
+
+// Execute executes the request
+//  @return GetCounterpartiesForAnyAccount200Response
+func (a *CounterpartyAPIService) GetExplicitCounterpartiesForAccountExecute(r ApiGetExplicitCounterpartiesForAccountRequest) (*GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetCounterpartiesForAnyAccount200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetExplicitCounterpartiesForAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetExplicitCounterpartyByIdRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	counterpartyid string
+}
+
+func (r ApiGetExplicitCounterpartyByIdRequest) Execute() (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	return r.ApiService.GetExplicitCounterpartyByIdExecute(r)
+}
+
+/*
+GetExplicitCounterpartyById Get Counterparty by Id (Explicit)
+
+<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p>
+<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
+<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
+<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
+<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
+<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
+<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
+<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
+<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
+<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param counterpartyid The COUNTERPARTYID identifier
+ @return ApiGetExplicitCounterpartyByIdRequest
+*/
+func (a *CounterpartyAPIService) GetExplicitCounterpartyById(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiGetExplicitCounterpartyByIdRequest {
+	return ApiGetExplicitCounterpartyByIdRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		counterpartyid: counterpartyid,
+	}
+}
+
+// Execute executes the request
+//  @return GetExplicitCounterpartyById200Response
+func (a *CounterpartyAPIService) GetExplicitCounterpartyByIdExecute(r ApiGetExplicitCounterpartyByIdRequest) (*GetExplicitCounterpartyById200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetExplicitCounterpartyById200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetExplicitCounterpartyById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetOtherAccountByIdForBankAccountRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	otheraccountid string
+}
+
+func (r ApiGetOtherAccountByIdForBankAccountRequest) Execute() (*GetTransactionByIdForBankAccount200ResponseOtherAccount, *http.Response, error) {
+	return r.ApiService.GetOtherAccountByIdForBankAccountExecute(r)
+}
+
+/*
+GetOtherAccountByIdForBankAccount Get Other Account by Id
+
+<p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br />
+User Authentication is Optional. The User need not be logged in.</p>
+<p>Authentication is required if the view is not public.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
+<p><a href="/glossary#address"><strong>address</strong></a>:</p>
+<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
+<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiGetOtherAccountByIdForBankAccountRequest
+*/
+func (a *CounterpartyAPIService) GetOtherAccountByIdForBankAccount(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiGetOtherAccountByIdForBankAccountRequest {
+	return ApiGetOtherAccountByIdForBankAccountRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		otheraccountid: otheraccountid,
+	}
+}
+
+// Execute executes the request
+//  @return GetTransactionByIdForBankAccount200ResponseOtherAccount
+func (a *CounterpartyAPIService) GetOtherAccountByIdForBankAccountExecute(r ApiGetOtherAccountByIdForBankAccountRequest) (*GetTransactionByIdForBankAccount200ResponseOtherAccount, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetTransactionByIdForBankAccount200ResponseOtherAccount
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetOtherAccountByIdForBankAccount")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetOtherAccountForTransactionRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2587,12 +4369,12 @@ type ApiOBPv121GetOtherAccountForTransactionRequest struct {
 	transactionid string
 }
 
-func (r ApiOBPv121GetOtherAccountForTransactionRequest) Execute() (*OBPv121GetOtherAccountForTransaction200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetOtherAccountForTransactionExecute(r)
+func (r ApiGetOtherAccountForTransactionRequest) Execute() (*GetOtherAccountForTransaction200Response, *http.Response, error) {
+	return r.ApiService.GetOtherAccountForTransactionExecute(r)
 }
 
 /*
-OBPv121GetOtherAccountForTransaction Get Other Account of Transaction
+GetOtherAccountForTransaction Get Other Account of Transaction
 
 <p>Get other account of a transaction.<br />
 Returns details of the other party involved in the transaction, moderated by the <a href="#1_2_1-getViewsForBankAccount">view</a> (VIEW_ID).<br />
@@ -2636,10 +4418,10 @@ Authentication via OAuth is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param transactionid The TRANSACTIONID identifier
- @return ApiOBPv121GetOtherAccountForTransactionRequest
+ @return ApiGetOtherAccountForTransactionRequest
 */
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountForTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiOBPv121GetOtherAccountForTransactionRequest {
-	return ApiOBPv121GetOtherAccountForTransactionRequest{
+func (a *CounterpartyAPIService) GetOtherAccountForTransaction(ctx context.Context, bankid string, accountid string, viewid string, transactionid string) ApiGetOtherAccountForTransactionRequest {
+	return ApiGetOtherAccountForTransactionRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2650,16 +4432,16 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountForTransaction(ctx contex
 }
 
 // Execute executes the request
-//  @return OBPv121GetOtherAccountForTransaction200Response
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountForTransactionExecute(r ApiOBPv121GetOtherAccountForTransactionRequest) (*OBPv121GetOtherAccountForTransaction200Response, *http.Response, error) {
+//  @return GetOtherAccountForTransaction200Response
+func (a *CounterpartyAPIService) GetOtherAccountForTransactionExecute(r ApiGetOtherAccountForTransactionRequest) (*GetOtherAccountForTransaction200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetOtherAccountForTransaction200Response
+		localVarReturnValue  *GetOtherAccountForTransaction200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121GetOtherAccountForTransaction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetOtherAccountForTransaction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2728,7 +4510,7 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountForTransactionExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetOtherAccountMetadataRequest struct {
+type ApiGetOtherAccountMetadataRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2737,12 +4519,12 @@ type ApiOBPv121GetOtherAccountMetadataRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121GetOtherAccountMetadataRequest) Execute() (*OBPv121GetOtherAccountMetadata200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetOtherAccountMetadataExecute(r)
+func (r ApiGetOtherAccountMetadataRequest) Execute() (*GetOtherAccountMetadata200Response, *http.Response, error) {
+	return r.ApiService.GetOtherAccountMetadataExecute(r)
 }
 
 /*
-OBPv121GetOtherAccountMetadata Get Other Account Metadata
+GetOtherAccountMetadata Get Other Account Metadata
 
 <p>Get metadata of one other account.<br />
 Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p>
@@ -2776,10 +4558,10 @@ Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that h
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121GetOtherAccountMetadataRequest
+ @return ApiGetOtherAccountMetadataRequest
 */
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountMetadata(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121GetOtherAccountMetadataRequest {
-	return ApiOBPv121GetOtherAccountMetadataRequest{
+func (a *CounterpartyAPIService) GetOtherAccountMetadata(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiGetOtherAccountMetadataRequest {
+	return ApiGetOtherAccountMetadataRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2790,16 +4572,16 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountMetadata(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return OBPv121GetOtherAccountMetadata200Response
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountMetadataExecute(r ApiOBPv121GetOtherAccountMetadataRequest) (*OBPv121GetOtherAccountMetadata200Response, *http.Response, error) {
+//  @return GetOtherAccountMetadata200Response
+func (a *CounterpartyAPIService) GetOtherAccountMetadataExecute(r ApiGetOtherAccountMetadataRequest) (*GetOtherAccountMetadata200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetOtherAccountMetadata200Response
+		localVarReturnValue  *GetOtherAccountMetadata200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121GetOtherAccountMetadata")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetOtherAccountMetadata")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2855,7 +4637,7 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountMetadataExecute(r ApiOBPv
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -2896,7 +4678,7 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountMetadataExecute(r ApiOBPv
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121GetOtherAccountPrivateAliasRequest struct {
+type ApiGetOtherAccountPrivateAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -2905,12 +4687,12 @@ type ApiOBPv121GetOtherAccountPrivateAliasRequest struct {
 	otheraccountid string
 }
 
-func (r ApiOBPv121GetOtherAccountPrivateAliasRequest) Execute() (*OBPv121GetCounterpartyPublicAlias200Response, *http.Response, error) {
-	return r.ApiService.OBPv121GetOtherAccountPrivateAliasExecute(r)
+func (r ApiGetOtherAccountPrivateAliasRequest) Execute() (*GetCounterpartyPublicAlias200Response, *http.Response, error) {
+	return r.ApiService.GetOtherAccountPrivateAliasExecute(r)
 }
 
 /*
-OBPv121GetOtherAccountPrivateAlias Get Other Account Private Alias
+GetOtherAccountPrivateAlias Get Other Account Private Alias
 
 <p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p>
 <p>User Authentication is Optional. The User need not be logged in.<br />
@@ -2929,10 +4711,10 @@ Authentication is required if the view is not public.</p>
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
  @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121GetOtherAccountPrivateAliasRequest
+ @return ApiGetOtherAccountPrivateAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121GetOtherAccountPrivateAliasRequest {
-	return ApiOBPv121GetOtherAccountPrivateAliasRequest{
+func (a *CounterpartyAPIService) GetOtherAccountPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiGetOtherAccountPrivateAliasRequest {
+	return ApiGetOtherAccountPrivateAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -2943,16 +4725,16 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountPrivateAlias(ctx context.
 }
 
 // Execute executes the request
-//  @return OBPv121GetCounterpartyPublicAlias200Response
-func (a *CounterpartyAPIService) OBPv121GetOtherAccountPrivateAliasExecute(r ApiOBPv121GetOtherAccountPrivateAliasRequest) (*OBPv121GetCounterpartyPublicAlias200Response, *http.Response, error) {
+//  @return GetCounterpartyPublicAlias200Response
+func (a *CounterpartyAPIService) GetOtherAccountPrivateAliasExecute(r ApiGetOtherAccountPrivateAliasRequest) (*GetCounterpartyPublicAlias200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv121GetCounterpartyPublicAlias200Response
+		localVarReturnValue  *GetCounterpartyPublicAlias200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121GetOtherAccountPrivateAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetOtherAccountPrivateAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3008,7 +4790,7 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountPrivateAliasExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -3049,1468 +4831,7 @@ func (a *CounterpartyAPIService) OBPv121GetOtherAccountPrivateAliasExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv121UpdateCounterpartyCorporateLocationRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyCorporateLocationRequest *OBPv121UpdateCounterpartyCorporateLocationRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyCorporateLocationRequest) OBPv121UpdateCounterpartyCorporateLocationRequest(oBPv121UpdateCounterpartyCorporateLocationRequest OBPv121UpdateCounterpartyCorporateLocationRequest) ApiOBPv121UpdateCounterpartyCorporateLocationRequest {
-	r.oBPv121UpdateCounterpartyCorporateLocationRequest = &oBPv121UpdateCounterpartyCorporateLocationRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyCorporateLocationRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyCorporateLocationExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyCorporateLocation Update Counterparty Corporate Location
-
-<p>Update the geolocation of the counterparty's registered address</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyCorporateLocationRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyCorporateLocationRequest {
-	return ApiOBPv121UpdateCounterpartyCorporateLocationRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyCorporateLocationExecute(r ApiOBPv121UpdateCounterpartyCorporateLocationRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyCorporateLocation")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyCorporateLocationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyCorporateLocationRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyCorporateLocationRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyImageUrlRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyImageUrlRequest *OBPv121UpdateCounterpartyImageUrlRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyImageUrlRequest) OBPv121UpdateCounterpartyImageUrlRequest(oBPv121UpdateCounterpartyImageUrlRequest OBPv121UpdateCounterpartyImageUrlRequest) ApiOBPv121UpdateCounterpartyImageUrlRequest {
-	r.oBPv121UpdateCounterpartyImageUrlRequest = &oBPv121UpdateCounterpartyImageUrlRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyImageUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyImageUrlExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyImageUrl Update Counterparty Image Url
-
-<p>Update the url that points to the logo of the counterparty</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyImageUrlRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyImageUrlRequest {
-	return ApiOBPv121UpdateCounterpartyImageUrlRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyImageUrlExecute(r ApiOBPv121UpdateCounterpartyImageUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyImageUrl")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyImageUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyImageUrlRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyImageUrlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyMoreInfoRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyMoreInfoRequest *OBPv121UpdateCounterpartyMoreInfoRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyMoreInfoRequest) OBPv121UpdateCounterpartyMoreInfoRequest(oBPv121UpdateCounterpartyMoreInfoRequest OBPv121UpdateCounterpartyMoreInfoRequest) ApiOBPv121UpdateCounterpartyMoreInfoRequest {
-	r.oBPv121UpdateCounterpartyMoreInfoRequest = &oBPv121UpdateCounterpartyMoreInfoRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyMoreInfoRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyMoreInfoExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyMoreInfo Update Counterparty More Info
-
-<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyMoreInfoRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyMoreInfoRequest {
-	return ApiOBPv121UpdateCounterpartyMoreInfoRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyMoreInfoExecute(r ApiOBPv121UpdateCounterpartyMoreInfoRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyMoreInfo")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyMoreInfoRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyMoreInfoRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyMoreInfoRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyOpenCorporatesUrlRequest *OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest) OBPv121UpdateCounterpartyOpenCorporatesUrlRequest(oBPv121UpdateCounterpartyOpenCorporatesUrlRequest OBPv121UpdateCounterpartyOpenCorporatesUrlRequest) ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest {
-	r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest = &oBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyOpenCorporatesUrlExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyOpenCorporatesUrl Update Open Corporates Url of Counterparty
-
-<p>Update open corporate url of other bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest {
-	return ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyOpenCorporatesUrlExecute(r ApiOBPv121UpdateCounterpartyOpenCorporatesUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyOpenCorporatesUrl")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyOpenCorporatesUrlRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyPhysicalLocationRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyPhysicalLocationRequest *OBPv121UpdateCounterpartyPhysicalLocationRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyPhysicalLocationRequest) OBPv121UpdateCounterpartyPhysicalLocationRequest(oBPv121UpdateCounterpartyPhysicalLocationRequest OBPv121UpdateCounterpartyPhysicalLocationRequest) ApiOBPv121UpdateCounterpartyPhysicalLocationRequest {
-	r.oBPv121UpdateCounterpartyPhysicalLocationRequest = &oBPv121UpdateCounterpartyPhysicalLocationRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyPhysicalLocationRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyPhysicalLocationExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyPhysicalLocation Update Counterparty Physical Location
-
-<p>Update geocoordinates of the counterparty's main location</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyPhysicalLocationRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyPhysicalLocationRequest {
-	return ApiOBPv121UpdateCounterpartyPhysicalLocationRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPhysicalLocationExecute(r ApiOBPv121UpdateCounterpartyPhysicalLocationRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyPhysicalLocation")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyPhysicalLocationRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyPhysicalLocationRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyPhysicalLocationRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyPrivateAliasRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121GetCounterpartyPublicAlias200Response *OBPv121GetCounterpartyPublicAlias200Response
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyPrivateAliasRequest) OBPv121GetCounterpartyPublicAlias200Response(oBPv121GetCounterpartyPublicAlias200Response OBPv121GetCounterpartyPublicAlias200Response) ApiOBPv121UpdateCounterpartyPrivateAliasRequest {
-	r.oBPv121GetCounterpartyPublicAlias200Response = &oBPv121GetCounterpartyPublicAlias200Response
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyPrivateAliasRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyPrivateAliasExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyPrivateAlias Update Counterparty Private Alias
-
-<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p>
-<p>User Authentication is Optional. The User need not be logged in.<br />
-Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyPrivateAliasRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyPrivateAliasRequest {
-	return ApiOBPv121UpdateCounterpartyPrivateAliasRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPrivateAliasExecute(r ApiOBPv121UpdateCounterpartyPrivateAliasRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyPrivateAlias")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121GetCounterpartyPublicAlias200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetCounterpartyPublicAlias200Response is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121GetCounterpartyPublicAlias200Response
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyPublicAliasRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121GetCounterpartyPublicAlias200Response *OBPv121GetCounterpartyPublicAlias200Response
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyPublicAliasRequest) OBPv121GetCounterpartyPublicAlias200Response(oBPv121GetCounterpartyPublicAlias200Response OBPv121GetCounterpartyPublicAlias200Response) ApiOBPv121UpdateCounterpartyPublicAliasRequest {
-	r.oBPv121GetCounterpartyPublicAlias200Response = &oBPv121GetCounterpartyPublicAlias200Response
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyPublicAliasRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyPublicAliasExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyPublicAlias Update public alias of other bank account
-
-<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p>
-<p>User Authentication is Optional. The User need not be logged in.<br />
-Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyPublicAliasRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyPublicAliasRequest {
-	return ApiOBPv121UpdateCounterpartyPublicAliasRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyPublicAliasExecute(r ApiOBPv121UpdateCounterpartyPublicAliasRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyPublicAlias")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121GetCounterpartyPublicAlias200Response == nil {
-		return localVarReturnValue, nil, reportError("oBPv121GetCounterpartyPublicAlias200Response is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121GetCounterpartyPublicAlias200Response
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv121UpdateCounterpartyUrlRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-	oBPv121UpdateCounterpartyUrlRequest *OBPv121UpdateCounterpartyUrlRequest
-}
-
-// Request body
-func (r ApiOBPv121UpdateCounterpartyUrlRequest) OBPv121UpdateCounterpartyUrlRequest(oBPv121UpdateCounterpartyUrlRequest OBPv121UpdateCounterpartyUrlRequest) ApiOBPv121UpdateCounterpartyUrlRequest {
-	r.oBPv121UpdateCounterpartyUrlRequest = &oBPv121UpdateCounterpartyUrlRequest
-	return r
-}
-
-func (r ApiOBPv121UpdateCounterpartyUrlRequest) Execute() (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	return r.ApiService.OBPv121UpdateCounterpartyUrlExecute(r)
-}
-
-/*
-OBPv121UpdateCounterpartyUrl Update url of other bank account
-
-<p>A url which represents the counterparty (home page url etc.)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv121UpdateCounterpartyUrlRequest
-*/
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv121UpdateCounterpartyUrlRequest {
-	return ApiOBPv121UpdateCounterpartyUrlRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv121UpdateTransactionNarrative200Response
-func (a *CounterpartyAPIService) OBPv121UpdateCounterpartyUrlExecute(r ApiOBPv121UpdateCounterpartyUrlRequest) (*OBPv121UpdateTransactionNarrative200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv121UpdateTransactionNarrative200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv121UpdateCounterpartyUrl")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv121UpdateCounterpartyUrlRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv121UpdateCounterpartyUrlRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv121UpdateCounterpartyUrlRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300GetOtherAccountByIdForBankAccountRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	otheraccountid string
-}
-
-func (r ApiOBPv300GetOtherAccountByIdForBankAccountRequest) Execute() (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount, *http.Response, error) {
-	return r.ApiService.OBPv300GetOtherAccountByIdForBankAccountExecute(r)
-}
-
-/*
-OBPv300GetOtherAccountByIdForBankAccount Get Other Account by Id
-
-<p>Returns data about the Other Account that has shared at least one transaction with ACCOUNT_ID at BANK_ID.<br />
-User Authentication is Optional. The User need not be logged in.</p>
-<p>Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#account_routings"><strong>account_routings</strong></a>:</p>
-<p><a href="/glossary#address"><strong>address</strong></a>:</p>
-<p><a href="/glossary#bank_routing"><strong>bank_routing</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#holder"><strong>holder</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
-<p><a href="/glossary#is_alias"><strong>is_alias</strong></a>:</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#scheme"><strong>scheme</strong></a>: OBP</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param otheraccountid The OTHERACCOUNTID identifier
- @return ApiOBPv300GetOtherAccountByIdForBankAccountRequest
-*/
-func (a *CounterpartyAPIService) OBPv300GetOtherAccountByIdForBankAccount(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiOBPv300GetOtherAccountByIdForBankAccountRequest {
-	return ApiOBPv300GetOtherAccountByIdForBankAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		otheraccountid: otheraccountid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
-func (a *CounterpartyAPIService) OBPv300GetOtherAccountByIdForBankAccountExecute(r ApiOBPv300GetOtherAccountByIdForBankAccountRequest) (*OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetTransactionByIdForBankAccount200ResponsePropertiesOtherAccount
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv300GetOtherAccountByIdForBankAccount")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv300GetOtherAccountsForBankAccountRequest struct {
+type ApiGetOtherAccountsForBankAccountRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
@@ -4518,12 +4839,12 @@ type ApiOBPv300GetOtherAccountsForBankAccountRequest struct {
 	viewid string
 }
 
-func (r ApiOBPv300GetOtherAccountsForBankAccountRequest) Execute() (*OBPv300GetOtherAccountsForBankAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv300GetOtherAccountsForBankAccountExecute(r)
+func (r ApiGetOtherAccountsForBankAccountRequest) Execute() (*GetOtherAccountsForBankAccount200Response, *http.Response, error) {
+	return r.ApiService.GetOtherAccountsForBankAccountExecute(r)
 }
 
 /*
-OBPv300GetOtherAccountsForBankAccount Get Other Accounts of one Account
+GetOtherAccountsForBankAccount Get Other Accounts of one Account
 
 <p>Returns data about all the other accounts that have shared at least one transaction with the ACCOUNT_ID at BANK_ID.<br />
 User Authentication is Optional. The User need not be logged in.</p>
@@ -4563,10 +4884,10 @@ User Authentication is Optional. The User need not be logged in.</p>
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv300GetOtherAccountsForBankAccountRequest
+ @return ApiGetOtherAccountsForBankAccountRequest
 */
-func (a *CounterpartyAPIService) OBPv300GetOtherAccountsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv300GetOtherAccountsForBankAccountRequest {
-	return ApiOBPv300GetOtherAccountsForBankAccountRequest{
+func (a *CounterpartyAPIService) GetOtherAccountsForBankAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiGetOtherAccountsForBankAccountRequest {
+	return ApiGetOtherAccountsForBankAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
@@ -4576,16 +4897,16 @@ func (a *CounterpartyAPIService) OBPv300GetOtherAccountsForBankAccount(ctx conte
 }
 
 // Execute executes the request
-//  @return OBPv300GetOtherAccountsForBankAccount200Response
-func (a *CounterpartyAPIService) OBPv300GetOtherAccountsForBankAccountExecute(r ApiOBPv300GetOtherAccountsForBankAccountRequest) (*OBPv300GetOtherAccountsForBankAccount200Response, *http.Response, error) {
+//  @return GetOtherAccountsForBankAccount200Response
+func (a *CounterpartyAPIService) GetOtherAccountsForBankAccountExecute(r ApiGetOtherAccountsForBankAccountRequest) (*GetOtherAccountsForBankAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv300GetOtherAccountsForBankAccount200Response
+		localVarReturnValue  *GetOtherAccountsForBankAccount200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv300GetOtherAccountsForBankAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.GetOtherAccountsForBankAccount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4640,7 +4961,7 @@ func (a *CounterpartyAPIService) OBPv300GetOtherAccountsForBankAccountExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4681,131 +5002,84 @@ func (a *CounterpartyAPIService) OBPv300GetOtherAccountsForBankAccountExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateCounterpartyRequest struct {
+type ApiUpdateCounterpartyCorporateLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv400CreateCounterpartyForAnyAccountRequest *OBPv400CreateCounterpartyForAnyAccountRequest
+	otheraccountid string
+	updateCounterpartyCorporateLocationRequest *UpdateCounterpartyCorporateLocationRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateCounterpartyRequest) OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest OBPv400CreateCounterpartyForAnyAccountRequest) ApiOBPv400CreateCounterpartyRequest {
-	r.oBPv400CreateCounterpartyForAnyAccountRequest = &oBPv400CreateCounterpartyForAnyAccountRequest
+func (r ApiUpdateCounterpartyCorporateLocationRequest) UpdateCounterpartyCorporateLocationRequest(updateCounterpartyCorporateLocationRequest UpdateCounterpartyCorporateLocationRequest) ApiUpdateCounterpartyCorporateLocationRequest {
+	r.updateCounterpartyCorporateLocationRequest = &updateCounterpartyCorporateLocationRequest
 	return r
 }
 
-func (r ApiOBPv400CreateCounterpartyRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateCounterpartyExecute(r)
+func (r ApiUpdateCounterpartyCorporateLocationRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyCorporateLocationExecute(r)
 }
 
 /*
-OBPv400CreateCounterparty Create Counterparty (Explicit)
+UpdateCounterpartyCorporateLocation Update Counterparty Corporate Location
 
-<p>This endpoint creates an (Explicit) Counterparty for an Account.</p>
-<p>For an introduction to Counterparties in OBP see <a href="/glossary#Counterparties">here</a></p>
+<p>Update the geolocation of the counterparty's registered address</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400CreateCounterpartyRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyCorporateLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv400CreateCounterparty(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400CreateCounterpartyRequest {
-	return ApiOBPv400CreateCounterpartyRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyCorporateLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyCorporateLocationRequest {
+	return ApiUpdateCounterpartyCorporateLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *CounterpartyAPIService) OBPv400CreateCounterpartyExecute(r ApiOBPv400CreateCounterpartyRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyCorporateLocationExecute(r ApiUpdateCounterpartyCorporateLocationRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400CreateCounterparty")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyCorporateLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateCounterpartyForAnyAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateCounterpartyForAnyAccountRequest is required and must be specified")
+	if r.updateCounterpartyCorporateLocationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyCorporateLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4826,7 +5100,7 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyExecute(r ApiOBPv400Cr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateCounterpartyForAnyAccountRequest
+	localVarPostBody = r.updateCounterpartyCorporateLocationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -4851,7 +5125,7 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyExecute(r ApiOBPv400Cr
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -4892,131 +5166,84 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyExecute(r ApiOBPv400Cr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400CreateCounterpartyForAnyAccountRequest struct {
+type ApiUpdateCounterpartyImageUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	oBPv400CreateCounterpartyForAnyAccountRequest *OBPv400CreateCounterpartyForAnyAccountRequest
+	otheraccountid string
+	updateCounterpartyImageUrlRequest *UpdateCounterpartyImageUrlRequest
 }
 
 // Request body
-func (r ApiOBPv400CreateCounterpartyForAnyAccountRequest) OBPv400CreateCounterpartyForAnyAccountRequest(oBPv400CreateCounterpartyForAnyAccountRequest OBPv400CreateCounterpartyForAnyAccountRequest) ApiOBPv400CreateCounterpartyForAnyAccountRequest {
-	r.oBPv400CreateCounterpartyForAnyAccountRequest = &oBPv400CreateCounterpartyForAnyAccountRequest
+func (r ApiUpdateCounterpartyImageUrlRequest) UpdateCounterpartyImageUrlRequest(updateCounterpartyImageUrlRequest UpdateCounterpartyImageUrlRequest) ApiUpdateCounterpartyImageUrlRequest {
+	r.updateCounterpartyImageUrlRequest = &updateCounterpartyImageUrlRequest
 	return r
 }
 
-func (r ApiOBPv400CreateCounterpartyForAnyAccountRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400CreateCounterpartyForAnyAccountExecute(r)
+func (r ApiUpdateCounterpartyImageUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyImageUrlExecute(r)
 }
 
 /*
-OBPv400CreateCounterpartyForAnyAccount Create Counterparty for any account (Explicit)
+UpdateCounterpartyImageUrl Update Counterparty Image Url
 
-<p>This is a management endpoint that allows the creation of a Counterparty on any Account.</p>
-<p>For an introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Update the url that points to the logo of the counterparty</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400CreateCounterpartyForAnyAccountRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyImageUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv400CreateCounterpartyForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400CreateCounterpartyForAnyAccountRequest {
-	return ApiOBPv400CreateCounterpartyForAnyAccountRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyImageUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyImageUrlRequest {
+	return ApiUpdateCounterpartyImageUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *CounterpartyAPIService) OBPv400CreateCounterpartyForAnyAccountExecute(r ApiOBPv400CreateCounterpartyForAnyAccountRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyImageUrlExecute(r ApiUpdateCounterpartyImageUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400CreateCounterpartyForAnyAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyImageUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400CreateCounterpartyForAnyAccountRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv400CreateCounterpartyForAnyAccountRequest is required and must be specified")
+	if r.updateCounterpartyImageUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyImageUrlRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -5037,7 +5264,143 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyForAnyAccountExecute(r
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400CreateCounterpartyForAnyAccountRequest
+	localVarPostBody = r.updateCounterpartyImageUrlRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateCounterpartyMoreInfoRequest struct {
+	ctx context.Context
+	ApiService *CounterpartyAPIService
+	bankid string
+	accountid string
+	viewid string
+	otheraccountid string
+	updateCounterpartyMoreInfoRequest *UpdateCounterpartyMoreInfoRequest
+}
+
+// Request body
+func (r ApiUpdateCounterpartyMoreInfoRequest) UpdateCounterpartyMoreInfoRequest(updateCounterpartyMoreInfoRequest UpdateCounterpartyMoreInfoRequest) ApiUpdateCounterpartyMoreInfoRequest {
+	r.updateCounterpartyMoreInfoRequest = &updateCounterpartyMoreInfoRequest
+	return r
+}
+
+func (r ApiUpdateCounterpartyMoreInfoRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyMoreInfoExecute(r)
+}
+
+/*
+UpdateCounterpartyMoreInfo Update Counterparty More Info
+
+<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param bankid The BANKID identifier
+ @param accountid The ACCOUNTID identifier
+ @param viewid The VIEWID identifier
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyMoreInfoRequest
+*/
+func (a *CounterpartyAPIService) UpdateCounterpartyMoreInfo(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyMoreInfoRequest {
+	return ApiUpdateCounterpartyMoreInfoRequest{
+		ApiService: a,
+		ctx: ctx,
+		bankid: bankid,
+		accountid: accountid,
+		viewid: viewid,
+		otheraccountid: otheraccountid,
+	}
+}
+
+// Execute executes the request
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyMoreInfoExecute(r ApiUpdateCounterpartyMoreInfoRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyMoreInfo")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info"
+	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.updateCounterpartyMoreInfoRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyMoreInfoRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateCounterpartyMoreInfoRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5062,7 +5425,7 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyForAnyAccountExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5103,379 +5466,88 @@ func (a *CounterpartyAPIService) OBPv400CreateCounterpartyForAnyAccountExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteCounterpartyForAnyAccountRequest struct {
+type ApiUpdateCounterpartyOpenCorporatesUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	counterpartyid string
+	otheraccountid string
+	updateCounterpartyOpenCorporatesUrlRequest *UpdateCounterpartyOpenCorporatesUrlRequest
 }
 
-func (r ApiOBPv400DeleteCounterpartyForAnyAccountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteCounterpartyForAnyAccountExecute(r)
+// Request body
+func (r ApiUpdateCounterpartyOpenCorporatesUrlRequest) UpdateCounterpartyOpenCorporatesUrlRequest(updateCounterpartyOpenCorporatesUrlRequest UpdateCounterpartyOpenCorporatesUrlRequest) ApiUpdateCounterpartyOpenCorporatesUrlRequest {
+	r.updateCounterpartyOpenCorporatesUrlRequest = &updateCounterpartyOpenCorporatesUrlRequest
+	return r
+}
+
+func (r ApiUpdateCounterpartyOpenCorporatesUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyOpenCorporatesUrlExecute(r)
 }
 
 /*
-OBPv400DeleteCounterpartyForAnyAccount Delete Counterparty for any account (Explicit)
+UpdateCounterpartyOpenCorporatesUrl Update Open Corporates Url of Counterparty
 
-<p>This is a management endpoint that enables the deletion of any specified Counterparty along with any related Metadata of that Counterparty.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>Update open corporate url of other bank account</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv400DeleteCounterpartyForAnyAccountRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyOpenCorporatesUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv400DeleteCounterpartyForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv400DeleteCounterpartyForAnyAccountRequest {
-	return ApiOBPv400DeleteCounterpartyForAnyAccountRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyOpenCorporatesUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyOpenCorporatesUrlRequest {
+	return ApiUpdateCounterpartyOpenCorporatesUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
-		counterpartyid: counterpartyid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-func (a *CounterpartyAPIService) OBPv400DeleteCounterpartyForAnyAccountExecute(r ApiOBPv400DeleteCounterpartyForAnyAccountRequest) (*http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyOpenCorporatesUrlExecute(r ApiUpdateCounterpartyOpenCorporatesUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400DeleteCounterpartyForAnyAccount")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400DeleteExplicitCounterpartyRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-	counterpartyid string
-}
-
-func (r ApiOBPv400DeleteExplicitCounterpartyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteExplicitCounterpartyExecute(r)
-}
-
-/*
-OBPv400DeleteExplicitCounterparty Delete Counterparty (Explicit)
-
-<p>This endpoint deletes the Counterparty on the Account / View specified by the COUNTERPARTY_ID.<br />
-It also deletes any related Counterparty Metadata.</p>
-<p>The User calling this endpoint must have access to the View specified in the URL and that View must have the permission <code>can_delete_counterparty</code>.</p>
-<p>For a general introduction to Counterparties in OBP see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON request body fields:</strong></p>
-<p><strong>JSON response body fields:</strong></p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv400DeleteExplicitCounterpartyRequest
-*/
-func (a *CounterpartyAPIService) OBPv400DeleteExplicitCounterparty(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv400DeleteExplicitCounterpartyRequest {
-	return ApiOBPv400DeleteExplicitCounterpartyRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-		counterpartyid: counterpartyid,
-	}
-}
-
-// Execute executes the request
-func (a *CounterpartyAPIService) OBPv400DeleteExplicitCounterpartyExecute(r ApiOBPv400DeleteExplicitCounterpartyRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400DeleteExplicitCounterparty")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiOBPv400GetCounterpartiesForAnyAccountRequest struct {
-	ctx context.Context
-	ApiService *CounterpartyAPIService
-	bankid string
-	accountid string
-	viewid string
-}
-
-func (r ApiOBPv400GetCounterpartiesForAnyAccountRequest) Execute() (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCounterpartiesForAnyAccountExecute(r)
-}
-
-/*
-OBPv400GetCounterpartiesForAnyAccount Get Counterparties for any account (Explicit)
-
-<p>This is a management endpoint that gets the Counterparties that have been explicitly created for an Account / View.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#Counterparties"><strong>counterparties</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bankid The BANKID identifier
- @param accountid The ACCOUNTID identifier
- @param viewid The VIEWID identifier
- @return ApiOBPv400GetCounterpartiesForAnyAccountRequest
-*/
-func (a *CounterpartyAPIService) OBPv400GetCounterpartiesForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400GetCounterpartiesForAnyAccountRequest {
-	return ApiOBPv400GetCounterpartiesForAnyAccountRequest{
-		ApiService: a,
-		ctx: ctx,
-		bankid: bankid,
-		accountid: accountid,
-		viewid: viewid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv400GetCounterpartiesForAnyAccount200Response
-func (a *CounterpartyAPIService) OBPv400GetCounterpartiesForAnyAccountExecute(r ApiOBPv400GetCounterpartiesForAnyAccountRequest) (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCounterpartiesForAnyAccount200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400GetCounterpartiesForAnyAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyOpenCorporatesUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.updateCounterpartyOpenCorporatesUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyOpenCorporatesUrlRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -5491,6 +5563,8 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartiesForAnyAccountExecute(r 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.updateCounterpartyOpenCorporatesUrlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5515,7 +5589,7 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartiesForAnyAccountExecute(r 
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5556,114 +5630,88 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartiesForAnyAccountExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCounterpartyByIdForAnyAccountRequest struct {
+type ApiUpdateCounterpartyPhysicalLocationRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	counterpartyid string
+	otheraccountid string
+	updateCounterpartyPhysicalLocationRequest *UpdateCounterpartyPhysicalLocationRequest
 }
 
-func (r ApiOBPv400GetCounterpartyByIdForAnyAccountRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCounterpartyByIdForAnyAccountExecute(r)
+// Request body
+func (r ApiUpdateCounterpartyPhysicalLocationRequest) UpdateCounterpartyPhysicalLocationRequest(updateCounterpartyPhysicalLocationRequest UpdateCounterpartyPhysicalLocationRequest) ApiUpdateCounterpartyPhysicalLocationRequest {
+	r.updateCounterpartyPhysicalLocationRequest = &updateCounterpartyPhysicalLocationRequest
+	return r
+}
+
+func (r ApiUpdateCounterpartyPhysicalLocationRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyPhysicalLocationExecute(r)
 }
 
 /*
-OBPv400GetCounterpartyByIdForAnyAccount Get Counterparty by Id for any account (Explicit)
+UpdateCounterpartyPhysicalLocation Update Counterparty Physical Location
 
-<p>This is a management endpoint that gets information about any single explicitly created Counterparty on an Account / View specified by its COUNTERPARTY_ID&quot;,</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>Update geocoordinates of the counterparty's main location</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv400GetCounterpartyByIdForAnyAccountRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyPhysicalLocationRequest
 */
-func (a *CounterpartyAPIService) OBPv400GetCounterpartyByIdForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv400GetCounterpartyByIdForAnyAccountRequest {
-	return ApiOBPv400GetCounterpartyByIdForAnyAccountRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyPhysicalLocation(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyPhysicalLocationRequest {
+	return ApiUpdateCounterpartyPhysicalLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
-		counterpartyid: counterpartyid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *CounterpartyAPIService) OBPv400GetCounterpartyByIdForAnyAccountExecute(r ApiOBPv400GetCounterpartyByIdForAnyAccountRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyPhysicalLocationExecute(r ApiUpdateCounterpartyPhysicalLocationRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400GetCounterpartyByIdForAnyAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyPhysicalLocation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.updateCounterpartyPhysicalLocationRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyPhysicalLocationRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -5679,6 +5727,8 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByIdForAnyAccountExecute(
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.updateCounterpartyPhysicalLocationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5703,7 +5753,7 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByIdForAnyAccountExecute(
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5744,114 +5794,89 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByIdForAnyAccountExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetCounterpartyByNameForAnyAccountRequest struct {
+type ApiUpdateCounterpartyPrivateAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	counterpartyname string
+	otheraccountid string
+	getCounterpartyPublicAlias200Response *GetCounterpartyPublicAlias200Response
 }
 
-func (r ApiOBPv400GetCounterpartyByNameForAnyAccountRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetCounterpartyByNameForAnyAccountExecute(r)
+// Request body
+func (r ApiUpdateCounterpartyPrivateAliasRequest) GetCounterpartyPublicAlias200Response(getCounterpartyPublicAlias200Response GetCounterpartyPublicAlias200Response) ApiUpdateCounterpartyPrivateAliasRequest {
+	r.getCounterpartyPublicAlias200Response = &getCounterpartyPublicAlias200Response
+	return r
+}
+
+func (r ApiUpdateCounterpartyPrivateAliasRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyPrivateAliasExecute(r)
 }
 
 /*
-OBPv400GetCounterpartyByNameForAnyAccount Get Counterparty by name for any account (Explicit) 
+UpdateCounterpartyPrivateAlias Update Counterparty Private Alias
 
-<p>This is a management endpoint that allows the retrieval of any Counterparty on an Account / View by its Name.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p>
+<p>User Authentication is Optional. The User need not be logged in.<br />
+Authentication is required if the view is not public.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">COUNTERPARTY_NAME</a>: John Smith Ltd.</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @param counterpartyname The COUNTERPARTYNAME identifier
- @return ApiOBPv400GetCounterpartyByNameForAnyAccountRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyPrivateAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv400GetCounterpartyByNameForAnyAccount(ctx context.Context, bankid string, accountid string, viewid string, counterpartyname string) ApiOBPv400GetCounterpartyByNameForAnyAccountRequest {
-	return ApiOBPv400GetCounterpartyByNameForAnyAccountRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyPrivateAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyPrivateAliasRequest {
+	return ApiUpdateCounterpartyPrivateAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
-		counterpartyname: counterpartyname,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *CounterpartyAPIService) OBPv400GetCounterpartyByNameForAnyAccountExecute(r ApiOBPv400GetCounterpartyByNameForAnyAccountRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyPrivateAliasExecute(r ApiUpdateCounterpartyPrivateAliasRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400GetCounterpartyByNameForAnyAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyPrivateAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/{viewid}/counterparty-names/{counterpartyname}"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyname"+"}", url.PathEscape(parameterValueToString(r.counterpartyname, "counterpartyname")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.getCounterpartyPublicAlias200Response == nil {
+		return localVarReturnValue, nil, reportError("getCounterpartyPublicAlias200Response is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -5867,6 +5892,8 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByNameForAnyAccountExecut
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.getCounterpartyPublicAlias200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5891,7 +5918,7 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByNameForAnyAccountExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -5932,94 +5959,89 @@ func (a *CounterpartyAPIService) OBPv400GetCounterpartyByNameForAnyAccountExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetExplicitCounterpartiesForAccountRequest struct {
+type ApiUpdateCounterpartyPublicAliasRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
+	otheraccountid string
+	getCounterpartyPublicAlias200Response *GetCounterpartyPublicAlias200Response
 }
 
-func (r ApiOBPv400GetExplicitCounterpartiesForAccountRequest) Execute() (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetExplicitCounterpartiesForAccountExecute(r)
+// Request body
+func (r ApiUpdateCounterpartyPublicAliasRequest) GetCounterpartyPublicAlias200Response(getCounterpartyPublicAlias200Response GetCounterpartyPublicAlias200Response) ApiUpdateCounterpartyPublicAliasRequest {
+	r.getCounterpartyPublicAlias200Response = &getCounterpartyPublicAlias200Response
+	return r
+}
+
+func (r ApiUpdateCounterpartyPublicAliasRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyPublicAliasExecute(r)
 }
 
 /*
-OBPv400GetExplicitCounterpartiesForAccount Get Counterparties (Explicit)
+UpdateCounterpartyPublicAlias Update public alias of other bank account
 
-<p>Get the Counterparties that have been explicitly created on the specified Account / View.</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p>
+<p>User Authentication is Optional. The User need not be logged in.<br />
+Authentication is required if the view is not public.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#Counterparties"><strong>counterparties</strong></a>:</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @return ApiOBPv400GetExplicitCounterpartiesForAccountRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyPublicAliasRequest
 */
-func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartiesForAccount(ctx context.Context, bankid string, accountid string, viewid string) ApiOBPv400GetExplicitCounterpartiesForAccountRequest {
-	return ApiOBPv400GetExplicitCounterpartiesForAccountRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyPublicAlias(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyPublicAliasRequest {
+	return ApiUpdateCounterpartyPublicAliasRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetCounterpartiesForAnyAccount200Response
-func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartiesForAccountExecute(r ApiOBPv400GetExplicitCounterpartiesForAccountRequest) (*OBPv400GetCounterpartiesForAnyAccount200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyPublicAliasExecute(r ApiUpdateCounterpartyPublicAliasRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetCounterpartiesForAnyAccount200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400GetExplicitCounterpartiesForAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyPublicAlias")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.getCounterpartyPublicAlias200Response == nil {
+		return localVarReturnValue, nil, reportError("getCounterpartyPublicAlias200Response is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -6035,6 +6057,8 @@ func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartiesForAccountExecu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.getCounterpartyPublicAlias200Response
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6059,7 +6083,7 @@ func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartiesForAccountExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -6100,114 +6124,88 @@ func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartiesForAccountExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetExplicitCounterpartyByIdRequest struct {
+type ApiUpdateCounterpartyUrlRequest struct {
 	ctx context.Context
 	ApiService *CounterpartyAPIService
 	bankid string
 	accountid string
 	viewid string
-	counterpartyid string
+	otheraccountid string
+	updateCounterpartyUrlRequest *UpdateCounterpartyUrlRequest
 }
 
-func (r ApiOBPv400GetExplicitCounterpartyByIdRequest) Execute() (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetExplicitCounterpartyByIdExecute(r)
+// Request body
+func (r ApiUpdateCounterpartyUrlRequest) UpdateCounterpartyUrlRequest(updateCounterpartyUrlRequest UpdateCounterpartyUrlRequest) ApiUpdateCounterpartyUrlRequest {
+	r.updateCounterpartyUrlRequest = &updateCounterpartyUrlRequest
+	return r
+}
+
+func (r ApiUpdateCounterpartyUrlRequest) Execute() (*UpdateTransactionNarrative200Response, *http.Response, error) {
+	return r.ApiService.UpdateCounterpartyUrlExecute(r)
 }
 
 /*
-OBPv400GetExplicitCounterpartyById Get Counterparty by Id (Explicit)
+UpdateCounterpartyUrl Update url of other bank account
 
-<p>This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:</p>
-<p>For a general introduction to Counterparties in OBP, see <a href="/glossary#Counterparties">here</a></p>
+<p>A url which represents the counterparty (home page url etc.)</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p><strong>URL Parameters:</strong></p>
 <p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
 <p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#">COUNTERPARTY_ID</a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
 <p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
 <p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#bespoke"><strong>bespoke</strong></a>:</p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>counterparty_id</strong></a>: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh</p>
-<p><a href="/glossary#created_by_user_id"><strong>created_by_user_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>currency</strong></a>: EUR</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#description"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_url</strong></a>:</p>
-<p><a href="/glossary#"><strong>is_beneficiary</strong></a>: false</p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#metadata"><strong>metadata</strong></a>:</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#name"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_url</strong></a>:</p>
-<p><a href="/glossary#other_account_routing_address"><strong>other_account_routing_address</strong></a>: DE89370400440532013000</p>
-<p><a href="/glossary#other_account_routing_scheme"><strong>other_account_routing_scheme</strong></a>: IBAN</p>
-<p><a href="/glossary#other_account_secondary_routing_address"><strong>other_account_secondary_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_account_secondary_routing_scheme"><strong>other_account_secondary_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_address"><strong>other_bank_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_bank_routing_scheme"><strong>other_bank_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_address"><strong>other_branch_routing_address</strong></a>:</p>
-<p><a href="/glossary#other_branch_routing_scheme"><strong>other_branch_routing_scheme</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#this_account_id"><strong>this_account_id</strong></a>:</p>
-<p><a href="/glossary#this_bank_id"><strong>this_bank_id</strong></a>:</p>
-<p><a href="/glossary#this_view_id"><strong>this_view_id</strong></a>:</p>
-<p><a href="/glossary#"><strong>url</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-<p><a href="/glossary#"><strong>username</strong></a>: felixsmith</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bankid The BANKID identifier
  @param accountid The ACCOUNTID identifier
  @param viewid The VIEWID identifier
- @param counterpartyid The COUNTERPARTYID identifier
- @return ApiOBPv400GetExplicitCounterpartyByIdRequest
+ @param otheraccountid The OTHERACCOUNTID identifier
+ @return ApiUpdateCounterpartyUrlRequest
 */
-func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartyById(ctx context.Context, bankid string, accountid string, viewid string, counterpartyid string) ApiOBPv400GetExplicitCounterpartyByIdRequest {
-	return ApiOBPv400GetExplicitCounterpartyByIdRequest{
+func (a *CounterpartyAPIService) UpdateCounterpartyUrl(ctx context.Context, bankid string, accountid string, viewid string, otheraccountid string) ApiUpdateCounterpartyUrlRequest {
+	return ApiUpdateCounterpartyUrlRequest{
 		ApiService: a,
 		ctx: ctx,
 		bankid: bankid,
 		accountid: accountid,
 		viewid: viewid,
-		counterpartyid: counterpartyid,
+		otheraccountid: otheraccountid,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetExplicitCounterpartyById200Response
-func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartyByIdExecute(r ApiOBPv400GetExplicitCounterpartyByIdRequest) (*OBPv400GetExplicitCounterpartyById200Response, *http.Response, error) {
+//  @return UpdateTransactionNarrative200Response
+func (a *CounterpartyAPIService) UpdateCounterpartyUrlExecute(r ApiUpdateCounterpartyUrlRequest) (*UpdateTransactionNarrative200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetExplicitCounterpartyById200Response
+		localVarReturnValue  *UpdateTransactionNarrative200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.OBPv400GetExplicitCounterpartyById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CounterpartyAPIService.UpdateCounterpartyUrl")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+	localVarPath := localBasePath + "/obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url"
 	localVarPath = strings.Replace(localVarPath, "{"+"bankid"+"}", url.PathEscape(parameterValueToString(r.bankid, "bankid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"accountid"+"}", url.PathEscape(parameterValueToString(r.accountid, "accountid")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"viewid"+"}", url.PathEscape(parameterValueToString(r.viewid, "viewid")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"counterpartyid"+"}", url.PathEscape(parameterValueToString(r.counterpartyid, "counterpartyid")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"otheraccountid"+"}", url.PathEscape(parameterValueToString(r.otheraccountid, "otheraccountid")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.updateCounterpartyUrlRequest == nil {
+		return localVarReturnValue, nil, reportError("updateCounterpartyUrlRequest is required and must be specified")
+	}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -6223,6 +6221,8 @@ func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartyByIdExecute(r Api
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.updateCounterpartyUrlRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -6247,7 +6247,7 @@ func (a *CounterpartyAPIService) OBPv400GetExplicitCounterpartyByIdExecute(r Api
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

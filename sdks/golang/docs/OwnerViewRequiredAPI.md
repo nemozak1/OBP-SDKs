@@ -1,18 +1,18 @@
 # \OwnerViewRequiredAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv510CreateUserWithAccountAccessById**](OwnerViewRequiredAPI.md#OBPv510CreateUserWithAccountAccessById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
-[**OBPv510GrantUserAccessToViewById**](OwnerViewRequiredAPI.md#OBPv510GrantUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
-[**OBPv510RevokeUserAccessToViewById**](OwnerViewRequiredAPI.md#OBPv510RevokeUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
+[**CreateUserWithAccountAccessById**](OwnerViewRequiredAPI.md#CreateUserWithAccountAccessById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/user-account-access | Create (DAuth) User with Account Access
+[**GrantUserAccessToViewById**](OwnerViewRequiredAPI.md#GrantUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/grant | Grant User access to View
+[**RevokeUserAccessToViewById**](OwnerViewRequiredAPI.md#RevokeUserAccessToViewById) | **Post** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/views/{viewid}/account-access/revoke | Revoke User access to View
 
 
 
-## OBPv510CreateUserWithAccountAccessById
+## CreateUserWithAccountAccessById
 
-> OBPv510CreateUserWithAccountAccessById200Response OBPv510CreateUserWithAccountAccessById(ctx, bankid, accountid, viewid).OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest).Execute()
+> CreateUserWithAccountAccessById200Response CreateUserWithAccountAccessById(ctx, bankid, accountid, viewid).CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest).Execute()
 
 Create (DAuth) User with Account Access
 
@@ -34,17 +34,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510CreateUserWithAccountAccessByIdRequest := *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequest("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestProperties(*openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViews("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItems("Type_example", *openapiclient.NewOBPv510CreateUserWithAccountAccessByIdRequestPropertiesViewsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )) // OBPv510CreateUserWithAccountAccessByIdRequest | Request body
+	createUserWithAccountAccessByIdRequest := *openapiclient.NewCreateUserWithAccountAccessByIdRequest() // CreateUserWithAccountAccessByIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OwnerViewRequiredAPI.OBPv510CreateUserWithAccountAccessById(context.Background(), bankid, accountid, viewid).OBPv510CreateUserWithAccountAccessByIdRequest(oBPv510CreateUserWithAccountAccessByIdRequest).Execute()
+	resp, r, err := apiClient.OwnerViewRequiredAPI.CreateUserWithAccountAccessById(context.Background(), bankid, accountid, viewid).CreateUserWithAccountAccessByIdRequest(createUserWithAccountAccessByIdRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.OBPv510CreateUserWithAccountAccessById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.CreateUserWithAccountAccessById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510CreateUserWithAccountAccessById`: OBPv510CreateUserWithAccountAccessById200Response
-	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.OBPv510CreateUserWithAccountAccessById`: %v\n", resp)
+	// response from `CreateUserWithAccountAccessById`: CreateUserWithAccountAccessById200Response
+	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.CreateUserWithAccountAccessById`: %v\n", resp)
 }
 ```
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510CreateUserWithAccountAccessByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateUserWithAccountAccessByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -68,11 +68,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510CreateUserWithAccountAccessByIdRequest** | [**OBPv510CreateUserWithAccountAccessByIdRequest**](OBPv510CreateUserWithAccountAccessByIdRequest.md) | Request body | 
+ **createUserWithAccountAccessByIdRequest** | [**CreateUserWithAccountAccessByIdRequest**](CreateUserWithAccountAccessByIdRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200Response**](OBPv510CreateUserWithAccountAccessById200Response.md)
+[**CreateUserWithAccountAccessById200Response**](CreateUserWithAccountAccessById200Response.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GrantUserAccessToViewById
+## GrantUserAccessToViewById
 
-> OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead OBPv510GrantUserAccessToViewById(ctx, bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+> CreateUserWithAccountAccessById200ResponseHead GrantUserAccessToViewById(ctx, bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
 
 Grant User access to View
 
@@ -112,17 +112,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510RevokeUserAccessToViewByIdRequest := *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequest("Type_example", *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510RevokeUserAccessToViewByIdRequest | Request body
+	revokeUserAccessToViewByIdRequest := *openapiclient.NewRevokeUserAccessToViewByIdRequest() // RevokeUserAccessToViewByIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OwnerViewRequiredAPI.OBPv510GrantUserAccessToViewById(context.Background(), bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+	resp, r, err := apiClient.OwnerViewRequiredAPI.GrantUserAccessToViewById(context.Background(), bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.OBPv510GrantUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.GrantUserAccessToViewById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GrantUserAccessToViewById`: OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead
-	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.OBPv510GrantUserAccessToViewById`: %v\n", resp)
+	// response from `GrantUserAccessToViewById`: CreateUserWithAccountAccessById200ResponseHead
+	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.GrantUserAccessToViewById`: %v\n", resp)
 }
 ```
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GrantUserAccessToViewByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGrantUserAccessToViewByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -146,11 +146,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510RevokeUserAccessToViewByIdRequest** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md) | Request body | 
+ **revokeUserAccessToViewByIdRequest** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead**](OBPv510CreateUserWithAccountAccessById200ResponsePropertiesHead.md)
+[**CreateUserWithAccountAccessById200ResponseHead**](CreateUserWithAccountAccessById200ResponseHead.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510RevokeUserAccessToViewById
+## RevokeUserAccessToViewById
 
-> OBPv510RevokeUserAccessToViewById200Response OBPv510RevokeUserAccessToViewById(ctx, bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+> RevokeUserAccessToViewById200Response RevokeUserAccessToViewById(ctx, bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
 
 Revoke User access to View
 
@@ -190,17 +190,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
-	oBPv510RevokeUserAccessToViewByIdRequest := *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequest("Type_example", *openapiclient.NewOBPv510RevokeUserAccessToViewByIdRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510RevokeUserAccessToViewByIdRequest | Request body
+	revokeUserAccessToViewByIdRequest := *openapiclient.NewRevokeUserAccessToViewByIdRequest() // RevokeUserAccessToViewByIdRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OwnerViewRequiredAPI.OBPv510RevokeUserAccessToViewById(context.Background(), bankid, accountid, viewid).OBPv510RevokeUserAccessToViewByIdRequest(oBPv510RevokeUserAccessToViewByIdRequest).Execute()
+	resp, r, err := apiClient.OwnerViewRequiredAPI.RevokeUserAccessToViewById(context.Background(), bankid, accountid, viewid).RevokeUserAccessToViewByIdRequest(revokeUserAccessToViewByIdRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.OBPv510RevokeUserAccessToViewById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `OwnerViewRequiredAPI.RevokeUserAccessToViewById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510RevokeUserAccessToViewById`: OBPv510RevokeUserAccessToViewById200Response
-	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.OBPv510RevokeUserAccessToViewById`: %v\n", resp)
+	// response from `RevokeUserAccessToViewById`: RevokeUserAccessToViewById200Response
+	fmt.Fprintf(os.Stdout, "Response from `OwnerViewRequiredAPI.RevokeUserAccessToViewById`: %v\n", resp)
 }
 ```
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510RevokeUserAccessToViewByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRevokeUserAccessToViewByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -224,11 +224,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv510RevokeUserAccessToViewByIdRequest** | [**OBPv510RevokeUserAccessToViewByIdRequest**](OBPv510RevokeUserAccessToViewByIdRequest.md) | Request body | 
+ **revokeUserAccessToViewByIdRequest** | [**RevokeUserAccessToViewByIdRequest**](RevokeUserAccessToViewByIdRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510RevokeUserAccessToViewById200Response**](OBPv510RevokeUserAccessToViewById200Response.md)
+[**RevokeUserAccessToViewById200Response**](RevokeUserAccessToViewById200Response.md)
 
 ### Authorization
 

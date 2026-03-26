@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,14 +11,14 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv510UpdateAtmAttributeRequest
-import com.openbankproject.model.OBPv600CreateApiProductAttribute200Response
+import com.openbankproject.model.CreateApiProductAttribute200Response
+import com.openbankproject.model.UpdateAtmAttributeRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object ApiProductAttributeApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new ApiProductAttributeApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new ApiProductAttributeApi(baseUrl)
 }
 
 class ApiProductAttributeApi(baseUrl: String) {
@@ -27,7 +27,7 @@ class ApiProductAttributeApi(baseUrl: String) {
    * <p>Create an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600CreateApiProductAttribute200Response (Successful operation)
+   *   code 200 : CreateApiProductAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -37,16 +37,16 @@ class ApiProductAttributeApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    * @param apiproductcode The APIPRODUCTCODE identifier
-   * @param oBPv510UpdateAtmAttributeRequest Request body
+   * @param updateAtmAttributeRequest Request body
    */
-  def oBPv600CreateApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], OBPv600CreateApiProductAttribute200Response]] =
+  def createApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], CreateApiProductAttribute200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/api-products/${apiproductcode}/attribute")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510UpdateAtmAttributeRequest)
-      .response(asJson[OBPv600CreateApiProductAttribute200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateAtmAttributeRequest)
+      .response(asJson[CreateApiProductAttribute200Response])
 
   /**
    * <p>Delete an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
@@ -64,19 +64,19 @@ class ApiProductAttributeApi(baseUrl: String) {
    * @param apiproductcode The APIPRODUCTCODE identifier
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
    */
-  def oBPv600DeleteApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, apiproductattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, apiproductattributeid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/api-products/${apiproductcode}/attributes/${apiproductattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get an Api Product Attribute by API_PRODUCT_ATTRIBUTE_ID.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600CreateApiProductAttribute200Response (Successful operation)
+   *   code 200 : CreateApiProductAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -84,17 +84,17 @@ class ApiProductAttributeApi(baseUrl: String) {
    * @param apiproductcode The APIPRODUCTCODE identifier
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
    */
-  def oBPv600GetApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String): Request[Either[ResponseException[String, Exception], OBPv600CreateApiProductAttribute200Response]] =
+  def getApiProductAttribute(bankid: String, apiproductcode: String, apiproductattributeid: String): Request[Either[ResponseException[String, Exception], CreateApiProductAttribute200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/api-products/${apiproductcode}/attributes/${apiproductattributeid}")
       .contentType("application/json")
-      .response(asJson[OBPv600CreateApiProductAttribute200Response])
+      .response(asJson[CreateApiProductAttribute200Response])
 
   /**
    * <p>Update an Api Product Attribute.</p> <p>Authentication is Required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">API_PRODUCT_ATTRIBUTE_ID</a>: API_PRODUCT_ATTRIBUTE_ID</p> <p><a href=\"/glossary#\">API_PRODUCT_CODE</a>: API_PRODUCT_CODE</p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>api_product_attribute_id</strong></a>: api_product_attribute_id</p> <p><a href=\"/glossary#\"><strong>api_product_code</strong></a>: api_product_code</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><a href=\"/glossary#is_active\">is_active</a>: false</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv600CreateApiProductAttribute200Response (Successful operation)
+   *   code 200 : CreateApiProductAttribute200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -105,15 +105,15 @@ class ApiProductAttributeApi(baseUrl: String) {
    * @param bankid The BANKID identifier
    * @param apiproductcode The APIPRODUCTCODE identifier
    * @param apiproductattributeid The APIPRODUCTATTRIBUTEID identifier
-   * @param oBPv510UpdateAtmAttributeRequest Request body
+   * @param updateAtmAttributeRequest Request body
    */
-  def oBPv600UpdateApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, apiproductattributeid: String, oBPv510UpdateAtmAttributeRequest: OBPv510UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], OBPv600CreateApiProductAttribute200Response]] =
+  def updateApiProductAttribute(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, apiproductcode: String, apiproductattributeid: String, updateAtmAttributeRequest: UpdateAtmAttributeRequest): Request[Either[ResponseException[String, Exception], CreateApiProductAttribute200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v6.0.0/banks/${bankid}/api-products/${apiproductcode}/attributes/${apiproductattributeid}")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv510UpdateAtmAttributeRequest)
-      .response(asJson[OBPv600CreateApiProductAttribute200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateAtmAttributeRequest)
+      .response(asJson[CreateApiProductAttribute200Response])
 
 }

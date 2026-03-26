@@ -4,15 +4,15 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv3_1_0_create_method_routing**](MethodRoutingApi.md#o_bpv3_1_0_create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
-[**o_bpv3_1_0_delete_method_routing**](MethodRoutingApi.md#o_bpv3_1_0_delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
-[**o_bpv3_1_0_get_method_routings**](MethodRoutingApi.md#o_bpv3_1_0_get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
-[**o_bpv3_1_0_update_method_routing**](MethodRoutingApi.md#o_bpv3_1_0_update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
-[**o_bpv6_0_0_get_connector_method_names**](MethodRoutingApi.md#o_bpv6_0_0_get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**create_method_routing**](MethodRoutingApi.md#create_method_routing) | **POST** /obp/v3.1.0/management/method_routings | Create MethodRouting
+[**delete_method_routing**](MethodRoutingApi.md#delete_method_routing) | **DELETE** /obp/v3.1.0/management/method_routings/{methodroutingid} | Delete MethodRouting
+[**get_connector_method_names**](MethodRoutingApi.md#get_connector_method_names) | **GET** /obp/v6.0.0/system/connector-method-names | Get Connector Method Names
+[**get_method_routings**](MethodRoutingApi.md#get_method_routings) | **GET** /obp/v3.1.0/management/method_routings | Get MethodRoutings
+[**update_method_routing**](MethodRoutingApi.md#update_method_routing) | **PUT** /obp/v3.1.0/management/method_routings/{methodroutingid} | Update MethodRouting
 
 
-# **o_bpv3_1_0_create_method_routing**
-> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
+# **create_method_routing**
+> GetMethodRoutings200ResponseMethodRoutingsInner create_method_routing(create_method_routing_request)
 
 Create MethodRouting
 
@@ -65,8 +65,8 @@ Build InBound json value rules:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
+from obp_python.models.create_method_routing_request import CreateMethodRoutingRequest
+from obp_python.models.get_method_routings200_response_method_routings_inner import GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -99,15 +99,15 @@ configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
 with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.MethodRoutingApi(api_client)
-    obpv310_create_method_routing_request = {"type":"object","properties":{"method_name":{"type":"string"},"bank_id_pattern":{"type":"string"},"parameters":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string"},"key":{"type":"string"}}}},"is_bank_id_exact_match":{"type":"boolean"},"connector_name":{"type":"string"}}} # OBPv310CreateMethodRoutingRequest | Request body
+    create_method_routing_request = {"type":"object","properties":{"method_name":{"type":"string"},"bank_id_pattern":{"type":"string"},"parameters":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string"},"key":{"type":"string"}}}},"is_bank_id_exact_match":{"type":"boolean"},"connector_name":{"type":"string"}}} # CreateMethodRoutingRequest | Request body
 
     try:
         # Create MethodRouting
-        api_response = api_instance.o_bpv3_1_0_create_method_routing(obpv310_create_method_routing_request)
-        print("The response of MethodRoutingApi->o_bpv3_1_0_create_method_routing:\n")
+        api_response = api_instance.create_method_routing(create_method_routing_request)
+        print("The response of MethodRoutingApi->create_method_routing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MethodRoutingApi->o_bpv3_1_0_create_method_routing: %s\n" % e)
+        print("Exception when calling MethodRoutingApi->create_method_routing: %s\n" % e)
 ```
 
 
@@ -117,11 +117,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obpv310_create_method_routing_request** | [**OBPv310CreateMethodRoutingRequest**](OBPv310CreateMethodRoutingRequest.md)| Request body | 
+ **create_method_routing_request** | [**CreateMethodRoutingRequest**](CreateMethodRoutingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
+[**GetMethodRoutings200ResponseMethodRoutingsInner**](GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -141,8 +141,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_delete_method_routing**
-> o_bpv3_1_0_delete_method_routing(methodroutingid)
+# **delete_method_routing**
+> delete_method_routing(methodroutingid)
 
 Delete MethodRouting
 
@@ -197,9 +197,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete MethodRouting
-        api_instance.o_bpv3_1_0_delete_method_routing(methodroutingid)
+        api_instance.delete_method_routing(methodroutingid)
     except Exception as e:
-        print("Exception when calling MethodRoutingApi->o_bpv3_1_0_delete_method_routing: %s\n" % e)
+        print("Exception when calling MethodRoutingApi->delete_method_routing: %s\n" % e)
 ```
 
 
@@ -233,8 +233,124 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_get_method_routings**
-> OBPv310GetMethodRoutings200Response o_bpv3_1_0_get_method_routings()
+# **get_connector_method_names**
+> GetConnectorMethodNames200Response get_connector_method_names()
+
+Get Connector Method Names
+
+<p>Get the list of all available connector method names.</p>
+<p>These are the method names that can be used in Method Routing configuration.</p>
+<h2><a href="#data-source" id="data-source">Data Source</a></h2>
+<p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p>
+<p>The endpoint:<br />
+1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br />
+2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br />
+3. Uses Scala reflection to scan all public methods that override the base Connector trait<br />
+4. Filters for valid connector methods (public, has parameters, overrides base trait)<br />
+5. Returns the method names as a sorted list</p>
+<h2><a href="#which-connector" id="which-connector">Which Connector?</a></h2>
+<p>Depends on your <code>connector</code> property:<br />
+* <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br />
+* <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br />
+* <code>connector=star</code> → Returns methods from StarConnector<br />
+* <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p>
+<h2><a href="#when-does-it-change" id="when-does-it-change">When Does It Change?</a></h2>
+<p>The list only changes when:<br />
+* Code is deployed with new/modified connector methods<br />
+* The <code>connector</code> property is changed to point to a different connector</p>
+<h2><a href="#performance" id="performance">Performance</a></h2>
+<p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br />
+Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p>
+<h2><a href="#use-case" id="use-case">Use Case</a></h2>
+<p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br />
+These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>CanGetSystemConnectorMethodNames entitlement is required.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>connector_method_names</strong></a>: connector_method_names</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_connector_method_names200_response import GetConnectorMethodNames200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.MethodRoutingApi(api_client)
+
+    try:
+        # Get Connector Method Names
+        api_response = api_instance.get_connector_method_names()
+        print("The response of MethodRoutingApi->get_connector_method_names:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MethodRoutingApi->get_connector_method_names: %s\n" % e)
+```
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetConnectorMethodNames200Response**](GetConnectorMethodNames200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_method_routings**
+> GetMethodRoutings200Response get_method_routings()
 
 Get MethodRoutings
 
@@ -262,7 +378,7 @@ Get MethodRoutings
 
 ```python
 import obp_python
-from obp_python.models.obpv310_get_method_routings200_response import OBPv310GetMethodRoutings200Response
+from obp_python.models.get_method_routings200_response import GetMethodRoutings200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -298,11 +414,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get MethodRoutings
-        api_response = api_instance.o_bpv3_1_0_get_method_routings()
-        print("The response of MethodRoutingApi->o_bpv3_1_0_get_method_routings:\n")
+        api_response = api_instance.get_method_routings()
+        print("The response of MethodRoutingApi->get_method_routings:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MethodRoutingApi->o_bpv3_1_0_get_method_routings: %s\n" % e)
+        print("Exception when calling MethodRoutingApi->get_method_routings: %s\n" % e)
 ```
 
 
@@ -313,7 +429,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200Response**](OBPv310GetMethodRoutings200Response.md)
+[**GetMethodRoutings200Response**](GetMethodRoutings200Response.md)
 
 ### Authorization
 
@@ -333,8 +449,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv3_1_0_update_method_routing**
-> OBPv310GetMethodRoutings200ResponseMethodRoutingsInner o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
+# **update_method_routing**
+> GetMethodRoutings200ResponseMethodRoutingsInner update_method_routing(methodroutingid, create_method_routing_request)
 
 Update MethodRouting
 
@@ -382,8 +498,8 @@ Build InBound json value rules:<br />
 
 ```python
 import obp_python
-from obp_python.models.obpv310_create_method_routing_request import OBPv310CreateMethodRoutingRequest
-from obp_python.models.obpv310_get_method_routings200_response_method_routings_inner import OBPv310GetMethodRoutings200ResponseMethodRoutingsInner
+from obp_python.models.create_method_routing_request import CreateMethodRoutingRequest
+from obp_python.models.get_method_routings200_response_method_routings_inner import GetMethodRoutings200ResponseMethodRoutingsInner
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -417,15 +533,15 @@ with obp_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = obp_python.MethodRoutingApi(api_client)
     methodroutingid = 'methodroutingid_example' # str | The METHODROUTINGID identifier
-    obpv310_create_method_routing_request = {type=object, properties={method_name={type=string}, bank_id_pattern={type=string}, parameters={type=array, items={type=object, properties={value={type=string}, key={type=string}}}}, is_bank_id_exact_match={type=boolean}, connector_name={type=string}}} # OBPv310CreateMethodRoutingRequest | Request body
+    create_method_routing_request = {type=object, properties={method_name={type=string}, bank_id_pattern={type=string}, parameters={type=array, items={type=object, properties={value={type=string}, key={type=string}}}}, is_bank_id_exact_match={type=boolean}, connector_name={type=string}}} # CreateMethodRoutingRequest | Request body
 
     try:
         # Update MethodRouting
-        api_response = api_instance.o_bpv3_1_0_update_method_routing(methodroutingid, obpv310_create_method_routing_request)
-        print("The response of MethodRoutingApi->o_bpv3_1_0_update_method_routing:\n")
+        api_response = api_instance.update_method_routing(methodroutingid, create_method_routing_request)
+        print("The response of MethodRoutingApi->update_method_routing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MethodRoutingApi->o_bpv3_1_0_update_method_routing: %s\n" % e)
+        print("Exception when calling MethodRoutingApi->update_method_routing: %s\n" % e)
 ```
 
 
@@ -436,11 +552,11 @@ with obp_python.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **methodroutingid** | **str**| The METHODROUTINGID identifier | 
- **obpv310_create_method_routing_request** | [**OBPv310CreateMethodRoutingRequest**](OBPv310CreateMethodRoutingRequest.md)| Request body | 
+ **create_method_routing_request** | [**CreateMethodRoutingRequest**](CreateMethodRoutingRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv310GetMethodRoutings200ResponseMethodRoutingsInner**](OBPv310GetMethodRoutings200ResponseMethodRoutingsInner.md)
+[**GetMethodRoutings200ResponseMethodRoutingsInner**](GetMethodRoutings200ResponseMethodRoutingsInner.md)
 
 ### Authorization
 
@@ -449,122 +565,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv6_0_0_get_connector_method_names**
-> OBPv600GetConnectorMethodNames200Response o_bpv6_0_0_get_connector_method_names()
-
-Get Connector Method Names
-
-<p>Get the list of all available connector method names.</p>
-<p>These are the method names that can be used in Method Routing configuration.</p>
-<h2><a href="#data-source" id="data-source">Data Source</a></h2>
-<p>The data comes from <strong>scanning the actual Scala connector code at runtime</strong> using reflection, NOT from a database or configuration file.</p>
-<p>The endpoint:<br />
-1. Reads the connector name from props (e.g., <code>connector=mapped</code>)<br />
-2. Gets the connector instance (e.g., LocalMappedConnector, KafkaConnector, StarConnector)<br />
-3. Uses Scala reflection to scan all public methods that override the base Connector trait<br />
-4. Filters for valid connector methods (public, has parameters, overrides base trait)<br />
-5. Returns the method names as a sorted list</p>
-<h2><a href="#which-connector" id="which-connector">Which Connector?</a></h2>
-<p>Depends on your <code>connector</code> property:<br />
-* <code>connector=mapped</code> → Returns methods from LocalMappedConnector<br />
-* <code>connector=kafka_vSept2018</code> → Returns methods from KafkaConnector<br />
-* <code>connector=star</code> → Returns methods from StarConnector<br />
-* <code>connector=rest_vMar2019</code> → Returns methods from RestConnector</p>
-<h2><a href="#when-does-it-change" id="when-does-it-change">When Does It Change?</a></h2>
-<p>The list only changes when:<br />
-* Code is deployed with new/modified connector methods<br />
-* The <code>connector</code> property is changed to point to a different connector</p>
-<h2><a href="#performance" id="performance">Performance</a></h2>
-<p>This endpoint uses caching (default: 1 hour) because Scala reflection is expensive.<br />
-Configure via: <code>getConnectorMethodNames.cache.ttl.seconds=3600</code></p>
-<h2><a href="#use-case" id="use-case">Use Case</a></h2>
-<p>Use this endpoint to discover which connector methods are available when configuring Method Routing.<br />
-These method names are different from API endpoint operation IDs (which you get from /resource-docs).</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>CanGetSystemConnectorMethodNames entitlement is required.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>connector_method_names</strong></a>: connector_method_names</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv600_get_connector_method_names200_response import OBPv600GetConnectorMethodNames200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.MethodRoutingApi(api_client)
-
-    try:
-        # Get Connector Method Names
-        api_response = api_instance.o_bpv6_0_0_get_connector_method_names()
-        print("The response of MethodRoutingApi->o_bpv6_0_0_get_connector_method_names:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MethodRoutingApi->o_bpv6_0_0_get_connector_method_names: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**OBPv600GetConnectorMethodNames200Response**](OBPv600GetConnectorMethodNames200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

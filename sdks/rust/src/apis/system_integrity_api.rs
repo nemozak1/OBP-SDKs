@@ -1,7 +1,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,49 +15,49 @@ use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
 
-/// struct for typed errors of method [`o_bpv5_1_0_account_access_unique_index_check`]
+/// struct for typed errors of method [`account_access_unique_index_check`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510AccountAccessUniqueIndexCheckError {
+pub enum AccountAccessUniqueIndexCheckError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_account_currency_check`]
+/// struct for typed errors of method [`account_currency_check`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510AccountCurrencyCheckError {
+pub enum AccountCurrencyCheckError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_custom_view_names_check`]
+/// struct for typed errors of method [`custom_view_names_check`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510CustomViewNamesCheckError {
+pub enum CustomViewNamesCheckError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_orphaned_account_check`]
+/// struct for typed errors of method [`orphaned_account_check`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510OrphanedAccountCheckError {
+pub enum OrphanedAccountCheckError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`o_bpv5_1_0_system_view_names_check`]
+/// struct for typed errors of method [`system_view_names_check`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum OBpv510SystemViewNamesCheckError {
+pub enum SystemViewNamesCheckError {
     Status500(),
     UnknownValue(serde_json::Value),
 }
 
 
 /// <p>Check unique index at account access table.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
-pub async fn o_bpv5_1_0_account_access_unique_index_check(configuration: &configuration::Configuration, ) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv510AccountAccessUniqueIndexCheckError>> {
+pub async fn account_access_unique_index_check(configuration: &configuration::Configuration, ) -> Result<models::AccountAccessUniqueIndexCheck200Response, Error<AccountAccessUniqueIndexCheckError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/management/system/integrity/account-access-unique-index-1-check", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -82,7 +82,7 @@ pub async fn o_bpv5_1_0_account_access_unique_index_check(configuration: &config
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -100,18 +100,18 @@ pub async fn o_bpv5_1_0_account_access_unique_index_check(configuration: &config
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510AccountAccessUniqueIndexCheckError> = serde_json::from_str(&content).ok();
+        let entity: Option<AccountAccessUniqueIndexCheckError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Check for sensible currencies at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
-pub async fn o_bpv5_1_0_account_currency_check(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv510AccountCurrencyCheckError>> {
+pub async fn account_currency_check(configuration: &configuration::Configuration, bankid: &str) -> Result<models::AccountAccessUniqueIndexCheck200Response, Error<AccountCurrencyCheckError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -138,7 +138,7 @@ pub async fn o_bpv5_1_0_account_currency_check(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -156,18 +156,18 @@ pub async fn o_bpv5_1_0_account_currency_check(configuration: &configuration::Co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510AccountCurrencyCheckError> = serde_json::from_str(&content).ok();
+        let entity: Option<AccountCurrencyCheckError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Check custom view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
-pub async fn o_bpv5_1_0_custom_view_names_check(configuration: &configuration::Configuration, ) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv510CustomViewNamesCheckError>> {
+pub async fn custom_view_names_check(configuration: &configuration::Configuration, ) -> Result<models::AccountAccessUniqueIndexCheck200Response, Error<CustomViewNamesCheckError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/management/system/integrity/custom-view-names-check", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -192,7 +192,7 @@ pub async fn o_bpv5_1_0_custom_view_names_check(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -210,18 +210,18 @@ pub async fn o_bpv5_1_0_custom_view_names_check(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510CustomViewNamesCheckError> = serde_json::from_str(&content).ok();
+        let entity: Option<CustomViewNamesCheckError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Check for orphaned accounts at Bank Account model</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
-pub async fn o_bpv5_1_0_orphaned_account_check(configuration: &configuration::Configuration, bankid: &str) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv510OrphanedAccountCheckError>> {
+pub async fn orphaned_account_check(configuration: &configuration::Configuration, bankid: &str) -> Result<models::AccountAccessUniqueIndexCheck200Response, Error<OrphanedAccountCheckError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_bankid = bankid;
 
@@ -248,7 +248,7 @@ pub async fn o_bpv5_1_0_orphaned_account_check(configuration: &configuration::Co
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -266,18 +266,18 @@ pub async fn o_bpv5_1_0_orphaned_account_check(configuration: &configuration::Co
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510OrphanedAccountCheckError> = serde_json::from_str(&content).ok();
+        let entity: Option<OrphanedAccountCheckError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
 
 /// <p>Check system view names.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> <p><a href=\"/glossary#\">debug_info</a>: debug_info</p> 
-pub async fn o_bpv5_1_0_system_view_names_check(configuration: &configuration::Configuration, ) -> Result<models::Obpv121UpdateTransactionNarrative200Response, Error<OBpv510SystemViewNamesCheckError>> {
+pub async fn system_view_names_check(configuration: &configuration::Configuration, ) -> Result<models::AccountAccessUniqueIndexCheck200Response, Error<SystemViewNamesCheckError>> {
 
     let uri_str = format!("{}/obp/v5.1.0/management/system/integrity/system-view-names-check", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -302,7 +302,7 @@ pub async fn o_bpv5_1_0_system_view_names_check(configuration: &configuration::C
             Some(ref prefix) => format!("{} {}", prefix, key),
             None => key,
         };
-        req_builder = req_builder.header("Authorization", value);
+        req_builder = req_builder.header("DirectLogin", value);
     };
 
     let req = req_builder.build()?;
@@ -320,12 +320,12 @@ pub async fn o_bpv5_1_0_system_view_names_check(configuration: &configuration::C
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::Obpv121UpdateTransactionNarrative200Response`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AccountAccessUniqueIndexCheck200Response`")))),
         }
     } else {
         let content = resp.text().await?;
-        let entity: Option<OBpv510SystemViewNamesCheckError> = serde_json::from_str(&content).ok();
+        let entity: Option<SystemViewNamesCheckError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

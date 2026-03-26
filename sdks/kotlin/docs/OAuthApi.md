@@ -1,18 +1,18 @@
 # OAuthApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv310GetOAuth2ServerJWKsURIs**](OAuthApi.md#oBPv310GetOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
-| [**oBPv310GetObpConnectorLoopback**](OAuthApi.md#oBPv310GetObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
-| [**oBPv600GetOidcClient**](OAuthApi.md#oBPv600GetOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
-| [**oBPv600VerifyOidcClient**](OAuthApi.md#oBPv600VerifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
+| [**getOAuth2ServerJWKsURIs**](OAuthApi.md#getOAuth2ServerJWKsURIs) | **GET** /obp/v3.1.0/jwks-uris | Get JSON Web Key (JWK) URIs |
+| [**getObpConnectorLoopback**](OAuthApi.md#getObpConnectorLoopback) | **GET** /obp/v3.1.0/connector/loopback | Get Connector Status (Loopback) |
+| [**getOidcClient**](OAuthApi.md#getOidcClient) | **GET** /obp/v6.0.0/oidc/clients/{clientid} | Get OIDC Client |
+| [**verifyOidcClient**](OAuthApi.md#verifyOidcClient) | **POST** /obp/v6.0.0/oidc/clients/verify | Verify OIDC Client |
 
 
-<a id="oBPv310GetOAuth2ServerJWKsURIs"></a>
-# **oBPv310GetOAuth2ServerJWKsURIs**
-> OBPv310GetOAuth2ServerJWKsURIs200Response oBPv310GetOAuth2ServerJWKsURIs()
+<a id="getOAuth2ServerJWKsURIs"></a>
+# **getOAuth2ServerJWKsURIs**
+> GetOAuth2ServerJWKsURIs200Response getOAuth2ServerJWKsURIs()
 
 Get JSON Web Key (JWK) URIs
 
@@ -26,13 +26,13 @@ Get JSON Web Key (JWK) URIs
 
 val apiInstance = OAuthApi()
 try {
-    val result : OBPv310GetOAuth2ServerJWKsURIs200Response = apiInstance.oBPv310GetOAuth2ServerJWKsURIs()
+    val result : GetOAuth2ServerJWKsURIs200Response = apiInstance.getOAuth2ServerJWKsURIs()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling OAuthApi#oBPv310GetOAuth2ServerJWKsURIs")
+    println("4xx response calling OAuthApi#getOAuth2ServerJWKsURIs")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling OAuthApi#oBPv310GetOAuth2ServerJWKsURIs")
+    println("5xx response calling OAuthApi#getOAuth2ServerJWKsURIs")
     e.printStackTrace()
 }
 ```
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetOAuth2ServerJWKsURIs200Response**](OBPv310GetOAuth2ServerJWKsURIs200Response.md)
+[**GetOAuth2ServerJWKsURIs200Response**](GetOAuth2ServerJWKsURIs200Response.md)
 
 ### Authorization
 
@@ -53,9 +53,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv310GetObpConnectorLoopback"></a>
-# **oBPv310GetObpConnectorLoopback**
-> OBPv310GetObpConnectorLoopback200Response oBPv310GetObpConnectorLoopback()
+<a id="getObpConnectorLoopback"></a>
+# **getObpConnectorLoopback**
+> GetObpConnectorLoopback200Response getObpConnectorLoopback()
 
 Get Connector Status (Loopback)
 
@@ -69,13 +69,13 @@ Get Connector Status (Loopback)
 
 val apiInstance = OAuthApi()
 try {
-    val result : OBPv310GetObpConnectorLoopback200Response = apiInstance.oBPv310GetObpConnectorLoopback()
+    val result : GetObpConnectorLoopback200Response = apiInstance.getObpConnectorLoopback()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling OAuthApi#oBPv310GetObpConnectorLoopback")
+    println("4xx response calling OAuthApi#getObpConnectorLoopback")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling OAuthApi#oBPv310GetObpConnectorLoopback")
+    println("5xx response calling OAuthApi#getObpConnectorLoopback")
     e.printStackTrace()
 }
 ```
@@ -85,7 +85,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv310GetObpConnectorLoopback200Response**](OBPv310GetObpConnectorLoopback200Response.md)
+[**GetObpConnectorLoopback200Response**](GetObpConnectorLoopback200Response.md)
 
 ### Authorization
 
@@ -96,21 +96,21 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600GetOidcClient"></a>
-# **oBPv600GetOidcClient**
-> OBPv600GetOidcClient200Response oBPv600GetOidcClient(clientid)
+<a id="getOidcClient"></a>
+# **getOidcClient**
+> GetOidcClient200Response getOidcClient(clientid)
 
 Get OIDC Client
 
-&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Gets an OIDC/OAuth2 client&#39;s metadata by client_id.&lt;/p&gt; &lt;p&gt;Returns client information including name, consumer_id, redirect_uris, and enabled status.&lt;br /&gt; This endpoint does not verify the client secret - use POST /oidc/clients/verify for authentication.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;CLIENT_ID&lt;/a&gt;: CLIENT_ID&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_name&lt;/strong&gt;&lt;/a&gt;: client_name&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;consumer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#enabled\&quot;&gt;&lt;strong&gt;enabled&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;redirect_uris&lt;/strong&gt;&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -121,13 +121,13 @@ Get OIDC Client
 val apiInstance = OAuthApi()
 val clientid : kotlin.String = clientid_example // kotlin.String | The CLIENTID identifier
 try {
-    val result : OBPv600GetOidcClient200Response = apiInstance.oBPv600GetOidcClient(clientid)
+    val result : GetOidcClient200Response = apiInstance.getOidcClient(clientid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling OAuthApi#oBPv600GetOidcClient")
+    println("4xx response calling OAuthApi#getOidcClient")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling OAuthApi#oBPv600GetOidcClient")
+    println("5xx response calling OAuthApi#getOidcClient")
     e.printStackTrace()
 }
 ```
@@ -139,7 +139,7 @@ try {
 
 ### Return type
 
-[**OBPv600GetOidcClient200Response**](OBPv600GetOidcClient200Response.md)
+[**GetOidcClient200Response**](GetOidcClient200Response.md)
 
 ### Authorization
 
@@ -150,21 +150,21 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a id="oBPv600VerifyOidcClient"></a>
-# **oBPv600VerifyOidcClient**
-> OBPv600VerifyOidcClient200Response oBPv600VerifyOidcClient(obPv600VerifyOidcClientRequest)
+<a id="verifyOidcClient"></a>
+# **verifyOidcClient**
+> VerifyOidcClient200Response verifyOidcClient(verifyOidcClientRequest)
 
 Verify OIDC Client
 
-&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
+&lt;p&gt;Verifies an OIDC/OAuth2 client&#39;s credentials.&lt;/p&gt; &lt;p&gt;Returns &lt;code&gt;valid: true&lt;/code&gt; if the client_id and client_secret match an active consumer.&lt;br /&gt; Also returns the consumer_id and redirect_uris for use by the OIDC provider.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;This endpoint supports &lt;strong&gt;User OR Application&lt;/strong&gt; authentication. You can authenticate either as a logged-in User (with Entitlements) or as an Application using a Consumer Key (with Scopes).&lt;br /&gt; See [here](/glossary#API.Endpoint Auth Modes) for more information.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_id&lt;/strong&gt;&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;client_secret&lt;/strong&gt;&lt;/a&gt;: client_secret&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;valid&lt;/strong&gt;&lt;/a&gt;: valid&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;client_id&lt;/a&gt;: client_id&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;consumer_id&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;redirect_uris&lt;/a&gt;: redirect_uris&lt;/p&gt; 
 
 ### Example
 ```kotlin
@@ -173,15 +173,15 @@ Verify OIDC Client
 //import com.openbankproject.models.*
 
 val apiInstance = OAuthApi()
-val obPv600VerifyOidcClientRequest : OBPv600VerifyOidcClientRequest = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} // OBPv600VerifyOidcClientRequest | Request body
+val verifyOidcClientRequest : VerifyOidcClientRequest = {"type":"object","properties":{"client_id":{"type":"string"},"client_secret":{"type":"string"}}} // VerifyOidcClientRequest | Request body
 try {
-    val result : OBPv600VerifyOidcClient200Response = apiInstance.oBPv600VerifyOidcClient(obPv600VerifyOidcClientRequest)
+    val result : VerifyOidcClient200Response = apiInstance.verifyOidcClient(verifyOidcClientRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling OAuthApi#oBPv600VerifyOidcClient")
+    println("4xx response calling OAuthApi#verifyOidcClient")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling OAuthApi#oBPv600VerifyOidcClient")
+    println("5xx response calling OAuthApi#verifyOidcClient")
     e.printStackTrace()
 }
 ```
@@ -189,11 +189,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv600VerifyOidcClientRequest** | [**OBPv600VerifyOidcClientRequest**](OBPv600VerifyOidcClientRequest.md)| Request body | |
+| **verifyOidcClientRequest** | [**VerifyOidcClientRequest**](VerifyOidcClientRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv600VerifyOidcClient200Response**](OBPv600VerifyOidcClient200Response.md)
+[**VerifyOidcClient200Response**](VerifyOidcClient200Response.md)
 
 ### Authorization
 
@@ -204,8 +204,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

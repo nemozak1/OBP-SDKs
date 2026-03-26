@@ -19,10 +19,10 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400GetDynamicEndpoints200Response
-import com.openbankproject.models.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
-import com.openbankproject.models.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
-import com.openbankproject.models.OBPv400UpdateBankLevelDynamicEndpointHostRequest
+import com.openbankproject.models.GetDynamicEndpoints200Response
+import com.openbankproject.models.GetDynamicEndpoints200ResponseDynamicEndpointsInner
+import com.openbankproject.models.GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
+import com.openbankproject.models.UpdateBankLevelDynamicEndpointHostRequest
 
 import com.squareup.moshi.Json
 
@@ -44,7 +44,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Create Bank Level Dynamic Endpoint
      * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
-     * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
+     * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateBankLevelDynamicEndpoint(bankid: kotlin.String, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        val localVarResponse = oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    fun createBankLevelDynamicEndpoint(bankid: kotlin.String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        val localVarResponse = createBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200ResponseDynamicEndpointsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,30 +86,30 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Create Bank Level Dynamic Endpoint
      * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?>
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
+     * @return ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?> {
-        val localVariableConfig = oBPv400CreateBankLevelDynamicEndpointRequestConfig(bankid = bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    fun createBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?> {
+        val localVariableConfig = createBankLevelDynamicEndpointRequestConfig(bankid = bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
-        return request<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return request<GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateBankLevelDynamicEndpoint
+     * To obtain the request config of the operation createBankLevelDynamicEndpoint
      *
      * @param bankid The BANKID identifier
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : RequestConfig<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString> {
-        val localVariableBody = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+    fun createBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : RequestConfig<GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString> {
+        val localVariableBody = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -129,8 +129,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * POST /obp/v4.0.0/management/dynamic-endpoints
      * Create Dynamic Endpoint
      * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
-     * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
+     * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -139,11 +139,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        val localVarResponse = oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    fun createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        val localVarResponse = createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200ResponseDynamicEndpointsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -161,29 +161,29 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * POST /obp/v4.0.0/management/dynamic-endpoints
      * Create Dynamic Endpoint
      * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?>
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
+     * @return ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?> {
-        val localVariableConfig = oBPv400CreateDynamicEndpointRequestConfig(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString)
+    fun createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?> {
+        val localVariableConfig = createDynamicEndpointRequestConfig(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString)
 
-        return request<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return request<GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateDynamicEndpoint
+     * To obtain the request config of the operation createDynamicEndpoint
      *
-     * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body
+     * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateDynamicEndpointRequestConfig(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString: OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) : RequestConfig<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString> {
-        val localVariableBody = obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString
+    fun createDynamicEndpointRequestConfig(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString: GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) : RequestConfig<GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString> {
+        val localVariableBody = getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -213,8 +213,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteBankLevelDynamicEndpoint(bankid: kotlin.String, dynamicendpointid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid)
+    fun deleteBankLevelDynamicEndpoint(bankid: kotlin.String, dynamicendpointid: kotlin.String) : Unit {
+        val localVarResponse = deleteBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -242,8 +242,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteBankLevelDynamicEndpointRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid)
+    fun deleteBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteBankLevelDynamicEndpointRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -251,13 +251,13 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteBankLevelDynamicEndpoint
+     * To obtain the request config of the operation deleteBankLevelDynamicEndpoint
      *
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -285,8 +285,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteDynamicEndpoint(dynamicendpointid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
+    fun deleteDynamicEndpoint(dynamicendpointid: kotlin.String) : Unit {
+        val localVarResponse = deleteDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -313,8 +313,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
+    fun deleteDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -322,12 +322,12 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteDynamicEndpoint
+     * To obtain the request config of the operation deleteDynamicEndpoint
      *
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -355,8 +355,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400DeleteMyDynamicEndpoint(dynamicendpointid: kotlin.String) : Unit {
-        val localVarResponse = oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
+    fun deleteMyDynamicEndpoint(dynamicendpointid: kotlin.String) : Unit {
+        val localVarResponse = deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -383,8 +383,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
-        val localVariableConfig = oBPv400DeleteMyDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
+    fun deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<Unit?> {
+        val localVariableConfig = deleteMyDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -392,12 +392,12 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
     }
 
     /**
-     * To obtain the request config of the operation oBPv400DeleteMyDynamicEndpoint
+     * To obtain the request config of the operation deleteMyDynamicEndpoint
      *
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
      * @return RequestConfig
      */
-    fun oBPv400DeleteMyDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
+    fun deleteMyDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -418,7 +418,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * &lt;p&gt;Get a Bank Level Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -427,11 +427,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetBankLevelDynamicEndpoint(bankid: kotlin.String, dynamicendpointid: kotlin.String) : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        val localVarResponse = oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid)
+    fun getBankLevelDynamicEndpoint(bankid: kotlin.String, dynamicendpointid: kotlin.String) : GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        val localVarResponse = getBankLevelDynamicEndpointWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200ResponseDynamicEndpointsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -451,28 +451,28 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * &lt;p&gt;Get a Bank Level Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?>
+     * @return ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String) : ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?> {
-        val localVariableConfig = oBPv400GetBankLevelDynamicEndpointRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid)
+    fun getBankLevelDynamicEndpointWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String) : ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?> {
+        val localVariableConfig = getBankLevelDynamicEndpointRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid)
 
-        return request<Unit, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return request<Unit, GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetBankLevelDynamicEndpoint
+     * To obtain the request config of the operation getBankLevelDynamicEndpoint
      *
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelDynamicEndpointRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -493,7 +493,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Get Bank Level Dynamic Endpoints
      * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return OBPv400GetDynamicEndpoints200Response
+     * @return GetDynamicEndpoints200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -502,11 +502,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetBankLevelDynamicEndpoints(bankid: kotlin.String) : OBPv400GetDynamicEndpoints200Response {
-        val localVarResponse = oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid = bankid)
+    fun getBankLevelDynamicEndpoints(bankid: kotlin.String) : GetDynamicEndpoints200Response {
+        val localVarResponse = getBankLevelDynamicEndpointsWithHttpInfo(bankid = bankid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -525,27 +525,27 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Get Bank Level Dynamic Endpoints
      * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200Response?>
+     * @return ApiResponse<GetDynamicEndpoints200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid: kotlin.String) : ApiResponse<OBPv400GetDynamicEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetBankLevelDynamicEndpointsRequestConfig(bankid = bankid)
+    fun getBankLevelDynamicEndpointsWithHttpInfo(bankid: kotlin.String) : ApiResponse<GetDynamicEndpoints200Response?> {
+        val localVariableConfig = getBankLevelDynamicEndpointsRequestConfig(bankid = bankid)
 
-        return request<Unit, OBPv400GetDynamicEndpoints200Response>(
+        return request<Unit, GetDynamicEndpoints200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetBankLevelDynamicEndpoints
+     * To obtain the request config of the operation getBankLevelDynamicEndpoints
      *
      * @param bankid The BANKID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetBankLevelDynamicEndpointsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
+    fun getBankLevelDynamicEndpointsRequestConfig(bankid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -566,7 +566,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Get Dynamic Endpoint
      * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+     * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -575,11 +575,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetDynamicEndpoint(dynamicendpointid: kotlin.String) : OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems {
-        val localVarResponse = oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
+    fun getDynamicEndpoint(dynamicendpointid: kotlin.String) : GetDynamicEndpoints200ResponseDynamicEndpointsInner {
+        val localVarResponse = getDynamicEndpointWithHttpInfo(dynamicendpointid = dynamicendpointid)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200ResponseDynamicEndpointsInner
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -598,27 +598,27 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * Get Dynamic Endpoint
      * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?>
+     * @return ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems?> {
-        val localVariableConfig = oBPv400GetDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
+    fun getDynamicEndpointWithHttpInfo(dynamicendpointid: kotlin.String) : ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner?> {
+        val localVariableConfig = getDynamicEndpointRequestConfig(dynamicendpointid = dynamicendpointid)
 
-        return request<Unit, OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return request<Unit, GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetDynamicEndpoint
+     * To obtain the request config of the operation getDynamicEndpoint
      *
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
      * @return RequestConfig
      */
-    fun oBPv400GetDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
+    fun getDynamicEndpointRequestConfig(dynamicendpointid: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -638,7 +638,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v4.0.0/management/dynamic-endpoints
      *  Get Dynamic Endpoints
      * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return OBPv400GetDynamicEndpoints200Response
+     * @return GetDynamicEndpoints200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -647,11 +647,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetDynamicEndpoints() : OBPv400GetDynamicEndpoints200Response {
-        val localVarResponse = oBPv400GetDynamicEndpointsWithHttpInfo()
+    fun getDynamicEndpoints() : GetDynamicEndpoints200Response {
+        val localVarResponse = getDynamicEndpointsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -669,26 +669,26 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v4.0.0/management/dynamic-endpoints
      *  Get Dynamic Endpoints
      * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200Response?>
+     * @return ApiResponse<GetDynamicEndpoints200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetDynamicEndpointsWithHttpInfo() : ApiResponse<OBPv400GetDynamicEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetDynamicEndpointsRequestConfig()
+    fun getDynamicEndpointsWithHttpInfo() : ApiResponse<GetDynamicEndpoints200Response?> {
+        val localVariableConfig = getDynamicEndpointsRequestConfig()
 
-        return request<Unit, OBPv400GetDynamicEndpoints200Response>(
+        return request<Unit, GetDynamicEndpoints200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetDynamicEndpoints
+     * To obtain the request config of the operation getDynamicEndpoints
      *
      * @return RequestConfig
      */
-    fun oBPv400GetDynamicEndpointsRequestConfig() : RequestConfig<Unit> {
+    fun getDynamicEndpointsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -708,7 +708,7 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v4.0.0/my/dynamic-endpoints
      * Get My Dynamic Endpoints
      * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return OBPv400GetDynamicEndpoints200Response
+     * @return GetDynamicEndpoints200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -717,11 +717,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400GetMyDynamicEndpoints() : OBPv400GetDynamicEndpoints200Response {
-        val localVarResponse = oBPv400GetMyDynamicEndpointsWithHttpInfo()
+    fun getMyDynamicEndpoints() : GetDynamicEndpoints200Response {
+        val localVarResponse = getMyDynamicEndpointsWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400GetDynamicEndpoints200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetDynamicEndpoints200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -739,26 +739,26 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * GET /obp/v4.0.0/my/dynamic-endpoints
      * Get My Dynamic Endpoints
      * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-     * @return ApiResponse<OBPv400GetDynamicEndpoints200Response?>
+     * @return ApiResponse<GetDynamicEndpoints200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400GetMyDynamicEndpointsWithHttpInfo() : ApiResponse<OBPv400GetDynamicEndpoints200Response?> {
-        val localVariableConfig = oBPv400GetMyDynamicEndpointsRequestConfig()
+    fun getMyDynamicEndpointsWithHttpInfo() : ApiResponse<GetDynamicEndpoints200Response?> {
+        val localVariableConfig = getMyDynamicEndpointsRequestConfig()
 
-        return request<Unit, OBPv400GetDynamicEndpoints200Response>(
+        return request<Unit, GetDynamicEndpoints200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400GetMyDynamicEndpoints
+     * To obtain the request config of the operation getMyDynamicEndpoints
      *
      * @return RequestConfig
      */
-    fun oBPv400GetMyDynamicEndpointsRequestConfig() : RequestConfig<Unit> {
+    fun getMyDynamicEndpointsRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -780,8 +780,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
-     * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
+     * @return UpdateBankLevelDynamicEndpointHostRequest
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -790,11 +790,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateBankLevelDynamicEndpointHost(bankid: kotlin.String, dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : OBPv400UpdateBankLevelDynamicEndpointHostRequest {
-        val localVarResponse = oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest = obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    fun updateBankLevelDynamicEndpointHost(bankid: kotlin.String, dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : UpdateBankLevelDynamicEndpointHostRequest {
+        val localVarResponse = updateBankLevelDynamicEndpointHostWithHttpInfo(bankid = bankid, dynamicendpointid = dynamicendpointid, updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHostRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400UpdateBankLevelDynamicEndpointHostRequest
+            ResponseType.Success -> (localVarResponse as Success<*>).data as UpdateBankLevelDynamicEndpointHostRequest
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -814,31 +814,31 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
-     * @return ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest?>
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
+     * @return ApiResponse<UpdateBankLevelDynamicEndpointHostRequest?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest?> {
-        val localVariableConfig = oBPv400UpdateBankLevelDynamicEndpointHostRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest = obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    fun updateBankLevelDynamicEndpointHostWithHttpInfo(bankid: kotlin.String, dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : ApiResponse<UpdateBankLevelDynamicEndpointHostRequest?> {
+        val localVariableConfig = updateBankLevelDynamicEndpointHostRequestConfig(bankid = bankid, dynamicendpointid = dynamicendpointid, updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHostRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicEndpointHostRequest, OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+        return request<UpdateBankLevelDynamicEndpointHostRequest, UpdateBankLevelDynamicEndpointHostRequest>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateBankLevelDynamicEndpointHost
+     * To obtain the request config of the operation updateBankLevelDynamicEndpointHost
      *
      * @param bankid The BANKID identifier
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateBankLevelDynamicEndpointHostRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicEndpointHostRequest
+    fun updateBankLevelDynamicEndpointHostRequestConfig(bankid: kotlin.String, dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : RequestConfig<UpdateBankLevelDynamicEndpointHostRequest> {
+        val localVariableBody = updateBankLevelDynamicEndpointHostRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -859,8 +859,8 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      *  Update Dynamic Endpoint Host
      * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
-     * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
+     * @return UpdateBankLevelDynamicEndpointHostRequest
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -869,11 +869,11 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400UpdateDynamicEndpointHost(dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : OBPv400UpdateBankLevelDynamicEndpointHostRequest {
-        val localVarResponse = oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid = dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest = obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    fun updateDynamicEndpointHost(dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : UpdateBankLevelDynamicEndpointHostRequest {
+        val localVarResponse = updateDynamicEndpointHostWithHttpInfo(dynamicendpointid = dynamicendpointid, updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHostRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400UpdateBankLevelDynamicEndpointHostRequest
+            ResponseType.Success -> (localVarResponse as Success<*>).data as UpdateBankLevelDynamicEndpointHostRequest
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -892,30 +892,30 @@ open class DynamicEndpointManageApi(basePath: kotlin.String = defaultBasePath, c
      *  Update Dynamic Endpoint Host
      * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
-     * @return ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest?>
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
+     * @return ApiResponse<UpdateBankLevelDynamicEndpointHostRequest?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest?> {
-        val localVariableConfig = oBPv400UpdateDynamicEndpointHostRequestConfig(dynamicendpointid = dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest = obPv400UpdateBankLevelDynamicEndpointHostRequest)
+    fun updateDynamicEndpointHostWithHttpInfo(dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : ApiResponse<UpdateBankLevelDynamicEndpointHostRequest?> {
+        val localVariableConfig = updateDynamicEndpointHostRequestConfig(dynamicendpointid = dynamicendpointid, updateBankLevelDynamicEndpointHostRequest = updateBankLevelDynamicEndpointHostRequest)
 
-        return request<OBPv400UpdateBankLevelDynamicEndpointHostRequest, OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+        return request<UpdateBankLevelDynamicEndpointHostRequest, UpdateBankLevelDynamicEndpointHostRequest>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400UpdateDynamicEndpointHost
+     * To obtain the request config of the operation updateDynamicEndpointHost
      *
      * @param dynamicendpointid The DYNAMICENDPOINTID identifier
-     * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body
+     * @param updateBankLevelDynamicEndpointHostRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400UpdateDynamicEndpointHostRequestConfig(dynamicendpointid: kotlin.String, obPv400UpdateBankLevelDynamicEndpointHostRequest: OBPv400UpdateBankLevelDynamicEndpointHostRequest) : RequestConfig<OBPv400UpdateBankLevelDynamicEndpointHostRequest> {
-        val localVariableBody = obPv400UpdateBankLevelDynamicEndpointHostRequest
+    fun updateDynamicEndpointHostRequestConfig(dynamicendpointid: kotlin.String, updateBankLevelDynamicEndpointHostRequest: UpdateBankLevelDynamicEndpointHostRequest) : RequestConfig<UpdateBankLevelDynamicEndpointHostRequest> {
+        val localVariableBody = updateBankLevelDynamicEndpointHostRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

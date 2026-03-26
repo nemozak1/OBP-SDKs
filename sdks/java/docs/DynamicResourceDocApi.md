@@ -1,37 +1,37 @@
 # DynamicResourceDocApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv400BuildDynamicEndpointTemplate**](DynamicResourceDocApi.md#oBPv400BuildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**oBPv400BuildDynamicEndpointTemplateWithHttpInfo**](DynamicResourceDocApi.md#oBPv400BuildDynamicEndpointTemplateWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
-| [**oBPv400CreateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400CreateBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
-| [**oBPv400CreateDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400CreateDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**oBPv400CreateDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400CreateDynamicResourceDocWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
-| [**oBPv400DeleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400DeleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
-| [**oBPv400DeleteDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400DeleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**oBPv400DeleteDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400DeleteDynamicResourceDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
-| [**oBPv400GetAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#oBPv400GetAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo**](DynamicResourceDocApi.md#oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
-| [**oBPv400GetAllDynamicResourceDocs**](DynamicResourceDocApi.md#oBPv400GetAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**oBPv400GetAllDynamicResourceDocsWithHttpInfo**](DynamicResourceDocApi.md#oBPv400GetAllDynamicResourceDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
-| [**oBPv400GetBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400GetBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**oBPv400GetBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400GetBankLevelDynamicResourceDocWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
-| [**oBPv400GetDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400GetDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**oBPv400GetDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400GetDynamicResourceDocWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
-| [**oBPv400UpdateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400UpdateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
-| [**oBPv400UpdateDynamicResourceDoc**](DynamicResourceDocApi.md#oBPv400UpdateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
-| [**oBPv400UpdateDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#oBPv400UpdateDynamicResourceDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**buildDynamicEndpointTemplate**](DynamicResourceDocApi.md#buildDynamicEndpointTemplate) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**buildDynamicEndpointTemplateWithHttpInfo**](DynamicResourceDocApi.md#buildDynamicEndpointTemplateWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-resource-docs/endpoint-code | Create Dynamic Resource Doc endpoint code |
+| [**createBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#createBankLevelDynamicResourceDoc) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**createBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#createBankLevelDynamicResourceDocWithHttpInfo) | **POST** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Create Bank Level Dynamic Resource Doc |
+| [**createDynamicResourceDoc**](DynamicResourceDocApi.md#createDynamicResourceDoc) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**createDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#createDynamicResourceDocWithHttpInfo) | **POST** /obp/v4.0.0/management/dynamic-resource-docs | Create Dynamic Resource Doc |
+| [**deleteBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#deleteBankLevelDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**deleteBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#deleteBankLevelDynamicResourceDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Bank Level Dynamic Resource Doc |
+| [**deleteDynamicResourceDoc**](DynamicResourceDocApi.md#deleteDynamicResourceDoc) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**deleteDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#deleteDynamicResourceDocWithHttpInfo) | **DELETE** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Delete Dynamic Resource Doc |
+| [**getAllBankLevelDynamicResourceDocs**](DynamicResourceDocApi.md#getAllBankLevelDynamicResourceDocs) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**getAllBankLevelDynamicResourceDocsWithHttpInfo**](DynamicResourceDocApi.md#getAllBankLevelDynamicResourceDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs | Get all Bank Level Dynamic Resource Docs |
+| [**getAllDynamicResourceDocs**](DynamicResourceDocApi.md#getAllDynamicResourceDocs) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**getAllDynamicResourceDocsWithHttpInfo**](DynamicResourceDocApi.md#getAllDynamicResourceDocsWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-resource-docs | Get all Dynamic Resource Docs |
+| [**getBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#getBankLevelDynamicResourceDoc) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**getBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#getBankLevelDynamicResourceDocWithHttpInfo) | **GET** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Bank Level Dynamic Resource Doc by Id |
+| [**getDynamicResourceDoc**](DynamicResourceDocApi.md#getDynamicResourceDoc) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**getDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#getDynamicResourceDocWithHttpInfo) | **GET** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Get Dynamic Resource Doc by Id |
+| [**updateBankLevelDynamicResourceDoc**](DynamicResourceDocApi.md#updateBankLevelDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**updateBankLevelDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#updateBankLevelDynamicResourceDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/banks/{bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Bank Level Dynamic Resource Doc |
+| [**updateDynamicResourceDoc**](DynamicResourceDocApi.md#updateDynamicResourceDoc) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
+| [**updateDynamicResourceDocWithHttpInfo**](DynamicResourceDocApi.md#updateDynamicResourceDocWithHttpInfo) | **PUT** /obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID | Update Dynamic Resource Doc |
 
 
 
-## oBPv400BuildDynamicEndpointTemplate
+## buildDynamicEndpointTemplate
 
-> OBPv400BuildDynamicEndpointTemplate200Response oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest)
+> BuildDynamicEndpointTemplate200Response buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -51,7 +51,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -70,12 +70,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest = new OBPv400BuildDynamicEndpointTemplateRequest(); // OBPv400BuildDynamicEndpointTemplateRequest | Request body
+        BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest = new BuildDynamicEndpointTemplateRequest(); // BuildDynamicEndpointTemplateRequest | Request body
         try {
-            OBPv400BuildDynamicEndpointTemplate200Response result = apiInstance.oBPv400BuildDynamicEndpointTemplate(obPv400BuildDynamicEndpointTemplateRequest);
+            BuildDynamicEndpointTemplate200Response result = apiInstance.buildDynamicEndpointTemplate(buildDynamicEndpointTemplateRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400BuildDynamicEndpointTemplate");
+            System.err.println("Exception when calling DynamicResourceDocApi#buildDynamicEndpointTemplate");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -90,11 +90,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | |
+| **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)
+[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)
 
 
 ### Authorization
@@ -112,9 +112,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400BuildDynamicEndpointTemplateWithHttpInfo
+## buildDynamicEndpointTemplateWithHttpInfo
 
-> ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response> oBPv400BuildDynamicEndpointTemplate oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest)
+> ApiResponse<BuildDynamicEndpointTemplate200Response> buildDynamicEndpointTemplate buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest)
 
 Create Dynamic Resource Doc endpoint code
 
@@ -135,7 +135,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -154,14 +154,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400BuildDynamicEndpointTemplateRequest obPv400BuildDynamicEndpointTemplateRequest = new OBPv400BuildDynamicEndpointTemplateRequest(); // OBPv400BuildDynamicEndpointTemplateRequest | Request body
+        BuildDynamicEndpointTemplateRequest buildDynamicEndpointTemplateRequest = new BuildDynamicEndpointTemplateRequest(); // BuildDynamicEndpointTemplateRequest | Request body
         try {
-            ApiResponse<OBPv400BuildDynamicEndpointTemplate200Response> response = apiInstance.oBPv400BuildDynamicEndpointTemplateWithHttpInfo(obPv400BuildDynamicEndpointTemplateRequest);
+            ApiResponse<BuildDynamicEndpointTemplate200Response> response = apiInstance.buildDynamicEndpointTemplateWithHttpInfo(buildDynamicEndpointTemplateRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400BuildDynamicEndpointTemplate");
+            System.err.println("Exception when calling DynamicResourceDocApi#buildDynamicEndpointTemplate");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -176,11 +176,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400BuildDynamicEndpointTemplateRequest** | [**OBPv400BuildDynamicEndpointTemplateRequest**](OBPv400BuildDynamicEndpointTemplateRequest.md)| Request body | |
+| **buildDynamicEndpointTemplateRequest** | [**BuildDynamicEndpointTemplateRequest**](BuildDynamicEndpointTemplateRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDynamicEndpointTemplate200Response.md)>
+ApiResponse<[**BuildDynamicEndpointTemplate200Response**](BuildDynamicEndpointTemplate200Response.md)>
 
 
 ### Authorization
@@ -199,9 +199,9 @@ ApiResponse<[**OBPv400BuildDynamicEndpointTemplate200Response**](OBPv400BuildDyn
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateBankLevelDynamicResourceDoc
+## createBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -221,7 +221,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -241,12 +241,12 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400CreateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest);
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.createBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400CreateBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#createBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -262,11 +262,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -285,9 +285,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo
+## createBankLevelDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateBankLevelDynamicResourceDoc oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> createBankLevelDynamicResourceDoc createBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Create Bank Level Dynamic Resource Doc
 
@@ -308,7 +308,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -328,14 +328,14 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400CreateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest);
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.createBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400CreateBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#createBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -351,11 +351,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization
@@ -375,9 +375,9 @@ ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBan
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400CreateDynamicResourceDoc
+## createDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -397,7 +397,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -416,12 +416,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400CreateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest);
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.createDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400CreateDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#createDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -436,11 +436,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -458,9 +458,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400CreateDynamicResourceDocWithHttpInfo
+## createDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400CreateDynamicResourceDoc oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest)
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> createDynamicResourceDoc createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest)
 
 Create Dynamic Resource Doc
 
@@ -481,7 +481,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -500,14 +500,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400CreateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest);
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.createDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400CreateDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#createDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -522,11 +522,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization
@@ -545,9 +545,9 @@ ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBan
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteBankLevelDynamicResourceDoc
+## deleteBankLevelDynamicResourceDoc
 
-> void oBPv400DeleteBankLevelDynamicResourceDoc(bankid)
+> void deleteBankLevelDynamicResourceDoc(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -567,7 +567,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -588,9 +588,9 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            apiInstance.oBPv400DeleteBankLevelDynamicResourceDoc(bankid);
+            apiInstance.deleteBankLevelDynamicResourceDoc(bankid);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400DeleteBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#deleteBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -628,9 +628,9 @@ null (empty response body)
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo
+## deleteBankLevelDynamicResourceDocWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteBankLevelDynamicResourceDoc oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid)
+> ApiResponse<Void> deleteBankLevelDynamicResourceDoc deleteBankLevelDynamicResourceDocWithHttpInfo(bankid)
 
 Delete Bank Level Dynamic Resource Doc
 
@@ -651,7 +651,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -672,11 +672,11 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteBankLevelDynamicResourceDocWithHttpInfo(bankid);
+            ApiResponse<Void> response = apiInstance.deleteBankLevelDynamicResourceDocWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400DeleteBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#deleteBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -715,9 +715,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400DeleteDynamicResourceDoc
+## deleteDynamicResourceDoc
 
-> void oBPv400DeleteDynamicResourceDoc()
+> void deleteDynamicResourceDoc()
 
 Delete Dynamic Resource Doc
 
@@ -737,7 +737,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -757,9 +757,9 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            apiInstance.oBPv400DeleteDynamicResourceDoc();
+            apiInstance.deleteDynamicResourceDoc();
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400DeleteDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#deleteDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -793,9 +793,9 @@ null (empty response body)
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400DeleteDynamicResourceDocWithHttpInfo
+## deleteDynamicResourceDocWithHttpInfo
 
-> ApiResponse<Void> oBPv400DeleteDynamicResourceDoc oBPv400DeleteDynamicResourceDocWithHttpInfo()
+> ApiResponse<Void> deleteDynamicResourceDoc deleteDynamicResourceDocWithHttpInfo()
 
 Delete Dynamic Resource Doc
 
@@ -816,7 +816,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -836,11 +836,11 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            ApiResponse<Void> response = apiInstance.oBPv400DeleteDynamicResourceDocWithHttpInfo();
+            ApiResponse<Void> response = apiInstance.deleteDynamicResourceDocWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400DeleteDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#deleteDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -875,9 +875,9 @@ ApiResponse<Void>
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllBankLevelDynamicResourceDocs
+## getAllBankLevelDynamicResourceDocs
 
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllBankLevelDynamicResourceDocs(bankid)
+> GetAllDynamicResourceDocs200Response getAllBankLevelDynamicResourceDocs(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -897,7 +897,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -918,10 +918,10 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetAllDynamicResourceDocs200Response result = apiInstance.oBPv400GetAllBankLevelDynamicResourceDocs(bankid);
+            GetAllDynamicResourceDocs200Response result = apiInstance.getAllBankLevelDynamicResourceDocs(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetAllBankLevelDynamicResourceDocs");
+            System.err.println("Exception when calling DynamicResourceDocApi#getAllBankLevelDynamicResourceDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -940,7 +940,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 
 ### Authorization
@@ -959,9 +959,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo
+## getAllBankLevelDynamicResourceDocsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllBankLevelDynamicResourceDocs oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid)
+> ApiResponse<GetAllDynamicResourceDocs200Response> getAllBankLevelDynamicResourceDocs getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid)
 
 Get all Bank Level Dynamic Resource Docs
 
@@ -982,7 +982,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1003,12 +1003,12 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> response = apiInstance.oBPv400GetAllBankLevelDynamicResourceDocsWithHttpInfo(bankid);
+            ApiResponse<GetAllDynamicResourceDocs200Response> response = apiInstance.getAllBankLevelDynamicResourceDocsWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetAllBankLevelDynamicResourceDocs");
+            System.err.println("Exception when calling DynamicResourceDocApi#getAllBankLevelDynamicResourceDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1027,7 +1027,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)>
+ApiResponse<[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)>
 
 
 ### Authorization
@@ -1047,9 +1047,9 @@ ApiResponse<[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynam
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetAllDynamicResourceDocs
+## getAllDynamicResourceDocs
 
-> OBPv400GetAllDynamicResourceDocs200Response oBPv400GetAllDynamicResourceDocs()
+> GetAllDynamicResourceDocs200Response getAllDynamicResourceDocs()
 
 Get all Dynamic Resource Docs
 
@@ -1069,7 +1069,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1089,10 +1089,10 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            OBPv400GetAllDynamicResourceDocs200Response result = apiInstance.oBPv400GetAllDynamicResourceDocs();
+            GetAllDynamicResourceDocs200Response result = apiInstance.getAllDynamicResourceDocs();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetAllDynamicResourceDocs");
+            System.err.println("Exception when calling DynamicResourceDocApi#getAllDynamicResourceDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1108,7 +1108,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)
+[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)
 
 
 ### Authorization
@@ -1126,9 +1126,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetAllDynamicResourceDocsWithHttpInfo
+## getAllDynamicResourceDocsWithHttpInfo
 
-> ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> oBPv400GetAllDynamicResourceDocs oBPv400GetAllDynamicResourceDocsWithHttpInfo()
+> ApiResponse<GetAllDynamicResourceDocs200Response> getAllDynamicResourceDocs getAllDynamicResourceDocsWithHttpInfo()
 
 Get all Dynamic Resource Docs
 
@@ -1149,7 +1149,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1169,12 +1169,12 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetAllDynamicResourceDocs200Response> response = apiInstance.oBPv400GetAllDynamicResourceDocsWithHttpInfo();
+            ApiResponse<GetAllDynamicResourceDocs200Response> response = apiInstance.getAllDynamicResourceDocsWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetAllDynamicResourceDocs");
+            System.err.println("Exception when calling DynamicResourceDocApi#getAllDynamicResourceDocs");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1190,7 +1190,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynamicResourceDocs200Response.md)>
+ApiResponse<[**GetAllDynamicResourceDocs200Response**](GetAllDynamicResourceDocs200Response.md)>
 
 
 ### Authorization
@@ -1209,9 +1209,9 @@ ApiResponse<[**OBPv400GetAllDynamicResourceDocs200Response**](OBPv400GetAllDynam
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetBankLevelDynamicResourceDoc
+## getBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetBankLevelDynamicResourceDoc(bankid)
+> GetBankLevelDynamicResourceDoc200Response getBankLevelDynamicResourceDoc(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -1231,7 +1231,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1252,10 +1252,10 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400GetBankLevelDynamicResourceDoc(bankid);
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.getBankLevelDynamicResourceDoc(bankid);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#getBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1274,7 +1274,7 @@ public class Example {
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -1293,9 +1293,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetBankLevelDynamicResourceDocWithHttpInfo
+## getBankLevelDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetBankLevelDynamicResourceDoc oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid)
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> getBankLevelDynamicResourceDoc getBankLevelDynamicResourceDocWithHttpInfo(bankid)
 
 Get Bank Level Dynamic Resource Doc by Id
 
@@ -1316,7 +1316,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1337,12 +1337,12 @@ public class Example {
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400GetBankLevelDynamicResourceDocWithHttpInfo(bankid);
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.getBankLevelDynamicResourceDocWithHttpInfo(bankid);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#getBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1361,7 +1361,7 @@ public class Example {
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization
@@ -1381,9 +1381,9 @@ ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBan
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400GetDynamicResourceDoc
+## getDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400GetDynamicResourceDoc()
+> GetBankLevelDynamicResourceDoc200Response getDynamicResourceDoc()
 
 Get Dynamic Resource Doc by Id
 
@@ -1403,7 +1403,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1423,10 +1423,10 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400GetDynamicResourceDoc();
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.getDynamicResourceDoc();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#getDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1442,7 +1442,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -1460,9 +1460,9 @@ This endpoint does not need any parameter.
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400GetDynamicResourceDocWithHttpInfo
+## getDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400GetDynamicResourceDoc oBPv400GetDynamicResourceDocWithHttpInfo()
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> getDynamicResourceDoc getDynamicResourceDocWithHttpInfo()
 
 Get Dynamic Resource Doc by Id
 
@@ -1483,7 +1483,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1503,12 +1503,12 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400GetDynamicResourceDocWithHttpInfo();
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.getDynamicResourceDocWithHttpInfo();
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400GetDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#getDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1524,7 +1524,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization
@@ -1543,9 +1543,9 @@ ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBan
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateBankLevelDynamicResourceDoc
+## updateBankLevelDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -1565,7 +1565,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1585,12 +1585,12 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400UpdateBankLevelDynamicResourceDoc(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest);
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.updateBankLevelDynamicResourceDoc(bankid, updateBankLevelDynamicResourceDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400UpdateBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#updateBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1606,11 +1606,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -1629,9 +1629,9 @@ public class Example {
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo
+## updateBankLevelDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateBankLevelDynamicResourceDoc oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest)
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateBankLevelDynamicResourceDoc updateBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest)
 
 Update Bank Level Dynamic Resource Doc
 
@@ -1652,7 +1652,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1672,14 +1672,14 @@ public class Example {
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
         String bankid = "bankid_example"; // String | The BANKID identifier
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400UpdateBankLevelDynamicResourceDocWithHttpInfo(bankid, obPv400UpdateBankLevelDynamicResourceDocRequest);
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.updateBankLevelDynamicResourceDocWithHttpInfo(bankid, updateBankLevelDynamicResourceDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400UpdateBankLevelDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#updateBankLevelDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1695,11 +1695,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | **String**| The BANKID identifier | |
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization
@@ -1719,9 +1719,9 @@ ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBan
 | **500** | Internal Server Error |  -  |
 
 
-## oBPv400UpdateDynamicResourceDoc
+## updateDynamicResourceDoc
 
-> OBPv400GetBankLevelDynamicResourceDoc200Response oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest)
+> GetBankLevelDynamicResourceDoc200Response updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -1741,7 +1741,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1760,12 +1760,12 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            OBPv400GetBankLevelDynamicResourceDoc200Response result = apiInstance.oBPv400UpdateDynamicResourceDoc(obPv400UpdateBankLevelDynamicResourceDocRequest);
+            GetBankLevelDynamicResourceDoc200Response result = apiInstance.updateDynamicResourceDoc(updateBankLevelDynamicResourceDocRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400UpdateDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#updateDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -1780,11 +1780,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)
+[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)
 
 
 ### Authorization
@@ -1802,9 +1802,9 @@ public class Example {
 | **200** | Successful operation |  -  |
 | **500** | Internal Server Error |  -  |
 
-## oBPv400UpdateDynamicResourceDocWithHttpInfo
+## updateDynamicResourceDocWithHttpInfo
 
-> ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> oBPv400UpdateDynamicResourceDoc oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest)
+> ApiResponse<GetBankLevelDynamicResourceDoc200Response> updateDynamicResourceDoc updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest)
 
 Update Dynamic Resource Doc
 
@@ -1825,7 +1825,7 @@ import com.openbankproject.api.DynamicResourceDocApi;
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://apisandbox.openbankproject.com");
+        defaultClient.setBasePath("http://127.0.0.1:8080");
         
         // Configure OAuth2 access token for authorization: OAuth2
         OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
@@ -1844,14 +1844,14 @@ public class Example {
         //DirectLogin.setApiKeyPrefix("Token");
 
         DynamicResourceDocApi apiInstance = new DynamicResourceDocApi(defaultClient);
-        OBPv400UpdateBankLevelDynamicResourceDocRequest obPv400UpdateBankLevelDynamicResourceDocRequest = new OBPv400UpdateBankLevelDynamicResourceDocRequest(); // OBPv400UpdateBankLevelDynamicResourceDocRequest | Request body
+        UpdateBankLevelDynamicResourceDocRequest updateBankLevelDynamicResourceDocRequest = new UpdateBankLevelDynamicResourceDocRequest(); // UpdateBankLevelDynamicResourceDocRequest | Request body
         try {
-            ApiResponse<OBPv400GetBankLevelDynamicResourceDoc200Response> response = apiInstance.oBPv400UpdateDynamicResourceDocWithHttpInfo(obPv400UpdateBankLevelDynamicResourceDocRequest);
+            ApiResponse<GetBankLevelDynamicResourceDoc200Response> response = apiInstance.updateDynamicResourceDocWithHttpInfo(updateBankLevelDynamicResourceDocRequest);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
         } catch (ApiException e) {
-            System.err.println("Exception when calling DynamicResourceDocApi#oBPv400UpdateDynamicResourceDoc");
+            System.err.println("Exception when calling DynamicResourceDocApi#updateDynamicResourceDoc");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Response headers: " + e.getResponseHeaders());
             System.err.println("Reason: " + e.getResponseBody());
@@ -1866,11 +1866,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **obPv400UpdateBankLevelDynamicResourceDocRequest** | [**OBPv400UpdateBankLevelDynamicResourceDocRequest**](OBPv400UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
+| **updateBankLevelDynamicResourceDocRequest** | [**UpdateBankLevelDynamicResourceDocRequest**](UpdateBankLevelDynamicResourceDocRequest.md)| Request body | |
 
 ### Return type
 
-ApiResponse<[**OBPv400GetBankLevelDynamicResourceDoc200Response**](OBPv400GetBankLevelDynamicResourceDoc200Response.md)>
+ApiResponse<[**GetBankLevelDynamicResourceDoc200Response**](GetBankLevelDynamicResourceDoc200Response.md)>
 
 
 ### Authorization

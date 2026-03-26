@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,25 +24,25 @@ import (
 // JSONSchemaValidationAPIService JSONSchemaValidationAPI service
 type JSONSchemaValidationAPIService service
 
-type ApiOBPv400CreateJsonSchemaValidationRequest struct {
+type ApiCreateJsonSchemaValidationRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 	operationid string
-	oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema *OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+	getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema *GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 }
 
 // Request body
-func (r ApiOBPv400CreateJsonSchemaValidationRequest) OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) ApiOBPv400CreateJsonSchemaValidationRequest {
-	r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = &oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+func (r ApiCreateJsonSchemaValidationRequest) GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) ApiCreateJsonSchemaValidationRequest {
+	r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = &getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 	return r
 }
 
-func (r ApiOBPv400CreateJsonSchemaValidationRequest) Execute() (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400CreateJsonSchemaValidationExecute(r)
+func (r ApiCreateJsonSchemaValidationRequest) Execute() (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
+	return r.ApiService.CreateJsonSchemaValidationExecute(r)
 }
 
 /*
-OBPv400CreateJsonSchemaValidation Create a JSON Schema Validation
+CreateJsonSchemaValidation Create a JSON Schema Validation
 
 <p>Create a JSON Schema Validation.</p>
 <p>Introduction:</p>
@@ -89,10 +89,10 @@ OBPv400CreateJsonSchemaValidation Create a JSON Schema Validation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400CreateJsonSchemaValidationRequest
+ @return ApiCreateJsonSchemaValidationRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidation(ctx context.Context, operationid string) ApiOBPv400CreateJsonSchemaValidationRequest {
-	return ApiOBPv400CreateJsonSchemaValidationRequest{
+func (a *JSONSchemaValidationAPIService) CreateJsonSchemaValidation(ctx context.Context, operationid string) ApiCreateJsonSchemaValidationRequest {
+	return ApiCreateJsonSchemaValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -100,16 +100,16 @@ func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidation(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
-func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidationExecute(r ApiOBPv400CreateJsonSchemaValidationRequest) (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
+//  @return GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+func (a *JSONSchemaValidationAPIService) CreateJsonSchemaValidationExecute(r ApiCreateJsonSchemaValidationRequest) (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+		localVarReturnValue  *GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400CreateJsonSchemaValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.CreateJsonSchemaValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -120,8 +120,8 @@ func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidationExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema is required and must be specified")
+	if r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema == nil {
+		return localVarReturnValue, nil, reportError("getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -142,7 +142,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidationExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+	localVarPostBody = r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -167,7 +167,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidationExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -208,18 +208,18 @@ func (a *JSONSchemaValidationAPIService) OBPv400CreateJsonSchemaValidationExecut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400DeleteJsonSchemaValidationRequest struct {
+type ApiDeleteJsonSchemaValidationRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 	operationid string
 }
 
-func (r ApiOBPv400DeleteJsonSchemaValidationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv400DeleteJsonSchemaValidationExecute(r)
+func (r ApiDeleteJsonSchemaValidationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteJsonSchemaValidationExecute(r)
 }
 
 /*
-OBPv400DeleteJsonSchemaValidation Delete a JSON Schema Validation
+DeleteJsonSchemaValidation Delete a JSON Schema Validation
 
 <p>Delete a JSON Schema Validation by operation_id.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -230,10 +230,10 @@ OBPv400DeleteJsonSchemaValidation Delete a JSON Schema Validation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400DeleteJsonSchemaValidationRequest
+ @return ApiDeleteJsonSchemaValidationRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400DeleteJsonSchemaValidation(ctx context.Context, operationid string) ApiOBPv400DeleteJsonSchemaValidationRequest {
-	return ApiOBPv400DeleteJsonSchemaValidationRequest{
+func (a *JSONSchemaValidationAPIService) DeleteJsonSchemaValidation(ctx context.Context, operationid string) ApiDeleteJsonSchemaValidationRequest {
+	return ApiDeleteJsonSchemaValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -241,14 +241,14 @@ func (a *JSONSchemaValidationAPIService) OBPv400DeleteJsonSchemaValidation(ctx c
 }
 
 // Execute executes the request
-func (a *JSONSchemaValidationAPIService) OBPv400DeleteJsonSchemaValidationExecute(r ApiOBPv400DeleteJsonSchemaValidationRequest) (*http.Response, error) {
+func (a *JSONSchemaValidationAPIService) DeleteJsonSchemaValidationExecute(r ApiDeleteJsonSchemaValidationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400DeleteJsonSchemaValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.DeleteJsonSchemaValidation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -301,7 +301,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400DeleteJsonSchemaValidationExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -333,17 +333,17 @@ func (a *JSONSchemaValidationAPIService) OBPv400DeleteJsonSchemaValidationExecut
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllJsonSchemaValidationsRequest struct {
+type ApiGetAllJsonSchemaValidationsRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 }
 
-func (r ApiOBPv400GetAllJsonSchemaValidationsRequest) Execute() (*OBPv400GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllJsonSchemaValidationsExecute(r)
+func (r ApiGetAllJsonSchemaValidationsRequest) Execute() (*GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
+	return r.ApiService.GetAllJsonSchemaValidationsExecute(r)
 }
 
 /*
-OBPv400GetAllJsonSchemaValidations Get all JSON Schema Validations
+GetAllJsonSchemaValidations Get all JSON Schema Validations
 
 <p>Get all JSON Schema Validations.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -364,26 +364,26 @@ OBPv400GetAllJsonSchemaValidations Get all JSON Schema Validations
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllJsonSchemaValidationsRequest
+ @return ApiGetAllJsonSchemaValidationsRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidations(ctx context.Context) ApiOBPv400GetAllJsonSchemaValidationsRequest {
-	return ApiOBPv400GetAllJsonSchemaValidationsRequest{
+func (a *JSONSchemaValidationAPIService) GetAllJsonSchemaValidations(ctx context.Context) ApiGetAllJsonSchemaValidationsRequest {
+	return ApiGetAllJsonSchemaValidationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllJsonSchemaValidationsPublic200Response
-func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsExecute(r ApiOBPv400GetAllJsonSchemaValidationsRequest) (*OBPv400GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
+//  @return GetAllJsonSchemaValidationsPublic200Response
+func (a *JSONSchemaValidationAPIService) GetAllJsonSchemaValidationsExecute(r ApiGetAllJsonSchemaValidationsRequest) (*GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllJsonSchemaValidationsPublic200Response
+		localVarReturnValue  *GetAllJsonSchemaValidationsPublic200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400GetAllJsonSchemaValidations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.GetAllJsonSchemaValidations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -435,7 +435,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsExecu
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -476,17 +476,17 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetAllJsonSchemaValidationsPublicRequest struct {
+type ApiGetAllJsonSchemaValidationsPublicRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 }
 
-func (r ApiOBPv400GetAllJsonSchemaValidationsPublicRequest) Execute() (*OBPv400GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
-	return r.ApiService.OBPv400GetAllJsonSchemaValidationsPublicExecute(r)
+func (r ApiGetAllJsonSchemaValidationsPublicRequest) Execute() (*GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
+	return r.ApiService.GetAllJsonSchemaValidationsPublicExecute(r)
 }
 
 /*
-OBPv400GetAllJsonSchemaValidationsPublic Get all JSON Schema Validations - public
+GetAllJsonSchemaValidationsPublic Get all JSON Schema Validations - public
 
 <p>Get all JSON Schema Validations - public.</p>
 <p>User Authentication is Optional. The User need not be logged in.</p>
@@ -507,26 +507,26 @@ OBPv400GetAllJsonSchemaValidationsPublic Get all JSON Schema Validations - publi
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv400GetAllJsonSchemaValidationsPublicRequest
+ @return ApiGetAllJsonSchemaValidationsPublicRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsPublic(ctx context.Context) ApiOBPv400GetAllJsonSchemaValidationsPublicRequest {
-	return ApiOBPv400GetAllJsonSchemaValidationsPublicRequest{
+func (a *JSONSchemaValidationAPIService) GetAllJsonSchemaValidationsPublic(ctx context.Context) ApiGetAllJsonSchemaValidationsPublicRequest {
+	return ApiGetAllJsonSchemaValidationsPublicRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllJsonSchemaValidationsPublic200Response
-func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsPublicExecute(r ApiOBPv400GetAllJsonSchemaValidationsPublicRequest) (*OBPv400GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
+//  @return GetAllJsonSchemaValidationsPublic200Response
+func (a *JSONSchemaValidationAPIService) GetAllJsonSchemaValidationsPublicExecute(r ApiGetAllJsonSchemaValidationsPublicRequest) (*GetAllJsonSchemaValidationsPublic200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllJsonSchemaValidationsPublic200Response
+		localVarReturnValue  *GetAllJsonSchemaValidationsPublic200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400GetAllJsonSchemaValidationsPublic")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.GetAllJsonSchemaValidationsPublic")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -591,18 +591,18 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetAllJsonSchemaValidationsPubli
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400GetJsonSchemaValidationRequest struct {
+type ApiGetJsonSchemaValidationRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 	operationid string
 }
 
-func (r ApiOBPv400GetJsonSchemaValidationRequest) Execute() (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400GetJsonSchemaValidationExecute(r)
+func (r ApiGetJsonSchemaValidationRequest) Execute() (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
+	return r.ApiService.GetJsonSchemaValidationExecute(r)
 }
 
 /*
-OBPv400GetJsonSchemaValidation Get a JSON Schema Validation
+GetJsonSchemaValidation Get a JSON Schema Validation
 
 <p>Get a JSON Schema Validation by operation_id.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -626,10 +626,10 @@ OBPv400GetJsonSchemaValidation Get a JSON Schema Validation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400GetJsonSchemaValidationRequest
+ @return ApiGetJsonSchemaValidationRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400GetJsonSchemaValidation(ctx context.Context, operationid string) ApiOBPv400GetJsonSchemaValidationRequest {
-	return ApiOBPv400GetJsonSchemaValidationRequest{
+func (a *JSONSchemaValidationAPIService) GetJsonSchemaValidation(ctx context.Context, operationid string) ApiGetJsonSchemaValidationRequest {
+	return ApiGetJsonSchemaValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -637,16 +637,16 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetJsonSchemaValidation(ctx cont
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
-func (a *JSONSchemaValidationAPIService) OBPv400GetJsonSchemaValidationExecute(r ApiOBPv400GetJsonSchemaValidationRequest) (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
+//  @return GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+func (a *JSONSchemaValidationAPIService) GetJsonSchemaValidationExecute(r ApiGetJsonSchemaValidationRequest) (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+		localVarReturnValue  *GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400GetJsonSchemaValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.GetJsonSchemaValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -699,7 +699,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetJsonSchemaValidationExecute(r
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -740,25 +740,25 @@ func (a *JSONSchemaValidationAPIService) OBPv400GetJsonSchemaValidationExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv400UpdateJsonSchemaValidationRequest struct {
+type ApiUpdateJsonSchemaValidationRequest struct {
 	ctx context.Context
 	ApiService *JSONSchemaValidationAPIService
 	operationid string
-	oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema *OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+	getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema *GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 }
 
 // Request body
-func (r ApiOBPv400UpdateJsonSchemaValidationRequest) OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema(oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema) ApiOBPv400UpdateJsonSchemaValidationRequest {
-	r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema = &oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+func (r ApiUpdateJsonSchemaValidationRequest) GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema(getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema) ApiUpdateJsonSchemaValidationRequest {
+	r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema = &getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 	return r
 }
 
-func (r ApiOBPv400UpdateJsonSchemaValidationRequest) Execute() (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
-	return r.ApiService.OBPv400UpdateJsonSchemaValidationExecute(r)
+func (r ApiUpdateJsonSchemaValidationRequest) Execute() (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
+	return r.ApiService.UpdateJsonSchemaValidationExecute(r)
 }
 
 /*
-OBPv400UpdateJsonSchemaValidation Update a JSON Schema Validation
+UpdateJsonSchemaValidation Update a JSON Schema Validation
 
 <p>Update a JSON Schema Validation.</p>
 <p>Introduction:</p>
@@ -792,10 +792,10 @@ OBPv400UpdateJsonSchemaValidation Update a JSON Schema Validation
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param operationid The OPERATIONID identifier
- @return ApiOBPv400UpdateJsonSchemaValidationRequest
+ @return ApiUpdateJsonSchemaValidationRequest
 */
-func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidation(ctx context.Context, operationid string) ApiOBPv400UpdateJsonSchemaValidationRequest {
-	return ApiOBPv400UpdateJsonSchemaValidationRequest{
+func (a *JSONSchemaValidationAPIService) UpdateJsonSchemaValidation(ctx context.Context, operationid string) ApiUpdateJsonSchemaValidationRequest {
+	return ApiUpdateJsonSchemaValidationRequest{
 		ApiService: a,
 		ctx: ctx,
 		operationid: operationid,
@@ -803,16 +803,16 @@ func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidation(ctx c
 }
 
 // Execute executes the request
-//  @return OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
-func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidationExecute(r ApiOBPv400UpdateJsonSchemaValidationRequest) (*OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems, *http.Response, error) {
+//  @return GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
+func (a *JSONSchemaValidationAPIService) UpdateJsonSchemaValidationExecute(r ApiUpdateJsonSchemaValidationRequest) (*GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItems
+		localVarReturnValue  *GetAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.OBPv400UpdateJsonSchemaValidation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JSONSchemaValidationAPIService.UpdateJsonSchemaValidation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -823,8 +823,8 @@ func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidationExecut
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema == nil {
-		return localVarReturnValue, nil, reportError("oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema is required and must be specified")
+	if r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema == nil {
+		return localVarReturnValue, nil, reportError("getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -845,7 +845,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidationExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv400GetAllJsonSchemaValidationsPublic200ResponsePropertiesJsonSchemaValidationsItemsPropertiesJsonSchema
+	localVarPostBody = r.getAllJsonSchemaValidationsPublic200ResponseJsonSchemaValidationsInnerJsonSchema
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -870,7 +870,7 @@ func (a *JSONSchemaValidationAPIService) OBPv400UpdateJsonSchemaValidationExecut
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

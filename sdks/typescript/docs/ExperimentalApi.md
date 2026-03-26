@@ -1,18 +1,18 @@
 # ExperimentalApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv310CreateMeeting**](ExperimentalApi.md#obpv310createmeetingoperation) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
-| [**oBPv310GetMeeting**](ExperimentalApi.md#obpv310getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
-| [**oBPv310GetMeetings**](ExperimentalApi.md#obpv310getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
+| [**createMeeting**](ExperimentalApi.md#createmeetingoperation) | **POST** /obp/v3.1.0/banks/{bankid}/meetings | Create Meeting (video conference/call) |
+| [**getMeeting**](ExperimentalApi.md#getmeeting) | **GET** /obp/v3.1.0/banks/{bankid}/meetings/{meetingid} | Get Meeting |
+| [**getMeetings**](ExperimentalApi.md#getmeetings) | **GET** /obp/v3.1.0/banks/{bankid}/meetings | Get Meetings |
 
 
 
-## oBPv310CreateMeeting
+## createMeeting
 
-> OBPv310GetMeeting200Response oBPv310CreateMeeting(bankid, oBPv310CreateMeetingRequest)
+> GetMeeting200Response createMeeting(bankid, createMeetingRequest)
 
 Create Meeting (video conference/call)
 
@@ -25,7 +25,7 @@ import {
   Configuration,
   ExperimentalApi,
 } from 'obp-typescript';
-import type { OBPv310CreateMeetingOperationRequest } from 'obp-typescript';
+import type { CreateMeetingOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -42,12 +42,12 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-    // OBPv310CreateMeetingRequest | Request body
-    oBPv310CreateMeetingRequest: {"type":"object","properties":{"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}},"date":{"type":"string","format":"date-time"}}},
-  } satisfies OBPv310CreateMeetingOperationRequest;
+    // CreateMeetingRequest | Request body
+    createMeetingRequest: {"type":"object","properties":{"date":{"type":"string","format":"date-time"},"invitees":{"type":"array","items":{"type":"object","properties":{"status":{"type":"string"},"contact_details":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}}},"provider_id":{"type":"string"},"purpose_id":{"type":"string"},"creator":{"type":"object","properties":{"name":{"type":"string"},"mobile_phone":{"type":"string"},"email_address":{"type":"string"}}}}},
+  } satisfies CreateMeetingOperationRequest;
 
   try {
-    const data = await api.oBPv310CreateMeeting(body);
+    const data = await api.createMeeting(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -64,11 +64,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
-| **oBPv310CreateMeetingRequest** | [OBPv310CreateMeetingRequest](OBPv310CreateMeetingRequest.md) | Request body | |
+| **createMeetingRequest** | [CreateMeetingRequest](CreateMeetingRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -90,9 +90,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv310GetMeeting
+## getMeeting
 
-> OBPv310GetMeeting200Response oBPv310GetMeeting(bankid, meetingid)
+> GetMeeting200Response getMeeting(bankid, meetingid)
 
 Get Meeting
 
@@ -105,7 +105,7 @@ import {
   Configuration,
   ExperimentalApi,
 } from 'obp-typescript';
-import type { OBPv310GetMeetingRequest } from 'obp-typescript';
+import type { GetMeetingRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -124,10 +124,10 @@ async function example() {
     bankid: bankid_example,
     // string | The MEETINGID identifier
     meetingid: meetingid_example,
-  } satisfies OBPv310GetMeetingRequest;
+  } satisfies GetMeetingRequest;
 
   try {
-    const data = await api.oBPv310GetMeeting(body);
+    const data = await api.getMeeting(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -148,7 +148,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv310GetMeeting200Response**](OBPv310GetMeeting200Response.md)
+[**GetMeeting200Response**](GetMeeting200Response.md)
 
 ### Authorization
 
@@ -170,9 +170,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv310GetMeetings
+## getMeetings
 
-> OBPv310GetMeetings200Response oBPv310GetMeetings(bankid)
+> GetMeetings200Response getMeetings(bankid)
 
 Get Meetings
 
@@ -185,7 +185,7 @@ import {
   Configuration,
   ExperimentalApi,
 } from 'obp-typescript';
-import type { OBPv310GetMeetingsRequest } from 'obp-typescript';
+import type { GetMeetingsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -202,10 +202,10 @@ async function example() {
   const body = {
     // string | The BANKID identifier
     bankid: bankid_example,
-  } satisfies OBPv310GetMeetingsRequest;
+  } satisfies GetMeetingsRequest;
 
   try {
-    const data = await api.oBPv310GetMeetings(body);
+    const data = await api.getMeetings(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -225,7 +225,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv310GetMeetings200Response**](OBPv310GetMeetings200Response.md)
+[**GetMeetings200Response**](GetMeetings200Response.md)
 
 ### Authorization
 

@@ -9,9 +9,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv510_get_atm_attribute200_response.dart';
-import 'package:obp_dart/src/model/obpv510_get_atm_attributes200_response.dart';
-import 'package:obp_dart/src/model/obpv510_update_atm_attribute_request.dart';
+import 'package:obp_dart/src/model/get_atm_attribute200_response.dart';
+import 'package:obp_dart/src/model/get_atm_attributes200_response.dart';
+import 'package:obp_dart/src/model/update_atm_attribute_request.dart';
 
 class ATMAttributeApi {
 
@@ -27,7 +27,7 @@ class ATMAttributeApi {
   /// Parameters:
   /// * [bankid] - The BANKID identifier
   /// * [atmid] - The ATMID identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,12 +35,12 @@ class ATMAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAtmAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAtmAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAtmAttribute200Response>> oBPv510CreateAtmAttribute({ 
+  Future<Response<GetAtmAttribute200Response>> createAtmAttribute({ 
     required String bankid,
     required String atmid,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class ATMAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -80,8 +80,8 @@ class ATMAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -104,14 +104,14 @@ class ATMAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAtmAttribute200Response? _responseData;
+    GetAtmAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAtmAttribute200Response),
-      ) as OBPv510GetAtmAttribute200Response;
+        specifiedType: const FullType(GetAtmAttribute200Response),
+      ) as GetAtmAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -123,7 +123,7 @@ class ATMAttributeApi {
       );
     }
 
-    return Response<OBPv510GetAtmAttribute200Response>(
+    return Response<GetAtmAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -151,7 +151,7 @@ class ATMAttributeApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> oBPv510DeleteAtmAttribute({ 
+  Future<Response<void>> deleteAtmAttribute({ 
     required String bankid,
     required String atmid,
     required String atmattributeid,
@@ -181,7 +181,7 @@ class ATMAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -215,9 +215,9 @@ class ATMAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAtmAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAtmAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAtmAttribute200Response>> oBPv510GetAtmAttribute({ 
+  Future<Response<GetAtmAttribute200Response>> getAtmAttribute({ 
     required String bankid,
     required String atmid,
     required String atmattributeid,
@@ -247,7 +247,7 @@ class ATMAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -264,14 +264,14 @@ class ATMAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAtmAttribute200Response? _responseData;
+    GetAtmAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAtmAttribute200Response),
-      ) as OBPv510GetAtmAttribute200Response;
+        specifiedType: const FullType(GetAtmAttribute200Response),
+      ) as GetAtmAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -283,7 +283,7 @@ class ATMAttributeApi {
       );
     }
 
-    return Response<OBPv510GetAtmAttribute200Response>(
+    return Response<GetAtmAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -308,9 +308,9 @@ class ATMAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAtmAttributes200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAtmAttributes200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAtmAttributes200Response>> oBPv510GetAtmAttributes({ 
+  Future<Response<GetAtmAttributes200Response>> getAtmAttributes({ 
     required String bankid,
     required String atmid,
     CancelToken? cancelToken,
@@ -339,7 +339,7 @@ class ATMAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -356,14 +356,14 @@ class ATMAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAtmAttributes200Response? _responseData;
+    GetAtmAttributes200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAtmAttributes200Response),
-      ) as OBPv510GetAtmAttributes200Response;
+        specifiedType: const FullType(GetAtmAttributes200Response),
+      ) as GetAtmAttributes200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -375,7 +375,7 @@ class ATMAttributeApi {
       );
     }
 
-    return Response<OBPv510GetAtmAttributes200Response>(
+    return Response<GetAtmAttributes200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -394,7 +394,7 @@ class ATMAttributeApi {
   /// * [bankid] - The BANKID identifier
   /// * [atmid] - The ATMID identifier
   /// * [atmattributeid] - The ATMATTRIBUTEID identifier
-  /// * [oBPv510UpdateAtmAttributeRequest] - Request body
+  /// * [updateAtmAttributeRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -402,13 +402,13 @@ class ATMAttributeApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv510GetAtmAttribute200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAtmAttribute200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv510GetAtmAttribute200Response>> oBPv510UpdateAtmAttribute({ 
+  Future<Response<GetAtmAttribute200Response>> updateAtmAttribute({ 
     required String bankid,
     required String atmid,
     required String atmattributeid,
-    required OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest,
+    required UpdateAtmAttributeRequest updateAtmAttributeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -435,7 +435,7 @@ class ATMAttributeApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -448,8 +448,8 @@ class ATMAttributeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv510UpdateAtmAttributeRequest);
-      _bodyData = _serializers.serialize(oBPv510UpdateAtmAttributeRequest, specifiedType: _type);
+      const _type = FullType(UpdateAtmAttributeRequest);
+      _bodyData = _serializers.serialize(updateAtmAttributeRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -472,14 +472,14 @@ class ATMAttributeApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv510GetAtmAttribute200Response? _responseData;
+    GetAtmAttribute200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv510GetAtmAttribute200Response),
-      ) as OBPv510GetAtmAttribute200Response;
+        specifiedType: const FullType(GetAtmAttribute200Response),
+      ) as GetAtmAttribute200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -491,7 +491,7 @@ class ATMAttributeApi {
       );
     }
 
-    return Response<OBPv510GetAtmAttribute200Response>(
+    return Response<GetAtmAttribute200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,25 +75,25 @@ class TransactionAttributeApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateOrUpdateTransactionAttributeDefinition' => [
+        'createOrUpdateTransactionAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400CreateTransactionAttribute' => [
+        'createTransactionAttribute' => [
             'application/json',
         ],
-        'oBPv400DeleteTransactionAttributeDefinition' => [
+        'deleteTransactionAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400GetTransactionAttributeById' => [
+        'getTransactionAttributeById' => [
             'application/json',
         ],
-        'oBPv400GetTransactionAttributeDefinition' => [
+        'getTransactionAttributeDefinition' => [
             'application/json',
         ],
-        'oBPv400GetTransactionAttributes' => [
+        'getTransactionAttributes' => [
             'application/json',
         ],
-        'oBPv400UpdateTransactionAttribute' => [
+        'updateTransactionAttribute' => [
             'application/json',
         ],
     ];
@@ -145,40 +145,40 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateOrUpdateTransactionAttributeDefinition
+     * Operation createOrUpdateTransactionAttributeDefinition
      *
      * Create or Update Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+     * @return \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner
      */
-    public function oBPv400CreateOrUpdateTransactionAttributeDefinition($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'][0])
+    public function createOrUpdateTransactionAttributeDefinition($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateTransactionAttributeDefinition'][0])
     {
-        list($response) = $this->oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
+        list($response) = $this->createOrUpdateTransactionAttributeDefinitionWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo
+     * Operation createOrUpdateTransactionAttributeDefinitionWithHttpInfo
      *
      * Create or Update Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateOrUpdateTransactionAttributeDefinitionWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'][0])
+    public function createOrUpdateTransactionAttributeDefinitionWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateTransactionAttributeDefinition'][0])
     {
-        $request = $this->oBPv400CreateOrUpdateTransactionAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
+        $request = $this->createOrUpdateTransactionAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -206,7 +206,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                         $request,
                         $response,
                     );
@@ -228,7 +228,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
+                '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                 $request,
                 $response,
             );
@@ -237,7 +237,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -250,20 +250,20 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateOrUpdateTransactionAttributeDefinitionAsync
+     * Operation createOrUpdateTransactionAttributeDefinitionAsync
      *
      * Create or Update Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateOrUpdateTransactionAttributeDefinitionAsync($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'][0])
+    public function createOrUpdateTransactionAttributeDefinitionAsync($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateTransactionAttributeDefinition'][0])
     {
-        return $this->oBPv400CreateOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType)
+        return $this->createOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -272,21 +272,21 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo
+     * Operation createOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo
      *
      * Create or Update Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'][0])
+    public function createOrUpdateTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateTransactionAttributeDefinition'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems';
-        $request = $this->oBPv400CreateOrUpdateTransactionAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200ResponseAttributesInner';
+        $request = $this->createOrUpdateTransactionAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -325,29 +325,29 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateOrUpdateTransactionAttributeDefinition'
+     * Create request for operation 'createOrUpdateTransactionAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest $obpv400_create_or_update_transaction_request_attribute_definition_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateOrUpdateTransactionRequestAttributeDefinitionRequest $create_or_update_transaction_request_attribute_definition_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createOrUpdateTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateOrUpdateTransactionAttributeDefinitionRequest($bankid, $obpv400_create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['oBPv400CreateOrUpdateTransactionAttributeDefinition'][0])
+    public function createOrUpdateTransactionAttributeDefinitionRequest($bankid, $create_or_update_transaction_request_attribute_definition_request, string $contentType = self::contentTypes['createOrUpdateTransactionAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateOrUpdateTransactionAttributeDefinition'
+                'Missing the required parameter $bankid when calling createOrUpdateTransactionAttributeDefinition'
             );
         }
 
-        // verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-        if ($obpv400_create_or_update_transaction_request_attribute_definition_request === null || (is_array($obpv400_create_or_update_transaction_request_attribute_definition_request) && count($obpv400_create_or_update_transaction_request_attribute_definition_request) === 0)) {
+        // verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+        if ($create_or_update_transaction_request_attribute_definition_request === null || (is_array($create_or_update_transaction_request_attribute_definition_request) && count($create_or_update_transaction_request_attribute_definition_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_or_update_transaction_request_attribute_definition_request when calling oBPv400CreateOrUpdateTransactionAttributeDefinition'
+                'Missing the required parameter $create_or_update_transaction_request_attribute_definition_request when calling createOrUpdateTransactionAttributeDefinition'
             );
         }
 
@@ -378,12 +378,12 @@ class TransactionAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_or_update_transaction_request_attribute_definition_request)) {
+        if (isset($create_or_update_transaction_request_attribute_definition_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_or_update_transaction_request_attribute_definition_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_or_update_transaction_request_attribute_definition_request));
             } else {
-                $httpBody = $obpv400_create_or_update_transaction_request_attribute_definition_request;
+                $httpBody = $create_or_update_transaction_request_attribute_definition_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -419,9 +419,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -446,44 +446,44 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateTransactionAttribute
+     * Operation createTransactionAttribute
      *
      * Create Transaction Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     * @return \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    public function oBPv400CreateTransactionAttribute($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400CreateTransactionAttribute'][0])
+    public function createTransactionAttribute($bankid, $accountid, $transactionid, $create_personal_data_field_request, string $contentType = self::contentTypes['createTransactionAttribute'][0])
     {
-        list($response) = $this->oBPv400CreateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->createTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateTransactionAttributeWithHttpInfo
+     * Operation createTransactionAttributeWithHttpInfo
      *
      * Create Transaction Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400CreateTransactionAttribute'][0])
+    public function createTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $create_personal_data_field_request, string $contentType = self::contentTypes['createTransactionAttribute'][0])
     {
-        $request = $this->oBPv400CreateTransactionAttributeRequest($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->createTransactionAttributeRequest($bankid, $accountid, $transactionid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -511,7 +511,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $request,
                         $response,
                     );
@@ -533,7 +533,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                 $request,
                 $response,
             );
@@ -542,7 +542,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -555,22 +555,22 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateTransactionAttributeAsync
+     * Operation createTransactionAttributeAsync
      *
      * Create Transaction Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateTransactionAttributeAsync($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400CreateTransactionAttribute'][0])
+    public function createTransactionAttributeAsync($bankid, $accountid, $transactionid, $create_personal_data_field_request, string $contentType = self::contentTypes['createTransactionAttribute'][0])
     {
-        return $this->oBPv400CreateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->createTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -579,23 +579,23 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400CreateTransactionAttributeAsyncWithHttpInfo
+     * Operation createTransactionAttributeAsyncWithHttpInfo
      *
      * Create Transaction Attribute
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400CreateTransactionAttribute'][0])
+    public function createTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $create_personal_data_field_request, string $contentType = self::contentTypes['createTransactionAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems';
-        $request = $this->oBPv400CreateTransactionAttributeRequest($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner';
+        $request = $this->createTransactionAttributeRequest($bankid, $accountid, $transactionid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -634,45 +634,45 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateTransactionAttribute'
+     * Create request for operation 'createTransactionAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateTransactionAttributeRequest($bankid, $accountid, $transactionid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400CreateTransactionAttribute'][0])
+    public function createTransactionAttributeRequest($bankid, $accountid, $transactionid, $create_personal_data_field_request, string $contentType = self::contentTypes['createTransactionAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400CreateTransactionAttribute'
+                'Missing the required parameter $bankid when calling createTransactionAttribute'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400CreateTransactionAttribute'
+                'Missing the required parameter $accountid when calling createTransactionAttribute'
             );
         }
 
         // verify the required parameter 'transactionid' is set
         if ($transactionid === null || (is_array($transactionid) && count($transactionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transactionid when calling oBPv400CreateTransactionAttribute'
+                'Missing the required parameter $transactionid when calling createTransactionAttribute'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv400CreateTransactionAttribute'
+                'Missing the required parameter $create_personal_data_field_request when calling createTransactionAttribute'
             );
         }
 
@@ -719,12 +719,12 @@ class TransactionAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -760,9 +760,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -787,39 +787,39 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteTransactionAttributeDefinition
+     * Operation deleteTransactionAttributeDefinition
      *
      * Delete Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv400DeleteTransactionAttributeDefinition($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'][0])
+    public function deleteTransactionAttributeDefinition($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteTransactionAttributeDefinition'][0])
     {
-        $this->oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, $contentType);
+        $this->deleteTransactionAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, $contentType);
     }
 
     /**
-     * Operation oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo
+     * Operation deleteTransactionAttributeDefinitionWithHttpInfo
      *
      * Delete Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteTransactionAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'][0])
+    public function deleteTransactionAttributeDefinitionWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteTransactionAttributeDefinition'][0])
     {
-        $request = $this->oBPv400DeleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
+        $request = $this->deleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -855,20 +855,20 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteTransactionAttributeDefinitionAsync
+     * Operation deleteTransactionAttributeDefinitionAsync
      *
      * Delete Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteTransactionAttributeDefinitionAsync($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'][0])
+    public function deleteTransactionAttributeDefinitionAsync($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteTransactionAttributeDefinition'][0])
     {
-        return $this->oBPv400DeleteTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, $contentType)
+        return $this->deleteTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -877,21 +877,21 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400DeleteTransactionAttributeDefinitionAsyncWithHttpInfo
+     * Operation deleteTransactionAttributeDefinitionAsyncWithHttpInfo
      *
      * Delete Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'][0])
+    public function deleteTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteTransactionAttributeDefinition'][0])
     {
         $returnType = '';
-        $request = $this->oBPv400DeleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
+        $request = $this->deleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -917,29 +917,29 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteTransactionAttributeDefinition'
+     * Create request for operation 'deleteTransactionAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, string $contentType = self::contentTypes['oBPv400DeleteTransactionAttributeDefinition'][0])
+    public function deleteTransactionAttributeDefinitionRequest($bankid, $attributedefinitionid, string $contentType = self::contentTypes['deleteTransactionAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400DeleteTransactionAttributeDefinition'
+                'Missing the required parameter $bankid when calling deleteTransactionAttributeDefinition'
             );
         }
 
         // verify the required parameter 'attributedefinitionid' is set
         if ($attributedefinitionid === null || (is_array($attributedefinitionid) && count($attributedefinitionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $attributedefinitionid when calling oBPv400DeleteTransactionAttributeDefinition'
+                'Missing the required parameter $attributedefinitionid when calling deleteTransactionAttributeDefinition'
             );
         }
 
@@ -1012,9 +1012,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1039,7 +1039,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeById
+     * Operation getTransactionAttributeById
      *
      * Get Transaction Attribute By Id
      *
@@ -1047,20 +1047,20 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $attributeid The ATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     * @return \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    public function oBPv400GetTransactionAttributeById($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeById'][0])
+    public function getTransactionAttributeById($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['getTransactionAttributeById'][0])
     {
-        list($response) = $this->oBPv400GetTransactionAttributeByIdWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, $contentType);
+        list($response) = $this->getTransactionAttributeByIdWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeByIdWithHttpInfo
+     * Operation getTransactionAttributeByIdWithHttpInfo
      *
      * Get Transaction Attribute By Id
      *
@@ -1068,15 +1068,15 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $attributeid The ATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetTransactionAttributeByIdWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeById'][0])
+    public function getTransactionAttributeByIdWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['getTransactionAttributeById'][0])
     {
-        $request = $this->oBPv400GetTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, $contentType);
+        $request = $this->getTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1104,7 +1104,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $request,
                         $response,
                     );
@@ -1126,7 +1126,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                 $request,
                 $response,
             );
@@ -1135,7 +1135,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1148,7 +1148,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeByIdAsync
+     * Operation getTransactionAttributeByIdAsync
      *
      * Get Transaction Attribute By Id
      *
@@ -1156,14 +1156,14 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $attributeid The ATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributeByIdAsync($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeById'][0])
+    public function getTransactionAttributeByIdAsync($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['getTransactionAttributeById'][0])
     {
-        return $this->oBPv400GetTransactionAttributeByIdAsyncWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, $contentType)
+        return $this->getTransactionAttributeByIdAsyncWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1172,7 +1172,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeByIdAsyncWithHttpInfo
+     * Operation getTransactionAttributeByIdAsyncWithHttpInfo
      *
      * Get Transaction Attribute By Id
      *
@@ -1180,15 +1180,15 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $attributeid The ATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributeByIdAsyncWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeById'][0])
+    public function getTransactionAttributeByIdAsyncWithHttpInfo($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['getTransactionAttributeById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems';
-        $request = $this->oBPv400GetTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner';
+        $request = $this->getTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1227,45 +1227,45 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetTransactionAttributeById'
+     * Create request for operation 'getTransactionAttributeById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $attributeid The ATTRIBUTEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeById'][0])
+    public function getTransactionAttributeByIdRequest($bankid, $accountid, $transactionid, $attributeid, string $contentType = self::contentTypes['getTransactionAttributeById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetTransactionAttributeById'
+                'Missing the required parameter $bankid when calling getTransactionAttributeById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetTransactionAttributeById'
+                'Missing the required parameter $accountid when calling getTransactionAttributeById'
             );
         }
 
         // verify the required parameter 'transactionid' is set
         if ($transactionid === null || (is_array($transactionid) && count($transactionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transactionid when calling oBPv400GetTransactionAttributeById'
+                'Missing the required parameter $transactionid when calling getTransactionAttributeById'
             );
         }
 
         // verify the required parameter 'attributeid' is set
         if ($attributeid === null || (is_array($attributeid) && count($attributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $attributeid when calling oBPv400GetTransactionAttributeById'
+                'Missing the required parameter $attributeid when calling getTransactionAttributeById'
             );
         }
 
@@ -1354,9 +1354,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1381,38 +1381,38 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeDefinition
+     * Operation getTransactionAttributeDefinition
      *
      * Get Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response
+     * @return \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response
      */
-    public function oBPv400GetTransactionAttributeDefinition($bankid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeDefinition'][0])
+    public function getTransactionAttributeDefinition($bankid, string $contentType = self::contentTypes['getTransactionAttributeDefinition'][0])
     {
-        list($response) = $this->oBPv400GetTransactionAttributeDefinitionWithHttpInfo($bankid, $contentType);
+        list($response) = $this->getTransactionAttributeDefinitionWithHttpInfo($bankid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeDefinitionWithHttpInfo
+     * Operation getTransactionAttributeDefinitionWithHttpInfo
      *
      * Get Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetTransactionAttributeDefinitionWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeDefinition'][0])
+    public function getTransactionAttributeDefinitionWithHttpInfo($bankid, string $contentType = self::contentTypes['getTransactionAttributeDefinition'][0])
     {
-        $request = $this->oBPv400GetTransactionAttributeDefinitionRequest($bankid, $contentType);
+        $request = $this->getTransactionAttributeDefinitionRequest($bankid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1440,7 +1440,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                         $request,
                         $response,
                     );
@@ -1462,7 +1462,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                 $request,
                 $response,
             );
@@ -1471,7 +1471,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response',
+                        '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1484,19 +1484,19 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeDefinitionAsync
+     * Operation getTransactionAttributeDefinitionAsync
      *
      * Get Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributeDefinitionAsync($bankid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeDefinition'][0])
+    public function getTransactionAttributeDefinitionAsync($bankid, string $contentType = self::contentTypes['getTransactionAttributeDefinition'][0])
     {
-        return $this->oBPv400GetTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $contentType)
+        return $this->getTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1505,20 +1505,20 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributeDefinitionAsyncWithHttpInfo
+     * Operation getTransactionAttributeDefinitionAsyncWithHttpInfo
      *
      * Get Transaction Attribute Definition
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeDefinition'][0])
+    public function getTransactionAttributeDefinitionAsyncWithHttpInfo($bankid, string $contentType = self::contentTypes['getTransactionAttributeDefinition'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTransactionRequestAttributeDefinition200Response';
-        $request = $this->oBPv400GetTransactionAttributeDefinitionRequest($bankid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTransactionRequestAttributeDefinition200Response';
+        $request = $this->getTransactionAttributeDefinitionRequest($bankid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1557,21 +1557,21 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetTransactionAttributeDefinition'
+     * Create request for operation 'getTransactionAttributeDefinition'
      *
      * @param  string $bankid The BANKID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributeDefinition'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributeDefinition'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetTransactionAttributeDefinitionRequest($bankid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributeDefinition'][0])
+    public function getTransactionAttributeDefinitionRequest($bankid, string $contentType = self::contentTypes['getTransactionAttributeDefinition'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetTransactionAttributeDefinition'
+                'Missing the required parameter $bankid when calling getTransactionAttributeDefinition'
             );
         }
 
@@ -1636,9 +1636,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1663,42 +1663,42 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributes
+     * Operation getTransactionAttributes
      *
      * Get Transaction Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetTransactionAttributes200Response
+     * @return \OpenBankProject\Model\GetTransactionAttributes200Response
      */
-    public function oBPv400GetTransactionAttributes($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributes'][0])
+    public function getTransactionAttributes($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['getTransactionAttributes'][0])
     {
-        list($response) = $this->oBPv400GetTransactionAttributesWithHttpInfo($bankid, $accountid, $transactionid, $contentType);
+        list($response) = $this->getTransactionAttributesWithHttpInfo($bankid, $accountid, $transactionid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributesWithHttpInfo
+     * Operation getTransactionAttributesWithHttpInfo
      *
      * Get Transaction Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributes'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetTransactionAttributes200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetTransactionAttributes200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetTransactionAttributesWithHttpInfo($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributes'][0])
+    public function getTransactionAttributesWithHttpInfo($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['getTransactionAttributes'][0])
     {
-        $request = $this->oBPv400GetTransactionAttributesRequest($bankid, $accountid, $transactionid, $contentType);
+        $request = $this->getTransactionAttributesRequest($bankid, $accountid, $transactionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1726,7 +1726,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetTransactionAttributes200Response',
+                        '\OpenBankProject\Model\GetTransactionAttributes200Response',
                         $request,
                         $response,
                     );
@@ -1748,7 +1748,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetTransactionAttributes200Response',
+                '\OpenBankProject\Model\GetTransactionAttributes200Response',
                 $request,
                 $response,
             );
@@ -1757,7 +1757,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetTransactionAttributes200Response',
+                        '\OpenBankProject\Model\GetTransactionAttributes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1770,21 +1770,21 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributesAsync
+     * Operation getTransactionAttributesAsync
      *
      * Get Transaction Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributesAsync($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributes'][0])
+    public function getTransactionAttributesAsync($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['getTransactionAttributes'][0])
     {
-        return $this->oBPv400GetTransactionAttributesAsyncWithHttpInfo($bankid, $accountid, $transactionid, $contentType)
+        return $this->getTransactionAttributesAsyncWithHttpInfo($bankid, $accountid, $transactionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1793,22 +1793,22 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400GetTransactionAttributesAsyncWithHttpInfo
+     * Operation getTransactionAttributesAsyncWithHttpInfo
      *
      * Get Transaction Attributes
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetTransactionAttributesAsyncWithHttpInfo($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributes'][0])
+    public function getTransactionAttributesAsyncWithHttpInfo($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['getTransactionAttributes'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetTransactionAttributes200Response';
-        $request = $this->oBPv400GetTransactionAttributesRequest($bankid, $accountid, $transactionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetTransactionAttributes200Response';
+        $request = $this->getTransactionAttributesRequest($bankid, $accountid, $transactionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1847,37 +1847,37 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetTransactionAttributes'
+     * Create request for operation 'getTransactionAttributes'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetTransactionAttributes'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionAttributes'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetTransactionAttributesRequest($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['oBPv400GetTransactionAttributes'][0])
+    public function getTransactionAttributesRequest($bankid, $accountid, $transactionid, string $contentType = self::contentTypes['getTransactionAttributes'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400GetTransactionAttributes'
+                'Missing the required parameter $bankid when calling getTransactionAttributes'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400GetTransactionAttributes'
+                'Missing the required parameter $accountid when calling getTransactionAttributes'
             );
         }
 
         // verify the required parameter 'transactionid' is set
         if ($transactionid === null || (is_array($transactionid) && count($transactionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transactionid when calling oBPv400GetTransactionAttributes'
+                'Missing the required parameter $transactionid when calling getTransactionAttributes'
             );
         }
 
@@ -1958,9 +1958,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1985,7 +1985,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400UpdateTransactionAttribute
+     * Operation updateTransactionAttribute
      *
      * Update Transaction Attribute
      *
@@ -1993,21 +1993,21 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems
+     * @return \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner
      */
-    public function oBPv400UpdateTransactionAttribute($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400UpdateTransactionAttribute'][0])
+    public function updateTransactionAttribute($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateTransactionAttribute'][0])
     {
-        list($response) = $this->oBPv400UpdateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        list($response) = $this->updateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400UpdateTransactionAttributeWithHttpInfo
+     * Operation updateTransactionAttributeWithHttpInfo
      *
      * Update Transaction Attribute
      *
@@ -2015,16 +2015,16 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400UpdateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400UpdateTransactionAttribute'][0])
+    public function updateTransactionAttributeWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateTransactionAttribute'][0])
     {
-        $request = $this->oBPv400UpdateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $request = $this->updateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2052,7 +2052,7 @@ class TransactionAttributeApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $request,
                         $response,
                     );
@@ -2074,7 +2074,7 @@ class TransactionAttributeApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                 $request,
                 $response,
             );
@@ -2083,7 +2083,7 @@ class TransactionAttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems',
+                        '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2096,7 +2096,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400UpdateTransactionAttributeAsync
+     * Operation updateTransactionAttributeAsync
      *
      * Update Transaction Attribute
      *
@@ -2104,15 +2104,15 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateTransactionAttributeAsync($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400UpdateTransactionAttribute'][0])
+    public function updateTransactionAttributeAsync($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateTransactionAttribute'][0])
     {
-        return $this->oBPv400UpdateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, $contentType)
+        return $this->updateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2121,7 +2121,7 @@ class TransactionAttributeApi
     }
 
     /**
-     * Operation oBPv400UpdateTransactionAttributeAsyncWithHttpInfo
+     * Operation updateTransactionAttributeAsyncWithHttpInfo
      *
      * Update Transaction Attribute
      *
@@ -2129,16 +2129,16 @@ class TransactionAttributeApi
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400UpdateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400UpdateTransactionAttribute'][0])
+    public function updateTransactionAttributeAsyncWithHttpInfo($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateTransactionAttribute'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv300GetCoreTransactionsForBankAccount200ResponsePropertiesTransactionsItemsPropertiesTransactionAttributesItems';
-        $request = $this->oBPv400UpdateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetCoreTransactionsForBankAccount200ResponseTransactionsInnerTransactionAttributesInner';
+        $request = $this->updateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2177,53 +2177,53 @@ class TransactionAttributeApi
     }
 
     /**
-     * Create request for operation 'oBPv400UpdateTransactionAttribute'
+     * Create request for operation 'updateTransactionAttribute'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $transactionid The TRANSACTIONID identifier (required)
      * @param  string $accountattributeid The ACCOUNTATTRIBUTEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600CreatePersonalDataFieldRequest $obpv600_create_personal_data_field_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400UpdateTransactionAttribute'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreatePersonalDataFieldRequest $create_personal_data_field_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTransactionAttribute'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400UpdateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $obpv600_create_personal_data_field_request, string $contentType = self::contentTypes['oBPv400UpdateTransactionAttribute'][0])
+    public function updateTransactionAttributeRequest($bankid, $accountid, $transactionid, $accountattributeid, $create_personal_data_field_request, string $contentType = self::contentTypes['updateTransactionAttribute'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv400UpdateTransactionAttribute'
+                'Missing the required parameter $bankid when calling updateTransactionAttribute'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv400UpdateTransactionAttribute'
+                'Missing the required parameter $accountid when calling updateTransactionAttribute'
             );
         }
 
         // verify the required parameter 'transactionid' is set
         if ($transactionid === null || (is_array($transactionid) && count($transactionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $transactionid when calling oBPv400UpdateTransactionAttribute'
+                'Missing the required parameter $transactionid when calling updateTransactionAttribute'
             );
         }
 
         // verify the required parameter 'accountattributeid' is set
         if ($accountattributeid === null || (is_array($accountattributeid) && count($accountattributeid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountattributeid when calling oBPv400UpdateTransactionAttribute'
+                'Missing the required parameter $accountattributeid when calling updateTransactionAttribute'
             );
         }
 
-        // verify the required parameter 'obpv600_create_personal_data_field_request' is set
-        if ($obpv600_create_personal_data_field_request === null || (is_array($obpv600_create_personal_data_field_request) && count($obpv600_create_personal_data_field_request) === 0)) {
+        // verify the required parameter 'create_personal_data_field_request' is set
+        if ($create_personal_data_field_request === null || (is_array($create_personal_data_field_request) && count($create_personal_data_field_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_personal_data_field_request when calling oBPv400UpdateTransactionAttribute'
+                'Missing the required parameter $create_personal_data_field_request when calling updateTransactionAttribute'
             );
         }
 
@@ -2278,12 +2278,12 @@ class TransactionAttributeApi
         );
 
         // for model (json/xml)
-        if (isset($obpv600_create_personal_data_field_request)) {
+        if (isset($create_personal_data_field_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_personal_data_field_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_personal_data_field_request));
             } else {
-                $httpBody = $obpv600_create_personal_data_field_request;
+                $httpBody = $create_personal_data_field_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2319,9 +2319,9 @@ class TransactionAttributeApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

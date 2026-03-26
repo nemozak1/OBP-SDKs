@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,12 +18,11 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv310GetWebUiProps200Response;
-import com.openbankproject.model.OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems;
-import com.openbankproject.model.OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems;
-import com.openbankproject.model.OBPv400DeleteSystemLevelEndpointTag200Response;
-import com.openbankproject.model.OBPv600GetWebUiProps200Response;
-import com.openbankproject.model.OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems;
+import com.openbankproject.model.CreateTransactionRequestCounterparty200ResponseAttributesInner;
+import com.openbankproject.model.CreateWebUiProps200Response;
+import com.openbankproject.model.GetTransactionTypes200ResponseTransactionTypesInnerId;
+import com.openbankproject.model.GetWebUiProps200Response;
+import com.openbankproject.model.GetWebUiProps200ResponseWebuiPropsInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +49,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class WebUiPropsApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -168,50 +167,54 @@ public class WebUiPropsApi {
   }
 
   /**
-   * Create WebUiProps
-   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems Request body (required)
-   * @return OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
+   * Create or Update WebUiProps
+   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
+   * @return CreateWebUiProps200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv310CreateWebUiProps(@javax.annotation.Nonnull OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems) throws ApiException {
-    return oBPv310CreateWebUiProps(obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, null);
+  public CreateWebUiProps200Response createOrUpdateWebUiProps(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId) throws ApiException {
+    return createOrUpdateWebUiProps(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId, null);
   }
 
   /**
-   * Create WebUiProps
-   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems Request body (required)
+   * Create or Update WebUiProps
+   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
+   * @return CreateWebUiProps200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv310CreateWebUiProps(@javax.annotation.Nonnull OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> localVarResponse = oBPv310CreateWebUiPropsWithHttpInfo(obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, headers);
+  public CreateWebUiProps200Response createOrUpdateWebUiProps(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateWebUiProps200Response> localVarResponse = createOrUpdateWebUiPropsWithHttpInfo(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Create WebUiProps
-   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems Request body (required)
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
+   * Create or Update WebUiProps
+   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
+   * @return ApiResponse&lt;CreateWebUiProps200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv310CreateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems) throws ApiException {
-    return oBPv310CreateWebUiPropsWithHttpInfo(obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, null);
+  public ApiResponse<CreateWebUiProps200Response> createOrUpdateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId) throws ApiException {
+    return createOrUpdateWebUiPropsWithHttpInfo(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId, null);
   }
 
   /**
-   * Create WebUiProps
-   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems Request body (required)
+   * Create or Update WebUiProps
+   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
+   * @param getTransactionTypes200ResponseTransactionTypesInnerId Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
+   * @return ApiResponse&lt;CreateWebUiProps200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv310CreateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310CreateWebUiPropsRequestBuilder(obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, headers);
+  public ApiResponse<CreateWebUiProps200Response> createOrUpdateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createOrUpdateWebUiPropsRequestBuilder(webuipropname, getTransactionTypes200ResponseTransactionTypesInnerId, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -222,11 +225,11 @@ public class WebUiPropsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310CreateWebUiProps", localVarResponse);
+          throw getApiException("createOrUpdateWebUiProps", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
+          return new ApiResponse<CreateWebUiProps200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -236,10 +239,10 @@ public class WebUiPropsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>() {});
+        CreateWebUiProps200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateWebUiProps200Response>() {});
         
 
-        return new ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
+        return new ApiResponse<CreateWebUiProps200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -258,10 +261,138 @@ public class WebUiPropsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310CreateWebUiPropsRequestBuilder(@javax.annotation.Nonnull OBPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems' is set
-    if (obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems' when calling oBPv310CreateWebUiProps");
+  private HttpRequest.Builder createOrUpdateWebUiPropsRequestBuilder(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull GetTransactionTypes200ResponseTransactionTypesInnerId getTransactionTypes200ResponseTransactionTypesInnerId, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'webuipropname' is set
+    if (webuipropname == null) {
+      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling createOrUpdateWebUiProps");
+    }
+    // verify the required parameter 'getTransactionTypes200ResponseTransactionTypesInnerId' is set
+    if (getTransactionTypes200ResponseTransactionTypesInnerId == null) {
+      throw new ApiException(400, "Missing the required parameter 'getTransactionTypes200ResponseTransactionTypesInnerId' when calling createOrUpdateWebUiProps");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v6.0.0/management/webui_props/{webuipropname}"
+        .replace("{webuipropname}", ApiClient.urlEncode(webuipropname.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json");
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getTransactionTypes200ResponseTransactionTypesInnerId);
+      localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Create WebUiProps
+   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param createTransactionRequestCounterparty200ResponseAttributesInner Request body (required)
+   * @return CreateWebUiProps200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateWebUiProps200Response createWebUiProps(@javax.annotation.Nonnull CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner) throws ApiException {
+    return createWebUiProps(createTransactionRequestCounterparty200ResponseAttributesInner, null);
+  }
+
+  /**
+   * Create WebUiProps
+   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param createTransactionRequestCounterparty200ResponseAttributesInner Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return CreateWebUiProps200Response
+   * @throws ApiException if fails to make API call
+   */
+  public CreateWebUiProps200Response createWebUiProps(@javax.annotation.Nonnull CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, Map<String, String> headers) throws ApiException {
+    ApiResponse<CreateWebUiProps200Response> localVarResponse = createWebUiPropsWithHttpInfo(createTransactionRequestCounterparty200ResponseAttributesInner, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Create WebUiProps
+   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param createTransactionRequestCounterparty200ResponseAttributesInner Request body (required)
+   * @return ApiResponse&lt;CreateWebUiProps200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateWebUiProps200Response> createWebUiPropsWithHttpInfo(@javax.annotation.Nonnull CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner) throws ApiException {
+    return createWebUiPropsWithHttpInfo(createTransactionRequestCounterparty200ResponseAttributesInner, null);
+  }
+
+  /**
+   * Create WebUiProps
+   * &lt;p&gt;Create a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;Explaination of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name is required String value&lt;/li&gt; &lt;li&gt;value is required String value&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should do escape, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should do escape like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @param createTransactionRequestCounterparty200ResponseAttributesInner Request body (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;CreateWebUiProps200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<CreateWebUiProps200Response> createWebUiPropsWithHttpInfo(@javax.annotation.Nonnull CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createWebUiPropsRequestBuilder(createTransactionRequestCounterparty200ResponseAttributesInner, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("createWebUiProps", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<CreateWebUiProps200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        CreateWebUiProps200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<CreateWebUiProps200Response>() {});
+        
+
+        return new ApiResponse<CreateWebUiProps200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder createWebUiPropsRequestBuilder(@javax.annotation.Nonnull CreateTransactionRequestCounterparty200ResponseAttributesInner createTransactionRequestCounterparty200ResponseAttributesInner, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'createTransactionRequestCounterparty200ResponseAttributesInner' is set
+    if (createTransactionRequestCounterparty200ResponseAttributesInner == null) {
+      throw new ApiException(400, "Missing the required parameter 'createTransactionRequestCounterparty200ResponseAttributesInner' when calling createWebUiProps");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -274,7 +405,7 @@ public class WebUiPropsApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateTransactionRequestCounterparty200ResponsePropertiesAttributesItems);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createTransactionRequestCounterparty200ResponseAttributesInner);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -292,46 +423,46 @@ public class WebUiPropsApi {
 
   /**
    * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropsid The WEBUIPROPSID identifier (required)
+   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv310DeleteWebUiProps(@javax.annotation.Nonnull String webuipropsid) throws ApiException {
-    oBPv310DeleteWebUiProps(webuipropsid, null);
+  public void deleteWebUiProps(@javax.annotation.Nonnull String webuipropname) throws ApiException {
+    deleteWebUiProps(webuipropname, null);
   }
 
   /**
    * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropsid The WEBUIPROPSID identifier (required)
+   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv310DeleteWebUiProps(@javax.annotation.Nonnull String webuipropsid, Map<String, String> headers) throws ApiException {
-    oBPv310DeleteWebUiPropsWithHttpInfo(webuipropsid, headers);
+  public void deleteWebUiProps(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
+    deleteWebUiPropsWithHttpInfo(webuipropname, headers);
   }
 
   /**
    * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropsid The WEBUIPROPSID identifier (required)
+   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv310DeleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropsid) throws ApiException {
-    return oBPv310DeleteWebUiPropsWithHttpInfo(webuipropsid, null);
+  public ApiResponse<Void> deleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname) throws ApiException {
+    return deleteWebUiPropsWithHttpInfo(webuipropname, null);
   }
 
   /**
    * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEB_UI_PROPS_ID.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#web_ui_props_id\&quot;&gt;WEB_UI_PROPS_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropsid The WEBUIPROPSID identifier (required)
+   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+   * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv310DeleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropsid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310DeleteWebUiPropsRequestBuilder(webuipropsid, headers);
+  public ApiResponse<Void> deleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteWebUiPropsRequestBuilder(webuipropname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -342,7 +473,7 @@ public class WebUiPropsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310DeleteWebUiProps", localVarResponse);
+          throw getApiException("deleteWebUiProps", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -367,355 +498,10 @@ public class WebUiPropsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv310DeleteWebUiPropsRequestBuilder(@javax.annotation.Nonnull String webuipropsid, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'webuipropsid' is set
-    if (webuipropsid == null) {
-      throw new ApiException(400, "Missing the required parameter 'webuipropsid' when calling oBPv310DeleteWebUiProps");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v3.1.0/management/webui_props/{webuipropsid}"
-        .replace("{webuipropsid}", ApiClient.urlEncode(webuipropsid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @return OBPv310GetWebUiProps200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv310GetWebUiProps200Response oBPv310GetWebUiProps() throws ApiException {
-    return oBPv310GetWebUiProps(null);
-  }
-
-  /**
-   * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return OBPv310GetWebUiProps200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv310GetWebUiProps200Response oBPv310GetWebUiProps(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetWebUiProps200Response> localVarResponse = oBPv310GetWebUiPropsWithHttpInfo(headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv310GetWebUiProps200Response> oBPv310GetWebUiPropsWithHttpInfo() throws ApiException {
-    return oBPv310GetWebUiPropsWithHttpInfo(null);
-  }
-
-  /**
-   * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit props from the database&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit props + implicit (default) props from configuration file &lt;ul&gt; &lt;li&gt;When both sources have the same property name, the database value takes precedence&lt;/li&gt; &lt;li&gt;Implicit props are marked with &lt;code&gt;webUiPropsId &#x3D; &amp;quot;default&amp;quot;&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database props combined with defaults:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v3.1.0/management/webui_props?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv310GetWebUiProps200Response> oBPv310GetWebUiPropsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv310GetWebUiPropsRequestBuilder(headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv310GetWebUiProps", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetWebUiProps200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetWebUiProps200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetWebUiProps200Response>() {});
-        
-
-        return new ApiResponse<OBPv310GetWebUiProps200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv310GetWebUiPropsRequestBuilder(Map<String, String> headers) throws ApiException {
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v3.1.0/management/webui_props";
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Create or Update WebUiProps
-   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @return OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv600CreateOrUpdateWebUiProps(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response) throws ApiException {
-    return oBPv600CreateOrUpdateWebUiProps(webuipropname, obPv400DeleteSystemLevelEndpointTag200Response, null);
-  }
-
-  /**
-   * Create or Update WebUiProps
-   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv600CreateOrUpdateWebUiProps(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> localVarResponse = oBPv600CreateOrUpdateWebUiPropsWithHttpInfo(webuipropname, obPv400DeleteSystemLevelEndpointTag200Response, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Create or Update WebUiProps
-   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv600CreateOrUpdateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response) throws ApiException {
-    return oBPv600CreateOrUpdateWebUiPropsWithHttpInfo(webuipropname, obPv400DeleteSystemLevelEndpointTag200Response, null);
-  }
-
-  /**
-   * Create or Update WebUiProps
-   * &lt;p&gt;Create or Update a WebUiProps.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - it will create the property if it doesn&#39;t exist, or update it if it does.&lt;br /&gt; The property is identified by WEBUI_PROP_NAME in the URL path.&lt;/p&gt; &lt;p&gt;Explanation of Fields:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;WEBUI_PROP_NAME in URL path (must start with &lt;code&gt;webui_&lt;/code&gt;, contain only alphanumeric characters, underscore, and dot, not exceed 255 characters, and will be converted to lowercase)&lt;/li&gt; &lt;li&gt;value is required String value in request body&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The line break and double quotations should be escaped, example:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value have &amp;quot;line break&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;should be escaped like this:&lt;/p&gt; &lt;pre&gt;&lt;code&gt; {&amp;quot;name&amp;quot;: &amp;quot;webui_some&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;this value\\nhave \\&amp;quot;line break\\&amp;quot; and double quotations.&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;Insert image examples:&lt;/p&gt; &lt;pre&gt;&lt;code&gt;// set width&#x3D;100 and height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;100&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only set height&#x3D;50 {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;&amp;quot; height&#x3D;&amp;quot;50&amp;quot; /&amp;gt;&amp;quot;}  // only width&#x3D;20% {&amp;quot;name&amp;quot;: &amp;quot;webui_some_pic&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;here is a picture &amp;lt;img alt&#x3D;&amp;quot;hello&amp;quot; src&#x3D;&amp;quot;http://somedomain.com/images/pic.png&amp;quot; width&#x3D;&amp;quot;20%&amp;quot; height&#x3D;&amp;quot;&amp;quot; /&amp;gt;&amp;quot;}  &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param obPv400DeleteSystemLevelEndpointTag200Response Request body (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv600CreateOrUpdateWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600CreateOrUpdateWebUiPropsRequestBuilder(webuipropname, obPv400DeleteSystemLevelEndpointTag200Response, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600CreateOrUpdateWebUiProps", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>() {});
-        
-
-        return new ApiResponse<OBPv310GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600CreateOrUpdateWebUiPropsRequestBuilder(@javax.annotation.Nonnull String webuipropname, @javax.annotation.Nonnull OBPv400DeleteSystemLevelEndpointTag200Response obPv400DeleteSystemLevelEndpointTag200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteWebUiPropsRequestBuilder(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'webuipropname' is set
     if (webuipropname == null) {
-      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling oBPv600CreateOrUpdateWebUiProps");
-    }
-    // verify the required parameter 'obPv400DeleteSystemLevelEndpointTag200Response' is set
-    if (obPv400DeleteSystemLevelEndpointTag200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400DeleteSystemLevelEndpointTag200Response' when calling oBPv600CreateOrUpdateWebUiProps");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v6.0.0/management/webui_props/{webuipropname}"
-        .replace("{webuipropname}", ApiClient.urlEncode(webuipropname.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Content-Type", "application/json");
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400DeleteSystemLevelEndpointTag200Response);
-      localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @throws ApiException if fails to make API call
-   */
-  public void oBPv600DeleteWebUiProps(@javax.annotation.Nonnull String webuipropname) throws ApiException {
-    oBPv600DeleteWebUiProps(webuipropname, null);
-  }
-
-  /**
-   * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param headers Optional headers to include in the request
-   * @throws ApiException if fails to make API call
-   */
-  public void oBPv600DeleteWebUiProps(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
-    oBPv600DeleteWebUiPropsWithHttpInfo(webuipropname, headers);
-  }
-
-  /**
-   * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @return ApiResponse&lt;Void&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<Void> oBPv600DeleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname) throws ApiException {
-    return oBPv600DeleteWebUiPropsWithHttpInfo(webuipropname, null);
-  }
-
-  /**
-   * Delete WebUiProps
-   * &lt;p&gt;Delete a WebUiProps specified by WEBUI_PROP_NAME.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;The property name will be converted to lowercase before deletion.&lt;/p&gt; &lt;p&gt;Returns 204 No Content on successful deletion.&lt;/p&gt; &lt;p&gt;This endpoint is idempotent - if the property does not exist, it still returns 204 No Content.&lt;/p&gt; &lt;p&gt;Requires the CanDeleteWebUiProps role.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-   * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;Void&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<Void> oBPv600DeleteWebUiPropsWithHttpInfo(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600DeleteWebUiPropsRequestBuilder(webuipropname, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600DeleteWebUiProps", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody != null) {
-          localVarResponseBody.readAllBytes();
-        }
-        return new ApiResponse<>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            null
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv600DeleteWebUiPropsRequestBuilder(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'webuipropname' is set
-    if (webuipropname == null) {
-      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling oBPv600DeleteWebUiProps");
+      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling deleteWebUiProps");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -741,49 +527,49 @@ public class WebUiPropsApi {
 
   /**
    * Get WebUiProp by Name
-   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @return OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems
+   * @return GetWebUiProps200ResponseWebuiPropsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv600GetWebUiProp(@javax.annotation.Nonnull String webuipropname) throws ApiException {
-    return oBPv600GetWebUiProp(webuipropname, null);
+  public GetWebUiProps200ResponseWebuiPropsInner getWebUiProp(@javax.annotation.Nonnull String webuipropname) throws ApiException {
+    return getWebUiProp(webuipropname, null);
   }
 
   /**
    * Get WebUiProp by Name
-   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems
+   * @return GetWebUiProps200ResponseWebuiPropsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems oBPv600GetWebUiProp(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems> localVarResponse = oBPv600GetWebUiPropWithHttpInfo(webuipropname, headers);
+  public GetWebUiProps200ResponseWebuiPropsInner getWebUiProp(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetWebUiProps200ResponseWebuiPropsInner> localVarResponse = getWebUiPropWithHttpInfo(webuipropname, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get WebUiProp by Name
-   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param webuipropname The WEBUIPROPNAME identifier (required)
-   * @return ApiResponse&lt;OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
+   * @return ApiResponse&lt;GetWebUiProps200ResponseWebuiPropsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv600GetWebUiPropWithHttpInfo(@javax.annotation.Nonnull String webuipropname) throws ApiException {
-    return oBPv600GetWebUiPropWithHttpInfo(webuipropname, null);
+  public ApiResponse<GetWebUiProps200ResponseWebuiPropsInner> getWebUiPropWithHttpInfo(@javax.annotation.Nonnull String webuipropname) throws ApiException {
+    return getWebUiPropWithHttpInfo(webuipropname, null);
   }
 
   /**
    * Get WebUiProp by Name
-   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get a single WebUiProp by name.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt; (optional, boolean string, default: &amp;quot;false&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;false&lt;/code&gt; or omitted: Returns only explicit prop from the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If &lt;code&gt;active&#x3D;true&lt;/code&gt;: Returns explicit prop from database, or if not found, returns implicit (default) prop from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get database-stored prop only:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get database prop or fallback to default:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props/webui_api_explorer_url?active&#x3D;true&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;WEBUI_PROP_NAME&lt;/a&gt;: WEBUI_PROP_NAME&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param webuipropname The WEBUIPROPNAME identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems&gt;
+   * @return ApiResponse&lt;GetWebUiProps200ResponseWebuiPropsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems> oBPv600GetWebUiPropWithHttpInfo(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetWebUiPropRequestBuilder(webuipropname, headers);
+  public ApiResponse<GetWebUiProps200ResponseWebuiPropsInner> getWebUiPropWithHttpInfo(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getWebUiPropRequestBuilder(webuipropname, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -794,11 +580,11 @@ public class WebUiPropsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetWebUiProp", localVarResponse);
+          throw getApiException("getWebUiProp", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
+          return new ApiResponse<GetWebUiProps200ResponseWebuiPropsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -808,10 +594,10 @@ public class WebUiPropsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems>() {});
+        GetWebUiProps200ResponseWebuiPropsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetWebUiProps200ResponseWebuiPropsInner>() {});
         
 
-        return new ApiResponse<OBPv600GetWebUiProps200ResponsePropertiesWebuiPropsItems>(
+        return new ApiResponse<GetWebUiProps200ResponseWebuiPropsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -830,10 +616,10 @@ public class WebUiPropsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetWebUiPropRequestBuilder(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getWebUiPropRequestBuilder(@javax.annotation.Nonnull String webuipropname, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'webuipropname' is set
     if (webuipropname == null) {
-      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling oBPv600GetWebUiProp");
+      throw new ApiException(400, "Missing the required parameter 'webuipropname' when calling getWebUiProp");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -859,45 +645,45 @@ public class WebUiPropsApi {
 
   /**
    * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @return OBPv600GetWebUiProps200Response
+   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @return GetWebUiProps200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetWebUiProps200Response oBPv600GetWebUiProps() throws ApiException {
-    return oBPv600GetWebUiProps(null);
+  public GetWebUiProps200Response getWebUiProps() throws ApiException {
+    return getWebUiProps(null);
   }
 
   /**
    * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv600GetWebUiProps200Response
+   * @return GetWebUiProps200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv600GetWebUiProps200Response oBPv600GetWebUiProps(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv600GetWebUiProps200Response> localVarResponse = oBPv600GetWebUiPropsWithHttpInfo(headers);
+  public GetWebUiProps200Response getWebUiProps(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetWebUiProps200Response> localVarResponse = getWebUiPropsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv600GetWebUiProps200Response&gt;
+   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * @return ApiResponse&lt;GetWebUiProps200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetWebUiProps200Response> oBPv600GetWebUiPropsWithHttpInfo() throws ApiException {
-    return oBPv600GetWebUiPropsWithHttpInfo(null);
+  public ApiResponse<GetWebUiProps200Response> getWebUiPropsWithHttpInfo() throws ApiException {
+    return getWebUiPropsWithHttpInfo(null);
   }
 
   /**
    * Get WebUiProps
-   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;https://apisandbox.openbankproject.com/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
+   * &lt;p&gt;Get WebUiProps - properties that configure the Web UI behavior and appearance.&lt;/p&gt; &lt;p&gt;Properties with names starting with &amp;quot;webui_&amp;quot; can be stored in the database and managed via API.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Data Sources:&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Explicit WebUiProps (Database)&lt;/strong&gt;: Custom values created/updated via the API and stored in the database.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Implicit WebUiProps (Configuration File)&lt;/strong&gt;: Default values defined in the &lt;code&gt;sample.props.template&lt;/code&gt; configuration file.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Response Fields:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The property name&lt;/li&gt; &lt;li&gt;&lt;code&gt;value&lt;/code&gt;: The property value&lt;/li&gt; &lt;li&gt;&lt;code&gt;webUiPropsId&lt;/code&gt; (optional): UUID for database props, omitted for config props&lt;/li&gt; &lt;li&gt;&lt;code&gt;source&lt;/code&gt;: Either &amp;quot;database&amp;quot; (editable via API) or &amp;quot;config&amp;quot; (read-only from config file)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Query Parameter:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;what&lt;/code&gt; (optional, string, default: &amp;quot;active&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;active&lt;/code&gt;: Returns one value per property name &lt;ul&gt; &lt;li&gt;If property exists in database: returns database value (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;If property only in config file: returns config default value (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;code&gt;database&lt;/code&gt;: Returns ONLY properties explicitly stored in the database (source&#x3D;&amp;quot;database&amp;quot;)&lt;/li&gt; &lt;li&gt;&lt;code&gt;config&lt;/code&gt;: Returns ONLY default properties from configuration file (source&#x3D;&amp;quot;config&amp;quot;)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Get active props (database overrides config, one value per prop):&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props&lt;/a&gt;&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;active&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only database-stored props:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;database&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Get only default props from configuration:&lt;br /&gt; &lt;a href&#x3D;\&quot;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config\&quot;&gt;http://127.0.0.1:8080/obp/v6.0.0/webui-props?what&#x3D;config&lt;/a&gt;&lt;/p&gt; &lt;p&gt;For more details about WebUI Props, including how to set config file defaults and precedence order, see &lt;a href&#x3D;\&quot;/glossary#webui_props\&quot;&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;source&lt;/a&gt;:&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv600GetWebUiProps200Response&gt;
+   * @return ApiResponse&lt;GetWebUiProps200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv600GetWebUiProps200Response> oBPv600GetWebUiPropsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv600GetWebUiPropsRequestBuilder(headers);
+  public ApiResponse<GetWebUiProps200Response> getWebUiPropsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getWebUiPropsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -908,11 +694,11 @@ public class WebUiPropsApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv600GetWebUiProps", localVarResponse);
+          throw getApiException("getWebUiProps", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv600GetWebUiProps200Response>(
+          return new ApiResponse<GetWebUiProps200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -922,10 +708,10 @@ public class WebUiPropsApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv600GetWebUiProps200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv600GetWebUiProps200Response>() {});
+        GetWebUiProps200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetWebUiProps200Response>() {});
         
 
-        return new ApiResponse<OBPv600GetWebUiProps200Response>(
+        return new ApiResponse<GetWebUiProps200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -944,7 +730,7 @@ public class WebUiPropsApi {
     }
   }
 
-  private HttpRequest.Builder oBPv600GetWebUiPropsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getWebUiPropsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 

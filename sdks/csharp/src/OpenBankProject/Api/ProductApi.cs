@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -39,6 +39,85 @@ namespace OpenBankProject.Api
         ProductApiEvents Events { get; }
 
         /// <summary>
+        /// Create or Update Product Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateProductAttributeDefinitionApiResponse> CreateOrUpdateProductAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create or Update Product Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateProductAttributeDefinitionApiResponse?> CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="createProductRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductApiResponse"/>&gt;</returns>
+        Task<ICreateProductApiResponse> CreateProductAsync(string bankid, string productcode, CreateProductRequest createProductRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="createProductRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductApiResponse"/>?&gt;</returns>
+        Task<ICreateProductApiResponse?> CreateProductOrDefaultAsync(string bankid, string productcode, CreateProductRequest createProductRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product Attribute
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateProductAttributeApiResponse> CreateProductAttributeAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product Attribute
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateProductAttributeApiResponse?> CreateProductAttributeOrDefaultAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
         /// Create Product Collection
         /// </summary>
         /// <remarks>
@@ -47,10 +126,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="oBPv310CreateProductCollectionRequest">Request body</param>
+        /// <param name="createProductCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateProductCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv310CreateProductCollectionApiResponse> OBPv310CreateProductCollectionAsync(string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductCollectionApiResponse"/>&gt;</returns>
+        Task<ICreateProductCollectionApiResponse> CreateProductCollectionAsync(string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Product Collection
@@ -60,10 +139,37 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="oBPv310CreateProductCollectionRequest">Request body</param>
+        /// <param name="createProductCollectionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateProductCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CreateProductCollectionApiResponse?> OBPv310CreateProductCollectionOrDefaultAsync(string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductCollectionApiResponse"/>?&gt;</returns>
+        Task<ICreateProductCollectionApiResponse?> CreateProductCollectionOrDefaultAsync(string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product Fee
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductFeeApiResponse"/>&gt;</returns>
+        Task<ICreateProductFeeApiResponse> CreateProductFeeAsync(string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create Product Fee
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductFeeApiResponse"/>?&gt;</returns>
+        Task<ICreateProductFeeApiResponse?> CreateProductFeeOrDefaultAsync(string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute
@@ -76,8 +182,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv310DeleteProductAttributeApiResponse> OBPv310DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        Task<IDeleteProductAttributeApiResponse> DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute
@@ -89,137 +195,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv310DeleteProductAttributeApiResponse?> OBPv310DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Product Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductCollectionApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetProductCollectionApiResponse> OBPv310GetProductCollectionAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Product Collection
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductCollectionApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetProductCollectionApiResponse?> OBPv310GetProductCollectionOrDefaultAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Product Tree
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductTreeApiResponse"/>&gt;</returns>
-        Task<IOBPv310GetProductTreeApiResponse> OBPv310GetProductTreeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Product Tree
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductTreeApiResponse"/>?&gt;</returns>
-        Task<IOBPv310GetProductTreeApiResponse?> OBPv310GetProductTreeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create or Update Product Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> OBPv400CreateOrUpdateProductAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create or Update Product Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product Attribute
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateProductAttributeApiResponse> OBPv400CreateProductAttributeAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product Attribute
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateProductAttributeApiResponse?> OBPv400CreateProductAttributeOrDefaultAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product Fee
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductFeeApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateProductFeeApiResponse> OBPv400CreateProductFeeAsync(string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product Fee
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductFeeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateProductFeeApiResponse?> OBPv400CreateProductFeeOrDefaultAsync(string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductAttributeApiResponse?> DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute Definition
@@ -231,8 +208,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteProductAttributeDefinitionApiResponse> OBPv400DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IDeleteProductAttributeDefinitionApiResponse> DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Attribute Definition
@@ -243,8 +220,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteProductAttributeDefinitionApiResponse?> OBPv400DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductAttributeDefinitionApiResponse?> DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Cascade
@@ -256,8 +233,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductCascadeApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteProductCascadeApiResponse> OBPv400DeleteProductCascadeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductCascadeApiResponse"/>&gt;</returns>
+        Task<IDeleteProductCascadeApiResponse> DeleteProductCascadeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Cascade
@@ -268,8 +245,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductCascadeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteProductCascadeApiResponse?> OBPv400DeleteProductCascadeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductCascadeApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductCascadeApiResponse?> DeleteProductCascadeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Fee
@@ -282,8 +259,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductFeeApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteProductFeeApiResponse> OBPv400DeleteProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductFeeApiResponse"/>&gt;</returns>
+        Task<IDeleteProductFeeApiResponse> DeleteProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete Product Fee
@@ -295,8 +272,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductFeeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteProductFeeApiResponse?> OBPv400DeleteProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductFeeApiResponse"/>?&gt;</returns>
+        Task<IDeleteProductFeeApiResponse?> DeleteProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Product
@@ -308,8 +285,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductApiResponse> OBPv400GetProductAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductApiResponse"/>&gt;</returns>
+        Task<IGetProductApiResponse> GetProductAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Bank Product
@@ -320,8 +297,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductApiResponse?> OBPv400GetProductOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductApiResponse"/>?&gt;</returns>
+        Task<IGetProductApiResponse?> GetProductOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute
@@ -334,8 +311,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductAttributeApiResponse> OBPv400GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        Task<IGetProductAttributeApiResponse> GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute
@@ -347,8 +324,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductAttributeApiResponse?> OBPv400GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IGetProductAttributeApiResponse?> GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute Definition
@@ -359,8 +336,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductAttributeDefinitionApiResponse> OBPv400GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IGetProductAttributeDefinitionApiResponse> GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Attribute Definition
@@ -370,8 +347,33 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductAttributeDefinitionApiResponse?> OBPv400GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IGetProductAttributeDefinitionApiResponse?> GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Product Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductCollectionApiResponse"/>&gt;</returns>
+        Task<IGetProductCollectionApiResponse> GetProductCollectionAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Product Collection
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductCollectionApiResponse"/>?&gt;</returns>
+        Task<IGetProductCollectionApiResponse?> GetProductCollectionOrDefaultAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Fee
@@ -384,8 +386,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeeApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductFeeApiResponse> OBPv400GetProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeeApiResponse"/>&gt;</returns>
+        Task<IGetProductFeeApiResponse> GetProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Fee
@@ -397,8 +399,8 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductFeeApiResponse?> OBPv400GetProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeeApiResponse"/>?&gt;</returns>
+        Task<IGetProductFeeApiResponse?> GetProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Fees
@@ -410,8 +412,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeesApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductFeesApiResponse> OBPv400GetProductFeesAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeesApiResponse"/>&gt;</returns>
+        Task<IGetProductFeesApiResponse> GetProductFeesAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Product Fees
@@ -422,8 +424,33 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeesApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductFeesApiResponse?> OBPv400GetProductFeesOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeesApiResponse"/>?&gt;</returns>
+        Task<IGetProductFeesApiResponse?> GetProductFeesOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Product Tree
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductTreeApiResponse"/>&gt;</returns>
+        Task<IGetProductTreeApiResponse> GetProductTreeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Product Tree
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductTreeApiResponse"/>?&gt;</returns>
+        Task<IGetProductTreeApiResponse?> GetProductTreeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Products
@@ -434,8 +461,8 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductsApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetProductsApiResponse> OBPv400GetProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductsApiResponse"/>&gt;</returns>
+        Task<IGetProductsApiResponse> GetProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Products
@@ -445,8 +472,8 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductsApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetProductsApiResponse?> OBPv400GetProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductsApiResponse"/>?&gt;</returns>
+        Task<IGetProductsApiResponse?> GetProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Attribute
@@ -458,10 +485,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateProductAttributeApiResponse> OBPv400UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateProductAttributeApiResponse> UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Attribute
@@ -472,10 +499,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateProductAttributeApiResponse?> OBPv400UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateProductAttributeApiResponse?> UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Fee
@@ -487,10 +514,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductFeeApiResponse"/>&gt;</returns>
-        Task<IOBPv400UpdateProductFeeApiResponse> OBPv400UpdateProductFeeAsync(string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductFeeApiResponse"/>&gt;</returns>
+        Task<IUpdateProductFeeApiResponse> UpdateProductFeeAsync(string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Product Fee
@@ -501,43 +528,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductFeeApiResponse"/>?&gt;</returns>
-        Task<IOBPv400UpdateProductFeeApiResponse?> OBPv400UpdateProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv500CreateProductRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500CreateProductApiResponse"/>&gt;</returns>
-        Task<IOBPv500CreateProductApiResponse> OBPv500CreateProductAsync(string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create Product
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv500CreateProductRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500CreateProductApiResponse"/>?&gt;</returns>
-        Task<IOBPv500CreateProductApiResponse?> OBPv500CreateProductOrDefaultAsync(string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductFeeApiResponse"/>?&gt;</returns>
+        Task<IUpdateProductFeeApiResponse?> UpdateProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310CreateProductCollectionApiResponse"/>
+    /// The <see cref="ICreateProductApiResponse"/>
     /// </summary>
-    public interface IOBPv310CreateProductCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310CreateProductCollection200Response?>
+    public interface ICreateProductApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateProduct200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -559,9 +559,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310GetProductCollectionApiResponse"/>
+    /// The <see cref="ICreateProductCollectionApiResponse"/>
     /// </summary>
-    public interface IOBPv310GetProductCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetProductCollection200Response?>
+    public interface ICreateProductCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateProductCollection200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -583,9 +583,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv310GetProductTreeApiResponse"/>
+    /// The <see cref="ICreateProductFeeApiResponse"/>
     /// </summary>
-    public interface IOBPv310GetProductTreeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv310GetProductTree200Response?>
+    public interface ICreateProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductFee200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -607,9 +607,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400CreateProductFeeApiResponse"/>
+    /// The <see cref="IDeleteProductCascadeApiResponse"/>
     /// </summary>
-    public interface IOBPv400CreateProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProductFee200Response?>
+    public interface IDeleteProductCascadeApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -631,9 +631,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteProductCascadeApiResponse"/>
+    /// The <see cref="IDeleteProductFeeApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteProductCascadeApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IDeleteProductFeeApiResponse : OpenBankProject.Client.IApiResponse
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -655,9 +655,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400DeleteProductFeeApiResponse"/>
+    /// The <see cref="IGetProductApiResponse"/>
     /// </summary>
-    public interface IOBPv400DeleteProductFeeApiResponse : OpenBankProject.Client.IApiResponse
+    public interface IGetProductApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProduct200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -679,9 +679,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetProductApiResponse"/>
+    /// The <see cref="IGetProductCollectionApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetProductApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProduct200Response?>
+    public interface IGetProductCollectionApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductCollection200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -703,9 +703,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetProductFeeApiResponse"/>
+    /// The <see cref="IGetProductFeeApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProductFee200Response?>
+    public interface IGetProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductFee200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -727,9 +727,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetProductFeesApiResponse"/>
+    /// The <see cref="IGetProductFeesApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetProductFeesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProductFees200Response?>
+    public interface IGetProductFeesApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductFees200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -751,9 +751,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400GetProductsApiResponse"/>
+    /// The <see cref="IGetProductTreeApiResponse"/>
     /// </summary>
-    public interface IOBPv400GetProductsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProducts200Response?>
+    public interface IGetProductTreeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductTree200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -775,9 +775,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv400UpdateProductFeeApiResponse"/>
+    /// The <see cref="IGetProductsApiResponse"/>
     /// </summary>
-    public interface IOBPv400UpdateProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv400GetProductFee200Response?>
+    public interface IGetProductsApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProducts200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -799,9 +799,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv500CreateProductApiResponse"/>
+    /// The <see cref="IUpdateProductFeeApiResponse"/>
     /// </summary>
-    public interface IOBPv500CreateProductApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv500CreateProduct200Response?>
+    public interface IUpdateProductFeeApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetProductFee200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -830,381 +830,381 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CreateProductCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CreateProductCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv310CreateProductCollection(ProductApi.OBPv310CreateProductCollectionApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateProductAttributeDefinition(AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv310CreateProductCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CreateProductCollection(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv310CreateProductCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310DeleteProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310DeleteProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateProduct;
 
-        internal void ExecuteOnOBPv310DeleteProductAttribute(AttributeApi.OBPv310DeleteProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateProduct(ProductApi.CreateProductApiResponse apiResponse)
         {
-            OnOBPv310DeleteProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310DeleteProductAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateProduct(Exception exception)
         {
-            OnErrorOBPv310DeleteProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetProductCollection;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetProductCollection;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateProductAttribute;
 
-        internal void ExecuteOnOBPv310GetProductCollection(ProductApi.OBPv310GetProductCollectionApiResponse apiResponse)
+        internal void ExecuteOnCreateProductAttribute(AttributeApi.CreateProductAttributeApiResponse apiResponse)
         {
-            OnOBPv310GetProductCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetProductCollection(Exception exception)
+        internal void ExecuteOnErrorCreateProductAttribute(Exception exception)
         {
-            OnErrorOBPv310GetProductCollection?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310GetProductTree;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateProductCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310GetProductTree;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateProductCollection;
 
-        internal void ExecuteOnOBPv310GetProductTree(ProductApi.OBPv310GetProductTreeApiResponse apiResponse)
+        internal void ExecuteOnCreateProductCollection(ProductApi.CreateProductCollectionApiResponse apiResponse)
         {
-            OnOBPv310GetProductTree?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateProductCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310GetProductTree(Exception exception)
+        internal void ExecuteOnErrorCreateProductCollection(Exception exception)
         {
-            OnErrorOBPv310GetProductTree?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateProductCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateProductFee;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateProductFee;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateProductAttributeDefinition(AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnCreateProductFee(ProductApi.CreateProductFeeApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorCreateProductFee(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateProductFee?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductAttribute;
 
-        internal void ExecuteOnOBPv400CreateProductAttribute(AttributeApi.OBPv400CreateProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductAttribute(AttributeApi.DeleteProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400CreateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateProductAttribute(Exception exception)
+        internal void ExecuteOnErrorDeleteProductAttribute(Exception exception)
         {
-            OnErrorOBPv400CreateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateProductFee;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateProductFee;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv400CreateProductFee(ProductApi.OBPv400CreateProductFeeApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductAttributeDefinition(AttributeApi.DeleteProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400CreateProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateProductFee(Exception exception)
+        internal void ExecuteOnErrorDeleteProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400CreateProductFee?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductCascade;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductCascade;
 
-        internal void ExecuteOnOBPv400DeleteProductAttributeDefinition(AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductCascade(ProductApi.DeleteProductCascadeApiResponse apiResponse)
         {
-            OnOBPv400DeleteProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductCascade?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorDeleteProductCascade(Exception exception)
         {
-            OnErrorOBPv400DeleteProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductCascade?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteProductCascade;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteProductFee;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteProductCascade;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteProductFee;
 
-        internal void ExecuteOnOBPv400DeleteProductCascade(ProductApi.OBPv400DeleteProductCascadeApiResponse apiResponse)
+        internal void ExecuteOnDeleteProductFee(ProductApi.DeleteProductFeeApiResponse apiResponse)
         {
-            OnOBPv400DeleteProductCascade?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteProductCascade(Exception exception)
+        internal void ExecuteOnErrorDeleteProductFee(Exception exception)
         {
-            OnErrorOBPv400DeleteProductCascade?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteProductFee?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteProductFee;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProduct;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteProductFee;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProduct;
 
-        internal void ExecuteOnOBPv400DeleteProductFee(ProductApi.OBPv400DeleteProductFeeApiResponse apiResponse)
+        internal void ExecuteOnGetProduct(ProductApi.GetProductApiResponse apiResponse)
         {
-            OnOBPv400DeleteProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteProductFee(Exception exception)
+        internal void ExecuteOnErrorGetProduct(Exception exception)
         {
-            OnErrorOBPv400DeleteProductFee?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProduct?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductAttribute;
 
-        internal void ExecuteOnOBPv400GetProduct(ProductApi.OBPv400GetProductApiResponse apiResponse)
+        internal void ExecuteOnGetProductAttribute(AttributeApi.GetProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400GetProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProduct(Exception exception)
+        internal void ExecuteOnErrorGetProductAttribute(Exception exception)
         {
-            OnErrorOBPv400GetProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductAttributeDefinition;
 
-        internal void ExecuteOnOBPv400GetProductAttribute(AttributeApi.OBPv400GetProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetProductAttributeDefinition(AttributeApi.GetProductAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400GetProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductAttribute(Exception exception)
+        internal void ExecuteOnErrorGetProductAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400GetProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductCollection;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductCollection;
 
-        internal void ExecuteOnOBPv400GetProductAttributeDefinition(AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnGetProductCollection(ProductApi.GetProductCollectionApiResponse apiResponse)
         {
-            OnOBPv400GetProductAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductCollection?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorGetProductCollection(Exception exception)
         {
-            OnErrorOBPv400GetProductAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductCollection?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductFee;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductFee;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductFee;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductFee;
 
-        internal void ExecuteOnOBPv400GetProductFee(ProductApi.OBPv400GetProductFeeApiResponse apiResponse)
+        internal void ExecuteOnGetProductFee(ProductApi.GetProductFeeApiResponse apiResponse)
         {
-            OnOBPv400GetProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductFee(Exception exception)
+        internal void ExecuteOnErrorGetProductFee(Exception exception)
         {
-            OnErrorOBPv400GetProductFee?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductFee?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProductFees;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductFees;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProductFees;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductFees;
 
-        internal void ExecuteOnOBPv400GetProductFees(ProductApi.OBPv400GetProductFeesApiResponse apiResponse)
+        internal void ExecuteOnGetProductFees(ProductApi.GetProductFeesApiResponse apiResponse)
         {
-            OnOBPv400GetProductFees?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductFees?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProductFees(Exception exception)
+        internal void ExecuteOnErrorGetProductFees(Exception exception)
         {
-            OnErrorOBPv400GetProductFees?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductFees?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetProducts;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProductTree;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetProducts;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProductTree;
 
-        internal void ExecuteOnOBPv400GetProducts(ProductApi.OBPv400GetProductsApiResponse apiResponse)
+        internal void ExecuteOnGetProductTree(ProductApi.GetProductTreeApiResponse apiResponse)
         {
-            OnOBPv400GetProducts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProductTree?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetProducts(Exception exception)
+        internal void ExecuteOnErrorGetProductTree(Exception exception)
         {
-            OnErrorOBPv400GetProducts?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProductTree?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateProductAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnGetProducts;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateProductAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetProducts;
 
-        internal void ExecuteOnOBPv400UpdateProductAttribute(AttributeApi.OBPv400UpdateProductAttributeApiResponse apiResponse)
+        internal void ExecuteOnGetProducts(ProductApi.GetProductsApiResponse apiResponse)
         {
-            OnOBPv400UpdateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetProducts?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateProductAttribute(Exception exception)
+        internal void ExecuteOnErrorGetProducts(Exception exception)
         {
-            OnErrorOBPv400UpdateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetProducts?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400UpdateProductFee;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateProductAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400UpdateProductFee;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateProductAttribute;
 
-        internal void ExecuteOnOBPv400UpdateProductFee(ProductApi.OBPv400UpdateProductFeeApiResponse apiResponse)
+        internal void ExecuteOnUpdateProductAttribute(AttributeApi.UpdateProductAttributeApiResponse apiResponse)
         {
-            OnOBPv400UpdateProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateProductAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400UpdateProductFee(Exception exception)
+        internal void ExecuteOnErrorUpdateProductAttribute(Exception exception)
         {
-            OnErrorOBPv400UpdateProductFee?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateProductAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv500CreateProduct;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateProductFee;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv500CreateProduct;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateProductFee;
 
-        internal void ExecuteOnOBPv500CreateProduct(ProductApi.OBPv500CreateProductApiResponse apiResponse)
+        internal void ExecuteOnUpdateProductFee(ProductApi.UpdateProductFeeApiResponse apiResponse)
         {
-            OnOBPv500CreateProduct?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateProductFee?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv500CreateProduct(Exception exception)
+        internal void ExecuteOnErrorUpdateProductFee(Exception exception)
         {
-            OnErrorOBPv500CreateProduct?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateProductFee?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -1262,25 +1262,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310CreateProductCollection(ref string bankid, ref string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest);
+        partial void FormatCreateOrUpdateProductAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <param name="oBPv310CreateProductCollectionRequest"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv310CreateProductCollection(string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest)
+        private void ValidateCreateOrUpdateProductAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (collectioncode == null)
-                throw new ArgumentNullException(nameof(collectioncode));
-
-            if (oBPv310CreateProductCollectionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310CreateProductCollectionRequest));
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
         }
 
         /// <summary>
@@ -1288,12 +1284,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <param name="oBPv310CreateProductCollectionRequest"></param>
-        private void AfterOBPv310CreateProductCollectionDefaultImplementation(IOBPv310CreateProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateProductAttributeDefinitionDefaultImplementation(ICreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310CreateProductCollection(ref suppressDefaultLog, apiResponseLocalVar, bankid, collectioncode, oBPv310CreateProductCollectionRequest);
+            AfterCreateOrUpdateProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1304,9 +1299,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <param name="oBPv310CreateProductCollectionRequest"></param>
-        partial void AfterOBPv310CreateProductCollection(ref bool suppressDefaultLog, IOBPv310CreateProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1315,12 +1309,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <param name="oBPv310CreateProductCollectionRequest"></param>
-        private void OnErrorOBPv310CreateProductCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CreateProductCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, collectioncode, oBPv310CreateProductCollectionRequest);
+            OnErrorCreateOrUpdateProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1333,23 +1326,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <param name="oBPv310CreateProductCollectionRequest"></param>
-        partial void OnErrorOBPv310CreateProductCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
-        /// Create Product Collection &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Create or Update Product Attribute Definition &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="oBPv310CreateProductCollectionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateProductCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateProductCollectionApiResponse?> OBPv310CreateProductCollectionOrDefaultAsync(string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateProductAttributeDefinitionApiResponse?> CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310CreateProductCollectionAsync(bankid, collectioncode, oBPv310CreateProductCollectionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateProductAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1358,23 +1349,22 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Create Product Collection &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// Create or Update Product Attribute Definition &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="oBPv310CreateProductCollectionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateProductCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateProductCollectionApiResponse> OBPv310CreateProductCollectionAsync(string bankid, string collectioncode, OBPv310CreateProductCollectionRequest oBPv310CreateProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateProductAttributeDefinitionApiResponse> CreateOrUpdateProductAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310CreateProductCollection(bankid, collectioncode, oBPv310CreateProductCollectionRequest);
+                ValidateCreateOrUpdateProductAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                FormatOBPv310CreateProductCollection(ref bankid, ref collectioncode, oBPv310CreateProductCollectionRequest);
+                FormatCreateOrUpdateProductAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1382,21 +1372,20 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}");
+                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcollectioncode%7D", Uri.EscapeDataString(collectioncode.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv310CreateProductCollectionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310CreateProductCollectionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1432,21 +1421,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv310CreateProductCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310CreateProductCollectionApiResponse>();
-                        OBPv310CreateProductCollectionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse>();
+                        AttributeApi.CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv310CreateProductCollectionDefaultImplementation(apiResponseLocalVar, bankid, collectioncode, oBPv310CreateProductCollectionRequest);
+                        AfterCreateOrUpdateProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv310CreateProductCollection(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateProductAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1458,24 +1447,226 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310CreateProductCollectionDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", uriBuilderLocalVar.Path, bankid, collectioncode, oBPv310CreateProductCollectionRequest);
-                Events.ExecuteOnErrorOBPv310CreateProductCollection(e);
+                OnErrorCreateOrUpdateProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateProductAttributeDefinition(e);
+                throw;
+            }
+        }
+
+        partial void FormatCreateProduct(ref string bankid, ref string productcode, CreateProductRequest createProductRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="createProductRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateProduct(string bankid, string productcode, CreateProductRequest createProductRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
+
+            if (createProductRequest == null)
+                throw new ArgumentNullException(nameof(createProductRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="createProductRequest"></param>
+        private void AfterCreateProductDefaultImplementation(ICreateProductApiResponse apiResponseLocalVar, string bankid, string productcode, CreateProductRequest createProductRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, createProductRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="createProductRequest"></param>
+        partial void AfterCreateProduct(ref bool suppressDefaultLog, ICreateProductApiResponse apiResponseLocalVar, string bankid, string productcode, CreateProductRequest createProductRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="createProductRequest"></param>
+        private void OnErrorCreateProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, CreateProductRequest createProductRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, createProductRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="createProductRequest"></param>
+        partial void OnErrorCreateProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, CreateProductRequest createProductRequest);
+
+        /// <summary>
+        /// Create Product &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="createProductRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductApiResponse?> CreateProductOrDefaultAsync(string bankid, string productcode, CreateProductRequest createProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateProductAsync(bankid, productcode, createProductRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Product &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="createProductRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductApiResponse> CreateProductAsync(string bankid, string productcode, CreateProductRequest createProductRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateProduct(bankid, productcode, createProductRequest);
+
+                FormatCreateProduct(ref bankid, ref productcode, createProductRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v5.0.0/banks/{bankid}/products/{productcode}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.0.0/banks/{bankid}/products/{productcode}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createProductRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createProductRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateProductApiResponse>();
+                        CreateProductApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.0.0/banks/{bankid}/products/{productcode}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateProductDefaultImplementation(apiResponseLocalVar, bankid, productcode, createProductRequest);
+
+                        Events.ExecuteOnCreateProduct(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateProductDefaultImplementation(e, "/obp/v5.0.0/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode, createProductRequest);
+                Events.ExecuteOnErrorCreateProduct(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv310CreateProductCollectionApiResponse"/>
+        /// The <see cref="CreateProductApiResponse"/>
         /// </summary>
-        public partial class OBPv310CreateProductCollectionApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310CreateProductCollectionApiResponse
+        public partial class CreateProductApiResponse : OpenBankProject.Client.ApiResponse, ICreateProductApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv310CreateProductCollectionApiResponse> Logger { get; }
+            public ILogger<CreateProductApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv310CreateProductCollectionApiResponse"/>
+            /// The <see cref="CreateProductApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1484,14 +1675,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateProductCollectionApiResponse(ILogger<OBPv310CreateProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateProductApiResponse(ILogger<CreateProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv310CreateProductCollectionApiResponse"/>
+            /// The <see cref="CreateProductApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1500,7 +1691,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv310CreateProductCollectionApiResponse(ILogger<OBPv310CreateProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateProductApiResponse(ILogger<CreateProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1518,11 +1709,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv310CreateProductCollection200Response? Ok()
+            public OpenBankProject.Model.CreateProduct200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310CreateProductCollection200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateProduct200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1531,7 +1722,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310CreateProductCollection200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateProduct200Response? result)
             {
                 result = null;
 
@@ -1569,7 +1760,823 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv310DeleteProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
+        partial void FormatCreateProductAttribute(ref string bankid, ref string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateProductAttribute(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
+
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterCreateProductAttributeDefaultImplementation(ICreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, updateAtmAttributeRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterCreateProductAttribute(ref bool suppressDefaultLog, ICreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorCreateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, updateAtmAttributeRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorCreateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest);
+
+        /// <summary>
+        /// Create Product Attribute &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductAttributeApiResponse?> CreateProductAttributeOrDefaultAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateProductAttributeAsync(bankid, productcode, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Product Attribute &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductAttributeApiResponse> CreateProductAttributeAsync(string bankid, string productcode, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateProductAttribute(bankid, productcode, updateAtmAttributeRequest);
+
+                FormatCreateProductAttribute(ref bankid, ref productcode, updateAtmAttributeRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AttributeApi.CreateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.CreateProductAttributeApiResponse>();
+                        AttributeApi.CreateProductAttributeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, updateAtmAttributeRequest);
+
+                        Events.ExecuteOnCreateProductAttribute(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, productcode, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorCreateProductAttribute(e);
+                throw;
+            }
+        }
+
+        partial void FormatCreateProductCollection(ref string bankid, ref string collectioncode, CreateProductCollectionRequest createProductCollectionRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <param name="createProductCollectionRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateProductCollection(string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (collectioncode == null)
+                throw new ArgumentNullException(nameof(collectioncode));
+
+            if (createProductCollectionRequest == null)
+                throw new ArgumentNullException(nameof(createProductCollectionRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <param name="createProductCollectionRequest"></param>
+        private void AfterCreateProductCollectionDefaultImplementation(ICreateProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateProductCollection(ref suppressDefaultLog, apiResponseLocalVar, bankid, collectioncode, createProductCollectionRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <param name="createProductCollectionRequest"></param>
+        partial void AfterCreateProductCollection(ref bool suppressDefaultLog, ICreateProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <param name="createProductCollectionRequest"></param>
+        private void OnErrorCreateProductCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateProductCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, collectioncode, createProductCollectionRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <param name="createProductCollectionRequest"></param>
+        partial void OnErrorCreateProductCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest);
+
+        /// <summary>
+        /// Create Product Collection &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="createProductCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductCollectionApiResponse?> CreateProductCollectionOrDefaultAsync(string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateProductCollectionAsync(bankid, collectioncode, createProductCollectionRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Product Collection &lt;p&gt;Create or Update a Product Collection at the Bank.&lt;/p&gt; &lt;p&gt;Use Product Collections to create Product &amp;quot;Baskets&amp;quot;, &amp;quot;Portfolios&amp;quot;, &amp;quot;Indices&amp;quot;, &amp;quot;Collections&amp;quot;, &amp;quot;Underlyings-lists&amp;quot;, &amp;quot;Buckets&amp;quot; etc. etc.&lt;/p&gt; &lt;p&gt;There is a many to many relationship between Products and Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A Product can exist in many Collections&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A Collection can contain many Products.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;A collection has collection code, one parent Product and one or more child Products.&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#items\&quot;&gt;&lt;strong&gt;items&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#member_product_code\&quot;&gt;&lt;strong&gt;member_product_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_collection\&quot;&gt;&lt;strong&gt;product_collection&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="createProductCollectionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductCollectionApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductCollectionApiResponse> CreateProductCollectionAsync(string bankid, string collectioncode, CreateProductCollectionRequest createProductCollectionRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateProductCollection(bankid, collectioncode, createProductCollectionRequest);
+
+                FormatCreateProductCollection(ref bankid, ref collectioncode, createProductCollectionRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcollectioncode%7D", Uri.EscapeDataString(collectioncode.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (createProductCollectionRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createProductCollectionRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateProductCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateProductCollectionApiResponse>();
+                        CreateProductCollectionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateProductCollectionDefaultImplementation(apiResponseLocalVar, bankid, collectioncode, createProductCollectionRequest);
+
+                        Events.ExecuteOnCreateProductCollection(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateProductCollectionDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", uriBuilderLocalVar.Path, bankid, collectioncode, createProductCollectionRequest);
+                Events.ExecuteOnErrorCreateProductCollection(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateProductCollectionApiResponse"/>
+        /// </summary>
+        public partial class CreateProductCollectionApiResponse : OpenBankProject.Client.ApiResponse, ICreateProductCollectionApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateProductCollectionApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateProductCollectionApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateProductCollectionApiResponse(ILogger<CreateProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateProductCollectionApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateProductCollectionApiResponse(ILogger<CreateProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.CreateProductCollection200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateProductCollection200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateProductCollection200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatCreateProductFee(ref string bankid, ref string productcode, UpdateProductFeeRequest updateProductFeeRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateProductFeeRequest"></param>
+        /// <returns></returns>
+        private void ValidateCreateProductFee(string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
+
+            if (updateProductFeeRequest == null)
+                throw new ArgumentNullException(nameof(updateProductFeeRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateProductFeeRequest"></param>
+        private void AfterCreateProductFeeDefaultImplementation(ICreateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterCreateProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, updateProductFeeRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateProductFeeRequest"></param>
+        partial void AfterCreateProductFee(ref bool suppressDefaultLog, ICreateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateProductFeeRequest"></param>
+        private void OnErrorCreateProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorCreateProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, updateProductFeeRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="updateProductFeeRequest"></param>
+        partial void OnErrorCreateProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest);
+
+        /// <summary>
+        /// Create Product Fee &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductFeeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductFeeApiResponse?> CreateProductFeeOrDefaultAsync(string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await CreateProductFeeAsync(bankid, productcode, updateProductFeeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Create Product Fee &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateProductFeeApiResponse"/>&gt;</returns>
+        public async Task<ICreateProductFeeApiResponse> CreateProductFeeAsync(string bankid, string productcode, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateCreateProductFee(bankid, productcode, updateProductFeeRequest);
+
+                FormatCreateProductFee(ref bankid, ref productcode, updateProductFeeRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateProductFeeRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateProductFeeRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<CreateProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateProductFeeApiResponse>();
+                        CreateProductFeeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterCreateProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, updateProductFeeRequest);
+
+                        Events.ExecuteOnCreateProductFee(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorCreateProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee", uriBuilderLocalVar.Path, bankid, productcode, updateProductFeeRequest);
+                Events.ExecuteOnErrorCreateProductFee(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="CreateProductFeeApiResponse"/>
+        /// </summary>
+        public partial class CreateProductFeeApiResponse : OpenBankProject.Client.ApiResponse, ICreateProductFeeApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<CreateProductFeeApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="CreateProductFeeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateProductFeeApiResponse(ILogger<CreateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="CreateProductFeeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public CreateProductFeeApiResponse(ILogger<CreateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetProductFee200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductFee200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductFee200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatDeleteProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -1578,7 +2585,7 @@ namespace OpenBankProject.Api
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv310DeleteProductAttribute(string bankid, string productcode, string productattributeid)
+        private void ValidateDeleteProductAttribute(string bankid, string productcode, string productattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1597,10 +2604,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void AfterOBPv310DeleteProductAttributeDefaultImplementation(IOBPv310DeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
+        private void AfterDeleteProductAttributeDefaultImplementation(IDeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310DeleteProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
+            AfterDeleteProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1613,7 +2620,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void AfterOBPv310DeleteProductAttribute(ref bool suppressDefaultLog, IOBPv310DeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
+        partial void AfterDeleteProductAttribute(ref bool suppressDefaultLog, IDeleteProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1624,10 +2631,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void OnErrorOBPv310DeleteProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
+        private void OnErrorDeleteProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310DeleteProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
+            OnErrorDeleteProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1642,7 +2649,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void OnErrorOBPv310DeleteProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
+        partial void OnErrorDeleteProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Delete Product Attribute &lt;p&gt;Delete Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Delete a Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -1651,12 +2658,12 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteProductAttributeApiResponse?> OBPv310DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeApiResponse?> DeleteProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310DeleteProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
+                return await DeleteProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1672,16 +2679,16 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310DeleteProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310DeleteProductAttributeApiResponse> OBPv310DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeApiResponse> DeleteProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310DeleteProductAttribute(bankid, productcode, productattributeid);
+                ValidateDeleteProductAttribute(bankid, productcode, productattributeid);
 
-                FormatOBPv310DeleteProductAttribute(ref bankid, ref productcode, ref productattributeid);
+                FormatDeleteProductAttribute(ref bankid, ref productcode, ref productattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1700,7 +2707,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1718,8 +2725,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv310DeleteProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv310DeleteProductAttributeApiResponse>();
-                        AttributeApi.OBPv310DeleteProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteProductAttributeApiResponse>();
+                        AttributeApi.DeleteProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1730,188 +2737,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310DeleteProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
+                        AfterDeleteProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
 
-                        Events.ExecuteOnOBPv310DeleteProductAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310DeleteProductAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
-                Events.ExecuteOnErrorOBPv310DeleteProductAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv310GetProductCollection(ref string bankid, ref string collectioncode);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310GetProductCollection(string bankid, string collectioncode)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (collectioncode == null)
-                throw new ArgumentNullException(nameof(collectioncode));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        private void AfterOBPv310GetProductCollectionDefaultImplementation(IOBPv310GetProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310GetProductCollection(ref suppressDefaultLog, apiResponseLocalVar, bankid, collectioncode);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        partial void AfterOBPv310GetProductCollection(ref bool suppressDefaultLog, IOBPv310GetProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        private void OnErrorOBPv310GetProductCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetProductCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, collectioncode);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="collectioncode"></param>
-        partial void OnErrorOBPv310GetProductCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode);
-
-        /// <summary>
-        /// Get Product Collection &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetProductCollectionApiResponse?> OBPv310GetProductCollectionOrDefaultAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310GetProductCollectionAsync(bankid, collectioncode, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Product Collection &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductCollectionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetProductCollectionApiResponse> OBPv310GetProductCollectionAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310GetProductCollection(bankid, collectioncode);
-
-                FormatOBPv310GetProductCollection(ref bankid, ref collectioncode);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcollectioncode%7D", Uri.EscapeDataString(collectioncode.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310GetProductCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310GetProductCollectionApiResponse>();
-                        OBPv310GetProductCollectionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310GetProductCollectionDefaultImplementation(apiResponseLocalVar, bankid, collectioncode);
-
-                        Events.ExecuteOnOBPv310GetProductCollection(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1923,1083 +2751,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310GetProductCollectionDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", uriBuilderLocalVar.Path, bankid, collectioncode);
-                Events.ExecuteOnErrorOBPv310GetProductCollection(e);
+                OnErrorDeleteProductAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
+                Events.ExecuteOnErrorDeleteProductAttribute(e);
                 throw;
             }
         }
 
-        /// <summary>
-        /// The <see cref="OBPv310GetProductCollectionApiResponse"/>
-        /// </summary>
-        public partial class OBPv310GetProductCollectionApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310GetProductCollectionApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310GetProductCollectionApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetProductCollectionApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetProductCollectionApiResponse(ILogger<OBPv310GetProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetProductCollectionApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetProductCollectionApiResponse(ILogger<OBPv310GetProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetProductCollection200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetProductCollection200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetProductCollection200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv310GetProductTree(ref string bankid, ref string productcode);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <returns></returns>
-        private void ValidateOBPv310GetProductTree(string bankid, string productcode)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        private void AfterOBPv310GetProductTreeDefaultImplementation(IOBPv310GetProductTreeApiResponse apiResponseLocalVar, string bankid, string productcode)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv310GetProductTree(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        partial void AfterOBPv310GetProductTree(ref bool suppressDefaultLog, IOBPv310GetProductTreeApiResponse apiResponseLocalVar, string bankid, string productcode);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        private void OnErrorOBPv310GetProductTreeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310GetProductTree(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        partial void OnErrorOBPv310GetProductTree(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
-
-        /// <summary>
-        /// Get Product Tree &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductTreeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetProductTreeApiResponse?> OBPv310GetProductTreeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310GetProductTreeAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Get Product Tree &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310GetProductTreeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310GetProductTreeApiResponse> OBPv310GetProductTreeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310GetProductTree(bankid, productcode);
-
-                FormatOBPv310GetProductTree(ref bankid, ref productcode);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv310GetProductTreeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv310GetProductTreeApiResponse>();
-                        OBPv310GetProductTreeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310GetProductTreeDefaultImplementation(apiResponseLocalVar, bankid, productcode);
-
-                        Events.ExecuteOnOBPv310GetProductTree(apiResponseLocalVar);
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310GetProductTreeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
-                Events.ExecuteOnErrorOBPv310GetProductTree(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv310GetProductTreeApiResponse"/>
-        /// </summary>
-        public partial class OBPv310GetProductTreeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv310GetProductTreeApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv310GetProductTreeApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetProductTreeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetProductTreeApiResponse(ILogger<OBPv310GetProductTreeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv310GetProductTreeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv310GetProductTreeApiResponse(ILogger<OBPv310GetProductTreeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv310GetProductTree200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv310GetProductTree200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv310GetProductTree200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400CreateOrUpdateProductAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateProductAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Create or Update Product Attribute Definition &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateProductAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateOrUpdateProductAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create or Update Product Attribute Definition &lt;p&gt;Create or Update Product Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Product&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> OBPv400CreateOrUpdateProductAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateOrUpdateProductAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                FormatOBPv400CreateOrUpdateProductAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400CreateOrUpdateProductAttributeDefinitionApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-                        Events.ExecuteOnOBPv400CreateOrUpdateProductAttributeDefinition(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateOrUpdateProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateProductAttributeDefinition(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateProductAttribute(ref string bankid, ref string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateProductAttribute(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400CreateProductAttributeDefaultImplementation(IOBPv400CreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400CreateProductAttribute(ref bool suppressDefaultLog, IOBPv400CreateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400CreateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400CreateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
-
-        /// <summary>
-        /// Create Product Attribute &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductAttributeApiResponse?> OBPv400CreateProductAttributeOrDefaultAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateProductAttributeAsync(bankid, productcode, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Product Attribute &lt;p&gt;Create Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Typical product attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductAttributeApiResponse> OBPv400CreateProductAttributeAsync(string bankid, string productcode, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateProductAttribute(bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-
-                FormatOBPv400CreateProductAttribute(ref bankid, ref productcode, oBPv510UpdateAtmAttributeRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AttributeApi.OBPv400CreateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400CreateProductAttributeApiResponse>();
-                        AttributeApi.OBPv400CreateProductAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-
-                        Events.ExecuteOnOBPv400CreateProductAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, productcode, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400CreateProductAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateProductFee(ref string bankid, ref string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateProductFee(string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-
-            if (oBPv400UpdateProductFeeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateProductFeeRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        private void AfterOBPv400CreateProductFeeDefaultImplementation(IOBPv400CreateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, oBPv400UpdateProductFeeRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        partial void AfterOBPv400CreateProductFee(ref bool suppressDefaultLog, IOBPv400CreateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        private void OnErrorOBPv400CreateProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, oBPv400UpdateProductFeeRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        partial void OnErrorOBPv400CreateProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
-
-        /// <summary>
-        /// Create Product Fee &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductFeeApiResponse?> OBPv400CreateProductFeeOrDefaultAsync(string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv400CreateProductFeeAsync(bankid, productcode, oBPv400UpdateProductFeeRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Product Fee &lt;p&gt;Create Product Fee&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateProductFeeApiResponse> OBPv400CreateProductFeeAsync(string bankid, string productcode, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv400CreateProductFee(bankid, productcode, oBPv400UpdateProductFeeRequest);
-
-                FormatOBPv400CreateProductFee(ref bankid, ref productcode, oBPv400UpdateProductFeeRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateProductFeeRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateProductFeeRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Post;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv400CreateProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400CreateProductFeeApiResponse>();
-                        OBPv400CreateProductFeeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv400CreateProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, oBPv400UpdateProductFeeRequest);
-
-                        Events.ExecuteOnOBPv400CreateProductFee(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv400CreateProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fee", uriBuilderLocalVar.Path, bankid, productcode, oBPv400UpdateProductFeeRequest);
-                Events.ExecuteOnErrorOBPv400CreateProductFee(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv400CreateProductFeeApiResponse"/>
-        /// </summary>
-        public partial class OBPv400CreateProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400CreateProductFeeApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv400CreateProductFeeApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateProductFeeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateProductFeeApiResponse(ILogger<OBPv400CreateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv400CreateProductFeeApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv400CreateProductFeeApiResponse(ILogger<OBPv400CreateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProductFee200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProductFee200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProductFee200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv400DeleteProductAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+        partial void FormatDeleteProductAttributeDefinition(ref string bankid, ref string attributedefinitionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3007,7 +2765,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteProductAttributeDefinition(string bankid, string attributedefinitionid)
+        private void ValidateDeleteProductAttributeDefinition(string bankid, string attributedefinitionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3022,10 +2780,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void AfterOBPv400DeleteProductAttributeDefinitionDefaultImplementation(IOBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        private void AfterDeleteProductAttributeDefinitionDefaultImplementation(IDeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            AfterDeleteProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3037,7 +2795,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void AfterOBPv400DeleteProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+        partial void AfterDeleteProductAttributeDefinition(ref bool suppressDefaultLog, IDeleteProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3047,10 +2805,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void OnErrorOBPv400DeleteProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        private void OnErrorDeleteProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            OnErrorDeleteProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3064,7 +2822,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void OnErrorOBPv400DeleteProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+        partial void OnErrorDeleteProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Delete Product Attribute Definition &lt;p&gt;Delete Product Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3072,12 +2830,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductAttributeDefinitionApiResponse?> OBPv400DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeDefinitionApiResponse?> DeleteProductAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteProductAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteProductAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3092,16 +2850,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductAttributeDefinitionApiResponse> OBPv400DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductAttributeDefinitionApiResponse> DeleteProductAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteProductAttributeDefinition(bankid, attributedefinitionid);
+                ValidateDeleteProductAttributeDefinition(bankid, attributedefinitionid);
 
-                FormatOBPv400DeleteProductAttributeDefinition(ref bankid, ref attributedefinitionid);
+                FormatDeleteProductAttributeDefinition(ref bankid, ref attributedefinitionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3119,7 +2877,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3137,8 +2895,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.DeleteProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.DeleteProductAttributeDefinitionApiResponse>();
+                        AttributeApi.DeleteProductAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3149,9 +2907,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+                        AfterDeleteProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
 
-                        Events.ExecuteOnOBPv400DeleteProductAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteProductAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3163,13 +2921,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
-                Events.ExecuteOnErrorOBPv400DeleteProductAttributeDefinition(e);
+                OnErrorDeleteProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/product", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
+                Events.ExecuteOnErrorDeleteProductAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteProductCascade(ref string bankid, ref string productcode);
+        partial void FormatDeleteProductCascade(ref string bankid, ref string productcode);
 
         /// <summary>
         /// Validates the request parameters
@@ -3177,7 +2935,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteProductCascade(string bankid, string productcode)
+        private void ValidateDeleteProductCascade(string bankid, string productcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3192,10 +2950,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void AfterOBPv400DeleteProductCascadeDefaultImplementation(IOBPv400DeleteProductCascadeApiResponse apiResponseLocalVar, string bankid, string productcode)
+        private void AfterDeleteProductCascadeDefaultImplementation(IDeleteProductCascadeApiResponse apiResponseLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteProductCascade(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
+            AfterDeleteProductCascade(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3207,7 +2965,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void AfterOBPv400DeleteProductCascade(ref bool suppressDefaultLog, IOBPv400DeleteProductCascadeApiResponse apiResponseLocalVar, string bankid, string productcode);
+        partial void AfterDeleteProductCascade(ref bool suppressDefaultLog, IDeleteProductCascadeApiResponse apiResponseLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3217,10 +2975,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void OnErrorOBPv400DeleteProductCascadeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
+        private void OnErrorDeleteProductCascadeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteProductCascade(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
+            OnErrorDeleteProductCascade(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3234,7 +2992,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void OnErrorOBPv400DeleteProductCascade(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
+        partial void OnErrorDeleteProductCascade(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Delete Product Cascade &lt;p&gt;Delete a Product Cascade specified by PRODUCT_CODE.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3242,12 +3000,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductCascadeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductCascadeApiResponse?> OBPv400DeleteProductCascadeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductCascadeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductCascadeApiResponse?> DeleteProductCascadeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteProductCascadeAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
+                return await DeleteProductCascadeAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3262,16 +3020,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductCascadeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductCascadeApiResponse> OBPv400DeleteProductCascadeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductCascadeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductCascadeApiResponse> DeleteProductCascadeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteProductCascade(bankid, productcode);
+                ValidateDeleteProductCascade(bankid, productcode);
 
-                FormatOBPv400DeleteProductCascade(ref bankid, ref productcode);
+                FormatDeleteProductCascade(ref bankid, ref productcode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3289,7 +3047,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3307,8 +3065,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteProductCascadeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteProductCascadeApiResponse>();
-                        OBPv400DeleteProductCascadeApiResponse apiResponseLocalVar;
+                        ILogger<DeleteProductCascadeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteProductCascadeApiResponse>();
+                        DeleteProductCascadeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3319,9 +3077,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteProductCascadeDefaultImplementation(apiResponseLocalVar, bankid, productcode);
+                        AfterDeleteProductCascadeDefaultImplementation(apiResponseLocalVar, bankid, productcode);
 
-                        Events.ExecuteOnOBPv400DeleteProductCascade(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteProductCascade(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3333,24 +3091,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteProductCascadeDefaultImplementation(e, "/obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
-                Events.ExecuteOnErrorOBPv400DeleteProductCascade(e);
+                OnErrorDeleteProductCascadeDefaultImplementation(e, "/obp/v4.0.0/management/cascading/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
+                Events.ExecuteOnErrorDeleteProductCascade(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteProductCascadeApiResponse"/>
+        /// The <see cref="DeleteProductCascadeApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteProductCascadeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteProductCascadeApiResponse
+        public partial class DeleteProductCascadeApiResponse : OpenBankProject.Client.ApiResponse, IDeleteProductCascadeApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteProductCascadeApiResponse> Logger { get; }
+            public ILogger<DeleteProductCascadeApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteProductCascadeApiResponse"/>
+            /// The <see cref="DeleteProductCascadeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3359,14 +3117,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteProductCascadeApiResponse(ILogger<OBPv400DeleteProductCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteProductCascadeApiResponse(ILogger<DeleteProductCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteProductCascadeApiResponse"/>
+            /// The <see cref="DeleteProductCascadeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3375,7 +3133,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteProductCascadeApiResponse(ILogger<OBPv400DeleteProductCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteProductCascadeApiResponse(ILogger<DeleteProductCascadeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3412,7 +3170,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400DeleteProductFee(ref string bankid, ref string productcode, ref string productfeeid);
+        partial void FormatDeleteProductFee(ref string bankid, ref string productcode, ref string productfeeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3421,7 +3179,7 @@ namespace OpenBankProject.Api
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteProductFee(string bankid, string productcode, string productfeeid)
+        private void ValidateDeleteProductFee(string bankid, string productcode, string productfeeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3440,10 +3198,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        private void AfterOBPv400DeleteProductFeeDefaultImplementation(IOBPv400DeleteProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid)
+        private void AfterDeleteProductFeeDefaultImplementation(IDeleteProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid);
+            AfterDeleteProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3456,7 +3214,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        partial void AfterOBPv400DeleteProductFee(ref bool suppressDefaultLog, IOBPv400DeleteProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid);
+        partial void AfterDeleteProductFee(ref bool suppressDefaultLog, IDeleteProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3467,10 +3225,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        private void OnErrorOBPv400DeleteProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid)
+        private void OnErrorDeleteProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid);
+            OnErrorDeleteProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3485,7 +3243,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        partial void OnErrorOBPv400DeleteProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid);
+        partial void OnErrorDeleteProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid);
 
         /// <summary>
         /// Delete Product Fee &lt;p&gt;Delete Product Fee&lt;/p&gt; &lt;p&gt;Delete one product fee by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;PRODUCT_FEE_ID&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -3494,12 +3252,12 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductFeeApiResponse?> OBPv400DeleteProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductFeeApiResponse?> DeleteProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteProductFeeAsync(bankid, productcode, productfeeid, cancellationToken).ConfigureAwait(false);
+                return await DeleteProductFeeAsync(bankid, productcode, productfeeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3515,16 +3273,16 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteProductFeeApiResponse> OBPv400DeleteProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IDeleteProductFeeApiResponse> DeleteProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteProductFee(bankid, productcode, productfeeid);
+                ValidateDeleteProductFee(bankid, productcode, productfeeid);
 
-                FormatOBPv400DeleteProductFee(ref bankid, ref productcode, ref productfeeid);
+                FormatDeleteProductFee(ref bankid, ref productcode, ref productfeeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3543,7 +3301,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -3561,8 +3319,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400DeleteProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400DeleteProductFeeApiResponse>();
-                        OBPv400DeleteProductFeeApiResponse apiResponseLocalVar;
+                        ILogger<DeleteProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<DeleteProductFeeApiResponse>();
+                        DeleteProductFeeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3573,9 +3331,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid);
+                        AfterDeleteProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid);
 
-                        Events.ExecuteOnOBPv400DeleteProductFee(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteProductFee(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -3587,24 +3345,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid);
-                Events.ExecuteOnErrorOBPv400DeleteProductFee(e);
+                OnErrorDeleteProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid);
+                Events.ExecuteOnErrorDeleteProductFee(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400DeleteProductFeeApiResponse"/>
+        /// The <see cref="DeleteProductFeeApiResponse"/>
         /// </summary>
-        public partial class OBPv400DeleteProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400DeleteProductFeeApiResponse
+        public partial class DeleteProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IDeleteProductFeeApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400DeleteProductFeeApiResponse> Logger { get; }
+            public ILogger<DeleteProductFeeApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteProductFeeApiResponse"/>
+            /// The <see cref="DeleteProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3613,14 +3371,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteProductFeeApiResponse(ILogger<OBPv400DeleteProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public DeleteProductFeeApiResponse(ILogger<DeleteProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400DeleteProductFeeApiResponse"/>
+            /// The <see cref="DeleteProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3629,7 +3387,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400DeleteProductFeeApiResponse(ILogger<OBPv400DeleteProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public DeleteProductFeeApiResponse(ILogger<DeleteProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3666,7 +3424,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetProduct(ref string bankid, ref string productcode);
+        partial void FormatGetProduct(ref string bankid, ref string productcode);
 
         /// <summary>
         /// Validates the request parameters
@@ -3674,7 +3432,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProduct(string bankid, string productcode)
+        private void ValidateGetProduct(string bankid, string productcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3689,10 +3447,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void AfterOBPv400GetProductDefaultImplementation(IOBPv400GetProductApiResponse apiResponseLocalVar, string bankid, string productcode)
+        private void AfterGetProductDefaultImplementation(IGetProductApiResponse apiResponseLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
+            AfterGetProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3704,7 +3462,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void AfterOBPv400GetProduct(ref bool suppressDefaultLog, IOBPv400GetProductApiResponse apiResponseLocalVar, string bankid, string productcode);
+        partial void AfterGetProduct(ref bool suppressDefaultLog, IGetProductApiResponse apiResponseLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3714,10 +3472,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void OnErrorOBPv400GetProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
+        private void OnErrorGetProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
+            OnErrorGetProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -3731,7 +3489,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void OnErrorOBPv400GetProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
+        partial void OnErrorGetProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Get Bank Product &lt;p&gt;Returns information about a financial Product offered by the bank specified by BANK_ID and PRODUCT_CODE including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Meta&lt;/li&gt; &lt;li&gt;Attributes&lt;/li&gt; &lt;li&gt;Fees&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The combination of bank_id and product_code is unique.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;product_fee_id&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; 
@@ -3739,12 +3497,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductApiResponse?> OBPv400GetProductOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductApiResponse"/>&gt;</returns>
+        public async Task<IGetProductApiResponse?> GetProductOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
+                return await GetProductAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -3759,16 +3517,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductApiResponse> OBPv400GetProductAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductApiResponse"/>&gt;</returns>
+        public async Task<IGetProductApiResponse> GetProductAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProduct(bankid, productcode);
+                ValidateGetProduct(bankid, productcode);
 
-                FormatOBPv400GetProduct(ref bankid, ref productcode);
+                FormatGetProduct(ref bankid, ref productcode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -3798,8 +3556,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetProductApiResponse>();
-                        OBPv400GetProductApiResponse apiResponseLocalVar;
+                        ILogger<GetProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductApiResponse>();
+                        GetProductApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -3810,9 +3568,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductDefaultImplementation(apiResponseLocalVar, bankid, productcode);
+                        AfterGetProductDefaultImplementation(apiResponseLocalVar, bankid, productcode);
 
-                        Events.ExecuteOnOBPv400GetProduct(apiResponseLocalVar);
+                        Events.ExecuteOnGetProduct(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -3820,24 +3578,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
-                Events.ExecuteOnErrorOBPv400GetProduct(e);
+                OnErrorGetProductDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
+                Events.ExecuteOnErrorGetProduct(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetProductApiResponse"/>
+        /// The <see cref="GetProductApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetProductApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetProductApiResponse
+        public partial class GetProductApiResponse : OpenBankProject.Client.ApiResponse, IGetProductApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetProductApiResponse> Logger { get; }
+            public ILogger<GetProductApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductApiResponse"/>
+            /// The <see cref="GetProductApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3846,14 +3604,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductApiResponse(ILogger<OBPv400GetProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetProductApiResponse(ILogger<GetProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductApiResponse"/>
+            /// The <see cref="GetProductApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -3862,7 +3620,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductApiResponse(ILogger<OBPv400GetProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetProductApiResponse(ILogger<GetProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3880,11 +3638,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProduct200Response? Ok()
+            public OpenBankProject.Model.GetProduct200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProduct200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProduct200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -3893,7 +3651,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProduct200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProduct200Response? result)
             {
                 result = null;
 
@@ -3931,7 +3689,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
+        partial void FormatGetProductAttribute(ref string bankid, ref string productcode, ref string productattributeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -3940,7 +3698,7 @@ namespace OpenBankProject.Api
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductAttribute(string bankid, string productcode, string productattributeid)
+        private void ValidateGetProductAttribute(string bankid, string productcode, string productattributeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -3959,10 +3717,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void AfterOBPv400GetProductAttributeDefaultImplementation(IOBPv400GetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
+        private void AfterGetProductAttributeDefaultImplementation(IGetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
+            AfterGetProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -3975,7 +3733,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void AfterOBPv400GetProductAttribute(ref bool suppressDefaultLog, IOBPv400GetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
+        partial void AfterGetProductAttribute(ref bool suppressDefaultLog, IGetProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -3986,10 +3744,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        private void OnErrorOBPv400GetProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
+        private void OnErrorGetProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
+            OnErrorGetProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4004,7 +3762,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        partial void OnErrorOBPv400GetProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
+        partial void OnErrorGetProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid);
 
         /// <summary>
         /// Get Product Attribute &lt;p&gt;Get Product Attribute&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Get one product attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -4013,12 +3771,12 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeApiResponse?> OBPv400GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeApiResponse?> GetProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
+                return await GetProductAttributeAsync(bankid, productcode, productattributeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4034,16 +3792,16 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeApiResponse> OBPv400GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeApiResponse> GetProductAttributeAsync(string bankid, string productcode, string productattributeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductAttribute(bankid, productcode, productattributeid);
+                ValidateGetProductAttribute(bankid, productcode, productattributeid);
 
-                FormatOBPv400GetProductAttribute(ref bankid, ref productcode, ref productattributeid);
+                FormatGetProductAttribute(ref bankid, ref productcode, ref productattributeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4062,7 +3820,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4089,8 +3847,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetProductAttributeApiResponse>();
-                        AttributeApi.OBPv400GetProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetProductAttributeApiResponse>();
+                        AttributeApi.GetProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4101,9 +3859,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
+                        AfterGetProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid);
 
-                        Events.ExecuteOnOBPv400GetProductAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4115,20 +3873,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
-                Events.ExecuteOnErrorOBPv400GetProductAttribute(e);
+                OnErrorGetProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid);
+                Events.ExecuteOnErrorGetProductAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetProductAttributeDefinition(ref string bankid);
+        partial void FormatGetProductAttributeDefinition(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductAttributeDefinition(string bankid)
+        private void ValidateGetProductAttributeDefinition(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4139,10 +3897,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetProductAttributeDefinitionDefaultImplementation(IOBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetProductAttributeDefinitionDefaultImplementation(IGetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetProductAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4153,7 +3911,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetProductAttributeDefinition(ref bool suppressDefaultLog, IOBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetProductAttributeDefinition(ref bool suppressDefaultLog, IGetProductAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4162,10 +3920,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetProductAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetProductAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4178,19 +3936,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetProductAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Product Attribute Definition &lt;p&gt;Get Product Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeDefinitionApiResponse?> OBPv400GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeDefinitionApiResponse?> GetProductAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetProductAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4204,16 +3962,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductAttributeDefinitionApiResponse> OBPv400GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductAttributeDefinitionApiResponse> GetProductAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductAttributeDefinition(bankid);
+                ValidateGetProductAttributeDefinition(bankid);
 
-                FormatOBPv400GetProductAttributeDefinition(ref bankid);
+                FormatGetProductAttributeDefinition(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4230,7 +3988,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -4257,8 +4015,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse>();
-                        AttributeApi.OBPv400GetProductAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.GetProductAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.GetProductAttributeDefinitionApiResponse>();
+                        AttributeApi.GetProductAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4269,9 +4027,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetProductAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetProductAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -4283,13 +4041,297 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetProductAttributeDefinition(e);
+                OnErrorGetProductAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/product", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetProductAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetProductFee(ref string bankid, ref string productcode, ref string productfeeid);
+        partial void FormatGetProductCollection(ref string bankid, ref string collectioncode);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        /// <returns></returns>
+        private void ValidateGetProductCollection(string bankid, string collectioncode)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (collectioncode == null)
+                throw new ArgumentNullException(nameof(collectioncode));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        private void AfterGetProductCollectionDefaultImplementation(IGetProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetProductCollection(ref suppressDefaultLog, apiResponseLocalVar, bankid, collectioncode);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        partial void AfterGetProductCollection(ref bool suppressDefaultLog, IGetProductCollectionApiResponse apiResponseLocalVar, string bankid, string collectioncode);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        private void OnErrorGetProductCollectionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetProductCollection(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, collectioncode);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="collectioncode"></param>
+        partial void OnErrorGetProductCollection(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string collectioncode);
+
+        /// <summary>
+        /// Get Product Collection &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductCollectionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductCollectionApiResponse?> GetProductCollectionOrDefaultAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetProductCollectionAsync(bankid, collectioncode, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Product Collection &lt;p&gt;Returns information about the financial Product Collection specified by BANK_ID and COLLECTION_CODE:&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;COLLECTION_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#collection_code\&quot;&gt;&lt;strong&gt;collection_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attributes\&quot;&gt;product_attributes&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="collectioncode">The COLLECTIONCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductCollectionApiResponse"/>&gt;</returns>
+        public async Task<IGetProductCollectionApiResponse> GetProductCollectionAsync(string bankid, string collectioncode, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetProductCollection(bankid, collectioncode);
+
+                FormatGetProductCollection(ref bankid, ref collectioncode);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bcollectioncode%7D", Uri.EscapeDataString(collectioncode.ToString()));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<GetProductCollectionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductCollectionApiResponse>();
+                        GetProductCollectionApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetProductCollectionDefaultImplementation(apiResponseLocalVar, bankid, collectioncode);
+
+                        Events.ExecuteOnGetProductCollection(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetProductCollectionDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-collections/{collectioncode}", uriBuilderLocalVar.Path, bankid, collectioncode);
+                Events.ExecuteOnErrorGetProductCollection(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="GetProductCollectionApiResponse"/>
+        /// </summary>
+        public partial class GetProductCollectionApiResponse : OpenBankProject.Client.ApiResponse, IGetProductCollectionApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<GetProductCollectionApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="GetProductCollectionApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetProductCollectionApiResponse(ILogger<GetProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="GetProductCollectionApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetProductCollectionApiResponse(ILogger<GetProductCollectionApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetProductCollection200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductCollection200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductCollection200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatGetProductFee(ref string bankid, ref string productcode, ref string productfeeid);
 
         /// <summary>
         /// Validates the request parameters
@@ -4298,7 +4340,7 @@ namespace OpenBankProject.Api
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductFee(string bankid, string productcode, string productfeeid)
+        private void ValidateGetProductFee(string bankid, string productcode, string productfeeid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4317,10 +4359,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        private void AfterOBPv400GetProductFeeDefaultImplementation(IOBPv400GetProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid)
+        private void AfterGetProductFeeDefaultImplementation(IGetProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid);
+            AfterGetProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4333,7 +4375,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        partial void AfterOBPv400GetProductFee(ref bool suppressDefaultLog, IOBPv400GetProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid);
+        partial void AfterGetProductFee(ref bool suppressDefaultLog, IGetProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4344,10 +4386,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        private void OnErrorOBPv400GetProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid)
+        private void OnErrorGetProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid);
+            OnErrorGetProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4362,7 +4404,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        partial void OnErrorOBPv400GetProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid);
+        partial void OnErrorGetProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid);
 
         /// <summary>
         /// Get Product Fee &lt;p&gt;Get Product Fee&lt;/p&gt; &lt;p&gt;Get one product fee by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;PRODUCT_FEE_ID&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -4371,12 +4413,12 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductFeeApiResponse?> OBPv400GetProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductFeeApiResponse?> GetProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductFeeAsync(bankid, productcode, productfeeid, cancellationToken).ConfigureAwait(false);
+                return await GetProductFeeAsync(bankid, productcode, productfeeid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4392,16 +4434,16 @@ namespace OpenBankProject.Api
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductFeeApiResponse> OBPv400GetProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductFeeApiResponse> GetProductFeeAsync(string bankid, string productcode, string productfeeid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductFee(bankid, productcode, productfeeid);
+                ValidateGetProductFee(bankid, productcode, productfeeid);
 
-                FormatOBPv400GetProductFee(ref bankid, ref productcode, ref productfeeid);
+                FormatGetProductFee(ref bankid, ref productcode, ref productfeeid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4432,8 +4474,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetProductFeeApiResponse>();
-                        OBPv400GetProductFeeApiResponse apiResponseLocalVar;
+                        ILogger<GetProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductFeeApiResponse>();
+                        GetProductFeeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4444,9 +4486,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid);
+                        AfterGetProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid);
 
-                        Events.ExecuteOnOBPv400GetProductFee(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductFee(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4454,24 +4496,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid);
-                Events.ExecuteOnErrorOBPv400GetProductFee(e);
+                OnErrorGetProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid);
+                Events.ExecuteOnErrorGetProductFee(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetProductFeeApiResponse"/>
+        /// The <see cref="GetProductFeeApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetProductFeeApiResponse
+        public partial class GetProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IGetProductFeeApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetProductFeeApiResponse> Logger { get; }
+            public ILogger<GetProductFeeApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductFeeApiResponse"/>
+            /// The <see cref="GetProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4480,14 +4522,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductFeeApiResponse(ILogger<OBPv400GetProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetProductFeeApiResponse(ILogger<GetProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductFeeApiResponse"/>
+            /// The <see cref="GetProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4496,7 +4538,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductFeeApiResponse(ILogger<OBPv400GetProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetProductFeeApiResponse(ILogger<GetProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -4514,11 +4556,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProductFee200Response? Ok()
+            public OpenBankProject.Model.GetProductFee200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProductFee200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductFee200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -4527,7 +4569,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProductFee200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductFee200Response? result)
             {
                 result = null;
 
@@ -4565,7 +4607,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetProductFees(ref string bankid, ref string productcode);
+        partial void FormatGetProductFees(ref string bankid, ref string productcode);
 
         /// <summary>
         /// Validates the request parameters
@@ -4573,7 +4615,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProductFees(string bankid, string productcode)
+        private void ValidateGetProductFees(string bankid, string productcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -4588,10 +4630,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void AfterOBPv400GetProductFeesDefaultImplementation(IOBPv400GetProductFeesApiResponse apiResponseLocalVar, string bankid, string productcode)
+        private void AfterGetProductFeesDefaultImplementation(IGetProductFeesApiResponse apiResponseLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProductFees(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
+            AfterGetProductFees(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4603,7 +4645,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void AfterOBPv400GetProductFees(ref bool suppressDefaultLog, IOBPv400GetProductFeesApiResponse apiResponseLocalVar, string bankid, string productcode);
+        partial void AfterGetProductFees(ref bool suppressDefaultLog, IGetProductFeesApiResponse apiResponseLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4613,10 +4655,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        private void OnErrorOBPv400GetProductFeesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
+        private void OnErrorGetProductFeesDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProductFees(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
+            OnErrorGetProductFees(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4630,7 +4672,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
-        partial void OnErrorOBPv400GetProductFees(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
+        partial void OnErrorGetProductFees(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Get Product Fees &lt;p&gt;Get Product Fees&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;product_fees&lt;/strong&gt;&lt;/a&gt;: product_fees&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -4638,12 +4680,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductFeesApiResponse?> OBPv400GetProductFeesOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeesApiResponse"/>&gt;</returns>
+        public async Task<IGetProductFeesApiResponse?> GetProductFeesOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductFeesAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
+                return await GetProductFeesAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4658,16 +4700,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductFeesApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductFeesApiResponse> OBPv400GetProductFeesAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductFeesApiResponse"/>&gt;</returns>
+        public async Task<IGetProductFeesApiResponse> GetProductFeesAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProductFees(bankid, productcode);
+                ValidateGetProductFees(bankid, productcode);
 
-                FormatOBPv400GetProductFees(ref bankid, ref productcode);
+                FormatGetProductFees(ref bankid, ref productcode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4697,8 +4739,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetProductFeesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetProductFeesApiResponse>();
-                        OBPv400GetProductFeesApiResponse apiResponseLocalVar;
+                        ILogger<GetProductFeesApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductFeesApiResponse>();
+                        GetProductFeesApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4709,9 +4751,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductFeesDefaultImplementation(apiResponseLocalVar, bankid, productcode);
+                        AfterGetProductFeesDefaultImplementation(apiResponseLocalVar, bankid, productcode);
 
-                        Events.ExecuteOnOBPv400GetProductFees(apiResponseLocalVar);
+                        Events.ExecuteOnGetProductFees(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4719,24 +4761,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductFeesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees", uriBuilderLocalVar.Path, bankid, productcode);
-                Events.ExecuteOnErrorOBPv400GetProductFees(e);
+                OnErrorGetProductFeesDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees", uriBuilderLocalVar.Path, bankid, productcode);
+                Events.ExecuteOnErrorGetProductFees(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetProductFeesApiResponse"/>
+        /// The <see cref="GetProductFeesApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetProductFeesApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetProductFeesApiResponse
+        public partial class GetProductFeesApiResponse : OpenBankProject.Client.ApiResponse, IGetProductFeesApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetProductFeesApiResponse> Logger { get; }
+            public ILogger<GetProductFeesApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductFeesApiResponse"/>
+            /// The <see cref="GetProductFeesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4745,14 +4787,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductFeesApiResponse(ILogger<OBPv400GetProductFeesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetProductFeesApiResponse(ILogger<GetProductFeesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductFeesApiResponse"/>
+            /// The <see cref="GetProductFeesApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4761,7 +4803,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductFeesApiResponse(ILogger<OBPv400GetProductFeesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetProductFeesApiResponse(ILogger<GetProductFeesApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -4779,11 +4821,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProductFees200Response? Ok()
+            public OpenBankProject.Model.GetProductFees200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProductFees200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductFees200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -4792,7 +4834,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProductFees200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductFees200Response? result)
             {
                 result = null;
 
@@ -4830,17 +4872,21 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400GetProducts(ref string bankid);
+        partial void FormatGetProductTree(ref string bankid, ref string productcode);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
+        /// <param name="productcode"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetProducts(string bankid)
+        private void ValidateGetProductTree(string bankid, string productcode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
+
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
         }
 
         /// <summary>
@@ -4848,10 +4894,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetProductsDefaultImplementation(IOBPv400GetProductsApiResponse apiResponseLocalVar, string bankid)
+        /// <param name="productcode"></param>
+        private void AfterGetProductTreeDefaultImplementation(IGetProductTreeApiResponse apiResponseLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetProducts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetProductTree(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -4862,7 +4909,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetProducts(ref bool suppressDefaultLog, IOBPv400GetProductsApiResponse apiResponseLocalVar, string bankid);
+        /// <param name="productcode"></param>
+        partial void AfterGetProductTree(ref bool suppressDefaultLog, IGetProductTreeApiResponse apiResponseLocalVar, string bankid, string productcode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -4871,10 +4919,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetProductsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        /// <param name="productcode"></param>
+        private void OnErrorGetProductTreeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetProducts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetProductTree(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -4887,19 +4936,277 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetProducts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        /// <param name="productcode"></param>
+        partial void OnErrorGetProductTree(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode);
+
+        /// <summary>
+        /// Get Product Tree &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductTreeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductTreeApiResponse?> GetProductTreeOrDefaultAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await GetProductTreeAsync(bankid, productcode, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Product Tree &lt;p&gt;Returns information about a particular financial product specified by BANK_ID and PRODUCT_CODE&lt;br /&gt; and it&#39;s parent product(s) recursively as specified by parent_product_code.&lt;/p&gt; &lt;p&gt;Each product includes the following information.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;Category&lt;/li&gt; &lt;li&gt;Family&lt;/li&gt; &lt;li&gt;Super Family&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License: The licence under which this product data is released. Licence can be an Open Data licence such as Open Data Commons Public Domain Dedication and License (PDDL) or Copyright etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#code\&quot;&gt;&lt;strong&gt;code&lt;/strong&gt;&lt;/a&gt;: 125&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#details\&quot;&gt;&lt;strong&gt;details&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#family\&quot;&gt;&lt;strong&gt;family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#super_family\&quot;&gt;&lt;strong&gt;super_family&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product\&quot;&gt;parent_product&lt;/a&gt;:&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductTreeApiResponse"/>&gt;</returns>
+        public async Task<IGetProductTreeApiResponse> GetProductTreeAsync(string bankid, string productcode, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateGetProductTree(bankid, productcode);
+
+                FormatGetProductTree(ref bankid, ref productcode);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<GetProductTreeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductTreeApiResponse>();
+                        GetProductTreeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterGetProductTreeDefaultImplementation(apiResponseLocalVar, bankid, productcode);
+
+                        Events.ExecuteOnGetProductTree(apiResponseLocalVar);
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorGetProductTreeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/product-tree/{productcode}", uriBuilderLocalVar.Path, bankid, productcode);
+                Events.ExecuteOnErrorGetProductTree(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="GetProductTreeApiResponse"/>
+        /// </summary>
+        public partial class GetProductTreeApiResponse : OpenBankProject.Client.ApiResponse, IGetProductTreeApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<GetProductTreeApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="GetProductTreeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetProductTreeApiResponse(ILogger<GetProductTreeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="GetProductTreeApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public GetProductTreeApiResponse(ILogger<GetProductTreeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public OpenBankProject.Model.GetProductTree200Response? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductTree200Response>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductTree200Response? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 404 NotFound
+            /// </summary>
+            /// <returns></returns>
+            public bool IsNotFound => 404 == (int)StatusCode;
+
+            /// <summary>
+            /// Returns true if the response is 500 InternalServerError
+            /// </summary>
+            /// <returns></returns>
+            public bool IsInternalServerError => 500 == (int)StatusCode;
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatGetProducts(ref string bankid);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <returns></returns>
+        private void ValidateGetProducts(string bankid)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void AfterGetProductsDefaultImplementation(IGetProductsApiResponse apiResponseLocalVar, string bankid)
+        {
+            bool suppressDefaultLog = false;
+            AfterGetProducts(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void AfterGetProducts(ref bool suppressDefaultLog, IGetProductsApiResponse apiResponseLocalVar, string bankid);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        private void OnErrorGetProductsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorGetProducts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        partial void OnErrorGetProducts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Products &lt;p&gt;Returns information about the financial products offered by a bank specified by BANK_ID including:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Name&lt;/li&gt; &lt;li&gt;Code&lt;/li&gt; &lt;li&gt;Parent Product Code&lt;/li&gt; &lt;li&gt;More info URL&lt;/li&gt; &lt;li&gt;Terms And Conditions URL&lt;/li&gt; &lt;li&gt;Description&lt;/li&gt; &lt;li&gt;Terms and Conditions&lt;/li&gt; &lt;li&gt;License the data under this endpoint is released under&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The combination of bank_id and product_code is unique.&lt;/p&gt; &lt;p&gt;Can filter with attributes name and values.&lt;br /&gt; URL params example: /banks/some-bank-id/products?&amp;amp;limit&#x3D;50&amp;amp;offset&#x3D;1&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#products\&quot;&gt;&lt;strong&gt;products&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductsApiResponse?> OBPv400GetProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductsApiResponse"/>&gt;</returns>
+        public async Task<IGetProductsApiResponse?> GetProductsOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetProductsAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetProductsAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -4913,16 +5220,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetProductsApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetProductsApiResponse> OBPv400GetProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetProductsApiResponse"/>&gt;</returns>
+        public async Task<IGetProductsApiResponse> GetProductsAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetProducts(bankid);
+                ValidateGetProducts(bankid);
 
-                FormatOBPv400GetProducts(ref bankid);
+                FormatGetProducts(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -4951,8 +5258,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400GetProductsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400GetProductsApiResponse>();
-                        OBPv400GetProductsApiResponse apiResponseLocalVar;
+                        ILogger<GetProductsApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetProductsApiResponse>();
+                        GetProductsApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -4963,9 +5270,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetProductsDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetProductsDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetProducts(apiResponseLocalVar);
+                        Events.ExecuteOnGetProducts(apiResponseLocalVar);
 
                         return apiResponseLocalVar;
                     }
@@ -4973,24 +5280,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetProductsDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetProducts(e);
+                OnErrorGetProductsDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetProducts(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400GetProductsApiResponse"/>
+        /// The <see cref="GetProductsApiResponse"/>
         /// </summary>
-        public partial class OBPv400GetProductsApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400GetProductsApiResponse
+        public partial class GetProductsApiResponse : OpenBankProject.Client.ApiResponse, IGetProductsApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400GetProductsApiResponse> Logger { get; }
+            public ILogger<GetProductsApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductsApiResponse"/>
+            /// The <see cref="GetProductsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -4999,14 +5306,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductsApiResponse(ILogger<OBPv400GetProductsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetProductsApiResponse(ILogger<GetProductsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400GetProductsApiResponse"/>
+            /// The <see cref="GetProductsApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5015,7 +5322,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400GetProductsApiResponse(ILogger<OBPv400GetProductsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetProductsApiResponse(ILogger<GetProductsApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5033,11 +5340,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProducts200Response? Ok()
+            public OpenBankProject.Model.GetProducts200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProducts200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProducts200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5046,7 +5353,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProducts200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProducts200Response? result)
             {
                 result = null;
 
@@ -5084,7 +5391,7 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv400UpdateProductAttribute(ref string bankid, ref string productcode, ref string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        partial void FormatUpdateProductAttribute(ref string bankid, ref string productcode, ref string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -5092,9 +5399,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
+        /// <param name="updateAtmAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateProductAttribute(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        private void ValidateUpdateProductAttribute(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -5105,8 +5412,8 @@ namespace OpenBankProject.Api
             if (productattributeid == null)
                 throw new ArgumentNullException(nameof(productattributeid));
 
-            if (oBPv510UpdateAtmAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv510UpdateAtmAttributeRequest));
+            if (updateAtmAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAtmAttributeRequest));
         }
 
         /// <summary>
@@ -5116,11 +5423,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void AfterOBPv400UpdateProductAttributeDefaultImplementation(IOBPv400UpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void AfterUpdateProductAttributeDefaultImplementation(IUpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+            AfterUpdateProductAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5133,8 +5440,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void AfterOBPv400UpdateProductAttribute(ref bool suppressDefaultLog, IOBPv400UpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void AfterUpdateProductAttribute(ref bool suppressDefaultLog, IUpdateProductAttributeApiResponse apiResponseLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5145,11 +5452,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        private void OnErrorOBPv400UpdateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+        /// <param name="updateAtmAttributeRequest"></param>
+        private void OnErrorUpdateProductAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+            OnErrorUpdateProductAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5164,8 +5471,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productattributeid"></param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest"></param>
-        partial void OnErrorOBPv400UpdateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest);
+        /// <param name="updateAtmAttributeRequest"></param>
+        partial void OnErrorUpdateProductAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest);
 
         /// <summary>
         /// Update Product Attribute &lt;p&gt;Update Product Attribute.&lt;/p&gt; &lt;p&gt;Product Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Product Attribute is linked to its Product by PRODUCT_CODE&lt;/p&gt; &lt;p&gt;Update one Product Attribute by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;PRODUCT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_attribute_id\&quot;&gt;&lt;strong&gt;product_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;is_active&lt;/a&gt;: false&lt;/p&gt; 
@@ -5173,14 +5480,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductAttributeApiResponse?> OBPv400UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductAttributeApiResponse?> UpdateProductAttributeOrDefaultAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateProductAttributeAsync(bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateProductAttributeAsync(bankid, productcode, productattributeid, updateAtmAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5195,18 +5502,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productattributeid">The PRODUCTATTRIBUTEID identifier</param>
-        /// <param name="oBPv510UpdateAtmAttributeRequest">Request body</param>
+        /// <param name="updateAtmAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductAttributeApiResponse> OBPv400UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductAttributeApiResponse> UpdateProductAttributeAsync(string bankid, string productcode, string productattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateProductAttribute(bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+                ValidateUpdateProductAttribute(bankid, productcode, productattributeid, updateAtmAttributeRequest);
 
-                FormatOBPv400UpdateProductAttribute(ref bankid, ref productcode, ref productattributeid, oBPv510UpdateAtmAttributeRequest);
+                FormatUpdateProductAttribute(ref bankid, ref productcode, ref productattributeid, updateAtmAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5220,16 +5527,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductattributeid%7D", Uri.EscapeDataString(productattributeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv510UpdateAtmAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAtmAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv510UpdateAtmAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAtmAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5265,8 +5572,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AttributeApi.OBPv400UpdateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.OBPv400UpdateProductAttributeApiResponse>();
-                        AttributeApi.OBPv400UpdateProductAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AttributeApi.UpdateProductAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AttributeApi.UpdateProductAttributeApiResponse>();
+                        AttributeApi.UpdateProductAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5277,9 +5584,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
+                        AfterUpdateProductAttributeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productattributeid, updateAtmAttributeRequest);
 
-                        Events.ExecuteOnOBPv400UpdateProductAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateProductAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5291,13 +5598,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid, oBPv510UpdateAtmAttributeRequest);
-                Events.ExecuteOnErrorOBPv400UpdateProductAttribute(e);
+                OnErrorUpdateProductAttributeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/attributes/{productattributeid}", uriBuilderLocalVar.Path, bankid, productcode, productattributeid, updateAtmAttributeRequest);
+                Events.ExecuteOnErrorUpdateProductAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400UpdateProductFee(ref string bankid, ref string productcode, ref string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
+        partial void FormatUpdateProductFee(ref string bankid, ref string productcode, ref string productfeeid, UpdateProductFeeRequest updateProductFeeRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -5305,9 +5612,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
+        /// <param name="updateProductFeeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400UpdateProductFee(string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
+        private void ValidateUpdateProductFee(string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -5318,8 +5625,8 @@ namespace OpenBankProject.Api
             if (productfeeid == null)
                 throw new ArgumentNullException(nameof(productfeeid));
 
-            if (oBPv400UpdateProductFeeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400UpdateProductFeeRequest));
+            if (updateProductFeeRequest == null)
+                throw new ArgumentNullException(nameof(updateProductFeeRequest));
         }
 
         /// <summary>
@@ -5329,11 +5636,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        private void AfterOBPv400UpdateProductFeeDefaultImplementation(IOBPv400UpdateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
+        /// <param name="updateProductFeeRequest"></param>
+        private void AfterUpdateProductFeeDefaultImplementation(IUpdateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400UpdateProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest);
+            AfterUpdateProductFee(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, productfeeid, updateProductFeeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -5346,8 +5653,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        partial void AfterOBPv400UpdateProductFee(ref bool suppressDefaultLog, IOBPv400UpdateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
+        /// <param name="updateProductFeeRequest"></param>
+        partial void AfterUpdateProductFee(ref bool suppressDefaultLog, IUpdateProductFeeApiResponse apiResponseLocalVar, string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -5358,11 +5665,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        private void OnErrorOBPv400UpdateProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest)
+        /// <param name="updateProductFeeRequest"></param>
+        private void OnErrorUpdateProductFeeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400UpdateProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest);
+            OnErrorUpdateProductFee(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, productfeeid, updateProductFeeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -5377,8 +5684,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="productcode"></param>
         /// <param name="productfeeid"></param>
-        /// <param name="oBPv400UpdateProductFeeRequest"></param>
-        partial void OnErrorOBPv400UpdateProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest);
+        /// <param name="updateProductFeeRequest"></param>
+        partial void OnErrorUpdateProductFee(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest);
 
         /// <summary>
         /// Update Product Fee &lt;p&gt;Update Product Fee.&lt;/p&gt; &lt;p&gt;Update one Product Fee by its id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;PRODUCT_FEE_ID&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_fee_id\&quot;&gt;&lt;strong&gt;product_fee_id&lt;/strong&gt;&lt;/a&gt;: 696hlAHLFKUHE37469287634&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
@@ -5386,14 +5693,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductFeeApiResponse?> OBPv400UpdateProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductFeeApiResponse?> UpdateProductFeeOrDefaultAsync(string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400UpdateProductFeeAsync(bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest, cancellationToken).ConfigureAwait(false);
+                return await UpdateProductFeeAsync(bankid, productcode, productfeeid, updateProductFeeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -5408,18 +5715,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="productfeeid">The PRODUCTFEEID identifier</param>
-        /// <param name="oBPv400UpdateProductFeeRequest">Request body</param>
+        /// <param name="updateProductFeeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400UpdateProductFeeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400UpdateProductFeeApiResponse> OBPv400UpdateProductFeeAsync(string bankid, string productcode, string productfeeid, OBPv400UpdateProductFeeRequest oBPv400UpdateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateProductFeeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateProductFeeApiResponse> UpdateProductFeeAsync(string bankid, string productcode, string productfeeid, UpdateProductFeeRequest updateProductFeeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400UpdateProductFee(bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest);
+                ValidateUpdateProductFee(bankid, productcode, productfeeid, updateProductFeeRequest);
 
-                FormatOBPv400UpdateProductFee(ref bankid, ref productcode, ref productfeeid, oBPv400UpdateProductFeeRequest);
+                FormatUpdateProductFee(ref bankid, ref productcode, ref productfeeid, updateProductFeeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -5433,16 +5740,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductfeeid%7D", Uri.EscapeDataString(productfeeid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400UpdateProductFeeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateProductFeeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400UpdateProductFeeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateProductFeeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -5478,8 +5785,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv400UpdateProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv400UpdateProductFeeApiResponse>();
-                        OBPv400UpdateProductFeeApiResponse apiResponseLocalVar;
+                        ILogger<UpdateProductFeeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<UpdateProductFeeApiResponse>();
+                        UpdateProductFeeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -5490,9 +5797,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400UpdateProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest);
+                        AfterUpdateProductFeeDefaultImplementation(apiResponseLocalVar, bankid, productcode, productfeeid, updateProductFeeRequest);
 
-                        Events.ExecuteOnOBPv400UpdateProductFee(apiResponseLocalVar);
+                        Events.ExecuteOnUpdateProductFee(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -5504,24 +5811,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400UpdateProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid, oBPv400UpdateProductFeeRequest);
-                Events.ExecuteOnErrorOBPv400UpdateProductFee(e);
+                OnErrorUpdateProductFeeDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/products/{productcode}/fees/{productfeeid}", uriBuilderLocalVar.Path, bankid, productcode, productfeeid, updateProductFeeRequest);
+                Events.ExecuteOnErrorUpdateProductFee(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv400UpdateProductFeeApiResponse"/>
+        /// The <see cref="UpdateProductFeeApiResponse"/>
         /// </summary>
-        public partial class OBPv400UpdateProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IOBPv400UpdateProductFeeApiResponse
+        public partial class UpdateProductFeeApiResponse : OpenBankProject.Client.ApiResponse, IUpdateProductFeeApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv400UpdateProductFeeApiResponse> Logger { get; }
+            public ILogger<UpdateProductFeeApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateProductFeeApiResponse"/>
+            /// The <see cref="UpdateProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5530,14 +5837,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateProductFeeApiResponse(ILogger<OBPv400UpdateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public UpdateProductFeeApiResponse(ILogger<UpdateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv400UpdateProductFeeApiResponse"/>
+            /// The <see cref="UpdateProductFeeApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -5546,7 +5853,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv400UpdateProductFeeApiResponse(ILogger<OBPv400UpdateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public UpdateProductFeeApiResponse(ILogger<UpdateProductFeeApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -5564,11 +5871,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv400GetProductFee200Response? Ok()
+            public OpenBankProject.Model.GetProductFee200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv400GetProductFee200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetProductFee200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -5577,314 +5884,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv400GetProductFee200Response? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 404 NotFound
-            /// </summary>
-            /// <returns></returns>
-            public bool IsNotFound => 404 == (int)StatusCode;
-
-            /// <summary>
-            /// Returns true if the response is 500 InternalServerError
-            /// </summary>
-            /// <returns></returns>
-            public bool IsInternalServerError => 500 == (int)StatusCode;
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatOBPv500CreateProduct(ref string bankid, ref string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv500CreateProductRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv500CreateProduct(string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-
-            if (oBPv500CreateProductRequest == null)
-                throw new ArgumentNullException(nameof(oBPv500CreateProductRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv500CreateProductRequest"></param>
-        private void AfterOBPv500CreateProductDefaultImplementation(IOBPv500CreateProductApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv500CreateProduct(ref suppressDefaultLog, apiResponseLocalVar, bankid, productcode, oBPv500CreateProductRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv500CreateProductRequest"></param>
-        partial void AfterOBPv500CreateProduct(ref bool suppressDefaultLog, IOBPv500CreateProductApiResponse apiResponseLocalVar, string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv500CreateProductRequest"></param>
-        private void OnErrorOBPv500CreateProductDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv500CreateProduct(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, productcode, oBPv500CreateProductRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="oBPv500CreateProductRequest"></param>
-        partial void OnErrorOBPv500CreateProduct(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest);
-
-        /// <summary>
-        /// Create Product &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv500CreateProductRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500CreateProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv500CreateProductApiResponse?> OBPv500CreateProductOrDefaultAsync(string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv500CreateProductAsync(bankid, productcode, oBPv500CreateProductRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Create Product &lt;p&gt;Create or Update Product for the Bank.&lt;/p&gt; &lt;p&gt;The combination of bank_id and product_code is unique. If a Product already exists for the bank_id and product_code, it will be updated.&lt;/p&gt; &lt;p&gt;Typical Super Family values / Asset classes are:&lt;/p&gt; &lt;p&gt;Debt&lt;br /&gt; Equity&lt;br /&gt; FX&lt;br /&gt; Commodity&lt;br /&gt; Derivative&lt;/p&gt; &lt;p&gt;Product hiearchy vs Product Collections:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can define a hierarchy of products - so that a child Product inherits attributes of its parent Product -  using the parent_product_code in Product.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You can define a collection (also known as baskets or buckets) of products using Product Collections.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#license\&quot;&gt;&lt;strong&gt;license&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#meta\&quot;&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info_url\&quot;&gt;&lt;strong&gt;more_info_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/abc\&quot;&gt;www.example.com/abc&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#parent_product_code\&quot;&gt;&lt;strong&gt;parent_product_code&lt;/strong&gt;&lt;/a&gt;: 787LOW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;terms_and_conditions_url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/xyz\&quot;&gt;www.example.com/xyz&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;attributes&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;fees&lt;/a&gt;: fees&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv500CreateProductRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv500CreateProductApiResponse"/>&gt;</returns>
-        public async Task<IOBPv500CreateProductApiResponse> OBPv500CreateProductAsync(string bankid, string productcode, OBPv500CreateProductRequest oBPv500CreateProductRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv500CreateProduct(bankid, productcode, oBPv500CreateProductRequest);
-
-                FormatOBPv500CreateProduct(ref bankid, ref productcode, oBPv500CreateProductRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v5.0.0/banks/{bankid}/products/{productcode}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.0.0/banks/{bankid}/products/{productcode}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv500CreateProductRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv500CreateProductRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<OBPv500CreateProductApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv500CreateProductApiResponse>();
-                        OBPv500CreateProductApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.0.0/banks/{bankid}/products/{productcode}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv500CreateProductDefaultImplementation(apiResponseLocalVar, bankid, productcode, oBPv500CreateProductRequest);
-
-                        Events.ExecuteOnOBPv500CreateProduct(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv500CreateProductDefaultImplementation(e, "/obp/v5.0.0/banks/{bankid}/products/{productcode}", uriBuilderLocalVar.Path, bankid, productcode, oBPv500CreateProductRequest);
-                Events.ExecuteOnErrorOBPv500CreateProduct(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="OBPv500CreateProductApiResponse"/>
-        /// </summary>
-        public partial class OBPv500CreateProductApiResponse : OpenBankProject.Client.ApiResponse, IOBPv500CreateProductApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<OBPv500CreateProductApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="OBPv500CreateProductApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv500CreateProductApiResponse(ILogger<OBPv500CreateProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            /// <summary>
-            /// The <see cref="OBPv500CreateProductApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="contentStream"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public OBPv500CreateProductApiResponse(ILogger<OBPv500CreateProductApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public OpenBankProject.Model.OBPv500CreateProduct200Response? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv500CreateProduct200Response>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv500CreateProduct200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetProductFee200Response? result)
             {
                 result = null;
 

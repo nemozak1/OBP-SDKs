@@ -10,91 +10,16 @@ import Foundation
 open class AccountPublicAPI {
 
     /**
-     Get Public Accounts at all Banks
-     
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200PublicAccountsAllBanks200Response
-     */
-    open class func oBPv200PublicAccountsAllBanks(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200PublicAccountsAllBanks200Response {
-        return try await oBPv200PublicAccountsAllBanksWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Public Accounts at all Banks
-     - GET /obp/v2.0.0/accounts/public
-     - <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200PublicAccountsAllBanks200Response> 
-     */
-    open class func oBPv200PublicAccountsAllBanksWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200PublicAccountsAllBanks200Response> {
-        let localVariablePath = "/obp/v2.0.0/accounts/public"
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200PublicAccountsAllBanks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
-     Get Public Accounts at Bank
-     
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv200PublicAccountsAllBanks200Response
-     */
-    open class func oBPv200PublicAccountsAtOneBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv200PublicAccountsAllBanks200Response {
-        return try await oBPv200PublicAccountsAtOneBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
-    }
-
-    /**
-     Get Public Accounts at Bank
-     - GET /obp/v2.0.0/banks/{bankid}/accounts/public
-     - <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
-     - parameter bankid: (path) The BANKID identifier 
-     - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv200PublicAccountsAllBanks200Response> 
-     */
-    open class func oBPv200PublicAccountsAtOneBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv200PublicAccountsAllBanks200Response> {
-        var localVariablePath = "/obp/v2.0.0/banks/{bankid}/accounts/public"
-        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
-        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
-        let localVariableURLString = apiConfiguration.basePath + localVariablePath
-        let localVariableParameters: [String: any Sendable]? = nil
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: (any Sendable)?] = [
-            :
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<OBPv200PublicAccountsAllBanks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
-    }
-
-    /**
      Get Public Account by Id
      
      - parameter bankid: (path) The BANKID identifier 
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: OBPv300GetPublicAccountById200Response
+     - returns: GetPublicAccountById200Response
      */
-    open class func oBPv300GetPublicAccountById(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> OBPv300GetPublicAccountById200Response {
-        return try await oBPv300GetPublicAccountByIdWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, apiConfiguration: apiConfiguration).execute().body
+    open class func getPublicAccountById(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> GetPublicAccountById200Response {
+        return try await getPublicAccountByIdWithRequestBuilder(bankid: bankid, accountid: accountid, viewid: viewid, apiConfiguration: apiConfiguration).execute().body
     }
 
     /**
@@ -105,9 +30,9 @@ open class AccountPublicAPI {
      - parameter accountid: (path) The ACCOUNTID identifier 
      - parameter viewid: (path) The VIEWID identifier 
      - parameter apiConfiguration: The configuration for the http request.
-     - returns: RequestBuilder<OBPv300GetPublicAccountById200Response> 
+     - returns: RequestBuilder<GetPublicAccountById200Response> 
      */
-    open class func oBPv300GetPublicAccountByIdWithRequestBuilder(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<OBPv300GetPublicAccountById200Response> {
+    open class func getPublicAccountByIdWithRequestBuilder(bankid: String, accountid: String, viewid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<GetPublicAccountById200Response> {
         var localVariablePath = "/obp/v3.0.0/banks/{bankid}/public/accounts/{accountid}/{viewid}/account"
         let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
         let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -129,7 +54,82 @@ open class AccountPublicAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<OBPv300GetPublicAccountById200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetPublicAccountById200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Public Accounts at all Banks
+     
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: PublicAccountsAllBanks200Response
+     */
+    open class func publicAccountsAllBanks(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> PublicAccountsAllBanks200Response {
+        return try await publicAccountsAllBanksWithRequestBuilder(apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Public Accounts at all Banks
+     - GET /obp/v2.0.0/accounts/public
+     - <p>Get public accounts at all banks (Anonymous access).<br /> Returns accounts that contain at least one public view (a view where is_public is true)<br /> For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<PublicAccountsAllBanks200Response> 
+     */
+    open class func publicAccountsAllBanksWithRequestBuilder(apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<PublicAccountsAllBanks200Response> {
+        let localVariablePath = "/obp/v2.0.0/accounts/public"
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<PublicAccountsAllBanks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
+    }
+
+    /**
+     Get Public Accounts at Bank
+     
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: PublicAccountsAllBanks200Response
+     */
+    open class func publicAccountsAtOneBank(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) async throws(ErrorResponse) -> PublicAccountsAllBanks200Response {
+        return try await publicAccountsAtOneBankWithRequestBuilder(bankid: bankid, apiConfiguration: apiConfiguration).execute().body
+    }
+
+    /**
+     Get Public Accounts at Bank
+     - GET /obp/v2.0.0/banks/{bankid}/accounts/public
+     - <p>Returns a list of the public accounts (Anonymous access) at BANK_ID. For each account the API returns the ID and the available views.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#accounts\"><strong>accounts</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#is_public\"><strong>is_public</strong></a>: false</p> <p><a href=\"/glossary#\"><strong>label</strong></a>: My Account</p> <p><a href=\"/glossary#short_name\"><strong>short_name</strong></a>:</p> <p><a href=\"/glossary#views_available\"><strong>views_available</strong></a>:</p> 
+     - parameter bankid: (path) The BANKID identifier 
+     - parameter apiConfiguration: The configuration for the http request.
+     - returns: RequestBuilder<PublicAccountsAllBanks200Response> 
+     */
+    open class func publicAccountsAtOneBankWithRequestBuilder(bankid: String, apiConfiguration: OBPSwiftAPIConfiguration = OBPSwiftAPIConfiguration.shared) -> RequestBuilder<PublicAccountsAllBanks200Response> {
+        var localVariablePath = "/obp/v2.0.0/banks/{bankid}/accounts/public"
+        let bankidPreEscape = "\(APIHelper.mapValueToPathItem(bankid))"
+        let bankidPostEscape = bankidPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{bankid}", with: bankidPostEscape, options: .literal, range: nil)
+        let localVariableURLString = apiConfiguration.basePath + localVariablePath
+        let localVariableParameters: [String: any Sendable]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: (any Sendable)?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<PublicAccountsAllBanks200Response>.Type = apiConfiguration.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false, apiConfiguration: apiConfiguration)
     }

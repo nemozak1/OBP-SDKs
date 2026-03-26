@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -23,11 +23,11 @@ module OpenBankProject
     # <p>Create Customer Attribute</p> <p>The type field must be one of &quot;STRING&quot;, &quot;INTEGER&quot;, &quot;DOUBLE&quot; or DATE_WITH_DAY&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>customer_attribute_id</strong></a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> <p><a href=\"/glossary#\"><strong>value</strong></a>: 5987953</p> 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]
-    def o_bpv4_0_0_create_customer_attribute(bankid, customerid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_customer_attribute_with_http_info(bankid, customerid, obpv600_create_personal_data_field_request, opts)
+    # @return [GetCustomerAttributes200ResponseCustomerAttributesInner]
+    def create_customer_attribute(bankid, customerid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = create_customer_attribute_with_http_info(bankid, customerid, create_personal_data_field_request, opts)
       data
     end
 
@@ -35,24 +35,24 @@ module OpenBankProject
     # &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Integer, Hash)>] OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_customer_attribute_with_http_info(bankid, customerid, obpv600_create_personal_data_field_request, opts = {})
+    # @return [Array<(GetCustomerAttributes200ResponseCustomerAttributesInner, Integer, Hash)>] GetCustomerAttributes200ResponseCustomerAttributesInner data, response status code and response headers
+    def create_customer_attribute_with_http_info(bankid, customerid, create_personal_data_field_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_create_customer_attribute ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.create_customer_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_create_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.create_customer_attribute"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.o_bpv4_0_0_create_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.create_customer_attribute"
       end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling CustomerAttributeApi.o_bpv4_0_0_create_customer_attribute"
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling CustomerAttributeApi.create_customer_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attribute'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s))
@@ -74,16 +74,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCustomerAttributes200ResponseCustomerAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_create_customer_attribute",
+        :operation => :"CustomerAttributeApi.create_customer_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -94,7 +94,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_create_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#create_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -102,31 +102,31 @@ module OpenBankProject
     # Create or Update Customer Attribute Definition
     # <p>Create or Update Customer Attribute Definition</p> <p>The category field must be one of: Customer</p> <p>The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems]
-    def o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts)
+    # @return [GetTransactionRequestAttributeDefinition200ResponseAttributesInner]
+    def create_or_update_customer_attribute_attribute_definition(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
+      data, _status_code, _headers = create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts)
       data
     end
 
     # Create or Update Customer Attribute Definition
     # &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
-    # @param obpv400_create_or_update_transaction_request_attribute_definition_request [OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
+    # @param create_or_update_transaction_request_attribute_definition_request [CreateOrUpdateTransactionRequestAttributeDefinitionRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, obpv400_create_or_update_transaction_request_attribute_definition_request, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200ResponseAttributesInner, Integer, Hash)>] GetTransactionRequestAttributeDefinition200ResponseAttributesInner data, response status code and response headers
+    def create_or_update_customer_attribute_attribute_definition_with_http_info(bankid, create_or_update_transaction_request_attribute_definition_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.create_or_update_customer_attribute_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.create_or_update_customer_attribute_attribute_definition"
       end
-      # verify the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' is set
-      if @api_client.config.client_side_validation && obpv400_create_or_update_transaction_request_attribute_definition_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_create_or_update_transaction_request_attribute_definition_request' when calling CustomerAttributeApi.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition"
+      # verify the required parameter 'create_or_update_transaction_request_attribute_definition_request' is set
+      if @api_client.config.client_side_validation && create_or_update_transaction_request_attribute_definition_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_or_update_transaction_request_attribute_definition_request' when calling CustomerAttributeApi.create_or_update_customer_attribute_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -148,16 +148,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_create_or_update_transaction_request_attribute_definition_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_or_update_transaction_request_attribute_definition_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200ResponseAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition",
+        :operation => :"CustomerAttributeApi.create_or_update_customer_attribute_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -168,7 +168,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_create_or_update_customer_attribute_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#create_or_update_customer_attribute_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -180,8 +180,8 @@ module OpenBankProject
     # @param customerattributeid [String] The CUSTOMERATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_customer_attribute(bankid, customerid, customerattributeid, opts = {})
-      o_bpv4_0_0_delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid, opts)
+    def delete_customer_attribute(bankid, customerid, customerattributeid, opts = {})
+      delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid, opts)
       nil
     end
 
@@ -192,21 +192,21 @@ module OpenBankProject
     # @param customerattributeid [String] The CUSTOMERATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid, opts = {})
+    def delete_customer_attribute_with_http_info(bankid, customerid, customerattributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.delete_customer_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.delete_customer_attribute"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.delete_customer_attribute"
       end
       # verify the required parameter 'customerattributeid' is set
       if @api_client.config.client_side_validation && customerattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerattributeid' when calling CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'customerattributeid' when calling CustomerAttributeApi.delete_customer_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/{customerid}/attributes/{customerattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s)).sub('{' + 'customerattributeid' + '}', CGI.escape(customerattributeid.to_s))
@@ -230,7 +230,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute",
+        :operation => :"CustomerAttributeApi.delete_customer_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -241,7 +241,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_delete_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#delete_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -252,8 +252,8 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_customer_attribute_definition(bankid, attributedefinitionid, opts = {})
-      o_bpv4_0_0_delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
+    def delete_customer_attribute_definition(bankid, attributedefinitionid, opts = {})
+      delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid, opts)
       nil
     end
 
@@ -263,17 +263,17 @@ module OpenBankProject
     # @param attributedefinitionid [String] The ATTRIBUTEDEFINITIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
+    def delete_customer_attribute_definition_with_http_info(bankid, attributedefinitionid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.delete_customer_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.delete_customer_attribute_definition"
       end
       # verify the required parameter 'attributedefinitionid' is set
       if @api_client.config.client_side_validation && attributedefinitionid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'attributedefinitionid' when calling CustomerAttributeApi.delete_customer_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/customer'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'attributedefinitionid' + '}', CGI.escape(attributedefinitionid.to_s))
@@ -297,7 +297,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_delete_customer_attribute_definition",
+        :operation => :"CustomerAttributeApi.delete_customer_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -308,7 +308,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_delete_customer_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#delete_customer_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -319,9 +319,9 @@ module OpenBankProject
     # @param customerid [String] The CUSTOMERID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]
-    def o_bpv4_0_0_get_customer_attribute_by_id(bankid, customerid, attributeid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid, opts)
+    # @return [GetCustomerAttributes200ResponseCustomerAttributesInner]
+    def get_customer_attribute_by_id(bankid, customerid, attributeid, opts = {})
+      data, _status_code, _headers = get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid, opts)
       data
     end
 
@@ -331,22 +331,22 @@ module OpenBankProject
     # @param customerid [String] The CUSTOMERID identifier
     # @param attributeid [String] The ATTRIBUTEID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Integer, Hash)>] OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid, opts = {})
+    # @return [Array<(GetCustomerAttributes200ResponseCustomerAttributesInner, Integer, Hash)>] GetCustomerAttributes200ResponseCustomerAttributesInner data, response status code and response headers
+    def get_customer_attribute_by_id_with_http_info(bankid, customerid, attributeid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_by_id ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.get_customer_attribute_by_id ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.get_customer_attribute_by_id"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.get_customer_attribute_by_id"
       end
       # verify the required parameter 'attributeid' is set
       if @api_client.config.client_side_validation && attributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'attributeid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_by_id"
+        fail ArgumentError, "Missing the required parameter 'attributeid' when calling CustomerAttributeApi.get_customer_attribute_by_id"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{attributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s)).sub('{' + 'attributeid' + '}', CGI.escape(attributeid.to_s))
@@ -366,13 +366,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCustomerAttributes200ResponseCustomerAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_by_id",
+        :operation => :"CustomerAttributeApi.get_customer_attribute_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -383,7 +383,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_get_customer_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#get_customer_attribute_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -392,9 +392,9 @@ module OpenBankProject
     # <p>Get Customer Attribute Definition</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#alias\"><strong>alias</strong></a>:</p> <p><a href=\"/glossary#attribute_definition_id\"><strong>attribute_definition_id</strong></a>:</p> <p><a href=\"/glossary#attributes\"><strong>attributes</strong></a>: attribute value in form of (name, value)</p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#can_be_seen_on_views\"><strong>can_be_seen_on_views</strong></a>: false</p> <p><a href=\"/glossary#category\"><strong>category</strong></a>:</p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#is_active\"><strong>is_active</strong></a>: false</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#type\"><strong>type</strong></a>:</p> 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetTransactionRequestAttributeDefinition200Response]
-    def o_bpv4_0_0_get_customer_attribute_definition(bankid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_customer_attribute_definition_with_http_info(bankid, opts)
+    # @return [GetTransactionRequestAttributeDefinition200Response]
+    def get_customer_attribute_definition(bankid, opts = {})
+      data, _status_code, _headers = get_customer_attribute_definition_with_http_info(bankid, opts)
       data
     end
 
@@ -402,14 +402,14 @@ module OpenBankProject
     # &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
     # @param bankid [String] The BANKID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] OBPv400GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
-    def o_bpv4_0_0_get_customer_attribute_definition_with_http_info(bankid, opts = {})
+    # @return [Array<(GetTransactionRequestAttributeDefinition200Response, Integer, Hash)>] GetTransactionRequestAttributeDefinition200Response data, response status code and response headers
+    def get_customer_attribute_definition_with_http_info(bankid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_definition ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.get_customer_attribute_definition ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_definition"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.get_customer_attribute_definition"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/attribute-definitions/customer'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s))
@@ -429,13 +429,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetTransactionRequestAttributeDefinition200Response'
+      return_type = opts[:debug_return_type] || 'GetTransactionRequestAttributeDefinition200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_get_customer_attribute_definition",
+        :operation => :"CustomerAttributeApi.get_customer_attribute_definition",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -446,7 +446,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_get_customer_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#get_customer_attribute_definition\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -456,9 +456,9 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetCustomerAttributes200Response]
-    def o_bpv4_0_0_get_customer_attributes(bankid, customerid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_customer_attributes_with_http_info(bankid, customerid, opts)
+    # @return [GetCustomerAttributes200Response]
+    def get_customer_attributes(bankid, customerid, opts = {})
+      data, _status_code, _headers = get_customer_attributes_with_http_info(bankid, customerid, opts)
       data
     end
 
@@ -467,18 +467,18 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetCustomerAttributes200Response, Integer, Hash)>] OBPv400GetCustomerAttributes200Response data, response status code and response headers
-    def o_bpv4_0_0_get_customer_attributes_with_http_info(bankid, customerid, opts = {})
+    # @return [Array<(GetCustomerAttributes200Response, Integer, Hash)>] GetCustomerAttributes200Response data, response status code and response headers
+    def get_customer_attributes_with_http_info(bankid, customerid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_get_customer_attributes ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.get_customer_attributes ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attributes"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.get_customer_attributes"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.o_bpv4_0_0_get_customer_attributes"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.get_customer_attributes"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s))
@@ -498,13 +498,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetCustomerAttributes200Response'
+      return_type = opts[:debug_return_type] || 'GetCustomerAttributes200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_get_customer_attributes",
+        :operation => :"CustomerAttributeApi.get_customer_attributes",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -515,7 +515,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_get_customer_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#get_customer_attributes\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -525,11 +525,11 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param customerattributeid [String] The CUSTOMERATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems]
-    def o_bpv4_0_0_update_customer_attribute(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request, opts)
+    # @return [GetCustomerAttributes200ResponseCustomerAttributesInner]
+    def update_customer_attribute(bankid, customerid, customerattributeid, create_personal_data_field_request, opts = {})
+      data, _status_code, _headers = update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, create_personal_data_field_request, opts)
       data
     end
 
@@ -538,28 +538,28 @@ module OpenBankProject
     # @param bankid [String] The BANKID identifier
     # @param customerid [String] The CUSTOMERID identifier
     # @param customerattributeid [String] The CUSTOMERATTRIBUTEID identifier
-    # @param obpv600_create_personal_data_field_request [OBPv600CreatePersonalDataFieldRequest] Request body
+    # @param create_personal_data_field_request [CreatePersonalDataFieldRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems, Integer, Hash)>] OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems data, response status code and response headers
-    def o_bpv4_0_0_update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, obpv600_create_personal_data_field_request, opts = {})
+    # @return [Array<(GetCustomerAttributes200ResponseCustomerAttributesInner, Integer, Hash)>] GetCustomerAttributes200ResponseCustomerAttributesInner data, response status code and response headers
+    def update_customer_attribute_with_http_info(bankid, customerid, customerattributeid, create_personal_data_field_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute ...'
+        @api_client.config.logger.debug 'Calling API: CustomerAttributeApi.update_customer_attribute ...'
       end
       # verify the required parameter 'bankid' is set
       if @api_client.config.client_side_validation && bankid.nil?
-        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'bankid' when calling CustomerAttributeApi.update_customer_attribute"
       end
       # verify the required parameter 'customerid' is set
       if @api_client.config.client_side_validation && customerid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'customerid' when calling CustomerAttributeApi.update_customer_attribute"
       end
       # verify the required parameter 'customerattributeid' is set
       if @api_client.config.client_side_validation && customerattributeid.nil?
-        fail ArgumentError, "Missing the required parameter 'customerattributeid' when calling CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute"
+        fail ArgumentError, "Missing the required parameter 'customerattributeid' when calling CustomerAttributeApi.update_customer_attribute"
       end
-      # verify the required parameter 'obpv600_create_personal_data_field_request' is set
-      if @api_client.config.client_side_validation && obpv600_create_personal_data_field_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv600_create_personal_data_field_request' when calling CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute"
+      # verify the required parameter 'create_personal_data_field_request' is set
+      if @api_client.config.client_side_validation && create_personal_data_field_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_personal_data_field_request' when calling CustomerAttributeApi.update_customer_attribute"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/banks/{bankid}/customers/{customerid}/attributes/{customerattributeid}'.sub('{' + 'bankid' + '}', CGI.escape(bankid.to_s)).sub('{' + 'customerid' + '}', CGI.escape(customerid.to_s)).sub('{' + 'customerattributeid' + '}', CGI.escape(customerattributeid.to_s))
@@ -581,16 +581,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv600_create_personal_data_field_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_personal_data_field_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems'
+      return_type = opts[:debug_return_type] || 'GetCustomerAttributes200ResponseCustomerAttributesInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"CustomerAttributeApi.o_bpv4_0_0_update_customer_attribute",
+        :operation => :"CustomerAttributeApi.update_customer_attribute",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -601,7 +601,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: CustomerAttributeApi#o_bpv4_0_0_update_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: CustomerAttributeApi#update_customer_attribute\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,7 +75,7 @@ class OldStyleApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv200ElasticSearchMetrics' => [
+        'elasticSearchMetrics' => [
             'application/json',
         ],
     ];
@@ -127,36 +127,36 @@ class OldStyleApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetrics
+     * Operation elasticSearchMetrics
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage
+     * @return object
      */
-    public function oBPv200ElasticSearchMetrics(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetrics(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        list($response) = $this->oBPv200ElasticSearchMetricsWithHttpInfo($contentType);
+        list($response) = $this->elasticSearchMetricsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsWithHttpInfo
+     * Operation elasticSearchMetricsWithHttpInfo
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv200ElasticSearchMetricsWithHttpInfo(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsWithHttpInfo(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        $request = $this->oBPv200ElasticSearchMetricsRequest($contentType);
+        $request = $this->elasticSearchMetricsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,7 +184,7 @@ class OldStyleApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $request,
                         $response,
                     );
@@ -206,7 +206,7 @@ class OldStyleApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                'object',
                 $request,
                 $response,
             );
@@ -215,7 +215,7 @@ class OldStyleApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -228,18 +228,18 @@ class OldStyleApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsAsync
+     * Operation elasticSearchMetricsAsync
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200ElasticSearchMetricsAsync(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsAsync(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        return $this->oBPv200ElasticSearchMetricsAsyncWithHttpInfo($contentType)
+        return $this->elasticSearchMetricsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -248,19 +248,19 @@ class OldStyleApi
     }
 
     /**
-     * Operation oBPv200ElasticSearchMetricsAsyncWithHttpInfo
+     * Operation elasticSearchMetricsAsyncWithHttpInfo
      *
      * Search API Metrics via Elasticsearch
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv200ElasticSearchMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsAsyncWithHttpInfo(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage';
-        $request = $this->oBPv200ElasticSearchMetricsRequest($contentType);
+        $returnType = 'object';
+        $request = $this->elasticSearchMetricsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -299,14 +299,14 @@ class OldStyleApi
     }
 
     /**
-     * Create request for operation 'oBPv200ElasticSearchMetrics'
+     * Create request for operation 'elasticSearchMetrics'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv200ElasticSearchMetrics'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['elasticSearchMetrics'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv200ElasticSearchMetricsRequest(string $contentType = self::contentTypes['oBPv200ElasticSearchMetrics'][0])
+    public function elasticSearchMetricsRequest(string $contentType = self::contentTypes['elasticSearchMetrics'][0])
     {
 
 
@@ -362,9 +362,9 @@ class OldStyleApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

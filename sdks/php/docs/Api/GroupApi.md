@@ -2,25 +2,25 @@
 
 Operations related to Group
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600AddUserToGroup()**](GroupApi.md#oBPv600AddUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
-| [**oBPv600CreateGroup()**](GroupApi.md#oBPv600CreateGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
-| [**oBPv600DeleteGroup()**](GroupApi.md#oBPv600DeleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
-| [**oBPv600GetGroup()**](GroupApi.md#oBPv600GetGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
-| [**oBPv600GetGroupEntitlements()**](GroupApi.md#oBPv600GetGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
-| [**oBPv600GetGroups()**](GroupApi.md#oBPv600GetGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
-| [**oBPv600GetUserGroupMemberships()**](GroupApi.md#oBPv600GetUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
-| [**oBPv600RemoveUserFromGroup()**](GroupApi.md#oBPv600RemoveUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
-| [**oBPv600UpdateGroup()**](GroupApi.md#oBPv600UpdateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
+| [**addUserToGroup()**](GroupApi.md#addUserToGroup) | **POST** /obp/v6.0.0/users/{userid}/group-entitlements | Grant User Membership to Group Entitlements |
+| [**createGroup()**](GroupApi.md#createGroup) | **POST** /obp/v6.0.0/management/groups | Create Group |
+| [**deleteGroup()**](GroupApi.md#deleteGroup) | **DELETE** /obp/v6.0.0/management/groups/{groupid} | Delete Group |
+| [**getGroup()**](GroupApi.md#getGroup) | **GET** /obp/v6.0.0/management/groups/{groupid} | Get Group |
+| [**getGroupEntitlements()**](GroupApi.md#getGroupEntitlements) | **GET** /obp/v6.0.0/management/groups/{groupid}/entitlements | Get Group Entitlements |
+| [**getGroups()**](GroupApi.md#getGroups) | **GET** /obp/v6.0.0/management/groups | Get Groups |
+| [**getUserGroupMemberships()**](GroupApi.md#getUserGroupMemberships) | **GET** /obp/v6.0.0/users/{userid}/group-entitlements | Get User&#39;s Group Memberships |
+| [**removeUserFromGroup()**](GroupApi.md#removeUserFromGroup) | **DELETE** /obp/v6.0.0/users/{userid}/group-entitlements/{groupid} | Remove User from Group |
+| [**updateGroup()**](GroupApi.md#updateGroup) | **PUT** /obp/v6.0.0/management/groups/{groupid} | Update Group |
 
 
-## `oBPv600AddUserToGroup()`
+## `addUserToGroup()`
 
 ```php
-oBPv600AddUserToGroup($userid, $obpv600_add_user_to_group_request): \OpenBankProject\Model\OBPv600AddUserToGroup200Response
+addUserToGroup($userid, $add_user_to_group_request): \OpenBankProject\Model\AddUserToGroup200Response
 ```
 
 Grant User Membership to Group Entitlements
@@ -43,9 +43,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -55,13 +55,13 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
     $config
 );
 $userid = 'userid_example'; // string | The USERID identifier
-$obpv600_add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}}; // \OpenBankProject\Model\OBPv600AddUserToGroupRequest | Request body
+$add_user_to_group_request = {"type":"object","properties":{"group_id":{"type":"string"}}}; // \OpenBankProject\Model\AddUserToGroupRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600AddUserToGroup($userid, $obpv600_add_user_to_group_request);
+    $result = $apiInstance->addUserToGroup($userid, $add_user_to_group_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600AddUserToGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->addUserToGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -70,11 +70,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userid** | **string**| The USERID identifier | |
-| **obpv600_add_user_to_group_request** | [**\OpenBankProject\Model\OBPv600AddUserToGroupRequest**](../Model/OBPv600AddUserToGroupRequest.md)| Request body | |
+| **add_user_to_group_request** | [**\OpenBankProject\Model\AddUserToGroupRequest**](../Model/AddUserToGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600AddUserToGroup200Response**](../Model/OBPv600AddUserToGroup200Response.md)
+[**\OpenBankProject\Model\AddUserToGroup200Response**](../Model/AddUserToGroup200Response.md)
 
 ### Authorization
 
@@ -89,10 +89,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600CreateGroup()`
+## `createGroup()`
 
 ```php
-oBPv600CreateGroup($obpv600_create_group_request): \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+createGroup($create_group_request): \OpenBankProject\Model\GetGroups200ResponseGroupsInner
 ```
 
 Create Group
@@ -115,9 +115,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -126,13 +126,13 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obpv600_create_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}}; // \OpenBankProject\Model\OBPv600CreateGroupRequest | Request body
+$create_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"bank_id":{"type":"string"},"is_enabled":{"type":"boolean"},"list_of_roles":{"type":"array","items":{"type":"string"}}}}; // \OpenBankProject\Model\CreateGroupRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600CreateGroup($obpv600_create_group_request);
+    $result = $apiInstance->createGroup($create_group_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600CreateGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->createGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -140,11 +140,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obpv600_create_group_request** | [**\OpenBankProject\Model\OBPv600CreateGroupRequest**](../Model/OBPv600CreateGroupRequest.md)| Request body | |
+| **create_group_request** | [**\OpenBankProject\Model\CreateGroupRequest**](../Model/CreateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems**](../Model/OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**\OpenBankProject\Model\GetGroups200ResponseGroupsInner**](../Model/GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -159,10 +159,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600DeleteGroup()`
+## `deleteGroup()`
 
 ```php
-oBPv600DeleteGroup($groupid)
+deleteGroup($groupid)
 ```
 
 Delete Group
@@ -185,9 +185,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -199,9 +199,9 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
 $groupid = 'groupid_example'; // string | The GROUPID identifier
 
 try {
-    $apiInstance->oBPv600DeleteGroup($groupid);
+    $apiInstance->deleteGroup($groupid);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600DeleteGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->deleteGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -228,10 +228,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetGroup()`
+## `getGroup()`
 
 ```php
-oBPv600GetGroup($groupid): \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+getGroup($groupid): \OpenBankProject\Model\GetGroups200ResponseGroupsInner
 ```
 
 Get Group
@@ -254,9 +254,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -268,10 +268,10 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
 $groupid = 'groupid_example'; // string | The GROUPID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetGroup($groupid);
+    $result = $apiInstance->getGroup($groupid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600GetGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -283,7 +283,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems**](../Model/OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**\OpenBankProject\Model\GetGroups200ResponseGroupsInner**](../Model/GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 
@@ -298,10 +298,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetGroupEntitlements()`
+## `getGroupEntitlements()`
 
 ```php
-oBPv600GetGroupEntitlements($groupid): \OpenBankProject\Model\OBPv600GetGroupEntitlements200Response
+getGroupEntitlements($groupid): \OpenBankProject\Model\GetGroupEntitlements200Response
 ```
 
 Get Group Entitlements
@@ -324,9 +324,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -338,10 +338,10 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
 $groupid = 'groupid_example'; // string | The GROUPID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetGroupEntitlements($groupid);
+    $result = $apiInstance->getGroupEntitlements($groupid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600GetGroupEntitlements: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getGroupEntitlements: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -353,7 +353,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetGroupEntitlements200Response**](../Model/OBPv600GetGroupEntitlements200Response.md)
+[**\OpenBankProject\Model\GetGroupEntitlements200Response**](../Model/GetGroupEntitlements200Response.md)
 
 ### Authorization
 
@@ -368,10 +368,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetGroups()`
+## `getGroups()`
 
 ```php
-oBPv600GetGroups(): \OpenBankProject\Model\OBPv600GetGroups200Response
+getGroups(): \OpenBankProject\Model\GetGroups200Response
 ```
 
 Get Groups
@@ -394,9 +394,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -407,10 +407,10 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetGroups();
+    $result = $apiInstance->getGroups();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600GetGroups: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getGroups: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetGroups200Response**](../Model/OBPv600GetGroups200Response.md)
+[**\OpenBankProject\Model\GetGroups200Response**](../Model/GetGroups200Response.md)
 
 ### Authorization
 
@@ -435,10 +435,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetUserGroupMemberships()`
+## `getUserGroupMemberships()`
 
 ```php
-oBPv600GetUserGroupMemberships($userid): \OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response
+getUserGroupMemberships($userid): \OpenBankProject\Model\GetUserGroupMemberships200Response
 ```
 
 Get User's Group Memberships
@@ -461,9 +461,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -475,10 +475,10 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
 $userid = 'userid_example'; // string | The USERID identifier
 
 try {
-    $result = $apiInstance->oBPv600GetUserGroupMemberships($userid);
+    $result = $apiInstance->getUserGroupMemberships($userid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600GetUserGroupMemberships: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->getUserGroupMemberships: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -490,7 +490,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetUserGroupMemberships200Response**](../Model/OBPv600GetUserGroupMemberships200Response.md)
+[**\OpenBankProject\Model\GetUserGroupMemberships200Response**](../Model/GetUserGroupMemberships200Response.md)
 
 ### Authorization
 
@@ -505,10 +505,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600RemoveUserFromGroup()`
+## `removeUserFromGroup()`
 
 ```php
-oBPv600RemoveUserFromGroup($userid, $groupid)
+removeUserFromGroup($userid, $groupid)
 ```
 
 Remove User from Group
@@ -531,9 +531,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -546,9 +546,9 @@ $userid = 'userid_example'; // string | The USERID identifier
 $groupid = 'groupid_example'; // string | The GROUPID identifier
 
 try {
-    $apiInstance->oBPv600RemoveUserFromGroup($userid, $groupid);
+    $apiInstance->removeUserFromGroup($userid, $groupid);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600RemoveUserFromGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->removeUserFromGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -576,10 +576,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600UpdateGroup()`
+## `updateGroup()`
 
 ```php
-oBPv600UpdateGroup($groupid, $obpv600_update_group_request): \OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems
+updateGroup($groupid, $update_group_request): \OpenBankProject\Model\GetGroups200ResponseGroupsInner
 ```
 
 Update Group
@@ -602,9 +602,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\GroupApi(
@@ -614,13 +614,13 @@ $apiInstance = new OpenBankProject\Api\GroupApi(
     $config
 );
 $groupid = 'groupid_example'; // string | The GROUPID identifier
-$obpv600_update_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}}; // \OpenBankProject\Model\OBPv600UpdateGroupRequest | Request body
+$update_group_request = {"type":"object","properties":{"group_name":{"type":"string"},"group_description":{"type":"string"},"list_of_roles":{"type":"array","items":{"type":"string"}},"is_enabled":{"type":"boolean"}}}; // \OpenBankProject\Model\UpdateGroupRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600UpdateGroup($groupid, $obpv600_update_group_request);
+    $result = $apiInstance->updateGroup($groupid, $update_group_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GroupApi->oBPv600UpdateGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GroupApi->updateGroup: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -629,11 +629,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupid** | **string**| The GROUPID identifier | |
-| **obpv600_update_group_request** | [**\OpenBankProject\Model\OBPv600UpdateGroupRequest**](../Model/OBPv600UpdateGroupRequest.md)| Request body | |
+| **update_group_request** | [**\OpenBankProject\Model\UpdateGroupRequest**](../Model/UpdateGroupRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetGroups200ResponsePropertiesGroupsItems**](../Model/OBPv600GetGroups200ResponsePropertiesGroupsItems.md)
+[**\OpenBankProject\Model\GetGroups200ResponseGroupsInner**](../Model/GetGroups200ResponseGroupsInner.md)
 
 ### Authorization
 

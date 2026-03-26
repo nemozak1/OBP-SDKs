@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,19 +75,19 @@ class BalanceApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv510CreateBankAccountBalance' => [
+        'createBankAccountBalance' => [
             'application/json',
         ],
-        'oBPv510DeleteBankAccountBalance' => [
+        'deleteBankAccountBalance' => [
             'application/json',
         ],
-        'oBPv510GetAllBankAccountBalances' => [
+        'getAllBankAccountBalances' => [
             'application/json',
         ],
-        'oBPv510GetBankAccountBalanceById' => [
+        'getBankAccountBalanceById' => [
             'application/json',
         ],
-        'oBPv510UpdateBankAccountBalance' => [
+        'updateBankAccountBalance' => [
             'application/json',
         ],
     ];
@@ -139,42 +139,42 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510CreateBankAccountBalance
+     * Operation createBankAccountBalance
      *
      * Create Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @return \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
      */
-    public function oBPv510CreateBankAccountBalance($bankid, $accountid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510CreateBankAccountBalance'][0])
+    public function createBankAccountBalance($bankid, $accountid, $create_bank_account_balance_request, string $contentType = self::contentTypes['createBankAccountBalance'][0])
     {
-        list($response) = $this->oBPv510CreateBankAccountBalanceWithHttpInfo($bankid, $accountid, $obpv510_create_bank_account_balance_request, $contentType);
+        list($response) = $this->createBankAccountBalanceWithHttpInfo($bankid, $accountid, $create_bank_account_balance_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510CreateBankAccountBalanceWithHttpInfo
+     * Operation createBankAccountBalanceWithHttpInfo
      *
      * Create Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510CreateBankAccountBalanceWithHttpInfo($bankid, $accountid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510CreateBankAccountBalance'][0])
+    public function createBankAccountBalanceWithHttpInfo($bankid, $accountid, $create_bank_account_balance_request, string $contentType = self::contentTypes['createBankAccountBalance'][0])
     {
-        $request = $this->oBPv510CreateBankAccountBalanceRequest($bankid, $accountid, $obpv510_create_bank_account_balance_request, $contentType);
+        $request = $this->createBankAccountBalanceRequest($bankid, $accountid, $create_bank_account_balance_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,7 +202,7 @@ class BalanceApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $request,
                         $response,
                     );
@@ -224,7 +224,7 @@ class BalanceApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                 $request,
                 $response,
             );
@@ -233,7 +233,7 @@ class BalanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,21 +246,21 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510CreateBankAccountBalanceAsync
+     * Operation createBankAccountBalanceAsync
      *
      * Create Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateBankAccountBalanceAsync($bankid, $accountid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510CreateBankAccountBalance'][0])
+    public function createBankAccountBalanceAsync($bankid, $accountid, $create_bank_account_balance_request, string $contentType = self::contentTypes['createBankAccountBalance'][0])
     {
-        return $this->oBPv510CreateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $obpv510_create_bank_account_balance_request, $contentType)
+        return $this->createBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $create_bank_account_balance_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -269,22 +269,22 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510CreateBankAccountBalanceAsyncWithHttpInfo
+     * Operation createBankAccountBalanceAsyncWithHttpInfo
      *
      * Create Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510CreateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510CreateBankAccountBalance'][0])
+    public function createBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $create_bank_account_balance_request, string $contentType = self::contentTypes['createBankAccountBalance'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems';
-        $request = $this->oBPv510CreateBankAccountBalanceRequest($bankid, $accountid, $obpv510_create_bank_account_balance_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner';
+        $request = $this->createBankAccountBalanceRequest($bankid, $accountid, $create_bank_account_balance_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -323,37 +323,37 @@ class BalanceApi
     }
 
     /**
-     * Create request for operation 'oBPv510CreateBankAccountBalance'
+     * Create request for operation 'createBankAccountBalance'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510CreateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510CreateBankAccountBalanceRequest($bankid, $accountid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510CreateBankAccountBalance'][0])
+    public function createBankAccountBalanceRequest($bankid, $accountid, $create_bank_account_balance_request, string $contentType = self::contentTypes['createBankAccountBalance'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510CreateBankAccountBalance'
+                'Missing the required parameter $bankid when calling createBankAccountBalance'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510CreateBankAccountBalance'
+                'Missing the required parameter $accountid when calling createBankAccountBalance'
             );
         }
 
-        // verify the required parameter 'obpv510_create_bank_account_balance_request' is set
-        if ($obpv510_create_bank_account_balance_request === null || (is_array($obpv510_create_bank_account_balance_request) && count($obpv510_create_bank_account_balance_request) === 0)) {
+        // verify the required parameter 'create_bank_account_balance_request' is set
+        if ($create_bank_account_balance_request === null || (is_array($create_bank_account_balance_request) && count($create_bank_account_balance_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_bank_account_balance_request when calling oBPv510CreateBankAccountBalance'
+                'Missing the required parameter $create_bank_account_balance_request when calling createBankAccountBalance'
             );
         }
 
@@ -392,12 +392,12 @@ class BalanceApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_bank_account_balance_request)) {
+        if (isset($create_bank_account_balance_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_bank_account_balance_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_bank_account_balance_request));
             } else {
-                $httpBody = $obpv510_create_bank_account_balance_request;
+                $httpBody = $create_bank_account_balance_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -433,9 +433,9 @@ class BalanceApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -460,41 +460,41 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510DeleteBankAccountBalance
+     * Operation deleteBankAccountBalance
      *
      * Delete Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteBankAccountBalance'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function oBPv510DeleteBankAccountBalance($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510DeleteBankAccountBalance'][0])
+    public function deleteBankAccountBalance($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['deleteBankAccountBalance'][0])
     {
-        $this->oBPv510DeleteBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $contentType);
+        $this->deleteBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $contentType);
     }
 
     /**
-     * Operation oBPv510DeleteBankAccountBalanceWithHttpInfo
+     * Operation deleteBankAccountBalanceWithHttpInfo
      *
      * Delete Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteBankAccountBalance'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510DeleteBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510DeleteBankAccountBalance'][0])
+    public function deleteBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['deleteBankAccountBalance'][0])
     {
-        $request = $this->oBPv510DeleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, $contentType);
+        $request = $this->deleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -530,21 +530,21 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510DeleteBankAccountBalanceAsync
+     * Operation deleteBankAccountBalanceAsync
      *
      * Delete Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteBankAccountBalance'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteBankAccountBalanceAsync($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510DeleteBankAccountBalance'][0])
+    public function deleteBankAccountBalanceAsync($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['deleteBankAccountBalance'][0])
     {
-        return $this->oBPv510DeleteBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $contentType)
+        return $this->deleteBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -553,22 +553,22 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510DeleteBankAccountBalanceAsyncWithHttpInfo
+     * Operation deleteBankAccountBalanceAsyncWithHttpInfo
      *
      * Delete Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteBankAccountBalance'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510DeleteBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510DeleteBankAccountBalance'][0])
+    public function deleteBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['deleteBankAccountBalance'][0])
     {
         $returnType = '';
-        $request = $this->oBPv510DeleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, $contentType);
+        $request = $this->deleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -594,37 +594,37 @@ class BalanceApi
     }
 
     /**
-     * Create request for operation 'oBPv510DeleteBankAccountBalance'
+     * Create request for operation 'deleteBankAccountBalance'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510DeleteBankAccountBalance'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510DeleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510DeleteBankAccountBalance'][0])
+    public function deleteBankAccountBalanceRequest($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['deleteBankAccountBalance'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510DeleteBankAccountBalance'
+                'Missing the required parameter $bankid when calling deleteBankAccountBalance'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510DeleteBankAccountBalance'
+                'Missing the required parameter $accountid when calling deleteBankAccountBalance'
             );
         }
 
         // verify the required parameter 'balanceid' is set
         if ($balanceid === null || (is_array($balanceid) && count($balanceid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $balanceid when calling oBPv510DeleteBankAccountBalance'
+                'Missing the required parameter $balanceid when calling deleteBankAccountBalance'
             );
         }
 
@@ -705,9 +705,9 @@ class BalanceApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -732,40 +732,40 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetAllBankAccountBalances
+     * Operation getAllBankAccountBalances
      *
      * Get All Bank Account Balances
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllBankAccountBalances'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankAccountBalances'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response
+     * @return \OpenBankProject\Model\GetAllBankAccountBalances200Response
      */
-    public function oBPv510GetAllBankAccountBalances($bankid, $accountid, string $contentType = self::contentTypes['oBPv510GetAllBankAccountBalances'][0])
+    public function getAllBankAccountBalances($bankid, $accountid, string $contentType = self::contentTypes['getAllBankAccountBalances'][0])
     {
-        list($response) = $this->oBPv510GetAllBankAccountBalancesWithHttpInfo($bankid, $accountid, $contentType);
+        list($response) = $this->getAllBankAccountBalancesWithHttpInfo($bankid, $accountid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetAllBankAccountBalancesWithHttpInfo
+     * Operation getAllBankAccountBalancesWithHttpInfo
      *
      * Get All Bank Account Balances
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllBankAccountBalances'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankAccountBalances'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankAccountBalances200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetAllBankAccountBalancesWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv510GetAllBankAccountBalances'][0])
+    public function getAllBankAccountBalancesWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getAllBankAccountBalances'][0])
     {
-        $request = $this->oBPv510GetAllBankAccountBalancesRequest($bankid, $accountid, $contentType);
+        $request = $this->getAllBankAccountBalancesRequest($bankid, $accountid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -793,7 +793,7 @@ class BalanceApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200Response',
                         $request,
                         $response,
                     );
@@ -815,7 +815,7 @@ class BalanceApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response',
+                '\OpenBankProject\Model\GetAllBankAccountBalances200Response',
                 $request,
                 $response,
             );
@@ -824,7 +824,7 @@ class BalanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -837,20 +837,20 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetAllBankAccountBalancesAsync
+     * Operation getAllBankAccountBalancesAsync
      *
      * Get All Bank Account Balances
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllBankAccountBalances'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankAccountBalances'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllBankAccountBalancesAsync($bankid, $accountid, string $contentType = self::contentTypes['oBPv510GetAllBankAccountBalances'][0])
+    public function getAllBankAccountBalancesAsync($bankid, $accountid, string $contentType = self::contentTypes['getAllBankAccountBalances'][0])
     {
-        return $this->oBPv510GetAllBankAccountBalancesAsyncWithHttpInfo($bankid, $accountid, $contentType)
+        return $this->getAllBankAccountBalancesAsyncWithHttpInfo($bankid, $accountid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -859,21 +859,21 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetAllBankAccountBalancesAsyncWithHttpInfo
+     * Operation getAllBankAccountBalancesAsyncWithHttpInfo
      *
      * Get All Bank Account Balances
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllBankAccountBalances'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankAccountBalances'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllBankAccountBalancesAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['oBPv510GetAllBankAccountBalances'][0])
+    public function getAllBankAccountBalancesAsyncWithHttpInfo($bankid, $accountid, string $contentType = self::contentTypes['getAllBankAccountBalances'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200Response';
-        $request = $this->oBPv510GetAllBankAccountBalancesRequest($bankid, $accountid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankAccountBalances200Response';
+        $request = $this->getAllBankAccountBalancesRequest($bankid, $accountid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -912,29 +912,29 @@ class BalanceApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetAllBankAccountBalances'
+     * Create request for operation 'getAllBankAccountBalances'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllBankAccountBalances'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllBankAccountBalances'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetAllBankAccountBalancesRequest($bankid, $accountid, string $contentType = self::contentTypes['oBPv510GetAllBankAccountBalances'][0])
+    public function getAllBankAccountBalancesRequest($bankid, $accountid, string $contentType = self::contentTypes['getAllBankAccountBalances'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetAllBankAccountBalances'
+                'Missing the required parameter $bankid when calling getAllBankAccountBalances'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510GetAllBankAccountBalances'
+                'Missing the required parameter $accountid when calling getAllBankAccountBalances'
             );
         }
 
@@ -1007,9 +1007,9 @@ class BalanceApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1034,42 +1034,42 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetBankAccountBalanceById
+     * Operation getBankAccountBalanceById
      *
      * Get Bank Account Balance By ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetBankAccountBalanceById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountBalanceById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @return \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
      */
-    public function oBPv510GetBankAccountBalanceById($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510GetBankAccountBalanceById'][0])
+    public function getBankAccountBalanceById($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['getBankAccountBalanceById'][0])
     {
-        list($response) = $this->oBPv510GetBankAccountBalanceByIdWithHttpInfo($bankid, $accountid, $balanceid, $contentType);
+        list($response) = $this->getBankAccountBalanceByIdWithHttpInfo($bankid, $accountid, $balanceid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetBankAccountBalanceByIdWithHttpInfo
+     * Operation getBankAccountBalanceByIdWithHttpInfo
      *
      * Get Bank Account Balance By ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetBankAccountBalanceById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountBalanceById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetBankAccountBalanceByIdWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510GetBankAccountBalanceById'][0])
+    public function getBankAccountBalanceByIdWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['getBankAccountBalanceById'][0])
     {
-        $request = $this->oBPv510GetBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, $contentType);
+        $request = $this->getBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1097,7 +1097,7 @@ class BalanceApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $request,
                         $response,
                     );
@@ -1119,7 +1119,7 @@ class BalanceApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                 $request,
                 $response,
             );
@@ -1128,7 +1128,7 @@ class BalanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1141,21 +1141,21 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetBankAccountBalanceByIdAsync
+     * Operation getBankAccountBalanceByIdAsync
      *
      * Get Bank Account Balance By ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetBankAccountBalanceById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountBalanceById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetBankAccountBalanceByIdAsync($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510GetBankAccountBalanceById'][0])
+    public function getBankAccountBalanceByIdAsync($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['getBankAccountBalanceById'][0])
     {
-        return $this->oBPv510GetBankAccountBalanceByIdAsyncWithHttpInfo($bankid, $accountid, $balanceid, $contentType)
+        return $this->getBankAccountBalanceByIdAsyncWithHttpInfo($bankid, $accountid, $balanceid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1164,22 +1164,22 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510GetBankAccountBalanceByIdAsyncWithHttpInfo
+     * Operation getBankAccountBalanceByIdAsyncWithHttpInfo
      *
      * Get Bank Account Balance By ID
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetBankAccountBalanceById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountBalanceById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetBankAccountBalanceByIdAsyncWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510GetBankAccountBalanceById'][0])
+    public function getBankAccountBalanceByIdAsyncWithHttpInfo($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['getBankAccountBalanceById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems';
-        $request = $this->oBPv510GetBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner';
+        $request = $this->getBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1218,37 +1218,37 @@ class BalanceApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetBankAccountBalanceById'
+     * Create request for operation 'getBankAccountBalanceById'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetBankAccountBalanceById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountBalanceById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['oBPv510GetBankAccountBalanceById'][0])
+    public function getBankAccountBalanceByIdRequest($bankid, $accountid, $balanceid, string $contentType = self::contentTypes['getBankAccountBalanceById'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510GetBankAccountBalanceById'
+                'Missing the required parameter $bankid when calling getBankAccountBalanceById'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510GetBankAccountBalanceById'
+                'Missing the required parameter $accountid when calling getBankAccountBalanceById'
             );
         }
 
         // verify the required parameter 'balanceid' is set
         if ($balanceid === null || (is_array($balanceid) && count($balanceid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $balanceid when calling oBPv510GetBankAccountBalanceById'
+                'Missing the required parameter $balanceid when calling getBankAccountBalanceById'
             );
         }
 
@@ -1329,9 +1329,9 @@ class BalanceApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1356,44 +1356,44 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510UpdateBankAccountBalance
+     * Operation updateBankAccountBalance
      *
      * Update Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems
+     * @return \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner
      */
-    public function oBPv510UpdateBankAccountBalance($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510UpdateBankAccountBalance'][0])
+    public function updateBankAccountBalance($bankid, $accountid, $balanceid, $create_bank_account_balance_request, string $contentType = self::contentTypes['updateBankAccountBalance'][0])
     {
-        list($response) = $this->oBPv510UpdateBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, $contentType);
+        list($response) = $this->updateBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $create_bank_account_balance_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510UpdateBankAccountBalanceWithHttpInfo
+     * Operation updateBankAccountBalanceWithHttpInfo
      *
      * Update Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510UpdateBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510UpdateBankAccountBalance'][0])
+    public function updateBankAccountBalanceWithHttpInfo($bankid, $accountid, $balanceid, $create_bank_account_balance_request, string $contentType = self::contentTypes['updateBankAccountBalance'][0])
     {
-        $request = $this->oBPv510UpdateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, $contentType);
+        $request = $this->updateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $create_bank_account_balance_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1421,7 +1421,7 @@ class BalanceApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $request,
                         $response,
                     );
@@ -1443,7 +1443,7 @@ class BalanceApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                 $request,
                 $response,
             );
@@ -1452,7 +1452,7 @@ class BalanceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems',
+                        '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1465,22 +1465,22 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510UpdateBankAccountBalanceAsync
+     * Operation updateBankAccountBalanceAsync
      *
      * Update Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateBankAccountBalanceAsync($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510UpdateBankAccountBalance'][0])
+    public function updateBankAccountBalanceAsync($bankid, $accountid, $balanceid, $create_bank_account_balance_request, string $contentType = self::contentTypes['updateBankAccountBalance'][0])
     {
-        return $this->oBPv510UpdateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, $contentType)
+        return $this->updateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $create_bank_account_balance_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1489,23 +1489,23 @@ class BalanceApi
     }
 
     /**
-     * Operation oBPv510UpdateBankAccountBalanceAsyncWithHttpInfo
+     * Operation updateBankAccountBalanceAsyncWithHttpInfo
      *
      * Update Bank Account Balance
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510UpdateBankAccountBalance'][0])
+    public function updateBankAccountBalanceAsyncWithHttpInfo($bankid, $accountid, $balanceid, $create_bank_account_balance_request, string $contentType = self::contentTypes['updateBankAccountBalance'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv510GetAllBankAccountBalances200ResponsePropertiesBalancesItems';
-        $request = $this->oBPv510UpdateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetAllBankAccountBalances200ResponseBalancesInner';
+        $request = $this->updateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $create_bank_account_balance_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1544,45 +1544,45 @@ class BalanceApi
     }
 
     /**
-     * Create request for operation 'oBPv510UpdateBankAccountBalance'
+     * Create request for operation 'updateBankAccountBalance'
      *
      * @param  string $bankid The BANKID identifier (required)
      * @param  string $accountid The ACCOUNTID identifier (required)
      * @param  string $balanceid The BALANCEID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv510CreateBankAccountBalanceRequest $obpv510_create_bank_account_balance_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateBankAccountBalance'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateBankAccountBalanceRequest $create_bank_account_balance_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBankAccountBalance'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510UpdateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $obpv510_create_bank_account_balance_request, string $contentType = self::contentTypes['oBPv510UpdateBankAccountBalance'][0])
+    public function updateBankAccountBalanceRequest($bankid, $accountid, $balanceid, $create_bank_account_balance_request, string $contentType = self::contentTypes['updateBankAccountBalance'][0])
     {
 
         // verify the required parameter 'bankid' is set
         if ($bankid === null || (is_array($bankid) && count($bankid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $bankid when calling oBPv510UpdateBankAccountBalance'
+                'Missing the required parameter $bankid when calling updateBankAccountBalance'
             );
         }
 
         // verify the required parameter 'accountid' is set
         if ($accountid === null || (is_array($accountid) && count($accountid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $accountid when calling oBPv510UpdateBankAccountBalance'
+                'Missing the required parameter $accountid when calling updateBankAccountBalance'
             );
         }
 
         // verify the required parameter 'balanceid' is set
         if ($balanceid === null || (is_array($balanceid) && count($balanceid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $balanceid when calling oBPv510UpdateBankAccountBalance'
+                'Missing the required parameter $balanceid when calling updateBankAccountBalance'
             );
         }
 
-        // verify the required parameter 'obpv510_create_bank_account_balance_request' is set
-        if ($obpv510_create_bank_account_balance_request === null || (is_array($obpv510_create_bank_account_balance_request) && count($obpv510_create_bank_account_balance_request) === 0)) {
+        // verify the required parameter 'create_bank_account_balance_request' is set
+        if ($create_bank_account_balance_request === null || (is_array($create_bank_account_balance_request) && count($create_bank_account_balance_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv510_create_bank_account_balance_request when calling oBPv510UpdateBankAccountBalance'
+                'Missing the required parameter $create_bank_account_balance_request when calling updateBankAccountBalance'
             );
         }
 
@@ -1629,12 +1629,12 @@ class BalanceApi
         );
 
         // for model (json/xml)
-        if (isset($obpv510_create_bank_account_balance_request)) {
+        if (isset($create_bank_account_balance_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv510_create_bank_account_balance_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_bank_account_balance_request));
             } else {
-                $httpBody = $obpv510_create_bank_account_balance_request;
+                $httpBody = $create_bank_account_balance_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1670,9 +1670,9 @@ class BalanceApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,6 +1,6 @@
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -11,17 +11,17 @@
  */
 package com.openbankproject.api
 
-import com.openbankproject.model.OBPv400BuildDynamicEndpointTemplate200Response
-import com.openbankproject.model.OBPv400BuildDynamicEndpointTemplateRequest
-import com.openbankproject.model.OBPv400GetAllDynamicResourceDocs200Response
-import com.openbankproject.model.OBPv400GetBankLevelDynamicResourceDoc200Response
-import com.openbankproject.model.OBPv400UpdateBankLevelDynamicResourceDocRequest
+import com.openbankproject.model.BuildDynamicEndpointTemplate200Response
+import com.openbankproject.model.BuildDynamicEndpointTemplateRequest
+import com.openbankproject.model.GetAllDynamicResourceDocs200Response
+import com.openbankproject.model.GetBankLevelDynamicResourceDoc200Response
+import com.openbankproject.model.UpdateBankLevelDynamicResourceDocRequest
 import org.openapitools.client.core.JsonSupport._
 import sttp.client4._
 import sttp.model.Method
 
 object DynamicResourceDocApi {
-  def apply(baseUrl: String = "https://apisandbox.openbankproject.com") = new DynamicResourceDocApi(baseUrl)
+  def apply(baseUrl: String = "http://127.0.0.1:8080") = new DynamicResourceDocApi(baseUrl)
 }
 
 class DynamicResourceDocApi(baseUrl: String) {
@@ -30,29 +30,29 @@ class DynamicResourceDocApi(baseUrl: String) {
    * <p>Create a Dynamic Resource Doc endpoint code.</p> <p>copy the response and past to PractiseEndpoint, So you can have the benefits of<br /> auto compilation and debug</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#code\"><strong>code</strong></a>: 125</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400BuildDynamicEndpointTemplate200Response (Successful operation)
+   *   code 200 : BuildDynamicEndpointTemplate200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400BuildDynamicEndpointTemplateRequest Request body
+   * @param buildDynamicEndpointTemplateRequest Request body
    */
-  def oBPv400BuildDynamicEndpointTemplate(apiKeyHeader: String, apiKeyHeader: String)(oBPv400BuildDynamicEndpointTemplateRequest: OBPv400BuildDynamicEndpointTemplateRequest): Request[Either[ResponseException[String, Exception], OBPv400BuildDynamicEndpointTemplate200Response]] =
+  def buildDynamicEndpointTemplate(apiKeyHeader: String, apiKeyHeader: String)(buildDynamicEndpointTemplateRequest: BuildDynamicEndpointTemplateRequest): Request[Either[ResponseException[String, Exception], BuildDynamicEndpointTemplate200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs/endpoint-code")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400BuildDynamicEndpointTemplateRequest)
-      .response(asJson[OBPv400BuildDynamicEndpointTemplate200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(buildDynamicEndpointTemplateRequest)
+      .response(asJson[BuildDynamicEndpointTemplate200Response])
 
   /**
    * <p>Create a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -61,38 +61,38 @@ class DynamicResourceDocApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400UpdateBankLevelDynamicResourceDocRequest Request body
+   * @param updateBankLevelDynamicResourceDocRequest Request body
    */
-  def oBPv400CreateBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def createBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-resource-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicResourceDocRequest)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicResourceDocRequest)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
   /**
    * <p>Create a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400UpdateBankLevelDynamicResourceDocRequest Request body
+   * @param updateBankLevelDynamicResourceDocRequest Request body
    */
-  def oBPv400CreateDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def createDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.POST, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicResourceDocRequest)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicResourceDocRequest)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
   /**
    * <p>Delete a Bank Level Dynamic Resource Doc.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> 
@@ -108,12 +108,12 @@ class DynamicResourceDocApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400DeleteBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
@@ -127,19 +127,19 @@ class DynamicResourceDocApi(baseUrl: String) {
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400DeleteDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
+  def deleteDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], Unit]] =
     basicRequest
       .method(Method.DELETE, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
+      .header("DirectLogin", apiKeyHeader)
       .response(asString.mapWithMetadata(ResponseAs.deserializeRightWithError(_ => Right(()))))
 
   /**
    * <p>Get all Bank Level Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllDynamicResourceDocs200Response (Successful operation)
+   *   code 200 : GetAllDynamicResourceDocs200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -149,38 +149,38 @@ class DynamicResourceDocApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetAllBankLevelDynamicResourceDocs(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetAllDynamicResourceDocs200Response]] =
+  def getAllBankLevelDynamicResourceDocs(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetAllDynamicResourceDocs200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-resource-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllDynamicResourceDocs200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllDynamicResourceDocs200Response])
 
   /**
    * <p>Get all Dynamic Resource Docs.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetAllDynamicResourceDocs200Response (Successful operation)
+   *   code 200 : GetAllDynamicResourceDocs200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetAllDynamicResourceDocs(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetAllDynamicResourceDocs200Response]] =
+  def getAllDynamicResourceDocs(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetAllDynamicResourceDocs200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetAllDynamicResourceDocs200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetAllDynamicResourceDocs200Response])
 
   /**
    * <p>Get a Bank Level Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -190,38 +190,38 @@ class DynamicResourceDocApi(baseUrl: String) {
    * 
    * @param bankid The BANKID identifier
    */
-  def oBPv400GetBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def getBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
   /**
    * <p>Get a Dynamic Resource Doc by DYNAMIC-RESOURCE-DOC-ID.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    */
-  def oBPv400GetDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def getDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.GET, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
   /**
    * <p>Update a Bank Level Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 404 :  (Not Found)
    *   code 500 :  (Internal Server Error)
    * 
@@ -230,37 +230,37 @@ class DynamicResourceDocApi(baseUrl: String) {
    *   DirectLogin (apiKey)
    * 
    * @param bankid The BANKID identifier
-   * @param oBPv400UpdateBankLevelDynamicResourceDocRequest Request body
+   * @param updateBankLevelDynamicResourceDocRequest Request body
    */
-  def oBPv400UpdateBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def updateBankLevelDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(bankid: String, updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/banks/${bankid}/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicResourceDocRequest)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicResourceDocRequest)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
   /**
    * <p>Update a Dynamic Resource Doc.</p> <p>The connector_method_body is URL-encoded format String</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#description\"><strong>description</strong></a>: Description of the object. Maximum length is 2000. It can be any characters here.</p> <p><a href=\"/glossary#name\"><strong>name</strong></a>: ACCOUNT_MANAGEMENT_FEE</p> <p><a href=\"/glossary#roles\"><strong>roles</strong></a>: CanCreateMyUser</p> <p><a href=\"/glossary#summary\"><strong>summary</strong></a>:</p> <p><a href=\"/glossary#tags\"><strong>tags</strong></a>: Create-My-User</p> 
    * 
    * Expected answers:
-   *   code 200 : OBPv400GetBankLevelDynamicResourceDoc200Response (Successful operation)
+   *   code 200 : GetBankLevelDynamicResourceDoc200Response (Successful operation)
    *   code 500 :  (Internal Server Error)
    * 
    * Available security schemes:
    *   GatewayLogin (apiKey)
    *   DirectLogin (apiKey)
    * 
-   * @param oBPv400UpdateBankLevelDynamicResourceDocRequest Request body
+   * @param updateBankLevelDynamicResourceDocRequest Request body
    */
-  def oBPv400UpdateDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(oBPv400UpdateBankLevelDynamicResourceDocRequest: OBPv400UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], OBPv400GetBankLevelDynamicResourceDoc200Response]] =
+  def updateDynamicResourceDoc(apiKeyHeader: String, apiKeyHeader: String)(updateBankLevelDynamicResourceDocRequest: UpdateBankLevelDynamicResourceDocRequest): Request[Either[ResponseException[String, Exception], GetBankLevelDynamicResourceDoc200Response]] =
     basicRequest
       .method(Method.PUT, uri"$baseUrl/obp/v4.0.0/management/dynamic-resource-docs/DYNAMIC-RESOURCE-DOC-ID")
       .contentType("application/json")
       .header("Authorization", apiKeyHeader)
-      .header("Authorization", apiKeyHeader)
-      .body(oBPv400UpdateBankLevelDynamicResourceDocRequest)
-      .response(asJson[OBPv400GetBankLevelDynamicResourceDoc200Response])
+      .header("DirectLogin", apiKeyHeader)
+      .body(updateBankLevelDynamicResourceDocRequest)
+      .response(asJson[GetBankLevelDynamicResourceDoc200Response])
 
 }

@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,12 +18,12 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
-import com.openbankproject.model.OBPv400GetCustomerAttributes200Response;
-import com.openbankproject.model.OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200Response;
-import com.openbankproject.model.OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems;
-import com.openbankproject.model.OBPv600CreatePersonalDataFieldRequest;
+import com.openbankproject.model.CreateOrUpdateTransactionRequestAttributeDefinitionRequest;
+import com.openbankproject.model.CreatePersonalDataFieldRequest;
+import com.openbankproject.model.GetCustomerAttributes200Response;
+import com.openbankproject.model.GetCustomerAttributes200ResponseCustomerAttributesInner;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200Response;
+import com.openbankproject.model.GetTransactionRequestAttributeDefinition200ResponseAttributesInner;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CustomerAttributeApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -172,12 +172,12 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400CreateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400CreateCustomerAttribute(bankid, customerid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner createCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createCustomerAttribute(bankid, customerid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -185,13 +185,13 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400CreateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> localVarResponse = oBPv400CreateCustomerAttributeWithHttpInfo(bankid, customerid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner createCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> localVarResponse = createCustomerAttributeWithHttpInfo(bankid, customerid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -200,12 +200,12 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400CreateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400CreateCustomerAttributeWithHttpInfo(bankid, customerid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> createCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return createCustomerAttributeWithHttpInfo(bankid, customerid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -213,13 +213,13 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Create Customer Attribute&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400CreateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateCustomerAttributeRequestBuilder(bankid, customerid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> createCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createCustomerAttributeRequestBuilder(bankid, customerid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -230,11 +230,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateCustomerAttribute", localVarResponse);
+          throw getApiException("createCustomerAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+          return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -244,10 +244,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>() {});
+        GetCustomerAttributes200ResponseCustomerAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCustomerAttributes200ResponseCustomerAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+        return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -266,18 +266,18 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createCustomerAttribute");
     }
     // verify the required parameter 'customerid' is set
     if (customerid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerid' when calling oBPv400CreateCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'customerid' when calling createCustomerAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv400CreateCustomerAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling createCustomerAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -292,7 +292,7 @@ public class CustomerAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -312,25 +312,25 @@ public class CustomerAttributeApi {
    * Create or Update Customer Attribute Definition
    * &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCustomerAttributeAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateCustomerAttributeAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
    * Create or Update Customer Attribute Definition
    * &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
+   * @return GetTransactionRequestAttributeDefinition200ResponseAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> localVarResponse = oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
+  public GetTransactionRequestAttributeDefinition200ResponseAttributesInner createOrUpdateCustomerAttributeAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> localVarResponse = createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -338,25 +338,25 @@ public class CustomerAttributeApi {
    * Create or Update Customer Attribute Definition
    * &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
-    return oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest) throws ApiException {
+    return createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, null);
   }
 
   /**
    * Create or Update Customer Attribute Definition
    * &lt;p&gt;Create or Update Customer Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be one of: Customer&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
+   * @param createOrUpdateTransactionRequestAttributeDefinitionRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200ResponseAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems> oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequestBuilder(bankid, obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner> createOrUpdateCustomerAttributeAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createOrUpdateCustomerAttributeAttributeDefinitionRequestBuilder(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -367,11 +367,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition", localVarResponse);
+          throw getApiException("createOrUpdateCustomerAttributeAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -381,10 +381,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>() {});
+        GetTransactionRequestAttributeDefinition200ResponseAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200ResponseAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -403,14 +403,14 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateOrUpdateCustomerAttributeAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createOrUpdateCustomerAttributeAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createOrUpdateCustomerAttributeAttributeDefinition");
     }
-    // verify the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' is set
-    if (obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest' when calling oBPv400CreateOrUpdateCustomerAttributeAttributeDefinition");
+    // verify the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' is set
+    if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createOrUpdateTransactionRequestAttributeDefinitionRequest' when calling createOrUpdateCustomerAttributeAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -424,7 +424,7 @@ public class CustomerAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createOrUpdateTransactionRequestAttributeDefinitionRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -448,8 +448,8 @@ public class CustomerAttributeApi {
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid) throws ApiException {
-    oBPv400DeleteCustomerAttribute(bankid, customerid, customerattributeid, null);
+  public void deleteCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid) throws ApiException {
+    deleteCustomerAttribute(bankid, customerid, customerattributeid, null);
   }
 
   /**
@@ -461,8 +461,8 @@ public class CustomerAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, headers);
+  public void deleteCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
+    deleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, headers);
   }
 
   /**
@@ -474,8 +474,8 @@ public class CustomerAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid) throws ApiException {
-    return oBPv400DeleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, null);
+  public ApiResponse<Void> deleteCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid) throws ApiException {
+    return deleteCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, null);
   }
 
   /**
@@ -488,8 +488,8 @@ public class CustomerAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteCustomerAttributeRequestBuilder(bankid, customerid, customerattributeid, headers);
+  public ApiResponse<Void> deleteCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCustomerAttributeRequestBuilder(bankid, customerid, customerattributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -500,7 +500,7 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteCustomerAttribute", localVarResponse);
+          throw getApiException("deleteCustomerAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -525,18 +525,18 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCustomerAttribute");
     }
     // verify the required parameter 'customerid' is set
     if (customerid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerid' when calling oBPv400DeleteCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'customerid' when calling deleteCustomerAttribute");
     }
     // verify the required parameter 'customerattributeid' is set
     if (customerattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerattributeid' when calling oBPv400DeleteCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'customerattributeid' when calling deleteCustomerAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -569,8 +569,8 @@ public class CustomerAttributeApi {
    * @param attributedefinitionid The ATTRIBUTEDEFINITIONID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    oBPv400DeleteCustomerAttributeDefinition(bankid, attributedefinitionid, null);
+  public void deleteCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    deleteCustomerAttributeDefinition(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -581,8 +581,8 @@ public class CustomerAttributeApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
+  public void deleteCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    deleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, headers);
   }
 
   /**
@@ -593,8 +593,8 @@ public class CustomerAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
-    return oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
+  public ApiResponse<Void> deleteCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid) throws ApiException {
+    return deleteCustomerAttributeDefinitionWithHttpInfo(bankid, attributedefinitionid, null);
   }
 
   /**
@@ -606,8 +606,8 @@ public class CustomerAttributeApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteCustomerAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
+  public ApiResponse<Void> deleteCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCustomerAttributeDefinitionRequestBuilder(bankid, attributedefinitionid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -618,7 +618,7 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteCustomerAttributeDefinition", localVarResponse);
+          throw getApiException("deleteCustomerAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -643,14 +643,14 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteCustomerAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCustomerAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String attributedefinitionid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteCustomerAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCustomerAttributeDefinition");
     }
     // verify the required parameter 'attributedefinitionid' is set
     if (attributedefinitionid == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling oBPv400DeleteCustomerAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'attributedefinitionid' when calling deleteCustomerAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -681,11 +681,11 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400GetCustomerAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid) throws ApiException {
-    return oBPv400GetCustomerAttributeById(bankid, customerid, attributeid, null);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner getCustomerAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid) throws ApiException {
+    return getCustomerAttributeById(bankid, customerid, attributeid, null);
   }
 
   /**
@@ -695,11 +695,11 @@ public class CustomerAttributeApi {
    * @param customerid The CUSTOMERID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400GetCustomerAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> localVarResponse = oBPv400GetCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid, headers);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner getCustomerAttributeById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> localVarResponse = getCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid, headers);
     return localVarResponse.getData();
   }
 
@@ -709,11 +709,11 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400GetCustomerAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid) throws ApiException {
-    return oBPv400GetCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid, null);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> getCustomerAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid) throws ApiException {
+    return getCustomerAttributeByIdWithHttpInfo(bankid, customerid, attributeid, null);
   }
 
   /**
@@ -723,11 +723,11 @@ public class CustomerAttributeApi {
    * @param customerid The CUSTOMERID identifier (required)
    * @param attributeid The ATTRIBUTEID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400GetCustomerAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetCustomerAttributeByIdRequestBuilder(bankid, customerid, attributeid, headers);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> getCustomerAttributeByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCustomerAttributeByIdRequestBuilder(bankid, customerid, attributeid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -738,11 +738,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetCustomerAttributeById", localVarResponse);
+          throw getApiException("getCustomerAttributeById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+          return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -752,10 +752,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>() {});
+        GetCustomerAttributes200ResponseCustomerAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCustomerAttributes200ResponseCustomerAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+        return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -774,18 +774,18 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetCustomerAttributeByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCustomerAttributeByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String attributeid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetCustomerAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCustomerAttributeById");
     }
     // verify the required parameter 'customerid' is set
     if (customerid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerid' when calling oBPv400GetCustomerAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'customerid' when calling getCustomerAttributeById");
     }
     // verify the required parameter 'attributeid' is set
     if (attributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'attributeid' when calling oBPv400GetCustomerAttributeById");
+      throw new ApiException(400, "Missing the required parameter 'attributeid' when calling getCustomerAttributeById");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -815,11 +815,11 @@ public class CustomerAttributeApi {
    * Get Customer Attribute Definition
    * &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetCustomerAttributeDefinition(bankid, null);
+  public GetTransactionRequestAttributeDefinition200Response getCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getCustomerAttributeDefinition(bankid, null);
   }
 
   /**
@@ -827,11 +827,11 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetTransactionRequestAttributeDefinition200Response
+   * @return GetTransactionRequestAttributeDefinition200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetTransactionRequestAttributeDefinition200Response oBPv400GetCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> localVarResponse = oBPv400GetCustomerAttributeDefinitionWithHttpInfo(bankid, headers);
+  public GetTransactionRequestAttributeDefinition200Response getCustomerAttributeDefinition(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetTransactionRequestAttributeDefinition200Response> localVarResponse = getCustomerAttributeDefinitionWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -839,11 +839,11 @@ public class CustomerAttributeApi {
    * Get Customer Attribute Definition
    * &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetCustomerAttributeDefinitionWithHttpInfo(bankid, null);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getCustomerAttributeDefinitionWithHttpInfo(bankid, null);
   }
 
   /**
@@ -851,11 +851,11 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Get Customer Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetTransactionRequestAttributeDefinition200Response&gt;
+   * @return ApiResponse&lt;GetTransactionRequestAttributeDefinition200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response> oBPv400GetCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetCustomerAttributeDefinitionRequestBuilder(bankid, headers);
+  public ApiResponse<GetTransactionRequestAttributeDefinition200Response> getCustomerAttributeDefinitionWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCustomerAttributeDefinitionRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -866,11 +866,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetCustomerAttributeDefinition", localVarResponse);
+          throw getApiException("getCustomerAttributeDefinition", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+          return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -880,10 +880,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetTransactionRequestAttributeDefinition200Response>() {});
+        GetTransactionRequestAttributeDefinition200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetTransactionRequestAttributeDefinition200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetTransactionRequestAttributeDefinition200Response>(
+        return new ApiResponse<GetTransactionRequestAttributeDefinition200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -902,10 +902,10 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetCustomerAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCustomerAttributeDefinitionRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetCustomerAttributeDefinition");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCustomerAttributeDefinition");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -934,11 +934,11 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Get Customer Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_attributes\&quot;&gt;&lt;strong&gt;customer_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @return OBPv400GetCustomerAttributes200Response
+   * @return GetCustomerAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200Response oBPv400GetCustomerAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid) throws ApiException {
-    return oBPv400GetCustomerAttributes(bankid, customerid, null);
+  public GetCustomerAttributes200Response getCustomerAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid) throws ApiException {
+    return getCustomerAttributes(bankid, customerid, null);
   }
 
   /**
@@ -947,11 +947,11 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetCustomerAttributes200Response
+   * @return GetCustomerAttributes200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200Response oBPv400GetCustomerAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetCustomerAttributes200Response> localVarResponse = oBPv400GetCustomerAttributesWithHttpInfo(bankid, customerid, headers);
+  public GetCustomerAttributes200Response getCustomerAttributes(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCustomerAttributes200Response> localVarResponse = getCustomerAttributesWithHttpInfo(bankid, customerid, headers);
     return localVarResponse.getData();
   }
 
@@ -960,11 +960,11 @@ public class CustomerAttributeApi {
    * &lt;p&gt;Get Customer Attributes&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Customer.customer_id\&quot;&gt;CUSTOMER_ID&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_attribute_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#customer_attributes\&quot;&gt;&lt;strong&gt;customer_attributes&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200Response&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200Response> oBPv400GetCustomerAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid) throws ApiException {
-    return oBPv400GetCustomerAttributesWithHttpInfo(bankid, customerid, null);
+  public ApiResponse<GetCustomerAttributes200Response> getCustomerAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid) throws ApiException {
+    return getCustomerAttributesWithHttpInfo(bankid, customerid, null);
   }
 
   /**
@@ -973,11 +973,11 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200Response&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200Response> oBPv400GetCustomerAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetCustomerAttributesRequestBuilder(bankid, customerid, headers);
+  public ApiResponse<GetCustomerAttributes200Response> getCustomerAttributesWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCustomerAttributesRequestBuilder(bankid, customerid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -988,11 +988,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetCustomerAttributes", localVarResponse);
+          throw getApiException("getCustomerAttributes", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetCustomerAttributes200Response>(
+          return new ApiResponse<GetCustomerAttributes200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1002,10 +1002,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetCustomerAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetCustomerAttributes200Response>() {});
+        GetCustomerAttributes200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCustomerAttributes200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetCustomerAttributes200Response>(
+        return new ApiResponse<GetCustomerAttributes200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1024,14 +1024,14 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetCustomerAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCustomerAttributesRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetCustomerAttributes");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCustomerAttributes");
     }
     // verify the required parameter 'customerid' is set
     if (customerid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerid' when calling oBPv400GetCustomerAttributes");
+      throw new ApiException(400, "Missing the required parameter 'customerid' when calling getCustomerAttributes");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1062,12 +1062,12 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400UpdateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400UpdateCustomerAttribute(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner updateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateCustomerAttribute(bankid, customerid, customerattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -1076,13 +1076,13 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems
+   * @return GetCustomerAttributes200ResponseCustomerAttributesInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems oBPv400UpdateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> localVarResponse = oBPv400UpdateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public GetCustomerAttributes200ResponseCustomerAttributesInner updateCustomerAttribute(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> localVarResponse = updateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, createPersonalDataFieldRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1092,12 +1092,12 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @param createPersonalDataFieldRequest Request body (required)
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400UpdateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest) throws ApiException {
-    return oBPv400UpdateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest, null);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> updateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest) throws ApiException {
+    return updateCustomerAttributeWithHttpInfo(bankid, customerid, customerattributeid, createPersonalDataFieldRequest, null);
   }
 
   /**
@@ -1106,13 +1106,13 @@ public class CustomerAttributeApi {
    * @param bankid The BANKID identifier (required)
    * @param customerid The CUSTOMERID identifier (required)
    * @param customerattributeid The CUSTOMERATTRIBUTEID identifier (required)
-   * @param obPv600CreatePersonalDataFieldRequest Request body (required)
+   * @param createPersonalDataFieldRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems&gt;
+   * @return ApiResponse&lt;GetCustomerAttributes200ResponseCustomerAttributesInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems> oBPv400UpdateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateCustomerAttributeRequestBuilder(bankid, customerid, customerattributeid, obPv600CreatePersonalDataFieldRequest, headers);
+  public ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner> updateCustomerAttributeWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCustomerAttributeRequestBuilder(bankid, customerid, customerattributeid, createPersonalDataFieldRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1123,11 +1123,11 @@ public class CustomerAttributeApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateCustomerAttribute", localVarResponse);
+          throw getApiException("updateCustomerAttribute", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+          return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1137,10 +1137,10 @@ public class CustomerAttributeApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>() {});
+        GetCustomerAttributes200ResponseCustomerAttributesInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCustomerAttributes200ResponseCustomerAttributesInner>() {});
         
 
-        return new ApiResponse<OBPv400GetCustomerAttributes200ResponsePropertiesCustomerAttributesItems>(
+        return new ApiResponse<GetCustomerAttributes200ResponseCustomerAttributesInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1159,22 +1159,22 @@ public class CustomerAttributeApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull OBPv600CreatePersonalDataFieldRequest obPv600CreatePersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCustomerAttributeRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String customerid, @javax.annotation.Nonnull String customerattributeid, @javax.annotation.Nonnull CreatePersonalDataFieldRequest createPersonalDataFieldRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCustomerAttribute");
     }
     // verify the required parameter 'customerid' is set
     if (customerid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerid' when calling oBPv400UpdateCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'customerid' when calling updateCustomerAttribute");
     }
     // verify the required parameter 'customerattributeid' is set
     if (customerattributeid == null) {
-      throw new ApiException(400, "Missing the required parameter 'customerattributeid' when calling oBPv400UpdateCustomerAttribute");
+      throw new ApiException(400, "Missing the required parameter 'customerattributeid' when calling updateCustomerAttribute");
     }
-    // verify the required parameter 'obPv600CreatePersonalDataFieldRequest' is set
-    if (obPv600CreatePersonalDataFieldRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv600CreatePersonalDataFieldRequest' when calling oBPv400UpdateCustomerAttribute");
+    // verify the required parameter 'createPersonalDataFieldRequest' is set
+    if (createPersonalDataFieldRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'createPersonalDataFieldRequest' when calling updateCustomerAttribute");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1190,7 +1190,7 @@ public class CustomerAttributeApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv600CreatePersonalDataFieldRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(createPersonalDataFieldRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

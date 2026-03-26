@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,10 +18,10 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200Response;
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems;
-import com.openbankproject.model.OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString;
-import com.openbankproject.model.OBPv400UpdateBankLevelDynamicEndpointHostRequest;
+import com.openbankproject.model.GetDynamicEndpoints200Response;
+import com.openbankproject.model.GetDynamicEndpoints200ResponseDynamicEndpointsInner;
+import com.openbankproject.model.GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString;
+import com.openbankproject.model.UpdateBankLevelDynamicEndpointHostRequest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,7 +48,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class DynamicEndpointManageApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -169,25 +169,25 @@ public class DynamicEndpointManageApi {
    * Create Bank Level Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) throws ApiException {
-    return oBPv400CreateBankLevelDynamicEndpoint(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, null);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner createBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) throws ApiException {
+    return createBankLevelDynamicEndpoint(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, null);
   }
 
   /**
    * Create Bank Level Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> localVarResponse = oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, headers);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner createBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> localVarResponse = createBankLevelDynamicEndpointWithHttpInfo(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, headers);
     return localVarResponse.getData();
   }
 
@@ -195,25 +195,25 @@ public class DynamicEndpointManageApi {
    * Create Bank Level Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) throws ApiException {
-    return oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, null);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) throws ApiException {
+    return createBankLevelDynamicEndpointWithHttpInfo(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, null);
   }
 
   /**
    * Create Bank Level Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateBankLevelDynamicEndpointRequestBuilder(bankid, obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, headers);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createBankLevelDynamicEndpointRequestBuilder(bankid, getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -224,11 +224,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateBankLevelDynamicEndpoint", localVarResponse);
+          throw getApiException("createBankLevelDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+          return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -238,10 +238,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>() {});
+        GetDynamicEndpoints200ResponseDynamicEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200ResponseDynamicEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -260,14 +260,14 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder createBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400CreateBankLevelDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling createBankLevelDynamicEndpoint");
     }
-    // verify the required parameter 'obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString' is set
-    if (obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString' when calling oBPv400CreateBankLevelDynamicEndpoint");
+    // verify the required parameter 'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString' is set
+    if (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == null) {
+      throw new ApiException(400, "Missing the required parameter 'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString' when calling createBankLevelDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -281,7 +281,7 @@ public class DynamicEndpointManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -300,48 +300,48 @@ public class DynamicEndpointManageApi {
   /**
    * Create Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateDynamicEndpoint(@javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) throws ApiException {
-    return oBPv400CreateDynamicEndpoint(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, null);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner createDynamicEndpoint(@javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) throws ApiException {
+    return createDynamicEndpoint(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, null);
   }
 
   /**
    * Create Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400CreateDynamicEndpoint(@javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> localVarResponse = oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, headers);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner createDynamicEndpoint(@javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> localVarResponse = createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, headers);
     return localVarResponse.getData();
   }
 
   /**
    * Create Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString) throws ApiException {
-    return oBPv400CreateDynamicEndpointWithHttpInfo(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, null);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString) throws ApiException {
+    return createDynamicEndpointWithHttpInfo(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, null);
   }
 
   /**
    * Create Dynamic Endpoint
    * &lt;p&gt;Create dynamic endpoints.&lt;/p&gt; &lt;p&gt;Create dynamic endpoints with one json format swagger content.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;dynamic_entity&lt;/code&gt;, then you need link the swagger fields to the dynamic entity fields,&lt;br /&gt; please check &lt;code&gt;Endpoint Mapping&lt;/code&gt; endpoints.&lt;/p&gt; &lt;p&gt;If the host of swagger is &lt;code&gt;obp_mock&lt;/code&gt;, every dynamic endpoint will return example response of swagger,&lt;/p&gt; &lt;p&gt;when create MethodRouting for given dynamic endpoint, it will be routed to given url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @param obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString Request body (required)
+   * @param getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400CreateDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400CreateDynamicEndpointRequestBuilder(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, headers);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> createDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = createDynamicEndpointRequestBuilder(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -352,11 +352,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400CreateDynamicEndpoint", localVarResponse);
+          throw getApiException("createDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+          return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -366,10 +366,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>() {});
+        GetDynamicEndpoints200ResponseDynamicEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200ResponseDynamicEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -388,10 +388,10 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400CreateDynamicEndpointRequestBuilder(@javax.annotation.Nonnull OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString' is set
-    if (obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString' when calling oBPv400CreateDynamicEndpoint");
+  private HttpRequest.Builder createDynamicEndpointRequestBuilder(@javax.annotation.Nonnull GetDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString' is set
+    if (getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString == null) {
+      throw new ApiException(400, "Missing the required parameter 'getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString' when calling createDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -404,7 +404,7 @@ public class DynamicEndpointManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItemsPropertiesSwaggerString);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getDynamicEndpoints200ResponseDynamicEndpointsInnerSwaggerString);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -427,8 +427,8 @@ public class DynamicEndpointManageApi {
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    oBPv400DeleteBankLevelDynamicEndpoint(bankid, dynamicendpointid, null);
+  public void deleteBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    deleteBankLevelDynamicEndpoint(bankid, dynamicendpointid, null);
   }
 
   /**
@@ -439,8 +439,8 @@ public class DynamicEndpointManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, headers);
+  public void deleteBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    deleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, headers);
   }
 
   /**
@@ -451,8 +451,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, null);
+  public ApiResponse<Void> deleteBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return deleteBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, null);
   }
 
   /**
@@ -464,8 +464,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteBankLevelDynamicEndpointRequestBuilder(bankid, dynamicendpointid, headers);
+  public ApiResponse<Void> deleteBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteBankLevelDynamicEndpointRequestBuilder(bankid, dynamicendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -476,7 +476,7 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteBankLevelDynamicEndpoint", localVarResponse);
+          throw getApiException("deleteBankLevelDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -501,14 +501,14 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400DeleteBankLevelDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteBankLevelDynamicEndpoint");
     }
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400DeleteBankLevelDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling deleteBankLevelDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -539,8 +539,8 @@ public class DynamicEndpointManageApi {
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    oBPv400DeleteDynamicEndpoint(dynamicendpointid, null);
+  public void deleteDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    deleteDynamicEndpoint(dynamicendpointid, null);
   }
 
   /**
@@ -550,8 +550,8 @@ public class DynamicEndpointManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
+  public void deleteDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    deleteDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
   }
 
   /**
@@ -561,8 +561,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400DeleteDynamicEndpointWithHttpInfo(dynamicendpointid, null);
+  public ApiResponse<Void> deleteDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return deleteDynamicEndpointWithHttpInfo(dynamicendpointid, null);
   }
 
   /**
@@ -573,8 +573,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteDynamicEndpointRequestBuilder(dynamicendpointid, headers);
+  public ApiResponse<Void> deleteDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteDynamicEndpointRequestBuilder(dynamicendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -585,7 +585,7 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteDynamicEndpoint", localVarResponse);
+          throw getApiException("deleteDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -610,10 +610,10 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400DeleteDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling deleteDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -643,8 +643,8 @@ public class DynamicEndpointManageApi {
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteMyDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    oBPv400DeleteMyDynamicEndpoint(dynamicendpointid, null);
+  public void deleteMyDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    deleteMyDynamicEndpoint(dynamicendpointid, null);
   }
 
   /**
@@ -654,8 +654,8 @@ public class DynamicEndpointManageApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv400DeleteMyDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
+  public void deleteMyDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
   }
 
   /**
@@ -665,8 +665,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteMyDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400DeleteMyDynamicEndpointWithHttpInfo(dynamicendpointid, null);
+  public ApiResponse<Void> deleteMyDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return deleteMyDynamicEndpointWithHttpInfo(dynamicendpointid, null);
   }
 
   /**
@@ -677,8 +677,8 @@ public class DynamicEndpointManageApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv400DeleteMyDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400DeleteMyDynamicEndpointRequestBuilder(dynamicendpointid, headers);
+  public ApiResponse<Void> deleteMyDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteMyDynamicEndpointRequestBuilder(dynamicendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -689,7 +689,7 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400DeleteMyDynamicEndpoint", localVarResponse);
+          throw getApiException("deleteMyDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -714,10 +714,10 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400DeleteMyDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteMyDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400DeleteMyDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling deleteMyDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -746,11 +746,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get a Bank Level Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400GetBankLevelDynamicEndpoint(bankid, dynamicendpointid, null);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner getBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return getBankLevelDynamicEndpoint(bankid, dynamicendpointid, null);
   }
 
   /**
@@ -759,11 +759,11 @@ public class DynamicEndpointManageApi {
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> localVarResponse = oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, headers);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner getBankLevelDynamicEndpoint(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> localVarResponse = getBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, headers);
     return localVarResponse.getData();
   }
 
@@ -772,11 +772,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get a Bank Level Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400GetBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, null);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return getBankLevelDynamicEndpointWithHttpInfo(bankid, dynamicendpointid, null);
   }
 
   /**
@@ -785,11 +785,11 @@ public class DynamicEndpointManageApi {
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetBankLevelDynamicEndpointRequestBuilder(bankid, dynamicendpointid, headers);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getBankLevelDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelDynamicEndpointRequestBuilder(bankid, dynamicendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -800,11 +800,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetBankLevelDynamicEndpoint", localVarResponse);
+          throw getApiException("getBankLevelDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+          return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -814,10 +814,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>() {});
+        GetDynamicEndpoints200ResponseDynamicEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200ResponseDynamicEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -836,14 +836,14 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetBankLevelDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelDynamicEndpoint");
     }
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400GetBankLevelDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling getBankLevelDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -872,11 +872,11 @@ public class DynamicEndpointManageApi {
    * Get Bank Level Dynamic Endpoints
    * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetBankLevelDynamicEndpoints(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetBankLevelDynamicEndpoints(bankid, null);
+  public GetDynamicEndpoints200Response getBankLevelDynamicEndpoints(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicEndpoints(bankid, null);
   }
 
   /**
@@ -884,11 +884,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetBankLevelDynamicEndpoints(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200Response> localVarResponse = oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid, headers);
+  public GetDynamicEndpoints200Response getBankLevelDynamicEndpoints(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200Response> localVarResponse = getBankLevelDynamicEndpointsWithHttpInfo(bankid, headers);
     return localVarResponse.getData();
   }
 
@@ -896,11 +896,11 @@ public class DynamicEndpointManageApi {
    * Get Bank Level Dynamic Endpoints
    * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
-    return oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(bankid, null);
+  public ApiResponse<GetDynamicEndpoints200Response> getBankLevelDynamicEndpointsWithHttpInfo(@javax.annotation.Nonnull String bankid) throws ApiException {
+    return getBankLevelDynamicEndpointsWithHttpInfo(bankid, null);
   }
 
   /**
@@ -908,11 +908,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get Bank Level Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetBankLevelDynamicEndpointsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetBankLevelDynamicEndpointsRequestBuilder(bankid, headers);
+  public ApiResponse<GetDynamicEndpoints200Response> getBankLevelDynamicEndpointsWithHttpInfo(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getBankLevelDynamicEndpointsRequestBuilder(bankid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -923,11 +923,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetBankLevelDynamicEndpoints", localVarResponse);
+          throw getApiException("getBankLevelDynamicEndpoints", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+          return new ApiResponse<GetDynamicEndpoints200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -937,10 +937,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200Response>() {});
+        GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+        return new ApiResponse<GetDynamicEndpoints200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -959,10 +959,10 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetBankLevelDynamicEndpointsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getBankLevelDynamicEndpointsRequestBuilder(@javax.annotation.Nonnull String bankid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetBankLevelDynamicEndpoints");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getBankLevelDynamicEndpoints");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -990,11 +990,11 @@ public class DynamicEndpointManageApi {
    * Get Dynamic Endpoint
    * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400GetDynamicEndpoint(dynamicendpointid, null);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner getDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return getDynamicEndpoint(dynamicendpointid, null);
   }
 
   /**
@@ -1002,11 +1002,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems
+   * @return GetDynamicEndpoints200ResponseDynamicEndpointsInner
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems oBPv400GetDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> localVarResponse = oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
+  public GetDynamicEndpoints200ResponseDynamicEndpointsInner getDynamicEndpoint(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> localVarResponse = getDynamicEndpointWithHttpInfo(dynamicendpointid, headers);
     return localVarResponse.getData();
   }
 
@@ -1014,11 +1014,11 @@ public class DynamicEndpointManageApi {
    * Get Dynamic Endpoint
    * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
-    return oBPv400GetDynamicEndpointWithHttpInfo(dynamicendpointid, null);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid) throws ApiException {
+    return getDynamicEndpointWithHttpInfo(dynamicendpointid, null);
   }
 
   /**
@@ -1026,11 +1026,11 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Get a Dynamic Endpoint.&lt;/p&gt; &lt;p&gt;Get one DynamicEndpoint,&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200ResponseDynamicEndpointsInner&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems> oBPv400GetDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetDynamicEndpointRequestBuilder(dynamicendpointid, headers);
+  public ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner> getDynamicEndpointWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getDynamicEndpointRequestBuilder(dynamicendpointid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1041,11 +1041,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetDynamicEndpoint", localVarResponse);
+          throw getApiException("getDynamicEndpoint", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+          return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1055,10 +1055,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>() {});
+        GetDynamicEndpoints200ResponseDynamicEndpointsInner responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200ResponseDynamicEndpointsInner>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200ResponsePropertiesDynamicEndpointsItems>(
+        return new ApiResponse<GetDynamicEndpoints200ResponseDynamicEndpointsInner>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1077,10 +1077,10 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getDynamicEndpointRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400GetDynamicEndpoint");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling getDynamicEndpoint");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1107,44 +1107,44 @@ public class DynamicEndpointManageApi {
   /**
    *  Get Dynamic Endpoints
    * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetDynamicEndpoints() throws ApiException {
-    return oBPv400GetDynamicEndpoints(null);
+  public GetDynamicEndpoints200Response getDynamicEndpoints() throws ApiException {
+    return getDynamicEndpoints(null);
   }
 
   /**
    *  Get Dynamic Endpoints
    * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetDynamicEndpoints(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200Response> localVarResponse = oBPv400GetDynamicEndpointsWithHttpInfo(headers);
+  public GetDynamicEndpoints200Response getDynamicEndpoints(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200Response> localVarResponse = getDynamicEndpointsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    *  Get Dynamic Endpoints
    * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetDynamicEndpointsWithHttpInfo() throws ApiException {
-    return oBPv400GetDynamicEndpointsWithHttpInfo(null);
+  public ApiResponse<GetDynamicEndpoints200Response> getDynamicEndpointsWithHttpInfo() throws ApiException {
+    return getDynamicEndpointsWithHttpInfo(null);
   }
 
   /**
    *  Get Dynamic Endpoints
    * &lt;p&gt;Get Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetDynamicEndpointsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetDynamicEndpointsRequestBuilder(headers);
+  public ApiResponse<GetDynamicEndpoints200Response> getDynamicEndpointsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getDynamicEndpointsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1155,11 +1155,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetDynamicEndpoints", localVarResponse);
+          throw getApiException("getDynamicEndpoints", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+          return new ApiResponse<GetDynamicEndpoints200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1169,10 +1169,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200Response>() {});
+        GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+        return new ApiResponse<GetDynamicEndpoints200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1191,7 +1191,7 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetDynamicEndpointsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getDynamicEndpointsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1216,44 +1216,44 @@ public class DynamicEndpointManageApi {
   /**
    * Get My Dynamic Endpoints
    * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetMyDynamicEndpoints() throws ApiException {
-    return oBPv400GetMyDynamicEndpoints(null);
+  public GetDynamicEndpoints200Response getMyDynamicEndpoints() throws ApiException {
+    return getMyDynamicEndpoints(null);
   }
 
   /**
    * Get My Dynamic Endpoints
    * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return OBPv400GetDynamicEndpoints200Response
+   * @return GetDynamicEndpoints200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv400GetDynamicEndpoints200Response oBPv400GetMyDynamicEndpoints(Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetDynamicEndpoints200Response> localVarResponse = oBPv400GetMyDynamicEndpointsWithHttpInfo(headers);
+  public GetDynamicEndpoints200Response getMyDynamicEndpoints(Map<String, String> headers) throws ApiException {
+    ApiResponse<GetDynamicEndpoints200Response> localVarResponse = getMyDynamicEndpointsWithHttpInfo(headers);
     return localVarResponse.getData();
   }
 
   /**
    * Get My Dynamic Endpoints
    * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetMyDynamicEndpointsWithHttpInfo() throws ApiException {
-    return oBPv400GetMyDynamicEndpointsWithHttpInfo(null);
+  public ApiResponse<GetDynamicEndpoints200Response> getMyDynamicEndpointsWithHttpInfo() throws ApiException {
+    return getMyDynamicEndpointsWithHttpInfo(null);
   }
 
   /**
    * Get My Dynamic Endpoints
    * &lt;p&gt;Get My Dynamic Endpoints.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetDynamicEndpoints200Response&gt;
+   * @return ApiResponse&lt;GetDynamicEndpoints200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400GetDynamicEndpoints200Response> oBPv400GetMyDynamicEndpointsWithHttpInfo(Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetMyDynamicEndpointsRequestBuilder(headers);
+  public ApiResponse<GetDynamicEndpoints200Response> getMyDynamicEndpointsWithHttpInfo(Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getMyDynamicEndpointsRequestBuilder(headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1264,11 +1264,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetMyDynamicEndpoints", localVarResponse);
+          throw getApiException("getMyDynamicEndpoints", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+          return new ApiResponse<GetDynamicEndpoints200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1278,10 +1278,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetDynamicEndpoints200Response>() {});
+        GetDynamicEndpoints200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetDynamicEndpoints200Response>() {});
         
 
-        return new ApiResponse<OBPv400GetDynamicEndpoints200Response>(
+        return new ApiResponse<GetDynamicEndpoints200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1300,7 +1300,7 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400GetMyDynamicEndpointsRequestBuilder(Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getMyDynamicEndpointsRequestBuilder(Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1327,12 +1327,12 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
-   * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @return UpdateBankLevelDynamicEndpointHostRequest
    * @throws ApiException if fails to make API call
    */
-  public OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHost(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, null);
+  public UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHost(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest) throws ApiException {
+    return updateBankLevelDynamicEndpointHost(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, null);
   }
 
   /**
@@ -1340,13 +1340,13 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+   * @return UpdateBankLevelDynamicEndpointHostRequest
    * @throws ApiException if fails to make API call
    */
-  public OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateBankLevelDynamicEndpointHost(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> localVarResponse = oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, headers);
+  public UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHost(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> localVarResponse = updateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1355,12 +1355,12 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400UpdateBankLevelDynamicEndpointHostRequest&gt;
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEndpointHostRequest&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest) throws ApiException {
-    return oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, null);
+  public ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateBankLevelDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest) throws ApiException {
+    return updateBankLevelDynamicEndpointHostWithHttpInfo(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, null);
   }
 
   /**
@@ -1368,13 +1368,13 @@ public class DynamicEndpointManageApi {
    * &lt;p&gt;Update Bank Level  dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400UpdateBankLevelDynamicEndpointHostRequest&gt;
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEndpointHostRequest&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateBankLevelDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateBankLevelDynamicEndpointHostRequestBuilder(bankid, dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, headers);
+  public ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateBankLevelDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateBankLevelDynamicEndpointHostRequestBuilder(bankid, dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1385,11 +1385,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateBankLevelDynamicEndpointHost", localVarResponse);
+          throw getApiException("updateBankLevelDynamicEndpointHost", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+          return new ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1399,10 +1399,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400UpdateBankLevelDynamicEndpointHostRequest>() {});
+        UpdateBankLevelDynamicEndpointHostRequest responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateBankLevelDynamicEndpointHostRequest>() {});
         
 
-        return new ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+        return new ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1421,18 +1421,18 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateBankLevelDynamicEndpointHostRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateBankLevelDynamicEndpointHostRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400UpdateBankLevelDynamicEndpointHost");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateBankLevelDynamicEndpointHost");
     }
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400UpdateBankLevelDynamicEndpointHost");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling updateBankLevelDynamicEndpointHost");
     }
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicEndpointHostRequest' is set
-    if (obPv400UpdateBankLevelDynamicEndpointHostRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicEndpointHostRequest' when calling oBPv400UpdateBankLevelDynamicEndpointHost");
+    // verify the required parameter 'updateBankLevelDynamicEndpointHostRequest' is set
+    if (updateBankLevelDynamicEndpointHostRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicEndpointHostRequest' when calling updateBankLevelDynamicEndpointHost");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1447,7 +1447,7 @@ public class DynamicEndpointManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicEndpointHostRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicEndpointHostRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1467,25 +1467,25 @@ public class DynamicEndpointManageApi {
    *  Update Dynamic Endpoint Host
    * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
-   * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @return UpdateBankLevelDynamicEndpointHostRequest
    * @throws ApiException if fails to make API call
    */
-  public OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateDynamicEndpointHost(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest) throws ApiException {
-    return oBPv400UpdateDynamicEndpointHost(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, null);
+  public UpdateBankLevelDynamicEndpointHostRequest updateDynamicEndpointHost(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest) throws ApiException {
+    return updateDynamicEndpointHost(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, null);
   }
 
   /**
    *  Update Dynamic Endpoint Host
    * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv400UpdateBankLevelDynamicEndpointHostRequest
+   * @return UpdateBankLevelDynamicEndpointHostRequest
    * @throws ApiException if fails to make API call
    */
-  public OBPv400UpdateBankLevelDynamicEndpointHostRequest oBPv400UpdateDynamicEndpointHost(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> localVarResponse = oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, headers);
+  public UpdateBankLevelDynamicEndpointHostRequest updateDynamicEndpointHost(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> localVarResponse = updateDynamicEndpointHostWithHttpInfo(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1493,25 +1493,25 @@ public class DynamicEndpointManageApi {
    *  Update Dynamic Endpoint Host
    * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
-   * @return ApiResponse&lt;OBPv400UpdateBankLevelDynamicEndpointHostRequest&gt;
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEndpointHostRequest&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest) throws ApiException {
-    return oBPv400UpdateDynamicEndpointHostWithHttpInfo(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, null);
+  public ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest) throws ApiException {
+    return updateDynamicEndpointHostWithHttpInfo(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, null);
   }
 
   /**
    *  Update Dynamic Endpoint Host
    * &lt;p&gt;Update dynamic endpoint Host.&lt;br /&gt; The value can be obp_mock, dynamic_entity, or some service url.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; 
    * @param dynamicendpointid The DYNAMICENDPOINTID identifier (required)
-   * @param obPv400UpdateBankLevelDynamicEndpointHostRequest Request body (required)
+   * @param updateBankLevelDynamicEndpointHostRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400UpdateBankLevelDynamicEndpointHostRequest&gt;
+   * @return ApiResponse&lt;UpdateBankLevelDynamicEndpointHostRequest&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest> oBPv400UpdateDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400UpdateDynamicEndpointHostRequestBuilder(dynamicendpointid, obPv400UpdateBankLevelDynamicEndpointHostRequest, headers);
+  public ApiResponse<UpdateBankLevelDynamicEndpointHostRequest> updateDynamicEndpointHostWithHttpInfo(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateDynamicEndpointHostRequestBuilder(dynamicendpointid, updateBankLevelDynamicEndpointHostRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1522,11 +1522,11 @@ public class DynamicEndpointManageApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400UpdateDynamicEndpointHost", localVarResponse);
+          throw getApiException("updateDynamicEndpointHost", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+          return new ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1536,10 +1536,10 @@ public class DynamicEndpointManageApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400UpdateBankLevelDynamicEndpointHostRequest responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400UpdateBankLevelDynamicEndpointHostRequest>() {});
+        UpdateBankLevelDynamicEndpointHostRequest responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateBankLevelDynamicEndpointHostRequest>() {});
         
 
-        return new ApiResponse<OBPv400UpdateBankLevelDynamicEndpointHostRequest>(
+        return new ApiResponse<UpdateBankLevelDynamicEndpointHostRequest>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1558,14 +1558,14 @@ public class DynamicEndpointManageApi {
     }
   }
 
-  private HttpRequest.Builder oBPv400UpdateDynamicEndpointHostRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull OBPv400UpdateBankLevelDynamicEndpointHostRequest obPv400UpdateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateDynamicEndpointHostRequestBuilder(@javax.annotation.Nonnull String dynamicendpointid, @javax.annotation.Nonnull UpdateBankLevelDynamicEndpointHostRequest updateBankLevelDynamicEndpointHostRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'dynamicendpointid' is set
     if (dynamicendpointid == null) {
-      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling oBPv400UpdateDynamicEndpointHost");
+      throw new ApiException(400, "Missing the required parameter 'dynamicendpointid' when calling updateDynamicEndpointHost");
     }
-    // verify the required parameter 'obPv400UpdateBankLevelDynamicEndpointHostRequest' is set
-    if (obPv400UpdateBankLevelDynamicEndpointHostRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv400UpdateBankLevelDynamicEndpointHostRequest' when calling oBPv400UpdateDynamicEndpointHost");
+    // verify the required parameter 'updateBankLevelDynamicEndpointHostRequest' is set
+    if (updateBankLevelDynamicEndpointHostRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateBankLevelDynamicEndpointHostRequest' when calling updateDynamicEndpointHost");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1579,7 +1579,7 @@ public class DynamicEndpointManageApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv400UpdateBankLevelDynamicEndpointHostRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateBankLevelDynamicEndpointHostRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

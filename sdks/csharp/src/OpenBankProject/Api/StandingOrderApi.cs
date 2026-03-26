@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -48,10 +48,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateStandingOrderApiResponse> OBPv400CreateStandingOrderAsync(string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderApiResponse"/>&gt;</returns>
+        Task<ICreateStandingOrderApiResponse> CreateStandingOrderAsync(string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Standing Order
@@ -62,10 +62,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateStandingOrderApiResponse?> OBPv400CreateStandingOrderOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderApiResponse"/>?&gt;</returns>
+        Task<ICreateStandingOrderApiResponse?> CreateStandingOrderOrDefaultAsync(string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Standing Order (management)
@@ -76,10 +76,10 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderManagementApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateStandingOrderManagementApiResponse> OBPv400CreateStandingOrderManagementAsync(string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderManagementApiResponse"/>&gt;</returns>
+        Task<ICreateStandingOrderManagementApiResponse> CreateStandingOrderManagementAsync(string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Standing Order (management)
@@ -89,10 +89,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderManagementApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateStandingOrderManagementApiResponse?> OBPv400CreateStandingOrderManagementOrDefaultAsync(string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderManagementApiResponse"/>?&gt;</returns>
+        Task<ICreateStandingOrderManagementApiResponse?> CreateStandingOrderManagementOrDefaultAsync(string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -103,41 +103,41 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateStandingOrder;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateStandingOrder;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateStandingOrder;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateStandingOrder;
 
-        internal void ExecuteOnOBPv400CreateStandingOrder(AccountApi.OBPv400CreateStandingOrderApiResponse apiResponse)
+        internal void ExecuteOnCreateStandingOrder(AccountApi.CreateStandingOrderApiResponse apiResponse)
         {
-            OnOBPv400CreateStandingOrder?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateStandingOrder?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateStandingOrder(Exception exception)
+        internal void ExecuteOnErrorCreateStandingOrder(Exception exception)
         {
-            OnErrorOBPv400CreateStandingOrder?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateStandingOrder?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateStandingOrderManagement;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateStandingOrderManagement;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateStandingOrderManagement;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateStandingOrderManagement;
 
-        internal void ExecuteOnOBPv400CreateStandingOrderManagement(AccountApi.OBPv400CreateStandingOrderManagementApiResponse apiResponse)
+        internal void ExecuteOnCreateStandingOrderManagement(AccountApi.CreateStandingOrderManagementApiResponse apiResponse)
         {
-            OnOBPv400CreateStandingOrderManagement?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateStandingOrderManagement?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateStandingOrderManagement(Exception exception)
+        internal void ExecuteOnErrorCreateStandingOrderManagement(Exception exception)
         {
-            OnErrorOBPv400CreateStandingOrderManagement?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateStandingOrderManagement?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -195,7 +195,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv400CreateStandingOrder(ref string bankid, ref string accountid, ref string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        partial void FormatCreateStandingOrder(ref string bankid, ref string accountid, ref string viewid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -203,9 +203,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
+        /// <param name="createStandingOrderRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateStandingOrder(string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        private void ValidateCreateStandingOrder(string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -216,8 +216,8 @@ namespace OpenBankProject.Api
             if (viewid == null)
                 throw new ArgumentNullException(nameof(viewid));
 
-            if (oBPv400CreateStandingOrderRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateStandingOrderRequest));
+            if (createStandingOrderRequest == null)
+                throw new ArgumentNullException(nameof(createStandingOrderRequest));
         }
 
         /// <summary>
@@ -227,11 +227,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        private void AfterOBPv400CreateStandingOrderDefaultImplementation(IOBPv400CreateStandingOrderApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        /// <param name="createStandingOrderRequest"></param>
+        private void AfterCreateStandingOrderDefaultImplementation(ICreateStandingOrderApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateStandingOrder(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
+            AfterCreateStandingOrder(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, viewid, createStandingOrderRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -244,8 +244,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        partial void AfterOBPv400CreateStandingOrder(ref bool suppressDefaultLog, IOBPv400CreateStandingOrderApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        /// <param name="createStandingOrderRequest"></param>
+        partial void AfterCreateStandingOrder(ref bool suppressDefaultLog, ICreateStandingOrderApiResponse apiResponseLocalVar, string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -256,11 +256,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        private void OnErrorOBPv400CreateStandingOrderDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        /// <param name="createStandingOrderRequest"></param>
+        private void OnErrorCreateStandingOrderDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateStandingOrder(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
+            OnErrorCreateStandingOrder(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, viewid, createStandingOrderRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -275,8 +275,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="viewid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        partial void OnErrorOBPv400CreateStandingOrder(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        /// <param name="createStandingOrderRequest"></param>
+        partial void OnErrorCreateStandingOrder(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Create Standing Order &lt;p&gt;Create standing order for an account.&lt;/p&gt; &lt;p&gt;when -&amp;gt; frequency &#x3D; {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}&lt;br /&gt; when -&amp;gt; detail &#x3D; { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#standing_order_id\&quot;&gt;&lt;strong&gt;standing_order_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
@@ -284,14 +284,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateStandingOrderApiResponse?> OBPv400CreateStandingOrderOrDefaultAsync(string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderApiResponse"/>&gt;</returns>
+        public async Task<ICreateStandingOrderApiResponse?> CreateStandingOrderOrDefaultAsync(string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateStandingOrderAsync(bankid, accountid, viewid, oBPv400CreateStandingOrderRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateStandingOrderAsync(bankid, accountid, viewid, createStandingOrderRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -306,18 +306,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="viewid">The VIEWID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateStandingOrderApiResponse> OBPv400CreateStandingOrderAsync(string bankid, string accountid, string viewid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderApiResponse"/>&gt;</returns>
+        public async Task<ICreateStandingOrderApiResponse> CreateStandingOrderAsync(string bankid, string accountid, string viewid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateStandingOrder(bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
+                ValidateCreateStandingOrder(bankid, accountid, viewid, createStandingOrderRequest);
 
-                FormatOBPv400CreateStandingOrder(ref bankid, ref accountid, ref viewid, oBPv400CreateStandingOrderRequest);
+                FormatCreateStandingOrder(ref bankid, ref accountid, ref viewid, createStandingOrderRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -331,16 +331,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bviewid%7D", Uri.EscapeDataString(viewid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateStandingOrderRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createStandingOrderRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateStandingOrderRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createStandingOrderRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -376,8 +376,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400CreateStandingOrderApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400CreateStandingOrderApiResponse>();
-                        AccountApi.OBPv400CreateStandingOrderApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateStandingOrderApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateStandingOrderApiResponse>();
+                        AccountApi.CreateStandingOrderApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -388,9 +388,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateStandingOrderDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
+                        AfterCreateStandingOrderDefaultImplementation(apiResponseLocalVar, bankid, accountid, viewid, createStandingOrderRequest);
 
-                        Events.ExecuteOnOBPv400CreateStandingOrder(apiResponseLocalVar);
+                        Events.ExecuteOnCreateStandingOrder(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -402,22 +402,22 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateStandingOrderDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order", uriBuilderLocalVar.Path, bankid, accountid, viewid, oBPv400CreateStandingOrderRequest);
-                Events.ExecuteOnErrorOBPv400CreateStandingOrder(e);
+                OnErrorCreateStandingOrderDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order", uriBuilderLocalVar.Path, bankid, accountid, viewid, createStandingOrderRequest);
+                Events.ExecuteOnErrorCreateStandingOrder(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400CreateStandingOrderManagement(ref string bankid, ref string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        partial void FormatCreateStandingOrderManagement(ref string bankid, ref string accountid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
+        /// <param name="createStandingOrderRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv400CreateStandingOrderManagement(string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        private void ValidateCreateStandingOrderManagement(string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -425,8 +425,8 @@ namespace OpenBankProject.Api
             if (accountid == null)
                 throw new ArgumentNullException(nameof(accountid));
 
-            if (oBPv400CreateStandingOrderRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateStandingOrderRequest));
+            if (createStandingOrderRequest == null)
+                throw new ArgumentNullException(nameof(createStandingOrderRequest));
         }
 
         /// <summary>
@@ -435,11 +435,11 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        private void AfterOBPv400CreateStandingOrderManagementDefaultImplementation(IOBPv400CreateStandingOrderManagementApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        /// <param name="createStandingOrderRequest"></param>
+        private void AfterCreateStandingOrderManagementDefaultImplementation(ICreateStandingOrderManagementApiResponse apiResponseLocalVar, string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400CreateStandingOrderManagement(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, oBPv400CreateStandingOrderRequest);
+            AfterCreateStandingOrderManagement(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, createStandingOrderRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -451,8 +451,8 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        partial void AfterOBPv400CreateStandingOrderManagement(ref bool suppressDefaultLog, IOBPv400CreateStandingOrderManagementApiResponse apiResponseLocalVar, string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        /// <param name="createStandingOrderRequest"></param>
+        partial void AfterCreateStandingOrderManagement(ref bool suppressDefaultLog, ICreateStandingOrderManagementApiResponse apiResponseLocalVar, string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -462,11 +462,11 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        private void OnErrorOBPv400CreateStandingOrderManagementDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest)
+        /// <param name="createStandingOrderRequest"></param>
+        private void OnErrorCreateStandingOrderManagementDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateStandingOrderManagement(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, oBPv400CreateStandingOrderRequest);
+            OnErrorCreateStandingOrderManagement(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, createStandingOrderRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -480,22 +480,22 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
-        /// <param name="oBPv400CreateStandingOrderRequest"></param>
-        partial void OnErrorOBPv400CreateStandingOrderManagement(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest);
+        /// <param name="createStandingOrderRequest"></param>
+        partial void OnErrorCreateStandingOrderManagement(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest);
 
         /// <summary>
         /// Create Standing Order (management) &lt;p&gt;Create standing order for an account.&lt;/p&gt; &lt;p&gt;when -&amp;gt; frequency &#x3D; {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}&lt;br /&gt; when -&amp;gt; detail &#x3D; { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#standing_order_id\&quot;&gt;&lt;strong&gt;standing_order_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderManagementApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateStandingOrderManagementApiResponse?> OBPv400CreateStandingOrderManagementOrDefaultAsync(string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderManagementApiResponse"/>&gt;</returns>
+        public async Task<ICreateStandingOrderManagementApiResponse?> CreateStandingOrderManagementOrDefaultAsync(string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateStandingOrderManagementAsync(bankid, accountid, oBPv400CreateStandingOrderRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateStandingOrderManagementAsync(bankid, accountid, createStandingOrderRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -509,18 +509,18 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="oBPv400CreateStandingOrderRequest">Request body</param>
+        /// <param name="createStandingOrderRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateStandingOrderManagementApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateStandingOrderManagementApiResponse> OBPv400CreateStandingOrderManagementAsync(string bankid, string accountid, OBPv400CreateStandingOrderRequest oBPv400CreateStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateStandingOrderManagementApiResponse"/>&gt;</returns>
+        public async Task<ICreateStandingOrderManagementApiResponse> CreateStandingOrderManagementAsync(string bankid, string accountid, CreateStandingOrderRequest createStandingOrderRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateStandingOrderManagement(bankid, accountid, oBPv400CreateStandingOrderRequest);
+                ValidateCreateStandingOrderManagement(bankid, accountid, createStandingOrderRequest);
 
-                FormatOBPv400CreateStandingOrderManagement(ref bankid, ref accountid, oBPv400CreateStandingOrderRequest);
+                FormatCreateStandingOrderManagement(ref bankid, ref accountid, createStandingOrderRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -533,16 +533,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateStandingOrderRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createStandingOrderRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateStandingOrderRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createStandingOrderRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -578,8 +578,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400CreateStandingOrderManagementApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400CreateStandingOrderManagementApiResponse>();
-                        AccountApi.OBPv400CreateStandingOrderManagementApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateStandingOrderManagementApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateStandingOrderManagementApiResponse>();
+                        AccountApi.CreateStandingOrderManagementApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -590,9 +590,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateStandingOrderManagementDefaultImplementation(apiResponseLocalVar, bankid, accountid, oBPv400CreateStandingOrderRequest);
+                        AfterCreateStandingOrderManagementDefaultImplementation(apiResponseLocalVar, bankid, accountid, createStandingOrderRequest);
 
-                        Events.ExecuteOnOBPv400CreateStandingOrderManagement(apiResponseLocalVar);
+                        Events.ExecuteOnCreateStandingOrderManagement(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -604,8 +604,8 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateStandingOrderManagementDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order", uriBuilderLocalVar.Path, bankid, accountid, oBPv400CreateStandingOrderRequest);
-                Events.ExecuteOnErrorOBPv400CreateStandingOrderManagement(e);
+                OnErrorCreateStandingOrderManagementDefaultImplementation(e, "/obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order", uriBuilderLocalVar.Path, bankid, accountid, createStandingOrderRequest);
+                Events.ExecuteOnErrorCreateStandingOrderManagement(e);
                 throw;
             }
         }

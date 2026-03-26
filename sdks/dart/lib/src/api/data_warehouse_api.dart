@@ -8,9 +8,9 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_value/json_object.dart';
 import 'package:obp_dart/src/api_util.dart';
-import 'package:obp_dart/src/model/obpv300_data_warehouse_search_request.dart';
-import 'package:obp_dart/src/model/obpv400_get_dynamic_message_doc200_response_properties_example_inbound_message.dart';
+import 'package:obp_dart/src/model/data_warehouse_search_request.dart';
 
 class DataWarehouseApi {
 
@@ -25,7 +25,7 @@ class DataWarehouseApi {
   ///
   /// Parameters:
   /// * [index] - The INDEX identifier
-  /// * [oBPv300DataWarehouseSearchRequest] - Request body
+  /// * [dataWarehouseSearchRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,11 +33,11 @@ class DataWarehouseApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage] as data
+  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>> oBPv300DataWarehouseSearch({ 
+  Future<Response<JsonObject>> dataWarehouseSearch({ 
     required String index,
-    required OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest,
+    required DataWarehouseSearchRequest dataWarehouseSearchRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class DataWarehouseApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -77,8 +77,8 @@ class DataWarehouseApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv300DataWarehouseSearchRequest);
-      _bodyData = _serializers.serialize(oBPv300DataWarehouseSearchRequest, specifiedType: _type);
+      const _type = FullType(DataWarehouseSearchRequest);
+      _bodyData = _serializers.serialize(dataWarehouseSearchRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -101,14 +101,14 @@ class DataWarehouseApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? _responseData;
+    JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage),
-      ) as OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage;
+        specifiedType: const FullType(JsonObject),
+      ) as JsonObject;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -120,7 +120,7 @@ class DataWarehouseApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+    return Response<JsonObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -138,7 +138,7 @@ class DataWarehouseApi {
   /// Parameters:
   /// * [index] - The INDEX identifier
   /// * [field] - The FIELD identifier
-  /// * [oBPv300DataWarehouseSearchRequest] - Request body
+  /// * [dataWarehouseSearchRequest] - Request body
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -146,12 +146,12 @@ class DataWarehouseApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage] as data
+  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>> oBPv300DataWarehouseStatistics({ 
+  Future<Response<JsonObject>> dataWarehouseStatistics({ 
     required String index,
     required String field,
-    required OBPv300DataWarehouseSearchRequest oBPv300DataWarehouseSearchRequest,
+    required DataWarehouseSearchRequest dataWarehouseSearchRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -178,7 +178,7 @@ class DataWarehouseApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -191,8 +191,8 @@ class DataWarehouseApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(OBPv300DataWarehouseSearchRequest);
-      _bodyData = _serializers.serialize(oBPv300DataWarehouseSearchRequest, specifiedType: _type);
+      const _type = FullType(DataWarehouseSearchRequest);
+      _bodyData = _serializers.serialize(dataWarehouseSearchRequest, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -215,14 +215,14 @@ class DataWarehouseApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage? _responseData;
+    JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage),
-      ) as OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage;
+        specifiedType: const FullType(JsonObject),
+      ) as JsonObject;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -234,7 +234,7 @@ class DataWarehouseApi {
       );
     }
 
-    return Response<OBPv400GetDynamicMessageDoc200ResponsePropertiesExampleInboundMessage>(
+    return Response<JsonObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

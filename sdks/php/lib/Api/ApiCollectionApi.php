@@ -12,7 +12,7 @@
 /**
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -75,73 +75,73 @@ class ApiCollectionApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'oBPv400CreateMyApiCollection' => [
+        'createFeaturedApiCollection' => [
             'application/json',
         ],
-        'oBPv400CreateMyApiCollectionEndpoint' => [
+        'createMyApiCollection' => [
             'application/json',
         ],
-        'oBPv400CreateMyApiCollectionEndpointById' => [
+        'createMyApiCollectionEndpoint' => [
             'application/json',
         ],
-        'oBPv400DeleteMyApiCollection' => [
+        'createMyApiCollectionEndpointById' => [
             'application/json',
         ],
-        'oBPv400DeleteMyApiCollectionEndpoint' => [
+        'deleteFeaturedApiCollection' => [
             'application/json',
         ],
-        'oBPv400DeleteMyApiCollectionEndpointById' => [
+        'deleteMyApiCollection' => [
             'application/json',
         ],
-        'oBPv400DeleteMyApiCollectionEndpointByOperationId' => [
+        'deleteMyApiCollectionEndpoint' => [
             'application/json',
         ],
-        'oBPv400GetApiCollectionEndpoints' => [
+        'deleteMyApiCollectionEndpointById' => [
             'application/json',
         ],
-        'oBPv400GetApiCollectionsForUser' => [
+        'deleteMyApiCollectionEndpointByOperationId' => [
             'application/json',
         ],
-        'oBPv400GetFeaturedApiCollections' => [
+        'getAllApiCollections' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollectionById' => [
+        'getApiCollectionEndpoints' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollectionByName' => [
+        'getApiCollectionsForUser' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollectionEndpoint' => [
+        'getFeaturedApiCollections' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollectionEndpoints' => [
+        'getFeaturedApiCollectionsAdmin' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollectionEndpointsById' => [
+        'getMyApiCollectionById' => [
             'application/json',
         ],
-        'oBPv400GetMyApiCollections' => [
+        'getMyApiCollectionByName' => [
             'application/json',
         ],
-        'oBPv400GetSharableApiCollectionById' => [
+        'getMyApiCollectionEndpoint' => [
             'application/json',
         ],
-        'oBPv510GetAllApiCollections' => [
+        'getMyApiCollectionEndpoints' => [
             'application/json',
         ],
-        'oBPv510UpdateMyApiCollection' => [
+        'getMyApiCollectionEndpointsById' => [
             'application/json',
         ],
-        'oBPv600CreateFeaturedApiCollection' => [
+        'getMyApiCollections' => [
             'application/json',
         ],
-        'oBPv600DeleteFeaturedApiCollection' => [
+        'getSharableApiCollectionById' => [
             'application/json',
         ],
-        'oBPv600GetFeaturedApiCollectionsAdmin' => [
+        'updateFeaturedApiCollection' => [
             'application/json',
         ],
-        'oBPv600UpdateFeaturedApiCollection' => [
+        'updateMyApiCollection' => [
             'application/json',
         ],
     ];
@@ -193,38 +193,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollection
+     * Operation createFeaturedApiCollection
      *
-     * Create My Api Collection
+     * Create Featured Api Collection
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFeaturedApiCollectionRequest $create_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+     * @return \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
      */
-    public function oBPv400CreateMyApiCollection($obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollection'][0])
+    public function createFeaturedApiCollection($create_featured_api_collection_request, string $contentType = self::contentTypes['createFeaturedApiCollection'][0])
     {
-        list($response) = $this->oBPv400CreateMyApiCollectionWithHttpInfo($obpv400_create_my_api_collection_request, $contentType);
+        list($response) = $this->createFeaturedApiCollectionWithHttpInfo($create_featured_api_collection_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionWithHttpInfo
+     * Operation createFeaturedApiCollectionWithHttpInfo
      *
-     * Create My Api Collection
+     * Create Featured Api Collection
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFeaturedApiCollectionRequest $create_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateMyApiCollectionWithHttpInfo($obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollection'][0])
+    public function createFeaturedApiCollectionWithHttpInfo($create_featured_api_collection_request, string $contentType = self::contentTypes['createFeaturedApiCollection'][0])
     {
-        $request = $this->oBPv400CreateMyApiCollectionRequest($obpv400_create_my_api_collection_request, $contentType);
+        $request = $this->createFeaturedApiCollectionRequest($create_featured_api_collection_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -252,7 +252,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -274,7 +274,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -283,7 +283,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -296,19 +296,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionAsync
+     * Operation createFeaturedApiCollectionAsync
      *
-     * Create My Api Collection
+     * Create Featured Api Collection
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFeaturedApiCollectionRequest $create_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionAsync($obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollection'][0])
+    public function createFeaturedApiCollectionAsync($create_featured_api_collection_request, string $contentType = self::contentTypes['createFeaturedApiCollection'][0])
     {
-        return $this->oBPv400CreateMyApiCollectionAsyncWithHttpInfo($obpv400_create_my_api_collection_request, $contentType)
+        return $this->createFeaturedApiCollectionAsyncWithHttpInfo($create_featured_api_collection_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -317,20 +317,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionAsyncWithHttpInfo
+     * Operation createFeaturedApiCollectionAsyncWithHttpInfo
      *
-     * Create My Api Collection
+     * Create Featured Api Collection
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFeaturedApiCollectionRequest $create_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionAsyncWithHttpInfo($obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollection'][0])
+    public function createFeaturedApiCollectionAsyncWithHttpInfo($create_featured_api_collection_request, string $contentType = self::contentTypes['createFeaturedApiCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems';
-        $request = $this->oBPv400CreateMyApiCollectionRequest($obpv400_create_my_api_collection_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner';
+        $request = $this->createFeaturedApiCollectionRequest($create_featured_api_collection_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -369,26 +369,26 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateMyApiCollection'
+     * Create request for operation 'createFeaturedApiCollection'
      *
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateFeaturedApiCollectionRequest $create_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateMyApiCollectionRequest($obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollection'][0])
+    public function createFeaturedApiCollectionRequest($create_featured_api_collection_request, string $contentType = self::contentTypes['createFeaturedApiCollection'][0])
     {
 
-        // verify the required parameter 'obpv400_create_my_api_collection_request' is set
-        if ($obpv400_create_my_api_collection_request === null || (is_array($obpv400_create_my_api_collection_request) && count($obpv400_create_my_api_collection_request) === 0)) {
+        // verify the required parameter 'create_featured_api_collection_request' is set
+        if ($create_featured_api_collection_request === null || (is_array($create_featured_api_collection_request) && count($create_featured_api_collection_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_my_api_collection_request when calling oBPv400CreateMyApiCollection'
+                'Missing the required parameter $create_featured_api_collection_request when calling createFeaturedApiCollection'
             );
         }
 
 
-        $resourcePath = '/obp/v4.0.0/my/api-collections';
+        $resourcePath = '/obp/v6.0.0/management/api-collections/featured';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -406,12 +406,12 @@ class ApiCollectionApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_my_api_collection_request)) {
+        if (isset($create_featured_api_collection_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_my_api_collection_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_featured_api_collection_request));
             } else {
-                $httpBody = $obpv400_create_my_api_collection_request;
+                $httpBody = $create_featured_api_collection_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -447,9 +447,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -474,40 +474,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpoint
+     * Operation createMyApiCollection
      *
-     * Create My Api Collection Endpoint
+     * Create My Api Collection
      *
-     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner
      */
-    public function oBPv400CreateMyApiCollectionEndpoint($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'][0])
+    public function createMyApiCollection($create_my_api_collection_request, string $contentType = self::contentTypes['createMyApiCollection'][0])
     {
-        list($response) = $this->oBPv400CreateMyApiCollectionEndpointWithHttpInfo($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        list($response) = $this->createMyApiCollectionWithHttpInfo($create_my_api_collection_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointWithHttpInfo
+     * Operation createMyApiCollectionWithHttpInfo
      *
-     * Create My Api Collection Endpoint
+     * Create My Api Collection
      *
-     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateMyApiCollectionEndpointWithHttpInfo($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'][0])
+    public function createMyApiCollectionWithHttpInfo($create_my_api_collection_request, string $contentType = self::contentTypes['createMyApiCollection'][0])
     {
-        $request = $this->oBPv400CreateMyApiCollectionEndpointRequest($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        $request = $this->createMyApiCollectionRequest($create_my_api_collection_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -535,7 +533,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -557,7 +555,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -566,7 +564,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -579,20 +577,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointAsync
+     * Operation createMyApiCollectionAsync
      *
-     * Create My Api Collection Endpoint
+     * Create My Api Collection
      *
-     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionEndpointAsync($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'][0])
+    public function createMyApiCollectionAsync($create_my_api_collection_request, string $contentType = self::contentTypes['createMyApiCollection'][0])
     {
-        return $this->oBPv400CreateMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, $contentType)
+        return $this->createMyApiCollectionAsyncWithHttpInfo($create_my_api_collection_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -601,21 +598,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointAsyncWithHttpInfo
+     * Operation createMyApiCollectionAsyncWithHttpInfo
      *
-     * Create My Api Collection Endpoint
+     * Create My Api Collection
      *
-     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'][0])
+    public function createMyApiCollectionAsyncWithHttpInfo($create_my_api_collection_request, string $contentType = self::contentTypes['createMyApiCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems';
-        $request = $this->oBPv400CreateMyApiCollectionEndpointRequest($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner';
+        $request = $this->createMyApiCollectionRequest($create_my_api_collection_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -654,29 +650,314 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateMyApiCollectionEndpoint'
+     * Create request for operation 'createMyApiCollection'
      *
-     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateMyApiCollectionEndpointRequest($apicollectionname, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpoint'][0])
+    public function createMyApiCollectionRequest($create_my_api_collection_request, string $contentType = self::contentTypes['createMyApiCollection'][0])
+    {
+
+        // verify the required parameter 'create_my_api_collection_request' is set
+        if ($create_my_api_collection_request === null || (is_array($create_my_api_collection_request) && count($create_my_api_collection_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_my_api_collection_request when calling createMyApiCollection'
+            );
+        }
+
+
+        $resourcePath = '/obp/v4.0.0/my/api-collections';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_my_api_collection_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_my_api_collection_request));
+            } else {
+                $httpBody = $create_my_api_collection_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createMyApiCollectionEndpoint
+     *
+     * Create My Api Collection Endpoint
+     *
+     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
+     */
+    public function createMyApiCollectionEndpoint($apicollectionname, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpoint'][0])
+    {
+        list($response) = $this->createMyApiCollectionEndpointWithHttpInfo($apicollectionname, $create_my_api_collection_endpoint_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createMyApiCollectionEndpointWithHttpInfo
+     *
+     * Create My Api Collection Endpoint
+     *
+     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpoint'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createMyApiCollectionEndpointWithHttpInfo($apicollectionname, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpoint'][0])
+    {
+        $request = $this->createMyApiCollectionEndpointRequest($apicollectionname, $create_my_api_collection_endpoint_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createMyApiCollectionEndpointAsync
+     *
+     * Create My Api Collection Endpoint
+     *
+     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createMyApiCollectionEndpointAsync($apicollectionname, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpoint'][0])
+    {
+        return $this->createMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $create_my_api_collection_endpoint_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createMyApiCollectionEndpointAsyncWithHttpInfo
+     *
+     * Create My Api Collection Endpoint
+     *
+     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpoint'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner';
+        $request = $this->createMyApiCollectionEndpointRequest($apicollectionname, $create_my_api_collection_endpoint_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createMyApiCollectionEndpoint'
+     *
+     * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpoint'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createMyApiCollectionEndpointRequest($apicollectionname, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpoint'][0])
     {
 
         // verify the required parameter 'apicollectionname' is set
         if ($apicollectionname === null || (is_array($apicollectionname) && count($apicollectionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionname when calling oBPv400CreateMyApiCollectionEndpoint'
+                'Missing the required parameter $apicollectionname when calling createMyApiCollectionEndpoint'
             );
         }
 
-        // verify the required parameter 'obpv400_create_my_api_collection_endpoint_request' is set
-        if ($obpv400_create_my_api_collection_endpoint_request === null || (is_array($obpv400_create_my_api_collection_endpoint_request) && count($obpv400_create_my_api_collection_endpoint_request) === 0)) {
+        // verify the required parameter 'create_my_api_collection_endpoint_request' is set
+        if ($create_my_api_collection_endpoint_request === null || (is_array($create_my_api_collection_endpoint_request) && count($create_my_api_collection_endpoint_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_my_api_collection_endpoint_request when calling oBPv400CreateMyApiCollectionEndpoint'
+                'Missing the required parameter $create_my_api_collection_endpoint_request when calling createMyApiCollectionEndpoint'
             );
         }
 
@@ -707,12 +988,12 @@ class ApiCollectionApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_my_api_collection_endpoint_request)) {
+        if (isset($create_my_api_collection_endpoint_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_my_api_collection_endpoint_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_my_api_collection_endpoint_request));
             } else {
-                $httpBody = $obpv400_create_my_api_collection_endpoint_request;
+                $httpBody = $create_my_api_collection_endpoint_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -748,9 +1029,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -775,40 +1056,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointById
+     * Operation createMyApiCollectionEndpointById
      *
      * Create My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
      */
-    public function oBPv400CreateMyApiCollectionEndpointById($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'][0])
+    public function createMyApiCollectionEndpointById($apicollectionid, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpointById'][0])
     {
-        list($response) = $this->oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        list($response) = $this->createMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $create_my_api_collection_endpoint_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo
+     * Operation createMyApiCollectionEndpointByIdWithHttpInfo
      *
      * Create My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400CreateMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'][0])
+    public function createMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpointById'][0])
     {
-        $request = $this->oBPv400CreateMyApiCollectionEndpointByIdRequest($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        $request = $this->createMyApiCollectionEndpointByIdRequest($apicollectionid, $create_my_api_collection_endpoint_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -836,7 +1117,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                         $request,
                         $response,
                     );
@@ -858,7 +1139,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                 $request,
                 $response,
             );
@@ -867,7 +1148,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -880,20 +1161,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointByIdAsync
+     * Operation createMyApiCollectionEndpointByIdAsync
      *
      * Create My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionEndpointByIdAsync($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'][0])
+    public function createMyApiCollectionEndpointByIdAsync($apicollectionid, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpointById'][0])
     {
-        return $this->oBPv400CreateMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, $contentType)
+        return $this->createMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $create_my_api_collection_endpoint_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -902,21 +1183,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400CreateMyApiCollectionEndpointByIdAsyncWithHttpInfo
+     * Operation createMyApiCollectionEndpointByIdAsyncWithHttpInfo
      *
      * Create My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400CreateMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'][0])
+    public function createMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpointById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems';
-        $request = $this->oBPv400CreateMyApiCollectionEndpointByIdRequest($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner';
+        $request = $this->createMyApiCollectionEndpointByIdRequest($apicollectionid, $create_my_api_collection_endpoint_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -955,29 +1236,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400CreateMyApiCollectionEndpointById'
+     * Create request for operation 'createMyApiCollectionEndpointById'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionEndpointRequest $obpv400_create_my_api_collection_endpoint_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionEndpointRequest $create_my_api_collection_endpoint_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400CreateMyApiCollectionEndpointByIdRequest($apicollectionid, $obpv400_create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['oBPv400CreateMyApiCollectionEndpointById'][0])
+    public function createMyApiCollectionEndpointByIdRequest($apicollectionid, $create_my_api_collection_endpoint_request, string $contentType = self::contentTypes['createMyApiCollectionEndpointById'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400CreateMyApiCollectionEndpointById'
+                'Missing the required parameter $apicollectionid when calling createMyApiCollectionEndpointById'
             );
         }
 
-        // verify the required parameter 'obpv400_create_my_api_collection_endpoint_request' is set
-        if ($obpv400_create_my_api_collection_endpoint_request === null || (is_array($obpv400_create_my_api_collection_endpoint_request) && count($obpv400_create_my_api_collection_endpoint_request) === 0)) {
+        // verify the required parameter 'create_my_api_collection_endpoint_request' is set
+        if ($create_my_api_collection_endpoint_request === null || (is_array($create_my_api_collection_endpoint_request) && count($create_my_api_collection_endpoint_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_my_api_collection_endpoint_request when calling oBPv400CreateMyApiCollectionEndpointById'
+                'Missing the required parameter $create_my_api_collection_endpoint_request when calling createMyApiCollectionEndpointById'
             );
         }
 
@@ -1008,12 +1289,12 @@ class ApiCollectionApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_my_api_collection_endpoint_request)) {
+        if (isset($create_my_api_collection_endpoint_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_my_api_collection_endpoint_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_my_api_collection_endpoint_request));
             } else {
-                $httpBody = $obpv400_create_my_api_collection_endpoint_request;
+                $httpBody = $create_my_api_collection_endpoint_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1049,9 +1330,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1076,38 +1357,270 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollection
+     * Operation deleteFeaturedApiCollection
+     *
+     * Delete Featured Api Collection
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeaturedApiCollection'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteFeaturedApiCollection($apicollectionid, string $contentType = self::contentTypes['deleteFeaturedApiCollection'][0])
+    {
+        $this->deleteFeaturedApiCollectionWithHttpInfo($apicollectionid, $contentType);
+    }
+
+    /**
+     * Operation deleteFeaturedApiCollectionWithHttpInfo
+     *
+     * Delete Featured Api Collection
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeaturedApiCollection'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteFeaturedApiCollectionWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['deleteFeaturedApiCollection'][0])
+    {
+        $request = $this->deleteFeaturedApiCollectionRequest($apicollectionid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            return [null, $statusCode, $response->getHeaders()];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteFeaturedApiCollectionAsync
+     *
+     * Delete Featured Api Collection
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeaturedApiCollection'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteFeaturedApiCollectionAsync($apicollectionid, string $contentType = self::contentTypes['deleteFeaturedApiCollection'][0])
+    {
+        return $this->deleteFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteFeaturedApiCollectionAsyncWithHttpInfo
+     *
+     * Delete Featured Api Collection
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeaturedApiCollection'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['deleteFeaturedApiCollection'][0])
+    {
+        $returnType = '';
+        $request = $this->deleteFeaturedApiCollectionRequest($apicollectionid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteFeaturedApiCollection'
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteFeaturedApiCollection'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteFeaturedApiCollectionRequest($apicollectionid, string $contentType = self::contentTypes['deleteFeaturedApiCollection'][0])
+    {
+
+        // verify the required parameter 'apicollectionid' is set
+        if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apicollectionid when calling deleteFeaturedApiCollection'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/management/api-collections/featured/{apicollectionid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($apicollectionid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'apicollectionid' . '}',
+                ObjectSerializer::toPathValue($apicollectionid),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            [],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteMyApiCollection
      *
      * Delete My Api Collection
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response
+     * @return \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response
      */
-    public function oBPv400DeleteMyApiCollection($apicollectionid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollection'][0])
+    public function deleteMyApiCollection($apicollectionid, string $contentType = self::contentTypes['deleteMyApiCollection'][0])
     {
-        list($response) = $this->oBPv400DeleteMyApiCollectionWithHttpInfo($apicollectionid, $contentType);
+        list($response) = $this->deleteMyApiCollectionWithHttpInfo($apicollectionid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionWithHttpInfo
+     * Operation deleteMyApiCollectionWithHttpInfo
      *
      * Delete My Api Collection
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteMyApiCollectionWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollection'][0])
+    public function deleteMyApiCollectionWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['deleteMyApiCollection'][0])
     {
-        $request = $this->oBPv400DeleteMyApiCollectionRequest($apicollectionid, $contentType);
+        $request = $this->deleteMyApiCollectionRequest($apicollectionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1135,7 +1648,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $request,
                         $response,
                     );
@@ -1157,7 +1670,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                 $request,
                 $response,
             );
@@ -1166,7 +1679,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1179,19 +1692,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionAsync
+     * Operation deleteMyApiCollectionAsync
      *
      * Delete My Api Collection
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionAsync($apicollectionid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollection'][0])
+    public function deleteMyApiCollectionAsync($apicollectionid, string $contentType = self::contentTypes['deleteMyApiCollection'][0])
     {
-        return $this->oBPv400DeleteMyApiCollectionAsyncWithHttpInfo($apicollectionid, $contentType)
+        return $this->deleteMyApiCollectionAsyncWithHttpInfo($apicollectionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1200,20 +1713,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionAsyncWithHttpInfo
+     * Operation deleteMyApiCollectionAsyncWithHttpInfo
      *
      * Delete My Api Collection
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollection'][0])
+    public function deleteMyApiCollectionAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['deleteMyApiCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response';
-        $request = $this->oBPv400DeleteMyApiCollectionRequest($apicollectionid, $contentType);
+        $returnType = '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response';
+        $request = $this->deleteMyApiCollectionRequest($apicollectionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1252,21 +1765,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteMyApiCollection'
+     * Create request for operation 'deleteMyApiCollection'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollection'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteMyApiCollectionRequest($apicollectionid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollection'][0])
+    public function deleteMyApiCollectionRequest($apicollectionid, string $contentType = self::contentTypes['deleteMyApiCollection'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400DeleteMyApiCollection'
+                'Missing the required parameter $apicollectionid when calling deleteMyApiCollection'
             );
         }
 
@@ -1331,9 +1844,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1358,40 +1871,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpoint
+     * Operation deleteMyApiCollectionEndpoint
      *
      * Delete My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response
+     * @return \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response
      */
-    public function oBPv400DeleteMyApiCollectionEndpoint($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'][0])
+    public function deleteMyApiCollectionEndpoint($apicollectionname, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpoint'][0])
     {
-        list($response) = $this->oBPv400DeleteMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, $contentType);
+        list($response) = $this->deleteMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointWithHttpInfo
      *
      * Delete My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'][0])
+    public function deleteMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpoint'][0])
     {
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
+        $request = $this->deleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1419,7 +1932,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $request,
                         $response,
                     );
@@ -1441,7 +1954,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                 $request,
                 $response,
             );
@@ -1450,7 +1963,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1463,20 +1976,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointAsync
+     * Operation deleteMyApiCollectionEndpointAsync
      *
      * Delete My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointAsync($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'][0])
+    public function deleteMyApiCollectionEndpointAsync($apicollectionname, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpoint'][0])
     {
-        return $this->oBPv400DeleteMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, $contentType)
+        return $this->deleteMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1485,21 +1998,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointAsyncWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointAsyncWithHttpInfo
      *
      * Delete My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'][0])
+    public function deleteMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response';
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
+        $returnType = '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response';
+        $request = $this->deleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1538,29 +2051,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteMyApiCollectionEndpoint'
+     * Create request for operation 'deleteMyApiCollectionEndpoint'
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpoint'][0])
+    public function deleteMyApiCollectionEndpointRequest($apicollectionname, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpoint'][0])
     {
 
         // verify the required parameter 'apicollectionname' is set
         if ($apicollectionname === null || (is_array($apicollectionname) && count($apicollectionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionname when calling oBPv400DeleteMyApiCollectionEndpoint'
+                'Missing the required parameter $apicollectionname when calling deleteMyApiCollectionEndpoint'
             );
         }
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400DeleteMyApiCollectionEndpoint'
+                'Missing the required parameter $operationid when calling deleteMyApiCollectionEndpoint'
             );
         }
 
@@ -1633,9 +2146,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1660,40 +2173,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointById
+     * Operation deleteMyApiCollectionEndpointById
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response
+     * @return \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response
      */
-    public function oBPv400DeleteMyApiCollectionEndpointById($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'][0])
+    public function deleteMyApiCollectionEndpointById($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointById'][0])
     {
-        list($response) = $this->oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $apicollectionendpointid, $contentType);
+        list($response) = $this->deleteMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $apicollectionendpointid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointByIdWithHttpInfo
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'][0])
+    public function deleteMyApiCollectionEndpointByIdWithHttpInfo($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointById'][0])
     {
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, $contentType);
+        $request = $this->deleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1721,7 +2234,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $request,
                         $response,
                     );
@@ -1743,7 +2256,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                 $request,
                 $response,
             );
@@ -1752,7 +2265,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1765,20 +2278,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByIdAsync
+     * Operation deleteMyApiCollectionEndpointByIdAsync
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByIdAsync($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'][0])
+    public function deleteMyApiCollectionEndpointByIdAsync($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointById'][0])
     {
-        return $this->oBPv400DeleteMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $apicollectionendpointid, $contentType)
+        return $this->deleteMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $apicollectionendpointid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1787,21 +2300,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByIdAsyncWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointByIdAsyncWithHttpInfo
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'][0])
+    public function deleteMyApiCollectionEndpointByIdAsyncWithHttpInfo($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response';
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, $contentType);
+        $returnType = '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response';
+        $request = $this->deleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1840,29 +2353,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteMyApiCollectionEndpointById'
+     * Create request for operation 'deleteMyApiCollectionEndpointById'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $apicollectionendpointid The APICOLLECTIONENDPOINTID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointById'][0])
+    public function deleteMyApiCollectionEndpointByIdRequest($apicollectionid, $apicollectionendpointid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointById'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400DeleteMyApiCollectionEndpointById'
+                'Missing the required parameter $apicollectionid when calling deleteMyApiCollectionEndpointById'
             );
         }
 
         // verify the required parameter 'apicollectionendpointid' is set
         if ($apicollectionendpointid === null || (is_array($apicollectionendpointid) && count($apicollectionendpointid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionendpointid when calling oBPv400DeleteMyApiCollectionEndpointById'
+                'Missing the required parameter $apicollectionendpointid when calling deleteMyApiCollectionEndpointById'
             );
         }
 
@@ -1935,9 +2448,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1962,40 +2475,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByOperationId
+     * Operation deleteMyApiCollectionEndpointByOperationId
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response
+     * @return \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByOperationId($apicollectionid, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'][0])
+    public function deleteMyApiCollectionEndpointByOperationId($apicollectionid, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointByOperationId'][0])
     {
-        list($response) = $this->oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo($apicollectionid, $operationid, $contentType);
+        list($response) = $this->deleteMyApiCollectionEndpointByOperationIdWithHttpInfo($apicollectionid, $operationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointByOperationIdWithHttpInfo
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByOperationIdWithHttpInfo($apicollectionid, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'][0])
+    public function deleteMyApiCollectionEndpointByOperationIdWithHttpInfo($apicollectionid, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointByOperationId'][0])
     {
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, $contentType);
+        $request = $this->deleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2023,7 +2536,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $request,
                         $response,
                     );
@@ -2045,7 +2558,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                 $request,
                 $response,
             );
@@ -2054,7 +2567,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response',
+                        '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2067,20 +2580,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByOperationIdAsync
+     * Operation deleteMyApiCollectionEndpointByOperationIdAsync
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByOperationIdAsync($apicollectionid, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'][0])
+    public function deleteMyApiCollectionEndpointByOperationIdAsync($apicollectionid, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointByOperationId'][0])
     {
-        return $this->oBPv400DeleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo($apicollectionid, $operationid, $contentType)
+        return $this->deleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo($apicollectionid, $operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2089,21 +2602,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400DeleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo
+     * Operation deleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo
      *
      * Delete My Api Collection Endpoint By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo($apicollectionid, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'][0])
+    public function deleteMyApiCollectionEndpointByOperationIdAsyncWithHttpInfo($apicollectionid, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointByOperationId'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400DeleteSystemLevelEndpointTag200Response';
-        $request = $this->oBPv400DeleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, $contentType);
+        $returnType = '\OpenBankProject\Model\DeleteSystemLevelEndpointTag200Response';
+        $request = $this->deleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2142,29 +2655,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400DeleteMyApiCollectionEndpointByOperationId'
+     * Create request for operation 'deleteMyApiCollectionEndpointByOperationId'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMyApiCollectionEndpointByOperationId'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400DeleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, string $contentType = self::contentTypes['oBPv400DeleteMyApiCollectionEndpointByOperationId'][0])
+    public function deleteMyApiCollectionEndpointByOperationIdRequest($apicollectionid, $operationid, string $contentType = self::contentTypes['deleteMyApiCollectionEndpointByOperationId'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400DeleteMyApiCollectionEndpointByOperationId'
+                'Missing the required parameter $apicollectionid when calling deleteMyApiCollectionEndpointByOperationId'
             );
         }
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400DeleteMyApiCollectionEndpointByOperationId'
+                'Missing the required parameter $operationid when calling deleteMyApiCollectionEndpointByOperationId'
             );
         }
 
@@ -2237,9 +2750,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2264,38 +2777,36 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionEndpoints
+     * Operation getAllApiCollections
      *
-     * Get Api Collection Endpoints
+     * Get All API Collections
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200Response
      */
-    public function oBPv400GetApiCollectionEndpoints($apicollectionid, string $contentType = self::contentTypes['oBPv400GetApiCollectionEndpoints'][0])
+    public function getAllApiCollections(string $contentType = self::contentTypes['getAllApiCollections'][0])
     {
-        list($response) = $this->oBPv400GetApiCollectionEndpointsWithHttpInfo($apicollectionid, $contentType);
+        list($response) = $this->getAllApiCollectionsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetApiCollectionEndpointsWithHttpInfo
+     * Operation getAllApiCollectionsWithHttpInfo
      *
-     * Get Api Collection Endpoints
+     * Get All API Collections
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetApiCollectionEndpointsWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetApiCollectionEndpoints'][0])
+    public function getAllApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['getAllApiCollections'][0])
     {
-        $request = $this->oBPv400GetApiCollectionEndpointsRequest($apicollectionid, $contentType);
+        $request = $this->getAllApiCollectionsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2323,7 +2834,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $request,
                         $response,
                     );
@@ -2345,7 +2856,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                 $request,
                 $response,
             );
@@ -2354,7 +2865,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2367,19 +2878,18 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionEndpointsAsync
+     * Operation getAllApiCollectionsAsync
      *
-     * Get Api Collection Endpoints
+     * Get All API Collections
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetApiCollectionEndpointsAsync($apicollectionid, string $contentType = self::contentTypes['oBPv400GetApiCollectionEndpoints'][0])
+    public function getAllApiCollectionsAsync(string $contentType = self::contentTypes['getAllApiCollections'][0])
     {
-        return $this->oBPv400GetApiCollectionEndpointsAsyncWithHttpInfo($apicollectionid, $contentType)
+        return $this->getAllApiCollectionsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2388,20 +2898,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionEndpointsAsyncWithHttpInfo
+     * Operation getAllApiCollectionsAsyncWithHttpInfo
      *
-     * Get Api Collection Endpoints
+     * Get All API Collections
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetApiCollectionEndpointsAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetApiCollectionEndpoints'][0])
+    public function getAllApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getAllApiCollections'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response';
-        $request = $this->oBPv400GetApiCollectionEndpointsRequest($apicollectionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200Response';
+        $request = $this->getAllApiCollectionsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2440,21 +2949,287 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetApiCollectionEndpoints'
+     * Create request for operation 'getAllApiCollections'
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetApiCollectionEndpointsRequest($apicollectionid, string $contentType = self::contentTypes['oBPv400GetApiCollectionEndpoints'][0])
+    public function getAllApiCollectionsRequest(string $contentType = self::contentTypes['getAllApiCollections'][0])
+    {
+
+
+        $resourcePath = '/obp/v5.1.0/management/api-collections';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getApiCollectionEndpoints
+     *
+     * Get Api Collection Endpoints
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionEndpoints'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response
+     */
+    public function getApiCollectionEndpoints($apicollectionid, string $contentType = self::contentTypes['getApiCollectionEndpoints'][0])
+    {
+        list($response) = $this->getApiCollectionEndpointsWithHttpInfo($apicollectionid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getApiCollectionEndpointsWithHttpInfo
+     *
+     * Get Api Collection Endpoints
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionEndpoints'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getApiCollectionEndpointsWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getApiCollectionEndpoints'][0])
+    {
+        $request = $this->getApiCollectionEndpointsRequest($apicollectionid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getApiCollectionEndpointsAsync
+     *
+     * Get Api Collection Endpoints
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionEndpoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiCollectionEndpointsAsync($apicollectionid, string $contentType = self::contentTypes['getApiCollectionEndpoints'][0])
+    {
+        return $this->getApiCollectionEndpointsAsyncWithHttpInfo($apicollectionid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getApiCollectionEndpointsAsyncWithHttpInfo
+     *
+     * Get Api Collection Endpoints
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionEndpoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getApiCollectionEndpointsAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getApiCollectionEndpoints'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response';
+        $request = $this->getApiCollectionEndpointsRequest($apicollectionid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getApiCollectionEndpoints'
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionEndpoints'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getApiCollectionEndpointsRequest($apicollectionid, string $contentType = self::contentTypes['getApiCollectionEndpoints'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400GetApiCollectionEndpoints'
+                'Missing the required parameter $apicollectionid when calling getApiCollectionEndpoints'
             );
         }
 
@@ -2532,38 +3307,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionsForUser
+     * Operation getApiCollectionsForUser
      *
      * Get Api Collections for User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionsForUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionsForUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200Response
      */
-    public function oBPv400GetApiCollectionsForUser($userid, string $contentType = self::contentTypes['oBPv400GetApiCollectionsForUser'][0])
+    public function getApiCollectionsForUser($userid, string $contentType = self::contentTypes['getApiCollectionsForUser'][0])
     {
-        list($response) = $this->oBPv400GetApiCollectionsForUserWithHttpInfo($userid, $contentType);
+        list($response) = $this->getApiCollectionsForUserWithHttpInfo($userid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetApiCollectionsForUserWithHttpInfo
+     * Operation getApiCollectionsForUserWithHttpInfo
      *
      * Get Api Collections for User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionsForUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionsForUser'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetApiCollectionsForUserWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv400GetApiCollectionsForUser'][0])
+    public function getApiCollectionsForUserWithHttpInfo($userid, string $contentType = self::contentTypes['getApiCollectionsForUser'][0])
     {
-        $request = $this->oBPv400GetApiCollectionsForUserRequest($userid, $contentType);
+        $request = $this->getApiCollectionsForUserRequest($userid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2591,7 +3366,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $request,
                         $response,
                     );
@@ -2613,7 +3388,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                 $request,
                 $response,
             );
@@ -2622,7 +3397,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2635,19 +3410,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionsForUserAsync
+     * Operation getApiCollectionsForUserAsync
      *
      * Get Api Collections for User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionsForUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionsForUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetApiCollectionsForUserAsync($userid, string $contentType = self::contentTypes['oBPv400GetApiCollectionsForUser'][0])
+    public function getApiCollectionsForUserAsync($userid, string $contentType = self::contentTypes['getApiCollectionsForUser'][0])
     {
-        return $this->oBPv400GetApiCollectionsForUserAsyncWithHttpInfo($userid, $contentType)
+        return $this->getApiCollectionsForUserAsyncWithHttpInfo($userid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2656,20 +3431,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetApiCollectionsForUserAsyncWithHttpInfo
+     * Operation getApiCollectionsForUserAsyncWithHttpInfo
      *
      * Get Api Collections for User
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionsForUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionsForUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetApiCollectionsForUserAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['oBPv400GetApiCollectionsForUser'][0])
+    public function getApiCollectionsForUserAsyncWithHttpInfo($userid, string $contentType = self::contentTypes['getApiCollectionsForUser'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response';
-        $request = $this->oBPv400GetApiCollectionsForUserRequest($userid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200Response';
+        $request = $this->getApiCollectionsForUserRequest($userid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2708,21 +3483,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetApiCollectionsForUser'
+     * Create request for operation 'getApiCollectionsForUser'
      *
      * @param  string $userid The USERID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetApiCollectionsForUser'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiCollectionsForUser'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetApiCollectionsForUserRequest($userid, string $contentType = self::contentTypes['oBPv400GetApiCollectionsForUser'][0])
+    public function getApiCollectionsForUserRequest($userid, string $contentType = self::contentTypes['getApiCollectionsForUser'][0])
     {
 
         // verify the required parameter 'userid' is set
         if ($userid === null || (is_array($userid) && count($userid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $userid when calling oBPv400GetApiCollectionsForUser'
+                'Missing the required parameter $userid when calling getApiCollectionsForUser'
             );
         }
 
@@ -2787,9 +3562,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2814,36 +3589,36 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetFeaturedApiCollections
+     * Operation getFeaturedApiCollections
      *
      * Get Featured Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFeaturedApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200Response
      */
-    public function oBPv400GetFeaturedApiCollections(string $contentType = self::contentTypes['oBPv400GetFeaturedApiCollections'][0])
+    public function getFeaturedApiCollections(string $contentType = self::contentTypes['getFeaturedApiCollections'][0])
     {
-        list($response) = $this->oBPv400GetFeaturedApiCollectionsWithHttpInfo($contentType);
+        list($response) = $this->getFeaturedApiCollectionsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetFeaturedApiCollectionsWithHttpInfo
+     * Operation getFeaturedApiCollectionsWithHttpInfo
      *
      * Get Featured Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFeaturedApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetFeaturedApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetFeaturedApiCollections'][0])
+    public function getFeaturedApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['getFeaturedApiCollections'][0])
     {
-        $request = $this->oBPv400GetFeaturedApiCollectionsRequest($contentType);
+        $request = $this->getFeaturedApiCollectionsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2871,7 +3646,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $request,
                         $response,
                     );
@@ -2893,7 +3668,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                 $request,
                 $response,
             );
@@ -2902,7 +3677,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2915,18 +3690,18 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetFeaturedApiCollectionsAsync
+     * Operation getFeaturedApiCollectionsAsync
      *
      * Get Featured Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFeaturedApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetFeaturedApiCollectionsAsync(string $contentType = self::contentTypes['oBPv400GetFeaturedApiCollections'][0])
+    public function getFeaturedApiCollectionsAsync(string $contentType = self::contentTypes['getFeaturedApiCollections'][0])
     {
-        return $this->oBPv400GetFeaturedApiCollectionsAsyncWithHttpInfo($contentType)
+        return $this->getFeaturedApiCollectionsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2935,19 +3710,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetFeaturedApiCollectionsAsyncWithHttpInfo
+     * Operation getFeaturedApiCollectionsAsyncWithHttpInfo
      *
      * Get Featured Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFeaturedApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetFeaturedApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetFeaturedApiCollections'][0])
+    public function getFeaturedApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getFeaturedApiCollections'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response';
-        $request = $this->oBPv400GetFeaturedApiCollectionsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200Response';
+        $request = $this->getFeaturedApiCollectionsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2986,14 +3761,14 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetFeaturedApiCollections'
+     * Create request for operation 'getFeaturedApiCollections'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetFeaturedApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetFeaturedApiCollectionsRequest(string $contentType = self::contentTypes['oBPv400GetFeaturedApiCollections'][0])
+    public function getFeaturedApiCollectionsRequest(string $contentType = self::contentTypes['getFeaturedApiCollections'][0])
     {
 
 
@@ -3062,38 +3837,36 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionById
+     * Operation getFeaturedApiCollectionsAdmin
      *
-     * Get My Api Collection By Id
+     * Get Featured Api Collections (Admin)
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollectionsAdmin'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+     * @return \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response
      */
-    public function oBPv400GetMyApiCollectionById($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionById'][0])
+    public function getFeaturedApiCollectionsAdmin(string $contentType = self::contentTypes['getFeaturedApiCollectionsAdmin'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionByIdWithHttpInfo($apicollectionid, $contentType);
+        list($response) = $this->getFeaturedApiCollectionsAdminWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByIdWithHttpInfo
+     * Operation getFeaturedApiCollectionsAdminWithHttpInfo
      *
-     * Get My Api Collection By Id
+     * Get Featured Api Collections (Admin)
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollectionsAdmin'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionById'][0])
+    public function getFeaturedApiCollectionsAdminWithHttpInfo(string $contentType = self::contentTypes['getFeaturedApiCollectionsAdmin'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionByIdRequest($apicollectionid, $contentType);
+        $request = $this->getFeaturedApiCollectionsAdminRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3121,7 +3894,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response',
                         $request,
                         $response,
                     );
@@ -3143,7 +3916,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response',
                 $request,
                 $response,
             );
@@ -3152,7 +3925,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3165,19 +3938,18 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByIdAsync
+     * Operation getFeaturedApiCollectionsAdminAsync
      *
-     * Get My Api Collection By Id
+     * Get Featured Api Collections (Admin)
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollectionsAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionByIdAsync($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionById'][0])
+    public function getFeaturedApiCollectionsAdminAsync(string $contentType = self::contentTypes['getFeaturedApiCollectionsAdmin'][0])
     {
-        return $this->oBPv400GetMyApiCollectionByIdAsyncWithHttpInfo($apicollectionid, $contentType)
+        return $this->getFeaturedApiCollectionsAdminAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3186,20 +3958,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByIdAsyncWithHttpInfo
+     * Operation getFeaturedApiCollectionsAdminAsyncWithHttpInfo
      *
-     * Get My Api Collection By Id
+     * Get Featured Api Collections (Admin)
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollectionsAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionById'][0])
+    public function getFeaturedApiCollectionsAdminAsyncWithHttpInfo(string $contentType = self::contentTypes['getFeaturedApiCollectionsAdmin'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems';
-        $request = $this->oBPv400GetMyApiCollectionByIdRequest($apicollectionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200Response';
+        $request = $this->getFeaturedApiCollectionsAdminRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3238,21 +4009,287 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollectionById'
+     * Create request for operation 'getFeaturedApiCollectionsAdmin'
      *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFeaturedApiCollectionsAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionByIdRequest($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionById'][0])
+    public function getFeaturedApiCollectionsAdminRequest(string $contentType = self::contentTypes['getFeaturedApiCollectionsAdmin'][0])
+    {
+
+
+        $resourcePath = '/obp/v6.0.0/management/api-collections/featured';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
+        if ($apiKey !== null) {
+            $headers['DirectLogin'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getMyApiCollectionById
+     *
+     * Get My Api Collection By Id
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner
+     */
+    public function getMyApiCollectionById($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionById'][0])
+    {
+        list($response) = $this->getMyApiCollectionByIdWithHttpInfo($apicollectionid, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getMyApiCollectionByIdWithHttpInfo
+     *
+     * Get My Api Collection By Id
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionById'] to see the possible values for this operation
+     *
+     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMyApiCollectionByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionById'][0])
+    {
+        $request = $this->getMyApiCollectionByIdRequest($apicollectionid, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMyApiCollectionByIdAsync
+     *
+     * Get My Api Collection By Id
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMyApiCollectionByIdAsync($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionById'][0])
+    {
+        return $this->getMyApiCollectionByIdAsyncWithHttpInfo($apicollectionid, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMyApiCollectionByIdAsyncWithHttpInfo
+     *
+     * Get My Api Collection By Id
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMyApiCollectionByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionById'][0])
+    {
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner';
+        $request = $this->getMyApiCollectionByIdRequest($apicollectionid, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMyApiCollectionById'
+     *
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionById'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getMyApiCollectionByIdRequest($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionById'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400GetMyApiCollectionById'
+                'Missing the required parameter $apicollectionid when calling getMyApiCollectionById'
             );
         }
 
@@ -3317,9 +4354,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3344,38 +4381,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByName
+     * Operation getMyApiCollectionByName
      *
      * Get My Api Collection By Name
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionByName'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionByName'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner
      */
-    public function oBPv400GetMyApiCollectionByName($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionByName'][0])
+    public function getMyApiCollectionByName($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionByName'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionByNameWithHttpInfo($apicollectionname, $contentType);
+        list($response) = $this->getMyApiCollectionByNameWithHttpInfo($apicollectionname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByNameWithHttpInfo
+     * Operation getMyApiCollectionByNameWithHttpInfo
      *
      * Get My Api Collection By Name
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionByName'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionByName'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionByNameWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionByName'][0])
+    public function getMyApiCollectionByNameWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionByName'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionByNameRequest($apicollectionname, $contentType);
+        $request = $this->getMyApiCollectionByNameRequest($apicollectionname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3403,7 +4440,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -3425,7 +4462,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -3434,7 +4471,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3447,19 +4484,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByNameAsync
+     * Operation getMyApiCollectionByNameAsync
      *
      * Get My Api Collection By Name
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionByName'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionByName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionByNameAsync($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionByName'][0])
+    public function getMyApiCollectionByNameAsync($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionByName'][0])
     {
-        return $this->oBPv400GetMyApiCollectionByNameAsyncWithHttpInfo($apicollectionname, $contentType)
+        return $this->getMyApiCollectionByNameAsyncWithHttpInfo($apicollectionname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3468,20 +4505,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionByNameAsyncWithHttpInfo
+     * Operation getMyApiCollectionByNameAsyncWithHttpInfo
      *
      * Get My Api Collection By Name
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionByName'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionByName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionByNameAsyncWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionByName'][0])
+    public function getMyApiCollectionByNameAsyncWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionByName'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems';
-        $request = $this->oBPv400GetMyApiCollectionByNameRequest($apicollectionname, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner';
+        $request = $this->getMyApiCollectionByNameRequest($apicollectionname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3520,21 +4557,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollectionByName'
+     * Create request for operation 'getMyApiCollectionByName'
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionByName'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionByName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionByNameRequest($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionByName'][0])
+    public function getMyApiCollectionByNameRequest($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionByName'][0])
     {
 
         // verify the required parameter 'apicollectionname' is set
         if ($apicollectionname === null || (is_array($apicollectionname) && count($apicollectionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionname when calling oBPv400GetMyApiCollectionByName'
+                'Missing the required parameter $apicollectionname when calling getMyApiCollectionByName'
             );
         }
 
@@ -3599,9 +4636,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3626,40 +4663,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpoint
+     * Operation getMyApiCollectionEndpoint
      *
      * Get My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner
      */
-    public function oBPv400GetMyApiCollectionEndpoint($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoint'][0])
+    public function getMyApiCollectionEndpoint($apicollectionname, $operationid, string $contentType = self::contentTypes['getMyApiCollectionEndpoint'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, $contentType);
+        list($response) = $this->getMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointWithHttpInfo
+     * Operation getMyApiCollectionEndpointWithHttpInfo
      *
      * Get My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoint'][0])
+    public function getMyApiCollectionEndpointWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['getMyApiCollectionEndpoint'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
+        $request = $this->getMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3687,7 +4724,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                         $request,
                         $response,
                     );
@@ -3709,7 +4746,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                 $request,
                 $response,
             );
@@ -3718,7 +4755,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3731,20 +4768,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointAsync
+     * Operation getMyApiCollectionEndpointAsync
      *
      * Get My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointAsync($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoint'][0])
+    public function getMyApiCollectionEndpointAsync($apicollectionname, $operationid, string $contentType = self::contentTypes['getMyApiCollectionEndpoint'][0])
     {
-        return $this->oBPv400GetMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, $contentType)
+        return $this->getMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3753,21 +4790,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointAsyncWithHttpInfo
+     * Operation getMyApiCollectionEndpointAsyncWithHttpInfo
      *
      * Get My Api Collection Endpoint
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoint'][0])
+    public function getMyApiCollectionEndpointAsyncWithHttpInfo($apicollectionname, $operationid, string $contentType = self::contentTypes['getMyApiCollectionEndpoint'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200ResponsePropertiesApiCollectionEndpointsItems';
-        $request = $this->oBPv400GetMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200ResponseApiCollectionEndpointsInner';
+        $request = $this->getMyApiCollectionEndpointRequest($apicollectionname, $operationid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3806,29 +4843,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollectionEndpoint'
+     * Create request for operation 'getMyApiCollectionEndpoint'
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
      * @param  string $operationid The OPERATIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoint'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoint'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionEndpointRequest($apicollectionname, $operationid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoint'][0])
+    public function getMyApiCollectionEndpointRequest($apicollectionname, $operationid, string $contentType = self::contentTypes['getMyApiCollectionEndpoint'][0])
     {
 
         // verify the required parameter 'apicollectionname' is set
         if ($apicollectionname === null || (is_array($apicollectionname) && count($apicollectionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionname when calling oBPv400GetMyApiCollectionEndpoint'
+                'Missing the required parameter $apicollectionname when calling getMyApiCollectionEndpoint'
             );
         }
 
         // verify the required parameter 'operationid' is set
         if ($operationid === null || (is_array($operationid) && count($operationid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $operationid when calling oBPv400GetMyApiCollectionEndpoint'
+                'Missing the required parameter $operationid when calling getMyApiCollectionEndpoint'
             );
         }
 
@@ -3914,38 +4951,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpoints
+     * Operation getMyApiCollectionEndpoints
      *
      * Get My Api Collection Endpoints
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response
      */
-    public function oBPv400GetMyApiCollectionEndpoints($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoints'][0])
+    public function getMyApiCollectionEndpoints($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionEndpoints'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionEndpointsWithHttpInfo($apicollectionname, $contentType);
+        list($response) = $this->getMyApiCollectionEndpointsWithHttpInfo($apicollectionname, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsWithHttpInfo
+     * Operation getMyApiCollectionEndpointsWithHttpInfo
      *
      * Get My Api Collection Endpoints
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoints'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionEndpointsWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoints'][0])
+    public function getMyApiCollectionEndpointsWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionEndpoints'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionEndpointsRequest($apicollectionname, $contentType);
+        $request = $this->getMyApiCollectionEndpointsRequest($apicollectionname, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3973,7 +5010,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                         $request,
                         $response,
                     );
@@ -3995,7 +5032,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                 $request,
                 $response,
             );
@@ -4004,7 +5041,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4017,19 +5054,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsAsync
+     * Operation getMyApiCollectionEndpointsAsync
      *
      * Get My Api Collection Endpoints
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointsAsync($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoints'][0])
+    public function getMyApiCollectionEndpointsAsync($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionEndpoints'][0])
     {
-        return $this->oBPv400GetMyApiCollectionEndpointsAsyncWithHttpInfo($apicollectionname, $contentType)
+        return $this->getMyApiCollectionEndpointsAsyncWithHttpInfo($apicollectionname, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4038,20 +5075,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsAsyncWithHttpInfo
+     * Operation getMyApiCollectionEndpointsAsyncWithHttpInfo
      *
      * Get My Api Collection Endpoints
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointsAsyncWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoints'][0])
+    public function getMyApiCollectionEndpointsAsyncWithHttpInfo($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionEndpoints'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response';
-        $request = $this->oBPv400GetMyApiCollectionEndpointsRequest($apicollectionname, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response';
+        $request = $this->getMyApiCollectionEndpointsRequest($apicollectionname, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4090,21 +5127,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollectionEndpoints'
+     * Create request for operation 'getMyApiCollectionEndpoints'
      *
      * @param  string $apicollectionname The APICOLLECTIONNAME identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpoints'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpoints'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionEndpointsRequest($apicollectionname, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpoints'][0])
+    public function getMyApiCollectionEndpointsRequest($apicollectionname, string $contentType = self::contentTypes['getMyApiCollectionEndpoints'][0])
     {
 
         // verify the required parameter 'apicollectionname' is set
         if ($apicollectionname === null || (is_array($apicollectionname) && count($apicollectionname) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionname when calling oBPv400GetMyApiCollectionEndpoints'
+                'Missing the required parameter $apicollectionname when calling getMyApiCollectionEndpoints'
             );
         }
 
@@ -4169,9 +5206,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4196,38 +5233,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsById
+     * Operation getMyApiCollectionEndpointsById
      *
      * Get My Api Collection Endpoints By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpointsById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response
+     * @return \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response
      */
-    public function oBPv400GetMyApiCollectionEndpointsById($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'][0])
+    public function getMyApiCollectionEndpointsById($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionEndpointsById'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo($apicollectionid, $contentType);
+        list($response) = $this->getMyApiCollectionEndpointsByIdWithHttpInfo($apicollectionid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo
+     * Operation getMyApiCollectionEndpointsByIdWithHttpInfo
      *
      * Get My Api Collection Endpoints By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpointsById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetMyApiCollectionEndpoints200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionEndpointsByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'][0])
+    public function getMyApiCollectionEndpointsByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionEndpointsById'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionEndpointsByIdRequest($apicollectionid, $contentType);
+        $request = $this->getMyApiCollectionEndpointsByIdRequest($apicollectionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4255,7 +5292,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                         $request,
                         $response,
                     );
@@ -4277,7 +5314,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                 $request,
                 $response,
             );
@@ -4286,7 +5323,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response',
+                        '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4299,19 +5336,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsByIdAsync
+     * Operation getMyApiCollectionEndpointsByIdAsync
      *
      * Get My Api Collection Endpoints By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpointsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointsByIdAsync($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'][0])
+    public function getMyApiCollectionEndpointsByIdAsync($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionEndpointsById'][0])
     {
-        return $this->oBPv400GetMyApiCollectionEndpointsByIdAsyncWithHttpInfo($apicollectionid, $contentType)
+        return $this->getMyApiCollectionEndpointsByIdAsyncWithHttpInfo($apicollectionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4320,20 +5357,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionEndpointsByIdAsyncWithHttpInfo
+     * Operation getMyApiCollectionEndpointsByIdAsyncWithHttpInfo
      *
      * Get My Api Collection Endpoints By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpointsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionEndpointsByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'][0])
+    public function getMyApiCollectionEndpointsByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionEndpointsById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetMyApiCollectionEndpoints200Response';
-        $request = $this->oBPv400GetMyApiCollectionEndpointsByIdRequest($apicollectionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetMyApiCollectionEndpoints200Response';
+        $request = $this->getMyApiCollectionEndpointsByIdRequest($apicollectionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4372,21 +5409,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollectionEndpointsById'
+     * Create request for operation 'getMyApiCollectionEndpointsById'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollectionEndpointsById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionEndpointsByIdRequest($apicollectionid, string $contentType = self::contentTypes['oBPv400GetMyApiCollectionEndpointsById'][0])
+    public function getMyApiCollectionEndpointsByIdRequest($apicollectionid, string $contentType = self::contentTypes['getMyApiCollectionEndpointsById'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400GetMyApiCollectionEndpointsById'
+                'Missing the required parameter $apicollectionid when calling getMyApiCollectionEndpointsById'
             );
         }
 
@@ -4451,9 +5488,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4478,36 +5515,36 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollections
+     * Operation getMyApiCollections
      *
      * Get My Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200Response
      */
-    public function oBPv400GetMyApiCollections(string $contentType = self::contentTypes['oBPv400GetMyApiCollections'][0])
+    public function getMyApiCollections(string $contentType = self::contentTypes['getMyApiCollections'][0])
     {
-        list($response) = $this->oBPv400GetMyApiCollectionsWithHttpInfo($contentType);
+        list($response) = $this->getMyApiCollectionsWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionsWithHttpInfo
+     * Operation getMyApiCollectionsWithHttpInfo
      *
      * Get My Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollections'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetMyApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetMyApiCollections'][0])
+    public function getMyApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['getMyApiCollections'][0])
     {
-        $request = $this->oBPv400GetMyApiCollectionsRequest($contentType);
+        $request = $this->getMyApiCollectionsRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4535,7 +5572,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $request,
                         $response,
                     );
@@ -4557,7 +5594,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                 $request,
                 $response,
             );
@@ -4566,7 +5603,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4579,18 +5616,18 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionsAsync
+     * Operation getMyApiCollectionsAsync
      *
      * Get My Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionsAsync(string $contentType = self::contentTypes['oBPv400GetMyApiCollections'][0])
+    public function getMyApiCollectionsAsync(string $contentType = self::contentTypes['getMyApiCollections'][0])
     {
-        return $this->oBPv400GetMyApiCollectionsAsyncWithHttpInfo($contentType)
+        return $this->getMyApiCollectionsAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4599,19 +5636,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetMyApiCollectionsAsyncWithHttpInfo
+     * Operation getMyApiCollectionsAsyncWithHttpInfo
      *
      * Get My Api Collections
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetMyApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv400GetMyApiCollections'][0])
+    public function getMyApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMyApiCollections'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response';
-        $request = $this->oBPv400GetMyApiCollectionsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200Response';
+        $request = $this->getMyApiCollectionsRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4650,14 +5687,14 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetMyApiCollections'
+     * Create request for operation 'getMyApiCollections'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetMyApiCollections'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMyApiCollections'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetMyApiCollectionsRequest(string $contentType = self::contentTypes['oBPv400GetMyApiCollections'][0])
+    public function getMyApiCollectionsRequest(string $contentType = self::contentTypes['getMyApiCollections'][0])
     {
 
 
@@ -4713,9 +5750,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4740,38 +5777,38 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetSharableApiCollectionById
+     * Operation getSharableApiCollectionById
      *
      * Get Sharable Api Collection By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetSharableApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSharableApiCollectionById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner
      */
-    public function oBPv400GetSharableApiCollectionById($apicollectionid, string $contentType = self::contentTypes['oBPv400GetSharableApiCollectionById'][0])
+    public function getSharableApiCollectionById($apicollectionid, string $contentType = self::contentTypes['getSharableApiCollectionById'][0])
     {
-        list($response) = $this->oBPv400GetSharableApiCollectionByIdWithHttpInfo($apicollectionid, $contentType);
+        list($response) = $this->getSharableApiCollectionByIdWithHttpInfo($apicollectionid, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv400GetSharableApiCollectionByIdWithHttpInfo
+     * Operation getSharableApiCollectionByIdWithHttpInfo
      *
      * Get Sharable Api Collection By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetSharableApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSharableApiCollectionById'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv400GetSharableApiCollectionByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetSharableApiCollectionById'][0])
+    public function getSharableApiCollectionByIdWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getSharableApiCollectionById'][0])
     {
-        $request = $this->oBPv400GetSharableApiCollectionByIdRequest($apicollectionid, $contentType);
+        $request = $this->getSharableApiCollectionByIdRequest($apicollectionid, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4799,7 +5836,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -4821,7 +5858,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -4830,7 +5867,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4843,19 +5880,19 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetSharableApiCollectionByIdAsync
+     * Operation getSharableApiCollectionByIdAsync
      *
      * Get Sharable Api Collection By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetSharableApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSharableApiCollectionById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetSharableApiCollectionByIdAsync($apicollectionid, string $contentType = self::contentTypes['oBPv400GetSharableApiCollectionById'][0])
+    public function getSharableApiCollectionByIdAsync($apicollectionid, string $contentType = self::contentTypes['getSharableApiCollectionById'][0])
     {
-        return $this->oBPv400GetSharableApiCollectionByIdAsyncWithHttpInfo($apicollectionid, $contentType)
+        return $this->getSharableApiCollectionByIdAsyncWithHttpInfo($apicollectionid, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4864,20 +5901,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv400GetSharableApiCollectionByIdAsyncWithHttpInfo
+     * Operation getSharableApiCollectionByIdAsyncWithHttpInfo
      *
      * Get Sharable Api Collection By Id
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetSharableApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSharableApiCollectionById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv400GetSharableApiCollectionByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv400GetSharableApiCollectionById'][0])
+    public function getSharableApiCollectionByIdAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['getSharableApiCollectionById'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems';
-        $request = $this->oBPv400GetSharableApiCollectionByIdRequest($apicollectionid, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner';
+        $request = $this->getSharableApiCollectionByIdRequest($apicollectionid, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4916,21 +5953,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv400GetSharableApiCollectionById'
+     * Create request for operation 'getSharableApiCollectionById'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv400GetSharableApiCollectionById'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSharableApiCollectionById'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv400GetSharableApiCollectionByIdRequest($apicollectionid, string $contentType = self::contentTypes['oBPv400GetSharableApiCollectionById'][0])
+    public function getSharableApiCollectionByIdRequest($apicollectionid, string $contentType = self::contentTypes['getSharableApiCollectionById'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv400GetSharableApiCollectionById'
+                'Missing the required parameter $apicollectionid when calling getSharableApiCollectionById'
             );
         }
 
@@ -5008,36 +6045,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510GetAllApiCollections
+     * Operation updateFeaturedApiCollection
      *
-     * Get All API Collections
+     * Update Featured Api Collection
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllApiCollections'] to see the possible values for this operation
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateFeaturedApiCollectionRequest $update_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response
+     * @return \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner
      */
-    public function oBPv510GetAllApiCollections(string $contentType = self::contentTypes['oBPv510GetAllApiCollections'][0])
+    public function updateFeaturedApiCollection($apicollectionid, $update_featured_api_collection_request, string $contentType = self::contentTypes['updateFeaturedApiCollection'][0])
     {
-        list($response) = $this->oBPv510GetAllApiCollectionsWithHttpInfo($contentType);
+        list($response) = $this->updateFeaturedApiCollectionWithHttpInfo($apicollectionid, $update_featured_api_collection_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510GetAllApiCollectionsWithHttpInfo
+     * Operation updateFeaturedApiCollectionWithHttpInfo
      *
-     * Get All API Collections
+     * Update Featured Api Collection
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllApiCollections'] to see the possible values for this operation
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateFeaturedApiCollectionRequest $update_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510GetAllApiCollectionsWithHttpInfo(string $contentType = self::contentTypes['oBPv510GetAllApiCollections'][0])
+    public function updateFeaturedApiCollectionWithHttpInfo($apicollectionid, $update_featured_api_collection_request, string $contentType = self::contentTypes['updateFeaturedApiCollection'][0])
     {
-        $request = $this->oBPv510GetAllApiCollectionsRequest($contentType);
+        $request = $this->updateFeaturedApiCollectionRequest($apicollectionid, $update_featured_api_collection_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5065,7 +6106,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -5087,7 +6128,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -5096,7 +6137,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response',
+                        '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5109,18 +6150,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510GetAllApiCollectionsAsync
+     * Operation updateFeaturedApiCollectionAsync
      *
-     * Get All API Collections
+     * Update Featured Api Collection
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllApiCollections'] to see the possible values for this operation
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateFeaturedApiCollectionRequest $update_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllApiCollectionsAsync(string $contentType = self::contentTypes['oBPv510GetAllApiCollections'][0])
+    public function updateFeaturedApiCollectionAsync($apicollectionid, $update_featured_api_collection_request, string $contentType = self::contentTypes['updateFeaturedApiCollection'][0])
     {
-        return $this->oBPv510GetAllApiCollectionsAsyncWithHttpInfo($contentType)
+        return $this->updateFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $update_featured_api_collection_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5129,19 +6172,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510GetAllApiCollectionsAsyncWithHttpInfo
+     * Operation updateFeaturedApiCollectionAsyncWithHttpInfo
      *
-     * Get All API Collections
+     * Update Featured Api Collection
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllApiCollections'] to see the possible values for this operation
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateFeaturedApiCollectionRequest $update_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510GetAllApiCollectionsAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv510GetAllApiCollections'][0])
+    public function updateFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $update_featured_api_collection_request, string $contentType = self::contentTypes['updateFeaturedApiCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200Response';
-        $request = $this->oBPv510GetAllApiCollectionsRequest($contentType);
+        $returnType = '\OpenBankProject\Model\GetFeaturedApiCollectionsAdmin200ResponseFeaturedApiCollectionsInner';
+        $request = $this->updateFeaturedApiCollectionRequest($apicollectionid, $update_featured_api_collection_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5180,18 +6225,34 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv510GetAllApiCollections'
+     * Create request for operation 'updateFeaturedApiCollection'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510GetAllApiCollections'] to see the possible values for this operation
+     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
+     * @param  \OpenBankProject\Model\UpdateFeaturedApiCollectionRequest $update_featured_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateFeaturedApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510GetAllApiCollectionsRequest(string $contentType = self::contentTypes['oBPv510GetAllApiCollections'][0])
+    public function updateFeaturedApiCollectionRequest($apicollectionid, $update_featured_api_collection_request, string $contentType = self::contentTypes['updateFeaturedApiCollection'][0])
     {
 
+        // verify the required parameter 'apicollectionid' is set
+        if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $apicollectionid when calling updateFeaturedApiCollection'
+            );
+        }
 
-        $resourcePath = '/obp/v5.1.0/management/api-collections';
+        // verify the required parameter 'update_featured_api_collection_request' is set
+        if ($update_featured_api_collection_request === null || (is_array($update_featured_api_collection_request) && count($update_featured_api_collection_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_featured_api_collection_request when calling updateFeaturedApiCollection'
+            );
+        }
+
+
+        $resourcePath = '/obp/v6.0.0/management/api-collections/featured/{apicollectionid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -5200,6 +6261,14 @@ class ApiCollectionApi
 
 
 
+        // path params
+        if ($apicollectionid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'apicollectionid' . '}',
+                ObjectSerializer::toPathValue($apicollectionid),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -5209,7 +6278,14 @@ class ApiCollectionApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($update_featured_api_collection_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_featured_api_collection_request));
+            } else {
+                $httpBody = $update_featured_api_collection_request;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -5243,9 +6319,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -5262,7 +6338,7 @@ class ApiCollectionApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -5270,40 +6346,40 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510UpdateMyApiCollection
+     * Operation updateMyApiCollection
      *
      * Update My Api Collection By API_COLLECTION_ID
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems
+     * @return \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner
      */
-    public function oBPv510UpdateMyApiCollection($apicollectionid, $obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv510UpdateMyApiCollection'][0])
+    public function updateMyApiCollection($apicollectionid, $create_my_api_collection_request, string $contentType = self::contentTypes['updateMyApiCollection'][0])
     {
-        list($response) = $this->oBPv510UpdateMyApiCollectionWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_request, $contentType);
+        list($response) = $this->updateMyApiCollectionWithHttpInfo($apicollectionid, $create_my_api_collection_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation oBPv510UpdateMyApiCollectionWithHttpInfo
+     * Operation updateMyApiCollectionWithHttpInfo
      *
      * Update My Api Collection By API_COLLECTION_ID
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyApiCollection'] to see the possible values for this operation
      *
      * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner, HTTP status code, HTTP response headers (array of strings)
      */
-    public function oBPv510UpdateMyApiCollectionWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv510UpdateMyApiCollection'][0])
+    public function updateMyApiCollectionWithHttpInfo($apicollectionid, $create_my_api_collection_request, string $contentType = self::contentTypes['updateMyApiCollection'][0])
     {
-        $request = $this->oBPv510UpdateMyApiCollectionRequest($apicollectionid, $obpv400_create_my_api_collection_request, $contentType);
+        $request = $this->updateMyApiCollectionRequest($apicollectionid, $create_my_api_collection_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5331,7 +6407,7 @@ class ApiCollectionApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $request,
                         $response,
                     );
@@ -5353,7 +6429,7 @@ class ApiCollectionApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                 $request,
                 $response,
             );
@@ -5362,7 +6438,7 @@ class ApiCollectionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems',
+                        '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5375,20 +6451,20 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510UpdateMyApiCollectionAsync
+     * Operation updateMyApiCollectionAsync
      *
      * Update My Api Collection By API_COLLECTION_ID
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateMyApiCollectionAsync($apicollectionid, $obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv510UpdateMyApiCollection'][0])
+    public function updateMyApiCollectionAsync($apicollectionid, $create_my_api_collection_request, string $contentType = self::contentTypes['updateMyApiCollection'][0])
     {
-        return $this->oBPv510UpdateMyApiCollectionAsyncWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_request, $contentType)
+        return $this->updateMyApiCollectionAsyncWithHttpInfo($apicollectionid, $create_my_api_collection_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5397,21 +6473,21 @@ class ApiCollectionApi
     }
 
     /**
-     * Operation oBPv510UpdateMyApiCollectionAsyncWithHttpInfo
+     * Operation updateMyApiCollectionAsyncWithHttpInfo
      *
      * Update My Api Collection By API_COLLECTION_ID
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function oBPv510UpdateMyApiCollectionAsyncWithHttpInfo($apicollectionid, $obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv510UpdateMyApiCollection'][0])
+    public function updateMyApiCollectionAsyncWithHttpInfo($apicollectionid, $create_my_api_collection_request, string $contentType = self::contentTypes['updateMyApiCollection'][0])
     {
-        $returnType = '\OpenBankProject\Model\OBPv400GetApiCollectionsForUser200ResponsePropertiesApiCollectionsItems';
-        $request = $this->oBPv510UpdateMyApiCollectionRequest($apicollectionid, $obpv400_create_my_api_collection_request, $contentType);
+        $returnType = '\OpenBankProject\Model\GetApiCollectionsForUser200ResponseApiCollectionsInner';
+        $request = $this->updateMyApiCollectionRequest($apicollectionid, $create_my_api_collection_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5450,29 +6526,29 @@ class ApiCollectionApi
     }
 
     /**
-     * Create request for operation 'oBPv510UpdateMyApiCollection'
+     * Create request for operation 'updateMyApiCollection'
      *
      * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv400CreateMyApiCollectionRequest $obpv400_create_my_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv510UpdateMyApiCollection'] to see the possible values for this operation
+     * @param  \OpenBankProject\Model\CreateMyApiCollectionRequest $create_my_api_collection_request Request body (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateMyApiCollection'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function oBPv510UpdateMyApiCollectionRequest($apicollectionid, $obpv400_create_my_api_collection_request, string $contentType = self::contentTypes['oBPv510UpdateMyApiCollection'][0])
+    public function updateMyApiCollectionRequest($apicollectionid, $create_my_api_collection_request, string $contentType = self::contentTypes['updateMyApiCollection'][0])
     {
 
         // verify the required parameter 'apicollectionid' is set
         if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv510UpdateMyApiCollection'
+                'Missing the required parameter $apicollectionid when calling updateMyApiCollection'
             );
         }
 
-        // verify the required parameter 'obpv400_create_my_api_collection_request' is set
-        if ($obpv400_create_my_api_collection_request === null || (is_array($obpv400_create_my_api_collection_request) && count($obpv400_create_my_api_collection_request) === 0)) {
+        // verify the required parameter 'create_my_api_collection_request' is set
+        if ($create_my_api_collection_request === null || (is_array($create_my_api_collection_request) && count($create_my_api_collection_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv400_create_my_api_collection_request when calling oBPv510UpdateMyApiCollection'
+                'Missing the required parameter $create_my_api_collection_request when calling updateMyApiCollection'
             );
         }
 
@@ -5503,12 +6579,12 @@ class ApiCollectionApi
         );
 
         // for model (json/xml)
-        if (isset($obpv400_create_my_api_collection_request)) {
+        if (isset($create_my_api_collection_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv400_create_my_api_collection_request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_my_api_collection_request));
             } else {
-                $httpBody = $obpv400_create_my_api_collection_request;
+                $httpBody = $create_my_api_collection_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5544,1085 +6620,9 @@ class ApiCollectionApi
             $headers['Authorization'] = $apiKey;
         }
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        $apiKey = $this->config->getApiKeyWithPrefix('DirectLogin');
         if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'PUT',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600CreateFeaturedApiCollection
-     *
-     * Create Featured Api Collection
-     *
-     * @param  \OpenBankProject\Model\OBPv600CreateFeaturedApiCollectionRequest $obpv600_create_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-     */
-    public function oBPv600CreateFeaturedApiCollection($obpv600_create_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600CreateFeaturedApiCollection'][0])
-    {
-        list($response) = $this->oBPv600CreateFeaturedApiCollectionWithHttpInfo($obpv600_create_featured_api_collection_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600CreateFeaturedApiCollectionWithHttpInfo
-     *
-     * Create Featured Api Collection
-     *
-     * @param  \OpenBankProject\Model\OBPv600CreateFeaturedApiCollectionRequest $obpv600_create_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600CreateFeaturedApiCollectionWithHttpInfo($obpv600_create_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600CreateFeaturedApiCollection'][0])
-    {
-        $request = $this->oBPv600CreateFeaturedApiCollectionRequest($obpv600_create_featured_api_collection_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600CreateFeaturedApiCollectionAsync
-     *
-     * Create Featured Api Collection
-     *
-     * @param  \OpenBankProject\Model\OBPv600CreateFeaturedApiCollectionRequest $obpv600_create_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateFeaturedApiCollectionAsync($obpv600_create_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600CreateFeaturedApiCollection'][0])
-    {
-        return $this->oBPv600CreateFeaturedApiCollectionAsyncWithHttpInfo($obpv600_create_featured_api_collection_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600CreateFeaturedApiCollectionAsyncWithHttpInfo
-     *
-     * Create Featured Api Collection
-     *
-     * @param  \OpenBankProject\Model\OBPv600CreateFeaturedApiCollectionRequest $obpv600_create_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600CreateFeaturedApiCollectionAsyncWithHttpInfo($obpv600_create_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600CreateFeaturedApiCollection'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems';
-        $request = $this->oBPv600CreateFeaturedApiCollectionRequest($obpv600_create_featured_api_collection_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600CreateFeaturedApiCollection'
-     *
-     * @param  \OpenBankProject\Model\OBPv600CreateFeaturedApiCollectionRequest $obpv600_create_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600CreateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600CreateFeaturedApiCollectionRequest($obpv600_create_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600CreateFeaturedApiCollection'][0])
-    {
-
-        // verify the required parameter 'obpv600_create_featured_api_collection_request' is set
-        if ($obpv600_create_featured_api_collection_request === null || (is_array($obpv600_create_featured_api_collection_request) && count($obpv600_create_featured_api_collection_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_create_featured_api_collection_request when calling oBPv600CreateFeaturedApiCollection'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/management/api-collections/featured';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_create_featured_api_collection_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_create_featured_api_collection_request));
-            } else {
-                $httpBody = $obpv600_create_featured_api_collection_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600DeleteFeaturedApiCollection
-     *
-     * Delete Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function oBPv600DeleteFeaturedApiCollection($apicollectionid, string $contentType = self::contentTypes['oBPv600DeleteFeaturedApiCollection'][0])
-    {
-        $this->oBPv600DeleteFeaturedApiCollectionWithHttpInfo($apicollectionid, $contentType);
-    }
-
-    /**
-     * Operation oBPv600DeleteFeaturedApiCollectionWithHttpInfo
-     *
-     * Delete Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600DeleteFeaturedApiCollectionWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv600DeleteFeaturedApiCollection'][0])
-    {
-        $request = $this->oBPv600DeleteFeaturedApiCollectionRequest($apicollectionid, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600DeleteFeaturedApiCollectionAsync
-     *
-     * Delete Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteFeaturedApiCollectionAsync($apicollectionid, string $contentType = self::contentTypes['oBPv600DeleteFeaturedApiCollection'][0])
-    {
-        return $this->oBPv600DeleteFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600DeleteFeaturedApiCollectionAsyncWithHttpInfo
-     *
-     * Delete Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600DeleteFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, string $contentType = self::contentTypes['oBPv600DeleteFeaturedApiCollection'][0])
-    {
-        $returnType = '';
-        $request = $this->oBPv600DeleteFeaturedApiCollectionRequest($apicollectionid, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600DeleteFeaturedApiCollection'
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600DeleteFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600DeleteFeaturedApiCollectionRequest($apicollectionid, string $contentType = self::contentTypes['oBPv600DeleteFeaturedApiCollection'][0])
-    {
-
-        // verify the required parameter 'apicollectionid' is set
-        if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv600DeleteFeaturedApiCollection'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/management/api-collections/featured/{apicollectionid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($apicollectionid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'apicollectionid' . '}',
-                ObjectSerializer::toPathValue($apicollectionid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            [],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'DELETE',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600GetFeaturedApiCollectionsAdmin
-     *
-     * Get Featured Api Collections (Admin)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response
-     */
-    public function oBPv600GetFeaturedApiCollectionsAdmin(string $contentType = self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'][0])
-    {
-        list($response) = $this->oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo($contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo
-     *
-     * Get Featured Api Collections (Admin)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600GetFeaturedApiCollectionsAdminWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'][0])
-    {
-        $request = $this->oBPv600GetFeaturedApiCollectionsAdminRequest($contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600GetFeaturedApiCollectionsAdminAsync
-     *
-     * Get Featured Api Collections (Admin)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetFeaturedApiCollectionsAdminAsync(string $contentType = self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'][0])
-    {
-        return $this->oBPv600GetFeaturedApiCollectionsAdminAsyncWithHttpInfo($contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600GetFeaturedApiCollectionsAdminAsyncWithHttpInfo
-     *
-     * Get Featured Api Collections (Admin)
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600GetFeaturedApiCollectionsAdminAsyncWithHttpInfo(string $contentType = self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200Response';
-        $request = $this->oBPv600GetFeaturedApiCollectionsAdminRequest($contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600GetFeaturedApiCollectionsAdmin'
-     *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600GetFeaturedApiCollectionsAdminRequest(string $contentType = self::contentTypes['oBPv600GetFeaturedApiCollectionsAdmin'][0])
-    {
-
-
-        $resourcePath = '/obp/v6.0.0/management/api-collections/featured';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation oBPv600UpdateFeaturedApiCollection
-     *
-     * Update Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateFeaturedApiCollectionRequest $obpv600_update_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems
-     */
-    public function oBPv600UpdateFeaturedApiCollection($apicollectionid, $obpv600_update_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600UpdateFeaturedApiCollection'][0])
-    {
-        list($response) = $this->oBPv600UpdateFeaturedApiCollectionWithHttpInfo($apicollectionid, $obpv600_update_featured_api_collection_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation oBPv600UpdateFeaturedApiCollectionWithHttpInfo
-     *
-     * Update Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateFeaturedApiCollectionRequest $obpv600_update_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \OpenBankProject\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function oBPv600UpdateFeaturedApiCollectionWithHttpInfo($apicollectionid, $obpv600_update_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600UpdateFeaturedApiCollection'][0])
-    {
-        $request = $this->oBPv600UpdateFeaturedApiCollectionRequest($apicollectionid, $obpv600_update_featured_api_collection_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation oBPv600UpdateFeaturedApiCollectionAsync
-     *
-     * Update Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateFeaturedApiCollectionRequest $obpv600_update_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600UpdateFeaturedApiCollectionAsync($apicollectionid, $obpv600_update_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600UpdateFeaturedApiCollection'][0])
-    {
-        return $this->oBPv600UpdateFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $obpv600_update_featured_api_collection_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation oBPv600UpdateFeaturedApiCollectionAsyncWithHttpInfo
-     *
-     * Update Featured Api Collection
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateFeaturedApiCollectionRequest $obpv600_update_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function oBPv600UpdateFeaturedApiCollectionAsyncWithHttpInfo($apicollectionid, $obpv600_update_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600UpdateFeaturedApiCollection'][0])
-    {
-        $returnType = '\OpenBankProject\Model\OBPv600GetFeaturedApiCollectionsAdmin200ResponsePropertiesFeaturedApiCollectionsItems';
-        $request = $this->oBPv600UpdateFeaturedApiCollectionRequest($apicollectionid, $obpv600_update_featured_api_collection_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'oBPv600UpdateFeaturedApiCollection'
-     *
-     * @param  string $apicollectionid The APICOLLECTIONID identifier (required)
-     * @param  \OpenBankProject\Model\OBPv600UpdateFeaturedApiCollectionRequest $obpv600_update_featured_api_collection_request Request body (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['oBPv600UpdateFeaturedApiCollection'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function oBPv600UpdateFeaturedApiCollectionRequest($apicollectionid, $obpv600_update_featured_api_collection_request, string $contentType = self::contentTypes['oBPv600UpdateFeaturedApiCollection'][0])
-    {
-
-        // verify the required parameter 'apicollectionid' is set
-        if ($apicollectionid === null || (is_array($apicollectionid) && count($apicollectionid) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $apicollectionid when calling oBPv600UpdateFeaturedApiCollection'
-            );
-        }
-
-        // verify the required parameter 'obpv600_update_featured_api_collection_request' is set
-        if ($obpv600_update_featured_api_collection_request === null || (is_array($obpv600_update_featured_api_collection_request) && count($obpv600_update_featured_api_collection_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $obpv600_update_featured_api_collection_request when calling oBPv600UpdateFeaturedApiCollection'
-            );
-        }
-
-
-        $resourcePath = '/obp/v6.0.0/management/api-collections/featured/{apicollectionid}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($apicollectionid !== null) {
-            $resourcePath = str_replace(
-                '{' . 'apicollectionid' . '}',
-                ObjectSerializer::toPathValue($apicollectionid),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($obpv600_update_featured_api_collection_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($obpv600_update_featured_api_collection_request));
-            } else {
-                $httpBody = $obpv600_update_featured_api_collection_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
+            $headers['DirectLogin'] = $apiKey;
         }
 
         $defaultHeaders = [];

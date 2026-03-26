@@ -2,22 +2,22 @@
 
 Operations related to Signalling
 
-All URIs are relative to https://apisandbox.openbankproject.com, except if the operation defines another base path.
+All URIs are relative to http://127.0.0.1:8080, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv600DeleteSignalChannel()**](SignallingApi.md#oBPv600DeleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
-| [**oBPv600GetSignalChannelInfo()**](SignallingApi.md#oBPv600GetSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
-| [**oBPv600GetSignalChannels()**](SignallingApi.md#oBPv600GetSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
-| [**oBPv600GetSignalMessages()**](SignallingApi.md#oBPv600GetSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
-| [**oBPv600GetSignalStats()**](SignallingApi.md#oBPv600GetSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
-| [**oBPv600PublishSignalMessage()**](SignallingApi.md#oBPv600PublishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
+| [**deleteSignalChannel()**](SignallingApi.md#deleteSignalChannel) | **DELETE** /obp/v6.0.0/signal/channels/{channelname} | Delete Signal Channel |
+| [**getSignalChannelInfo()**](SignallingApi.md#getSignalChannelInfo) | **GET** /obp/v6.0.0/signal/channels/{channelname}/info | Get Signal Channel Info |
+| [**getSignalChannels()**](SignallingApi.md#getSignalChannels) | **GET** /obp/v6.0.0/signal/channels | List Signal Channels |
+| [**getSignalMessages()**](SignallingApi.md#getSignalMessages) | **GET** /obp/v6.0.0/signal/channels/{channelname}/messages | Get Signal Messages |
+| [**getSignalStats()**](SignallingApi.md#getSignalStats) | **GET** /obp/v6.0.0/signal/channels/stats | Get Signal Channel Stats |
+| [**publishSignalMessage()**](SignallingApi.md#publishSignalMessage) | **POST** /obp/v6.0.0/signal/channels/{channelname}/messages | Publish Signal Message |
 
 
-## `oBPv600DeleteSignalChannel()`
+## `deleteSignalChannel()`
 
 ```php
-oBPv600DeleteSignalChannel($channelname): \OpenBankProject\Model\OBPv600DeleteSignalChannel200Response
+deleteSignalChannel($channelname): \OpenBankProject\Model\DeleteSignalChannel200Response
 ```
 
 Delete Signal Channel
@@ -40,9 +40,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -54,10 +54,10 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
 $channelname = 'channelname_example'; // string | The CHANNELNAME identifier
 
 try {
-    $result = $apiInstance->oBPv600DeleteSignalChannel($channelname);
+    $result = $apiInstance->deleteSignalChannel($channelname);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600DeleteSignalChannel: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->deleteSignalChannel: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -69,7 +69,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600DeleteSignalChannel200Response**](../Model/OBPv600DeleteSignalChannel200Response.md)
+[**\OpenBankProject\Model\DeleteSignalChannel200Response**](../Model/DeleteSignalChannel200Response.md)
 
 ### Authorization
 
@@ -84,10 +84,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetSignalChannelInfo()`
+## `getSignalChannelInfo()`
 
 ```php
-oBPv600GetSignalChannelInfo($channelname): \OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response
+getSignalChannelInfo($channelname): \OpenBankProject\Model\GetSignalChannelInfo200Response
 ```
 
 Get Signal Channel Info
@@ -110,9 +110,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -124,10 +124,10 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
 $channelname = 'channelname_example'; // string | The CHANNELNAME identifier
 
 try {
-    $result = $apiInstance->oBPv600GetSignalChannelInfo($channelname);
+    $result = $apiInstance->getSignalChannelInfo($channelname);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600GetSignalChannelInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->getSignalChannelInfo: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -139,7 +139,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetSignalChannelInfo200Response**](../Model/OBPv600GetSignalChannelInfo200Response.md)
+[**\OpenBankProject\Model\GetSignalChannelInfo200Response**](../Model/GetSignalChannelInfo200Response.md)
 
 ### Authorization
 
@@ -154,10 +154,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetSignalChannels()`
+## `getSignalChannels()`
 
 ```php
-oBPv600GetSignalChannels(): \OpenBankProject\Model\OBPv600GetSignalChannels200Response
+getSignalChannels(): \OpenBankProject\Model\GetSignalChannels200Response
 ```
 
 List Signal Channels
@@ -180,9 +180,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -193,10 +193,10 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetSignalChannels();
+    $result = $apiInstance->getSignalChannels();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600GetSignalChannels: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->getSignalChannels: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetSignalChannels200Response**](../Model/OBPv600GetSignalChannels200Response.md)
+[**\OpenBankProject\Model\GetSignalChannels200Response**](../Model/GetSignalChannels200Response.md)
 
 ### Authorization
 
@@ -221,10 +221,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetSignalMessages()`
+## `getSignalMessages()`
 
 ```php
-oBPv600GetSignalMessages($channelname): \OpenBankProject\Model\OBPv600GetSignalMessages200Response
+getSignalMessages($channelname): \OpenBankProject\Model\GetSignalMessages200Response
 ```
 
 Get Signal Messages
@@ -247,9 +247,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -261,10 +261,10 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
 $channelname = 'channelname_example'; // string | The CHANNELNAME identifier
 
 try {
-    $result = $apiInstance->oBPv600GetSignalMessages($channelname);
+    $result = $apiInstance->getSignalMessages($channelname);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600GetSignalMessages: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->getSignalMessages: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -276,7 +276,7 @@ try {
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetSignalMessages200Response**](../Model/OBPv600GetSignalMessages200Response.md)
+[**\OpenBankProject\Model\GetSignalMessages200Response**](../Model/GetSignalMessages200Response.md)
 
 ### Authorization
 
@@ -291,10 +291,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600GetSignalStats()`
+## `getSignalStats()`
 
 ```php
-oBPv600GetSignalStats(): \OpenBankProject\Model\OBPv600GetSignalStats200Response
+getSignalStats(): \OpenBankProject\Model\GetSignalStats200Response
 ```
 
 Get Signal Channel Stats
@@ -317,9 +317,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -330,10 +330,10 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
 );
 
 try {
-    $result = $apiInstance->oBPv600GetSignalStats();
+    $result = $apiInstance->getSignalStats();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600GetSignalStats: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->getSignalStats: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -343,7 +343,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600GetSignalStats200Response**](../Model/OBPv600GetSignalStats200Response.md)
+[**\OpenBankProject\Model\GetSignalStats200Response**](../Model/GetSignalStats200Response.md)
 
 ### Authorization
 
@@ -358,10 +358,10 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `oBPv600PublishSignalMessage()`
+## `publishSignalMessage()`
 
 ```php
-oBPv600PublishSignalMessage($channelname, $obpv600_publish_signal_message_request): \OpenBankProject\Model\OBPv600PublishSignalMessage200Response
+publishSignalMessage($channelname, $publish_signal_message_request): \OpenBankProject\Model\PublishSignalMessage200Response
 ```
 
 Publish Signal Message
@@ -384,9 +384,9 @@ $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('A
 // $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configure API key authorization: DirectLogin
-$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKey('DirectLogin', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = OpenBankProject\Configuration::getDefaultConfiguration()->setApiKeyPrefix('DirectLogin', 'Bearer');
 
 
 $apiInstance = new OpenBankProject\Api\SignallingApi(
@@ -396,13 +396,13 @@ $apiInstance = new OpenBankProject\Api\SignallingApi(
     $config
 );
 $channelname = 'channelname_example'; // string | The CHANNELNAME identifier
-$obpv600_publish_signal_message_request = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}; // \OpenBankProject\Model\OBPv600PublishSignalMessageRequest | Request body
+$publish_signal_message_request = {"type":"object","properties":{"message_type":{"type":"string"},"payload":{"type":"object","properties":{"agent_name":{"type":"string"},"capabilities":{"type":"array","items":{"type":"object","properties":{"s":{"type":"string"}}}}}}}}; // \OpenBankProject\Model\PublishSignalMessageRequest | Request body
 
 try {
-    $result = $apiInstance->oBPv600PublishSignalMessage($channelname, $obpv600_publish_signal_message_request);
+    $result = $apiInstance->publishSignalMessage($channelname, $publish_signal_message_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SignallingApi->oBPv600PublishSignalMessage: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SignallingApi->publishSignalMessage: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -411,11 +411,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **channelname** | **string**| The CHANNELNAME identifier | |
-| **obpv600_publish_signal_message_request** | [**\OpenBankProject\Model\OBPv600PublishSignalMessageRequest**](../Model/OBPv600PublishSignalMessageRequest.md)| Request body | |
+| **publish_signal_message_request** | [**\OpenBankProject\Model\PublishSignalMessageRequest**](../Model/PublishSignalMessageRequest.md)| Request body | |
 
 ### Return type
 
-[**\OpenBankProject\Model\OBPv600PublishSignalMessage200Response**](../Model/OBPv600PublishSignalMessage200Response.md)
+[**\OpenBankProject\Model\PublishSignalMessage200Response**](../Model/PublishSignalMessage200Response.md)
 
 ### Authorization
 

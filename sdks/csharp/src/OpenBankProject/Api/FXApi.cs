@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -46,10 +46,10 @@ namespace OpenBankProject.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv220CreateFxRequest">Request body</param>
+        /// <param name="createFxRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220CreateFxApiResponse"/>&gt;</returns>
-        Task<IOBPv220CreateFxApiResponse> OBPv220CreateFxAsync(string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFxApiResponse"/>&gt;</returns>
+        Task<ICreateFxApiResponse> CreateFxAsync(string bankid, CreateFxRequest createFxRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Fx
@@ -58,10 +58,33 @@ namespace OpenBankProject.Api
         /// &lt;p&gt;Create or Update Fx for the Bank.&lt;/p&gt; &lt;p&gt;Example:&lt;/p&gt; &lt;p&gt;“from_currency_code”:“EUR”,&lt;br /&gt; “to_currency_code”:“USD”,&lt;br /&gt; “conversion_value”: 1.136305,&lt;br /&gt; “inverse_conversion_value”: 1 / 1.136305 &#x3D; 0.8800454103431737,&lt;/p&gt; &lt;p&gt;Thus 1 Euro &#x3D; 1.136305 US Dollar&lt;br /&gt; and&lt;br /&gt; 1 US Dollar &#x3D; 0.8800 Euro&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
         /// </remarks>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv220CreateFxRequest">Request body</param>
+        /// <param name="createFxRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220CreateFxApiResponse"/>?&gt;</returns>
-        Task<IOBPv220CreateFxApiResponse?> OBPv220CreateFxOrDefaultAsync(string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFxApiResponse"/>?&gt;</returns>
+        Task<ICreateFxApiResponse?> CreateFxOrDefaultAsync(string bankid, CreateFxRequest createFxRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Currencies at a Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrenciesAtBankApiResponse"/>&gt;</returns>
+        Task<IGetCurrenciesAtBankApiResponse> GetCurrenciesAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Currencies at a Bank
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrenciesAtBankApiResponse"/>?&gt;</returns>
+        Task<IGetCurrenciesAtBankApiResponse?> GetCurrenciesAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Current FxRate
@@ -74,8 +97,8 @@ namespace OpenBankProject.Api
         /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
         /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetCurrentFxRateApiResponse"/>&gt;</returns>
-        Task<IOBPv220GetCurrentFxRateApiResponse> OBPv220GetCurrentFxRateAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrentFxRateApiResponse"/>&gt;</returns>
+        Task<IGetCurrentFxRateApiResponse> GetCurrentFxRateAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Current FxRate
@@ -87,37 +110,14 @@ namespace OpenBankProject.Api
         /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
         /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetCurrentFxRateApiResponse"/>?&gt;</returns>
-        Task<IOBPv220GetCurrentFxRateApiResponse?> OBPv220GetCurrentFxRateOrDefaultAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Currencies at a Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCurrenciesAtBankApiResponse"/>&gt;</returns>
-        Task<IOBPv510GetCurrenciesAtBankApiResponse> OBPv510GetCurrenciesAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Currencies at a Bank
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCurrenciesAtBankApiResponse"/>?&gt;</returns>
-        Task<IOBPv510GetCurrenciesAtBankApiResponse?> OBPv510GetCurrenciesAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrentFxRateApiResponse"/>?&gt;</returns>
+        Task<IGetCurrentFxRateApiResponse?> GetCurrentFxRateOrDefaultAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IOBPv220CreateFxApiResponse"/>
+    /// The <see cref="ICreateFxApiResponse"/>
     /// </summary>
-    public interface IOBPv220CreateFxApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv220CreateFxRequest?>
+    public interface ICreateFxApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateFxRequest?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -139,9 +139,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv220GetCurrentFxRateApiResponse"/>
+    /// The <see cref="IGetCurrenciesAtBankApiResponse"/>
     /// </summary>
-    public interface IOBPv220GetCurrentFxRateApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv220CreateFxRequest?>
+    public interface IGetCurrenciesAtBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.GetCurrenciesAtBank200Response?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -157,9 +157,9 @@ namespace OpenBankProject.Api
     }
 
     /// <summary>
-    /// The <see cref="IOBPv510GetCurrenciesAtBankApiResponse"/>
+    /// The <see cref="IGetCurrentFxRateApiResponse"/>
     /// </summary>
-    public interface IOBPv510GetCurrenciesAtBankApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.OBPv510GetCurrenciesAtBank200Response?>
+    public interface IGetCurrentFxRateApiResponse : OpenBankProject.Client.IApiResponse, IOk<OpenBankProject.Model.CreateFxRequest?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -182,61 +182,61 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv220CreateFx;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateFx;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv220CreateFx;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateFx;
 
-        internal void ExecuteOnOBPv220CreateFx(FXApi.OBPv220CreateFxApiResponse apiResponse)
+        internal void ExecuteOnCreateFx(FXApi.CreateFxApiResponse apiResponse)
         {
-            OnOBPv220CreateFx?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateFx?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv220CreateFx(Exception exception)
+        internal void ExecuteOnErrorCreateFx(Exception exception)
         {
-            OnErrorOBPv220CreateFx?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateFx?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv220GetCurrentFxRate;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCurrenciesAtBank;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv220GetCurrentFxRate;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCurrenciesAtBank;
 
-        internal void ExecuteOnOBPv220GetCurrentFxRate(FXApi.OBPv220GetCurrentFxRateApiResponse apiResponse)
+        internal void ExecuteOnGetCurrenciesAtBank(FXApi.GetCurrenciesAtBankApiResponse apiResponse)
         {
-            OnOBPv220GetCurrentFxRate?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCurrenciesAtBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv220GetCurrentFxRate(Exception exception)
+        internal void ExecuteOnErrorGetCurrenciesAtBank(Exception exception)
         {
-            OnErrorOBPv220GetCurrentFxRate?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCurrenciesAtBank?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv510GetCurrenciesAtBank;
+        public event EventHandler<ApiResponseEventArgs>? OnGetCurrentFxRate;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv510GetCurrenciesAtBank;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetCurrentFxRate;
 
-        internal void ExecuteOnOBPv510GetCurrenciesAtBank(FXApi.OBPv510GetCurrenciesAtBankApiResponse apiResponse)
+        internal void ExecuteOnGetCurrentFxRate(FXApi.GetCurrentFxRateApiResponse apiResponse)
         {
-            OnOBPv510GetCurrenciesAtBank?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetCurrentFxRate?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv510GetCurrenciesAtBank(Exception exception)
+        internal void ExecuteOnErrorGetCurrentFxRate(Exception exception)
         {
-            OnErrorOBPv510GetCurrenciesAtBank?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetCurrentFxRate?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -294,21 +294,21 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv220CreateFx(ref string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest);
+        partial void FormatCreateFx(ref string bankid, CreateFxRequest createFxRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="oBPv220CreateFxRequest"></param>
+        /// <param name="createFxRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv220CreateFx(string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest)
+        private void ValidateCreateFx(string bankid, CreateFxRequest createFxRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (oBPv220CreateFxRequest == null)
-                throw new ArgumentNullException(nameof(oBPv220CreateFxRequest));
+            if (createFxRequest == null)
+                throw new ArgumentNullException(nameof(createFxRequest));
         }
 
         /// <summary>
@@ -316,11 +316,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv220CreateFxRequest"></param>
-        private void AfterOBPv220CreateFxDefaultImplementation(IOBPv220CreateFxApiResponse apiResponseLocalVar, string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest)
+        /// <param name="createFxRequest"></param>
+        private void AfterCreateFxDefaultImplementation(ICreateFxApiResponse apiResponseLocalVar, string bankid, CreateFxRequest createFxRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv220CreateFx(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv220CreateFxRequest);
+            AfterCreateFx(ref suppressDefaultLog, apiResponseLocalVar, bankid, createFxRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -331,8 +331,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv220CreateFxRequest"></param>
-        partial void AfterOBPv220CreateFx(ref bool suppressDefaultLog, IOBPv220CreateFxApiResponse apiResponseLocalVar, string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest);
+        /// <param name="createFxRequest"></param>
+        partial void AfterCreateFx(ref bool suppressDefaultLog, ICreateFxApiResponse apiResponseLocalVar, string bankid, CreateFxRequest createFxRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -341,11 +341,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv220CreateFxRequest"></param>
-        private void OnErrorOBPv220CreateFxDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest)
+        /// <param name="createFxRequest"></param>
+        private void OnErrorCreateFxDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateFxRequest createFxRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv220CreateFx(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv220CreateFxRequest);
+            OnErrorCreateFx(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createFxRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -358,21 +358,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="oBPv220CreateFxRequest"></param>
-        partial void OnErrorOBPv220CreateFx(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest);
+        /// <param name="createFxRequest"></param>
+        partial void OnErrorCreateFx(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateFxRequest createFxRequest);
 
         /// <summary>
         /// Create Fx &lt;p&gt;Create or Update Fx for the Bank.&lt;/p&gt; &lt;p&gt;Example:&lt;/p&gt; &lt;p&gt;“from_currency_code”:“EUR”,&lt;br /&gt; “to_currency_code”:“USD”,&lt;br /&gt; “conversion_value”: 1.136305,&lt;br /&gt; “inverse_conversion_value”: 1 / 1.136305 &#x3D; 0.8800454103431737,&lt;/p&gt; &lt;p&gt;Thus 1 Euro &#x3D; 1.136305 US Dollar&lt;br /&gt; and&lt;br /&gt; 1 US Dollar &#x3D; 0.8800 Euro&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv220CreateFxRequest">Request body</param>
+        /// <param name="createFxRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220CreateFxApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220CreateFxApiResponse?> OBPv220CreateFxOrDefaultAsync(string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFxApiResponse"/>&gt;</returns>
+        public async Task<ICreateFxApiResponse?> CreateFxOrDefaultAsync(string bankid, CreateFxRequest createFxRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv220CreateFxAsync(bankid, oBPv220CreateFxRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateFxAsync(bankid, createFxRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -385,18 +385,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv220CreateFxRequest">Request body</param>
+        /// <param name="createFxRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220CreateFxApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220CreateFxApiResponse> OBPv220CreateFxAsync(string bankid, OBPv220CreateFxRequest oBPv220CreateFxRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateFxApiResponse"/>&gt;</returns>
+        public async Task<ICreateFxApiResponse> CreateFxAsync(string bankid, CreateFxRequest createFxRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv220CreateFx(bankid, oBPv220CreateFxRequest);
+                ValidateCreateFx(bankid, createFxRequest);
 
-                FormatOBPv220CreateFx(ref bankid, oBPv220CreateFxRequest);
+                FormatCreateFx(ref bankid, createFxRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -408,16 +408,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.2.0/banks/{bankid}/fx");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv220CreateFxRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createFxRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv220CreateFxRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createFxRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -453,8 +453,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv220CreateFxApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv220CreateFxApiResponse>();
-                        OBPv220CreateFxApiResponse apiResponseLocalVar;
+                        ILogger<CreateFxApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<CreateFxApiResponse>();
+                        CreateFxApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -465,9 +465,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv220CreateFxDefaultImplementation(apiResponseLocalVar, bankid, oBPv220CreateFxRequest);
+                        AfterCreateFxDefaultImplementation(apiResponseLocalVar, bankid, createFxRequest);
 
-                        Events.ExecuteOnOBPv220CreateFx(apiResponseLocalVar);
+                        Events.ExecuteOnCreateFx(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -479,24 +479,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv220CreateFxDefaultImplementation(e, "/obp/v2.2.0/banks/{bankid}/fx", uriBuilderLocalVar.Path, bankid, oBPv220CreateFxRequest);
-                Events.ExecuteOnErrorOBPv220CreateFx(e);
+                OnErrorCreateFxDefaultImplementation(e, "/obp/v2.2.0/banks/{bankid}/fx", uriBuilderLocalVar.Path, bankid, createFxRequest);
+                Events.ExecuteOnErrorCreateFx(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv220CreateFxApiResponse"/>
+        /// The <see cref="CreateFxApiResponse"/>
         /// </summary>
-        public partial class OBPv220CreateFxApiResponse : OpenBankProject.Client.ApiResponse, IOBPv220CreateFxApiResponse
+        public partial class CreateFxApiResponse : OpenBankProject.Client.ApiResponse, ICreateFxApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv220CreateFxApiResponse> Logger { get; }
+            public ILogger<CreateFxApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv220CreateFxApiResponse"/>
+            /// The <see cref="CreateFxApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -505,14 +505,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv220CreateFxApiResponse(ILogger<OBPv220CreateFxApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public CreateFxApiResponse(ILogger<CreateFxApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv220CreateFxApiResponse"/>
+            /// The <see cref="CreateFxApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -521,7 +521,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv220CreateFxApiResponse(ILogger<OBPv220CreateFxApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public CreateFxApiResponse(ILogger<CreateFxApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -539,11 +539,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv220CreateFxRequest? Ok()
+            public OpenBankProject.Model.CreateFxRequest? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv220CreateFxRequest>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateFxRequest>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -552,7 +552,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv220CreateFxRequest? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateFxRequest? result)
             {
                 result = null;
 
@@ -590,25 +590,17 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv220GetCurrentFxRate(ref string bankid, ref string fromcurrencycode, ref string tocurrencycode);
+        partial void FormatGetCurrenciesAtBank(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="fromcurrencycode"></param>
-        /// <param name="tocurrencycode"></param>
         /// <returns></returns>
-        private void ValidateOBPv220GetCurrentFxRate(string bankid, string fromcurrencycode, string tocurrencycode)
+        private void ValidateGetCurrenciesAtBank(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
-
-            if (fromcurrencycode == null)
-                throw new ArgumentNullException(nameof(fromcurrencycode));
-
-            if (tocurrencycode == null)
-                throw new ArgumentNullException(nameof(tocurrencycode));
         }
 
         /// <summary>
@@ -616,12 +608,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="fromcurrencycode"></param>
-        /// <param name="tocurrencycode"></param>
-        private void AfterOBPv220GetCurrentFxRateDefaultImplementation(IOBPv220GetCurrentFxRateApiResponse apiResponseLocalVar, string bankid, string fromcurrencycode, string tocurrencycode)
+        private void AfterGetCurrenciesAtBankDefaultImplementation(IGetCurrenciesAtBankApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv220GetCurrentFxRate(ref suppressDefaultLog, apiResponseLocalVar, bankid, fromcurrencycode, tocurrencycode);
+            AfterGetCurrenciesAtBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -632,9 +622,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="fromcurrencycode"></param>
-        /// <param name="tocurrencycode"></param>
-        partial void AfterOBPv220GetCurrentFxRate(ref bool suppressDefaultLog, IOBPv220GetCurrentFxRateApiResponse apiResponseLocalVar, string bankid, string fromcurrencycode, string tocurrencycode);
+        partial void AfterGetCurrenciesAtBank(ref bool suppressDefaultLog, IGetCurrenciesAtBankApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -643,12 +631,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="fromcurrencycode"></param>
-        /// <param name="tocurrencycode"></param>
-        private void OnErrorOBPv220GetCurrentFxRateDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string fromcurrencycode, string tocurrencycode)
+        private void OnErrorGetCurrenciesAtBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv220GetCurrentFxRate(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, fromcurrencycode, tocurrencycode);
+            OnErrorGetCurrenciesAtBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -661,23 +647,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="fromcurrencycode"></param>
-        /// <param name="tocurrencycode"></param>
-        partial void OnErrorOBPv220GetCurrentFxRate(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string fromcurrencycode, string tocurrencycode);
+        partial void OnErrorGetCurrenciesAtBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
-        /// Get Current FxRate &lt;p&gt;Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE&lt;/p&gt; &lt;p&gt;OBP may try different sources of FX rate information depending on the Connector in operation.&lt;/p&gt; &lt;p&gt;For example we want to convert EUR &#x3D;&amp;gt; USD:&lt;/p&gt; &lt;p&gt;OBP will:&lt;br /&gt; 1st try - Connector (database, core banking system or external FX service)&lt;br /&gt; 2nd try part 1 - fallbackexchangerates/eur.json&lt;br /&gt; 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)&lt;br /&gt; 3rd try - Hardcoded map of FX rates.&lt;/p&gt; &lt;p&gt;&lt;img src&#x3D;\&quot;https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\&quot; alt&#x3D;\&quot;FX Flow\&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Public Access:&lt;/strong&gt; This endpoint can be made publicly accessible (no authentication required) by setting the property &lt;code&gt;apiOptions.getCurrentFxRateIsPublic&#x3D;true&lt;/code&gt; in the props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;FROM_CURRENCY_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;TO_CURRENCY_CODE&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
+        /// Get Currencies at a Bank &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
-        /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetCurrentFxRateApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220GetCurrentFxRateApiResponse?> OBPv220GetCurrentFxRateOrDefaultAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrenciesAtBankApiResponse"/>&gt;</returns>
+        public async Task<IGetCurrenciesAtBankApiResponse?> GetCurrenciesAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv220GetCurrentFxRateAsync(bankid, fromcurrencycode, tocurrencycode, cancellationToken).ConfigureAwait(false);
+                return await GetCurrenciesAtBankAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -686,23 +668,21 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get Current FxRate &lt;p&gt;Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE&lt;/p&gt; &lt;p&gt;OBP may try different sources of FX rate information depending on the Connector in operation.&lt;/p&gt; &lt;p&gt;For example we want to convert EUR &#x3D;&amp;gt; USD:&lt;/p&gt; &lt;p&gt;OBP will:&lt;br /&gt; 1st try - Connector (database, core banking system or external FX service)&lt;br /&gt; 2nd try part 1 - fallbackexchangerates/eur.json&lt;br /&gt; 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)&lt;br /&gt; 3rd try - Hardcoded map of FX rates.&lt;/p&gt; &lt;p&gt;&lt;img src&#x3D;\&quot;https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\&quot; alt&#x3D;\&quot;FX Flow\&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Public Access:&lt;/strong&gt; This endpoint can be made publicly accessible (no authentication required) by setting the property &lt;code&gt;apiOptions.getCurrentFxRateIsPublic&#x3D;true&lt;/code&gt; in the props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;FROM_CURRENCY_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;TO_CURRENCY_CODE&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
+        /// Get Currencies at a Bank &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
-        /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv220GetCurrentFxRateApiResponse"/>&gt;</returns>
-        public async Task<IOBPv220GetCurrentFxRateApiResponse> OBPv220GetCurrentFxRateAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrenciesAtBankApiResponse"/>&gt;</returns>
+        public async Task<IGetCurrenciesAtBankApiResponse> GetCurrenciesAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv220GetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
+                ValidateGetCurrenciesAtBank(bankid);
 
-                FormatOBPv220GetCurrentFxRate(ref bankid, ref fromcurrencycode, ref tocurrencycode);
+                FormatGetCurrenciesAtBank(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -710,18 +690,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}");
+                        ? "/obp/v5.1.0/banks/{bankid}/currencies"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/banks/{bankid}/currencies");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bfromcurrencycode%7D", Uri.EscapeDataString(fromcurrencycode.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btocurrencycode%7D", Uri.EscapeDataString(tocurrencycode.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -748,21 +726,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv220GetCurrentFxRateApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv220GetCurrentFxRateApiResponse>();
-                        OBPv220GetCurrentFxRateApiResponse apiResponseLocalVar;
+                        ILogger<GetCurrenciesAtBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetCurrenciesAtBankApiResponse>();
+                        GetCurrenciesAtBankApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/banks/{bankid}/currencies", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv220GetCurrentFxRateDefaultImplementation(apiResponseLocalVar, bankid, fromcurrencycode, tocurrencycode);
+                        AfterGetCurrenciesAtBankDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv220GetCurrentFxRate(apiResponseLocalVar);
+                        Events.ExecuteOnGetCurrenciesAtBank(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -774,24 +752,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv220GetCurrentFxRateDefaultImplementation(e, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}", uriBuilderLocalVar.Path, bankid, fromcurrencycode, tocurrencycode);
-                Events.ExecuteOnErrorOBPv220GetCurrentFxRate(e);
+                OnErrorGetCurrenciesAtBankDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/currencies", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetCurrenciesAtBank(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv220GetCurrentFxRateApiResponse"/>
+        /// The <see cref="GetCurrenciesAtBankApiResponse"/>
         /// </summary>
-        public partial class OBPv220GetCurrentFxRateApiResponse : OpenBankProject.Client.ApiResponse, IOBPv220GetCurrentFxRateApiResponse
+        public partial class GetCurrenciesAtBankApiResponse : OpenBankProject.Client.ApiResponse, IGetCurrenciesAtBankApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv220GetCurrentFxRateApiResponse> Logger { get; }
+            public ILogger<GetCurrenciesAtBankApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv220GetCurrentFxRateApiResponse"/>
+            /// The <see cref="GetCurrenciesAtBankApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -800,14 +778,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv220GetCurrentFxRateApiResponse(ILogger<OBPv220GetCurrentFxRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetCurrenciesAtBankApiResponse(ILogger<GetCurrenciesAtBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv220GetCurrentFxRateApiResponse"/>
+            /// The <see cref="GetCurrenciesAtBankApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -816,7 +794,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv220GetCurrentFxRateApiResponse(ILogger<OBPv220GetCurrentFxRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetCurrenciesAtBankApiResponse(ILogger<GetCurrenciesAtBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -834,11 +812,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv220CreateFxRequest? Ok()
+            public OpenBankProject.Model.GetCurrenciesAtBank200Response? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv220CreateFxRequest>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.GetCurrenciesAtBank200Response>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -847,7 +825,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv220CreateFxRequest? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.GetCurrenciesAtBank200Response? result)
             {
                 result = null;
 
@@ -879,17 +857,25 @@ namespace OpenBankProject.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatOBPv510GetCurrenciesAtBank(ref string bankid);
+        partial void FormatGetCurrentFxRate(ref string bankid, ref string fromcurrencycode, ref string tocurrencycode);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
+        /// <param name="fromcurrencycode"></param>
+        /// <param name="tocurrencycode"></param>
         /// <returns></returns>
-        private void ValidateOBPv510GetCurrenciesAtBank(string bankid)
+        private void ValidateGetCurrentFxRate(string bankid, string fromcurrencycode, string tocurrencycode)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
+
+            if (fromcurrencycode == null)
+                throw new ArgumentNullException(nameof(fromcurrencycode));
+
+            if (tocurrencycode == null)
+                throw new ArgumentNullException(nameof(tocurrencycode));
         }
 
         /// <summary>
@@ -897,10 +883,12 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv510GetCurrenciesAtBankDefaultImplementation(IOBPv510GetCurrenciesAtBankApiResponse apiResponseLocalVar, string bankid)
+        /// <param name="fromcurrencycode"></param>
+        /// <param name="tocurrencycode"></param>
+        private void AfterGetCurrentFxRateDefaultImplementation(IGetCurrentFxRateApiResponse apiResponseLocalVar, string bankid, string fromcurrencycode, string tocurrencycode)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv510GetCurrenciesAtBank(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetCurrentFxRate(ref suppressDefaultLog, apiResponseLocalVar, bankid, fromcurrencycode, tocurrencycode);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -911,7 +899,9 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv510GetCurrenciesAtBank(ref bool suppressDefaultLog, IOBPv510GetCurrenciesAtBankApiResponse apiResponseLocalVar, string bankid);
+        /// <param name="fromcurrencycode"></param>
+        /// <param name="tocurrencycode"></param>
+        partial void AfterGetCurrentFxRate(ref bool suppressDefaultLog, IGetCurrentFxRateApiResponse apiResponseLocalVar, string bankid, string fromcurrencycode, string tocurrencycode);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -920,10 +910,12 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv510GetCurrenciesAtBankDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        /// <param name="fromcurrencycode"></param>
+        /// <param name="tocurrencycode"></param>
+        private void OnErrorGetCurrentFxRateDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string fromcurrencycode, string tocurrencycode)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv510GetCurrenciesAtBank(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetCurrentFxRate(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, fromcurrencycode, tocurrencycode);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -936,19 +928,23 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv510GetCurrenciesAtBank(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        /// <param name="fromcurrencycode"></param>
+        /// <param name="tocurrencycode"></param>
+        partial void OnErrorGetCurrentFxRate(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string fromcurrencycode, string tocurrencycode);
 
         /// <summary>
-        /// Get Currencies at a Bank &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+        /// Get Current FxRate &lt;p&gt;Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE&lt;/p&gt; &lt;p&gt;OBP may try different sources of FX rate information depending on the Connector in operation.&lt;/p&gt; &lt;p&gt;For example we want to convert EUR &#x3D;&amp;gt; USD:&lt;/p&gt; &lt;p&gt;OBP will:&lt;br /&gt; 1st try - Connector (database, core banking system or external FX service)&lt;br /&gt; 2nd try part 1 - fallbackexchangerates/eur.json&lt;br /&gt; 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)&lt;br /&gt; 3rd try - Hardcoded map of FX rates.&lt;/p&gt; &lt;p&gt;&lt;img src&#x3D;\&quot;https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\&quot; alt&#x3D;\&quot;FX Flow\&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Public Access:&lt;/strong&gt; This endpoint can be made publicly accessible (no authentication required) by setting the property &lt;code&gt;apiOptions.getCurrentFxRateIsPublic&#x3D;true&lt;/code&gt; in the props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;FROM_CURRENCY_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;TO_CURRENCY_CODE&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
+        /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCurrenciesAtBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCurrenciesAtBankApiResponse?> OBPv510GetCurrenciesAtBankOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrentFxRateApiResponse"/>&gt;</returns>
+        public async Task<IGetCurrentFxRateApiResponse?> GetCurrentFxRateOrDefaultAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv510GetCurrenciesAtBankAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetCurrentFxRateAsync(bankid, fromcurrencycode, tocurrencycode, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -957,21 +953,23 @@ namespace OpenBankProject.Api
         }
 
         /// <summary>
-        /// Get Currencies at a Bank &lt;p&gt;Get Currencies specified by BANK_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;alphanumeric_code&lt;/strong&gt;&lt;/a&gt;: alphanumeric_code&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currencies&lt;/strong&gt;&lt;/a&gt;: currencies&lt;/p&gt; 
+        /// Get Current FxRate &lt;p&gt;Get the latest FX rate specified by BANK_ID, FROM_CURRENCY_CODE and TO_CURRENCY_CODE&lt;/p&gt; &lt;p&gt;OBP may try different sources of FX rate information depending on the Connector in operation.&lt;/p&gt; &lt;p&gt;For example we want to convert EUR &#x3D;&amp;gt; USD:&lt;/p&gt; &lt;p&gt;OBP will:&lt;br /&gt; 1st try - Connector (database, core banking system or external FX service)&lt;br /&gt; 2nd try part 1 - fallbackexchangerates/eur.json&lt;br /&gt; 2nd try part 2 - fallbackexchangerates/usd.json (the inverse rate is used)&lt;br /&gt; 3rd try - Hardcoded map of FX rates.&lt;/p&gt; &lt;p&gt;&lt;img src&#x3D;\&quot;https://user-images.githubusercontent.com/485218/60005085-1eded600-966e-11e9-96fb-798b102d9ad0.png\&quot; alt&#x3D;\&quot;FX Flow\&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Public Access:&lt;/strong&gt; This endpoint can be made publicly accessible (no authentication required) by setting the property &lt;code&gt;apiOptions.getCurrentFxRateIsPublic&#x3D;true&lt;/code&gt; in the props file.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;FROM_CURRENCY_CODE&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;TO_CURRENCY_CODE&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#conversion_value\&quot;&gt;&lt;strong&gt;conversion_value&lt;/strong&gt;&lt;/a&gt;: 100&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#effective_date\&quot;&gt;&lt;strong&gt;effective_date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#from_currency_code\&quot;&gt;&lt;strong&gt;from_currency_code&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#inverse_conversion_value\&quot;&gt;&lt;strong&gt;inverse_conversion_value&lt;/strong&gt;&lt;/a&gt;: 50&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#to_currency_code\&quot;&gt;&lt;strong&gt;to_currency_code&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="fromcurrencycode">The FROMCURRENCYCODE identifier</param>
+        /// <param name="tocurrencycode">The TOCURRENCYCODE identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv510GetCurrenciesAtBankApiResponse"/>&gt;</returns>
-        public async Task<IOBPv510GetCurrenciesAtBankApiResponse> OBPv510GetCurrenciesAtBankAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetCurrentFxRateApiResponse"/>&gt;</returns>
+        public async Task<IGetCurrentFxRateApiResponse> GetCurrentFxRateAsync(string bankid, string fromcurrencycode, string tocurrencycode, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv510GetCurrenciesAtBank(bankid);
+                ValidateGetCurrentFxRate(bankid, fromcurrencycode, tocurrencycode);
 
-                FormatOBPv510GetCurrenciesAtBank(ref bankid);
+                FormatGetCurrentFxRate(ref bankid, ref fromcurrencycode, ref tocurrencycode);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -979,16 +977,18 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v5.1.0/banks/{bankid}/currencies"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v5.1.0/banks/{bankid}/currencies");
+                        ? "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bfromcurrencycode%7D", Uri.EscapeDataString(fromcurrencycode.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Btocurrencycode%7D", Uri.EscapeDataString(tocurrencycode.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1015,21 +1015,21 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<OBPv510GetCurrenciesAtBankApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<OBPv510GetCurrenciesAtBankApiResponse>();
-                        OBPv510GetCurrenciesAtBankApiResponse apiResponseLocalVar;
+                        ILogger<GetCurrentFxRateApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<GetCurrentFxRateApiResponse>();
+                        GetCurrentFxRateApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
                                 string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v5.1.0/banks/{bankid}/currencies", requestedAtLocalVar, _jsonSerializerOptions);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}", requestedAtLocalVar, _jsonSerializerOptions);
 
                                 break;
                             }
                         }
 
-                        AfterOBPv510GetCurrenciesAtBankDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetCurrentFxRateDefaultImplementation(apiResponseLocalVar, bankid, fromcurrencycode, tocurrencycode);
 
-                        Events.ExecuteOnOBPv510GetCurrenciesAtBank(apiResponseLocalVar);
+                        Events.ExecuteOnGetCurrentFxRate(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1041,24 +1041,24 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv510GetCurrenciesAtBankDefaultImplementation(e, "/obp/v5.1.0/banks/{bankid}/currencies", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv510GetCurrenciesAtBank(e);
+                OnErrorGetCurrentFxRateDefaultImplementation(e, "/obp/v2.2.0/banks/{bankid}/fx/{fromcurrencycode}/{tocurrencycode}", uriBuilderLocalVar.Path, bankid, fromcurrencycode, tocurrencycode);
+                Events.ExecuteOnErrorGetCurrentFxRate(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="OBPv510GetCurrenciesAtBankApiResponse"/>
+        /// The <see cref="GetCurrentFxRateApiResponse"/>
         /// </summary>
-        public partial class OBPv510GetCurrenciesAtBankApiResponse : OpenBankProject.Client.ApiResponse, IOBPv510GetCurrenciesAtBankApiResponse
+        public partial class GetCurrentFxRateApiResponse : OpenBankProject.Client.ApiResponse, IGetCurrentFxRateApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<OBPv510GetCurrenciesAtBankApiResponse> Logger { get; }
+            public ILogger<GetCurrentFxRateApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCurrenciesAtBankApiResponse"/>
+            /// The <see cref="GetCurrentFxRateApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1067,14 +1067,14 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCurrenciesAtBankApiResponse(ILogger<OBPv510GetCurrenciesAtBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetCurrentFxRateApiResponse(ILogger<GetCurrentFxRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="OBPv510GetCurrenciesAtBankApiResponse"/>
+            /// The <see cref="GetCurrentFxRateApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1083,7 +1083,7 @@ namespace OpenBankProject.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public OBPv510GetCurrenciesAtBankApiResponse(ILogger<OBPv510GetCurrenciesAtBankApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetCurrentFxRateApiResponse(ILogger<GetCurrentFxRateApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1101,11 +1101,11 @@ namespace OpenBankProject.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public OpenBankProject.Model.OBPv510GetCurrenciesAtBank200Response? Ok()
+            public OpenBankProject.Model.CreateFxRequest? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.OBPv510GetCurrenciesAtBank200Response>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<OpenBankProject.Model.CreateFxRequest>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1114,7 +1114,7 @@ namespace OpenBankProject.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.OBPv510GetCurrenciesAtBank200Response? result)
+            public bool TryOk([NotNullWhen(true)]out OpenBankProject.Model.CreateFxRequest? result)
             {
                 result = null;
 

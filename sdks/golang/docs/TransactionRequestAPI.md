@@ -1,339 +1,46 @@
 # \TransactionRequestAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**OBPv140GetTransactionRequestTypes**](TransactionRequestAPI.md#OBPv140GetTransactionRequestTypes) | **Get** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
-[**OBPv210CreateTransactionRequestSandboxTan**](TransactionRequestAPI.md#OBPv210CreateTransactionRequestSandboxTan) | **Post** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
-[**OBPv210GetTransactionRequestTypesSupportedByBank**](TransactionRequestAPI.md#OBPv210GetTransactionRequestTypesSupportedByBank) | **Get** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
-[**OBPv310SaveHistoricalTransaction**](TransactionRequestAPI.md#OBPv310SaveHistoricalTransaction) | **Post** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
-[**OBPv400AnswerTransactionRequestChallenge**](TransactionRequestAPI.md#OBPv400AnswerTransactionRequestChallenge) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
-[**OBPv400CreateHistoricalTransactionAtBank**](TransactionRequestAPI.md#OBPv400CreateHistoricalTransactionAtBank) | **Post** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#OBPv400CreateOrUpdateTransactionRequestAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
-[**OBPv400CreateTransactionRequestAccount**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
-[**OBPv400CreateTransactionRequestAccountOtp**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestAccountOtp) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
-[**OBPv400CreateTransactionRequestAgentCashWithDrawal**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestAgentCashWithDrawal) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
-[**OBPv400CreateTransactionRequestAttribute**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
-[**OBPv400CreateTransactionRequestCard**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestCard) | **Post** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
-[**OBPv400CreateTransactionRequestCounterparty**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
-[**OBPv400CreateTransactionRequestFreeForm**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestFreeForm) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
-[**OBPv400CreateTransactionRequestRefund**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestRefund) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
-[**OBPv400CreateTransactionRequestSepa**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestSepa) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
-[**OBPv400CreateTransactionRequestSimple**](TransactionRequestAPI.md#OBPv400CreateTransactionRequestSimple) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
-[**OBPv400DeleteTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#OBPv400DeleteTransactionRequestAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
-[**OBPv400GetTransactionRequest**](TransactionRequestAPI.md#OBPv400GetTransactionRequest) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
-[**OBPv400GetTransactionRequestAttributeById**](TransactionRequestAPI.md#OBPv400GetTransactionRequestAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
-[**OBPv400GetTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#OBPv400GetTransactionRequestAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
-[**OBPv400GetTransactionRequestAttributes**](TransactionRequestAPI.md#OBPv400GetTransactionRequestAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
-[**OBPv400UpdateTransactionRequestAttribute**](TransactionRequestAPI.md#OBPv400UpdateTransactionRequestAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
-[**OBPv510CreateVRPConsentRequest**](TransactionRequestAPI.md#OBPv510CreateVRPConsentRequest) | **Post** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
-[**OBPv510GetTransactionRequestById**](TransactionRequestAPI.md#OBPv510GetTransactionRequestById) | **Get** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
-[**OBPv510GetTransactionRequests**](TransactionRequestAPI.md#OBPv510GetTransactionRequests) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
-[**OBPv510UpdateTransactionRequestStatus**](TransactionRequestAPI.md#OBPv510UpdateTransactionRequestStatus) | **Put** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
-[**OBPv600CreateTransactionRequestCardano**](TransactionRequestAPI.md#OBPv600CreateTransactionRequestCardano) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
-[**OBPv600CreateTransactionRequestEthSendRawTransaction**](TransactionRequestAPI.md#OBPv600CreateTransactionRequestEthSendRawTransaction) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-[**OBPv600CreateTransactionRequestEthereumeSendTransaction**](TransactionRequestAPI.md#OBPv600CreateTransactionRequestEthereumeSendTransaction) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
-[**OBPv600CreateTransactionRequestHold**](TransactionRequestAPI.md#OBPv600CreateTransactionRequestHold) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
-
-
-
-## OBPv140GetTransactionRequestTypes
-
-> OBPv140GetTransactionRequestTypes200Response OBPv140GetTransactionRequestTypes(ctx, bankid, accountid, viewid).Execute()
-
-Get Transaction Request Types for Account
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv140GetTransactionRequestTypes(context.Background(), bankid, accountid, viewid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv140GetTransactionRequestTypes``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv140GetTransactionRequestTypes`: OBPv140GetTransactionRequestTypes200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv140GetTransactionRequestTypes`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv140GetTransactionRequestTypesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
-[**OBPv140GetTransactionRequestTypes200Response**](OBPv140GetTransactionRequestTypes200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv210CreateTransactionRequestSandboxTan
-
-> OBPv510GetTransactionRequestById200Response OBPv210CreateTransactionRequestSandboxTan(ctx, bankid, accountid, viewid, sandboxtan).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
-
-Create Transaction Request (SANDBOX_TAN)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	viewid := "viewid_example" // string | The VIEWID identifier
-	sandboxtan := "sandboxtan_example" // string | The SANDBOXTAN identifier
-	oBPv400CreateTransactionRequestAccountRequest := *openapiclient.NewOBPv400CreateTransactionRequestAccountRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestAccountRequestProperties(*openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestAccountRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv210CreateTransactionRequestSandboxTan(context.Background(), bankid, accountid, viewid, sandboxtan).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv210CreateTransactionRequestSandboxTan``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv210CreateTransactionRequestSandboxTan`: OBPv510GetTransactionRequestById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv210CreateTransactionRequestSandboxTan`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**viewid** | **string** | The VIEWID identifier | 
-**sandboxtan** | **string** | The SANDBOXTAN identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv210CreateTransactionRequestSandboxTanRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **oBPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv210GetTransactionRequestTypesSupportedByBank
-
-> OBPv210GetTransactionRequestTypesSupportedByBank200Response OBPv210GetTransactionRequestTypesSupportedByBank(ctx, bankid).Execute()
-
-Get Transaction Request Types at Bank
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv210GetTransactionRequestTypesSupportedByBank(context.Background(), bankid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv210GetTransactionRequestTypesSupportedByBank``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv210GetTransactionRequestTypesSupportedByBank`: OBPv210GetTransactionRequestTypesSupportedByBank200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv210GetTransactionRequestTypesSupportedByBank`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv210GetTransactionRequestTypesSupportedByBankRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**OBPv210GetTransactionRequestTypesSupportedByBank200Response**](OBPv210GetTransactionRequestTypesSupportedByBank200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv310SaveHistoricalTransaction
-
-> OBPv310SaveHistoricalTransaction200Response OBPv310SaveHistoricalTransaction(ctx).OBPv310SaveHistoricalTransactionRequest(oBPv310SaveHistoricalTransactionRequest).Execute()
-
-Save Historical Transactions 
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv310SaveHistoricalTransactionRequest := *openapiclient.NewOBPv310SaveHistoricalTransactionRequest("Type_example", *openapiclient.NewOBPv310SaveHistoricalTransactionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesTo("Type_example", *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesToProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , )), , , *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesTo("Type_example", *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesToProperties(, , )), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), )) // OBPv310SaveHistoricalTransactionRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv310SaveHistoricalTransaction(context.Background()).OBPv310SaveHistoricalTransactionRequest(oBPv310SaveHistoricalTransactionRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv310SaveHistoricalTransaction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv310SaveHistoricalTransaction`: OBPv310SaveHistoricalTransaction200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv310SaveHistoricalTransaction`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv310SaveHistoricalTransactionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv310SaveHistoricalTransactionRequest** | [**OBPv310SaveHistoricalTransactionRequest**](OBPv310SaveHistoricalTransactionRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv310SaveHistoricalTransaction200Response**](OBPv310SaveHistoricalTransaction200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv400AnswerTransactionRequestChallenge
-
-> OBPv510GetTransactionRequestById200Response OBPv400AnswerTransactionRequestChallenge(ctx, bankid, accountid, viewid, transactionrequesttype, transactionrequestid).OBPv400AnswerTransactionRequestChallengeRequest(oBPv400AnswerTransactionRequestChallengeRequest).Execute()
+[**AnswerTransactionRequestChallenge**](TransactionRequestAPI.md#AnswerTransactionRequestChallenge) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{transactionrequesttype}/transaction-requests/{transactionrequestid}/challenge | Answer Transaction Request Challenge
+[**CreateHistoricalTransactionAtBank**](TransactionRequestAPI.md#CreateHistoricalTransactionAtBank) | **Post** /obp/v4.0.0/banks/{bankid}/management/historical/transactions | Create Historical Transactions 
+[**CreateOrUpdateTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#CreateOrUpdateTransactionRequestAttributeDefinition) | **Put** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Create or Update Transaction Request Attribute Definition
+[**CreateTransactionRequestAccount**](TransactionRequestAPI.md#CreateTransactionRequestAccount) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{account}/transaction-requests | Create Transaction Request (ACCOUNT)
+[**CreateTransactionRequestAccountOtp**](TransactionRequestAPI.md#CreateTransactionRequestAccountOtp) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{accountotp}/transaction-requests | Create Transaction Request (ACCOUNT_OTP)
+[**CreateTransactionRequestAgentCashWithDrawal**](TransactionRequestAPI.md#CreateTransactionRequestAgentCashWithDrawal) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{agentcashwithdrawal}/transaction-requests | Create Transaction Request (AGENT_CASH_WITHDRAWAL)
+[**CreateTransactionRequestAttribute**](TransactionRequestAPI.md#CreateTransactionRequestAttribute) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attribute | Create Transaction Request Attribute
+[**CreateTransactionRequestCard**](TransactionRequestAPI.md#CreateTransactionRequestCard) | **Post** /obp/v4.0.0/transaction-request-types/{card}/transaction-requests | Create Transaction Request (CARD)
+[**CreateTransactionRequestCardano**](TransactionRequestAPI.md#CreateTransactionRequestCardano) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{cardano}/transaction-requests | Create Transaction Request (CARDANO)
+[**CreateTransactionRequestCounterparty**](TransactionRequestAPI.md#CreateTransactionRequestCounterparty) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{counterparty}/transaction-requests | Create Transaction Request (COUNTERPARTY)
+[**CreateTransactionRequestEthSendRawTransaction**](TransactionRequestAPI.md#CreateTransactionRequestEthSendRawTransaction) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendrawtransaction}/transaction-requests | CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+[**CreateTransactionRequestEthereumeSendTransaction**](TransactionRequestAPI.md#CreateTransactionRequestEthereumeSendTransaction) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{ethsendtransaction}/transaction-requests | Create Transaction Request (ETH_SEND_TRANSACTION)
+[**CreateTransactionRequestFreeForm**](TransactionRequestAPI.md#CreateTransactionRequestFreeForm) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{freeform}/transaction-requests | Create Transaction Request (FREE_FORM)
+[**CreateTransactionRequestHold**](TransactionRequestAPI.md#CreateTransactionRequestHold) | **Post** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/owner/transaction-request-types/{hold}/transaction-requests | Create Transaction Request (HOLD)
+[**CreateTransactionRequestRefund**](TransactionRequestAPI.md#CreateTransactionRequestRefund) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{refund}/transaction-requests | Create Transaction Request (REFUND)
+[**CreateTransactionRequestSandboxTan**](TransactionRequestAPI.md#CreateTransactionRequestSandboxTan) | **Post** /obp/v2.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sandboxtan}/transaction-requests | Create Transaction Request (SANDBOX_TAN)
+[**CreateTransactionRequestSepa**](TransactionRequestAPI.md#CreateTransactionRequestSepa) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{sepa}/transaction-requests | Create Transaction Request (SEPA)
+[**CreateTransactionRequestSimple**](TransactionRequestAPI.md#CreateTransactionRequestSimple) | **Post** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types/{simple}/transaction-requests | Create Transaction Request (SIMPLE)
+[**CreateVRPConsentRequest**](TransactionRequestAPI.md#CreateVRPConsentRequest) | **Post** /obp/v5.1.0/consumer/vrp-consent-requests | Create Consent Request VRP
+[**DeleteTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#DeleteTransactionRequestAttributeDefinition) | **Delete** /obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/transaction-request | Delete Transaction Request Attribute Definition
+[**GetTransactionRequest**](TransactionRequestAPI.md#GetTransactionRequest) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests/{transactionrequestid} | Get Transaction Request
+[**GetTransactionRequestAttributeById**](TransactionRequestAPI.md#GetTransactionRequestAttributeById) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Get Transaction Request Attribute By Id
+[**GetTransactionRequestAttributeDefinition**](TransactionRequestAPI.md#GetTransactionRequestAttributeDefinition) | **Get** /obp/v4.0.0/banks/{bankid}/attribute-definitions/transaction-request | Get Transaction Request Attribute Definition
+[**GetTransactionRequestAttributes**](TransactionRequestAPI.md#GetTransactionRequestAttributes) | **Get** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes | Get Transaction Request Attributes
+[**GetTransactionRequestById**](TransactionRequestAPI.md#GetTransactionRequestById) | **Get** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Get Transaction Request by ID
+[**GetTransactionRequestTypes**](TransactionRequestAPI.md#GetTransactionRequestTypes) | **Get** /obp/v1.4.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-request-types | Get Transaction Request Types for Account
+[**GetTransactionRequestTypesSupportedByBank**](TransactionRequestAPI.md#GetTransactionRequestTypesSupportedByBank) | **Get** /obp/v2.1.0/banks/{bankid}/transaction-request-types | Get Transaction Request Types at Bank
+[**GetTransactionRequests**](TransactionRequestAPI.md#GetTransactionRequests) | **Get** /obp/v5.1.0/banks/{bankid}/accounts/{accountid}/{viewid}/transaction-requests | Get Transaction Requests
+[**SaveHistoricalTransaction**](TransactionRequestAPI.md#SaveHistoricalTransaction) | **Post** /obp/v3.1.0/management/historical/transactions  | Save Historical Transactions 
+[**UpdateTransactionRequestAttribute**](TransactionRequestAPI.md#UpdateTransactionRequestAttribute) | **Put** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/transaction-requests/{transactionrequestid}/attributes/{attributeid} | Update Transaction Request Attribute
+[**UpdateTransactionRequestStatus**](TransactionRequestAPI.md#UpdateTransactionRequestStatus) | **Put** /obp/v5.1.0/management/transaction-requests/{transactionrequestid} | Update Transaction Request Status
+
+
+
+## AnswerTransactionRequestChallenge
+
+> GetTransactionRequestById200Response AnswerTransactionRequestChallenge(ctx, bankid, accountid, viewid, transactionrequesttype, transactionrequestid).AnswerTransactionRequestChallengeRequest(answerTransactionRequestChallengeRequest).Execute()
 
 Answer Transaction Request Challenge
 
@@ -357,17 +64,17 @@ func main() {
 	viewid := "viewid_example" // string | The VIEWID identifier
 	transactionrequesttype := "transactionrequesttype_example" // string | The TRANSACTIONREQUESTTYPE identifier
 	transactionrequestid := "transactionrequestid_example" // string | The TRANSACTIONREQUESTID identifier
-	oBPv400AnswerTransactionRequestChallengeRequest := *openapiclient.NewOBPv400AnswerTransactionRequestChallengeRequest("Type_example", *openapiclient.NewOBPv400AnswerTransactionRequestChallengeRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400AnswerTransactionRequestChallengeRequest | Request body
+	answerTransactionRequestChallengeRequest := *openapiclient.NewAnswerTransactionRequestChallengeRequest() // AnswerTransactionRequestChallengeRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400AnswerTransactionRequestChallenge(context.Background(), bankid, accountid, viewid, transactionrequesttype, transactionrequestid).OBPv400AnswerTransactionRequestChallengeRequest(oBPv400AnswerTransactionRequestChallengeRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.AnswerTransactionRequestChallenge(context.Background(), bankid, accountid, viewid, transactionrequesttype, transactionrequestid).AnswerTransactionRequestChallengeRequest(answerTransactionRequestChallengeRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400AnswerTransactionRequestChallenge``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.AnswerTransactionRequestChallenge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400AnswerTransactionRequestChallenge`: OBPv510GetTransactionRequestById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400AnswerTransactionRequestChallenge`: %v\n", resp)
+	// response from `AnswerTransactionRequestChallenge`: GetTransactionRequestById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.AnswerTransactionRequestChallenge`: %v\n", resp)
 }
 ```
 
@@ -385,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400AnswerTransactionRequestChallengeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAnswerTransactionRequestChallengeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -395,11 +102,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400AnswerTransactionRequestChallengeRequest** | [**OBPv400AnswerTransactionRequestChallengeRequest**](OBPv400AnswerTransactionRequestChallengeRequest.md) | Request body | 
+ **answerTransactionRequestChallengeRequest** | [**AnswerTransactionRequestChallengeRequest**](AnswerTransactionRequestChallengeRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 ### Authorization
 
@@ -415,9 +122,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateHistoricalTransactionAtBank
+## CreateHistoricalTransactionAtBank
 
-> OBPv310SaveHistoricalTransaction200Response OBPv400CreateHistoricalTransactionAtBank(ctx, bankid).OBPv400CreateHistoricalTransactionAtBankRequest(oBPv400CreateHistoricalTransactionAtBankRequest).Execute()
+> SaveHistoricalTransaction200Response CreateHistoricalTransactionAtBank(ctx, bankid).CreateHistoricalTransactionAtBankRequest(createHistoricalTransactionAtBankRequest).Execute()
 
 Create Historical Transactions 
 
@@ -437,17 +144,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateHistoricalTransactionAtBankRequest := *openapiclient.NewOBPv400CreateHistoricalTransactionAtBankRequest("Type_example", *openapiclient.NewOBPv400CreateHistoricalTransactionAtBankRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), )) // OBPv400CreateHistoricalTransactionAtBankRequest | Request body
+	createHistoricalTransactionAtBankRequest := *openapiclient.NewCreateHistoricalTransactionAtBankRequest() // CreateHistoricalTransactionAtBankRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateHistoricalTransactionAtBank(context.Background(), bankid).OBPv400CreateHistoricalTransactionAtBankRequest(oBPv400CreateHistoricalTransactionAtBankRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateHistoricalTransactionAtBank(context.Background(), bankid).CreateHistoricalTransactionAtBankRequest(createHistoricalTransactionAtBankRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateHistoricalTransactionAtBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateHistoricalTransactionAtBank``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateHistoricalTransactionAtBank`: OBPv310SaveHistoricalTransaction200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateHistoricalTransactionAtBank`: %v\n", resp)
+	// response from `CreateHistoricalTransactionAtBank`: SaveHistoricalTransaction200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateHistoricalTransactionAtBank`: %v\n", resp)
 }
 ```
 
@@ -461,17 +168,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateHistoricalTransactionAtBankRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateHistoricalTransactionAtBankRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateHistoricalTransactionAtBankRequest** | [**OBPv400CreateHistoricalTransactionAtBankRequest**](OBPv400CreateHistoricalTransactionAtBankRequest.md) | Request body | 
+ **createHistoricalTransactionAtBankRequest** | [**CreateHistoricalTransactionAtBankRequest**](CreateHistoricalTransactionAtBankRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv310SaveHistoricalTransaction200Response**](OBPv310SaveHistoricalTransaction200Response.md)
+[**SaveHistoricalTransaction200Response**](SaveHistoricalTransaction200Response.md)
 
 ### Authorization
 
@@ -487,9 +194,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateOrUpdateTransactionRequestAttributeDefinition
+## CreateOrUpdateTransactionRequestAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateTransactionRequestAttributeDefinition(ctx, bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateTransactionRequestAttributeDefinition(ctx, bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 
 Create or Update Transaction Request Attribute Definition
 
@@ -509,17 +216,17 @@ import (
 
 func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
-	oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest("Type_example", *openapiclient.NewOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600GetActiveRateLimitsAtDate200ResponsePropertiesConsideredRateLimitIds("Type_example", *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example")), , )) // OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
+	createOrUpdateTransactionRequestAttributeDefinitionRequest := *openapiclient.NewCreateOrUpdateTransactionRequestAttributeDefinitionRequest() // CreateOrUpdateTransactionRequestAttributeDefinitionRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateOrUpdateTransactionRequestAttributeDefinition(context.Background(), bankid).OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateOrUpdateTransactionRequestAttributeDefinition(context.Background(), bankid).CreateOrUpdateTransactionRequestAttributeDefinitionRequest(createOrUpdateTransactionRequestAttributeDefinitionRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateOrUpdateTransactionRequestAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateOrUpdateTransactionRequestAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateOrUpdateTransactionRequestAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateOrUpdateTransactionRequestAttributeDefinition`: %v\n", resp)
+	// response from `CreateOrUpdateTransactionRequestAttributeDefinition`: GetTransactionRequestAttributeDefinition200ResponseAttributesInner
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateOrUpdateTransactionRequestAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -533,17 +240,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateOrUpdateTransactionRequestAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
+ **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -559,9 +266,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestAccount
+## CreateTransactionRequestAccount
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestAccount(ctx, bankid, accountid, viewid, account).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestAccount(ctx, bankid, accountid, viewid, account).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
 
 Create Transaction Request (ACCOUNT)
 
@@ -584,17 +291,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	account := "account_example" // string | The ACCOUNT identifier
-	oBPv400CreateTransactionRequestAccountRequest := *openapiclient.NewOBPv400CreateTransactionRequestAccountRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestAccountRequestProperties(*openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestAccountRequest | Request body
+	createTransactionRequestAccountRequest := *openapiclient.NewCreateTransactionRequestAccountRequest() // CreateTransactionRequestAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestAccount(context.Background(), bankid, accountid, viewid, account).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestAccount(context.Background(), bankid, accountid, viewid, account).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestAccount`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestAccount`: %v\n", resp)
+	// response from `CreateTransactionRequestAccount`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestAccount`: %v\n", resp)
 }
 ```
 
@@ -611,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -620,11 +327,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md) | Request body | 
+ **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -640,9 +347,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestAccountOtp
+## CreateTransactionRequestAccountOtp
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestAccountOtp(ctx, bankid, accountid, viewid, accountotp).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestAccountOtp(ctx, bankid, accountid, viewid, accountotp).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
 
 Create Transaction Request (ACCOUNT_OTP)
 
@@ -665,17 +372,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	accountotp := "accountotp_example" // string | The ACCOUNTOTP identifier
-	oBPv400CreateTransactionRequestAccountRequest := *openapiclient.NewOBPv400CreateTransactionRequestAccountRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestAccountRequestProperties(*openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFrom("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesFromProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestAccountRequest | Request body
+	createTransactionRequestAccountRequest := *openapiclient.NewCreateTransactionRequestAccountRequest() // CreateTransactionRequestAccountRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestAccountOtp(context.Background(), bankid, accountid, viewid, accountotp).OBPv400CreateTransactionRequestAccountRequest(oBPv400CreateTransactionRequestAccountRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestAccountOtp(context.Background(), bankid, accountid, viewid, accountotp).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestAccountOtp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestAccountOtp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestAccountOtp`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestAccountOtp`: %v\n", resp)
+	// response from `CreateTransactionRequestAccountOtp`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestAccountOtp`: %v\n", resp)
 }
 ```
 
@@ -692,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestAccountOtpRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestAccountOtpRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -701,11 +408,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestAccountRequest** | [**OBPv400CreateTransactionRequestAccountRequest**](OBPv400CreateTransactionRequestAccountRequest.md) | Request body | 
+ **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -721,9 +428,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestAgentCashWithDrawal
+## CreateTransactionRequestAgentCashWithDrawal
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestAgentCashWithDrawal(ctx, bankid, accountid, viewid, agentcashwithdrawal).OBPv400CreateTransactionRequestAgentCashWithDrawalRequest(oBPv400CreateTransactionRequestAgentCashWithDrawalRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestAgentCashWithDrawal(ctx, bankid, accountid, viewid, agentcashwithdrawal).CreateTransactionRequestAgentCashWithDrawalRequest(createTransactionRequestAgentCashWithDrawalRequest).Execute()
 
 Create Transaction Request (AGENT_CASH_WITHDRAWAL)
 
@@ -746,17 +453,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	agentcashwithdrawal := "agentcashwithdrawal_example" // string | The AGENTCASHWITHDRAWAL identifier
-	oBPv400CreateTransactionRequestAgentCashWithDrawalRequest := *openapiclient.NewOBPv400CreateTransactionRequestAgentCashWithDrawalRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestAgentCashWithDrawalRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgent("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToAgentProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestAgentCashWithDrawalRequest | Request body
+	createTransactionRequestAgentCashWithDrawalRequest := *openapiclient.NewCreateTransactionRequestAgentCashWithDrawalRequest() // CreateTransactionRequestAgentCashWithDrawalRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestAgentCashWithDrawal(context.Background(), bankid, accountid, viewid, agentcashwithdrawal).OBPv400CreateTransactionRequestAgentCashWithDrawalRequest(oBPv400CreateTransactionRequestAgentCashWithDrawalRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestAgentCashWithDrawal(context.Background(), bankid, accountid, viewid, agentcashwithdrawal).CreateTransactionRequestAgentCashWithDrawalRequest(createTransactionRequestAgentCashWithDrawalRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestAgentCashWithDrawal``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestAgentCashWithDrawal``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestAgentCashWithDrawal`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestAgentCashWithDrawal`: %v\n", resp)
+	// response from `CreateTransactionRequestAgentCashWithDrawal`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestAgentCashWithDrawal`: %v\n", resp)
 }
 ```
 
@@ -773,7 +480,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestAgentCashWithDrawalRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestAgentCashWithDrawalRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -782,11 +489,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestAgentCashWithDrawalRequest** | [**OBPv400CreateTransactionRequestAgentCashWithDrawalRequest**](OBPv400CreateTransactionRequestAgentCashWithDrawalRequest.md) | Request body | 
+ **createTransactionRequestAgentCashWithDrawalRequest** | [**CreateTransactionRequestAgentCashWithDrawalRequest**](CreateTransactionRequestAgentCashWithDrawalRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -802,9 +509,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestAttribute
+## CreateTransactionRequestAttribute
 
-> OBPv400GetTransactionRequestAttributeById200Response OBPv400CreateTransactionRequestAttribute(ctx, bankid, accountid, transactionrequestid).OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems).Execute()
+> GetTransactionRequestAttributeById200Response CreateTransactionRequestAttribute(ctx, bankid, accountid, transactionrequestid).CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner).Execute()
 
 Create Transaction Request Attribute
 
@@ -826,17 +533,17 @@ func main() {
 	bankid := "bankid_example" // string | The BANKID identifier
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	transactionrequestid := "transactionrequestid_example" // string | The TRANSACTIONREQUESTID identifier
-	oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems := *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
+	createTransactionRequestCounterpartyRequestAttributesInner := *openapiclient.NewCreateTransactionRequestCounterpartyRequestAttributesInner() // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestAttribute(context.Background(), bankid, accountid, transactionrequestid).OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestAttribute(context.Background(), bankid, accountid, transactionrequestid).CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestAttribute``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestAttribute`: OBPv400GetTransactionRequestAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestAttribute`: %v\n", resp)
+	// response from `CreateTransactionRequestAttribute`: GetTransactionRequestAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestAttribute`: %v\n", resp)
 }
 ```
 
@@ -852,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestAttributeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestAttributeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -860,11 +567,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md) | Request body | 
+ **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md) | Request body | 
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -880,9 +587,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestCard
+## CreateTransactionRequestCard
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestCard(ctx, card).OBPv400CreateTransactionRequestCardRequest(oBPv400CreateTransactionRequestCardRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestCard(ctx, card).CreateTransactionRequestCardRequest(createTransactionRequestCardRequest).Execute()
 
 Create Transaction Request (CARD)
 
@@ -902,17 +609,17 @@ import (
 
 func main() {
 	card := "card_example" // string | The CARD identifier
-	oBPv400CreateTransactionRequestCardRequest := *openapiclient.NewOBPv400CreateTransactionRequestCardRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCardRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv400CreateTransactionRequestCardRequestPropertiesCard("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCardRequestPropertiesCardProperties(, , , , , , )), *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties()))) // OBPv400CreateTransactionRequestCardRequest | Request body
+	createTransactionRequestCardRequest := *openapiclient.NewCreateTransactionRequestCardRequest() // CreateTransactionRequestCardRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestCard(context.Background(), card).OBPv400CreateTransactionRequestCardRequest(oBPv400CreateTransactionRequestCardRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestCard(context.Background(), card).CreateTransactionRequestCardRequest(createTransactionRequestCardRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestCard``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestCard``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestCard`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestCard`: %v\n", resp)
+	// response from `CreateTransactionRequestCard`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestCard`: %v\n", resp)
 }
 ```
 
@@ -926,17 +633,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestCardRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestCardRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv400CreateTransactionRequestCardRequest** | [**OBPv400CreateTransactionRequestCardRequest**](OBPv400CreateTransactionRequestCardRequest.md) | Request body | 
+ **createTransactionRequestCardRequest** | [**CreateTransactionRequestCardRequest**](CreateTransactionRequestCardRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -952,9 +659,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestCounterparty
+## CreateTransactionRequestCardano
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestCounterparty(ctx, bankid, accountid, viewid, counterparty).OBPv400CreateTransactionRequestCounterpartyRequest(oBPv400CreateTransactionRequestCounterpartyRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestCardano(ctx, bankid, accountid, cardano).CreateTransactionRequestCardanoRequest(createTransactionRequestCardanoRequest).Execute()
+
+Create Transaction Request (CARDANO)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	cardano := "cardano_example" // string | The CARDANO identifier
+	createTransactionRequestCardanoRequest := *openapiclient.NewCreateTransactionRequestCardanoRequest() // CreateTransactionRequestCardanoRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestCardano(context.Background(), bankid, accountid, cardano).CreateTransactionRequestCardanoRequest(createTransactionRequestCardanoRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestCardano``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTransactionRequestCardano`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestCardano`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**cardano** | **string** | The CARDANO identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTransactionRequestCardanoRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createTransactionRequestCardanoRequest** | [**CreateTransactionRequestCardanoRequest**](CreateTransactionRequestCardanoRequest.md) | Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTransactionRequestCounterparty
+
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestCounterparty(ctx, bankid, accountid, viewid, counterparty).CreateTransactionRequestCounterpartyRequest(createTransactionRequestCounterpartyRequest).Execute()
 
 Create Transaction Request (COUNTERPARTY)
 
@@ -977,17 +762,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	counterparty := "counterparty_example" // string | The COUNTERPARTY identifier
-	oBPv400CreateTransactionRequestCounterpartyRequest := *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributes("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , ))), *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties()), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestCounterpartyRequest | Request body
+	createTransactionRequestCounterpartyRequest := *openapiclient.NewCreateTransactionRequestCounterpartyRequest() // CreateTransactionRequestCounterpartyRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestCounterparty(context.Background(), bankid, accountid, viewid, counterparty).OBPv400CreateTransactionRequestCounterpartyRequest(oBPv400CreateTransactionRequestCounterpartyRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestCounterparty(context.Background(), bankid, accountid, viewid, counterparty).CreateTransactionRequestCounterpartyRequest(createTransactionRequestCounterpartyRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestCounterparty``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestCounterparty``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestCounterparty`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestCounterparty`: %v\n", resp)
+	// response from `CreateTransactionRequestCounterparty`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestCounterparty`: %v\n", resp)
 }
 ```
 
@@ -1004,7 +789,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestCounterpartyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestCounterpartyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1013,11 +798,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestCounterpartyRequest** | [**OBPv400CreateTransactionRequestCounterpartyRequest**](OBPv400CreateTransactionRequestCounterpartyRequest.md) | Request body | 
+ **createTransactionRequestCounterpartyRequest** | [**CreateTransactionRequestCounterpartyRequest**](CreateTransactionRequestCounterpartyRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -1033,9 +818,165 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestFreeForm
+## CreateTransactionRequestEthSendRawTransaction
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestFreeForm(ctx, bankid, accountid, viewid, freeform).OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestEthSendRawTransaction(ctx, bankid, accountid, ethsendrawtransaction).CreateTransactionRequestEthSendRawTransactionRequest(createTransactionRequestEthSendRawTransactionRequest).Execute()
+
+CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	ethsendrawtransaction := "ethsendrawtransaction_example" // string | The ETHSENDRAWTRANSACTION identifier
+	createTransactionRequestEthSendRawTransactionRequest := *openapiclient.NewCreateTransactionRequestEthSendRawTransactionRequest() // CreateTransactionRequestEthSendRawTransactionRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestEthSendRawTransaction(context.Background(), bankid, accountid, ethsendrawtransaction).CreateTransactionRequestEthSendRawTransactionRequest(createTransactionRequestEthSendRawTransactionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestEthSendRawTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTransactionRequestEthSendRawTransaction`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestEthSendRawTransaction`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**ethsendrawtransaction** | **string** | The ETHSENDRAWTRANSACTION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTransactionRequestEthSendRawTransactionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createTransactionRequestEthSendRawTransactionRequest** | [**CreateTransactionRequestEthSendRawTransactionRequest**](CreateTransactionRequestEthSendRawTransactionRequest.md) | Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTransactionRequestEthereumeSendTransaction
+
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestEthereumeSendTransaction(ctx, bankid, accountid, ethsendtransaction).CreateTransactionRequestEthereumeSendTransactionRequest(createTransactionRequestEthereumeSendTransactionRequest).Execute()
+
+Create Transaction Request (ETH_SEND_TRANSACTION)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	ethsendtransaction := "ethsendtransaction_example" // string | The ETHSENDTRANSACTION identifier
+	createTransactionRequestEthereumeSendTransactionRequest := *openapiclient.NewCreateTransactionRequestEthereumeSendTransactionRequest() // CreateTransactionRequestEthereumeSendTransactionRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestEthereumeSendTransaction(context.Background(), bankid, accountid, ethsendtransaction).CreateTransactionRequestEthereumeSendTransactionRequest(createTransactionRequestEthereumeSendTransactionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestEthereumeSendTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTransactionRequestEthereumeSendTransaction`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestEthereumeSendTransaction`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**ethsendtransaction** | **string** | The ETHSENDTRANSACTION identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTransactionRequestEthereumeSendTransactionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createTransactionRequestEthereumeSendTransactionRequest** | [**CreateTransactionRequestEthereumeSendTransactionRequest**](CreateTransactionRequestEthereumeSendTransactionRequest.md) | Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTransactionRequestFreeForm
+
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestFreeForm(ctx, bankid, accountid, viewid, freeform).CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest).Execute()
 
 Create Transaction Request (FREE_FORM)
 
@@ -1058,17 +999,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	freeform := "freeform_example" // string | The FREEFORM identifier
-	oBPv400CreateTransactionRequestFreeFormRequest := *openapiclient.NewOBPv400CreateTransactionRequestFreeFormRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestFreeFormRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )))) // OBPv400CreateTransactionRequestFreeFormRequest | Request body
+	createTransactionRequestFreeFormRequest := *openapiclient.NewCreateTransactionRequestFreeFormRequest() // CreateTransactionRequestFreeFormRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestFreeForm(context.Background(), bankid, accountid, viewid, freeform).OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestFreeForm(context.Background(), bankid, accountid, viewid, freeform).CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestFreeForm``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestFreeForm``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestFreeForm`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestFreeForm`: %v\n", resp)
+	// response from `CreateTransactionRequestFreeForm`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestFreeForm`: %v\n", resp)
 }
 ```
 
@@ -1085,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestFreeFormRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestFreeFormRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1094,11 +1035,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md) | Request body | 
+ **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -1114,9 +1055,87 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestRefund
+## CreateTransactionRequestHold
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestRefund(ctx, bankid, accountid, viewid, refund).OBPv400CreateTransactionRequestRefundRequest(oBPv400CreateTransactionRequestRefundRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestHold(ctx, bankid, accountid, hold).CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest).Execute()
+
+Create Transaction Request (HOLD)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	hold := "hold_example" // string | The HOLD identifier
+	createTransactionRequestFreeFormRequest := *openapiclient.NewCreateTransactionRequestFreeFormRequest() // CreateTransactionRequestFreeFormRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestHold(context.Background(), bankid, accountid, hold).CreateTransactionRequestFreeFormRequest(createTransactionRequestFreeFormRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestHold``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTransactionRequestHold`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestHold`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**hold** | **string** | The HOLD identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTransactionRequestHoldRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **createTransactionRequestFreeFormRequest** | [**CreateTransactionRequestFreeFormRequest**](CreateTransactionRequestFreeFormRequest.md) | Request body | 
+
+### Return type
+
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTransactionRequestRefund
+
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestRefund(ctx, bankid, accountid, viewid, refund).CreateTransactionRequestRefundRequest(createTransactionRequestRefundRequest).Execute()
 
 Create Transaction Request (REFUND)
 
@@ -1139,17 +1158,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	refund := "refund_example" // string | The REFUND identifier
-	oBPv400CreateTransactionRequestRefundRequest := *openapiclient.NewOBPv400CreateTransactionRequestRefundRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestRefundRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400CreateTransactionRequestRefundRequestPropertiesRefund("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestRefundRequestPropertiesRefundProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesTo("Type_example", *openapiclient.NewOBPv310SaveHistoricalTransactionRequestPropertiesToProperties(, , )), *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesToProperties()), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestRefundRequest | Request body
+	createTransactionRequestRefundRequest := *openapiclient.NewCreateTransactionRequestRefundRequest() // CreateTransactionRequestRefundRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestRefund(context.Background(), bankid, accountid, viewid, refund).OBPv400CreateTransactionRequestRefundRequest(oBPv400CreateTransactionRequestRefundRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestRefund(context.Background(), bankid, accountid, viewid, refund).CreateTransactionRequestRefundRequest(createTransactionRequestRefundRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestRefund``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestRefund``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestRefund`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestRefund`: %v\n", resp)
+	// response from `CreateTransactionRequestRefund`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestRefund`: %v\n", resp)
 }
 ```
 
@@ -1166,7 +1185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestRefundRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestRefundRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1175,11 +1194,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestRefundRequest** | [**OBPv400CreateTransactionRequestRefundRequest**](OBPv400CreateTransactionRequestRefundRequest.md) | Request body | 
+ **createTransactionRequestRefundRequest** | [**CreateTransactionRequestRefundRequest**](CreateTransactionRequestRefundRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -1195,9 +1214,90 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestSepa
+## CreateTransactionRequestSandboxTan
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestSepa(ctx, bankid, accountid, viewid, sepa).OBPv400CreateTransactionRequestSepaRequest(oBPv400CreateTransactionRequestSepaRequest).Execute()
+> GetTransactionRequestById200Response CreateTransactionRequestSandboxTan(ctx, bankid, accountid, viewid, sandboxtan).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
+
+Create Transaction Request (SANDBOX_TAN)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+	sandboxtan := "sandboxtan_example" // string | The SANDBOXTAN identifier
+	createTransactionRequestAccountRequest := *openapiclient.NewCreateTransactionRequestAccountRequest() // CreateTransactionRequestAccountRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestSandboxTan(context.Background(), bankid, accountid, viewid, sandboxtan).CreateTransactionRequestAccountRequest(createTransactionRequestAccountRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestSandboxTan``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateTransactionRequestSandboxTan`: GetTransactionRequestById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestSandboxTan`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+**sandboxtan** | **string** | The SANDBOXTAN identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTransactionRequestSandboxTanRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **createTransactionRequestAccountRequest** | [**CreateTransactionRequestAccountRequest**](CreateTransactionRequestAccountRequest.md) | Request body | 
+
+### Return type
+
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTransactionRequestSepa
+
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestSepa(ctx, bankid, accountid, viewid, sepa).CreateTransactionRequestSepaRequest(createTransactionRequestSepaRequest).Execute()
 
 Create Transaction Request (SEPA)
 
@@ -1220,17 +1320,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	sepa := "sepa_example" // string | The SEPA identifier
-	oBPv400CreateTransactionRequestSepaRequest := *openapiclient.NewOBPv400CreateTransactionRequestSepaRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestSepaRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccount("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterparty200ResponsePropertiesDetailsPropertiesToSepaCreditTransfersPropertiesDebtorAccountProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )), *openapiclient.NewOBPv400CreateTransactionRequestSepaRequestPropertiesReasons("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItems("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestSepaRequestPropertiesReasonsItemsProperties(, , , , ))))) // OBPv400CreateTransactionRequestSepaRequest | Request body
+	createTransactionRequestSepaRequest := *openapiclient.NewCreateTransactionRequestSepaRequest() // CreateTransactionRequestSepaRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestSepa(context.Background(), bankid, accountid, viewid, sepa).OBPv400CreateTransactionRequestSepaRequest(oBPv400CreateTransactionRequestSepaRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestSepa(context.Background(), bankid, accountid, viewid, sepa).CreateTransactionRequestSepaRequest(createTransactionRequestSepaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestSepa``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestSepa``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestSepa`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestSepa`: %v\n", resp)
+	// response from `CreateTransactionRequestSepa`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestSepa`: %v\n", resp)
 }
 ```
 
@@ -1247,7 +1347,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestSepaRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestSepaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1256,11 +1356,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestSepaRequest** | [**OBPv400CreateTransactionRequestSepaRequest**](OBPv400CreateTransactionRequestSepaRequest.md) | Request body | 
+ **createTransactionRequestSepaRequest** | [**CreateTransactionRequestSepaRequest**](CreateTransactionRequestSepaRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -1276,9 +1376,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400CreateTransactionRequestSimple
+## CreateTransactionRequestSimple
 
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv400CreateTransactionRequestSimple(ctx, bankid, accountid, viewid, simple).OBPv400CreateTransactionRequestSimpleRequest(oBPv400CreateTransactionRequestSimpleRequest).Execute()
+> CreateTransactionRequestCounterparty200Response CreateTransactionRequestSimple(ctx, bankid, accountid, viewid, simple).CreateTransactionRequestSimpleRequest(createTransactionRequestSimpleRequest).Execute()
 
 Create Transaction Request (SIMPLE)
 
@@ -1301,17 +1401,17 @@ func main() {
 	accountid := "accountid_example" // string | The ACCOUNTID identifier
 	viewid := "viewid_example" // string | The VIEWID identifier
 	simple := "simple_example" // string | The SIMPLE identifier
-	oBPv400CreateTransactionRequestSimpleRequest := *openapiclient.NewOBPv400CreateTransactionRequestSimpleRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestSimpleRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400CreateTransactionRequestSimpleRequestPropertiesTo("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestSimpleRequestPropertiesToProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), , , , , , , , , )), , *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv400CreateTransactionRequestSimpleRequest | Request body
+	createTransactionRequestSimpleRequest := *openapiclient.NewCreateTransactionRequestSimpleRequest() // CreateTransactionRequestSimpleRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400CreateTransactionRequestSimple(context.Background(), bankid, accountid, viewid, simple).OBPv400CreateTransactionRequestSimpleRequest(oBPv400CreateTransactionRequestSimpleRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.CreateTransactionRequestSimple(context.Background(), bankid, accountid, viewid, simple).CreateTransactionRequestSimpleRequest(createTransactionRequestSimpleRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400CreateTransactionRequestSimple``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateTransactionRequestSimple``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400CreateTransactionRequestSimple`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400CreateTransactionRequestSimple`: %v\n", resp)
+	// response from `CreateTransactionRequestSimple`: CreateTransactionRequestCounterparty200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateTransactionRequestSimple`: %v\n", resp)
 }
 ```
 
@@ -1328,7 +1428,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400CreateTransactionRequestSimpleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTransactionRequestSimpleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1337,11 +1437,11 @@ Name | Type | Description  | Notes
 
 
 
- **oBPv400CreateTransactionRequestSimpleRequest** | [**OBPv400CreateTransactionRequestSimpleRequest**](OBPv400CreateTransactionRequestSimpleRequest.md) | Request body | 
+ **createTransactionRequestSimpleRequest** | [**CreateTransactionRequestSimpleRequest**](CreateTransactionRequestSimpleRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**CreateTransactionRequestCounterparty200Response**](CreateTransactionRequestCounterparty200Response.md)
 
 ### Authorization
 
@@ -1357,9 +1457,75 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400DeleteTransactionRequestAttributeDefinition
+## CreateVRPConsentRequest
 
-> OBPv400DeleteSystemLevelEndpointTag200Response OBPv400DeleteTransactionRequestAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
+> CreateVRPConsentRequest200Response CreateVRPConsentRequest(ctx).CreateVRPConsentRequestRequest(createVRPConsentRequestRequest).Execute()
+
+Create Consent Request VRP
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	createVRPConsentRequestRequest := *openapiclient.NewCreateVRPConsentRequestRequest() // CreateVRPConsentRequestRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.CreateVRPConsentRequest(context.Background()).CreateVRPConsentRequestRequest(createVRPConsentRequestRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.CreateVRPConsentRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateVRPConsentRequest`: CreateVRPConsentRequest200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.CreateVRPConsentRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateVRPConsentRequestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createVRPConsentRequestRequest** | [**CreateVRPConsentRequestRequest**](CreateVRPConsentRequestRequest.md) | Request body | 
+
+### Return type
+
+[**CreateVRPConsentRequest200Response**](CreateVRPConsentRequest200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteTransactionRequestAttributeDefinition
+
+> DeleteSystemLevelEndpointTag200Response DeleteTransactionRequestAttributeDefinition(ctx, bankid, attributedefinitionid).Execute()
 
 Delete Transaction Request Attribute Definition
 
@@ -1383,13 +1549,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400DeleteTransactionRequestAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.DeleteTransactionRequestAttributeDefinition(context.Background(), bankid, attributedefinitionid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400DeleteTransactionRequestAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.DeleteTransactionRequestAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400DeleteTransactionRequestAttributeDefinition`: OBPv400DeleteSystemLevelEndpointTag200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400DeleteTransactionRequestAttributeDefinition`: %v\n", resp)
+	// response from `DeleteTransactionRequestAttributeDefinition`: DeleteSystemLevelEndpointTag200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.DeleteTransactionRequestAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -1404,7 +1570,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400DeleteTransactionRequestAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTransactionRequestAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1414,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)
+[**DeleteSystemLevelEndpointTag200Response**](DeleteSystemLevelEndpointTag200Response.md)
 
 ### Authorization
 
@@ -1430,9 +1596,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetTransactionRequest
+## GetTransactionRequest
 
-> OBPv510GetTransactionRequestById200Response OBPv400GetTransactionRequest(ctx, bankid, accountid, viewid, transactionrequestid).Execute()
+> GetTransactionRequestById200Response GetTransactionRequest(ctx, bankid, accountid, viewid, transactionrequestid).Execute()
 
 Get Transaction Request
 
@@ -1458,13 +1624,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400GetTransactionRequest(context.Background(), bankid, accountid, viewid, transactionrequestid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequest(context.Background(), bankid, accountid, viewid, transactionrequestid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400GetTransactionRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequest``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetTransactionRequest`: OBPv510GetTransactionRequestById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400GetTransactionRequest`: %v\n", resp)
+	// response from `GetTransactionRequest`: GetTransactionRequestById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequest`: %v\n", resp)
 }
 ```
 
@@ -1481,7 +1647,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetTransactionRequestRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1493,7 +1659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 ### Authorization
 
@@ -1509,9 +1675,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetTransactionRequestAttributeById
+## GetTransactionRequestAttributeById
 
-> OBPv400GetTransactionRequestAttributeById200Response OBPv400GetTransactionRequestAttributeById(ctx, bankid, accountid, transactionrequestid, attributeid).Execute()
+> GetTransactionRequestAttributeById200Response GetTransactionRequestAttributeById(ctx, bankid, accountid, transactionrequestid, attributeid).Execute()
 
 Get Transaction Request Attribute By Id
 
@@ -1537,13 +1703,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400GetTransactionRequestAttributeById(context.Background(), bankid, accountid, transactionrequestid, attributeid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestAttributeById(context.Background(), bankid, accountid, transactionrequestid, attributeid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400GetTransactionRequestAttributeById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestAttributeById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetTransactionRequestAttributeById`: OBPv400GetTransactionRequestAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400GetTransactionRequestAttributeById`: %v\n", resp)
+	// response from `GetTransactionRequestAttributeById`: GetTransactionRequestAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestAttributeById`: %v\n", resp)
 }
 ```
 
@@ -1560,7 +1726,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetTransactionRequestAttributeByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestAttributeByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1572,7 +1738,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
 
 ### Authorization
 
@@ -1588,9 +1754,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetTransactionRequestAttributeDefinition
+## GetTransactionRequestAttributeDefinition
 
-> OBPv400GetTransactionRequestAttributeDefinition200Response OBPv400GetTransactionRequestAttributeDefinition(ctx, bankid).Execute()
+> GetTransactionRequestAttributeDefinition200Response GetTransactionRequestAttributeDefinition(ctx, bankid).Execute()
 
 Get Transaction Request Attribute Definition
 
@@ -1613,13 +1779,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400GetTransactionRequestAttributeDefinition(context.Background(), bankid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestAttributeDefinition(context.Background(), bankid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400GetTransactionRequestAttributeDefinition``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestAttributeDefinition``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetTransactionRequestAttributeDefinition`: OBPv400GetTransactionRequestAttributeDefinition200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400GetTransactionRequestAttributeDefinition`: %v\n", resp)
+	// response from `GetTransactionRequestAttributeDefinition`: GetTransactionRequestAttributeDefinition200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestAttributeDefinition`: %v\n", resp)
 }
 ```
 
@@ -1633,7 +1799,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetTransactionRequestAttributeDefinitionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestAttributeDefinitionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1642,7 +1808,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200Response**](OBPv400GetTransactionRequestAttributeDefinition200Response.md)
+[**GetTransactionRequestAttributeDefinition200Response**](GetTransactionRequestAttributeDefinition200Response.md)
 
 ### Authorization
 
@@ -1658,9 +1824,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400GetTransactionRequestAttributes
+## GetTransactionRequestAttributes
 
-> OBPv400GetTransactionRequestAttributes200Response OBPv400GetTransactionRequestAttributes(ctx, bankid, accountid, transactionrequestid).Execute()
+> GetTransactionRequestAttributes200Response GetTransactionRequestAttributes(ctx, bankid, accountid, transactionrequestid).Execute()
 
 Get Transaction Request Attributes
 
@@ -1685,13 +1851,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400GetTransactionRequestAttributes(context.Background(), bankid, accountid, transactionrequestid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestAttributes(context.Background(), bankid, accountid, transactionrequestid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400GetTransactionRequestAttributes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestAttributes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv400GetTransactionRequestAttributes`: OBPv400GetTransactionRequestAttributes200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400GetTransactionRequestAttributes`: %v\n", resp)
+	// response from `GetTransactionRequestAttributes`: GetTransactionRequestAttributes200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestAttributes`: %v\n", resp)
 }
 ```
 
@@ -1707,7 +1873,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv400GetTransactionRequestAttributesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestAttributesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1718,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributes200Response**](OBPv400GetTransactionRequestAttributes200Response.md)
+[**GetTransactionRequestAttributes200Response**](GetTransactionRequestAttributes200Response.md)
 
 ### Authorization
 
@@ -1734,156 +1900,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv400UpdateTransactionRequestAttribute
+## GetTransactionRequestById
 
-> OBPv400GetTransactionRequestAttributeById200Response OBPv400UpdateTransactionRequestAttribute(ctx, bankid, accountid, transactionrequestid, attributeid).OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems).Execute()
-
-Update Transaction Request Attribute
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	transactionrequestid := "transactionrequestid_example" // string | The TRANSACTIONREQUESTID identifier
-	attributeid := "attributeid_example" // string | The ATTRIBUTEID identifier
-	oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems := *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv400UpdateTransactionRequestAttribute(context.Background(), bankid, accountid, transactionrequestid, attributeid).OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems(oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv400UpdateTransactionRequestAttribute``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv400UpdateTransactionRequestAttribute`: OBPv400GetTransactionRequestAttributeById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv400UpdateTransactionRequestAttribute`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**transactionrequestid** | **string** | The TRANSACTIONREQUESTID identifier | 
-**attributeid** | **string** | The ATTRIBUTEID identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv400UpdateTransactionRequestAttributeRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
- **oBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems** | [**OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems**](OBPv400CreateTransactionRequestCounterpartyRequestPropertiesAttributesItems.md) | Request body | 
-
-### Return type
-
-[**OBPv400GetTransactionRequestAttributeById200Response**](OBPv400GetTransactionRequestAttributeById200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510CreateVRPConsentRequest
-
-> OBPv510CreateVRPConsentRequest200Response OBPv510CreateVRPConsentRequest(ctx).OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest).Execute()
-
-Create Consent Request VRP
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	oBPv510CreateVRPConsentRequestRequest := *openapiclient.NewOBPv510CreateVRPConsentRequestRequest("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesFromAccount("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesFromAccountProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )))), *openapiclient.NewOBPv600UpdateRateLimitsRequestPropertiesFromDate("Type_example", "Format_example"), *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccount("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountProperties(*openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItems("Type_example", *openapiclient.NewOBPv310GetCheckbookOrders200ResponsePropertiesAccountPropertiesAccountRoutingsItemsProperties(, )), , *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimit("Type_example", *openapiclient.NewOBPv510CreateVRPConsentRequestRequestPropertiesToAccountPropertiesLimitProperties(, , , , , , , )))))) // OBPv510CreateVRPConsentRequestRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv510CreateVRPConsentRequest(context.Background()).OBPv510CreateVRPConsentRequestRequest(oBPv510CreateVRPConsentRequestRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv510CreateVRPConsentRequest``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv510CreateVRPConsentRequest`: OBPv510CreateVRPConsentRequest200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv510CreateVRPConsentRequest`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv510CreateVRPConsentRequestRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oBPv510CreateVRPConsentRequestRequest** | [**OBPv510CreateVRPConsentRequestRequest**](OBPv510CreateVRPConsentRequestRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv510CreateVRPConsentRequest200Response**](OBPv510CreateVRPConsentRequest200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv510GetTransactionRequestById
-
-> OBPv510GetTransactionRequestById200Response OBPv510GetTransactionRequestById(ctx, transactionrequestid).Execute()
+> GetTransactionRequestById200Response GetTransactionRequestById(ctx, transactionrequestid).Execute()
 
 Get Transaction Request by ID
 
@@ -1906,13 +1925,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv510GetTransactionRequestById(context.Background(), transactionrequestid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestById(context.Background(), transactionrequestid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv510GetTransactionRequestById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetTransactionRequestById`: OBPv510GetTransactionRequestById200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv510GetTransactionRequestById`: %v\n", resp)
+	// response from `GetTransactionRequestById`: GetTransactionRequestById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestById`: %v\n", resp)
 }
 ```
 
@@ -1926,7 +1945,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetTransactionRequestByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1935,7 +1954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetTransactionRequestById200Response**](OBPv510GetTransactionRequestById200Response.md)
+[**GetTransactionRequestById200Response**](GetTransactionRequestById200Response.md)
 
 ### Authorization
 
@@ -1951,9 +1970,155 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510GetTransactionRequests
+## GetTransactionRequestTypes
 
-> OBPv510GetTransactionRequests200Response OBPv510GetTransactionRequests(ctx, bankid, accountid, viewid).Execute()
+> GetTransactionRequestTypes200Response GetTransactionRequestTypes(ctx, bankid, accountid, viewid).Execute()
+
+Get Transaction Request Types for Account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	viewid := "viewid_example" // string | The VIEWID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestTypes(context.Background(), bankid, accountid, viewid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTransactionRequestTypes`: GetTransactionRequestTypes200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**viewid** | **string** | The VIEWID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTransactionRequestTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+### Return type
+
+[**GetTransactionRequestTypes200Response**](GetTransactionRequestTypes200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTransactionRequestTypesSupportedByBank
+
+> GetTransactionRequestTypesSupportedByBank200Response GetTransactionRequestTypesSupportedByBank(ctx, bankid).Execute()
+
+Get Transaction Request Types at Bank
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequestTypesSupportedByBank(context.Background(), bankid).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequestTypesSupportedByBank``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTransactionRequestTypesSupportedByBank`: GetTransactionRequestTypesSupportedByBank200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequestTypesSupportedByBank`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTransactionRequestTypesSupportedByBankRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetTransactionRequestTypesSupportedByBank200Response**](GetTransactionRequestTypesSupportedByBank200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTransactionRequests
+
+> GetTransactionRequests200Response GetTransactionRequests(ctx, bankid, accountid, viewid).Execute()
 
 Get Transaction Requests
 
@@ -1978,13 +2143,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv510GetTransactionRequests(context.Background(), bankid, accountid, viewid).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.GetTransactionRequests(context.Background(), bankid, accountid, viewid).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv510GetTransactionRequests``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.GetTransactionRequests``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510GetTransactionRequests`: OBPv510GetTransactionRequests200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv510GetTransactionRequests`: %v\n", resp)
+	// response from `GetTransactionRequests`: GetTransactionRequests200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.GetTransactionRequests`: %v\n", resp)
 }
 ```
 
@@ -2000,7 +2165,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510GetTransactionRequestsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTransactionRequestsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2011,7 +2176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv510GetTransactionRequests200Response**](OBPv510GetTransactionRequests200Response.md)
+[**GetTransactionRequests200Response**](GetTransactionRequests200Response.md)
 
 ### Authorization
 
@@ -2027,9 +2192,156 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## OBPv510UpdateTransactionRequestStatus
+## SaveHistoricalTransaction
 
-> OBPv510UpdateTransactionRequestStatusRequest OBPv510UpdateTransactionRequestStatus(ctx, transactionrequestid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+> SaveHistoricalTransaction200Response SaveHistoricalTransaction(ctx).SaveHistoricalTransactionRequest(saveHistoricalTransactionRequest).Execute()
+
+Save Historical Transactions 
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	saveHistoricalTransactionRequest := *openapiclient.NewSaveHistoricalTransactionRequest() // SaveHistoricalTransactionRequest | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.SaveHistoricalTransaction(context.Background()).SaveHistoricalTransactionRequest(saveHistoricalTransactionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.SaveHistoricalTransaction``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SaveHistoricalTransaction`: SaveHistoricalTransaction200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.SaveHistoricalTransaction`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSaveHistoricalTransactionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **saveHistoricalTransactionRequest** | [**SaveHistoricalTransactionRequest**](SaveHistoricalTransactionRequest.md) | Request body | 
+
+### Return type
+
+[**SaveHistoricalTransaction200Response**](SaveHistoricalTransaction200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateTransactionRequestAttribute
+
+> GetTransactionRequestAttributeById200Response UpdateTransactionRequestAttribute(ctx, bankid, accountid, transactionrequestid, attributeid).CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner).Execute()
+
+Update Transaction Request Attribute
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	bankid := "bankid_example" // string | The BANKID identifier
+	accountid := "accountid_example" // string | The ACCOUNTID identifier
+	transactionrequestid := "transactionrequestid_example" // string | The TRANSACTIONREQUESTID identifier
+	attributeid := "attributeid_example" // string | The ATTRIBUTEID identifier
+	createTransactionRequestCounterpartyRequestAttributesInner := *openapiclient.NewCreateTransactionRequestCounterpartyRequestAttributesInner() // CreateTransactionRequestCounterpartyRequestAttributesInner | Request body
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.TransactionRequestAPI.UpdateTransactionRequestAttribute(context.Background(), bankid, accountid, transactionrequestid, attributeid).CreateTransactionRequestCounterpartyRequestAttributesInner(createTransactionRequestCounterpartyRequestAttributesInner).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.UpdateTransactionRequestAttribute``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateTransactionRequestAttribute`: GetTransactionRequestAttributeById200Response
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.UpdateTransactionRequestAttribute`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bankid** | **string** | The BANKID identifier | 
+**accountid** | **string** | The ACCOUNTID identifier | 
+**transactionrequestid** | **string** | The TRANSACTIONREQUESTID identifier | 
+**attributeid** | **string** | The ATTRIBUTEID identifier | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateTransactionRequestAttributeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **createTransactionRequestCounterpartyRequestAttributesInner** | [**CreateTransactionRequestCounterpartyRequestAttributesInner**](CreateTransactionRequestCounterpartyRequestAttributesInner.md) | Request body | 
+
+### Return type
+
+[**GetTransactionRequestAttributeById200Response**](GetTransactionRequestAttributeById200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateTransactionRequestStatus
+
+> UpdateTransactionRequestStatusRequest UpdateTransactionRequestStatus(ctx, transactionrequestid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 
 Update Transaction Request Status
 
@@ -2049,17 +2361,17 @@ import (
 
 func main() {
 	transactionrequestid := "transactionrequestid_example" // string | The TRANSACTIONREQUESTID identifier
-	oBPv510UpdateTransactionRequestStatusRequest := *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequest("Type_example", *openapiclient.NewOBPv510UpdateTransactionRequestStatusRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv510UpdateTransactionRequestStatusRequest | Request body
+	updateTransactionRequestStatusRequest := *openapiclient.NewUpdateTransactionRequestStatusRequest() // UpdateTransactionRequestStatusRequest | Request body
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv510UpdateTransactionRequestStatus(context.Background(), transactionrequestid).OBPv510UpdateTransactionRequestStatusRequest(oBPv510UpdateTransactionRequestStatusRequest).Execute()
+	resp, r, err := apiClient.TransactionRequestAPI.UpdateTransactionRequestStatus(context.Background(), transactionrequestid).UpdateTransactionRequestStatusRequest(updateTransactionRequestStatusRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv510UpdateTransactionRequestStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.UpdateTransactionRequestStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OBPv510UpdateTransactionRequestStatus`: OBPv510UpdateTransactionRequestStatusRequest
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv510UpdateTransactionRequestStatus`: %v\n", resp)
+	// response from `UpdateTransactionRequestStatus`: UpdateTransactionRequestStatusRequest
+	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.UpdateTransactionRequestStatus`: %v\n", resp)
 }
 ```
 
@@ -2073,329 +2385,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiOBPv510UpdateTransactionRequestStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTransactionRequestStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **oBPv510UpdateTransactionRequestStatusRequest** | [**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md) | Request body | 
+ **updateTransactionRequestStatusRequest** | [**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv510UpdateTransactionRequestStatusRequest**](OBPv510UpdateTransactionRequestStatusRequest.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateTransactionRequestCardano
-
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv600CreateTransactionRequestCardano(ctx, bankid, accountid, cardano).OBPv600CreateTransactionRequestCardanoRequest(oBPv600CreateTransactionRequestCardanoRequest).Execute()
-
-Create Transaction Request (CARDANO)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	cardano := "cardano_example" // string | The CARDANO identifier
-	oBPv600CreateTransactionRequestCardanoRequest := *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequest("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesTo("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToProperties(*openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmount("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAmountProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )), , *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssets("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItems("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesToPropertiesAssetsItemsProperties(, , ))))), *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesMetadata("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataProperties(*openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestCardanoRequestPropertiesMetadataPropertiesValue1Properties()), )), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(, )))) // OBPv600CreateTransactionRequestCardanoRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv600CreateTransactionRequestCardano(context.Background(), bankid, accountid, cardano).OBPv600CreateTransactionRequestCardanoRequest(oBPv600CreateTransactionRequestCardanoRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv600CreateTransactionRequestCardano``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateTransactionRequestCardano`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv600CreateTransactionRequestCardano`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**cardano** | **string** | The CARDANO identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateTransactionRequestCardanoRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv600CreateTransactionRequestCardanoRequest** | [**OBPv600CreateTransactionRequestCardanoRequest**](OBPv600CreateTransactionRequestCardanoRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateTransactionRequestEthSendRawTransaction
-
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv600CreateTransactionRequestEthSendRawTransaction(ctx, bankid, accountid, ethsendrawtransaction).OBPv600CreateTransactionRequestEthSendRawTransactionRequest(oBPv600CreateTransactionRequestEthSendRawTransactionRequest).Execute()
-
-CREATE TRANSACTION REQUEST (ETH_SEND_RAW_TRANSACTION )
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	ethsendrawtransaction := "ethsendrawtransaction_example" // string | The ETHSENDRAWTRANSACTION identifier
-	oBPv600CreateTransactionRequestEthSendRawTransactionRequest := *openapiclient.NewOBPv600CreateTransactionRequestEthSendRawTransactionRequest("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestEthSendRawTransactionRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))) // OBPv600CreateTransactionRequestEthSendRawTransactionRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv600CreateTransactionRequestEthSendRawTransaction(context.Background(), bankid, accountid, ethsendrawtransaction).OBPv600CreateTransactionRequestEthSendRawTransactionRequest(oBPv600CreateTransactionRequestEthSendRawTransactionRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv600CreateTransactionRequestEthSendRawTransaction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateTransactionRequestEthSendRawTransaction`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv600CreateTransactionRequestEthSendRawTransaction`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**ethsendrawtransaction** | **string** | The ETHSENDRAWTRANSACTION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateTransactionRequestEthSendRawTransactionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv600CreateTransactionRequestEthSendRawTransactionRequest** | [**OBPv600CreateTransactionRequestEthSendRawTransactionRequest**](OBPv600CreateTransactionRequestEthSendRawTransactionRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateTransactionRequestEthereumeSendTransaction
-
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv600CreateTransactionRequestEthereumeSendTransaction(ctx, bankid, accountid, ethsendtransaction).OBPv600CreateTransactionRequestEthereumeSendTransactionRequest(oBPv600CreateTransactionRequestEthereumeSendTransactionRequest).Execute()
-
-Create Transaction Request (ETH_SEND_TRANSACTION)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	ethsendtransaction := "ethsendtransaction_example" // string | The ETHSENDTRANSACTION identifier
-	oBPv600CreateTransactionRequestEthereumeSendTransactionRequest := *openapiclient.NewOBPv600CreateTransactionRequestEthereumeSendTransactionRequest("Type_example", *openapiclient.NewOBPv600CreateTransactionRequestEthereumeSendTransactionRequestProperties(*openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"))), *openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )) // OBPv600CreateTransactionRequestEthereumeSendTransactionRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv600CreateTransactionRequestEthereumeSendTransaction(context.Background(), bankid, accountid, ethsendtransaction).OBPv600CreateTransactionRequestEthereumeSendTransactionRequest(oBPv600CreateTransactionRequestEthereumeSendTransactionRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv600CreateTransactionRequestEthereumeSendTransaction``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateTransactionRequestEthereumeSendTransaction`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv600CreateTransactionRequestEthereumeSendTransaction`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**ethsendtransaction** | **string** | The ETHSENDTRANSACTION identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateTransactionRequestEthereumeSendTransactionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv600CreateTransactionRequestEthereumeSendTransactionRequest** | [**OBPv600CreateTransactionRequestEthereumeSendTransactionRequest**](OBPv600CreateTransactionRequestEthereumeSendTransactionRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## OBPv600CreateTransactionRequestHold
-
-> OBPv400CreateTransactionRequestCounterparty200Response OBPv600CreateTransactionRequestHold(ctx, bankid, accountid, hold).OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest).Execute()
-
-Create Transaction Request (HOLD)
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	bankid := "bankid_example" // string | The BANKID identifier
-	accountid := "accountid_example" // string | The ACCOUNTID identifier
-	hold := "hold_example" // string | The HOLD identifier
-	oBPv400CreateTransactionRequestFreeFormRequest := *openapiclient.NewOBPv400CreateTransactionRequestFreeFormRequest("Type_example", *openapiclient.NewOBPv400CreateTransactionRequestFreeFormRequestProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimit("Type_example", *openapiclient.NewOBPv500GetMyCustomersAtBank200ResponsePropertiesCustomersItemsPropertiesCreditLimitProperties(*openapiclient.NewOBPv400UpdateSystemLevelEndpointTagRequestPropertiesTagName("Type_example"), )))) // OBPv400CreateTransactionRequestFreeFormRequest | Request body
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TransactionRequestAPI.OBPv600CreateTransactionRequestHold(context.Background(), bankid, accountid, hold).OBPv400CreateTransactionRequestFreeFormRequest(oBPv400CreateTransactionRequestFreeFormRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TransactionRequestAPI.OBPv600CreateTransactionRequestHold``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `OBPv600CreateTransactionRequestHold`: OBPv400CreateTransactionRequestCounterparty200Response
-	fmt.Fprintf(os.Stdout, "Response from `TransactionRequestAPI.OBPv600CreateTransactionRequestHold`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bankid** | **string** | The BANKID identifier | 
-**accountid** | **string** | The ACCOUNTID identifier | 
-**hold** | **string** | The HOLD identifier | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiOBPv600CreateTransactionRequestHoldRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
- **oBPv400CreateTransactionRequestFreeFormRequest** | [**OBPv400CreateTransactionRequestFreeFormRequest**](OBPv400CreateTransactionRequestFreeFormRequest.md) | Request body | 
-
-### Return type
-
-[**OBPv400CreateTransactionRequestCounterparty200Response**](OBPv400CreateTransactionRequestCounterparty200Response.md)
+[**UpdateTransactionRequestStatusRequest**](UpdateTransactionRequestStatusRequest.md)
 
 ### Authorization
 

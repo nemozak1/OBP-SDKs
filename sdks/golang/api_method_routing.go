@@ -1,7 +1,7 @@
 /*
 Open Bank Project API v6.0.0
 
-The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 API version: 6.0.0
 Contact: contact@tesobe.com
@@ -24,30 +24,30 @@ import (
 // MethodRoutingAPIService MethodRoutingAPI service
 type MethodRoutingAPIService service
 
-type ApiOBPv310CreateMethodRoutingRequest struct {
+type ApiCreateMethodRoutingRequest struct {
 	ctx context.Context
 	ApiService *MethodRoutingAPIService
-	oBPv310CreateMethodRoutingRequest *OBPv310CreateMethodRoutingRequest
+	createMethodRoutingRequest *CreateMethodRoutingRequest
 }
 
 // Request body
-func (r ApiOBPv310CreateMethodRoutingRequest) OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest OBPv310CreateMethodRoutingRequest) ApiOBPv310CreateMethodRoutingRequest {
-	r.oBPv310CreateMethodRoutingRequest = &oBPv310CreateMethodRoutingRequest
+func (r ApiCreateMethodRoutingRequest) CreateMethodRoutingRequest(createMethodRoutingRequest CreateMethodRoutingRequest) ApiCreateMethodRoutingRequest {
+	r.createMethodRoutingRequest = &createMethodRoutingRequest
 	return r
 }
 
-func (r ApiOBPv310CreateMethodRoutingRequest) Execute() (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	return r.ApiService.OBPv310CreateMethodRoutingExecute(r)
+func (r ApiCreateMethodRoutingRequest) Execute() (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	return r.ApiService.CreateMethodRoutingExecute(r)
 }
 
 /*
-OBPv310CreateMethodRouting Create MethodRouting
+CreateMethodRouting Create MethodRouting
 
 <p>Create a MethodRouting.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
 <p>Explanation of Fields:</p>
 <ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
 <li>connector_name is required String value</li>
 <li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
 <li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
@@ -85,26 +85,26 @@ Build InBound json value rules:<br />
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310CreateMethodRoutingRequest
+ @return ApiCreateMethodRoutingRequest
 */
-func (a *MethodRoutingAPIService) OBPv310CreateMethodRouting(ctx context.Context) ApiOBPv310CreateMethodRoutingRequest {
-	return ApiOBPv310CreateMethodRoutingRequest{
+func (a *MethodRoutingAPIService) CreateMethodRouting(ctx context.Context) ApiCreateMethodRoutingRequest {
+	return ApiCreateMethodRoutingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-func (a *MethodRoutingAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310CreateMethodRoutingRequest) (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
+//  @return GetMethodRoutings200ResponseMethodRoutingsInner
+func (a *MethodRoutingAPIService) CreateMethodRoutingExecute(r ApiCreateMethodRoutingRequest) (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
+		localVarReturnValue  *GetMethodRoutings200ResponseMethodRoutingsInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.OBPv310CreateMethodRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.CreateMethodRouting")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -114,8 +114,8 @@ func (a *MethodRoutingAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.oBPv310CreateMethodRoutingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateMethodRoutingRequest is required and must be specified")
+	if r.createMethodRoutingRequest == nil {
+		return localVarReturnValue, nil, reportError("createMethodRoutingRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -136,7 +136,7 @@ func (a *MethodRoutingAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oBPv310CreateMethodRoutingRequest
+	localVarPostBody = r.createMethodRoutingRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -161,7 +161,7 @@ func (a *MethodRoutingAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -202,18 +202,18 @@ func (a *MethodRoutingAPIService) OBPv310CreateMethodRoutingExecute(r ApiOBPv310
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOBPv310DeleteMethodRoutingRequest struct {
+type ApiDeleteMethodRoutingRequest struct {
 	ctx context.Context
 	ApiService *MethodRoutingAPIService
 	methodroutingid string
 }
 
-func (r ApiOBPv310DeleteMethodRoutingRequest) Execute() (*http.Response, error) {
-	return r.ApiService.OBPv310DeleteMethodRoutingExecute(r)
+func (r ApiDeleteMethodRoutingRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteMethodRoutingExecute(r)
 }
 
 /*
-OBPv310DeleteMethodRouting Delete MethodRouting
+DeleteMethodRouting Delete MethodRouting
 
 <p>Delete a MethodRouting specified by METHOD_ROUTING_ID.</p>
 <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
@@ -224,10 +224,10 @@ OBPv310DeleteMethodRouting Delete MethodRouting
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param methodroutingid The METHODROUTINGID identifier
- @return ApiOBPv310DeleteMethodRoutingRequest
+ @return ApiDeleteMethodRoutingRequest
 */
-func (a *MethodRoutingAPIService) OBPv310DeleteMethodRouting(ctx context.Context, methodroutingid string) ApiOBPv310DeleteMethodRoutingRequest {
-	return ApiOBPv310DeleteMethodRoutingRequest{
+func (a *MethodRoutingAPIService) DeleteMethodRouting(ctx context.Context, methodroutingid string) ApiDeleteMethodRoutingRequest {
+	return ApiDeleteMethodRoutingRequest{
 		ApiService: a,
 		ctx: ctx,
 		methodroutingid: methodroutingid,
@@ -235,14 +235,14 @@ func (a *MethodRoutingAPIService) OBPv310DeleteMethodRouting(ctx context.Context
 }
 
 // Execute executes the request
-func (a *MethodRoutingAPIService) OBPv310DeleteMethodRoutingExecute(r ApiOBPv310DeleteMethodRoutingRequest) (*http.Response, error) {
+func (a *MethodRoutingAPIService) DeleteMethodRoutingExecute(r ApiDeleteMethodRoutingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.OBPv310DeleteMethodRouting")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.DeleteMethodRouting")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -295,7 +295,7 @@ func (a *MethodRoutingAPIService) OBPv310DeleteMethodRoutingExecute(r ApiOBPv310
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["Authorization"] = key
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}
@@ -327,335 +327,17 @@ func (a *MethodRoutingAPIService) OBPv310DeleteMethodRoutingExecute(r ApiOBPv310
 	return localVarHTTPResponse, nil
 }
 
-type ApiOBPv310GetMethodRoutingsRequest struct {
+type ApiGetConnectorMethodNamesRequest struct {
 	ctx context.Context
 	ApiService *MethodRoutingAPIService
 }
 
-func (r ApiOBPv310GetMethodRoutingsRequest) Execute() (*OBPv310GetMethodRoutings200Response, *http.Response, error) {
-	return r.ApiService.OBPv310GetMethodRoutingsExecute(r)
+func (r ApiGetConnectorMethodNamesRequest) Execute() (*GetConnectorMethodNames200Response, *http.Response, error) {
+	return r.ApiService.GetConnectorMethodNamesExecute(r)
 }
 
 /*
-OBPv310GetMethodRoutings Get MethodRoutings
-
-<p>Get the all MethodRoutings.</p>
-<p>Query url parameters:</p>
-<ul>
-<li>method_name: filter with method_name</li>
-<li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
-</ul>
-<p>eg:<br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?active=true</a><br />
-<a href="https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank">https://apisandbox.openbankproject.com/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv310GetMethodRoutingsRequest
-*/
-func (a *MethodRoutingAPIService) OBPv310GetMethodRoutings(ctx context.Context) ApiOBPv310GetMethodRoutingsRequest {
-	return ApiOBPv310GetMethodRoutingsRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetMethodRoutings200Response
-func (a *MethodRoutingAPIService) OBPv310GetMethodRoutingsExecute(r ApiOBPv310GetMethodRoutingsRequest) (*OBPv310GetMethodRoutings200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.OBPv310GetMethodRoutings")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv310UpdateMethodRoutingRequest struct {
-	ctx context.Context
-	ApiService *MethodRoutingAPIService
-	methodroutingid string
-	oBPv310CreateMethodRoutingRequest *OBPv310CreateMethodRoutingRequest
-}
-
-// Request body
-func (r ApiOBPv310UpdateMethodRoutingRequest) OBPv310CreateMethodRoutingRequest(oBPv310CreateMethodRoutingRequest OBPv310CreateMethodRoutingRequest) ApiOBPv310UpdateMethodRoutingRequest {
-	r.oBPv310CreateMethodRoutingRequest = &oBPv310CreateMethodRoutingRequest
-	return r
-}
-
-func (r ApiOBPv310UpdateMethodRoutingRequest) Execute() (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	return r.ApiService.OBPv310UpdateMethodRoutingExecute(r)
-}
-
-/*
-OBPv310UpdateMethodRouting Update MethodRouting
-
-<p>Update a MethodRouting.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p>Explaination of Fields:</p>
-<ul>
-<li>method_name is required String value, current supported value: [mapped]</li>
-<li>connector_name is required String value</li>
-<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
-<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
-<li>parameters is optional array of key value pairs. You can set some paremeters for this method<br />
-note:</li>
-<li>
-<p>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</p>
-</li>
-</ul>
-<p>If connector name start with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, to convert OutBound and InBound json structure.<br />
-for example:<br />
-outBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
-Build OutBound json value rules:<br />
-1 set cId value with: outboundAdapterCallContext.correlationId value<br />
-2 set bankId value with: concat bankId.value value with  string helloworld<br />
-3 set originalJson value with: whole source json, note: the field value expression is $root</p>
-<p>inBoundMapping example, convert json from source to target:<br />
-<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
-Build InBound json value rules:<br />
-1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
-3 set fullName value with: concat string full: with result.name value<br />
-4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
-<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
-<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
-
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodroutingid The METHODROUTINGID identifier
- @return ApiOBPv310UpdateMethodRoutingRequest
-*/
-func (a *MethodRoutingAPIService) OBPv310UpdateMethodRouting(ctx context.Context, methodroutingid string) ApiOBPv310UpdateMethodRoutingRequest {
-	return ApiOBPv310UpdateMethodRoutingRequest{
-		ApiService: a,
-		ctx: ctx,
-		methodroutingid: methodroutingid,
-	}
-}
-
-// Execute executes the request
-//  @return OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-func (a *MethodRoutingAPIService) OBPv310UpdateMethodRoutingExecute(r ApiOBPv310UpdateMethodRoutingRequest) (*OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OBPv310GetMethodRoutings200ResponsePropertiesMethodRoutingsItems
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.OBPv310UpdateMethodRouting")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.oBPv310CreateMethodRoutingRequest == nil {
-		return localVarReturnValue, nil, reportError("oBPv310CreateMethodRoutingRequest is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.oBPv310CreateMethodRoutingRequest
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["GatewayLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["DirectLogin"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiOBPv600GetConnectorMethodNamesRequest struct {
-	ctx context.Context
-	ApiService *MethodRoutingAPIService
-}
-
-func (r ApiOBPv600GetConnectorMethodNamesRequest) Execute() (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
-	return r.ApiService.OBPv600GetConnectorMethodNamesExecute(r)
-}
-
-/*
-OBPv600GetConnectorMethodNames Get Connector Method Names
+GetConnectorMethodNames Get Connector Method Names
 
 <p>Get the list of all available connector method names.</p>
 <p>These are the method names that can be used in Method Routing configuration.</p>
@@ -690,26 +372,26 @@ These method names are different from API endpoint operation IDs (which you get 
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOBPv600GetConnectorMethodNamesRequest
+ @return ApiGetConnectorMethodNamesRequest
 */
-func (a *MethodRoutingAPIService) OBPv600GetConnectorMethodNames(ctx context.Context) ApiOBPv600GetConnectorMethodNamesRequest {
-	return ApiOBPv600GetConnectorMethodNamesRequest{
+func (a *MethodRoutingAPIService) GetConnectorMethodNames(ctx context.Context) ApiGetConnectorMethodNamesRequest {
+	return ApiGetConnectorMethodNamesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OBPv600GetConnectorMethodNames200Response
-func (a *MethodRoutingAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBPv600GetConnectorMethodNamesRequest) (*OBPv600GetConnectorMethodNames200Response, *http.Response, error) {
+//  @return GetConnectorMethodNames200Response
+func (a *MethodRoutingAPIService) GetConnectorMethodNamesExecute(r ApiGetConnectorMethodNamesRequest) (*GetConnectorMethodNames200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OBPv600GetConnectorMethodNames200Response
+		localVarReturnValue  *GetConnectorMethodNames200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.OBPv600GetConnectorMethodNames")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.GetConnectorMethodNames")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -761,7 +443,325 @@ func (a *MethodRoutingAPIService) OBPv600GetConnectorMethodNamesExecute(r ApiOBP
 				} else {
 					key = apiKey.Key
 				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetMethodRoutingsRequest struct {
+	ctx context.Context
+	ApiService *MethodRoutingAPIService
+}
+
+func (r ApiGetMethodRoutingsRequest) Execute() (*GetMethodRoutings200Response, *http.Response, error) {
+	return r.ApiService.GetMethodRoutingsExecute(r)
+}
+
+/*
+GetMethodRoutings Get MethodRoutings
+
+<p>Get the all MethodRoutings.</p>
+<p>Query url parameters:</p>
+<ul>
+<li>method_name: filter with method_name</li>
+<li>active: if active = true, it will show all the webui_ props. Even if they are set yet, we will return all the default webui_ props</li>
+</ul>
+<p>eg:<br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?active=true</a><br />
+<a href="http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank">http://127.0.0.1:8080/obp/v3.1.0/management/method_routings?method_name=getBank</a></p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetMethodRoutingsRequest
+*/
+func (a *MethodRoutingAPIService) GetMethodRoutings(ctx context.Context) ApiGetMethodRoutingsRequest {
+	return ApiGetMethodRoutingsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return GetMethodRoutings200Response
+func (a *MethodRoutingAPIService) GetMethodRoutingsExecute(r ApiGetMethodRoutingsRequest) (*GetMethodRoutings200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMethodRoutings200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.GetMethodRoutings")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
 				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateMethodRoutingRequest struct {
+	ctx context.Context
+	ApiService *MethodRoutingAPIService
+	methodroutingid string
+	createMethodRoutingRequest *CreateMethodRoutingRequest
+}
+
+// Request body
+func (r ApiUpdateMethodRoutingRequest) CreateMethodRoutingRequest(createMethodRoutingRequest CreateMethodRoutingRequest) ApiUpdateMethodRoutingRequest {
+	r.createMethodRoutingRequest = &createMethodRoutingRequest
+	return r
+}
+
+func (r ApiUpdateMethodRoutingRequest) Execute() (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	return r.ApiService.UpdateMethodRoutingExecute(r)
+}
+
+/*
+UpdateMethodRouting Update MethodRouting
+
+<p>Update a MethodRouting.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p>Explaination of Fields:</p>
+<ul>
+<li>method_name is required String value, current supported value: [mapped | cardano_vJun2025 | rabbitmq_vOct2024]</li>
+<li>connector_name is required String value</li>
+<li>is_bank_id_exact_match is required boolean value, if bank_id_pattern is exact bank_id value, this value is true; if bank_id_pattern is null or a regex, this value is false</li>
+<li>bank_id_pattern is optional String value, it can be null, a exact bank_id or a regex</li>
+<li>parameters is optional array of key value pairs. You can set some paremeters for this method<br />
+note:</li>
+<li>
+<p>if bank_id_pattern is regex, special characters need to do escape, for example: bank_id_pattern = &quot;some-id_pattern_\d+&quot;</p>
+</li>
+</ul>
+<p>If connector name start with rest, parameters can contain &quot;outBoundMapping&quot; and &quot;inBoundMapping&quot;, to convert OutBound and InBound json structure.<br />
+for example:<br />
+outBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248007-33332e00-580e-11ea-8d2a-d1856035fa24.png" alt="Snipaste_outBoundMapping" /><br />
+Build OutBound json value rules:<br />
+1 set cId value with: outboundAdapterCallContext.correlationId value<br />
+2 set bankId value with: concat bankId.value value with  string helloworld<br />
+3 set originalJson value with: whole source json, note: the field value expression is $root</p>
+<p>inBoundMapping example, convert json from source to target:<br />
+<img src="https://user-images.githubusercontent.com/2577334/75248199-a9d02b80-580e-11ea-9238-e073264e9170.png" alt="inBoundMapping" /><br />
+Build InBound json value rules:<br />
+1 and 2 set inboundAdapterCallContext and status value: because field name ends with &quot;$default&quot;, remove &quot;$default&quot; from field name, not change the value<br />
+3 set fullName value with: concat string full: with result.name value<br />
+4 set bankRoutingScheme value: because source value is Array, but target value is not Array, the mapping field name must ends with [0].</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#method_routing_id">METHOD_ROUTING_ID</a>:</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>key</strong></a>: CustomerNumber</p>
+<p><a href="/glossary#parameters"><strong>parameters</strong></a>:</p>
+<p><a href="/glossary#"><strong>value</strong></a>: 5987953</p>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param methodroutingid The METHODROUTINGID identifier
+ @return ApiUpdateMethodRoutingRequest
+*/
+func (a *MethodRoutingAPIService) UpdateMethodRouting(ctx context.Context, methodroutingid string) ApiUpdateMethodRoutingRequest {
+	return ApiUpdateMethodRoutingRequest{
+		ApiService: a,
+		ctx: ctx,
+		methodroutingid: methodroutingid,
+	}
+}
+
+// Execute executes the request
+//  @return GetMethodRoutings200ResponseMethodRoutingsInner
+func (a *MethodRoutingAPIService) UpdateMethodRoutingExecute(r ApiUpdateMethodRoutingRequest) (*GetMethodRoutings200ResponseMethodRoutingsInner, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GetMethodRoutings200ResponseMethodRoutingsInner
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MethodRoutingAPIService.UpdateMethodRouting")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/obp/v3.1.0/management/method_routings/{methodroutingid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"methodroutingid"+"}", url.PathEscape(parameterValueToString(r.methodroutingid, "methodroutingid")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.createMethodRoutingRequest == nil {
+		return localVarReturnValue, nil, reportError("createMethodRoutingRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createMethodRoutingRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["GatewayLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["DirectLogin"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["DirectLogin"] = key
 			}
 		}
 	}

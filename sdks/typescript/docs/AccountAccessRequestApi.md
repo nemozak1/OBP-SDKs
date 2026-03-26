@@ -1,21 +1,21 @@
 # AccountAccessRequestApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**oBPv600ApproveAccountAccessRequest**](AccountAccessRequestApi.md#obpv600approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
-| [**oBPv600CreateAccountAccessRequest**](AccountAccessRequestApi.md#obpv600createaccountaccessrequestoperation) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
-| [**oBPv600GetAccountAccessRequestById**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
-| [**oBPv600GetAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#obpv600getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
-| [**oBPv600GetMyAccountAccessRequests**](AccountAccessRequestApi.md#obpv600getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
-| [**oBPv600RejectAccountAccessRequest**](AccountAccessRequestApi.md#obpv600rejectaccountaccessrequestoperation) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
+| [**approveAccountAccessRequest**](AccountAccessRequestApi.md#approveaccountaccessrequest) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/approval | Approve Account Access Request |
+| [**createAccountAccessRequest**](AccountAccessRequestApi.md#createaccountaccessrequestoperation) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Create Account Access Request |
+| [**getAccountAccessRequestById**](AccountAccessRequestApi.md#getaccountaccessrequestbyid) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid} | Get Account Access Request by Id |
+| [**getAccountAccessRequestsForAccount**](AccountAccessRequestApi.md#getaccountaccessrequestsforaccount) | **GET** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests | Get Account Access Requests for Account |
+| [**getMyAccountAccessRequests**](AccountAccessRequestApi.md#getmyaccountaccessrequests) | **GET** /obp/v6.0.0/my/account-access-requests | Get My Account Access Requests |
+| [**rejectAccountAccessRequest**](AccountAccessRequestApi.md#rejectaccountaccessrequestoperation) | **POST** /obp/v6.0.0/banks/{bankid}/accounts/{accountid}/account-access-requests/{accountaccessrequestid}/rejection | Reject Account Access Request |
 
 
 
-## oBPv600ApproveAccountAccessRequest
+## approveAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600ApproveAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response approveAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Approve Account Access Request
 
@@ -28,7 +28,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600ApproveAccountAccessRequestRequest } from 'obp-typescript';
+import type { ApproveAccountAccessRequestRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -49,12 +49,12 @@ async function example() {
     accountid: accountid_example,
     // string | The ACCOUNTACCESSREQUESTID identifier
     accountaccessrequestid: accountaccessrequestid_example,
-    // OBPv600RejectAccountAccessRequestRequest | Request body
-    oBPv600RejectAccountAccessRequestRequest: {type=object, properties={comment={type=string}}},
-  } satisfies OBPv600ApproveAccountAccessRequestRequest;
+    // RejectAccountAccessRequestRequest | Request body
+    rejectAccountAccessRequestRequest: {type=object, properties={comment={type=string}}},
+  } satisfies ApproveAccountAccessRequestRequest;
 
   try {
-    const data = await api.oBPv600ApproveAccountAccessRequest(body);
+    const data = await api.approveAccountAccessRequest(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -73,11 +73,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **accountaccessrequestid** | `string` | The ACCOUNTACCESSREQUESTID identifier | [Defaults to `undefined`] |
-| **oBPv600RejectAccountAccessRequestRequest** | [OBPv600RejectAccountAccessRequestRequest](OBPv600RejectAccountAccessRequestRequest.md) | Request body | |
+| **rejectAccountAccessRequestRequest** | [RejectAccountAccessRequestRequest](RejectAccountAccessRequestRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -99,9 +99,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600CreateAccountAccessRequest
+## createAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600CreateAccountAccessRequest(bankid, accountid, oBPv600CreateAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response createAccountAccessRequest(bankid, accountid, createAccountAccessRequestRequest)
 
 Create Account Access Request
 
@@ -114,7 +114,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600CreateAccountAccessRequestOperationRequest } from 'obp-typescript';
+import type { CreateAccountAccessRequestOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -133,12 +133,12 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-    // OBPv600CreateAccountAccessRequestRequest | Request body
-    oBPv600CreateAccountAccessRequestRequest: {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}},
-  } satisfies OBPv600CreateAccountAccessRequestOperationRequest;
+    // CreateAccountAccessRequestRequest | Request body
+    createAccountAccessRequestRequest: {"type":"object","properties":{"is_system_view":{"type":"boolean"},"business_justification":{"type":"string"},"view_id":{"type":"string"},"target_user_id":{"type":"string"}}},
+  } satisfies CreateAccountAccessRequestOperationRequest;
 
   try {
-    const data = await api.oBPv600CreateAccountAccessRequest(body);
+    const data = await api.createAccountAccessRequest(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -156,11 +156,11 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
-| **oBPv600CreateAccountAccessRequestRequest** | [OBPv600CreateAccountAccessRequestRequest](OBPv600CreateAccountAccessRequestRequest.md) | Request body | |
+| **createAccountAccessRequestRequest** | [CreateAccountAccessRequestRequest](CreateAccountAccessRequestRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -182,9 +182,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAccountAccessRequestById
+## getAccountAccessRequestById
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600GetAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
+> RejectAccountAccessRequest200Response getAccountAccessRequestById(bankid, accountid, accountaccessrequestid)
 
 Get Account Access Request by Id
 
@@ -197,7 +197,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600GetAccountAccessRequestByIdRequest } from 'obp-typescript';
+import type { GetAccountAccessRequestByIdRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -218,10 +218,10 @@ async function example() {
     accountid: accountid_example,
     // string | The ACCOUNTACCESSREQUESTID identifier
     accountaccessrequestid: accountaccessrequestid_example,
-  } satisfies OBPv600GetAccountAccessRequestByIdRequest;
+  } satisfies GetAccountAccessRequestByIdRequest;
 
   try {
-    const data = await api.oBPv600GetAccountAccessRequestById(body);
+    const data = await api.getAccountAccessRequestById(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -243,7 +243,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 
@@ -265,9 +265,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetAccountAccessRequestsForAccount
+## getAccountAccessRequestsForAccount
 
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetAccountAccessRequestsForAccount(bankid, accountid)
+> GetAccountAccessRequestsForAccount200Response getAccountAccessRequestsForAccount(bankid, accountid)
 
 Get Account Access Requests for Account
 
@@ -280,7 +280,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600GetAccountAccessRequestsForAccountRequest } from 'obp-typescript';
+import type { GetAccountAccessRequestsForAccountRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -299,10 +299,10 @@ async function example() {
     bankid: bankid_example,
     // string | The ACCOUNTID identifier
     accountid: accountid_example,
-  } satisfies OBPv600GetAccountAccessRequestsForAccountRequest;
+  } satisfies GetAccountAccessRequestsForAccountRequest;
 
   try {
-    const data = await api.oBPv600GetAccountAccessRequestsForAccount(body);
+    const data = await api.getAccountAccessRequestsForAccount(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -323,7 +323,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -345,9 +345,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600GetMyAccountAccessRequests
+## getMyAccountAccessRequests
 
-> OBPv600GetAccountAccessRequestsForAccount200Response oBPv600GetMyAccountAccessRequests()
+> GetAccountAccessRequestsForAccount200Response getMyAccountAccessRequests()
 
 Get My Account Access Requests
 
@@ -360,7 +360,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600GetMyAccountAccessRequestsRequest } from 'obp-typescript';
+import type { GetMyAccountAccessRequestsRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -375,7 +375,7 @@ async function example() {
   const api = new AccountAccessRequestApi(config);
 
   try {
-    const data = await api.oBPv600GetMyAccountAccessRequests();
+    const data = await api.getMyAccountAccessRequests();
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -392,7 +392,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OBPv600GetAccountAccessRequestsForAccount200Response**](OBPv600GetAccountAccessRequestsForAccount200Response.md)
+[**GetAccountAccessRequestsForAccount200Response**](GetAccountAccessRequestsForAccount200Response.md)
 
 ### Authorization
 
@@ -413,9 +413,9 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## oBPv600RejectAccountAccessRequest
+## rejectAccountAccessRequest
 
-> OBPv600RejectAccountAccessRequest200Response oBPv600RejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, oBPv600RejectAccountAccessRequestRequest)
+> RejectAccountAccessRequest200Response rejectAccountAccessRequest(bankid, accountid, accountaccessrequestid, rejectAccountAccessRequestRequest)
 
 Reject Account Access Request
 
@@ -428,7 +428,7 @@ import {
   Configuration,
   AccountAccessRequestApi,
 } from 'obp-typescript';
-import type { OBPv600RejectAccountAccessRequestOperationRequest } from 'obp-typescript';
+import type { RejectAccountAccessRequestOperationRequest } from 'obp-typescript';
 
 async function example() {
   console.log("🚀 Testing obp-typescript SDK...");
@@ -449,12 +449,12 @@ async function example() {
     accountid: accountid_example,
     // string | The ACCOUNTACCESSREQUESTID identifier
     accountaccessrequestid: accountaccessrequestid_example,
-    // OBPv600RejectAccountAccessRequestRequest | Request body
-    oBPv600RejectAccountAccessRequestRequest: {"type":"object","properties":{"comment":{"type":"string"}}},
-  } satisfies OBPv600RejectAccountAccessRequestOperationRequest;
+    // RejectAccountAccessRequestRequest | Request body
+    rejectAccountAccessRequestRequest: {"type":"object","properties":{"comment":{"type":"string"}}},
+  } satisfies RejectAccountAccessRequestOperationRequest;
 
   try {
-    const data = await api.oBPv600RejectAccountAccessRequest(body);
+    const data = await api.rejectAccountAccessRequest(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -473,11 +473,11 @@ example().catch(console.error);
 | **bankid** | `string` | The BANKID identifier | [Defaults to `undefined`] |
 | **accountid** | `string` | The ACCOUNTID identifier | [Defaults to `undefined`] |
 | **accountaccessrequestid** | `string` | The ACCOUNTACCESSREQUESTID identifier | [Defaults to `undefined`] |
-| **oBPv600RejectAccountAccessRequestRequest** | [OBPv600RejectAccountAccessRequestRequest](OBPv600RejectAccountAccessRequestRequest.md) | Request body | |
+| **rejectAccountAccessRequestRequest** | [RejectAccountAccessRequestRequest](RejectAccountAccessRequestRequest.md) | Request body | |
 
 ### Return type
 
-[**OBPv600RejectAccountAccessRequest200Response**](OBPv600RejectAccountAccessRequest200Response.md)
+[**RejectAccountAccessRequest200Response**](RejectAccountAccessRequest200Response.md)
 
 ### Authorization
 

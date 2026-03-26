@@ -2,7 +2,7 @@
 /*
  * Open Bank Project API v6.0.0
  *
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -48,10 +48,10 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv310CreateAccountAttributeApiResponse> OBPv310CreateAccountAttributeAsync(string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAttributeApiResponse"/>&gt;</returns>
+        Task<ICreateAccountAttributeApiResponse> CreateAccountAttributeAsync(string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create Account Attribute
@@ -62,10 +62,83 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv310CreateAccountAttributeApiResponse?> OBPv310CreateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAttributeApiResponse"/>?&gt;</returns>
+        Task<ICreateAccountAttributeApiResponse?> CreateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create or Update Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<ICreateOrUpdateAccountAttributeDefinitionApiResponse> CreateOrUpdateAccountAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create or Update Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<ICreateOrUpdateAccountAttributeDefinitionApiResponse?> CreateOrUpdateAccountAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IDeleteAccountAttributeDefinitionApiResponse> DeleteAccountAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IDeleteAccountAttributeDefinitionApiResponse?> DeleteAccountAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        Task<IGetAccountAttributeDefinitionApiResponse> GetAccountAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Account Attribute Definition
+        /// </summary>
+        /// <remarks>
+        /// &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+        /// </remarks>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
+        Task<IGetAccountAttributeDefinitionApiResponse?> GetAccountAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Account Attribute
@@ -78,10 +151,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310UpdateAccountAttributeApiResponse"/>&gt;</returns>
-        Task<IOBPv310UpdateAccountAttributeApiResponse> OBPv310UpdateAccountAttributeAsync(string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAccountAttributeApiResponse"/>&gt;</returns>
+        Task<IUpdateAccountAttributeApiResponse> UpdateAccountAttributeAsync(string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update Account Attribute
@@ -93,83 +166,10 @@ namespace OpenBankProject.Api
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
         /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310UpdateAccountAttributeApiResponse"/>?&gt;</returns>
-        Task<IOBPv310UpdateAccountAttributeApiResponse?> OBPv310UpdateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create or Update Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse> OBPv400CreateOrUpdateAccountAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Create or Update Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateAccountAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400DeleteAccountAttributeDefinitionApiResponse> OBPv400DeleteAccountAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Delete Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400DeleteAccountAttributeDefinitionApiResponse?> OBPv400DeleteAccountAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        Task<IOBPv400GetAccountAttributeDefinitionApiResponse> OBPv400GetAccountAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get Account Attribute Definition
-        /// </summary>
-        /// <remarks>
-        /// &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
-        /// </remarks>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAccountAttributeDefinitionApiResponse"/>?&gt;</returns>
-        Task<IOBPv400GetAccountAttributeDefinitionApiResponse?> OBPv400GetAccountAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAccountAttributeApiResponse"/>?&gt;</returns>
+        Task<IUpdateAccountAttributeApiResponse?> UpdateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -180,101 +180,101 @@ namespace OpenBankProject.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310CreateAccountAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateAccountAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310CreateAccountAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateAccountAttribute;
 
-        internal void ExecuteOnOBPv310CreateAccountAttribute(AccountApi.OBPv310CreateAccountAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateAccountAttribute(AccountApi.CreateAccountAttributeApiResponse apiResponse)
         {
-            OnOBPv310CreateAccountAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateAccountAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310CreateAccountAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateAccountAttribute(Exception exception)
         {
-            OnErrorOBPv310CreateAccountAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateAccountAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv310UpdateAccountAttribute;
+        public event EventHandler<ApiResponseEventArgs>? OnCreateOrUpdateAccountAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv310UpdateAccountAttribute;
+        public event EventHandler<ExceptionEventArgs>? OnErrorCreateOrUpdateAccountAttributeDefinition;
 
-        internal void ExecuteOnOBPv310UpdateAccountAttribute(AccountApi.OBPv310UpdateAccountAttributeApiResponse apiResponse)
+        internal void ExecuteOnCreateOrUpdateAccountAttributeDefinition(AccountApi.CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv310UpdateAccountAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnCreateOrUpdateAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv310UpdateAccountAttribute(Exception exception)
+        internal void ExecuteOnErrorCreateOrUpdateAccountAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv310UpdateAccountAttribute?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorCreateOrUpdateAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400CreateOrUpdateAccountAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnDeleteAccountAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400CreateOrUpdateAccountAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorDeleteAccountAttributeDefinition;
 
-        internal void ExecuteOnOBPv400CreateOrUpdateAccountAttributeDefinition(AccountApi.OBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnDeleteAccountAttributeDefinition(AccountApi.DeleteAccountAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400CreateOrUpdateAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnDeleteAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400CreateOrUpdateAccountAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorDeleteAccountAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400CreateOrUpdateAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorDeleteAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400DeleteAccountAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnGetAccountAttributeDefinition;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400DeleteAccountAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorGetAccountAttributeDefinition;
 
-        internal void ExecuteOnOBPv400DeleteAccountAttributeDefinition(AccountApi.OBPv400DeleteAccountAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnGetAccountAttributeDefinition(AccountApi.GetAccountAttributeDefinitionApiResponse apiResponse)
         {
-            OnOBPv400DeleteAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnGetAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400DeleteAccountAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorGetAccountAttributeDefinition(Exception exception)
         {
-            OnErrorOBPv400DeleteAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorGetAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnOBPv400GetAccountAttributeDefinition;
+        public event EventHandler<ApiResponseEventArgs>? OnUpdateAccountAttribute;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorOBPv400GetAccountAttributeDefinition;
+        public event EventHandler<ExceptionEventArgs>? OnErrorUpdateAccountAttribute;
 
-        internal void ExecuteOnOBPv400GetAccountAttributeDefinition(AccountApi.OBPv400GetAccountAttributeDefinitionApiResponse apiResponse)
+        internal void ExecuteOnUpdateAccountAttribute(AccountApi.UpdateAccountAttributeApiResponse apiResponse)
         {
-            OnOBPv400GetAccountAttributeDefinition?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnUpdateAccountAttribute?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorOBPv400GetAccountAttributeDefinition(Exception exception)
+        internal void ExecuteOnErrorUpdateAccountAttribute(Exception exception)
         {
-            OnErrorOBPv400GetAccountAttributeDefinition?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorUpdateAccountAttribute?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -332,7 +332,7 @@ namespace OpenBankProject.Api
             OauthTokenProvider = oauthTokenProvider;
         }
 
-        partial void FormatOBPv310CreateAccountAttribute(ref string bankid, ref string accountid, ref string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
+        partial void FormatCreateAccountAttribute(ref string bankid, ref string accountid, ref string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest);
 
         /// <summary>
         /// Validates the request parameters
@@ -340,9 +340,9 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv310CreateAccountAttribute(string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        private void ValidateCreateAccountAttribute(string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -353,8 +353,8 @@ namespace OpenBankProject.Api
             if (productcode == null)
                 throw new ArgumentNullException(nameof(productcode));
 
-            if (oBPv310UpdateAccountAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310UpdateAccountAttributeRequest));
+            if (updateAccountAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAccountAttributeRequest));
         }
 
         /// <summary>
@@ -364,11 +364,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        private void AfterOBPv310CreateAccountAttributeDefaultImplementation(IOBPv310CreateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        /// <param name="updateAccountAttributeRequest"></param>
+        private void AfterCreateAccountAttributeDefaultImplementation(ICreateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310CreateAccountAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest);
+            AfterCreateAccountAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, productcode, updateAccountAttributeRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -381,8 +381,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        partial void AfterOBPv310CreateAccountAttribute(ref bool suppressDefaultLog, IOBPv310CreateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
+        /// <param name="updateAccountAttributeRequest"></param>
+        partial void AfterCreateAccountAttribute(ref bool suppressDefaultLog, ICreateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -393,11 +393,11 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        private void OnErrorOBPv310CreateAccountAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        /// <param name="updateAccountAttributeRequest"></param>
+        private void OnErrorCreateAccountAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310CreateAccountAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest);
+            OnErrorCreateAccountAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, productcode, updateAccountAttributeRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -412,8 +412,8 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="accountid"></param>
         /// <param name="productcode"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        partial void OnErrorOBPv310CreateAccountAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
+        /// <param name="updateAccountAttributeRequest"></param>
+        partial void OnErrorCreateAccountAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest);
 
         /// <summary>
         /// Create Account Attribute &lt;p&gt;Create Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;The type field must be one of &amp;quot;STRING&amp;quot;, &amp;quot;INTEGER&amp;quot;, &amp;quot;DOUBLE&amp;quot; or DATE_WITH_DAY&amp;quot;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
@@ -421,14 +421,14 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateAccountAttributeApiResponse?> OBPv310CreateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountAttributeApiResponse?> CreateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv310CreateAccountAttributeAsync(bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateAccountAttributeAsync(bankid, accountid, productcode, updateAccountAttributeRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -443,18 +443,18 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="accountid">The ACCOUNTID identifier</param>
         /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310CreateAccountAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310CreateAccountAttributeApiResponse> OBPv310CreateAccountAttributeAsync(string bankid, string accountid, string productcode, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateAccountAttributeApiResponse"/>&gt;</returns>
+        public async Task<ICreateAccountAttributeApiResponse> CreateAccountAttributeAsync(string bankid, string accountid, string productcode, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv310CreateAccountAttribute(bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest);
+                ValidateCreateAccountAttribute(bankid, accountid, productcode, updateAccountAttributeRequest);
 
-                FormatOBPv310CreateAccountAttribute(ref bankid, ref accountid, ref productcode, oBPv310UpdateAccountAttributeRequest);
+                FormatCreateAccountAttribute(ref bankid, ref accountid, ref productcode, updateAccountAttributeRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -468,16 +468,16 @@ namespace OpenBankProject.Api
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv310UpdateAccountAttributeRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (updateAccountAttributeRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310UpdateAccountAttributeRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAccountAttributeRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -513,8 +513,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv310CreateAccountAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv310CreateAccountAttributeApiResponse>();
-                        AccountApi.OBPv310CreateAccountAttributeApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateAccountAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateAccountAttributeApiResponse>();
+                        AccountApi.CreateAccountAttributeApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -525,9 +525,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv310CreateAccountAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest);
+                        AfterCreateAccountAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, productcode, updateAccountAttributeRequest);
 
-                        Events.ExecuteOnOBPv310CreateAccountAttribute(apiResponseLocalVar);
+                        Events.ExecuteOnCreateAccountAttribute(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -539,39 +539,27 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv310CreateAccountAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, accountid, productcode, oBPv310UpdateAccountAttributeRequest);
-                Events.ExecuteOnErrorOBPv310CreateAccountAttribute(e);
+                OnErrorCreateAccountAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attribute", uriBuilderLocalVar.Path, bankid, accountid, productcode, updateAccountAttributeRequest);
+                Events.ExecuteOnErrorCreateAccountAttribute(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv310UpdateAccountAttribute(ref string bankid, ref string accountid, ref string productcode, ref string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
+        partial void FormatCreateOrUpdateAccountAttributeDefinition(ref string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="accountattributeid"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
         /// <returns></returns>
-        private void ValidateOBPv310UpdateAccountAttribute(string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        private void ValidateCreateOrUpdateAccountAttributeDefinition(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
 
-            if (accountid == null)
-                throw new ArgumentNullException(nameof(accountid));
-
-            if (productcode == null)
-                throw new ArgumentNullException(nameof(productcode));
-
-            if (accountattributeid == null)
-                throw new ArgumentNullException(nameof(accountattributeid));
-
-            if (oBPv310UpdateAccountAttributeRequest == null)
-                throw new ArgumentNullException(nameof(oBPv310UpdateAccountAttributeRequest));
+            if (createOrUpdateTransactionRequestAttributeDefinitionRequest == null)
+                throw new ArgumentNullException(nameof(createOrUpdateTransactionRequestAttributeDefinitionRequest));
         }
 
         /// <summary>
@@ -579,14 +567,11 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="accountattributeid"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        private void AfterOBPv310UpdateAccountAttributeDefaultImplementation(IOBPv310UpdateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void AfterCreateOrUpdateAccountAttributeDefinitionDefaultImplementation(ICreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv310UpdateAccountAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest);
+            AfterCreateOrUpdateAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -597,11 +582,8 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="accountattributeid"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        partial void AfterOBPv310UpdateAccountAttribute(ref bool suppressDefaultLog, IOBPv310UpdateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void AfterCreateOrUpdateAccountAttributeDefinition(ref bool suppressDefaultLog, ICreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -610,14 +592,11 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="accountattributeid"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        private void OnErrorOBPv310UpdateAccountAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest)
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        private void OnErrorCreateOrUpdateAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv310UpdateAccountAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest);
+            OnErrorCreateOrUpdateAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -630,224 +609,21 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        /// <param name="accountid"></param>
-        /// <param name="productcode"></param>
-        /// <param name="accountattributeid"></param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest"></param>
-        partial void OnErrorOBPv310UpdateAccountAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest);
-
-        /// <summary>
-        /// Update Account Attribute &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-        /// </summary>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310UpdateAccountAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310UpdateAccountAttributeApiResponse?> OBPv310UpdateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await OBPv310UpdateAccountAttributeAsync(bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Update Account Attribute &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="accountid">The ACCOUNTID identifier</param>
-        /// <param name="productcode">The PRODUCTCODE identifier</param>
-        /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
-        /// <param name="oBPv310UpdateAccountAttributeRequest">Request body</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv310UpdateAccountAttributeApiResponse"/>&gt;</returns>
-        public async Task<IOBPv310UpdateAccountAttributeApiResponse> OBPv310UpdateAccountAttributeAsync(string bankid, string accountid, string productcode, string accountattributeid, OBPv310UpdateAccountAttributeRequest oBPv310UpdateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateOBPv310UpdateAccountAttribute(bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest);
-
-                FormatOBPv310UpdateAccountAttribute(ref bankid, ref accountid, ref productcode, ref accountattributeid, oBPv310UpdateAccountAttributeRequest);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountattributeid%7D", Uri.EscapeDataString(accountattributeid.ToString()));
-
-                    httpRequestMessageLocalVar.Content = (oBPv310UpdateAccountAttributeRequest as object) is System.IO.Stream stream
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv310UpdateAccountAttributeRequest, _jsonSerializerOptions));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
-                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
-
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
-                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
-
-                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] contentTypes = new string[] {
-                        "application/json"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
-
-                    string[] acceptLocalVars = new string[] {
-                        "application/json"
-                    };
-
-                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
-
-                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        ILogger<AccountApi.OBPv310UpdateAccountAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv310UpdateAccountAttributeApiResponse>();
-                        AccountApi.OBPv310UpdateAccountAttributeApiResponse apiResponseLocalVar;
-
-                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
-                            default: {
-                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                                break;
-                            }
-                        }
-
-                        AfterOBPv310UpdateAccountAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest);
-
-                        Events.ExecuteOnOBPv310UpdateAccountAttribute(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorOBPv310UpdateAccountAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}", uriBuilderLocalVar.Path, bankid, accountid, productcode, accountattributeid, oBPv310UpdateAccountAttributeRequest);
-                Events.ExecuteOnErrorOBPv310UpdateAccountAttribute(e);
-                throw;
-            }
-        }
-
-        partial void FormatOBPv400CreateOrUpdateAccountAttributeDefinition(ref string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        /// <returns></returns>
-        private void ValidateOBPv400CreateOrUpdateAccountAttributeDefinition(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            if (bankid == null)
-                throw new ArgumentNullException(nameof(bankid));
-
-            if (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest == null)
-                throw new ArgumentNullException(nameof(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void AfterOBPv400CreateOrUpdateAccountAttributeDefinitionDefaultImplementation(IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLog = false;
-            AfterOBPv400CreateOrUpdateAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void AfterOBPv400CreateOrUpdateAccountAttributeDefinition(ref bool suppressDefaultLog, IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        private void OnErrorOBPv400CreateOrUpdateAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400CreateOrUpdateAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="bankid"></param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
-        partial void OnErrorOBPv400CreateOrUpdateAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest"></param>
+        partial void OnErrorCreateOrUpdateAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
         /// <summary>
         /// Create or Update Account Attribute Definition &lt;p&gt;Create or Update Account Attribute Definition&lt;/p&gt; &lt;p&gt;The category field must be Account&lt;/p&gt; &lt;p&gt;The type field must be one of; DOUBLE, STRING, INTEGER and DATE_WITH_DAY&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse?> OBPv400CreateOrUpdateAccountAttributeDefinitionOrDefaultAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateAccountAttributeDefinitionApiResponse?> CreateOrUpdateAccountAttributeDefinitionOrDefaultAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400CreateOrUpdateAccountAttributeDefinitionAsync(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
+                return await CreateOrUpdateAccountAttributeDefinitionAsync(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -860,18 +636,18 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
-        /// <param name="oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
+        /// <param name="createOrUpdateTransactionRequestAttributeDefinitionRequest">Request body</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse> OBPv400CreateOrUpdateAccountAttributeDefinitionAsync(string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="ICreateOrUpdateAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<ICreateOrUpdateAccountAttributeDefinitionApiResponse> CreateOrUpdateAccountAttributeDefinitionAsync(string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400CreateOrUpdateAccountAttributeDefinition(bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                ValidateCreateOrUpdateAccountAttributeDefinition(bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                FormatOBPv400CreateOrUpdateAccountAttributeDefinition(ref bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                FormatCreateOrUpdateAccountAttributeDefinition(ref bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -883,16 +659,16 @@ namespace OpenBankProject.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/account");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
+                    httpRequestMessageLocalVar.Content = (createOrUpdateTransactionRequestAttributeDefinitionRequest as object) is System.IO.Stream stream
                         ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(createOrUpdateTransactionRequestAttributeDefinitionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -928,8 +704,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse>();
-                        AccountApi.OBPv400CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.CreateOrUpdateAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.CreateOrUpdateAccountAttributeDefinitionApiResponse>();
+                        AccountApi.CreateOrUpdateAccountAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -940,9 +716,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400CreateOrUpdateAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
+                        AfterCreateOrUpdateAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
 
-                        Events.ExecuteOnOBPv400CreateOrUpdateAccountAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnCreateOrUpdateAccountAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -954,13 +730,13 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400CreateOrUpdateAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/account", uriBuilderLocalVar.Path, bankid, oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest);
-                Events.ExecuteOnErrorOBPv400CreateOrUpdateAccountAttributeDefinition(e);
+                OnErrorCreateOrUpdateAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/account", uriBuilderLocalVar.Path, bankid, createOrUpdateTransactionRequestAttributeDefinitionRequest);
+                Events.ExecuteOnErrorCreateOrUpdateAccountAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400DeleteAccountAttributeDefinition(ref string bankid, ref string attributedefinitionid);
+        partial void FormatDeleteAccountAttributeDefinition(ref string bankid, ref string attributedefinitionid);
 
         /// <summary>
         /// Validates the request parameters
@@ -968,7 +744,7 @@ namespace OpenBankProject.Api
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400DeleteAccountAttributeDefinition(string bankid, string attributedefinitionid)
+        private void ValidateDeleteAccountAttributeDefinition(string bankid, string attributedefinitionid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -983,10 +759,10 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void AfterOBPv400DeleteAccountAttributeDefinitionDefaultImplementation(IOBPv400DeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
+        private void AfterDeleteAccountAttributeDefinitionDefaultImplementation(IDeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400DeleteAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
+            AfterDeleteAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -998,7 +774,7 @@ namespace OpenBankProject.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void AfterOBPv400DeleteAccountAttributeDefinition(ref bool suppressDefaultLog, IOBPv400DeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
+        partial void AfterDeleteAccountAttributeDefinition(ref bool suppressDefaultLog, IDeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1008,10 +784,10 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        private void OnErrorOBPv400DeleteAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
+        private void OnErrorDeleteAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400DeleteAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
+            OnErrorDeleteAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, attributedefinitionid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1025,7 +801,7 @@ namespace OpenBankProject.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
         /// <param name="attributedefinitionid"></param>
-        partial void OnErrorOBPv400DeleteAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
+        partial void OnErrorDeleteAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string attributedefinitionid);
 
         /// <summary>
         /// Delete Account Attribute Definition &lt;p&gt;Delete Account Attribute Definition by ATTRIBUTE_DEFINITION_ID&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;ATTRIBUTE_DEFINITION_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
@@ -1033,12 +809,12 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteAccountAttributeDefinitionApiResponse?> OBPv400DeleteAccountAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAccountAttributeDefinitionApiResponse?> DeleteAccountAttributeDefinitionOrDefaultAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400DeleteAccountAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
+                return await DeleteAccountAttributeDefinitionAsync(bankid, attributedefinitionid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1053,16 +829,16 @@ namespace OpenBankProject.Api
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="attributedefinitionid">The ATTRIBUTEDEFINITIONID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400DeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400DeleteAccountAttributeDefinitionApiResponse> OBPv400DeleteAccountAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IDeleteAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IDeleteAccountAttributeDefinitionApiResponse> DeleteAccountAttributeDefinitionAsync(string bankid, string attributedefinitionid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400DeleteAccountAttributeDefinition(bankid, attributedefinitionid);
+                ValidateDeleteAccountAttributeDefinition(bankid, attributedefinitionid);
 
-                FormatOBPv400DeleteAccountAttributeDefinition(ref bankid, ref attributedefinitionid);
+                FormatDeleteAccountAttributeDefinition(ref bankid, ref attributedefinitionid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1080,7 +856,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1098,8 +874,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400DeleteAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400DeleteAccountAttributeDefinitionApiResponse>();
-                        AccountApi.OBPv400DeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.DeleteAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.DeleteAccountAttributeDefinitionApiResponse>();
+                        AccountApi.DeleteAccountAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1110,9 +886,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400DeleteAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
+                        AfterDeleteAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid, attributedefinitionid);
 
-                        Events.ExecuteOnOBPv400DeleteAccountAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnDeleteAccountAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1124,20 +900,20 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400DeleteAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
-                Events.ExecuteOnErrorOBPv400DeleteAccountAttributeDefinition(e);
+                OnErrorDeleteAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/{attributedefinitionid}/account", uriBuilderLocalVar.Path, bankid, attributedefinitionid);
+                Events.ExecuteOnErrorDeleteAccountAttributeDefinition(e);
                 throw;
             }
         }
 
-        partial void FormatOBPv400GetAccountAttributeDefinition(ref string bankid);
+        partial void FormatGetAccountAttributeDefinition(ref string bankid);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="bankid"></param>
         /// <returns></returns>
-        private void ValidateOBPv400GetAccountAttributeDefinition(string bankid)
+        private void ValidateGetAccountAttributeDefinition(string bankid)
         {
             if (bankid == null)
                 throw new ArgumentNullException(nameof(bankid));
@@ -1148,10 +924,10 @@ namespace OpenBankProject.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        private void AfterOBPv400GetAccountAttributeDefinitionDefaultImplementation(IOBPv400GetAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
+        private void AfterGetAccountAttributeDefinitionDefaultImplementation(IGetAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid)
         {
             bool suppressDefaultLog = false;
-            AfterOBPv400GetAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
+            AfterGetAccountAttributeDefinition(ref suppressDefaultLog, apiResponseLocalVar, bankid);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1162,7 +938,7 @@ namespace OpenBankProject.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void AfterOBPv400GetAccountAttributeDefinition(ref bool suppressDefaultLog, IOBPv400GetAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
+        partial void AfterGetAccountAttributeDefinition(ref bool suppressDefaultLog, IGetAccountAttributeDefinitionApiResponse apiResponseLocalVar, string bankid);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1171,10 +947,10 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        private void OnErrorOBPv400GetAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
+        private void OnErrorGetAccountAttributeDefinitionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorOBPv400GetAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
+            OnErrorGetAccountAttributeDefinition(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1187,19 +963,19 @@ namespace OpenBankProject.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="bankid"></param>
-        partial void OnErrorOBPv400GetAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
+        partial void OnErrorGetAccountAttributeDefinition(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid);
 
         /// <summary>
         /// Get Account Attribute Definition &lt;p&gt;Get Account Attribute Definition&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#alias\&quot;&gt;&lt;strong&gt;alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attribute_definition_id\&quot;&gt;&lt;strong&gt;attribute_definition_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#attributes\&quot;&gt;&lt;strong&gt;attributes&lt;/strong&gt;&lt;/a&gt;: attribute value in form of (name, value)&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#can_be_seen_on_views\&quot;&gt;&lt;strong&gt;can_be_seen_on_views&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#category\&quot;&gt;&lt;strong&gt;category&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#is_active\&quot;&gt;&lt;strong&gt;is_active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
         /// </summary>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAccountAttributeDefinitionApiResponse?> OBPv400GetAccountAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAttributeDefinitionApiResponse?> GetAccountAttributeDefinitionOrDefaultAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await OBPv400GetAccountAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
+                return await GetAccountAttributeDefinitionAsync(bankid, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1213,16 +989,16 @@ namespace OpenBankProject.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="bankid">The BANKID identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IOBPv400GetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
-        public async Task<IOBPv400GetAccountAttributeDefinitionApiResponse> OBPv400GetAccountAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IGetAccountAttributeDefinitionApiResponse"/>&gt;</returns>
+        public async Task<IGetAccountAttributeDefinitionApiResponse> GetAccountAttributeDefinitionAsync(string bankid, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateOBPv400GetAccountAttributeDefinition(bankid);
+                ValidateGetAccountAttributeDefinition(bankid);
 
-                FormatOBPv400GetAccountAttributeDefinition(ref bankid);
+                FormatGetAccountAttributeDefinition(ref bankid);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1239,7 +1015,7 @@ namespace OpenBankProject.Api
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
                     apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
 
-                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
                     tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
                     apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
 
@@ -1266,8 +1042,8 @@ namespace OpenBankProject.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<AccountApi.OBPv400GetAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.OBPv400GetAccountAttributeDefinitionApiResponse>();
-                        AccountApi.OBPv400GetAccountAttributeDefinitionApiResponse apiResponseLocalVar;
+                        ILogger<AccountApi.GetAccountAttributeDefinitionApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.GetAccountAttributeDefinitionApiResponse>();
+                        AccountApi.GetAccountAttributeDefinitionApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1278,9 +1054,9 @@ namespace OpenBankProject.Api
                             }
                         }
 
-                        AfterOBPv400GetAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
+                        AfterGetAccountAttributeDefinitionDefaultImplementation(apiResponseLocalVar, bankid);
 
-                        Events.ExecuteOnOBPv400GetAccountAttributeDefinition(apiResponseLocalVar);
+                        Events.ExecuteOnGetAccountAttributeDefinition(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1292,8 +1068,232 @@ namespace OpenBankProject.Api
             }
             catch(Exception e)
             {
-                OnErrorOBPv400GetAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/account", uriBuilderLocalVar.Path, bankid);
-                Events.ExecuteOnErrorOBPv400GetAccountAttributeDefinition(e);
+                OnErrorGetAccountAttributeDefinitionDefaultImplementation(e, "/obp/v4.0.0/banks/{bankid}/attribute-definitions/account", uriBuilderLocalVar.Path, bankid);
+                Events.ExecuteOnErrorGetAccountAttributeDefinition(e);
+                throw;
+            }
+        }
+
+        partial void FormatUpdateAccountAttribute(ref string bankid, ref string accountid, ref string productcode, ref string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="accountattributeid"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
+        /// <returns></returns>
+        private void ValidateUpdateAccountAttribute(string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest)
+        {
+            if (bankid == null)
+                throw new ArgumentNullException(nameof(bankid));
+
+            if (accountid == null)
+                throw new ArgumentNullException(nameof(accountid));
+
+            if (productcode == null)
+                throw new ArgumentNullException(nameof(productcode));
+
+            if (accountattributeid == null)
+                throw new ArgumentNullException(nameof(accountattributeid));
+
+            if (updateAccountAttributeRequest == null)
+                throw new ArgumentNullException(nameof(updateAccountAttributeRequest));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="accountattributeid"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
+        private void AfterUpdateAccountAttributeDefaultImplementation(IUpdateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest)
+        {
+            bool suppressDefaultLog = false;
+            AfterUpdateAccountAttribute(ref suppressDefaultLog, apiResponseLocalVar, bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="accountattributeid"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
+        partial void AfterUpdateAccountAttribute(ref bool suppressDefaultLog, IUpdateAccountAttributeApiResponse apiResponseLocalVar, string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="accountattributeid"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
+        private void OnErrorUpdateAccountAttributeDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorUpdateAccountAttribute(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="bankid"></param>
+        /// <param name="accountid"></param>
+        /// <param name="productcode"></param>
+        /// <param name="accountattributeid"></param>
+        /// <param name="updateAccountAttributeRequest"></param>
+        partial void OnErrorUpdateAccountAttribute(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest);
+
+        /// <summary>
+        /// Update Account Attribute &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+        /// </summary>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAccountAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAccountAttributeApiResponse?> UpdateAccountAttributeOrDefaultAsync(string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await UpdateAccountAttributeAsync(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Update Account Attribute &lt;p&gt;Update Account Attribute&lt;/p&gt; &lt;p&gt;Account Attributes are used to describe a financial Product with a list of typed key value pairs.&lt;/p&gt; &lt;p&gt;Each Account Attribute is linked to its Account by ACCOUNT_ID&lt;/p&gt; &lt;p&gt;Typical account attributes might be:&lt;/p&gt; &lt;p&gt;ISIN (for International bonds)&lt;br /&gt; VKN (for German bonds)&lt;br /&gt; REDCODE (markit short code for credit derivative)&lt;br /&gt; LOAN_ID (e.g. used for Anacredit reporting)&lt;/p&gt; &lt;p&gt;ISSUE_DATE (When the bond was issued in the market)&lt;br /&gt; MATURITY_DATE (End of life time of a product)&lt;br /&gt; TRADABLE&lt;/p&gt; &lt;p&gt;See &lt;a href&#x3D;\&quot;http://www.fpml.org/\&quot;&gt;FPML&lt;/a&gt; for more examples.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;ACCOUNT_ATTRIBUTE_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;PRODUCT_CODE&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#account_attribute_id\&quot;&gt;&lt;strong&gt;account_attribute_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#product_code\&quot;&gt;&lt;strong&gt;product_code&lt;/strong&gt;&lt;/a&gt;: 1234BW&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#type\&quot;&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;product_instance_code&lt;/a&gt;: product_instance_code&lt;/p&gt; 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bankid">The BANKID identifier</param>
+        /// <param name="accountid">The ACCOUNTID identifier</param>
+        /// <param name="productcode">The PRODUCTCODE identifier</param>
+        /// <param name="accountattributeid">The ACCOUNTATTRIBUTEID identifier</param>
+        /// <param name="updateAccountAttributeRequest">Request body</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IUpdateAccountAttributeApiResponse"/>&gt;</returns>
+        public async Task<IUpdateAccountAttributeApiResponse> UpdateAccountAttributeAsync(string bankid, string accountid, string productcode, string accountattributeid, UpdateAccountAttributeRequest updateAccountAttributeRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateUpdateAccountAttribute(bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+
+                FormatUpdateAccountAttribute(ref bankid, ref accountid, ref productcode, ref accountattributeid, updateAccountAttributeRequest);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bbankid%7D", Uri.EscapeDataString(bankid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountid%7D", Uri.EscapeDataString(accountid.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bproductcode%7D", Uri.EscapeDataString(productcode.ToString()));
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Baccountattributeid%7D", Uri.EscapeDataString(accountattributeid.ToString()));
+
+                    httpRequestMessageLocalVar.Content = (updateAccountAttributeRequest as object) is System.IO.Stream stream
+                        ? httpRequestMessageLocalVar.Content = new StreamContent(stream)
+                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(updateAccountAttributeRequest, _jsonSerializerOptions));
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar2 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar2);
+                    apiKeyTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar);
+
+                    ApiKeyToken apiKeyTokenLocalVar3 = (ApiKeyToken) await ApiKeyProvider.GetAsync("DirectLogin", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar3);
+                    apiKeyTokenLocalVar3.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    OAuthToken oauthTokenLocalVar1 = (OAuthToken) await OauthTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(oauthTokenLocalVar1);
+
+                    oauthTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] contentTypes = new string[] {
+                        "application/json"
+                    };
+
+                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
+
+                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
+                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
+
+                    string[] acceptLocalVars = new string[] {
+                        "application/json"
+                    };
+
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
+
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Put;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        ILogger<AccountApi.UpdateAccountAttributeApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<AccountApi.UpdateAccountAttributeApiResponse>();
+                        AccountApi.UpdateAccountAttributeApiResponse apiResponseLocalVar;
+
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
+
+                        AfterUpdateAccountAttributeDefaultImplementation(apiResponseLocalVar, bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+
+                        Events.ExecuteOnUpdateAccountAttribute(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorUpdateAccountAttributeDefaultImplementation(e, "/obp/v3.1.0/banks/{bankid}/accounts/{accountid}/products/{productcode}/attributes/{accountattributeid}", uriBuilderLocalVar.Path, bankid, accountid, productcode, accountattributeid, updateAccountAttributeRequest);
+                Events.ExecuteOnErrorUpdateAccountAttribute(e);
                 throw;
             }
         }

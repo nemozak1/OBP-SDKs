@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -15,30 +15,30 @@
 
 import * as runtime from '../runtime';
 import type {
-  OBPv400GetScopes200Response,
-  OBPv400GetScopes200ResponsePropertiesListItems,
-  OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems,
+  CreateConsentImplicitRequestEntitlementsInner,
+  GetScopes200Response,
+  GetScopes200ResponseListInner,
 } from '../models/index';
 import {
-    OBPv400GetScopes200ResponseFromJSON,
-    OBPv400GetScopes200ResponseToJSON,
-    OBPv400GetScopes200ResponsePropertiesListItemsFromJSON,
-    OBPv400GetScopes200ResponsePropertiesListItemsToJSON,
-    OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsFromJSON,
-    OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsToJSON,
+    CreateConsentImplicitRequestEntitlementsInnerFromJSON,
+    CreateConsentImplicitRequestEntitlementsInnerToJSON,
+    GetScopes200ResponseFromJSON,
+    GetScopes200ResponseToJSON,
+    GetScopes200ResponseListInnerFromJSON,
+    GetScopes200ResponseListInnerToJSON,
 } from '../models/index';
 
-export interface OBPv300DeleteScopeRequest {
+export interface AddScopeRequest {
+    consumerid: string;
+    createConsentImplicitRequestEntitlementsInner: CreateConsentImplicitRequestEntitlementsInner;
+}
+
+export interface DeleteScopeRequest {
     consumerid: string;
     scopeid: string;
 }
 
-export interface OBPv400AddScopeRequest {
-    consumerid: string;
-    oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems;
-}
-
-export interface OBPv400GetScopesRequest {
+export interface GetScopesRequest {
     consumerid: string;
 }
 
@@ -48,87 +48,20 @@ export interface OBPv400GetScopesRequest {
 export class ScopeApi extends runtime.BaseAPI {
 
     /**
-     * Creates request options for oBPv300DeleteScope without sending the request
+     * Creates request options for addScope without sending the request
      */
-    async oBPv300DeleteScopeRequestOpts(requestParameters: OBPv300DeleteScopeRequest): Promise<runtime.RequestOpts> {
+    async addScopeRequestOpts(requestParameters: AddScopeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['consumerid'] == null) {
             throw new runtime.RequiredError(
                 'consumerid',
-                'Required parameter "consumerid" was null or undefined when calling oBPv300DeleteScope().'
+                'Required parameter "consumerid" was null or undefined when calling addScope().'
             );
         }
 
-        if (requestParameters['scopeid'] == null) {
+        if (requestParameters['createConsentImplicitRequestEntitlementsInner'] == null) {
             throw new runtime.RequiredError(
-                'scopeid',
-                'Required parameter "scopeid" was null or undefined when calling oBPv300DeleteScope().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.accessToken) {
-            // oauth required
-            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
-        }
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
-        }
-
-
-        let urlPath = `/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}`;
-        urlPath = urlPath.replace(`{${"consumerid"}}`, encodeURIComponent(String(requestParameters['consumerid'])));
-        urlPath = urlPath.replace(`{${"scopeid"}}`, encodeURIComponent(String(requestParameters['scopeid'])));
-
-        return {
-            path: urlPath,
-            method: 'DELETE',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p> <p>Authentication is required and the user needs to be a Super Admin.<br /> Super Admins are listed in the Props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#scope_id\">SCOPE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Consumer Scope
-     */
-    async oBPv300DeleteScopeRaw(requestParameters: OBPv300DeleteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.oBPv300DeleteScopeRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p> <p>Authentication is required and the user needs to be a Super Admin.<br /> Super Admins are listed in the Props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#scope_id\">SCOPE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
-     * Delete Consumer Scope
-     */
-    async oBPv300DeleteScope(requestParameters: OBPv300DeleteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.oBPv300DeleteScopeRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for oBPv400AddScope without sending the request
-     */
-    async oBPv400AddScopeRequestOpts(requestParameters: OBPv400AddScopeRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['consumerid'] == null) {
-            throw new runtime.RequiredError(
-                'consumerid',
-                'Required parameter "consumerid" was null or undefined when calling oBPv400AddScope().'
-            );
-        }
-
-        if (requestParameters['oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems'] == null) {
-            throw new runtime.RequiredError(
-                'oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems',
-                'Required parameter "oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems" was null or undefined when calling oBPv400AddScope().'
+                'createConsentImplicitRequestEntitlementsInner',
+                'Required parameter "createConsentImplicitRequestEntitlementsInner" was null or undefined when calling addScope().'
             );
         }
 
@@ -148,7 +81,7 @@ export class ScopeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -160,7 +93,7 @@ export class ScopeApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: OBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItemsToJSON(requestParameters['oBPv510GetMyConsentsByBank200ResponsePropertiesConsentsItemsPropertiesJwtPayloadPropertiesEntitlementsItems']),
+            body: CreateConsentImplicitRequestEntitlementsInnerToJSON(requestParameters['createConsentImplicitRequestEntitlementsInner']),
         };
     }
 
@@ -168,30 +101,37 @@ export class ScopeApi extends runtime.BaseAPI {
      * <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
      * Create Scope for a Consumer
      */
-    async oBPv400AddScopeRaw(requestParameters: OBPv400AddScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetScopes200ResponsePropertiesListItems>> {
-        const requestOptions = await this.oBPv400AddScopeRequestOpts(requestParameters);
+    async addScopeRaw(requestParameters: AddScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetScopes200ResponseListInner>> {
+        const requestOptions = await this.addScopeRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetScopes200ResponsePropertiesListItemsFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetScopes200ResponseListInnerFromJSON(jsonValue));
     }
 
     /**
      * <p>Create Scope. Grant Role to Consumer.</p> <p>Scopes are used to grant System or Bank level roles to the Consumer (App). (For Account level privileges, see Views)</p> <p>For a System level Role (.e.g CanGetAnyUser), set bank_id to an empty string i.e. &quot;bank_id&quot;:&quot;&quot;</p> <p>For a Bank level Role (e.g. CanCreateAccount), set bank_id to a valid value e.g. &quot;bank_id&quot;:&quot;my-bank-id&quot;</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
      * Create Scope for a Consumer
      */
-    async oBPv400AddScope(requestParameters: OBPv400AddScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetScopes200ResponsePropertiesListItems> {
-        const response = await this.oBPv400AddScopeRaw(requestParameters, initOverrides);
+    async addScope(requestParameters: AddScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetScopes200ResponseListInner> {
+        const response = await this.addScopeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
     /**
-     * Creates request options for oBPv400GetScopes without sending the request
+     * Creates request options for deleteScope without sending the request
      */
-    async oBPv400GetScopesRequestOpts(requestParameters: OBPv400GetScopesRequest): Promise<runtime.RequestOpts> {
+    async deleteScopeRequestOpts(requestParameters: DeleteScopeRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['consumerid'] == null) {
             throw new runtime.RequiredError(
                 'consumerid',
-                'Required parameter "consumerid" was null or undefined when calling oBPv400GetScopes().'
+                'Required parameter "consumerid" was null or undefined when calling deleteScope().'
+            );
+        }
+
+        if (requestParameters['scopeid'] == null) {
+            throw new runtime.RequiredError(
+                'scopeid',
+                'Required parameter "scopeid" was null or undefined when calling deleteScope().'
             );
         }
 
@@ -209,7 +149,67 @@ export class ScopeApi extends runtime.BaseAPI {
         }
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // DirectLogin authentication
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
+        }
+
+
+        let urlPath = `/obp/v3.0.0/consumers/{consumerid}/scope/{scopeid}`;
+        urlPath = urlPath.replace(`{${"consumerid"}}`, encodeURIComponent(String(requestParameters['consumerid'])));
+        urlPath = urlPath.replace(`{${"scopeid"}}`, encodeURIComponent(String(requestParameters['scopeid'])));
+
+        return {
+            path: urlPath,
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p> <p>Authentication is required and the user needs to be a Super Admin.<br /> Super Admins are listed in the Props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#scope_id\">SCOPE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Consumer Scope
+     */
+    async deleteScopeRaw(requestParameters: DeleteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const requestOptions = await this.deleteScopeRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * <p>Delete Consumer Scope specified by SCOPE_ID for an consumer specified by CONSUMER_ID</p> <p>Authentication is required and the user needs to be a Super Admin.<br /> Super Admins are listed in the Props file.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><a href=\"/glossary#scope_id\">SCOPE_ID</a>:</p> <p><strong>JSON response body fields:</strong></p> 
+     * Delete Consumer Scope
+     */
+    async deleteScope(requestParameters: DeleteScopeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteScopeRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * Creates request options for getScopes without sending the request
+     */
+    async getScopesRequestOpts(requestParameters: GetScopesRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['consumerid'] == null) {
+            throw new runtime.RequiredError(
+                'consumerid',
+                'Required parameter "consumerid" was null or undefined when calling getScopes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", []);
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // GatewayLogin authentication
+        }
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["DirectLogin"] = await this.configuration.apiKey("DirectLogin"); // DirectLogin authentication
         }
 
 
@@ -228,19 +228,19 @@ export class ScopeApi extends runtime.BaseAPI {
      * <p>Get all the scopes for an consumer specified by CONSUMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#list\"><strong>list</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
      * Get Scopes for Consumer
      */
-    async oBPv400GetScopesRaw(requestParameters: OBPv400GetScopesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<OBPv400GetScopes200Response>> {
-        const requestOptions = await this.oBPv400GetScopesRequestOpts(requestParameters);
+    async getScopesRaw(requestParameters: GetScopesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetScopes200Response>> {
+        const requestOptions = await this.getScopesRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => OBPv400GetScopes200ResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetScopes200ResponseFromJSON(jsonValue));
     }
 
     /**
      * <p>Get all the scopes for an consumer specified by CONSUMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">CONSUMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>bank_id</strong></a>: gh.29.uk</p> <p><a href=\"/glossary#list\"><strong>list</strong></a>:</p> <p><a href=\"/glossary#role_name\"><strong>role_name</strong></a>:</p> <p><a href=\"/glossary#scope_id\"><strong>scope_id</strong></a>:</p> 
      * Get Scopes for Consumer
      */
-    async oBPv400GetScopes(requestParameters: OBPv400GetScopesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<OBPv400GetScopes200Response> {
-        const response = await this.oBPv400GetScopesRaw(requestParameters, initOverrides);
+    async getScopes(requestParameters: GetScopesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetScopes200Response> {
+        const response = await this.getScopesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

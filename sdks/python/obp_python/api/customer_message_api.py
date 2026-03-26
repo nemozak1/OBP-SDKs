@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.models.obpv140_add_customer_message_request import OBPv140AddCustomerMessageRequest
-from obp_python.models.obpv140_get_customers_messages200_response import OBPv140GetCustomersMessages200Response
-from obp_python.models.obpv400_create_customer_message_request import OBPv400CreateCustomerMessageRequest
-from obp_python.models.obpv400_get_customer_messages200_response import OBPv400GetCustomerMessages200Response
+from obp_python.models.add_customer_message_request import AddCustomerMessageRequest
+from obp_python.models.create_customer_message_request import CreateCustomerMessageRequest
+from obp_python.models.get_customer_messages200_response import GetCustomerMessages200Response
+from obp_python.models.get_customers_messages200_response import GetCustomersMessages200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 
 from obp_python.api_client import ApiClient, RequestSerialized
 from obp_python.api_response import ApiResponse
@@ -43,11 +43,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv1_4_0_add_customer_message(
+    def add_customer_message(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv140_add_customer_message_request: Annotated[OBPv140AddCustomerMessageRequest, Field(description="Request body")],
+        add_customer_message_request: Annotated[AddCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -60,7 +60,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Create Customer Message
 
         <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -69,8 +69,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv140_add_customer_message_request: Request body (required)
-        :type obpv140_add_customer_message_request: OBPv140AddCustomerMessageRequest
+        :param add_customer_message_request: Request body (required)
+        :type add_customer_message_request: AddCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,10 +93,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_4_0_add_customer_message_serialize(
+        _param = self._add_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv140_add_customer_message_request=obpv140_add_customer_message_request,
+            add_customer_message_request=add_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -104,7 +104,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -119,11 +119,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv1_4_0_add_customer_message_with_http_info(
+    def add_customer_message_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv140_add_customer_message_request: Annotated[OBPv140AddCustomerMessageRequest, Field(description="Request body")],
+        add_customer_message_request: Annotated[AddCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -136,7 +136,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Create Customer Message
 
         <p>Create a message for the customer specified by CUSTOMER_ID</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -145,8 +145,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv140_add_customer_message_request: Request body (required)
-        :type obpv140_add_customer_message_request: OBPv140AddCustomerMessageRequest
+        :param add_customer_message_request: Request body (required)
+        :type add_customer_message_request: AddCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -169,10 +169,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_4_0_add_customer_message_serialize(
+        _param = self._add_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv140_add_customer_message_request=obpv140_add_customer_message_request,
+            add_customer_message_request=add_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -180,7 +180,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -195,11 +195,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv1_4_0_add_customer_message_without_preload_content(
+    def add_customer_message_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv140_add_customer_message_request: Annotated[OBPv140AddCustomerMessageRequest, Field(description="Request body")],
+        add_customer_message_request: Annotated[AddCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -221,8 +221,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv140_add_customer_message_request: Request body (required)
-        :type obpv140_add_customer_message_request: OBPv140AddCustomerMessageRequest
+        :param add_customer_message_request: Request body (required)
+        :type add_customer_message_request: AddCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -245,10 +245,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv1_4_0_add_customer_message_serialize(
+        _param = self._add_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv140_add_customer_message_request=obpv140_add_customer_message_request,
+            add_customer_message_request=add_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -256,7 +256,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '500': None,
         }
         response_data = self.api_client.call_api(
@@ -266,11 +266,11 @@ class CustomerMessageApi:
         return response_data.response
 
 
-    def _o_bpv1_4_0_add_customer_message_serialize(
+    def _add_customer_message_serialize(
         self,
         bankid,
         customerid,
-        obpv140_add_customer_message_request,
+        add_customer_message_request,
         _request_auth,
         _content_type,
         _headers,
@@ -300,8 +300,8 @@ class CustomerMessageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv140_add_customer_message_request is not None:
-            _body_params = obpv140_add_customer_message_request
+        if add_customer_message_request is not None:
+            _body_params = add_customer_message_request
 
 
         # set the HTTP header `Accept`
@@ -352,277 +352,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv1_4_0_get_customers_messages(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv140GetCustomersMessages200Response:
-        """Get Customer Messages for all Customers
-
-        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_4_0_get_customers_messages_serialize(
-            bankid=bankid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv140GetCustomersMessages200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def o_bpv1_4_0_get_customers_messages_with_http_info(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv140GetCustomersMessages200Response]:
-        """Get Customer Messages for all Customers
-
-        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_4_0_get_customers_messages_serialize(
-            bankid=bankid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv140GetCustomersMessages200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def o_bpv1_4_0_get_customers_messages_without_preload_content(
-        self,
-        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Customer Messages for all Customers
-
-        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
-
-        :param bankid: The BANKID identifier (required)
-        :type bankid: str
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._o_bpv1_4_0_get_customers_messages_serialize(
-            bankid=bankid,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv140GetCustomersMessages200Response",
-            '500': None,
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _o_bpv1_4_0_get_customers_messages_serialize(
-        self,
-        bankid,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if bankid is not None:
-            _path_params['bankid'] = bankid
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'OAuth2', 
-            'GatewayLogin', 
-            'DirectLogin'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/obp/v1.4.0/banks/{bankid}/customer/messages',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def o_bpv4_0_0_create_customer_message(
+    def create_customer_message(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv400_create_customer_message_request: Annotated[OBPv400CreateCustomerMessageRequest, Field(description="Request body")],
+        create_customer_message_request: Annotated[CreateCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -635,7 +369,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv121UpdateTransactionNarrative200Response:
+    ) -> UpdateTransactionNarrative200Response:
         """Create Customer Message
 
         <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -644,8 +378,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv400_create_customer_message_request: Request body (required)
-        :type obpv400_create_customer_message_request: OBPv400CreateCustomerMessageRequest
+        :param create_customer_message_request: Request body (required)
+        :type create_customer_message_request: CreateCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -668,10 +402,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_message_serialize(
+        _param = self._create_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv400_create_customer_message_request=obpv400_create_customer_message_request,
+            create_customer_message_request=create_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -679,7 +413,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -695,11 +429,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_customer_message_with_http_info(
+    def create_customer_message_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv400_create_customer_message_request: Annotated[OBPv400CreateCustomerMessageRequest, Field(description="Request body")],
+        create_customer_message_request: Annotated[CreateCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -712,7 +446,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv121UpdateTransactionNarrative200Response]:
+    ) -> ApiResponse[UpdateTransactionNarrative200Response]:
         """Create Customer Message
 
         <p>Create a message for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON request body fields:</strong></p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#success\"><strong>success</strong></a>:</p> 
@@ -721,8 +455,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv400_create_customer_message_request: Request body (required)
-        :type obpv400_create_customer_message_request: OBPv400CreateCustomerMessageRequest
+        :param create_customer_message_request: Request body (required)
+        :type create_customer_message_request: CreateCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -745,10 +479,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_message_serialize(
+        _param = self._create_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv400_create_customer_message_request=obpv400_create_customer_message_request,
+            create_customer_message_request=create_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -756,7 +490,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -772,11 +506,11 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_create_customer_message_without_preload_content(
+    def create_customer_message_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
-        obpv400_create_customer_message_request: Annotated[OBPv400CreateCustomerMessageRequest, Field(description="Request body")],
+        create_customer_message_request: Annotated[CreateCustomerMessageRequest, Field(description="Request body")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -798,8 +532,8 @@ class CustomerMessageApi:
         :type bankid: str
         :param customerid: The CUSTOMERID identifier (required)
         :type customerid: str
-        :param obpv400_create_customer_message_request: Request body (required)
-        :type obpv400_create_customer_message_request: OBPv400CreateCustomerMessageRequest
+        :param create_customer_message_request: Request body (required)
+        :type create_customer_message_request: CreateCustomerMessageRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -822,10 +556,10 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_create_customer_message_serialize(
+        _param = self._create_customer_message_serialize(
             bankid=bankid,
             customerid=customerid,
-            obpv400_create_customer_message_request=obpv400_create_customer_message_request,
+            create_customer_message_request=create_customer_message_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -833,7 +567,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv121UpdateTransactionNarrative200Response",
+            '200': "UpdateTransactionNarrative200Response",
             '404': None,
             '500': None,
         }
@@ -844,11 +578,11 @@ class CustomerMessageApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_create_customer_message_serialize(
+    def _create_customer_message_serialize(
         self,
         bankid,
         customerid,
-        obpv400_create_customer_message_request,
+        create_customer_message_request,
         _request_auth,
         _content_type,
         _headers,
@@ -878,8 +612,8 @@ class CustomerMessageApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if obpv400_create_customer_message_request is not None:
-            _body_params = obpv400_create_customer_message_request
+        if create_customer_message_request is not None:
+            _body_params = create_customer_message_request
 
 
         # set the HTTP header `Accept`
@@ -930,7 +664,7 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_messages(
+    def get_customer_messages(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -946,7 +680,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OBPv400GetCustomerMessages200Response:
+    ) -> GetCustomerMessages200Response:
         """Get Customer Messages for a Customer
 
         <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
@@ -977,7 +711,7 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_messages_serialize(
+        _param = self._get_customer_messages_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -987,7 +721,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerMessages200Response",
+            '200': "GetCustomerMessages200Response",
             '404': None,
             '500': None,
         }
@@ -1003,7 +737,7 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_messages_with_http_info(
+    def get_customer_messages_with_http_info(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1019,7 +753,7 @@ class CustomerMessageApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OBPv400GetCustomerMessages200Response]:
+    ) -> ApiResponse[GetCustomerMessages200Response]:
         """Get Customer Messages for a Customer
 
         <p>Get messages for the customer specified by CUSTOMER_ID<br /> User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><a href=\"/glossary#Customer.customer_id\">CUSTOMER_ID</a>: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> <p><a href=\"/glossary#transport\"><strong>transport</strong></a>: SMS</p> 
@@ -1050,7 +784,7 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_messages_serialize(
+        _param = self._get_customer_messages_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -1060,7 +794,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerMessages200Response",
+            '200': "GetCustomerMessages200Response",
             '404': None,
             '500': None,
         }
@@ -1076,7 +810,7 @@ class CustomerMessageApi:
 
 
     @validate_call
-    def o_bpv4_0_0_get_customer_messages_without_preload_content(
+    def get_customer_messages_without_preload_content(
         self,
         bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
         customerid: Annotated[StrictStr, Field(description="The CUSTOMERID identifier")],
@@ -1123,7 +857,7 @@ class CustomerMessageApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._o_bpv4_0_0_get_customer_messages_serialize(
+        _param = self._get_customer_messages_serialize(
             bankid=bankid,
             customerid=customerid,
             _request_auth=_request_auth,
@@ -1133,7 +867,7 @@ class CustomerMessageApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OBPv400GetCustomerMessages200Response",
+            '200': "GetCustomerMessages200Response",
             '404': None,
             '500': None,
         }
@@ -1144,7 +878,7 @@ class CustomerMessageApi:
         return response_data.response
 
 
-    def _o_bpv4_0_0_get_customer_messages_serialize(
+    def _get_customer_messages_serialize(
         self,
         bankid,
         customerid,
@@ -1198,6 +932,272 @@ class CustomerMessageApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/obp/v4.0.0/banks/{bankid}/customers/{customerid}/messages',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_customers_messages(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetCustomersMessages200Response:
+        """Get Customer Messages for all Customers
+
+        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_customers_messages_serialize(
+            bankid=bankid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCustomersMessages200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_customers_messages_with_http_info(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetCustomersMessages200Response]:
+        """Get Customer Messages for all Customers
+
+        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_customers_messages_serialize(
+            bankid=bankid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCustomersMessages200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_customers_messages_without_preload_content(
+        self,
+        bankid: Annotated[StrictStr, Field(description="The BANKID identifier")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Customer Messages for all Customers
+
+        <p>Get messages for the logged in customer<br /> Messages sent to the currently authenticated user.</p> <p>Authentication via OAuth is required.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#Bank.bank_id\">BANK_ID</a>: gh.29.uk</p> <p><strong>JSON response body fields:</strong></p> <p><a href=\"/glossary#\"><strong>date</strong></a>: 2020-01-27</p> <p><a href=\"/glossary#from_department\"><strong>from_department</strong></a>: Open Bank</p> <p><a href=\"/glossary#from_person\"><strong>from_person</strong></a>: Tom</p> <p><a href=\"/glossary#id\"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p> <p><a href=\"/glossary#message\"><strong>message</strong></a>: 123456</p> <p><a href=\"/glossary#messages\"><strong>messages</strong></a>:</p> 
+
+        :param bankid: The BANKID identifier (required)
+        :type bankid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_customers_messages_serialize(
+            bankid=bankid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "GetCustomersMessages200Response",
+            '500': None,
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_customers_messages_serialize(
+        self,
+        bankid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if bankid is not None:
+            _path_params['bankid'] = bankid
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2', 
+            'GatewayLogin', 
+            'DirectLogin'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/obp/v1.4.0/banks/{bankid}/customer/messages',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

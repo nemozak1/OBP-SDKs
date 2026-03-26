@@ -1,17 +1,17 @@
 # AccountMetadataApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**oBPv400AddTagForViewOnAccount**](AccountMetadataApi.md#oBPv400AddTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
-| [**oBPv400DeleteTagForViewOnAccount**](AccountMetadataApi.md#oBPv400DeleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
-| [**oBPv400GetTagsForViewOnAccount**](AccountMetadataApi.md#oBPv400GetTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
+| [**addTagForViewOnAccount**](AccountMetadataApi.md#addTagForViewOnAccount) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Create a tag on account |
+| [**deleteTagForViewOnAccount**](AccountMetadataApi.md#deleteTagForViewOnAccount) | **DELETE** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags/{tagid} | Delete a tag on account |
+| [**getTagsForViewOnAccount**](AccountMetadataApi.md#getTagsForViewOnAccount) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/metadata/tags | Get tags on account |
 
 
-<a id="oBPv400AddTagForViewOnAccount"></a>
-# **oBPv400AddTagForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response)
+<a id="addTagForViewOnAccount"></a>
+# **addTagForViewOnAccount**
+> GetTagsForViewOnAccount200ResponseTagsInner addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
 
 Create a tag on account
 
@@ -27,15 +27,15 @@ val apiInstance = AccountMetadataApi()
 val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identifier
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
-val obPv400DeleteSystemLevelEndpointTag200Response : OBPv400DeleteSystemLevelEndpointTag200Response = {"type":"object","properties":{"value":{"type":"string"}}} // OBPv400DeleteSystemLevelEndpointTag200Response | Request body
+val getTransactionTypes200ResponseTransactionTypesInnerId : GetTransactionTypes200ResponseTransactionTypesInnerId = {"type":"object","properties":{"value":{"type":"string"}}} // GetTransactionTypes200ResponseTransactionTypesInnerId | Request body
 try {
-    val result : OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems = apiInstance.oBPv400AddTagForViewOnAccount(bankid, accountid, viewid, obPv400DeleteSystemLevelEndpointTag200Response)
+    val result : GetTagsForViewOnAccount200ResponseTagsInner = apiInstance.addTagForViewOnAccount(bankid, accountid, viewid, getTransactionTypes200ResponseTransactionTypesInnerId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountMetadataApi#oBPv400AddTagForViewOnAccount")
+    println("4xx response calling AccountMetadataApi#addTagForViewOnAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountMetadataApi#oBPv400AddTagForViewOnAccount")
+    println("5xx response calling AccountMetadataApi#addTagForViewOnAccount")
     e.printStackTrace()
 }
 ```
@@ -46,11 +46,11 @@ try {
 | **viewid** | **kotlin.String**| The VIEWID identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **obPv400DeleteSystemLevelEndpointTag200Response** | [**OBPv400DeleteSystemLevelEndpointTag200Response**](OBPv400DeleteSystemLevelEndpointTag200Response.md)| Request body | |
+| **getTransactionTypes200ResponseTransactionTypesInnerId** | [**GetTransactionTypes200ResponseTransactionTypesInnerId**](GetTransactionTypes200ResponseTransactionTypesInnerId.md)| Request body | |
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems**](OBPv400GetTagsForViewOnAccount200ResponsePropertiesTagsItems.md)
+[**GetTagsForViewOnAccount200ResponseTagsInner**](GetTagsForViewOnAccount200ResponseTagsInner.md)
 
 ### Authorization
 
@@ -61,17 +61,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="oBPv400DeleteTagForViewOnAccount"></a>
-# **oBPv400DeleteTagForViewOnAccount**
-> oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
+<a id="deleteTagForViewOnAccount"></a>
+# **deleteTagForViewOnAccount**
+> deleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
 
 Delete a tag on account
 
@@ -89,12 +89,12 @@ val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNT
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 val tagid : kotlin.String = tagid_example // kotlin.String | The TAGID identifier
 try {
-    apiInstance.oBPv400DeleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
+    apiInstance.deleteTagForViewOnAccount(bankid, accountid, viewid, tagid)
 } catch (e: ClientException) {
-    println("4xx response calling AccountMetadataApi#oBPv400DeleteTagForViewOnAccount")
+    println("4xx response calling AccountMetadataApi#deleteTagForViewOnAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountMetadataApi#oBPv400DeleteTagForViewOnAccount")
+    println("5xx response calling AccountMetadataApi#deleteTagForViewOnAccount")
     e.printStackTrace()
 }
 ```
@@ -120,17 +120,17 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a id="oBPv400GetTagsForViewOnAccount"></a>
-# **oBPv400GetTagsForViewOnAccount**
-> OBPv400GetTagsForViewOnAccount200Response oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid)
+<a id="getTagsForViewOnAccount"></a>
+# **getTagsForViewOnAccount**
+> GetTagsForViewOnAccount200Response getTagsForViewOnAccount(bankid, accountid, viewid)
 
 Get tags on account
 
@@ -147,13 +147,13 @@ val bankid : kotlin.String = bankid_example // kotlin.String | The BANKID identi
 val accountid : kotlin.String = accountid_example // kotlin.String | The ACCOUNTID identifier
 val viewid : kotlin.String = viewid_example // kotlin.String | The VIEWID identifier
 try {
-    val result : OBPv400GetTagsForViewOnAccount200Response = apiInstance.oBPv400GetTagsForViewOnAccount(bankid, accountid, viewid)
+    val result : GetTagsForViewOnAccount200Response = apiInstance.getTagsForViewOnAccount(bankid, accountid, viewid)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling AccountMetadataApi#oBPv400GetTagsForViewOnAccount")
+    println("4xx response calling AccountMetadataApi#getTagsForViewOnAccount")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling AccountMetadataApi#oBPv400GetTagsForViewOnAccount")
+    println("5xx response calling AccountMetadataApi#getTagsForViewOnAccount")
     e.printStackTrace()
 }
 ```
@@ -167,7 +167,7 @@ try {
 
 ### Return type
 
-[**OBPv400GetTagsForViewOnAccount200Response**](OBPv400GetTagsForViewOnAccount200Response.md)
+[**GetTagsForViewOnAccount200Response**](GetTagsForViewOnAccount200Response.md)
 
 ### Authorization
 
@@ -178,8 +178,8 @@ Configure GatewayLogin:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
 Configure DirectLogin:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
+    ApiClient.apiKey["DirectLogin"] = ""
+    ApiClient.apiKeyPrefix["DirectLogin"] = ""
 
 ### HTTP request headers
 

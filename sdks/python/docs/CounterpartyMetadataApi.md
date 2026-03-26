@@ -4,38 +4,38 @@ All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**o_bpv1_2_1_add_counterparty_corporate_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
-[**o_bpv1_2_1_add_counterparty_image_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
-[**o_bpv1_2_1_add_counterparty_more_info**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
-[**o_bpv1_2_1_add_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
-[**o_bpv1_2_1_add_counterparty_physical_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
-[**o_bpv1_2_1_add_counterparty_public_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
-[**o_bpv1_2_1_add_counterparty_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
-[**o_bpv1_2_1_add_other_account_private_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
-[**o_bpv1_2_1_delete_counterparty_corporate_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
-[**o_bpv1_2_1_delete_counterparty_image_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
-[**o_bpv1_2_1_delete_counterparty_more_info**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
-[**o_bpv1_2_1_delete_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
-[**o_bpv1_2_1_delete_counterparty_physical_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
-[**o_bpv1_2_1_delete_counterparty_private_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
-[**o_bpv1_2_1_delete_counterparty_public_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
-[**o_bpv1_2_1_delete_counterparty_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
-[**o_bpv1_2_1_get_counterparty_public_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
-[**o_bpv1_2_1_get_other_account_metadata**](CounterpartyMetadataApi.md#o_bpv1_2_1_get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
-[**o_bpv1_2_1_get_other_account_private_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
-[**o_bpv1_2_1_update_counterparty_corporate_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
-[**o_bpv1_2_1_update_counterparty_image_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
-[**o_bpv1_2_1_update_counterparty_more_info**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
-[**o_bpv1_2_1_update_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
-[**o_bpv1_2_1_update_counterparty_physical_location**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
-[**o_bpv1_2_1_update_counterparty_private_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
-[**o_bpv1_2_1_update_counterparty_public_alias**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
-[**o_bpv1_2_1_update_counterparty_url**](CounterpartyMetadataApi.md#o_bpv1_2_1_update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
-[**o_bpv4_0_0_get_explicit_counterparty_by_id**](CounterpartyMetadataApi.md#o_bpv4_0_0_get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**add_counterparty_corporate_location**](CounterpartyMetadataApi.md#add_counterparty_corporate_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Add Corporate Location to Counterparty
+[**add_counterparty_image_url**](CounterpartyMetadataApi.md#add_counterparty_image_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Add image url to other bank account
+[**add_counterparty_more_info**](CounterpartyMetadataApi.md#add_counterparty_more_info) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Add Counterparty More Info
+[**add_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#add_counterparty_open_corporates_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Add Open Corporates URL to Counterparty
+[**add_counterparty_physical_location**](CounterpartyMetadataApi.md#add_counterparty_physical_location) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Add physical location to other bank account
+[**add_counterparty_public_alias**](CounterpartyMetadataApi.md#add_counterparty_public_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Add public alias to other bank account
+[**add_counterparty_url**](CounterpartyMetadataApi.md#add_counterparty_url) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Add url to other bank account
+[**add_other_account_private_alias**](CounterpartyMetadataApi.md#add_other_account_private_alias) | **POST** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Create Other Account Private Alias
+[**delete_counterparty_corporate_location**](CounterpartyMetadataApi.md#delete_counterparty_corporate_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Delete Counterparty Corporate Location
+[**delete_counterparty_image_url**](CounterpartyMetadataApi.md#delete_counterparty_image_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Delete Counterparty Image URL
+[**delete_counterparty_more_info**](CounterpartyMetadataApi.md#delete_counterparty_more_info) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Delete more info of other bank account
+[**delete_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#delete_counterparty_open_corporates_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Delete Counterparty Open Corporates URL
+[**delete_counterparty_physical_location**](CounterpartyMetadataApi.md#delete_counterparty_physical_location) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Delete Counterparty Physical Location
+[**delete_counterparty_private_alias**](CounterpartyMetadataApi.md#delete_counterparty_private_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Delete Counterparty Private Alias
+[**delete_counterparty_public_alias**](CounterpartyMetadataApi.md#delete_counterparty_public_alias) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Delete Counterparty Public Alias
+[**delete_counterparty_url**](CounterpartyMetadataApi.md#delete_counterparty_url) | **DELETE** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Delete url of other bank account
+[**get_counterparty_public_alias**](CounterpartyMetadataApi.md#get_counterparty_public_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Get public alias of other bank account
+[**get_explicit_counterparty_by_id**](CounterpartyMetadataApi.md#get_explicit_counterparty_by_id) | **GET** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid} | Get Counterparty by Id (Explicit)
+[**get_other_account_metadata**](CounterpartyMetadataApi.md#get_other_account_metadata) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata | Get Other Account Metadata
+[**get_other_account_private_alias**](CounterpartyMetadataApi.md#get_other_account_private_alias) | **GET** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Get Other Account Private Alias
+[**update_counterparty_corporate_location**](CounterpartyMetadataApi.md#update_counterparty_corporate_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/corporate_location | Update Counterparty Corporate Location
+[**update_counterparty_image_url**](CounterpartyMetadataApi.md#update_counterparty_image_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/image_url | Update Counterparty Image Url
+[**update_counterparty_more_info**](CounterpartyMetadataApi.md#update_counterparty_more_info) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/more_info | Update Counterparty More Info
+[**update_counterparty_open_corporates_url**](CounterpartyMetadataApi.md#update_counterparty_open_corporates_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/open_corporates_url | Update Open Corporates Url of Counterparty
+[**update_counterparty_physical_location**](CounterpartyMetadataApi.md#update_counterparty_physical_location) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/physical_location | Update Counterparty Physical Location
+[**update_counterparty_private_alias**](CounterpartyMetadataApi.md#update_counterparty_private_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/private_alias | Update Counterparty Private Alias
+[**update_counterparty_public_alias**](CounterpartyMetadataApi.md#update_counterparty_public_alias) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/public_alias | Update public alias of other bank account
+[**update_counterparty_url**](CounterpartyMetadataApi.md#update_counterparty_url) | **PUT** /obp/v1.2.1/banks/{bankid}/accounts/{accountid}/{viewid}/other_accounts/{otheraccountid}/metadata/url | Update url of other bank account
 
 
-# **o_bpv1_2_1_add_counterparty_corporate_location**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request)
+# **add_counterparty_corporate_location**
+> UpdateTransactionNarrative200Response add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request)
 
 Add Corporate Location to Counterparty
 
@@ -62,8 +62,8 @@ Add Corporate Location to Counterparty
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_corporate_location_request import OBPv121UpdateCounterpartyCorporateLocationRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_corporate_location_request import UpdateCounterpartyCorporateLocationRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -100,15 +100,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_corporate_location_request = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
+    update_counterparty_corporate_location_request = {type=object, properties={corporate_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # UpdateCounterpartyCorporateLocationRequest | Request body
 
     try:
         # Add Corporate Location to Counterparty
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_corporate_location:\n")
+        api_response = api_instance.add_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_corporate_location:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_corporate_location: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_corporate_location: %s\n" % e)
 ```
 
 
@@ -122,11 +122,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_corporate_location_request** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
+ **update_counterparty_corporate_location_request** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -147,8 +147,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_image_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request)
+# **add_counterparty_image_url**
+> UpdateTransactionNarrative200Response add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request)
 
 Add image url to other bank account
 
@@ -173,8 +173,8 @@ Add image url to other bank account
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_image_url_request import OBPv121UpdateCounterpartyImageUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_image_url_request import UpdateCounterpartyImageUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -211,15 +211,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_image_url_request = {type=object, properties={image_URL={type=string}}} # OBPv121UpdateCounterpartyImageUrlRequest | Request body
+    update_counterparty_image_url_request = {type=object, properties={image_URL={type=string}}} # UpdateCounterpartyImageUrlRequest | Request body
 
     try:
         # Add image url to other bank account
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_image_url:\n")
+        api_response = api_instance.add_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_image_url:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_image_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_image_url: %s\n" % e)
 ```
 
 
@@ -233,11 +233,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_image_url_request** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | 
+ **update_counterparty_image_url_request** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -258,8 +258,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_more_info**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request)
+# **add_counterparty_more_info**
+> UpdateTransactionNarrative200Response add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request)
 
 Add Counterparty More Info
 
@@ -284,8 +284,8 @@ Add Counterparty More Info
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_more_info_request import OBPv121UpdateCounterpartyMoreInfoRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_more_info_request import UpdateCounterpartyMoreInfoRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -322,15 +322,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_more_info_request = {type=object, properties={more_info={type=string}}} # OBPv121UpdateCounterpartyMoreInfoRequest | Request body
+    update_counterparty_more_info_request = {type=object, properties={more_info={type=string}}} # UpdateCounterpartyMoreInfoRequest | Request body
 
     try:
         # Add Counterparty More Info
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_more_info:\n")
+        api_response = api_instance.add_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_more_info:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_more_info: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_more_info: %s\n" % e)
 ```
 
 
@@ -344,11 +344,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_more_info_request** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | 
+ **update_counterparty_more_info_request** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -369,8 +369,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_open_corporates_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request)
+# **add_counterparty_open_corporates_url**
+> UpdateTransactionNarrative200Response add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request)
 
 Add Open Corporates URL to Counterparty
 
@@ -392,8 +392,8 @@ Add Open Corporates URL to Counterparty
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_open_corporates_url_request import OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_open_corporates_url_request import UpdateCounterpartyOpenCorporatesUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -412,15 +412,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_open_corporates_url_request = {type=object, properties={open_corporates_URL={type=string}}} # OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+    update_counterparty_open_corporates_url_request = {type=object, properties={open_corporates_URL={type=string}}} # UpdateCounterpartyOpenCorporatesUrlRequest | Request body
 
     try:
         # Add Open Corporates URL to Counterparty
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_open_corporates_url:\n")
+        api_response = api_instance.add_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_open_corporates_url:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_open_corporates_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_open_corporates_url: %s\n" % e)
 ```
 
 
@@ -434,11 +434,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_open_corporates_url_request** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
+ **update_counterparty_open_corporates_url_request** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -459,8 +459,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_physical_location**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request)
+# **add_counterparty_physical_location**
+> UpdateTransactionNarrative200Response add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request)
 
 Add physical location to other bank account
 
@@ -487,8 +487,8 @@ Add physical location to other bank account
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_physical_location_request import OBPv121UpdateCounterpartyPhysicalLocationRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_physical_location_request import UpdateCounterpartyPhysicalLocationRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -525,15 +525,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_physical_location_request = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
+    update_counterparty_physical_location_request = {type=object, properties={physical_location={type=object, properties={longitude={type=number}, latitude={type=number}}}}} # UpdateCounterpartyPhysicalLocationRequest | Request body
 
     try:
         # Add physical location to other bank account
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_physical_location:\n")
+        api_response = api_instance.add_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_physical_location:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_physical_location: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_physical_location: %s\n" % e)
 ```
 
 
@@ -547,11 +547,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_physical_location_request** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
+ **update_counterparty_physical_location_request** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -572,8 +572,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_public_alias**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
+# **add_counterparty_public_alias**
+> UpdateTransactionNarrative200Response add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
 
 Add public alias to other bank account
 
@@ -602,8 +602,8 @@ the public alias was deleted.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -640,15 +640,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # OBPv121GetCounterpartyPublicAlias200Response | Request body
+    get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # GetCounterpartyPublicAlias200Response | Request body
 
     try:
         # Add public alias to other bank account
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_public_alias:\n")
+        api_response = api_instance.add_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+        print("The response of CounterpartyMetadataApi->add_counterparty_public_alias:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_public_alias: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_public_alias: %s\n" % e)
 ```
 
 
@@ -662,11 +662,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_get_counterparty_public_alias200_response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
+ **get_counterparty_public_alias200_response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -687,8 +687,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_counterparty_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request)
+# **add_counterparty_url**
+> UpdateTransactionNarrative200Response add_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request)
 
 Add url to other bank account
 
@@ -713,8 +713,8 @@ Add url to other bank account
 
 ```python
 import obp_python
-from obp_python.models.obpv121_update_counterparty_url_request import OBPv121UpdateCounterpartyUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.update_counterparty_url_request import UpdateCounterpartyUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -751,15 +751,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_url_request = {type=object, properties={URL={type=string}}} # OBPv121UpdateCounterpartyUrlRequest | Request body
+    update_counterparty_url_request = {type=object, properties={URL={type=string}}} # UpdateCounterpartyUrlRequest | Request body
 
     try:
         # Add url to other bank account
-        api_response = api_instance.o_bpv1_2_1_add_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_url:\n")
+        api_response = api_instance.add_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request)
+        print("The response of CounterpartyMetadataApi->add_counterparty_url:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_counterparty_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_counterparty_url: %s\n" % e)
 ```
 
 
@@ -773,11 +773,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_url_request** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md)| Request body | 
+ **update_counterparty_url_request** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -798,8 +798,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_add_other_account_private_alias**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
+# **add_other_account_private_alias**
+> UpdateTransactionNarrative200Response add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
 
 Create Other Account Private Alias
 
@@ -825,8 +825,8 @@ Authentication is required if the view is not public.</p>
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -863,15 +863,15 @@ with obp_python.ApiClient(configuration) as api_client:
     accountid = 'accountid_example' # str | The ACCOUNTID identifier
     viewid = 'viewid_example' # str | The VIEWID identifier
     otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # OBPv121GetCounterpartyPublicAlias200Response | Request body
+    get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # GetCounterpartyPublicAlias200Response | Request body
 
     try:
         # Create Other Account Private Alias
-        api_response = api_instance.o_bpv1_2_1_add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_add_other_account_private_alias:\n")
+        api_response = api_instance.add_other_account_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+        print("The response of CounterpartyMetadataApi->add_other_account_private_alias:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_add_other_account_private_alias: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->add_other_account_private_alias: %s\n" % e)
 ```
 
 
@@ -885,11 +885,11 @@ Name | Type | Description  | Notes
  **accountid** | **str**| The ACCOUNTID identifier | 
  **viewid** | **str**| The VIEWID identifier | 
  **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_get_counterparty_public_alias200_response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
+ **get_counterparty_public_alias200_response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
 
 ### Return type
 
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
 
 ### Authorization
 
@@ -910,8 +910,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_corporate_location**
-> o_bpv1_2_1_delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_corporate_location**
+> delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Corporate Location
 
@@ -972,9 +972,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Corporate Location
-        api_instance.o_bpv1_2_1_delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_corporate_location: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_corporate_location: %s\n" % e)
 ```
 
 
@@ -1012,8 +1012,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_image_url**
-> o_bpv1_2_1_delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_image_url**
+> delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Image URL
 
@@ -1053,9 +1053,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Image URL
-        api_instance.o_bpv1_2_1_delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_image_url(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_image_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_image_url: %s\n" % e)
 ```
 
 
@@ -1092,8 +1092,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_more_info**
-> o_bpv1_2_1_delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_more_info**
+> delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid)
 
 Delete more info of other bank account
 
@@ -1153,9 +1153,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete more info of other bank account
-        api_instance.o_bpv1_2_1_delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_more_info(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_more_info: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_more_info: %s\n" % e)
 ```
 
 
@@ -1193,8 +1193,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_open_corporates_url**
-> o_bpv1_2_1_delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_open_corporates_url**
+> delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Open Corporates URL
 
@@ -1255,9 +1255,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Open Corporates URL
-        api_instance.o_bpv1_2_1_delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_open_corporates_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_open_corporates_url: %s\n" % e)
 ```
 
 
@@ -1295,8 +1295,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_physical_location**
-> o_bpv1_2_1_delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_physical_location**
+> delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Physical Location
 
@@ -1357,9 +1357,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Physical Location
-        api_instance.o_bpv1_2_1_delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_physical_location(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_physical_location: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_physical_location: %s\n" % e)
 ```
 
 
@@ -1397,8 +1397,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_private_alias**
-> o_bpv1_2_1_delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_private_alias**
+> delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Private Alias
 
@@ -1460,9 +1460,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Private Alias
-        api_instance.o_bpv1_2_1_delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_private_alias(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_private_alias: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_private_alias: %s\n" % e)
 ```
 
 
@@ -1500,8 +1500,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_public_alias**
-> o_bpv1_2_1_delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_public_alias**
+> delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
 
 Delete Counterparty Public Alias
 
@@ -1563,9 +1563,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete Counterparty Public Alias
-        api_instance.o_bpv1_2_1_delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_public_alias: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_public_alias: %s\n" % e)
 ```
 
 
@@ -1603,8 +1603,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_delete_counterparty_url**
-> o_bpv1_2_1_delete_counterparty_url(bankid, accountid, viewid, otheraccountid)
+# **delete_counterparty_url**
+> delete_counterparty_url(bankid, accountid, viewid, otheraccountid)
 
 Delete url of other bank account
 
@@ -1664,9 +1664,9 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Delete url of other bank account
-        api_instance.o_bpv1_2_1_delete_counterparty_url(bankid, accountid, viewid, otheraccountid)
+        api_instance.delete_counterparty_url(bankid, accountid, viewid, otheraccountid)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_delete_counterparty_url: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->delete_counterparty_url: %s\n" % e)
 ```
 
 
@@ -1704,8 +1704,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_counterparty_public_alias**
-> OBPv121GetCounterpartyPublicAlias200Response o_bpv1_2_1_get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
+# **get_counterparty_public_alias**
+> GetCounterpartyPublicAlias200Response get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
 
 Get public alias of other bank account
 
@@ -1729,7 +1729,7 @@ User Authentication is Required. The User must be logged in. The Application mus
 
 ```python
 import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -1769,11 +1769,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get public alias of other bank account
-        api_response = api_instance.o_bpv1_2_1_get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_get_counterparty_public_alias:\n")
+        api_response = api_instance.get_counterparty_public_alias(bankid, accountid, viewid, otheraccountid)
+        print("The response of CounterpartyMetadataApi->get_counterparty_public_alias:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_get_counterparty_public_alias: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->get_counterparty_public_alias: %s\n" % e)
 ```
 
 
@@ -1790,7 +1790,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
 
 ### Authorization
 
@@ -1811,1089 +1811,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **o_bpv1_2_1_get_other_account_metadata**
-> OBPv121GetOtherAccountMetadata200Response o_bpv1_2_1_get_other_account_metadata(bankid, accountid, viewid, otheraccountid)
-
-Get Other Account Metadata
-
-<p>Get metadata of one other account.<br />
-Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p>
-<p>Authentication via OAuth is required if the view is not public.</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
-<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
-<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
-<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
-<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
-<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
-<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
-<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
-<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
-<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
-<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
-<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
-<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
-<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
-<p><a href="/glossary#User"><strong>user</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_other_account_metadata200_response import OBPv121GetOtherAccountMetadata200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-
-    try:
-        # Get Other Account Metadata
-        api_response = api_instance.o_bpv1_2_1_get_other_account_metadata(bankid, accountid, viewid, otheraccountid)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_get_other_account_metadata:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_get_other_account_metadata: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetOtherAccountMetadata200Response**](OBPv121GetOtherAccountMetadata200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_get_other_account_private_alias**
-> OBPv121GetCounterpartyPublicAlias200Response o_bpv1_2_1_get_other_account_private_alias(bankid, accountid, viewid, otheraccountid)
-
-Get Other Account Private Alias
-
-<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p>
-<p>User Authentication is Optional. The User need not be logged in.<br />
-Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-
-    try:
-        # Get Other Account Private Alias
-        api_response = api_instance.o_bpv1_2_1_get_other_account_private_alias(bankid, accountid, viewid, otheraccountid)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_get_other_account_private_alias:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_get_other_account_private_alias: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
-
-### Return type
-
-[**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_corporate_location**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request)
-
-Update Counterparty Corporate Location
-
-<p>Update the geolocation of the counterparty's registered address</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_corporate_location_request import OBPv121UpdateCounterpartyCorporateLocationRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_corporate_location_request = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # OBPv121UpdateCounterpartyCorporateLocationRequest | Request body
-
-    try:
-        # Update Counterparty Corporate Location
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_corporate_location_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_corporate_location:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_corporate_location: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_corporate_location_request** | [**OBPv121UpdateCounterpartyCorporateLocationRequest**](OBPv121UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_image_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request)
-
-Update Counterparty Image Url
-
-<p>Update the url that points to the logo of the counterparty</p>
-<p>User Authentication is Optional. The User need not be logged in.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_image_url_request import OBPv121UpdateCounterpartyImageUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_image_url_request = {"type":"object","properties":{"image_URL":{"type":"string"}}} # OBPv121UpdateCounterpartyImageUrlRequest | Request body
-
-    try:
-        # Update Counterparty Image Url
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_image_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_image_url:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_image_url: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_image_url_request** | [**OBPv121UpdateCounterpartyImageUrlRequest**](OBPv121UpdateCounterpartyImageUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_more_info**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request)
-
-Update Counterparty More Info
-
-<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_more_info_request import OBPv121UpdateCounterpartyMoreInfoRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_more_info_request = {"type":"object","properties":{"more_info":{"type":"string"}}} # OBPv121UpdateCounterpartyMoreInfoRequest | Request body
-
-    try:
-        # Update Counterparty More Info
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_more_info_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_more_info:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_more_info: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_more_info_request** | [**OBPv121UpdateCounterpartyMoreInfoRequest**](OBPv121UpdateCounterpartyMoreInfoRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_open_corporates_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request)
-
-Update Open Corporates Url of Counterparty
-
-<p>Update open corporate url of other bank account</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_open_corporates_url_request import OBPv121UpdateCounterpartyOpenCorporatesUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_open_corporates_url_request = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}} # OBPv121UpdateCounterpartyOpenCorporatesUrlRequest | Request body
-
-    try:
-        # Update Open Corporates Url of Counterparty
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_open_corporates_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_open_corporates_url:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_open_corporates_url: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_open_corporates_url_request** | [**OBPv121UpdateCounterpartyOpenCorporatesUrlRequest**](OBPv121UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_physical_location**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request)
-
-Update Counterparty Physical Location
-
-<p>Update geocoordinates of the counterparty's main location</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_physical_location_request import OBPv121UpdateCounterpartyPhysicalLocationRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_physical_location_request = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # OBPv121UpdateCounterpartyPhysicalLocationRequest | Request body
-
-    try:
-        # Update Counterparty Physical Location
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_physical_location_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_physical_location:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_physical_location: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_physical_location_request** | [**OBPv121UpdateCounterpartyPhysicalLocationRequest**](OBPv121UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_private_alias**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-
-Update Counterparty Private Alias
-
-<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p>
-<p>User Authentication is Optional. The User need not be logged in.<br />
-Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-    try:
-        # Update Counterparty Private Alias
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_private_alias:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_private_alias: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_get_counterparty_public_alias200_response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_public_alias**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-
-Update public alias of other bank account
-
-<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p>
-<p>User Authentication is Optional. The User need not be logged in.<br />
-Authentication is required if the view is not public.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_get_counterparty_public_alias200_response import OBPv121GetCounterpartyPublicAlias200Response
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_get_counterparty_public_alias200_response = {"type":"object","properties":{"alias":{"type":"string"}}} # OBPv121GetCounterpartyPublicAlias200Response | Request body
-
-    try:
-        # Update public alias of other bank account
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, obpv121_get_counterparty_public_alias200_response)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_public_alias:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_public_alias: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_get_counterparty_public_alias200_response** | [**OBPv121GetCounterpartyPublicAlias200Response**](OBPv121GetCounterpartyPublicAlias200Response.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv1_2_1_update_counterparty_url**
-> OBPv121UpdateTransactionNarrative200Response o_bpv1_2_1_update_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request)
-
-Update url of other bank account
-
-<p>A url which represents the counterparty (home page url etc.)</p>
-<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
-<p><strong>URL Parameters:</strong></p>
-<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
-<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
-<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
-<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
-<p><strong>JSON response body fields:</strong></p>
-<p><a href="/glossary#success"><strong>success</strong></a>:</p>
-
-
-### Example
-
-* OAuth Authentication (OAuth2):
-* Api Key Authentication (GatewayLogin):
-* Api Key Authentication (DirectLogin):
-
-```python
-import obp_python
-from obp_python.models.obpv121_update_counterparty_url_request import OBPv121UpdateCounterpartyUrlRequest
-from obp_python.models.obpv121_update_transaction_narrative200_response import OBPv121UpdateTransactionNarrative200Response
-from obp_python.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://127.0.0.1:8080
-# See configuration.py for a list of all supported configuration parameters.
-configuration = obp_python.Configuration(
-    host = "http://127.0.0.1:8080"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with obp_python.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = obp_python.CounterpartyMetadataApi(api_client)
-    bankid = 'bankid_example' # str | The BANKID identifier
-    accountid = 'accountid_example' # str | The ACCOUNTID identifier
-    viewid = 'viewid_example' # str | The VIEWID identifier
-    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
-    obpv121_update_counterparty_url_request = {"type":"object","properties":{"URL":{"type":"string"}}} # OBPv121UpdateCounterpartyUrlRequest | Request body
-
-    try:
-        # Update url of other bank account
-        api_response = api_instance.o_bpv1_2_1_update_counterparty_url(bankid, accountid, viewid, otheraccountid, obpv121_update_counterparty_url_request)
-        print("The response of CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_url:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv1_2_1_update_counterparty_url: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankid** | **str**| The BANKID identifier | 
- **accountid** | **str**| The ACCOUNTID identifier | 
- **viewid** | **str**| The VIEWID identifier | 
- **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
- **obpv121_update_counterparty_url_request** | [**OBPv121UpdateCounterpartyUrlRequest**](OBPv121UpdateCounterpartyUrlRequest.md)| Request body | 
-
-### Return type
-
-[**OBPv121UpdateTransactionNarrative200Response**](OBPv121UpdateTransactionNarrative200Response.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **o_bpv4_0_0_get_explicit_counterparty_by_id**
-> OBPv400GetExplicitCounterpartyById200Response o_bpv4_0_0_get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid)
+# **get_explicit_counterparty_by_id**
+> GetExplicitCounterpartyById200Response get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid)
 
 Get Counterparty by Id (Explicit)
 
@@ -2952,7 +1871,7 @@ Get Counterparty by Id (Explicit)
 
 ```python
 import obp_python
-from obp_python.models.obpv400_get_explicit_counterparty_by_id200_response import OBPv400GetExplicitCounterpartyById200Response
+from obp_python.models.get_explicit_counterparty_by_id200_response import GetExplicitCounterpartyById200Response
 from obp_python.rest import ApiException
 from pprint import pprint
 
@@ -2992,11 +1911,11 @@ with obp_python.ApiClient(configuration) as api_client:
 
     try:
         # Get Counterparty by Id (Explicit)
-        api_response = api_instance.o_bpv4_0_0_get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid)
-        print("The response of CounterpartyMetadataApi->o_bpv4_0_0_get_explicit_counterparty_by_id:\n")
+        api_response = api_instance.get_explicit_counterparty_by_id(bankid, accountid, viewid, counterpartyid)
+        print("The response of CounterpartyMetadataApi->get_explicit_counterparty_by_id:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CounterpartyMetadataApi->o_bpv4_0_0_get_explicit_counterparty_by_id: %s\n" % e)
+        print("Exception when calling CounterpartyMetadataApi->get_explicit_counterparty_by_id: %s\n" % e)
 ```
 
 
@@ -3013,7 +1932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OBPv400GetExplicitCounterpartyById200Response**](OBPv400GetExplicitCounterpartyById200Response.md)
+[**GetExplicitCounterpartyById200Response**](GetExplicitCounterpartyById200Response.md)
 
 ### Authorization
 
@@ -3022,6 +1941,1087 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_other_account_metadata**
+> GetOtherAccountMetadata200Response get_other_account_metadata(bankid, accountid, viewid, otheraccountid)
+
+Get Other Account Metadata
+
+<p>Get metadata of one other account.<br />
+Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.</p>
+<p>Authentication via OAuth is required if the view is not public.</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#"><strong>URL</strong></a>: <a href="http://www.example.com/id-docs/123/image.png">http://www.example.com/id-docs/123/image.png</a></p>
+<p><a href="/glossary#corporate_location"><strong>corporate_location</strong></a>: 10</p>
+<p><a href="/glossary#"><strong>date</strong></a>: 2020-01-27</p>
+<p><a href="/glossary#display_name"><strong>display_name</strong></a>:</p>
+<p><a href="/glossary#id"><strong>id</strong></a>: d8839721-ad8f-45dd-9f78-2080414b93f9</p>
+<p><a href="/glossary#image_url"><strong>image_URL</strong></a>:</p>
+<p><a href="/glossary#latitude"><strong>latitude</strong></a>: 38.8951</p>
+<p><a href="/glossary#longitude"><strong>longitude</strong></a>: -77.0364</p>
+<p><a href="/glossary#more_info"><strong>more_info</strong></a>: More information about this fee</p>
+<p><a href="/glossary#open_corporates_url"><strong>open_corporates_URL</strong></a>:</p>
+<p><a href="/glossary#physical_location"><strong>physical_location</strong></a>:</p>
+<p><a href="/glossary#private_alias"><strong>private_alias</strong></a>:</p>
+<p><a href="/glossary#provider"><strong>provider</strong></a>: ETHEREUM</p>
+<p><a href="/glossary#public_alias"><strong>public_alias</strong></a>:</p>
+<p><a href="/glossary#User"><strong>user</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_other_account_metadata200_response import GetOtherAccountMetadata200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+
+    try:
+        # Get Other Account Metadata
+        api_response = api_instance.get_other_account_metadata(bankid, accountid, viewid, otheraccountid)
+        print("The response of CounterpartyMetadataApi->get_other_account_metadata:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->get_other_account_metadata: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetOtherAccountMetadata200Response**](GetOtherAccountMetadata200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_other_account_private_alias**
+> GetCounterpartyPublicAlias200Response get_other_account_private_alias(bankid, accountid, viewid, otheraccountid)
+
+Get Other Account Private Alias
+
+<p>Returns the private alias of the other account OTHER_ACCOUNT_ID.</p>
+<p>User Authentication is Optional. The User need not be logged in.<br />
+Authentication is required if the view is not public.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#alias"><strong>alias</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+
+    try:
+        # Get Other Account Private Alias
+        api_response = api_instance.get_other_account_private_alias(bankid, accountid, viewid, otheraccountid)
+        print("The response of CounterpartyMetadataApi->get_other_account_private_alias:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->get_other_account_private_alias: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+
+### Return type
+
+[**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_corporate_location**
+> UpdateTransactionNarrative200Response update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request)
+
+Update Counterparty Corporate Location
+
+<p>Update the geolocation of the counterparty's registered address</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_corporate_location_request import UpdateCounterpartyCorporateLocationRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_corporate_location_request = {"type":"object","properties":{"corporate_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # UpdateCounterpartyCorporateLocationRequest | Request body
+
+    try:
+        # Update Counterparty Corporate Location
+        api_response = api_instance.update_counterparty_corporate_location(bankid, accountid, viewid, otheraccountid, update_counterparty_corporate_location_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_corporate_location:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_corporate_location: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_corporate_location_request** | [**UpdateCounterpartyCorporateLocationRequest**](UpdateCounterpartyCorporateLocationRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_image_url**
+> UpdateTransactionNarrative200Response update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request)
+
+Update Counterparty Image Url
+
+<p>Update the url that points to the logo of the counterparty</p>
+<p>User Authentication is Optional. The User need not be logged in.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_image_url_request import UpdateCounterpartyImageUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_image_url_request = {"type":"object","properties":{"image_URL":{"type":"string"}}} # UpdateCounterpartyImageUrlRequest | Request body
+
+    try:
+        # Update Counterparty Image Url
+        api_response = api_instance.update_counterparty_image_url(bankid, accountid, viewid, otheraccountid, update_counterparty_image_url_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_image_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_image_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_image_url_request** | [**UpdateCounterpartyImageUrlRequest**](UpdateCounterpartyImageUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_more_info**
+> UpdateTransactionNarrative200Response update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request)
+
+Update Counterparty More Info
+
+<p>Update the more info description of the counter party from the perpestive of the account e.g. My dentist</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_more_info_request import UpdateCounterpartyMoreInfoRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_more_info_request = {"type":"object","properties":{"more_info":{"type":"string"}}} # UpdateCounterpartyMoreInfoRequest | Request body
+
+    try:
+        # Update Counterparty More Info
+        api_response = api_instance.update_counterparty_more_info(bankid, accountid, viewid, otheraccountid, update_counterparty_more_info_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_more_info:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_more_info: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_more_info_request** | [**UpdateCounterpartyMoreInfoRequest**](UpdateCounterpartyMoreInfoRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_open_corporates_url**
+> UpdateTransactionNarrative200Response update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request)
+
+Update Open Corporates Url of Counterparty
+
+<p>Update open corporate url of other bank account</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_open_corporates_url_request import UpdateCounterpartyOpenCorporatesUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_open_corporates_url_request = {"type":"object","properties":{"open_corporates_URL":{"type":"string"}}} # UpdateCounterpartyOpenCorporatesUrlRequest | Request body
+
+    try:
+        # Update Open Corporates Url of Counterparty
+        api_response = api_instance.update_counterparty_open_corporates_url(bankid, accountid, viewid, otheraccountid, update_counterparty_open_corporates_url_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_open_corporates_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_open_corporates_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_open_corporates_url_request** | [**UpdateCounterpartyOpenCorporatesUrlRequest**](UpdateCounterpartyOpenCorporatesUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_physical_location**
+> UpdateTransactionNarrative200Response update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request)
+
+Update Counterparty Physical Location
+
+<p>Update geocoordinates of the counterparty's main location</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_physical_location_request import UpdateCounterpartyPhysicalLocationRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_physical_location_request = {"type":"object","properties":{"physical_location":{"type":"object","properties":{"longitude":{"type":"number"},"latitude":{"type":"number"}}}}} # UpdateCounterpartyPhysicalLocationRequest | Request body
+
+    try:
+        # Update Counterparty Physical Location
+        api_response = api_instance.update_counterparty_physical_location(bankid, accountid, viewid, otheraccountid, update_counterparty_physical_location_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_physical_location:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_physical_location: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_physical_location_request** | [**UpdateCounterpartyPhysicalLocationRequest**](UpdateCounterpartyPhysicalLocationRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_private_alias**
+> UpdateTransactionNarrative200Response update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+
+Update Counterparty Private Alias
+
+<p>Updates the private alias of the counterparty (AKA other account) OTHER_ACCOUNT_ID.</p>
+<p>User Authentication is Optional. The User need not be logged in.<br />
+Authentication is required if the view is not public.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    get_counterparty_public_alias200_response = {type=object, properties={alias={type=string}}} # GetCounterpartyPublicAlias200Response | Request body
+
+    try:
+        # Update Counterparty Private Alias
+        api_response = api_instance.update_counterparty_private_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+        print("The response of CounterpartyMetadataApi->update_counterparty_private_alias:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_private_alias: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **get_counterparty_public_alias200_response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_public_alias**
+> UpdateTransactionNarrative200Response update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+
+Update public alias of other bank account
+
+<p>Updates the public alias of the other account / counterparty OTHER_ACCOUNT_ID.</p>
+<p>User Authentication is Optional. The User need not be logged in.<br />
+Authentication is required if the view is not public.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.get_counterparty_public_alias200_response import GetCounterpartyPublicAlias200Response
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    get_counterparty_public_alias200_response = {"type":"object","properties":{"alias":{"type":"string"}}} # GetCounterpartyPublicAlias200Response | Request body
+
+    try:
+        # Update public alias of other bank account
+        api_response = api_instance.update_counterparty_public_alias(bankid, accountid, viewid, otheraccountid, get_counterparty_public_alias200_response)
+        print("The response of CounterpartyMetadataApi->update_counterparty_public_alias:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_public_alias: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **get_counterparty_public_alias200_response** | [**GetCounterpartyPublicAlias200Response**](GetCounterpartyPublicAlias200Response.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_counterparty_url**
+> UpdateTransactionNarrative200Response update_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request)
+
+Update url of other bank account
+
+<p>A url which represents the counterparty (home page url etc.)</p>
+<p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p>
+<p><strong>URL Parameters:</strong></p>
+<p><a href="/glossary#Account.account_id">ACCOUNT_ID</a>: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0</p>
+<p><a href="/glossary#Bank.bank_id">BANK_ID</a>: gh.29.uk</p>
+<p><a href="/glossary#other_account_id">OTHER_ACCOUNT_ID</a>:</p>
+<p><a href="/glossary#this_view_id">VIEW_ID</a>: owner</p>
+<p><strong>JSON response body fields:</strong></p>
+<p><a href="/glossary#success"><strong>success</strong></a>:</p>
+
+
+### Example
+
+* OAuth Authentication (OAuth2):
+* Api Key Authentication (GatewayLogin):
+* Api Key Authentication (DirectLogin):
+
+```python
+import obp_python
+from obp_python.models.update_counterparty_url_request import UpdateCounterpartyUrlRequest
+from obp_python.models.update_transaction_narrative200_response import UpdateTransactionNarrative200Response
+from obp_python.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://127.0.0.1:8080
+# See configuration.py for a list of all supported configuration parameters.
+configuration = obp_python.Configuration(
+    host = "http://127.0.0.1:8080"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure API key authorization: GatewayLogin
+configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
+
+# Configure API key authorization: DirectLogin
+configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with obp_python.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = obp_python.CounterpartyMetadataApi(api_client)
+    bankid = 'bankid_example' # str | The BANKID identifier
+    accountid = 'accountid_example' # str | The ACCOUNTID identifier
+    viewid = 'viewid_example' # str | The VIEWID identifier
+    otheraccountid = 'otheraccountid_example' # str | The OTHERACCOUNTID identifier
+    update_counterparty_url_request = {"type":"object","properties":{"URL":{"type":"string"}}} # UpdateCounterpartyUrlRequest | Request body
+
+    try:
+        # Update url of other bank account
+        api_response = api_instance.update_counterparty_url(bankid, accountid, viewid, otheraccountid, update_counterparty_url_request)
+        print("The response of CounterpartyMetadataApi->update_counterparty_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CounterpartyMetadataApi->update_counterparty_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankid** | **str**| The BANKID identifier | 
+ **accountid** | **str**| The ACCOUNTID identifier | 
+ **viewid** | **str**| The VIEWID identifier | 
+ **otheraccountid** | **str**| The OTHERACCOUNTID identifier | 
+ **update_counterparty_url_request** | [**UpdateCounterpartyUrlRequest**](UpdateCounterpartyUrlRequest.md)| Request body | 
+
+### Return type
+
+[**UpdateTransactionNarrative200Response**](UpdateTransactionNarrative200Response.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [GatewayLogin](../README.md#GatewayLogin), [DirectLogin](../README.md#DirectLogin)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

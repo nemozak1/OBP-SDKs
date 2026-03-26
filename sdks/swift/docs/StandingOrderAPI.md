@@ -1,16 +1,16 @@
 # StandingOrderAPI
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**oBPv400CreateStandingOrder**](StandingOrderAPI.md#obpv400createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
-[**oBPv400CreateStandingOrderManagement**](StandingOrderAPI.md#obpv400createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
+[**createStandingOrder**](StandingOrderAPI.md#createstandingorder) | **POST** /obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/standing-order | Create Standing Order
+[**createStandingOrderManagement**](StandingOrderAPI.md#createstandingordermanagement) | **POST** /obp/v4.0.0/management/banks/{bankid}/accounts/{accountid}/standing-order | Create Standing Order (management)
 
 
-# **oBPv400CreateStandingOrder**
+# **createStandingOrder**
 ```swift
-    open class func oBPv400CreateStandingOrder(bankid: String, accountid: String, viewid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, completion: @escaping (_ data: OBPv400CreateStandingOrder200Response?, _ error: Error?) -> Void)
+    open class func createStandingOrder(bankid: String, accountid: String, viewid: String, createStandingOrderRequest: CreateStandingOrderRequest, completion: @escaping (_ data: CreateStandingOrder200Response?, _ error: Error?) -> Void)
 ```
 
 Create Standing Order
@@ -25,10 +25,10 @@ import OBPSwift
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
 let viewid = "viewid_example" // String | The VIEWID identifier
-let oBPv400CreateStandingOrderRequest = OBPv4_0_0_createStandingOrder_request(type: "type_example", properties: OBPv4_0_0_createStandingOrder_request_properties(dateStarts: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), customerId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), dateSigned: nil, userId: nil, amount: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit(type: "type_example", properties: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit_properties(currency: nil, amount: nil)), dateExpires: nil, counterpartyId: nil, when: OBPv4_0_0_createStandingOrder_request_properties_when(type: "type_example", properties: OBPv4_0_0_createStandingOrder_request_properties_when_properties(frequency: nil, detail: nil)))) // OBPv400CreateStandingOrderRequest | Request body
+let createStandingOrderRequest = createStandingOrder_request(dateStarts: Date(), customerId: "customerId_example", dateSigned: Date(), userId: "userId_example", amount: getMyCustomersAtBank_200_response_customers_inner_credit_limit(currency: "currency_example", amount: "amount_example"), dateExpires: Date(), counterpartyId: "counterpartyId_example", when: createStandingOrder_request_when(frequency: "frequency_example", detail: "detail_example")) // CreateStandingOrderRequest | Request body
 
 // Create Standing Order
-StandingOrderAPI.oBPv400CreateStandingOrder(bankid: bankid, accountid: accountid, viewid: viewid, oBPv400CreateStandingOrderRequest: oBPv400CreateStandingOrderRequest) { (response, error) in
+StandingOrderAPI.createStandingOrder(bankid: bankid, accountid: accountid, viewid: viewid, createStandingOrderRequest: createStandingOrderRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -47,11 +47,11 @@ Name | Type | Description  | Notes
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
  **viewid** | **String** | The VIEWID identifier | 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 
@@ -64,9 +64,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **oBPv400CreateStandingOrderManagement**
+# **createStandingOrderManagement**
 ```swift
-    open class func oBPv400CreateStandingOrderManagement(bankid: String, accountid: String, oBPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest, completion: @escaping (_ data: OBPv400CreateStandingOrder200Response?, _ error: Error?) -> Void)
+    open class func createStandingOrderManagement(bankid: String, accountid: String, createStandingOrderRequest: CreateStandingOrderRequest, completion: @escaping (_ data: CreateStandingOrder200Response?, _ error: Error?) -> Void)
 ```
 
 Create Standing Order (management)
@@ -80,10 +80,10 @@ import OBPSwift
 
 let bankid = "bankid_example" // String | The BANKID identifier
 let accountid = "accountid_example" // String | The ACCOUNTID identifier
-let oBPv400CreateStandingOrderRequest = OBPv4_0_0_createStandingOrder_request(type: "type_example", properties: OBPv4_0_0_createStandingOrder_request_properties(dateStarts: OBPv6_0_0_updateRateLimits_request_properties_from_date(type: "type_example", format: "format_example"), customerId: OBPv4_0_0_updateSystemLevelEndpointTag_request_properties_tag_name(type: "type_example"), dateSigned: nil, userId: nil, amount: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit(type: "type_example", properties: OBPv5_0_0_getMyCustomersAtBank_200_response_properties_customers_items_properties_credit_limit_properties(currency: nil, amount: nil)), dateExpires: nil, counterpartyId: nil, when: OBPv4_0_0_createStandingOrder_request_properties_when(type: "type_example", properties: OBPv4_0_0_createStandingOrder_request_properties_when_properties(frequency: nil, detail: nil)))) // OBPv400CreateStandingOrderRequest | Request body
+let createStandingOrderRequest = createStandingOrder_request(dateStarts: Date(), customerId: "customerId_example", dateSigned: Date(), userId: "userId_example", amount: getMyCustomersAtBank_200_response_customers_inner_credit_limit(currency: "currency_example", amount: "amount_example"), dateExpires: Date(), counterpartyId: "counterpartyId_example", when: createStandingOrder_request_when(frequency: "frequency_example", detail: "detail_example")) // CreateStandingOrderRequest | Request body
 
 // Create Standing Order (management)
-StandingOrderAPI.oBPv400CreateStandingOrderManagement(bankid: bankid, accountid: accountid, oBPv400CreateStandingOrderRequest: oBPv400CreateStandingOrderRequest) { (response, error) in
+StandingOrderAPI.createStandingOrderManagement(bankid: bankid, accountid: accountid, createStandingOrderRequest: createStandingOrderRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -101,11 +101,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankid** | **String** | The BANKID identifier | 
  **accountid** | **String** | The ACCOUNTID identifier | 
- **oBPv400CreateStandingOrderRequest** | [**OBPv400CreateStandingOrderRequest**](OBPv400CreateStandingOrderRequest.md) | Request body | 
+ **createStandingOrderRequest** | [**CreateStandingOrderRequest**](CreateStandingOrderRequest.md) | Request body | 
 
 ### Return type
 
-[**OBPv400CreateStandingOrder200Response**](OBPv400CreateStandingOrder200Response.md)
+[**CreateStandingOrder200Response**](CreateStandingOrder200Response.md)
 
 ### Authorization
 

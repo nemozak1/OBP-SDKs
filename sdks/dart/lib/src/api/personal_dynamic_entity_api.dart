@@ -8,7 +8,7 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:obp_dart/src/model/obpv600_get_available_personal_dynamic_entities200_response.dart';
+import 'package:obp_dart/src/model/get_available_personal_dynamic_entities200_response.dart';
 
 class PersonalDynamicEntityApi {
 
@@ -29,9 +29,9 @@ class PersonalDynamicEntityApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [OBPv600GetAvailablePersonalDynamicEntities200Response] as data
+  /// Returns a [Future] containing a [Response] with a [GetAvailablePersonalDynamicEntities200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<OBPv600GetAvailablePersonalDynamicEntities200Response>> oBPv600GetAvailablePersonalDynamicEntities({ 
+  Future<Response<GetAvailablePersonalDynamicEntities200Response>> getAvailablePersonalDynamicEntities({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +58,7 @@ class PersonalDynamicEntityApi {
           },{
             'type': 'apiKey',
             'name': 'DirectLogin',
-            'keyName': 'Authorization',
+            'keyName': 'DirectLogin',
             'where': 'header',
           },
         ],
@@ -75,14 +75,14 @@ class PersonalDynamicEntityApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    OBPv600GetAvailablePersonalDynamicEntities200Response? _responseData;
+    GetAvailablePersonalDynamicEntities200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(OBPv600GetAvailablePersonalDynamicEntities200Response),
-      ) as OBPv600GetAvailablePersonalDynamicEntities200Response;
+        specifiedType: const FullType(GetAvailablePersonalDynamicEntities200Response),
+      ) as GetAvailablePersonalDynamicEntities200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -94,7 +94,7 @@ class PersonalDynamicEntityApi {
       );
     }
 
-    return Response<OBPv600GetAvailablePersonalDynamicEntities200Response>(
+    return Response<GetAvailablePersonalDynamicEntities200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

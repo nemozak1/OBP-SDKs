@@ -1,7 +1,7 @@
 =begin
 #Open Bank Project API v6.0.0
 
-#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+#The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
 
 The version of the OpenAPI document: 6.0.0
 Contact: contact@tesobe.com
@@ -22,31 +22,31 @@ module OpenBankProject
     # Create an Authentication Type Validation
     # <p>Create an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON request body fields:</strong></p> <p><strong>JSON response body fields:</strong></p> 
     # @param operationid [String] The OPERATIONID identifier
-    # @param obpv400_update_authentication_type_validation_request [OBPv400UpdateAuthenticationTypeValidationRequest] Request body
+    # @param update_authentication_type_validation_request [UpdateAuthenticationTypeValidationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]
-    def o_bpv4_0_0_create_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_create_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request, opts)
+    # @return [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]
+    def create_authentication_type_validation(operationid, update_authentication_type_validation_request, opts = {})
+      data, _status_code, _headers = create_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request, opts)
       data
     end
 
     # Create an Authentication Type Validation
     # &lt;p&gt;Create an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param operationid [String] The OPERATIONID identifier
-    # @param obpv400_update_authentication_type_validation_request [OBPv400UpdateAuthenticationTypeValidationRequest] Request body
+    # @param update_authentication_type_validation_request [UpdateAuthenticationTypeValidationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Integer, Hash)>] OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems data, response status code and response headers
-    def o_bpv4_0_0_create_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request, opts = {})
+    # @return [Array<(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Integer, Hash)>] GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner data, response status code and response headers
+    def create_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_create_authentication_type_validation ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.create_authentication_type_validation ...'
       end
       # verify the required parameter 'operationid' is set
       if @api_client.config.client_side_validation && operationid.nil?
-        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_create_authentication_type_validation"
+        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.create_authentication_type_validation"
       end
-      # verify the required parameter 'obpv400_update_authentication_type_validation_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_authentication_type_validation_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_authentication_type_validation_request' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_create_authentication_type_validation"
+      # verify the required parameter 'update_authentication_type_validation_request' is set
+      if @api_client.config.client_side_validation && update_authentication_type_validation_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_authentication_type_validation_request' when calling AuthenticationTypeValidationApi.create_authentication_type_validation"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/authentication-type-validations/{operationid}'.sub('{' + 'operationid' + '}', CGI.escape(operationid.to_s))
@@ -68,16 +68,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_authentication_type_validation_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_authentication_type_validation_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems'
+      return_type = opts[:debug_return_type] || 'GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_create_authentication_type_validation",
+        :operation => :"AuthenticationTypeValidationApi.create_authentication_type_validation",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -88,7 +88,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_create_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#create_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -98,8 +98,8 @@ module OpenBankProject
     # @param operationid [String] The OPERATIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def o_bpv4_0_0_delete_authentication_type_validation(operationid, opts = {})
-      o_bpv4_0_0_delete_authentication_type_validation_with_http_info(operationid, opts)
+    def delete_authentication_type_validation(operationid, opts = {})
+      delete_authentication_type_validation_with_http_info(operationid, opts)
       nil
     end
 
@@ -108,13 +108,13 @@ module OpenBankProject
     # @param operationid [String] The OPERATIONID identifier
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def o_bpv4_0_0_delete_authentication_type_validation_with_http_info(operationid, opts = {})
+    def delete_authentication_type_validation_with_http_info(operationid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_delete_authentication_type_validation ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.delete_authentication_type_validation ...'
       end
       # verify the required parameter 'operationid' is set
       if @api_client.config.client_side_validation && operationid.nil?
-        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_delete_authentication_type_validation"
+        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.delete_authentication_type_validation"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/authentication-type-validations/{operationid}'.sub('{' + 'operationid' + '}', CGI.escape(operationid.to_s))
@@ -138,7 +138,7 @@ module OpenBankProject
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_delete_authentication_type_validation",
+        :operation => :"AuthenticationTypeValidationApi.delete_authentication_type_validation",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -149,7 +149,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_delete_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#delete_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -157,19 +157,19 @@ module OpenBankProject
     # Get all Authentication Type Validations
     # <p>Get all Authentication Type Validations.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllAuthenticationTypeValidationsPublic200Response]
-    def o_bpv4_0_0_get_all_authentication_type_validations(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_authentication_type_validations_with_http_info(opts)
+    # @return [GetAllAuthenticationTypeValidationsPublic200Response]
+    def get_all_authentication_type_validations(opts = {})
+      data, _status_code, _headers = get_all_authentication_type_validations_with_http_info(opts)
       data
     end
 
     # Get all Authentication Type Validations
     # &lt;p&gt;Get all Authentication Type Validations.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllAuthenticationTypeValidationsPublic200Response, Integer, Hash)>] OBPv400GetAllAuthenticationTypeValidationsPublic200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_authentication_type_validations_with_http_info(opts = {})
+    # @return [Array<(GetAllAuthenticationTypeValidationsPublic200Response, Integer, Hash)>] GetAllAuthenticationTypeValidationsPublic200Response data, response status code and response headers
+    def get_all_authentication_type_validations_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_get_all_authentication_type_validations ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.get_all_authentication_type_validations ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/authentication-type-validations'
@@ -189,13 +189,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllAuthenticationTypeValidationsPublic200Response'
+      return_type = opts[:debug_return_type] || 'GetAllAuthenticationTypeValidationsPublic200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_get_all_authentication_type_validations",
+        :operation => :"AuthenticationTypeValidationApi.get_all_authentication_type_validations",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -206,7 +206,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_get_all_authentication_type_validations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#get_all_authentication_type_validations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -214,19 +214,19 @@ module OpenBankProject
     # Get all Authentication Type Validations - public
     # <p>Get all Authentication Type Validations - public.</p> <p>User Authentication is Optional. The User need not be logged in.</p> <p><strong>JSON response body fields:</strong></p> 
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllAuthenticationTypeValidationsPublic200Response]
-    def o_bpv4_0_0_get_all_authentication_type_validations_public(opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info(opts)
+    # @return [GetAllAuthenticationTypeValidationsPublic200Response]
+    def get_all_authentication_type_validations_public(opts = {})
+      data, _status_code, _headers = get_all_authentication_type_validations_public_with_http_info(opts)
       data
     end
 
     # Get all Authentication Type Validations - public
     # &lt;p&gt;Get all Authentication Type Validations - public.&lt;/p&gt; &lt;p&gt;User Authentication is Optional. The User need not be logged in.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllAuthenticationTypeValidationsPublic200Response, Integer, Hash)>] OBPv400GetAllAuthenticationTypeValidationsPublic200Response data, response status code and response headers
-    def o_bpv4_0_0_get_all_authentication_type_validations_public_with_http_info(opts = {})
+    # @return [Array<(GetAllAuthenticationTypeValidationsPublic200Response, Integer, Hash)>] GetAllAuthenticationTypeValidationsPublic200Response data, response status code and response headers
+    def get_all_authentication_type_validations_public_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_get_all_authentication_type_validations_public ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.get_all_authentication_type_validations_public ...'
       end
       # resource path
       local_var_path = '/obp/v4.0.0/endpoints/authentication-type-validations'
@@ -246,13 +246,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllAuthenticationTypeValidationsPublic200Response'
+      return_type = opts[:debug_return_type] || 'GetAllAuthenticationTypeValidationsPublic200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_get_all_authentication_type_validations_public",
+        :operation => :"AuthenticationTypeValidationApi.get_all_authentication_type_validations_public",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -263,7 +263,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_get_all_authentication_type_validations_public\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#get_all_authentication_type_validations_public\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -272,9 +272,9 @@ module OpenBankProject
     # <p>Get an Authentication Type Validation by operation_id.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
     # @param operationid [String] The OPERATIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]
-    def o_bpv4_0_0_get_authentication_type_validation(operationid, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_get_authentication_type_validation_with_http_info(operationid, opts)
+    # @return [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]
+    def get_authentication_type_validation(operationid, opts = {})
+      data, _status_code, _headers = get_authentication_type_validation_with_http_info(operationid, opts)
       data
     end
 
@@ -282,14 +282,14 @@ module OpenBankProject
     # &lt;p&gt;Get an Authentication Type Validation by operation_id.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param operationid [String] The OPERATIONID identifier
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Integer, Hash)>] OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems data, response status code and response headers
-    def o_bpv4_0_0_get_authentication_type_validation_with_http_info(operationid, opts = {})
+    # @return [Array<(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Integer, Hash)>] GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner data, response status code and response headers
+    def get_authentication_type_validation_with_http_info(operationid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_get_authentication_type_validation ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.get_authentication_type_validation ...'
       end
       # verify the required parameter 'operationid' is set
       if @api_client.config.client_side_validation && operationid.nil?
-        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_get_authentication_type_validation"
+        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.get_authentication_type_validation"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/authentication-type-validations/{operationid}'.sub('{' + 'operationid' + '}', CGI.escape(operationid.to_s))
@@ -309,13 +309,13 @@ module OpenBankProject
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems'
+      return_type = opts[:debug_return_type] || 'GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_get_authentication_type_validation",
+        :operation => :"AuthenticationTypeValidationApi.get_authentication_type_validation",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -326,7 +326,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_get_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#get_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -334,31 +334,31 @@ module OpenBankProject
     # Update an Authentication Type Validation
     # <p>Update an Authentication Type Validation.</p> <p>Please supply allowed authentication types.</p> <p>User Authentication is Required. The User must be logged in. The Application must also be authenticated.</p> <p><strong>URL Parameters:</strong></p> <p><a href=\"/glossary#\">OPERATION_ID</a>: OBPv6.0.0-getBanks</p> <p><strong>JSON response body fields:</strong></p> 
     # @param operationid [String] The OPERATIONID identifier
-    # @param obpv400_update_authentication_type_validation_request [OBPv400UpdateAuthenticationTypeValidationRequest] Request body
+    # @param update_authentication_type_validation_request [UpdateAuthenticationTypeValidationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems]
-    def o_bpv4_0_0_update_authentication_type_validation(operationid, obpv400_update_authentication_type_validation_request, opts = {})
-      data, _status_code, _headers = o_bpv4_0_0_update_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request, opts)
+    # @return [GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner]
+    def update_authentication_type_validation(operationid, update_authentication_type_validation_request, opts = {})
+      data, _status_code, _headers = update_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request, opts)
       data
     end
 
     # Update an Authentication Type Validation
     # &lt;p&gt;Update an Authentication Type Validation.&lt;/p&gt; &lt;p&gt;Please supply allowed authentication types.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;OPERATION_ID&lt;/a&gt;: OBPv6.0.0-getBanks&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; 
     # @param operationid [String] The OPERATIONID identifier
-    # @param obpv400_update_authentication_type_validation_request [OBPv400UpdateAuthenticationTypeValidationRequest] Request body
+    # @param update_authentication_type_validation_request [UpdateAuthenticationTypeValidationRequest] Request body
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems, Integer, Hash)>] OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems data, response status code and response headers
-    def o_bpv4_0_0_update_authentication_type_validation_with_http_info(operationid, obpv400_update_authentication_type_validation_request, opts = {})
+    # @return [Array<(GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner, Integer, Hash)>] GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner data, response status code and response headers
+    def update_authentication_type_validation_with_http_info(operationid, update_authentication_type_validation_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.o_bpv4_0_0_update_authentication_type_validation ...'
+        @api_client.config.logger.debug 'Calling API: AuthenticationTypeValidationApi.update_authentication_type_validation ...'
       end
       # verify the required parameter 'operationid' is set
       if @api_client.config.client_side_validation && operationid.nil?
-        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_update_authentication_type_validation"
+        fail ArgumentError, "Missing the required parameter 'operationid' when calling AuthenticationTypeValidationApi.update_authentication_type_validation"
       end
-      # verify the required parameter 'obpv400_update_authentication_type_validation_request' is set
-      if @api_client.config.client_side_validation && obpv400_update_authentication_type_validation_request.nil?
-        fail ArgumentError, "Missing the required parameter 'obpv400_update_authentication_type_validation_request' when calling AuthenticationTypeValidationApi.o_bpv4_0_0_update_authentication_type_validation"
+      # verify the required parameter 'update_authentication_type_validation_request' is set
+      if @api_client.config.client_side_validation && update_authentication_type_validation_request.nil?
+        fail ArgumentError, "Missing the required parameter 'update_authentication_type_validation_request' when calling AuthenticationTypeValidationApi.update_authentication_type_validation"
       end
       # resource path
       local_var_path = '/obp/v4.0.0/management/authentication-type-validations/{operationid}'.sub('{' + 'operationid' + '}', CGI.escape(operationid.to_s))
@@ -380,16 +380,16 @@ module OpenBankProject
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(obpv400_update_authentication_type_validation_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_authentication_type_validation_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OBPv400GetAllAuthenticationTypeValidationsPublic200ResponsePropertiesAuthenticationTypesValidationsItems'
+      return_type = opts[:debug_return_type] || 'GetAllAuthenticationTypeValidationsPublic200ResponseAuthenticationTypesValidationsInner'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2', 'GatewayLogin', 'DirectLogin']
 
       new_options = opts.merge(
-        :operation => :"AuthenticationTypeValidationApi.o_bpv4_0_0_update_authentication_type_validation",
+        :operation => :"AuthenticationTypeValidationApi.update_authentication_type_validation",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -400,7 +400,7 @@ module OpenBankProject
 
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#o_bpv4_0_0_update_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: AuthenticationTypeValidationApi#update_authentication_type_validation\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

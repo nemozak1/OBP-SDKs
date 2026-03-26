@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import com.openbankproject.models.OBPv400CreateStandingOrder200Response
-import com.openbankproject.models.OBPv400CreateStandingOrderRequest
+import com.openbankproject.models.CreateStandingOrder200Response
+import com.openbankproject.models.CreateStandingOrderRequest
 
 import com.squareup.moshi.Json
 
@@ -42,7 +42,7 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://apisandbox.openbankproject.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "http://127.0.0.1:8080")
         }
     }
 
@@ -53,8 +53,8 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
-     * @return OBPv400CreateStandingOrder200Response
+     * @param createStandingOrderRequest Request body
+     * @return CreateStandingOrder200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateStandingOrder(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : OBPv400CreateStandingOrder200Response {
-        val localVarResponse = oBPv400CreateStandingOrderWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, obPv400CreateStandingOrderRequest = obPv400CreateStandingOrderRequest)
+    fun createStandingOrder(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : CreateStandingOrder200Response {
+        val localVarResponse = createStandingOrderWithHttpInfo(bankid = bankid, accountid = accountid, viewid = viewid, createStandingOrderRequest = createStandingOrderRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400CreateStandingOrder200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateStandingOrder200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -88,32 +88,32 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
-     * @return ApiResponse<OBPv400CreateStandingOrder200Response?>
+     * @param createStandingOrderRequest Request body
+     * @return ApiResponse<CreateStandingOrder200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateStandingOrderWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : ApiResponse<OBPv400CreateStandingOrder200Response?> {
-        val localVariableConfig = oBPv400CreateStandingOrderRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, obPv400CreateStandingOrderRequest = obPv400CreateStandingOrderRequest)
+    fun createStandingOrderWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : ApiResponse<CreateStandingOrder200Response?> {
+        val localVariableConfig = createStandingOrderRequestConfig(bankid = bankid, accountid = accountid, viewid = viewid, createStandingOrderRequest = createStandingOrderRequest)
 
-        return request<OBPv400CreateStandingOrderRequest, OBPv400CreateStandingOrder200Response>(
+        return request<CreateStandingOrderRequest, CreateStandingOrder200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateStandingOrder
+     * To obtain the request config of the operation createStandingOrder
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
      * @param viewid The VIEWID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
+     * @param createStandingOrderRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateStandingOrderRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : RequestConfig<OBPv400CreateStandingOrderRequest> {
-        val localVariableBody = obPv400CreateStandingOrderRequest
+    fun createStandingOrderRequestConfig(bankid: kotlin.String, accountid: kotlin.String, viewid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : RequestConfig<CreateStandingOrderRequest> {
+        val localVariableBody = createStandingOrderRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -135,8 +135,8 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Create standing order for an account.&lt;/p&gt; &lt;p&gt;when -&amp;gt; frequency &#x3D; {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}&lt;br /&gt; when -&amp;gt; detail &#x3D; { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#standing_order_id\&quot;&gt;&lt;strong&gt;standing_order_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
-     * @return OBPv400CreateStandingOrder200Response
+     * @param createStandingOrderRequest Request body
+     * @return CreateStandingOrder200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -145,11 +145,11 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun oBPv400CreateStandingOrderManagement(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : OBPv400CreateStandingOrder200Response {
-        val localVarResponse = oBPv400CreateStandingOrderManagementWithHttpInfo(bankid = bankid, accountid = accountid, obPv400CreateStandingOrderRequest = obPv400CreateStandingOrderRequest)
+    fun createStandingOrderManagement(bankid: kotlin.String, accountid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : CreateStandingOrder200Response {
+        val localVarResponse = createStandingOrderManagementWithHttpInfo(bankid = bankid, accountid = accountid, createStandingOrderRequest = createStandingOrderRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OBPv400CreateStandingOrder200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CreateStandingOrder200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -169,31 +169,31 @@ open class StandingOrderApi(basePath: kotlin.String = defaultBasePath, client: C
      * &lt;p&gt;Create standing order for an account.&lt;/p&gt; &lt;p&gt;when -&amp;gt; frequency &#x3D; {‘YEARLY’,’MONTHLY, ‘WEEKLY’, ‘BI-WEEKLY’, DAILY’}&lt;br /&gt; when -&amp;gt; detail &#x3D; { ‘FIRST_MONDAY’, ‘FIRST_DAY’, ‘LAST_DAY’}}&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON request body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_expires&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;date_signed&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;account_id&lt;/strong&gt;&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#active\&quot;&gt;&lt;strong&gt;active&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;amount&lt;/strong&gt;&lt;/a&gt;: 10.12&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;bank_id&lt;/strong&gt;&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;customer_id&lt;/strong&gt;&lt;/a&gt;: 7uy8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_cancelled&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_expires&lt;/strong&gt;&lt;/a&gt;: 2021-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_signed&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date_starts&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#detail\&quot;&gt;&lt;strong&gt;detail&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#frequency\&quot;&gt;&lt;strong&gt;frequency&lt;/strong&gt;&lt;/a&gt;: DAILY&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#standing_order_id\&quot;&gt;&lt;strong&gt;standing_order_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;user_id&lt;/strong&gt;&lt;/a&gt;: 9ca9a7e4-6d02-40e3-a129-0b2bf89de9b1&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#when\&quot;&gt;&lt;strong&gt;when&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; 
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
-     * @return ApiResponse<OBPv400CreateStandingOrder200Response?>
+     * @param createStandingOrderRequest Request body
+     * @return ApiResponse<CreateStandingOrder200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun oBPv400CreateStandingOrderManagementWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : ApiResponse<OBPv400CreateStandingOrder200Response?> {
-        val localVariableConfig = oBPv400CreateStandingOrderManagementRequestConfig(bankid = bankid, accountid = accountid, obPv400CreateStandingOrderRequest = obPv400CreateStandingOrderRequest)
+    fun createStandingOrderManagementWithHttpInfo(bankid: kotlin.String, accountid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : ApiResponse<CreateStandingOrder200Response?> {
+        val localVariableConfig = createStandingOrderManagementRequestConfig(bankid = bankid, accountid = accountid, createStandingOrderRequest = createStandingOrderRequest)
 
-        return request<OBPv400CreateStandingOrderRequest, OBPv400CreateStandingOrder200Response>(
+        return request<CreateStandingOrderRequest, CreateStandingOrder200Response>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation oBPv400CreateStandingOrderManagement
+     * To obtain the request config of the operation createStandingOrderManagement
      *
      * @param bankid The BANKID identifier
      * @param accountid The ACCOUNTID identifier
-     * @param obPv400CreateStandingOrderRequest Request body
+     * @param createStandingOrderRequest Request body
      * @return RequestConfig
      */
-    fun oBPv400CreateStandingOrderManagementRequestConfig(bankid: kotlin.String, accountid: kotlin.String, obPv400CreateStandingOrderRequest: OBPv400CreateStandingOrderRequest) : RequestConfig<OBPv400CreateStandingOrderRequest> {
-        val localVariableBody = obPv400CreateStandingOrderRequest
+    fun createStandingOrderManagementRequestConfig(bankid: kotlin.String, accountid: kotlin.String, createStandingOrderRequest: CreateStandingOrderRequest) : RequestConfig<CreateStandingOrderRequest> {
+        val localVariableBody = createStandingOrderRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

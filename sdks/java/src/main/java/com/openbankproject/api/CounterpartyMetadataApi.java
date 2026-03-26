@@ -1,6 +1,6 @@
 /*
  * Open Bank Project API v6.0.0
- * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-22T07:16:47.250257  For more information, visit: https://github.com/OpenBankProject/OBP-API
+ * The Open Bank Project API v6.0.0 provides standardized banking APIs.  This specification was automatically generated from the OBP API codebase. Generated on: 2026-03-25T12:23:21.276369  For more information, visit: https://github.com/OpenBankProject/OBP-API
  *
  * The version of the OpenAPI document: 6.0.0
  * Contact: contact@tesobe.com
@@ -18,16 +18,16 @@ import com.openbankproject.ApiResponse;
 import com.openbankproject.Configuration;
 import com.openbankproject.Pair;
 
-import com.openbankproject.model.OBPv121GetCounterpartyPublicAlias200Response;
-import com.openbankproject.model.OBPv121GetOtherAccountMetadata200Response;
-import com.openbankproject.model.OBPv121UpdateCounterpartyCorporateLocationRequest;
-import com.openbankproject.model.OBPv121UpdateCounterpartyImageUrlRequest;
-import com.openbankproject.model.OBPv121UpdateCounterpartyMoreInfoRequest;
-import com.openbankproject.model.OBPv121UpdateCounterpartyOpenCorporatesUrlRequest;
-import com.openbankproject.model.OBPv121UpdateCounterpartyPhysicalLocationRequest;
-import com.openbankproject.model.OBPv121UpdateCounterpartyUrlRequest;
-import com.openbankproject.model.OBPv121UpdateTransactionNarrative200Response;
-import com.openbankproject.model.OBPv400GetExplicitCounterpartyById200Response;
+import com.openbankproject.model.GetCounterpartyPublicAlias200Response;
+import com.openbankproject.model.GetExplicitCounterpartyById200Response;
+import com.openbankproject.model.GetOtherAccountMetadata200Response;
+import com.openbankproject.model.UpdateCounterpartyCorporateLocationRequest;
+import com.openbankproject.model.UpdateCounterpartyImageUrlRequest;
+import com.openbankproject.model.UpdateCounterpartyMoreInfoRequest;
+import com.openbankproject.model.UpdateCounterpartyOpenCorporatesUrlRequest;
+import com.openbankproject.model.UpdateCounterpartyPhysicalLocationRequest;
+import com.openbankproject.model.UpdateCounterpartyUrlRequest;
+import com.openbankproject.model.UpdateTransactionNarrative200Response;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,7 +54,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-22T11:10:23.425327611+01:00[Europe/Berlin]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CounterpartyMetadataApi {
   /**
    * Utility class for extending HttpRequest.Builder functionality.
@@ -178,12 +178,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest) throws ApiException {
-    return oBPv121AddCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest) throws ApiException {
+    return addCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, null);
   }
 
   /**
@@ -193,13 +193,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -210,12 +210,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest) throws ApiException {
-    return oBPv121AddCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest) throws ApiException {
+    return addCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, null);
   }
 
   /**
@@ -225,13 +225,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -242,11 +242,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyCorporateLocation", localVarResponse);
+          throw getApiException("addCounterpartyCorporateLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -256,10 +256,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -278,26 +278,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyCorporateLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyCorporateLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyCorporateLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyCorporateLocation");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyCorporateLocationRequest' is set
-    if (obPv121UpdateCounterpartyCorporateLocationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyCorporateLocationRequest' when calling oBPv121AddCounterpartyCorporateLocation");
+    // verify the required parameter 'updateCounterpartyCorporateLocationRequest' is set
+    if (updateCounterpartyCorporateLocationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyCorporateLocationRequest' when calling addCounterpartyCorporateLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -314,7 +314,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyCorporateLocationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyCorporateLocationRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -337,12 +337,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyImageUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest) throws ApiException {
+    return addCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, null);
   }
 
   /**
@@ -352,13 +352,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
+   * @param updateCounterpartyImageUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -369,12 +369,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyImageUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest) throws ApiException {
+    return addCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, null);
   }
 
   /**
@@ -384,13 +384,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
+   * @param updateCounterpartyImageUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -401,11 +401,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyImageUrl", localVarResponse);
+          throw getApiException("addCounterpartyImageUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -415,10 +415,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -437,26 +437,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyImageUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyImageUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyImageUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyImageUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyImageUrlRequest' is set
-    if (obPv121UpdateCounterpartyImageUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyImageUrlRequest' when calling oBPv121AddCounterpartyImageUrl");
+    // verify the required parameter 'updateCounterpartyImageUrlRequest' is set
+    if (updateCounterpartyImageUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyImageUrlRequest' when calling addCounterpartyImageUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -473,7 +473,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyImageUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyImageUrlRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -496,12 +496,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest) throws ApiException {
-    return oBPv121AddCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest) throws ApiException {
+    return addCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, null);
   }
 
   /**
@@ -511,13 +511,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -528,12 +528,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest) throws ApiException {
-    return oBPv121AddCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest) throws ApiException {
+    return addCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, null);
   }
 
   /**
@@ -543,13 +543,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -560,11 +560,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyMoreInfo", localVarResponse);
+          throw getApiException("addCounterpartyMoreInfo", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -574,10 +574,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -596,26 +596,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyMoreInfo");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyMoreInfo");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyMoreInfo");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyMoreInfo");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyMoreInfoRequest' is set
-    if (obPv121UpdateCounterpartyMoreInfoRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyMoreInfoRequest' when calling oBPv121AddCounterpartyMoreInfo");
+    // verify the required parameter 'updateCounterpartyMoreInfoRequest' is set
+    if (updateCounterpartyMoreInfoRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyMoreInfoRequest' when calling addCounterpartyMoreInfo");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -632,7 +632,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyMoreInfoRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyMoreInfoRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -655,12 +655,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
+    return addCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, null);
   }
 
   /**
@@ -670,13 +670,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -687,12 +687,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
+    return addCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, null);
   }
 
   /**
@@ -702,13 +702,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -719,11 +719,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyOpenCorporatesUrl", localVarResponse);
+          throw getApiException("addCounterpartyOpenCorporatesUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -733,10 +733,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -755,26 +755,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyOpenCorporatesUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyOpenCorporatesUrlRequest' is set
-    if (obPv121UpdateCounterpartyOpenCorporatesUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyOpenCorporatesUrlRequest' when calling oBPv121AddCounterpartyOpenCorporatesUrl");
+    // verify the required parameter 'updateCounterpartyOpenCorporatesUrlRequest' is set
+    if (updateCounterpartyOpenCorporatesUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyOpenCorporatesUrlRequest' when calling addCounterpartyOpenCorporatesUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -791,7 +791,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyOpenCorporatesUrlRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -814,12 +814,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest) throws ApiException {
-    return oBPv121AddCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest) throws ApiException {
+    return addCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, null);
   }
 
   /**
@@ -829,13 +829,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -846,12 +846,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest) throws ApiException {
-    return oBPv121AddCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest) throws ApiException {
+    return addCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, null);
   }
 
   /**
@@ -861,13 +861,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -878,11 +878,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyPhysicalLocation", localVarResponse);
+          throw getApiException("addCounterpartyPhysicalLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -892,10 +892,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -914,26 +914,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyPhysicalLocation");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyPhysicalLocationRequest' is set
-    if (obPv121UpdateCounterpartyPhysicalLocationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyPhysicalLocationRequest' when calling oBPv121AddCounterpartyPhysicalLocation");
+    // verify the required parameter 'updateCounterpartyPhysicalLocationRequest' is set
+    if (updateCounterpartyPhysicalLocationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyPhysicalLocationRequest' when calling addCounterpartyPhysicalLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -950,7 +950,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyPhysicalLocationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyPhysicalLocationRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -973,12 +973,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121AddCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public UpdateTransactionNarrative200Response addCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return addCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -988,13 +988,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     return localVarResponse.getData();
   }
 
@@ -1005,12 +1005,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121AddCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return addCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -1020,13 +1020,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1037,11 +1037,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyPublicAlias", localVarResponse);
+          throw getApiException("addCounterpartyPublicAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1051,10 +1051,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1073,26 +1073,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyPublicAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyPublicAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyPublicAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyPublicAlias");
     }
-    // verify the required parameter 'obPv121GetCounterpartyPublicAlias200Response' is set
-    if (obPv121GetCounterpartyPublicAlias200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121GetCounterpartyPublicAlias200Response' when calling oBPv121AddCounterpartyPublicAlias");
+    // verify the required parameter 'getCounterpartyPublicAlias200Response' is set
+    if (getCounterpartyPublicAlias200Response == null) {
+      throw new ApiException(400, "Missing the required parameter 'getCounterpartyPublicAlias200Response' when calling addCounterpartyPublicAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1109,7 +1109,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121GetCounterpartyPublicAlias200Response);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getCounterpartyPublicAlias200Response);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1132,12 +1132,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, null);
+  public UpdateTransactionNarrative200Response addCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest) throws ApiException {
+    return addCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, null);
   }
 
   /**
@@ -1147,13 +1147,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
+   * @param updateCounterpartyUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, headers);
+  public UpdateTransactionNarrative200Response addCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -1164,12 +1164,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest) throws ApiException {
-    return oBPv121AddCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest) throws ApiException {
+    return addCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, null);
   }
 
   /**
@@ -1179,13 +1179,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
+   * @param updateCounterpartyUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1196,11 +1196,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddCounterpartyUrl", localVarResponse);
+          throw getApiException("addCounterpartyUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1210,10 +1210,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1232,26 +1232,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addCounterpartyUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addCounterpartyUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addCounterpartyUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addCounterpartyUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyUrlRequest' is set
-    if (obPv121UpdateCounterpartyUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyUrlRequest' when calling oBPv121AddCounterpartyUrl");
+    // verify the required parameter 'updateCounterpartyUrlRequest' is set
+    if (updateCounterpartyUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyUrlRequest' when calling addCounterpartyUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1268,7 +1268,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyUrlRequest);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1291,12 +1291,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121AddOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public UpdateTransactionNarrative200Response addOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return addOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -1306,13 +1306,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121AddOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121AddOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public UpdateTransactionNarrative200Response addOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = addOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     return localVarResponse.getData();
   }
 
@@ -1323,12 +1323,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121AddOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> addOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return addOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -1338,13 +1338,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121AddOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121AddOtherAccountPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> addOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = addOtherAccountPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1355,11 +1355,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121AddOtherAccountPrivateAlias", localVarResponse);
+          throw getApiException("addOtherAccountPrivateAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -1369,10 +1369,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -1391,26 +1391,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121AddOtherAccountPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder addOtherAccountPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121AddOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling addOtherAccountPrivateAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121AddOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling addOtherAccountPrivateAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121AddOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling addOtherAccountPrivateAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121AddOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling addOtherAccountPrivateAlias");
     }
-    // verify the required parameter 'obPv121GetCounterpartyPublicAlias200Response' is set
-    if (obPv121GetCounterpartyPublicAlias200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121GetCounterpartyPublicAlias200Response' when calling oBPv121AddOtherAccountPrivateAlias");
+    // verify the required parameter 'getCounterpartyPublicAlias200Response' is set
+    if (getCounterpartyPublicAlias200Response == null) {
+      throw new ApiException(400, "Missing the required parameter 'getCounterpartyPublicAlias200Response' when calling addOtherAccountPrivateAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1427,7 +1427,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121GetCounterpartyPublicAlias200Response);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getCounterpartyPublicAlias200Response);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -1452,8 +1452,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1466,8 +1466,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -1480,8 +1480,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1495,8 +1495,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1507,7 +1507,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyCorporateLocation", localVarResponse);
+          throw getApiException("deleteCounterpartyCorporateLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1532,22 +1532,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyCorporateLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyCorporateLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyCorporateLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyCorporateLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1583,8 +1583,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1597,8 +1597,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -1611,8 +1611,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1626,8 +1626,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1638,7 +1638,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyImageUrl", localVarResponse);
+          throw getApiException("deleteCounterpartyImageUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1663,22 +1663,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyImageUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyImageUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyImageUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyImageUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1714,8 +1714,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1728,8 +1728,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -1742,8 +1742,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1757,8 +1757,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1769,7 +1769,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyMoreInfo", localVarResponse);
+          throw getApiException("deleteCounterpartyMoreInfo", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1794,22 +1794,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyMoreInfo");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyMoreInfo");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyMoreInfo");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyMoreInfo");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1845,8 +1845,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1859,8 +1859,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -1873,8 +1873,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1888,8 +1888,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1900,7 +1900,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyOpenCorporatesUrl", localVarResponse);
+          throw getApiException("deleteCounterpartyOpenCorporatesUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -1925,22 +1925,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyOpenCorporatesUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -1976,8 +1976,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -1990,8 +1990,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -2004,8 +2004,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2019,8 +2019,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2031,7 +2031,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyPhysicalLocation", localVarResponse);
+          throw getApiException("deleteCounterpartyPhysicalLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -2056,22 +2056,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyPhysicalLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2107,8 +2107,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2121,8 +2121,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -2135,8 +2135,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2150,8 +2150,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2162,7 +2162,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyPrivateAlias", localVarResponse);
+          throw getApiException("deleteCounterpartyPrivateAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -2187,22 +2187,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyPrivateAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyPrivateAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyPrivateAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyPrivateAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2238,8 +2238,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2252,8 +2252,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -2266,8 +2266,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2281,8 +2281,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2293,7 +2293,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyPublicAlias", localVarResponse);
+          throw getApiException("deleteCounterpartyPublicAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -2318,22 +2318,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyPublicAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyPublicAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyPublicAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyPublicAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2369,8 +2369,8 @@ public class CounterpartyMetadataApi {
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    oBPv121DeleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid, null);
+  public void deleteCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    deleteCounterpartyUrl(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2383,8 +2383,8 @@ public class CounterpartyMetadataApi {
    * @param headers Optional headers to include in the request
    * @throws ApiException if fails to make API call
    */
-  public void oBPv121DeleteCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    oBPv121DeleteCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public void deleteCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    deleteCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
   }
 
   /**
@@ -2397,8 +2397,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121DeleteCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<Void> deleteCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return deleteCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2412,8 +2412,8 @@ public class CounterpartyMetadataApi {
    * @return ApiResponse&lt;Void&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<Void> oBPv121DeleteCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121DeleteCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<Void> deleteCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = deleteCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2424,7 +2424,7 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121DeleteCounterpartyUrl", localVarResponse);
+          throw getApiException("deleteCounterpartyUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody != null) {
@@ -2449,22 +2449,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121DeleteCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder deleteCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121DeleteCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling deleteCounterpartyUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121DeleteCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling deleteCounterpartyUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121DeleteCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling deleteCounterpartyUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121DeleteCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling deleteCounterpartyUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2498,11 +2498,11 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return OBPv121GetCounterpartyPublicAlias200Response
+   * @return GetCounterpartyPublicAlias200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, null);
+  public GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2513,11 +2513,11 @@ public class CounterpartyMetadataApi {
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121GetCounterpartyPublicAlias200Response
+   * @return GetCounterpartyPublicAlias200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetCounterpartyPublicAlias200Response oBPv121GetCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> localVarResponse = oBPv121GetCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyPublicAlias200Response> localVarResponse = getCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
     return localVarResponse.getData();
   }
 
@@ -2528,11 +2528,11 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return ApiResponse&lt;OBPv121GetCounterpartyPublicAlias200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyPublicAlias200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> oBPv121GetCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<GetCounterpartyPublicAlias200Response> getCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2543,11 +2543,11 @@ public class CounterpartyMetadataApi {
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121GetCounterpartyPublicAlias200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyPublicAlias200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> oBPv121GetCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121GetCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<GetCounterpartyPublicAlias200Response> getCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2558,11 +2558,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121GetCounterpartyPublicAlias", localVarResponse);
+          throw getApiException("getCounterpartyPublicAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>(
+          return new ApiResponse<GetCounterpartyPublicAlias200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2572,10 +2572,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121GetCounterpartyPublicAlias200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121GetCounterpartyPublicAlias200Response>() {});
+        GetCounterpartyPublicAlias200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyPublicAlias200Response>() {});
         
 
-        return new ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>(
+        return new ApiResponse<GetCounterpartyPublicAlias200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2594,22 +2594,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121GetCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121GetCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getCounterpartyPublicAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121GetCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getCounterpartyPublicAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121GetCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getCounterpartyPublicAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121GetCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling getCounterpartyPublicAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2637,62 +2637,62 @@ public class CounterpartyMetadataApi {
   }
 
   /**
-   * Get Other Account Metadata
-   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * Get Counterparty by Id (Explicit)
+   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return OBPv121GetOtherAccountMetadata200Response
+   * @param counterpartyid The COUNTERPARTYID identifier (required)
+   * @return GetExplicitCounterpartyById200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetOtherAccountMetadata200Response oBPv121GetOtherAccountMetadata(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetOtherAccountMetadata(bankid, accountid, viewid, otheraccountid, null);
+  public GetExplicitCounterpartyById200Response getExplicitCounterpartyById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
-   * Get Other Account Metadata
-   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * Get Counterparty by Id (Explicit)
+   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121GetOtherAccountMetadata200Response
+   * @return GetExplicitCounterpartyById200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetOtherAccountMetadata200Response oBPv121GetOtherAccountMetadata(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121GetOtherAccountMetadata200Response> localVarResponse = oBPv121GetOtherAccountMetadataWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public GetExplicitCounterpartyById200Response getExplicitCounterpartyById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetExplicitCounterpartyById200Response> localVarResponse = getExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
     return localVarResponse.getData();
   }
 
   /**
-   * Get Other Account Metadata
-   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * Get Counterparty by Id (Explicit)
+   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return ApiResponse&lt;OBPv121GetOtherAccountMetadata200Response&gt;
+   * @param counterpartyid The COUNTERPARTYID identifier (required)
+   * @return ApiResponse&lt;GetExplicitCounterpartyById200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetOtherAccountMetadata200Response> oBPv121GetOtherAccountMetadataWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetOtherAccountMetadataWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<GetExplicitCounterpartyById200Response> getExplicitCounterpartyByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
+    return getExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
   }
 
   /**
-   * Get Other Account Metadata
-   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * Get Counterparty by Id (Explicit)
+   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
    * @param bankid The BANKID identifier (required)
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
-   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @param counterpartyid The COUNTERPARTYID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121GetOtherAccountMetadata200Response&gt;
+   * @return ApiResponse&lt;GetExplicitCounterpartyById200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetOtherAccountMetadata200Response> oBPv121GetOtherAccountMetadataWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121GetOtherAccountMetadataRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<GetExplicitCounterpartyById200Response> getExplicitCounterpartyByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getExplicitCounterpartyByIdRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2703,11 +2703,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121GetOtherAccountMetadata", localVarResponse);
+          throw getApiException("getExplicitCounterpartyById", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121GetOtherAccountMetadata200Response>(
+          return new ApiResponse<GetExplicitCounterpartyById200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2717,10 +2717,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121GetOtherAccountMetadata200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121GetOtherAccountMetadata200Response>() {});
+        GetExplicitCounterpartyById200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetExplicitCounterpartyById200Response>() {});
         
 
-        return new ApiResponse<OBPv121GetOtherAccountMetadata200Response>(
+        return new ApiResponse<GetExplicitCounterpartyById200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2739,22 +2739,167 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121GetOtherAccountMetadataRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getExplicitCounterpartyByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121GetOtherAccountMetadata");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getExplicitCounterpartyById");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121GetOtherAccountMetadata");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getExplicitCounterpartyById");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121GetOtherAccountMetadata");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getExplicitCounterpartyById");
+    }
+    // verify the required parameter 'counterpartyid' is set
+    if (counterpartyid == null) {
+      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling getExplicitCounterpartyById");
+    }
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
+        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
+        .replace("{accountid}", ApiClient.urlEncode(accountid.toString()))
+        .replace("{viewid}", ApiClient.urlEncode(viewid.toString()))
+        .replace("{counterpartyid}", ApiClient.urlEncode(counterpartyid.toString()));
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Accept", "application/json");
+
+    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * Get Other Account Metadata
+   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param accountid The ACCOUNTID identifier (required)
+   * @param viewid The VIEWID identifier (required)
+   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @return GetOtherAccountMetadata200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetOtherAccountMetadata200Response getOtherAccountMetadata(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getOtherAccountMetadata(bankid, accountid, viewid, otheraccountid, null);
+  }
+
+  /**
+   * Get Other Account Metadata
+   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param accountid The ACCOUNTID identifier (required)
+   * @param viewid The VIEWID identifier (required)
+   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return GetOtherAccountMetadata200Response
+   * @throws ApiException if fails to make API call
+   */
+  public GetOtherAccountMetadata200Response getOtherAccountMetadata(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetOtherAccountMetadata200Response> localVarResponse = getOtherAccountMetadataWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * Get Other Account Metadata
+   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param accountid The ACCOUNTID identifier (required)
+   * @param viewid The VIEWID identifier (required)
+   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @return ApiResponse&lt;GetOtherAccountMetadata200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetOtherAccountMetadata200Response> getOtherAccountMetadataWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getOtherAccountMetadataWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  }
+
+  /**
+   * Get Other Account Metadata
+   * &lt;p&gt;Get metadata of one other account.&lt;br /&gt; Returns only the metadata about one other bank account (OTHER_ACCOUNT_ID) that had shared at least one transaction with ACCOUNT_ID at BANK_ID.&lt;/p&gt; &lt;p&gt;Authentication via OAuth is required if the view is not public.&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_id\&quot;&gt;OTHER_ACCOUNT_ID&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;URL&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#display_name\&quot;&gt;&lt;strong&gt;display_name&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_URL&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; 
+   * @param bankid The BANKID identifier (required)
+   * @param accountid The ACCOUNTID identifier (required)
+   * @param viewid The VIEWID identifier (required)
+   * @param otheraccountid The OTHERACCOUNTID identifier (required)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;GetOtherAccountMetadata200Response&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<GetOtherAccountMetadata200Response> getOtherAccountMetadataWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getOtherAccountMetadataRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("getOtherAccountMetadata", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<GetOtherAccountMetadata200Response>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        GetOtherAccountMetadata200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetOtherAccountMetadata200Response>() {});
+        
+
+        return new ApiResponse<GetOtherAccountMetadata200Response>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder getOtherAccountMetadataRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    // verify the required parameter 'bankid' is set
+    if (bankid == null) {
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getOtherAccountMetadata");
+    }
+    // verify the required parameter 'accountid' is set
+    if (accountid == null) {
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getOtherAccountMetadata");
+    }
+    // verify the required parameter 'viewid' is set
+    if (viewid == null) {
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getOtherAccountMetadata");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121GetOtherAccountMetadata");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling getOtherAccountMetadata");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2788,11 +2933,11 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return OBPv121GetCounterpartyPublicAlias200Response
+   * @return GetCounterpartyPublicAlias200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetCounterpartyPublicAlias200Response oBPv121GetOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, null);
+  public GetCounterpartyPublicAlias200Response getOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getOtherAccountPrivateAlias(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2803,11 +2948,11 @@ public class CounterpartyMetadataApi {
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121GetCounterpartyPublicAlias200Response
+   * @return GetCounterpartyPublicAlias200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121GetCounterpartyPublicAlias200Response oBPv121GetOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> localVarResponse = oBPv121GetOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
+  public GetCounterpartyPublicAlias200Response getOtherAccountPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetCounterpartyPublicAlias200Response> localVarResponse = getOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, headers);
     return localVarResponse.getData();
   }
 
@@ -2818,11 +2963,11 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @return ApiResponse&lt;OBPv121GetCounterpartyPublicAlias200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyPublicAlias200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> oBPv121GetOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
-    return oBPv121GetOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
+  public ApiResponse<GetCounterpartyPublicAlias200Response> getOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid) throws ApiException {
+    return getOtherAccountPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, null);
   }
 
   /**
@@ -2833,11 +2978,11 @@ public class CounterpartyMetadataApi {
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121GetCounterpartyPublicAlias200Response&gt;
+   * @return ApiResponse&lt;GetCounterpartyPublicAlias200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121GetCounterpartyPublicAlias200Response> oBPv121GetOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121GetOtherAccountPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
+  public ApiResponse<GetCounterpartyPublicAlias200Response> getOtherAccountPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = getOtherAccountPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2848,11 +2993,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121GetOtherAccountPrivateAlias", localVarResponse);
+          throw getApiException("getOtherAccountPrivateAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>(
+          return new ApiResponse<GetCounterpartyPublicAlias200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -2862,10 +3007,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121GetCounterpartyPublicAlias200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121GetCounterpartyPublicAlias200Response>() {});
+        GetCounterpartyPublicAlias200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<GetCounterpartyPublicAlias200Response>() {});
         
 
-        return new ApiResponse<OBPv121GetCounterpartyPublicAlias200Response>(
+        return new ApiResponse<GetCounterpartyPublicAlias200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -2884,22 +3029,22 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121GetOtherAccountPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder getOtherAccountPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121GetOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling getOtherAccountPrivateAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121GetOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling getOtherAccountPrivateAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121GetOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling getOtherAccountPrivateAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121GetOtherAccountPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling getOtherAccountPrivateAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -2933,12 +3078,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest) throws ApiException {
+    return updateCounterpartyCorporateLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, null);
   }
 
   /**
@@ -2948,13 +3093,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyCorporateLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -2965,12 +3110,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest) throws ApiException {
+    return updateCounterpartyCorporateLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, null);
   }
 
   /**
@@ -2980,13 +3125,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyCorporateLocationRequest Request body (required)
+   * @param updateCounterpartyCorporateLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyCorporateLocationRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyCorporateLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyCorporateLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyCorporateLocationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2997,11 +3142,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyCorporateLocation", localVarResponse);
+          throw getApiException("updateCounterpartyCorporateLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3011,10 +3156,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3033,26 +3178,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyCorporateLocationRequest obPv121UpdateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyCorporateLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyCorporateLocationRequest updateCounterpartyCorporateLocationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyCorporateLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyCorporateLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyCorporateLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyCorporateLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyCorporateLocation");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyCorporateLocationRequest' is set
-    if (obPv121UpdateCounterpartyCorporateLocationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyCorporateLocationRequest' when calling oBPv121UpdateCounterpartyCorporateLocation");
+    // verify the required parameter 'updateCounterpartyCorporateLocationRequest' is set
+    if (updateCounterpartyCorporateLocationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyCorporateLocationRequest' when calling updateCounterpartyCorporateLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3069,7 +3214,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyCorporateLocationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyCorporateLocationRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3092,12 +3237,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyImageUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest) throws ApiException {
+    return updateCounterpartyImageUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, null);
   }
 
   /**
@@ -3107,13 +3252,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
+   * @param updateCounterpartyImageUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyImageUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -3124,12 +3269,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyImageUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest) throws ApiException {
+    return updateCounterpartyImageUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, null);
   }
 
   /**
@@ -3139,13 +3284,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyImageUrlRequest Request body (required)
+   * @param updateCounterpartyImageUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyImageUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyImageUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyImageUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyImageUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3156,11 +3301,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyImageUrl", localVarResponse);
+          throw getApiException("updateCounterpartyImageUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3170,10 +3315,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3192,26 +3337,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyImageUrlRequest obPv121UpdateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyImageUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyImageUrlRequest updateCounterpartyImageUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyImageUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyImageUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyImageUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyImageUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyImageUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyImageUrlRequest' is set
-    if (obPv121UpdateCounterpartyImageUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyImageUrlRequest' when calling oBPv121UpdateCounterpartyImageUrl");
+    // verify the required parameter 'updateCounterpartyImageUrlRequest' is set
+    if (updateCounterpartyImageUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyImageUrlRequest' when calling updateCounterpartyImageUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3228,7 +3373,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyImageUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyImageUrlRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3251,12 +3396,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest) throws ApiException {
+    return updateCounterpartyMoreInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, null);
   }
 
   /**
@@ -3266,13 +3411,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyMoreInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -3283,12 +3428,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest) throws ApiException {
+    return updateCounterpartyMoreInfoWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, null);
   }
 
   /**
@@ -3298,13 +3443,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyMoreInfoRequest Request body (required)
+   * @param updateCounterpartyMoreInfoRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyMoreInfoRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyMoreInfoWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyMoreInfoRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyMoreInfoRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3315,11 +3460,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyMoreInfo", localVarResponse);
+          throw getApiException("updateCounterpartyMoreInfo", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3329,10 +3474,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3351,26 +3496,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyMoreInfoRequest obPv121UpdateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyMoreInfoRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyMoreInfoRequest updateCounterpartyMoreInfoRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyMoreInfo");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyMoreInfo");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyMoreInfo");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyMoreInfo");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyMoreInfo");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyMoreInfoRequest' is set
-    if (obPv121UpdateCounterpartyMoreInfoRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyMoreInfoRequest' when calling oBPv121UpdateCounterpartyMoreInfo");
+    // verify the required parameter 'updateCounterpartyMoreInfoRequest' is set
+    if (updateCounterpartyMoreInfoRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyMoreInfoRequest' when calling updateCounterpartyMoreInfo");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3387,7 +3532,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyMoreInfoRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyMoreInfoRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3410,12 +3555,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
+    return updateCounterpartyOpenCorporatesUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, null);
   }
 
   /**
@@ -3425,13 +3570,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyOpenCorporatesUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -3442,12 +3587,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest) throws ApiException {
+    return updateCounterpartyOpenCorporatesUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, null);
   }
 
   /**
@@ -3457,13 +3602,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyOpenCorporatesUrlRequest Request body (required)
+   * @param updateCounterpartyOpenCorporatesUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyOpenCorporatesUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyOpenCorporatesUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyOpenCorporatesUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyOpenCorporatesUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3474,11 +3619,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyOpenCorporatesUrl", localVarResponse);
+          throw getApiException("updateCounterpartyOpenCorporatesUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3488,10 +3633,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3510,26 +3655,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyOpenCorporatesUrlRequest obPv121UpdateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyOpenCorporatesUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyOpenCorporatesUrlRequest updateCounterpartyOpenCorporatesUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyOpenCorporatesUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyOpenCorporatesUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyOpenCorporatesUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyOpenCorporatesUrlRequest' is set
-    if (obPv121UpdateCounterpartyOpenCorporatesUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyOpenCorporatesUrlRequest' when calling oBPv121UpdateCounterpartyOpenCorporatesUrl");
+    // verify the required parameter 'updateCounterpartyOpenCorporatesUrlRequest' is set
+    if (updateCounterpartyOpenCorporatesUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyOpenCorporatesUrlRequest' when calling updateCounterpartyOpenCorporatesUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3546,7 +3691,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyOpenCorporatesUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyOpenCorporatesUrlRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3569,12 +3714,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest) throws ApiException {
+    return updateCounterpartyPhysicalLocation(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, null);
   }
 
   /**
@@ -3584,13 +3729,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyPhysicalLocation(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -3601,12 +3746,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest) throws ApiException {
+    return updateCounterpartyPhysicalLocationWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, null);
   }
 
   /**
@@ -3616,13 +3761,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyPhysicalLocationRequest Request body (required)
+   * @param updateCounterpartyPhysicalLocationRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyPhysicalLocationRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPhysicalLocationWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyPhysicalLocationRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyPhysicalLocationRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3633,11 +3778,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyPhysicalLocation", localVarResponse);
+          throw getApiException("updateCounterpartyPhysicalLocation", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3647,10 +3792,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3669,26 +3814,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyPhysicalLocationRequest obPv121UpdateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyPhysicalLocationRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyPhysicalLocationRequest updateCounterpartyPhysicalLocationRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyPhysicalLocation");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyPhysicalLocation");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyPhysicalLocation");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyPhysicalLocationRequest' is set
-    if (obPv121UpdateCounterpartyPhysicalLocationRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyPhysicalLocationRequest' when calling oBPv121UpdateCounterpartyPhysicalLocation");
+    // verify the required parameter 'updateCounterpartyPhysicalLocationRequest' is set
+    if (updateCounterpartyPhysicalLocationRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyPhysicalLocationRequest' when calling updateCounterpartyPhysicalLocation");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3705,7 +3850,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyPhysicalLocationRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyPhysicalLocationRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3728,12 +3873,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121UpdateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return updateCounterpartyPrivateAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -3743,13 +3888,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyPrivateAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     return localVarResponse.getData();
   }
 
@@ -3760,12 +3905,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return updateCounterpartyPrivateAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -3775,13 +3920,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPrivateAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyPrivateAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3792,11 +3937,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyPrivateAlias", localVarResponse);
+          throw getApiException("updateCounterpartyPrivateAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3806,10 +3951,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3828,26 +3973,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyPrivateAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyPrivateAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyPrivateAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyPrivateAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyPrivateAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyPrivateAlias");
     }
-    // verify the required parameter 'obPv121GetCounterpartyPublicAlias200Response' is set
-    if (obPv121GetCounterpartyPublicAlias200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121GetCounterpartyPublicAlias200Response' when calling oBPv121UpdateCounterpartyPrivateAlias");
+    // verify the required parameter 'getCounterpartyPublicAlias200Response' is set
+    if (getCounterpartyPublicAlias200Response == null) {
+      throw new ApiException(400, "Missing the required parameter 'getCounterpartyPublicAlias200Response' when calling updateCounterpartyPrivateAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -3864,7 +4009,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121GetCounterpartyPublicAlias200Response);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getCounterpartyPublicAlias200Response);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -3887,12 +4032,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121UpdateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return updateCounterpartyPublicAlias(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -3902,13 +4047,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyPublicAlias(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     return localVarResponse.getData();
   }
 
@@ -3919,12 +4064,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param getCounterpartyPublicAlias200Response Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response) throws ApiException {
-    return oBPv121UpdateCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response) throws ApiException {
+    return updateCounterpartyPublicAliasWithHttpInfo(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, null);
   }
 
   /**
@@ -3934,13 +4079,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121GetCounterpartyPublicAlias200Response Request body (required)
+   * @param getCounterpartyPublicAlias200Response Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121GetCounterpartyPublicAlias200Response, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyPublicAliasWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyPublicAliasRequestBuilder(bankid, accountid, viewid, otheraccountid, getCounterpartyPublicAlias200Response, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -3951,11 +4096,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyPublicAlias", localVarResponse);
+          throw getApiException("updateCounterpartyPublicAlias", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -3965,10 +4110,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -3987,26 +4132,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121GetCounterpartyPublicAlias200Response obPv121GetCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyPublicAliasRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull GetCounterpartyPublicAlias200Response getCounterpartyPublicAlias200Response, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyPublicAlias");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyPublicAlias");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyPublicAlias");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyPublicAlias");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyPublicAlias");
     }
-    // verify the required parameter 'obPv121GetCounterpartyPublicAlias200Response' is set
-    if (obPv121GetCounterpartyPublicAlias200Response == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121GetCounterpartyPublicAlias200Response' when calling oBPv121UpdateCounterpartyPublicAlias");
+    // verify the required parameter 'getCounterpartyPublicAlias200Response' is set
+    if (getCounterpartyPublicAlias200Response == null) {
+      throw new ApiException(400, "Missing the required parameter 'getCounterpartyPublicAlias200Response' when calling updateCounterpartyPublicAlias");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -4023,7 +4168,7 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121GetCounterpartyPublicAlias200Response);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getCounterpartyPublicAlias200Response);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
@@ -4046,12 +4191,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @param updateCounterpartyUrlRequest Request body (required)
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, null);
+  public UpdateTransactionNarrative200Response updateCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest) throws ApiException {
+    return updateCounterpartyUrl(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, null);
   }
 
   /**
@@ -4061,13 +4206,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
+   * @param updateCounterpartyUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return OBPv121UpdateTransactionNarrative200Response
+   * @return UpdateTransactionNarrative200Response
    * @throws ApiException if fails to make API call
    */
-  public OBPv121UpdateTransactionNarrative200Response oBPv121UpdateCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv121UpdateTransactionNarrative200Response> localVarResponse = oBPv121UpdateCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, headers);
+  public UpdateTransactionNarrative200Response updateCounterpartyUrl(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+    ApiResponse<UpdateTransactionNarrative200Response> localVarResponse = updateCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, headers);
     return localVarResponse.getData();
   }
 
@@ -4078,12 +4223,12 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @param updateCounterpartyUrlRequest Request body (required)
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest) throws ApiException {
-    return oBPv121UpdateCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, null);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest) throws ApiException {
+    return updateCounterpartyUrlWithHttpInfo(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, null);
   }
 
   /**
@@ -4093,13 +4238,13 @@ public class CounterpartyMetadataApi {
    * @param accountid The ACCOUNTID identifier (required)
    * @param viewid The VIEWID identifier (required)
    * @param otheraccountid The OTHERACCOUNTID identifier (required)
-   * @param obPv121UpdateCounterpartyUrlRequest Request body (required)
+   * @param updateCounterpartyUrlRequest Request body (required)
    * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv121UpdateTransactionNarrative200Response&gt;
+   * @return ApiResponse&lt;UpdateTransactionNarrative200Response&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<OBPv121UpdateTransactionNarrative200Response> oBPv121UpdateCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv121UpdateCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, obPv121UpdateCounterpartyUrlRequest, headers);
+  public ApiResponse<UpdateTransactionNarrative200Response> updateCounterpartyUrlWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = updateCounterpartyUrlRequestBuilder(bankid, accountid, viewid, otheraccountid, updateCounterpartyUrlRequest, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -4110,11 +4255,11 @@ public class CounterpartyMetadataApi {
       InputStream localVarResponseBody = null;
       try {
         if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv121UpdateCounterpartyUrl", localVarResponse);
+          throw getApiException("updateCounterpartyUrl", localVarResponse);
         }
         localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
         if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+          return new ApiResponse<UpdateTransactionNarrative200Response>(
               localVarResponse.statusCode(),
               localVarResponse.headers().map(),
               null
@@ -4124,10 +4269,10 @@ public class CounterpartyMetadataApi {
         
         
         String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv121UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv121UpdateTransactionNarrative200Response>() {});
+        UpdateTransactionNarrative200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<UpdateTransactionNarrative200Response>() {});
         
 
-        return new ApiResponse<OBPv121UpdateTransactionNarrative200Response>(
+        return new ApiResponse<UpdateTransactionNarrative200Response>(
             localVarResponse.statusCode(),
             localVarResponse.headers().map(),
             responseValue
@@ -4146,26 +4291,26 @@ public class CounterpartyMetadataApi {
     }
   }
 
-  private HttpRequest.Builder oBPv121UpdateCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull OBPv121UpdateCounterpartyUrlRequest obPv121UpdateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder updateCounterpartyUrlRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String otheraccountid, @javax.annotation.Nonnull UpdateCounterpartyUrlRequest updateCounterpartyUrlRequest, Map<String, String> headers) throws ApiException {
     // verify the required parameter 'bankid' is set
     if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv121UpdateCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'bankid' when calling updateCounterpartyUrl");
     }
     // verify the required parameter 'accountid' is set
     if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv121UpdateCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'accountid' when calling updateCounterpartyUrl");
     }
     // verify the required parameter 'viewid' is set
     if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv121UpdateCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'viewid' when calling updateCounterpartyUrl");
     }
     // verify the required parameter 'otheraccountid' is set
     if (otheraccountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling oBPv121UpdateCounterpartyUrl");
+      throw new ApiException(400, "Missing the required parameter 'otheraccountid' when calling updateCounterpartyUrl");
     }
-    // verify the required parameter 'obPv121UpdateCounterpartyUrlRequest' is set
-    if (obPv121UpdateCounterpartyUrlRequest == null) {
-      throw new ApiException(400, "Missing the required parameter 'obPv121UpdateCounterpartyUrlRequest' when calling oBPv121UpdateCounterpartyUrl");
+    // verify the required parameter 'updateCounterpartyUrlRequest' is set
+    if (updateCounterpartyUrlRequest == null) {
+      throw new ApiException(400, "Missing the required parameter 'updateCounterpartyUrlRequest' when calling updateCounterpartyUrl");
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -4182,156 +4327,11 @@ public class CounterpartyMetadataApi {
     localVarRequestBuilder.header("Accept", "application/json");
 
     try {
-      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(obPv121UpdateCounterpartyUrlRequest);
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(updateCounterpartyUrlRequest);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);
     }
-    if (memberVarReadTimeout != null) {
-      localVarRequestBuilder.timeout(memberVarReadTimeout);
-    }
-    // Add custom headers if provided
-    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
-    if (memberVarInterceptor != null) {
-      memberVarInterceptor.accept(localVarRequestBuilder);
-    }
-    return localVarRequestBuilder;
-  }
-
-  /**
-   * Get Counterparty by Id (Explicit)
-   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param accountid The ACCOUNTID identifier (required)
-   * @param viewid The VIEWID identifier (required)
-   * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return OBPv400GetExplicitCounterpartyById200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetExplicitCounterpartyById200Response oBPv400GetExplicitCounterpartyById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv400GetExplicitCounterpartyById(bankid, accountid, viewid, counterpartyid, null);
-  }
-
-  /**
-   * Get Counterparty by Id (Explicit)
-   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param accountid The ACCOUNTID identifier (required)
-   * @param viewid The VIEWID identifier (required)
-   * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return OBPv400GetExplicitCounterpartyById200Response
-   * @throws ApiException if fails to make API call
-   */
-  public OBPv400GetExplicitCounterpartyById200Response oBPv400GetExplicitCounterpartyById(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    ApiResponse<OBPv400GetExplicitCounterpartyById200Response> localVarResponse = oBPv400GetExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid, headers);
-    return localVarResponse.getData();
-  }
-
-  /**
-   * Get Counterparty by Id (Explicit)
-   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param accountid The ACCOUNTID identifier (required)
-   * @param viewid The VIEWID identifier (required)
-   * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @return ApiResponse&lt;OBPv400GetExplicitCounterpartyById200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetExplicitCounterpartyById200Response> oBPv400GetExplicitCounterpartyByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid) throws ApiException {
-    return oBPv400GetExplicitCounterpartyByIdWithHttpInfo(bankid, accountid, viewid, counterpartyid, null);
-  }
-
-  /**
-   * Get Counterparty by Id (Explicit)
-   * &lt;p&gt;This endpoint returns a single Counterparty on an Account View specified by its COUNTERPARTY_ID:&lt;/p&gt; &lt;p&gt;For a general introduction to Counterparties in OBP, see &lt;a href&#x3D;\&quot;/glossary#Counterparties\&quot;&gt;here&lt;/a&gt;&lt;/p&gt; &lt;p&gt;User Authentication is Required. The User must be logged in. The Application must also be authenticated.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;URL Parameters:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Account.account_id\&quot;&gt;ACCOUNT_ID&lt;/a&gt;: 8ca8a7e4-6d02-40e3-a129-0b2bf89de9f0&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#Bank.bank_id\&quot;&gt;BANK_ID&lt;/a&gt;: gh.29.uk&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;COUNTERPARTY_ID&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;VIEW_ID&lt;/a&gt;: owner&lt;/p&gt; &lt;p&gt;&lt;strong&gt;JSON response body fields:&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#bespoke\&quot;&gt;&lt;strong&gt;bespoke&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#corporate_location\&quot;&gt;&lt;strong&gt;corporate_location&lt;/strong&gt;&lt;/a&gt;: 10&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;counterparty_id&lt;/strong&gt;&lt;/a&gt;: 9fg8a7e4-6d02-40e3-a129-0b2bf89de8uh&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#created_by_user_id\&quot;&gt;&lt;strong&gt;created_by_user_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;currency&lt;/strong&gt;&lt;/a&gt;: EUR&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;date&lt;/strong&gt;&lt;/a&gt;: 2020-01-27&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#description\&quot;&gt;&lt;strong&gt;description&lt;/strong&gt;&lt;/a&gt;: Description of the object. Maximum length is 2000. It can be any characters here.&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#id\&quot;&gt;&lt;strong&gt;id&lt;/strong&gt;&lt;/a&gt;: d8839721-ad8f-45dd-9f78-2080414b93f9&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#image_url\&quot;&gt;&lt;strong&gt;image_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;is_beneficiary&lt;/strong&gt;&lt;/a&gt;: false&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;key&lt;/strong&gt;&lt;/a&gt;: CustomerNumber&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#latitude\&quot;&gt;&lt;strong&gt;latitude&lt;/strong&gt;&lt;/a&gt;: 38.8951&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#longitude\&quot;&gt;&lt;strong&gt;longitude&lt;/strong&gt;&lt;/a&gt;: -77.0364&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#metadata\&quot;&gt;&lt;strong&gt;metadata&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#more_info\&quot;&gt;&lt;strong&gt;more_info&lt;/strong&gt;&lt;/a&gt;: More information about this fee&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#name\&quot;&gt;&lt;strong&gt;name&lt;/strong&gt;&lt;/a&gt;: ACCOUNT_MANAGEMENT_FEE&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#open_corporates_url\&quot;&gt;&lt;strong&gt;open_corporates_url&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_address\&quot;&gt;&lt;strong&gt;other_account_routing_address&lt;/strong&gt;&lt;/a&gt;: DE89370400440532013000&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_routing_scheme&lt;/strong&gt;&lt;/a&gt;: IBAN&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_address\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_account_secondary_routing_scheme\&quot;&gt;&lt;strong&gt;other_account_secondary_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_address\&quot;&gt;&lt;strong&gt;other_bank_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_bank_routing_scheme\&quot;&gt;&lt;strong&gt;other_bank_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_address\&quot;&gt;&lt;strong&gt;other_branch_routing_address&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#other_branch_routing_scheme\&quot;&gt;&lt;strong&gt;other_branch_routing_scheme&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#physical_location\&quot;&gt;&lt;strong&gt;physical_location&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#private_alias\&quot;&gt;&lt;strong&gt;private_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#provider\&quot;&gt;&lt;strong&gt;provider&lt;/strong&gt;&lt;/a&gt;: ETHEREUM&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#public_alias\&quot;&gt;&lt;strong&gt;public_alias&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_account_id\&quot;&gt;&lt;strong&gt;this_account_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_bank_id\&quot;&gt;&lt;strong&gt;this_bank_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#this_view_id\&quot;&gt;&lt;strong&gt;this_view_id&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;url&lt;/strong&gt;&lt;/a&gt;: &lt;a href&#x3D;\&quot;http://www.example.com/id-docs/123/image.png\&quot;&gt;http://www.example.com/id-docs/123/image.png&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#User\&quot;&gt;&lt;strong&gt;user&lt;/strong&gt;&lt;/a&gt;:&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;username&lt;/strong&gt;&lt;/a&gt;: felixsmith&lt;/p&gt; &lt;p&gt;&lt;a href&#x3D;\&quot;/glossary#\&quot;&gt;&lt;strong&gt;value&lt;/strong&gt;&lt;/a&gt;: 5987953&lt;/p&gt; 
-   * @param bankid The BANKID identifier (required)
-   * @param accountid The ACCOUNTID identifier (required)
-   * @param viewid The VIEWID identifier (required)
-   * @param counterpartyid The COUNTERPARTYID identifier (required)
-   * @param headers Optional headers to include in the request
-   * @return ApiResponse&lt;OBPv400GetExplicitCounterpartyById200Response&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public ApiResponse<OBPv400GetExplicitCounterpartyById200Response> oBPv400GetExplicitCounterpartyByIdWithHttpInfo(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = oBPv400GetExplicitCounterpartyByIdRequestBuilder(bankid, accountid, viewid, counterpartyid, headers);
-    try {
-      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
-          localVarRequestBuilder.build(),
-          HttpResponse.BodyHandlers.ofInputStream());
-      if (memberVarResponseInterceptor != null) {
-        memberVarResponseInterceptor.accept(localVarResponse);
-      }
-      InputStream localVarResponseBody = null;
-      try {
-        if (localVarResponse.statusCode()/ 100 != 2) {
-          throw getApiException("oBPv400GetExplicitCounterpartyById", localVarResponse);
-        }
-        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
-        if (localVarResponseBody == null) {
-          return new ApiResponse<OBPv400GetExplicitCounterpartyById200Response>(
-              localVarResponse.statusCode(),
-              localVarResponse.headers().map(),
-              null
-          );
-        }
-
-        
-        
-        String responseBody = new String(localVarResponseBody.readAllBytes());
-        OBPv400GetExplicitCounterpartyById200Response responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<OBPv400GetExplicitCounterpartyById200Response>() {});
-        
-
-        return new ApiResponse<OBPv400GetExplicitCounterpartyById200Response>(
-            localVarResponse.statusCode(),
-            localVarResponse.headers().map(),
-            responseValue
-        );
-      } finally {
-        if (localVarResponseBody != null) {
-          localVarResponseBody.close();
-        }
-      }
-    } catch (IOException e) {
-      throw new ApiException(e);
-    }
-    catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new ApiException(e);
-    }
-  }
-
-  private HttpRequest.Builder oBPv400GetExplicitCounterpartyByIdRequestBuilder(@javax.annotation.Nonnull String bankid, @javax.annotation.Nonnull String accountid, @javax.annotation.Nonnull String viewid, @javax.annotation.Nonnull String counterpartyid, Map<String, String> headers) throws ApiException {
-    // verify the required parameter 'bankid' is set
-    if (bankid == null) {
-      throw new ApiException(400, "Missing the required parameter 'bankid' when calling oBPv400GetExplicitCounterpartyById");
-    }
-    // verify the required parameter 'accountid' is set
-    if (accountid == null) {
-      throw new ApiException(400, "Missing the required parameter 'accountid' when calling oBPv400GetExplicitCounterpartyById");
-    }
-    // verify the required parameter 'viewid' is set
-    if (viewid == null) {
-      throw new ApiException(400, "Missing the required parameter 'viewid' when calling oBPv400GetExplicitCounterpartyById");
-    }
-    // verify the required parameter 'counterpartyid' is set
-    if (counterpartyid == null) {
-      throw new ApiException(400, "Missing the required parameter 'counterpartyid' when calling oBPv400GetExplicitCounterpartyById");
-    }
-
-    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-
-    String localVarPath = "/obp/v4.0.0/banks/{bankid}/accounts/{accountid}/{viewid}/counterparties/{counterpartyid}"
-        .replace("{bankid}", ApiClient.urlEncode(bankid.toString()))
-        .replace("{accountid}", ApiClient.urlEncode(accountid.toString()))
-        .replace("{viewid}", ApiClient.urlEncode(viewid.toString()))
-        .replace("{counterpartyid}", ApiClient.urlEncode(counterpartyid.toString()));
-
-    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
-
-    localVarRequestBuilder.header("Accept", "application/json");
-
-    localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
     }

@@ -1,19 +1,19 @@
 # OpenBankProject.Api.BankAttributeApi
 
-All URIs are relative to *https://apisandbox.openbankproject.com*
+All URIs are relative to *http://127.0.0.1:8080*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**OBPv400CreateBankAttribute**](BankAttributeApi.md#obpv400createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
-| [**OBPv400CreateOrUpdateBankAttributeDefinition**](BankAttributeApi.md#obpv400createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
-| [**OBPv400DeleteBankAttribute**](BankAttributeApi.md#obpv400deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
-| [**OBPv400GetBankAttribute**](BankAttributeApi.md#obpv400getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
-| [**OBPv400GetBankAttributes**](BankAttributeApi.md#obpv400getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
-| [**OBPv400UpdateBankAttribute**](BankAttributeApi.md#obpv400updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
+| [**CreateBankAttribute**](BankAttributeApi.md#createbankattribute) | **POST** /obp/v4.0.0/banks/{bankid}/attribute | Create Bank Attribute |
+| [**CreateOrUpdateBankAttributeDefinition**](BankAttributeApi.md#createorupdatebankattributedefinition) | **PUT** /obp/v4.0.0/banks/{bankid}/attribute-definitions/bank | Create or Update Bank Attribute Definition |
+| [**DeleteBankAttribute**](BankAttributeApi.md#deletebankattribute) | **DELETE** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Delete Bank Attribute |
+| [**GetBankAttribute**](BankAttributeApi.md#getbankattribute) | **GET** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Get Bank Attribute By BANK_ATTRIBUTE_ID |
+| [**GetBankAttributes**](BankAttributeApi.md#getbankattributes) | **GET** /obp/v4.0.0/banks/{bankid}/attributes | Get Bank Attributes |
+| [**UpdateBankAttribute**](BankAttributeApi.md#updatebankattribute) | **PUT** /obp/v4.0.0/banks/{bankid}/attributes/{bankattributeid} | Update Bank Attribute |
 
-<a id="obpv400createbankattribute"></a>
-# **OBPv400CreateBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems OBPv400CreateBankAttribute (string bankid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="createbankattribute"></a>
+# **CreateBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner CreateBankAttribute (string bankid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Create Bank Attribute
 
@@ -25,11 +25,11 @@ Create Bank Attribute
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -49,9 +49,9 @@ Create Bank Attribute
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400createorupdatebankattributedefinition"></a>
-# **OBPv400CreateOrUpdateBankAttributeDefinition**
-> OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems OBPv400CreateOrUpdateBankAttributeDefinition (string bankid, OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest)
+<a id="createorupdatebankattributedefinition"></a>
+# **CreateOrUpdateBankAttributeDefinition**
+> GetTransactionRequestAttributeDefinition200ResponseAttributesInner CreateOrUpdateBankAttributeDefinition (string bankid, CreateOrUpdateTransactionRequestAttributeDefinitionRequest createOrUpdateTransactionRequestAttributeDefinitionRequest)
 
 Create or Update Bank Attribute Definition
 
@@ -63,11 +63,11 @@ Create or Update Bank Attribute Definition
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
-| **oBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest** | [**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
+| **createOrUpdateTransactionRequestAttributeDefinitionRequest** | [**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems**](OBPv400GetTransactionRequestAttributeDefinition200ResponsePropertiesAttributesItems.md)
+[**GetTransactionRequestAttributeDefinition200ResponseAttributesInner**](GetTransactionRequestAttributeDefinition200ResponseAttributesInner.md)
 
 ### Authorization
 
@@ -88,9 +88,9 @@ Create or Update Bank Attribute Definition
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400deletebankattribute"></a>
-# **OBPv400DeleteBankAttribute**
-> void OBPv400DeleteBankAttribute (string bankid, string bankattributeid)
+<a id="deletebankattribute"></a>
+# **DeleteBankAttribute**
+> void DeleteBankAttribute (string bankid, string bankattributeid)
 
 Delete Bank Attribute
 
@@ -127,9 +127,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankattribute"></a>
-# **OBPv400GetBankAttribute**
-> OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems OBPv400GetBankAttribute (string bankid, string bankattributeid)
+<a id="getbankattribute"></a>
+# **GetBankAttribute**
+> GetBankAttributes200ResponseBankAttributesInner GetBankAttribute (string bankid, string bankattributeid)
 
 Get Bank Attribute By BANK_ATTRIBUTE_ID
 
@@ -145,7 +145,7 @@ Get Bank Attribute By BANK_ATTRIBUTE_ID
 
 ### Return type
 
-[**OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems**](OBPv400GetBankAttributes200ResponsePropertiesBankAttributesItems.md)
+[**GetBankAttributes200ResponseBankAttributesInner**](GetBankAttributes200ResponseBankAttributesInner.md)
 
 ### Authorization
 
@@ -166,9 +166,9 @@ Get Bank Attribute By BANK_ATTRIBUTE_ID
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400getbankattributes"></a>
-# **OBPv400GetBankAttributes**
-> OBPv400GetBankAttributes200Response OBPv400GetBankAttributes (string bankid)
+<a id="getbankattributes"></a>
+# **GetBankAttributes**
+> GetBankAttributes200Response GetBankAttributes (string bankid)
 
 Get Bank Attributes
 
@@ -183,7 +183,7 @@ Get Bank Attributes
 
 ### Return type
 
-[**OBPv400GetBankAttributes200Response**](OBPv400GetBankAttributes200Response.md)
+[**GetBankAttributes200Response**](GetBankAttributes200Response.md)
 
 ### Authorization
 
@@ -204,9 +204,9 @@ Get Bank Attributes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="obpv400updatebankattribute"></a>
-# **OBPv400UpdateBankAttribute**
-> OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest OBPv400UpdateBankAttribute (string bankid, string bankattributeid, OBPv510UpdateAtmAttributeRequest oBPv510UpdateAtmAttributeRequest)
+<a id="updatebankattribute"></a>
+# **UpdateBankAttribute**
+> CreateOrUpdateTransactionRequestAttributeDefinitionRequest UpdateBankAttribute (string bankid, string bankattributeid, UpdateAtmAttributeRequest updateAtmAttributeRequest)
 
 Update Bank Attribute
 
@@ -219,11 +219,11 @@ Update Bank Attribute
 |------|------|-------------|-------|
 | **bankid** | **string** | The BANKID identifier |  |
 | **bankattributeid** | **string** | The BANKATTRIBUTEID identifier |  |
-| **oBPv510UpdateAtmAttributeRequest** | [**OBPv510UpdateAtmAttributeRequest**](OBPv510UpdateAtmAttributeRequest.md) | Request body |  |
+| **updateAtmAttributeRequest** | [**UpdateAtmAttributeRequest**](UpdateAtmAttributeRequest.md) | Request body |  |
 
 ### Return type
 
-[**OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](OBPv400CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
+[**CreateOrUpdateTransactionRequestAttributeDefinitionRequest**](CreateOrUpdateTransactionRequestAttributeDefinitionRequest.md)
 
 ### Authorization
 
